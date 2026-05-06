@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "JEE Prep App"
+version = "1.0.0"
+id = "artifacts/jee-prep"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 21847
+
+[services.development]
+run = "pnpm --filter @workspace/jee-prep run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/jee-prep", "run", "build" ]
+publicDir = "artifacts/jee-prep/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "21847"
+BASE_PATH = "/"

@@ -1,0 +1,83 @@
+Build a fully responsive, premium-quality web app for JEE preparation that works both offline and online using only HTML, CSS, and JavaScript (no backend required initially).
+
+The app should have a login system (default user: username "OM", password "9801") with session memory so the user stays logged in after the first login.
+
+After login, the main homepage should act as a dashboard and include:
+
+* A personalized welcome message (e.g., "Welcome, OM")
+* A modern, animated countdown timer for JEE 2028 placed at the top center, styled like an Apple flip countdown, fully editable by the user
+* Below the countdown, an advanced Todo system with:
+
+  * Priority levels (high, medium, low)
+  * Subject tags (Physics, Chemistry, Math)
+  * Deadlines with reminder notifications (15 min before + exact time)
+  * Progress tracking (percentage)
+  * Recurring tasks (daily)
+  * Study timer per task
+  * Inline editing
+  * Drag-and-drop reordering
+  * Smart sorting (deadline, priority, completion)
+  * Auto cleanup of completed tasks
+* A calendar preview showing today’s events
+The app must use a sidebar navigation system (glassmorphism style, animated, collapsible, mobile responsive) to access different sections:
+
+* Home (default)
+* Calendar (full Google Calendar-like system)
+* Music Player
+* PDF Viewer
+Calendar section must include:
+
+* Week and month view
+* Drag-and-drop event creation
+* Time-based event scheduling
+* Event editing, deletion, and color labels
+* Recurring events
+* Notifications before and at event time
+* Smooth animations like Google Calendar
+Music Player section must include:
+
+* Upload local MP3 files and add songs via direct URL
+* Playlist system with create, rename, delete
+* Background playback across all pages (music continues when navigating)
+* Album cover support
+* Dynamic blurred background based on song
+* Waveform visualization
+* Shuffle and repeat modes
+* Crossfade transitions between songs
+* Volume normalization
+* Beat-aware transitions (approximation)
+* Smart fade timing
+* DJ-style mixer UI with crossfader
+* Tone.js integration for advanced audio processing
+* Mini player that can expand/collapse with animation
+* Fully animated, modern UI similar to Spotify
+PDF Viewer section must include:
+
+* Upload and view PDFs
+* Zoom in/out
+* Page flip animation
+* Drawing tools (pen, highlighter, shapes, eraser)
+* Text typing tool with styling (bold, color, size)
+* Selection box and multi-select
+* Layer system (like Photoshop)
+* Grid/snap system
+* Undo/redo system
+* Auto-save all edits to local storage so changes persist after closing or switching sections
+* Export edited PDF
+General app requirements:
+
+* Smooth animated page transitions between sections
+* Fully responsive design (mobile + desktop)
+* Dark/light mode toggle
+* Data persistence using localStorage (todos, calendar, music, pdf edits)
+* Offline capability using service workers (PWA support)
+* Installable as a PWA
+* Convertible into APK using tools like PWABuilder or Capacitor
+Performance requirements:
+
+* No lag or crashes
+* Use GPU-accelerated animations (transform, opacity)
+* Efficient rendering and state management
+The final app should feel like a production-level product with modern UI/UX similar to apps like Spotify and Google Calendar, with smooth animations, high responsiveness, and full functionality across all modules.
+
+The app shouldnt contain any tough data base Prefered language - html,css,js,react,typescript,node js or dont use any other ang or no database require only local storage

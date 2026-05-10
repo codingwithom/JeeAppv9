@@ -33,6 +33,7 @@ import {
   Link as LinkIcon,
   FileUp,
   Image as ImageIcon,
+  MoreVertical,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -265,6 +266,46 @@ function drawItem(ctx: CanvasRenderingContext2D, item: DrawItem) {
   ctx.restore();
 }
 
+// ─── Dropdown Components ──────────────────────────────────────────────────────
+function ThreeDotMenu({ children }: { children: React.ReactNode }) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+  
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    };
+    if (open) document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, [open]);
+
+  return (
+    <div className="relative flex items-center shrink-0" ref={ref} onClick={e => e.stopPropagation()}>
+      <button onClick={() => setOpen(!open)} className="p-1 text-muted-foreground hover:text-foreground outline-none transition-colors">
+        <MoreVertical className="h-3.5 w-3.5" />
+      </button>
+      <AnimatePresence>
+        {open && (
+          <motion.div initial={{ opacity: 0, scale: 0.95, y: -5 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0.95, y: -5 }} transition={{ duration: 0.1 }} className="absolute left-0 top-full mt-1 w-44 bg-card border border-border rounded-md shadow-xl z-[300] py-1 flex flex-col">
+            {children}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+
+function MenuItem({ icon: Icon, label, onClick, shortcut, destructive }: any) {
+  return (
+    <button onClick={(e) => { onClick(e); }} className={`w-full flex items-center justify-between px-3 py-1.5 text-xs transition-colors hover:bg-muted ${destructive ? 'text-destructive hover:text-destructive' : 'text-foreground'}`}>
+      <div className="flex items-center gap-2">{Icon && <Icon className="h-3.5 w-3.5" />}<span>{label}</span></div>
+      {shortcut && <span className="text-[10px] text-muted-foreground tracking-widest">{shortcut}</span>}
+    </button>
+  );
+}
+
 // ─── Upload Modal ─────────────────────────────────────────────────────────────
 function UploadModal({
   onFile,
@@ -422,6 +463,7 @@ export default function PDFPage() {
     "jee_pdf_sections_v3",
     [],
   );
+  const [activeItemId, setActiveItemId] = useState<string | null>(null);
   const [activeLeafId, setActiveLeafId] = useState<string | null>(null);
   const [renamingId, setRenamingId] = useState<string | null>(null);
   const [renameVal, setRenameVal] = useState("");
@@ -1089,6 +1131,47 @@ export default function PDFPage() {
     setRenamingId(null);
   };
 
+  // ── Keyboard Shortcuts ──────────────────────────────────────────────────────
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      const tag = (e.target as HTMLElement)?.tagName;
+      if (tag === "INPUT" || tag === "TEXTAREA") return;
+
+      let activeItemInfo: any = null;
+      if (activeItemId) {
+        for (const sec of sections) {
+          if (sec.id === activeItemId) { activeItemInfo = { type: 'section', secId: sec.id, name: sec.name }; break; }
+          for (const sub of sec.subsections) {
+            if (sub.id === activeItemId) { activeItemInfo = { type: 'sub', secId: sec.id, subId: sub.id, name: sub.name }; break; }
+            for (const ss of sub.subsubsections) {
+              if (ss.id === activeItemId) { activeItemInfo = { type: 'subsub', secId: sec.id, subId: sub.id, subSubId: ss.id, name: ss.name }; break; }
+            }
+          }
+        }
+      }
+
+      if (!e.ctrlKey && !e.metaKey && e.key.toLowerCase() === "n") {
+        e.preventDefault();
+        if (!activeItemInfo) addSection();
+        else if (activeItemInfo.type === 'section') addSubsection(activeItemInfo.secId);
+        else if (activeItemInfo.type === 'sub') addSubSubsection(activeItemInfo.secId, activeItemInfo.subId);
+      } else if (e.key === "F2") {
+        if (!activeItemInfo) return;
+        e.preventDefault();
+        setRenamingId(activeItemId);
+        setRenameVal(activeItemInfo.name);
+      } else if (e.key === "Delete") {
+        if (!activeItemInfo) return;
+        e.preventDefault();
+        if (activeItemInfo.type === 'section') deleteSection(activeItemInfo.secId);
+        else if (activeItemInfo.type === 'sub') deleteSubsection(activeItemInfo.secId, activeItemInfo.subId);
+        else if (activeItemInfo.type === 'subsub') deleteSubSubsection(activeItemInfo.secId, activeItemInfo.subId, activeItemInfo.subSubId);
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [activeItemId, sections, setSections]);
+
   const cursorStyle =
     tool === "eraser"
       ? "cell"
@@ -1153,7 +1236,10 @@ export default function PDFPage() {
           {sections.map((sec) => (
             <div key={sec.id}>
               {/* ── Section row (level 1) ── */}
-              <div className="group flex items-center gap-1 px-2 py-1.5 hover:bg-muted/50 transition-colors">
+              <div 
+                className={`group flex items-center gap-1 px-2 py-1.5 cursor-pointer transition-colors ${activeItemId === sec.id ? "bg-muted" : "hover:bg-muted/50"}`}
+                onClick={() => setActiveItemId(sec.id)}
+              >
                 <button
                   onClick={() => toggleSection(sec.id)}
                   className="text-muted-foreground hover:text-foreground transition-colors shrink-0"
@@ -1178,30 +1264,11 @@ export default function PDFPage() {
                     {sec.name}
                   </span>
                 )}
-                <div className="hidden group-hover:flex items-center gap-0.5 shrink-0">
-                  <button
-                    onClick={() => {
-                      setRenamingId(sec.id);
-                      setRenameVal(sec.name);
-                    }}
-                    className="p-0.5 text-muted-foreground hover:text-foreground"
-                  >
-                    <Pencil className="h-2.5 w-2.5" />
-                  </button>
-                  <button
-                    onClick={() => addSubsection(sec.id)}
-                    className="p-0.5 text-muted-foreground hover:text-foreground"
-                    title="Add subsection"
-                  >
-                    <FilePlus className="h-2.5 w-2.5" />
-                  </button>
-                  <button
-                    onClick={() => deleteSection(sec.id)}
-                    className="p-0.5 text-muted-foreground hover:text-destructive"
-                  >
-                    <X className="h-2.5 w-2.5" />
-                  </button>
-                </div>
+                <ThreeDotMenu>
+                  <MenuItem icon={FilePlus} label="Add Subsection" shortcut="N" onClick={(e: any) => { e.stopPropagation(); addSubsection(sec.id); }} />
+                  <MenuItem icon={Pencil} label="Rename" shortcut="F2" onClick={(e: any) => { e.stopPropagation(); setRenamingId(sec.id); setRenameVal(sec.name); }} />
+                  <MenuItem icon={Trash2} label="Delete" shortcut="Del" destructive onClick={(e: any) => { e.stopPropagation(); deleteSection(sec.id); }} />
+                </ThreeDotMenu>
               </div>
 
               {/* ── Subsections (level 2) ── */}
@@ -1210,8 +1277,9 @@ export default function PDFPage() {
                   <div key={sub.id}>
                     <div
                       className={`group flex items-center gap-1 pl-5 pr-2 py-1.5 cursor-pointer transition-colors
-                      ${activeLeafId === sub.id && !sub.subsubsections.length ? "bg-primary/15 border-l-2 border-primary" : "hover:bg-muted/50"}`}
+                      ${activeLeafId === sub.id && !sub.subsubsections.length ? "bg-primary/15 border-l-2 border-primary" : (activeItemId === sub.id ? "bg-muted/70" : "hover:bg-muted/50")}`}
                       onClick={async () => {
+                        setActiveItemId(sub.id);
                         if (sub.fileType === "image" && sub.imageKey) {
                           const buf = await readMediaAsArrayBuffer(sub.imageKey);
                           if (buf) {
@@ -1275,50 +1343,12 @@ export default function PDFPage() {
                         </div>
                       )}
 
-                      <div className="hidden group-hover:flex items-center gap-0.5 shrink-0">
-                        <button
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            setRenamingId(sub.id);
-                            setRenameVal(sub.name);
-                          }}
-                          className="p-0.5 text-muted-foreground hover:text-foreground"
-                        >
-                          <Pencil className="h-2.5 w-2.5" />
-                        </button>
-                        <button
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            setUploadTarget({
-                              sectionId: sec.id,
-                              subId: sub.id,
-                            });
-                          }}
-                          className="p-0.5 text-muted-foreground hover:text-primary"
-                          title="Load PDF"
-                        >
-                          <Upload className="h-2.5 w-2.5" />
-                        </button>
-                        <button
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            addSubSubsection(sec.id, sub.id);
-                          }}
-                          className="p-0.5 text-muted-foreground hover:text-foreground"
-                          title="Add sub-subsection"
-                        >
-                          <FilePlus className="h-2.5 w-2.5" />
-                        </button>
-                        <button
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            deleteSubsection(sec.id, sub.id);
-                          }}
-                          className="p-0.5 text-muted-foreground hover:text-destructive"
-                        >
-                          <X className="h-2.5 w-2.5" />
-                        </button>
-                      </div>
+                      <ThreeDotMenu>
+                        <MenuItem icon={Upload} label="Upload / Add" onClick={(e: any) => { e.stopPropagation(); setUploadTarget({ sectionId: sec.id, subId: sub.id }); }} />
+                        <MenuItem icon={FilePlus} label="Add Sub-subsection" shortcut="N" onClick={(e: any) => { e.stopPropagation(); addSubSubsection(sec.id, sub.id); }} />
+                        <MenuItem icon={Pencil} label="Rename" shortcut="F2" onClick={(e: any) => { e.stopPropagation(); setRenamingId(sub.id); setRenameVal(sub.name); }} />
+                        <MenuItem icon={Trash2} label="Delete" shortcut="Del" destructive onClick={(e: any) => { e.stopPropagation(); deleteSubsection(sec.id, sub.id); }} />
+                      </ThreeDotMenu>
                     </div>
 
                     {/* ── Sub-subsections (level 3) ── */}
@@ -1327,8 +1357,9 @@ export default function PDFPage() {
                         <div
                           key={ssub.id}
                           className={`group flex items-center gap-1 pl-9 pr-2 py-1.5 cursor-pointer transition-colors
-                        ${activeLeafId === ssub.id ? "bg-primary/15 border-l-2 border-primary" : "hover:bg-muted/50"}`}
+                        ${activeLeafId === ssub.id ? "bg-primary/15 border-l-2 border-primary" : (activeItemId === ssub.id ? "bg-muted/70" : "hover:bg-muted/50")}`}
                           onClick={async () => {
+                            setActiveItemId(ssub.id);
                             if (ssub.fileType === "image" && ssub.imageKey) {
                               const buf = await readMediaAsArrayBuffer(ssub.imageKey);
                               if (buf) {
@@ -1376,41 +1407,11 @@ export default function PDFPage() {
                             </div>
                           )}
 
-                          <div className="hidden group-hover:flex items-center gap-0.5 shrink-0">
-                            <button
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                setRenamingId(ssub.id);
-                                setRenameVal(ssub.name);
-                              }}
-                              className="p-0.5 text-muted-foreground hover:text-foreground"
-                            >
-                              <Pencil className="h-2.5 w-2.5" />
-                            </button>
-                            <button
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                setUploadTarget({
-                                  sectionId: sec.id,
-                                  subId: sub.id,
-                                  subSubId: ssub.id,
-                                });
-                              }}
-                              className="p-0.5 text-muted-foreground hover:text-primary"
-                              title="Load PDF"
-                            >
-                              <Upload className="h-2.5 w-2.5" />
-                            </button>
-                            <button
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                deleteSubSubsection(sec.id, sub.id, ssub.id);
-                              }}
-                              className="p-0.5 text-muted-foreground hover:text-destructive"
-                            >
-                              <X className="h-2.5 w-2.5" />
-                            </button>
-                          </div>
+                          <ThreeDotMenu>
+                            <MenuItem icon={Upload} label="Upload / Add" onClick={(e: any) => { e.stopPropagation(); setUploadTarget({ sectionId: sec.id, subId: sub.id, subSubId: ssub.id }); }} />
+                            <MenuItem icon={Pencil} label="Rename" shortcut="F2" onClick={(e: any) => { e.stopPropagation(); setRenamingId(ssub.id); setRenameVal(ssub.name); }} />
+                            <MenuItem icon={Trash2} label="Delete" shortcut="Del" destructive onClick={(e: any) => { e.stopPropagation(); deleteSubSubsection(sec.id, sub.id, ssub.id); }} />
+                          </ThreeDotMenu>
                         </div>
                       ))}
 

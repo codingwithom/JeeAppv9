@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useMusicContext, Song } from "@/context/MusicContext";
 import { useAppContext } from "@/context/AppContext";
@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
   Music, Plus, Play, Pause, Trash2, Upload, Link2, X,
-  Library, ChevronRight, Pencil, Check, Clock, Youtube, Loader2, Radio, Search,
+  Library, ChevronRight, Pencil, Check, Clock, Youtube, Loader2, Radio, Search, MoreVertical,
 } from "lucide-react";
 
 // Prevent browser tab throttling/pausing for media players by spoofing page visibility
@@ -31,6 +31,46 @@ function getGrad(name: string) { return GRADIENTS[name.charCodeAt(0) % GRADIENTS
 function formatTime(s: number) {
   if (!isFinite(s) || s <= 0) return "—";
   return `${Math.floor(s / 60)}:${Math.floor(s % 60).toString().padStart(2, "0")}`;
+}
+
+// ─── Dropdown Components ──────────────────────────────────────────────────────
+function ThreeDotMenu({ children }: { children: React.ReactNode }) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+  
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    };
+    if (open) document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, [open]);
+
+  return (
+    <div className="relative flex items-center shrink-0" ref={ref} onClick={e => e.stopPropagation()}>
+      <button onClick={() => setOpen(!open)} className="p-1 text-muted-foreground hover:text-foreground outline-none transition-colors">
+        <MoreVertical className="h-4 w-4" />
+      </button>
+      <AnimatePresence>
+        {open && (
+          <motion.div initial={{ opacity: 0, scale: 0.95, y: -5 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0.95, y: -5 }} transition={{ duration: 0.1 }} className="absolute left-0 top-full mt-1 w-44 bg-card border border-border rounded-md shadow-xl z-[300] py-1 flex flex-col">
+            {children}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+
+function MenuItem({ icon: Icon, label, onClick, shortcut, destructive }: any) {
+  return (
+    <button onClick={(e) => { onClick(e); }} className={`w-full flex items-center justify-between px-3 py-1.5 text-xs transition-colors hover:bg-muted ${destructive ? 'text-destructive hover:text-destructive' : 'text-foreground'}`}>
+      <div className="flex items-center gap-2">{Icon && <Icon className="h-3.5 w-3.5" />}<span>{label}</span></div>
+      {shortcut && <span className="text-[10px] text-muted-foreground tracking-widest">{shortcut}</span>}
+    </button>
+  );
 }
 
 function EditSongModal({
@@ -1240,6 +1280,49 @@ export default function MusicPage() {
   const [editName, setEditName] = useState("");
   const [filterTab, setFilterTab] = useState<"all" | "playlists">("all");
   const [showMobileSidebar, setShowMobileSidebar] = useState(() => typeof window !== 'undefined' ? window.innerWidth < 768 : false);
+  const [activeItemId, setActiveItemId] = useState<string | null>(null);
+
+  // ── Keyboard Shortcuts ──────────────────────────────────────────────────────
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      const tag = (e.target as HTMLElement)?.tagName;
+      if (tag === "INPUT" || tag === "TEXTAREA") return;
+
+      let itemType: 'playlist' | 'song' | null = null;
+      let targetPlaylist: any = null;
+      let targetSong: any = null;
+
+      if (activeItemId) {
+        targetPlaylist = playlists.find(p => p.id === activeItemId);
+        if (targetPlaylist) {
+          itemType = 'playlist';
+        } else {
+          for (const p of playlists) {
+            targetSong = p.songs.find((s: any) => s.id === activeItemId);
+            if (targetSong) { itemType = 'song'; targetPlaylist = p; break; }
+          }
+        }
+      }
+
+      if (!e.ctrlKey && !e.metaKey && e.key.toLowerCase() === "n") {
+        e.preventDefault();
+        if (itemType === 'song') setShowAdd(true);
+        else setShowNew(true);
+      } else if (e.key === "F2") {
+        if (!itemType) return;
+        e.preventDefault();
+        if (itemType === 'playlist') { setEditId(targetPlaylist.id); setEditName(targetPlaylist.name); }
+        else if (itemType === 'song') setEditSong({ song: targetSong, playlistId: targetPlaylist.id });
+      } else if (e.key === "Delete") {
+        if (!itemType) return;
+        e.preventDefault();
+        if (itemType === 'playlist' && targetPlaylist.id !== 'default') deletePlaylist(targetPlaylist.id);
+        else if (itemType === 'song') removeSongFromPlaylist(targetPlaylist.id, targetSong.id);
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [activeItemId, playlists, deletePlaylist, removeSongFromPlaylist]);
 
   void theme; // consumed via CSS vars
   const bgClass = "bg-background";
@@ -1364,8 +1447,8 @@ export default function MusicPage() {
                 <div
                   key={p.id}
                   className={`group flex items-center gap-3 px-2 py-2 rounded-md cursor-pointer transition-colors
-                    ${isActive ? "bg-muted" : "hover:bg-muted/50"}`}
-                  onClick={() => { setSelId(p.id); setShowMobileSidebar(false); }}
+                    ${isActive ? "bg-muted" : (activeItemId === p.id ? "bg-muted/70" : "hover:bg-muted/50")}`}
+                  onClick={() => { setSelId(p.id); setActiveItemId(p.id); setShowMobileSidebar(false); }}
                 >
                   <div className={`w-10 h-10 rounded flex-shrink-0 flex items-center justify-center bg-gradient-to-br ${pg0} ${pg1}`}>
                     <Music className="h-4 w-4 text-white/60" />
@@ -1393,22 +1476,12 @@ export default function MusicPage() {
                       ))}
                     </div>
                   )}
-                  <div className="hidden group-hover:flex items-center gap-0.5 flex-shrink-0">
-                    <button
-                      className="p-1 text-muted-foreground hover:text-foreground transition-colors"
-                      onClick={e => { e.stopPropagation(); setEditId(p.id); setEditName(p.name); }}
-                    >
-                      <Pencil className="h-3 w-3" />
-                    </button>
+                  <ThreeDotMenu>
+                    <MenuItem icon={Pencil} label="Rename" shortcut="F2" onClick={(e: any) => { e.stopPropagation(); setEditId(p.id); setEditName(p.name); }} />
                     {p.id !== "default" && (
-                      <button
-                        className="p-1 text-muted-foreground hover:text-red-400 transition-colors"
-                        onClick={e => { e.stopPropagation(); deletePlaylist(p.id); }}
-                      >
-                        <Trash2 className="h-3 w-3" />
-                      </button>
+                      <MenuItem icon={Trash2} label="Delete" shortcut="Del" destructive onClick={(e: any) => { e.stopPropagation(); deletePlaylist(p.id); }} />
                     )}
-                  </div>
+                  </ThreeDotMenu>
                 </div>
               );
             })}
@@ -1499,7 +1572,7 @@ export default function MusicPage() {
                     className={`md:hidden grid gap-2 px-2 py-2 rounded-md cursor-pointer transition-colors border border-border/30
                       ${isActive ? "bg-muted border-[#1DB954]/30" : "hover:bg-muted/40"}`}
                     style={{ gridTemplateColumns: "auto 1fr auto" }}
-                    onClick={() => playSong(song, selId)}
+                    onClick={() => { setActiveItemId(song.id); playSong(song, selId); }}
                   >
                     {/* Mobile card layout */}
                     <div className="flex items-center justify-center flex-shrink-0">
@@ -1533,21 +1606,11 @@ export default function MusicPage() {
                       </div>
                     </div>
 
-                    <div className="flex items-center justify-center gap-1 flex-shrink-0">
-                      <button
-                        className="text-muted-foreground hover:text-foreground transition-all p-0.5"
-                        onClick={e => { e.stopPropagation(); setEditSong({ song, playlistId: selId }); }}
-                        title="Edit"
-                      >
-                        <Pencil className="h-3 w-3" />
-                      </button>
-                      <button
-                        className="text-muted-foreground hover:text-red-400 transition-all p-0.5"
-                        onClick={e => { e.stopPropagation(); removeSongFromPlaylist(selId, song.id); }}
-                        title="Remove"
-                      >
-                        <Trash2 className="h-3 w-3" />
-                      </button>
+                    <div className="flex items-center justify-center shrink-0">
+                      <ThreeDotMenu>
+                        <MenuItem icon={Pencil} label="Edit" onClick={(e: any) => { e.stopPropagation(); setEditSong({ song, playlistId: selId }); }} />
+                        <MenuItem icon={Trash2} label="Delete" destructive onClick={(e: any) => { e.stopPropagation(); removeSongFromPlaylist(selId, song.id); }} />
+                      </ThreeDotMenu>
                     </div>
                   </motion.div>
                 );
@@ -1565,9 +1628,9 @@ export default function MusicPage() {
                     animate={{ opacity: 1 }}
                     transition={{ delay: idx * 0.02 }}
                     className={`hidden md:grid group gap-4 px-4 py-3 rounded-md cursor-pointer transition-colors
-                      ${isActive ? "bg-muted" : "hover:bg-muted/40"}`}
+                      ${isActive ? "bg-muted" : (activeItemId === song.id ? "bg-muted/70" : "hover:bg-muted/40")}`}
                     style={{ gridTemplateColumns: "28px 1fr 80px 64px" }}
-                    onClick={() => playSong(song, selId)}
+                    onClick={() => { setActiveItemId(song.id); playSong(song, selId); }}
                   >
                     {/* Index / playing */}
                     <div className="flex items-center justify-center text-sm">
@@ -1618,21 +1681,11 @@ export default function MusicPage() {
                     </div>
 
                     {/* Actions */}
-                    <div className="flex items-center justify-center gap-1">
-                      <button
-                        className="opacity-0 group-hover:opacity-100 text-muted-foreground hover:text-foreground transition-all p-1"
-                        onClick={e => { e.stopPropagation(); setEditSong({ song, playlistId: selId }); }}
-                        title="Edit details"
-                      >
-                        <Pencil className="h-3.5 w-3.5" />
-                      </button>
-                      <button
-                        className="opacity-0 group-hover:opacity-100 text-muted-foreground hover:text-red-400 transition-all p-1"
-                        onClick={e => { e.stopPropagation(); removeSongFromPlaylist(selId, song.id); }}
-                        title="Remove"
-                      >
-                        <Trash2 className="h-3.5 w-3.5" />
-                      </button>
+                    <div className="flex items-center justify-center">
+                      <ThreeDotMenu>
+                        <MenuItem icon={Pencil} label="Rename / Edit" shortcut="F2" onClick={(e: any) => { e.stopPropagation(); setEditSong({ song, playlistId: selId }); }} />
+                        <MenuItem icon={Trash2} label="Delete" shortcut="Del" destructive onClick={(e: any) => { e.stopPropagation(); removeSongFromPlaylist(selId, song.id); }} />
+                      </ThreeDotMenu>
                     </div>
                   </motion.div>
                 );

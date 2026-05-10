@@ -42,6 +42,7 @@ import {
   RefreshCw,
   Search,
   Loader2,
+  MoreVertical,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { loadYouTubeApi } from "@/lib/youtube-api";
@@ -159,6 +160,46 @@ function uuid(): string {
   if (typeof crypto !== "undefined" && crypto.randomUUID)
     return crypto.randomUUID();
   return Date.now().toString(36) + Math.random().toString(36).slice(2);
+}
+
+// ─── Dropdown Components ──────────────────────────────────────────────────────
+function ThreeDotMenu({ children }: { children: React.ReactNode }) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+  
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    };
+    if (open) document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, [open]);
+
+  return (
+    <div className="relative flex items-center shrink-0" ref={ref} onClick={e => e.stopPropagation()}>
+      <button onClick={() => setOpen(!open)} className="p-1 text-muted-foreground hover:text-foreground outline-none transition-colors">
+        <MoreVertical className="h-3.5 w-3.5" />
+      </button>
+      <AnimatePresence>
+        {open && (
+          <motion.div initial={{ opacity: 0, scale: 0.95, y: -5 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0.95, y: -5 }} transition={{ duration: 0.1 }} className="absolute left-0 top-full mt-1 w-44 bg-card border border-border rounded-md shadow-xl z-[300] py-1 flex flex-col">
+            {children}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+
+function MenuItem({ icon: Icon, label, onClick, shortcut, destructive }: any) {
+  return (
+    <button onClick={(e) => { onClick(e); }} className={`w-full flex items-center justify-between px-3 py-1.5 text-xs transition-colors hover:bg-muted ${destructive ? 'text-destructive hover:text-destructive' : 'text-foreground'}`}>
+      <div className="flex items-center gap-2">{Icon && <Icon className="h-3.5 w-3.5" />}<span>{label}</span></div>
+      {shortcut && <span className="text-[10px] text-muted-foreground tracking-widest">{shortcut}</span>}
+    </button>
+  );
 }
 
 // ─── Screenshot Editor ────────────────────────────────────────────────────────
@@ -1029,6 +1070,7 @@ export default function VideoPage() {
     "vid_sections_v1",
     [],
   );
+  const [activeItemId, setActiveItemId] = useState<string | null>(null);
   const [allNotes, setAllNotes] = useLocalStorage<Record<string, NoteBlock[]>>(
     "vid_notes_v1",
     {},
@@ -2060,6 +2102,47 @@ export default function VideoPage() {
     setRenamingId(null);
   };
 
+  // ── Keyboard Shortcuts ──────────────────────────────────────────────────────
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      const tag = (e.target as HTMLElement)?.tagName;
+      if (tag === "INPUT" || tag === "TEXTAREA") return;
+
+      let activeItemInfo: any = null;
+      if (activeItemId) {
+        for (const sec of sections) {
+          if (sec.id === activeItemId) { activeItemInfo = { type: 'section', secId: sec.id, name: sec.name }; break; }
+          for (const sub of sec.subsections) {
+            if (sub.id === activeItemId) { activeItemInfo = { type: 'sub', secId: sec.id, subId: sub.id, name: sub.name }; break; }
+            for (const ss of sub.subsubsections) {
+              if (ss.id === activeItemId) { activeItemInfo = { type: 'subsub', secId: sec.id, subId: sub.id, subSubId: ss.id, name: ss.name }; break; }
+            }
+          }
+        }
+      }
+
+      if (!e.ctrlKey && !e.metaKey && e.key.toLowerCase() === "n") {
+        e.preventDefault();
+        if (!activeItemInfo) addSection();
+        else if (activeItemInfo.type === 'section') addSubsection(activeItemInfo.secId);
+        else if (activeItemInfo.type === 'sub') addSubSubsection(activeItemInfo.secId, activeItemInfo.subId);
+      } else if (e.key === "F2") {
+        if (!activeItemInfo) return;
+        e.preventDefault();
+        setRenamingId(activeItemId);
+        setRenameVal(activeItemInfo.name);
+      } else if (e.key === "Delete") {
+        if (!activeItemInfo) return;
+        e.preventDefault();
+        if (activeItemInfo.type === 'section') deleteSection(activeItemInfo.secId);
+        else if (activeItemInfo.type === 'sub') deleteSubsection(activeItemInfo.secId, activeItemInfo.subId);
+        else if (activeItemInfo.type === 'subsub') deleteSubSubsection(activeItemInfo.secId, activeItemInfo.subId, activeItemInfo.subSubId);
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [activeItemId, sections, setSections]);
+
   const handleVideoUpload = async (file: File, target: typeof uploadTarget) => {
     if (!target) return;
     const key = `vid_file_${target.subSubId ?? target.subId}_${Date.now()}`;
@@ -2541,7 +2624,10 @@ export default function VideoPage() {
           {sections.map((sec) => (
             <div key={sec.id}>
               {/* Section */}
-              <div className="group flex items-center gap-1 px-2 py-1.5 rounded-lg hover:bg-accent/30 transition-colors">
+              <div 
+                className={`group flex items-center gap-1 px-2 py-1.5 rounded-lg transition-colors cursor-pointer ${activeItemId === sec.id ? "bg-accent/40" : "hover:bg-accent/30"}`}
+                onClick={() => setActiveItemId(sec.id)}
+              >
                 <button
                   onClick={() => toggleSection(sec.id)}
                   className="text-muted-foreground shrink-0"
@@ -2569,30 +2655,11 @@ export default function VideoPage() {
                     {sec.name}
                   </span>
                 )}
-                <div className="opacity-0 group-hover:opacity-100 flex gap-0.5 transition-opacity">
-                  <button
-                    onClick={() => addSubsection(sec.id)}
-                    className="p-0.5 hover:text-primary text-muted-foreground"
-                    title="Add subsection"
-                  >
-                    <FilePlus className="h-3 w-3" />
-                  </button>
-                  <button
-                    onClick={() => {
-                      setRenamingId(sec.id);
-                      setRenameVal(sec.name);
-                    }}
-                    className="p-0.5 hover:text-primary text-muted-foreground"
-                  >
-                    <Pencil className="h-3 w-3" />
-                  </button>
-                  <button
-                    onClick={() => deleteSection(sec.id)}
-                    className="p-0.5 hover:text-destructive text-muted-foreground"
-                  >
-                    <Trash2 className="h-3 w-3" />
-                  </button>
-                </div>
+                <ThreeDotMenu>
+                  <MenuItem icon={FilePlus} label="Add Subsection" shortcut="N" onClick={(e: any) => { e.stopPropagation(); addSubsection(sec.id); }} />
+                  <MenuItem icon={Pencil} label="Rename" shortcut="F2" onClick={(e: any) => { e.stopPropagation(); setRenamingId(sec.id); setRenameVal(sec.name); }} />
+                  <MenuItem icon={Trash2} label="Delete" shortcut="Del" destructive onClick={(e: any) => { e.stopPropagation(); deleteSection(sec.id); }} />
+                </ThreeDotMenu>
               </div>
 
               {sec.expanded &&
@@ -2604,8 +2671,10 @@ export default function VideoPage() {
                         activeLeafId === sub.id &&
                           sub.subsubsections.length === 0 &&
                           "bg-primary/10 text-primary",
+                        activeItemId === sub.id && "bg-accent/40"
                       )}
                       onClick={() => {
+                        setActiveItemId(sub.id);
                         if (sub.subsubsections.length === 0) {
                           setActiveLeafId(sub.id);
                           setShowMobileSidebar(false);
@@ -2679,45 +2748,12 @@ export default function VideoPage() {
                           onSelect={(c) => setSubColor(sec.id, sub.id, c)}
                         />
                       </div>
-                      <div
-                        className="opacity-0 group-hover:opacity-100 flex gap-0.5 transition-opacity"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        <button
-                          onClick={() =>
-                            setUploadTarget({
-                              sectionId: sec.id,
-                              subId: sub.id,
-                            })
-                          }
-                          className="p-0.5 hover:text-primary text-muted-foreground"
-                          title="Add/replace video"
-                        >
-                          <Plus className="h-3 w-3" />
-                        </button>
-                        <button
-                          onClick={() => addSubSubsection(sec.id, sub.id)}
-                          className="p-0.5 hover:text-primary text-muted-foreground"
-                          title="Add item"
-                        >
-                          <FilePlus className="h-3 w-3" />
-                        </button>
-                        <button
-                          onClick={() => {
-                            setRenamingId(sub.id);
-                            setRenameVal(sub.name);
-                          }}
-                          className="p-0.5 hover:text-primary text-muted-foreground"
-                        >
-                          <Pencil className="h-3 w-3" />
-                        </button>
-                        <button
-                          onClick={() => deleteSubsection(sec.id, sub.id)}
-                          className="p-0.5 hover:text-destructive text-muted-foreground"
-                        >
-                          <Trash2 className="h-3 w-3" />
-                        </button>
-                      </div>
+                      <ThreeDotMenu>
+                        <MenuItem icon={Plus} label="Add/Replace Video" onClick={(e: any) => { e.stopPropagation(); setUploadTarget({ sectionId: sec.id, subId: sub.id }); }} />
+                        <MenuItem icon={FilePlus} label="Add Item" shortcut="N" onClick={(e: any) => { e.stopPropagation(); addSubSubsection(sec.id, sub.id); }} />
+                        <MenuItem icon={Pencil} label="Rename" shortcut="F2" onClick={(e: any) => { e.stopPropagation(); setRenamingId(sub.id); setRenameVal(sub.name); }} />
+                        <MenuItem icon={Trash2} label="Delete" shortcut="Del" destructive onClick={(e: any) => { e.stopPropagation(); deleteSubsection(sec.id, sub.id); }} />
+                      </ThreeDotMenu>
                     </div>
 
                     {sub.expanded &&
@@ -2728,9 +2764,10 @@ export default function VideoPage() {
                               "group flex items-center gap-1.5 px-2 py-1.5 rounded-lg transition-colors cursor-pointer",
                               activeLeafId === ss.id
                                 ? "bg-primary/10 text-primary"
-                                : "hover:bg-accent/30 text-muted-foreground hover:text-foreground",
+                                : (activeItemId === ss.id ? "bg-accent/40 text-foreground" : "hover:bg-accent/30 text-muted-foreground hover:text-foreground")
                             )}
                             onClick={() => {
+                              setActiveItemId(ss.id);
                               setActiveLeafId(ss.id);
                               setShowMobileSidebar(false);
                             }}
@@ -2794,41 +2831,11 @@ export default function VideoPage() {
                                 }
                               />
                             </div>
-                            <div
-                              className="opacity-0 group-hover:opacity-100 flex gap-0.5 transition-opacity"
-                              onClick={(e) => e.stopPropagation()}
-                            >
-                              <button
-                                onClick={() =>
-                                  setUploadTarget({
-                                    sectionId: sec.id,
-                                    subId: sub.id,
-                                    subSubId: ss.id,
-                                  })
-                                }
-                                className="p-0.5 hover:text-primary text-muted-foreground"
-                                title="Add/replace video"
-                              >
-                                <Plus className="h-3 w-3" />
-                              </button>
-                              <button
-                                onClick={() => {
-                                  setRenamingId(ss.id);
-                                  setRenameVal(ss.name);
-                                }}
-                                className="p-0.5 hover:text-primary text-muted-foreground"
-                              >
-                                <Pencil className="h-3 w-3" />
-                              </button>
-                              <button
-                                onClick={() =>
-                                  deleteSubSubsection(sec.id, sub.id, ss.id)
-                                }
-                                className="p-0.5 hover:text-destructive text-muted-foreground"
-                              >
-                                <Trash2 className="h-3 w-3" />
-                              </button>
-                            </div>
+                            <ThreeDotMenu>
+                              <MenuItem icon={Plus} label="Add/Replace Video" onClick={(e: any) => { e.stopPropagation(); setUploadTarget({ sectionId: sec.id, subId: sub.id, subSubId: ss.id }); }} />
+                              <MenuItem icon={Pencil} label="Rename" shortcut="F2" onClick={(e: any) => { e.stopPropagation(); setRenamingId(ss.id); setRenameVal(ss.name); }} />
+                              <MenuItem icon={Trash2} label="Delete" shortcut="Del" destructive onClick={(e: any) => { e.stopPropagation(); deleteSubSubsection(sec.id, sub.id, ss.id); }} />
+                            </ThreeDotMenu>
                           </div>
                         </div>
                       ))}

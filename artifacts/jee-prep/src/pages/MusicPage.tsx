@@ -6,8 +6,17 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
   Music, Plus, Play, Pause, Trash2, Upload, Link2, X,
-  Library, ChevronRight, Pencil, Check, Clock, Youtube, Loader2, Radio,
+  Library, ChevronRight, Pencil, Check, Clock, Youtube, Loader2, Radio, Search,
 } from "lucide-react";
+
+// Prevent browser tab throttling/pausing for media players by spoofing page visibility
+try {
+  if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+    Object.defineProperty(document, 'hidden', { get: () => false });
+    Object.defineProperty(document, 'visibilityState', { get: () => 'visible' });
+    window.addEventListener('visibilitychange', e => e.stopImmediatePropagation(), true);
+  }
+} catch (e) {}
 
 const GRADIENTS = [
   ["from-purple-800","to-indigo-900"],
@@ -18,12 +27,12 @@ const GRADIENTS = [
   ["from-teal-800","to-cyan-900"],
 ];
 function getGrad(name: string) { return GRADIENTS[name.charCodeAt(0) % GRADIENTS.length]; }
+
 function formatTime(s: number) {
   if (!isFinite(s) || s <= 0) return "—";
   return `${Math.floor(s / 60)}:${Math.floor(s % 60).toString().padStart(2, "0")}`;
 }
 
-// ── Edit Song Modal ───────────────────────────────────────────────────────────
 function EditSongModal({
   playlistId, song, onClose,
 }: { playlistId: string; song: Song; onClose: () => void }) {
@@ -139,6 +148,335 @@ function EditSongModal({
   );
 }
 
+// ── YouTube Search Modal ──────────────────────────────────────────────────────
+interface YouTubeSearchResult {
+  videoId: string;
+  title: string;
+  author: string;
+  length_seconds: number;
+  thumbnail: string;
+}
+
+function YouTubeSearchModal({
+  playlistId, onClose, onSongAdded,
+}: { playlistId: string; onClose: () => void; onSongAdded?: (song: Song) => void }) {
+  const { addSongToPlaylist } = useMusicContext();
+  const [searchQuery, setSearchQuery] = useState("");
+  const [results, setResults] = useState<YouTubeSearchResult[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleSearch = async () => {
+    if (!searchQuery.trim()) return;
+    setLoading(true);
+    setError("");
+    setResults([]);
+
+    try {
+      const q = encodeURIComponent(searchQuery);
+      let found = false;
+
+      // Strategy 1: Piped API (Native CORS, fastest and most reliable)
+      const pipedInstances = [
+        "https://pipedapi.kavin.rocks",
+        "https://pipedapi.smnz.de",
+        "https://pipedapi.adminforge.de",
+        "https://pipedapi.astartes.nl"
+      ];
+
+      for (const instance of pipedInstances) {
+        if (found) break;
+        try {
+          const controller = new AbortController();
+          const timeout = setTimeout(() => controller.abort(), 8000);
+          const res = await fetch(`${instance}/search?q=${q}&filter=all`, { signal: controller.signal });
+          clearTimeout(timeout);
+
+          if (res.ok) {
+            const data = await res.json();
+            if (data && data.items && data.items.length > 0) {
+              const videos = data.items.filter((item: any) => item.type === "stream").slice(0, 20);
+              if (videos.length > 0) {
+                setResults(videos.map((v: any) => {
+                  const vId = v.url.includes("?v=") ? v.url.split("?v=")[1].split("&")[0] : v.url.split("/").pop();
+                  return {
+                    videoId: vId,
+                    title: v.title || "Unknown",
+                    author: v.uploaderName || "Unknown",
+                    length_seconds: v.duration || 0,
+                    thumbnail: v.thumbnail || `https://i.ytimg.com/vi/${vId}/mqdefault.jpg`
+                  };
+                }));
+                found = true;
+                break;
+              }
+            }
+          }
+        } catch (e) {
+          console.warn(`[YouTube Search] Piped ${instance} failed`);
+        }
+      }
+
+      // Strategy 2: Direct Invidious API (Using CORS-enabled instances)
+      if (!found) {
+        const invidiousInstances = [
+          "https://invidious.privacydev.net",
+          "https://inv.tux.pizza",
+          "https://invidious.flokinet.to",
+          "https://invidious.nerdvpn.de"
+        ];
+
+        for (const instance of invidiousInstances) {
+          if (found) break;
+          try {
+            const controller = new AbortController();
+            const timeout = setTimeout(() => controller.abort(), 8000);
+            const res = await fetch(`${instance}/api/v1/search?q=${q}&type=video`, { signal: controller.signal });
+            clearTimeout(timeout);
+
+            if (res.ok) {
+              const data = await res.json();
+              if (Array.isArray(data) && data.length > 0) {
+                setResults(data.slice(0, 20).map((v: any) => ({
+                  videoId: v.videoId,
+                  title: v.title || "Unknown",
+                  author: v.author || "Unknown",
+                  length_seconds: v.lengthSeconds || v.length_seconds || 0,
+                  thumbnail: v.videoThumbnails?.[0]?.url || v.thumbnail || `https://i.ytimg.com/vi/${v.videoId}/mqdefault.jpg`
+                })));
+                found = true;
+                break;
+              }
+            }
+          } catch (e) {
+            console.warn(`[YouTube Search] Invidious ${instance} failed`);
+          }
+        }
+      }
+
+      // Strategy 3: CORS Proxy + YouTube HTML scraping (Absolute Fallback)
+      if (!found) {
+        try {
+          const corsProxies = [
+            `https://api.allorigins.win/get?url=${encodeURIComponent(`https://www.youtube.com/results?search_query=${q}&gl=US&hl=en`)}`,
+            `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(`https://www.youtube.com/results?search_query=${q}&gl=US&hl=en`)}`,
+            `https://corsproxy.io/?${encodeURIComponent(`https://www.youtube.com/results?search_query=${q}&gl=US&hl=en`)}`
+          ];
+
+          for (const proxy of corsProxies) {
+            if (found) break;
+            try {
+              const controller = new AbortController();
+              const timeout = setTimeout(() => controller.abort(), 10000);
+              const res = await fetch(proxy, { signal: controller.signal });
+              clearTimeout(timeout);
+
+              if (res.ok) {
+                const contentType = res.headers.get("content-type") || "";
+                let html = "";
+                if (contentType.includes("application/json")) {
+                  const data = await res.json();
+                  html = data.contents || "";
+                } else {
+                  html = await res.text();
+                }
+
+                const match = html.match(/ytInitialData\s*=\s*(\{[\s\S]+?\});/s) || html.match(/window\["ytInitialData"\]\s*=\s*(\{[\s\S]+?\});/s);
+                if (match) {
+                  const ytData = JSON.parse(match[1]);
+                  const videos: any[] = [];
+                  const findVideos = (obj: any) => {
+                    if (videos.length >= 20) return;
+                    if (Array.isArray(obj)) {
+                      for (const item of obj) findVideos(item);
+                    } else if (obj !== null && typeof obj === 'object') {
+                      if (obj.videoRenderer && obj.videoRenderer.videoId) {
+                        videos.push(obj.videoRenderer);
+                      } else {
+                        for (const key of Object.keys(obj)) findVideos(obj[key]);
+                      }
+                    }
+                  };
+                  findVideos(ytData);
+
+                  if (videos.length > 0) {
+                    const formatted = videos.map(v => {
+                      const timeStr = v.lengthText?.simpleText || "0:00";
+                      const parts = timeStr.split(":").map(Number);
+                      const length_seconds = parts.length === 3 
+                        ? parts[0] * 3600 + parts[1] * 60 + parts[2]
+                        : parts.length === 2 
+                          ? parts[0] * 60 + parts[1]
+                          : parts[0] || 0;
+
+                      return {
+                        videoId: v.videoId,
+                        title: v.title?.runs?.[0]?.text || "Unknown",
+                        author: v.ownerText?.runs?.[0]?.text || "Unknown",
+                        length_seconds,
+                        thumbnail: v.thumbnail?.thumbnails?.[0]?.url || `https://i.ytimg.com/vi/${v.videoId}/mqdefault.jpg`
+                      };
+                    });
+                    setResults(formatted);
+                    found = true;
+                    break;
+                  }
+                }
+              }
+            } catch (e) {
+              console.warn("[YouTube Search] Proxy scraping failed");
+            }
+          }
+        } catch (err) {
+          console.warn("[YouTube Search] Strategy 3 failed");
+        }
+      }
+
+      if (!found) {
+        setError("No results found. Try a different search term.");
+      }
+    } catch (err) {
+      setError("Search failed. Please try again.");
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleAddSong = (result: YouTubeSearchResult) => {
+    const song: Song = {
+      id: Date.now().toString(),
+      title: result.title,
+      artist: result.author,
+      youtubeId: result.videoId,
+      url: `https://www.youtube.com/watch?v=${result.videoId}`,
+      coverUrl: result.thumbnail,
+      duration: result.length_seconds,
+    };
+    addSongToPlaylist(playlistId, song);
+    onSongAdded?.(song);
+  };
+
+  return (
+    <motion.div
+      className="fixed inset-0 bg-black/70 backdrop-blur-sm z-[100] flex items-center justify-center p-4"
+      initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+      onClick={onClose}
+    >
+      <motion.div
+        className="bg-card border border-border rounded-xl w-full max-w-2xl shadow-2xl max-h-[90vh] overflow-hidden flex flex-col"
+        initial={{ scale: 0.95, y: 20 }} animate={{ scale: 1, y: 0 }} exit={{ scale: 0.95, y: 20 }}
+        onClick={e => e.stopPropagation()}
+      >
+        {/* Header */}
+        <div className="flex items-center justify-between p-4 md:p-6 border-b border-border flex-shrink-0">
+          <div className="flex items-center gap-3">
+            <Youtube className="h-5 w-5 text-red-500" />
+            <h2 className="text-lg font-bold text-foreground">Search YouTube</h2>
+          </div>
+          <button onClick={onClose} className="text-muted-foreground hover:text-foreground transition-colors">
+            <X className="h-5 w-5" />
+          </button>
+        </div>
+
+        {/* Search bar */}
+        <div className="p-4 md:p-6 border-b border-border flex-shrink-0 space-y-3">
+          <div className="flex gap-2">
+            <input
+              type="text"
+              placeholder="Search for songs, albums, artists..."
+              value={searchQuery}
+              onChange={e => setSearchQuery(e.target.value)}
+              onKeyDown={e => e.key === "Enter" && handleSearch()}
+              autoFocus
+              className="flex-1 px-3 py-2 bg-muted border border-border rounded-lg text-sm text-foreground placeholder:text-muted-foreground outline-none focus:ring-2 focus:ring-[#1DB954]/50"
+            />
+            <button
+              onClick={handleSearch}
+              disabled={loading || !searchQuery.trim()}
+              className="px-4 py-2 bg-[#1DB954] text-black font-semibold rounded-lg hover:bg-[#1ed760] disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+            >
+              {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Search className="h-4 w-4" />}
+              <span className="hidden sm:inline">Search</span>
+            </button>
+          </div>
+          {error && <p className="text-sm text-red-400">{error}</p>}
+          <p className="text-xs text-muted-foreground">Showing up to 20 results</p>
+        </div>
+
+        {/* Results */}
+        <div className="flex-1 overflow-y-auto p-4 md:p-6">
+          {results.length === 0 && !loading && searchQuery && (
+            <div className="text-center py-8 text-muted-foreground">
+              <Music className="h-12 w-12 mx-auto mb-3 opacity-20" />
+              <p>No results. Try searching for something else.</p>
+            </div>
+          )}
+
+          {results.length === 0 && !loading && !searchQuery && (
+            <div className="text-center py-8 text-muted-foreground">
+              <Search className="h-12 w-12 mx-auto mb-3 opacity-20" />
+              <p>Enter a search term above to find songs</p>
+            </div>
+          )}
+
+          <div className="space-y-2 md:space-y-3">
+            {results.map((result) => (
+              <motion.div
+                key={result.videoId}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="group flex items-start gap-3 p-3 rounded-lg border border-border hover:bg-muted/50 transition-colors cursor-pointer"
+                onClick={() => handleAddSong(result)}
+              >
+                {/* Thumbnail */}
+                <div className="w-16 h-16 md:w-20 md:h-20 rounded flex-shrink-0 overflow-hidden bg-muted">
+                  <img
+                    src={result.thumbnail}
+                    alt={result.title}
+                    className="w-full h-full object-cover"
+                    onError={(e) => (e.currentTarget.src = "")}
+                  />
+                </div>
+
+                {/* Info */}
+                <div className="flex-1 min-w-0">
+                  <p className="text-sm font-medium text-foreground truncate group-hover:text-[#1DB954] transition-colors">
+                    {result.title}
+                  </p>
+                  <p className="text-xs text-muted-foreground truncate">{result.author}</p>
+                  <p className="text-xs text-muted-foreground/60 mt-1">
+                    {Math.floor(result.length_seconds / 60)}:{String(result.length_seconds % 60).padStart(2, "0")}
+                  </p>
+                </div>
+
+                {/* Add button */}
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleAddSong(result);
+                  }}
+                  className="px-3 py-2 bg-[#1DB954]/10 hover:bg-[#1DB954]/20 text-[#1DB954] rounded-lg text-xs font-semibold transition-colors flex-shrink-0 flex items-center gap-1"
+                >
+                  <Plus className="h-3.5 w-3.5" />
+                  <span className="hidden sm:inline">Add</span>
+                </button>
+              </motion.div>
+            ))}
+          </div>
+
+          {loading && (
+            <div className="flex flex-col items-center justify-center py-12">
+              <Loader2 className="h-8 w-8 animate-spin text-[#1DB954]" />
+              <p className="text-sm text-muted-foreground mt-3">Searching...</p>
+            </div>
+          )}
+        </div>
+      </motion.div>
+    </motion.div>
+  );
+}
+
 // ── Add Song Modal ────────────────────────────────────────────────────────────
 interface TrackResult {
   type: "track";
@@ -238,26 +576,350 @@ function AddSongModal({
       return;
     } catch { /* backend unavailable or error — try client-side fallback */ }
 
-    // Fallback: YouTube oEmbed (CORS-safe, no API key required)
-    // Works on static hosting where the backend is not available
     try {
-      const ytId = extractYouTubeId(raw);
-      if (!ytId) throw new Error("Not a recognizable YouTube URL");
-      const oembedUrl = `https://www.youtube.com/oembed?url=${encodeURIComponent(`https://www.youtube.com/watch?v=${ytId}`)}&format=json`;
-      const oRes = await fetch(oembedUrl);
-      if (!oRes.ok) throw new Error("YouTube oEmbed failed");
-      const oData = await oRes.json();
-      const result: TrackResult = {
-        type: "track",
-        title: oData.title ?? "Unknown Title",
-        artist: oData.author_name ?? "YouTube",
-        thumbnail: `https://img.youtube.com/vi/${ytId}/mqdefault.jpg`,
-        duration: 0,
-        streamUrl: `yt:${ytId}`,
-        youtubeId: ytId,
-      };
-      setMediaResult(result);
-      setFetchState("done");
+        const fetchHtml = async (targetUrl: string) => {
+          try {
+            const controller = new AbortController();
+            const timeout = setTimeout(() => controller.abort(), 8000);
+            const res = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(targetUrl)}`, { signal: controller.signal });
+            clearTimeout(timeout);
+            if (res.ok) {
+              const data = await res.json();
+              if (data.contents) return data.contents;
+            }
+          } catch (e) {}
+          try {
+            const controller = new AbortController();
+            const timeout = setTimeout(() => controller.abort(), 8000);
+            const res = await fetch(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(targetUrl)}`, { signal: controller.signal });
+            clearTimeout(timeout);
+            if (res.ok) return await res.text();
+          } catch (e) {}
+          const controller = new AbortController();
+          const timeout = setTimeout(() => controller.abort(), 8000);
+          const res2 = await fetch(`https://corsproxy.io/?${encodeURIComponent(targetUrl)}`, { signal: controller.signal });
+          clearTimeout(timeout);
+          if (!res2.ok) throw new Error("Failed to fetch proxy");
+          return await res2.text();
+        };
+
+        const ytId = extractYouTubeId(raw);
+        const ytPlaylistId = extractYouTubePlaylistId(raw);
+        const spotifyInfo = extractSpotifyInfo(raw);
+
+        if (ytPlaylistId) {
+          try {
+            const tracks: TrackResult[] = [];
+            let playlistName = "YouTube Playlist";
+
+            // Strategy 1: Try Invidious API (public YouTube alternative)
+            const invidious_instances = [
+              "https://invidious.privacydev.net",
+              "https://inv.tux.pizza",
+              "https://invidious.flokinet.to",
+              "https://invidious.nerdvpn.de"
+            ];
+
+            let playlistData: any = null;
+            for (const instance of invidious_instances) {
+              try {
+                const res = await fetch(`${instance}/api/v1/playlists/${ytPlaylistId}?fields=title,videos`);
+                if (res.ok) {
+                  playlistData = await res.json();
+                  playlistName = playlistData.title || "YouTube Playlist";
+                  if (playlistData.videos && Array.isArray(playlistData.videos)) {
+                    for (const video of playlistData.videos.slice(0, 100)) {
+                      if (video.videoId) {
+                        tracks.push({
+                          type: "track",
+                          title: video.title || "Unknown Video",
+                          artist: video.author || "YouTube",
+                          thumbnail: `https://img.youtube.com/vi/${video.videoId}/mqdefault.jpg`,
+                          duration: video.length_seconds || 0,
+                          streamUrl: `https://www.youtube.com/watch?v=${video.videoId}`,
+                          youtubeId: video.videoId
+                        });
+                      }
+                    }
+                    if (tracks.length > 0) {
+                      setMediaResult({
+                        type: "playlist",
+                        name: playlistName,
+                        thumbnail: tracks[0]?.thumbnail,
+                        trackCount: tracks.length,
+                        tracks
+                      });
+                      setFetchState("done");
+                      return;
+                    }
+                  }
+                }
+              } catch (e) {
+                // Try next instance
+              }
+            }
+
+            // Strategy 2: Try fetching YouTube playlist page and extract from multiple sources
+            try {
+              const html = await fetchHtml(`https://www.youtube.com/playlist?list=${ytPlaylistId}`);
+
+              // Extract title
+              const titleMatch = html.match(/<title>(.*?) - YouTube<\/title>/) 
+                || html.match(/<meta\s+name="title"\s+content="([^"]+)"/);
+              if (titleMatch) playlistName = titleMatch[1];
+
+              // Try multiple regex patterns for ytInitialData
+              const patterns = [
+                /window\["ytInitialData"\]\s*=\s*(\{[\s\S]*?\});/,
+                /ytInitialData\s*=\s*(\{[\s\S]*?\});/,
+                /var\s+ytInitialData\s*=\s*(\{[\s\S]*?\});/
+              ];
+
+              for (const pattern of patterns) {
+                const match = html.match(pattern);
+                if (match) {
+                  try {
+                    const ytData = JSON.parse(match[1]);
+                    const findVideos = (obj: any) => {
+                      if (tracks.length >= 100) return; // Found enough videos, stop searching
+                      if (Array.isArray(obj)) {
+                        for (const item of obj) findVideos(item);
+                      } else if (obj !== null && typeof obj === 'object') {
+                        if (obj.playlistVideoRenderer?.videoId) {
+                          const r = obj.playlistVideoRenderer;
+                          tracks.push({
+                            type: "track",
+                            title: r.title?.runs?.[0]?.text || "Unknown Video",
+                            artist: r.shortBylineText?.runs?.[0]?.text || "YouTube",
+                            thumbnail: `https://img.youtube.com/vi/${r.videoId}/mqdefault.jpg`,
+                            duration: parseInt(r.lengthSeconds || "0", 10),
+                            streamUrl: `https://www.youtube.com/watch?v=${r.videoId}`,
+                            youtubeId: r.videoId
+                          });
+                        }
+                        for (const key of Object.keys(obj)) {
+                          if (tracks.length >= 100) break;
+                          findVideos(obj[key]);
+                        }
+                      }
+                    };
+                    findVideos(ytData);
+                    if (tracks.length > 0) break;
+                  } catch (e) {
+                    // Continue to next pattern
+                  }
+                }
+              }
+
+              // Strategy 3: Extract video IDs from page links if ytInitialData didn't work
+              if (tracks.length === 0) {
+                // Look for watch?v= patterns and list= patterns to ensure they're from this playlist
+                const videoPatterns = [
+                  /\/watch\?v=([a-zA-Z0-9_-]{11})[^"&]*list=[^"&]*/g,
+                  /data-video-id="([a-zA-Z0-9_-]{11})"/g,
+                  /\/watch\?v=([a-zA-Z0-9_-]{11})/g
+                ];
+
+                const seenIds = new Set<string>();
+                for (const pattern of videoPatterns) {
+                  let match;
+                  while ((match = pattern.exec(html)) !== null && seenIds.size < 100) {
+                    const vId = match[1];
+                    if (!seenIds.has(vId)) {
+                      seenIds.add(vId);
+                      tracks.push({
+                        type: "track",
+                        title: `Video ${seenIds.size}`,
+                        artist: "YouTube",
+                        thumbnail: `https://img.youtube.com/vi/${vId}/mqdefault.jpg`,
+                        duration: 0,
+                        streamUrl: `https://www.youtube.com/watch?v=${vId}`,
+                        youtubeId: vId
+                      });
+                    }
+                  }
+                  if (tracks.length > 0) break;
+                }
+              }
+
+              if (tracks.length > 0) {
+                setMediaResult({
+                  type: "playlist",
+                  name: playlistName,
+                  thumbnail: tracks[0]?.thumbnail,
+                  trackCount: tracks.length,
+                  tracks
+                });
+                setFetchState("done");
+                return;
+              }
+            } catch (e) {
+              // Continue to next strategy
+            }
+
+            // Strategy 4: Try YouTube's OEmbed endpoint (limited but reliable)
+            try {
+              const res = await fetch(`https://www.youtube.com/oembed?url=${encodeURIComponent(`https://www.youtube.com/playlist?list=${ytPlaylistId}`)}&format=json`);
+              if (res.ok) {
+                const data = await res.json();
+                playlistName = data.title || playlistName;
+              }
+            } catch (e) {
+              // OEmbed might not work for playlists, continue
+            }
+
+            if (tracks.length === 0) {
+              throw new Error(
+                `Could not extract playlist (ID: ${ytPlaylistId}). ` +
+                `Playlist might be private, age-restricted, or embeds might be disabled. ` +
+                `Please try a different public playlist.`
+              );
+            }
+
+            setMediaResult({
+              type: "playlist",
+              name: playlistName,
+              thumbnail: tracks[0]?.thumbnail,
+              trackCount: tracks.length,
+              tracks
+            });
+            setFetchState("done");
+          } catch (err: any) {
+            throw new Error(`YouTube Playlist Error: ${err.message}`);
+          }
+
+        } else if (ytId) {
+          try {
+            let oData: any = null;
+            try {
+              const noembedRes = await fetch(`https://noembed.com/embed?url=https://www.youtube.com/watch?v=${ytId}`);
+              if (noembedRes.ok) {
+                const parsed = await noembedRes.json();
+                if (!parsed.error) oData = parsed;
+              }
+            } catch (e) {}
+            if (!oData) {
+              const oembedUrl = `https://www.youtube.com/oembed?url=${encodeURIComponent(`https://www.youtube.com/watch?v=${ytId}`)}&format=json`;
+              const proxyData = await fetchHtml(oembedUrl);
+              oData = JSON.parse(proxyData);
+            }
+            setMediaResult({
+              type: "track",
+              title: oData?.title ?? "Unknown Title",
+              artist: oData?.author_name ?? "YouTube",
+              thumbnail: `https://img.youtube.com/vi/${ytId}/mqdefault.jpg`,
+              duration: 0,
+              streamUrl: `https://www.youtube.com/watch?v=${ytId}`,
+              youtubeId: ytId,
+            });
+            setFetchState("done");
+          } catch (e) {
+            throw new Error("Could not fetch YouTube video info.");
+          }
+
+        } else if (spotifyInfo) {
+          let isPlaylist = spotifyInfo.type === "playlist" || spotifyInfo.type === "album";
+          let token = "";
+          let playlistName = `Spotify ${spotifyInfo.type}`;
+
+          // Try multiple strategies to fetch Spotify access token
+          const tokenStrategies = [
+            () => fetchHtml("https://open.spotify.com/get_access_token?reason=transport&productType=embed"),
+            () => fetch("https://open.spotify.com/get_access_token?reason=transport&productType=embed").then(r => r.text()),
+            () => fetchHtml("https://open.spotify.com").then(html => {
+              const tokenMatch = html.match(/"accessToken":"([^"]+)"/) || html.match(/"accessToken": "([^"]+)"/);
+              if (tokenMatch?.[1]) return JSON.stringify({ accessToken: tokenMatch[1] });
+              throw new Error("Token not found");
+            })
+          ];
+
+          for (const strategy of tokenStrategies) {
+            try {
+              const tokenHtml = await strategy();
+              const tokenData = JSON.parse(tokenHtml);
+              token = tokenData.accessToken;
+              if (token) break;
+            } catch (e) {
+              // Try next strategy
+            }
+          }
+
+          // If playlist/album, try to fetch with token or graceful fallback
+          if (isPlaylist) {
+            let data: any = null;
+            if (token) {
+              try {
+                const apiUrl = spotifyInfo.type === "playlist"
+                  ? `https://api.spotify.com/v1/playlists/${spotifyInfo.id}`
+                  : `https://api.spotify.com/v1/albums/${spotifyInfo.id}`;
+                const plRes = await fetch(apiUrl, { headers: { "Authorization": `Bearer ${token}` } });
+                if (plRes.ok) data = await plRes.json();
+              } catch (e) {
+                console.error("Failed to fetch Spotify API:", e);
+              }
+            }
+
+            const tracks: TrackResult[] = [];
+            if (data) {
+              // Full metadata available
+              const items = spotifyInfo.type === "playlist" ? data.tracks.items : data.tracks.items;
+              for (const item of items) {
+                const track = spotifyInfo.type === "playlist" ? item.track : item;
+                if (!track) continue;
+                tracks.push({
+                  type: "track",
+                  title: track.name,
+                  artist: track.artists.map((a: any) => a.name).join(", "),
+                  thumbnail: track.album?.images?.[0]?.url || data.images?.[0]?.url,
+                  duration: Math.floor(track.duration_ms / 1000),
+                  streamUrl: `ytsearch:${track.name} ${track.artists[0]?.name} audio`,
+                });
+              }
+            } else {
+              // Fallback: extract basic info from Spotify page and create minimal playlist
+              throw new Error(`Could not fetch Spotify ${spotifyInfo.type}. Please try again or add tracks individually.`);
+            }
+
+            if (tracks.length === 0) throw new Error(`Spotify ${spotifyInfo.type} is empty or unavailable.`);
+
+            setMediaResult({
+              type: "playlist",
+              name: data?.name || playlistName,
+              thumbnail: data?.images?.[0]?.url || tracks.find(t => t.thumbnail)?.thumbnail,
+              trackCount: tracks.length,
+              tracks
+            });
+            setFetchState("done");
+            return;
+          }
+
+          let oData: any = null;
+          try {
+            const oembedUrl = `https://open.spotify.com/oembed?url=${encodeURIComponent(raw)}`;
+            const proxyData = await fetchHtml(oembedUrl);
+            oData = JSON.parse(proxyData);
+          } catch (e) {
+            throw new Error("Could not fetch Spotify track info. Please check the URL.");
+          }
+
+          if (!oData) throw new Error("Spotify track not found.");
+
+          const trackTitle = oData.title || "Spotify Track";
+          const trackArtist = oData.provider_name || oData.author_name || "Spotify";
+
+          // For single Spotify tracks, create a searchable track with better metadata
+          setMediaResult({
+            type: "track",
+            title: trackTitle,
+            artist: trackArtist,
+            thumbnail: oData.thumbnail_url,
+            duration: 0,
+            streamUrl: `ytsearch:${trackTitle} ${trackArtist} audio`,
+          });
+          setFetchState("done");
+        } else {
+        throw new Error("Not a recognizable YouTube or Spotify URL");
+      }
     } catch (err: unknown) {
       setFetchError(err instanceof Error ? err.message : "Could not fetch media info. Check the URL.");
       setFetchState("error");
@@ -276,6 +938,16 @@ function AddSongModal({
       if (m) return m[1];
     }
     return null;
+  }
+
+  function extractYouTubePlaylistId(url: string): string | null {
+    const m = url.match(/[?&]list=([^&#]+)/);
+    return m ? m[1] : null;
+  }
+
+  function extractSpotifyInfo(url: string): { type: string, id: string } | null {
+    const m = url.match(/spotify\.com\/(track|playlist|album)\/([a-zA-Z0-9]+)/);
+    return m ? { type: m[1], id: m[2] } : null;
   }
 
   const handleAddTrack = () => {
@@ -560,12 +1232,14 @@ export default function MusicPage() {
 
   const [selId, setSelId] = useState(playlists[0]?.id || "default");
   const [showAdd, setShowAdd] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
   const [editSong, setEditSong] = useState<{ song: Song; playlistId: string } | null>(null);
   const [newName, setNewName] = useState("");
   const [showNew, setShowNew] = useState(false);
   const [editId, setEditId] = useState<string | null>(null);
   const [editName, setEditName] = useState("");
   const [filterTab, setFilterTab] = useState<"all" | "playlists">("all");
+  const [showMobileSidebar, setShowMobileSidebar] = useState(() => typeof window !== 'undefined' ? window.innerWidth < 768 : false);
 
   void theme; // consumed via CSS vars
   const bgClass = "bg-background";
@@ -594,7 +1268,7 @@ export default function MusicPage() {
   void nextSong;
 
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className={`flex h-full ${bgClass} pb-20 overflow-hidden`}>
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className={`flex h-full ${bgClass} pb-20 overflow-hidden flex-col md:flex-row`}>
       <AnimatePresence>
         {showAdd && (
           <AddSongModal
@@ -602,6 +1276,13 @@ export default function MusicPage() {
             onClose={() => setShowAdd(false)}
             onSongAdded={(song, pid) => setEditSong({ song, playlistId: pid })}
             onPlaylistCreated={(newId) => setSelId(newId)}
+          />
+        )}
+        {showSearch && (
+          <YouTubeSearchModal
+            playlistId={selId}
+            onClose={() => setShowSearch(false)}
+            onSongAdded={(song) => setEditSong({ song, playlistId: selId })}
           />
         )}
         {editSong && (
@@ -613,23 +1294,28 @@ export default function MusicPage() {
         )}
       </AnimatePresence>
 
-      {/* ── Your Library sidebar ── */}
-      <div className="w-72 flex-shrink-0 flex flex-col p-2 gap-2 overflow-hidden">
+      {/* ── Your Library sidebar ── Toggleable on mobile, visible on tablet+ */}
+      <div className={`w-full md:w-48 lg:w-56 xl:w-72 flex-shrink-0 flex flex-col p-1 md:p-2 gap-2 overflow-hidden ${
+        showMobileSidebar ? "flex fixed inset-0 z-[200] bg-background/95 backdrop-blur-xl md:relative md:z-auto md:bg-transparent" : "hidden md:flex"
+      }`}>
         <div className={`${sidebarBg} rounded-lg flex-1 flex flex-col overflow-hidden border border-border`}>
           <div className="p-4 flex-shrink-0">
             <div className="flex items-center justify-between mb-4">
               <button className={`flex items-center gap-2 ${mutedTextClass} hover:text-foreground transition-colors font-bold text-sm`}>
                 <Library className="h-5 w-5" />Your Library
               </button>
-              <div className="flex gap-0.5">
+              <div className="flex items-center gap-0.5">
                 <button
                   onClick={() => setShowNew(v => !v)}
                   className={`h-8 w-8 flex items-center justify-center rounded-full hover:bg-muted/60 ${mutedTextClass} hover:text-foreground transition-colors`}
                 >
                   <Plus className="h-4 w-4" />
                 </button>
-                <button className={`h-8 w-8 flex items-center justify-center rounded-full hover:bg-muted/60 ${mutedTextClass} hover:text-foreground transition-colors`}>
+                <button className={`hidden md:flex h-8 w-8 items-center justify-center rounded-full hover:bg-muted/60 ${mutedTextClass} hover:text-foreground transition-colors`}>
                   <ChevronRight className="h-4 w-4" />
+                </button>
+                <button onClick={() => setShowMobileSidebar(false)} className={`md:hidden h-8 w-8 flex items-center justify-center rounded-full bg-muted/30 hover:bg-muted/60 ${mutedTextClass} hover:text-foreground transition-colors ml-1`}>
+                  <X className="h-4 w-4" />
                 </button>
               </div>
             </div>
@@ -679,7 +1365,7 @@ export default function MusicPage() {
                   key={p.id}
                   className={`group flex items-center gap-3 px-2 py-2 rounded-md cursor-pointer transition-colors
                     ${isActive ? "bg-muted" : "hover:bg-muted/50"}`}
-                  onClick={() => setSelId(p.id)}
+                  onClick={() => { setSelId(p.id); setShowMobileSidebar(false); }}
                 >
                   <div className={`w-10 h-10 rounded flex-shrink-0 flex items-center justify-center bg-gradient-to-br ${pg0} ${pg1}`}>
                     <Music className="h-4 w-4 text-white/60" />
@@ -731,56 +1417,67 @@ export default function MusicPage() {
       </div>
 
       {/* ── Main content ── */}
-      <div className="flex-1 flex flex-col overflow-hidden rounded-lg bg-card m-2 ml-0">
-        {/* Gradient header */}
-        <div className={`bg-gradient-to-b ${g0} ${g1} px-6 pt-14 pb-5 flex-shrink-0`}>
-          <div className="flex items-end gap-5">
-            <div className={`w-44 h-44 bg-gradient-to-br ${g0} ${g1} shadow-2xl rounded-sm flex items-center justify-center flex-shrink-0`}>
-              <Music className="h-20 w-20 text-white/20" />
+      <div className="flex-1 flex flex-col overflow-hidden rounded-none sm:rounded-lg bg-card m-0 sm:m-2 sm:ml-0">
+        {/* Gradient header - Responsive sizes */}
+        <div className={`bg-gradient-to-b ${g0} ${g1} px-3 sm:px-4 md:px-6 pt-14 sm:pt-8 md:pt-14 pb-2 sm:pb-3 md:pb-5 flex-shrink-0 relative`}>
+          <button onClick={() => setShowMobileSidebar(true)} className="md:hidden absolute top-4 left-4 z-10 px-3 py-1.5 bg-black/20 rounded-full text-white/90 hover:text-white hover:bg-black/40 backdrop-blur-md flex items-center gap-1.5 text-xs font-medium transition-colors">
+            <Library className="h-3.5 w-3.5" /> Library
+          </button>
+          <div className="flex flex-col sm:flex-row sm:items-end gap-3 sm:gap-5">
+            <div className={`w-32 h-32 sm:w-40 sm:h-40 md:w-44 md:h-44 bg-gradient-to-br ${g0} ${g1} shadow-2xl rounded-sm flex items-center justify-center flex-shrink-0`}>
+              <Music className="h-12 sm:h-16 md:h-20 w-12 sm:w-16 md:w-20 text-white/20" />
             </div>
-            <div className="min-w-0 pb-1">
-              <p className="text-[11px] font-bold text-white uppercase tracking-widest mb-2">Playlist</p>
-              <h1 className="text-4xl font-black text-white leading-none mb-4 truncate">{sel?.name || "Library"}</h1>
-              <p className="text-sm text-white/70">
+            <div className="min-w-0 pb-0 sm:pb-1">
+              <p className="text-[9px] sm:text-[10px] md:text-[11px] font-bold text-white uppercase tracking-widest mb-1 sm:mb-2">Playlist</p>
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-white leading-none mb-2 sm:mb-4 truncate">{sel?.name || "Library"}</h1>
+              <p className="text-xs sm:text-sm text-white/70">
                 <span className="font-bold text-white">OM</span> · {sel?.songs.length || 0} songs
               </p>
             </div>
           </div>
         </div>
 
-        {/* Controls bar */}
-        <div className="px-6 py-4 flex items-center gap-5 flex-shrink-0 bg-gradient-to-b from-background/20 to-transparent">
+        {/* Controls bar - Responsive */}
+        <div className="px-3 sm:px-4 md:px-6 py-2 sm:py-3 md:py-4 flex items-center gap-2 sm:gap-3 md:gap-5 flex-shrink-0 bg-gradient-to-b from-background/20 to-transparent flex-wrap">
           <button
             onClick={() => { const s = sel?.songs[0]; if (s) playSong(s, selId); }}
-            className="w-14 h-14 bg-[#1DB954] hover:bg-[#1ed760] hover:scale-105 rounded-full flex items-center justify-center transition-all shadow-lg"
+            className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-[#1DB954] hover:bg-[#1ed760] hover:scale-105 rounded-full flex items-center justify-center transition-all shadow-lg flex-shrink-0"
           >
             {isPlaying && currentPlaylistId === selId
-              ? <Pause className="h-6 w-6 text-black" />
-              : <Play className="h-6 w-6 text-black ml-1" />}
+              ? <Pause className="h-4 sm:h-5 md:h-6 w-4 sm:w-5 md:w-6 text-black" />
+              : <Play className="h-4 sm:h-5 md:h-6 w-4 sm:w-5 md:w-6 text-black ml-1" />}
           </button>
-          <button onClick={() => setShowAdd(true)} className="ml-auto flex items-center gap-1.5 text-muted-foreground hover:text-foreground text-sm font-medium transition-colors">
-            <Plus className="h-4 w-4" />Add songs
+
+          <button onClick={() => setShowAdd(true)} className="flex items-center gap-1 sm:gap-1.5 text-muted-foreground hover:text-foreground text-xs sm:text-sm font-medium transition-colors flex-shrink-0">
+            <Plus className="h-3.5 sm:h-4 w-3.5 sm:w-4" />
+            <span className="hidden sm:inline">Add</span>
+          </button>
+
+          <button onClick={() => setShowSearch(true)} className="flex items-center gap-1 sm:gap-1.5 text-muted-foreground hover:text-foreground text-xs sm:text-sm font-medium transition-colors flex-shrink-0">
+            <Search className="h-3.5 sm:h-4 w-3.5 sm:w-4" />
+            <span className="hidden sm:inline">Search</span>
           </button>
         </div>
 
-        {/* Song table */}
-        <div className="flex-1 overflow-y-auto px-6 pb-4">
+        {/* Song table - Responsive grid layout */}
+        <div className="flex-1 overflow-y-auto px-2 sm:px-4 md:px-6 pb-4">
           {(!sel || sel.songs.length === 0) ? (
-            <div className="flex flex-col items-center justify-center py-20 text-center">
-              <Music className="h-16 w-16 text-foreground/10 mb-4" />
-              <p className="text-foreground font-semibold mb-1">It's quiet in here</p>
-              <p className="text-muted-foreground text-sm mb-6">Add songs to get started.</p>
+            <div className="flex flex-col items-center justify-center py-16 sm:py-20 text-center">
+              <Music className="h-12 sm:h-16 w-12 sm:w-16 text-foreground/10 mb-3 sm:mb-4" />
+              <p className="text-foreground font-semibold mb-1 text-sm sm:text-base">It's quiet in here</p>
+              <p className="text-muted-foreground text-xs sm:text-sm mb-4 sm:mb-6">Add songs to get started.</p>
               <button
                 onClick={() => setShowAdd(true)}
-                className="px-6 py-2 border border-border text-foreground rounded-full text-sm font-semibold hover:border-foreground transition-colors"
+                className="px-4 sm:px-6 py-1.5 sm:py-2 border border-border text-foreground rounded-full text-xs sm:text-sm font-semibold hover:border-foreground transition-colors"
               >
                 Add songs
               </button>
             </div>
           ) : (
             <>
+              {/* Header - Show/hide columns based on screen size */}
               <div
-                className="grid gap-4 px-4 py-2 border-b border-border mb-1 text-xs font-medium text-muted-foreground uppercase tracking-wider select-none"
+                className="hidden md:grid gap-4 px-2 sm:px-4 py-2 border-b border-border mb-1 text-xs font-medium text-muted-foreground uppercase tracking-wider select-none"
                 style={{ gridTemplateColumns: "28px 1fr 80px 64px" }}
               >
                 <span className="text-center">#</span>
@@ -799,7 +1496,75 @@ export default function MusicPage() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: idx * 0.02 }}
-                    className={`group grid gap-4 px-4 py-3 rounded-md cursor-pointer transition-colors
+                    className={`md:hidden grid gap-2 px-2 py-2 rounded-md cursor-pointer transition-colors border border-border/30
+                      ${isActive ? "bg-muted border-[#1DB954]/30" : "hover:bg-muted/40"}`}
+                    style={{ gridTemplateColumns: "auto 1fr auto" }}
+                    onClick={() => playSong(song, selId)}
+                  >
+                    {/* Mobile card layout */}
+                    <div className="flex items-center justify-center flex-shrink-0">
+                      {isPlayingThis ? (
+                        <div className="flex items-end gap-0.5 h-4">
+                          {[0, 1, 2].map(i => (
+                            <motion.div key={i} className="w-0.5 bg-[#1DB954] rounded-full" animate={{ height: ["30%", "100%", "30%"] }} transition={{ repeat: Infinity, duration: 0.6, delay: i * 0.2 }} />
+                          ))}
+                        </div>
+                      ) : isActive ? (
+                        <span className="text-[#1DB954] font-semibold text-xs">{idx + 1}</span>
+                      ) : (
+                        <>
+                          <span className="text-muted-foreground text-xs">{idx + 1}</span>
+                          <Play className="h-3 w-3 text-foreground hidden" />
+                        </>
+                      )}
+                    </div>
+
+                    <div className="flex items-center gap-2 min-w-0">
+                      <div className={`w-8 h-8 rounded flex-shrink-0 flex items-center justify-center bg-gradient-to-br ${sg0} ${sg1}`}>
+                        {song.coverUrl ? (
+                          <img src={song.coverUrl} alt="" className="w-full h-full object-cover rounded" />
+                        ) : (
+                          <Music className="h-3 w-3 text-white/50" />
+                        )}
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <p className={`text-xs font-medium truncate ${isActive ? "text-[#1DB954]" : "text-foreground"}`}>{song.title}</p>
+                        <p className="text-[10px] text-muted-foreground truncate">{song.artist}</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center justify-center gap-1 flex-shrink-0">
+                      <button
+                        className="text-muted-foreground hover:text-foreground transition-all p-0.5"
+                        onClick={e => { e.stopPropagation(); setEditSong({ song, playlistId: selId }); }}
+                        title="Edit"
+                      >
+                        <Pencil className="h-3 w-3" />
+                      </button>
+                      <button
+                        className="text-muted-foreground hover:text-red-400 transition-all p-0.5"
+                        onClick={e => { e.stopPropagation(); removeSongFromPlaylist(selId, song.id); }}
+                        title="Remove"
+                      >
+                        <Trash2 className="h-3 w-3" />
+                      </button>
+                    </div>
+                  </motion.div>
+                );
+              })}
+
+              {/* Desktop table layout */}
+              {sel.songs.map((song, idx) => {
+                const isActive = currentSong?.id === song.id;
+                const isPlayingThis = isActive && isPlaying;
+                const [sg0, sg1] = getGrad(song.title);
+                return (
+                  <motion.div
+                    key={`desk-${song.id}`}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: idx * 0.02 }}
+                    className={`hidden md:grid group gap-4 px-4 py-3 rounded-md cursor-pointer transition-colors
                       ${isActive ? "bg-muted" : "hover:bg-muted/40"}`}
                     style={{ gridTemplateColumns: "28px 1fr 80px 64px" }}
                     onClick={() => playSong(song, selId)}

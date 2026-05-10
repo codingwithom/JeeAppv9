@@ -3,6 +3,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { AppProvider, useAppContext } from "@/context/AppContext";
+import { WorkspaceProvider } from "@/context/WorkspaceContext";
 import { MusicProvider } from "@/context/MusicContext";
 import { StreakProvider } from "@/context/StreakContext";
 import { TagsProvider } from "@/context/TagsContext";
@@ -38,8 +39,8 @@ function TopBar() {
   const label = PAGE_LABELS[location] || "";
 
   return (
-    <div className="h-12 flex items-center justify-between px-5 border-b border-border/60 bg-background/80 backdrop-blur-md flex-shrink-0 z-20">
-      <span className="text-sm font-medium text-muted-foreground">{label}</span>
+    <div className="h-12 flex items-center justify-between pr-5 pl-14 md:px-5 border-b border-border/60 bg-background/80 backdrop-blur-md flex-shrink-0 z-20">
+      <span className="text-sm font-medium text-muted-foreground truncate">{label}</span>
       <motion.button
         whileTap={{ scale: 0.9 }}
         onClick={toggleTheme}
@@ -95,22 +96,24 @@ function Router() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <AppProvider>
-        <TagsProvider>
-          <MusicProvider>
-            <StreakProvider>
-              <VideoProvider>
-                <TooltipProvider>
-                  <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
-                    <Router />
-                  </WouterRouter>
-                  <Toaster />
-                </TooltipProvider>
-              </VideoProvider>
-            </StreakProvider>
-          </MusicProvider>
-        </TagsProvider>
-      </AppProvider>
+      <WorkspaceProvider>
+        <AppProvider>
+          <TagsProvider>
+            <MusicProvider>
+              <StreakProvider>
+                <VideoProvider>
+                  <TooltipProvider>
+                    <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+                      <Router />
+                    </WouterRouter>
+                    <Toaster />
+                  </TooltipProvider>
+                </VideoProvider>
+              </StreakProvider>
+            </MusicProvider>
+          </TagsProvider>
+        </AppProvider>
+      </WorkspaceProvider>
     </QueryClientProvider>
   );
 }

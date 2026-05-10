@@ -22,15 +22,21 @@ function TodoTrackerCard() {
         <div className="flex items-baseline gap-2">
           <p className="text-2xl font-bold text-foreground tabular-nums">
             {totalCompleted}
-            <span className="text-sm text-muted-foreground font-normal">/{totalTasks}</span>
+            <span className="text-sm text-muted-foreground font-normal">
+              /{totalTasks}
+            </span>
           </p>
           {totalTasks > 0 && (
-            <span className={`text-sm font-semibold tabular-nums ${pct >= 80 ? "text-green-500" : pct >= 50 ? "text-amber-500" : "text-muted-foreground"}`}>
+            <span
+              className={`text-sm font-semibold tabular-nums ${pct >= 80 ? "text-green-500" : pct >= 50 ? "text-amber-500" : "text-muted-foreground"}`}
+            >
               {pct}%
             </span>
           )}
         </div>
-        {totalTasks === 0 && <p className="text-xs text-muted-foreground">No todos yet</p>}
+        {totalTasks === 0 && (
+          <p className="text-xs text-muted-foreground">No todos yet</p>
+        )}
       </div>
     </Card>
   );
@@ -40,7 +46,9 @@ export default function HomePage() {
   const { user } = useAppContext();
 
   const dateStr = new Date().toLocaleDateString("en-US", {
-    weekday: "long", month: "long", day: "numeric",
+    weekday: "long",
+    month: "long",
+    day: "numeric",
   });
 
   return (
@@ -90,7 +98,6 @@ export default function HomePage() {
         NO explicit row/col placement — pure auto-flow avoids overlap.
       */}
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5 items-start">
-
         {/* 1 – Todo List */}
         <ResizableSection storageKey="todo-system" minHeight={200}>
           <TodoSystem />
@@ -118,7 +125,6 @@ export default function HomePage() {
             <TimeManagementWidget />
           </ResizableSection>
         </div>
-
       </div>
     </motion.div>
   );

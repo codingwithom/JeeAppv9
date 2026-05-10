@@ -1,6 +1,7 @@
 import { createContext, useContext, ReactNode, useState, useEffect, useRef, useCallback } from "react";
 import { idbSet, idbGet } from "@/lib/idb";
 import { loadYouTubeApi } from "@/lib/youtube-api";
+import { useWorkspaceContext } from "./WorkspaceContext";
 
 export interface Song {
   id: string;
@@ -77,6 +78,18 @@ function resolveUrl(url: string): string {
 function getYouTubeId(song: Song): string | null {
   if (song.youtubeId) return song.youtubeId;
   if (song.url?.startsWith("yt:")) return song.url.slice(3);
+  if (song.url) {
+    const patterns = [
+      /[?&]v=([^&#]+)/,
+      /youtu\.be\/([^?#]+)/,
+      /youtube\.com\/embed\/([^?#]+)/,
+      /youtube\.com\/shorts\/([^?#]+)/,
+    ];
+    for (const pattern of patterns) {
+      const m = song.url.match(pattern);
+      if (m) return m[1];
+    }
+  }
   // Backward compat: songs added before the static-hosting migration have
   // url="/api/stream?url=https://youtube.com/watch?v=XXX" — extract the ID.
   if (song.url?.includes("/api/stream?url=")) {
@@ -90,6 +103,7 @@ function getYouTubeId(song: Song): string | null {
 }
 
 export function MusicProvider({ children }: { children: ReactNode }) {
+  const { writeMedia, readMediaAsArrayBuffer } = useWorkspaceContext();
   const [playlists, setPlaylists] = useState<Playlist[]>(loadPlaylistsFromStorage);
   const [currentSong, setCurrentSong] = useState<Song | null>(null);
   const [currentPlaylistId, setCurrentPlaylistId] = useState<string | null>(null);
@@ -142,7 +156,7 @@ export function MusicProvider({ children }: { children: ReactNode }) {
             p.songs.map(async s => {
               if (s.isLocal && s.idbKey) {
                 try {
-                  const buf = await idbGet<ArrayBuffer>(s.idbKey);
+                  const buf = await readMediaAsArrayBuffer(s.idbKey);
                   if (buf) {
                     const blob = new Blob([buf], { type: "audio/mpeg" });
                     return { ...s, url: URL.createObjectURL(blob) };
@@ -335,7 +349,7 @@ export function MusicProvider({ children }: { children: ReactNode }) {
   // Keep a ref to playSong so handleSongEnd can call the latest version
   const playSongRef = useRef<(song: Song, playlistId?: string) => void>(() => {});
 
-  const playSong = useCallback((song: Song, playlistId?: string) => {
+  const playSong = useCallback(async (song: Song, playlistId?: string) => {
     setCurrentSong(song);
     if (playlistId) setCurrentPlaylistId(playlistId);
     setProgress(0);
@@ -349,7 +363,158 @@ export function MusicProvider({ children }: { children: ReactNode }) {
       ytProgressIntervalRef.current = null;
     }
 
-    const ytId = getYouTubeId(song);
+    let ytId = getYouTubeId(song);
+
+    // Just-In-Time resolution for Spotify tracks mapped via "ytsearch:"
+    if (!ytId && song.url && song.url.startsWith("ytsearch:")) {
+      const query = song.url.slice(9);
+      console.log(`[Spotify→Audio] Resolving: "${query}"`);
+
+      // Add "audio" to query for better search results
+      const searchQuery = `${query} audio official`;
+
+      // Strategy 1: Try Invidious API via CORS proxy with timeout
+      if (!ytId) {
+        const invidious_instances = [
+          "https://invidious.privacydev.net",
+          "https://inv.tux.pizza",
+          "https://invidious.flokinet.to",
+          "https://invidious.nerdvpn.de"
+        ];
+
+        for (const instance of invidious_instances) {
+          try {
+            const controller = new AbortController();
+            const timeout = setTimeout(() => controller.abort(), 8000);
+
+            // Direct fetch (these instances usually support CORS)
+            const res = await fetch(`${instance}/api/v1/search?q=${encodeURIComponent(searchQuery)}&type=video`, { signal: controller.signal });
+            clearTimeout(timeout);
+
+            if (res.ok) {
+              const data = await res.json();
+
+              if (Array.isArray(data) && data[0]?.videoId) {
+                ytId = data[0].videoId;
+                console.log(`[Spotify→Audio SUCCESS] Found: ${data[0].title} (${ytId})`);
+                if (playlistId) {
+                  setPlaylists(prev => prev.map(p => 
+                    p.id === playlistId ? { 
+                      ...p, 
+                      songs: p.songs.map(s => 
+                        s.id === song.id ? { 
+                          ...s, 
+                          youtubeId: ytId ?? undefined, 
+                          url: `https://www.youtube.com/watch?v=${ytId}`,
+                          duration: data[0].lengthSeconds || 0
+                        } : s
+                      ) 
+                    } : p
+                  ));
+                }
+                break;
+              }
+            }
+          } catch (e) {
+            if (e instanceof Error && e.name === "AbortError") {
+              console.warn(`[Spotify→Audio] Invidious ${invidious_instances.indexOf(invidious_instances.find(i => i) || "")} timeout`);
+            }
+          }
+        }
+      }
+
+      // Strategy 2: Try YouTube HTML scraping as fallback (with timeout)
+      if (!ytId) {
+        try {
+          const fetchHtml = async (targetUrl: string) => {
+            try {
+              const controller = new AbortController();
+              const timeout = setTimeout(() => controller.abort(), 4000);
+
+              const res = await fetch(
+                `https://api.allorigins.win/get?url=${encodeURIComponent(targetUrl)}`,
+                { signal: controller.signal }
+              );
+              clearTimeout(timeout);
+
+              if (res.ok) {
+                const data = await res.json();
+                if (data.contents) return data.contents;
+              }
+            } catch (e) {}
+
+            const controller = new AbortController();
+            const timeout = setTimeout(() => controller.abort(), 4000);
+
+            const res2 = await fetch(
+              `https://corsproxy.io/?${encodeURIComponent(targetUrl)}`,
+              { signal: controller.signal }
+            );
+            clearTimeout(timeout);
+
+            if (!res2.ok) throw new Error("Failed to fetch proxy");
+            return await res2.text();
+          };
+
+          const html = await fetchHtml(
+              `https://www.youtube.com/results?search_query=${encodeURIComponent(searchQuery)}&gl=US&hl=en`
+          );
+
+          const match = html.match(/ytInitialData\s*=\s*(\{[\s\S]+?\});/s)
+            || html.match(/window\["ytInitialData"\]\s*=\s*(\{[\s\S]+?\});/s);
+
+          if (match) {
+            try {
+              const ytData = JSON.parse(match[1]);
+              let firstVideoId: string | null = null;
+              const findVideo = (obj: any) => {
+                if (firstVideoId) return;
+                if (Array.isArray(obj)) {
+                  for (const item of obj) findVideo(item);
+                } else if (obj !== null && typeof obj === 'object') {
+                  if (obj.videoRenderer && obj.videoRenderer.videoId) {
+                    firstVideoId = obj.videoRenderer.videoId;
+                  } else {
+                    for (const key of Object.keys(obj)) findVideo(obj[key]);
+                  }
+                }
+              };
+              findVideo(ytData);
+
+              if (firstVideoId) {
+                ytId = firstVideoId;
+                console.log(`[Spotify→Audio SUCCESS] Found via YouTube: ${firstVideoId}`);
+                if (playlistId) {
+                  setPlaylists(prev => prev.map(p => 
+                    p.id === playlistId ? { 
+                      ...p, 
+                      songs: p.songs.map(s => 
+                        s.id === song.id ? { 
+                          ...s, 
+                          youtubeId: firstVideoId ?? undefined, 
+                          url: `https://www.youtube.com/watch?v=${firstVideoId}` 
+                        } : s
+                      ) 
+                    } : p
+                  ));
+                }
+              } else {
+                console.warn(`[Spotify→Audio] No results for: "${query}"`);
+              }
+            } catch (parseErr) {
+              console.warn(`[Spotify→Audio] Parse error: ${parseErr instanceof Error ? parseErr.message : String(parseErr)}`);
+            }
+          }
+        } catch (err) {
+          console.warn(`[Spotify→Audio] Scrape failed: ${err instanceof Error ? err.message : String(err)}`);
+        }
+      }
+
+      if (!ytId) {
+        console.error(`[Spotify→Audio FAILED] Could not find audio for: "${query}"`);
+      }
+    }
+
     if (ytId) {
       // YouTube IFrame mode
       isYtModeRef.current = true;
@@ -362,9 +527,17 @@ export function MusicProvider({ children }: { children: ReactNode }) {
       if (ytPlayerRef.current) {
         try { ytPlayerRef.current.pauseVideo(); } catch {}
       }
-      if (song.url && audioRef.current) {
+      // Only attempt to play if URL is not a ytsearch: placeholder (unresolved Spotify track)
+      if (song.url && audioRef.current && !song.url.startsWith("ytsearch:")) {
         audioRef.current.src = resolveUrl(song.url);
-        audioRef.current.play().then(() => setIsPlaying(true)).catch(console.error);
+        audioRef.current.play().then(() => setIsPlaying(true)).catch(err => {
+          console.error(`[Playback Error] Failed to play audio for: ${song.title}`, err);
+          setIsPlaying(false);
+        });
+      } else if (song.url?.startsWith("ytsearch:")) {
+        // Unresolved Spotify track - show warning
+        console.error(`[Spotify Playback Failed] Could not resolve to YouTube: "${song.title}" by ${song.artist}. Try adding again or use a different track.`);
+        setIsPlaying(false);
       }
     }
   }, [playYouTubeSong]);
@@ -594,7 +767,7 @@ export function MusicProvider({ children }: { children: ReactNode }) {
   const addLocalSongToPlaylist = async (
     playlistId: string, song: Song, fileData: ArrayBuffer
   ): Promise<void> => {
-    if (song.idbKey) await idbSet(song.idbKey, fileData);
+    if (song.idbKey) await writeMedia(song.idbKey, fileData);
     addSongToPlaylist(playlistId, song);
   };
 

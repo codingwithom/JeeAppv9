@@ -17,7 +17,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
 
   const login = (username: string) => setUser(username);
   const logout = () => setUser(null);
-  
+
   const toggleTheme = () => {
     setTheme((prev) => (prev === "dark" ? "light" : "dark"));
   };

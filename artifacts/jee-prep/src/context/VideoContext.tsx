@@ -1,4 +1,10 @@
-import { createContext, useContext, useState, useCallback, ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useState,
+  useCallback,
+  ReactNode,
+} from "react";
 
 export interface VideoMiniState {
   leafId: string;
@@ -35,11 +41,18 @@ export function VideoProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const updateMiniState = useCallback((updates: Partial<VideoMiniState>) => {
-    setMiniState(prev => prev ? { ...prev, ...updates } : null);
+    setMiniState((prev) => (prev ? { ...prev, ...updates } : null));
   }, []);
 
   return (
-    <VideoContext.Provider value={{ miniState, activateMiniPlayer, deactivateMiniPlayer, updateMiniState }}>
+    <VideoContext.Provider
+      value={{
+        miniState,
+        activateMiniPlayer,
+        deactivateMiniPlayer,
+        updateMiniState,
+      }}
+    >
       {children}
     </VideoContext.Provider>
   );
@@ -47,6 +60,7 @@ export function VideoProvider({ children }: { children: ReactNode }) {
 
 export function useVideoContext() {
   const ctx = useContext(VideoContext);
-  if (!ctx) throw new Error("useVideoContext must be used within VideoProvider");
+  if (!ctx)
+    throw new Error("useVideoContext must be used within VideoProvider");
   return ctx;
 }

@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Reorder } from "framer-motion";
 import { useMusicContext, Song } from "@/context/MusicContext";
 import { useAppContext } from "@/context/AppContext";
 import { Button } from "@/components/ui/button";
@@ -1263,11 +1263,12 @@ function AddSongModal({
 
 // ── Main page ─────────────────────────────────────────────────────────────────
 export default function MusicPage() {
+  const musicCtx = useMusicContext() as any;
   const {
     playlists, currentSong, currentPlaylistId, isPlaying, duration, volume, progress,
     addPlaylist, deletePlaylist, renamePlaylist, removeSongFromPlaylist, playSong,
     nextSong,
-  } = useMusicContext();
+  } = musicCtx;
   const { theme } = useAppContext();
 
   const [selId, setSelId] = useState(playlists[0]?.id || "default");
@@ -1281,6 +1282,10 @@ export default function MusicPage() {
   const [filterTab, setFilterTab] = useState<"all" | "playlists">("all");
   const [showMobileSidebar, setShowMobileSidebar] = useState(() => typeof window !== 'undefined' ? window.innerWidth < 768 : false);
   const [activeItemId, setActiveItemId] = useState<string | null>(null);
+
+  // Setup local playlists to handle UI dragging properly
+  const [localPlaylists, setLocalPlaylists] = useState(playlists);
+  useEffect(() => setLocalPlaylists(playlists), [playlists]);
 
   // ── Keyboard Shortcuts ──────────────────────────────────────────────────────
   useEffect(() => {
@@ -1332,7 +1337,7 @@ export default function MusicPage() {
   const accentColor = "#1DB954";
   const accentHover = "#1ed760";
 
-  const sel = playlists.find(p => p.id === selId) || playlists[0];
+  const sel = localPlaylists.find((p: any) => p.id === selId) || localPlaylists[0];
   const [g0, g1] = sel ? getGrad(sel.name) : getGrad("default");
 
   const createPlaylist = () => {
@@ -1438,12 +1443,16 @@ export default function MusicPage() {
             )}
           </AnimatePresence>
 
-          <div className="flex-1 overflow-y-auto px-2 pb-2 space-y-0.5">
-            {playlists.map(p => {
+          <Reorder.Group as="div" axis="y" values={localPlaylists} onReorder={(newPlaylists) => {
+            setLocalPlaylists(newPlaylists);
+            musicCtx.reorderPlaylists?.(newPlaylists);
+          }} className="flex-1 overflow-y-auto px-2 pb-2 space-y-0.5">
+            {localPlaylists.map((p: any) => {
               const [pg0, pg1] = getGrad(p.name);
               const isActive = p.id === selId;
               const isPlayingThis = currentPlaylistId === p.id && isPlaying;
               return (
+                <Reorder.Item as="div" key={p.id} value={p}>
                 <div
                   key={p.id}
                   className={`group flex items-center gap-3 px-2 py-2 rounded-md cursor-pointer transition-colors
@@ -1483,9 +1492,10 @@ export default function MusicPage() {
                     )}
                   </ThreeDotMenu>
                 </div>
+                </Reorder.Item>
               );
             })}
-          </div>
+          </Reorder.Group>
         </div>
       </div>
 
@@ -1559,17 +1569,21 @@ export default function MusicPage() {
                 <span />
               </div>
 
-              {sel.songs.map((song, idx) => {
+              <Reorder.Group as="div" axis="y" values={sel.songs} onReorder={(newSongs) => {
+                setLocalPlaylists((prev: any[]) => prev.map(p => p.id === selId ? { ...p, songs: newSongs } : p));
+                musicCtx.reorderSongs?.(selId, newSongs);
+              }} className="space-y-1">
+              {sel.songs.map((song: any, idx: number) => {
                 const isActive = currentSong?.id === song.id;
                 const isPlayingThis = isActive && isPlaying;
                 const [sg0, sg1] = getGrad(song.title);
                 return (
-                  <motion.div
-                    key={song.id}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: idx * 0.02 }}
-                    className={`md:hidden grid gap-2 px-2 py-2 rounded-md cursor-pointer transition-colors border border-border/30
+                  <Reorder.Item as="div" key={song.id} value={song}>
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: idx * 0.02 }}
+                      className={`md:hidden grid gap-2 px-2 py-2 rounded-md cursor-pointer transition-colors border border-border/30
                       ${isActive ? "bg-muted border-[#1DB954]/30" : "hover:bg-muted/40"}`}
                     style={{ gridTemplateColumns: "auto 1fr auto" }}
                     onClick={() => { setActiveItemId(song.id); playSong(song, selId); }}
@@ -1613,27 +1627,18 @@ export default function MusicPage() {
                       </ThreeDotMenu>
                     </div>
                   </motion.div>
-                );
-              })}
-
-              {/* Desktop table layout */}
-              {sel.songs.map((song, idx) => {
-                const isActive = currentSong?.id === song.id;
-                const isPlayingThis = isActive && isPlaying;
-                const [sg0, sg1] = getGrad(song.title);
-                return (
-                  <motion.div
-                    key={`desk-${song.id}`}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: idx * 0.02 }}
-                    className={`hidden md:grid group gap-4 px-4 py-3 rounded-md cursor-pointer transition-colors
+                    
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: idx * 0.02 }}
+                      className={`hidden md:grid group gap-4 px-4 py-3 rounded-md cursor-pointer transition-colors
                       ${isActive ? "bg-muted" : (activeItemId === song.id ? "bg-muted/70" : "hover:bg-muted/40")}`}
-                    style={{ gridTemplateColumns: "28px 1fr 80px 64px" }}
-                    onClick={() => { setActiveItemId(song.id); playSong(song, selId); }}
-                  >
-                    {/* Index / playing */}
-                    <div className="flex items-center justify-center text-sm">
+                      style={{ gridTemplateColumns: "28px 1fr 80px 64px" }}
+                      onClick={() => { setActiveItemId(song.id); playSong(song, selId); }}
+                    >
+                      {/* Index / playing */}
+                      <div className="flex items-center justify-center text-sm">
                       {isPlayingThis ? (
                         <div className="flex items-end gap-0.5 h-4">
                           {[0, 1, 2].map(i => (
@@ -1688,8 +1693,10 @@ export default function MusicPage() {
                       </ThreeDotMenu>
                     </div>
                   </motion.div>
+                  </Reorder.Item>
                 );
               })}
+              </Reorder.Group>
             </>
           )}
         </div>

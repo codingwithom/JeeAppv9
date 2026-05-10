@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Reorder } from "framer-motion";
 import { idbSet, idbGet } from "@/lib/idb";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
 import { useWorkspaceContext } from "@/context/WorkspaceContext";
@@ -1218,7 +1218,7 @@ export default function PDFPage() {
           </div>
         </div>
 
-        <div className="flex-1 overflow-y-auto py-1">
+        <Reorder.Group as="div" axis="y" values={sections} onReorder={setSections} className="flex-1 overflow-y-auto py-1 space-y-0.5">
           {sections.length === 0 && (
             <div className="px-3 py-4 text-center">
               <p className="text-xs text-muted-foreground mb-2">
@@ -1234,7 +1234,7 @@ export default function PDFPage() {
           )}
 
           {sections.map((sec) => (
-            <div key={sec.id}>
+            <Reorder.Item as="div" key={sec.id} value={sec}>
               {/* ── Section row (level 1) ── */}
               <div 
                 className={`group flex items-center gap-1 px-2 py-1.5 cursor-pointer transition-colors ${activeItemId === sec.id ? "bg-muted" : "hover:bg-muted/50"}`}
@@ -1272,9 +1272,11 @@ export default function PDFPage() {
               </div>
 
               {/* ── Subsections (level 2) ── */}
-              {sec.expanded &&
-                sec.subsections.map((sub) => (
-                  <div key={sub.id}>
+              {sec.expanded && (
+                <div onPointerDown={(e) => e.stopPropagation()}>
+                  <Reorder.Group as="div" axis="y" values={sec.subsections} onReorder={(newSubs) => setSections(prev => prev.map(s => s.id === sec.id ? { ...s, subsections: newSubs } : s))} className="space-y-0.5 mt-0.5">
+                    {sec.subsections.map((sub) => (
+                      <Reorder.Item as="div" key={sub.id} value={sub}>
                     <div
                       className={`group flex items-center gap-1 pl-5 pr-2 py-1.5 cursor-pointer transition-colors
                       ${activeLeafId === sub.id && !sub.subsubsections.length ? "bg-primary/15 border-l-2 border-primary" : (activeItemId === sub.id ? "bg-muted/70" : "hover:bg-muted/50")}`}
@@ -1352,9 +1354,12 @@ export default function PDFPage() {
                     </div>
 
                     {/* ── Sub-subsections (level 3) ── */}
-                    {sub.expanded &&
-                      sub.subsubsections.map((ssub) => (
-                        <div
+                    {sub.expanded && (
+                      <div onPointerDown={(e) => e.stopPropagation()}>
+                        <Reorder.Group as="div" axis="y" values={sub.subsubsections} onReorder={(newSubSubs) => setSections(prev => prev.map(s => s.id === sec.id ? { ...s, subsections: s.subsections.map(su => su.id === sub.id ? { ...su, subsubsections: newSubSubs } : su) } : s))} className="space-y-0.5 mt-0.5">
+                          {sub.subsubsections.map((ssub) => (
+                            <Reorder.Item as="div" key={ssub.id} value={ssub}>
+                              <div
                           key={ssub.id}
                           className={`group flex items-center gap-1 pl-9 pr-2 py-1.5 cursor-pointer transition-colors
                         ${activeLeafId === ssub.id ? "bg-primary/15 border-l-2 border-primary" : (activeItemId === ssub.id ? "bg-muted/70" : "hover:bg-muted/50")}`}
@@ -1412,8 +1417,12 @@ export default function PDFPage() {
                             <MenuItem icon={Pencil} label="Rename" shortcut="F2" onClick={(e: any) => { e.stopPropagation(); setRenamingId(ssub.id); setRenameVal(ssub.name); }} />
                             <MenuItem icon={Trash2} label="Delete" shortcut="Del" destructive onClick={(e: any) => { e.stopPropagation(); deleteSubSubsection(sec.id, sub.id, ssub.id); }} />
                           </ThreeDotMenu>
-                        </div>
-                      ))}
+                              </div>
+                            </Reorder.Item>
+                          ))}
+                        </Reorder.Group>
+                      </div>
+                    )}
 
                     {/* Add sub-subsection shortcut */}
                     {sub.expanded && (
@@ -1424,8 +1433,11 @@ export default function PDFPage() {
                         <FilePlus className="h-2.5 w-2.5" />+ Add sub-subsection
                       </button>
                     )}
-                  </div>
-                ))}
+                      </Reorder.Item>
+                    ))}
+                  </Reorder.Group>
+                </div>
+              )}
 
               {/* Add subsection shortcut */}
               {sec.expanded && (
@@ -1436,9 +1448,9 @@ export default function PDFPage() {
                   <FilePlus className="h-2.5 w-2.5" />+ Add subsection
                 </button>
               )}
-            </div>
+            </Reorder.Item>
           ))}
-        </div>
+        </Reorder.Group>
       </div>
 
       {/* ── PDF viewer area ── */}

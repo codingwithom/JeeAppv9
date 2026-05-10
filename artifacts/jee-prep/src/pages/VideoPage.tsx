@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Reorder } from "framer-motion";
 import { idbSet, idbGet, idbDelete } from "@/lib/idb";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
 import { useWorkspaceContext } from "@/context/WorkspaceContext";
@@ -2610,7 +2610,7 @@ export default function VideoPage() {
           </div>
         </div>
 
-        <div className="flex-1 overflow-y-auto p-1.5 md:p-2 space-y-0.5">
+        <Reorder.Group as="div" axis="y" values={sections} onReorder={setSections} className="flex-1 overflow-y-auto p-1.5 md:p-2 space-y-0.5">
           {sections.length === 0 && (
             <div className="text-center py-8 px-3">
               <FileVideo className="h-8 w-8 mx-auto mb-2 text-primary/30" />
@@ -2622,7 +2622,7 @@ export default function VideoPage() {
           )}
 
           {sections.map((sec) => (
-            <div key={sec.id}>
+            <Reorder.Item as="div" key={sec.id} value={sec}>
               {/* Section */}
               <div 
                 className={`group flex items-center gap-1 px-2 py-1.5 rounded-lg transition-colors cursor-pointer ${activeItemId === sec.id ? "bg-accent/40" : "hover:bg-accent/30"}`}
@@ -2662,9 +2662,11 @@ export default function VideoPage() {
                 </ThreeDotMenu>
               </div>
 
-              {sec.expanded &&
-                sec.subsections.map((sub) => (
-                  <div key={sub.id} className="ml-4">
+              {sec.expanded && (
+                <div onPointerDown={(e) => e.stopPropagation()}>
+                  <Reorder.Group as="div" axis="y" values={sec.subsections} onReorder={(newSubs) => setSections(prev => prev.map(s => s.id === sec.id ? { ...s, subsections: newSubs } : s))} className="space-y-0.5 mt-0.5">
+                    {sec.subsections.map((sub) => (
+                      <Reorder.Item as="div" key={sub.id} value={sub} className="ml-4">
                     <div
                       className={cn(
                         "group flex items-center gap-1 px-2 py-1.5 rounded-lg hover:bg-accent/30 transition-colors cursor-pointer",
@@ -2756,9 +2758,11 @@ export default function VideoPage() {
                       </ThreeDotMenu>
                     </div>
 
-                    {sub.expanded &&
-                      sub.subsubsections.map((ss) => (
-                        <div key={ss.id} className="ml-4">
+                    {sub.expanded && (
+                      <div onPointerDown={(e) => e.stopPropagation()}>
+                        <Reorder.Group as="div" axis="y" values={sub.subsubsections} onReorder={(newSubSubs) => setSections(prev => prev.map(s => s.id === sec.id ? { ...s, subsections: s.subsections.map(su => su.id === sub.id ? { ...su, subsubsections: newSubSubs } : su) } : s))} className="space-y-0.5 mt-0.5">
+                          {sub.subsubsections.map((ss) => (
+                            <Reorder.Item as="div" key={ss.id} value={ss} className="ml-4">
                           <div
                             className={cn(
                               "group flex items-center gap-1.5 px-2 py-1.5 rounded-lg transition-colors cursor-pointer",
@@ -2837,13 +2841,19 @@ export default function VideoPage() {
                               <MenuItem icon={Trash2} label="Delete" shortcut="Del" destructive onClick={(e: any) => { e.stopPropagation(); deleteSubSubsection(sec.id, sub.id, ss.id); }} />
                             </ThreeDotMenu>
                           </div>
-                        </div>
-                      ))}
-                  </div>
-                ))}
-            </div>
+                            </Reorder.Item>
+                          ))}
+                        </Reorder.Group>
+                      </div>
+                    )}
+                      </Reorder.Item>
+                    ))}
+                  </Reorder.Group>
+                </div>
+              )}
+            </Reorder.Item>
           ))}
-        </div>
+        </Reorder.Group>
 
         <div className="p-1.5 md:p-2 border-t border-border">
           <div className="flex flex-wrap gap-1 md:gap-1.5 text-[9px] md:text-[10px] text-muted-foreground">

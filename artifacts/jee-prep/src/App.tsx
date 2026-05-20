@@ -1,3 +1,4 @@
+import React from "react";
 import { Switch, Route, Router as WouterRouter, useLocation } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -18,6 +19,8 @@ import MusicPage from "@/pages/MusicPage";
 import PDFPage from "@/pages/PDFPage";
 import AdminPage from "@/pages/AdminPage";
 import VideoPage from "@/pages/VideoPage";
+import MovieHub from "@/pages/MovieHub";
+import SavesPage from "@/pages/SavesPage"; // Import the new SavesPage
 import { MiniPlayer } from "@/components/MiniPlayer";
 import { AnimatePresence, motion } from "framer-motion";
 import { Sun, Moon } from "lucide-react";
@@ -30,6 +33,7 @@ const PAGE_LABELS: Record<string, string> = {
   "/music": "Focus Music",
   "/pdf": "PDF Viewer",
   "/video": "Videos",
+  "/movies": "Movie Hub",
   "/admin": "Admin Panel",
 };
 
@@ -65,10 +69,12 @@ function ProtectedLayout({ children }: { children: React.ReactNode }) {
       <Sidebar />
       <main className="flex-1 flex flex-col overflow-hidden relative">
         <TopBar />
-        <div className="flex-1 overflow-y-auto relative">
-          <AnimatePresence mode="wait">
-            {children}
-          </AnimatePresence>
+        <div className="flex-1 flex flex-col md:flex-row overflow-hidden relative">
+          <div className="flex-1 overflow-y-auto relative">
+            <AnimatePresence mode="wait">
+              {children}
+            </AnimatePresence>
+          </div>
         </div>
         <MiniPlayer />
         <VideoMiniPlayer />
@@ -86,14 +92,16 @@ function Router() {
         <Route path="/music" component={MusicPage} />
         <Route path="/pdf" component={PDFPage} />
         <Route path="/video" component={VideoPage} />
+        <Route path="/movies" component={MovieHub} />
         <Route path="/admin" component={AdminPage} />
+        <Route path="/saves" component={SavesPage} /> {/* Add the new route for SavesPage */}
         <Route component={NotFound} />
       </Switch>
     </ProtectedLayout>
   );
 }
 
-function App() {
+export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <WorkspaceProvider>
@@ -117,5 +125,3 @@ function App() {
     </QueryClientProvider>
   );
 }
-
-export default App;

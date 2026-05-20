@@ -80,6 +80,7 @@
   },
   "dependencies": {
     "@types/jszip": "^3.4.1",
+    "hls.js": "^1.6.16",
     "jszip": "^3.10.1"
   }
 }

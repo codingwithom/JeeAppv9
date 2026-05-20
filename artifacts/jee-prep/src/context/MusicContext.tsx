@@ -376,8 +376,11 @@ export function MusicProvider({ children }: { children: ReactNode }) {
       // Strategy 1: Try Invidious API via CORS proxy with timeout
       if (!ytId) {
         const invidious_instances = [
+          "https://invidious.jing.rocks",
+          "https://vid.puffyan.us",
           "https://invidious.privacydev.net",
           "https://inv.tux.pizza",
+          "https://invidious.lunar.icu",
           "https://invidious.flokinet.to",
           "https://invidious.nerdvpn.de"
         ];
@@ -396,7 +399,7 @@ export function MusicProvider({ children }: { children: ReactNode }) {
 
               if (Array.isArray(data) && data[0]?.videoId) {
                 ytId = data[0].videoId;
-                console.log(`[Spotify→Audio SUCCESS] Found: ${data[0].title} (${ytId})`);
+                console.log(`[Search→Audio SUCCESS] Found: ${data[0].title} (${ytId})`);
                 if (playlistId) {
                   setPlaylists(prev => prev.map(p => 
                     p.id === playlistId ? { 
@@ -417,7 +420,7 @@ export function MusicProvider({ children }: { children: ReactNode }) {
             }
           } catch (e) {
             if (e instanceof Error && e.name === "AbortError") {
-              console.warn(`[Spotify→Audio] Invidious ${invidious_instances.indexOf(invidious_instances.find(i => i) || "")} timeout`);
+              console.warn(`[Search→Audio] Invidious ${invidious_instances.indexOf(invidious_instances.find(i => i) || "")} timeout`);
             }
           }
         }
@@ -441,6 +444,17 @@ export function MusicProvider({ children }: { children: ReactNode }) {
                 const data = await res.json();
                 if (data.contents) return data.contents;
               }
+            } catch (e) {}
+
+            try {
+              const controller = new AbortController();
+              const timeout = setTimeout(() => controller.abort(), 4000);
+              const res = await fetch(
+                `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(targetUrl)}`,
+                { signal: controller.signal }
+              );
+              clearTimeout(timeout);
+              if (res.ok) return await res.text();
             } catch (e) {}
 
             const controller = new AbortController();
@@ -483,7 +497,7 @@ export function MusicProvider({ children }: { children: ReactNode }) {
 
               if (firstVideoId) {
                 ytId = firstVideoId;
-                console.log(`[Spotify→Audio SUCCESS] Found via YouTube: ${firstVideoId}`);
+                console.log(`[Search→Audio SUCCESS] Found via YouTube: ${firstVideoId}`);
                 if (playlistId) {
                   setPlaylists(prev => prev.map(p => 
                     p.id === playlistId ? { 
@@ -499,19 +513,19 @@ export function MusicProvider({ children }: { children: ReactNode }) {
                   ));
                 }
               } else {
-                console.warn(`[Spotify→Audio] No results for: "${query}"`);
+                console.warn(`[Search→Audio] No results for: "${query}"`);
               }
             } catch (parseErr) {
-              console.warn(`[Spotify→Audio] Parse error: ${parseErr instanceof Error ? parseErr.message : String(parseErr)}`);
+              console.warn(`[Search→Audio] Parse error: ${parseErr instanceof Error ? parseErr.message : String(parseErr)}`);
             }
           }
         } catch (err) {
-          console.warn(`[Spotify→Audio] Scrape failed: ${err instanceof Error ? err.message : String(err)}`);
+          console.warn(`[Search→Audio] Scrape failed: ${err instanceof Error ? err.message : String(err)}`);
         }
       }
 
       if (!ytId) {
-        console.error(`[Spotify→Audio FAILED] Could not find audio for: "${query}"`);
+        console.error(`[Search→Audio FAILED] Could not find audio for: "${query}"`);
       }
     }
 
@@ -527,7 +541,7 @@ export function MusicProvider({ children }: { children: ReactNode }) {
       if (ytPlayerRef.current) {
         try { ytPlayerRef.current.pauseVideo(); } catch {}
       }
-      // Only attempt to play if URL is not a ytsearch: placeholder (unresolved Spotify track)
+      // Only attempt to play if URL is not a ytsearch: placeholder (unresolved search track)
       if (song.url && audioRef.current && !song.url.startsWith("ytsearch:")) {
         audioRef.current.src = resolveUrl(song.url);
         audioRef.current.play().then(() => setIsPlaying(true)).catch(err => {
@@ -535,8 +549,8 @@ export function MusicProvider({ children }: { children: ReactNode }) {
           setIsPlaying(false);
         });
       } else if (song.url?.startsWith("ytsearch:")) {
-        // Unresolved Spotify track - show warning
-        console.error(`[Spotify Playback Failed] Could not resolve to YouTube: "${song.title}" by ${song.artist}. Try adding again or use a different track.`);
+        // Unresolved search track - show warning
+        console.error(`[Search Playback Failed] Could not resolve to YouTube: "${song.title}" by ${song.artist}. Try adding again or use a different track.`);
         setIsPlaying(false);
       }
     }

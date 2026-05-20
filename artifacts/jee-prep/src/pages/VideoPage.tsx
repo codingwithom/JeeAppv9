@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useEffect, useCallback, useMemo } from "react";
 import { motion, AnimatePresence, Reorder } from "framer-motion";
 import { idbSet, idbGet, idbDelete } from "@/lib/idb";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
@@ -43,6 +43,10 @@ import {
   Search,
   Loader2,
   MoreVertical,
+  Settings,
+  Subtitles,
+  ChevronLeft,
+  Music,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { loadYouTubeApi } from "@/lib/youtube-api";
@@ -694,6 +698,339 @@ function SpeedPopup({
   );
 }
 
+// ─── Video Settings Popup ──────────────────────────────────────────────────
+function VideoSettingsPopup({
+  videoType,
+  videoSrc,
+  ytPlayer,
+  videoEl,
+  onClose,
+}: {
+  videoType: string | null;
+  videoSrc: string | null;
+  ytPlayer: any;
+  videoEl: HTMLVideoElement | null;
+  onClose: () => void;
+}) {
+  const [view, setView] = useState<"main" | "cc" | "quality" | "audio">("main");
+  const [ccTracks, setCcTracks] = useState<{ id: string; label: string }[]>([]);
+  const [activeCc, setActiveCc] = useState<string | null>(null);
+  const [qualities, setQualities] = useState<{ id: string; label: string }[]>([]);
+  const [activeQuality, setActiveQuality] = useState<string | null>(null);
+  const [audioTracks, setAudioTracks] = useState<{ id: string; label: string }[]>([]);
+  const [activeAudio, setActiveAudio] = useState<string | null>(null);
+
+  const QUALITY_LABELS: Record<string, string> = {
+    highres: "Highest",
+    hd2160: "4K (2160p)",
+    hd1440: "1440p",
+    hd1080: "1080p",
+    hd720: "720p",
+    large: "480p",
+    medium: "360p",
+    small: "240p",
+    tiny: "144p",
+    auto: "Auto"
+  };
+
+  const syncVideoSettings = useCallback(() => {
+    if (videoType === "youtube" && ytPlayer) {
+      if (typeof ytPlayer.loadModule === "function") {
+        try { ytPlayer.loadModule("captions"); } catch {}
+        try { ytPlayer.loadModule("audioTrack"); } catch {}
+      }
+
+      if (typeof ytPlayer.getAvailableQualityLevels === "function") {
+        const q = ytPlayer.getAvailableQualityLevels();
+        setQualities(
+          q.filter((level: string) => level !== "auto").map((level: string) => ({ id: level, label: QUALITY_LABELS[level] || level }))
+        );
+        setActiveQuality(ytPlayer.getPlaybackQuality() || "auto");
+      } else {
+        setQualities([{ id: "auto", label: "Auto" }]);
+        setActiveQuality("auto");
+      }
+
+      if (typeof ytPlayer.getOption === "function") {
+        const tracks = ytPlayer.getOption("captions", "tracklist") || [];
+        setCcTracks(
+          tracks.map((t: any) => ({
+            id: t.languageCode || t.id || String(t.languageName || t.displayName || ""),
+            label: t.displayName || t.languageName || t.languageCode || `CC ${t.languageCode || t.id || "unknown"}`,
+          }))
+        );
+        const active = ytPlayer.getOption("captions", "track");
+        setActiveCc(active ? active.languageCode || active.id || null : null);
+      } else {
+        setCcTracks([]);
+        setActiveCc(null);
+      }
+
+      let foundYtAudio = false;
+      let aTracks: any[] = [];
+      if (typeof ytPlayer.getAvailableAudioTracks === "function") {
+         aTracks = ytPlayer.getAvailableAudioTracks() || [];
+      }
+      if ((!aTracks || aTracks.length === 0) && typeof ytPlayer.getOption === "function") {
+         aTracks = ytPlayer.getOption("audioTrack", "tracklist") || ytPlayer.getOption("audio", "tracklist") || [];
+      }
+      if (aTracks && aTracks.length > 0) {
+         setAudioTracks(aTracks.map((t: any, i: number) => ({
+             id: t.id || t.languageCode || String(i),
+             label: t.name || t.displayName || t.languageName || t.label || `Track ${i+1}`
+         })));
+         let activeId = "0";
+         if (typeof ytPlayer.getAudioTrack === "function") {
+             const active = ytPlayer.getAudioTrack();
+             activeId = active?.id || active?.languageCode || "0";
+         } else if (typeof ytPlayer.getOption === "function") {
+             const active = ytPlayer.getOption("audioTrack", "track") || ytPlayer.getOption("audio", "track");
+             activeId = active?.id || active?.languageCode || "0";
+         }
+         setActiveAudio(activeId);
+         foundYtAudio = true;
+      }
+      if (!foundYtAudio) {
+         setAudioTracks([{ id: "default", label: "Default Audio" }]);
+         setActiveAudio("default");
+      }
+    } else if (videoType === "html5" && videoEl) {
+      const v = videoEl;
+      const textTracks = Array.from(v.textTracks || []).filter(
+        (t: any) => t.kind === "subtitles" || t.kind === "captions"
+      );
+      setCcTracks(
+        textTracks.map((t: any, i) => ({
+          id: String(i),
+          label: t.label || t.language || `Track ${i + 1}`,
+        }))
+      );
+      const activeT = textTracks.findIndex((t: any) => t.mode === "showing");
+      setActiveCc(activeT >= 0 ? String(activeT) : null);
+
+      const aTracks = Array.from((v as any).audioTracks || []);
+      if (aTracks.length > 0) {
+        setAudioTracks(
+          aTracks.map((t: any, i) => ({
+            id: String(i),
+            label: t.label || t.language || `Audio ${i + 1}`,
+          }))
+        );
+        const activeA = aTracks.findIndex((t: any) => t.enabled);
+        setActiveAudio(activeA >= 0 ? String(activeA) : null);
+      } else {
+        setAudioTracks([{ id: "default", label: "Default Audio" }]);
+        setActiveAudio("default");
+      }
+
+      setQualities([{ id: "original", label: "Original" }]);
+      setActiveQuality("original");
+    }
+  }, [videoType, ytPlayer, videoEl, videoSrc]);
+
+  useEffect(() => {
+    syncVideoSettings();
+  }, [syncVideoSettings]);
+
+  useEffect(() => {
+    if (videoType !== "html5" || !videoEl) return;
+    const refresh = () => syncVideoSettings();
+    videoEl.addEventListener("loadedmetadata", refresh);
+    videoEl.addEventListener("loadeddata", refresh);
+    return () => {
+      videoEl.removeEventListener("loadedmetadata", refresh);
+      videoEl.removeEventListener("loadeddata", refresh);
+    };
+  }, [videoType, videoEl, syncVideoSettings]);
+
+  const setCc = (id: string | null) => {
+    if (videoType === "youtube" && ytPlayer) {
+      if (id === null) {
+        if (typeof ytPlayer.setOption === "function") {
+          ytPlayer.setOption("captions", "track", {});
+        }
+      } else {
+        if (typeof ytPlayer.loadModule === "function") {
+          try { ytPlayer.loadModule("captions"); } catch {}
+        }
+        if (typeof ytPlayer.setOption === "function") {
+          ytPlayer.setOption("captions", "track", { languageCode: id });
+        }
+      }
+    } else if (videoType === "html5" && videoEl) {
+      const tracks = Array.from(videoEl.textTracks || []).filter(
+        (t: any) => t.kind === "subtitles" || t.kind === "captions"
+      );
+      tracks.forEach((t: any, i) => {
+        t.mode = String(i) === id ? "showing" : "hidden";
+      });
+    }
+    setActiveCc(id);
+    setView("main");
+  };
+
+  const setQuality = (id: string) => {
+    if (videoType === "youtube" && ytPlayer) {
+      const target = id === "auto" ? "default" : id;
+      if (typeof ytPlayer.setPlaybackQualityRange === "function") {
+        if (id === "auto") {
+          try { ytPlayer.setPlaybackQualityRange("default", "highres"); } catch {}
+          try { ytPlayer.setPlaybackQuality("default"); } catch {}
+        } else {
+          try { ytPlayer.setPlaybackQualityRange(id, id); } catch {}
+        }
+        try { ytPlayer.setPlaybackQualityRange(id === "auto" ? "default" : id, id === "auto" ? "highres" : id); } catch {}
+      }
+      if (typeof ytPlayer.setPlaybackQuality === "function") {
+        try { ytPlayer.setPlaybackQuality(id === "auto" ? "default" : id); } catch {}
+        try { ytPlayer.setPlaybackQuality(target); } catch {}
+      }
+      if (typeof ytPlayer.loadVideoById === "function") {
+        const videoData = typeof ytPlayer.getVideoData === "function" ? ytPlayer.getVideoData() : null;
+        const vId = videoData?.video_id || (videoSrc ? getYouTubeId(videoSrc) : null);
+        if (vId) {
+          const currentTime = typeof ytPlayer.getCurrentTime === "function" ? ytPlayer.getCurrentTime() : 0;
+          const isPlaying = typeof ytPlayer.getPlayerState === "function" ? ytPlayer.getPlayerState() === 1 : true;
+          ytPlayer.loadVideoById({
+            videoId: vId,
+            startSeconds: currentTime,
+            suggestedQuality: id === "auto" ? "default" : id
+          });
+          if (!isPlaying && typeof ytPlayer.pauseVideo === "function") {
+             setTimeout(() => ytPlayer.pauseVideo(), 150);
+          }
+          
+          try { ytPlayer.loadVideoById(vId, currentTime, target); } catch {}
+          
+          setTimeout(() => {
+            if (typeof ytPlayer.setPlaybackQualityRange === "function") {
+               try { ytPlayer.setPlaybackQualityRange(id === "auto" ? "default" : id, id === "auto" ? "highres" : id); } catch {}
+            }
+            if (typeof ytPlayer.setPlaybackQuality === "function") {
+               try { ytPlayer.setPlaybackQuality(target); } catch {}
+            }
+            if (!isPlaying && typeof ytPlayer.pauseVideo === "function") {
+               ytPlayer.pauseVideo();
+            }
+          }, 200);
+        }
+      }
+    }
+    setActiveQuality(id);
+    setView("main");
+  };
+
+  const setAudio = (id: string) => {
+        if (videoType === "youtube" && ytPlayer) {
+          if (typeof ytPlayer.loadModule === "function") {
+            try { ytPlayer.loadModule("audioTrack"); } catch {}
+          }
+          if (typeof ytPlayer.setAudioTrack === "function") {
+             const trackList = ytPlayer.getAvailableAudioTracks?.() || [];
+             const track = trackList.find((t: any) => t.id === id || t.languageCode === id);
+             if (track) {
+               try { ytPlayer.setAudioTrack(track); } catch {}
+             } else {
+               try { ytPlayer.setAudioTrack({ id }); } catch {}
+               try { ytPlayer.setAudioTrack({ languageCode: id }); } catch {}
+               try { ytPlayer.setAudioTrack(id); } catch {}
+             }
+          }
+          if (typeof ytPlayer.setOption === "function") {
+             const track = { id };
+             try { ytPlayer.setOption("audioTrack", "track", track); } catch {}
+             try { ytPlayer.setOption("audioTrack", "track", id); } catch {}
+             try { ytPlayer.setOption("audio", "track", track); } catch {}
+             try { ytPlayer.setOption("audio", "track", id); } catch {}
+          }
+        } else if (videoType === "html5" && videoEl) {
+      const tracks = Array.from((videoEl as any).audioTracks || []);
+      tracks.forEach((t: any, i) => {
+        t.enabled = String(i) === id;
+      });
+    }
+    setActiveAudio(id);
+    setView("main");
+  };
+
+  return (
+    <div className="fixed inset-0 z-[300]" onClick={onClose}>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95, y: 4 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.95 }}
+        className="absolute bottom-14 right-4 sm:right-1/4 bg-card border border-border rounded-2xl shadow-2xl p-2 w-64 max-h-80 overflow-y-auto"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {view === "main" && (
+          <div className="flex flex-col gap-1">
+            <button onClick={() => setView("cc")} className="flex items-center justify-between p-2 hover:bg-muted rounded-lg transition-colors text-sm text-foreground">
+              <span className="flex items-center gap-2"><Subtitles className="w-4 h-4"/> Subtitles/CC</span>
+              <span className="text-xs text-muted-foreground flex items-center gap-1">
+                {activeCc ? ccTracks.find(t => t.id === activeCc)?.label || 'On' : 'Off'} <ChevRight className="w-3 h-3"/>
+              </span>
+            </button>
+            <button onClick={() => setView("quality")} className="flex items-center justify-between p-2 hover:bg-muted rounded-lg transition-colors text-sm text-foreground">
+              <span className="flex items-center gap-2"><Settings className="w-4 h-4"/> Quality</span>
+              <span className="text-xs text-muted-foreground flex items-center gap-1">
+                {activeQuality ? (QUALITY_LABELS[activeQuality] || activeQuality) : 'Auto'} <ChevRight className="w-3 h-3"/>
+              </span>
+            </button>
+            <button onClick={() => setView("audio")} className="flex items-center justify-between p-2 hover:bg-muted rounded-lg transition-colors text-sm text-foreground">
+              <span className="flex items-center gap-2"><Music className="w-4 h-4"/> Audio Track</span>
+              <span className="text-xs text-muted-foreground flex items-center gap-1">
+                {audioTracks.find(t => t.id === activeAudio)?.label || 'Default'} <ChevRight className="w-3 h-3"/>
+              </span>
+            </button>
+          </div>
+        )}
+
+        {view !== "main" && (
+          <div className="flex flex-col">
+            <div className="flex items-center gap-2 p-2 border-b border-border mb-1">
+              <button onClick={() => setView("main")} className="p-1 hover:bg-muted rounded-md transition-colors"><ChevronLeft className="w-4 h-4"/></button>
+              <span className="text-sm font-semibold capitalize">{view === 'cc' ? 'Subtitles/CC' : view === 'quality' ? 'Quality' : 'Audio Track'}</span>
+            </div>
+            
+            {view === "cc" && (
+              <div className="flex flex-col gap-1">
+                <button onClick={() => setCc(null)} className={cn("text-left p-2 text-sm rounded-lg hover:bg-muted transition-colors", activeCc === null && "bg-primary/10 text-primary")}>Off</button>
+                {ccTracks.map(t => (
+                  <button key={t.id} onClick={() => setCc(t.id)} className={cn("text-left p-2 text-sm rounded-lg hover:bg-muted transition-colors", activeCc === t.id && "bg-primary/10 text-primary")}>
+                    {t.label}
+                  </button>
+                ))}
+                {ccTracks.length === 0 && <p className="text-xs text-muted-foreground p-2 text-center">No tracks available</p>}
+              </div>
+            )}
+            
+            {view === "quality" && (
+              <div className="flex flex-col gap-1">
+                <button onClick={() => setQuality("auto")} className={cn("text-left p-2 text-sm rounded-lg hover:bg-muted transition-colors", activeQuality === "auto" && "bg-primary/10 text-primary")}>Auto</button>
+                {qualities.map(t => (
+                  <button key={t.id} onClick={() => setQuality(t.id)} className={cn("text-left p-2 text-sm rounded-lg hover:bg-muted transition-colors", activeQuality === t.id && "bg-primary/10 text-primary")}>
+                    {t.label}
+                  </button>
+                ))}
+              </div>
+            )}
+
+            {view === "audio" && (
+              <div className="flex flex-col gap-1">
+                {audioTracks.map(t => (
+                  <button key={t.id} onClick={() => setAudio(t.id)} className={cn("text-left p-2 text-sm rounded-lg hover:bg-muted transition-colors", activeAudio === t.id && "bg-primary/10 text-primary")}>
+                    {t.label}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+      </motion.div>
+    </div>
+  );
+}
+
 // ─── YouTube Search Modal for Videos ──────────────────────────────────────────
 interface YouTubeVideoResult {
   videoId: string;
@@ -714,203 +1051,133 @@ function YouTubeVideoSearchModal({
   const [results, setResults] = useState<YouTubeVideoResult[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10;
 
   const handleSearch = async () => {
     if (!searchQuery.trim()) return;
     setLoading(true);
     setError("");
     setResults([]);
+    setCurrentPage(1);
 
     try {
       const q = encodeURIComponent(searchQuery);
-      let found = false;
 
-      // Strategy 1: Piped API (Native CORS, fastest and most reliable)
-      const pipedInstances = [
-        "https://pipedapi.kavin.rocks",
-        "https://pipedapi.smnz.de",
-        "https://pipedapi.adminforge.de",
-        "https://pipedapi.astartes.nl",
+      const fetchWithTimeout = async (url: string, timeoutMs: number) => {
+        const controller = new AbortController();
+        const id = setTimeout(() => controller.abort(), timeoutMs);
+        const response = await fetch(url, { signal: controller.signal });
+        clearTimeout(id);
+        if (!response.ok) throw new Error("HTTP error");
+        return response;
+      };
+
+      const fetchPiped = async (instance: string) => {
+        const res = await fetchWithTimeout(`${instance}/search?q=${q}&filter=all`, 5000);
+        const data = await res.json();
+        if (!data?.items?.length) throw new Error("No data");
+        const videos = data.items.filter((item: any) => item.type === "stream");
+        if (!videos.length) throw new Error("No videos");
+        return videos.slice(0, 50).map((v: any) => {
+          const vId = v.url.includes("?v=") ? v.url.split("?v=")[1].split("&")[0] : v.url.split("/").pop();
+          return {
+            videoId: vId,
+            title: v.title || "Unknown",
+            author: v.uploaderName || "Unknown",
+            length_seconds: v.duration || 0,
+            thumbnail: v.thumbnail || `https://i.ytimg.com/vi/${vId}/mqdefault.jpg`,
+          };
+        });
+      };
+
+      const fetchInvidious = async (instance: string) => {
+        const res = await fetchWithTimeout(`${instance}/api/v1/search?q=${q}&type=video`, 5000);
+        const data = await res.json();
+        if (!Array.isArray(data) || !data.length) throw new Error("No data");
+        return data.slice(0, 50).map((v: any) => ({
+          videoId: v.videoId,
+          title: v.title || "Unknown",
+          author: v.author || "Unknown",
+          length_seconds: v.lengthSeconds || v.length_seconds || 0,
+          thumbnail: v.videoThumbnails?.[0]?.url || v.thumbnail || `https://i.ytimg.com/vi/${v.videoId}/mqdefault.jpg`,
+        }));
+      };
+
+      const fetchProxy = async (proxyUrl: string) => {
+        const res = await fetchWithTimeout(proxyUrl, 6000);
+        const contentType = res.headers.get("content-type") || "";
+        let html = "";
+        if (contentType.includes("application/json")) {
+          const data = await res.json();
+          html = data.contents || "";
+        } else {
+          html = await res.text();
+        }
+
+        const match =
+          html.match(/ytInitialData\s*=\s*(\{[\s\S]+?\});/s) ||
+          html.match(/window\["ytInitialData"\]\s*=\s*(\{[\s\S]+?\});/s);
+        if (!match) throw new Error("No ytInitialData");
+        const ytData = JSON.parse(match[1]);
+        const videos: any[] = [];
+        const findVideos = (obj: any) => {
+          if (videos.length >= 50) return;
+          if (Array.isArray(obj)) {
+            for (const item of obj) findVideos(item);
+          } else if (obj !== null && typeof obj === "object") {
+            if (obj.videoRenderer && obj.videoRenderer.videoId) {
+              videos.push(obj.videoRenderer);
+            } else {
+              for (const key of Object.keys(obj)) findVideos(obj[key]);
+            }
+          }
+        };
+        findVideos(ytData);
+
+        if (videos.length === 0) throw new Error("No videos found in proxy");
+
+        return videos.map((v) => {
+          const timeStr = v.lengthText?.simpleText || "0:00";
+          const parts = timeStr.split(":").map(Number);
+          const length_seconds =
+            parts.length === 3
+              ? parts[0] * 3600 + parts[1] * 60 + parts[2]
+              : parts.length === 2
+                ? parts[0] * 60 + parts[1]
+                : parts[0] || 0;
+
+          return {
+            videoId: v.videoId,
+            title: v.title?.runs?.[0]?.text || "Unknown",
+            author: v.ownerText?.runs?.[0]?.text || "Unknown",
+            length_seconds,
+            thumbnail:
+              v.thumbnail?.thumbnails?.[0]?.url ||
+              `https://i.ytimg.com/vi/${v.videoId}/mqdefault.jpg`,
+          };
+        });
+      };
+
+      const tasks = [
+        fetchPiped("https://pipedapi.kavin.rocks"),
+        fetchPiped("https://pipedapi.smnz.de"),
+        fetchInvidious("https://invidious.jing.rocks"),
+        fetchInvidious("https://vid.puffyan.us"),
+        fetchInvidious("https://invidious.nerdvpn.de"),
+        fetchProxy(`https://api.allorigins.win/get?url=${encodeURIComponent(`https://www.youtube.com/results?search_query=${q}&gl=US&hl=en`)}`),
+        fetchProxy(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(`https://www.youtube.com/results?search_query=${q}&gl=US&hl=en`)}`),
+        fetchProxy(`https://corsproxy.io/?${encodeURIComponent(`https://www.youtube.com/results?search_query=${q}&gl=US&hl=en`)}`)
       ];
 
-      for (const instance of pipedInstances) {
-        if (found) break;
-        try {
-          const controller = new AbortController();
-          const timeout = setTimeout(() => controller.abort(), 8000);
-          const res = await fetch(`${instance}/search?q=${q}&filter=all`, {
-            signal: controller.signal,
-          });
-          clearTimeout(timeout);
+      const fastestResults = await Promise.any(tasks);
 
-          if (res.ok) {
-            const data = await res.json();
-            if (data && data.items && data.items.length > 0) {
-              const videos = data.items
-                .filter((item: any) => item.type === "stream")
-                .slice(0, 20);
-              if (videos.length > 0) {
-                setResults(
-                  videos.map((v: any) => {
-                    const vId = v.url.includes("?v=")
-                      ? v.url.split("?v=")[1].split("&")[0]
-                      : v.url.split("/").pop();
-                    return {
-                      videoId: vId,
-                      title: v.title || "Unknown",
-                      author: v.uploaderName || "Unknown",
-                      length_seconds: v.duration || 0,
-                      thumbnail:
-                        v.thumbnail ||
-                        `https://i.ytimg.com/vi/${vId}/mqdefault.jpg`,
-                    };
-                  }),
-                );
-                found = true;
-                break;
-              }
-            }
-          }
-        } catch (e) {
-          console.warn(`[YouTube Search] Piped ${instance} failed`);
-        }
-      }
-
-      // Strategy 2: Direct Invidious API (Using CORS-enabled instances)
-      if (!found) {
-        const invidiousInstances = [
-          "https://invidious.privacydev.net",
-          "https://inv.tux.pizza",
-          "https://invidious.flokinet.to",
-          "https://invidious.nerdvpn.de",
-        ];
-
-        for (const instance of invidiousInstances) {
-          if (found) break;
-          try {
-            const controller = new AbortController();
-            const timeout = setTimeout(() => controller.abort(), 8000);
-            const res = await fetch(
-              `${instance}/api/v1/search?q=${q}&type=video`,
-              { signal: controller.signal },
-            );
-            clearTimeout(timeout);
-
-            if (res.ok) {
-              const data = await res.json();
-              if (Array.isArray(data) && data.length > 0) {
-                setResults(
-                  data.slice(0, 20).map((v: any) => ({
-                    videoId: v.videoId,
-                    title: v.title || "Unknown",
-                    author: v.author || "Unknown",
-                    length_seconds: v.lengthSeconds || v.length_seconds || 0,
-                    thumbnail:
-                      v.videoThumbnails?.[0]?.url ||
-                      v.thumbnail ||
-                      `https://i.ytimg.com/vi/${v.videoId}/mqdefault.jpg`,
-                  })),
-                );
-                found = true;
-                break;
-              }
-            }
-          } catch (e) {
-            console.warn(`[YouTube Search] Invidious ${instance} failed`);
-          }
-        }
-      }
-
-      // Strategy 3: CORS Proxy + YouTube HTML scraping (Absolute Fallback)
-      if (!found) {
-        try {
-          const corsProxies = [
-            `https://api.allorigins.win/get?url=${encodeURIComponent(`https://www.youtube.com/results?search_query=${q}&gl=US&hl=en`)}`,
-            `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(`https://www.youtube.com/results?search_query=${q}&gl=US&hl=en`)}`,
-            `https://corsproxy.io/?${encodeURIComponent(`https://www.youtube.com/results?search_query=${q}&gl=US&hl=en`)}`,
-          ];
-
-          for (const proxy of corsProxies) {
-            if (found) break;
-            try {
-              const controller = new AbortController();
-              const timeout = setTimeout(() => controller.abort(), 10000);
-              const res = await fetch(proxy, { signal: controller.signal });
-              clearTimeout(timeout);
-
-              if (res.ok) {
-                const contentType = res.headers.get("content-type") || "";
-                let html = "";
-                if (contentType.includes("application/json")) {
-                  const data = await res.json();
-                  html = data.contents || "";
-                } else {
-                  html = await res.text();
-                }
-
-                const match =
-                  html.match(/ytInitialData\s*=\s*(\{[\s\S]+?\});/s) ||
-                  html.match(
-                    /window\["ytInitialData"\]\s*=\s*(\{[\s\S]+?\});/s,
-                  );
-                if (match) {
-                  const ytData = JSON.parse(match[1]);
-                  const videos: any[] = [];
-                  const findVideos = (obj: any) => {
-                    if (videos.length >= 20) return;
-                    if (Array.isArray(obj)) {
-                      for (const item of obj) findVideos(item);
-                    } else if (obj !== null && typeof obj === "object") {
-                      if (obj.videoRenderer && obj.videoRenderer.videoId) {
-                        videos.push(obj.videoRenderer);
-                      } else {
-                        for (const key of Object.keys(obj))
-                          findVideos(obj[key]);
-                      }
-                    }
-                  };
-                  findVideos(ytData);
-
-                  if (videos.length > 0) {
-                    const formatted = videos.map((v) => {
-                      const timeStr = v.lengthText?.simpleText || "0:00";
-                      const parts = timeStr.split(":").map(Number);
-                      const length_seconds =
-                        parts.length === 3
-                          ? parts[0] * 3600 + parts[1] * 60 + parts[2]
-                          : parts.length === 2
-                            ? parts[0] * 60 + parts[1]
-                            : parts[0] || 0;
-
-                      return {
-                        videoId: v.videoId,
-                        title: v.title?.runs?.[0]?.text || "Unknown",
-                        author: v.ownerText?.runs?.[0]?.text || "Unknown",
-                        length_seconds,
-                        thumbnail:
-                          v.thumbnail?.thumbnails?.[0]?.url ||
-                          `https://i.ytimg.com/vi/${v.videoId}/mqdefault.jpg`,
-                      };
-                    });
-                    setResults(formatted);
-                    found = true;
-                    break;
-                  }
-                }
-              }
-            } catch (e) {
-              console.warn("[YouTube Search] Proxy scraping failed");
-            }
-          }
-        } catch (err) {
-          console.warn("[YouTube Search] Strategy 3 failed");
-        }
-      }
-
-      if (!found) {
+      if (fastestResults && fastestResults.length > 0) {
+        setResults(fastestResults.slice(0, 50));
+      } else {
         setError("No results found. Try a different search term.");
       }
-    } catch (err) {
+    } catch (err: any) {
       setError("Search failed. Please try again.");
       console.error(err);
     } finally {
@@ -981,12 +1248,12 @@ function YouTubeVideoSearchModal({
           </div>
           {error && <p className="text-sm text-red-400">{error}</p>}
           <p className="text-xs text-muted-foreground">
-            Showing up to 20 results
+          Showing up to 50 results
           </p>
         </div>
 
         {/* Results */}
-        <div className="flex-1 overflow-y-auto p-4 md:p-6">
+      <div className="flex-1 overflow-y-auto p-4 md:p-6 flex flex-col">
           {results.length === 0 && !loading && searchQuery && (
             <div className="text-center py-8 text-muted-foreground">
               <FileVideo className="h-12 w-12 mx-auto mb-3 opacity-20" />
@@ -1001,8 +1268,8 @@ function YouTubeVideoSearchModal({
             </div>
           )}
 
-          <div className="space-y-2 md:space-y-3">
-            {results.map((result) => (
+        <div className="space-y-2 md:space-y-3 flex-1">
+          {results.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage).map((result) => (
               <motion.div
                 key={result.videoId}
                 initial={{ opacity: 0, y: 10 }}
@@ -1048,6 +1315,32 @@ function YouTubeVideoSearchModal({
               </motion.div>
             ))}
           </div>
+
+        {Math.ceil(results.length / itemsPerPage) > 1 && !loading && (
+          <div className="flex items-center justify-between pt-4 mt-2 border-t border-border shrink-0">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+              disabled={currentPage === 1}
+              className="text-xs"
+            >
+              Previous
+            </Button>
+            <span className="text-xs text-muted-foreground font-medium">
+              Page {currentPage} of {Math.ceil(results.length / itemsPerPage)}
+            </span>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setCurrentPage(p => Math.min(Math.ceil(results.length / itemsPerPage), p + 1))}
+              disabled={currentPage === Math.ceil(results.length / itemsPerPage)}
+              className="text-xs"
+            >
+              Next
+            </Button>
+          </div>
+        )}
 
           {loading && (
             <div className="flex flex-col items-center justify-center py-12">
@@ -1129,6 +1422,7 @@ export default function VideoPage() {
   );
   const [newNoteText, setNewNoteText] = useState("");
   const [showYouTubeSearch, setShowYouTubeSearch] = useState(false);
+  const [showSettingsMenu, setShowSettingsMenu] = useState(false);
 
   // Refs
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -1346,9 +1640,11 @@ export default function VideoPage() {
           rel: 0,
           modestbranding: 1,
           iv_load_policy: 3,
+          cc_load_policy: 1,
           fs: 0,
           disablekb: 1,
           enablejsapi: 1,
+            playsinline: 1,
           origin: window.location.origin,
         },
         events: {
@@ -1358,6 +1654,7 @@ export default function VideoPage() {
             if (mutedObjRef.current) e.target.mute();
             else e.target.unMute();
             e.target.setPlaybackRate(speedObjRef.current);
+            try { e.target.loadModule("captions"); } catch {}
           },
           onStateChange: (e: any) => {
             const YT = (window as any).YT.PlayerState;
@@ -1371,6 +1668,10 @@ export default function VideoPage() {
     });
     return () => {
       cancelled = true;
+      if (ytPlayerRef.current) {
+        try { ytPlayerRef.current.destroy(); } catch {}
+        ytPlayerRef.current = null;
+      }
     };
   }, [videoType, videoSrc]);
 
@@ -1383,10 +1684,10 @@ export default function VideoPage() {
     }
     progressIntervalRef.current = setInterval(() => {
       let t = 0;
-      if (videoType === "youtube" && ytPlayerRef.current?.getCurrentTime) {
+      if (videoType === "youtube" && ytPlayerRef.current && typeof ytPlayerRef.current.getCurrentTime === "function") {
         t = ytPlayerRef.current.getCurrentTime();
         setCurrentTime(t);
-        setDuration(ytPlayerRef.current.getDuration() || 0);
+        setDuration(typeof ytPlayerRef.current.getDuration === "function" ? ytPlayerRef.current.getDuration() || 0 : durationRef.current);
       } else if (videoRef.current) {
         t = videoRef.current.currentTime;
         setCurrentTime(t);
@@ -1445,9 +1746,11 @@ export default function VideoPage() {
   // ── Playback controls ─────────────────────────────────────────────────────
   const handlePlayPause = useCallback(() => {
     if (videoType === "youtube" && ytPlayerRef.current) {
-      const state = ytPlayerRef.current.getPlayerState?.();
-      if (state === 1) ytPlayerRef.current.pauseVideo();
-      else ytPlayerRef.current.playVideo();
+      if (typeof ytPlayerRef.current.getPlayerState === "function") {
+        const state = ytPlayerRef.current.getPlayerState();
+        if (state === 1 && typeof ytPlayerRef.current.pauseVideo === "function") ytPlayerRef.current.pauseVideo();
+        else if (typeof ytPlayerRef.current.playVideo === "function") ytPlayerRef.current.playVideo();
+      }
     } else if (videoRef.current) {
       if (videoRef.current.paused) videoRef.current.play().catch(() => {});
       else videoRef.current.pause();
@@ -1458,7 +1761,9 @@ export default function VideoPage() {
     (time: number) => {
       const t = Math.max(0, Math.min(durationRef.current, time));
       if (videoType === "youtube" && ytPlayerRef.current) {
-        ytPlayerRef.current.seekTo(t, true);
+        if (typeof ytPlayerRef.current.seekTo === "function") {
+          ytPlayerRef.current.seekTo(t, true);
+        }
       } else if (videoRef.current) {
         videoRef.current.currentTime = t;
       }
@@ -1477,9 +1782,11 @@ export default function VideoPage() {
       const vol = Math.max(0, Math.min(1, v));
       setVolume(vol);
       if (videoType === "youtube" && ytPlayerRef.current) {
-        ytPlayerRef.current.setVolume(vol * 100);
+        if (typeof ytPlayerRef.current.setVolume === "function") {
+          ytPlayerRef.current.setVolume(vol * 100);
+        }
         if (vol > 0 && mutedObjRef.current) {
-          ytPlayerRef.current.unMute();
+          if (typeof ytPlayerRef.current.unMute === "function") ytPlayerRef.current.unMute();
           setMuted(false);
         }
       } else if (videoRef.current) {
@@ -1493,8 +1800,8 @@ export default function VideoPage() {
     setMuted((prev) => {
       const next = !prev;
       if (videoType === "youtube" && ytPlayerRef.current) {
-        if (next) ytPlayerRef.current.mute();
-        else ytPlayerRef.current.unMute();
+        if (next && typeof ytPlayerRef.current.mute === "function") ytPlayerRef.current.mute();
+        else if (!next && typeof ytPlayerRef.current.unMute === "function") ytPlayerRef.current.unMute();
       } else if (videoRef.current) {
         videoRef.current.muted = next;
       }
@@ -1506,7 +1813,9 @@ export default function VideoPage() {
     (s: number) => {
       setSpeed(s);
       if (videoType === "youtube" && ytPlayerRef.current) {
-        ytPlayerRef.current.setPlaybackRate(s);
+        if (typeof ytPlayerRef.current.setPlaybackRate === "function") {
+          ytPlayerRef.current.setPlaybackRate(s);
+        }
       } else if (videoRef.current) {
         videoRef.current.playbackRate = s;
       }
@@ -1701,8 +2010,8 @@ export default function VideoPage() {
   // ── Timeline block actions ────────────────────────────────────────────────
   const addTimelineBlock = () => {
     const ts =
-      videoType === "youtube" && ytPlayerRef.current
-        ? (ytPlayerRef.current.getCurrentTime?.() ?? currentTime)
+      videoType === "youtube" && ytPlayerRef.current && typeof ytPlayerRef.current.getCurrentTime === "function"
+        ? (ytPlayerRef.current.getCurrentTime() ?? currentTime)
         : (videoRef.current?.currentTime ?? currentTime);
     const block: NoteBlock = {
       id: uuid(),
@@ -1776,8 +2085,8 @@ export default function VideoPage() {
 
         if (blockId === "NEW") {
           const ts =
-            videoType === "youtube" && ytPlayerRef.current
-              ? (ytPlayerRef.current.getCurrentTime?.() ?? currentTime)
+            videoType === "youtube" && ytPlayerRef.current && typeof ytPlayerRef.current.getCurrentTime === "function"
+              ? (ytPlayerRef.current.getCurrentTime() ?? currentTime)
               : (videoRef.current?.currentTime ?? currentTime);
           const block: NoteBlock = {
             id: uuid(),
@@ -1829,8 +2138,8 @@ export default function VideoPage() {
 
     if (screenshotTargetBlockId === "NEW") {
       const ts =
-        videoType === "youtube" && ytPlayerRef.current
-          ? (ytPlayerRef.current.getCurrentTime?.() ?? currentTime)
+        videoType === "youtube" && ytPlayerRef.current && typeof ytPlayerRef.current.getCurrentTime === "function"
+          ? (ytPlayerRef.current.getCurrentTime() ?? currentTime)
           : (videoRef.current?.currentTime ?? currentTime);
       const block: NoteBlock = {
         id: uuid(),
@@ -1878,8 +2187,8 @@ export default function VideoPage() {
   const addQuickNote = () => {
     if (!newNoteText.trim()) return;
     const ts =
-      videoType === "youtube" && ytPlayerRef.current
-        ? (ytPlayerRef.current.getCurrentTime?.() ?? currentTime)
+      videoType === "youtube" && ytPlayerRef.current && typeof ytPlayerRef.current.getCurrentTime === "function"
+        ? (ytPlayerRef.current.getCurrentTime() ?? currentTime)
         : (videoRef.current?.currentTime ?? currentTime);
     const block: NoteBlock = {
       id: uuid(),
@@ -1894,9 +2203,9 @@ export default function VideoPage() {
 
   const jumpToTimestamp = (ts: number) => {
     handleSeek(ts);
-    if (videoType === "youtube" && ytPlayerRef.current)
-      ytPlayerRef.current.playVideo();
-    else if (videoRef.current) videoRef.current.play().catch(() => {});
+    if (videoType === "youtube" && ytPlayerRef.current) {
+      if (typeof ytPlayerRef.current.playVideo === "function") ytPlayerRef.current.playVideo();
+    } else if (videoRef.current) videoRef.current.play().catch(() => {});
   };
 
   // ── Section tree helpers ──────────────────────────────────────────────────
@@ -2572,16 +2881,8 @@ export default function VideoPage() {
     </>
   );
 
-  // ─── Render ───────────────────────────────────────────────────────────────
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0 }}
-      className="flex h-full overflow-hidden bg-background flex-col md:flex-row"
-    >
-      {/* ── Left Sidebar ── Toggleable on mobile, visible on tablet+ */}
-      <div
+  const SidebarContent = useMemo(() => (
+    <div
         className={cn(
           "w-full md:w-48 lg:w-56 xl:w-60 shrink-0 border-r border-border flex-col bg-card/95 backdrop-blur-xl overflow-hidden",
           showMobileSidebar
@@ -2872,6 +3173,19 @@ export default function VideoPage() {
           </div>
         </div>
       </div>
+  ), [sections, activeItemId, activeLeafId, renamingId, renameVal, activeColorPicker, showMobileSidebar]);
+
+  const MemoizedNotesPanel = useMemo(() => renderNotesPanelContent(), [notes, editingBlockId, editingText, mediaUrls, recording, recordingTime, recordingTargetBlockId, newNoteText, screenshotTargetBlockId]);
+
+  // ─── Render ───────────────────────────────────────────────────────────────
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0 }}
+      className="flex h-full overflow-hidden bg-background flex-col md:flex-row"
+    >
+      {SidebarContent}
 
       {/* ── Main Area ── Responsive */}
       <div className="flex-1 flex flex-col overflow-hidden">
@@ -3010,6 +3324,8 @@ export default function VideoPage() {
                         src={videoSrc}
                         className="w-full h-full object-contain"
                         playsInline
+                        crossOrigin="anonymous"
+                        onLoadedMetadata={(e) => setDuration(e.currentTarget.duration || 0)}
                         onClick={handlePlayPause}
                       />
                     )}
@@ -3017,7 +3333,9 @@ export default function VideoPage() {
                     {/* YouTube Player with overlay */}
                     {videoType === "youtube" && (
                       <div className="relative w-full h-full">
-                        <div ref={ytDivRef} className="w-full h-full" />
+                        <div className="w-full h-full pointer-events-none">
+                          <div ref={ytDivRef} className="w-full h-full" />
+                        </div>
                         {/* Transparent overlay to capture click events for custom controls */}
                         <div
                           className="absolute inset-0 z-10"
@@ -3041,9 +3359,8 @@ export default function VideoPage() {
                           animate={{ opacity: 1 }}
                           exit={{ opacity: 0 }}
                           className={cn(
-                            "bg-gradient-to-t from-black/80 via-black/30 to-transparent",
                             isFullscreen
-                              ? "absolute bottom-0 left-0 right-0 z-30"
+                              ? "absolute bottom-0 left-0 right-0 z-30 bg-gradient-to-t from-black/90 via-black/60 to-transparent"
                               : "bg-card border-t border-border",
                           )}
                         >
@@ -3103,7 +3420,7 @@ export default function VideoPage() {
                                 resetControlsTimer();
                               }}
                             >
-                              <div className="h-1.5 bg-white/20 rounded-full overflow-hidden group-hover:h-2.5 transition-all">
+                              <div className={cn("h-1.5 rounded-full overflow-hidden group-hover:h-2.5 transition-all", isFullscreen ? "bg-white/20" : "bg-primary/20")}>
                                 <div
                                   className="h-full bg-primary rounded-full"
                                   style={{ width: `${progress}%` }}
@@ -3116,7 +3433,7 @@ export default function VideoPage() {
                                   handleSeekRelative(-10);
                                   resetControlsTimer();
                                 }}
-                                className="p-1.5 hover:bg-white/10 rounded-lg text-white/80 transition-colors"
+                                className={cn("p-1.5 rounded-lg transition-colors", isFullscreen ? "text-white/80 hover:bg-white/10" : "text-muted-foreground hover:bg-accent hover:text-foreground")}
                               >
                                 <SkipBack className="h-3.5 w-3.5" />
                               </button>
@@ -3138,25 +3455,25 @@ export default function VideoPage() {
                                   handleSeekRelative(10);
                                   resetControlsTimer();
                                 }}
-                                className="p-1.5 hover:bg-white/10 rounded-lg text-white/80 transition-colors"
+                                className={cn("p-1.5 rounded-lg transition-colors", isFullscreen ? "text-white/80 hover:bg-white/10" : "text-muted-foreground hover:bg-accent hover:text-foreground")}
                               >
                                 <SkipForward className="h-3.5 w-3.5" />
                               </button>
-                              <span className="text-xs text-white/70 tabular-nums">
+                              <span className={cn("text-xs tabular-nums", isFullscreen ? "text-white/70" : "text-muted-foreground")}>
                                 {formatTime(currentTime)} /{" "}
                                 {formatTime(duration)}
                               </span>
                               <div className="flex-1" />
                               <button
                                 onClick={() => setShowYouTubeSearch(true)}
-                                className="p-1.5 hover:bg-white/10 rounded-lg text-white/80 transition-colors"
+                                className={cn("p-1.5 rounded-lg transition-colors", isFullscreen ? "text-white/80 hover:bg-white/10" : "text-muted-foreground hover:bg-accent hover:text-foreground")}
                                 title="Search YouTube"
                               >
                                 <Search className="h-3.5 w-3.5" />
                               </button>
                               <button
                                 onClick={handleMute}
-                                className="p-1.5 hover:bg-white/10 rounded-lg text-white/80 transition-colors"
+                                className={cn("p-1.5 rounded-lg transition-colors", isFullscreen ? "text-white/80 hover:bg-white/10" : "text-muted-foreground hover:bg-accent hover:text-foreground")}
                               >
                                 {muted || volume === 0 ? (
                                   <VolumeX className="h-3.5 w-3.5" />
@@ -3180,7 +3497,7 @@ export default function VideoPage() {
                               <div className="relative">
                                 <button
                                   onClick={() => setShowSpeedPopup((p) => !p)}
-                                  className="flex items-center gap-1 px-2 py-1 rounded-lg text-xs font-medium bg-white/10 text-white/80 hover:bg-white/20 border border-white/20"
+                                  className={cn("flex items-center gap-1 px-2 py-1 rounded-lg text-xs font-medium transition-colors border", isFullscreen ? "bg-white/10 text-white/80 hover:bg-white/20 border-white/20" : "bg-muted text-foreground hover:bg-accent border-border")}
                                 >
                                   <Gauge className="h-3 w-3" />
                                   {speed.toFixed(2)}x
@@ -3195,17 +3512,37 @@ export default function VideoPage() {
                                   )}
                                 </AnimatePresence>
                               </div>
+                              <div className="relative">
+                                <button
+                                  onClick={() => setShowSettingsMenu((p) => !p)}
+                                  className={cn("p-1.5 rounded-lg transition-colors", isFullscreen ? "text-white/80 hover:bg-white/10" : "text-muted-foreground hover:bg-accent hover:text-foreground")}
+                                  title="Settings (Quality, CC, Audio)"
+                                >
+                                  <Settings className="h-3.5 w-3.5" />
+                                </button>
+                                <AnimatePresence>
+                                  {showSettingsMenu && (
+                                    <VideoSettingsPopup
+                                      videoType={videoType}
+                                      videoSrc={videoSrc}
+                                      ytPlayer={ytPlayerRef.current}
+                                      videoEl={videoRef.current}
+                                      onClose={() => setShowSettingsMenu(false)}
+                                    />
+                                  )}
+                                </AnimatePresence>
+                              </div>
                               {!isFullscreen && (
                                 <button
                                   onClick={handleMiniPlayer}
-                                  className="p-1.5 hover:bg-white/10 rounded-lg text-white/80"
+                                  className={cn("p-1.5 rounded-lg transition-colors", isFullscreen ? "text-white/80 hover:bg-white/10" : "text-muted-foreground hover:bg-accent hover:text-foreground")}
                                 >
                                   <Minimize2 className="h-3.5 w-3.5" />
                                 </button>
                               )}
                               <button
                                 onClick={toggleFullscreen}
-                                className="p-1.5 hover:bg-white/10 rounded-lg text-white/80"
+                                className={cn("p-1.5 rounded-lg transition-colors", isFullscreen ? "text-white/80 hover:bg-white/10" : "text-muted-foreground hover:bg-accent hover:text-foreground")}
                               >
                                 {isFullscreen ? (
                                   <Maximize2 className="h-3.5 w-3.5" />
@@ -3215,7 +3552,7 @@ export default function VideoPage() {
                               </button>
                             </div>
                             {!isFullscreen && (
-                              <p className="text-[10px] text-white/30 text-center">
+                              <p className="text-[10px] text-muted-foreground text-center">
                                 Space: play/pause · ← →: seek 5s · ↑ ↓: volume ·
                                 M: mute · I: mini · F: fullscreen
                               </p>
@@ -3264,7 +3601,7 @@ export default function VideoPage() {
                       "border-l border-border bg-card/50 flex flex-col overflow-hidden shrink-0 w-full lg:w-80 h-[40vh] lg:h-auto",
                     )}
                   >
-                    {renderNotesPanelContent()}
+                    {MemoizedNotesPanel}
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -3278,7 +3615,7 @@ export default function VideoPage() {
                     transition={{ duration: 0.15 }}
                     className="absolute top-0 right-0 bottom-0 z-40 w-full max-w-[28rem] border-l border-border bg-card/95 backdrop-blur-md shadow-2xl overflow-hidden"
                   >
-                    {renderNotesPanelContent()}
+                    {MemoizedNotesPanel}
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -3364,12 +3701,14 @@ export default function VideoPage() {
                 (() => {
                   const ytId = getYouTubeId(videoSrc);
                   return ytId ? (
-                    <iframe
-                      src={`https://www.youtube-nocookie.com/embed/${ytId}?start=${Math.floor(currentTimeRef.current)}&autoplay=1&rel=0&modestbranding=1&controls=1`}
-                      className="w-full h-full border-0"
-                      allow="autoplay; fullscreen"
-                      allowFullScreen
-                    />
+                    <div className="w-full h-full pointer-events-none">
+                      <iframe
+                        src={`https://www.youtube-nocookie.com/embed/${ytId}?start=${Math.floor(currentTimeRef.current)}&autoplay=1&rel=0&modestbranding=1&controls=0&iv_load_policy=3&showinfo=0&disablekb=1&fs=0`}
+                        className="w-full h-full border-0"
+                        allow="autoplay; fullscreen"
+                        allowFullScreen
+                      />
+                    </div>
                   ) : null;
                 })()}
               <div className="absolute bottom-0 left-0 right-0 h-1 bg-black/40 pointer-events-none">

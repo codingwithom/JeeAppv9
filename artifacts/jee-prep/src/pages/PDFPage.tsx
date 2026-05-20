@@ -1,9 +1,10 @@
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useEffect, useCallback, useMemo, useLayoutEffect } from "react";
 import { motion, AnimatePresence, Reorder } from "framer-motion";
 import { idbSet, idbGet } from "@/lib/idb";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
 import { useWorkspaceContext } from "@/context/WorkspaceContext";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import {
   Upload,
   ZoomIn,
@@ -34,6 +35,9 @@ import {
   FileUp,
   Image as ImageIcon,
   MoreVertical,
+  Scissors,
+  Save,
+  Check as CheckIcon
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -62,6 +66,31 @@ interface DrawItem {
   text?: string;
   fontSize?: number;
 }
+
+interface CropArea {
+  id: string;
+  x: number; // relative to canvas width (0-1)
+  y: number; // relative to canvas height (0-1)
+  w: number; // relative to canvas width
+  h: number; // relative to canvas height
+}
+
+// --- Saves Types for Integration ---
+interface SavedQuestion {
+  id: string;
+  name: string;
+  questionImageKey?: string;
+  questionUrl?: string;
+  answerText?: string;
+  answerImageKey?: string;
+  answerUrl?: string;
+  description?: string;
+  isCorrect?: boolean;
+  createdAt: number;
+}
+interface QuestionSource { id: string; name: string; }
+interface QuestionChapter { id: string; name: string; sources: QuestionSource[]; }
+interface QuestionSubject { id: string; name: string; chapters: QuestionChapter[]; }
 
 interface PDFSubSubsection {
   id: string;
@@ -457,6 +486,264 @@ function UploadModal({
   );
 }
 
+// ─── Multi-Crop Helper ──────────────────────────────────────────────────────
+function CropBox({ crop, active, onUpdate, onDelete, containerRef }: { 
+  crop: CropArea, 
+  active: boolean, 
+  onUpdate: (u: Partial<CropArea>) => void,
+  onDelete: () => void,
+  containerRef: React.RefObject<HTMLDivElement>
+}) {
+  const [isDragging, setIsDragging] = useState(false);
+  const [isResizing, setIsResizing] = useState<string | null>(null);
+  const startRef = useRef({ x: 0, y: 0, cropX: 0, cropY: 0, cropW: 0, cropH: 0 });
+
+  const onPointerDown = (e: React.PointerEvent, type: string | null) => {
+    e.stopPropagation();
+    if (!containerRef.current) return;
+    const rect = containerRef.current.getBoundingClientRect();
+    startRef.current = { 
+      x: e.clientX, y: e.clientY, 
+      cropX: crop.x, cropY: crop.y, 
+      cropW: crop.w, cropH: crop.h 
+    };
+    if (type === 'move') setIsDragging(true);
+    else setIsResizing(type);
+    (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
+    resetControlsTimer?.();
+  };
+
+  const onPointerMove = (e: React.PointerEvent) => {
+    if (!isDragging && !isResizing) return;
+    if (!containerRef.current) return;
+    const rect = containerRef.current.getBoundingClientRect();
+    const dx = (e.clientX - startRef.current.x) / rect.width;
+    const dy = (e.clientY - startRef.current.y) / rect.height;
+
+    if (isDragging) {
+      onUpdate({ 
+        x: Math.max(0, Math.min(1 - crop.w, startRef.current.cropX + dx)),
+        y: Math.max(0, Math.min(1 - crop.h, startRef.current.cropY + dy))
+      });
+    } else if (isResizing) {
+      let { cropX, cropY, cropW, cropH } = startRef.current;
+      if (isResizing.includes('e')) cropW = Math.max(0.01, Math.min(1 - cropX, cropW + dx));
+      if (isResizing.includes('s')) cropH = Math.max(0.01, Math.min(1 - cropY, cropH + dy));
+      if (isResizing.includes('w')) {
+        const nextW = Math.max(0.01, cropW - dx);
+        if (nextW !== cropW) { cropX = cropX + (cropW - nextW); cropW = nextW; }
+      }
+      if (isResizing.includes('n')) {
+        const nextH = Math.max(0.01, cropH - dy);
+        if (nextH !== cropH) { cropY = cropY + (cropH - nextH); cropH = nextH; }
+      }
+      onUpdate({ x: cropX, y: cropY, w: cropW, h: cropH });
+    }
+  };
+
+  const onPointerUp = (e: React.PointerEvent) => {
+    setIsDragging(false);
+    setIsResizing(null);
+    (e.currentTarget as HTMLElement).releasePointerCapture(e.pointerId);
+  };
+
+  const handles = ['nw', 'n', 'ne', 'e', 'se', 's', 'sw', 'w'];
+
+  return (
+    <div 
+      className={cn(
+        "absolute border-2 transition-colors group select-none",
+        active ? "border-primary bg-primary/5 z-30" : "border-white/50 bg-white/5 z-20 hover:border-white"
+      )}
+      style={{ left: `${crop.x * 100}%`, top: `${crop.y * 100}%`, width: `${crop.w * 100}%`, height: `${crop.h * 100}%` }}
+      onPointerDown={(e) => onPointerDown(e, 'move')}
+      onPointerMove={onPointerMove}
+      onPointerUp={onPointerUp}
+    >
+      {/* Label */}
+      <div className="absolute -top-6 left-0 bg-primary text-white text-[10px] font-bold px-1.5 py-0.5 rounded flex items-center gap-2 whitespace-nowrap shadow-lg">
+        Q {crop.id.slice(-2)}
+        <button onClick={(e) => { e.stopPropagation(); onDelete(); }} className="hover:text-red-200"><X className="h-3 w-3"/></button>
+      </div>
+
+      {/* Resize Handles */}
+      {handles.map(h => (
+        <div 
+          key={h}
+          onPointerDown={(e) => onPointerDown(e, h)}
+          className={cn(
+            "absolute w-3 h-3 bg-white border-2 border-primary rounded-full -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity",
+            active && "opacity-100",
+            h.includes('n') && "top-0", h.includes('s') && "top-full",
+            h.includes('w') && "left-0", h.includes('e') && "left-full",
+            h === 'n' || h === 's' ? "left-1/2 cursor-ns-resize" : 
+            h === 'e' || h === 'w' ? "top-1/2 cursor-ew-resize" : 
+            (h === 'nw' || h === 'se') ? "cursor-nwse-resize" : "cursor-nesw-resize"
+          )}
+        />
+      ))}
+    </div>
+  );
+}
+
+// ─── Destination Picker ──────────────────────────────────────────────────────
+function SourcePicker({ onConfirm, onClose }: { onConfirm: (id: string) => void, onClose: () => void }) {
+  const [subjects] = useLocalStorage<QuestionSubject[]>("jee_saves_subjects_v1", []);
+  const [sel, setSel] = useState("");
+
+  return (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+      <motion.div initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="bg-card border border-border rounded-2xl p-6 w-full max-w-sm shadow-2xl">
+        <h3 className="text-sm font-bold mb-4">Select Destination Source</h3>
+        <div className="max-h-60 overflow-y-auto space-y-1 mb-6">
+          {subjects.map(sub => (
+            <div key={sub.id} className="space-y-1">
+              <p className="text-[10px] font-bold text-muted-foreground uppercase px-2 mt-2">{sub.name}</p>
+              {sub.chapters.map(chap => (
+                <div key={chap.id} className="pl-2 space-y-0.5">
+                   {chap.sources.map(src => (
+                     <button 
+                        key={src.id} 
+                        onClick={() => setSel(src.id)}
+                        className={cn("w-full text-left px-3 py-1.5 text-xs rounded-lg transition-colors", sel === src.id ? "bg-primary text-primary-foreground" : "hover:bg-muted text-foreground")}
+                     >
+                       {src.name}
+                     </button>
+                   ))}
+                </div>
+              ))}
+            </div>
+          ))}
+          {subjects.length === 0 && <p className="text-xs text-muted-foreground text-center py-4">No sources found. Create one in 'Saves' first.</p>}
+        </div>
+        <div className="flex gap-2">
+          <Button variant="outline" size="sm" className="flex-1" onClick={onClose}>Cancel</Button>
+          <Button size="sm" className="flex-1" disabled={!sel} onClick={() => onConfirm(sel)}>Add</Button>
+        </div>
+      </motion.div>
+    </div>
+  );
+}
+
+// ─── Multi-Crop Editor Panel ────────────────────────────────────────────────
+function MultiCropEditor({ 
+  crops, 
+  onClose, 
+  onSave 
+}: { 
+  crops: any[], 
+  onClose: () => void, 
+  onSave: (data: any[]) => void 
+}) {
+  const [editedCrops, setEditedCrops] = useState(crops);
+
+  const updateField = (id: string, field: string, value: any) => {
+    setEditedCrops(prev => prev.map(c => c.id === id ? { ...c, [field]: value } : c));
+  };
+
+  return (
+    <div className="fixed inset-0 z-[150] flex flex-col bg-background">
+      <div className="flex items-center justify-between px-6 py-4 border-b border-border bg-card">
+        <div>
+          <h2 className="text-lg font-bold flex items-center gap-2">
+            <Scissors className="h-5 w-5 text-primary" /> Import Questions ({editedCrops.length})
+          </h2>
+          <p className="text-xs text-muted-foreground">Review and add details for your cropped questions</p>
+        </div>
+        <div className="flex items-center gap-3">
+          <Button variant="outline" size="sm" onClick={onClose}>Discard All</Button>
+          <Button size="sm" className="font-bold px-6" onClick={() => onSave(editedCrops)}>Import All Questions</Button>
+        </div>
+      </div>
+
+      <div className="flex-1 overflow-y-auto p-6 space-y-8 bg-muted/20">
+        <div className="max-w-4xl mx-auto space-y-8">
+          {editedCrops.map((crop, idx) => (
+            <motion.div 
+              key={crop.id} 
+              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.05 }}
+              className="bg-card border border-border rounded-2xl overflow-hidden shadow-sm flex flex-col md:flex-row"
+            >
+              {/* Left: Image Preview */}
+              <div className="w-full md:w-1/3 bg-muted/40 p-4 border-b md:border-b-0 md:border-r border-border flex items-center justify-center">
+                <div className="relative group rounded-lg overflow-hidden border border-border bg-white shadow-inner">
+                  <img src={crop.imageUrl} className="max-h-60 w-full object-contain" alt="Question Crop" />
+                  <div className="absolute top-2 left-2 bg-primary text-white text-[10px] font-bold px-2 py-0.5 rounded shadow">
+                    Q {idx + 1}
+                  </div>
+                </div>
+              </div>
+
+              {/* Right: Inputs */}
+              <div className="flex-1 p-6 space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-1.5">
+                    <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">Question Name/No</p>
+                    <Input 
+                      value={crop.name} 
+                      onChange={e => updateField(crop.id, 'name', e.target.value)} 
+                      placeholder="e.g. Q1" 
+                    />
+                  </div>
+                  <div className="space-y-1.5">
+                    <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">Option Status</p>
+                    <div className="flex gap-2">
+                      <button 
+                        onClick={() => updateField(crop.id, 'isCorrect', crop.isCorrect === true ? undefined : true)}
+                        className={cn("flex-1 h-9 rounded-lg border text-[10px] font-bold flex items-center justify-center gap-1.5 transition-all", 
+                          crop.isCorrect === true ? "bg-green-500/10 border-green-500 text-green-500" : "bg-muted text-muted-foreground border-transparent")}
+                      >
+                        <CheckIcon className="h-3.5 w-3.5" /> Correct
+                      </button>
+                      <button 
+                        onClick={() => updateField(crop.id, 'isCorrect', crop.isCorrect === false ? undefined : false)}
+                        className={cn("flex-1 h-9 rounded-lg border text-[10px] font-bold flex items-center justify-center gap-1.5 transition-all", 
+                          crop.isCorrect === false ? "bg-red-500/10 border-red-500 text-red-500" : "bg-muted text-muted-foreground border-transparent")}
+                      >
+                        <X className="h-3.5 w-3.5" /> Incorrect
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="space-y-1.5">
+                  <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">Answer Section (Text or Image URL)</p>
+                  <div className="space-y-2">
+                    <textarea 
+                      value={crop.answerText} 
+                      onChange={e => updateField(crop.id, 'answerText', e.target.value)}
+                      placeholder="Type plain text answer..." 
+                      rows={2} 
+                      className="w-full text-xs px-3 py-2 rounded-lg bg-muted/50 border border-border text-foreground placeholder:text-muted-foreground resize-none focus:outline-none focus:ring-1 focus:ring-primary/30"
+                    />
+                    <Input 
+                      value={crop.answerUrl} 
+                      onChange={e => updateField(crop.id, 'answerUrl', e.target.value)}
+                      placeholder="Paste answer image URL..." 
+                      className="h-8 text-[11px]"
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-1.5">
+                  <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">Description</p>
+                  <textarea 
+                    value={crop.description} 
+                    onChange={e => updateField(crop.id, 'description', e.target.value)}
+                    placeholder="Additional notes..." 
+                    rows={2} 
+                    className="w-full text-xs px-3 py-2 rounded-lg bg-muted/50 border border-border text-foreground placeholder:text-muted-foreground resize-none focus:outline-none focus:ring-1 focus:ring-primary/30"
+                  />
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ─── PDF Page Component ───────────────────────────────────────────────────────
 export default function PDFPage() {
   const [sections, setSections] = useLocalStorage<PDFSection[]>(
@@ -471,6 +758,20 @@ export default function PDFPage() {
   const [showMobileSidebar, setShowMobileSidebar] = useState(() =>
     typeof window !== "undefined" ? window.innerWidth < 768 : false,
   );
+
+  // Multi-Crop State
+  const [isCropMode, setIsCropMode] = useState(false);
+  const [crops, setCrops] = useState<CropArea[]>([]);
+  const [activeCropId, setActiveCropId] = useState<string | null>(null);
+  const [showSourcePicker, setShowSourcePicker] = useState(false);
+  const [pendingCrops, setPendingCrops] = useState<any[]>([]);
+  const [selectedSourceId, setSelectedSourceId] = useState<string | null>(null);
+  const [isSavingCrops, setIsSavingCrops] = useState(false);
+  const [allQuestions, setAllQuestions] = useLocalStorage<Record<string, SavedQuestion[]>>("jee_saves_questions_v1", {});
+  const cropContainerRef = useRef<HTMLDivElement>(null);
+  
+  const creatingCropIdRef = useRef<string | null>(null);
+  const creationStartPosRef = useRef({ x: 0, y: 0 });
 
   // Upload modal: targets the item receiving the PDF
   const [uploadTarget, setUploadTarget] = useState<{
@@ -508,6 +809,7 @@ export default function PDFPage() {
   const pdfCanvasRef = useRef<HTMLCanvasElement>(null);
   const drawCanvasRef = useRef<HTMLCanvasElement>(null);
   const renderTaskRef = useRef<any>(null);
+  const pdfjsRef = useRef<any>(null);
 
   const items = undoStack[undoIdx] || [];
 
@@ -612,6 +914,7 @@ export default function PDFPage() {
   const loadPdfFromBuffer = useCallback(
     async (buffer: ArrayBuffer, restoreLeafId?: string) => {
       const pdfjsLib = await import("pdfjs-dist");
+      pdfjsRef.current = pdfjsLib;
       pdfjsLib.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.mjs`;
       const doc = await pdfjsLib.getDocument({ data: buffer.slice(0) }).promise;
       setPdfDoc(doc);
@@ -974,6 +1277,129 @@ export default function PDFPage() {
     link.download = `annotated_page_${pageNum}.png`;
     link.click();
   };
+
+  // ── Multi-Crop Logic ───────────────────────────────────────────────────────
+  const onCropPointerDown = (e: React.PointerEvent) => {
+    if (!isCropMode || e.button !== 0) return;
+    const rect = cropContainerRef.current!.getBoundingClientRect();
+    const x = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+    const y = Math.max(0, Math.min(1, (e.clientY - rect.top) / rect.height));
+    
+    const id = Date.now().toString();
+    creatingCropIdRef.current = id;
+    creationStartPosRef.current = { x, y };
+
+    const newCrop = { id, x, y, w: 0, h: 0 };
+    setCrops(p => [...p, newCrop]);
+    setActiveCropId(id);
+    (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
+  };
+
+  const onCropPointerMove = (e: React.PointerEvent) => {
+    if (!creatingCropIdRef.current) return;
+    const rect = cropContainerRef.current!.getBoundingClientRect();
+    const curX = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+    const curY = Math.max(0, Math.min(1, (e.clientY - rect.top) / rect.height));
+
+    const start = creationStartPosRef.current;
+    const x = Math.min(start.x, curX);
+    const y = Math.min(start.y, curY);
+    const w = Math.abs(curX - start.x);
+    const h = Math.abs(curY - start.y);
+
+    setCrops(prev => prev.map(c => 
+      c.id === creatingCropIdRef.current ? { ...c, x, y, w, h } : c
+    ));
+  };
+
+  const onCropPointerUp = (e: React.PointerEvent) => {
+    if (creatingCropIdRef.current) {
+      setCrops(prev => prev.filter(c => 
+        c.id !== creatingCropIdRef.current || (c.w > 0.005 && c.h > 0.005)
+      ));
+      creatingCropIdRef.current = null;
+      (e.currentTarget as HTMLElement).releasePointerCapture(e.pointerId);
+    }
+  };
+
+  const prepareCropsForEditing = async (targetSourceId: string) => {
+    if (!pdfCanvasRef.current || crops.length === 0) return;
+    setIsSavingCrops(true);
+    const sourceCanvas = pdfCanvasRef.current;
+    const prepared: any[] = [];
+
+    for (const crop of crops) {
+      const temp = document.createElement('canvas');
+      const cw = crop.w * sourceCanvas.width;
+      const ch = crop.h * sourceCanvas.height;
+      temp.width = cw;
+      temp.height = ch;
+      const ctx = temp.getContext('2d')!;
+      ctx.drawImage(sourceCanvas, crop.x * sourceCanvas.width, crop.y * sourceCanvas.height, cw, ch, 0, 0, cw, ch);
+      
+      const blob = await new Promise<Blob>((res) => temp.toBlob(b => res(b!), 'image/jpeg', 0.7));
+      prepared.push({
+        id: crop.id,
+        imageBlob: blob,
+        imageUrl: URL.createObjectURL(blob),
+        name: `Crop ${crop.id.slice(-2)}`,
+        answerText: "",
+        answerUrl: "",
+        description: "",
+        isCorrect: undefined
+      });
+    }
+
+    setPendingCrops(prepared);
+    setSelectedSourceId(targetSourceId);
+    setShowSourcePicker(false);
+    setIsSavingCrops(false);
+  };
+
+  const handleImportAll = async (finalData: any[]) => {
+    if (!selectedSourceId) return;
+    setIsSavingCrops(true);
+    
+    const newQuestions: SavedQuestion[] = [];
+    for (const item of finalData) {
+      const mediaKey = `q_crop_${Date.now()}_${item.id}`;
+      await writeMedia(mediaKey, item.imageBlob);
+
+      newQuestions.push({
+        id: Date.now().toString() + Math.random().toString(36).slice(2),
+        name: item.name,
+        questionImageKey: mediaKey,
+        answerText: item.answerText || undefined,
+        answerUrl: item.answerUrl || undefined,
+        description: item.description || undefined,
+        isCorrect: item.isCorrect,
+        createdAt: Date.now()
+      });
+    }
+
+    setAllQuestions(prev => ({
+      ...prev,
+      [selectedSourceId]: [...(prev[selectedSourceId] || []), ...newQuestions]
+    }));
+
+    setIsSavingCrops(false);
+    setPendingCrops([]);
+    setSelectedSourceId(null);
+    setIsCropMode(false);
+    setCrops([]);
+  };
+
+  // Handle escape to exit crop mode
+  useEffect(() => {
+    const onEsc = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsCropMode(false);
+        setCrops([]);
+      }
+    };
+    window.addEventListener('keydown', onEsc);
+    return () => window.removeEventListener('keydown', onEsc);
+  }, []);
 
   // ── Sections management ──────────────────────────────────────────────────────
   const addSection = () => {
@@ -1497,6 +1923,17 @@ export default function PDFPage() {
           <Button
             variant="outline"
             size="sm"
+            className={cn("h-7 gap-1.5 text-xs shrink-0 transition-all", isCropMode ? "bg-primary text-primary-foreground border-primary" : "hover:bg-primary/10")}
+            onClick={() => { setIsCropMode(!isCropMode); setCrops([]); }}
+            disabled={!pdfDoc}
+          >
+            <Scissors className="h-3 w-3" />
+            {isCropMode ? "Exit Crop" : "Add Ques to Saves"}
+          </Button>
+
+          <Button
+            variant="outline"
+            size="sm"
             className="h-7 gap-1.5 text-xs shrink-0"
             onClick={() => fileInputRef.current?.click()}
           >
@@ -1648,6 +2085,15 @@ export default function PDFPage() {
                   Export
                 </Button>
               </div>
+
+              {isCropMode && crops.length > 0 && (
+                <div className="ml-auto flex items-center gap-2">
+                   <span className="text-[10px] font-bold text-primary animate-pulse">{crops.length} Selected</span>
+                   <Button size="sm" className="h-7 px-3 text-[10px] font-bold gap-1.5" onClick={() => setShowSourcePicker(true)}>
+                      <Save className="h-3 w-3" /> Save to Library
+                   </Button>
+                </div>
+              )}
             </>
           )}
         </div>
@@ -1734,7 +2180,7 @@ export default function PDFPage() {
               )}
             </div>
           ) : (
-            <div
+            <div 
               className="relative shadow-2xl"
               style={{ cursor: cursorStyle }}
             >
@@ -1747,6 +2193,22 @@ export default function PDFPage() {
                 onMouseUp={onMouseUp}
                 onMouseLeave={onMouseUp}
               />
+              
+              {/* Multi-Crop Interface Layer */}
+              {isCropMode && (
+                <div 
+                  ref={cropContainerRef}
+                  className="absolute inset-0 z-40 bg-black/20 cursor-crosshair touch-none"
+                  onPointerDown={onCropPointerDown}
+                  onPointerMove={onCropPointerMove}
+                  onPointerUp={onCropPointerUp}
+                >
+                  {crops.map(c => (
+                    <CropBox key={c.id} crop={c} active={activeCropId === c.id} containerRef={cropContainerRef} onUpdate={(u) => setCrops(prev => prev.map(item => item.id === c.id ? {...item, ...u} : item))} onDelete={() => setCrops(p => p.filter(x => x.id !== c.id))} />
+                  ))}
+                </div>
+              )}
+
               {textInput && (
                 <div
                   className="absolute"
@@ -1803,6 +2265,19 @@ export default function PDFPage() {
           />
         )}
       </AnimatePresence>
+
+      <AnimatePresence>
+        {showSourcePicker && (
+          <SourcePicker onConfirm={prepareCropsForEditing} onClose={() => setShowSourcePicker(false)} />
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {pendingCrops.length > 0 && (
+          <MultiCropEditor crops={pendingCrops} onSave={handleImportAll} onClose={() => setPendingCrops([])} />
+        )}
+      </AnimatePresence>
+
     </motion.div>
   );
 }

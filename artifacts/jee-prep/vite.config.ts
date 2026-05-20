@@ -7,16 +7,14 @@ import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 const port = Number(process.env.PORT) || 3000;
 
 export default defineConfig({
-  // FIX: Using "./" ensures the built HTML finds the JS/CSS files
-  // relative to its own location, preventing the white screen.
-  base: "./",
+  // Use absolute root path for web routing inside Codespaces
+  base: "/",
 
   plugins: [
     react(),
     tailwindcss(),
     runtimeErrorOverlay(),
-    ...(process.env.NODE_ENV !== "production" &&
-    process.env.REPL_ID !== undefined
+    ...(process.env.NODE_ENV !== "production" && process.env.REPL_ID !== undefined
       ? [
           await import("@replit/vite-plugin-cartographer").then((m) =>
             m.cartographer({ root: path.resolve(import.meta.dirname, "..") }),
@@ -34,9 +32,11 @@ export default defineConfig({
     },
     dedupe: ["react", "react-dom"],
   },
+  
+  // CRITICAL FIX: Tells Vite that index.html is located one level up in the workspace root
   root: path.resolve(import.meta.dirname),
+  
   build: {
-    // Standardizing outDir to just 'dist' is often safer in Replit
     outDir: "dist",
     emptyOutDir: true,
     reportCompressedSize: false,
@@ -47,7 +47,8 @@ export default defineConfig({
     host: "0.0.0.0",
     allowedHosts: true,
     fs: {
-      strict: true,
+      // Allow Vite to serve layout components outside this sub-workspace folder
+      strict: false,
     },
     proxy: {
       "/api": {

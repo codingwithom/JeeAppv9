@@ -11,6 +11,8 @@ import {
   ChevronLeft,
   ChevronRight,
   Video,
+  Film,
+  Bookmark,
   X,
   Menu,
 } from "lucide-react";
@@ -53,6 +55,8 @@ export function Sidebar() {
     { href: "/music", label: "Focus Music", icon: Music },
     { href: "/pdf", label: "PDF Viewer", icon: FileText },
     { href: "/video", label: "Videos", icon: Video },
+    { href: "/saves", label: "Saves", icon: Bookmark },
+    { href: "/movies", label: "Movie Hub", icon: Film },
   ];
 
   return (

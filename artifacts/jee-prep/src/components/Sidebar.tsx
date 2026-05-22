@@ -15,6 +15,8 @@ import {
   Bookmark,
   X,
   Menu,
+  Headphones,
+  Trees
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
@@ -52,6 +54,7 @@ export function Sidebar() {
   const links = [
     { href: "/", label: "Dashboard", icon: Home },
     { href: "/calendar", label: "Calendar", icon: Tag },
+    { href: "/ambient", label: "Zen Mixer", icon: Headphones },
     { href: "/music", label: "Focus Music", icon: Music },
     { href: "/pdf", label: "PDF Viewer", icon: FileText },
     { href: "/video", label: "Videos", icon: Video },

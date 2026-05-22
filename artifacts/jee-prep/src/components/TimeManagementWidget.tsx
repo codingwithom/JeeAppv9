@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   Play, Pause, RotateCcw, Flag, Trash2, Plus, X,
-  ChevronUp, ChevronDown, AlarmClock, Timer, Watch, Clock,
+  ChevronUp, ChevronDown, AlarmClock, Timer, Watch, Clock, Sprout
 } from "lucide-react";
 import { playTimerDone, playAlarmRing, setBeepVolume, getBeepVolume } from "@/utils/audio";
 import { Volume2 } from "lucide-react";
@@ -258,6 +258,14 @@ function TimersSection({ isDark }: { isDark: boolean }) {
             playTimerDone();
             if ("Notification" in window && Notification.permission === "granted") {
               new Notification(`⏰ "${t.name}" finished!`);
+            }
+            
+            if (t.totalSecs >= 1500) {
+              const currentPlants = JSON.parse(localStorage.getItem("jee_tm_garden") || "[]");
+              const types = ["🌲", "🌳", "🌵", "🪴", "🌴", "🌻", "🍁", "🍄", "🌺"];
+              const plantType = types[Math.floor(Math.random() * types.length)];
+              currentPlants.push({ id: Date.now(), name: t.name, date: new Date().toISOString(), type: plantType });
+              localStorage.setItem("jee_tm_garden", JSON.stringify(currentPlants));
             }
             return { ...t, running: false, remaining: 0 };
           }
@@ -745,6 +753,61 @@ function AlarmsSection({ isDark }: { isDark: boolean }) {
   );
 }
 
+// ─── GARDEN SECTION ───────────────────────────────────────────────────────────
+function GardenSection({ isDark }: { isDark: boolean }) {
+  const [plants, setPlants] = useState<{id: number, name: string, date: string, type: string}[]>([]);
+  
+  useEffect(() => {
+    const raw = localStorage.getItem("jee_tm_garden");
+    if (raw) setPlants(JSON.parse(raw));
+  }, []);
+
+  const tc = isDark ? "text-white" : "text-gray-900";
+  const mc = isDark ? "text-gray-400" : "text-gray-500";
+  const cardBg = isDark ? "bg-muted/20" : "bg-gray-50";
+
+  return (
+    <div className="space-y-4">
+      <div className="text-center mb-6">
+        <h3 className={`text-xl font-bold ${tc} flex items-center justify-center gap-2`}>
+          <Sprout className="h-5 w-5 text-green-500" /> Focus Garden
+        </h3>
+        <p className={`text-sm ${mc}`}>Grow a plant for every 25+ min timer completed!</p>
+      </div>
+
+      <div className="flex flex-wrap gap-4 justify-center max-h-80 overflow-y-auto p-2">
+        <AnimatePresence>
+          {plants.length === 0 ? (
+             <p className={`text-sm ${mc} py-8`}>No plants yet. Start a 25-minute timer to grow your first plant!</p>
+          ) : (
+            plants.map((p, i) => (
+              <motion.div
+                key={p.id}
+                initial={{ scale: 0, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ type: "spring", delay: Math.min(i * 0.05, 1) }}
+                className={`w-24 h-24 ${cardBg} border border-border/40 rounded-2xl flex flex-col items-center justify-center p-2 relative overflow-hidden group shadow-sm`}
+              >
+                <motion.div 
+                   animate={{ rotate: [-3, 3, -3], y: [0, -2, 0] }} 
+                   transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: Math.min(i * 0.2, 2) }}
+                   className="text-4xl drop-shadow-lg"
+                >
+                  {p.type || ["🌲", "🌳", "🌵", "🪴", "🌴", "🌻"][p.id % 6]}
+                </motion.div>
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-1">
+                  <span className="text-[10px] text-white font-bold truncate w-full text-center px-1">{p.name}</span>
+                  <span className="text-[8px] text-white/70">{new Date(p.date).toLocaleDateString()}</span>
+                </div>
+              </motion.div>
+            ))
+          )}
+        </AnimatePresence>
+      </div>
+    </div>
+  );
+}
+
 // ─── MAIN EXPORT ──────────────────────────────────────────────────────────────
 type Tab = "timers" | "stopwatch" | "alarms";
 
@@ -808,6 +871,10 @@ export function TimeManagementWidget() {
           {tab === "alarms" && <AlarmsSection isDark={isDark} />}
         </motion.div>
       </AnimatePresence>
+
+      <div className="mt-8 pt-6 border-t border-border/60">
+        <GardenSection isDark={isDark} />
+      </div>
     </div>
   );
 }

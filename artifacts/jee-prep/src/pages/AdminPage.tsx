@@ -49,6 +49,7 @@ import {
   RefreshCw,
   ChevronDown,
   ChevronRight as ChevRight,
+  ChevronLeft,
   AlarmClock,
   Layers,
   Globe,
@@ -83,6 +84,26 @@ const TIMELINE_TYPES: Record<
   achievement: { label: "Achievement", color: "#F59E0B", emoji: "🏆" },
   goal: { label: "Goal", color: "#10B981", emoji: "⭐" },
 };
+
+const DEFAULT_TMDB_KEYS = [
+  'fb7bb23f03b6994dafc674c074d01761',
+  'e55425032d3d0f371fc776f302e7c09b',
+  '8301a21598f8b45668d5711a814f01f6',
+  '8cf43ad9c085135b9479ad5cf6bbcbda',
+  'da63548086e399ffc910fbc08526df05',
+  '13e53ff644a8bd4ba37b3e1044ad24f3',
+  '269890f657dddf4635473cf4cf456576',
+  'a2f888b27315e62e471b2d587048f32e',
+  '8476a7ab80ad76f0936744df0430e67c',
+  '5622cafbfe8f8cfe358a29c53e19bba0',
+  'ae4bd1b6fce2a5648671bfc171d15ba4',
+  '257654f35e3dff105574f97fb4b97035',
+  '2f4038e83265214a0dcd6ec2eb3276f5',
+  '9e43f45f94705cc8e1d5a0400d19a7b7',
+  'af6887753365e14160254ac7f4345dd2',
+  '06f10fc8741a672af455421c239a1ffc',
+  '09ad8ace66eec34302943272db0e8d2c'
+];
 
 // ─── Animated counter ───────────────────────────────────────────────────────
 function AnimCounter({
@@ -205,6 +226,199 @@ const ChartTooltip = ({ active, payload, label }: any) => {
   );
 };
 
+function TimeSpentHistory({ records }: { records: Record<string, any> }) {
+  const sortedRecords = useMemo(() => Object.values(records).sort((a, b) => b.date.localeCompare(a.date)), [records]);
+  const [selectedDate, setSelectedDate] = useState<string | null>(null);
+
+  const totalSecs = sortedRecords.reduce((acc, r) => acc + (r.totalSeconds || 0), 0);
+  const totalHours = Math.floor(totalSecs / 3600);
+  const totalMins = Math.floor((totalSecs % 3600) / 60);
+
+  const selectedRecord = selectedDate ? records[selectedDate] : null;
+
+  // Compute histogram data for selected record
+  const histogramData = useMemo(() => {
+    if (!selectedRecord || !selectedRecord.sections) return [];
+    const total = selectedRecord.totalSeconds || 1; // avoid div by zero
+    return Object.entries(selectedRecord.sections).map(([name, secs]: [string, any]) => ({
+      name,
+      time: secs, // For tooltip
+      percentage: Number(((secs / total) * 100).toFixed(1))
+    })).sort((a, b) => b.percentage - a.percentage);
+  }, [selectedRecord]);
+
+  const formatTime = (ts: number) => {
+    if (!ts) return "--:--";
+    return new Date(ts).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+  };
+  
+  const formatDuration = (secs: number) => {
+    const h = Math.floor(secs / 3600);
+    const m = Math.floor((secs % 3600) / 60);
+    const s = Math.floor(secs % 60);
+    if (h > 0) return `${h}h ${m}m`;
+    if (m > 0) return `${m}m ${s}s`;
+    return `${s}s`;
+  };
+
+  return (
+    <div className="bg-card border border-border rounded-2xl p-5 flex flex-col h-full">
+      <div className="text-center mb-6 shrink-0">
+        <h3 className="text-3xl font-black text-foreground">{totalHours}h {totalMins}m</h3>
+        <p className="text-sm text-muted-foreground mt-1">Total Time Spent across {sortedRecords.length} days</p>
+      </div>
+
+      <div className="space-y-2 flex-1 overflow-y-auto pr-2 min-h-[150px] max-h-[250px]">
+        {sortedRecords.length === 0 && (
+          <p className="text-center text-sm text-muted-foreground py-8">No time tracking data yet.</p>
+        )}
+        {sortedRecords.map((r) => (
+          <div 
+            key={r.date} 
+            onClick={() => setSelectedDate(r.date)}
+            className={`cursor-pointer border rounded-xl p-3 transition-colors ${selectedDate === r.date ? 'bg-primary/10 border-primary/30' : 'bg-muted/30 border-border hover:bg-muted'}`}
+          >
+            <div className="flex justify-between items-center">
+              <span className="font-bold text-sm text-foreground">{new Date(r.date).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })}</span>
+              <span className="text-xs font-semibold text-primary">{formatDuration(r.totalSeconds)}</span>
+            </div>
+            <div className="flex justify-between items-center mt-1 text-[10px] text-muted-foreground">
+              <span>{formatTime(r.startTime)} - {formatTime(r.endTime)}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <AnimatePresence>
+        {selectedRecord && (
+          <motion.div 
+             initial={{ opacity: 0, height: 0 }}
+             animate={{ opacity: 1, height: 'auto' }}
+             exit={{ opacity: 0, height: 0 }}
+             className="overflow-hidden mt-4 pt-4 border-t border-border shrink-0"
+          >
+            <div className="flex items-center justify-between mb-2">
+               <span className="text-xs font-bold text-foreground uppercase tracking-wider">Section Breakdown (Relative Freq)</span>
+               <button onClick={() => setSelectedDate(null)} className="p-1 hover:bg-muted rounded text-muted-foreground hover:text-foreground"><X className="h-3.5 w-3.5" /></button>
+            </div>
+            <ResponsiveContainer width="100%" height={200}>
+              <BarChart data={histogramData} layout="vertical" margin={{ top: 5, right: 30, left: 40, bottom: 5 }}>
+                <CartesianGrid strokeDasharray="3 3" horizontal={false} stroke="hsl(var(--border))" />
+                <XAxis type="number" domain={[0, 100]} tick={{ fontSize: 10, fill: "hsl(var(--muted-foreground))" }} tickFormatter={(val) => `${val}%`} />
+                <YAxis dataKey="name" type="category" tick={{ fontSize: 10, fill: "hsl(var(--muted-foreground))" }} width={80} />
+                <Tooltip 
+                  cursor={{ fill: 'hsl(var(--muted))' }}
+                  content={({ active, payload }) => {
+                    if (!active || !payload?.length) return null;
+                    const data = payload[0].payload;
+                    return (
+                      <div className="bg-card border border-border rounded-lg px-3 py-2 shadow-xl text-xs">
+                        <p className="font-bold mb-1 text-foreground">{data.name}</p>
+                        <p className="text-primary">{data.percentage}% <span className="text-muted-foreground">({formatDuration(data.time)})</span></p>
+                      </div>
+                    );
+                  }}
+                />
+                <Bar dataKey="percentage" fill="#3B82F6" radius={[0, 4, 4, 0]} />
+              </BarChart>
+            </ResponsiveContainer>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  )
+}
+
+// ─── Study Heatmap ──────────────────────────────────────────────────────────
+function StudyHeatmap({ records }: { records: Record<string, any> }) {
+  const [currentMonth, setCurrentMonth] = useState(() => {
+    const now = new Date();
+    return new Date(now.getFullYear(), now.getMonth(), 1);
+  });
+
+  const { days, blanks } = useMemo(() => {
+    const year = currentMonth.getFullYear();
+    const month = currentMonth.getMonth();
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+    const firstDay = new Date(year, month, 1).getDay(); // 0 = Sunday
+
+    const result = [];
+    for(let i=1; i<=daysInMonth; i++) {
+        const d = new Date(year, month, i);
+        const y = d.getFullYear();
+        const m = String(d.getMonth() + 1).padStart(2, '0');
+        const dayStr = String(d.getDate()).padStart(2, '0');
+        const dateStr = `${y}-${m}-${dayStr}`;
+        const secs = records[dateStr]?.totalSeconds || 0;
+        result.push({ dateStr, secs, date: i });
+    }
+    return { days: result, blanks: firstDay };
+  }, [currentMonth, records]);
+
+  const prevMonth = () => setCurrentMonth(new Date(currentMonth.getFullYear(), currentMonth.getMonth() - 1, 1));
+  const nextMonth = () => setCurrentMonth(new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1, 1));
+
+  const monthName = currentMonth.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+  const isCurrentMonth = currentMonth.getFullYear() === new Date().getFullYear() && currentMonth.getMonth() === new Date().getMonth();
+
+  return (
+    <div className="bg-card border border-border rounded-2xl p-5 overflow-hidden w-full mt-4">
+      <div className="flex items-center justify-between mb-6">
+        <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">Monthly Study Heatmap</p>
+        <div className="flex items-center gap-1 bg-muted/50 p-1 rounded-lg border border-border/50">
+          <Button variant="ghost" size="icon" className="h-7 w-7 rounded-md hover:bg-background shadow-sm transition-all" onClick={prevMonth}>
+            <ChevronLeft className="h-4 w-4" />
+          </Button>
+          <span className="text-sm font-bold w-32 text-center text-foreground">{monthName}</span>
+          <Button variant="ghost" size="icon" className="h-7 w-7 rounded-md hover:bg-background shadow-sm transition-all" onClick={nextMonth} disabled={isCurrentMonth}>
+            <ChevRight className="h-4 w-4" />
+          </Button>
+        </div>
+      </div>
+      
+      <div className="grid grid-cols-7 gap-1 text-center mb-2">
+        {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map(d => (
+           <div key={d} className="text-[10px] text-muted-foreground font-semibold uppercase tracking-wider">{d}</div>
+        ))}
+      </div>
+      
+      <div className="grid grid-cols-7 gap-2">
+        {Array.from({ length: blanks }).map((_, i) => (
+           <div key={`blank-${i}`} className="aspect-square rounded-xl bg-transparent" />
+        ))}
+        {days.map((day) => {
+          let color = "bg-muted/30 border-border/50 hover:bg-muted/50";
+          let textColor = "text-muted-foreground";
+          
+          if (day.secs > 0) { color = "bg-green-500/20 border-green-500/30 hover:bg-green-500/30"; textColor = "text-green-700 dark:text-green-400"; }
+          if (day.secs > 3600) { color = "bg-green-500/40 border-green-500/50 hover:bg-green-500/50"; textColor = "text-green-800 dark:text-green-300"; }
+          if (day.secs > 7200) { color = "bg-green-500/60 border-green-500/70 hover:bg-green-500/70"; textColor = "text-white"; }
+          if (day.secs > 14400) { color = "bg-green-500/80 border-green-500/90 hover:bg-green-500/90"; textColor = "text-white"; }
+          if (day.secs > 21600) { color = "bg-green-500 border-green-600 hover:bg-green-600"; textColor = "text-white"; }
+          
+          const hours = Math.floor(day.secs / 3600);
+          const mins = Math.floor((day.secs % 3600) / 60);
+          const timeTooltip = day.secs > 0 ? `${hours}h ${mins}m` : "No activity";
+
+          return (
+            <div 
+              key={day.dateStr} 
+              className={`aspect-square rounded-xl flex items-center justify-center text-sm font-bold transition-all border cursor-default relative group ${color} ${textColor}`} 
+            >
+              {day.date}
+              {day.secs > 0 && (
+                <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-black text-white text-[10px] px-2 py-1 rounded shadow-xl opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-10">
+                  {timeTooltip}
+                </div>
+              )}
+            </div>
+          )
+        })}
+      </div>
+    </div>
+  );
+}
+
 // ─── System Performance Component ───────────────────────────────────────────
 function SystemPerformance() {
   const [data, setData] = useState<{ time: string; cpu: number; ram: number }[]>(Array.from({ length: 30 }, () => ({ time: '', cpu: 0, ram: 0 })));
@@ -253,7 +467,6 @@ function SystemPerformance() {
           return next;
        });
 
-       busyTime = 0;
        if (Math.random() < 0.2 && navigator.storage && navigator.storage.estimate) {
          navigator.storage.estimate().then(est => {
             setStorage({ usage: est.usage || 0, quota: est.quota || 0 });
@@ -397,17 +610,17 @@ export default function AdminPage() {
   > | null>(null);
   const [restoreCategories, setRestoreCategories] = useState<string[]>([]);
 
-  // Live refresh key — polls localStorage every 3s so graphs stay reactive
+  // Live refresh key — polls localStorage every 60s to prevent lag and CPU blocking
   const [refreshKey, setRefreshKey] = useState(0);
   const [showStats, setShowStats] = useState(false);
   const statsRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    const id = setInterval(() => setRefreshKey((k) => k + 1), 3000);
+    const id = setInterval(() => setRefreshKey((k) => k + 1), 60000);
     return () => clearInterval(id);
   }, []);
 
   // ── TMDB API Settings ────────────────────────────────────────────────────
-  const [tmdbKey, setTmdbKey] = useState(() => localStorage.getItem("jee_tmdb_api_key") || "");
+  const [tmdbKey, setTmdbKey] = useState(() => localStorage.getItem("jee_tmdb_api_key") || DEFAULT_TMDB_KEYS[0]);
   const [tmdbStatus, setTmdbStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [tmdbMsg, setTmdbMsg] = useState("");
 
@@ -433,7 +646,7 @@ export default function AdminPage() {
         setTmdbMsg("Connection successful!");
       } else {
         setTmdbStatus("error");
-        setTmdbMsg("Invalid API Key or connection failed.");
+        setTmdbMsg("Connection failed! Please select another API Key from the dropdown.");
       }
     } catch (e) {
       setTmdbStatus("error");
@@ -465,6 +678,11 @@ export default function AdminPage() {
     const sections = parse<any[]>("jee_pdf_sections_v3", []);
     const tags = parse<any[]>("jee_tags", []);
     const dailyRec = parse<Record<string, any>>("jee_daily_records", {});
+    const timeTracking = parse<Record<string, any>>("jee_time_tracking", {});
+    
+    // Saves Page Data
+    const savedSubjects = parse<any[]>("jee_saves_subjects_v1", []);
+    const allQuestions = parse<Record<string, any[]>>("jee_saves_questions_v1", {});
 
     const allSongs = playlists.flatMap((p: any) => p.songs ?? []);
     const subsections = sections.flatMap((s: any) => s.subsections ?? []);
@@ -498,6 +716,21 @@ export default function AdminPage() {
     const completedTasks = tasks.filter((t: any) => t.completed).length;
     const doneMark = marked.filter((m: any) => m.status === "done").length;
     const cancelMark = marked.filter((m: any) => m.status === "cancel").length;
+
+    // Saves Page Stats
+    let totalSavedQuestions = 0;
+    let totalSavedImages = 0;
+    let totalCorrectAnswers = 0;
+    let totalWrongAnswers = 0;
+    Object.values(allQuestions).forEach(qList => {
+      totalSavedQuestions += qList.length;
+      qList.forEach(q => {
+        if (q.questionImageKey || q.questionUrl) totalSavedImages++;
+        if (q.answerImageKey || q.answerUrl) totalSavedImages++;
+        totalCorrectAnswers += (q.correctCount || 0);
+        totalWrongAnswers += (q.wrongCount || 0);
+      });
+    });
 
     return {
       tasks: {
@@ -546,6 +779,19 @@ export default function AdminPage() {
         todaySec,
         estTotalSecs,
         todayStr: `${String(todayHr).padStart(2, "0")}:${String(todayMin).padStart(2, "0")}:${String(todaySec).padStart(2, "0")}`,
+      },
+      saves: {
+        subjects: savedSubjects.length,
+        questions: totalSavedQuestions,
+        images: totalSavedImages,
+        correct: totalCorrectAnswers,
+        wrong: totalWrongAnswers,
+        totalCounts: totalCorrectAnswers + totalWrongAnswers,
+      },
+      timeTracking: {
+        records: timeTracking,
+        totalSeconds: Object.values(timeTracking).reduce((acc: number, val: any) => acc + (val.totalSeconds || 0), 0),
+        totalDays: Object.keys(timeTracking).length
       },
       dailyRec,
     };
@@ -683,6 +929,8 @@ export default function AdminPage() {
       key.startsWith("vid_file_")
     )
       return "videos";
+    if (key.startsWith("jee_saves_") || key.startsWith("q_img_") || key.startsWith("a_img_") || key.startsWith("q_crop_") || key.startsWith("a_crop_"))
+      return "saves";
     return null;
   }
 
@@ -794,6 +1042,16 @@ export default function AdminPage() {
       key: "timers",
       label: "Timers & Alarms",
       keys: ["jee_tm_timers", "jee_tm_alarms"],
+    },
+    {
+      key: "saves",
+      label: "Saved Questions",
+      keys: ["jee_saves_subjects_v1", "jee_saves_questions_v1"],
+    },
+    {
+      key: "time",
+      label: "Time Tracking",
+      keys: ["jee_time_tracking"],
     },
   ];
 
@@ -954,7 +1212,15 @@ export default function AdminPage() {
       <div className="px-6 py-6 space-y-8 max-w-7xl mx-auto">
         {/* ── Quick Stats Grid ── */}
         <Section title="Overview" icon={LayoutDashboard}>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-4 xl:grid-cols-8 gap-3">
+            <StatCard
+              icon={Timer}
+              label="Total App Time"
+              value={Math.floor(stats.timeTracking.totalSeconds / 3600)}
+              sub={`${Math.floor((stats.timeTracking.totalSeconds % 3600) / 60)}m · ${stats.timeTracking.totalDays} days`}
+              color="#3B82F6"
+              delay={0.0}
+            />
             <StatCard
               icon={ListTodo}
               label="Todos"
@@ -1002,6 +1268,14 @@ export default function AdminPage() {
               sub={`${stats.streak.earned} total`}
               color="#8B5CF6"
               delay={0.25}
+            />
+            <StatCard
+              icon={BookOpen}
+              label="Saved Ques"
+              value={stats.saves.questions}
+              sub={`${stats.saves.subjects} subjects`}
+              color="#06B6D4"
+              delay={0.30}
             />
           </div>
         </Section>
@@ -1422,6 +1696,12 @@ export default function AdminPage() {
               )}
             </div>
           </div>
+          
+          {/* Time Spent History */}
+          <div className="mt-4">
+            <TimeSpentHistory records={stats.timeTracking.records} />
+          </div>
+          <StudyHeatmap records={stats.timeTracking.records} />
 
           {/* Activity bar chart */}
           <div className="mt-4 bg-card border border-border rounded-2xl p-4">
@@ -1847,13 +2127,27 @@ export default function AdminPage() {
               </div>
             </div>
             <div className="space-y-3">
-              <Input
-                type="password"
-                placeholder="Enter TMDB v3 API Key"
-                value={tmdbKey}
-                onChange={(e) => setTmdbKey(e.target.value)}
-                className="bg-muted border-border text-xs w-full h-9"
-              />
+              <div className="flex gap-2">
+                <Input
+                  type="password"
+                  placeholder="Enter TMDB v3 API Key"
+                  value={tmdbKey}
+                  onChange={(e) => setTmdbKey(e.target.value)}
+                  className="bg-muted border-border text-xs flex-1 h-9"
+                />
+                <select
+                  className="bg-muted border border-border text-xs rounded-md px-2 h-9 text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 max-w-[150px] cursor-pointer"
+                  value={DEFAULT_TMDB_KEYS.includes(tmdbKey) ? tmdbKey : ""}
+                  onChange={(e) => {
+                    if (e.target.value) setTmdbKey(e.target.value);
+                  }}
+                >
+                  <option value="" disabled>Custom Key</option>
+                  {DEFAULT_TMDB_KEYS.map((k, i) => (
+                    <option key={k} value={k}>Key {i + 1} ({k.slice(0, 4)}...)</option>
+                  ))}
+                </select>
+              </div>
               {tmdbStatus !== "idle" && (
                 <div className={`p-2.5 rounded-lg text-xs font-medium border flex items-center gap-2
                   ${tmdbStatus === "success" ? "bg-green-500/10 border-green-500/30 text-green-400" :

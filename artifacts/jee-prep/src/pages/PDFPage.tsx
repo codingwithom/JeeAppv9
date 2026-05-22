@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect, useCallback, useMemo, useLayoutEffect } from "react";
 import { motion, AnimatePresence, Reorder } from "framer-motion";
-import { idbSet, idbGet } from "@/lib/idb";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
 import { useWorkspaceContext } from "@/context/WorkspaceContext";
 import { Button } from "@/components/ui/button";
@@ -487,12 +486,14 @@ function UploadModal({
 }
 
 // ─── Multi-Crop Helper ──────────────────────────────────────────────────────
-function CropBox({ crop, active, onUpdate, onDelete, containerRef }: { 
+function CropBox({ crop, active, onUpdate, onDelete, containerRef, label, onConfirm }: { 
   crop: CropArea, 
   active: boolean, 
   onUpdate: (u: Partial<CropArea>) => void,
   onDelete: () => void,
-  containerRef: React.RefObject<HTMLDivElement>
+  containerRef: React.RefObject<HTMLDivElement>,
+  label?: string,
+  onConfirm?: () => void
 }) {
   const [isDragging, setIsDragging] = useState(false);
   const [isResizing, setIsResizing] = useState<string | null>(null);
@@ -510,7 +511,6 @@ function CropBox({ crop, active, onUpdate, onDelete, containerRef }: {
     if (type === 'move') setIsDragging(true);
     else setIsResizing(type);
     (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
-    resetControlsTimer?.();
   };
 
   const onPointerMove = (e: React.PointerEvent) => {
@@ -562,7 +562,10 @@ function CropBox({ crop, active, onUpdate, onDelete, containerRef }: {
     >
       {/* Label */}
       <div className="absolute -top-6 left-0 bg-primary text-white text-[10px] font-bold px-1.5 py-0.5 rounded flex items-center gap-2 whitespace-nowrap shadow-lg">
-        Q {crop.id.slice(-2)}
+        {label || `Q ${crop.id.slice(-2)}`}
+        {onConfirm && (
+          <button onClick={(e) => { e.stopPropagation(); onConfirm(); }} className="hover:text-green-200"><CheckIcon className="h-3 w-3"/></button>
+        )}
         <button onClick={(e) => { e.stopPropagation(); onDelete(); }} className="hover:text-red-200"><X className="h-3 w-3"/></button>
       </div>
 
@@ -588,33 +591,49 @@ function CropBox({ crop, active, onUpdate, onDelete, containerRef }: {
 
 // ─── Destination Picker ──────────────────────────────────────────────────────
 function SourcePicker({ onConfirm, onClose }: { onConfirm: (id: string) => void, onClose: () => void }) {
-  const [subjects] = useLocalStorage<QuestionSubject[]>("jee_saves_subjects_v1", []);
+  const [subjects, setSubjects] = useState<QuestionSubject[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [sel, setSel] = useState("");
+
+  useEffect(() => {
+    try {
+      const data = JSON.parse(localStorage.getItem("jee_saves_subjects_v1") || "[]");
+      setSubjects(data);
+    } catch {
+      setSubjects([]);
+    }
+    setIsLoading(false);
+  }, []);
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
       <motion.div initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="bg-card border border-border rounded-2xl p-6 w-full max-w-sm shadow-2xl">
         <h3 className="text-sm font-bold mb-4">Select Destination Source</h3>
         <div className="max-h-60 overflow-y-auto space-y-1 mb-6">
-          {subjects.map(sub => (
-            <div key={sub.id} className="space-y-1">
-              <p className="text-[10px] font-bold text-muted-foreground uppercase px-2 mt-2">{sub.name}</p>
-              {sub.chapters.map(chap => (
-                <div key={chap.id} className="pl-2 space-y-0.5">
-                   {chap.sources.map(src => (
-                     <button 
-                        key={src.id} 
-                        onClick={() => setSel(src.id)}
-                        className={cn("w-full text-left px-3 py-1.5 text-xs rounded-lg transition-colors", sel === src.id ? "bg-primary text-primary-foreground" : "hover:bg-muted text-foreground")}
-                     >
-                       {src.name}
-                     </button>
-                   ))}
-                </div>
-              ))}
-            </div>
-          ))}
-          {subjects.length === 0 && <p className="text-xs text-muted-foreground text-center py-4">No sources found. Create one in 'Saves' first.</p>}
+          {isLoading ? (
+            <p className="text-xs text-muted-foreground text-center py-4">Loading sources...</p>
+          ) : subjects.length === 0 ? (
+            <p className="text-xs text-muted-foreground text-center py-4">No sources found. Create one in 'Saves' first.</p>
+          ) : (
+            subjects.map(sub => (
+              <div key={sub.id} className="space-y-1">
+                <p className="text-[10px] font-bold text-muted-foreground uppercase px-2 mt-2">{sub.name}</p>
+                {sub.chapters.map(chap => (
+                  <div key={chap.id} className="pl-2 space-y-0.5">
+                     {chap.sources.map(src => (
+                       <button 
+                          key={src.id} 
+                          onClick={() => setSel(src.id)}
+                          className={cn("w-full text-left px-3 py-1.5 text-xs rounded-lg transition-colors", sel === src.id ? "bg-primary text-primary-foreground" : "hover:bg-muted text-foreground")}
+                       >
+                         {src.name}
+                       </button>
+                     ))}
+                  </div>
+                ))}
+              </div>
+            ))
+          )}
         </div>
         <div className="flex gap-2">
           <Button variant="outline" size="sm" className="flex-1" onClick={onClose}>Cancel</Button>
@@ -629,36 +648,34 @@ function SourcePicker({ onConfirm, onClose }: { onConfirm: (id: string) => void,
 function MultiCropEditor({ 
   crops, 
   onClose, 
-  onSave 
+  onSave,
+  onUpdateCrop,
+  onCaptureAnswer
 }: { 
   crops: any[], 
   onClose: () => void, 
-  onSave: (data: any[]) => void 
+  onSave: () => void,
+  onUpdateCrop: (id: string, updates: any) => void,
+  onCaptureAnswer: (id: string) => void
 }) {
-  const [editedCrops, setEditedCrops] = useState(crops);
-
-  const updateField = (id: string, field: string, value: any) => {
-    setEditedCrops(prev => prev.map(c => c.id === id ? { ...c, [field]: value } : c));
-  };
-
   return (
     <div className="fixed inset-0 z-[150] flex flex-col bg-background">
       <div className="flex items-center justify-between px-6 py-4 border-b border-border bg-card">
         <div>
           <h2 className="text-lg font-bold flex items-center gap-2">
-            <Scissors className="h-5 w-5 text-primary" /> Import Questions ({editedCrops.length})
+            <Scissors className="h-5 w-5 text-primary" /> Import Questions ({crops.length})
           </h2>
           <p className="text-xs text-muted-foreground">Review and add details for your cropped questions</p>
         </div>
         <div className="flex items-center gap-3">
           <Button variant="outline" size="sm" onClick={onClose}>Discard All</Button>
-          <Button size="sm" className="font-bold px-6" onClick={() => onSave(editedCrops)}>Import All Questions</Button>
+          <Button size="sm" className="font-bold px-6" onClick={onSave}>Import All Questions</Button>
         </div>
       </div>
 
       <div className="flex-1 overflow-y-auto p-6 space-y-8 bg-muted/20">
         <div className="max-w-4xl mx-auto space-y-8">
-          {editedCrops.map((crop, idx) => (
+          {crops.map((crop, idx) => (
             <motion.div 
               key={crop.id} 
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.05 }}
@@ -680,8 +697,8 @@ function MultiCropEditor({
                   <div className="space-y-1.5">
                     <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">Question Name/No</p>
                     <Input 
-                      value={crop.name} 
-                      onChange={e => updateField(crop.id, 'name', e.target.value)} 
+                      value={crop.name || ""} 
+                      onChange={e => onUpdateCrop(crop.id, { name: e.target.value })} 
                       placeholder="e.g. Q1" 
                     />
                   </div>
@@ -689,14 +706,14 @@ function MultiCropEditor({
                     <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">Option Status</p>
                     <div className="flex gap-2">
                       <button 
-                        onClick={() => updateField(crop.id, 'isCorrect', crop.isCorrect === true ? undefined : true)}
+                        onClick={() => onUpdateCrop(crop.id, { isCorrect: crop.isCorrect === true ? undefined : true })}
                         className={cn("flex-1 h-9 rounded-lg border text-[10px] font-bold flex items-center justify-center gap-1.5 transition-all", 
                           crop.isCorrect === true ? "bg-green-500/10 border-green-500 text-green-500" : "bg-muted text-muted-foreground border-transparent")}
                       >
                         <CheckIcon className="h-3.5 w-3.5" /> Correct
                       </button>
                       <button 
-                        onClick={() => updateField(crop.id, 'isCorrect', crop.isCorrect === false ? undefined : false)}
+                        onClick={() => onUpdateCrop(crop.id, { isCorrect: crop.isCorrect === false ? undefined : false })}
                         className={cn("flex-1 h-9 rounded-lg border text-[10px] font-bold flex items-center justify-center gap-1.5 transition-all", 
                           crop.isCorrect === false ? "bg-red-500/10 border-red-500 text-red-500" : "bg-muted text-muted-foreground border-transparent")}
                       >
@@ -707,29 +724,47 @@ function MultiCropEditor({
                 </div>
 
                 <div className="space-y-1.5">
-                  <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">Answer Section (Text or Image URL)</p>
+                  <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">Answer Section</p>
                   <div className="space-y-2">
                     <textarea 
-                      value={crop.answerText} 
-                      onChange={e => updateField(crop.id, 'answerText', e.target.value)}
+                      value={crop.answerText || ""} 
+                      onChange={e => onUpdateCrop(crop.id, { answerText: e.target.value })}
                       placeholder="Type plain text answer..." 
                       rows={2} 
                       className="w-full text-xs px-3 py-2 rounded-lg bg-muted/50 border border-border text-foreground placeholder:text-muted-foreground resize-none focus:outline-none focus:ring-1 focus:ring-primary/30"
                     />
-                    <Input 
-                      value={crop.answerUrl} 
-                      onChange={e => updateField(crop.id, 'answerUrl', e.target.value)}
-                      placeholder="Paste answer image URL..." 
-                      className="h-8 text-[11px]"
-                    />
+                    {crop.answerImageUrl ? (
+                      <div className="relative border border-border rounded-lg overflow-hidden group bg-muted/30 p-2">
+                         <p className="text-[10px] text-muted-foreground mb-1 font-bold uppercase">Answer Image</p>
+                         <img src={crop.answerImageUrl} className="w-full max-h-32 object-contain bg-white rounded-md border border-border" alt="Answer" />
+                         <div className="absolute top-1 right-1">
+                           <button onClick={() => onUpdateCrop(crop.id, { answerImageBlob: null, answerImageUrl: null })} className="p-1 bg-black/60 text-white rounded-md hover:bg-red-500/80 transition-colors">
+                             <X className="h-3 w-3" />
+                           </button>
+                         </div>
+                      </div>
+                    ) : (
+                      <div className="flex gap-2 items-center">
+                        <Button variant="outline" size="sm" className="h-8 text-[11px] gap-1.5 flex-1" onClick={() => onCaptureAnswer(crop.id)}>
+                           <Scissors className="h-3 w-3"/> Add Answer Image
+                        </Button>
+                        <span className="text-[10px] text-muted-foreground font-bold">OR</span>
+                        <Input 
+                          value={crop.answerUrl || ""} 
+                          onChange={e => onUpdateCrop(crop.id, { answerUrl: e.target.value })}
+                          placeholder="Paste image URL..." 
+                          className="h-8 text-[11px] flex-1"
+                        />
+                      </div>
+                    )}
                   </div>
                 </div>
 
                 <div className="space-y-1.5">
                   <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">Description</p>
                   <textarea 
-                    value={crop.description} 
-                    onChange={e => updateField(crop.id, 'description', e.target.value)}
+                    value={crop.description || ""} 
+                    onChange={e => onUpdateCrop(crop.id, { description: e.target.value })}
                     placeholder="Additional notes..." 
                     rows={2} 
                     className="w-full text-xs px-3 py-2 rounded-lg bg-muted/50 border border-border text-foreground placeholder:text-muted-foreground resize-none focus:outline-none focus:ring-1 focus:ring-primary/30"
@@ -767,7 +802,9 @@ export default function PDFPage() {
   const [pendingCrops, setPendingCrops] = useState<any[]>([]);
   const [selectedSourceId, setSelectedSourceId] = useState<string | null>(null);
   const [isSavingCrops, setIsSavingCrops] = useState(false);
-  const [allQuestions, setAllQuestions] = useLocalStorage<Record<string, SavedQuestion[]>>("jee_saves_questions_v1", {});
+  const [capturingAnswerFor, setCapturingAnswerFor] = useState<string | null>(null);
+  const [answerCrop, setAnswerCrop] = useState<CropArea | null>(null);
+  const creatingAnswerRef = useRef(false);
   const cropContainerRef = useRef<HTMLDivElement>(null);
   
   const creatingCropIdRef = useRef<string | null>(null);
@@ -1321,6 +1358,59 @@ export default function PDFPage() {
       (e.currentTarget as HTMLElement).releasePointerCapture(e.pointerId);
     }
   };
+  
+  const onAnswerCropPointerDown = (e: React.PointerEvent) => {
+    if (e.button !== 0) return;
+    const rect = cropContainerRef.current!.getBoundingClientRect();
+    const x = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+    const y = Math.max(0, Math.min(1, (e.clientY - rect.top) / rect.height));
+    creationStartPosRef.current = { x, y };
+    setAnswerCrop({ id: 'ans', x, y, w: 0, h: 0 });
+    creatingAnswerRef.current = true;
+    (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
+  };
+
+  const onAnswerCropPointerMove = (e: React.PointerEvent) => {
+    if (!creatingAnswerRef.current || !answerCrop) return;
+    const rect = cropContainerRef.current!.getBoundingClientRect();
+    const curX = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+    const curY = Math.max(0, Math.min(1, (e.clientY - rect.top) / rect.height));
+    const start = creationStartPosRef.current;
+    setAnswerCrop({ 
+      id: 'ans',
+      x: Math.min(start.x, curX), y: Math.min(start.y, curY), 
+      w: Math.abs(curX - start.x), h: Math.abs(curY - start.y) 
+    });
+  };
+
+  const onAnswerCropPointerUp = async (e: React.PointerEvent) => {
+    if (creatingAnswerRef.current) {
+      creatingAnswerRef.current = false;
+      (e.currentTarget as HTMLElement).releasePointerCapture(e.pointerId);
+      if (answerCrop && (answerCrop.w < 0.01 || answerCrop.h < 0.01)) {
+        setAnswerCrop(null);
+      }
+    }
+  };
+
+  const confirmAnswerCrop = async () => {
+    if (!answerCrop || answerCrop.w < 0.01 || answerCrop.h < 0.01) {
+      setAnswerCrop(null);
+      setCapturingAnswerFor(null);
+      return;
+    }
+    if (!pdfCanvasRef.current || !capturingAnswerFor) return;
+    const srcCanvas = pdfCanvasRef.current;
+    const temp = document.createElement('canvas');
+    const cw = answerCrop.w * srcCanvas.width, ch = answerCrop.h * srcCanvas.height;
+    temp.width = cw; temp.height = ch;
+    temp.getContext('2d')!.drawImage(srcCanvas, answerCrop.x * srcCanvas.width, answerCrop.y * srcCanvas.height, cw, ch, 0, 0, cw, ch);
+    const blob = await new Promise<Blob>((res) => temp.toBlob(b => res(b!), 'image/jpeg', 0.7));
+    const imageUrl = URL.createObjectURL(blob);
+    setPendingCrops(prev => prev.map(c => c.id === capturingAnswerFor ? { ...c, answerImageBlob: blob, answerImageUrl: imageUrl } : c));
+    setCapturingAnswerFor(null);
+    setAnswerCrop(null);
+  };
 
   const prepareCropsForEditing = async (targetSourceId: string) => {
     if (!pdfCanvasRef.current || crops.length === 0) return;
@@ -1364,12 +1454,19 @@ export default function PDFPage() {
     for (const item of finalData) {
       const mediaKey = `q_crop_${Date.now()}_${item.id}`;
       await writeMedia(mediaKey, item.imageBlob);
+      
+      let ansMediaKey = undefined;
+      if (item.answerImageBlob) {
+        ansMediaKey = `a_crop_${Date.now()}_${item.id}`;
+        await writeMedia(ansMediaKey, item.answerImageBlob);
+      }
 
       newQuestions.push({
         id: Date.now().toString() + Math.random().toString(36).slice(2),
         name: item.name,
         questionImageKey: mediaKey,
         answerText: item.answerText || undefined,
+        answerImageKey: ansMediaKey || undefined,
         answerUrl: item.answerUrl || undefined,
         description: item.description || undefined,
         isCorrect: item.isCorrect,
@@ -1377,10 +1474,17 @@ export default function PDFPage() {
       });
     }
 
-    setAllQuestions(prev => ({
-      ...prev,
-      [selectedSourceId]: [...(prev[selectedSourceId] || []), ...newQuestions]
-    }));
+    let prevQuestions: Record<string, SavedQuestion[]> = {};
+    try {
+      const str = localStorage.getItem("jee_saves_questions_v1");
+      if (str) prevQuestions = JSON.parse(str);
+    } catch (e) {}
+
+    const updated = {
+      ...prevQuestions,
+      [selectedSourceId]: [...(prevQuestions[selectedSourceId] || []), ...newQuestions]
+    };
+    localStorage.setItem("jee_saves_questions_v1", JSON.stringify(updated));
 
     setIsSavingCrops(false);
     setPendingCrops([]);
@@ -1395,6 +1499,8 @@ export default function PDFPage() {
       if (e.key === 'Escape') {
         setIsCropMode(false);
         setCrops([]);
+        setCapturingAnswerFor(null);
+        setAnswerCrop(null);
       }
     };
     window.addEventListener('keydown', onEsc);
@@ -2183,6 +2289,7 @@ export default function PDFPage() {
             <div 
               className="relative shadow-2xl"
               style={{ cursor: cursorStyle }}
+              ref={cropContainerRef}
             >
               <canvas ref={pdfCanvasRef} className="block" />
               <canvas
@@ -2197,7 +2304,6 @@ export default function PDFPage() {
               {/* Multi-Crop Interface Layer */}
               {isCropMode && (
                 <div 
-                  ref={cropContainerRef}
                   className="absolute inset-0 z-40 bg-black/20 cursor-crosshair touch-none"
                   onPointerDown={onCropPointerDown}
                   onPointerMove={onCropPointerMove}
@@ -2206,6 +2312,28 @@ export default function PDFPage() {
                   {crops.map(c => (
                     <CropBox key={c.id} crop={c} active={activeCropId === c.id} containerRef={cropContainerRef} onUpdate={(u) => setCrops(prev => prev.map(item => item.id === c.id ? {...item, ...u} : item))} onDelete={() => setCrops(p => p.filter(x => x.id !== c.id))} />
                   ))}
+                </div>
+              )}
+              
+              {/* Answer Capture Interface Layer */}
+              {capturingAnswerFor && (
+                <div 
+                  className="absolute inset-0 z-40 bg-black/20 cursor-crosshair touch-none"
+                  onPointerDown={onAnswerCropPointerDown}
+                  onPointerMove={onAnswerCropPointerMove}
+                  onPointerUp={onAnswerCropPointerUp}
+                >
+                  {answerCrop && (
+                    <CropBox 
+                      crop={answerCrop} 
+                      active={true} 
+                      containerRef={cropContainerRef} 
+                      label="Answer Crop"
+                      onUpdate={(u) => setAnswerCrop(prev => prev ? { ...prev, ...u } : prev)} 
+                      onDelete={() => setAnswerCrop(null)} 
+                      onConfirm={confirmAnswerCrop}
+                    />
+                  )}
                 </div>
               )}
 
@@ -2265,6 +2393,13 @@ export default function PDFPage() {
           />
         )}
       </AnimatePresence>
+      
+      {capturingAnswerFor && (
+        <div className="fixed top-20 left-1/2 -translate-x-1/2 z-50 bg-black text-white px-4 py-2 rounded-full text-sm font-bold shadow-xl flex items-center gap-3">
+           <span>Draw and adjust the answer crop, then click ✓</span>
+           <button onClick={() => { setCapturingAnswerFor(null); setAnswerCrop(null); }} className="p-1 hover:bg-white/20 rounded-full transition-colors"><X className="h-4 w-4"/></button>
+        </div>
+      )}
 
       <AnimatePresence>
         {showSourcePicker && (
@@ -2273,8 +2408,14 @@ export default function PDFPage() {
       </AnimatePresence>
 
       <AnimatePresence>
-        {pendingCrops.length > 0 && (
-          <MultiCropEditor crops={pendingCrops} onSave={handleImportAll} onClose={() => setPendingCrops([])} />
+        {pendingCrops.length > 0 && !capturingAnswerFor && (
+          <MultiCropEditor 
+            crops={pendingCrops} 
+            onSave={() => handleImportAll(pendingCrops)} 
+            onClose={() => setPendingCrops([])} 
+            onUpdateCrop={(id, up) => setPendingCrops(p => p.map(c => c.id === id ? { ...c, ...up } : c))}
+            onCaptureAnswer={(id) => setCapturingAnswerFor(id)}
+          />
         )}
       </AnimatePresence>
 

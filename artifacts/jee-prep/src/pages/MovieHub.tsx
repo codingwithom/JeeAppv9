@@ -30,9 +30,9 @@ export interface Media {
 
 const getTmdbApiKey = () => {
   if (typeof window !== "undefined") {
-    return localStorage.getItem("jee_tmdb_api_key") || "e547e17d4e91f3e62a571655cd1ccaff";
+    return localStorage.getItem("jee_tmdb_api_key") || "fb7bb23f03b6994dafc674c074d01761";
   }
-  return "e547e17d4e91f3e62a571655cd1ccaff";
+  return "fb7bb23f03b6994dafc674c074d01761";
 };
 
 const DUMMY_DATA: Media[] = [

@@ -63,6 +63,7 @@ interface StreakContextType {
   extendStreak: () => boolean; // returns whether extension was applied
   canExtend: boolean;
   extendsLeft: number;
+  resetStreak: () => void;
 }
 
 const StreakContext = createContext<StreakContextType | undefined>(undefined);
@@ -148,6 +149,18 @@ export function StreakProvider({ children }: { children: ReactNode }) {
     return () => clearInterval(timer);
   }, [computeNewStreak]);
 
+  const resetStreak = useCallback(() => {
+    setStreakData(currentData => {
+      const newData: StreakData = {
+        ...currentData,
+        currentStreak: 0,
+        lastEarnedDate: null,
+      };
+      localStorage.setItem("jee_streak_data", JSON.stringify(newData));
+      return newData;
+    });
+  }, []);
+
   const extendStreak = useCallback((): boolean => {
     const today = getTodayStr();
     const currentMonth = getMonthStr();
@@ -182,7 +195,7 @@ export function StreakProvider({ children }: { children: ReactNode }) {
 
   return (
     <StreakContext.Provider
-      value={{ streakData, todaySession, todayProgress, extendStreak, canExtend, extendsLeft }}
+      value={{ streakData, todaySession, todayProgress, extendStreak, canExtend, extendsLeft, resetStreak }}
     >
       {children}
     </StreakContext.Provider>

@@ -418,15 +418,20 @@ function TimersSection({ isDark }: { isDark: boolean }) {
 // ─── STOPWATCH SECTION ────────────────────────────────────────────────────────
 function StopwatchSection({ isDark }: { isDark: boolean }) {
   const [running, setRunning] = useState(false);
-  const [elapsed, setElapsed] = useState(0);
   const [laps, setLaps] = useState<Lap[]>([]);
   const startRef = useRef<number | null>(null);
   const baseRef = useRef<number>(0);
   const rafRef = useRef<number>(0);
+  const displayRef = useRef<HTMLDivElement>(null);
+  const currentElapsedRef = useRef<number>(0);
 
   const tick = useCallback(() => {
     if (startRef.current !== null) {
-      setElapsed(baseRef.current + (Date.now() - startRef.current));
+      const current = baseRef.current + (Date.now() - startRef.current);
+      currentElapsedRef.current = current;
+      if (displayRef.current) {
+        displayRef.current.textContent = fmtMs(current);
+      }
       rafRef.current = requestAnimationFrame(tick);
     }
   }, []);
@@ -438,7 +443,7 @@ function StopwatchSection({ isDark }: { isDark: boolean }) {
   };
 
   const pause = () => {
-    baseRef.current = elapsed;
+    baseRef.current = currentElapsedRef.current;
     startRef.current = null;
     cancelAnimationFrame(rafRef.current);
     setRunning(false);
@@ -448,14 +453,15 @@ function StopwatchSection({ isDark }: { isDark: boolean }) {
     cancelAnimationFrame(rafRef.current);
     startRef.current = null;
     baseRef.current = 0;
-    setElapsed(0);
+    currentElapsedRef.current = 0;
+    if (displayRef.current) displayRef.current.textContent = fmtMs(0);
     setLaps([]);
     setRunning(false);
   };
 
   const lap = () => {
     const prevTotal = laps.length > 0 ? laps[laps.length - 1].totalMs : 0;
-    setLaps(prev => [...prev, { n: prev.length + 1, lapMs: elapsed - prevTotal, totalMs: elapsed }]);
+    setLaps(prev => [...prev, { n: prev.length + 1, lapMs: currentElapsedRef.current - prevTotal, totalMs: currentElapsedRef.current }]);
   };
 
   useEffect(() => () => cancelAnimationFrame(rafRef.current), []);
@@ -467,8 +473,8 @@ function StopwatchSection({ isDark }: { isDark: boolean }) {
 
   return (
     <div className="flex flex-col items-center gap-8">
-      <div className={`text-5xl sm:text-6xl md:text-7xl font-mono font-bold ${tc} tabular-nums tracking-tight select-none`}>
-        {fmtMs(elapsed)}
+      <div ref={displayRef} className={`text-5xl sm:text-6xl md:text-7xl font-mono font-bold ${tc} tabular-nums tracking-tight select-none`}>
+        {fmtMs(currentElapsedRef.current)}
       </div>
 
       <div className="flex items-center gap-4">
@@ -518,7 +524,7 @@ function StopwatchSection({ isDark }: { isDark: boolean }) {
         </div>
       )}
 
-      {laps.length === 0 && elapsed === 0 && (
+      {laps.length === 0 && !running && currentElapsedRef.current === 0 && (
         <p className={`text-sm ${mc}`}>Press play to start timing</p>
       )}
     </div>
@@ -788,9 +794,8 @@ function GardenSection({ isDark }: { isDark: boolean }) {
                 transition={{ type: "spring", delay: Math.min(i * 0.05, 1) }}
                 className={`w-24 h-24 ${cardBg} border border-border/40 rounded-2xl flex flex-col items-center justify-center p-2 relative overflow-hidden group shadow-sm`}
               >
-                <motion.div 
-                   animate={{ rotate: [-3, 3, -3], y: [0, -2, 0] }} 
-                   transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: Math.min(i * 0.2, 2) }}
+                <motion.div
+                   whileHover={{ scale: 1.1, rotate: [0, -5, 5, 0] }}
                    className="text-4xl drop-shadow-lg"
                 >
                   {p.type || ["🌲", "🌳", "🌵", "🪴", "🌴", "🌻"][p.id % 6]}

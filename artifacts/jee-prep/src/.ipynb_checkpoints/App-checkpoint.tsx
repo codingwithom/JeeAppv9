@@ -9,7 +9,6 @@ import { MusicProvider } from "@/context/MusicContext";
 import { StreakProvider } from "@/context/StreakContext";
 import { TagsProvider } from "@/context/TagsContext";
 import { VideoProvider } from "@/context/VideoContext";
-import { LockdownProvider, useLockdown } from "@/context/LockdownContext";
 import { VideoMiniPlayer } from "@/components/VideoMiniPlayer";
 import NotFound from "@/pages/not-found";
 import LoginPage from "@/pages/LoginPage";
@@ -62,18 +61,17 @@ function CommandPalette() {
   const [isOpen, setIsOpen] = useState(false);
   const [search, setSearch] = useState("");
   const [, navigate] = useLocation();
-  const { isActive } = useLockdown();
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
       if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
-        if (!isActive) setIsOpen((open) => !open);
+        setIsOpen((open) => !open);
       }
     };
     document.addEventListener("keydown", down);
     return () => document.removeEventListener("keydown", down);
-  }, [isActive]);
+  }, []);
 
   if (!isOpen) return null;
 
@@ -121,47 +119,19 @@ function TopBar() {
   const { theme, toggleTheme } = useAppContext();
   const [location] = useLocation();
   const label = PAGE_LABELS[location] || "";
-  const { isActive, endTime } = useLockdown();
-  const [timeLeft, setTimeLeft] = useState("");
-
-  useEffect(() => {
-    if (!isActive || !endTime) return;
-    const update = () => {
-      const remain = Math.max(0, endTime - Date.now());
-      const h = Math.floor(remain / 3600000);
-      const m = Math.floor((remain % 3600000) / 60000);
-      const s = Math.floor((remain % 60000) / 1000);
-      if (h > 0) {
-        setTimeLeft(`${h}:${m.toString().padStart(2, "0")}:${s.toString().padStart(2, "0")}`);
-      } else {
-        setTimeLeft(`${m}:${s.toString().padStart(2, "0")}`);
-      }
-    };
-    update();
-    const id = setInterval(update, 1000);
-    return () => clearInterval(id);
-  }, [isActive, endTime]);
 
   return (
     <div className="h-12 flex items-center justify-between pr-5 pl-14 md:px-5 border-b border-border/60 bg-background/80 backdrop-blur-md flex-shrink-0 z-20">
       <span className="text-sm font-medium text-muted-foreground truncate">{label}</span>
-      <div className="flex items-center gap-3">
-        {isActive && (
-          <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/30 shadow-inner">
-            <Shield className="h-4 w-4 text-red-500 animate-pulse" />
-            <span className="text-sm font-bold text-red-500 tabular-nums">{timeLeft}</span>
-          </div>
-        )}
-        <motion.button
-          whileTap={{ scale: 0.9 }}
-          onClick={toggleTheme}
-          className="h-8 w-8 rounded-full border border-border bg-card flex items-center justify-center hover:bg-accent transition-colors shadow-sm"
-        >
-          {theme === "dark"
-            ? <Sun className="h-4 w-4 text-yellow-400" />
-            : <Moon className="h-4 w-4 text-indigo-500" />}
-        </motion.button>
-      </div>
+      <motion.button
+        whileTap={{ scale: 0.9 }}
+        onClick={toggleTheme}
+        className="h-8 w-8 rounded-full border border-border bg-card flex items-center justify-center hover:bg-accent transition-colors shadow-sm"
+      >
+        {theme === "dark"
+          ? <Sun className="h-4 w-4 text-yellow-400" />
+          : <Moon className="h-4 w-4 text-indigo-500" />}
+      </motion.button>
     </div>
   );
 }
@@ -383,10 +353,7 @@ export default function App() {
                 <VideoProvider>
                   <TooltipProvider>
                     <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
-                      {/* LockdownProvider requires router context, so it sits inside WouterRouter */}
-                      <LockdownProvider key="lockdown-provider">
-                        <Router />
-                      </LockdownProvider>
+                      <Router />
                     </WouterRouter>
                     <Toaster />
                   </TooltipProvider>

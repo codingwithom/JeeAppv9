@@ -47,6 +47,7 @@ import {
   Subtitles,
   ChevronLeft,
   Music,
+  Repeat,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { loadYouTubeApi } from "@/lib/youtube-api";
@@ -203,6 +204,57 @@ function MenuItem({ icon: Icon, label, onClick, shortcut, destructive }: any) {
       <div className="flex items-center gap-2">{Icon && <Icon className="h-3.5 w-3.5" />}<span>{label}</span></div>
       {shortcut && <span className="text-[10px] text-muted-foreground tracking-widest">{shortcut}</span>}
     </button>
+  );
+}
+
+// ─── DualRangeSlider ─────────────────────────────────────────────────────────
+function DualRangeSlider({ duration, currentTime, value, onChange, onSeekPreview }: { duration: number; currentTime: number; value: [number, number]; onChange: (val: [number, number]) => void; onSeekPreview?: (val: number) => void; }) {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [dragging, setDragging] = useState<'a'|'b'|null>(null);
+
+  const handlePointerDown = (e: React.PointerEvent, thumb: 'a'|'b') => {
+    e.stopPropagation();
+    e.currentTarget.setPointerCapture(e.pointerId);
+    setDragging(thumb);
+  };
+
+  const handlePointerMove = (e: React.PointerEvent) => {
+    if (!dragging || !trackRef.current) return;
+    const rect = trackRef.current.getBoundingClientRect();
+    const pct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+    const t = pct * duration;
+    if (dragging === 'a') {
+      const newA = Math.min(t, value[1] - 0.5);
+      onChange([newA, value[1]]);
+      onSeekPreview?.(newA);
+    } else {
+      const newB = Math.max(t, value[0] + 0.5);
+      onChange([value[0], newB]);
+      onSeekPreview?.(Math.max(value[0], newB - 1));
+    }
+  };
+
+  const handlePointerUp = (e: React.PointerEvent) => {
+    if (dragging) {
+      e.currentTarget.releasePointerCapture(e.pointerId);
+      setDragging(null);
+    }
+  };
+
+  const pctA = duration > 0 ? (value[0] / duration) * 100 : 0;
+  const pctB = duration > 0 ? (value[1] / duration) * 100 : 100;
+  const pctC = duration > 0 ? (currentTime / duration) * 100 : 0;
+
+  return (
+    <div ref={trackRef} className="relative h-1.5 bg-muted/60 rounded-full w-full mx-2 flex-1 touch-none" onPointerMove={handlePointerMove} onPointerUp={handlePointerUp} onPointerCancel={handlePointerUp}>
+      <div className="absolute top-0 bottom-0 bg-primary/20 rounded-full pointer-events-none" style={{ left: 0, width: `${pctC}%` }} />
+      <div className="absolute top-0 bottom-0 bg-primary/40 rounded-full pointer-events-none" style={{ left: `${pctA}%`, width: `${pctB - pctA}%` }} />
+      {pctC > pctA && (
+        <div className="absolute top-0 bottom-0 bg-primary rounded-full pointer-events-none" style={{ left: `${pctA}%`, width: `${Math.min(pctB - pctA, pctC - pctA)}%` }} />
+      )}
+      <div className="absolute top-1/2 -translate-y-1/2 w-3.5 h-3.5 bg-primary border-2 border-white rounded-full shadow cursor-ew-resize hover:scale-125 transition-transform z-10" style={{ left: `calc(${pctA}% - 7px)` }} onPointerDown={(e) => handlePointerDown(e, 'a')} />
+      <div className="absolute top-1/2 -translate-y-1/2 w-3.5 h-3.5 bg-primary border-2 border-white rounded-full shadow cursor-ew-resize hover:scale-125 transition-transform z-10" style={{ left: `calc(${pctB}% - 7px)` }} onPointerDown={(e) => handlePointerDown(e, 'b')} />
+    </div>
   );
 }
 
@@ -1032,6 +1084,22 @@ function VideoSettingsPopup({
 }
 
 // ─── YouTube Search Modal for Videos ──────────────────────────────────────────
+function BlurImage({ src, alt, className }: { src: string; alt?: string; className?: string }) {
+  const [loaded, setLoaded] = useState(false);
+  return (
+    <img
+      src={src}
+      alt={alt || ""}
+      className={cn(className, "transition-all duration-500", loaded ? "blur-0 scale-100" : "blur-md scale-110")}
+      onLoad={() => setLoaded(true)}
+      onError={(e) => {
+        (e.currentTarget as HTMLImageElement).src = "";
+        setLoaded(true);
+      }}
+    />
+  );
+}
+
 interface YouTubeVideoResult {
   videoId: string;
   title: string;
@@ -1074,7 +1142,7 @@ function YouTubeVideoSearchModal({
       };
 
       const fetchPiped = async (instance: string) => {
-        const res = await fetchWithTimeout(`${instance}/search?q=${q}&filter=all`, 5000);
+        const res = await fetchWithTimeout(`${instance}/search?q=${q}&filter=all`, 4000);
         const data = await res.json();
         if (!data?.items?.length) throw new Error("No data");
         const videos = data.items.filter((item: any) => item.type === "stream");
@@ -1086,13 +1154,13 @@ function YouTubeVideoSearchModal({
             title: v.title || "Unknown",
             author: v.uploaderName || "Unknown",
             length_seconds: v.duration || 0,
-            thumbnail: v.thumbnail || `https://i.ytimg.com/vi/${vId}/mqdefault.jpg`,
+            thumbnail: `https://i.ytimg.com/vi/${vId}/mqdefault.jpg`,
           };
         });
       };
 
       const fetchInvidious = async (instance: string) => {
-        const res = await fetchWithTimeout(`${instance}/api/v1/search?q=${q}&type=video`, 5000);
+        const res = await fetchWithTimeout(`${instance}/api/v1/search?q=${q}&type=video`, 4000);
         const data = await res.json();
         if (!Array.isArray(data) || !data.length) throw new Error("No data");
         return data.slice(0, 50).map((v: any) => ({
@@ -1100,12 +1168,12 @@ function YouTubeVideoSearchModal({
           title: v.title || "Unknown",
           author: v.author || "Unknown",
           length_seconds: v.lengthSeconds || v.length_seconds || 0,
-          thumbnail: v.videoThumbnails?.[0]?.url || v.thumbnail || `https://i.ytimg.com/vi/${v.videoId}/mqdefault.jpg`,
+          thumbnail: `https://i.ytimg.com/vi/${v.videoId}/mqdefault.jpg`,
         }));
       };
 
       const fetchProxy = async (proxyUrl: string) => {
-        const res = await fetchWithTimeout(proxyUrl, 6000);
+        const res = await fetchWithTimeout(proxyUrl, 5000);
         const contentType = res.headers.get("content-type") || "";
         let html = "";
         if (contentType.includes("application/json")) {
@@ -1116,6 +1184,7 @@ function YouTubeVideoSearchModal({
         }
 
         const match =
+          html.match(/var\s+ytInitialData\s*=\s*(\{[\s\S]+?\});/s) ||
           html.match(/ytInitialData\s*=\s*(\{[\s\S]+?\});/s) ||
           html.match(/window\["ytInitialData"\]\s*=\s*(\{[\s\S]+?\});/s);
         if (!match) throw new Error("No ytInitialData");
@@ -1152,9 +1221,7 @@ function YouTubeVideoSearchModal({
             title: v.title?.runs?.[0]?.text || "Unknown",
             author: v.ownerText?.runs?.[0]?.text || "Unknown",
             length_seconds,
-            thumbnail:
-              v.thumbnail?.thumbnails?.[0]?.url ||
-              `https://i.ytimg.com/vi/${v.videoId}/mqdefault.jpg`,
+            thumbnail: `https://i.ytimg.com/vi/${v.videoId}/mqdefault.jpg`,
           };
         });
       };
@@ -1162,9 +1229,16 @@ function YouTubeVideoSearchModal({
       const tasks = [
         fetchPiped("https://pipedapi.kavin.rocks"),
         fetchPiped("https://pipedapi.smnz.de"),
+        fetchPiped("https://piped-api.lunar.icu"),
+        fetchPiped("https://pipedapi.adminforge.de"),
+        fetchPiped("https://pipedapi.tokhmi.xyz"),
         fetchInvidious("https://invidious.jing.rocks"),
         fetchInvidious("https://vid.puffyan.us"),
         fetchInvidious("https://invidious.nerdvpn.de"),
+        fetchInvidious("https://invidious.privacydev.net"),
+        fetchInvidious("https://inv.tux.pizza"),
+        fetchInvidious("https://invidious.lunar.icu"),
+        fetchInvidious("https://invidious.flokinet.to"),
         fetchProxy(`https://api.allorigins.win/get?url=${encodeURIComponent(`https://www.youtube.com/results?search_query=${q}&gl=US&hl=en`)}`),
         fetchProxy(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(`https://www.youtube.com/results?search_query=${q}&gl=US&hl=en`)}`),
         fetchProxy(`https://corsproxy.io/?${encodeURIComponent(`https://www.youtube.com/results?search_query=${q}&gl=US&hl=en`)}`)
@@ -1279,11 +1353,10 @@ function YouTubeVideoSearchModal({
               >
                 {/* Thumbnail */}
                 <div className="w-16 h-16 md:w-24 md:h-14 rounded flex-shrink-0 overflow-hidden bg-muted">
-                  <img
+                  <BlurImage
                     src={result.thumbnail}
                     alt={result.title}
                     className="w-full h-full object-cover"
-                    onError={(e) => (e.currentTarget.src = "")}
                   />
                 </div>
 
@@ -1423,6 +1496,11 @@ export default function VideoPage() {
   const [newNoteText, setNewNoteText] = useState("");
   const [showYouTubeSearch, setShowYouTubeSearch] = useState(false);
   const [showSettingsMenu, setShowSettingsMenu] = useState(false);
+  const [showAB, setShowAB] = useState(false);
+  const [loopAB, setLoopAB] = useState<[number, number] | null>(null);
+  const loopABRef = useRef(loopAB);
+  useEffect(() => { loopABRef.current = loopAB; }, [loopAB]);
+  const forcedPlayRef = useRef(false);
 
   // Refs
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -1474,6 +1552,14 @@ export default function VideoPage() {
   useEffect(() => {
     activeLeafIdRef.current = activeLeafId;
   }, [activeLeafId]);
+
+  useEffect(() => {
+    if (showAB && duration > 0 && !loopAB) {
+      setLoopAB([0, duration]);
+    } else if (!showAB) {
+      setLoopAB(null);
+    }
+  }, [showAB, duration]);
 
   const notes: NoteBlock[] =
     (activeLeafId ? allNotes[activeLeafId] : null) ?? [];
@@ -1573,6 +1659,8 @@ export default function VideoPage() {
       setIsPlaying(false);
       setCurrentTime(0);
       setDuration(0);
+      setLoopAB(null);
+      setShowAB(false);
 
       if (video.type === "local" && video.fileKey) {
         const blob = await readMediaAsBlob(video.fileKey);
@@ -1688,10 +1776,20 @@ export default function VideoPage() {
         t = ytPlayerRef.current.getCurrentTime();
         setCurrentTime(t);
         setDuration(typeof ytPlayerRef.current.getDuration === "function" ? ytPlayerRef.current.getDuration() || 0 : durationRef.current);
+        if (loopABRef.current) {
+           if (t >= loopABRef.current[1] || t < loopABRef.current[0]) {
+             ytPlayerRef.current.seekTo(loopABRef.current[0], true);
+           }
+        }
       } else if (videoRef.current) {
         t = videoRef.current.currentTime;
         setCurrentTime(t);
         setDuration(videoRef.current.duration || 0);
+        if (loopABRef.current) {
+           if (t >= loopABRef.current[1] || t < loopABRef.current[0]) {
+             videoRef.current.currentTime = loopABRef.current[0];
+           }
+        }
       }
       // Update mini player in context
       if (isMiniPlayer && videoCtx.miniState) {
@@ -1710,7 +1808,7 @@ export default function VideoPage() {
           } catch {}
         }
       }
-    }, 250);
+    }, 150);
     return () => {
       if (progressIntervalRef.current)
         clearInterval(progressIntervalRef.current);
@@ -2542,20 +2640,37 @@ export default function VideoPage() {
   const renderControls = (compact = false) => (
     <div className={cn("space-y-2", compact ? "p-2" : "px-4 py-3")}>
       {/* Progress bar */}
-      <div
-        className="relative group cursor-pointer"
-        onClick={(e) => {
-          const rect = e.currentTarget.getBoundingClientRect();
-          handleSeek(((e.clientX - rect.left) / rect.width) * duration);
-        }}
-      >
-        <div className="h-1.5 bg-muted/60 rounded-full overflow-hidden group-hover:h-2.5 transition-all">
-          <div
-            className="h-full bg-primary rounded-full"
-            style={{ width: `${progress}%` }}
+      {showAB && !compact ? (
+        <div className="flex items-center gap-2 pb-1">
+          <span className={cn("text-[10px] font-bold", isFullscreen ? "text-primary" : "text-primary")}>A</span>
+          <DualRangeSlider 
+            duration={duration} 
+            currentTime={currentTime} 
+            value={loopAB || [0, duration]} 
+            onChange={setLoopAB} 
+            onSeekPreview={(t) => {
+              handleSeek(t);
+              if (!isPlaying && !forcedPlayRef.current) { forcedPlayRef.current = true; handlePlayPause(); setTimeout(() => forcedPlayRef.current = false, 500); }
+            }} 
           />
+          <span className={cn("text-[10px] font-bold", isFullscreen ? "text-primary" : "text-primary")}>B</span>
         </div>
-      </div>
+      ) : (
+        <div
+          className="relative group cursor-pointer"
+          onClick={(e) => {
+            const rect = e.currentTarget.getBoundingClientRect();
+            handleSeek(((e.clientX - rect.left) / rect.width) * duration);
+          }}
+        >
+          <div className="h-1.5 bg-muted/60 rounded-full overflow-hidden group-hover:h-2.5 transition-all">
+            <div
+              className="h-full bg-primary rounded-full"
+              style={{ width: `${progress}%` }}
+            />
+          </div>
+        </div>
+      )}
       {/* Controls row */}
       <div className="flex items-center gap-2">
         <button
@@ -3408,25 +3523,42 @@ export default function VideoPage() {
                           )}
                           {/* Seek + controls */}
                           <div className="px-4 py-2 space-y-1.5">
-                            <div
-                              className="relative group cursor-pointer"
-                              onClick={(e) => {
-                                const rect =
-                                  e.currentTarget.getBoundingClientRect();
-                                handleSeek(
-                                  ((e.clientX - rect.left) / rect.width) *
-                                    duration,
-                                );
-                                resetControlsTimer();
-                              }}
-                            >
-                              <div className={cn("h-1.5 rounded-full overflow-hidden group-hover:h-2.5 transition-all", isFullscreen ? "bg-white/20" : "bg-primary/20")}>
-                                <div
-                                  className="h-full bg-primary rounded-full"
-                                  style={{ width: `${progress}%` }}
+                            {showAB ? (
+                              <div className="flex items-center gap-2 pb-1">
+                                <span className={cn("text-[10px] font-bold", isFullscreen ? "text-primary" : "text-primary")}>A</span>
+                                <DualRangeSlider 
+                                  duration={duration} 
+                                  currentTime={currentTime} 
+                                  value={loopAB || [0, duration]} 
+                                  onChange={setLoopAB} 
+                                  onSeekPreview={(t) => {
+                                    handleSeek(t);
+                                    if (!isPlaying && !forcedPlayRef.current) { forcedPlayRef.current = true; handlePlayPause(); setTimeout(() => forcedPlayRef.current = false, 500); }
+                                  }} 
                                 />
+                                <span className={cn("text-[10px] font-bold", isFullscreen ? "text-primary" : "text-primary")}>B</span>
                               </div>
-                            </div>
+                            ) : (
+                              <div
+                                className="relative group cursor-pointer"
+                                onClick={(e) => {
+                                  const rect =
+                                    e.currentTarget.getBoundingClientRect();
+                                  handleSeek(
+                                    ((e.clientX - rect.left) / rect.width) *
+                                      duration,
+                                  );
+                                  resetControlsTimer();
+                                }}
+                              >
+                                <div className={cn("h-1.5 rounded-full overflow-hidden group-hover:h-2.5 transition-all", isFullscreen ? "bg-white/20" : "bg-primary/20")}>
+                                  <div
+                                    className="h-full bg-primary rounded-full"
+                                    style={{ width: `${progress}%` }}
+                                  />
+                                </div>
+                              </div>
+                            )}
                             <div className="flex items-center gap-2">
                               <button
                                 onClick={() => {
@@ -3464,6 +3596,13 @@ export default function VideoPage() {
                                 {formatTime(duration)}
                               </span>
                               <div className="flex-1" />
+        <button
+          onClick={() => setShowAB((p) => !p)}
+          className={cn("p-1.5 rounded-lg transition-colors", showAB ? "text-primary bg-primary/10" : (isFullscreen ? "text-white/80 hover:bg-white/10" : "text-muted-foreground hover:bg-accent hover:text-foreground"))}
+          title="A-B Loop"
+        >
+          <Repeat className="h-3.5 w-3.5" />
+        </button>
                               <button
                                 onClick={() => setShowYouTubeSearch(true)}
                                 className={cn("p-1.5 rounded-lg transition-colors", isFullscreen ? "text-white/80 hover:bg-white/10" : "text-muted-foreground hover:bg-accent hover:text-foreground")}

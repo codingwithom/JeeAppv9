@@ -641,14 +641,26 @@ function QuestionDetailModal({
 // --- Stopwatch Widget ---
 function StopwatchWidget({ onClose }: { onClose: () => void }) {
   const [isRunning, setIsRunning] = useState(false);
-  const [elapsedMs, setElapsedMs] = useState(0);
   const [savedTimes, setSavedTimes] = useState<number[]>([]);
   const lastUpdateRef = useRef<number>(0);
   const rafRef = useRef<number>(0);
+  const displayRef = useRef<HTMLSpanElement>(null);
+  const currentElapsedRef = useRef<number>(0);
+
+  const formatTime = (ms: number) => {
+    const totalSecs = Math.floor(ms / 1000);
+    const mins = Math.floor(totalSecs / 60);
+    const secs = totalSecs % 60;
+    const millis = Math.floor((ms % 1000) / 10);
+    return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}.${millis.toString().padStart(2, '0')}`;
+  };
 
   const update = useCallback(() => {
     const now = performance.now();
-    setElapsedMs(prev => prev + (now - lastUpdateRef.current));
+    currentElapsedRef.current += (now - lastUpdateRef.current);
+    if (displayRef.current) {
+      displayRef.current.textContent = formatTime(currentElapsedRef.current);
+    }
     lastUpdateRef.current = now;
     rafRef.current = requestAnimationFrame(update);
   }, []);
@@ -663,14 +675,6 @@ function StopwatchWidget({ onClose }: { onClose: () => void }) {
     return () => cancelAnimationFrame(rafRef.current);
   }, [isRunning, update]);
 
-  const formatTime = (ms: number) => {
-    const totalSecs = Math.floor(ms / 1000);
-    const mins = Math.floor(totalSecs / 60);
-    const secs = totalSecs % 60;
-    const millis = Math.floor((ms % 1000) / 10);
-    return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}.${millis.toString().padStart(2, '0')}`;
-  };
-
   return (
     <motion.div 
       initial={{ opacity: 0, y: -20, scale: 0.95 }}
@@ -684,17 +688,17 @@ function StopwatchWidget({ onClose }: { onClose: () => void }) {
       </div>
 
       <div className="text-center py-4">
-        <span className="text-4xl font-black tabular-nums text-foreground">{formatTime(elapsedMs)}</span>
+        <span ref={displayRef} className="text-4xl font-black tabular-nums text-foreground">{formatTime(currentElapsedRef.current)}</span>
       </div>
 
       <div className="flex gap-2 mb-2">
-        <Button size="sm" variant={isRunning ? "destructive" : "default"} className="flex-1 font-bold h-8 text-xs" onClick={() => setIsRunning(!isRunning)}>
-          {isRunning ? "Stop" : (elapsedMs > 0 ? "Resume" : "Start")}
+        <Button size="sm" variant={isRunning ? "destructive" : "default"} className="flex-1 font-bold h-8 text-xs" onClick={() => { setIsRunning(!isRunning); }}>
+          {isRunning ? "Stop" : (currentElapsedRef.current > 0 ? "Resume" : "Start")}
         </Button>
-        <Button size="sm" variant="outline" className="flex-1 font-bold h-8 text-xs" onClick={() => { if (elapsedMs > 0) setSavedTimes(prev => [elapsedMs, ...prev]); }} disabled={elapsedMs === 0}>
+        <Button size="sm" variant="outline" className="flex-1 font-bold h-8 text-xs" onClick={() => { if (currentElapsedRef.current > 0) setSavedTimes(prev => [currentElapsedRef.current, ...prev]); setIsRunning(false); }}>
           Save
         </Button>
-        <Button size="sm" variant="outline" className="flex-1 font-bold h-8 text-xs" onClick={() => { setIsRunning(false); setElapsedMs(0); setSavedTimes([]); }}>
+        <Button size="sm" variant="outline" className="flex-1 font-bold h-8 text-xs" onClick={() => { setIsRunning(false); currentElapsedRef.current = 0; if (displayRef.current) displayRef.current.textContent = formatTime(0); setSavedTimes([]); }}>
           Reset
         </Button>
       </div>

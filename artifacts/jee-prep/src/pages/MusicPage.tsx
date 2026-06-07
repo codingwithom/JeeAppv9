@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, useMemo } from "react";
-import { motion, AnimatePresence, Reorder } from "framer-motion";
+import { motion, AnimatePresence, Reorder, useDragControls } from "framer-motion";
 import { useMusicContext, Song } from "@/context/MusicContext";
 import { useAppContext } from "@/context/AppContext";
 import { Button } from "@/components/ui/button";
@@ -189,6 +189,22 @@ function EditSongModal({
 }
 
 // ── YouTube Search Modal ──────────────────────────────────────────────────────
+function BlurImage({ src, alt, className }: { src: string; alt?: string; className?: string }) {
+  const [loaded, setLoaded] = useState(false);
+  return (
+    <img
+      src={src}
+      alt={alt || ""}
+      className={`${className || ""} transition-all duration-500 ${loaded ? "blur-0 scale-100" : "blur-md scale-110"}`}
+      onLoad={() => setLoaded(true)}
+      onError={(e) => {
+        (e.currentTarget as HTMLImageElement).src = "";
+        setLoaded(true);
+      }}
+    />
+  );
+}
+
 interface YouTubeSearchResult {
   videoId: string;
   title: string;
@@ -200,13 +216,26 @@ interface YouTubeSearchResult {
 function YouTubeSearchModal({
   playlistId, onClose, onSongAdded,
 }: { playlistId: string; onClose: () => void; onSongAdded?: (song: Song) => void }) {
-  const { addSongToPlaylist } = useMusicContext();
+  const { addSongToPlaylist, playlists, playSong } = useMusicContext();
   const [searchQuery, setSearchQuery] = useState("");
   const [results, setResults] = useState<YouTubeSearchResult[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
+
+  const currentPlaylist = playlists.find(p => p.id === playlistId);
+
+  const localResults = useMemo(() => {
+    if (!searchQuery.trim() || !currentPlaylist) return [];
+    const q = searchQuery.toLowerCase();
+    return currentPlaylist.songs.filter(s =>
+      s.title.toLowerCase().includes(q) ||
+      s.artist.toLowerCase().includes(q) ||
+      s.description?.toLowerCase().includes(q) ||
+      s.tags?.some(t => t.toLowerCase().includes(q))
+    );
+  }, [searchQuery, currentPlaylist]);
 
   const handleSearch = async () => {
     if (!searchQuery.trim()) return;
@@ -240,35 +269,26 @@ function YouTubeSearchModal({
             title: v.title || "Unknown",
             author: v.uploaderName || "Unknown",
             length_seconds: v.duration || 0,
-            thumbnail: v.thumbnail || `https://i.ytimg.com/vi/${vId}/mqdefault.jpg`,
+            thumbnail: `https://i.ytimg.com/vi/${vId}/mqdefault.jpg`,
           };
         });
       };
 
       const fetchInvidious = async (instance: string) => {
-        const fetchPage = async (page: number) => {
-          const res = await fetchWithTimeout(`${instance}/api/v1/search?q=${q}&type=video&page=${page}`, 5000);
-          const data = await res.json();
-          if (!Array.isArray(data)) throw new Error("No data");
-          return data;
-        };
-        
-        const pages = await Promise.allSettled([fetchPage(1), fetchPage(2), fetchPage(3)]);
-        const combined = pages.flatMap(p => p.status === "fulfilled" ? p.value : []);
-        if (!combined.length) throw new Error("No data");
-        
-        const unique = Array.from(new Map(combined.map((v: any) => [v.videoId, v])).values());
-        return unique.slice(0, 50).map((v: any) => ({
+        const res = await fetchWithTimeout(`${instance}/api/v1/search?q=${q}&type=video`, 4000);
+        const data = await res.json();
+        if (!Array.isArray(data) || !data.length) throw new Error("No data");
+        return data.slice(0, 50).map((v: any) => ({
           videoId: v.videoId,
           title: v.title || "Unknown",
           author: v.author || "Unknown",
           length_seconds: v.lengthSeconds || v.length_seconds || 0,
-          thumbnail: v.videoThumbnails?.[0]?.url || v.thumbnail || `https://i.ytimg.com/vi/${v.videoId}/mqdefault.jpg`,
+          thumbnail: `https://i.ytimg.com/vi/${v.videoId}/mqdefault.jpg`,
         }));
       };
 
       const fetchProxy = async (proxyUrl: string) => {
-        const res = await fetchWithTimeout(proxyUrl, 6000);
+        const res = await fetchWithTimeout(proxyUrl, 5000);
         const contentType = res.headers.get("content-type") || "";
         let html = "";
         if (contentType.includes("application/json")) {
@@ -279,6 +299,7 @@ function YouTubeSearchModal({
         }
 
         const match =
+          html.match(/var\s+ytInitialData\s*=\s*(\{[\s\S]+?\});/s) ||
           html.match(/ytInitialData\s*=\s*(\{[\s\S]+?\});/s) ||
           html.match(/window\["ytInitialData"\]\s*=\s*(\{[\s\S]+?\});/s);
         if (!match) throw new Error("No ytInitialData");
@@ -315,21 +336,24 @@ function YouTubeSearchModal({
             title: v.title?.runs?.[0]?.text || "Unknown",
             author: v.ownerText?.runs?.[0]?.text || "Unknown",
             length_seconds,
-            thumbnail:
-              v.thumbnail?.thumbnails?.[0]?.url ||
-              `https://i.ytimg.com/vi/${v.videoId}/mqdefault.jpg`,
+            thumbnail: `https://i.ytimg.com/vi/${v.videoId}/mqdefault.jpg`,
           };
         });
       };
 
       const allTasks = [
+        fetchPiped("https://pipedapi.kavin.rocks"),
+        fetchPiped("https://pipedapi.smnz.de"),
+        fetchPiped("https://piped-api.lunar.icu"),
+        fetchPiped("https://pipedapi.adminforge.de"),
+        fetchPiped("https://pipedapi.tokhmi.xyz"),
         fetchInvidious("https://invidious.jing.rocks"),
         fetchInvidious("https://vid.puffyan.us"),
         fetchInvidious("https://invidious.nerdvpn.de"),
         fetchInvidious("https://invidious.privacydev.net"),
         fetchInvidious("https://inv.tux.pizza"),
-        fetchPiped("https://pipedapi.kavin.rocks"),
-        fetchPiped("https://pipedapi.smnz.de"),
+        fetchInvidious("https://invidious.lunar.icu"),
+        fetchInvidious("https://invidious.flokinet.to"),
         fetchProxy(`https://api.allorigins.win/get?url=${encodeURIComponent(`https://www.youtube.com/results?search_query=${q}&gl=US&hl=en`)}`),
         fetchProxy(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(`https://www.youtube.com/results?search_query=${q}&gl=US&hl=en`)}`),
         fetchProxy(`https://corsproxy.io/?${encodeURIComponent(`https://www.youtube.com/results?search_query=${q}&gl=US&hl=en`)}`)
@@ -413,18 +437,54 @@ function YouTubeSearchModal({
 
         {/* Results */}
         <div className="flex-1 overflow-y-auto p-4 md:p-6 flex flex-col">
-          {results.length === 0 && !loading && searchQuery && (
+          {results.length === 0 && localResults.length === 0 && !loading && searchQuery && (
             <div className="text-center py-8 text-muted-foreground">
               <Music className="h-12 w-12 mx-auto mb-3 opacity-20" />
               <p>No results. Try searching for something else.</p>
             </div>
           )}
 
-          {results.length === 0 && !loading && !searchQuery && (
+          {results.length === 0 && localResults.length === 0 && !loading && !searchQuery && (
             <div className="text-center py-8 text-muted-foreground">
               <Search className="h-12 w-12 mx-auto mb-3 opacity-20" />
               <p>Enter a search term above to find songs</p>
             </div>
+          )}
+
+          {localResults.length > 0 && !loading && (
+            <div className="mb-6 flex-shrink-0">
+              <h3 className="text-xs font-bold text-[#1DB954] uppercase tracking-widest mb-3 flex items-center gap-2">
+                <Library className="h-4 w-4" /> In "{currentPlaylist?.name}"
+              </h3>
+              <div className="space-y-2">
+                {localResults.map((song) => (
+                  <motion.div
+                    key={song.id}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="group flex items-center gap-3 p-3 rounded-lg border border-[#1DB954]/20 bg-[#1DB954]/5 hover:bg-[#1DB954]/10 transition-colors cursor-pointer"
+                    onClick={() => { playSong(song, playlistId); onClose(); }}
+                  >
+                    <div className="w-12 h-12 md:w-14 md:h-14 rounded flex-shrink-0 overflow-hidden bg-black/20">
+                      {song.coverUrl ? <img src={song.coverUrl} className="w-full h-full object-cover" /> : <Music className="w-full h-full p-3 text-[#1DB954]/50" />}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-sm font-medium text-foreground truncate group-hover:text-[#1DB954] transition-colors">{song.title}</p>
+                      <p className="text-xs text-muted-foreground truncate">{song.artist}</p>
+                    </div>
+                    <button className="p-2 bg-[#1DB954] hover:bg-[#1ed760] text-black rounded-full transition-colors flex-shrink-0">
+                      <Play className="h-4 w-4 ml-0.5" />
+                    </button>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {localResults.length > 0 && results.length > 0 && !loading && (
+            <h3 className="text-xs font-bold text-red-500 uppercase tracking-widest mb-3 flex items-center gap-2 pt-4 border-t border-border">
+              <Youtube className="h-4 w-4" /> YouTube Results
+            </h3>
           )}
 
           <div className="space-y-2 md:space-y-3 flex-1">
@@ -438,11 +498,10 @@ function YouTubeSearchModal({
               >
                 {/* Thumbnail */}
                 <div className="w-16 h-16 md:w-20 md:h-20 rounded flex-shrink-0 overflow-hidden bg-muted">
-                  <img
+                  <BlurImage
                     src={result.thumbnail}
                     alt={result.title}
                     className="w-full h-full object-cover"
-                    onError={(e) => (e.currentTarget.src = "")}
                   />
                 </div>
 
@@ -1244,6 +1303,149 @@ function AddSongModal({
   );
 }
 
+function SongListItem({
+  song,
+  idx,
+  selId,
+  isActive,
+  activeItemId,
+  isPlayingThis,
+  duration,
+  playSong,
+  removeSongFromPlaylist,
+  setEditSong,
+  setActiveItemId
+}: any) {
+  const controls = useDragControls();
+  const isMobile = typeof window !== 'undefined' ? window.innerWidth < 768 : false;
+  const [sg0, sg1] = getGrad(song.title);
+
+  return (
+    <Reorder.Item as="div" value={song} dragListener={!isMobile} dragControls={controls}>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: idx * 0.02 }}
+        className={`md:hidden grid gap-2 px-2 py-2 rounded-md transition-colors border border-border/30 ${isActive ? "bg-muted border-[#1DB954]/30" : (activeItemId === song.id ? "bg-muted/70" : "hover:bg-muted/40")}`}
+        style={{ gridTemplateColumns: "auto 1fr auto" }}
+        onClick={() => { setActiveItemId(song.id); playSong(song, selId); }}
+      >
+        {/* Mobile Handle */}
+        <div 
+          className="flex items-center justify-center flex-shrink-0 cursor-grab active:cursor-grabbing px-2 py-1"
+          onPointerDown={(e) => { 
+            if (isMobile) { 
+              e.preventDefault(); 
+              controls.start(e); 
+            } 
+          }}
+          style={{ touchAction: "none" }}
+          onClick={(e) => e.stopPropagation()}
+        >
+          {isPlayingThis ? (
+            <div className="flex items-end gap-0.5 h-4">
+              {[0, 1, 2].map(i => (
+                <motion.div key={i} className="w-0.5 bg-[#1DB954] rounded-full" animate={{ height: ["30%", "100%", "30%"] }} transition={{ repeat: Infinity, duration: 0.6, delay: i * 0.2 }} />
+              ))}
+            </div>
+          ) : isActive ? (
+            <span className="text-[#1DB954] font-semibold text-xs">| {idx + 1}</span>
+          ) : (
+            <span className="text-muted-foreground text-xs">| {idx + 1}</span>
+          )}
+        </div>
+
+        {/* Details */}
+        <div className="flex items-center gap-2 min-w-0 pointer-events-none">
+          <div className={`w-8 h-8 rounded flex-shrink-0 flex items-center justify-center bg-gradient-to-br ${sg0} ${sg1}`}>
+            {song.coverUrl ? (
+              <img src={song.coverUrl} alt="" className="w-full h-full object-cover rounded" />
+            ) : (
+              <Music className="h-3 w-3 text-white/50" />
+            )}
+          </div>
+          <div className="min-w-0 flex-1">
+            <p className={`text-xs font-medium truncate ${isActive ? "text-[#1DB954]" : "text-foreground"}`}>{song.title}</p>
+            <p className="text-[10px] text-muted-foreground truncate">{song.artist}</p>
+          </div>
+        </div>
+
+        <div className="flex items-center justify-center shrink-0">
+          <ThreeDotMenu>
+            <MenuItem icon={Pencil} label="Edit" onClick={(e: any) => { e.stopPropagation(); setEditSong({ song, playlistId: selId }); }} />
+            <MenuItem icon={Trash2} label="Delete" destructive onClick={(e: any) => { e.stopPropagation(); removeSongFromPlaylist(selId, song.id); }} />
+          </ThreeDotMenu>
+        </div>
+      </motion.div>
+        
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: idx * 0.02 }}
+        className={`hidden md:grid group gap-4 px-4 py-3 rounded-md cursor-pointer transition-colors ${isActive ? "bg-muted" : (activeItemId === song.id ? "bg-muted/70" : "hover:bg-muted/40")}`}
+        style={{ gridTemplateColumns: "28px 1fr 80px 64px" }}
+        onClick={() => { setActiveItemId(song.id); playSong(song, selId); }}
+      >
+        {/* Desktop Index */}
+        <div className="flex items-center justify-center text-sm font-semibold pointer-events-none">
+          {isPlayingThis ? (
+            <div className="flex items-end gap-0.5 h-4">
+              {[0, 1, 2].map(i => (
+                <motion.div key={i} className="w-0.5 bg-[#1DB954] rounded-full" animate={{ height: ["30%", "100%", "30%"] }} transition={{ repeat: Infinity, duration: 0.6, delay: i * 0.2 }} />
+              ))}
+            </div>
+          ) : isActive ? (
+            <span className="text-[#1DB954] text-sm">| {idx + 1}</span>
+          ) : (
+            <>
+              <span className="text-muted-foreground group-hover:hidden text-sm">| {idx + 1}</span>
+              <Play className="h-3.5 w-3.5 text-foreground hidden group-hover:block" />
+            </>
+          )}
+        </div>
+
+        {/* Title + artist */}
+        <div className="flex items-center gap-3 min-w-0 pointer-events-none">
+          <div className={`w-10 h-10 rounded flex-shrink-0 flex items-center justify-center bg-gradient-to-br ${sg0} ${sg1}`}>
+            {song.coverUrl ? (
+              <img src={song.coverUrl} alt="" className="w-full h-full object-cover rounded" />
+            ) : (
+              <Music className="h-4 w-4 text-white/50" />
+            )}
+          </div>
+          <div className="min-w-0 flex-1">
+            <p className={`text-sm font-medium truncate ${isActive ? "text-[#1DB954]" : "text-foreground"}`}>{song.title}</p>
+            <p className="text-xs text-muted-foreground truncate">{song.artist}</p>
+            {song.description && (
+              <p className="text-[10px] text-muted-foreground/60 truncate">{song.description}</p>
+            )}
+            {song.tags && song.tags.length > 0 && (
+              <div className="flex gap-1 mt-0.5 flex-wrap">
+                {song.tags.slice(0, 3).map((t: string) => (
+                  <span key={t} className="text-[9px] bg-[#1DB954]/15 text-[#1DB954] px-1.5 py-0.5 rounded-full">#{t}</span>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Duration */}
+        <div className="flex items-center justify-center pointer-events-none">
+          <span className="text-sm text-muted-foreground">{isActive ? formatTime(duration) : "—"}</span>
+        </div>
+
+        {/* Actions */}
+        <div className="flex items-center justify-center">
+          <ThreeDotMenu>
+            <MenuItem icon={Pencil} label="Rename / Edit" shortcut="F2" onClick={(e: any) => { e.stopPropagation(); setEditSong({ song, playlistId: selId }); }} />
+            <MenuItem icon={Trash2} label="Delete" shortcut="Del" destructive onClick={(e: any) => { e.stopPropagation(); removeSongFromPlaylist(selId, song.id); }} />
+          </ThreeDotMenu>
+        </div>
+      </motion.div>
+    </Reorder.Item>
+  );
+}
+
 // ── Main page ─────────────────────────────────────────────────────────────────
 export default function MusicPage() {
   const musicCtx = useMusicContext() as any;
@@ -1490,124 +1692,21 @@ export default function MusicPage() {
               {sel.songs.map((song: any, idx: number) => {
                 const isActive = currentSong?.id === song.id;
                 const isPlayingThis = isActive && isPlaying;
-                const [sg0, sg1] = getGrad(song.title);
                 return (
-                  <Reorder.Item as="div" key={song.id} value={song}>
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ delay: idx * 0.02 }}
-                      className={`md:hidden grid gap-2 px-2 py-2 rounded-md cursor-pointer transition-colors border border-border/30
-                      ${isActive ? "bg-muted border-[#1DB954]/30" : "hover:bg-muted/40"}`}
-                    style={{ gridTemplateColumns: "auto 1fr auto" }}
-                    onClick={() => { setActiveItemId(song.id); playSong(song, selId); }}
-                  >
-                    {/* Mobile card layout */}
-                    <div className="flex items-center justify-center flex-shrink-0">
-                      {isPlayingThis ? (
-                        <div className="flex items-end gap-0.5 h-4">
-                          {[0, 1, 2].map(i => (
-                            <motion.div key={i} className="w-0.5 bg-[#1DB954] rounded-full" animate={{ height: ["30%", "100%", "30%"] }} transition={{ repeat: Infinity, duration: 0.6, delay: i * 0.2 }} />
-                          ))}
-                        </div>
-                      ) : isActive ? (
-                        <span className="text-[#1DB954] font-semibold text-xs">{idx + 1}</span>
-                      ) : (
-                        <>
-                          <span className="text-muted-foreground text-xs">{idx + 1}</span>
-                          <Play className="h-3 w-3 text-foreground hidden" />
-                        </>
-                      )}
-                    </div>
-
-                    <div className="flex items-center gap-2 min-w-0">
-                      <div className={`w-8 h-8 rounded flex-shrink-0 flex items-center justify-center bg-gradient-to-br ${sg0} ${sg1}`}>
-                        {song.coverUrl ? (
-                          <img src={song.coverUrl} alt="" className="w-full h-full object-cover rounded" />
-                        ) : (
-                          <Music className="h-3 w-3 text-white/50" />
-                        )}
-                      </div>
-                      <div className="min-w-0 flex-1">
-                        <p className={`text-xs font-medium truncate ${isActive ? "text-[#1DB954]" : "text-foreground"}`}>{song.title}</p>
-                        <p className="text-[10px] text-muted-foreground truncate">{song.artist}</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center justify-center shrink-0">
-                      <ThreeDotMenu>
-                        <MenuItem icon={Pencil} label="Edit" onClick={(e: any) => { e.stopPropagation(); setEditSong({ song, playlistId: selId }); }} />
-                        <MenuItem icon={Trash2} label="Delete" destructive onClick={(e: any) => { e.stopPropagation(); removeSongFromPlaylist(selId, song.id); }} />
-                      </ThreeDotMenu>
-                    </div>
-                  </motion.div>
-                    
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ delay: idx * 0.02 }}
-                      className={`hidden md:grid group gap-4 px-4 py-3 rounded-md cursor-pointer transition-colors
-                      ${isActive ? "bg-muted" : (activeItemId === song.id ? "bg-muted/70" : "hover:bg-muted/40")}`}
-                      style={{ gridTemplateColumns: "28px 1fr 80px 64px" }}
-                      onClick={() => { setActiveItemId(song.id); playSong(song, selId); }}
-                    >
-                      {/* Index / playing */}
-                      <div className="flex items-center justify-center text-sm">
-                      {isPlayingThis ? (
-                        <div className="flex items-end gap-0.5 h-4">
-                          {[0, 1, 2].map(i => (
-                            <motion.div key={i} className="w-0.5 bg-[#1DB954] rounded-full" animate={{ height: ["30%", "100%", "30%"] }} transition={{ repeat: Infinity, duration: 0.6, delay: i * 0.2 }} />
-                          ))}
-                        </div>
-                      ) : isActive ? (
-                        <span className="text-[#1DB954] font-semibold text-sm">{idx + 1}</span>
-                      ) : (
-                        <>
-                          <span className="text-muted-foreground group-hover:hidden text-sm">{idx + 1}</span>
-                          <Play className="h-3.5 w-3.5 text-foreground hidden group-hover:block" />
-                        </>
-                      )}
-                    </div>
-
-                    {/* Title + artist */}
-                    <div className="flex items-center gap-3 min-w-0">
-                      <div className={`w-10 h-10 rounded flex-shrink-0 flex items-center justify-center bg-gradient-to-br ${sg0} ${sg1}`}>
-                        {song.coverUrl ? (
-                          <img src={song.coverUrl} alt="" className="w-full h-full object-cover rounded" />
-                        ) : (
-                          <Music className="h-4 w-4 text-white/50" />
-                        )}
-                      </div>
-                      <div className="min-w-0 flex-1">
-                        <p className={`text-sm font-medium truncate ${isActive ? "text-[#1DB954]" : "text-foreground"}`}>{song.title}</p>
-                        <p className="text-xs text-muted-foreground truncate">{song.artist}</p>
-                        {song.description && (
-                          <p className="text-[10px] text-muted-foreground/60 truncate">{song.description}</p>
-                        )}
-                        {song.tags && song.tags.length > 0 && (
-                          <div className="flex gap-1 mt-0.5 flex-wrap">
-                            {song.tags.slice(0, 3).map(t => (
-                              <span key={t} className="text-[9px] bg-[#1DB954]/15 text-[#1DB954] px-1.5 py-0.5 rounded-full">#{t}</span>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    </div>
-
-                    {/* Duration */}
-                    <div className="flex items-center justify-center">
-                      <span className="text-sm text-muted-foreground">{isActive ? formatTime(duration) : "—"}</span>
-                    </div>
-
-                    {/* Actions */}
-                    <div className="flex items-center justify-center">
-                      <ThreeDotMenu>
-                        <MenuItem icon={Pencil} label="Rename / Edit" shortcut="F2" onClick={(e: any) => { e.stopPropagation(); setEditSong({ song, playlistId: selId }); }} />
-                        <MenuItem icon={Trash2} label="Delete" shortcut="Del" destructive onClick={(e: any) => { e.stopPropagation(); removeSongFromPlaylist(selId, song.id); }} />
-                      </ThreeDotMenu>
-                    </div>
-                  </motion.div>
-                  </Reorder.Item>
+                  <SongListItem
+                    key={song.id}
+                    song={song}
+                    idx={idx}
+                    selId={selId}
+                    isActive={isActive}
+                    activeItemId={activeItemId}
+                    isPlayingThis={isPlayingThis}
+                    duration={duration}
+                    playSong={playSong}
+                    removeSongFromPlaylist={removeSongFromPlaylist}
+                    setEditSong={setEditSong}
+                    setActiveItemId={setActiveItemId}
+                  />
                 );
               })}
               </Reorder.Group>

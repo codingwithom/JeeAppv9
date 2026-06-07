@@ -17,9 +17,13 @@ import {
   AreaChart,
   Area,
   CartesianGrid,
+  Brush,
 } from "recharts";
 import JSZip from "jszip";
 import { idbGetAllKeys, idbGet, idbSet } from "@/lib/idb";
+import { auth, db } from "@/lib/firebase";
+import { doc, getDoc, updateDoc } from "firebase/firestore";
+import { sendPasswordResetEmail } from "firebase/auth";
 import {
   CheckCircle2,
   ListTodo,
@@ -36,6 +40,8 @@ import {
   FolderPlus,
   X,
   Pencil,
+  User,
+  Mail,
   Trash2,
   Trophy,
   BookOpen,
@@ -472,7 +478,7 @@ function SystemPerformance() {
             setStorage({ usage: est.usage || 0, quota: est.quota || 0 });
          });
        }
-    }, 2000);
+    }, 5000);
 
     return () => {
        clearInterval(intervalId);
@@ -575,7 +581,7 @@ function SystemPerformance() {
 export default function AdminPage() {
   const { user, logout } = useAppContext();
   const { streakData, todaySession } = useStreakContext();
-  const { isSupported, changeFolder } = useWorkspaceContext();
+  const { isSupported, changeFolder, writeMedia, readMediaAsArrayBuffer } = useWorkspaceContext();
 
   const [timeline, setTimeline] = useState<TimelineEntry[]>(() => {
     try {
@@ -613,6 +619,98 @@ export default function AdminPage() {
   // Live refresh key — polls localStorage every 60s to prevent lag and CPU blocking
   const [refreshKey, setRefreshKey] = useState(0);
   const [showStats, setShowStats] = useState(false);
+  const [spikeOffset, setSpikeOffset] = useState(0);
+  const [dateRangeOffset, setDateRangeOffset] = useState(0); // -1 = past 365 days, 0 = current, +1 = future 365 days
+
+  // ── Account Config State ──────────────────────────────────────────────────
+  const [accName, setAccName] = useState("");
+  const [accDob, setAccDob] = useState("");
+  const [accPic, setAccPic] = useState("");
+  const [accPass, setAccPass] = useState("");
+  const [accLoading, setAccLoading] = useState(false);
+  const [accMsg, setAccMsg] = useState("");
+  const [otpStep, setOtpStep] = useState<"idle" | "sent" | "verified">("idle");
+  const [otpInput, setOtpInput] = useState("");
+  const [generatedOtp, setGeneratedOtp] = useState("");
+
+  useEffect(() => {
+    if (auth.currentUser) {
+      getDoc(doc(db, "users", auth.currentUser.uid)).then(d => {
+        if (d.exists()) {
+          const data = d.data();
+          setAccName(data.localUsername || data.name || "");
+          setAccDob(data.dateOfBirth || "");
+          setAccPass(data.localPassword || "");
+          setAccPic(data.profilePic || localStorage.getItem("jee_profile_pic") || "");
+        }
+      });
+    } else {
+      setAccPic(localStorage.getItem("jee_profile_pic") || "");
+    }
+  }, []);
+
+  const handlePicUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      setAccPic(event.target?.result as string);
+    };
+    reader.readAsDataURL(file);
+  };
+
+  const sendResetLink = async () => {
+    if (!auth.currentUser?.email) {
+      setAccMsg("No email associated with this account to send a reset link.");
+      return;
+    }
+    try {
+      await sendPasswordResetEmail(auth, auth.currentUser.email);
+      setAccMsg("A password reset link has been sent to your email!");
+    } catch (err: any) {
+      setAccMsg(err.message || "Failed to send reset link.");
+    }
+  };
+
+  const handleSaveAccount = async () => {
+    setAccLoading(true);
+    setAccMsg("");
+    try {
+      if (auth.currentUser) {
+        await updateDoc(doc(db, "users", auth.currentUser.uid), {
+          name: accName,
+          localUsername: accName,
+          dateOfBirth: accDob,
+          localPassword: accPass,
+          profilePic: accPic
+        });
+      }
+      
+      const storedUsers = JSON.parse(localStorage.getItem("jee_local_users") || "[]");
+      const updatedUsers = storedUsers.map((u: any) => 
+        u.username === user ? { ...u, username: accName, password: accPass } : u
+      );
+      localStorage.setItem("jee_local_users", JSON.stringify(updatedUsers));
+      
+      if (accPic) localStorage.setItem("jee_profile_pic", accPic);
+      if (accName) {
+        localStorage.setItem("jee_local_name", accName);
+        localStorage.setItem("jee_current_user", accName); // Keep local session active with new name
+      }
+      
+      setAccMsg("Account configuration saved successfully! Reloading...");
+      // Dispatch event to update cross-tab components instantly
+      window.dispatchEvent(new Event("storage"));
+      
+      if (accName !== user) {
+        setTimeout(() => window.location.reload(), 1500); // Auto-reload to apply new username everywhere
+      }
+    } catch (err: any) {
+      setAccMsg(err.message || "Failed to update account.");
+    }
+    setAccLoading(false);
+  };
+
   const statsRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const id = setInterval(() => setRefreshKey((k) => k + 1), 60000);
@@ -659,6 +757,19 @@ export default function AdminPage() {
     localStorage.setItem("jee_admin_timeline", JSON.stringify(timeline));
   }, [timeline]);
 
+  // ── Helper: Get date range for period ────────────────────────────────────
+  const getDateRange = (offset: number) => {
+    const endDate = new Date();
+    const startDate = new Date();
+    
+    // offset: 0 = current period, -1 = past, 1 = future
+    const periodDays = 365;
+    endDate.setDate(endDate.getDate() + (offset * periodDays));
+    startDate.setDate(endDate.getDate() - periodDays);
+    
+    return { startDate, endDate };
+  };
+
   // ── Compute all stats ────────────────────────────────────────────────────
   const stats = useMemo(() => {
     const parse = <T,>(key: string, fallback: T): T => {
@@ -669,8 +780,15 @@ export default function AdminPage() {
       }
     };
 
-    const tasks = parse<any[]>("jee_tasks", []);
-    const events = parse<any[]>("jee_cal_events", []);
+    // Get date range for the current period
+    const { startDate, endDate } = getDateRange(dateRangeOffset);
+    const isInRange = (date: any) => {
+      const d = new Date(date);
+      return d >= startDate && d <= endDate;
+    };
+
+    const tasks = parse<any[]>("jee_tasks", []).filter(t => !t.createdAt || isInRange(t.createdAt));
+    const events = parse<any[]>("jee_cal_events", []).filter(e => !e.start || isInRange(e.start));
     const marked = parse<any[]>("jee_today_marked", []);
     const timers = parse<any[]>("jee_tm_timers", []);
     const alarms = parse<any[]>("jee_tm_alarms", []);
@@ -679,6 +797,8 @@ export default function AdminPage() {
     const tags = parse<any[]>("jee_tags", []);
     const dailyRec = parse<Record<string, any>>("jee_daily_records", {});
     const timeTracking = parse<Record<string, any>>("jee_time_tracking", {});
+    const lockdownRecords = parse<any[]>("jee_lockdown_records", []);
+    const totalZenSecs = Object.values(timeTracking).reduce((acc: number, val: any) => acc + (val.sections?.['Zen Mixer'] || 0), 0);
     
     // Saves Page Data
     const savedSubjects = parse<any[]>("jee_saves_subjects_v1", []);
@@ -716,6 +836,9 @@ export default function AdminPage() {
     const completedTasks = tasks.filter((t: any) => t.completed).length;
     const doneMark = marked.filter((m: any) => m.status === "done").length;
     const cancelMark = marked.filter((m: any) => m.status === "cancel").length;
+
+    const lockdownCompleted = lockdownRecords.filter(r => r.status === 'completed').length;
+    const lockdownBroken = lockdownRecords.filter(r => r.status === 'broken').length;
 
     // Saves Page Stats
     let totalSavedQuestions = 0;
@@ -778,6 +901,7 @@ export default function AdminPage() {
         todayMin,
         todaySec,
         estTotalSecs,
+        totalZenSecs,
         todayStr: `${String(todayHr).padStart(2, "0")}:${String(todayMin).padStart(2, "0")}:${String(todaySec).padStart(2, "0")}`,
       },
       saves: {
@@ -793,9 +917,14 @@ export default function AdminPage() {
         totalSeconds: Object.values(timeTracking).reduce((acc: number, val: any) => acc + (val.totalSeconds || 0), 0),
         totalDays: Object.keys(timeTracking).length
       },
+      lockdown: {
+        completed: lockdownCompleted,
+        broken: lockdownBroken,
+        total: lockdownRecords.length
+      },
       dailyRec,
     };
-  }, [todaySession, streakData, refreshKey]);
+  }, [todaySession, streakData, refreshKey, dateRangeOffset]);
 
   // ── Chart data ───────────────────────────────────────────────────────────
   const todoChartData = [
@@ -820,7 +949,7 @@ export default function AdminPage() {
     { name: "URL", value: stats.music.url, fill: "#06B6D4" },
   ].filter((d) => d.value > 0);
 
-  // Spike graph data — 30 days of todo completions + calendar events
+  // Spike graph data — 365 days of todo completions + calendar events
   const spikeData = useMemo(() => {
     const parse = <T,>(key: string, fallback: T): T => {
       try {
@@ -840,9 +969,10 @@ export default function AdminPage() {
         byDay[d] = (byDay[d] || 0) + 1;
       }
     });
-    return Array.from({ length: 30 }, (_, i) => {
+    const DAYS = 365;
+    return Array.from({ length: DAYS }, (_, i) => {
       const d = new Date();
-      d.setDate(d.getDate() - (29 - i));
+      d.setDate(d.getDate() - (DAYS - 1 - i) + spikeOffset);
       const key = d.toISOString().slice(0, 10);
       return {
         date: d.toLocaleDateString("en-US", { month: "short", day: "numeric" }),
@@ -851,25 +981,7 @@ export default function AdminPage() {
         events: byDay[key] || 0,
       };
     });
-  }, [refreshKey]);
-
-  // Activity bar — last 14 streak record dates
-  const activityData = useMemo(() => {
-    const days: { date: string; earned: number; extended: number }[] = [];
-    for (let i = 13; i >= 0; i--) {
-      const d = new Date();
-      d.setDate(d.getDate() - i);
-      const ds = d.toISOString().slice(0, 10);
-      const earned = streakData.records.filter(
-        (r) => r.date === ds && r.type === "earned",
-      ).length;
-      const extended = streakData.records.filter(
-        (r) => r.date === ds && r.type === "extended",
-      ).length;
-      days.push({ date: ds.slice(5), earned, extended });
-    }
-    return days;
-  }, [streakData]);
+  }, [refreshKey, spikeOffset]);
 
   // ── Timeline CRUD ────────────────────────────────────────────────────────
   const openAdd = () => {
@@ -921,6 +1033,7 @@ export default function AdminPage() {
     if (key.startsWith("pdf_leaf_") || key.startsWith("img_leaf_"))
       return "pdf";
     if (key.startsWith("music_")) return "music";
+    if (key.startsWith("ambient_")) return "ambient";
     // Video note images, voice recordings, screenshots, local video files
     if (
       key.startsWith("vid_img_") ||
@@ -946,6 +1059,7 @@ export default function AdminPage() {
       if (
         key.startsWith("jee_") ||
         key.startsWith("pdf_anno_") ||
+        key.startsWith("vid_") ||
         key === "theme" ||
         key === "user"
       ) {
@@ -960,22 +1074,91 @@ export default function AdminPage() {
     // Include timeline from local state
     backup["jee_admin_timeline"] = timeline;
 
-    // ── Export IndexedDB binary files (PDFs, local music, video notes) ──────
+    // ── Export IndexedDB & Workspace binary files ──────
     try {
       const idbKeys = await idbGetAllKeys();
-      const idbManifest: { key: string; file: string; mimeType?: string }[] =
-        [];
-      for (const key of idbKeys) {
+      const mediaKeysToBackup = new Set<string>(idbKeys);
+
+      const safeParse = (k: string) => {
+        try { return JSON.parse(localStorage.getItem(k) || "null"); }
+        catch { return null; }
+      };
+
+      const pdfSections = safeParse("jee_pdf_sections_v3") || [];
+      pdfSections.forEach((sec: any) => {
+        sec.subsections?.forEach((sub: any) => {
+          if (sub.pdfKey) mediaKeysToBackup.add(sub.pdfKey);
+          if (sub.imageKey) mediaKeysToBackup.add(sub.imageKey);
+          sub.subsubsections?.forEach((ss: any) => {
+            if (ss.pdfKey) mediaKeysToBackup.add(ss.pdfKey);
+            if (ss.imageKey) mediaKeysToBackup.add(ss.imageKey);
+          });
+        });
+      });
+
+      const vidSections = safeParse("jee_vid_sections_v1") || [];
+      vidSections.forEach((sec: any) => {
+        sec.subsections?.forEach((sub: any) => {
+          if (sub.video?.fileKey) mediaKeysToBackup.add(sub.video.fileKey);
+          sub.subsubsections?.forEach((ss: any) => {
+            if (ss.video?.fileKey) mediaKeysToBackup.add(ss.video.fileKey);
+          });
+        });
+      });
+
+      const vidNotes = safeParse("vid_notes_v1") || {};
+      Object.values(vidNotes).forEach((notes: any) => {
+        notes?.forEach((n: any) => {
+          if (n.imageKey) mediaKeysToBackup.add(n.imageKey);
+          if (n.voiceKey) mediaKeysToBackup.add(n.voiceKey);
+          if (n.screenshotKey) mediaKeysToBackup.add(n.screenshotKey);
+        });
+      });
+
+      const savedQs = safeParse("jee_saves_questions_v1") || {};
+      Object.values(savedQs).forEach((qs: any) => {
+        qs?.forEach((q: any) => {
+          if (q.questionImageKey) mediaKeysToBackup.add(q.questionImageKey);
+          if (q.answerImageKey) mediaKeysToBackup.add(q.answerImageKey);
+        });
+      });
+
+      const playlists = safeParse("jee_playlists") || [];
+      playlists.forEach((p: any) => {
+        p.songs?.forEach((s: any) => {
+          if (s.idbKey) mediaKeysToBackup.add(s.idbKey);
+        });
+      });
+
+      const customTracks = safeParse("jee_ambient_custom_tracks") || [];
+      customTracks.forEach((t: any) => {
+        if (t.isCustom && !t.src.startsWith("http")) mediaKeysToBackup.add(t.src);
+      });
+
+      const idbManifest: { key: string; file: string; mimeType?: string }[] = [];
+      for (const key of Array.from(mediaKeysToBackup)) {
         try {
-          const value = await idbGet<ArrayBuffer | Blob>(key);
           let buf: ArrayBuffer | null = null;
           let mimeType: string | undefined;
-          if (value instanceof Blob) {
-            buf = await value.arrayBuffer();
-            mimeType = value.type || undefined;
-          } else if (value instanceof ArrayBuffer) {
-            buf = value;
+
+          if (key.startsWith("pdf_")) mimeType = "application/pdf";
+          else if (key.startsWith("img_") || key.startsWith("q_img_") || key.startsWith("a_img_") || key.startsWith("q_crop_") || key.startsWith("a_crop_") || key.startsWith("vid_img_") || key.startsWith("vid_ss_")) mimeType = "image/jpeg";
+          else if (key.startsWith("music_") || key.startsWith("vid_voice_") || key.startsWith("ambient_")) mimeType = "audio/webm";
+          else if (key.startsWith("vid_file_")) mimeType = "video/mp4";
+
+          const mediaBuf = await readMediaAsArrayBuffer(key);
+          if (mediaBuf) {
+            buf = mediaBuf;
+          } else {
+            const value = await idbGet<ArrayBuffer | Blob>(key);
+            if (value instanceof Blob) {
+              buf = await value.arrayBuffer();
+              mimeType = mimeType || value.type || undefined;
+            } else if (value instanceof ArrayBuffer) {
+              buf = value;
+            }
           }
+
           if (buf) {
             const safeName = key.replace(/[^a-zA-Z0-9_\-]/g, "_");
             const filename = `idb/${safeName}.bin`;
@@ -986,13 +1169,14 @@ export default function AdminPage() {
               ...(mimeType ? { mimeType } : {}),
             });
           }
-        } catch {
+        } catch (err) {
           /* skip unreadable entry */
+          console.warn("Could not backup media key", key, err);
         }
       }
       if (idbManifest.length > 0) backup["_idb"] = idbManifest;
-    } catch {
-      /* IDB not available, skip */
+    } catch (err) {
+      console.error("IDB backup error:", err);
     }
 
     backup["_meta"] = {
@@ -1014,7 +1198,7 @@ export default function AdminPage() {
     a.download = `jee_backup_${dateStr}.zip`;
     a.click();
     URL.revokeObjectURL(url);
-  }, [timeline, user]);
+  }, [timeline, user, readMediaAsArrayBuffer]);
 
   // ── Backup Import (ZIP) ──────────────────────────────────────────────────
   const RESTORE_CATEGORIES: { key: string; label: string; keys: string[] }[] = [
@@ -1026,6 +1210,7 @@ export default function AdminPage() {
     { key: "calendar", label: "Calendar Events", keys: ["jee_cal_events"] },
     { key: "pdf", label: "PDF Sections", keys: ["jee_pdf_sections_v3"] },
     { key: "music", label: "Music Playlists", keys: ["jee_playlists"] },
+    { key: "ambient", label: "Zen Mixer Tracks", keys: ["jee_ambient_custom_tracks", "jee_ambient_active"] },
     {
       key: "videos",
       label: "Video Sections",
@@ -1045,13 +1230,27 @@ export default function AdminPage() {
     },
     {
       key: "saves",
-      label: "Saved Questions",
-      keys: ["jee_saves_subjects_v1", "jee_saves_questions_v1"],
+      label: "Saved Questions & Bookmarks",
+      keys: ["jee_saves_subjects_v1", "jee_saves_questions_v1", "jee_saves_bookmarks_v1"],
     },
     {
       key: "time",
       label: "Time Tracking",
-      keys: ["jee_time_tracking"],
+      keys: ["jee_time_tracking", "jee_lockdown_records"],
+    },
+    {
+      key: "account",
+      label: "Account Config",
+      keys: [
+        "jee_local_users",
+        "jee_profile_pic",
+        "jee_local_name",
+        "jee_current_user",
+        "user",
+        "jee_tmdb_api_key",
+        "theme",
+        "jee_remember_me",
+      ],
     },
   ];
 
@@ -1116,7 +1315,7 @@ export default function AdminPage() {
       }[];
       for (const entry of manifest) {
         const cat = idbKeyCategory(entry.key);
-        if (!cat || !restoreCategories.includes(cat)) continue;
+        if (cat && !restoreCategories.includes(cat)) continue;
         try {
           const zipFile = pendingZip.file(entry.file);
           if (!zipFile) continue;
@@ -1124,6 +1323,13 @@ export default function AdminPage() {
           const stored = entry.mimeType
             ? new Blob([buf], { type: entry.mimeType })
             : buf;
+              
+              try {
+                await writeMedia(entry.key, stored);
+              } catch (e) {
+                console.warn("writeMedia failed, falling back to IDB", e);
+              }
+              
           await idbSet(entry.key, stored);
           restored++;
         } catch {
@@ -1138,7 +1344,7 @@ export default function AdminPage() {
     setImportMsg(`Restored ${restored} items. Reloading…`);
     setTimeout(() => window.location.reload(), 2200);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [pendingRestore, pendingZip, restoreCategories]);
+  }, [pendingRestore, pendingZip, restoreCategories, writeMedia]);
 
   const CHART_COLORS = [
     "#3B82F6",
@@ -1150,6 +1356,25 @@ export default function AdminPage() {
     "#06B6D4",
   ];
 
+  const appUsageData = useMemo(() => {
+    const totals: Record<string, number> = {};
+    Object.values(stats.timeTracking.records).forEach((r: any) => {
+      if (r.sections) {
+        Object.entries(r.sections).forEach(([name, secs]: [string, any]) => {
+          totals[name] = (totals[name] || 0) + secs;
+        });
+      }
+    });
+    return Object.entries(totals)
+      .map(([name, value], i) => ({
+        name,
+        value: Math.round((value as number) / 60),
+        fill: CHART_COLORS[i % CHART_COLORS.length],
+      }))
+      .filter((d) => d.value > 0)
+      .sort((a, b) => b.value - a.value);
+  }, [stats.timeTracking.records]);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 10 }}
@@ -1158,7 +1383,7 @@ export default function AdminPage() {
       className="min-h-full bg-background overflow-y-auto"
     >
       {/* ── Hero header ── */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-primary/20 via-card to-background border-b border-border px-8 py-8">
+      <div className="relative overflow-hidden bg-gradient-to-br from-primary/20 via-card to-background border-b border-border px-4 sm:px-6 md:px-8 py-4 sm:py-6 md:py-8">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_hsl(var(--primary)/0.15),_transparent_60%)]" />
         <div className="absolute -top-10 -right-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
         <motion.div
@@ -1167,40 +1392,40 @@ export default function AdminPage() {
           transition={{ delay: 0.1 }}
           className="relative"
         >
-          <div className="flex items-center gap-3 mb-2">
-            <div className="h-10 w-10 rounded-xl bg-primary/20 flex items-center justify-center border border-primary/30">
-              <Shield className="h-5 w-5 text-primary" />
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-2">
+            <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-xl bg-primary/20 flex items-center justify-center border border-primary/30 shrink-0">
+              <Shield className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
             </div>
             <div>
               <p className="text-xs text-primary font-semibold uppercase tracking-widest">
                 Admin Panel
               </p>
-              <h1 className="text-2xl font-black text-foreground leading-tight">
+              <h1 className="text-xl sm:text-2xl font-black text-foreground leading-tight">
                 Welcome Boss, {user} 👋
               </h1>
             </div>
           </div>
-          <p className="text-sm text-muted-foreground ml-[52px]">
+          <p className="text-xs sm:text-sm text-muted-foreground mt-2 sm:mt-0 ml-0 sm:ml-[52px]">
             This is your Desk for JEE Prep with Digital Way
           </p>
-          <div className="flex items-center gap-4 mt-3 ml-[52px]">
-            <span className="flex items-center gap-1.5 text-xs text-muted-foreground bg-muted/50 px-2.5 py-1 rounded-full border border-border/50">
-              <Clock className="h-3 w-3 text-primary" />
-              Today:{" "}
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3 md:gap-4 mt-3 ml-0 sm:ml-[52px]">
+            <span className="flex items-center gap-1 sm:gap-1.5 text-[11px] sm:text-xs text-muted-foreground bg-muted/50 px-2 sm:px-2.5 py-1 rounded-full border border-border/50 whitespace-nowrap">
+              <Clock className="h-3 w-3 text-primary shrink-0" />
+              <span>Today:</span>
               <span className="text-foreground font-semibold">
                 {stats.time.todayStr}
               </span>
             </span>
-            <span className="flex items-center gap-1.5 text-xs text-muted-foreground bg-muted/50 px-2.5 py-1 rounded-full border border-border/50">
-              <Flame className="h-3 w-3 text-orange-400" />
-              Streak:{" "}
+            <span className="flex items-center gap-1 sm:gap-1.5 text-[11px] sm:text-xs text-muted-foreground bg-muted/50 px-2 sm:px-2.5 py-1 rounded-full border border-border/50 whitespace-nowrap">
+              <Flame className="h-3 w-3 text-orange-400 shrink-0" />
+              <span>Streak:</span>
               <span className="text-foreground font-semibold">
                 {stats.streak.current} days
               </span>
             </span>
-            <span className="flex items-center gap-1.5 text-xs text-muted-foreground bg-muted/50 px-2.5 py-1 rounded-full border border-border/50">
-              <Trophy className="h-3 w-3 text-yellow-400" />
-              Earned:{" "}
+            <span className="flex items-center gap-1 sm:gap-1.5 text-[11px] sm:text-xs text-muted-foreground bg-muted/50 px-2 sm:px-2.5 py-1 rounded-full border border-border/50 whitespace-nowrap">
+              <Trophy className="h-3 w-3 text-yellow-400 shrink-0" />
+              <span>Earned:</span>
               <span className="text-foreground font-semibold">
                 {stats.streak.earned} days
               </span>
@@ -1210,9 +1435,70 @@ export default function AdminPage() {
       </div>
 
       <div className="px-6 py-6 space-y-8 max-w-7xl mx-auto">
+        {/* ── Account Configuration ── */}
+        <Section title="Account Configuration" icon={User} delay={0.05}>
+          <div className="bg-card border border-border rounded-2xl p-5 md:p-6">
+            <div className="flex flex-col md:flex-row gap-8">
+              {/* Profile Picture */}
+              <div className="flex flex-col items-center gap-4 shrink-0">
+                <div className="relative w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-muted bg-muted flex items-center justify-center group">
+                  {accPic ? (
+                    <img src={accPic} alt="Profile" className="w-full h-full object-cover" />
+                  ) : (
+                    <User className="h-12 w-12 text-muted-foreground" />
+                  )}
+                  <label className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center cursor-pointer text-white text-xs font-semibold">
+                    Upload
+                    <input type="file" accept="image/*" className="hidden" onChange={handlePicUpload} />
+                  </label>
+                </div>
+                <p className="text-xs text-muted-foreground text-center max-w-[120px]">Click image to change profile picture</p>
+              </div>
+
+              {/* Form */}
+              <div className="flex-1 space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-semibold text-muted-foreground uppercase">Username</label>
+                    <Input value={accName} onChange={e => setAccName(e.target.value)} className="bg-muted border-border" />
+                  </div>
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-semibold text-muted-foreground uppercase">Date of Birth</label>
+                    <Input type="date" value={accDob} onChange={e => setAccDob(e.target.value)} className="bg-muted border-border" />
+                  </div>
+                </div>
+
+                <div className="space-y-2 pt-2 border-t border-border">
+                  <label className="text-xs font-semibold text-muted-foreground uppercase">Password Reset</label>
+                  
+                  <div className="flex gap-2 items-center">
+                    <Input type="password" value="********" disabled className="bg-muted border-border text-muted-foreground w-full max-w-xs" />
+                    <Button type="button" onClick={sendResetLink} variant="outline" size="sm" className="gap-2 shrink-0">
+                      <Mail className="h-4 w-4" /> Send Firebase Reset Link
+                    </Button>
+                  </div>
+                  <p className="text-[10px] text-muted-foreground mt-1 leading-relaxed max-w-sm">
+                    Clicking this will send a secure password reset link to your registered email address via Firebase.
+                  </p>
+                </div>
+
+                <div className="pt-4 flex items-center justify-between">
+                  <p className={`text-xs font-semibold ${accMsg.includes("successfully") ? "text-green-500" : "text-destructive"}`}>
+                    {accMsg}
+                  </p>
+                  <Button type="button" onClick={handleSaveAccount} disabled={accLoading} className="gap-2 shrink-0">
+                    {accLoading && <Loader2 className="h-4 w-4 animate-spin" />}
+                    Save Profile Changes
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Section>
+
         {/* ── Quick Stats Grid ── */}
         <Section title="Overview" icon={LayoutDashboard}>
-          <div className="grid grid-cols-2 sm:grid-cols-4 xl:grid-cols-8 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-4 xl:grid-cols-9 gap-3">
             <StatCard
               icon={Timer}
               label="Total App Time"
@@ -1276,6 +1562,14 @@ export default function AdminPage() {
               sub={`${stats.saves.subjects} subjects`}
               color="#06B6D4"
               delay={0.30}
+            />
+            <StatCard
+              icon={Shield}
+              label="Lockdowns"
+              value={stats.lockdown.completed}
+              sub={`${stats.lockdown.broken} broken`}
+              color="#10B981"
+              delay={0.35}
             />
           </div>
         </Section>
@@ -1451,6 +1745,11 @@ export default function AdminPage() {
                   color: "bg-blue-400",
                 },
                 {
+                  label: "Zen Mixer Time",
+                  val: stats.time.totalZenSecs > 0 ? `${Math.floor(stats.time.totalZenSecs / 60)}m` : "0m",
+                  color: "bg-indigo-400",
+                },
+                {
                   label: "Streak Days",
                   val: stats.streak.current,
                   color: "bg-red-400",
@@ -1467,7 +1766,7 @@ export default function AdminPage() {
                     </span>
                   </div>
                   <span className="text-xs font-bold text-foreground tabular-nums">
-                    {item.label === "Today's Session"
+                    {item.label === "Today's Session" || item.label === "Zen Mixer Time"
                       ? `${item.val}m`
                       : item.val}
                   </span>
@@ -1697,57 +1996,72 @@ export default function AdminPage() {
             </div>
           </div>
           
-          {/* Time Spent History */}
-          <div className="mt-4">
+          {/* Time Spent History & App Usage Breakdown */}
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 mt-4">
             <TimeSpentHistory records={stats.timeTracking.records} />
+
+            <div className="bg-card border border-border rounded-2xl p-5 flex flex-col h-full">
+              <div className="text-center mb-2 shrink-0">
+                <h3 className="text-xl font-black text-foreground">App Usage Breakdown</h3>
+                <p className="text-sm text-muted-foreground mt-1">Total time spent across features (Minutes)</p>
+              </div>
+              <div className="flex-1 min-h-[250px]">
+                {appUsageData.length > 0 ? (
+                  <ResponsiveContainer width="100%" height="100%">
+                    <PieChart>
+                      <Pie
+                        data={appUsageData}
+                        cx="50%"
+                        cy="50%"
+                        innerRadius={60}
+                        outerRadius={90}
+                        paddingAngle={4}
+                        dataKey="value"
+                        stroke="none"
+                        labelLine={false}
+                      >
+                        {appUsageData.map((d, i) => (
+                          <Cell key={i} fill={d.fill} />
+                        ))}
+                      </Pie>
+                      <Tooltip content={<ChartTooltip />} />
+                      <Legend wrapperStyle={{ fontSize: "11px", paddingTop: "10px" }} />
+                    </PieChart>
+                  </ResponsiveContainer>
+                ) : (
+                  <div className="h-full flex items-center justify-center text-xs text-muted-foreground">
+                    No usage data yet
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
           <StudyHeatmap records={stats.timeTracking.records} />
 
-          {/* Activity bar chart */}
+          {/* Todo Completions Spike — 365 days */}
           <div className="mt-4 bg-card border border-border rounded-2xl p-4">
-            <p className="text-xs font-semibold text-muted-foreground mb-3 uppercase tracking-wide">
-              14-Day Activity (Streak Records)
-            </p>
-            <ResponsiveContainer width="100%" height={140}>
-              <BarChart data={activityData} barSize={12} barGap={2}>
-                <XAxis
-                  dataKey="date"
-                  tick={{ fontSize: 9, fill: "hsl(var(--muted-foreground))" }}
-                  axisLine={false}
-                  tickLine={false}
-                />
-                <YAxis hide />
-                <Tooltip content={<ChartTooltip />} />
-                <Bar
-                  dataKey="earned"
-                  name="Earned"
-                  fill="#22C55E"
-                  radius={[3, 3, 0, 0]}
-                />
-                <Bar
-                  dataKey="extended"
-                  name="Extended"
-                  fill="#F59E0B"
-                  radius={[3, 3, 0, 0]}
-                />
-                <Legend
-                  iconType="circle"
-                  iconSize={8}
-                  wrapperStyle={{ fontSize: "10px" }}
-                />
-              </BarChart>
-            </ResponsiveContainer>
-          </div>
-
-          {/* Todo Completions Spike — 30 days */}
-          <div className="mt-4 bg-card border border-border rounded-2xl p-4">
-            <p className="text-xs font-semibold text-muted-foreground mb-1 uppercase tracking-wide">
-              Todo Completions — 30 Days
-            </p>
+            <div className="flex items-center justify-between mb-1">
+              <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
+                Todo Completions — 365 Days
+              </p>
+              <div className="flex items-center gap-1 bg-muted/50 p-1 rounded-lg border border-border/50">
+                <Button variant="ghost" size="icon" className="h-6 w-6 rounded-md hover:bg-background shadow-sm transition-all" onClick={() => setSpikeOffset(o => o - 365)}>
+                  <ChevronLeft className="h-4 w-4" />
+                </Button>
+                {spikeOffset !== 0 && (
+                  <Button variant="ghost" size="sm" className="h-6 text-[10px] px-2 rounded-md hover:bg-background shadow-sm transition-all" onClick={() => setSpikeOffset(0)}>
+                    Today
+                  </Button>
+                )}
+                <Button variant="ghost" size="icon" className="h-6 w-6 rounded-md hover:bg-background shadow-sm transition-all" onClick={() => setSpikeOffset(o => o + 365)}>
+                  <ChevRight className="h-4 w-4" />
+                </Button>
+              </div>
+            </div>
             <p className="text-[10px] text-muted-foreground/60 mb-3">
-              Updates every 3 seconds · green = completed, blue = total
+              Updates every 60 seconds · green = completed, blue = total · Use brush to zoom
             </p>
-            <ResponsiveContainer width="100%" height={130}>
+            <ResponsiveContainer width="100%" height={180}>
               <AreaChart
                 data={spikeData}
                 margin={{ top: 4, right: 4, left: -24, bottom: 0 }}
@@ -1779,7 +2093,7 @@ export default function AdminPage() {
                   tick={{ fontSize: 8, fill: "hsl(var(--muted-foreground))" }}
                   axisLine={false}
                   tickLine={false}
-                  interval={6}
+                  minTickGap={30}
                 />
                 <YAxis
                   tick={{ fontSize: 8, fill: "hsl(var(--muted-foreground))" }}
@@ -1806,19 +2120,41 @@ export default function AdminPage() {
                   fill="url(#grad-todo-done)"
                   dot={false}
                 />
+                <Brush 
+                  dataKey="date" 
+                  height={20} 
+                  stroke="hsl(var(--primary))" 
+                  fill="hsl(var(--muted))" 
+                  tickFormatter={() => ""} 
+                />
               </AreaChart>
             </ResponsiveContainer>
           </div>
 
-          {/* Calendar Events Spike — 30 days */}
+          {/* Calendar Events Spike — 365 days */}
           <div className="mt-4 bg-card border border-border rounded-2xl p-4">
-            <p className="text-xs font-semibold text-muted-foreground mb-1 uppercase tracking-wide">
-              Calendar Events by Scheduled Date — 30 Days
-            </p>
+            <div className="flex items-center justify-between mb-1">
+              <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
+                Calendar Events by Scheduled Date — 365 Days
+              </p>
+              <div className="flex items-center gap-1 bg-muted/50 p-1 rounded-lg border border-border/50">
+                <Button variant="ghost" size="icon" className="h-6 w-6 rounded-md hover:bg-background shadow-sm transition-all" onClick={() => setSpikeOffset(o => o - 365)}>
+                  <ChevronLeft className="h-4 w-4" />
+                </Button>
+                {spikeOffset !== 0 && (
+                  <Button variant="ghost" size="sm" className="h-6 text-[10px] px-2 rounded-md hover:bg-background shadow-sm transition-all" onClick={() => setSpikeOffset(0)}>
+                    Today
+                  </Button>
+                )}
+                <Button variant="ghost" size="icon" className="h-6 w-6 rounded-md hover:bg-background shadow-sm transition-all" onClick={() => setSpikeOffset(o => o + 365)}>
+                  <ChevRight className="h-4 w-4" />
+                </Button>
+              </div>
+            </div>
             <p className="text-[10px] text-muted-foreground/60 mb-3">
-              Shows how many events are scheduled on each day · live reactive
+              Shows how many events are scheduled on each day · live reactive · Use brush to zoom
             </p>
-            <ResponsiveContainer width="100%" height={130}>
+            <ResponsiveContainer width="100%" height={180}>
               <AreaChart
                 data={spikeData}
                 margin={{ top: 4, right: 4, left: -24, bottom: 0 }}
@@ -1834,7 +2170,7 @@ export default function AdminPage() {
                   tick={{ fontSize: 8, fill: "hsl(var(--muted-foreground))" }}
                   axisLine={false}
                   tickLine={false}
-                  interval={6}
+                  minTickGap={30}
                 />
                 <YAxis
                   tick={{ fontSize: 8, fill: "hsl(var(--muted-foreground))" }}
@@ -1851,6 +2187,13 @@ export default function AdminPage() {
                   strokeWidth={2}
                   fill="url(#grad-cal-ev)"
                   dot={false}
+                />
+                <Brush 
+                  dataKey="date" 
+                  height={20} 
+                  stroke="hsl(var(--primary))" 
+                  fill="hsl(var(--muted))" 
+                  tickFormatter={() => ""} 
                 />
               </AreaChart>
             </ResponsiveContainer>
@@ -2015,11 +2358,12 @@ export default function AdminPage() {
               <div className="space-y-2 mb-4 text-xs text-muted-foreground">
                 <p>✓ All todos, events, timers & alarms</p>
                 <p>✓ PDF sections & all annotations</p>
-                <p>✓ Music playlists & settings</p>
+                <p>✓ Music playlists & Zen Mixer tracks</p>
                 <p>✓ Streak history & daily records</p>
                 <p>✓ Timeline & tags</p>
-                <p className="text-yellow-400/80">
-                  ⚠ PDF and audio binary files excluded (browser storage)
+                <p>✓ Saved questions, bookmarks & account config</p>
+                <p className="text-green-400/80">
+                  ✓ Includes all local media (PDFs, Videos, Images, Music)
                 </p>
               </div>
               <Button
@@ -2050,6 +2394,7 @@ export default function AdminPage() {
               <div className="space-y-2 mb-4 text-xs text-muted-foreground">
                 <p>• Upload a previously exported ZIP file</p>
                 <p>• All existing data will be replaced</p>
+                <p>• Includes restoring all local media files</p>
                 <p>• Page will reload automatically after restore</p>
                 <p className="text-red-400/80">
                   ⚠ This will overwrite your current data

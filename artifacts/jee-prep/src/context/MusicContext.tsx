@@ -34,6 +34,10 @@ interface MusicContextType {
   duration: number;
   isShuffle: boolean;
   repeatMode: "none" | "one" | "all";
+  loopAB: [number, number] | null;
+  setLoopAB: (range: [number, number] | null) => void;
+  reorderPlaylists: (newPlaylists: Playlist[]) => void;
+  reorderSongs: (playlistId: string, newSongs: Song[]) => void;
   addPlaylist: (name: string) => void;
   addPlaylistWithSongs: (name: string, songs: Song[]) => string;
   deletePlaylist: (id: string) => void;
@@ -114,6 +118,7 @@ export function MusicProvider({ children }: { children: ReactNode }) {
   const [duration, setDuration] = useState(0);
   const [isShuffle, setIsShuffle] = useState(false);
   const [repeatMode, setRepeatMode] = useState<"none" | "one" | "all">("none");
+  const [loopAB, setLoopAB] = useState<[number, number] | null>(null);
   const [analyserNode, setAnalyserNode] = useState<AnalyserNode | null>(null);
 
   // HTML5 Audio refs
@@ -136,12 +141,14 @@ export function MusicProvider({ children }: { children: ReactNode }) {
   const currentSongRef = useRef<Song | null>(null);
   const currentPlaylistIdRef = useRef<string | null>(null);
   const playlistsRef = useRef<Playlist[]>(playlists);
+  const loopABRef = useRef<[number, number] | null>(null);
 
   // Keep refs in sync with state
   useEffect(() => { repeatModeRef.current = repeatMode; }, [repeatMode]);
   useEffect(() => { currentSongRef.current = currentSong; }, [currentSong]);
   useEffect(() => { currentPlaylistIdRef.current = currentPlaylistId; }, [currentPlaylistId]);
   useEffect(() => { playlistsRef.current = playlists; }, [playlists]);
+  useEffect(() => { loopABRef.current = loopAB; }, [loopAB]);
 
   // ── Restore local song blob URLs from IndexedDB on mount ─────────────────
   useEffect(() => {
@@ -207,6 +214,11 @@ export function MusicProvider({ children }: { children: ReactNode }) {
     const onTimeUpdate = () => {
       setProgress(audio.currentTime);
       progressRef.current = audio.currentTime;
+      if (loopABRef.current) {
+        if (audio.currentTime >= loopABRef.current[1] || audio.currentTime < loopABRef.current[0]) {
+          audio.currentTime = loopABRef.current[0];
+        }
+      }
     };
     const onLoadedMetadata = () => {
       setDuration(audio.duration);
@@ -290,8 +302,13 @@ export function MusicProvider({ children }: { children: ReactNode }) {
             const d = player.getDuration?.() ?? 0;
             setProgress(t); progressRef.current = t;
             if (d > 0) { setDuration(d); durationRef.current = d; }
+            if (loopABRef.current) {
+              if (t >= loopABRef.current[1] || t < loopABRef.current[0]) {
+                player.seekTo(loopABRef.current[0], true);
+              }
+            }
           } catch {}
-        }, 500);
+        }, 200);
       };
 
       if (ytPlayerRef.current && typeof ytPlayerRef.current.loadVideoById === "function") {
@@ -356,6 +373,8 @@ export function MusicProvider({ children }: { children: ReactNode }) {
     setDuration(0);
     progressRef.current = 0;
     durationRef.current = 0;
+    setLoopAB(null);
+    loopABRef.current = null;
 
     // Stop YT polling
     if (ytProgressIntervalRef.current) {
@@ -382,47 +401,66 @@ export function MusicProvider({ children }: { children: ReactNode }) {
           "https://inv.tux.pizza",
           "https://invidious.lunar.icu",
           "https://invidious.flokinet.to",
-          "https://invidious.nerdvpn.de"
+          "https://invidious.nerdvpn.de"];
+        
+        const piped_instances = [
+          "https://pipedapi.kavin.rocks",
+          "https://pipedapi.smnz.de",
+          "https://piped-api.lunar.icu",
+          "https://pipedapi.adminforge.de",
+          "https://pipedapi.tokhmi.xyz",
         ];
 
-        for (const instance of invidious_instances) {
-          try {
+        const allSearchTasks = [
+          ...invidious_instances.map(async (instance) => {
             const controller = new AbortController();
-            const timeout = setTimeout(() => controller.abort(), 8000);
-
-            // Direct fetch (these instances usually support CORS)
+            const timeout = setTimeout(() => controller.abort(), 4000);
             const res = await fetch(`${instance}/api/v1/search?q=${encodeURIComponent(searchQuery)}&type=video`, { signal: controller.signal });
             clearTimeout(timeout);
-
-            if (res.ok) {
-              const data = await res.json();
-
-              if (Array.isArray(data) && data[0]?.videoId) {
-                ytId = data[0].videoId;
-                console.log(`[Search→Audio SUCCESS] Found: ${data[0].title} (${ytId})`);
-                if (playlistId) {
-                  setPlaylists(prev => prev.map(p => 
-                    p.id === playlistId ? { 
-                      ...p, 
-                      songs: p.songs.map(s => 
-                        s.id === song.id ? { 
-                          ...s, 
-                          youtubeId: ytId ?? undefined, 
-                          url: `https://www.youtube.com/watch?v=${ytId}`,
-                          duration: data[0].lengthSeconds || 0
-                        } : s
-                      ) 
-                    } : p
-                  ));
-                }
-                break;
-              }
+            if (!res.ok) throw new Error("error");
+            const data = await res.json();
+            if (Array.isArray(data) && data[0]?.videoId) {
+              return { ytId: data[0].videoId, duration: data[0].lengthSeconds || 0, title: data[0].title };
             }
-          } catch (e) {
-            if (e instanceof Error && e.name === "AbortError") {
-              console.warn(`[Search→Audio] Invidious ${invidious_instances.indexOf(invidious_instances.find(i => i) || "")} timeout`);
+            throw new Error("No data");
+          }),
+          ...piped_instances.map(async (instance) => {
+            const controller = new AbortController();
+            const timeout = setTimeout(() => controller.abort(), 4000);
+            const res = await fetch(`${instance}/search?q=${encodeURIComponent(searchQuery)}&filter=videos`, { signal: controller.signal });
+            clearTimeout(timeout);
+            if (!res.ok) throw new Error("error");
+            const data = await res.json();
+            const videos = data?.items?.filter((item: any) => item.type === "stream");
+            if (videos && videos[0]) {
+               const vId = videos[0].url.includes("?v=") ? videos[0].url.split("?v=")[1].split("&")[0] : videos[0].url.split("/").pop();
+               return { ytId: vId, duration: videos[0].duration || 0, title: videos[0].title };
             }
+            throw new Error("No data");
+          })
+        ];
+
+        try {
+          const result = await Promise.any(allSearchTasks);
+          ytId = result.ytId;
+          console.log(`[Search→Audio SUCCESS] Found: ${result.title} (${ytId})`);
+          if (playlistId) {
+            setPlaylists(prev => prev.map(p => 
+              p.id === playlistId ? { 
+                ...p, 
+                songs: p.songs.map(s => 
+                  s.id === song.id ? { 
+                    ...s, 
+                    youtubeId: ytId ?? undefined, 
+                    url: `https://www.youtube.com/watch?v=${ytId}`,
+                    duration: result.duration || 0
+                  } : s
+                ) 
+              } : p
+            ));
           }
+        } catch(e) {
+          console.warn(`[Search→Audio] API searches failed`);
         }
       }
 
@@ -475,6 +513,7 @@ export function MusicProvider({ children }: { children: ReactNode }) {
           );
 
           const match = html.match(/ytInitialData\s*=\s*(\{[\s\S]+?\});/s)
+            || html.match(/var\s+ytInitialData\s*=\s*(\{[\s\S]+?\});/s)
             || html.match(/window\["ytInitialData"\]\s*=\s*(\{[\s\S]+?\});/s);
 
           if (match) {
@@ -803,6 +842,14 @@ export function MusicProvider({ children }: { children: ReactNode }) {
     setCurrentSong(prev => (prev && prev.id === songId ? { ...prev, ...updates } : prev));
   };
 
+  const reorderPlaylists = useCallback((newPlaylists: Playlist[]) => {
+    setPlaylists(newPlaylists);
+  }, []);
+
+  const reorderSongs = useCallback((playlistId: string, newSongs: Song[]) => {
+    setPlaylists(prev => prev.map(p => p.id === playlistId ? { ...p, songs: newSongs } : p));
+  }, []);
+
   const toggleShuffle = () => setIsShuffle(prev => !prev);
   const toggleRepeat = () =>
     setRepeatMode(prev => (prev === "none" ? "all" : prev === "all" ? "one" : "none"));
@@ -814,7 +861,9 @@ export function MusicProvider({ children }: { children: ReactNode }) {
       value={{
         playlists, currentSong, currentPlaylistId, isPlaying, volume, isMuted,
         progress, duration, isShuffle, repeatMode, analyserNode,
+        loopAB, setLoopAB,
         addPlaylist, addPlaylistWithSongs, deletePlaylist, renamePlaylist,
+        reorderPlaylists, reorderSongs,
         addSongToPlaylist, addLocalSongToPlaylist, removeSongFromPlaylist,
         updateSong,
         playSong, togglePlay, stopMusic, setVolume, toggleMute, seek,

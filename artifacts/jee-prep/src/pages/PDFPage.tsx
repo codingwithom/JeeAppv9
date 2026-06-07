@@ -564,7 +564,12 @@ function CropBox({ crop, active, onUpdate, onDelete, containerRef, label, onConf
       <div className="absolute -top-6 left-0 bg-primary text-white text-[10px] font-bold px-1.5 py-0.5 rounded flex items-center gap-2 whitespace-nowrap shadow-lg">
         {label || `Q ${crop.id.slice(-2)}`}
         {onConfirm && (
-          <button onClick={(e) => { e.stopPropagation(); onConfirm(); }} className="hover:text-green-200"><CheckIcon className="h-3 w-3"/></button>
+          <button 
+            onClick={(e) => { e.stopPropagation(); onConfirm(); }} 
+            className="hover:text-green-200 bg-white/20 px-1 rounded flex items-center gap-0.5"
+          >
+            <CheckIcon className="h-3 w-3"/> Done
+          </button>
         )}
         <button onClick={(e) => { e.stopPropagation(); onDelete(); }} className="hover:text-red-200"><X className="h-3 w-3"/></button>
       </div>
@@ -2192,7 +2197,7 @@ export default function PDFPage() {
                 </Button>
               </div>
 
-              {isCropMode && crops.length > 0 && (
+              {isCropMode && crops.length > 0 && pendingCrops.length === 0 && (
                 <div className="ml-auto flex items-center gap-2">
                    <span className="text-[10px] font-bold text-primary animate-pulse">{crops.length} Selected</span>
                    <Button size="sm" className="h-7 px-3 text-[10px] font-bold gap-1.5" onClick={() => setShowSourcePicker(true)}>
@@ -2396,7 +2401,12 @@ export default function PDFPage() {
       
       {capturingAnswerFor && (
         <div className="fixed top-20 left-1/2 -translate-x-1/2 z-50 bg-black text-white px-4 py-2 rounded-full text-sm font-bold shadow-xl flex items-center gap-3">
-           <span>Draw and adjust the answer crop, then click ✓</span>
+           <span>Draw and adjust the answer crop</span>
+           {answerCrop && answerCrop.w > 0.01 && (
+             <Button size="sm" className="h-6 px-3 text-xs bg-green-500 hover:bg-green-600 text-white rounded-full ml-1" onClick={confirmAnswerCrop}>
+               Done
+             </Button>
+           )}
            <button onClick={() => { setCapturingAnswerFor(null); setAnswerCrop(null); }} className="p-1 hover:bg-white/20 rounded-full transition-colors"><X className="h-4 w-4"/></button>
         </div>
       )}

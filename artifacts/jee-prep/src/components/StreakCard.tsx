@@ -93,18 +93,13 @@ function WeekGrid() {
                 }`}
             >
               {isEarned ? (
-                <motion.div
-                  animate={{ scale: [1, 1.15, 1] }}
-                  transition={{ duration: 1.6, repeat: Infinity, delay: i * 0.12 }}
-                >
-                  <Flame
-                    className="h-4 w-4"
-                    style={{
-                      color: "#f97316",
-                      filter: "drop-shadow(0 0 4px rgba(249,115,22,0.6))",
-                    }}
-                  />
-                </motion.div>
+                isToday ? (
+                  <motion.div animate={{ scale: [1, 1.15, 1] }} transition={{ duration: 1.6, repeat: Infinity, delay: i * 0.12 }}>
+                    <Flame className="h-4 w-4" style={{ color: "#f97316", filter: "drop-shadow(0 0 4px rgba(249,115,22,0.6))" }} />
+                  </motion.div>
+                ) : (
+                  <Flame className="h-4 w-4" style={{ color: "#f97316" }} />
+                )
               ) : isExtended ? (
                 <Zap className="h-3.5 w-3.5 text-blue-400" />
               ) : isToday ? (

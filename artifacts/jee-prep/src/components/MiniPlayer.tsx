@@ -37,11 +37,62 @@ function VolumeIcon({ volume, isMuted, isDark }: { volume: number; isMuted: bool
   );
 }
 
+function DualRangeSlider({ duration, currentTime, value, onChange, onSeekPreview }: { duration: number; currentTime: number; value: [number, number]; onChange: (val: [number, number]) => void; onSeekPreview?: (val: number) => void; }) {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [dragging, setDragging] = useState<'a'|'b'|null>(null);
+
+  const handlePointerDown = (e: React.PointerEvent, thumb: 'a'|'b') => {
+    e.stopPropagation();
+    e.currentTarget.setPointerCapture(e.pointerId);
+    setDragging(thumb);
+  };
+
+  const handlePointerMove = (e: React.PointerEvent) => {
+    if (!dragging || !trackRef.current) return;
+    const rect = trackRef.current.getBoundingClientRect();
+    const pct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+    const t = pct * duration;
+    if (dragging === 'a') {
+      const newA = Math.min(t, value[1] - 0.5);
+      onChange([newA, value[1]]);
+      onSeekPreview?.(newA);
+    } else {
+      const newB = Math.max(t, value[0] + 0.5);
+      onChange([value[0], newB]);
+      onSeekPreview?.(Math.max(value[0], newB - 1));
+    }
+  };
+
+  const handlePointerUp = (e: React.PointerEvent) => {
+    if (dragging) {
+      e.currentTarget.releasePointerCapture(e.pointerId);
+      setDragging(null);
+    }
+  };
+
+  const pctA = duration > 0 ? (value[0] / duration) * 100 : 0;
+  const pctB = duration > 0 ? (value[1] / duration) * 100 : 100;
+  const pctC = duration > 0 ? (currentTime / duration) * 100 : 0;
+
+  return (
+    <div ref={trackRef} className="relative h-1.5 bg-black/10 dark:bg-white/10 rounded-full w-full mx-2 flex-1 touch-none" onPointerMove={handlePointerMove} onPointerUp={handlePointerUp} onPointerCancel={handlePointerUp}>
+      <div className="absolute top-0 bottom-0 bg-primary/20 rounded-full pointer-events-none" style={{ left: 0, width: `${pctC}%` }} />
+      <div className="absolute top-0 bottom-0 bg-primary/40 rounded-full pointer-events-none" style={{ left: `${pctA}%`, width: `${pctB - pctA}%` }} />
+      {pctC > pctA && (
+        <div className="absolute top-0 bottom-0 bg-primary rounded-full pointer-events-none" style={{ left: `${pctA}%`, width: `${Math.min(pctB - pctA, pctC - pctA)}%` }} />
+      )}
+      <div className="absolute top-1/2 -translate-y-1/2 w-3.5 h-3.5 bg-primary border-2 border-white rounded-full shadow cursor-ew-resize hover:scale-125 transition-transform z-10" style={{ left: `calc(${pctA}% - 7px)` }} onPointerDown={(e) => handlePointerDown(e, 'a')} />
+      <div className="absolute top-1/2 -translate-y-1/2 w-3.5 h-3.5 bg-primary border-2 border-white rounded-full shadow cursor-ew-resize hover:scale-125 transition-transform z-10" style={{ left: `calc(${pctB}% - 7px)` }} onPointerDown={(e) => handlePointerDown(e, 'b')} />
+    </div>
+  );
+}
+
 export function MiniPlayer() {
   const {
     currentSong, isPlaying, togglePlay, progress, duration, seek,
     volume, isMuted, setVolume, toggleMute,
     toggleShuffle, isShuffle, toggleRepeat, repeatMode,
+    loopAB, setLoopAB,
     nextSong, prevSong, stopMusic, getAudioElement,
   } = useMusicContext();
   const { theme } = useAppContext();
@@ -50,7 +101,10 @@ export function MiniPlayer() {
   const [isDraggingSeek, setIsDraggingSeek] = useState(false);
   const [isSeekable, setIsSeekable] = useState(false);
   const [volFlash, setVolFlash] = useState(false);
+  const [showAB, setShowAB] = useState(false);
   const seekBarRef = useRef<HTMLDivElement>(null);
+  const volumeBarRef = useRef<HTMLDivElement>(null);
+  const forcedPlayRef = useRef(false);
   const seekCheckRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const prevVolumeRef = useRef(volume);
 
@@ -77,6 +131,14 @@ export function MiniPlayer() {
     const t = setTimeout(() => setVolFlash(false), 300);
     return () => clearTimeout(t);
   }, [volume]);
+
+  useEffect(() => {
+    if (showAB && duration > 0 && !loopAB) {
+      setLoopAB([0, duration]);
+    } else if (!showAB) {
+      setLoopAB(null);
+    }
+  }, [showAB, duration, setLoopAB]);
 
   if (!currentSong) return null;
 
@@ -128,15 +190,12 @@ export function MiniPlayer() {
       transition={{ type: "spring", damping: 20, stiffness: 300 }}
       className={`fixed bottom-0 left-0 right-0 h-20 ${bgClass} backdrop-blur-xl border-t flex items-center px-4 md:px-6 z-50 gap-4 transition-all duration-300`}
       onMouseMove={e => {
-        if (isDraggingVolume) {
-          const sliders = document.querySelectorAll('[data-testid="miniplayer-volume"]');
-          sliders.forEach(slider => {
-            const rect = (slider as HTMLElement).getBoundingClientRect();
-            if (e.clientX >= rect.left - 10 && e.clientX <= rect.right + 10) {
-              const v = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
-              setVolume(v);
-            }
-          });
+        if (isDraggingVolume && volumeBarRef.current) {
+          const rect = volumeBarRef.current.getBoundingClientRect();
+          if (e.clientX >= rect.left - 10 && e.clientX <= rect.right + 10) {
+            const v = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+            setVolume(v);
+          }
         }
         if (isDraggingSeek && seekBarRef.current && canSeek) {
           const rect = seekBarRef.current.getBoundingClientRect();
@@ -187,38 +246,56 @@ export function MiniPlayer() {
             onClick={toggleRepeat} data-testid="miniplayer-repeat">
             {repeatMode === "one" ? <Repeat1 className="h-3.5 w-3.5" /> : <Repeat className="h-3.5 w-3.5" />}
           </Button>
+          <Button variant="ghost" size="icon"
+            className={`h-7 w-7 ${showAB ? "text-primary bg-primary/10" : mutedTextClass}`}
+            onClick={() => setShowAB(p => !p)} title="A-B Loop">
+            <span className="font-bold text-[10px] uppercase">AB</span>
+          </Button>
         </div>
 
         {/* Seek bar */}
         <div className={`w-full flex items-center gap-2 text-[10px] ${mutedTextClass}`}>
           <span className="tabular-nums">{fmt(progress)}</span>
 
-          <div
-            ref={seekBarRef}
-            className={`flex-1 h-1.5 rounded-full relative group select-none
-              ${canSeek ? "cursor-pointer" : "cursor-default"} ${barBgClass}`}
-            onClick={handleSeekClick}
-            onMouseDown={e => { if (canSeek) { setIsDraggingSeek(true); handleSeekClick(e); } }}
-            onMouseMove={handleSeekMouseMove}
-            data-testid="miniplayer-seek"
-            title={isSeekReady ? "Click or drag to seek" : canSeek ? "Seek will be available shortly" : ""}
-          >
-            {/* Shimmer while streaming audio buffers */}
-            {!isSeekReady && canSeek && (
-              <div className="absolute inset-0 rounded-full animate-shimmer opacity-50 pointer-events-none" />
-            )}
-
-            {/* Filled portion */}
+          {showAB ? (
+            <DualRangeSlider 
+              duration={duration} 
+              currentTime={progress} 
+              value={loopAB || [0, duration]} 
+              onChange={setLoopAB} 
+              onSeekPreview={(t) => {
+                seek(t);
+                if (!isPlaying && !forcedPlayRef.current) { forcedPlayRef.current = true; togglePlay(); setTimeout(() => forcedPlayRef.current = false, 500); }
+              }} 
+            />
+          ) : (
             <div
-              className={`h-full ${barFillClass} rounded-full relative transition-[width] duration-75`}
-              style={{ width: `${pct}%` }}
+              ref={seekBarRef}
+              className={`flex-1 h-1.5 rounded-full relative group select-none
+                ${canSeek ? "cursor-pointer" : "cursor-default"} ${barBgClass}`}
+              onClick={handleSeekClick}
+              onMouseDown={e => { if (canSeek) { setIsDraggingSeek(true); handleSeekClick(e); } }}
+              onMouseMove={handleSeekMouseMove}
+              data-testid="miniplayer-seek"
+              title={isSeekReady ? "Click or drag to seek" : canSeek ? "Seek will be available shortly" : ""}
             >
-              {/* Drag handle dot */}
-              <div className={`absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3
-                ${isDark ? "bg-white" : "bg-black"} rounded-full shadow
-                opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none`} />
+              {/* Shimmer while streaming audio buffers */}
+              {!isSeekReady && canSeek && (
+                <div className="absolute inset-0 rounded-full animate-shimmer opacity-50 pointer-events-none" />
+              )}
+
+              {/* Filled portion */}
+              <div
+                className={`h-full ${barFillClass} rounded-full relative transition-[width] duration-75`}
+                style={{ width: `${pct}%` }}
+              >
+                {/* Drag handle dot */}
+                <div className={`absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3
+                  ${isDark ? "bg-white" : "bg-black"} rounded-full shadow
+                  opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none`} />
+              </div>
             </div>
-          </div>
+          )}
 
           <span className="tabular-nums">{fmt(duration)}</span>
         </div>
@@ -247,6 +324,7 @@ export function MiniPlayer() {
 
         {/* Volume bar */}
         <div
+          ref={volumeBarRef}
           className={`flex-1 h-1.5 ${barBgClass} rounded-full cursor-pointer group relative select-none`}
           onClick={handleVolumeInteract}
           onMouseDown={e => { setIsDraggingVolume(true); handleVolumeInteract(e); }}

@@ -66,6 +66,11 @@ export function WorkspaceProvider({ children }: { children: ReactNode }) {
     }
     idbGet('workspace_dir_handle').then(async (handle) => {
       if (handle) {
+        if (typeof (handle as any).queryPermission !== 'function') {
+          console.warn("Corrupted workspace handle found in IDB. Ignoring.");
+          setIsLoading(false);
+          return;
+        }
         setDirHandle(handle);
         const perm = await (handle as any).queryPermission({ mode: 'readwrite' });
         if (perm === 'granted') {

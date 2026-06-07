@@ -80,6 +80,7 @@
   },
   "dependencies": {
     "@types/jszip": "^3.4.1",
+    "firebase": "^12.13.0",
     "hls.js": "^1.6.16",
     "jszip": "^3.10.1"
   }

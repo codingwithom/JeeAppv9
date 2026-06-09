@@ -20,7 +20,8 @@ import {
   PenTool,
   Lock,
   Shield,
-  ShieldAlert
+  ShieldAlert,
+  BrainCircuit
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
@@ -164,6 +165,7 @@ export function Sidebar() {
     { href: "/pdf", label: "PDF Viewer", icon: FileText },
     { href: "/video", label: "Videos", icon: Video },
     { href: "/saves", label: "Saves", icon: Bookmark },
+    { href: "/quiz", label: "AI", icon: BrainCircuit },
     { href: "/movies", label: "Movie Hub", icon: Film },
   ];
 

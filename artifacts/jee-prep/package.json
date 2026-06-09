@@ -46,6 +46,7 @@
     "@tailwindcss/typography": "^0.5.15",
     "@tailwindcss/vite": "catalog:",
     "@tanstack/react-query": "catalog:",
+    "@types/express": "^5.0.6",
     "@types/node": "catalog:",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
@@ -79,9 +80,16 @@
     "zod": "catalog:"
   },
   "dependencies": {
+    "@openrouter/sdk": "^0.12.79",
     "@types/jszip": "^3.4.1",
+    "express": "^5.2.1",
     "firebase": "^12.13.0",
     "hls.js": "^1.6.16",
-    "jszip": "^3.10.1"
+    "jszip": "^3.10.1",
+    "katex": "^0.17.0",
+    "react-markdown": "^10.1.0",
+    "rehype-katex": "^7.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-math": "^6.0.0"
   }
 }

@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useAppContext } from "@/context/AppContext";
 import { useStreakContext } from "@/context/StreakContext";
 import { useWorkspaceContext } from "@/context/WorkspaceContext";
+import { OpenRouter } from '@openrouter/sdk';
 import {
   PieChart,
   Pie,
@@ -67,9 +68,11 @@ import {
   Settings,
   Key,
   Loader2,
+  BrainCircuit,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { cn } from "@/lib/utils";
 
 // ─── Types ─────────────────────────────────────────────────────────────────
 interface TimelineEntry {
@@ -583,6 +586,13 @@ export default function AdminPage() {
   const { streakData, todaySession } = useStreakContext();
   const { isSupported, changeFolder, writeMedia, readMediaAsArrayBuffer } = useWorkspaceContext();
 
+  const [workspaceName, setWorkspaceName] = useState<string | null>(null);
+  useEffect(() => {
+    idbGet("jee_workspace_handle").then((handle: any) => {
+      if (handle && handle.name) setWorkspaceName(handle.name);
+    }).catch(() => {});
+  }, []);
+
   const [timeline, setTimeline] = useState<TimelineEntry[]>(() => {
     try {
       return JSON.parse(localStorage.getItem("jee_admin_timeline") || "[]");
@@ -611,6 +621,9 @@ export default function AdminPage() {
     string,
     any
   > | null>(null);
+  const [editingCategory, setEditingCategory] = useState<string | null>(null);
+  const [isExpertMode, setIsExpertMode] = useState(false);
+  const [editJsonBuffer, setEditJsonBuffer] = useState("");
   const [pendingZip, setPendingZip] = useState<InstanceType<
     typeof JSZip
   > | null>(null);
@@ -717,6 +730,83 @@ export default function AdminPage() {
     return () => clearInterval(id);
   }, []);
 
+  // ── Gemini API Settings ──────────────────────────────────────────────────
+  const [geminiKey, setGeminiKey] = useState(() => localStorage.getItem("jee_gemini_api_key") || "");
+  const [geminiStatus, setGeminiStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [geminiMsg, setGeminiMsg] = useState("");
+
+  const handleSaveGeminiKey = () => {
+    if (!geminiKey.trim()) { setGeminiStatus("error"); setGeminiMsg("API Key cannot be empty."); return; }
+    localStorage.setItem("jee_gemini_api_key", geminiKey.trim());
+    setGeminiStatus("success");
+    setGeminiMsg("Gemini API Key saved successfully!");
+    setTimeout(() => setGeminiStatus("idle"), 3000);
+  };
+
+  const handleTestGeminiKey = async () => {
+    if (!geminiKey.trim()) {
+      setGeminiStatus("error");
+      setGeminiMsg("Please enter an API key first.");
+      return;
+    }
+    setGeminiStatus("loading");
+    setGeminiMsg("Testing connection...");
+    try {
+      const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${geminiKey.trim()}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: "Hello" }] }],
+          generationConfig: { maxOutputTokens: 10 }
+        })
+      });
+      if (res.ok) {
+        setGeminiStatus("success");
+        setGeminiMsg("Connection successful! Gemini API is working.");
+      } else {
+        setGeminiStatus("error");
+        setGeminiMsg("Connection failed! Invalid API Key or missing access.");
+      }
+    } catch (e) {
+      setGeminiStatus("error");
+      setGeminiMsg("Network error. Check your connection.");
+    }
+  };
+
+  // ── OpenRouter API Settings ──────────────────────────────────────────────
+  const [openRouterKey, setOpenRouterKey] = useState(() => localStorage.getItem("jee_openrouter_api_key") || "");
+  const [openRouterStatus, setOpenRouterStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [openRouterMsg, setOpenRouterMsg] = useState("");
+  const [activeAiProvider, setActiveAiProvider] = useState(() => localStorage.getItem("jee_active_ai_provider") || "gemini");
+
+  const handleSaveActiveAiProvider = (provider: string) => {
+    setActiveAiProvider(provider);
+    localStorage.setItem("jee_active_ai_provider", provider);
+  };
+
+  const handleSaveOpenRouterKey = () => {
+    if (!openRouterKey.trim()) { setOpenRouterStatus("error"); setOpenRouterMsg("API Key cannot be empty."); return; }
+    localStorage.setItem("jee_openrouter_api_key", openRouterKey.trim());
+    setOpenRouterStatus("success");
+    setOpenRouterMsg("OpenRouter API Key saved successfully!");
+    setTimeout(() => setOpenRouterStatus("idle"), 3000);
+  };
+
+  const handleTestOpenRouterKey = async () => {
+    if (!openRouterKey.trim()) {
+      setOpenRouterStatus("error");
+      setOpenRouterMsg("Please enter an API key first.");
+      return;
+    }
+    setOpenRouterStatus("loading");
+    setOpenRouterMsg("Testing connection...");
+    try {
+      const res = await fetch("https://openrouter.ai/api/v1/auth/key", { method: "GET", headers: { "Authorization": `Bearer ${openRouterKey.trim()}` } });
+      if (res.ok) { setOpenRouterStatus("success"); setOpenRouterMsg("Connection successful! OpenRouter is working."); }
+      else { setOpenRouterStatus("error"); setOpenRouterMsg("Connection failed! Invalid API Key."); }
+    } catch (e) { setOpenRouterStatus("error"); setOpenRouterMsg("Network error."); }
+  };
+
   // ── TMDB API Settings ────────────────────────────────────────────────────
   const [tmdbKey, setTmdbKey] = useState(() => localStorage.getItem("jee_tmdb_api_key") || DEFAULT_TMDB_KEYS[0]);
   const [tmdbStatus, setTmdbStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -798,6 +888,7 @@ export default function AdminPage() {
     const dailyRec = parse<Record<string, any>>("jee_daily_records", {});
     const timeTracking = parse<Record<string, any>>("jee_time_tracking", {});
     const lockdownRecords = parse<any[]>("jee_lockdown_records", []);
+    const quizResults = parse<any[]>("jee_quiz_results", []);
     const totalZenSecs = Object.values(timeTracking).reduce((acc: number, val: any) => acc + (val.sections?.['Zen Mixer'] || 0), 0);
     
     // Saves Page Data
@@ -911,6 +1002,10 @@ export default function AdminPage() {
         correct: totalCorrectAnswers,
         wrong: totalWrongAnswers,
         totalCounts: totalCorrectAnswers + totalWrongAnswers,
+      },
+      quiz: {
+        total: quizResults.length,
+        questions: quizResults.reduce((acc, q) => acc + (q.total || 0), 0)
       },
       timeTracking: {
         records: timeTracking,
@@ -1217,8 +1312,13 @@ export default function AdminPage() {
       keys: ["jee_vid_sections_v1", "jee_vid_notes_v1", "jee_vid_resume"],
     },
     {
+      key: "quiz",
+      label: "AI Quiz History",
+      keys: ["jee_quiz_results"],
+    },
+    {
       key: "streak",
-      label: "Streak & Records",
+      label: "Streak, Heatmap & Daily Records",
       keys: ["jee_streak_data", "jee_daily_records", "jee_streak_records"],
     },
     { key: "tags", label: "Tags", keys: ["jee_tags"] },
@@ -1235,7 +1335,7 @@ export default function AdminPage() {
     },
     {
       key: "time",
-      label: "Time Tracking",
+      label: "Time Tracking & Usage Breakdown",
       keys: ["jee_time_tracking", "jee_lockdown_records"],
     },
     {
@@ -1254,6 +1354,214 @@ export default function AdminPage() {
     },
   ];
 
+  function idbKeyCategory(key: string): string | null {
+    if (key.startsWith("pdf_leaf_") || key.startsWith("img_leaf_")) return "pdf";
+    if (key.startsWith("music_")) return "music";
+    if (key.startsWith("ambient_")) return "ambient";
+    if (
+      key.startsWith("vid_img_") ||
+      key.startsWith("vid_voice_") ||
+      key.startsWith("vid_ss_") ||
+      key.startsWith("vid_file_")
+    ) return "videos";
+    if (key.startsWith("jee_saves_") || key.startsWith("q_img_") || key.startsWith("a_img_") || key.startsWith("q_crop_") || key.startsWith("a_crop_")) return "saves";
+    return null;
+  }
+
+  // ── Smart Editor Logic ──────────────────────────────────────────────────
+  const startEditingCategory = (catKey: string) => {
+    const cat = RESTORE_CATEGORIES.find(c => c.key === catKey);
+    if (!cat || !pendingRestore) return;
+    const dataToEdit: Record<string, any> = {};
+    cat.keys.forEach(k => {
+      // Ensure we clone so we don't mutate pendingRestore directly until save
+      if (pendingRestore[k] !== undefined) {
+        dataToEdit[k] = JSON.parse(JSON.stringify(pendingRestore[k]));
+      }
+    });
+    setEditJsonBuffer(JSON.stringify(dataToEdit, null, 2));
+    setEditingCategory(catKey);
+    setIsExpertMode(false); // Start in Smart Mode by default
+  };
+
+  const updateWorkingKey = (key: string, value: any) => {
+    try {
+      const current = JSON.parse(editJsonBuffer);
+      current[key] = value;
+      setEditJsonBuffer(JSON.stringify(current, null, 2));
+    } catch (e) { console.error("Update failed", e); }
+  };
+
+  const renderSmartEditor = () => {
+    if (!editingCategory) return null;
+    let data: Record<string, any> = {};
+    try { data = JSON.parse(editJsonBuffer); } catch { return <p className="text-destructive text-xs">Error parsing data for smart editor.</p>; }
+
+    switch (editingCategory) {
+      case "tasks": {
+        const daily = data["jee_daily_records"] || {};
+        const tasks = data["jee_tasks"] || [];
+        return (
+          <div className="space-y-6">
+            {/* Daily Records Section */}
+            <div className="space-y-3">
+              <label className="text-[10px] font-bold uppercase text-primary block px-1 tracking-wider">Daily Progress History</label>
+              {Object.entries(daily).sort((a,b) => b[0].localeCompare(a[0])).map(([date, val]: [string, any]) => (
+                <div key={date} className="flex flex-col sm:flex-row sm:items-center justify-between p-3 bg-muted/30 border border-border rounded-xl gap-2">
+                  <span className="text-xs font-bold font-mono text-foreground">{date}</span>
+                  <div className="flex items-center gap-2 self-end sm:self-auto">
+                    <input 
+                      type="number" 
+                      value={val.completed} 
+                      onChange={e => {
+                        const next = { ...daily, [date]: { ...val, completed: parseInt(e.target.value) || 0 } };
+                        updateWorkingKey("jee_daily_records", next);
+                      }}
+                      className="w-10 h-7 bg-background border border-border rounded text-center text-xs focus:ring-1 focus:ring-primary outline-none" 
+                    />
+                    <span className="text-muted-foreground">/</span>
+                    <input 
+                      type="number" 
+                      value={val.total} 
+                      onChange={e => {
+                        const next = { ...daily, [date]: { ...val, total: parseInt(e.target.value) || 0 } };
+                        updateWorkingKey("jee_daily_records", next);
+                      }}
+                      className="w-10 h-7 bg-background border border-border rounded text-center text-xs focus:ring-1 focus:ring-primary outline-none" 
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Task List Section */}
+            <div className="space-y-3">
+              <label className="text-[10px] font-bold uppercase text-primary block px-1 tracking-wider">Master Task List</label>
+            {tasks.map((task: any, idx: number) => (
+              <div key={task.id || idx} className="flex items-center gap-3 p-2 bg-muted/30 border border-border rounded-xl">
+                <input 
+                  type="checkbox" 
+                  checked={task.completed} 
+                  onChange={e => {
+                    const next = [...tasks];
+                    next[idx] = { ...task, completed: e.target.checked };
+                    updateWorkingKey("jee_tasks", next);
+                  }}
+                  className="h-4 w-4 rounded border-border bg-background accent-primary cursor-pointer"
+                />
+                <Input 
+                  value={task.text} 
+                  onChange={e => {
+                    const next = [...tasks];
+                    next[idx] = { ...task, text: e.target.value };
+                    updateWorkingKey("jee_tasks", next);
+                  }}
+                  className="h-7 text-xs bg-transparent border-none p-0 focus-visible:ring-0 truncate" 
+                />
+                <div className={`px-1.5 py-0.5 rounded text-[8px] font-bold text-white shrink-0 ${task.priority === 'High' ? 'bg-red-500' : task.priority === 'Medium' ? 'bg-orange-500' : 'bg-blue-500'}`}>
+                  {task.priority}
+                </div>
+              </div>
+            ))}
+            </div>
+          </div>
+        );
+      }
+      case "timeline": {
+        const timeline = data["jee_admin_timeline"] || [];
+        return (
+          <div className="space-y-3">
+            {timeline.map((item: any, idx: number) => (
+              <div key={item.id || idx} className="p-3 bg-muted/30 border border-border rounded-xl space-y-2">
+                <div className="flex gap-2">
+                   <input 
+                    type="date" 
+                    value={item.date} 
+                    onChange={e => {
+                      const next = [...timeline];
+                      next[idx] = { ...item, date: e.target.value };
+                      updateWorkingKey("jee_admin_timeline", next);
+                    }}
+                    className="text-[10px] bg-background border border-border rounded px-1.5 h-6 outline-none" 
+                   />
+                   <select 
+                    value={item.type}
+                    onChange={e => {
+                      const next = [...timeline];
+                      next[idx] = { ...item, type: e.target.value };
+                      updateWorkingKey("jee_admin_timeline", next);
+                    }}
+                    className="text-[10px] bg-background border border-border rounded px-1.5 h-6 outline-none flex-1"
+                   >
+                     {Object.keys(TIMELINE_TYPES).map(t => <option key={t} value={t}>{t}</option>)}
+                   </select>
+                </div>
+                <Input 
+                  value={item.title} 
+                  onChange={e => {
+                    const next = [...timeline];
+                    next[idx] = { ...item, title: e.target.value };
+                    updateWorkingKey("jee_admin_timeline", next);
+                  }}
+                  className="h-8 text-xs bg-background" 
+                />
+              </div>
+            ))}
+          </div>
+        );
+      }
+      case "tags": {
+        const tags = data["jee_tags"] || [];
+        return (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            {tags.map((tag: any, idx: number) => (
+              <div key={tag.id || idx} className="flex items-center gap-2 p-2 bg-muted/30 border border-border rounded-xl">
+                <input 
+                  type="color" 
+                  value={tag.color} 
+                  onChange={e => {
+                    const next = [...tags];
+                    next[idx] = { ...tag, color: e.target.value };
+                    updateWorkingKey("jee_tags", next);
+                  }}
+                  className="w-6 h-6 rounded-md overflow-hidden bg-transparent border-none cursor-pointer p-0" 
+                />
+                <Input 
+                  value={tag.name} 
+                  onChange={e => {
+                    const next = [...tags];
+                    next[idx] = { ...tag, name: e.target.value };
+                    updateWorkingKey("jee_tags", next);
+                  }}
+                  className="h-7 text-xs bg-transparent border-none p-0 focus-visible:ring-0" 
+                />
+              </div>
+            ))}
+          </div>
+        );
+      }
+      default:
+        return (
+          <div className="flex flex-col items-center justify-center py-10 text-center space-y-3">
+             <Database className="h-10 w-10 text-muted-foreground/30" />
+             <div className="space-y-1">
+               <p className="text-xs font-bold text-foreground">Advanced Data Category</p>
+               <p className="text-[10px] text-muted-foreground px-10">Smart editing is not available for this complex category. Please use Expert Mode to tweak JSON.</p>
+             </div>
+             <Button variant="outline" size="sm" className="h-7 text-[10px]" onClick={() => setIsExpertMode(true)}>Switch to Expert Mode</Button>
+          </div>
+        );
+    }
+  };
+
+  const saveEditedCategory = () => {
+    try {
+      const parsed = JSON.parse(editJsonBuffer);
+      setPendingRestore(prev => ({ ...prev, ...parsed }));
+      setEditingCategory(null);
+    } catch (e) { alert("Invalid JSON format."); }
+  };
+
   const handleImportFile = useCallback(
     async (e: React.ChangeEvent<HTMLInputElement>) => {
       const file = e.target.files?.[0];
@@ -1270,7 +1578,7 @@ export default function AdminPage() {
         const backup: Record<string, any> = JSON.parse(text);
         setImportStatus("idle");
         setImportMsg("");
-        // Keep the loaded zip so applyRestore can extract IDB binary files
+        // Store the loaded ZIP so applyRestore can extract binary files later
         setPendingZip(loaded);
         setPendingRestore(backup);
         setRestoreCategories(RESTORE_CATEGORIES.map((c) => c.key));
@@ -1278,41 +1586,46 @@ export default function AdminPage() {
         setImportStatus("error");
         setImportMsg(err?.message || "Failed to read backup file.");
       }
-      // eslint-disable-next-line react-hooks/exhaustive-deps
     },
-    [],
+    [RESTORE_CATEGORIES],
   );
 
   const applyRestore = useCallback(async () => {
     if (!pendingRestore) return;
+    
+    // --- Session & Workspace Preservation ---
+    const currentU = localStorage.getItem("user");
+    const currentCU = localStorage.getItem("jee_current_user");
+    const currentLN = localStorage.getItem("jee_local_name");
+    const currentSA = localStorage.getItem("jee_session_active");
+    const currentWH = localStorage.getItem("jee_workspace_handle"); 
+
     const allowedKeys = new Set<string>(
       RESTORE_CATEGORIES.filter((c) =>
         restoreCategories.includes(c.key),
       ).flatMap((c) => c.keys),
     );
-    let restored = 0;
+    let restoredCount = 0;
 
-    // ── Restore localStorage ─────────────────────────────────────────────
+    // 1. Restore Metadata (LocalStorage)
     for (const [key, value] of Object.entries(pendingRestore)) {
       if (key === "_meta" || key === "_idb") continue;
-      const isPdfAnno =
-        key.startsWith("pdf_anno_") && restoreCategories.includes("pdf");
+      const isPdfAnno = key.startsWith("pdf_anno_") && restoreCategories.includes("pdf");
       if (!allowedKeys.has(key) && !isPdfAnno) continue;
-      localStorage.setItem(
-        key,
-        typeof value === "string" ? value : JSON.stringify(value),
-      );
-      if (key === "jee_admin_timeline") setTimeline(value);
-      restored++;
+      localStorage.setItem(key, typeof value === "string" ? value : JSON.stringify(value));
+      restoredCount++;
     }
 
-    // ── Restore IndexedDB binary files ───────────────────────────────────
+    // Restore current session after loop to prevent accidental logouts
+    if (currentU) localStorage.setItem("user", currentU);
+    if (currentCU) localStorage.setItem("jee_current_user", currentCU);
+    if (currentLN) localStorage.setItem("jee_local_name", currentLN);
+    if (currentSA) localStorage.setItem("jee_session_active", currentSA);
+    if (currentWH) localStorage.setItem("jee_workspace_handle", currentWH);
+
+    // 2. Restore Binary Files (IndexedDB via Workspace)
     if (pendingZip && pendingRestore["_idb"]) {
-      const manifest = pendingRestore["_idb"] as {
-        key: string;
-        file: string;
-        mimeType?: string;
-      }[];
+      const manifest = pendingRestore["_idb"] as any[];
       for (const entry of manifest) {
         const cat = idbKeyCategory(entry.key);
         if (cat && !restoreCategories.includes(cat)) continue;
@@ -1320,31 +1633,19 @@ export default function AdminPage() {
           const zipFile = pendingZip.file(entry.file);
           if (!zipFile) continue;
           const buf = await zipFile.async("arraybuffer");
-          const stored = entry.mimeType
-            ? new Blob([buf], { type: entry.mimeType })
-            : buf;
-              
-              try {
-                await writeMedia(entry.key, stored);
-              } catch (e) {
-                console.warn("writeMedia failed, falling back to IDB", e);
-              }
-              
-          await idbSet(entry.key, stored);
-          restored++;
-        } catch {
-          /* skip unreadable entry */
-        }
+          const stored = entry.mimeType ? new Blob([buf], { type: entry.mimeType }) : buf;
+          await writeMedia(entry.key, stored);
+          restoredCount++;
+        } catch (err) { console.warn("Binary restore failed:", entry.key, err); }
       }
     }
 
     setPendingRestore(null);
     setPendingZip(null);
     setImportStatus("success");
-    setImportMsg(`Restored ${restored} items. Reloading…`);
-    setTimeout(() => window.location.reload(), 2200);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [pendingRestore, pendingZip, restoreCategories, writeMedia]);
+    setImportMsg(`Restored ${restoredCount} items. Reloading…`);
+    setTimeout(() => window.location.reload(), 1500);
+  }, [pendingRestore, pendingZip, restoreCategories, writeMedia, idbKeyCategory, RESTORE_CATEGORIES]);
 
   const CHART_COLORS = [
     "#3B82F6",
@@ -1498,7 +1799,7 @@ export default function AdminPage() {
 
         {/* ── Quick Stats Grid ── */}
         <Section title="Overview" icon={LayoutDashboard}>
-          <div className="grid grid-cols-2 sm:grid-cols-4 xl:grid-cols-9 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
             <StatCard
               icon={Timer}
               label="Total App Time"
@@ -1570,6 +1871,14 @@ export default function AdminPage() {
               sub={`${stats.lockdown.broken} broken`}
               color="#10B981"
               delay={0.35}
+            />
+            <StatCard
+              icon={BrainCircuit}
+              label="AI Quizzes"
+              value={stats.quiz.total}
+              sub={`${stats.quiz.questions} Qs Ans`}
+              color="#A855F7"
+              delay={0.4}
             />
           </div>
         </Section>
@@ -2451,7 +2760,17 @@ export default function AdminPage() {
                     <p className="text-xs text-muted-foreground">Change your assigned storage folder on disk.</p>
                   </div>
                 </div>
-                <Button onClick={changeFolder} className="w-full gap-2 text-sm" variant="outline">
+                {workspaceName && (
+                  <div className="mb-4 p-2.5 bg-muted/30 rounded-lg border border-border/50 flex items-center gap-2 overflow-hidden">
+                    <span className="text-[10px] uppercase text-muted-foreground font-bold shrink-0">Current Location:</span>
+                    <span className="text-xs font-mono font-semibold text-primary truncate">...\{workspaceName}</span>
+                  </div>
+                )}
+                <Button onClick={async () => {
+                  await changeFolder();
+                  const handle: any = await idbGet("jee_workspace_handle");
+                  if (handle?.name) setWorkspaceName(handle.name);
+                }} className="w-full gap-2 text-sm" variant="outline">
                   Choose New Local Folder
                 </Button>
               </div>
@@ -2461,7 +2780,25 @@ export default function AdminPage() {
 
         {/* ── API Integrations ── */}
         <Section title="API Integrations" icon={Settings} delay={0.55}>
-          <div className="bg-card border border-border rounded-2xl p-5">
+          <div className="bg-card border border-border rounded-2xl p-5 space-y-8">
+            
+            {/* AI Provider Selection */}
+            <div className="flex items-center gap-3 mb-4">
+              <div className="p-2.5 bg-blue-500/10 rounded-xl">
+                <BrainCircuit className="h-5 w-5 text-blue-400" />
+              </div>
+              <div>
+                <p className="text-sm font-bold text-foreground">Active AI Provider</p>
+                <p className="text-xs text-muted-foreground">Select which AI will generate quizzes</p>
+              </div>
+            </div>
+            <div className="flex gap-2 mb-6">
+               <button onClick={() => handleSaveActiveAiProvider("gemini")} className={cn("flex-1 py-2 text-xs font-bold rounded-lg border-2 transition-all", activeAiProvider === "gemini" ? "border-blue-500 bg-blue-500/10 text-blue-400" : "border-border bg-muted text-muted-foreground")}>Google Gemini</button>
+               <button onClick={() => handleSaveActiveAiProvider("openrouter")} className={cn("flex-1 py-2 text-xs font-bold rounded-lg border-2 transition-all", activeAiProvider === "openrouter" ? "border-purple-500 bg-purple-500/10 text-purple-400" : "border-border bg-muted text-muted-foreground")}>OpenRouter</button>
+            </div>
+
+            <div className="border-t border-border pt-6 space-y-8">
+            {/* TMDB API Key */}
             <div className="flex items-center gap-3 mb-4">
               <div className="p-2.5 bg-rose-500/10 rounded-xl">
                 <Key className="h-5 w-5 text-rose-400" />
@@ -2512,6 +2849,86 @@ export default function AdminPage() {
                   Save API Key
                 </Button>
               </div>
+            </div>
+
+            {/* Gemini API Key */}
+            <div className={cn("transition-all duration-300", activeAiProvider !== "gemini" && "opacity-50 grayscale pointer-events-none")}>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2.5 bg-indigo-500/10 rounded-xl">
+                  <BrainCircuit className="h-5 w-5 text-indigo-400" />
+                </div>
+                <div>
+                  <p className="text-sm font-bold text-foreground">Gemini AI API Key</p>
+                  <p className="text-xs text-muted-foreground">Used for NotebookLM-style AI Quiz generation from your sources.</p>
+                </div>
+              </div>
+              <div className="space-y-3">
+                <div className="flex gap-2">
+                  <Input
+                    type="password"
+                    placeholder="Enter Google Gemini API Key"
+                    value={geminiKey}
+                    onChange={(e) => setGeminiKey(e.target.value)}
+                    className="bg-muted border-border text-xs flex-1 h-9"
+                  />
+                </div>
+                {geminiStatus !== "idle" && (
+                  <div className={`p-2.5 rounded-lg text-xs font-medium border flex items-center gap-2
+                    ${geminiStatus === "success" ? "bg-green-500/10 border-green-500/30 text-green-400" :
+                      geminiStatus === "error" ? "bg-red-500/10 border-red-500/30 text-red-400" : 
+                      "bg-blue-500/10 border-blue-500/30 text-blue-400"}`}>
+                    {geminiStatus === "loading" && <Loader2 className="h-3.5 w-3.5 animate-spin" />}
+                    {geminiStatus === "success" && <Check className="h-3.5 w-3.5" />}
+                    {geminiStatus === "error" && <X className="h-3.5 w-3.5" />}
+                    {geminiMsg}
+                  </div>
+                )}
+                <div className="flex gap-2">
+                  <Button onClick={handleTestGeminiKey} variant="outline" className="flex-1 text-xs h-9 border-indigo-500/30 text-indigo-400 hover:bg-indigo-500/10" disabled={geminiStatus === "loading"}>
+                    Test Connection
+                  </Button>
+                  <Button onClick={handleSaveGeminiKey} className="flex-1 text-xs h-9 bg-indigo-600 hover:bg-indigo-700 text-white" disabled={geminiStatus === "loading"}>
+                    Save AI Key
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* OpenRouter API Key */}
+            <div className={cn("transition-all duration-300", activeAiProvider !== "openrouter" && "opacity-50 grayscale pointer-events-none")}>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2.5 bg-purple-500/10 rounded-xl">
+                  <BrainCircuit className="h-5 w-5 text-purple-400" />
+                </div>
+                <div>
+                  <p className="text-sm font-bold text-foreground">OpenRouter API Key</p>
+                  <p className="text-xs text-muted-foreground">Used for generating quizzes through OpenRouter models.</p>
+                </div>
+              </div>
+              <div className="space-y-3">
+                <div className="flex gap-2">
+                  <Input
+                    type="password"
+                    placeholder="Enter OpenRouter API Key (sk-or-v1-...)"
+                    value={openRouterKey}
+                    onChange={(e) => setOpenRouterKey(e.target.value)}
+                    className="bg-muted border-border text-xs flex-1 h-9"
+                  />
+                </div>
+                {openRouterStatus !== "idle" && (
+                  <div className={`p-2.5 rounded-lg text-xs font-medium border flex items-center gap-2 ${openRouterStatus === "success" ? "bg-green-500/10 border-green-500/30 text-green-400" : openRouterStatus === "error" ? "bg-red-500/10 border-red-500/30 text-red-400" : "bg-blue-500/10 border-blue-500/30 text-blue-400"}`}>
+                    {openRouterStatus === "loading" && <Loader2 className="h-3.5 w-3.5 animate-spin" />}
+                    {openRouterStatus === "success" && <Check className="h-3.5 w-3.5" />}
+                    {openRouterStatus === "error" && <X className="h-3.5 w-3.5" />}
+                    {openRouterMsg}
+                  </div>
+                )}
+                <div className="flex gap-2">
+                  <Button onClick={handleTestOpenRouterKey} variant="outline" className="flex-1 text-xs h-9 border-purple-500/30 text-purple-400 hover:bg-purple-500/10" disabled={openRouterStatus === "loading"}>Test Connection</Button>
+                  <Button onClick={handleSaveOpenRouterKey} className="flex-1 text-xs h-9 bg-purple-600 hover:bg-purple-700 text-white" disabled={openRouterStatus === "loading"}>Save OpenRouter Key</Button>
+                </div>
+              </div>
+            </div>
             </div>
           </div>
         </Section>
@@ -2571,55 +2988,97 @@ export default function AdminPage() {
                 </button>
               </div>
               <div className="space-y-2 mb-4">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs text-muted-foreground font-medium">
-                    Categories
-                  </span>
-                  <button
-                    className="text-xs text-primary hover:underline"
-                    onClick={() =>
-                      setRestoreCategories(
-                        restoreCategories.length === RESTORE_CATEGORIES.length
-                          ? []
-                          : RESTORE_CATEGORIES.map((c) => c.key),
-                      )
-                    }
-                  >
-                    {restoreCategories.length === RESTORE_CATEGORIES.length
-                      ? "Deselect all"
-                      : "Select all"}
-                  </button>
-                </div>
-                {RESTORE_CATEGORIES.map((cat) => (
-                  <label
-                    key={cat.key}
-                    className="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-muted/50 hover:bg-muted cursor-pointer transition-colors"
-                  >
-                    <div
-                      className={`w-4 h-4 rounded border-2 flex items-center justify-center transition-colors shrink-0
-                        ${restoreCategories.includes(cat.key) ? "bg-primary border-primary" : "border-border"}`}
-                      onClick={() =>
-                        setRestoreCategories((prev) =>
-                          prev.includes(cat.key)
-                            ? prev.filter((k) => k !== cat.key)
-                            : [...prev, cat.key],
-                        )
-                      }
-                    >
-                      {restoreCategories.includes(cat.key) && (
-                        <Check className="h-2.5 w-2.5 text-primary-foreground" />
-                      )}
+                {editingCategory ? (
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <button onClick={() => setEditingCategory(null)} className="p-1 hover:bg-muted rounded text-muted-foreground"><ChevronLeft className="h-4 w-4"/></button>
+                        <span className="text-xs font-bold text-primary">{RESTORE_CATEGORIES.find(c => c.key === editingCategory)?.label}</span>
+                      </div>
+                      <button 
+                        onClick={() => setIsExpertMode(!isExpertMode)} 
+                        className={cn("text-[9px] px-2 py-0.5 rounded-full border transition-colors", isExpertMode ? "bg-primary/20 border-primary text-primary" : "bg-muted border-border text-muted-foreground")}
+                      >
+                        {isExpertMode ? "Expert Mode (JSON)" : "Smart Mode"}
+                      </button>
                     </div>
-                    <span className="text-xs font-medium text-foreground">
-                      {cat.label}
-                    </span>
-                  </label>
-                ))}
+                    {isExpertMode ? (
+                      <textarea 
+                        value={editJsonBuffer}
+                        onChange={e => setEditJsonBuffer(e.target.value)}
+                        className="w-full h-48 sm:h-80 bg-muted border border-border rounded-xl p-3 text-[10px] font-mono focus:outline-none focus:ring-1 focus:ring-primary resize-none"
+                      />
+                    ) : renderSmartEditor()}
+                    <Button size="sm" className="w-full h-8 text-xs font-bold" onClick={saveEditedCategory}>Apply Changes to Pending Restore</Button>
+                  </div>
+                ) : (
+                  <>
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-xs text-muted-foreground font-medium">
+                        Categories
+                      </span>
+                      <button
+                        className="text-xs text-primary hover:underline"
+                        onClick={() =>
+                          setRestoreCategories(
+                            restoreCategories.length === RESTORE_CATEGORIES.length
+                              ? []
+                              : RESTORE_CATEGORIES.map((c) => c.key),
+                          )
+                        }
+                      >
+                        {restoreCategories.length === RESTORE_CATEGORIES.length
+                          ? "Deselect all"
+                          : "Select all"}
+                      </button>
+                    </div>
+                    {RESTORE_CATEGORIES.map((cat) => (
+                      <div 
+                        key={cat.key} 
+                        onDoubleClick={() => cat.key !== 'streak' && startEditingCategory(cat.key)}
+                        className="flex items-center justify-between group px-3 py-2.5 rounded-lg bg-muted/50 hover:bg-muted transition-colors cursor-pointer"
+                      >
+                        <label
+                          className="flex items-center gap-3 flex-1 cursor-pointer"
+                        >
+                          <div
+                            className={`w-4 h-4 rounded border-2 flex items-center justify-center transition-colors shrink-0
+                              ${restoreCategories.includes(cat.key) ? "bg-primary border-primary" : "border-border"}`}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setRestoreCategories((prev) =>
+                                prev.includes(cat.key)
+                                  ? prev.filter((k) => k !== cat.key)
+                                  : [...prev, cat.key],
+                              );
+                            }}
+                          >
+                            {restoreCategories.includes(cat.key) && (
+                              <Check className="h-2.5 w-2.5 text-primary-foreground" />
+                            )}
+                          </div>
+                          <span className="text-xs font-medium text-foreground select-none">
+                            {cat.label}
+                          </span>
+                        </label>
+                        {cat.key !== 'streak' && (
+                          <button 
+                            onClick={(e) => { e.stopPropagation(); startEditingCategory(cat.key); }}
+                            className="p-1 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-primary/20 rounded"
+                          >
+                            <Pencil className="h-3 w-3 text-primary" />
+                          </button>
+                        )}
+                      </div>
+                    ))}
+                    <p className="text-[9px] text-muted-foreground text-center mt-2 italic">Tip: Double-tap a category to edit its raw data</p>
+                  </>
+                )}
               </div>
               <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg px-3 py-2 text-xs text-yellow-600 dark:text-yellow-400 mb-4">
                 ⚠ Selected categories will overwrite your current data.
               </div>
-              <div className="flex gap-2">
+              <div className="flex gap-2" style={{ display: editingCategory ? 'none' : 'flex' }}>
                 <Button
                   variant="outline"
                   size="sm"

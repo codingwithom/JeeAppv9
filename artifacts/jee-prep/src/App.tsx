@@ -22,6 +22,7 @@ import AdminPage from "@/pages/AdminPage";
 import VideoPage from "@/pages/VideoPage";
 import MovieHub from "@/pages/MovieHub";
 import SavesPage from "@/pages/SavesPage"; // Import the new SavesPage
+import QuizPage from "@/pages/QuizPage";
 import { AmbientMixer } from "@/components/AmbientMixer";
 import { MiniPlayer } from "@/components/MiniPlayer";
 import { AnimatePresence, motion } from "framer-motion";
@@ -40,7 +41,8 @@ import {
   X,
   Headphones,
   Trees,
-  PenTool
+  PenTool,
+  BrainCircuit
 } from "lucide-react";
 import { idbGetAllKeys, idbGet, idbSet } from "@/lib/idb";
 
@@ -55,6 +57,7 @@ const PAGE_LABELS: Record<string, string> = {
   "/movies": "Movie Hub",
   "/admin": "Admin Panel",
   "/saves": "Saves",
+  "/quiz": "AI",
   "/ambient": "Zen Mixer",
 };
 
@@ -86,6 +89,7 @@ function CommandPalette() {
     { name: "Movie Hub", path: "/movies", icon: Film },
     { name: "Admin Panel", path: "/admin", icon: Shield },
     { name: "Saves & Flashcards", path: "/saves", icon: Bookmark },
+    { name: "AI", path: "/quiz", icon: BrainCircuit },
     { name: "Zen Mixer", path: "/ambient", icon: Headphones },
   ];
 
@@ -309,6 +313,7 @@ function TimeTracker() {
        else if (location.startsWith("/movies")) sectionName = "Movie Hub";
        else if (location.startsWith("/saves")) sectionName = "Saves";
        else if (location.startsWith("/calendar")) sectionName = "Calendar";
+       else if (location.startsWith("/quiz")) sectionName = "AI";
        else if (location.startsWith("/admin")) sectionName = "Admin Panel";
        else if (location.startsWith("/ambient")) sectionName = "Zen Mixer";
        
@@ -359,6 +364,7 @@ function Router() {
         <Route path="/movies" component={MovieHub} />
         <Route path="/admin" component={AdminPage} />
         <Route path="/saves" component={SavesPage} /> {/* Add the new route for SavesPage */}
+        <Route path="/quiz" component={QuizPage} />
         <Route path="/ambient" component={AmbientMixer} />
         <Route component={NotFound} />
       </Switch>

@@ -192,6 +192,12 @@ export function WorkspaceProvider({ children }: { children: ReactNode }) {
                 <p className="text-muted-foreground text-sm mb-6">
                   Welcome back! Please grant access to your local workspace folder to continue.
                 </p>
+                {dirHandle?.name && (
+                  <div className="mb-6 p-3 bg-muted/30 rounded-lg border border-border/50 flex items-center justify-center gap-2 overflow-hidden">
+                    <span className="text-[10px] uppercase text-muted-foreground font-bold shrink-0">Location:</span>
+                    <span className="text-xs font-mono font-semibold text-primary truncate">...\{dirHandle.name}</span>
+                  </div>
+                )}
                 <Button onClick={requestPermission} className="w-full h-12 font-semibold">Grant Access</Button>
               </>
             ) : (

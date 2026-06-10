@@ -474,7 +474,11 @@ export default function AIChatInterface() {
     
     try {
       const aiProvider = localStorage.getItem("jee_active_ai_provider") || "gemini";
-      const apiKey = aiProvider === "openrouter" ? localStorage.getItem("jee_openrouter_api_key") : localStorage.getItem("jee_gemini_api_key");
+      let apiKey = "";
+      if (aiProvider === "openrouter") apiKey = localStorage.getItem("jee_openrouter_api_key") || "";
+      else if (aiProvider === "nvidia") apiKey = localStorage.getItem("jee_nvidia_api_key") || "";
+      else apiKey = localStorage.getItem("jee_gemini_api_key") || "";
+      
       if (!apiKey) return;
 
       const chatText = chatHistory.map(m => `${m.role}: ${m.content}`).join("\n").slice(-3000); 
@@ -488,6 +492,23 @@ export default function AIChatInterface() {
            try {
                const payload = { model: modelName, messages: [{ role: "user", content: promptText }] };
                const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+                  method: "POST",
+                  headers: { "Authorization": `Bearer ${apiKey}`, "Content-Type": "application/json" },
+                  body: JSON.stringify(payload)
+               });
+               if (res.ok) {
+                  const data = await res.json();
+                  newTitle = data.choices?.[0]?.message?.content?.trim();
+                  if (newTitle) break;
+               }
+           } catch (e) {}
+         }
+      } else if (aiProvider === "nvidia") {
+         const models = ["meta/llama-3.1-70b-instruct", "meta/llama-3.1-8b-instruct"];
+         for (const modelName of models) {
+           try {
+               const payload = { model: modelName, messages: [{ role: "user", content: promptText }], max_tokens: 15 };
+               const res = await fetch("https://integrate.api.nvidia.com/v1/chat/completions", {
                   method: "POST",
                   headers: { "Authorization": `Bearer ${apiKey}`, "Content-Type": "application/json" },
                   body: JSON.stringify(payload)
@@ -526,10 +547,13 @@ export default function AIChatInterface() {
     setLoading(true);
     try {
       const aiProvider = localStorage.getItem("jee_active_ai_provider") || "gemini";
-      const apiKey = aiProvider === "openrouter" ? localStorage.getItem("jee_openrouter_api_key") : localStorage.getItem("jee_gemini_api_key");
+      let apiKey = "";
+      if (aiProvider === "openrouter") apiKey = localStorage.getItem("jee_openrouter_api_key") || "";
+      else if (aiProvider === "nvidia") apiKey = localStorage.getItem("jee_nvidia_api_key") || "";
+      else apiKey = localStorage.getItem("jee_gemini_api_key") || "";
       
       if (!apiKey) {
-        throw new Error(`Please set your ${aiProvider === "openrouter" ? "OpenRouter" : "Gemini AI"} API Key in the Admin Panel first!`);
+        throw new Error(`Please set your ${aiProvider === "openrouter" ? "OpenRouter" : aiProvider === "nvidia" ? "NVIDIA API" : "Gemini AI"} API Key in the Admin Panel first!`);
       }
 
       const systemInstruction = `You are an expert JEE Advanced tutor and highly capable assistant. Your name is "Calculus" and you were developed by "OM sir". If asked about your identity, creator, or who you are, always respond that you are Calculus, developed by OM sir.
@@ -586,6 +610,9 @@ CRITICAL SAFETY RULE: You MUST NOT generate, provide, or discuss any adult, sexu
           "openai/gpt-oss-20b:free",
           "z-ai/glm-4.5-air:free",
           "nvidia/nemotron-3-ultra-550b-a55b:free",       
+          "nvidia/nemotron-nano-9b-v2:free",
+          "nvidia/nemotron-nano-12b-v2-vl:free",
+          "nvidia/nemotron-3-nano-30b-a3b:free",
           "nousresearch/hermes-3-llama-3.1-405b:free",
           "moonshotai/kimi-k2.6:free",
           "meta-llama/llama-3.3-70b-instruct:free",
@@ -594,8 +621,7 @@ CRITICAL SAFETY RULE: You MUST NOT generate, provide, or discuss any adult, sexu
         ];
         
         const openRouterImageModels = [
-          "nvidia/nemotron-nano-12b-v2-vl:free",
-          "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free"
+          "nex-agi/nex-n2-pro:free",
         ];
         
         let success = false;
@@ -682,6 +708,71 @@ CRITICAL SAFETY RULE: You MUST NOT generate, provide, or discuss any adult, sexu
           throw new Error(`AI System is in Maintenance. OpenRouter error: ${primaryApiError || "All free endpoints exhausted or unavailable."}`);
         }
 
+      } else if (aiProvider === "nvidia") {
+        let success = false;
+        let targetModels = [
+          "meta/llama-3.1-70b-instruct",
+          "meta/llama-3.1-405b-instruct",
+          "meta/llama-3.1-8b-instruct",
+          "nvidia/llama-3.1-nemotron-70b-instruct"
+        ];
+        if (hasImages || isImageRequest) {
+          targetModels = ["meta/llama-3.2-90b-vision-instruct", "meta/llama-3.2-11b-vision-instruct"];
+        }
+
+        const messagesPayload = [
+          { role: "system", content: finalSystemInstruction + (visionPrompt ? "\n\n" + visionPrompt : "") },
+          ...messagesToSent.map((m, idx) => {
+            if (idx === messagesToSent.length - 1 && m.role === "user" && filePayloads && filePayloads.length > 0) {
+              const contentArray: any[] = [{ type: "text", text: m.content }];
+              filePayloads.forEach(fp => contentArray.push({ type: "image_url", image_url: { url: `data:${fp.inlineData.mimeType};base64,${fp.inlineData.data}` } }));
+              return { role: "user", content: contentArray };
+            }
+            return { role: m.role === "model" ? "assistant" : "user", content: m.content };
+          })
+        ];
+
+        for (const modelName of targetModels) {
+          try {
+            const reqBody: any = { 
+              model: modelName, 
+              messages: messagesPayload,
+              max_tokens: 2048,
+              temperature: 0.3
+            };
+
+            const response = await fetch("https://integrate.api.nvidia.com/v1/chat/completions", {
+              method: "POST",
+              headers: {
+                "Authorization": `Bearer ${apiKey}`,
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify(reqBody),
+            });
+
+            if (!response.ok) {
+              const errData = await response.json().catch(() => ({}));
+              throw new Error(`NVIDIA Error (${modelName}): ${errData.error?.message || response.statusText}`);
+            }
+            
+            const data = await response.json();
+            const messageObj = data.choices?.[0]?.message;
+            const content = messageObj?.content;
+            
+            if (content) {
+              responseText = content;
+              success = true;
+              break;
+            }
+          } catch (err: any) {
+            console.warn(`Model ${modelName} failed:`, err);
+            if (!primaryApiError) primaryApiError = err.message;
+          }
+        }
+
+        if (!success) {
+          throw new Error(`NVIDIA API failed: ${primaryApiError}`);
+        }
       } else {
          const payload: any = {
             systemInstruction: { parts: [{ text: finalSystemInstruction + (visionPrompt ? "\n\n" + visionPrompt : "") }] },
@@ -1124,7 +1215,7 @@ CRITICAL SAFETY RULE: You MUST NOT generate, provide, or discuss any adult, sexu
                        </span>
                     </div>
                  ) : (
-                   <div className="flex flex-col gap-3 mt-2.5 w-full max-w-[90%]">
+                   <div className="flex flex-col gap-3 mt-2.5 w-full max-w-[80%]">
                      {[100, 100, 80].map((w, i) => (
                        <div key={i} className="h-4 rounded-full bg-muted/60 dark:bg-muted/40 relative overflow-hidden" style={{ width: `${w}%` }}>
                           <motion.div

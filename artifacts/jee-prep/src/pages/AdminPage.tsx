@@ -773,6 +773,34 @@ export default function AdminPage() {
     }
   };
 
+  // ── NVIDIA API Settings ──────────────────────────────────────────────────
+  const [nvidiaKey, setNvidiaKey] = useState(() => localStorage.getItem("jee_nvidia_api_key") || "");
+  const [nvidiaStatus, setNvidiaStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [nvidiaMsg, setNvidiaMsg] = useState("");
+
+  const handleSaveNvidiaKey = () => {
+    if (!nvidiaKey.trim()) { setNvidiaStatus("error"); setNvidiaMsg("API Key cannot be empty."); return; }
+    localStorage.setItem("jee_nvidia_api_key", nvidiaKey.trim());
+    setNvidiaStatus("success");
+    setNvidiaMsg("NVIDIA API Key saved successfully!");
+    setTimeout(() => setNvidiaStatus("idle"), 3000);
+  };
+
+  const handleTestNvidiaKey = async () => {
+    if (!nvidiaKey.trim()) {
+      setNvidiaStatus("error");
+      setNvidiaMsg("Please enter an API key first.");
+      return;
+    }
+    setNvidiaStatus("loading");
+    setNvidiaMsg("Testing connection...");
+    try {
+      const res = await fetch("https://integrate.api.nvidia.com/v1/models", { method: "GET", headers: { "Authorization": `Bearer ${nvidiaKey.trim()}` } });
+      if (res.ok) { setNvidiaStatus("success"); setNvidiaMsg("Connection successful! NVIDIA API is working."); }
+      else { setNvidiaStatus("error"); setNvidiaMsg("Connection failed! Invalid API Key."); }
+    } catch (e) { setNvidiaStatus("error"); setNvidiaMsg("Network error."); }
+  };
+
   // ── OpenRouter API Settings ──────────────────────────────────────────────
   const [openRouterKey, setOpenRouterKey] = useState(() => localStorage.getItem("jee_openrouter_api_key") || "");
   const [openRouterStatus, setOpenRouterStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -2795,6 +2823,7 @@ export default function AdminPage() {
             <div className="flex gap-2 mb-6">
                <button onClick={() => handleSaveActiveAiProvider("gemini")} className={cn("flex-1 py-2 text-xs font-bold rounded-lg border-2 transition-all", activeAiProvider === "gemini" ? "border-blue-500 bg-blue-500/10 text-blue-400" : "border-border bg-muted text-muted-foreground")}>Google Gemini</button>
                <button onClick={() => handleSaveActiveAiProvider("openrouter")} className={cn("flex-1 py-2 text-xs font-bold rounded-lg border-2 transition-all", activeAiProvider === "openrouter" ? "border-purple-500 bg-purple-500/10 text-purple-400" : "border-border bg-muted text-muted-foreground")}>OpenRouter</button>
+               <button onClick={() => handleSaveActiveAiProvider("nvidia")} className={cn("flex-1 py-2 text-xs font-bold rounded-lg border-2 transition-all", activeAiProvider === "nvidia" ? "border-green-500 bg-green-500/10 text-green-400" : "border-border bg-muted text-muted-foreground")}>NVIDIA API</button>
             </div>
 
             <div className="border-t border-border pt-6 space-y-8">
@@ -2926,6 +2955,42 @@ export default function AdminPage() {
                 <div className="flex gap-2">
                   <Button onClick={handleTestOpenRouterKey} variant="outline" className="flex-1 text-xs h-9 border-purple-500/30 text-purple-400 hover:bg-purple-500/10" disabled={openRouterStatus === "loading"}>Test Connection</Button>
                   <Button onClick={handleSaveOpenRouterKey} className="flex-1 text-xs h-9 bg-purple-600 hover:bg-purple-700 text-white" disabled={openRouterStatus === "loading"}>Save OpenRouter Key</Button>
+                </div>
+              </div>
+            </div>
+
+            {/* NVIDIA API Key */}
+            <div className={cn("transition-all duration-300", activeAiProvider !== "nvidia" && "opacity-50 grayscale pointer-events-none")}>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2.5 bg-green-500/10 rounded-xl">
+                  <BrainCircuit className="h-5 w-5 text-green-400" />
+                </div>
+                <div>
+                  <p className="text-sm font-bold text-foreground">NVIDIA API Key</p>
+                  <p className="text-xs text-muted-foreground">Used for generating quizzes through NVIDIA NIM models.</p>
+                </div>
+              </div>
+              <div className="space-y-3">
+                <div className="flex gap-2">
+                  <Input
+                    type="password"
+                    placeholder="Enter NVIDIA API Key (nvapi-...)"
+                    value={nvidiaKey}
+                    onChange={(e) => setNvidiaKey(e.target.value)}
+                    className="bg-muted border-border text-xs flex-1 h-9"
+                  />
+                </div>
+                {nvidiaStatus !== "idle" && (
+                  <div className={`p-2.5 rounded-lg text-xs font-medium border flex items-center gap-2 ${nvidiaStatus === "success" ? "bg-green-500/10 border-green-500/30 text-green-400" : nvidiaStatus === "error" ? "bg-red-500/10 border-red-500/30 text-red-400" : "bg-blue-500/10 border-blue-500/30 text-blue-400"}`}>
+                    {nvidiaStatus === "loading" && <Loader2 className="h-3.5 w-3.5 animate-spin" />}
+                    {nvidiaStatus === "success" && <Check className="h-3.5 w-3.5" />}
+                    {nvidiaStatus === "error" && <X className="h-3.5 w-3.5" />}
+                    {nvidiaMsg}
+                  </div>
+                )}
+                <div className="flex gap-2">
+                  <Button onClick={handleTestNvidiaKey} variant="outline" className="flex-1 text-xs h-9 border-green-500/30 text-green-400 hover:bg-green-500/10" disabled={nvidiaStatus === "loading"}>Test Connection</Button>
+                  <Button onClick={handleSaveNvidiaKey} className="flex-1 text-xs h-9 bg-green-600 hover:bg-green-700 text-white" disabled={nvidiaStatus === "loading"}>Save NVIDIA Key</Button>
                 </div>
               </div>
             </div>

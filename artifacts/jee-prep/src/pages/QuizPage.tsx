@@ -146,10 +146,13 @@ class QuizGeneratorManager {
     const { sources, difficulty, finalQuestionCount, readMediaAsArrayBuffer, availablePdfs, availableVideos } = params;
 
     const aiProvider = localStorage.getItem("jee_active_ai_provider") || "gemini";
-    const apiKey = aiProvider === "openrouter" ? localStorage.getItem("jee_openrouter_api_key") : localStorage.getItem("jee_gemini_api_key");
+    let apiKey = "";
+    if (aiProvider === "openrouter") apiKey = localStorage.getItem("jee_openrouter_api_key") || "";
+    else if (aiProvider === "nvidia") apiKey = localStorage.getItem("jee_nvidia_api_key") || "";
+    else apiKey = localStorage.getItem("jee_gemini_api_key") || "";
     
     if (!apiKey) {
-      alert(`Please set your ${aiProvider === "openrouter" ? "OpenRouter" : "Gemini AI"} API Key in the Admin Panel first!`);
+      alert(`Please set your ${aiProvider === "openrouter" ? "OpenRouter" : aiProvider === "nvidia" ? "NVIDIA API" : "Gemini AI"} API Key in the Admin Panel first!`);
       return;
     }
 
@@ -232,6 +235,9 @@ class QuizGeneratorManager {
           "z-ai/glm-4.5-air:free",
           "nvidia/nemotron-3.5-content-safety:free",
           "nvidia/nemotron-3-ultra-550b-a55b:free",
+          "nvidia/nemotron-nano-9b-v2:free",
+          "nvidia/nemotron-nano-12b-v2-vl:free",
+          "nvidia/nemotron-3-nano-30b-a3b:free",
           "nousresearch/hermes-3-llama-3.1-405b:free",
           "moonshotai/kimi-k2.6:free",
           "meta-llama/llama-3.3-70b-instruct:free",
@@ -411,6 +417,57 @@ ${sources.internetSearch.enabled && sources.internetSearch.query ? `Additionally
               }
               if (!success) {
                   throw new Error(`AI System is in Maintenance. OpenRouter error: ${primaryApiError || "All free endpoints exhausted or unavailable."}`);
+              }
+          } else if (aiProvider === "nvidia") {
+              let success = false;
+              const nvidiaModels = [
+                  "meta/llama-3.1-70b-instruct",
+                  "meta/llama-3.1-405b-instruct",
+                  "meta/llama-3.1-8b-instruct",
+                  "nvidia/llama-3.1-nemotron-70b-instruct"
+              ];
+              for (const modelName of nvidiaModels) {
+                  try {
+                      const payload: any = {
+                        model: modelName,
+                        messages: [{ role: "user", content: promptText }],
+                        temperature: 0.2,
+                        top_p: 0.7,
+                        max_tokens: 4096,
+                      };
+
+                      const response = await fetch("https://integrate.api.nvidia.com/v1/chat/completions", {
+                        method: "POST",
+                        headers: {
+                          "Authorization": `Bearer ${apiKey}`,
+                          "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(payload),
+                      });
+
+                      if (!response.ok) {
+                        const errData = await response.json().catch(() => ({}));
+                        throw new Error(`NVIDIA API Error (${modelName}): ${errData.error?.message || response.statusText}`);
+                      }
+
+                      const data = await response.json();
+                      const rawText = data.choices?.[0]?.message?.content || "[]";
+                      const parsed = extractJson(rawText);
+
+                      if (Array.isArray(parsed) && parsed.length > 0) {
+                         batchResult = parsed;
+                         success = true;
+                         break;
+                      } else {
+                         throw new Error(`Invalid JSON from ${modelName}`);
+                      }
+                  } catch (err: any) {
+                      console.warn(`Model ${modelName} failed:`, err);
+                      if (!primaryApiError) primaryApiError = err.message;
+                  }
+              }
+              if (!success) {
+                  throw new Error(`NVIDIA API failed: ${primaryApiError}`);
               }
           } else {
               try {

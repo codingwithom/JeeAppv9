@@ -20,6 +20,10 @@ import {
   CartesianGrid,
   Brush,
 } from "recharts";
+
+
+
+
 import JSZip from "jszip";
 import { idbGetAllKeys, idbGet, idbSet } from "@/lib/idb";
 import { auth, db } from "@/lib/firebase";
@@ -730,87 +734,10 @@ export default function AdminPage() {
     return () => clearInterval(id);
   }, []);
 
-  // ── Gemini API Settings ──────────────────────────────────────────────────
-  const [geminiKey, setGeminiKey] = useState(() => localStorage.getItem("jee_gemini_api_key") || "");
-  const [geminiStatus, setGeminiStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-  const [geminiMsg, setGeminiMsg] = useState("");
-
-  const handleSaveGeminiKey = () => {
-    if (!geminiKey.trim()) { setGeminiStatus("error"); setGeminiMsg("API Key cannot be empty."); return; }
-    localStorage.setItem("jee_gemini_api_key", geminiKey.trim());
-    setGeminiStatus("success");
-    setGeminiMsg("Gemini API Key saved successfully!");
-    setTimeout(() => setGeminiStatus("idle"), 3000);
-  };
-
-  const handleTestGeminiKey = async () => {
-    if (!geminiKey.trim()) {
-      setGeminiStatus("error");
-      setGeminiMsg("Please enter an API key first.");
-      return;
-    }
-    setGeminiStatus("loading");
-    setGeminiMsg("Testing connection...");
-    try {
-      const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${geminiKey.trim()}`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          contents: [{ parts: [{ text: "Hello" }] }],
-          generationConfig: { maxOutputTokens: 10 }
-        })
-      });
-      if (res.ok) {
-        setGeminiStatus("success");
-        setGeminiMsg("Connection successful! Gemini API is working.");
-      } else {
-        setGeminiStatus("error");
-        setGeminiMsg("Connection failed! Invalid API Key or missing access.");
-      }
-    } catch (e) {
-      setGeminiStatus("error");
-      setGeminiMsg("Network error. Check your connection.");
-    }
-  };
-
-  // ── NVIDIA API Settings ──────────────────────────────────────────────────
-  const [nvidiaKey, setNvidiaKey] = useState(() => localStorage.getItem("jee_nvidia_api_key") || "");
-  const [nvidiaStatus, setNvidiaStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-  const [nvidiaMsg, setNvidiaMsg] = useState("");
-
-  const handleSaveNvidiaKey = () => {
-    if (!nvidiaKey.trim()) { setNvidiaStatus("error"); setNvidiaMsg("API Key cannot be empty."); return; }
-    localStorage.setItem("jee_nvidia_api_key", nvidiaKey.trim());
-    setNvidiaStatus("success");
-    setNvidiaMsg("NVIDIA API Key saved successfully!");
-    setTimeout(() => setNvidiaStatus("idle"), 3000);
-  };
-
-  const handleTestNvidiaKey = async () => {
-    if (!nvidiaKey.trim()) {
-      setNvidiaStatus("error");
-      setNvidiaMsg("Please enter an API key first.");
-      return;
-    }
-    setNvidiaStatus("loading");
-    setNvidiaMsg("Testing connection...");
-    try {
-      const res = await fetch("https://integrate.api.nvidia.com/v1/models", { method: "GET", headers: { "Authorization": `Bearer ${nvidiaKey.trim()}` } });
-      if (res.ok) { setNvidiaStatus("success"); setNvidiaMsg("Connection successful! NVIDIA API is working."); }
-      else { setNvidiaStatus("error"); setNvidiaMsg("Connection failed! Invalid API Key."); }
-    } catch (e) { setNvidiaStatus("error"); setNvidiaMsg("Network error."); }
-  };
-
   // ── OpenRouter API Settings ──────────────────────────────────────────────
   const [openRouterKey, setOpenRouterKey] = useState(() => localStorage.getItem("jee_openrouter_api_key") || "");
   const [openRouterStatus, setOpenRouterStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [openRouterMsg, setOpenRouterMsg] = useState("");
-  const [activeAiProvider, setActiveAiProvider] = useState(() => localStorage.getItem("jee_active_ai_provider") || "gemini");
-
-  const handleSaveActiveAiProvider = (provider: string) => {
-    setActiveAiProvider(provider);
-    localStorage.setItem("jee_active_ai_provider", provider);
-  };
 
   const handleSaveOpenRouterKey = () => {
     if (!openRouterKey.trim()) { setOpenRouterStatus("error"); setOpenRouterMsg("API Key cannot be empty."); return; }
@@ -829,9 +756,64 @@ export default function AdminPage() {
     setOpenRouterStatus("loading");
     setOpenRouterMsg("Testing connection...");
     try {
-      const res = await fetch("https://openrouter.ai/api/v1/auth/key", { method: "GET", headers: { "Authorization": `Bearer ${openRouterKey.trim()}` } });
-      if (res.ok) { setOpenRouterStatus("success"); setOpenRouterMsg("Connection successful! OpenRouter is working."); }
-      else { setOpenRouterStatus("error"); setOpenRouterMsg("Connection failed! Invalid API Key."); }
+      const testModels = [
+        "google/gemma-4-26b-a4b-it:free",
+        "google/gemma-4-31b-it:free",
+        "liquid/lfm-2.5-1.2b-thinking:free",
+        "liquid/lfm-2.5-1.2b-instruct:free",
+        "openai/gpt-oss-120b:free",
+        "openai/gpt-oss-20b:free",
+        "z-ai/glm-4.5-air:free",
+        "nvidia/nemotron-3-ultra-550b-a55b:free",       
+        "nvidia/nemotron-nano-9b-v2:free",
+        "nvidia/nemotron-nano-12b-v2-vl:free",
+        "nvidia/nemotron-3-nano-30b-a3b:free",
+        "nousresearch/hermes-3-llama-3.1-405b:free",
+        "moonshotai/kimi-k2.6:free",
+        "meta-llama/llama-3.3-70b-instruct:free",
+        "qwen/qwen-2.5-coder-32b-instruct:free"
+      ];
+
+      let success = false;
+      let lastError = "Invalid API Key or all test models are down.";
+
+      for (const modelName of testModels) {
+        try {
+          const payload = { model: modelName, messages: [{ role: "user", content: "Hi" }], max_tokens: 1 };
+          let res;
+          try {
+            res = await fetch("https://openrouter.ai/api/v1/chat/completions", { 
+              method: "POST", 
+              headers: { "Authorization": `Bearer ${openRouterKey.trim()}`, "Content-Type": "application/json", "HTTP-Referer": window.location.href, "X-Title": "JEE Prep App" },
+              body: JSON.stringify(payload)
+            });
+          } catch (e) {
+            res = await fetch(`https://corsproxy.io/?${encodeURIComponent("https://openrouter.ai/api/v1/chat/completions")}`, { 
+              method: "POST", 
+              headers: { "Authorization": `Bearer ${openRouterKey.trim()}`, "Content-Type": "application/json", "HTTP-Referer": window.location.href, "X-Title": "JEE Prep App" },
+              body: JSON.stringify(payload)
+            });
+          }
+          
+          if (res && res.ok) { 
+            success = true;
+            break;
+          } else { 
+            const errData = await res?.json().catch(() => ({}));
+            lastError = errData?.error?.message || `Request to ${modelName} failed.`;
+          }
+        } catch (e) {
+          lastError = (e as Error).message || "A network error occurred during testing.";
+        }
+      }
+      
+      if (success) {
+        setOpenRouterStatus("success"); 
+        setOpenRouterMsg("Connection successful! OpenRouter is working."); 
+      } else { 
+        setOpenRouterStatus("error"); 
+        setOpenRouterMsg(`Connection failed! ${lastError}`); 
+      }
     } catch (e) { setOpenRouterStatus("error"); setOpenRouterMsg("Network error."); }
   };
 
@@ -2809,23 +2791,42 @@ export default function AdminPage() {
         {/* ── API Integrations ── */}
         <Section title="API Integrations" icon={Settings} delay={0.55}>
           <div className="bg-card border border-border rounded-2xl p-5 space-y-8">
+            {/* OpenRouter API Key */}
+            <div className="transition-all duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2.5 bg-purple-500/10 rounded-xl">
+                  <BrainCircuit className="h-5 w-5 text-purple-400" />
+                </div>
+                <div>
+                  <p className="text-sm font-bold text-foreground">OpenRouter API Key</p>
+                  <p className="text-xs text-muted-foreground">Used for generating quizzes and AI responses.</p>
+                </div>
+              </div>
+              <div className="space-y-3">
+                <div className="flex gap-2">
+                  <Input
+                    type="password"
+                    placeholder="Enter OpenRouter API Key (sk-or-v1-...)"
+                    value={openRouterKey}
+                    onChange={(e) => setOpenRouterKey(e.target.value)}
+                    className="bg-muted border-border text-xs flex-1 h-9"
+                  />
+                </div>
+                {openRouterStatus !== "idle" && (
+                  <div className={`p-2.5 rounded-lg text-xs font-medium border flex items-center gap-2 ${openRouterStatus === "success" ? "bg-green-500/10 border-green-500/30 text-green-400" : openRouterStatus === "error" ? "bg-red-500/10 border-red-500/30 text-red-400" : "bg-blue-500/10 border-blue-500/30 text-blue-400"}`}>
+                    {openRouterStatus === "loading" && <Loader2 className="h-3.5 w-3.5 animate-spin" />}
+                    {openRouterStatus === "success" && <Check className="h-3.5 w-3.5" />}
+                    {openRouterStatus === "error" && <X className="h-3.5 w-3.5" />}
+                    {openRouterMsg}
+                  </div>
+                )}
+                <div className="flex gap-2">
+                  <Button onClick={handleTestOpenRouterKey} variant="outline" className="flex-1 text-xs h-9 border-purple-500/30 text-purple-400 hover:bg-purple-500/10" disabled={openRouterStatus === "loading"}>Test Connection</Button>
+                  <Button onClick={handleSaveOpenRouterKey} className="flex-1 text-xs h-9 bg-purple-600 hover:bg-purple-700 text-white" disabled={openRouterStatus === "loading"}>Save OpenRouter Key</Button>
+                </div>
+              </div>
+            </div>
             
-            {/* AI Provider Selection */}
-            <div className="flex items-center gap-3 mb-4">
-              <div className="p-2.5 bg-blue-500/10 rounded-xl">
-                <BrainCircuit className="h-5 w-5 text-blue-400" />
-              </div>
-              <div>
-                <p className="text-sm font-bold text-foreground">Active AI Provider</p>
-                <p className="text-xs text-muted-foreground">Select which AI will generate quizzes</p>
-              </div>
-            </div>
-            <div className="flex gap-2 mb-6">
-               <button onClick={() => handleSaveActiveAiProvider("gemini")} className={cn("flex-1 py-2 text-xs font-bold rounded-lg border-2 transition-all", activeAiProvider === "gemini" ? "border-blue-500 bg-blue-500/10 text-blue-400" : "border-border bg-muted text-muted-foreground")}>Google Gemini</button>
-               <button onClick={() => handleSaveActiveAiProvider("openrouter")} className={cn("flex-1 py-2 text-xs font-bold rounded-lg border-2 transition-all", activeAiProvider === "openrouter" ? "border-purple-500 bg-purple-500/10 text-purple-400" : "border-border bg-muted text-muted-foreground")}>OpenRouter</button>
-               <button onClick={() => handleSaveActiveAiProvider("nvidia")} className={cn("flex-1 py-2 text-xs font-bold rounded-lg border-2 transition-all", activeAiProvider === "nvidia" ? "border-green-500 bg-green-500/10 text-green-400" : "border-border bg-muted text-muted-foreground")}>NVIDIA API</button>
-            </div>
-
             <div className="border-t border-border pt-6 space-y-8">
             {/* TMDB API Key */}
             <div className="flex items-center gap-3 mb-4">
@@ -2880,120 +2881,6 @@ export default function AdminPage() {
               </div>
             </div>
 
-            {/* Gemini API Key */}
-            <div className={cn("transition-all duration-300", activeAiProvider !== "gemini" && "opacity-50 grayscale pointer-events-none")}>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2.5 bg-indigo-500/10 rounded-xl">
-                  <BrainCircuit className="h-5 w-5 text-indigo-400" />
-                </div>
-                <div>
-                  <p className="text-sm font-bold text-foreground">Gemini AI API Key</p>
-                  <p className="text-xs text-muted-foreground">Used for NotebookLM-style AI Quiz generation from your sources.</p>
-                </div>
-              </div>
-              <div className="space-y-3">
-                <div className="flex gap-2">
-                  <Input
-                    type="password"
-                    placeholder="Enter Google Gemini API Key"
-                    value={geminiKey}
-                    onChange={(e) => setGeminiKey(e.target.value)}
-                    className="bg-muted border-border text-xs flex-1 h-9"
-                  />
-                </div>
-                {geminiStatus !== "idle" && (
-                  <div className={`p-2.5 rounded-lg text-xs font-medium border flex items-center gap-2
-                    ${geminiStatus === "success" ? "bg-green-500/10 border-green-500/30 text-green-400" :
-                      geminiStatus === "error" ? "bg-red-500/10 border-red-500/30 text-red-400" : 
-                      "bg-blue-500/10 border-blue-500/30 text-blue-400"}`}>
-                    {geminiStatus === "loading" && <Loader2 className="h-3.5 w-3.5 animate-spin" />}
-                    {geminiStatus === "success" && <Check className="h-3.5 w-3.5" />}
-                    {geminiStatus === "error" && <X className="h-3.5 w-3.5" />}
-                    {geminiMsg}
-                  </div>
-                )}
-                <div className="flex gap-2">
-                  <Button onClick={handleTestGeminiKey} variant="outline" className="flex-1 text-xs h-9 border-indigo-500/30 text-indigo-400 hover:bg-indigo-500/10" disabled={geminiStatus === "loading"}>
-                    Test Connection
-                  </Button>
-                  <Button onClick={handleSaveGeminiKey} className="flex-1 text-xs h-9 bg-indigo-600 hover:bg-indigo-700 text-white" disabled={geminiStatus === "loading"}>
-                    Save AI Key
-                  </Button>
-                </div>
-              </div>
-            </div>
-
-            {/* OpenRouter API Key */}
-            <div className={cn("transition-all duration-300", activeAiProvider !== "openrouter" && "opacity-50 grayscale pointer-events-none")}>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2.5 bg-purple-500/10 rounded-xl">
-                  <BrainCircuit className="h-5 w-5 text-purple-400" />
-                </div>
-                <div>
-                  <p className="text-sm font-bold text-foreground">OpenRouter API Key</p>
-                  <p className="text-xs text-muted-foreground">Used for generating quizzes through OpenRouter models.</p>
-                </div>
-              </div>
-              <div className="space-y-3">
-                <div className="flex gap-2">
-                  <Input
-                    type="password"
-                    placeholder="Enter OpenRouter API Key (sk-or-v1-...)"
-                    value={openRouterKey}
-                    onChange={(e) => setOpenRouterKey(e.target.value)}
-                    className="bg-muted border-border text-xs flex-1 h-9"
-                  />
-                </div>
-                {openRouterStatus !== "idle" && (
-                  <div className={`p-2.5 rounded-lg text-xs font-medium border flex items-center gap-2 ${openRouterStatus === "success" ? "bg-green-500/10 border-green-500/30 text-green-400" : openRouterStatus === "error" ? "bg-red-500/10 border-red-500/30 text-red-400" : "bg-blue-500/10 border-blue-500/30 text-blue-400"}`}>
-                    {openRouterStatus === "loading" && <Loader2 className="h-3.5 w-3.5 animate-spin" />}
-                    {openRouterStatus === "success" && <Check className="h-3.5 w-3.5" />}
-                    {openRouterStatus === "error" && <X className="h-3.5 w-3.5" />}
-                    {openRouterMsg}
-                  </div>
-                )}
-                <div className="flex gap-2">
-                  <Button onClick={handleTestOpenRouterKey} variant="outline" className="flex-1 text-xs h-9 border-purple-500/30 text-purple-400 hover:bg-purple-500/10" disabled={openRouterStatus === "loading"}>Test Connection</Button>
-                  <Button onClick={handleSaveOpenRouterKey} className="flex-1 text-xs h-9 bg-purple-600 hover:bg-purple-700 text-white" disabled={openRouterStatus === "loading"}>Save OpenRouter Key</Button>
-                </div>
-              </div>
-            </div>
-
-            {/* NVIDIA API Key */}
-            <div className={cn("transition-all duration-300", activeAiProvider !== "nvidia" && "opacity-50 grayscale pointer-events-none")}>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2.5 bg-green-500/10 rounded-xl">
-                  <BrainCircuit className="h-5 w-5 text-green-400" />
-                </div>
-                <div>
-                  <p className="text-sm font-bold text-foreground">NVIDIA API Key</p>
-                  <p className="text-xs text-muted-foreground">Used for generating quizzes through NVIDIA NIM models.</p>
-                </div>
-              </div>
-              <div className="space-y-3">
-                <div className="flex gap-2">
-                  <Input
-                    type="password"
-                    placeholder="Enter NVIDIA API Key (nvapi-...)"
-                    value={nvidiaKey}
-                    onChange={(e) => setNvidiaKey(e.target.value)}
-                    className="bg-muted border-border text-xs flex-1 h-9"
-                  />
-                </div>
-                {nvidiaStatus !== "idle" && (
-                  <div className={`p-2.5 rounded-lg text-xs font-medium border flex items-center gap-2 ${nvidiaStatus === "success" ? "bg-green-500/10 border-green-500/30 text-green-400" : nvidiaStatus === "error" ? "bg-red-500/10 border-red-500/30 text-red-400" : "bg-blue-500/10 border-blue-500/30 text-blue-400"}`}>
-                    {nvidiaStatus === "loading" && <Loader2 className="h-3.5 w-3.5 animate-spin" />}
-                    {nvidiaStatus === "success" && <Check className="h-3.5 w-3.5" />}
-                    {nvidiaStatus === "error" && <X className="h-3.5 w-3.5" />}
-                    {nvidiaMsg}
-                  </div>
-                )}
-                <div className="flex gap-2">
-                  <Button onClick={handleTestNvidiaKey} variant="outline" className="flex-1 text-xs h-9 border-green-500/30 text-green-400 hover:bg-green-500/10" disabled={nvidiaStatus === "loading"}>Test Connection</Button>
-                  <Button onClick={handleSaveNvidiaKey} className="flex-1 text-xs h-9 bg-green-600 hover:bg-green-700 text-white" disabled={nvidiaStatus === "loading"}>Save NVIDIA Key</Button>
-                </div>
-              </div>
-            </div>
             </div>
           </div>
         </Section>

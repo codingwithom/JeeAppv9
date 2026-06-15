@@ -13,7 +13,8 @@ import {
   Plus,
   ArrowRight,
   FileText,
-  FileVideo
+  FileVideo,
+  Square
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAppContext } from "@/context/AppContext";
@@ -35,6 +36,7 @@ export interface ChatMessage {
   role: "user" | "model";
   content: string;
   isTyping?: boolean;
+  isStopped?: boolean;
   attachments?: { url: string; type: string; name: string }[];
   sources?: { uri: string; title: string; favicon: string }[];
 }
@@ -63,7 +65,35 @@ const getMarkdownComponents = (setFullScreenImage?: (url: string) => void): any 
          </a>
        );
     }
-    return <a href={href} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600 underline transition-colors font-medium break-all" {...props}>{children}</a>;
+    
+    // Detect YouTube URLs
+    const ytRegex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+    const ytMatch = href?.match(ytRegex);
+    
+    if (ytMatch && ytMatch[1]) {
+      const videoId = ytMatch[1];
+      return (
+        <div className="my-4 rounded-xl overflow-hidden border border-border shadow-sm max-w-md w-full bg-card">
+          <div className="relative pt-[56.25%] bg-black">
+            <iframe 
+              src={`https://www.youtube.com/embed/${videoId}`} 
+              className="absolute top-0 left-0 w-full h-full border-0" 
+              allowFullScreen
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            />
+          </div>
+          {children && (
+            <div className="p-3 bg-muted/30 text-sm font-semibold text-foreground border-t border-border line-clamp-2">
+              <a href={href} target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 transition-colors">
+                 {children}
+              </a>
+            </div>
+          )}
+        </div>
+      );
+    }
+
+    return <a href={href} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600 underline transition-colors font-medium break-words" {...props}>{children}</a>;
   },
   img: ({ src, alt, ...props }: any) => {
     return (
@@ -373,12 +403,14 @@ export default function AIChatInterface() {
   const [generatingImageType, setGeneratingImageType] = useState(false);
   const [fullScreenImage, setFullScreenImage] = useState<string | null>(null);
   const [chatMode, setChatMode] = useState<"academic" | "non_academic">("academic");
+  const abortControllerRef = useRef<AbortController | null>(null);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   const activeSession = sessions.find(s => s.id === activeSessionId);
   const messages = activeSession?.messages || [];
+  const isTyping = messages.length > 0 && messages[messages.length - 1].role === "model" && messages[messages.length - 1].isTyping;
 
   useEffect(() => {
     localStorage.setItem("jee_ai_chats", JSON.stringify(sessions));
@@ -399,6 +431,14 @@ export default function AIChatInterface() {
     window.addEventListener('chat-typing', handleScroll);
     return () => window.removeEventListener('chat-typing', handleScroll);
   }, []);
+
+  const handleStopGeneration = () => {
+    if (loading && abortControllerRef.current) {
+      abortControllerRef.current.abort();
+    } else if (isTyping) {
+      markAsDone(messages.length - 1);
+    }
+  };
 
   // Auto-resize textarea
   useEffect(() => {
@@ -473,11 +513,7 @@ export default function AIChatInterface() {
     if (chatHistory.length !== 2 && (chatHistory.length - 2) % 4 !== 0) return;
     
     try {
-      const aiProvider = localStorage.getItem("jee_active_ai_provider") || "gemini";
-      let apiKey = "";
-      if (aiProvider === "openrouter") apiKey = localStorage.getItem("jee_openrouter_api_key") || "";
-      else if (aiProvider === "nvidia") apiKey = localStorage.getItem("jee_nvidia_api_key") || "";
-      else apiKey = localStorage.getItem("jee_gemini_api_key") || "";
+      const apiKey = localStorage.getItem("jee_openrouter_api_key") || "";
       
       if (!apiKey) return;
 
@@ -486,47 +522,30 @@ export default function AIChatInterface() {
 
       let newTitle = "";
 
-      if (aiProvider === "openrouter") {
-         const models = ["meta-llama/llama-3.3-70b-instruct:free", "google/gemma-2-9b-it:free", "openai/gpt-oss-120b:free"];
-         for (const modelName of models) {
-           try {
-               const payload = { model: modelName, messages: [{ role: "user", content: promptText }] };
-               const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-                  method: "POST",
-                  headers: { "Authorization": `Bearer ${apiKey}`, "Content-Type": "application/json" },
-                  body: JSON.stringify(payload)
-               });
-               if (res.ok) {
-                  const data = await res.json();
-                  newTitle = data.choices?.[0]?.message?.content?.trim();
-                  if (newTitle) break;
-               }
-           } catch (e) {}
-         }
-      } else if (aiProvider === "nvidia") {
-         const models = ["meta/llama-3.1-70b-instruct", "meta/llama-3.1-8b-instruct"];
-         for (const modelName of models) {
-           try {
-               const payload = { model: modelName, messages: [{ role: "user", content: promptText }], max_tokens: 15 };
-               const res = await fetch("https://integrate.api.nvidia.com/v1/chat/completions", {
-                  method: "POST",
-                  headers: { "Authorization": `Bearer ${apiKey}`, "Content-Type": "application/json" },
-                  body: JSON.stringify(payload)
-               });
-               if (res.ok) {
-                  const data = await res.json();
-                  newTitle = data.choices?.[0]?.message?.content?.trim();
-                  if (newTitle) break;
-               }
-           } catch (e) {}
-         }
-      } else {
-         const payload = { contents: [{ parts: [{ text: promptText }] }], generationConfig: { maxOutputTokens: 15, temperature: 0.3 } };
-         const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
-         if (res.ok) {
-            const data = await res.json();
-            newTitle = data.candidates?.[0]?.content?.parts?.[0]?.text?.trim();
-         }
+      const models = ["meta-llama/llama-3.3-70b-instruct:free", "qwen/qwen-2.5-coder-32b-instruct:free", "openai/gpt-oss-120b:free"];
+      for (const modelName of models) {
+        try {
+            const payload = { model: modelName, messages: [{ role: "user", content: promptText }] };
+            let res;
+            try {
+              res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+                method: "POST",
+                headers: { "Authorization": `Bearer ${apiKey.trim()}`, "Content-Type": "application/json" },
+                body: JSON.stringify(payload)
+              });
+            } catch (e) {
+              res = await fetch(`https://corsproxy.io/?${encodeURIComponent("https://openrouter.ai/api/v1/chat/completions")}`, {
+                method: "POST",
+                headers: { "Authorization": `Bearer ${apiKey.trim()}`, "Content-Type": "application/json" },
+                body: JSON.stringify(payload)
+              });
+            }
+            if (res.ok) {
+              const data = await res.json();
+              newTitle = data.choices?.[0]?.message?.content?.trim();
+              if (newTitle) break;
+            }
+        } catch (e) {}
       }
 
       if (newTitle) {
@@ -545,52 +564,71 @@ export default function AIChatInterface() {
     
     setGeneratingImageType(isImageRequest);
     setLoading(true);
+    abortControllerRef.current = new AbortController();
+    const signal = abortControllerRef.current.signal;
     try {
-      const aiProvider = localStorage.getItem("jee_active_ai_provider") || "gemini";
-      let apiKey = "";
-      if (aiProvider === "openrouter") apiKey = localStorage.getItem("jee_openrouter_api_key") || "";
-      else if (aiProvider === "nvidia") apiKey = localStorage.getItem("jee_nvidia_api_key") || "";
-      else apiKey = localStorage.getItem("jee_gemini_api_key") || "";
+      const apiKey = localStorage.getItem("jee_openrouter_api_key") || "";
       
       if (!apiKey) {
-        throw new Error(`Please set your ${aiProvider === "openrouter" ? "OpenRouter" : aiProvider === "nvidia" ? "NVIDIA API" : "Gemini AI"} API Key in the Admin Panel first!`);
+        throw new Error("Please set your OpenRouter API Key in the Admin Panel first!");
       }
 
-      const systemInstruction = `You are an expert JEE Advanced tutor and highly capable assistant. Your name is "Calculus" and you were developed by "OM sir". If asked about your identity, creator, or who you are, always respond that you are Calculus, developed by OM sir.
+      const systemInstruction = `You are "Calculus", an expert JEE PCM Tutor and Academic Content Strategist developed by "OM sir". If asked about your identity, creator, or who you are, always respond that you are Calculus, developed by OM sir. Your goal is to provide comprehensive, structured study plans for JEE aspirants.
 
-CRITICAL INSTRUCTIONS FOR PROBLEM SOLVING (STRICT RULE):
-1. EXPERT PANEL & CROSS-CHECKING: Act as a panel of 3 expert JEE tutors. Whenever a user asks a question or uploads an image of a question, silently let each expert solve the problem independently step-by-step. Cross-verify the answers from all experts and provide the final answer that the majority agrees upon to ensure maximum accuracy.
-2. MULTIPLE CORRECT OPTIONS: Be highly aware that JEE Advanced questions can have one, two, three, or all four options correct. You must evaluate EVERY option meticulously before concluding.
-3. INTERNET KNOWLEDGE SYNTHESIS: Act as if you have crawled all important educational websites and searched the internet to find the exact, most accurate, and universally accepted solution for the Physics, Chemistry, or Math (PCM) question.
-4. STRUCTURED SEQUENCE: Present your final response in a highly arranged, logical, step-by-step sequence (e.g., Given, Concepts/Formulas Used, Step-by-Step Execution, Option Verification, Final Answer).
+CRITICAL INSTRUCTIONS FOR PROBLEM SOLVING & ACADEMIC CONTENT (STRICT RULE):
+1. EXPERT PANEL & CROSS-CHECKING: Act as a panel of 3 expert JEE tutors. Whenever a user asks a question or uploads an image, silently let each expert solve the problem independently step-by-step. Cross-verify the answers and provide the final answer that the majority agrees upon.
+2. WEB SEARCH FOR ACCURACY: For EVERY user query, especially for academic questions, study schedules, or topic explanations, ALWAYS use your integrated web search tool to fetch the latest syllabus updates, trending educational resources, and highly-rated videos. Synthesize the information from multiple reliable sources. Do not rely solely on your training data.
+3. MULTIPLE CORRECT OPTIONS: Be highly aware that JEE Advanced questions can have one, two, three, or all four options correct. Evaluate EVERY option meticulously.
+4. STRUCTURE THE OUTPUT: Use professional formatting—tables for schedules, bold headers for key concepts, and bullet points for actionable tips.
+5. CURATE HIGH-QUALITY VIDEOS: When recommending videos:
+   - Search for the latest, most popular videos from authoritative channels (e.g., Physics Wallah, Eduniti, Competition Wallah).
+   - NEVER create placeholder thumbnails. Stop trying to render ![Video Thumbnail]. Only provide the direct, clickable text link to the video from YouTube using Markdown Links: Title of Video.
+   - Provide a brief 'Why I recommend this' summary for each video, explaining how it aids concept building, problem-solving, or revision.
+6. TONE: Be encouraging, professional, and clear. Emphasize JEE Main vs. Advanced distinctions.
+7. SOURCE ATTRIBUTION: Reference the sources you used for your information by providing relevant hyperlinks.
 
-CRITICAL FORMATTING INSTRUCTIONS FOR MATH/PHYSICS/CHEMISTRY AND TABLES:
-- You MUST use LaTeX formatting for all math, physics, and chemistry equations, formulas, symbols, coordinates, vectors, and matrices.
-- MUST wrap ALL inline equations, numbers, and vectors in single dollar signs: e.g., $x^2 + y^2 = r^2$ or $[2, -1, -2]$
-- MUST wrap standalone block equations in double dollar signs: e.g., $$\\frac{A x^2}{B t}$$
-- NEVER leave math, vectors (like [1, 2, -2]), or formulas as plain text. Always wrap them in $...$
-- NEVER use [ ... ] or \\[ ... \\] or \\( ... \\) for math. ALWAYS use $$ ... $$ for block math and $ ... $ for inline math.
-- Example of WRONG block math: [ F = ma ]
-- Example of CORRECT block math: $$ F = ma $$
-- For tables, ALWAYS use standard Markdown tables (using | and -). NEVER use LaTeX table environments like \\begin{table} or \\begin{tabular}. Ensure they are clean and properly aligned. DO NOT put block math ($$) inside a Markdown table cell; use inline math ($) inside tables.
-Do not use Unicode approximations. Output strict LaTeX.
-Be concise, extremely helpful, and maintain a highly accurate JEE level.
+OUTPUT TEMPLATE (When asked for study schedules, topic explanations, or suggestions):
+- Introduction: Briefly explain the significance of the topic for JEE.
+- Structured Schedule/Solution: A clear table (Day/Topic/Method/Practice) or step-by-step math sequence.
+- Top Video Recommendations: Use standard Markdown link format: Video Title. Explain why it is the top pick.
+- Study Tips: Practical, actionable advice for JEE success.
+- Closing: Offer to create a long-term roadmap or provide further resources.
 
-CRITICAL SAFETY RULE: You MUST NOT generate, provide, or discuss any adult, sexually explicit, NSFW, or otherwise inappropriate content under any circumstances.`;
+ULTRA-STRICT FORMATTING PROTOCOL (NON-NEGOTIABLE):
+Your entire response MUST strictly adhere to the following formatting rules. These are not suggestions; they are mandatory for every response to ensure professional, readable, and correct rendering.
+1. LaTeX for All Math:
+   - You MUST use LaTeX formatting for all math, physics, and chemistry equations.
+   - Wrap ALL inline equations, numbers, and vectors in single dollar signs: e.g., $x^2 + y^2 = r^2$.
+   - Wrap standalone block equations in double dollar signs: e.g., $$\\frac{A x^2}{B t}$$.
+   - ABSOLUTE RULE: NEVER output naked LaTeX commands (like \\text, \\dfrac, \\boxed) without enclosing them in $...$ or $$...$$.
+   - Example of WRONG output: \\boxed{5.55 \\times 10^3}
+   - Example of CORRECT output: $$\\boxed{5.55 \\times 10^3}$$
+
+   - Use \\boxed{...} inside a $$...$$ block for final answers. Example: $$\\boxed{v = u + at}$$.
+   - NEVER leave math, vectors (like [1, 2, -2]), or formulas as plain text. Always wrap them in $ ... $.
+   - NEVER use [ ... ] or \\[ ... \\] or \\( ... \\) for math. ALWAYS use $$ ... $$ and $ ... $.
+     - Output strict LaTeX. Do not use Unicode approximations (e.g., write this $10^3$ as 10³, not only 10^3).
+2. Rich Markdown for Structure & Clarity:
+   - Use standard Markdown extensively.
+   - Use proper headers (###, ####), bold (**text**), and italic (*text*).
+   - Use pristine Markdown tables (using | and -). DO NOT put block math ($$) inside a Markdown table cell; use inline math ($).
+   - Ensure clear, consistent vertical spacing.
+
+CRITICAL SAFETY RULE: You MUST NOT generate, provide, or discuss any adult, sexually explicit, NSFW, or otherwise inappropriate content.`;
 
       let modeInstruction = "";
       if (chatMode === "academic") {
-        modeInstruction = `\n\nMODE: ACADEMIC. You are STRICTLY limited to study-related questions, educational guidance, and mental pressure relief. You must act as a friendly and caring teacher/friend. Always care about the user's well-being, motivate them by solving their problems, and decline to answer non-academic topics.\n\nINTERNET MEDIA PROTOCOL: If the user asks about any study-related content or YouTube video, you MUST use your Google Search tool to crawl the internet to find the LATEST and most up-to-date video on that topic. Do NOT rely on your old training data. Additionally, you MUST suggest 2-3 MORE videos related to that topic that are filtered by: large number of views, latest, and highly liked. At the very end of your response, provide clickable image thumbnails that redirect the user to these videos. Wrap the image inside a link using this exact Markdown layout:\n\n### Video Title\n\n!Thumbnail\n\nReplace VIDEO_ID with the actual YouTube video ID.`;
-      } else if (chatMode === "non_academic") {
-         modeInstruction = `\n\nMODE: NON-ACADEMIC. You retain all academic capabilities, but you are ALSO allowed to discuss any non-academic topics like world news, games, and general stuff freely.\n\nINTERNET MEDIA PROTOCOL: If the user asks about a specific video (e.g., YouTube), movie, news, or real-world topic, you MUST use your Google Search tool to crawl the internet to find the LATEST and most up-to-date video on that topic. Do NOT rely on your old training data. Additionally, you MUST suggest 2-3 MORE videos related to that topic that are filtered by: large number of views, latest, and highly liked. At the very end of your response, provide clickable image thumbnails that redirect the user to these videos. Wrap the image inside a link using this exact Markdown layout:\n\n### Video Title\n\n!Thumbnail\n\nReplace VIDEO_ID with the actual YouTube video ID.`;
-      }
+        modeInstruction = `\n\nMODE: ACADEMIC. You are STRICTLY limited to study-related questions, educational guidance, and mental pressure relief. You must act as a friendly and caring teacher/friend. Always care about the user's well-being, motivate them by solving their problems, and decline to answer non-academic topics.\n\nINTERNET MEDIA PROTOCOL: If the user asks about any study-related content or YouTube video, you MUST use your Google Search tool to crawl the internet to find the LATEST and most up-to-date video on that topic. Suggest 2-3 MORE videos related to that topic that are highly viewed and liked. At the very end of your response, provide clickable TEXT links to these videos using standard Markdown: Title of Video. Explain why you recommend each video. DO NOT use image tags (![...]) for videos.`;
+        } else if (chatMode === "non_academic") {
+        modeInstruction = `\n\nMODE: NON-ACADEMIC. You retain all academic capabilities, but you are ALSO allowed to discuss any non-academic topics like world news, games, and general stuff freely.\n\nINTERNET MEDIA PROTOCOL: If the user asks about a specific video, movie, news, or real-world topic, you MUST use your Google Search tool to find the LATEST and most up-to-date videos. Suggest 2-3 MORE videos related to that topic. At the very end of your response, provide clickable TEXT links to these videos using standard Markdown: Title of Video. DO NOT use image tags (![...]) for videos.`;
+     }
 
       let imageGenerationInstruction = "";
       if (isImageRequest) {
-         imageGenerationInstruction = `\n\nIMAGE GENERATION PROTOCOL: The user has requested an image. IF they explicitly asked to GENERATE, CREATE, or DRAW a NEW image, you CAN generate images by responding EXACTLY with this markdown format: !Generated Image.\n\nIF they just asked to SHOW, SEARCH, or FETCH an existing image or video from the internet, DO NOT generate one. Instead, use Google Search to find REAL image/thumbnail URLs and the source URL. Output it in Markdown as:\n\n!Thumbnail\n\nso the user can click the images to view them or open links. If it is a YouTube video, use https://i.ytimg.com/vi/VIDEO_ID/hqdefault.jpg for the IMAGE_URL.`;
-      } else {
-         imageGenerationInstruction = `\n\nMEDIA FETCH PROTOCOL: If you are providing a video, thumbnail, or image from the internet, you MUST output it using this exact Markdown layout:\n\n### Video/Image Title\n\n!Thumbnail`;
-      }
+         imageGenerationInstruction = `\n\nIMAGE GENERATION PROTOCOL: The user has requested an image. IF they explicitly asked to GENERATE, CREATE, or DRAW a NEW image, you CAN generate images by responding EXACTLY with this markdown format: !Generated Image or similar depending on your capabilities.\n\nIF they just asked to SHOW, SEARCH, or FETCH an existing image or video from the internet, DO NOT generate one. For images, use Markdown as: !Description. For videos, ALWAYS use standard text links: Video Title. DO NOT use image tags for videos.`;
+       } else {
+         imageGenerationInstruction = `\n\nMEDIA FETCH PROTOCOL: If you are providing a video or recommending content from the internet, you MUST output standard text links. NEVER try to render a video thumbnail as an image (![Thumbnail]). Use this exact format:\n\n### Video Title\n*Why I recommend this:* [Brief summary]`;
+       }
       const finalSystemInstruction = systemInstruction + modeInstruction + imageGenerationInstruction;
 
       let responseText = "";
@@ -600,229 +638,169 @@ CRITICAL SAFETY RULE: You MUST NOT generate, provide, or discuss any adult, sexu
       
       const visionPrompt = hasImages ? "Please scan, read, and analyze the uploaded image carefully. Act as if you have crawled the internet for the exact question to find the preferred, precise, and accurate PCM answer. Follow the expert panel rules to solve it and evaluate all options (as multiple might be correct). Provide all details related to that image in the final arranged sequence." : "";
 
-      if (aiProvider === "openrouter") {
-        const openRouterFreeModels = [
-         "google/gemma-4-26b-a4b-it:free",
-          "google/gemma-4-31b-it:free",
-          "liquid/lfm-2.5-1.2b-thinking:free",
-          "liquid/lfm-2.5-1.2b-instruct:free",
-          "openai/gpt-oss-120b:free",
-          "openai/gpt-oss-20b:free",
-          "z-ai/glm-4.5-air:free",
-          "nvidia/nemotron-3-ultra-550b-a55b:free",       
-          "nvidia/nemotron-nano-9b-v2:free",
-          "nvidia/nemotron-nano-12b-v2-vl:free",
-          "nvidia/nemotron-3-nano-30b-a3b:free",
-          "nousresearch/hermes-3-llama-3.1-405b:free",
-          "moonshotai/kimi-k2.6:free",
-          "meta-llama/llama-3.3-70b-instruct:free",
-          "qwen/qwen-2.5-coder-32b-instruct:free",
-          "google/gemma-2-9b-it:free"
-        ];
-        
-        const openRouterImageModels = [
-          "nex-agi/nex-n2-pro:free",
-        ];
-        
-        let success = false;
-        let targetModels = openRouterFreeModels;
-        if (hasImages || isImageRequest) {
-          targetModels = openRouterImageModels;
-        }
+      const openRouterFreeModels = [
+        "google/gemma-4-26b-a4b-it:free",
+        "google/gemma-4-31b-it:free",
+        "liquid/lfm-2.5-1.2b-thinking:free",
+        "liquid/lfm-2.5-1.2b-instruct:free",
+        "openai/gpt-oss-120b:free",
+        "openai/gpt-oss-20b:free",
+        "z-ai/glm-4.5-air:free",
+        "nvidia/nemotron-3.5-content-safety:free",
+        "nvidia/nemotron-3-ultra-550b-a55b:free",       
+        "nvidia/nemotron-nano-9b-v2:free",
+        "nvidia/nemotron-nano-12b-v2-vl:free",
+        "nvidia/nemotron-3-nano-30b-a3b:free",
+        "nousresearch/hermes-3-llama-3.1-405b:free",
+        "moonshotai/kimi-k2.6:free",
+        "meta-llama/llama-3.3-70b-instruct:free",
+        "qwen/qwen-2.5-coder-32b-instruct:free"
+      ];
 
-        const messagesPayload = [
-          { role: "system", content: finalSystemInstruction + (visionPrompt ? "\n\n" + visionPrompt : "") },
-          ...messagesToSent.map((m, idx) => {
-            if (idx === messagesToSent.length - 1 && m.role === "user" && filePayloads && filePayloads.length > 0) {
-              const contentArray: any[] = [{ type: "text", text: m.content }];
-              filePayloads.forEach(fp => contentArray.push({ type: "image_url", image_url: { url: `data:${fp.inlineData.mimeType};base64,${fp.inlineData.data}` } }));
-              return { role: "user", content: contentArray };
-            }
-            return { role: m.role === "model" ? "assistant" : "user", content: m.content };
-          })
-        ];
+      const searchCapableModels = [
+        "google/gemma-4-26b-a4b-it:free",
+        "google/gemma-4-31b-it:free",
+        "nousresearch/hermes-3-llama-3.1-405b:free",
+        "meta-llama/llama-3.3-70b-instruct:free",
+        "openai/gpt-oss-120b:free",
+      ];
+      
+      const openRouterImageModels = [
+        "meta-llama/llama-3.2-90b-vision-instruct:free",
+        "meta-llama/llama-3.2-11b-vision-instruct:free",
+        "qwen/qwen-vl-plus:free"
+      ];
+      
+      let success = false;
+      let targetModels: string[] = [];
+      
+      // AI Task Routing Logic based on User Demand
+      const lowerMsg = lastMsg.toLowerCase();
+      const isCodeRequest = lowerMsg.includes("code") || lowerMsg.includes("script") || lowerMsg.includes("program") || lowerMsg.includes("function") || lowerMsg.includes("html");
+      const isMathReasoningRequest = lowerMsg.includes("math") || lowerMsg.includes("solve") || lowerMsg.includes("reasoning") || lowerMsg.includes("calculate") || lowerMsg.includes("equation") || lowerMsg.includes("physics") || lowerMsg.includes("chemistry");
 
-        for (const modelName of targetModels) {
+      if (hasImages || isImageRequest) {
+        targetModels = openRouterImageModels;
+      } else if (isCodeRequest) {
+        // Prioritize coding models for programming tasks
+        const prioritized = ["qwen/qwen-2.5-coder-32b-instruct:free", "meta-llama/llama-3.3-70b-instruct:free", "openai/gpt-oss-120b:free"];
+        targetModels = [...prioritized, ...openRouterFreeModels.filter(m => !prioritized.includes(m))];
+      } else if (isMathReasoningRequest) {
+        // Prioritize deep-thinking and reasoning models for complex math/science
+        const prioritized = ["liquid/lfm-2.5-1.2b-thinking:free", "nousresearch/hermes-3-llama-3.1-405b:free", "meta-llama/llama-3.3-70b-instruct:free"];
+        targetModels = [...prioritized, ...openRouterFreeModels.filter(m => !prioritized.includes(m))];
+      } else {
+        // General requests like "Hi" - prioritize fast, responsive general models
+        const prioritized = ["google/gemma-4-26b-a4b-it:free", "google/gemma-4-31b-it:free", "nvidia/nemotron-nano-12b-v2-vl:free"];
+        targetModels = [...prioritized, ...openRouterFreeModels.filter(m => !prioritized.includes(m))];
+      }
+
+      const messagesPayload = [
+        { role: "system", content: finalSystemInstruction + (visionPrompt ? "\n\n" + visionPrompt : "") },
+        ...messagesToSent.map((m, idx) => {
+          let contentText = m.content;
+          if (contentText.length > 150000) {
+              contentText = contentText.slice(0, 150000) + "\n\n...[Content truncated to fit AI limits]...";
+          }
+          if (idx === messagesToSent.length - 1 && m.role === "user" && filePayloads && filePayloads.length > 0) {
+            const contentArray: any[] = [{ type: "text", text: contentText || "Please analyze the uploaded image." }];
+            filePayloads.forEach(fp => contentArray.push({ type: "image_url", image_url: { url: `data:${fp.inlineData.mimeType};base64,${fp.inlineData.data}` } }));
+            return { role: "user", content: contentArray };
+          }
+          return { role: m.role === "model" ? "assistant" : "user", content: contentText };
+        })
+      ];
+
+      for (const modelName of targetModels) {
+        try {
+          const reqBody: any = { 
+            model: modelName, 
+            messages: messagesPayload
+          };
+
+          if (searchCapableModels.includes(modelName)) {
+            reqBody.plugins = [{ id: "web", max_results: 5 }];
+          }
+
+          let response;
           try {
-            const reqBody: any = { 
-              model: modelName, 
-              messages: messagesPayload,
-              plugins: [{ id: "web", max_results: 5 }]
-            };
-
-            const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+            response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
               method: "POST",
               headers: {
-                "Authorization": `Bearer ${apiKey}`,
+                "Authorization": `Bearer ${apiKey.trim()}`,
                 "HTTP-Referer": window.location.href,
                 "X-Title": "JEE Prep App",
                 "Content-Type": "application/json"
               },
               body: JSON.stringify(reqBody),
+              signal
             });
-
-            if (!response.ok) {
-              const errData = await response.json().catch(() => ({}));
-              throw new Error(`OpenRouter Error (${modelName}): ${errData.error?.message || response.statusText}`);
-            }
-            
-            const data = await response.json();
-            const messageObj = data.choices?.[0]?.message;
-            const content = messageObj?.content;
-            
-            if (messageObj?.images && messageObj.images.length > 0) {
-               generatedAttachments = messageObj.images.map((img: any) => ({
-                 url: img.image_url?.url || img.url || "",
-                 type: "image",
-                 name: "Generated Image"
-               }));
-            }
-
-            if (messageObj?.citations && Array.isArray(messageObj.citations)) {
-               messageObj.citations.forEach((cit: any) => {
-                   if (cit.url || cit.uri) {
-                       const uri = cit.url || cit.uri;
-                       let hostname = "";
-                       try { hostname = new URL(uri).hostname; } catch(e) {}
-                       generatedSources.push({
-                           uri,
-                           title: cit.title || hostname || uri,
-                           favicon: hostname ? `https://www.google.com/s2/favicons?domain=${hostname}` : ""
-                       });
-                   }
-               });
-            }
-            
-            if (content || generatedAttachments.length > 0) {
-              responseText = content || (generatedAttachments.length > 0 ? "Here is your generated image." : "Done.");
-              success = true;
-              break;
-            }
-          } catch (err: any) {
-            console.warn(`Model ${modelName} failed:`, err);
-            if (!primaryApiError) primaryApiError = err.message;
-          }
-        }
-
-        if (!success) {
-          throw new Error(`AI System is in Maintenance. OpenRouter error: ${primaryApiError || "All free endpoints exhausted or unavailable."}`);
-        }
-
-      } else if (aiProvider === "nvidia") {
-        let success = false;
-        let targetModels = [
-          "meta/llama-3.1-70b-instruct",
-          "meta/llama-3.1-405b-instruct",
-          "meta/llama-3.1-8b-instruct",
-          "nvidia/llama-3.1-nemotron-70b-instruct"
-        ];
-        if (hasImages || isImageRequest) {
-          targetModels = ["meta/llama-3.2-90b-vision-instruct", "meta/llama-3.2-11b-vision-instruct"];
-        }
-
-        const messagesPayload = [
-          { role: "system", content: finalSystemInstruction + (visionPrompt ? "\n\n" + visionPrompt : "") },
-          ...messagesToSent.map((m, idx) => {
-            if (idx === messagesToSent.length - 1 && m.role === "user" && filePayloads && filePayloads.length > 0) {
-              const contentArray: any[] = [{ type: "text", text: m.content }];
-              filePayloads.forEach(fp => contentArray.push({ type: "image_url", image_url: { url: `data:${fp.inlineData.mimeType};base64,${fp.inlineData.data}` } }));
-              return { role: "user", content: contentArray };
-            }
-            return { role: m.role === "model" ? "assistant" : "user", content: m.content };
-          })
-        ];
-
-        for (const modelName of targetModels) {
-          try {
-            const reqBody: any = { 
-              model: modelName, 
-              messages: messagesPayload,
-              max_tokens: 2048,
-              temperature: 0.3
-            };
-
-            const response = await fetch("https://integrate.api.nvidia.com/v1/chat/completions", {
+          } catch (e: any) {
+            if (e.name === "AbortError") throw e;
+            response = await fetch(`https://corsproxy.io/?${encodeURIComponent("https://openrouter.ai/api/v1/chat/completions")}`, {
               method: "POST",
               headers: {
-                "Authorization": `Bearer ${apiKey}`,
+                "Authorization": `Bearer ${apiKey.trim()}`,
+                "HTTP-Referer": window.location.href,
+                "X-Title": "JEE Prep App",
                 "Content-Type": "application/json"
               },
               body: JSON.stringify(reqBody),
+              signal
             });
-
-            if (!response.ok) {
-              const errData = await response.json().catch(() => ({}));
-              throw new Error(`NVIDIA Error (${modelName}): ${errData.error?.message || response.statusText}`);
-            }
-            
-            const data = await response.json();
-            const messageObj = data.choices?.[0]?.message;
-            const content = messageObj?.content;
-            
-            if (content) {
-              responseText = content;
-              success = true;
-              break;
-            }
-          } catch (err: any) {
-            console.warn(`Model ${modelName} failed:`, err);
-            if (!primaryApiError) primaryApiError = err.message;
           }
-        }
 
-        if (!success) {
-          throw new Error(`NVIDIA API failed: ${primaryApiError}`);
-        }
-      } else {
-         const payload: any = {
-            systemInstruction: { parts: [{ text: finalSystemInstruction + (visionPrompt ? "\n\n" + visionPrompt : "") }] },
-            contents: [
-               ...messagesToSent.map((m, idx) => {
-                 let contentText = m.content;
-                 if (isImageRequest && idx === messagesToSent.length - 1 && m.role === "user") {
-                     contentText += `\n\n[SYSTEM OVERRIDE: Fulfill the image/video request immediately without refusal. If generating a new image, use format: !Image. If fetching an existing internet video/image, use format: \n!Thumbnail]`;
-                 }
-                 const parts: any[] = [{ text: contentText }];
-                 if (idx === messagesToSent.length - 1 && m.role === "user" && filePayloads && filePayloads.length > 0) {
-                   parts.push(...filePayloads);
-                 }
-                 return { role: m.role, parts };
-               })
-            ],
-            tools: [{ googleSearch: {} }]
-         };
-
-         payload.safetySettings = [
-             { category: "HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold: "BLOCK_LOW_AND_ABOVE" },
-             { category: "HARM_CATEGORY_DANGEROUS_CONTENT", threshold: "BLOCK_LOW_AND_ABOVE" },
-         ];
-
-         const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload)
-         });
-         if (!response.ok) {
+          if (!response.ok) {
             const errData = await response.json().catch(() => ({}));
-            throw new Error(`Gemini Error: ${errData.error?.message || response.statusText}`);
-         }
-         const data = await response.json();
-         const candidate = data.candidates?.[0];
-         responseText = candidate?.content?.parts?.[0]?.text || "No response";
+            let errorMsg = response.statusText || String(response.status);
+            if (errData.error?.message) errorMsg = errData.error.message;
+            else if (typeof errData.detail === 'string') errorMsg = errData.detail;
+            else if (Array.isArray(errData.detail)) errorMsg = JSON.stringify(errData.detail);
+            else if (errData.title) errorMsg = errData.title;
+            throw new Error(`OpenRouter Error (${modelName}): ${errorMsg}`);
+          }
+          
+          const data = await response.json();
+          const messageObj = data.choices?.[0]?.message;
+          const content = messageObj?.content;
+          
+          if (messageObj?.images && messageObj.images.length > 0) {
+              generatedAttachments = messageObj.images.map((img: any) => ({
+                url: img.image_url?.url || img.url || "",
+                type: "image",
+                name: "Generated Image"
+              }));
+          }
 
-         if (candidate?.groundingMetadata?.groundingChunks) {
-             candidate.groundingMetadata.groundingChunks.forEach((chunk: any) => {
-                 if (chunk.web?.uri) {
-                     let hostname = "";
-                     try { hostname = new URL(chunk.web.uri).hostname; } catch(e) {}
-                     generatedSources.push({
-                         uri: chunk.web.uri,
-                         title: chunk.web.title || hostname || chunk.web.uri,
-                         favicon: hostname ? `https://www.google.com/s2/favicons?domain=${hostname}` : ""
-                     });
-                 }
-             });
-         }
+          if (messageObj?.citations && Array.isArray(messageObj.citations)) {
+              messageObj.citations.forEach((cit: any) => {
+                  if (cit.url || cit.uri) {
+                      const uri = cit.url || cit.uri;
+                      let hostname = "";
+                      try { hostname = new URL(uri).hostname; } catch(e) {}
+                      generatedSources.push({
+                          uri,
+                          title: cit.title || hostname || uri,
+                          favicon: hostname ? `https://www.google.com/s2/favicons?domain=${hostname}` : ""
+                      });
+                  }
+              });
+          }
+          
+          if (content || generatedAttachments.length > 0) {
+            responseText = content || (generatedAttachments.length > 0 ? "Here is your generated image." : "Done.");
+            success = true;
+            break;
+          }
+        } catch (err: any) {
+          if (err.name === "AbortError") throw err;
+          console.warn(`Model ${modelName} failed:`, err);
+          if (!primaryApiError) primaryApiError = err.message;
+        }
+      }
+
+      if (!success) {
+        throw new Error("AI Limits End");
       }
       
       generatedSources = generatedSources.filter((v, i, a) => a.findIndex(t => (t.uri === v.uri)) === i);
@@ -933,10 +911,18 @@ CRITICAL SAFETY RULE: You MUST NOT generate, provide, or discuss any adult, sexu
 
       autoGenerateTitle(sessionId, newMessagesHistory);
     } catch (e: any) {
-      const errorContent = e.message.includes("Maintenance") ? e.message : `Error: ${e.message}`;
+      if (e.name === "AbortError") {
+         setSessions(prev => prev.map(s => s.id === sessionId ? {
+            ...s,
+            messages: [...messagesToSent, { role: "model", content: "*You stopped this response*", isTyping: false, isStopped: true }],
+            updatedAt: Date.now()
+         } : s));
+         return;
+      }
+      const errorContent = e.message === "AI Limits End" ? "AI Limits End" : (e.message.includes("Maintenance") ? e.message : `Error: ${e.message}`);
       setSessions(prev => prev.map(s => s.id === sessionId ? {
          ...s,
-         messages: [...messagesToSent, { role: "model", content: errorContent, isTyping: true }],
+         messages: [...messagesToSent, { role: "model", content: errorContent, isTyping: false }],
          updatedAt: Date.now()
       } : s));
     } finally {
@@ -946,18 +932,44 @@ CRITICAL SAFETY RULE: You MUST NOT generate, provide, or discuss any adult, sexu
   };
 
   const handleSend = async () => {
-    if ((!input.trim() && attachedFiles.length === 0) || loading) return;
+    if ((!input.trim() && attachedFiles.length === 0) || loading || isTyping) return;
     const userMsg = input.trim();
     setInput("");
     
     let filePayloads: any[] = [];
     for (const af of attachedFiles.filter(f => f.type === 'image')) {
-      const reader = new FileReader();
       const b64 = await new Promise<string>((resolve) => {
-        reader.onload = () => resolve((reader.result as string).split(',')[1]);
-        reader.readAsDataURL(af.file);
+        const img = new Image();
+        img.onload = () => {
+          const canvas = document.createElement("canvas");
+          let width = img.width;
+          let height = img.height;
+          const maxDim = 512;
+          if (width > maxDim || height > maxDim) {
+            if (width > height) {
+              height = Math.round((height * maxDim) / width);
+              width = maxDim;
+            } else {
+              width = Math.round((width * maxDim) / height);
+              height = maxDim;
+            }
+          }
+          canvas.width = width;
+          canvas.height = height;
+          const ctx = canvas.getContext("2d");
+          if (ctx) {
+            ctx.drawImage(img, 0, 0, width, height);
+            const dataUrl = canvas.toDataURL(af.file.type || 'image/jpeg', 0.8);
+            resolve(dataUrl.split(',')[1]);
+          } else {
+            resolve("");
+          }
+        };
+        img.src = af.url;
       });
-      filePayloads.push({ inlineData: { data: b64, mimeType: af.file.type || 'image/jpeg' } });
+      if (b64) {
+        filePayloads.push({ inlineData: { data: b64, mimeType: af.file.type || 'image/jpeg' } });
+      }
     }
 
     let textFilesContent = "";
@@ -1142,7 +1154,7 @@ CRITICAL SAFETY RULE: You MUST NOT generate, provide, or discuss any adult, sexu
                     </button>
                  )}
 
-                 <div className={cn("max-w-[90%] text-[15px] leading-relaxed", m.role === "user" ? "bg-muted px-5 py-3 rounded-3xl" : "text-foreground pt-1 w-full")}>
+                 <div className={cn("max-w-[90%] text-[15px] leading-relaxed", m.role === "user" ? "bg-muted px-5 py-3 rounded-3xl" : "text-foreground pt-1 w-full", m.isStopped ? "opacity-80" : "")}>
                    {m.role === "model" && m.sources && m.sources.length > 0 && (
                       <MessageSources sources={m.sources} />
                    )}
@@ -1300,13 +1312,22 @@ CRITICAL SAFETY RULE: You MUST NOT generate, provide, or discuss any adult, sexu
                className="flex-1 bg-transparent border-none resize-none max-h-48 min-h-[44px] py-3 px-4 text-base focus:outline-none placeholder:text-muted-foreground/60 text-foreground"
                rows={1}
              />
-             <button 
-               onClick={handleSend}
-               disabled={(!input.trim() && attachedFiles.length === 0) || loading}
-               className={cn("h-11 w-11 shrink-0 rounded-full flex items-center justify-center transition-all mx-1 mb-0.5", (input.trim() || attachedFiles.length > 0) && !loading ? "bg-foreground text-background shadow-md hover:scale-105" : "bg-muted-foreground/20 text-muted-foreground cursor-not-allowed")}
-             >
-               <ArrowRight className="h-5 w-5" />
-             </button>
+             {loading || isTyping ? (
+               <button 
+                 onClick={handleStopGeneration}
+                 className="h-11 w-11 shrink-0 rounded-full flex items-center justify-center transition-all mx-1 mb-0.5 bg-red-500 text-white shadow-md hover:scale-105"
+               >
+                 <Square className="h-4 w-4 fill-current" />
+               </button>
+             ) : (
+               <button 
+                 onClick={handleSend}
+                 disabled={!input.trim() && attachedFiles.length === 0}
+                 className={cn("h-11 w-11 shrink-0 rounded-full flex items-center justify-center transition-all mx-1 mb-0.5", (input.trim() || attachedFiles.length > 0) ? "bg-foreground text-background shadow-md hover:scale-105" : "bg-muted-foreground/20 text-muted-foreground cursor-not-allowed")}
+               >
+                 <ArrowRight className="h-5 w-5" />
+               </button>
+             )}
               </div>
               </div>
               <p className="text-center text-[11px] text-muted-foreground mt-3 font-medium">Calculus AI can make mistakes. Consider verifying important information.</p>

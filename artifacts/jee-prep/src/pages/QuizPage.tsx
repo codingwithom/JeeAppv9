@@ -25,7 +25,8 @@ import {
   Info,
   MoreVertical,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  Square
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -111,8 +112,10 @@ const AnsweredMarkedShape = ({ children }: { children: React.ReactNode }) => (
   </div>
 );
 
+const quizOptionComponents = { p: ({node, ...props}: any) => <span {...props} /> };
+
 class QuizGeneratorManager {
-  activeJobs: Map<string, { id: string; status: string; name: string }> = new Map();
+  activeJobs: Map<string, { id: string; status: string; name: string; abortController?: AbortController }> = new Map();
   listeners: Set<() => void> = new Set();
 
   constructor() {
@@ -135,6 +138,13 @@ class QuizGeneratorManager {
     this.listeners.forEach(cb => cb());
   }
 
+  stopJob(jobId: string) {
+    const job = this.activeJobs.get(jobId);
+    if (job && job.abortController) {
+      job.abortController.abort();
+    }
+  }
+
   async generate(params: {
     sources: SelectedSources;
     difficulty: string;
@@ -145,14 +155,10 @@ class QuizGeneratorManager {
   }) {
     const { sources, difficulty, finalQuestionCount, readMediaAsArrayBuffer, availablePdfs, availableVideos } = params;
 
-    const aiProvider = localStorage.getItem("jee_active_ai_provider") || "gemini";
-    let apiKey = "";
-    if (aiProvider === "openrouter") apiKey = localStorage.getItem("jee_openrouter_api_key") || "";
-    else if (aiProvider === "nvidia") apiKey = localStorage.getItem("jee_nvidia_api_key") || "";
-    else apiKey = localStorage.getItem("jee_gemini_api_key") || "";
+    const apiKey = localStorage.getItem("jee_openrouter_api_key") || "";
     
     if (!apiKey) {
-      alert(`Please set your ${aiProvider === "openrouter" ? "OpenRouter" : aiProvider === "nvidia" ? "NVIDIA API" : "Gemini AI"} API Key in the Admin Panel first!`);
+      alert("Please set your OpenRouter API Key in the Admin Panel first!");
       return;
     }
 
@@ -162,7 +168,10 @@ class QuizGeneratorManager {
       if (job) { job.status = msg; this.notify(); }
     };
 
-    this.activeJobs.set(jobId, { id: jobId, status: "Initializing AI Engine...", name: `Quiz (${finalQuestionCount} Qs - ${difficulty})` });
+    const abortController = new AbortController();
+    const signal = abortController.signal;
+
+    this.activeJobs.set(jobId, { id: jobId, status: "Initializing AI Engine...", name: `Quiz (${finalQuestionCount} Qs - ${difficulty})`, abortController });
     this.notify();
 
     try {
@@ -206,7 +215,7 @@ class QuizGeneratorManager {
                const buf = await readMediaAsArrayBuffer(item.mediaKey);
                if (buf) {
                   const pdf = await pdfjsLib.getDocument({ data: buf.slice(0) }).promise;
-                  const maxPages = Math.min(pdf.numPages, 10); // Extract up to 10 pages per PDF to keep it fast
+                  const maxPages = Math.min(pdf.numPages, 100); // Extract up to 100 pages per PDF for deep analysis
                   for (let i = 1; i <= maxPages; i++) {
                      const page = await pdf.getPage(i);
                      const content = await page.getTextContent();
@@ -221,9 +230,12 @@ class QuizGeneratorManager {
 
       setStatus("AI is formulating your quiz...");
 
-      const BATCH_SIZE = 10;
-      const maxContextLength = aiProvider === "openrouter" ? 25000 : 80000; 
-      const safeContext = contextText.slice(0, maxContextLength);
+      const BATCH_SIZE = 5;
+      let maxContextLength = 150000;
+      
+      const safeContext = contextText.length > maxContextLength 
+        ? contextText.slice(0, maxContextLength) + "\n\n...[Context truncated to fit AI limits]..." 
+        : contextText;
 
       const openRouterFreeModels = [
          "google/gemma-4-26b-a4b-it:free",
@@ -241,8 +253,15 @@ class QuizGeneratorManager {
           "nousresearch/hermes-3-llama-3.1-405b:free",
           "moonshotai/kimi-k2.6:free",
           "meta-llama/llama-3.3-70b-instruct:free",
-          "qwen/qwen-2.5-coder-32b-instruct:free",
-          "google/gemma-2-9b-it:free"
+          "qwen/qwen-2.5-coder-32b-instruct:free"
+      ];
+
+      const searchCapableModels = [
+        "google/gemma-4-26b-a4b-it:free",
+        "google/gemma-4-31b-it:free",
+        "nousresearch/hermes-3-llama-3.1-405b:free",
+        "meta-llama/llama-3.3-70b-instruct:free",
+        "openai/gpt-oss-120b:free",
       ];
 
       let allParsedQuestions: any[] = [];
@@ -252,42 +271,72 @@ class QuizGeneratorManager {
       let attempts = 0;
 
       const extractJson = (raw: string) => {
-          let cleanedText = raw.replace(/\`\`\`json/gi, "").replace(/\`\`\`/g, "").trim();
-          const startIndex = cleanedText.indexOf('[');
-          if (startIndex === -1) throw new Error("No JSON array found");
+          let cleanedText = raw.replace(/```(?:json)?/gi, "").replace(/```/g, "").trim();
+          const firstBracket = cleanedText.indexOf('[');
+          const firstBrace = cleanedText.indexOf('{');
           
-          let endIndex = cleanedText.lastIndexOf(']');
-          if (endIndex >= startIndex) {
-              cleanedText = cleanedText.substring(startIndex, endIndex + 1);
-          } else {
-              cleanedText = cleanedText.substring(startIndex);
+          if (firstBracket === -1 && firstBrace === -1) {
+              throw new Error("No JSON structure found");
           }
           
+          let isArray = (firstBracket !== -1 && (firstBrace === -1 || firstBracket < firstBrace));
+          let startIndex = isArray ? firstBracket : firstBrace;
+          cleanedText = cleanedText.substring(startIndex);
+          
+          let lastBracket = cleanedText.lastIndexOf(']');
+          let lastBrace = cleanedText.lastIndexOf('}');
+          let endIndex = isArray ? lastBracket : lastBrace;
+          
+          if (endIndex !== -1) {
+              cleanedText = cleanedText.substring(0, endIndex + 1);
+          } else {
+              cleanedText += isArray ? ']' : '}';
+          }
+          
+          let parsed;
           try {
-              return JSON.parse(cleanedText);
-          } catch (parseError) {
-              let repairedText = cleanedText;
-              repairedText = repairedText.replace(/\\([^\\"])/g, "\\\\$1");
-              repairedText = repairedText.replace(/\n/g, " ").replace(/\r/g, "");
-              repairedText = repairedText.replace(/,\s*]/g, "]");
-              repairedText = repairedText.replace(/,\s*}/g, "}");
-              
-              if (!repairedText.endsWith(']')) {
-                  const lastClose = repairedText.lastIndexOf('}');
-                  if (lastClose !== -1) {
-                      repairedText = repairedText.substring(0, lastClose + 1) + ']';
-                  } else {
-                      repairedText += ']';
-                  }
-              }
+              parsed = JSON.parse(cleanedText);
+          } catch (e) {
+              let repaired = cleanedText
+                  .replace(/\\([^\\"])/g, "\\\\$1")
+                  .replace(/\n/g, " ")
+                  .replace(/\r/g, "")
+                  .replace(/,\s*]/g, "]")
+                  .replace(/,\s*}/g, "}");
               
               try {
-                  return JSON.parse(repairedText);
-              } catch (e) {
-                  console.warn("JSON parse and repair failed on raw output");
-                  return [];
+                  parsed = JSON.parse(repaired);
+              } catch(e2) {
+                  let lastValidEnd = repaired.lastIndexOf('},');
+                  if (lastValidEnd !== -1) {
+                      repaired = repaired.substring(0, lastValidEnd + 1) + (isArray ? ']' : '}');
+                      try {
+                          parsed = JSON.parse(repaired);
+                      } catch(e3) {
+                          return [];
+                      }
+                  } else {
+                      return [];
+                  }
               }
           }
+          
+          // Intelligent Object unwrapper in case the model nests the array (e.g. { "questions": [ ... ] } )
+          if (Array.isArray(parsed) && parsed.length === 1 && parsed[0] && !parsed[0].text) {
+              for (let key in parsed[0]) {
+                  if (Array.isArray(parsed[0][key])) {
+                      return parsed[0][key];
+                  }
+              }
+          } else if (!Array.isArray(parsed) && typeof parsed === 'object') {
+              for (let key in parsed) {
+                  if (Array.isArray(parsed[key])) {
+                      return parsed[key];
+                  }
+              }
+              return [parsed];
+          }
+          return parsed;
       };
 
       while (allParsedQuestions.length < finalQuestionCount && attempts < MAX_ATTEMPTS) {
@@ -370,140 +419,75 @@ ${sources.internetSearch.enabled && sources.internetSearch.query ? `Additionally
 
           let batchResult: any[] = [];
 
-          if (aiProvider === "openrouter") {
-              let success = false;
-              for (const modelName of openRouterFreeModels) {
-                  try {
-                      const payload: any = {
-                        model: modelName,
-                        messages: [{ role: "user", content: promptText }],
-                      };
-
-                      if (sources.internetSearch.enabled && sources.internetSearch.query) {
-                          payload.plugins = [{ id: "web", max_results: 5 }];
-                      }
-
-                      const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-                        method: "POST",
-                        headers: {
-                          "Authorization": `Bearer ${apiKey}`,
-                          "HTTP-Referer": window.location.href, 
-                          "X-Title": "JEE Prep App", 
-                          "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify(payload),
-                      });
-
-                      if (!response.ok) {
-                        const errData = await response.json().catch(() => ({}));
-                        throw new Error(`OpenRouter Error (${modelName}): ${errData.error?.message || response.statusText}`);
-                      }
-
-                      const data = await response.json();
-                      const rawText = data.choices?.[0]?.message?.content || "[]";
-                      const parsed = extractJson(rawText);
-
-                      if (Array.isArray(parsed) && parsed.length > 0) {
-                         batchResult = parsed;
-                         success = true;
-                         break;
-                      } else {
-                         throw new Error(`Invalid JSON from ${modelName}`);
-                      }
-                  } catch (err: any) {
-                      console.warn(`Model ${modelName} failed:`, err);
-                      if (!primaryApiError) primaryApiError = err.message;
-                  }
-              }
-              if (!success) {
-                  throw new Error(`AI System is in Maintenance. OpenRouter error: ${primaryApiError || "All free endpoints exhausted or unavailable."}`);
-              }
-          } else if (aiProvider === "nvidia") {
-              let success = false;
-              const nvidiaModels = [
-                  "meta/llama-3.1-70b-instruct",
-                  "meta/llama-3.1-405b-instruct",
-                  "meta/llama-3.1-8b-instruct",
-                  "nvidia/llama-3.1-nemotron-70b-instruct"
-              ];
-              for (const modelName of nvidiaModels) {
-                  try {
-                      const payload: any = {
-                        model: modelName,
-                        messages: [{ role: "user", content: promptText }],
-                        temperature: 0.2,
-                        top_p: 0.7,
-                        max_tokens: 4096,
-                      };
-
-                      const response = await fetch("https://integrate.api.nvidia.com/v1/chat/completions", {
-                        method: "POST",
-                        headers: {
-                          "Authorization": `Bearer ${apiKey}`,
-                          "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify(payload),
-                      });
-
-                      if (!response.ok) {
-                        const errData = await response.json().catch(() => ({}));
-                        throw new Error(`NVIDIA API Error (${modelName}): ${errData.error?.message || response.statusText}`);
-                      }
-
-                      const data = await response.json();
-                      const rawText = data.choices?.[0]?.message?.content || "[]";
-                      const parsed = extractJson(rawText);
-
-                      if (Array.isArray(parsed) && parsed.length > 0) {
-                         batchResult = parsed;
-                         success = true;
-                         break;
-                      } else {
-                         throw new Error(`Invalid JSON from ${modelName}`);
-                      }
-                  } catch (err: any) {
-                      console.warn(`Model ${modelName} failed:`, err);
-                      if (!primaryApiError) primaryApiError = err.message;
-                  }
-              }
-              if (!success) {
-                  throw new Error(`NVIDIA API failed: ${primaryApiError}`);
-              }
-          } else {
+          let success = false;
+          for (const modelName of openRouterFreeModels) {
               try {
                   const payload: any = {
-                      contents: [{ parts: [{ text: promptText }] }],
-                      generationConfig: {
-                          maxOutputTokens: 8192,
-                          response_mime_type: sources.internetSearch.enabled && sources.internetSearch.query ? undefined : "application/json"
-                      }
+                    model: modelName,
+                    messages: [{ role: "user", content: promptText }],
                   };
 
-                  if (sources.internetSearch.enabled && sources.internetSearch.query) {
-                      payload.tools = [{ googleSearch: {} }];
+                  if (sources.internetSearch.enabled && searchCapableModels.includes(modelName)) {
+                    payload.plugins = [{ id: "web", max_results: 5 }];
                   }
 
-                  const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
+                  let response;
+                  try {
+                    response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
                       method: "POST",
-                      headers: { "Content-Type": "application/json" },
-                      body: JSON.stringify(payload)
-                  });
+                      headers: {
+                        "Authorization": `Bearer ${apiKey.trim()}`,
+                        "HTTP-Referer": window.location.href, 
+                        "X-Title": "JEE Prep App", 
+                        "Content-Type": "application/json"
+                      },
+                      body: JSON.stringify(payload),
+                      signal
+                    });
+                  } catch (e: any) {
+                    if (e.name === "AbortError") throw e;
+                    response = await fetch(`https://corsproxy.io/?${encodeURIComponent("https://openrouter.ai/api/v1/chat/completions")}`, {
+                      method: "POST",
+                      headers: {
+                        "Authorization": `Bearer ${apiKey.trim()}`,
+                        "HTTP-Referer": window.location.href, 
+                        "X-Title": "JEE Prep App", 
+                        "Content-Type": "application/json"
+                      },
+                      body: JSON.stringify(payload),
+                      signal
+                    });
+                  }
 
                   if (!response.ok) {
-                      const errData = await response.json().catch(() => ({}));
-                      throw new Error(`Gemini API Error: ${errData.error?.message || response.statusText}`);
+                    const errData = await response.json().catch(() => ({}));
+                    let errorMsg = response.statusText || String(response.status);
+                    if (errData.error?.message) errorMsg = errData.error.message;
+                    else if (typeof errData.detail === 'string') errorMsg = errData.detail;
+                    else if (Array.isArray(errData.detail)) errorMsg = JSON.stringify(errData.detail);
+                    else if (errData.title) errorMsg = errData.title;
+                    throw new Error(`OpenRouter Error (${modelName}): ${errorMsg}`);
                   }
 
                   const data = await response.json();
-                  const rawText = data.candidates?.[0]?.content?.parts?.[0]?.text || "[]";
+                  const rawText = data.choices?.[0]?.message?.content || "[]";
                   const parsed = extractJson(rawText);
-                  if (Array.isArray(parsed)) {
-                      batchResult = parsed;
+
+                  if (Array.isArray(parsed) && parsed.length > 0) {
+                     batchResult = parsed;
+                     success = true;
+                     break;
+                  } else {
+                     throw new Error(`Invalid JSON from ${modelName}`);
                   }
-              } catch (e: any) {
-                  console.warn(`Gemini failed:`, e);
-                  if (!primaryApiError) primaryApiError = e.message;
+              } catch (err: any) {
+                  if (err.name === "AbortError") throw err;
+                  console.warn(`Model ${modelName} failed:`, err);
+                  if (!primaryApiError) primaryApiError = err.message;
               }
+          }
+          if (!success) {
+              throw new Error(`OpenRouter API failed. Details: ${primaryApiError || "All free endpoints exhausted or unavailable."}`);
           }
 
           if (batchResult.length > 0) {
@@ -660,8 +644,12 @@ ${sources.internetSearch.enabled && sources.internetSearch.query ? `Additionally
       }
 
     } catch (e: any) {
+      if (e.name === "AbortError") {
+        console.log(`Job ${jobId} stopped by user.`);
+        return;
+      }
       console.error("Quiz Generation Failed:", e);
-      alert("Failed to generate quiz with AI: \n" + e.message + "\n\nTry reducing the number of sources if the payload is too large, and make sure your API Key is valid.");
+      alert("Failed to generate quiz with AI: \n" + e.message + "\n\nHint: If you see a timeout or payload too large error, try selecting fewer sources (PDFs/Saves).");
     } finally {
       this.activeJobs.delete(jobId);
       this.notify();
@@ -1193,6 +1181,9 @@ function AIQuizInterface() {
                            <p className="text-xs text-muted-foreground">{job.status}</p>
                         </div>
                       </div>
+                      <Button variant="outline" size="sm" className="h-8 w-8 p-0 text-red-500 hover:text-red-600 hover:bg-red-500/10 border-red-500/20" onClick={() => quizGeneratorManager.stopJob(job.id)}>
+                        <Square className="h-3.5 w-3.5 fill-current" />
+                      </Button>
                     </div>
                   ))}
 
@@ -1316,7 +1307,7 @@ function AIQuizInterface() {
                             <label key={i} className="flex items-start gap-4 cursor-pointer group">
                               <input type="radio" name={`question-${currentIndex}`} checked={answers[currentIndex] === i} onChange={() => setAnswers(prev => ({...prev, [currentIndex]: i}))} className="mt-1 w-4 h-4 accent-blue-600 cursor-pointer border-gray-300" />
                               <div className="font-medium text-black prose max-w-none text-base">
-                                <ReactMarkdown remarkPlugins={[remarkMath, remarkGfm]} rehypePlugins={[rehypeKatex]} components={{ p: ({node, ...props}) => <span {...props} /> }}>{`(${String.fromCharCode(65 + i)}) ${opt}`}</ReactMarkdown>
+                                <ReactMarkdown remarkPlugins={[remarkMath, remarkGfm]} rehypePlugins={[rehypeKatex]} components={quizOptionComponents}>{`(${String.fromCharCode(65 + i)}) ${opt}`}</ReactMarkdown>
                               </div>
                             </label>
                          ))}

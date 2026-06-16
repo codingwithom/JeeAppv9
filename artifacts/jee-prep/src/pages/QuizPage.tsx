@@ -26,7 +26,15 @@ import {
   MoreVertical,
   ChevronLeft,
   ChevronRight,
-  Square
+  Square,
+  Eye,
+  Key,
+  ShieldCheck,
+  Timer,
+  CheckCircle2,
+  XCircle,
+  Clock,
+  Sparkles
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -70,7 +78,10 @@ interface Question {
   correctOptionIndex: number;
   explanation: string;
   difficulty: string;
-  subject?: string;
+  subject: string;
+  sourceQuestionId?: string;
+  imageKey?: string;
+  imageUrl?: string;
 }
 
 interface SavedQuiz {
@@ -81,6 +92,19 @@ interface SavedQuiz {
   difficulty: string;
 }
 
+interface SubjectPlan {
+  count: number;
+  difficulty: "Easy" | "Medium" | "Hard" | "Mixed";
+}
+
+const MODELS = [
+  { id: "qwen/qwen-2.5-coder-32b-instruct", name: "Qwen 2.5 Coder 32B (JSON Precision)", desc: "Best for structured JSON output and strict format adherence." },
+  { id: "meta-llama/llama-3.3-70b-instruct", name: "Llama 3.3 70B Instruct (Balanced)", desc: "Excellent, highly optimized model that balances reasoning depth with efficiency." },
+  { id: "nousresearch/hermes-3-llama-3.1-405b", name: "Hermes 3 Llama 3.1 405B (Deep Reasoning)", desc: "Most powerful model. Best for deep, multi-concept physics/chemistry problems." },
+  { id: "google/gemma-4-31b-it", name: "Gemma 4 31B IT (Scientific/Math)", desc: "Specifically optimized for scientific knowledge and complex academic-level problems." }
+];
+
+// ─── Custom Shapes for JEE Question Palette ──────────────────────────────
 const AnsweredShape = ({ children }: { children: React.ReactNode }) => (
   <div className="w-8 h-8 bg-[#22c55e] text-white flex items-center justify-center font-bold text-sm shadow-sm" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%)' }}>
     {children}
@@ -112,8 +136,233 @@ const AnsweredMarkedShape = ({ children }: { children: React.ReactNode }) => (
   </div>
 );
 
+// Review shape that shows green for correct, red for incorrect, and gray for skipped
+const ReviewShape = ({ index, children, answers, questions }: { index: number; children: React.ReactNode; answers: Record<number, number>; questions: Question[] }) => {
+  const ans = answers[index];
+  const q = questions[index];
+  if (ans === undefined) {
+    return <NotVisitedShape>{children}</NotVisitedShape>;
+  }
+  if (ans === q.correctOptionIndex) {
+    return <AnsweredShape>{children}</AnsweredShape>;
+  }
+  return <NotAnsweredShape>{children}</NotAnsweredShape>;
+};
+
 const quizOptionComponents = { p: ({node, ...props}: any) => <span {...props} /> };
 
+// ─── Subject Planning & Exclusions Parsing ─────────────────────────────────
+function planSubjects(
+  brief: string,
+  defaultDifficulty: string,
+  totalCount: number,
+  activeSources: SelectedSources,
+  availablePdfs: SelectableItem[],
+  availableSaves: SelectableItem[]
+): Record<string, SubjectPlan> {
+  const text = brief.trim().toLowerCase();
+  
+  // Initialize plan
+  const plan: Record<string, SubjectPlan> = {
+    Physics: { count: 0, difficulty: defaultDifficulty as any },
+    Chemistry: { count: 0, difficulty: defaultDifficulty as any },
+    Maths: { count: 0, difficulty: defaultDifficulty as any }
+  };
+
+  if (text.length > 0) {
+    const subjects = ["physics", "chemistry", "maths"];
+    let totalAllocated = 0;
+    
+    subjects.forEach(subj => {
+      const displaySubj = subj === "physics" ? "Physics" : (subj === "chemistry" ? "Chemistry" : "Maths");
+      
+      // Matches: "10 tough questions of Maths" or "10 hard maths" or "10 Maths (hard)"
+      const regex = new RegExp(`(\\d+)\\s*(easy|medium|hard|tough|mixed)?\\s*(?:question|q)?s?\\s*(?:of|for)?\\s*${subj.replace("maths", "math")}`, "i");
+      const match = text.match(regex);
+      
+      if (match) {
+        const count = parseInt(match[1]);
+        let diffStr = match[2] || "";
+        let diff: "Easy" | "Medium" | "Hard" | "Mixed" = defaultDifficulty as any;
+        
+        if (diffStr.includes("easy")) diff = "Easy";
+        else if (diffStr.includes("medium")) diff = "Medium";
+        else if (diffStr.includes("hard") || diffStr.includes("tough")) diff = "Hard";
+        else if (diffStr.includes("mixed")) diff = "Mixed";
+        
+        plan[displaySubj].count = count;
+        plan[displaySubj].difficulty = diff;
+        totalAllocated += count;
+      }
+    });
+    
+    // If no counts were found but some subjects were mentioned, or if some subjects are explicitly excluded
+    if (totalAllocated === 0) {
+      const mentionsPhysics = text.includes("physic") || text.includes("phy");
+      const mentionsChemistry = text.includes("chemist") || text.includes("chem");
+      const mentionsMaths = text.includes("math");
+      
+      const mentionedSubjects: string[] = [];
+      if (mentionsPhysics) mentionedSubjects.push("Physics");
+      if (mentionsChemistry) mentionedSubjects.push("Chemistry");
+      if (mentionsMaths) mentionedSubjects.push("Maths");
+      
+      if (mentionedSubjects.length > 0) {
+        // Distribute totalCount evenly among mentioned subjects
+        const baseCount = Math.floor(totalCount / mentionedSubjects.length);
+        const remainder = totalCount % mentionedSubjects.length;
+        
+        mentionedSubjects.forEach((subj, index) => {
+          plan[subj].count = baseCount + (index < remainder ? 1 : 0);
+          plan[subj].difficulty = defaultDifficulty as any;
+        });
+        return plan;
+      }
+    } else {
+      // If we found some counts, check if they sum up to our total requested count
+      if (totalAllocated === totalCount) {
+        return plan;
+      }
+      
+      const unallocated = totalCount - totalAllocated;
+      if (unallocated > 0) {
+        // Distribute remainder among subjects that currently have 0 count but are NOT excluded
+        // A subject is excluded if we explicitly mentioned other subjects but not this one
+        const mentionedInBrief = text.includes("phys") || text.includes("chem") || text.includes("math");
+        const zeroSubjs = Object.keys(plan).filter(k => {
+          if (plan[k].count > 0) return false;
+          if (!mentionedInBrief) return true; // if brief is general, all are open
+          // If brief mentioned subjects, only count those mentioned
+          const lowKey = k.toLowerCase();
+          return text.includes(lowKey.replace("maths", "math"));
+        });
+        
+        const activeZeroSubjs = zeroSubjs.length > 0 ? zeroSubjs : Object.keys(plan).filter(k => plan[k].count > 0);
+        
+        const baseCount = Math.floor(unallocated / activeZeroSubjs.length);
+        const remainder = unallocated % activeZeroSubjs.length;
+        activeZeroSubjs.forEach((subj, index) => {
+          plan[subj].count += baseCount + (index < remainder ? 1 : 0);
+        });
+      }
+      return plan;
+    }
+  }
+
+  // Fallback: If brief is empty, distribute questions among subjects found in sources
+  const activeSubjects = new Set<string>();
+  
+  // Check PDF names
+  activeSources.pdfs.forEach(pdfId => {
+    const item = availablePdfs.find(p => p.id === pdfId);
+    if (item) {
+      const pathLower = item.path.toLowerCase();
+      if (pathLower.includes("phys")) activeSubjects.add("Physics");
+      if (pathLower.includes("chem")) activeSubjects.add("Chemistry");
+      if (pathLower.includes("math")) activeSubjects.add("Maths");
+    }
+  });
+  
+  // Check Saves names
+  activeSources.saves.forEach(saveId => {
+    const item = availableSaves.find(p => p.id === saveId);
+    if (item) {
+      const pathLower = item.path.toLowerCase();
+      if (pathLower.includes("phys")) activeSubjects.add("Physics");
+      if (pathLower.includes("chem")) activeSubjects.add("Chemistry");
+      if (pathLower.includes("math")) activeSubjects.add("Maths");
+    }
+  });
+
+  const finalActive = activeSubjects.size > 0 ? Array.from(activeSubjects) : ["Physics", "Chemistry", "Maths"];
+  
+  const baseCount = Math.floor(totalCount / finalActive.length);
+  const remainder = totalCount % finalActive.length;
+  
+  finalActive.forEach((subj, index) => {
+    plan[subj].count = baseCount + (index < remainder ? 1 : 0);
+    plan[subj].difficulty = defaultDifficulty as any;
+  });
+
+  return plan;
+}
+
+function buildSubjectPrompt(params: {
+  subject: string;
+  count: number;
+  difficulty: string;
+  brief: string;
+  contextText: string;
+  internetSearch: { enabled: boolean; query: string };
+}) {
+  const { subject, count, difficulty, brief, contextText, internetSearch } = params;
+  
+  return `You are an expert JEE Advanced examiner. Your task is to generate high-quality, exam-style questions for the subject: "${subject}".
+
+CRITICAL SPECIFICATIONS:
+1. Target Subject: "${subject}". Every question generated MUST belong strictly to the subject "${subject}" (e.g. Physics concepts only for Physics). Do NOT mix mathematics concepts in chemistry or physics unless it is a standard interdisciplinary concept, and keep it firmly in "${subject}".
+2. Number of questions to generate: EXACTLY ${count}.
+3. Target Difficulty: ${difficulty} (Note: Hard questions must involve multi-step calculations, deep conceptual understanding, or advanced application of formulas typical of JEE Advanced. Easy/Medium questions should match standard JEE Main levels).
+
+INSTRUCTIONS REGARDING USER GUIDELINES:
+${brief ? `The user has specified the following custom guidelines: "${brief}". Adhere to this as closely as possible when choosing topics, difficulty ratios, or specific sub-topics for this batch.` : "Adhere to the provided source context for topic selection."}
+
+CRITICAL FORMATTING INSTRUCTIONS FOR MATH/PHYSICS/CHEMISTRY AND TABLES:
+- You MUST use LaTeX formatting for all math, physics, and chemistry equations, formulas, symbols, coordinates, vectors, and matrices.
+- MUST wrap ALL inline equations, numbers, and vectors in single dollar signs: e.g., $x^2 + y^2 = r^2$ or $[2, -1, -2]$
+- MUST wrap standalone block equations in double dollar signs: e.g., $$\\frac{A x^2}{B t}$$
+- NEVER leave math, vectors (like [1, 2, -2]), or formulas as plain text. Always wrap them in $...$
+- NEVER use [ ... ] or \\[ ... \\] or \\( ... \\) for math. ALWAYS use $$ ... $$ for block math and $ ... $ for inline math.
+- For chemical equations, use LaTeX notation (e.g. $\\text{H}_2\\text{SO}_4$).
+- For tables, ALWAYS use standard Markdown tables (using | and -). NEVER use LaTeX table environments like \\begin{table} or \\begin{tabular}. Ensure they are clean and properly aligned. DO NOT put block math ($$) inside a Markdown table cell; use inline math ($) inside tables.
+- If the question contains multiple statements, items, or internal options (e.g., (1) ..., (2) ..., (3) ... or Statement I, Statement II), YOU MUST format them vertically by adding newlines (\\n) before each item in the "text" field so they appear on separate lines.
+Do not use Unicode approximations. Output strict LaTeX.
+
+CRITICAL JSON ESCAPING REQUIREMENT:
+Because your response must be valid JSON, you MUST double-escape ALL backslashes used in your LaTeX.
+For example:
+- WRONG: "\\alpha + \\beta"
+- CORRECT: "\\\\alpha + \\\\beta"
+- WRONG: "\\text{(i)}"
+- CORRECT: "\\\\text{(i)}"
+If you do not double-escape backslashes, the JSON parser will fail.
+
+CRITICAL SOURCES LINKING RULE:
+- If a question from the "SAVED QUESTIONS" in the context has a diagram or image ("Has Diagram/Image: YES"), and you adapt, rewrite, or use this question in the generated quiz, you MUST output its exact "Saved Question ID" (e.g., "src_id::q_id") in the "sourceQuestionId" field of the JSON object.
+- You MUST also refer to the diagram/image in your question text (e.g., "as shown in the figure" or "as shown in the diagram below") and keep it exactly linked so that the UI can render it.
+- This is the ONLY way we can render the diagram/image of the quiz with options just like JEE Mains/Advance! If you fail to supply the exact "Saved Question ID", the image will not be displayed.
+
+
+CRITICAL JSON FORMATTING RULES:
+1. Output EXACTLY ONE valid JSON array. No extra text before or after.
+2. Do NOT use literal newlines in strings. Use \\n instead.
+3. Ensure no trailing commas before closing brackets.
+4. Provide exactly ${count} questions.
+
+IMPORTANT: Respond ONLY with a valid JSON array of objects. Do not wrap it in markdown. Ensure the JSON array is properly closed at the end.
+Format for each object:
+[
+  {
+    "id": "q_${subject.toLowerCase()}_${Date.now()}_[index]",
+    "text": "The actual question text here with $math$...",
+    "options": ["Option A", "Option B", "Option C", "Option D"],
+    "correctOptionIndex": 0,
+    "explanation": "Detailed step-by-step explanation including calculations with $math$.",
+    "difficulty": "${difficulty}",
+    "subject": "${subject}",
+    "sourceQuestionId": ""
+  }
+]
+
+--- CONTEXT MATERIALS START ---
+${contextText}
+--- CONTEXT MATERIALS END ---
+
+${internetSearch.enabled && internetSearch.query ? `Additionally, include up-to-date, rigorous questions on this topic: ${internetSearch.query}` : ""}
+`;
+}
+
+// ─── Quiz Generator Manager ───────────────────────────────────────────────
 class QuizGeneratorManager {
   activeJobs: Map<string, { id: string; status: string; name: string; abortController?: AbortController }> = new Map();
   listeners: Set<() => void> = new Set();
@@ -152,13 +401,16 @@ class QuizGeneratorManager {
     readMediaAsArrayBuffer: (key: string) => Promise<ArrayBuffer | null>;
     availablePdfs: SelectableItem[];
     availableVideos: SelectableItem[];
+    model: string;
+    useFree: boolean;
+    brief: string;
   }) {
-    const { sources, difficulty, finalQuestionCount, readMediaAsArrayBuffer, availablePdfs, availableVideos } = params;
+    const { sources, difficulty, finalQuestionCount, readMediaAsArrayBuffer, availablePdfs, availableVideos, model, useFree, brief } = params;
 
     const apiKey = localStorage.getItem("jee_openrouter_api_key") || "";
     
     if (!apiKey) {
-      alert("Please set your OpenRouter API Key in the Admin Panel first!");
+      alert("Please set your OpenRouter API Key first in the Engine Settings or Admin Panel!");
       return;
     }
 
@@ -171,7 +423,7 @@ class QuizGeneratorManager {
     const abortController = new AbortController();
     const signal = abortController.signal;
 
-    this.activeJobs.set(jobId, { id: jobId, status: "Initializing AI Engine...", name: `Quiz (${finalQuestionCount} Qs - ${difficulty})`, abortController });
+    this.activeJobs.set(jobId, { id: jobId, status: "Planning quiz layout...", name: `Quiz (${finalQuestionCount} Qs - ${difficulty})`, abortController });
     this.notify();
 
     try {
@@ -198,7 +450,9 @@ class QuizGeneratorManager {
          sources.saves.forEach(srcId => {
             const qs = allSaves[srcId] || [];
             qs.forEach((q: any) => {
-               contextText += `Saved Topic: ${q.name || ''}\nDetails: ${q.description || ''}\nConcept Answer: ${q.answerText || ''}\n\n`;
+               // Include the exact identifier so LLM can return it for diagram mapping
+               const hasImage = !!(q.questionImageKey || q.questionUrl);
+               contextText += `Saved Question ID: ${srcId}::${q.id}\nSaved Topic: ${q.name || ''}\nDetails: ${q.description || ''}\nConcept Answer: ${q.answerText || ''}\nHas Diagram/Image: ${hasImage ? "YES" : "NO"}\n\n`;
             });
          });
       }
@@ -215,7 +469,7 @@ class QuizGeneratorManager {
                const buf = await readMediaAsArrayBuffer(item.mediaKey);
                if (buf) {
                   const pdf = await pdfjsLib.getDocument({ data: buf.slice(0) }).promise;
-                  const maxPages = Math.min(pdf.numPages, 100); // Extract up to 100 pages per PDF for deep analysis
+                  const maxPages = Math.min(pdf.numPages, 100); 
                   for (let i = 1; i <= maxPages; i++) {
                      const page = await pdf.getPage(i);
                      const content = await page.getTextContent();
@@ -228,47 +482,54 @@ class QuizGeneratorManager {
          }
       }
 
-      setStatus("AI is formulating your quiz...");
+      // ─── Plan the subject distribution ───
+      const allSavesData = JSON.parse(localStorage.getItem("jee_saves_questions_v1") || "[]");
+      const savedList: SelectableItem[] = [];
+      Object.entries(allSavesData).forEach(([srcId, questionsList]: [string, any]) => {
+         if (Array.isArray(questionsList)) {
+            questionsList.forEach((q: any) => {
+               savedList.push({ id: q.id, name: q.name || "", path: srcId });
+            });
+         }
+      });
 
-      const BATCH_SIZE = 5;
-      let maxContextLength = 150000;
-      
-      const safeContext = contextText.length > maxContextLength 
-        ? contextText.slice(0, maxContextLength) + "\n\n...[Context truncated to fit AI limits]..." 
-        : contextText;
+      const subjectPlans = planSubjects(
+         brief,
+         difficulty,
+         finalQuestionCount,
+         sources,
+         availablePdfs,
+         savedList
+      );
 
-      const openRouterFreeModels = [
-         "google/gemma-4-26b-a4b-it:free",
-          "google/gemma-4-31b-it:free",
-          "liquid/lfm-2.5-1.2b-thinking:free",
-          "liquid/lfm-2.5-1.2b-instruct:free",
-          "openai/gpt-oss-120b:free",
-          "openai/gpt-oss-20b:free",
-          "z-ai/glm-4.5-air:free",
-          "nvidia/nemotron-3.5-content-safety:free",
-          "nvidia/nemotron-3-ultra-550b-a55b:free",
-          "nvidia/nemotron-nano-9b-v2:free",
-          "nvidia/nemotron-nano-12b-v2-vl:free",
-          "nvidia/nemotron-3-nano-30b-a3b:free",
-          "nousresearch/hermes-3-llama-3.1-405b:free",
-          "moonshotai/kimi-k2.6:free",
-          "meta-llama/llama-3.3-70b-instruct:free",
-          "qwen/qwen-2.5-coder-32b-instruct:free"
-      ];
+      // Determine total number of batches to slice the context
+      let totalBatches = 0;
+      for (const [subj, plan] of Object.entries(subjectPlans)) {
+         if (plan.count <= 0) continue;
+         totalBatches += Math.ceil(plan.count / 5);
+      }
 
-      const searchCapableModels = [
-        "google/gemma-4-26b-a4b-it:free",
-        "google/gemma-4-31b-it:free",
-        "nousresearch/hermes-3-llama-3.1-405b:free",
-        "meta-llama/llama-3.3-70b-instruct:free",
-        "openai/gpt-oss-120b:free",
-      ];
-
-      let allParsedQuestions: any[] = [];
-      let primaryApiError = "";
-
-      const MAX_ATTEMPTS = Math.ceil(finalQuestionCount / BATCH_SIZE) * 3;
-      let attempts = 0;
+      // Context slicing helper to avoid OpenRouter rate limits (TPM) and context limits on 40 Qs
+      const getContextSlice = (batchIdx: number, totalBCount: number) => {
+         if (!contextText || contextText.length <= 15000 || totalBCount <= 1) {
+            return contextText.length > 120000 
+              ? contextText.slice(0, 120000) + "\n\n...[Context truncated to fit AI limits]..." 
+              : contextText;
+         }
+         
+         const totalLen = contextText.length;
+         const sliceSize = Math.ceil(totalLen / totalBCount);
+         const overlap = Math.ceil(sliceSize * 0.15); // 15% overlap
+         
+         const start = Math.max(0, batchIdx * sliceSize - overlap);
+         const end = Math.min(totalLen, (batchIdx + 1) * sliceSize + overlap);
+         
+         let slice = contextText.substring(start, end);
+         if (start > 0) slice = "... [Truncated preceding text context] ...\n" + slice;
+         if (end < totalLen) slice = slice + "\n... [Truncated succeeding text context] ...";
+         
+         return slice;
+      };
 
       const extractJson = (raw: string) => {
           let cleanedText = raw.replace(/```(?:json)?/gi, "").replace(/```/g, "").trim();
@@ -297,8 +558,20 @@ class QuizGeneratorManager {
           try {
               parsed = JSON.parse(cleanedText);
           } catch (e) {
-              let repaired = cleanedText
-                  .replace(/\\([^\\"])/g, "\\\\$1")
+              // Smart backslash repair for LaTeX command integrity in JSON strings
+              let repaired = cleanedText.replace(/\\(.)/g, (match, char, offset) => {
+                if (char === '"' || char === '\\') return match;
+                if (char === 'n' || char === 'r' || char === 't') {
+                  const nextChar = cleanedText[offset + 2];
+                  if (nextChar && /[a-zA-Z]/.test(nextChar)) {
+                    return '\\\\' + char;
+                  }
+                  return match;
+                }
+                return '\\\\' + char;
+              });
+
+              repaired = repaired
                   .replace(/\n/g, " ")
                   .replace(/\r/g, "")
                   .replace(/,\s*]/g, "]")
@@ -321,7 +594,6 @@ class QuizGeneratorManager {
               }
           }
           
-          // Intelligent Object unwrapper in case the model nests the array (e.g. { "questions": [ ... ] } )
           if (Array.isArray(parsed) && parsed.length === 1 && parsed[0] && !parsed[0].text) {
               for (let key in parsed[0]) {
                   if (Array.isArray(parsed[0][key])) {
@@ -339,173 +611,16 @@ class QuizGeneratorManager {
           return parsed;
       };
 
-      while (allParsedQuestions.length < finalQuestionCount && attempts < MAX_ATTEMPTS) {
-          const questionsNeeded = Math.min(BATCH_SIZE, finalQuestionCount - allParsedQuestions.length);
-          setStatus(`Generating questions...\nCollected ${allParsedQuestions.length} of ${finalQuestionCount} so far.`);
-
-          const promptText = `You are an expert JEE Advanced examiner. Your task is to deeply understand the user's requirements, scan the provided datasets and internet context, and generate a perfect quiz.
-
-FIRST, ANALYZE AND UNDERSTAND:
-1. Scan ALL the provided datasets (source materials) and internet search context. Pay attention to ALL sources provided, even if some have less text (like a video title) compared to others (like full PDF text).
-2. Understand the core concepts, difficulty level, and the pattern of questions/explanations required.
-3. Decide on the most appropriate question structures (numerical problems, mathematical equations, or deep theoretical concepts, previous year questions based on JEE Mains and Advance) based on the context.
-
-THEN, GENERATE THE PERFECT QUIZ:
-
-Target Difficulty: ${difficulty} (If 'Mixed', use a ratio of 2 Easy : 1 Medium : 3 Hard).
-Number of questions needed: ${questionsNeeded}.
-
-CRITICAL SUBJECT SORTING & FILTERING (STRICT RULE):
-1. Look closely at ALL the provided context. Identify EVERY distinct subject present (Physics, Chemistry, Maths).
-2. If multiple subjects are present in the context (e.g., a Physics PDF and a Chemistry video), YOU ABSOLUTELY MUST generate questions for EACH of those subjects. Ensure a fair distribution of questions among the identified subjects. Do NOT group all questions under one subject if the context has multiple subjects.
-3. YOU MUST STRICTLY RESTRICT your generated questions ONLY to the subjects found in the context. Generating questions for a missing subject is explicitly FORBIDDEN.
-4. You MUST assign the EXACT and CORRECT "subject" ("Physics", "Chemistry", or "Maths") to EVERY individual question based on its actual core content.
-   - A Chemistry question MUST have "subject": "Chemistry".
-   - A Physics question MUST have "subject": "Physics".
-   - A Maths question MUST have "subject": "Maths".
-   - Do NOT label a Chemistry question as Physics.
-
-- If the source material contains numerical questions or complex problems, YOU MUST generate numerical/complex questions. Do NOT just generate easy text-based theoretical questions.
-- Hard questions MUST involve multi-step calculations, deep conceptual understanding, or advanced application of formulas typical of JEE Advanced.
-
-CRITICAL FORMATTING INSTRUCTIONS FOR MATH/PHYSICS/CHEMISTRY AND TABLES:
-- You MUST use LaTeX formatting for all math, physics, and chemistry equations, formulas, symbols, coordinates, vectors, and matrices.
-- MUST wrap ALL inline equations, numbers, and vectors in single dollar signs: e.g., $x^2 + y^2 = r^2$ or $[2, -1, -2]$
-- MUST wrap standalone block equations in double dollar signs: e.g., $$\\frac{A x^2}{B t}$$
-- NEVER leave math, vectors (like [1, 2, -2]), or formulas as plain text. Always wrap them in $...$
-- NEVER use [ ... ] or \\[ ... \\] or \\( ... \\) for math. ALWAYS use $$ ... $$ for block math and $ ... $ for inline math.
-- Example of WRONG block math: [ F = ma ]
-- Example of CORRECT block math: $$ F = ma $$
-- For tables, ALWAYS use standard Markdown tables (using | and -). NEVER use LaTeX table environments like \\begin{table} or \\begin{tabular}. Ensure they are clean and properly aligned. DO NOT put block math ($$) inside a Markdown table cell; use inline math ($) inside tables.
-- If the question contains multiple statements, items, or internal options (e.g., (1) ..., (2) ..., (3) ... or Statement I, Statement II), YOU MUST format them vertically by adding newlines (\\n) before each item in the "text" field so they appear on separate lines.
-Do not use Unicode approximations. Output strict LaTeX.
-
-CRITICAL JSON ESCAPING REQUIREMENT:
-Because your response must be valid JSON, you MUST double-escape ALL backslashes used in your LaTeX.
-For example:
-- WRONG: "\\alpha + \\beta"
-- CORRECT: "\\\\alpha + \\\\beta"
-- WRONG: "\\text{(i)}"
-- CORRECT: "\\\\text{(i)}"
-If you do not double-escape backslashes, the JSON parser will fail.
-
-CRITICAL JSON FORMATTING RULES:
-1. Output EXACTLY ONE valid JSON array. No extra text before or after.
-2. Do NOT use literal newlines in strings. Use \\n instead.
-3. Ensure no trailing commas before closing brackets.
-4. Provide exactly ${questionsNeeded} questions.
-
-IMPORTANT: Respond ONLY with a valid JSON array of objects. Do not wrap it in markdown. Ensure the JSON array is properly closed at the end.
-Format for each object:
-[
-  {
-    "id": "q_unique_id",
-    "text": "The actual question text here with $math$...",
-    "options": ["Option A", "Option B", "Option C", "Option D"],
-    "correctOptionIndex": 0,
-    "explanation": "Detailed step-by-step explanation including calculations with $math$.",
-    "difficulty": "Hard",
-    "subject": "Physics"
-  }
-]
-* Note: "subject" MUST be exactly "Physics", "Chemistry", or "Maths".
-
---- CONTEXT MATERIALS START ---
-${safeContext}
---- CONTEXT MATERIALS END ---
-
-${sources.internetSearch.enabled && sources.internetSearch.query ? `Additionally, include up-to-date, rigorous questions on this topic: ${sources.internetSearch.query}` : ""}
-`;
-
-          let batchResult: any[] = [];
-
-          let success = false;
-          for (const modelName of openRouterFreeModels) {
-              try {
-                  const payload: any = {
-                    model: modelName,
-                    messages: [{ role: "user", content: promptText }],
-                  };
-
-                  if (sources.internetSearch.enabled && searchCapableModels.includes(modelName)) {
-                    payload.plugins = [{ id: "web", max_results: 5 }];
-                  }
-
-                  let response;
-                  try {
-                    response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-                      method: "POST",
-                      headers: {
-                        "Authorization": `Bearer ${apiKey.trim()}`,
-                        "HTTP-Referer": window.location.href, 
-                        "X-Title": "JEE Prep App", 
-                        "Content-Type": "application/json"
-                      },
-                      body: JSON.stringify(payload),
-                      signal
-                    });
-                  } catch (e: any) {
-                    if (e.name === "AbortError") throw e;
-                    response = await fetch(`https://corsproxy.io/?${encodeURIComponent("https://openrouter.ai/api/v1/chat/completions")}`, {
-                      method: "POST",
-                      headers: {
-                        "Authorization": `Bearer ${apiKey.trim()}`,
-                        "HTTP-Referer": window.location.href, 
-                        "X-Title": "JEE Prep App", 
-                        "Content-Type": "application/json"
-                      },
-                      body: JSON.stringify(payload),
-                      signal
-                    });
-                  }
-
-                  if (!response.ok) {
-                    const errData = await response.json().catch(() => ({}));
-                    let errorMsg = response.statusText || String(response.status);
-                    if (errData.error?.message) errorMsg = errData.error.message;
-                    else if (typeof errData.detail === 'string') errorMsg = errData.detail;
-                    else if (Array.isArray(errData.detail)) errorMsg = JSON.stringify(errData.detail);
-                    else if (errData.title) errorMsg = errData.title;
-                    throw new Error(`OpenRouter Error (${modelName}): ${errorMsg}`);
-                  }
-
-                  const data = await response.json();
-                  const rawText = data.choices?.[0]?.message?.content || "[]";
-                  const parsed = extractJson(rawText);
-
-                  if (Array.isArray(parsed) && parsed.length > 0) {
-                     batchResult = parsed;
-                     success = true;
-                     break;
-                  } else {
-                     throw new Error(`Invalid JSON from ${modelName}`);
-                  }
-              } catch (err: any) {
-                  if (err.name === "AbortError") throw err;
-                  console.warn(`Model ${modelName} failed:`, err);
-                  if (!primaryApiError) primaryApiError = err.message;
-              }
-          }
-          if (!success) {
-              throw new Error(`OpenRouter API failed. Details: ${primaryApiError || "All free endpoints exhausted or unavailable."}`);
-          }
-
-          if (batchResult.length > 0) {
-              const toAdd = batchResult.slice(0, questionsNeeded);
-              allParsedQuestions = [...allParsedQuestions, ...toAdd];
-          }
-          
-          attempts++;
-      }
-      
-      if (allParsedQuestions.length === 0) {
-          throw new Error(`AI returned no valid questions.\nAPI Error: ${primaryApiError || "Format issue suspected."}\n\nTry reducing the number of sources if the context is too large.`);
-      }
-
       const fixMath = (str: string) => {
           if (!str) return str;
+          
+          // Replace \ce{...} with \text{...} or raw formatting for KaTeX mhchem lack of support
+          str = str.replace(/\\ce\{([a-zA-Z0-9\+\-\s\(\)]+)\}/g, (match, chem) => {
+              let converted = chem.replace(/([a-zA-Z]+)(\d+)/g, "\\text{$1}_$2");
+              converted = converted.replace(/(?<!\d|_|{)([a-zA-Z]+)(?!\d|_|})/g, "\\text{$1}");
+              return converted;
+          });
 
-          // Decode HTML breaks and common entities that AI sometimes outputs inappropriately
           str = str.replace(/&lt;br\s*\/?&gt;/gi, "\n\n");
           str = str.replace(/<br\s*\/?>/gi, "\n\n");
           str = str.replace(/&nbsp;/gi, " ");
@@ -516,7 +631,6 @@ ${sources.internetSearch.enabled && sources.internetSearch.query ? `Additionally
           str = str.replace(/\\\(([\s\S]*?)\\\)/g, "$$$1$");
           str = str.replace(/\\\[([\s\S]*?)\\\]/g, "$$$$$1$$$$");
           
-          // Fix chemistry hybridization typos
           str = str.replace(/(?:\\text\{sp\}|sp)\s*\^?\s*\{?(\d+)\}?\s*(?:extd|\\text\{d\}|\\textd)\s*\^?\s*\{?(\d+)\}?/g, "sp^$1d^$2");
           str = str.replace(/(?:\\text\{sp\}|sp)\s*\^?\s*\{?(\d+)\}?\s*(?:extd|\\text\{d\}|\\textd)/g, "sp^$1d");
           str = str.replace(/(?:extd|\\text\{d\}|\\textd)\s*\^?\s*\{?(\d+)\}?\s*(?:\\text\{sp\}|sp)\s*\^?\s*\{?(\d+)\}?/g, "d^$1sp^$2");
@@ -524,10 +638,8 @@ ${sources.internetSearch.enabled && sources.internetSearch.query ? `Additionally
           str = str.replace(/sp\s*<\s*sup\s*>\s*(\d+)\s*<\s*\/\s*sup\s*>\s*(?:extd|\\text\{d\}|\\textd)/g, "sp<sup>$1</sup>d");
           str = str.replace(/(?:extd|\\text\{d\}|\\textd)\s*<\s*sup\s*>\s*(\d+)\s*<\s*\/\s*sup\s*>\s*sp\s*<\s*sup\s*>\s*(\d+)\s*<\s*\/\s*sup\s*>/g, "d<sup>$1</sup>sp<sup>$2</sup>");
 
-          // Convert align/align* to aligned to render properly in KaTeX
           str = str.replace(/\\begin\{align\*?\}([\s\S]*?)\\end\{align\*?\}/g, "\\begin{aligned}$1\\end{aligned}");
 
-          // Fix rogue $$ inside math environments and ensure they are wrapped properly
           str = str.replace(/(?:\$\$|\$)?\s*\\begin\{([a-zA-Z*]+)\}([\s\S]*?)\\end\{\1\}\s*(?:\$\$|\$)?/g, (match, env, inner) => {
               const mathEnvs = ['aligned', 'pmatrix', 'bmatrix', 'vmatrix', 'matrix', 'cases', 'array', 'eqnarray', 'equation', 'equation*'];
               if (mathEnvs.includes(env)) {
@@ -540,13 +652,10 @@ ${sources.internetSearch.enabled && sources.internetSearch.query ? `Additionally
           str = str.replace(/\((\\text\{[^}]+\}.*?)\)/g, "$$$1$");
           str = str.replace(/\((\\displaystyle.*?)\)/g, "$$$1$");
           
-          // Require space after [ and before ] to prevent matching [S] = [M]
           str = str.replace(/^\[\s+([\s\S]*?[_^\\][\s\S]*?)\s+\]$/gm, "$$$$ $1 $$$$");
-          
-          // Fallback to fix mismatched dimensional brackets like $$S] = ...
+          str = str.replace(/\dots/g, "\\dots");
           str = str.replace(/\$\$\s*([a-zA-Z\\{}_0-9]+)\s*\]\s*=/g, "$$$$ [$1] =");
 
-          // Auto-close unclosed $$ and $ blocks before Markdown bold (**) or double newlines (\n\n)
           let tempStr = str.replace(/\\\$/g, "___ESCAPED_DOLLAR___");
           let tokens = tempStr.split(/(\$\$?)/);
           let inBlockMath = false;
@@ -591,39 +700,236 @@ ${sources.internetSearch.enabled && sources.internetSearch.query ? `Additionally
           return str;
       };
 
-      allParsedQuestions = allParsedQuestions
-        .filter(q => q && q.text && Array.isArray(q.options) && typeof q.correctOptionIndex === 'number')
-        .map(q => {
-            let subj = "Physics";
-            if (typeof q.subject === 'string') {
-                const lowerSubj = q.subject.toLowerCase();
-                if (lowerSubj.includes("math")) subj = "Maths";
-                else if (lowerSubj.includes("chem")) subj = "Chemistry";
-                else if (lowerSubj.includes("phys")) subj = "Physics";
-                else subj = q.subject;
-            }
-            if (!["Physics", "Chemistry", "Maths"].includes(subj)) {
-                const lowerText = (q.text || "").toLowerCase();
-                if (lowerText.includes("math") || lowerText.includes("integral") || lowerText.includes("matrix") || lowerText.includes("polynomial")) subj = "Maths";
-                else if (lowerText.includes("chem") || lowerText.includes("reaction") || lowerText.includes("acid") || lowerText.includes("bond")) subj = "Chemistry";
-                else subj = "Physics";
-            }
-            return {
-                ...q,
-                subject: subj,
-                text: fixMath(q.text),
-                options: q.options.map((opt: string) => fixMath(opt)),
-                explanation: fixMath(q.explanation)
-            };
-        })
-        .sort((a, b) => {
-            const order: Record<string, number> = { "Physics": 1, "Chemistry": 2, "Maths": 3 };
-            return (order[a.subject] || 4) - (order[b.subject] || 4);
-        });
+      // ─── Execute Subject-Specific Batched Calls ───
+      let allParsedQuestions: Question[] = [];
+      let primaryApiError = "";
+      let batchIndex = 0;
 
-      if (allParsedQuestions.length === 0) {
-          throw new Error(`AI returned no valid questions.\nAPI Error: ${primaryApiError || "Format issue suspected."}\n\nTry reducing the number of sources if the context is too large.`);
+      for (const [subj, plan] of Object.entries(subjectPlans)) {
+         if (plan.count <= 0) continue;
+         
+         let subjectQuestions: any[] = [];
+         let attempts = 0;
+         const MAX_ATTEMPTS = Math.ceil(plan.count / 3) * 3; // Retry loop budget
+         
+         while (subjectQuestions.length < plan.count && attempts < MAX_ATTEMPTS) {
+            const needed = plan.count - subjectQuestions.length;
+            const batchSize = Math.min(5, needed);
+            
+            setStatus(`Formulating ${subj} questions (${subjectQuestions.length}/${plan.count} complete)...`);
+            
+            const currentSlice = getContextSlice(batchIndex, totalBatches);
+
+            const promptText = buildSubjectPrompt({
+               subject: subj,
+               count: batchSize,
+               difficulty: plan.difficulty,
+               brief,
+               contextText: currentSlice,
+               internetSearch: sources.internetSearch
+            });
+            
+            let success = false;
+            
+            // Prioritize the requested models first, with standard fallbacks
+            const modelsToTry = [
+               "meta-llama/llama-3.3-70b-instruct:free",
+               "qwen/qwen-2.5-coder-32b-instruct:free",
+               "openai/gpt-oss-120b:free",
+               "openai/gpt-oss-20b:free",
+               "z-ai/glm-4.5-air:free",
+               "nvidia/nemotron-3.5-content-safety:free",
+               "nvidia/nemotron-3-ultra-550b-a55b:free",
+               "nousresearch/hermes-3-llama-3.1-405b:free",
+               "moonshotai/kimi-k2.6:free",
+               "google/gemma-2-9b-it:free"
+            ];
+            
+            const uniqueModels = Array.from(new Set(modelsToTry));
+            
+            for (const modelName of uniqueModels) {
+               try {
+                   const payload: any = {
+                     model: modelName,
+                     messages: [{ role: "user", content: promptText }],
+                   };
+
+                   // Enable web search plugin if using internet search on search-capable models
+                   if (sources.internetSearch.enabled && ["google/gemma-4-31b-it:free", "google/gemma-4-31b-it", "nousresearch/hermes-3-llama-3.1-405b:free", "nousresearch/hermes-3-llama-3.1-405b", "meta-llama/llama-3.3-70b-instruct:free", "meta-llama/llama-3.3-70b-instruct"].includes(modelName)) {
+                     payload.plugins = [{ id: "web", max_results: 5 }];
+                   }
+
+                   let response;
+                   try {
+                     response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+                       method: "POST",
+                       headers: {
+                         "Authorization": `Bearer ${apiKey.trim()}`,
+                         "HTTP-Referer": window.location.href, 
+                         "X-Title": "JEE Prep App", 
+                         "Content-Type": "application/json"
+                       },
+                       body: JSON.stringify(payload),
+                       signal
+                     });
+                   } catch (e: any) {
+                     if (e.name === "AbortError") throw e;
+                     response = await fetch(`https://corsproxy.io/?${encodeURIComponent("https://openrouter.ai/api/v1/chat/completions")}`, {
+                       method: "POST",
+                       headers: {
+                         "Authorization": `Bearer ${apiKey.trim()}`,
+                         "HTTP-Referer": window.location.href, 
+                         "X-Title": "JEE Prep App", 
+                         "Content-Type": "application/json"
+                       },
+                       body: JSON.stringify(payload),
+                       signal
+                     });
+                   }
+
+                   if (!response.ok) {
+                     const errData = await response.json().catch(() => ({}));
+                     let errorMsg = response.statusText || String(response.status);
+                     let errorCode = response.status;
+                     if (errData.error?.message) errorMsg = errData.error.message;
+                     if (errData.error?.code) errorCode = errData.error.code;
+
+                     const isCreditExhaustedError = (status: number, message: string) => {
+                       const msg = message.toLowerCase();
+                       return status === 402 || 
+                              msg.includes("credit") || 
+                              msg.includes("balance") || 
+                              msg.includes("insufficient funds") || 
+                              msg.includes("insufficient balance") || 
+                              msg.includes("payment required");
+                     };
+
+                     if (isCreditExhaustedError(errorCode, errorMsg)) {
+                        throw new Error(`CREDIT_EXHAUSTED: ${errorMsg}`);
+                     }
+                     throw new Error(`OpenRouter Error (${modelName}): ${errorMsg}`);
+                   }
+
+                   const data = await response.json();
+                   const rawText = data.choices?.[0]?.message?.content || "[]";
+                   const parsed = extractJson(rawText);
+
+                   if (Array.isArray(parsed) && parsed.length > 0) {
+                      // Filter and format questions for this subject
+                      const validatedQs = parsed
+                        .filter(q => q && q.text && Array.isArray(q.options) && typeof q.correctOptionIndex === 'number')
+                        .map(q => ({
+                          ...q,
+                          subject: subj, // Enforce correct subject allocation
+                          difficulty: q.difficulty || plan.difficulty,
+                          text: fixMath(q.text),
+                          options: q.options.map((opt: string) => fixMath(opt)),
+                          explanation: fixMath(q.explanation)
+                        }));
+                      
+                      if (validatedQs.length > 0) {
+                         subjectQuestions = [...subjectQuestions, ...validatedQs];
+                         success = true;
+                         batchIndex++;
+                         break;
+                      } else {
+                         throw new Error(`No valid questions returned from ${modelName}`);
+                      }
+                   } else {
+                      throw new Error(`Invalid JSON structure from ${modelName}`);
+                   }
+               } catch (err: any) {
+                   if (err.name === "AbortError") throw err;
+                   const errMsg = err.message || "";
+                   if (errMsg.includes("CREDIT_EXHAUSTED") || 
+                       errMsg.toLowerCase().includes("credits exhausted") || 
+                       errMsg.toLowerCase().includes("insufficient balance") ||
+                       errMsg.toLowerCase().includes("insufficient funds")) {
+                      throw new Error("Credit ends: Can't able to generate quiz. Please add credits/balance to your OpenRouter account.");
+                   }
+                   console.warn(`Model ${modelName} failed:`, err);
+                   if (!primaryApiError) primaryApiError = err.message;
+               }
+            }
+            if (!success) {
+               throw new Error(`Could not generate ${subj} questions. Fallbacks exhausted. Error: ${primaryApiError}`);
+            }
+            attempts++;
+         }
+         
+         // Enforce exact count limit per subject
+         if (subjectQuestions.length > plan.count) {
+           subjectQuestions = subjectQuestions.slice(0, plan.count);
+         }
+         
+         allParsedQuestions = [...allParsedQuestions, ...subjectQuestions];
       }
+      
+      if (allParsedQuestions.length === 0) {
+          throw new Error(`AI returned no valid questions.\nAPI Error: ${primaryApiError || "Format issue suspected."}`);
+      }
+
+      // ─── Image Mapping Logic ───
+      try {
+        const allSaves = JSON.parse(localStorage.getItem("jee_saves_questions_v1") || "{}");
+        const savedQuestionsMap: Record<string, { imageKey?: string; imageUrl?: string }> = {};
+        
+        Object.entries(allSaves).forEach(([srcId, questionsList]: [string, any]) => {
+          if (Array.isArray(questionsList)) {
+            questionsList.forEach((q: any) => {
+              // Map by exact source question ID
+              savedQuestionsMap[`${srcId}::${q.id}`] = {
+                imageKey: q.questionImageKey,
+                imageUrl: q.questionUrl
+              };
+              
+              // Map by name (fuzzy backup lookup)
+              const cleanName = (q.name || "").toLowerCase().replace(/\s+/g, "");
+              if (cleanName) {
+                savedQuestionsMap[cleanName] = {
+                  imageKey: q.questionImageKey,
+                  imageUrl: q.questionUrl
+                };
+              }
+            });
+          }
+        });
+        
+        // Connect generated questions back to their images/urls
+        allParsedQuestions = allParsedQuestions.map(q => {
+          let imageKey = undefined;
+          let imageUrl = undefined;
+          
+          if (q.sourceQuestionId && savedQuestionsMap[q.sourceQuestionId]) {
+            imageKey = savedQuestionsMap[q.sourceQuestionId].imageKey;
+            imageUrl = savedQuestionsMap[q.sourceQuestionId].imageUrl;
+          } else {
+            const cleanText = (q.text || "").toLowerCase().replace(/\s+/g, "");
+            for (const [key, value] of Object.entries(savedQuestionsMap)) {
+              if (key.includes("::")) continue; 
+              if (cleanText.includes(key) || key.includes(cleanText)) {
+                imageKey = value.imageKey;
+                imageUrl = value.imageUrl;
+                break;
+              }
+            }
+          }
+          
+          return {
+            ...q,
+            imageKey,
+            imageUrl
+          };
+        });
+      } catch (imgErr) {
+        console.warn("Diagram image mapping failed:", imgErr);
+      }
+
+      // Sort questions: Physics first, Chemistry second, Maths third
+      allParsedQuestions.sort((a, b) => {
+          const order: Record<string, number> = { "Physics": 1, "Chemistry": 2, "Maths": 3 };
+          return (order[a.subject] || 4) - (order[b.subject] || 4);
+      });
 
       const newQuiz: SavedQuiz = {
          id: Date.now().toString(),
@@ -649,7 +955,7 @@ ${sources.internetSearch.enabled && sources.internetSearch.query ? `Additionally
         return;
       }
       console.error("Quiz Generation Failed:", e);
-      alert("Failed to generate quiz with AI: \n" + e.message + "\n\nHint: If you see a timeout or payload too large error, try selecting fewer sources (PDFs/Saves).");
+      alert("Failed to generate quiz with AI: \n" + e.message);
     } finally {
       this.activeJobs.delete(jobId);
       this.notify();
@@ -659,6 +965,52 @@ ${sources.internetSearch.enabled && sources.internetSearch.query ? `Additionally
 
 export const quizGeneratorManager = new QuizGeneratorManager();
 
+// ─── Diagram Image Renderer Component ─────────────────────────────────────
+function QuestionImage({ imageKey, imageUrl }: { imageKey?: string, imageUrl?: string }) {
+  const { readMediaAsBlob } = useWorkspaceContext();
+  const [src, setSrc] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (imageUrl) {
+      setSrc(imageUrl);
+      return;
+    }
+
+    if (imageKey) {
+      setLoading(true);
+      readMediaAsBlob(imageKey)
+        .then(blob => {
+          if (blob) {
+            const url = URL.createObjectURL(blob);
+            setSrc(url);
+          }
+        })
+        .finally(() => setLoading(false));
+    } else {
+      setSrc(null);
+    }
+  }, [imageKey, imageUrl, readMediaAsBlob]);
+
+  if (loading) {
+    return (
+      <div className="my-4 p-4 border border-border rounded-xl flex items-center justify-center bg-muted/20">
+        <RefreshCw className="h-5 w-5 text-muted-foreground animate-spin" />
+        <span className="text-xs text-muted-foreground ml-2 font-medium">Loading diagram...</span>
+      </div>
+    );
+  }
+
+  if (!src) return null;
+
+  return (
+    <div className="my-4 p-2 border border-border rounded-xl bg-white dark:bg-zinc-900 inline-block max-w-full shadow-sm hover:shadow-md transition-shadow">
+      <img src={src} alt="Question Diagram" className="max-h-[250px] object-contain rounded-lg" />
+    </div>
+  );
+}
+
+// ─── Main Interface ────────────────────────────────────────────────────────
 function AIQuizInterface() {
   const { user } = useAppContext();
   const { readMediaAsArrayBuffer } = useWorkspaceContext();
@@ -670,6 +1022,12 @@ function AIQuizInterface() {
   const [difficulty, setDifficulty] = useState<Difficulty>("Mixed");
   const [showSourceModal, setShowSourceModal] = useState(false);
   
+  // Custom Guidelines & AI Settings State
+  const [briefInstructions, setBriefInstructions] = useState("");
+
+  // Premium AI Explanations State
+  const [aiExplanations, setAiExplanations] = useState<Record<number, { text: string; model?: string; loading: boolean; error?: string }>>({});
+
   const [sources, setSources] = useState<SelectedSources>({
     pdfs: [],
     saves: [],
@@ -684,7 +1042,7 @@ function AIQuizInterface() {
   const [sourceTab, setSourceTab] = useState<"pdfs" | "videos" | "saves" | "urls" | "internet">("pdfs");
   const [urlInput, setUrlInput] = useState("");
 
-  // Quiz State
+  // Quiz Attempt State
   type QuestionStatus = "not_visited" | "not_answered" | "answered" | "marked_for_review" | "answered_marked_for_review";
   const [questions, setQuestions] = useState<Question[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -696,6 +1054,11 @@ function AIQuizInterface() {
   const [showInstructions, setShowInstructions] = useState(false);
   const [showSummary, setShowSummary] = useState(false);
   const [quizName, setQuizName] = useState("");
+  
+  // Time tracking per question
+  const [timeSpent, setTimeSpent] = useState<Record<number, number>>({});
+  const [reviewMode, setReviewMode] = useState(false);
+
   const subjects = useMemo(() => {
     const uniqueSubjects = Array.from(new Set(questions.map(q => q.subject).filter(Boolean))) as string[];
     const standardOrder = ["Physics", "Chemistry", "Maths"];
@@ -720,7 +1083,7 @@ function AIQuizInterface() {
 
   useEffect(() => {
     let prevJobCount = quizGeneratorManager.activeJobs.size;
-    return quizGeneratorManager.subscribe(() => {
+    const unsubscribe = quizGeneratorManager.subscribe(() => {
       setIsGenerating(quizGeneratorManager.isGenerating);
       setActiveJobs(Array.from(quizGeneratorManager.activeJobs.values()));
       const currentJobCount = quizGeneratorManager.activeJobs.size;
@@ -729,6 +1092,9 @@ function AIQuizInterface() {
       }
       prevJobCount = currentJobCount;
     });
+    return () => {
+      unsubscribe();
+    };
   }, []);
 
   const [renamingQuizId, setRenamingQuizId] = useState<string | null>(null);
@@ -736,6 +1102,11 @@ function AIQuizInterface() {
 
   const totalSources = sources.pdfs.length + sources.saves.length + sources.videos.length + sources.urls.length + (sources.internetSearch.enabled ? 1 : 0);
   const finalQuestionCount = numQuestions === "custom" ? customNum : numQuestions;
+
+  // Live Auto-parsed preview allocation based on prompt
+  const detectedBriefPlan = useMemo(() => {
+    return planSubjects(briefInstructions, difficulty, finalQuestionCount, sources, availablePdfs, availableSaves);
+  }, [briefInstructions, difficulty, finalQuestionCount, sources, availablePdfs, availableSaves]);
 
   useEffect(() => {
     if (typeof Notification !== "undefined" && Notification.permission === "default") {
@@ -791,9 +1162,140 @@ function AIQuizInterface() {
       finalQuestionCount,
       readMediaAsArrayBuffer,
       availablePdfs,
-      availableVideos
+      availableVideos,
+      model: "",
+      useFree: true,
+      brief: briefInstructions
     });
   };
+
+  const handleGenerateExplanation = async (idx: number) => {
+    const q = questions[idx];
+    if (!q) return;
+
+    setAiExplanations(prev => ({
+      ...prev,
+      [idx]: { text: "", loading: true }
+    }));
+
+    const apiKey = localStorage.getItem("jee_openrouter_api_key") || "";
+    if (!apiKey) {
+      setAiExplanations(prev => ({
+        ...prev,
+        [idx]: { text: "", loading: false, error: "OpenRouter API Key is missing. Please configure it in the Admin Panel." }
+      }));
+      return;
+    }
+
+    const explanationModels = [
+      "nousresearch/hermes-3-llama-3.1-405b:free",
+      "google/gemma-4-31b-it:free",
+      "meta-llama/llama-3.3-70b-instruct:free"
+    ];
+
+    const promptText = `You are a world-class IIT JEE teacher and expert evaluator. 
+Provide a comprehensive, mathematically rigorous, and step-by-step explanation for the following JEE question.
+
+Question:
+${q.text}
+
+Options:
+${q.options.map((opt, i) => `${String.fromCharCode(65 + i)}) ${opt}`).join("\n")}
+
+Correct Option: Option ${String.fromCharCode(65 + q.correctOptionIndex)}
+
+Please write a detailed derivation, detailing all equations, steps, values, and laws/theorems used. Use LaTeX notation for all formulas, equations, symbols, and chemical formulas. Wrap block equations in $$ and inline equations in $. 
+
+Respond with ONLY the markdown explanation. Do not wrap it in JSON or HTML. Start directly with the steps.`;
+
+    let success = false;
+    let lastError = "";
+
+    // Helper to fix math and chemical formulas
+    const fixExplanationMath = (str: string) => {
+      if (!str) return str;
+      
+      // Replace \ce{...} with \text{...} or raw formatting for KaTeX mhchem lack of support
+      str = str.replace(/\\ce\{([a-zA-Z0-9\+\-\s\(\)]+)\}/g, (match, chem) => {
+          let converted = chem.replace(/([a-zA-Z]+)(\d+)/g, "\\text{$1}_$2");
+          converted = converted.replace(/(?<!\d|_|{)([a-zA-Z]+)(?!\d|_|})/g, "\\text{$1}");
+          return converted;
+      });
+
+      str = str.replace(/\\\(([\s\S]*?)\\\)/g, "$$$1$");
+      str = str.replace(/\\\[([\s\S]*?)\\\]/g, "$$$$$1$$$$");
+      return str;
+    };
+
+    for (const modelName of explanationModels) {
+      try {
+        const payload = {
+          model: modelName,
+          messages: [{ role: "user", content: promptText }]
+        };
+
+        let response;
+        try {
+          response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+            method: "POST",
+            headers: {
+              "Authorization": `Bearer ${apiKey.trim()}`,
+              "HTTP-Referer": window.location.href, 
+              "X-Title": "JEE Prep App", 
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(payload)
+          });
+        } catch (e: any) {
+          response = await fetch(`https://corsproxy.io/?${encodeURIComponent("https://openrouter.ai/api/v1/chat/completions")}`, {
+            method: "POST",
+            headers: {
+              "Authorization": `Bearer ${apiKey.trim()}`,
+              "HTTP-Referer": window.location.href, 
+              "X-Title": "JEE Prep App", 
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(payload)
+          });
+        }
+
+        if (!response.ok) {
+          throw new Error(`Failed with status ${response.status}`);
+        }
+
+        const data = await response.json();
+        const text = data.choices?.[0]?.message?.content;
+        if (text) {
+          setAiExplanations(prev => ({
+            ...prev,
+            [idx]: { text: fixExplanationMath(text), model: modelName, loading: false }
+          }));
+          success = true;
+          break;
+        } else {
+          throw new Error("No response text");
+        }
+      } catch (err: any) {
+        console.warn(`Explanation model ${modelName} failed:`, err);
+        lastError = err.message || "Unknown error";
+      }
+    }
+
+    if (!success) {
+      setAiExplanations(prev => ({
+        ...prev,
+        [idx]: { text: "", loading: false, error: `Could not generate explanation. Fallbacks exhausted. Last error: ${lastError}` }
+      }));
+    }
+  };
+
+  useEffect(() => {
+    if (reviewMode && questions[currentIndex]) {
+      if (!aiExplanations[currentIndex]) {
+        handleGenerateExplanation(currentIndex);
+      }
+    }
+  }, [currentIndex, reviewMode, questions]);
 
   const formatTime = (seconds: number) => {
     const h = Math.floor(seconds / 3600);
@@ -802,14 +1304,29 @@ function AIQuizInterface() {
     return `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
   };
 
+  const formatTimeSpent = (seconds: number) => {
+     if (seconds < 60) return `${seconds}s`;
+     const m = Math.floor(seconds / 60);
+     const s = seconds % 60;
+     return `${m}m ${s}s`;
+  };
+
+  // Timer loop for tracking overall time and per-question active time
   useEffect(() => {
-    if (phase === "active" && timeLeft > 0 && !showSummary && !showInstructions) {
-        const timer = setInterval(() => setTimeLeft(t => t - 1), 1000);
+    if (phase === "active" && timeLeft > 0 && !showSummary && !showInstructions && !reviewMode) {
+        const timer = setInterval(() => {
+          setTimeLeft(t => t - 1);
+          setTimeSpent(prev => ({
+             ...prev,
+             [currentIndex]: (prev[currentIndex] || 0) + 1
+          }));
+        }, 1000);
         return () => clearInterval(timer);
-    } else if (timeLeft === 0 && phase === "active") {
+    } else if (timeLeft === 0 && phase === "active" && !reviewMode) {
         finalSubmit();
     }
-  }, [phase, timeLeft, showSummary, showInstructions]);
+    return;
+  }, [phase, timeLeft, showSummary, showInstructions, currentIndex, reviewMode]);
 
   const questionsBySubject = subjects.reduce((acc, subj) => {
     acc[subj] = questions.filter(q => q.subject === subj);
@@ -835,7 +1352,11 @@ function AIQuizInterface() {
   const goToNext = () => {
     let nextIndex = currentIndex + 1;
     if (nextIndex >= questions.length) {
-        setShowSummary(true);
+        if (reviewMode) {
+          setPhase("results");
+        } else {
+          setShowSummary(true);
+        }
     } else {
        const nextSubj = questions[nextIndex].subject;
        if (nextSubj && nextSubj !== activeSubject) setActiveSubject(nextSubj);
@@ -888,25 +1409,17 @@ function AIQuizInterface() {
 
   const startQuiz = (quiz: SavedQuiz) => {
     setQuizName(quiz.name);
-    const updatedQuestions = quiz.questions.map((q) => {
-       let subj = "Physics";
-       if (typeof q.subject === 'string') {
-           const lowerSubj = q.subject.toLowerCase();
-           if (lowerSubj.includes("math")) subj = "Maths";
-           else if (lowerSubj.includes("chem")) subj = "Chemistry";
-           else if (lowerSubj.includes("phys")) subj = "Physics";
-       }
-       return { ...q, subject: subj };
-    });
-    setQuestions(updatedQuestions);
+    setQuestions(quiz.questions);
     setCurrentIndex(0);
     setScore(0);
     setAnswers({});
+    setTimeSpent({});
+    setReviewMode(false);
     const initialStatuses: Record<number, QuestionStatus> = {};
-    updatedQuestions.forEach((_, i) => initialStatuses[i] = i === 0 ? "not_answered" : "not_visited");
+    quiz.questions.forEach((_, i) => initialStatuses[i] = i === 0 ? "not_answered" : "not_visited");
     setQuestionStatuses(initialStatuses);
-    setTimeLeft(updatedQuestions.length * 120); 
-    setActiveSubject(updatedQuestions[0]?.subject || "Physics");
+    setTimeLeft(quiz.questions.length * 120); 
+    setActiveSubject(quiz.questions[0]?.subject || "Physics");
     setShowSummary(false);
     setShowInstructions(false);
     setPhase("active");
@@ -953,6 +1466,38 @@ function AIQuizInterface() {
     setPhase("results");
   };
 
+  // Subject Stats Calculator for Advanced Dashboard
+  const getSubjectStats = (subj: string) => {
+    const subjQs = questions.filter(q => q.subject === subj);
+    const subjIndices = questions.map((q, idx) => q.subject === subj ? idx : -1).filter(idx => idx !== -1);
+    
+    let correct = 0;
+    let incorrect = 0;
+    let skipped = 0;
+    let time = 0;
+    
+    subjIndices.forEach(idx => {
+      const ans = answers[idx];
+      const q = questions[idx];
+      time += timeSpent[idx] || 0;
+      if (ans === undefined) skipped++;
+      else if (ans === q.correctOptionIndex) correct++;
+      else incorrect++;
+    });
+    
+    const sScore = correct * 4 - incorrect * 1;
+    const totalSubjQs = subjQs.length;
+    
+    return {
+      correct,
+      incorrect,
+      skipped,
+      time,
+      score: sScore,
+      total: totalSubjQs
+    };
+  };
+
   const addUrl = () => {
     if (urlInput.trim()) {
       setSources(s => ({ ...s, urls: [...s.urls, urlInput.trim()] }));
@@ -986,8 +1531,20 @@ function AIQuizInterface() {
     );
   };
 
+  const totalPossibleScore = questions.length * 4;
+  const answeredQuestionsCount = Object.keys(answers).length;
+  const correctAnswersCount = questions.reduce((acc, q, idx) => {
+    return acc + (answers[idx] !== undefined && answers[idx] === q.correctOptionIndex ? 1 : 0);
+  }, 0);
+  const incorrectAnswersCount = questions.reduce((acc, q, idx) => {
+    return acc + (answers[idx] !== undefined && answers[idx] !== q.correctOptionIndex ? 1 : 0);
+  }, 0);
+  const skippedAnswersCount = questions.length - answeredQuestionsCount;
+  const accuracy = answeredQuestionsCount > 0 ? Math.round((correctAnswersCount / answeredQuestionsCount) * 100) : 0;
+  const totalSecondsSpent = Object.values(timeSpent).reduce((a, b) => a + b, 0);
+
   return (
-    <div className="h-full w-full bg-background overflow-y-auto flex flex-col items-center relative">
+    <div className="h-full w-full bg-background overflow-y-auto flex flex-col items-center relative text-foreground">
       {/* Header */}
       <div className="w-full relative overflow-hidden bg-gradient-to-br from-primary/10 via-card to-background border-b border-border px-6 py-8 shrink-0">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_hsl(var(--primary)/0.1),_transparent_50%)]" />
@@ -997,7 +1554,7 @@ function AIQuizInterface() {
           </div>
           <div>
             <h1 className="text-2xl font-black text-foreground tracking-tight">AI Quiz Generator</h1>
-            <p className="text-sm text-muted-foreground mt-0.5">Test your knowledge based on your own study materials.</p>
+            <p className="text-sm text-muted-foreground mt-0.5">Test your knowledge with an advanced custom exam builder.</p>
           </div>
         </div>
       </div>
@@ -1013,6 +1570,17 @@ function AIQuizInterface() {
               exit={{ opacity: 0, y: -20 }}
               className="space-y-8"
             >
+              {/* Warnings */}
+              {!localStorage.getItem("jee_openrouter_api_key") && (
+                <div className="p-4 rounded-2xl bg-red-500/10 border border-red-500/20 text-red-600 dark:text-red-400 flex items-start gap-3 text-sm font-semibold">
+                   <AlertCircle className="h-5 w-5 shrink-0 mt-0.5" />
+                   <div>
+                     <p className="font-bold">No OpenRouter API Key configured</p>
+                     <p className="text-xs font-normal opacity-90">Please enter your API Key in the Admin Panel to enable quiz generation.</p>
+                   </div>
+                </div>
+              )}
+
               {/* Number of Questions */}
               <div className="bg-card border border-border rounded-3xl p-6 shadow-sm">
                 <div className="flex items-center gap-2 mb-4">
@@ -1105,7 +1673,7 @@ function AIQuizInterface() {
                     variant="outline"
                     size="sm"
                     onClick={() => setShowSourceModal(true)}
-                    className="gap-2 border-purple-500/30 text-purple-600 dark:text-purple-400 hover:bg-purple-500/10"
+                    className="gap-2 border-purple-500/30 text-purple-600 dark:text-purple-400 hover:bg-purple-500/10 font-bold"
                   >
                     <Settings className="h-4 w-4" />
                     Manage Sources
@@ -1117,7 +1685,7 @@ function AIQuizInterface() {
                     <AlertCircle className="h-8 w-8 text-muted-foreground/50 mx-auto mb-2" />
                     <p className="text-sm font-medium text-foreground">No sources selected</p>
                     <p className="text-xs text-muted-foreground mt-1">Select PDFs, Saves, Videos, URLs or Internet to ground the AI.</p>
-                    <Button onClick={() => setShowSourceModal(true)} variant="secondary" size="sm" className="mt-4">
+                    <Button onClick={() => setShowSourceModal(true)} variant="secondary" size="sm" className="mt-4 font-bold">
                       Add Sources
                     </Button>
                   </div>
@@ -1152,13 +1720,40 @@ function AIQuizInterface() {
                 )}
               </div>
 
+              {/* Explain Briefly (Custom distribution box) */}
+              <div className="bg-card border border-border rounded-3xl p-6 shadow-sm">
+                <div className="flex items-center gap-2 mb-2">
+                  <Pencil className="h-5 w-5 text-indigo-500" />
+                  <h2 className="text-sm font-bold uppercase tracking-wider text-foreground">Explain Briefly / Custom Guidelines</h2>
+                </div>
+                <p className="text-xs text-muted-foreground mb-4">
+                  Describe exact ratios, target sub-topics, or subject splits (e.g. "in 30 questions put 10 tough questions of Maths, 16 medium questions of Physics and 4 hard questions of Chemistry").
+                </p>
+                <textarea
+                  value={briefInstructions}
+                  onChange={(e) => setBriefInstructions(e.target.value)}
+                  placeholder="e.g. put 10 tough question of Maths, 16 medium question of Physics and 4 hard question for Chemistry. Exclude chemistry completely if needed."
+                  className="w-full min-h-[100px] rounded-2xl bg-muted/30 border border-border p-4 text-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary placeholder:text-muted-foreground/60 transition-all font-medium"
+                />
+
+                {briefInstructions.trim() && (
+                  <div className="mt-3 p-3 bg-indigo-500/5 rounded-xl border border-indigo-500/10 text-xs flex flex-wrap gap-4 items-center font-semibold text-foreground">
+                    <span className="text-muted-foreground flex items-center gap-1"><Info className="w-3.5 h-3.5" /> Detected Plan:</span>
+                    {detectedBriefPlan.Maths.count > 0 && <span className="text-blue-600 dark:text-blue-400 font-bold">Maths: {detectedBriefPlan.Maths.count} Qs ({detectedBriefPlan.Maths.difficulty})</span>}
+                    {detectedBriefPlan.Physics.count > 0 && <span className="text-indigo-600 dark:text-indigo-400 font-bold">Physics: {detectedBriefPlan.Physics.count} Qs ({detectedBriefPlan.Physics.difficulty})</span>}
+                    {detectedBriefPlan.Chemistry.count > 0 && <span className="text-rose-600 dark:text-rose-400 font-bold">Chemistry: {detectedBriefPlan.Chemistry.count} Qs ({detectedBriefPlan.Chemistry.difficulty})</span>}
+                    <span className="text-foreground font-black ml-auto border-l pl-3 border-border">Total: {detectedBriefPlan.Physics.count + detectedBriefPlan.Chemistry.count + detectedBriefPlan.Maths.count} Qs</span>
+                  </div>
+                )}
+              </div>
+
               {/* Start Button */}
-              <div className="flex justify-end pt-4">
+              <div className="flex justify-end pt-2">
                 <Button
                   onClick={handleStartAnalysis}
-                  disabled={totalSources === 0}
+                  disabled={totalSources === 0 || !localStorage.getItem("jee_openrouter_api_key")}
                   size="lg"
-                  className="gap-2 h-14 px-8 rounded-2xl text-base shadow-xl shadow-primary/25"
+                  className="gap-2 h-14 px-8 rounded-2xl text-base font-bold shadow-xl shadow-primary/25"
                 >
                   {isGenerating ? "Generate Another Quiz" : "Synthesize & Generate Quiz"} <Zap className="h-5 w-5" />
                 </Button>
@@ -1178,7 +1773,7 @@ function AIQuizInterface() {
                         <RefreshCw className="h-5 w-5 text-primary animate-spin" />
                         <div>
                            <p className="text-sm font-bold text-foreground">Generating {job.name}...</p>
-                           <p className="text-xs text-muted-foreground">{job.status}</p>
+                           <p className="text-xs text-muted-foreground font-medium">{job.status}</p>
                         </div>
                       </div>
                       <Button variant="outline" size="sm" className="h-8 w-8 p-0 text-red-500 hover:text-red-600 hover:bg-red-500/10 border-red-500/20" onClick={() => quizGeneratorManager.stopJob(job.id)}>
@@ -1209,7 +1804,7 @@ function AIQuizInterface() {
                            ) : (
                               <p className="text-sm font-bold text-foreground truncate">{quiz.name}</p>
                            )}
-                           <p className="text-xs text-muted-foreground">{quiz.questions.length} Questions • {quiz.difficulty} • {new Date(quiz.createdAt).toLocaleDateString()}</p>
+                           <p className="text-xs text-muted-foreground font-semibold">{quiz.questions.length} Questions • {quiz.difficulty} • {new Date(quiz.createdAt).toLocaleDateString()}</p>
                         </div>
                         <div className="flex items-center gap-2 shrink-0">
                            <Button variant="outline" size="icon" className="h-8 w-8 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity" onClick={() => { setRenamingQuizId(quiz.id); setRenameVal(quiz.name); }}>
@@ -1229,187 +1824,309 @@ function AIQuizInterface() {
             </motion.div>
           )}
 
-          {/* ── PHASE 3: ACTIVE QUIZ (JEE INTERFACE) ── */}
+          {/* ── PHASE 3: ACTIVE QUIZ (JEE INTERFACE & REVIEW MODE) ── */}
           {phase === "active" && questions.length > 0 && (
             <motion.div
               key="active"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 z-50 bg-white flex flex-col font-sans"
+              className="fixed inset-0 z-50 bg-background flex flex-col font-sans text-foreground"
             >
               {/* Header */}
-              <div className="flex items-center justify-between px-4 py-2 border-b border-gray-300 bg-[#f8f9fa] text-black shrink-0">
+              <div className="flex items-center justify-between px-4 py-2 border-b border-border bg-card shrink-0">
                 <div className="flex items-center gap-3">
-                  <div className="w-16 h-16 bg-[#dee2e6] rounded-full flex items-center justify-center overflow-hidden shrink-0 shadow-sm">
-                     <User className="h-10 w-10 text-white fill-white" />
+                  <div className="w-16 h-16 bg-muted border border-border rounded-full flex items-center justify-center overflow-hidden shrink-0 shadow-sm">
+                     <User className="h-10 w-10 text-muted-foreground fill-current" />
                   </div>
-                  <table className="text-sm font-medium text-gray-700">
+                  <table className="text-sm font-semibold text-foreground">
                     <tbody>
                       <tr>
-                        <td className="pr-2 pb-1">Candidate Name</td>
-                        <td className="pb-1">: <span className="font-bold text-gray-800">{user || "Student"}</span></td>
+                        <td className="pr-2 pb-0.5 text-muted-foreground font-bold">Candidate Name</td>
+                        <td className="pb-0.5">: <span className="font-extrabold text-foreground">{user || "Student"}</span></td>
                       </tr>
                       <tr>
-                        <td className="pr-2 pb-1">Test Name</td>
-                        <td className="pb-1 flex items-center gap-1">: <span className="font-bold text-gray-800">{quizName}</span> <Info className="w-3.5 h-3.5 text-gray-500" /></td>
+                        <td className="pr-2 pb-0.5 text-muted-foreground font-bold">Test Name</td>
+                        <td className="pb-0.5 flex items-center gap-1">: <span className="font-extrabold text-foreground">{quizName}</span> <Info className="w-3.5 h-3.5 text-muted-foreground" /></td>
                       </tr>
                       <tr>
-                        <td className="pr-2">Remaining Time</td>
-                        <td>: <span className="bg-[#3b82f6] text-white px-2 py-0.5 rounded-full font-bold text-xs shadow-sm">{formatTime(timeLeft)}</span></td>
+                        <td className="pr-2 text-muted-foreground font-bold">{reviewMode ? "Mode" : "Remaining Time"}</td>
+                        <td>: <span className={cn("px-2 py-0.5 rounded-full font-bold text-xs shadow-sm text-white", reviewMode ? "bg-emerald-500" : "bg-[#3b82f6]")}>{reviewMode ? "REVIEW SOLUTIONS" : formatTime(timeLeft)}</span></td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
-                <Button variant="outline" onClick={() => setShowInstructions(true)} className="border-gray-300 text-gray-700 bg-white hover:bg-gray-50 font-semibold shadow-sm text-sm">View Instructions</Button>
+                {!reviewMode && (
+                  <Button variant="outline" onClick={() => setShowInstructions(true)} className="border-border text-foreground hover:bg-muted font-bold text-sm">View Instructions</Button>
+                )}
               </div>
               
               {/* Tabs */}
-              <div className="flex items-center bg-[#f8f9fa] border-b border-gray-300 shrink-0 px-1 relative">
-                 <button className="px-2 py-2.5 text-sm text-gray-500 hover:text-gray-800 shrink-0"><ChevronLeft className="w-4 h-4" /></button>
-                 <div className="flex bg-[#f8f9fa] flex-1 overflow-x-auto scrollbar-hide">
+              <div className="flex items-center bg-card border-b border-border shrink-0 px-1 relative">
+                 <button className="px-2 py-2.5 text-sm text-muted-foreground hover:text-foreground shrink-0"><ChevronLeft className="w-4 h-4" /></button>
+                 <div className="flex bg-card flex-1 overflow-x-auto scrollbar-hide">
                  {subjects.map(subj => {
                    if (!questionsBySubject[subj] || questionsBySubject[subj].length === 0) return null;
                     return (
-                   <button 
-                     key={subj}
-                     onClick={() => handleTabClick(subj)}
-                     className={cn("px-4 py-2.5 text-sm font-medium transition-colors whitespace-nowrap", activeSubject === subj ? "bg-[#e2e8f0] text-gray-900 rounded-t-sm" : "text-gray-500 hover:bg-gray-200")}
-                   >
-                     {subj}
-                   </button>
-                   );
+                    <button 
+                      key={subj}
+                      onClick={() => handleTabClick(subj)}
+                      className={cn("px-5 py-2.5 text-sm font-bold border-b-2 transition-all whitespace-nowrap", activeSubject === subj ? "border-primary text-primary bg-primary/5" : "border-transparent text-muted-foreground hover:text-foreground hover:bg-muted/30")}
+                    >
+                      {subj}
+                    </button>
+                    );
                  })}
                  </div>
-                 <button className="px-2 py-2.5 text-sm text-gray-500 hover:text-gray-800 shrink-0"><ChevronRight className="w-4 h-4" /></button>
+                 <button className="px-2 py-2.5 text-sm text-muted-foreground hover:text-foreground shrink-0"><ChevronRight className="w-4 h-4" /></button>
               </div>
 
               {/* Main content */}
-              <div className="flex flex-1 overflow-hidden bg-white text-black">
+              <div className="flex flex-1 overflow-hidden bg-background text-foreground">
                  {/* Left Area - Question */}
-                 <div className="flex-1 flex flex-col border-r border-gray-300 relative">
-                    <div className="flex justify-between items-center px-6 py-3 shrink-0">
+                 <div className="flex-1 flex flex-col border-r border-border relative">
+                    <div className="flex justify-between items-center px-6 py-3 shrink-0 border-b border-border bg-card/50">
                        <div className="flex items-center gap-4">
-                         <span className="font-bold text-lg text-gray-900">Question {questions.filter(q => q.subject === activeSubject).findIndex(q => q === questions[currentIndex]) + 1}:</span>
-                         <span className="text-gray-600 border border-gray-300 bg-gray-50 px-2 py-0.5 rounded-full text-xs font-semibold">Marks: <span className="text-[#22c55e]">+4</span> <span className="text-[#ef4444]">-1</span></span>
-                         <span className="text-gray-600 border border-gray-300 bg-gray-50 px-2 py-0.5 rounded-full text-xs font-semibold">Type: Single</span>
+                         <span className="font-bold text-lg text-foreground">Question {questions.filter(q => q.subject === activeSubject).findIndex(q => q === questions[currentIndex]) + 1}:</span>
+                         <span className="text-muted-foreground border border-border bg-muted/30 px-2.5 py-0.5 rounded-full text-xs font-bold">Marks: <span className="text-emerald-500 font-extrabold">+4</span> <span className="text-red-500 font-extrabold">-1</span></span>
+                         <span className="text-muted-foreground border border-border bg-muted/30 px-2.5 py-0.5 rounded-full text-xs font-bold">Type: Single Option Correct</span>
                        </div>
-                       <button className="text-gray-500 hover:text-gray-800"><MoreVertical className="w-5 h-5" /></button>
+                       <button className="text-muted-foreground hover:text-foreground"><MoreVertical className="w-5 h-5" /></button>
                     </div>
                     
-                    <div className="flex-1 overflow-y-auto p-6 md:p-8">
-                       <div className="prose max-w-none text-base md:text-lg text-black leading-relaxed font-serif">
+                    <div className="flex-1 overflow-y-auto p-6 md:p-8 space-y-6">
+                       {/* LaTeX Rich Question Text */}
+                       <div className="prose dark:prose-invert max-w-none text-base md:text-lg text-foreground leading-relaxed font-serif">
                           <ReactMarkdown remarkPlugins={[remarkMath, remarkGfm]} rehypePlugins={[rehypeKatex]}>{questions[currentIndex].text}</ReactMarkdown>
                        </div>
+
+                       {/* Question Diagram (If available in sources) */}
+                       <QuestionImage 
+                         imageKey={questions[currentIndex].imageKey}
+                         imageUrl={questions[currentIndex].imageUrl}
+                       />
                        
-                       <div className="mt-8 space-y-4">
-                         {questions[currentIndex].options.map((opt, i) => (
-                            <label key={i} className="flex items-start gap-4 cursor-pointer group">
-                              <input type="radio" name={`question-${currentIndex}`} checked={answers[currentIndex] === i} onChange={() => setAnswers(prev => ({...prev, [currentIndex]: i}))} className="mt-1 w-4 h-4 accent-blue-600 cursor-pointer border-gray-300" />
-                              <div className="font-medium text-black prose max-w-none text-base">
-                                <ReactMarkdown remarkPlugins={[remarkMath, remarkGfm]} rehypePlugins={[rehypeKatex]} components={quizOptionComponents}>{`(${String.fromCharCode(65 + i)}) ${opt}`}</ReactMarkdown>
-                              </div>
-                            </label>
-                         ))}
+                       {/* Options */}
+                       <div className="mt-8 space-y-3">
+                         {questions[currentIndex].options.map((opt, i) => {
+                            const isSelected = answers[currentIndex] === i;
+                            const isCorrect = i === questions[currentIndex].correctOptionIndex;
+                            
+                            return (
+                              <label 
+                                key={i} 
+                                className={cn(
+                                  "flex items-start gap-4 p-4 rounded-2xl border transition-all cursor-pointer select-none",
+                                  reviewMode
+                                    ? isCorrect
+                                      ? "bg-emerald-500/10 border-emerald-500/30 text-emerald-950 dark:text-emerald-300"
+                                      : isSelected
+                                        ? "bg-red-500/10 border-red-500/30 text-red-950 dark:text-red-300"
+                                        : "border-border bg-card/30 hover:bg-card"
+                                    : isSelected
+                                      ? "bg-primary/5 border-primary text-primary"
+                                      : "border-border bg-card/30 hover:bg-card hover:border-border/80"
+                                )}
+                              >
+                                <input 
+                                  type="radio" 
+                                  name={`question-${currentIndex}`} 
+                                  checked={isSelected} 
+                                  disabled={reviewMode}
+                                  onChange={() => setAnswers(prev => ({...prev, [currentIndex]: i}))} 
+                                  className="mt-1 w-4 h-4 accent-primary cursor-pointer border-border" 
+                                />
+                                <div className="font-semibold prose dark:prose-invert max-w-none text-sm md:text-base text-foreground flex-1">
+                                  <ReactMarkdown remarkPlugins={[remarkMath, remarkGfm]} rehypePlugins={[rehypeKatex]} components={quizOptionComponents}>{`(${String.fromCharCode(65 + i)}) ${opt}`}</ReactMarkdown>
+                                </div>
+                                {reviewMode && isCorrect && <Check className="h-5 w-5 text-emerald-500 shrink-0 mt-0.5" />}
+                                {reviewMode && isSelected && !isCorrect && <X className="h-5 w-5 text-red-500 shrink-0 mt-0.5" />}
+                              </label>
+                            );
+                         })}
                        </div>
+
+                       {/* Explanation Box (Review Mode Only) */}
+                       {reviewMode && (
+                          <div className="space-y-6 mt-8">
+                            {/* Standard Explanation */}
+                            <div className="p-6 bg-primary/5 border border-primary/15 rounded-2xl space-y-4">
+                              <div className="flex items-center gap-2 text-primary font-bold text-sm uppercase tracking-wider">
+                                <BrainCircuit className="h-4 w-4" /> Comprehensive Scientific Derivation
+                              </div>
+                              <div className="prose dark:prose-invert max-w-none text-sm md:text-base text-foreground leading-relaxed font-sans">
+                                <ReactMarkdown remarkPlugins={[remarkMath, remarkGfm]} rehypePlugins={[rehypeKatex]}>
+                                  {questions[currentIndex].explanation}
+                                </ReactMarkdown>
+                              </div>
+                              <div className="text-xs text-muted-foreground pt-3 border-t border-border flex flex-wrap gap-4 justify-between font-semibold">
+                                <span>Time spent: <span className="text-foreground">{formatTimeSpent(timeSpent[currentIndex] || 0)}</span></span>
+                                <span>Difficulty: <span className="text-foreground">{questions[currentIndex].difficulty}</span></span>
+                              </div>
+                            </div>
+
+                            {/* Premium AI Explanation */}
+                            <div className="p-6 bg-purple-500/5 border border-purple-500/20 rounded-2xl space-y-4">
+                              <div className="flex items-center justify-between flex-wrap gap-2">
+                                <div className="flex items-center gap-2 text-purple-600 dark:text-purple-400 font-bold text-sm uppercase tracking-wider">
+                                  <Sparkles className="h-4 w-4 animate-pulse" /> Premium AI Explanation (Multi-Model)
+                                </div>
+                                {aiExplanations[currentIndex]?.model && (
+                                  <span className="text-[10px] bg-purple-500/10 text-purple-600 dark:text-purple-400 px-2 py-0.5 rounded font-mono font-bold">
+                                    {aiExplanations[currentIndex].model}
+                                  </span>
+                                )}
+                              </div>
+                              
+                              {(!aiExplanations[currentIndex] || aiExplanations[currentIndex].error) ? (
+                                <div className="space-y-3">
+                                  {aiExplanations[currentIndex]?.error && (
+                                    <p className="text-xs text-red-500 font-semibold">{aiExplanations[currentIndex].error}</p>
+                                  )}
+                                  <Button 
+                                    onClick={() => handleGenerateExplanation(currentIndex)}
+                                    className="bg-purple-600 hover:bg-purple-700 text-white font-bold rounded text-xs px-4 h-9 flex items-center gap-1.5"
+                                  >
+                                    <Sparkles className="h-3.5 w-3.5" /> Generate Premium AI Explanation
+                                  </Button>
+                                </div>
+                              ) : aiExplanations[currentIndex].loading ? (
+                                <div className="flex items-center gap-2.5 py-4">
+                                  <RefreshCw className="h-4 w-4 text-purple-500 animate-spin" />
+                                  <span className="text-xs font-semibold text-muted-foreground">Generating premium derivation using nousresearch/hermes-3-llama-3.1-405b:free...</span>
+                                </div>
+                              ) : (
+                                <div className="prose dark:prose-invert max-w-none text-sm md:text-base text-foreground leading-relaxed font-sans">
+                                  <ReactMarkdown remarkPlugins={[remarkMath, remarkGfm]} rehypePlugins={[rehypeKatex]}>
+                                    {aiExplanations[currentIndex].text}
+                                  </ReactMarkdown>
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                        )}
                     </div>
                     
-                    {/* Action Bar 1 */}
-                    <div className="p-3 border-t border-gray-300 flex flex-wrap gap-3 justify-between items-center bg-white shrink-0">
+                    {/* Action Bar */}
+                    <div className="p-3 border-t border-border flex flex-wrap gap-3 justify-between items-center bg-card shrink-0">
                        <div className="flex gap-2">
-                         <Button onClick={handleSaveAndNext} className="bg-[#22c55e] hover:bg-[#16a34a] text-white font-semibold rounded shadow-sm px-4 h-9 text-sm">SAVE & NEXT</Button>
-                         <Button variant="outline" onClick={handleClear} className="font-semibold text-gray-700 border-gray-300 bg-white hover:bg-gray-100 rounded shadow-sm h-9 text-sm">CLEAR</Button>
+                         {!reviewMode && (
+                           <>
+                             <Button onClick={handleSaveAndNext} className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded px-5 h-9 text-sm">SAVE & NEXT</Button>
+                             <Button variant="outline" onClick={handleClear} className="font-bold border-border text-foreground hover:bg-muted rounded h-9 text-sm">CLEAR</Button>
+                           </>
+                         )}
                        </div>
                        <div className="flex gap-2">
-                         <Button onClick={handleSaveAndMark} className="bg-[#3b82f6] hover:bg-[#2563eb] text-white font-semibold rounded shadow-sm px-4 h-9 text-sm">SAVE & MARK FOR REVIEW</Button>
-                         <Button onClick={handleMarkAndNext} className="bg-[#f59e0b] hover:bg-[#d97706] text-white font-semibold rounded shadow-sm px-4 h-9 text-sm">MARK FOR REVIEW & NEXT</Button>
+                         {!reviewMode && (
+                           <>
+                             <Button onClick={handleSaveAndMark} className="bg-blue-600 hover:bg-blue-700 text-white font-bold rounded px-5 h-9 text-sm">SAVE & MARK FOR REVIEW</Button>
+                             <Button onClick={handleMarkAndNext} className="bg-amber-600 hover:bg-amber-700 text-white font-bold rounded px-5 h-9 text-sm">MARK FOR REVIEW & NEXT</Button>
+                           </>
+                         )}
                        </div>
                     </div>
                  </div>
 
                  {/* Right Area - Palette */}
-                 <div className="w-[340px] flex flex-col bg-white shrink-0">
+                 <div className="w-[340px] flex flex-col bg-card shrink-0 select-none">
                     {/* Palette Stats */}
-                    <div className="p-4 grid grid-cols-2 gap-y-3 gap-x-2 border-b border-gray-300 text-[11px] text-gray-700 bg-white">
+                    <div className="p-4 grid grid-cols-2 gap-y-3 gap-x-2 border-b border-border text-[11px] text-muted-foreground font-bold">
                       <div className="flex items-center gap-2"><AnsweredShape>{Object.values(questionStatuses).filter(s => s === "answered").length}</AnsweredShape> <span>Answered</span></div>
                       <div className="flex items-center gap-2"><NotAnsweredShape>{Object.values(questionStatuses).filter(s => s === "not_answered").length}</NotAnsweredShape> <span>Not Answered</span></div>
                       <div className="flex items-center gap-2"><NotVisitedShape>{Object.values(questionStatuses).filter(s => s === "not_visited").length}</NotVisitedShape> <span>Not Visited</span></div>
                       <div className="flex items-center gap-2"><MarkedShape>{Object.values(questionStatuses).filter(s => s === "marked_for_review").length}</MarkedShape> <span>Mark for review</span></div>
                       <div className="col-span-2 flex items-center gap-2 mt-1">
                          <AnsweredMarkedShape>{Object.values(questionStatuses).filter(s => s === "answered_marked_for_review").length}</AnsweredMarkedShape> 
-                         <span className="leading-tight">Answered & Marked for Revision (will be considered for evaluation)</span>
+                         <span className="leading-tight">Answered & Marked (evaluated)</span>
                       </div>
                     </div>
 
                     {/* Number Grid */}
-                    <div className="flex-1 overflow-y-auto bg-[#f8f9fa]">
-                       <div className="bg-[#e2e8f0] text-gray-800 font-bold text-sm px-4 py-2 border-b border-gray-300">
+                    <div className="flex-1 overflow-y-auto bg-muted/20">
+                       <div className="bg-muted text-foreground font-bold text-sm px-4 py-2 border-b border-border">
                           {activeSubject}
                        </div>
                        <div className="p-4 grid grid-cols-5 gap-3">
-                            {questionsBySubject[activeSubject]?.map((q, localIndex) => {
-                              const globalIndex = questions.findIndex(x => x === q);
-                              const status = questionStatuses[globalIndex];
-                              
-                              let ShapeComponent = NotVisitedShape;
-                              if (status === "not_answered") ShapeComponent = NotAnsweredShape;
-                              else if (status === "answered") ShapeComponent = AnsweredShape;
-                              else if (status === "marked_for_review") ShapeComponent = MarkedShape;
-                              else if (status === "answered_marked_for_review") ShapeComponent = AnsweredMarkedShape;
+                             {questionsBySubject[activeSubject]?.map((q, localIndex) => {
+                               const globalIndex = questions.findIndex(x => x === q);
+                               
+                               return (
+                                 <button 
+                                   key={globalIndex} 
+                                   onClick={() => {
+                                     setCurrentIndex(globalIndex);
+                                     updateStatus(globalIndex);
+                                   }} 
+                                   className="focus:outline-none flex justify-center hover:opacity-80 transition-opacity"
+                                 >
+                                   {reviewMode ? (
+                                      <ReviewShape index={globalIndex} answers={answers} questions={questions}>
+                                        {localIndex + 1}
+                                      </ReviewShape>
+                                   ) : (
+                                      (() => {
+                                         const status = questionStatuses[globalIndex];
+                                         let ShapeComponent = NotVisitedShape;
+                                         if (status === "not_answered") ShapeComponent = NotAnsweredShape;
+                                         else if (status === "answered") ShapeComponent = AnsweredShape;
+                                         else if (status === "marked_for_review") ShapeComponent = MarkedShape;
+                                         else if (status === "answered_marked_for_review") ShapeComponent = AnsweredMarkedShape;
 
-                              return (
-                                <button key={globalIndex} onClick={() => {
-                                  setCurrentIndex(globalIndex);
-                                  updateStatus(globalIndex);
-                                }} className="focus:outline-none flex justify-center hover:opacity-80 transition-opacity">
-                                  <ShapeComponent>{localIndex + 1}</ShapeComponent>
-                                </button>
-                              );
-                            })}
+                                         return <ShapeComponent>{localIndex + 1}</ShapeComponent>;
+                                      })()
+                                   )}
+                                 </button>
+                               );
+                             })}
                        </div>
                     </div>
                  </div>
               </div>
 
               {/* Global Bottom Bar */}
-              <div className="flex items-center justify-between px-4 py-3 bg-[#f8f9fa] border-t border-gray-300 shrink-0 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] z-10">
+              <div className="flex items-center justify-between px-4 py-3 bg-card border-t border-border shrink-0 shadow-md z-10">
                  <div className="flex gap-2">
-                   <Button variant="outline" onClick={handleBack} className="font-semibold border-gray-300 text-gray-700 bg-white hover:bg-gray-100 rounded h-10 px-4 text-sm" disabled={currentIndex === 0}>&lt; BACK</Button>
-                   <Button variant="outline" onClick={goToNext} className="font-semibold border-gray-300 text-gray-700 bg-white hover:bg-gray-100 rounded h-10 px-4 text-sm" disabled={currentIndex === questions.length - 1}>NEXT &gt;</Button>
+                   <Button variant="outline" onClick={handleBack} className="font-bold border-border text-foreground hover:bg-muted rounded h-10 px-4 text-sm" disabled={currentIndex === 0}>&lt; BACK</Button>
+                   <Button variant="outline" onClick={goToNext} className="font-bold border-border text-foreground hover:bg-muted rounded h-10 px-4 text-sm" disabled={currentIndex === questions.length - 1}>NEXT &gt;</Button>
                  </div>
-                 <Button onClick={handleSubmit} className="bg-[#10b981] hover:bg-[#059669] text-white font-semibold rounded shadow-sm px-8 h-10 text-sm">SUBMIT</Button>
+                 {reviewMode ? (
+                   <Button onClick={() => setPhase("results")} className="bg-primary hover:bg-primary/95 text-primary-foreground font-bold rounded px-8 h-10 text-sm">EXIT REVIEW</Button>
+                 ) : (
+                   <Button onClick={handleSubmit} className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded px-8 h-10 text-sm">SUBMIT</Button>
+                 )}
               </div>
 
               {/* Modals */}
               {showSummary && (
-                <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 font-sans text-black">
-                   <div className="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-3xl">
-                      <h2 className="text-2xl font-black mb-6 text-center text-gray-800 bg-gray-100 py-3 rounded-lg">Test Summary</h2>
+                <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 font-sans text-foreground">
+                   <div className="bg-card border border-border rounded-2xl shadow-2xl p-8 w-full max-w-3xl">
+                      <h2 className="text-2xl font-black mb-6 text-center bg-muted py-3 rounded-lg">Test Submission Summary</h2>
                       <div className="grid grid-cols-2 sm:grid-cols-5 gap-4 mb-8">
-                         <div className="text-center p-4 bg-gray-100 rounded-xl border border-gray-200 shadow-sm">
-                           <div className="text-3xl font-black text-gray-700 mb-1">{questions.length}</div>
-                           <div className="text-xs font-bold text-gray-500 uppercase">Total Questions</div>
+                         <div className="text-center p-4 bg-muted/40 border border-border rounded-xl shadow-sm">
+                           <div className="text-3xl font-black text-foreground mb-1">{questions.length}</div>
+                           <div className="text-xs font-bold text-muted-foreground uppercase">Total</div>
                          </div>
-                         <div className="text-center p-4 bg-green-50 rounded-xl border border-green-100 shadow-sm">
-                           <div className="text-3xl font-black text-[#22c55e] mb-1">{Object.values(questionStatuses).filter(s => s === "answered" || s === "answered_marked_for_review").length}</div>
-                           <div className="text-xs font-bold text-green-700 uppercase">Answered</div>
+                         <div className="text-center p-4 bg-green-500/10 border border-green-500/20 rounded-xl shadow-sm">
+                           <div className="text-3xl font-black text-emerald-500 mb-1">{Object.values(questionStatuses).filter(s => s === "answered" || s === "answered_marked_for_review").length}</div>
+                           <div className="text-xs font-bold text-emerald-600 uppercase">Answered</div>
                          </div>
-                         <div className="text-center p-4 bg-red-50 rounded-xl border border-red-100 shadow-sm">
-                           <div className="text-3xl font-black text-[#ef4444] mb-1">{Object.values(questionStatuses).filter(s => s === "not_answered").length}</div>
-                           <div className="text-xs font-bold text-red-700 uppercase">Not Answered</div>
+                         <div className="text-center p-4 bg-red-500/10 border border-red-500/20 rounded-xl shadow-sm">
+                           <div className="text-3xl font-black text-red-500 mb-1">{Object.values(questionStatuses).filter(s => s === "not_answered").length}</div>
+                           <div className="text-xs font-bold text-red-600 uppercase">Not Answered</div>
                          </div>
-                         <div className="text-center p-4 bg-purple-50 rounded-xl border border-purple-100 shadow-sm">
-                           <div className="text-3xl font-black text-[#8b5cf6] mb-1">{Object.values(questionStatuses).filter(s => s === "marked_for_review").length}</div>
-                           <div className="text-xs font-bold text-purple-700 uppercase">Marked for Review</div>
+                         <div className="text-center p-4 bg-purple-500/10 border border-purple-500/20 rounded-xl shadow-sm">
+                           <div className="text-3xl font-black text-purple-500 mb-1">{Object.values(questionStatuses).filter(s => s === "marked_for_review").length}</div>
+                           <div className="text-xs font-bold text-purple-600 uppercase">Marked</div>
                          </div>
-                         <div className="text-center p-4 bg-gray-50 rounded-xl border border-gray-200 shadow-sm">
-                           <div className="text-3xl font-black text-gray-500 mb-1">{Object.values(questionStatuses).filter(s => s === "not_visited").length}</div>
-                           <div className="text-xs font-bold text-gray-500 uppercase">Not Visited</div>
+                         <div className="text-center p-4 bg-muted/60 border border-border rounded-xl shadow-sm">
+                           <div className="text-3xl font-black text-muted-foreground mb-1">{Object.values(questionStatuses).filter(s => s === "not_visited").length}</div>
+                           <div className="text-xs font-bold text-muted-foreground uppercase">Not Visited</div>
                          </div>
                       </div>
-                      <p className="text-center mb-8 font-bold text-lg text-gray-700">Are you sure you want to submit the test for final marking?<br/><span className="text-sm font-medium text-gray-500">No changes will be allowed after submission.</span></p>
+                      <p className="text-center mb-8 font-bold text-lg text-foreground">Are you sure you want to submit the test for final marking?<br/><span className="text-sm font-medium text-muted-foreground">No changes will be allowed after submission.</span></p>
                       <div className="flex justify-center gap-6">
-                         <Button variant="outline" size="lg" onClick={() => setShowSummary(false)} className="font-bold px-8 h-12 rounded-xl text-gray-600 border-gray-300 hover:bg-gray-100">Return</Button>
+                         <Button variant="outline" size="lg" onClick={() => setShowSummary(false)} className="font-bold px-8 h-12 rounded-xl border-border text-foreground hover:bg-muted">Return</Button>
                          <Button size="lg" onClick={finalSubmit} className="font-bold px-10 h-12 rounded-xl bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-500/30">Submit</Button>
                       </div>
                    </div>
@@ -1417,34 +2134,20 @@ function AIQuizInterface() {
               )}
 
               {showInstructions && (
-                <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 font-sans text-black">
-                   <div className="bg-white rounded-xl shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col">
-                      <div className="px-6 py-4 border-b border-gray-200 bg-gray-50 rounded-t-xl shrink-0">
-                         <h2 className="text-lg font-black text-center text-gray-800 uppercase tracking-widest">General Instructions</h2>
+                <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 font-sans text-foreground">
+                   <div className="bg-card border border-border rounded-xl shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col">
+                      <div className="px-6 py-4 border-b border-border bg-muted/40 rounded-t-xl shrink-0">
+                         <h2 className="text-lg font-black text-center text-foreground uppercase tracking-widest">General Instructions</h2>
                       </div>
-                      <div className="flex-1 overflow-y-auto p-6 md:p-8 text-sm text-gray-700 leading-relaxed">
-                         <p className="font-bold text-black mb-4 text-center">Please read the instructions carefully</p>
-                         <ol className="list-decimal pl-5 mb-6 space-y-2 font-medium">
-                           <li>Total duration of examination is {formatTime(timeLeft)} minutes.</li>
-                           <li>The clock will be set at the server. The countdown timer in the top right corner of screen will display the remaining time available for you to complete the examination. When the timer reaches zero, the examination will end by itself. You will not be required to end or submit your examination.</li>
-                           <li>The Question Palette displayed on the right side of screen will show the status of each question using one of the following symbols:</li>
-                         </ol>
-                         <ul className="list-none space-y-4 font-medium pl-2 mb-6">
-                           <li className="flex items-center gap-3"><div className="w-8 h-8 shrink-0 bg-gray-200 border border-gray-300 rounded-md text-gray-700 flex items-center justify-center font-bold">1</div> You have not visited the question yet.</li>
-                           <li className="flex items-center gap-3"><div className="w-8 h-8 shrink-0 bg-[#ef4444] border border-[#dc2626] rounded-t-md rounded-bl-md text-white flex items-center justify-center font-bold">2</div> You have not answered the question.</li>
-                           <li className="flex items-center gap-3"><div className="w-8 h-8 shrink-0 bg-[#22c55e] border border-[#16a34a] rounded-t-md rounded-br-md text-white flex items-center justify-center font-bold">3</div> You have answered the question.</li>
-                           <li className="flex items-center gap-3"><div className="w-8 h-8 shrink-0 bg-[#8b5cf6] border border-[#7c3aed] rounded-full text-white flex items-center justify-center font-bold">4</div> You have NOT answered the question, but have marked the question for review.</li>
-                           <li className="flex items-center gap-3"><div className="w-8 h-8 shrink-0 bg-[#8b5cf6] border border-[#7c3aed] rounded-full text-white flex items-center justify-center font-bold relative"><div className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-[#22c55e] rounded-full border border-white"></div>5</div> The question(s) "Answered and Marked for Review" will be considered for evaluation.</li>
-                         </ul>
-                         <p className="font-bold mb-2 text-black">Navigating to a Question:</p>
-                         <ol className="list-decimal pl-5 space-y-2 font-medium">
-                           <li>To answer a question, do the following:</li>
-                           <li>Click on the question number in the Question Palette at the right of your screen to go to that numbered question directly. Note that using this option does NOT save your answer to the current question.</li>
-                           <li>Click on Save & Next to save your answer for the current question and then go to the next question.</li>
-                           <li>Click on Mark for Review & Next to save your answer for the current question, mark it for review, and then go to the next question.</li>
-                         </ol>
+                      <div className="flex-1 overflow-y-auto p-6 md:p-8 text-sm text-muted-foreground leading-relaxed">
+                          <p className="font-bold text-foreground mb-4 text-center">Please read the instructions carefully</p>
+                          <ol className="list-decimal pl-5 mb-6 space-y-2 font-medium">
+                            <li>Total duration of examination is 180 minutes.</li>
+                            <li>The countdown timer in the top right corner of screen will display the remaining time available for you to complete the examination. When the timer reaches zero, the examination will end automatically.</li>
+                            <li>The Question Palette displayed on the right side of screen will show the status of each question.</li>
+                          </ol>
                       </div>
-                      <div className="px-6 py-4 border-t border-gray-200 bg-gray-50 rounded-b-xl flex justify-end shrink-0">
+                      <div className="px-6 py-4 border-t border-border bg-muted/40 rounded-b-xl flex justify-end shrink-0">
                          <Button onClick={() => setShowInstructions(false)} className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 h-10 rounded">Close</Button>
                       </div>
                    </div>
@@ -1453,25 +2156,170 @@ function AIQuizInterface() {
             </motion.div>
           )}
 
-          {/* ── PHASE 4: RESULTS ── */}
+          {/* ── PHASE 4: ADVANCED RESULTS & DASHBOARD ── */}
           {phase === "results" && (
             <motion.div
               key="results"
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="flex flex-col items-center justify-center py-20 text-center max-w-lg mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="space-y-8 max-w-4xl mx-auto pb-12 text-foreground"
             >
-              <div className="h-24 w-24 bg-yellow-500/20 rounded-full flex items-center justify-center mb-6 border-4 border-yellow-500/30">
-                <Trophy className="h-10 w-10 text-yellow-500" />
+              {/* Header & Trophy Card */}
+              <div className="bg-card border border-border rounded-3xl p-8 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/5 via-transparent to-transparent pointer-events-none" />
+                <div className="flex items-center gap-6">
+                  <div className="h-20 w-20 bg-yellow-500/10 rounded-2xl flex items-center justify-center border border-yellow-500/20 shadow-lg shadow-yellow-500/5 shrink-0 animate-bounce">
+                    <Trophy className="h-10 w-10 text-yellow-500" />
+                  </div>
+                  <div>
+                    <h2 className="text-3xl font-black tracking-tight">Test Analysis Report</h2>
+                    <p className="text-sm text-muted-foreground mt-1">Detailed subject breakdown and time analysis.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4 w-full md:w-auto">
+                  <Button onClick={() => { setReviewMode(true); setPhase("active"); setCurrentIndex(0); }} className="flex-1 md:flex-initial h-12 px-6 rounded-xl font-bold bg-primary text-primary-foreground shadow-lg hover:bg-primary/95 transition-all gap-2">
+                    <Eye className="w-5 h-5" /> View Solutions
+                  </Button>
+                  <Button variant="outline" onClick={() => setPhase("setup")} className="flex-1 md:flex-initial h-12 px-6 rounded-xl font-bold border-border hover:bg-muted">
+                    Dashboard
+                  </Button>
+                </div>
               </div>
-              <h2 className="text-4xl font-black text-foreground mb-2">Test Complete!</h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                Your calculated score is <span className="font-bold text-primary">{score}</span> out of {questions.length * 4}.
-              </p>
-              <div className="flex gap-4 w-full">
-                <Button variant="outline" className="flex-1 h-12 rounded-xl" onClick={() => setPhase("setup")}>
-                  Return to Dashboard
-                </Button>
+
+              {/* Metric Overview grid */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="bg-card border border-border rounded-2xl p-5 shadow-sm text-center">
+                  <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider block">Score Obtained</span>
+                  <div className="text-3xl font-black text-primary mt-2">
+                    {score} <span className="text-sm font-normal text-muted-foreground">/ {totalPossibleScore}</span>
+                  </div>
+                </div>
+                <div className="bg-card border border-border rounded-2xl p-5 shadow-sm text-center">
+                  <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider block">Accuracy Rating</span>
+                  <div className="text-3xl font-black text-emerald-500 mt-2">{accuracy}%</div>
+                </div>
+                <div className="bg-card border border-border rounded-2xl p-5 shadow-sm text-center">
+                  <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider block">Total Time Spent</span>
+                  <div className="text-3xl font-black text-amber-500 mt-2">{formatTimeSpent(totalSecondsSpent)}</div>
+                </div>
+                <div className="bg-card border border-border rounded-2xl p-5 shadow-sm text-center">
+                  <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider block">Questions Breakdown</span>
+                  <div className="text-xl font-black text-foreground mt-2.5 flex items-center justify-center gap-1.5 font-sans">
+                    <span className="text-emerald-500">{correctAnswersCount}</span>
+                    <span className="text-muted-foreground text-xs font-medium">C</span>
+                    <span className="text-muted-foreground text-xs font-medium">•</span>
+                    <span className="text-red-500">{incorrectAnswersCount}</span>
+                    <span className="text-muted-foreground text-xs font-medium">W</span>
+                    <span className="text-muted-foreground text-xs font-medium">•</span>
+                    <span className="text-muted-foreground">{skippedAnswersCount}</span>
+                    <span className="text-muted-foreground text-xs font-medium">S</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Subject-wise breakdowns */}
+              <div className="space-y-4">
+                <h3 className="text-lg font-black tracking-tight flex items-center gap-2">
+                  <Target className="h-5 w-5 text-primary animate-pulse" /> Subject Analysis
+                </h3>
+                
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {subjects.map(subj => {
+                    const stats = getSubjectStats(subj);
+                    if (stats.total === 0) return null;
+                    
+                    return (
+                      <div key={subj} className="bg-card border border-border rounded-2xl p-6 shadow-sm flex flex-col justify-between hover:border-primary/20 transition-all">
+                        <div>
+                          <h4 className="text-base font-extrabold text-foreground border-b border-border pb-2 mb-4 flex items-center justify-between">
+                            <span>{subj}</span>
+                            <span className="text-xs bg-primary/10 text-primary px-2.5 py-0.5 rounded-full">{stats.total} Qs</span>
+                          </h4>
+                          <div className="space-y-3">
+                            <div className="flex justify-between text-sm font-semibold">
+                              <span className="text-muted-foreground">Subject Score</span>
+                              <span className="text-foreground">{stats.score} / {stats.total * 4}</span>
+                            </div>
+                            <div className="flex justify-between text-sm font-semibold">
+                              <span className="text-muted-foreground">Accuracy</span>
+                              <span className="text-emerald-500">
+                                {stats.correct + stats.incorrect > 0 
+                                  ? Math.round((stats.correct / (stats.correct + stats.incorrect)) * 100) 
+                                  : 0}%
+                              </span>
+                            </div>
+                            <div className="flex justify-between text-sm font-semibold">
+                              <span className="text-muted-foreground">Time Spent</span>
+                              <span className="text-amber-500">{formatTimeSpent(stats.time)}</span>
+                            </div>
+                            <div className="flex justify-between text-sm font-semibold">
+                              <span className="text-muted-foreground">Correct / Wrong</span>
+                              <span className="text-foreground">
+                                <span className="text-emerald-500">{stats.correct}</span> / <span className="text-red-500">{stats.incorrect}</span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Question Palette overview */}
+              <div className="bg-card border border-border rounded-3xl p-6 shadow-sm space-y-5">
+                <h3 className="text-lg font-black tracking-tight">Question Grid & Performance</h3>
+                <div className="space-y-6">
+                  {subjects.map(subj => {
+                    const stats = getSubjectStats(subj);
+                    if (stats.total === 0) return null;
+                    
+                    return (
+                      <div key={subj} className="space-y-3">
+                        <div className="flex justify-between items-center bg-muted/40 px-4 py-2.5 rounded-xl border border-border/50">
+                          <span className="text-sm font-bold text-foreground">{subj}</span>
+                          <span className="text-xs text-muted-foreground font-semibold">{stats.correct} Correct • {stats.incorrect} Wrong • {stats.skipped} Skipped</span>
+                        </div>
+                        
+                        <div className="grid grid-cols-5 sm:grid-cols-10 gap-3">
+                          {questions.map((q, idx) => {
+                            if (q.subject !== subj) return null;
+                            
+                            const subjQs = questions.filter(x => x.subject === subj);
+                            const localIndex = subjQs.findIndex(x => x === q) + 1;
+                            
+                            const ans = answers[idx];
+                            const isCorrect = ans !== undefined && ans === q.correctOptionIndex;
+                            const isWrong = ans !== undefined && ans !== q.correctOptionIndex;
+                            
+                            let bgClass = "bg-muted/40 text-muted-foreground border-border";
+                            if (isCorrect) bgClass = "bg-emerald-500/10 border-emerald-500/30 text-emerald-600 dark:text-emerald-400";
+                            if (isWrong) bgClass = "bg-red-500/10 border-red-500/30 text-red-600 dark:text-red-400";
+                            
+                            return (
+                              <button
+                                key={idx}
+                                onClick={() => {
+                                  setReviewMode(true);
+                                  setPhase("active");
+                                  setCurrentIndex(idx);
+                                }}
+                                className={cn(
+                                  "h-11 border rounded-xl flex flex-col items-center justify-center font-bold text-xs hover:opacity-80 transition-all select-none",
+                                  bgClass
+                                )}
+                              >
+                                <span>{localIndex}</span>
+                                <span className="text-[8.5px] font-semibold opacity-70 mt-0.5">{formatTimeSpent(timeSpent[idx] || 0)}</span>
+                              </button>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </motion.div>
           )}
@@ -1525,7 +2373,7 @@ function AIQuizInterface() {
                     <div className="space-y-4">
                       <div className="flex gap-2">
                         <Input value={urlInput} onChange={(e) => setUrlInput(e.target.value)} onKeyDown={(e) => e.key === "Enter" && addUrl()} placeholder="https://youtube.com/... or any document url" className="flex-1 text-sm bg-muted/50" />
-                        <Button onClick={addUrl} size="sm" className="px-6">Add URL</Button>
+                        <Button onClick={addUrl} size="sm" className="px-6 font-bold">Add URL</Button>
                       </div>
                       <div className="space-y-2">
                         {sources.urls.length === 0 && <p className="text-sm text-muted-foreground text-center py-6 border-2 border-dashed border-border rounded-xl">No URLs added.</p>}
@@ -1591,7 +2439,7 @@ export default function QuizPage() {
   const [activeTab, setActiveTab] = useState<"chat" | "quiz">("chat");
 
   return (
-    <div className="flex flex-col h-full bg-background overflow-hidden relative w-full">
+    <div className="flex flex-col h-full bg-background overflow-hidden relative w-full text-foreground">
        <div className="flex justify-center p-3 border-b border-border bg-card/80 backdrop-blur-sm shrink-0 z-10 relative">
           <div className="flex bg-muted/50 p-1 rounded-xl border border-border/50">
              <button 

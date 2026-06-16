@@ -14,7 +14,13 @@ import {
   ArrowRight,
   FileText,
   FileVideo,
-  Square
+  Square,
+  Copy,
+  ExternalLink,
+  Image as ImageIcon,
+  TrendingUp,
+  ThumbsUp,
+  ThumbsDown
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAppContext } from "@/context/AppContext";
@@ -24,6 +30,14 @@ import remarkMath from 'remark-math';
 import remarkGfm from 'remark-gfm';
 import rehypeKatex from 'rehype-katex';
 import 'katex/dist/katex.min.css';
+
+import {
+  GraphWidget,
+  SimulationWidget,
+  YouTubeCardWidget,
+  NewsFeedWidget,
+  InteractiveQuizWidget
+} from "@/components/AICustomWidgets";
 
 export interface AttachedFile {
   id: string;
@@ -47,6 +61,20 @@ export interface ChatSession {
   updatedAt: number;
   messages: ChatMessage[];
 }
+
+const loadHtml2Canvas = (): Promise<any> => {
+  return new Promise((resolve, reject) => {
+    if ((window as any).html2canvas) {
+      resolve((window as any).html2canvas);
+      return;
+    }
+    const script = document.createElement("script");
+    script.src = "https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js";
+    script.onload = () => resolve((window as any).html2canvas);
+    script.onerror = () => reject(new Error("Failed to load html2canvas"));
+    document.body.appendChild(script);
+  });
+};
 
 const getMarkdownComponents = (setFullScreenImage?: (url: string) => void): any => ({
   a: ({ node, children, href, ...props }: any) => {
@@ -120,6 +148,120 @@ const getMarkdownComponents = (setFullScreenImage?: (url: string) => void): any 
            <Download className="h-4 w-4" />
          </a>
        </div>
+    );
+  },
+  code: ({ node, className, children, ...props }: any) => {
+    const match = /language-(\w+)/.exec(className || "");
+    const codeContent = String(children).replace(/\n$/, "");
+    let lang = match ? match[1] : "";
+    
+    if (!lang || lang === "json") {
+      try {
+        const data = JSON.parse(codeContent);
+        if (typeof data === "object" && data !== null) {
+          if (data.type === "simulation" || (data.type && ["projectile", "density", "electricity", "bohr", "bonding", "shm"].includes(data.type))) {
+            lang = "simulation";
+          } else if (data.functions || data.formula || data.type === "plot") {
+            lang = "graph";
+          } else if (data.videoId || data.creator) {
+            lang = "youtube-card";
+          } else if (data.items || data.recommendations) {
+            lang = "news-feed";
+          } else if (data.question && data.options && data.answer) {
+            lang = "interactive-quiz";
+          }
+        }
+      } catch (e) {}
+    }
+    
+    if (lang) {
+      if (lang === "simulation") {
+        try {
+          const data = JSON.parse(codeContent);
+          return <SimulationWidget type={data.type} />;
+        } catch (e) {
+          return <pre className="bg-slate-900 border border-slate-800 p-4 rounded-xl overflow-x-auto"><code className={className} {...props}>{children}</code></pre>;
+        }
+      }
+      if (lang === "graph" || lang === "plot") {
+        try {
+          const data = JSON.parse(codeContent);
+          let funcs = data.functions;
+          if (!funcs && data.formula) {
+            funcs = [data.formula.replace(/^y\s*=\s*/i, "")];
+          }
+          if (!funcs && typeof data === "object" && data !== null) {
+            const values = Object.values(data as any).filter((v: any) => typeof v === "string" && (v.includes("x") || v.includes("sin") || v.includes("cos") || v.includes("tan")));
+            if (values.length > 0) {
+              funcs = [(values[0] as string).replace(/^y\s*=\s*/i, "")];
+            }
+          }
+          return (
+            <GraphWidget 
+              functions={funcs || ["sin(x)"]} 
+              xRange={data.xRange || [-10, 10]} 
+              yRange={data.yRange || [-6, 6]} 
+              sliders={data.sliders || []} 
+            />
+          );
+        } catch (e) {
+          return <pre className="bg-slate-900 border border-slate-800 p-4 rounded-xl overflow-x-auto"><code className={className} {...props}>{children}</code></pre>;
+        }
+      }
+      if (lang === "youtube-card") {
+        try {
+          const data = JSON.parse(codeContent);
+          return (
+            <YouTubeCardWidget
+              videoId={data.videoId}
+              title={data.title}
+              creator={data.creator}
+              views={data.views}
+              uploadDate={data.uploadDate}
+              rating={data.rating}
+              whyRecommend={data.whyRecommend}
+            />
+          );
+        } catch (e) {
+          return <pre className="bg-slate-900 border border-slate-800 p-4 rounded-xl overflow-x-auto"><code className={className} {...props}>{children}</code></pre>;
+        }
+      }
+      if (lang === "news-feed") {
+        try {
+          const data = JSON.parse(codeContent);
+          return <NewsFeedWidget items={data.items} recommendations={data.recommendations} />;
+        } catch (e) {
+          return <pre className="bg-slate-900 border border-slate-800 p-4 rounded-xl overflow-x-auto"><code className={className} {...props}>{children}</code></pre>;
+        }
+      }
+      if (lang === "interactive-quiz") {
+        try {
+          const data = JSON.parse(codeContent);
+          return (
+            <InteractiveQuizWidget 
+              question={data.question} 
+              options={data.options} 
+              answer={data.answer} 
+              explanation={data.explanation} 
+            />
+          );
+        } catch (e) {
+          return <pre className="bg-slate-900 border border-slate-800 p-4 rounded-xl overflow-x-auto"><code className={className} {...props}>{children}</code></pre>;
+        }
+      }
+    }
+    
+    const isInline = !className;
+    return isInline ? (
+      <code className="bg-muted px-1.5 py-0.5 rounded font-mono text-xs text-rose-500 dark:text-rose-400" {...props}>
+        {children}
+      </code>
+    ) : (
+      <pre className="bg-muted border border-border p-4 rounded-xl overflow-x-auto max-w-full my-2">
+        <code className={className} {...props}>
+          {children}
+        </code>
+      </pre>
     );
   }
 });
@@ -308,54 +450,176 @@ function ChatImageEditor({
   );
 }
 
-function MessageSources({ sources }: { sources: { uri: string; title: string; favicon: string }[] }) {
-  const [expanded, setExpanded] = useState(false);
-  
-  if (expanded) {
-    return (
-      <div className="mb-4 border border-border bg-muted/30 rounded-2xl p-3 shadow-sm max-w-sm">
-         <div className="flex items-center justify-between mb-3 border-b border-border/50 pb-2">
-            <span className="text-xs font-bold text-foreground flex items-center gap-1.5">
-               <Globe className="h-4 w-4 text-primary" /> Sources
-            </span>
-            <button onClick={() => setExpanded(false)} className="text-muted-foreground hover:text-foreground bg-muted hover:bg-muted-foreground/20 p-1 rounded-full transition-colors">
-               <X className="h-3 w-3" />
-            </button>
-         </div>
-         <div className="flex flex-col gap-2 max-h-48 overflow-y-auto pr-1 scrollbar-thin">
-            {sources.map((src, idx) => (
-               <a key={idx} href={src.uri} target="_blank" rel="noreferrer" className="flex items-center gap-3 p-2 rounded-xl hover:bg-muted/60 transition-colors border border-transparent hover:border-border">
-                  <div className="h-7 w-7 rounded-full bg-background shadow-sm flex items-center justify-center shrink-0 border border-border">
-                     <img src={src.favicon} alt="" className="h-4 w-4 rounded-full object-cover" onError={(e) => { e.currentTarget.style.display = 'none'; }} />
-                  </div>
-                  <span className="text-[13px] font-medium text-foreground truncate">{src.title}</span>
-               </a>
-            ))}
-         </div>
-      </div>
-    );
+function getSourceName(uri: string, title?: string): string {
+  let hostname = "";
+  try {
+    hostname = new URL(uri).hostname.toLowerCase();
+  } catch (e) {
+    return title || "Source";
   }
+  
+  if (hostname.includes("indianexpress.com")) return "The Indian Express";
+  if (hostname.includes("abplive.com")) return "ABP Live";
+  if (hostname.includes("careers360.com")) return "Careers360";
+  if (hostname.includes("sarvgyan.com")) return "SarvGyan";
+  if (hostname.includes("josaa.nic.in")) return "JoSAA";
+  if (hostname.includes("collegedunia.com")) return "Collegedunia";
+  if (hostname.includes("timesofindia")) return "Times of India";
+  if (hostname.includes("hindustantimes.com")) return "Hindustan Times";
+  if (hostname.includes("ndtv.com")) return "NDTV";
+  if (hostname.includes("theprint.in")) return "ThePrint";
+  if (hostname.includes("livemint.com")) return "Mint";
+  if (hostname.includes("businesstoday.in")) return "Business Today";
+  if (hostname.includes("business-standard.com")) return "Business Standard";
+  if (hostname.includes("nta.ac.in")) return "NTA";
+  if (hostname.includes("jeeadv.ac.in")) return "JEE Advanced";
+  if (hostname.includes("wikipedia.org")) return "Wikipedia";
+  if (hostname.includes("youtube.com")) return "YouTube";
+  if (hostname.includes("eduniti.in")) return "Eduniti";
 
+  const parts = hostname.replace("www.", "").split(".");
+  if (parts.length > 0) {
+    return parts[0].charAt(0).toUpperCase() + parts[0].slice(1);
+  }
+  return "Source";
+}
+
+function MessageSources({ sources }: { sources: { uri: string; title: string; favicon: string; snippet?: string; thumbnail?: string }[] }) {
   return (
-    <div className="flex items-center gap-3 mb-3 cursor-pointer group w-fit hover:bg-muted/50 px-2 py-1.5 rounded-full border border-transparent hover:border-border transition-all" onClick={() => setExpanded(true)}>
-        <div className="flex -space-x-2 overflow-hidden">
-           {sources.slice(0, 4).map((src, idx) => (
-               <div key={idx} className="h-7 w-7 rounded-full ring-2 ring-background bg-muted flex items-center justify-center z-10 group-hover:z-20 transition-transform group-hover:scale-105 shadow-sm border border-border/50">
-                  <img src={src.favicon} alt="" className="h-4 w-4 rounded-full object-cover" onError={(e) => { e.currentTarget.style.display = 'none'; }} />
-               </div>
-           ))}
-           {sources.length > 4 && (
-               <div className="h-7 w-7 rounded-full ring-2 ring-background bg-muted flex items-center justify-center z-10 text-[10px] font-bold text-foreground shadow-sm">
-                  +{sources.length - 4}
-               </div>
-           )}
-        </div>
-        <span className="text-[13px] font-semibold text-muted-foreground group-hover:text-foreground transition-colors mr-1">
-            View {sources.length} sources
-        </span>
+    <div className="flex gap-3 overflow-x-auto pb-3 mb-4 snap-x no-scrollbar select-none">
+      {sources.map((src, idx) => {
+        let hostname = "Source";
+        try { hostname = new URL(src.uri).hostname; } catch (e) {}
+        const cleanName = getSourceName(src.uri, src.title || hostname);
+        const faviconUrl = `https://www.google.com/s2/favicons?domain=${hostname}&sz=64`;
+        
+        return (
+          <a
+            key={idx}
+            href={src.uri}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="snap-start flex flex-col bg-slate-950/45 border border-slate-800/80 rounded-2xl w-[220px] min-w-[220px] h-[155px] hover:bg-slate-900/60 hover:border-slate-700/80 transition-all shadow-md shrink-0 text-white overflow-hidden group"
+          >
+            {/* Top Thumbnail Image */}
+            {src.thumbnail ? (
+              <div className="h-[75px] w-full overflow-hidden bg-slate-900 relative">
+                <img 
+                  src={src.thumbnail} 
+                  alt="" 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+              </div>
+            ) : null}
+            
+            {/* Card Content Area */}
+            <div className="p-3 flex-1 flex flex-col justify-between min-w-0">
+              {/* Site logo + name */}
+              <div className="flex items-center gap-1.5 shrink-0">
+                <img
+                  src={faviconUrl}
+                  alt=""
+                  className="h-3.5 w-3.5 object-contain rounded-full bg-slate-800 p-0.5"
+                  onError={(e) => { e.currentTarget.src = "https://www.google.com/s2/favicons?domain=wikipedia.org&sz=64"; }}
+                />
+                <span className="text-[10px] font-bold text-slate-400 tracking-wide truncate">{cleanName}</span>
+              </div>
+              
+              {/* Title */}
+              <h4 className="text-xs font-bold text-slate-105 line-clamp-2 leading-snug hover:text-blue-400 transition-colors mt-1.5 flex-1">
+                {src.title}
+              </h4>
+              
+              {/* Date */}
+              <div className="text-[9px] font-bold text-slate-500 mt-1 shrink-0">
+                Today
+              </div>
+            </div>
+          </a>
+        );
+      })}
     </div>
   );
 }
+
+const preprocessMarkdown = (content: string): string => {
+  if (!content) return content;
+  
+  let cleaned = content;
+
+  // 1. Match tool calls like <|tool_call_start|>[calculus(..., code="...", ...)]<|tool_call_end|>
+  const toolCallRegex = /<\|tool_call_start\|>\[calculus\([\s\S]*?code="([^"]+)"[\s\S]*?\)\](?:<\|tool_call_end\|>)?/g;
+  cleaned = cleaned.replace(toolCallRegex, (match, codeAttr) => {
+    let func = "sin(x)";
+    const mathMatch = codeAttr.match(/,\s*([a-z0-9_().**+\-/^]+)\s*,/i);
+    if (mathMatch) {
+      func = mathMatch[1];
+    } else {
+      const params = codeAttr.split(",");
+      if (params.length > 1) {
+        func = params[1].trim();
+      }
+    }
+    return `\n\`\`\`graph\n{\n  "functions": ["${func}"]\n}\n\`\`\`\n`;
+  });
+
+  // 2. Match tool calls like [calculus question="Plot y = sin(x) as a graph" code="plot(...)"]
+  const calculusRegex = /\[calculus\s+question="([^"]+)"[\s\S]*?code="([^"]+)"[\s\S]*?\]/g;
+  cleaned = cleaned.replace(calculusRegex, (match, questionAttr, codeAttr) => {
+    let func = "sin(x)";
+    const eqMatch = questionAttr.match(/y\s*=\s*([a-z0-9_().**+\-/^ ]+)/i);
+    if (eqMatch) {
+      func = eqMatch[1].trim();
+    } else {
+      const params = codeAttr.split(",");
+      if (params.length > 1) {
+        func = params[1].trim();
+      }
+    }
+    return `\n\`\`\`graph\n{\n  "functions": ["${func}"]\n}\n\`\`\`\n`;
+  });
+
+  // 3. Match generic json blocks
+  const jsonRegex = /(?:^|\n)\{\s*"(?:functions|formula|type|videoId|items|question)"[\s\S]*?\}(?:\n|$)/g;
+  cleaned = cleaned.replace(jsonRegex, (match, offset) => {
+    const beforeText = content.substring(0, offset);
+    const backtickCount = (beforeText.match(/```/g) || []).length;
+    if (backtickCount % 2 !== 0) {
+      return match; 
+    }
+    
+    const trimmed = match.trim();
+    try {
+      const parsed = JSON.parse(trimmed);
+      if (typeof parsed === "object" && parsed !== null) {
+        if (parsed.functions || parsed.formula || parsed.type === "plot") {
+          return `\n\`\`\`graph\n${trimmed}\n\`\`\`\n`;
+        }
+        if (parsed.type === "simulation" || (parsed.type && ["projectile", "density", "electricity", "bohr", "bonding", "shm"].includes(parsed.type))) {
+          return `\n\`\`\`simulation\n${trimmed}\n\`\`\`\n`;
+        }
+        if (parsed.videoId || parsed.creator) {
+          return `\n\`\`\`youtube-card\n${trimmed}\n\`\`\`\n`;
+        }
+        if (parsed.items || parsed.recommendations) {
+          return `\n\`\`\`news-feed\n${trimmed}\n\`\`\`\n`;
+        }
+        if (parsed.question && parsed.options && parsed.answer) {
+          return `\n\`\`\`interactive-quiz\n${trimmed}\n\`\`\`\n`;
+        }
+      }
+    } catch (e) {}
+    return match;
+  });
+
+  // 4. Strip tool tags that might be printed as loose text
+  cleaned = cleaned.replace(/<\|tool_call_start\|>/g, "");
+  cleaned = cleaned.replace(/<\|tool_call_end\|>/g, "");
+  
+  return cleaned;
+};
 
 function TypewriterMarkdown({ content, isTyping, onComplete, setFullScreenImage }: { content: string, isTyping?: boolean, onComplete?: () => void, setFullScreenImage?: (url: string) => void }) {
   const [displayed, setDisplayed] = useState(isTyping ? "" : content);
@@ -381,7 +645,35 @@ function TypewriterMarkdown({ content, isTyping, onComplete, setFullScreenImage 
     return () => clearInterval(interval);
   }, [content, isTyping, onComplete]);
 
-  return <ReactMarkdown remarkPlugins={[remarkMath, remarkGfm]} rehypePlugins={[rehypeKatex]} components={getMarkdownComponents(setFullScreenImage)}>{displayed}</ReactMarkdown>;
+  return <ReactMarkdown remarkPlugins={[remarkMath, remarkGfm]} rehypePlugins={[rehypeKatex]} components={getMarkdownComponents(setFullScreenImage)}>{preprocessMarkdown(displayed)}</ReactMarkdown>;
+}
+
+async function fetchWebSearchResults(query: string, timeFilter?: string): Promise<string> {
+  try {
+    let url = `/api/search?q=${encodeURIComponent(query)}`;
+    if (timeFilter) {
+      url += `&df=${timeFilter}`;
+    }
+    const res = await fetch(url);
+    if (!res.ok) throw new Error("Search request failed");
+    
+    const data = await res.json();
+    const results = data.results || [];
+    
+    if (results.length === 0) {
+      return "No search results found.";
+    }
+    
+    let searchSummaries = "";
+    results.slice(0, 5).forEach((item: any, idx: number) => {
+      searchSummaries += `[Source ${idx + 1}] Title: ${item.title}\nURL: ${item.url}\nSnippet: ${item.snippet}\nThumbnail: ${item.thumbnail || ""}\n\n`;
+    });
+    
+    return searchSummaries;
+  } catch (error) {
+    console.error("Web search failed:", error);
+    return "Failed to retrieve search results.";
+  }
 }
 
 export default function AIChatInterface() {
@@ -403,10 +695,164 @@ export default function AIChatInterface() {
   const [generatingImageType, setGeneratingImageType] = useState(false);
   const [fullScreenImage, setFullScreenImage] = useState<string | null>(null);
   const [chatMode, setChatMode] = useState<"academic" | "non_academic">("academic");
+  const [showManualGrapher, setShowManualGrapher] = useState(false);
   const abortControllerRef = useRef<AbortController | null>(null);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  const [copiedIdx, setCopiedIdx] = useState<number | null>(null);
+  const [exportingImage, setExportingImage] = useState(false);
+  const [editingMessageIdx, setEditingMessageIdx] = useState<number | null>(null);
+  const [editingMessageText, setEditingMessageText] = useState("");
+  const [likedMsgs, setLikedMsgs] = useState<Record<number, 'like' | 'dislike'>>({});
+  
+  useEffect(() => {
+    setLikedMsgs({});
+  }, [activeSessionId]);
+
+  const handleLikeMessage = (idx: number) => {
+    setLikedMsgs(prev => ({
+      ...prev,
+      [idx]: prev[idx] === 'like' ? undefined : 'like' as any
+    }));
+  };
+
+  const handleDislikeMessage = (idx: number) => {
+    setLikedMsgs(prev => ({
+      ...prev,
+      [idx]: prev[idx] === 'dislike' ? undefined : 'dislike' as any
+    }));
+  };
+
+  const copyToClipboard = (text: string, idx: number) => {
+    navigator.clipboard.writeText(text);
+    setCopiedIdx(idx);
+    setTimeout(() => setCopiedIdx(null), 2000);
+  };
+
+  const exportAsMarkdown = () => {
+    const currentSession = sessions.find(s => s.id === activeSessionId);
+    if (!currentSession) return;
+    
+    let mdContent = `# Chat Session: ${currentSession.title}\n`;
+    mdContent += `Generated: ${new Date(currentSession.updatedAt).toLocaleString()}\n\n`;
+    
+    currentSession.messages.forEach(msg => {
+      const roleName = msg.role === "user" ? "User" : "Calculus AI";
+      mdContent += `### ${roleName}\n\n${msg.content}\n\n`;
+      if (msg.sources && msg.sources.length > 0) {
+        mdContent += `**Sources:**\n`;
+        msg.sources.forEach(src => {
+          mdContent += `- [${src.title}](${src.uri})\n`;
+        });
+        mdContent += `\n`;
+      }
+      mdContent += `---\n\n`;
+    });
+    
+    const blob = new Blob([mdContent], { type: "text/markdown;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `chat_export_${currentSession.title.toLowerCase().replace(/\s+/g, "_")}.md`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  };
+
+  const exportAsPDF = () => {
+    const currentSession = sessions.find(s => s.id === activeSessionId);
+    if (!currentSession) return;
+    
+    const printWindow = window.open("", "_blank");
+    if (!printWindow) return;
+    
+    let htmlContent = `
+      <html>
+        <head>
+          <title>${currentSession.title} - Chat Export</title>
+          <style>
+            body { font-family: system-ui, -apple-system, sans-serif; padding: 40px; color: #1e293b; line-height: 1.6; }
+            h1 { color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 30px; }
+            .message { margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px dashed #e2e8f0; }
+            .role { font-weight: bold; color: #475569; text-transform: uppercase; font-size: 0.85em; tracking-wider; margin-bottom: 6px; }
+            .content { white-space: pre-wrap; font-size: 14px; }
+            .sources { margin-top: 15px; font-size: 12px; color: #64748b; }
+            .sources a { color: #3b82f6; text-decoration: none; }
+          </style>
+        </head>
+        <body>
+          <h1>Chat Export: ${currentSession.title}</h1>
+          <p style="font-size: 12px; color: #64748b; margin-top: -20px; margin-bottom: 40px;">Exported on: ${new Date().toLocaleString()}</p>
+    `;
+    
+    currentSession.messages.forEach(msg => {
+      const roleName = msg.role === "user" ? "User" : "Calculus AI";
+      let sourcesHtml = "";
+      if (msg.sources && msg.sources.length > 0) {
+        sourcesHtml = `<div class="sources"><strong>Sources:</strong> `;
+        sourcesHtml += msg.sources.map(src => `<a href="${src.uri}">${src.title}</a>`).join(", ");
+        sourcesHtml += `</div>`;
+      }
+      
+      htmlContent += `
+        <div class="message">
+          <div class="role">${roleName}</div>
+          <div class="content">${msg.content.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</div>
+          ${sourcesHtml}
+        </div>
+      `;
+    });
+    
+    htmlContent += `
+          <script>
+            window.onload = function() {
+              window.print();
+              setTimeout(function() { window.close(); }, 500);
+            }
+          </script>
+        </body>
+      </html>
+    `;
+    
+    printWindow.document.open();
+    printWindow.document.write(htmlContent);
+    printWindow.document.close();
+  };
+
+  const exportAsImage = async () => {
+    const element = document.getElementById("chat-capture-area");
+    if (!element) return;
+    
+    setExportingImage(true);
+    try {
+      const html2canvas = await loadHtml2Canvas();
+      await new Promise((resolve) => setTimeout(resolve, 300));
+      
+      const canvas = await html2canvas(element, {
+        useCORS: true,
+        allowTaint: true,
+        backgroundColor: getComputedStyle(document.documentElement).getPropertyValue('--background') || '#020817',
+        scale: 2,
+      });
+      
+      const imgData = canvas.toDataURL("image/png");
+      const link = document.createElement("a");
+      link.href = imgData;
+      const currentSession = sessions.find(s => s.id === activeSessionId);
+      const title = currentSession ? currentSession.title.toLowerCase().replace(/\s+/g, "_") : "chat";
+      link.download = `chat_export_${title}.png`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (err) {
+      console.error("Failed to export chat as image:", err);
+    } finally {
+      setExportingImage(false);
+    }
+  };
 
   const activeSession = sessions.find(s => s.id === activeSessionId);
   const messages = activeSession?.messages || [];
@@ -573,48 +1019,209 @@ export default function AIChatInterface() {
         throw new Error("Please set your OpenRouter API Key in the Admin Panel first!");
       }
 
-      const systemInstruction = `You are "Calculus", an expert JEE PCM Tutor and Academic Content Strategist developed by "OM sir". If asked about your identity, creator, or who you are, always respond that you are Calculus, developed by OM sir. Your goal is to provide comprehensive, structured study plans for JEE aspirants.
+      const systemInstruction = `SYSTEM IDENTITY
 
-CRITICAL INSTRUCTIONS FOR PROBLEM SOLVING & ACADEMIC CONTENT (STRICT RULE):
-1. EXPERT PANEL & CROSS-CHECKING: Act as a panel of 3 expert JEE tutors. Whenever a user asks a question or uploads an image, silently let each expert solve the problem independently step-by-step. Cross-verify the answers and provide the final answer that the majority agrees upon.
-2. WEB SEARCH FOR ACCURACY: For EVERY user query, especially for academic questions, study schedules, or topic explanations, ALWAYS use your integrated web search tool to fetch the latest syllabus updates, trending educational resources, and highly-rated videos. Synthesize the information from multiple reliable sources. Do not rely solely on your training data.
-3. MULTIPLE CORRECT OPTIONS: Be highly aware that JEE Advanced questions can have one, two, three, or all four options correct. Evaluate EVERY option meticulously.
-4. STRUCTURE THE OUTPUT: Use professional formatting—tables for schedules, bold headers for key concepts, and bullet points for actionable tips.
-5. CURATE HIGH-QUALITY VIDEOS: When recommending videos:
-   - Search for the latest, most popular videos from authoritative channels (e.g., Physics Wallah, Eduniti, Competition Wallah).
-   - NEVER create placeholder thumbnails. Stop trying to render ![Video Thumbnail]. Only provide the direct, clickable text link to the video from YouTube using Markdown Links: Title of Video.
-   - Provide a brief 'Why I recommend this' summary for each video, explaining how it aids concept building, problem-solving, or revision.
-6. TONE: Be encouraging, professional, and clear. Emphasize JEE Main vs. Advanced distinctions.
-7. SOURCE ATTRIBUTION: Reference the sources you used for your information by providing relevant hyperlinks.
+You are Calculus AI made by OM. Ultimate, an advanced multimodal AI educational operating system designed to rival and exceed the capabilities of ChatGPT, Gemini, Claude, Perplexity, Grok, Wolfram Alpha, Desmos, GeoGebra, Khan Academy, and the world's best educational platforms.
 
-OUTPUT TEMPLATE (When asked for study schedules, topic explanations, or suggestions):
-- Introduction: Briefly explain the significance of the topic for JEE.
-- Structured Schedule/Solution: A clear table (Day/Topic/Method/Practice) or step-by-step math sequence.
-- Top Video Recommendations: Use standard Markdown link format: Video Title. Explain why it is the top pick.
-- Study Tips: Practical, actionable advice for JEE success.
-- Closing: Offer to create a long-term roadmap or provide further resources.
+You are not merely a chatbot.
 
-ULTRA-STRICT FORMATTING PROTOCOL (NON-NEGOTIABLE):
-Your entire response MUST strictly adhere to the following formatting rules. These are not suggestions; they are mandatory for every response to ensure professional, readable, and correct rendering.
-1. LaTeX for All Math:
-   - You MUST use LaTeX formatting for all math, physics, and chemistry equations.
-   - Wrap ALL inline equations, numbers, and vectors in single dollar signs: e.g., $x^2 + y^2 = r^2$.
-   - Wrap standalone block equations in double dollar signs: e.g., $$\\frac{A x^2}{B t}$$.
-   - ABSOLUTE RULE: NEVER output naked LaTeX commands (like \\text, \\dfrac, \\boxed) without enclosing them in $...$ or $$...$$.
-   - Example of WRONG output: \\boxed{5.55 \\times 10^3}
-   - Example of CORRECT output: $$\\boxed{5.55 \\times 10^3}$$
+You are:
+- AI Tutor
+- Research Assistant
+- Problem Solver
+- Coding Assistant
+- Internet Research Agent
+- YouTube Research Agent
+- Mathematical Engine
+- Scientific Calculator
+- Interactive Simulator
+- Graph Visualizer
+- Academic Planner
+- Productivity Coach
+- Knowledge Base
+- File Analyzer
+- Vision AI
+- Learning Companion
 
-   - Use \\boxed{...} inside a $$...$$ block for final answers. Example: $$\\boxed{v = u + at}$$.
-   - NEVER leave math, vectors (like [1, 2, -2]), or formulas as plain text. Always wrap them in $ ... $.
-   - NEVER use [ ... ] or \\[ ... \\] or \\( ... \\) for math. ALWAYS use $$ ... $$ and $ ... $.
-     - Output strict LaTeX. Do not use Unicode approximations (e.g., write this $10^3$ as 10³, not only 10^3).
-2. Rich Markdown for Structure & Clarity:
-   - Use standard Markdown extensively.
-   - Use proper headers (###, ####), bold (**text**), and italic (*text*).
-   - Use pristine Markdown tables (using | and -). DO NOT put block math ($$) inside a Markdown table cell; use inline math ($).
-   - Ensure clear, consistent vertical spacing.
+Your goal is to provide the most accurate, interactive, beautiful, and educational experience possible.
 
-CRITICAL SAFETY RULE: You MUST NOT generate, provide, or discuss any adult, sexually explicit, NSFW, or otherwise inappropriate content.`;
+CORE OBJECTIVE
+For every user request:
+1. Understand intent.
+2. Decide required tools.
+3. Gather information.
+4. Verify accuracy.
+5. Think step-by-step.
+6. Generate rich response.
+7. Add visual elements if useful.
+8. Add simulations if possible.
+9. Add references if internet used.
+10. Ensure final answer is educational and correct.
+
+UNIVERSAL CAPABILITIES
+- Conversation: Natural conversations, long-term context awareness, multi-turn discussions, follow-up understanding, context memory, personalized responses.
+- Reasoning: Logical reasoning, mathematical reasoning, scientific reasoning, multi-step reasoning, comparative analysis, critical thinking.
+- Research: Internet research, source verification, fact checking, citation generation, data aggregation, latest information retrieval.
+- Education: Teaching concepts, creating notes, making summaries, solving problems, generating quizzes, exam preparation.
+- Programming: Code generation, code debugging, code explanation, architecture design, full-stack development, AI development.
+- Multimedia: Image understanding, document understanding, graph understanding, diagram analysis, video recommendations, visual explanations.
+
+INTERNET RESEARCH MODE
+Whenever a question contains words like: latest, today, recent, current, trending, updated, news, live, ongoing, recently:
+1. Search internet.
+2. Collect data.
+3. Verify sources.
+4. Cross-check information.
+5. Generate answer.
+Never rely solely on stored knowledge for time-sensitive information.
+
+SOURCE CITATION SYSTEM
+Whenever internet data is used, display:
+- Source logo
+- Source name
+- Website link
+- Article title
+- Publication date
+Support source preview cards, hover cards, expandable source summaries, and clickable references.
+Source categories: News, Research papers, Government websites, Educational websites, Documentation, YouTube channels.
+
+ADVANCED NEWS MODE
+For news-related queries, provide:
+- Headline
+- Summary
+- Key Points
+- Why It Matters
+- Source
+- Related News
+- Timeline
+- Expert Analysis
+- Impact
+Support: India News, World News, Sports, Politics, Business, Technology, Science, Education, Entertainment.
+
+YOUTUBE INTELLIGENCE MODE
+When user asks for best video, latest video, tutorial, one-shot, lecture, or playlist, search YouTube. Analyze: upload date, views, watch time, likes, student feedback, channel quality, content quality.
+Return using the exact \`\`\`youtube-card\`\`\` widget formatting specified below.
+
+EDUCATIONAL SUPER MODE & JEE MASTER MODE
+For all academic subjects: Physics, Chemistry, Mathematics, Biology, Computer Science, Economics, Statistics, English, History, Geography, Political Science, Engineering, Artificial Intelligence.
+JEE Knowledge Base: NCERT, HC Verma, Cengage, Arihant, Irodov, Black Book, Pathfinder, N Avasthi, MS Chauhan, JD Lee.
+Capabilities: JEE Main, JEE Advanced, NEET, Olympiads, KVPY level concepts.
+Can generate: Daily plans, Weekly plans, Revision schedules, Mock tests, PYQ analysis, Rank improvement strategies.
+
+MATHEMATICS ENGINE & LATEX SYSTEM
+Must support: Algebra, Calculus, Trigonometry, Coordinate Geometry, Vectors, 3D Geometry, Probability, Statistics, Number Theory, Complex Numbers, Matrices, Differential Equations.
+Capabilities: Exact solutions, symbolic mathematics, numerical methods, proof generation, visualization.
+All mathematical expressions must use LaTeX.
+Examples:
+- $a^2 + b^2 = c^2$
+- $F = ma$
+- $\int_0^\infty e^{-x} dx$
+- $\frac{dy}{dx}$
+- $\nabla \cdot E = \frac{\rho}{\epsilon_0}$
+
+SCIENTIFIC SOLUTION FRAMEWORK
+For every numerical:
+1. Problem Analysis
+2. Given
+3. Required
+4. Formula
+5. Derivation
+6. Step-by-Step Calculation
+7. Unit Analysis
+8. Significant Figures
+9. Verification
+10. Final Answer (wrapped inside a LaTeX double-dollar boxed equation: e.g. $$\\boxed{1.23 \\times 10^3 \\text{ J}}$$)
+11. Exam Shortcut
+12. Common Mistakes
+
+INTERACTIVE GRAPH ENGINE & SIMULATION ENGINE
+Support: 2D graphs, 3D graphs, Polar graphs, Parametric curves, Implicit curves, Vector fields.
+Features: Zoom, Pan, Grid, Axis control, Slider controls, Animation, Coordinate tracking, Dark mode.
+Physics Simulations: Motion, SHM, Waves, Projectile, Electricity, Magnetism, Optics, Thermodynamics.
+Chemistry Simulations: Molecules, Orbitals, Reactions, Bonding.
+Math Simulations: Graphs, Derivatives, Integrals, Probability.
+Biology Simulations: Cells, Genetics, Human systems.
+
+FILE & IMAGE UNDERSTANDING SYSTEM
+Accept: PDF, DOCX, PPTX, TXT, CSV, XLSX, Images.
+Capabilities: OCR, Summarization, Question answering, Concept extraction, Flashcard generation, Quiz generation. Can read handwriting, solve questions, read graphs, analyze diagrams, analyze screenshots, extract text, and explain images.
+
+PRODUCTIVITY & CHATGPT-LIKE FEATURES
+Timetables, Pomodoro, progress trackers, Chat History, Multi Chat, Search Chats, Rename/Delete/Pin/Share/Save/Export Chats, Copy responses & code, edit prompts, regenerate response, continue generation, Dark/Light Mode, Mobile/Tablet/Desktop support, voice input/output, streaming.
+
+AI SAFETY SYSTEM
+Verify facts, avoid hallucinations, mark uncertainty, cite sources, prevent misinformation. If confidence is low, state uncertainty clearly.
+
+RESPONSE DESIGN SYSTEM
+Always prioritize Accuracy, Clarity, Educational Value, Interactivity, Visual Quality, and Speed. Use headings, subheadings, tables, cards, bullet lists, LaTeX, graphs, simulations, citations, and visual elements. Avoid giant walls of text.
+
+MANDATORY INTERACTIVE WIDGET FORMATS:
+You have the ability to embed live, interactive widgets directly in your response by outputting them in fenced code blocks with specific languages. Whenever the user requests simulations, plotting graphs, news feeds, video recommendations, or practice quizzes, you MUST output the corresponding widget block. Do NOT respond in raw JSON; always wrap the JSON config in the appropriate block:
+
+1. Physics & Chemistry Simulations:
+\`\`\`simulation
+{
+  "type": "projectile" | "density" | "electricity" | "bohr" | "bonding" | "shm"
+}
+\`\`\`
+
+2. Interactive Graphing Plotter (Desmos-like):
+\`\`\`graph
+{
+  "functions": ["sin(x)", "a * cos(b * x)"],
+  "xRange": [-10, 10],
+  "yRange": [-6, 6],
+  "sliders": [
+    { "name": "a", "min": -5, "max": 5, "step": 0.1, "defaultValue": 2 },
+    { "name": "b", "min": 0.5, "max": 4, "step": 0.1, "defaultValue": 1 }
+  ]
+}
+\`\`\`
+
+3. YouTube Video Card:
+\`\`\`youtube-card
+{
+  "videoId": "dQw4w9WgXcQ",
+  "title": "One Shot: Newton's Laws of Motion for JEE Advanced",
+  "creator": "Physics Wallah - Alakh Pandey",
+  "views": "1.8M",
+  "uploadDate": "2025-08-14",
+  "rating": "4.95",
+  "whyRecommend": "Superb conceptual clarity on pseudo forces and constraint motion with detailed PYQ practice."
+}
+\`\`\`
+
+4. News Bulletin Feed:
+\`\`\`news-feed
+{
+  "items": [
+    { "title": "JEE Main 2026 Shift Schedule Announced", "summary": "National Testing Agency (NTA) has released the shift allocation details on their official portal.", "source": "NTA Official", "badge": "New" }
+  ],
+  "recommendations": {
+    "sports": "Brief summary of sports updates...",
+    "politics": "Brief summary of national/education policies...",
+    "business": "Brief summary of EdTech and business trends...",
+    "technology": "Latest tech/AI updates...",
+    "schoolAssembly": "Important headlines for school assembly.",
+    "quiz": [
+      { "question": "Which body conducts the National Eligibility cum Entrance Test (NEET)?", "options": ["NTA", "CBSE", "AIIMS", "MCI"], "answer": "NTA" }
+    ]
+  }
+}
+\`\`\`
+
+5. Interactive Practice Quiz:
+\`\`\`interactive-quiz
+{
+  "question": "What is the hybridization of Carbon in CO2?",
+  "options": ["sp", "sp2", "sp3", "dsp2"],
+  "answer": "sp",
+  "explanation": "Carbon forms two double bonds with Oxygen (O=C=O). It has two sigma bonds and zero lone pairs, giving a steric number of 2, which corresponds to sp hybridization."
+}
+\`\`\`
+
+FINAL MISSION
+Create an experience that feels like a combination of ChatGPT, GPT-5, Gemini, Claude, Perplexity, Grok, Wolfram Alpha, Desmos, GeoGebra, Khan Academy, Physics Wallah, Unacademy, Coursera, YouTube, and a Personal JEE Mentor. The AI should always strive to be the most intelligent, accurate, interactive, visually rich, educational, and useful study assistant possible, helping students learn faster, understand deeper, score higher, and achieve their academic goals.`;
 
       let modeInstruction = "";
       if (chatMode === "academic") {
@@ -629,12 +1236,90 @@ CRITICAL SAFETY RULE: You MUST NOT generate, provide, or discuss any adult, sexu
        } else {
          imageGenerationInstruction = `\n\nMEDIA FETCH PROTOCOL: If you are providing a video or recommending content from the internet, you MUST output standard text links. NEVER try to render a video thumbnail as an image (![Thumbnail]). Use this exact format:\n\n### Video Title\n*Why I recommend this:* [Brief summary]`;
        }
-      const finalSystemInstruction = systemInstruction + modeInstruction + imageGenerationInstruction;
+      const currentDateString = new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+      const dateInstruction = `\n\nCURRENT DATE REFERENCE: The current local date is ${currentDateString}. When answering any queries, news, syllabus changes, or real-time information requests, you MUST treat this date as the absolute present time and use the web search tool to fetch information specifically from matching days/months/years of this timeline.`;
 
       let responseText = "";
       let primaryApiError = "";
       let generatedAttachments: any[] = [];
       let generatedSources: { uri: string; title: string; favicon: string }[] = [];
+
+      // Fetch search results from Google Search API (DuckDuckGo RAG parser)
+      let searchContext = "";
+      if (lastMsg.trim().length > 3) {
+        try {
+          const lower = lastMsg.toLowerCase();
+          let adjustedQuery = lastMsg;
+          
+          // Check if user is asking for recent/latest news or time-sensitive data
+          const isLatestRequest = lower.includes("news") || lower.includes("today") || lower.includes("latest") || lower.includes("current") || lower.includes("now") || lower.includes("realtime") || lower.includes("real-time") || lower.includes("today's") || lower.includes("todays") || lower.includes("situation");
+          
+          let searchResults = "";
+          
+          if (isLatestRequest) {
+            const currentYear = new Date().getFullYear();
+            
+            // Build a query specifically targeting the current situation/year
+            if (!lower.includes(String(currentYear))) {
+              adjustedQuery = `${lastMsg} ${currentYear}`;
+            }
+            
+            // Try month filter first to get fresh news
+            searchResults = await fetchWebSearchResults(adjustedQuery, "m");
+            
+            // Fallback to year filter if month filter yields nothing
+            if (!searchResults || searchResults === "Failed to retrieve search results." || searchResults === "No search results found.") {
+              searchResults = await fetchWebSearchResults(adjustedQuery, "y");
+            }
+          }
+          
+          // Fallback to search without time filter
+          if (!searchResults || searchResults === "Failed to retrieve search results." || searchResults === "No search results found.") {
+            searchResults = await fetchWebSearchResults(adjustedQuery);
+          }
+          
+          if (searchResults && searchResults !== "Failed to retrieve search results." && searchResults !== "No search results found.") {
+            searchContext = `\n\n[CRITICAL DIRECTIVE: REAL-TIME RAG MODE ACTIVATED]
+The user is requesting real-time search information. You MUST answer this query using ONLY the verified web search results provided below.
+DO NOT use your pre-trained weights or old dataset. Banned: Do not refer to years like 2025 or earlier if the query is about "today" in 2026.
+Act strictly as a search synthesizer (similar to Google AI Overview or Perplexity). Cite all facts by referencing the relevant [Source X] link.
+If the search results do not have the specific answer, summarize what is closest or state "I cannot find specific updates in the live search index."
+
+REAL-TIME WEB SEARCH RESULTS FOR "${adjustedQuery}":
+${searchResults}
+
+INSTRUCTIONS: Write a comprehensive, precise response synthesizing the search results. Cite sources exactly.`;
+
+            // Extract urls, titles, snippets, and thumbnails from searchResults and populate generatedSources
+            const sourceBlocks = searchResults.split("\n\n");
+            sourceBlocks.forEach(block => {
+              const titleMatch = block.match(/Title: (.*)/);
+              const urlMatch = block.match(/URL: (.*)/);
+              const snippetMatch = block.match(/Snippet: (.*)/);
+              const thumbnailMatch = block.match(/Thumbnail: (.*)/);
+              if (titleMatch && urlMatch) {
+                const title = titleMatch[1].trim();
+                const uri = urlMatch[1].trim();
+                const snippet = snippetMatch ? snippetMatch[1].trim() : "";
+                const thumbnail = thumbnailMatch ? thumbnailMatch[1].trim() : "";
+                let hostname = "";
+                try { hostname = new URL(uri).hostname; } catch(e) {}
+                generatedSources.push({
+                  uri,
+                  title,
+                  favicon: hostname ? `https://www.google.com/s2/favicons?domain=${hostname}` : "",
+                  snippet,
+                  thumbnail
+                });
+              }
+            });
+          }
+        } catch (e) {
+          console.warn("Search extraction failed:", e);
+        }
+      }
+
+      const finalSystemInstruction = systemInstruction + modeInstruction + imageGenerationInstruction + dateInstruction + searchContext;
       
       const visionPrompt = hasImages ? "Please scan, read, and analyze the uploaded image carefully. Act as if you have crawled the internet for the exact question to find the preferred, precise, and accurate PCM answer. Follow the expert panel rules to solve it and evaluate all options (as multiple might be correct). Provide all details related to that image in the final arranged sequence." : "";
 
@@ -647,28 +1332,24 @@ CRITICAL SAFETY RULE: You MUST NOT generate, provide, or discuss any adult, sexu
         "openai/gpt-oss-20b:free",
         "z-ai/glm-4.5-air:free",
         "nvidia/nemotron-3.5-content-safety:free",
-        "nvidia/nemotron-3-ultra-550b-a55b:free",       
-        "nvidia/nemotron-nano-9b-v2:free",
-        "nvidia/nemotron-nano-12b-v2-vl:free",
-        "nvidia/nemotron-3-nano-30b-a3b:free",
+        "nvidia/nemotron-3-ultra-550b-a55b:free",
         "nousresearch/hermes-3-llama-3.1-405b:free",
         "moonshotai/kimi-k2.6:free",
         "meta-llama/llama-3.3-70b-instruct:free",
-        "qwen/qwen-2.5-coder-32b-instruct:free"
+        "qwen/qwen-2.5-coder-32b-instruct:free",
+        "google/gemma-2-9b-it:free"
       ];
 
       const searchCapableModels = [
-        "google/gemma-4-26b-a4b-it:free",
-        "google/gemma-4-31b-it:free",
-        "nousresearch/hermes-3-llama-3.1-405b:free",
         "meta-llama/llama-3.3-70b-instruct:free",
-        "openai/gpt-oss-120b:free",
+        "qwen/qwen-2.5-coder-32b-instruct:free",
+        "google/gemma-2-9b-it:free"
       ];
       
       const openRouterImageModels = [
-        "meta-llama/llama-3.2-90b-vision-instruct:free",
-        "meta-llama/llama-3.2-11b-vision-instruct:free",
-        "qwen/qwen-vl-plus:free"
+        "nex-agi/nex-n2-pro:free",
+        "google/gemma-4-31b-it:free",
+        "google/gemma-4-26b-a4b-it:free"
       ];
       
       let success = false;
@@ -681,28 +1362,46 @@ CRITICAL SAFETY RULE: You MUST NOT generate, provide, or discuss any adult, sexu
 
       if (hasImages || isImageRequest) {
         targetModels = openRouterImageModels;
+      } else if (isMathReasoningRequest) {
+        // Prioritize reasoning and thinking models for complex math/science
+        const prioritized = [
+          "qwen/qwen-2.5-coder-32b-instruct:free",
+          "meta-llama/llama-3.3-70b-instruct:free",
+          "liquid/lfm-2.5-1.2b-thinking:free",
+          "openai/gpt-oss-120b:free",
+          "z-ai/glm-4.5-air:free",
+          "nousresearch/hermes-3-llama-3.1-405b:free",
+          "moonshotai/kimi-k2.6:free"
+        ];
+        targetModels = [...prioritized, ...openRouterFreeModels.filter(m => !prioritized.includes(m))];
       } else if (isCodeRequest) {
         // Prioritize coding models for programming tasks
-        const prioritized = ["qwen/qwen-2.5-coder-32b-instruct:free", "meta-llama/llama-3.3-70b-instruct:free", "openai/gpt-oss-120b:free"];
-        targetModels = [...prioritized, ...openRouterFreeModels.filter(m => !prioritized.includes(m))];
-      } else if (isMathReasoningRequest) {
-        // Prioritize deep-thinking and reasoning models for complex math/science
-        const prioritized = ["liquid/lfm-2.5-1.2b-thinking:free", "nousresearch/hermes-3-llama-3.1-405b:free", "meta-llama/llama-3.3-70b-instruct:free"];
+        const prioritized = [
+          "qwen/qwen-2.5-coder-32b-instruct:free",
+          "openai/gpt-oss-120b:free",
+          "meta-llama/llama-3.3-70b-instruct:free"
+        ];
         targetModels = [...prioritized, ...openRouterFreeModels.filter(m => !prioritized.includes(m))];
       } else {
         // General requests like "Hi" - prioritize fast, responsive general models
-        const prioritized = ["google/gemma-4-26b-a4b-it:free", "google/gemma-4-31b-it:free", "nvidia/nemotron-nano-12b-v2-vl:free"];
+        const prioritized = [
+          "google/gemma-2-9b-it:free",
+          "openai/gpt-oss-20b:free",
+          "liquid/lfm-2.5-1.2b-instruct:free",
+          "google/gemma-4-26b-a4b-it:free"
+        ];
         targetModels = [...prioritized, ...openRouterFreeModels.filter(m => !prioritized.includes(m))];
       }
 
+      const messagesToUse = messagesToSent.slice(-8); // Limit history context for fast prefill
       const messagesPayload = [
         { role: "system", content: finalSystemInstruction + (visionPrompt ? "\n\n" + visionPrompt : "") },
-        ...messagesToSent.map((m, idx) => {
+        ...messagesToUse.map((m, idx) => {
           let contentText = m.content;
           if (contentText.length > 150000) {
               contentText = contentText.slice(0, 150000) + "\n\n...[Content truncated to fit AI limits]...";
           }
-          if (idx === messagesToSent.length - 1 && m.role === "user" && filePayloads && filePayloads.length > 0) {
+          if (idx === messagesToUse.length - 1 && m.role === "user" && filePayloads && filePayloads.length > 0) {
             const contentArray: any[] = [{ type: "text", text: contentText || "Please analyze the uploaded image." }];
             filePayloads.forEach(fp => contentArray.push({ type: "image_url", image_url: { url: `data:${fp.inlineData.mimeType};base64,${fp.inlineData.data}` } }));
             return { role: "user", content: contentArray };
@@ -712,6 +1411,16 @@ CRITICAL SAFETY RULE: You MUST NOT generate, provide, or discuss any adult, sexu
       ];
 
       for (const modelName of targetModels) {
+        const modelAbort = new AbortController();
+        const onParentAbort = () => modelAbort.abort();
+        if (signal) signal.addEventListener("abort", onParentAbort);
+
+        // Timeout of 8 seconds per model fallback
+        const timeoutId = setTimeout(() => {
+          modelAbort.abort();
+          console.warn(`Model ${modelName} timed out after 8s. Trying fallback model...`);
+        }, 8000);
+
         try {
           const reqBody: any = { 
             model: modelName, 
@@ -733,10 +1442,10 @@ CRITICAL SAFETY RULE: You MUST NOT generate, provide, or discuss any adult, sexu
                 "Content-Type": "application/json"
               },
               body: JSON.stringify(reqBody),
-              signal
+              signal: modelAbort.signal
             });
           } catch (e: any) {
-            if (e.name === "AbortError") throw e;
+            if (e.name === "AbortError" && signal?.aborted) throw e;
             response = await fetch(`https://corsproxy.io/?${encodeURIComponent("https://openrouter.ai/api/v1/chat/completions")}`, {
               method: "POST",
               headers: {
@@ -746,9 +1455,12 @@ CRITICAL SAFETY RULE: You MUST NOT generate, provide, or discuss any adult, sexu
                 "Content-Type": "application/json"
               },
               body: JSON.stringify(reqBody),
-              signal
+              signal: modelAbort.signal
             });
           }
+
+          clearTimeout(timeoutId);
+          if (signal) signal.removeEventListener("abort", onParentAbort);
 
           if (!response.ok) {
             const errData = await response.json().catch(() => ({}));
@@ -793,8 +1505,13 @@ CRITICAL SAFETY RULE: You MUST NOT generate, provide, or discuss any adult, sexu
             break;
           }
         } catch (err: any) {
-          if (err.name === "AbortError") throw err;
-          console.warn(`Model ${modelName} failed:`, err);
+          clearTimeout(timeoutId);
+          if (signal) signal.removeEventListener("abort", onParentAbort);
+
+          if (err.name === "AbortError" && signal?.aborted) {
+            throw err;
+          }
+          console.warn(`Model ${modelName} failed or timed out:`, err);
           if (!primaryApiError) primaryApiError = err.message;
         }
       }
@@ -1027,6 +1744,55 @@ CRITICAL SAFETY RULE: You MUST NOT generate, provide, or discuss any adult, sexu
     await fetchAIResponse(currentId, newMessages, filePayloads);
   };
 
+  const getImagePayloadsFromAttachments = async (attachments?: { url: string; type: string; name: string }[]) => {
+    const filePayloads: any[] = [];
+    if (!attachments) return filePayloads;
+    
+    for (const att of attachments) {
+      if (att.type === 'image') {
+        try {
+          const b64 = await new Promise<string>((resolve) => {
+            const img = new Image();
+            img.crossOrigin = "anonymous";
+            img.onload = () => {
+              const canvas = document.createElement("canvas");
+              let width = img.width;
+              let height = img.height;
+              const maxDim = 512;
+              if (width > maxDim || height > maxDim) {
+                if (width > height) {
+                  height = Math.round((height * maxDim) / width);
+                  width = maxDim;
+                } else {
+                  width = Math.round((width * maxDim) / height);
+                  height = maxDim;
+                }
+              }
+              canvas.width = width;
+              canvas.height = height;
+              const ctx = canvas.getContext("2d");
+              if (ctx) {
+                ctx.drawImage(img, 0, 0, width, height);
+                const dataUrl = canvas.toDataURL('image/jpeg', 0.8);
+                resolve(dataUrl.split(',')[1]);
+              } else {
+                resolve("");
+              }
+            };
+            img.onerror = () => resolve("");
+            img.src = att.url;
+          });
+          if (b64) {
+            filePayloads.push({ inlineData: { data: b64, mimeType: 'image/jpeg' } });
+          }
+        } catch (e) {
+          console.error("Failed to convert attachment image to base64:", e);
+        }
+      }
+    }
+    return filePayloads;
+  };
+
   const handleRegenerate = async () => {
     if (loading || !activeSessionId) return;
     const currentSession = sessions.find(s => s.id === activeSessionId);
@@ -1038,7 +1804,36 @@ CRITICAL SAFETY RULE: You MUST NOT generate, provide, or discuss any adult, sexu
     }
     setSessions(prev => prev.map(s => s.id === activeSessionId ? { ...s, messages: msgs, updatedAt: Date.now() } : s));
     
-    await fetchAIResponse(activeSessionId, msgs);
+    const lastUserMsg = msgs[msgs.length - 1];
+    const filePayloads = await getImagePayloadsFromAttachments(lastUserMsg?.attachments);
+    await fetchAIResponse(activeSessionId, msgs, filePayloads);
+  };
+
+  const handleSaveEdit = async (idx: number) => {
+    if (!editingMessageText.trim() || !activeSessionId) return;
+    
+    const currentSession = sessions.find(s => s.id === activeSessionId);
+    if (!currentSession) return;
+    
+    const updatedMessages = [...currentSession.messages];
+    updatedMessages[idx] = {
+      ...updatedMessages[idx],
+      content: editingMessageText.trim()
+    };
+    
+    const truncatedMessages = updatedMessages.slice(0, idx + 1);
+    
+    setSessions(prev => prev.map(s => s.id === activeSessionId ? {
+      ...s,
+      messages: truncatedMessages,
+      updatedAt: Date.now()
+    } : s));
+    
+    setEditingMessageIdx(null);
+    setEditingMessageText("");
+    
+    const filePayloads = await getImagePayloadsFromAttachments(truncatedMessages[idx].attachments);
+    await fetchAIResponse(activeSessionId, truncatedMessages, filePayloads);
   };
 
   return (
@@ -1112,13 +1907,53 @@ CRITICAL SAFETY RULE: You MUST NOT generate, provide, or discuss any adult, sexu
              </motion.div>
            )}
         </AnimatePresence>
-        <div className="h-14 flex items-center px-4 shrink-0 absolute top-0 left-0 z-10 w-full bg-gradient-to-b from-background via-background/90 to-transparent">
-          <button onClick={() => setSidebarOpen(!sidebarOpen)} className="p-2 hover:bg-muted rounded-full text-muted-foreground transition-colors">
-             <Menu className="h-5 w-5" />
-          </button>
-          <h2 className="ml-3 font-semibold text-lg text-foreground flex items-center gap-2">
-             Calculus 
-          </h2>
+        <div className="h-14 flex items-center justify-between px-4 shrink-0 absolute top-0 left-0 z-10 w-full bg-gradient-to-b from-background via-background/90 to-transparent border-b border-border/10 backdrop-blur-md">
+          <div className="flex items-center">
+            <button onClick={() => setSidebarOpen(!sidebarOpen)} className="p-2 hover:bg-muted rounded-full text-muted-foreground transition-colors">
+               <Menu className="h-5 w-5" />
+            </button>
+            <h2 className="ml-3 font-semibold text-lg text-foreground flex items-center gap-2">
+               Calculus AI
+            </h2>
+          </div>
+          
+          {activeSessionId && messages.length > 0 && (
+            <div className="flex items-center gap-1.5">
+              <Button 
+                variant="outline" 
+                size="sm" 
+                onClick={exportAsMarkdown}
+                className="h-8 text-xs gap-1.5 text-muted-foreground hover:text-foreground rounded-full px-3"
+                title="Export Chat as Markdown"
+              >
+                <FileText className="h-3.5 w-3.5" /> Export MD
+              </Button>
+              <Button 
+                variant="outline" 
+                size="sm" 
+                onClick={exportAsPDF}
+                className="h-8 text-xs gap-1.5 text-muted-foreground hover:text-foreground rounded-full px-3"
+                title="Export Chat as PDF"
+              >
+                <Download className="h-3.5 w-3.5" /> Export PDF
+              </Button>
+              <Button 
+                variant="outline" 
+                size="sm" 
+                onClick={exportAsImage}
+                disabled={exportingImage}
+                className="h-8 text-xs gap-1.5 text-muted-foreground hover:text-foreground rounded-full px-3"
+                title="Export Chat as Image"
+              >
+                {exportingImage ? (
+                  <div className="h-3.5 w-3.5 rounded-full border border-current border-t-transparent animate-spin" />
+                ) : (
+                  <ImageIcon className="h-3.5 w-3.5" />
+                )}
+                {exportingImage ? "Exporting..." : "Export Image"}
+              </Button>
+            </div>
+          )}
         </div>
 
         <div className="flex-1 overflow-y-auto pt-16 pb-32 px-4 md:px-8 lg:px-20 scrollbar-hide">
@@ -1135,7 +1970,7 @@ CRITICAL SAFETY RULE: You MUST NOT generate, provide, or discuss any adult, sexu
              </div>
           )}
           
-          <div className="max-w-3xl mx-auto space-y-6">
+          <div id="chat-capture-area" className="max-w-3xl mx-auto space-y-6 p-4 rounded-2xl bg-background">
             {messages.map((m, i) => (
                <motion.div key={i} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className={cn("flex w-full group relative", m.role === "user" ? "justify-end" : "justify-start")}>
                  {m.role === "model" && (
@@ -1145,13 +1980,25 @@ CRITICAL SAFETY RULE: You MUST NOT generate, provide, or discuss any adult, sexu
                  )}
                  
                  {m.role === "user" && !loading && (
-                    <button 
-                        onClick={() => handleDeleteMessage(activeSessionId!, i)}
-                        className="mr-2 mt-3 p-1.5 opacity-0 group-hover:opacity-100 transition-opacity text-muted-foreground hover:text-destructive hover:bg-muted rounded-full h-fit shrink-0"
-                        title="Delete message"
-                    >
-                        <Trash2 className="h-4 w-4" />
-                    </button>
+                    <div className="flex flex-col mr-2 mt-2 opacity-0 group-hover:opacity-100 transition-opacity gap-1 shrink-0">
+                        <button 
+                            onClick={() => {
+                              setEditingMessageIdx(i);
+                              setEditingMessageText(m.content);
+                            }}
+                            className="p-1.5 text-muted-foreground hover:text-foreground hover:bg-muted rounded-full h-fit"
+                            title="Edit message"
+                        >
+                            <Pencil className="h-3.5 w-3.5" />
+                        </button>
+                        <button 
+                            onClick={() => handleDeleteMessage(activeSessionId!, i)}
+                            className="p-1.5 text-muted-foreground hover:text-destructive hover:bg-muted rounded-full h-fit"
+                            title="Delete message"
+                        >
+                            <Trash2 className="h-3.5 w-3.5" />
+                        </button>
+                    </div>
                  )}
 
                  <div className={cn("max-w-[90%] text-[15px] leading-relaxed", m.role === "user" ? "bg-muted px-5 py-3 rounded-3xl" : "text-foreground pt-1 w-full", m.isStopped ? "opacity-80" : "")}>
@@ -1197,19 +2044,165 @@ CRITICAL SAFETY RULE: You MUST NOT generate, provide, or discuss any adult, sexu
                           onComplete={() => markAsDone(i)}
                           setFullScreenImage={setFullScreenImage}
                        />
+                     ) : editingMessageIdx === i ? (
+                       <div className="flex flex-col gap-2 min-w-[240px] sm:min-w-[450px] bg-background border border-border/80 rounded-2xl p-3 shadow-inner">
+                         <textarea
+                           value={editingMessageText}
+                           onChange={e => setEditingMessageText(e.target.value)}
+                           className="w-full bg-transparent border-0 text-sm focus:outline-none text-foreground resize-y min-h-[80px]"
+                           onKeyDown={e => {
+                             if (e.key === 'Enter' && !e.shiftKey) {
+                               e.preventDefault();
+                               handleSaveEdit(i);
+                             }
+                           }}
+                           autoFocus
+                         />
+                         <div className="flex justify-end gap-2 border-t border-border/40 pt-2 shrink-0">
+                           <Button
+                             variant="ghost"
+                             size="sm"
+                             onClick={() => {
+                               setEditingMessageIdx(null);
+                               setEditingMessageText("");
+                             }}
+                             className="h-7 text-xs px-3 rounded-full hover:bg-muted"
+                           >
+                             Cancel
+                           </Button>
+                           <Button
+                             size="sm"
+                             onClick={() => handleSaveEdit(i)}
+                             className="h-7 text-xs px-3 rounded-full"
+                           >
+                             Save & Submit
+                           </Button>
+                         </div>
+                       </div>
                      ) : (
                        <ReactMarkdown remarkPlugins={[remarkMath, remarkGfm]} rehypePlugins={[rehypeKatex]} components={getMarkdownComponents(setFullScreenImage)}>
-                         {m.content}
+                         {preprocessMarkdown(m.content)}
                        </ReactMarkdown>
                      )}
+                     {m.role === "model" && !m.isTyping && (
+                       <div className="mt-3 flex flex-wrap items-center justify-between gap-3 border-t border-border/40 pt-2.5">
+                         <div className="flex flex-wrap items-center gap-2">
+                           <Button 
+                             variant="outline" 
+                             size="sm" 
+                             onClick={() => copyToClipboard(m.content, i)} 
+                             className="h-7 text-[11px] gap-1.5 text-muted-foreground hover:text-foreground rounded-full px-3"
+                             title="Copy response content"
+                           >
+                             {copiedIdx === i ? (
+                               <>
+                                 <Check className="h-3 w-3 text-green-500" /> Copied
+                               </>
+                             ) : (
+                               <>
+                                 <Copy className="h-3 w-3" /> Copy
+                               </>
+                             )}
+                           </Button>
+                           {i === messages.length - 1 && !loading && (
+                             <Button 
+                               variant="outline" 
+                               size="sm" 
+                               onClick={handleRegenerate} 
+                               className="h-7 text-[11px] gap-1.5 text-muted-foreground hover:text-foreground rounded-full px-3"
+                             >
+                               <RefreshCw className="h-3 w-3" /> Regenerate
+                             </Button>
+                           )}
+                           
+                           <Button
+                             variant="outline"
+                             size="sm"
+                             onClick={() => handleLikeMessage(i)}
+                             className={cn("h-7 w-7 p-0 rounded-full", likedMsgs[i] === 'like' ? "text-green-500 border-green-500/30 bg-green-500/10 hover:bg-green-500/20" : "text-muted-foreground hover:text-foreground")}
+                             title="Like response"
+                           >
+                             <ThumbsUp className="h-3.5 w-3.5" />
+                           </Button>
+                           <Button
+                             variant="outline"
+                             size="sm"
+                             onClick={() => handleDislikeMessage(i)}
+                             className={cn("h-7 w-7 p-0 rounded-full", likedMsgs[i] === 'dislike' ? "text-red-500 border-red-500/30 bg-red-500/10 hover:bg-red-500/20" : "text-muted-foreground hover:text-foreground")}
+                             title="Dislike response"
+                           >
+                             <ThumbsDown className="h-3.5 w-3.5" />
+                           </Button>
+                         </div>
+
+                         {m.sources && m.sources.length > 0 && (
+                           <div className="flex items-center gap-2">
+                             <span className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider">Sources:</span>
+                             <div className="flex items-center gap-1.5">
+                               {m.sources.map((src, srcIdx) => {
+                                 let hostname = "External Source";
+                                 try { hostname = new URL(src.uri).hostname; } catch(e) {}
+                                 const faviconUrl = `https://www.google.com/s2/favicons?domain=${hostname}&sz=64`;
+                                 
+                                 return (
+                                   <div key={srcIdx} className="relative group/src">
+                                     <a
+                                       href={src.uri}
+                                       target="_blank"
+                                       rel="noopener noreferrer"
+                                       className="h-6 w-6 rounded-full border border-border flex items-center justify-center hover:scale-110 hover:border-primary transition-all bg-background overflow-hidden cursor-pointer shadow-sm"
+                                     >
+                                       <img
+                                         src={faviconUrl}
+                                         alt={src.title || hostname}
+                                         className="h-4 w-4 object-contain rounded-full"
+                                         onError={(e) => { e.currentTarget.src = "https://www.google.com/s2/favicons?domain=wikipedia.org"; }}
+                                       />
+                                     </a>
+                                     
+                                     <div className="absolute z-[100] bottom-full right-0 mb-2 w-72 bg-slate-950 border border-slate-800 rounded-2xl p-4 shadow-2xl scale-0 group-hover/src:scale-100 transition-all origin-bottom-right text-white">
+                                       <div className="flex items-start gap-3 mb-2.5">
+                                         <div className="h-10 w-10 rounded-xl bg-slate-900 flex items-center justify-center shrink-0 border border-slate-800">
+                                           <img 
+                                             src={faviconUrl} 
+                                             alt="" 
+                                             className="h-6 w-6 object-contain"
+                                             onError={(e) => { e.currentTarget.src = "https://www.google.com/s2/favicons?domain=wikipedia.org&sz=64"; }}
+                                           />
+                                         </div>
+                                         <div className="min-w-0 flex-1">
+                                           <h4 className="text-xs font-bold text-slate-200 line-clamp-2 leading-snug">{src.title}</h4>
+                                           <p className="text-[10px] text-slate-500 font-medium font-mono truncate">{hostname}</p>
+                                         </div>
+                                       </div>
+                                       
+                                       {src.snippet && (
+                                         <p className="text-[11px] text-slate-400 leading-relaxed font-medium mb-3 line-clamp-3">
+                                           {src.snippet}
+                                         </p>
+                                       )}
+                                       
+                                       <div className="flex items-center justify-between border-t border-slate-900 pt-2.5">
+                                         <span className="text-[9px] font-semibold text-slate-650 font-mono">Verified Link</span>
+                                         <a
+                                           href={src.uri}
+                                           target="_blank"
+                                           rel="noopener noreferrer"
+                                           className="text-[10px] font-bold text-blue-400 hover:text-blue-300 flex items-center gap-1"
+                                         >
+                                           Visit Site <ExternalLink className="h-2.5 w-2.5" />
+                                         </a>
+                                       </div>
+                                     </div>
+                                   </div>
+                                 );
+                               })}
+                             </div>
+                           </div>
+                         )}
+                       </div>
+                     )}
                    </div>
-                   {m.role === "model" && i === messages.length - 1 && !m.isTyping && !loading && (
-                     <div className="mt-3 flex justify-start">
-                       <Button variant="outline" size="sm" onClick={handleRegenerate} className="h-7 text-[11px] gap-1.5 text-muted-foreground hover:text-foreground rounded-full px-3">
-                         <RefreshCw className="h-3 w-3" /> Regenerate
-                       </Button>
-                     </div>
-                   )}
                  </div>
                </motion.div>
             ))}

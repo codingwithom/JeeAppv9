@@ -52,7 +52,7 @@ export interface ChatMessage {
   isTyping?: boolean;
   isStopped?: boolean;
   attachments?: { url: string; type: string; name: string }[];
-  sources?: { uri: string; title: string; favicon: string }[];
+  sources?: { uri: string; title: string; favicon: string; snippet?: string; thumbnail?: string }[];
 }
 
 export interface ChatSession {
@@ -64,14 +64,17 @@ export interface ChatSession {
 
 const loadHtml2Canvas = (): Promise<any> => {
   return new Promise((resolve, reject) => {
-    if ((window as any).html2canvas) {
+    if ((window as any).html2canvas && (window as any).html2canvasIsPro) {
       resolve((window as any).html2canvas);
       return;
     }
     const script = document.createElement("script");
-    script.src = "https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js";
-    script.onload = () => resolve((window as any).html2canvas);
-    script.onerror = () => reject(new Error("Failed to load html2canvas"));
+    script.src = "https://cdn.jsdelivr.net/npm/html2canvas-pro@2.0.4/dist/html2canvas-pro.min.js";
+    script.onload = () => {
+      (window as any).html2canvasIsPro = true;
+      resolve((window as any).html2canvas);
+    };
+    script.onerror = () => reject(new Error("Failed to load html2canvas-pro"));
     document.body.appendChild(script);
   });
 };
@@ -581,38 +584,94 @@ const preprocessMarkdown = (content: string): string => {
     return `\n\`\`\`graph\n{\n  "functions": ["${func}"]\n}\n\`\`\`\n`;
   });
 
-  // 3. Match generic json blocks
-  const jsonRegex = /(?:^|\n)\{\s*"(?:functions|formula|type|videoId|items|question)"[\s\S]*?\}(?:\n|$)/g;
-  cleaned = cleaned.replace(jsonRegex, (match, offset) => {
-    const beforeText = content.substring(0, offset);
+  // 3. Match generic json blocks (with support for indentation and nested structures)
+  let scanIndex = 0;
+  while (true) {
+    const openBraceIdx = cleaned.indexOf("{", scanIndex);
+    if (openBraceIdx === -1) break;
+
+    // Check if this brace is inside a code block already
+    const beforeText = cleaned.substring(0, openBraceIdx);
     const backtickCount = (beforeText.match(/```/g) || []).length;
     if (backtickCount % 2 !== 0) {
-      return match; 
+      scanIndex = openBraceIdx + 1;
+      continue;
     }
-    
-    const trimmed = match.trim();
-    try {
-      const parsed = JSON.parse(trimmed);
-      if (typeof parsed === "object" && parsed !== null) {
-        if (parsed.functions || parsed.formula || parsed.type === "plot") {
-          return `\n\`\`\`graph\n${trimmed}\n\`\`\`\n`;
-        }
-        if (parsed.type === "simulation" || (parsed.type && ["projectile", "density", "electricity", "bohr", "bonding", "shm"].includes(parsed.type))) {
-          return `\n\`\`\`simulation\n${trimmed}\n\`\`\`\n`;
-        }
-        if (parsed.videoId || parsed.creator) {
-          return `\n\`\`\`youtube-card\n${trimmed}\n\`\`\`\n`;
-        }
-        if (parsed.items || parsed.recommendations) {
-          return `\n\`\`\`news-feed\n${trimmed}\n\`\`\`\n`;
-        }
-        if (parsed.question && parsed.options && parsed.answer) {
-          return `\n\`\`\`interactive-quiz\n${trimmed}\n\`\`\`\n`;
+
+    // Find the matching closing brace
+    let depth = 1;
+    let closeBraceIdx = -1;
+    let inString = false;
+    let escape = false;
+
+    for (let i = openBraceIdx + 1; i < cleaned.length; i++) {
+      const char = cleaned[i];
+      if (escape) {
+        escape = false;
+        continue;
+      }
+      if (char === "\\") {
+        escape = true;
+        continue;
+      }
+      if (char === '"') {
+        inString = !inString;
+        continue;
+      }
+      if (!inString) {
+        if (char === "{") depth++;
+        else if (char === "}") depth--;
+        if (depth === 0) {
+          closeBraceIdx = i;
+          break;
         }
       }
-    } catch (e) {}
-    return match;
-  });
+    }
+
+    if (closeBraceIdx === -1) {
+      scanIndex = openBraceIdx + 1;
+      continue;
+    }
+
+    // Extract the substring
+    const jsonStr = cleaned.substring(openBraceIdx, closeBraceIdx + 1);
+    
+    // Check if it's a valid JSON with specific keys
+    try {
+      const parsed = JSON.parse(jsonStr);
+      if (typeof parsed === "object" && parsed !== null) {
+        let lang = "";
+        if (parsed.functions || parsed.formula || parsed.type === "plot") {
+          lang = "graph";
+        } else if (parsed.type === "simulation" || (parsed.type && ["projectile", "density", "electricity", "bohr", "bonding", "shm"].includes(parsed.type))) {
+          lang = "simulation";
+        } else if (parsed.videoId || parsed.creator) {
+          lang = "youtube-card";
+        } else if (parsed.items || parsed.recommendations) {
+          lang = "news-feed";
+        } else if (parsed.question && parsed.options && parsed.answer) {
+          lang = "interactive-quiz";
+        }
+
+        if (lang) {
+          const replacement = `\n\`\`\`${lang}\n${jsonStr.trim()}\n\`\`\`\n`;
+          
+          let startReplaceIdx = openBraceIdx;
+          while (startReplaceIdx > 0 && (cleaned[startReplaceIdx - 1] === " " || cleaned[startReplaceIdx - 1] === "\t")) {
+            startReplaceIdx--;
+          }
+          
+          cleaned = cleaned.substring(0, startReplaceIdx) + replacement + cleaned.substring(closeBraceIdx + 1);
+          scanIndex = startReplaceIdx + replacement.length;
+          continue;
+        }
+      }
+    } catch (e) {
+      // Not a valid JSON, skip
+    }
+
+    scanIndex = openBraceIdx + 1;
+  }
 
   // 4. Strip tool tags that might be printed as loose text
   cleaned = cleaned.replace(/<\|tool_call_start\|>/g, "");
@@ -671,8 +730,77 @@ async function fetchWebSearchResults(query: string, timeFilter?: string): Promis
     
     return searchSummaries;
   } catch (error) {
-    console.error("Web search failed:", error);
-    return "Failed to retrieve search results.";
+    console.warn("Local search API failed or backend server is not running. Falling back to direct client-side search via CORS proxy:", error);
+    try {
+      const encoded = encodeURIComponent(query);
+      let searchUrl = `https://html.duckduckgo.com/html/?q=${encoded}`;
+      if (timeFilter) {
+        searchUrl += `&df=${timeFilter}`;
+      }
+      
+      const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(searchUrl)}`;
+      const res = await fetch(proxyUrl);
+      if (!res.ok) throw new Error("CORS proxy search request failed");
+      
+      const html = await res.text();
+      if (!html.includes("result results_links")) {
+        return "No search results found.";
+      }
+      
+      const decodeHTMLEntities = (str: string): string => {
+        return str
+          .replace(/&amp;/g, "&")
+          .replace(/&lt;/g, "<")
+          .replace(/&gt;/g, ">")
+          .replace(/&quot;/g, '"')
+          .replace(/&#39;/g, "'")
+          .replace(/&#x27;/g, "'")
+          .replace(/&#x2F;/g, "/")
+          .replace(/&ndash;/g, "–")
+          .replace(/&mdash;/g, "—")
+          .replace(/&nbsp;/g, " ");
+      };
+
+      const parts = html.split('class="result results_links');
+      const results = parts.slice(1, 6).map((part) => {
+        const hrefMatch = part.match(/class="result__a"[^>]*href="([^"]+)"/);
+        const titleMatch = part.match(/class="result__a"[^>]*>([\s\S]*?)<\/a>/);
+        const snippetMatch = part.match(/class="result__snippet"[^>]*>([\s\S]*?)<\/a>/);
+        
+        let url = hrefMatch ? hrefMatch[1] : "";
+        if (url.startsWith("//")) {
+          url = "https:" + url;
+        }
+        if (url.startsWith("/l/") || url.includes("uddg=")) {
+          const match = url.match(/[?&]uddg=([^&]+)/);
+          if (match) {
+            url = decodeURIComponent(match[1]);
+          }
+        }
+        
+        let title = titleMatch ? titleMatch[1].replace(/<[^>]*>/g, "").trim() : "";
+        let snippet = snippetMatch ? snippetMatch[1].replace(/<[^>]*>/g, "").trim() : "";
+        
+        title = decodeHTMLEntities(title);
+        snippet = decodeHTMLEntities(snippet);
+        
+        return { url, title, snippet };
+      });
+
+      if (results.length === 0) {
+        return "No search results found.";
+      }
+
+      let searchSummaries = "";
+      results.forEach((item, idx) => {
+        searchSummaries += `[Source ${idx + 1}] Title: ${item.title}\nURL: ${item.url}\nSnippet: ${item.snippet}\nThumbnail: \n\n`;
+      });
+      
+      return searchSummaries;
+    } catch (fallbackError) {
+      console.error("Fallback direct web search failed:", fallbackError);
+      return "Failed to retrieve search results.";
+    }
   }
 }
 
@@ -731,119 +859,79 @@ export default function AIChatInterface() {
     setTimeout(() => setCopiedIdx(null), 2000);
   };
 
-  const exportAsMarkdown = () => {
-    const currentSession = sessions.find(s => s.id === activeSessionId);
-    if (!currentSession) return;
-    
-    let mdContent = `# Chat Session: ${currentSession.title}\n`;
-    mdContent += `Generated: ${new Date(currentSession.updatedAt).toLocaleString()}\n\n`;
-    
-    currentSession.messages.forEach(msg => {
-      const roleName = msg.role === "user" ? "User" : "Calculus AI";
-      mdContent += `### ${roleName}\n\n${msg.content}\n\n`;
-      if (msg.sources && msg.sources.length > 0) {
-        mdContent += `**Sources:**\n`;
-        msg.sources.forEach(src => {
-          mdContent += `- [${src.title}](${src.uri})\n`;
-        });
-        mdContent += `\n`;
-      }
-      mdContent += `---\n\n`;
-    });
-    
-    const blob = new Blob([mdContent], { type: "text/markdown;charset=utf-8" });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-    link.href = url;
-    link.download = `chat_export_${currentSession.title.toLowerCase().replace(/\s+/g, "_")}.md`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    URL.revokeObjectURL(url);
-  };
-
-  const exportAsPDF = () => {
-    const currentSession = sessions.find(s => s.id === activeSessionId);
-    if (!currentSession) return;
-    
-    const printWindow = window.open("", "_blank");
-    if (!printWindow) return;
-    
-    let htmlContent = `
-      <html>
-        <head>
-          <title>${currentSession.title} - Chat Export</title>
-          <style>
-            body { font-family: system-ui, -apple-system, sans-serif; padding: 40px; color: #1e293b; line-height: 1.6; }
-            h1 { color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 30px; }
-            .message { margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px dashed #e2e8f0; }
-            .role { font-weight: bold; color: #475569; text-transform: uppercase; font-size: 0.85em; tracking-wider; margin-bottom: 6px; }
-            .content { white-space: pre-wrap; font-size: 14px; }
-            .sources { margin-top: 15px; font-size: 12px; color: #64748b; }
-            .sources a { color: #3b82f6; text-decoration: none; }
-          </style>
-        </head>
-        <body>
-          <h1>Chat Export: ${currentSession.title}</h1>
-          <p style="font-size: 12px; color: #64748b; margin-top: -20px; margin-bottom: 40px;">Exported on: ${new Date().toLocaleString()}</p>
-    `;
-    
-    currentSession.messages.forEach(msg => {
-      const roleName = msg.role === "user" ? "User" : "Calculus AI";
-      let sourcesHtml = "";
-      if (msg.sources && msg.sources.length > 0) {
-        sourcesHtml = `<div class="sources"><strong>Sources:</strong> `;
-        sourcesHtml += msg.sources.map(src => `<a href="${src.uri}">${src.title}</a>`).join(", ");
-        sourcesHtml += `</div>`;
-      }
-      
-      htmlContent += `
-        <div class="message">
-          <div class="role">${roleName}</div>
-          <div class="content">${msg.content.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</div>
-          ${sourcesHtml}
-        </div>
-      `;
-    });
-    
-    htmlContent += `
-          <script>
-            window.onload = function() {
-              window.print();
-              setTimeout(function() { window.close(); }, 500);
-            }
-          </script>
-        </body>
-      </html>
-    `;
-    
-    printWindow.document.open();
-    printWindow.document.write(htmlContent);
-    printWindow.document.close();
-  };
-
   const exportAsImage = async () => {
     const element = document.getElementById("chat-capture-area");
     if (!element) return;
     
     setExportingImage(true);
+    
+    const currentSession = sessions.find(s => s.id === activeSessionId);
+    const title = currentSession ? currentSession.title.toLowerCase().replace(/\s+/g, "_") : "chat";
+    const filename = `chat_export_${title}.png`;
+    
+    let fileHandle: any = null;
+    
+    // Check if File System Access API is supported and try to open save picker
+    if ('showSaveFilePicker' in window) {
+      try {
+        fileHandle = await (window as any).showSaveFilePicker({
+          suggestedName: filename,
+          types: [{
+            description: 'PNG Image',
+            accept: {
+              'image/png': ['.png'],
+            },
+          }],
+        });
+      } catch (pickerErr: any) {
+        // If the user cancelled, abort the operation without rendering
+        if (pickerErr.name === 'AbortError') {
+          setExportingImage(false);
+          return;
+        }
+        console.warn("showSaveFilePicker failed or was rejected, falling back to legacy download:", pickerErr);
+      }
+    }
+    
     try {
       const html2canvas = await loadHtml2Canvas();
       await new Promise((resolve) => setTimeout(resolve, 300));
       
+      const bodyBg = getComputedStyle(document.body).backgroundColor;
+      const parsedBg = (bodyBg && bodyBg !== 'transparent' && bodyBg !== 'rgba(0, 0, 0, 0)') 
+        ? bodyBg 
+        : (getComputedStyle(element).backgroundColor && getComputedStyle(element).backgroundColor !== 'transparent' && getComputedStyle(element).backgroundColor !== 'rgba(0, 0, 0, 0)')
+          ? getComputedStyle(element).backgroundColor
+          : '#020817';
+
       const canvas = await html2canvas(element, {
         useCORS: true,
         allowTaint: true,
-        backgroundColor: getComputedStyle(document.documentElement).getPropertyValue('--background') || '#020817',
-        scale: 2,
+        backgroundColor: parsedBg,
+        scale: window.devicePixelRatio || 2,
+        logging: false,
+        height: element.scrollHeight,
+        windowHeight: element.scrollHeight,
+        scrollX: 0,
+        scrollY: 0,
       });
       
+      // If we got a file handle from showSaveFilePicker, write directly to it
+      if (fileHandle) {
+        const blob = await new Promise<Blob | null>((resolve) => canvas.toBlob(resolve, 'image/png'));
+        if (blob) {
+          const writable = await fileHandle.createWritable();
+          await writable.write(blob);
+          await writable.close();
+          return;
+        }
+      }
+      
+      // Fallback to legacy anchor link download
       const imgData = canvas.toDataURL("image/png");
       const link = document.createElement("a");
       link.href = imgData;
-      const currentSession = sessions.find(s => s.id === activeSessionId);
-      const title = currentSession ? currentSession.title.toLowerCase().replace(/\s+/g, "_") : "chat";
-      link.download = `chat_export_${title}.png`;
+      link.download = filename;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -1242,7 +1330,10 @@ Create an experience that feels like a combination of ChatGPT, GPT-5, Gemini, Cl
       let responseText = "";
       let primaryApiError = "";
       let generatedAttachments: any[] = [];
-      let generatedSources: { uri: string; title: string; favicon: string }[] = [];
+      let generatedSources: { uri: string; title: string; favicon: string; snippet?: string; thumbnail?: string }[] = [];
+
+      // Detect if user wants a graph/plot/visualization
+      const isGraphOrPlotRequest = lastMsg.toLowerCase().includes("plot") || lastMsg.toLowerCase().includes("graph") || lastMsg.toLowerCase().includes("visualize") || lastMsg.toLowerCase().includes("curve") || lastMsg.toLowerCase().includes("equation") || lastMsg.toLowerCase().includes("draw");
 
       // Fetch search results from Google Search API (DuckDuckGo RAG parser)
       let searchContext = "";
@@ -1254,36 +1345,51 @@ Create an experience that feels like a combination of ChatGPT, GPT-5, Gemini, Cl
           // Check if user is asking for recent/latest news or time-sensitive data
           const isLatestRequest = lower.includes("news") || lower.includes("today") || lower.includes("latest") || lower.includes("current") || lower.includes("now") || lower.includes("realtime") || lower.includes("real-time") || lower.includes("today's") || lower.includes("todays") || lower.includes("situation");
           
+          // Trigger web search for news OR when plotting named math shapes/curves to find formulas
+          const isNamedCurveRequest = isGraphOrPlotRequest && (
+            lower.includes("leaf") || lower.includes("heart") || lower.includes("butterfly") ||
+            lower.includes("rose") || lower.includes("spiral") || lower.includes("cardioid") ||
+            lower.includes("lemniscate") || lower.includes("pattern") || lower.includes("shape") ||
+            lower.includes("design") || lower.includes("formula") || lower.includes("how to") ||
+            lower.length > 20
+          );
+          
+          const shouldSearchWeb = isLatestRequest || isNamedCurveRequest;
+          
           let searchResults = "";
           
-          if (isLatestRequest) {
-            const currentYear = new Date().getFullYear();
-            
-            // Build a query specifically targeting the current situation/year
-            if (!lower.includes(String(currentYear))) {
-              adjustedQuery = `${lastMsg} ${currentYear}`;
-            }
-            
-            // Try month filter first to get fresh news
-            searchResults = await fetchWebSearchResults(adjustedQuery, "m");
-            
-            // Fallback to year filter if month filter yields nothing
-            if (!searchResults || searchResults === "Failed to retrieve search results." || searchResults === "No search results found.") {
-              searchResults = await fetchWebSearchResults(adjustedQuery, "y");
+          if (shouldSearchWeb) {
+            if (isLatestRequest) {
+              const currentYear = new Date().getFullYear();
+              
+              // Build a query specifically targeting the current situation/year
+              if (!lower.includes(String(currentYear))) {
+                adjustedQuery = `${lastMsg} ${currentYear}`;
+              }
+              
+              // Try month filter first to get fresh news
+              searchResults = await fetchWebSearchResults(adjustedQuery, "m");
+              
+              // Fallback to year filter if month filter yields nothing
+              if (!searchResults || searchResults === "Failed to retrieve search results." || searchResults === "No search results found.") {
+                searchResults = await fetchWebSearchResults(adjustedQuery, "y");
+              }
+            } else if (isNamedCurveRequest) {
+              // Build a targeted search query for the mathematical formula
+              adjustedQuery = `${lastMsg} mathematical formula equation`;
+              searchResults = await fetchWebSearchResults(adjustedQuery);
             }
           }
           
           // Fallback to search without time filter
-          if (!searchResults || searchResults === "Failed to retrieve search results." || searchResults === "No search results found.") {
+          if (shouldSearchWeb && (!searchResults || searchResults === "Failed to retrieve search results." || searchResults === "No search results found.")) {
             searchResults = await fetchWebSearchResults(adjustedQuery);
           }
           
           if (searchResults && searchResults !== "Failed to retrieve search results." && searchResults !== "No search results found.") {
             searchContext = `\n\n[CRITICAL DIRECTIVE: REAL-TIME RAG MODE ACTIVATED]
-The user is requesting real-time search information. You MUST answer this query using ONLY the verified web search results provided below.
-DO NOT use your pre-trained weights or old dataset. Banned: Do not refer to years like 2025 or earlier if the query is about "today" in 2026.
-Act strictly as a search synthesizer (similar to Google AI Overview or Perplexity). Cite all facts by referencing the relevant [Source X] link.
-If the search results do not have the specific answer, summarize what is closest or state "I cannot find specific updates in the live search index."
+The user is requesting information. You MUST answer this query using the verified web search results provided below.
+Cite all facts by referencing the relevant [Source X] link.
 
 REAL-TIME WEB SEARCH RESULTS FOR "${adjustedQuery}":
 ${searchResults}
@@ -1319,7 +1425,32 @@ INSTRUCTIONS: Write a comprehensive, precise response synthesizing the search re
         }
       }
 
-      const finalSystemInstruction = systemInstruction + modeInstruction + imageGenerationInstruction + dateInstruction + searchContext;
+      let graphDirective = "";
+      if (isGraphOrPlotRequest) {
+        graphDirective = `\n\n[CRITICAL DIRECTIVE: INTERACTIVE GRAPH PLOTTER]
+The user wants to plot, graph, or visualize an equation or pattern.
+You MUST output a Desmos-like interactive graph widget using the \`\`\`graph\`\`\` code block format.
+DO NOT output Python, MATLAB, R, C++, or other programming code blocks. Avoid giving code scripts; instead, always return the interactive graph config.
+If the request refers to a specific pattern or curve (like a leaf graph, heart curve, butterfly, rose, cardioid, etc.), extract the formula from the search results or your knowledge base.
+
+For the leaf graph requested:
+- Formula: r = ( 100 / (100 + (theta - pi/2)^8) ) * ( 2 - sin(7*theta) - 1/2 * cos(30*theta) )
+- Range: -pi/2 <= theta <= 3*pi/2
+- Make sure to format it in the functions list using theta.
+
+Formatting guidelines for the \`\`\`graph\`\`\` config:
+1. Polar curves: specify as "r = f(theta)" or just the right-hand side, and specify the range in the equation like "r = f(theta), low_val <= theta <= high_val". For example:
+   "functions": ["r = ( 100 / (100 + (theta - pi/2)^8) ) * ( 2 - sin(7*theta) - 0.5 * cos(30*theta) ), -pi/2 <= theta <= 3*pi/2"]
+2. Parametric curves: specify as "x = f(t), y = g(t), low_val <= t <= high_val". For example:
+   "functions": ["x = cos(t), y = sin(t), 0 <= t <= 2*pi"]
+3. Explicit curves: specify as "y = f(x)" or "f(x)". For example: "y = x^2".
+4. Implicit curves: specify as "f(x,y) = g(x,y)". For example: "x^2 + y^2 = 9".
+5. Use sliders if they want interactive parameters (e.g. "sliders": [{"name": "a", "min": -5, "max": 5, "step": 0.1, "defaultValue": 1}]).
+
+If the user uploaded an image of an equation, read/OCR the equation from the image using your visual capabilities and output the \`\`\`graph\`\`\` config for it.`;
+      }
+
+      const finalSystemInstruction = systemInstruction + modeInstruction + imageGenerationInstruction + dateInstruction + searchContext + graphDirective;
       
       const visionPrompt = hasImages ? "Please scan, read, and analyze the uploaded image carefully. Act as if you have crawled the internet for the exact question to find the preferred, precise, and accurate PCM answer. Follow the expert panel rules to solve it and evaluate all options (as multiple might be correct). Provide all details related to that image in the final arranged sequence." : "";
 
@@ -1347,6 +1478,10 @@ INSTRUCTIONS: Write a comprehensive, precise response synthesizing the search re
       ];
       
       const openRouterImageModels = [
+"nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free", 
+"nvidia/llama-nemotron-rerank-vl-1b-v2:free",
+"nex-agi/nex-n2-pro:free",
+"nvidia/nemotron-3.5-content-safety:free",
         "nex-agi/nex-n2-pro:free",
         "google/gemma-4-31b-it:free",
         "google/gemma-4-26b-a4b-it:free"
@@ -1922,24 +2057,6 @@ INSTRUCTIONS: Write a comprehensive, precise response synthesizing the search re
               <Button 
                 variant="outline" 
                 size="sm" 
-                onClick={exportAsMarkdown}
-                className="h-8 text-xs gap-1.5 text-muted-foreground hover:text-foreground rounded-full px-3"
-                title="Export Chat as Markdown"
-              >
-                <FileText className="h-3.5 w-3.5" /> Export MD
-              </Button>
-              <Button 
-                variant="outline" 
-                size="sm" 
-                onClick={exportAsPDF}
-                className="h-8 text-xs gap-1.5 text-muted-foreground hover:text-foreground rounded-full px-3"
-                title="Export Chat as PDF"
-              >
-                <Download className="h-3.5 w-3.5" /> Export PDF
-              </Button>
-              <Button 
-                variant="outline" 
-                size="sm" 
                 onClick={exportAsImage}
                 disabled={exportingImage}
                 className="h-8 text-xs gap-1.5 text-muted-foreground hover:text-foreground rounded-full px-3"
@@ -1980,7 +2097,7 @@ INSTRUCTIONS: Write a comprehensive, precise response synthesizing the search re
                  )}
                  
                  {m.role === "user" && !loading && (
-                    <div className="flex flex-col mr-2 mt-2 opacity-0 group-hover:opacity-100 transition-opacity gap-1 shrink-0">
+                    <div data-html2canvas-ignore="true" className="flex flex-col mr-2 mt-2 opacity-0 group-hover:opacity-100 transition-opacity gap-1 shrink-0">
                         <button 
                             onClick={() => {
                               setEditingMessageIdx(i);
@@ -2085,7 +2202,7 @@ INSTRUCTIONS: Write a comprehensive, precise response synthesizing the search re
                        </ReactMarkdown>
                      )}
                      {m.role === "model" && !m.isTyping && (
-                       <div className="mt-3 flex flex-wrap items-center justify-between gap-3 border-t border-border/40 pt-2.5">
+                       <div data-html2canvas-ignore="true" className="mt-3 flex flex-wrap items-center justify-between gap-3 border-t border-border/40 pt-2.5">
                          <div className="flex flex-wrap items-center gap-2">
                            <Button 
                              variant="outline" 

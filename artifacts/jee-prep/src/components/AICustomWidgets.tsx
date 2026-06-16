@@ -71,6 +71,14 @@ export function GraphWidget({
   const [isClosed, setIsClosed] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
   const [isLiked, setIsLiked] = useState<'like' | 'dislike' | null>(null);
+  const [showEquationPanel, setShowEquationPanel] = useState(true);
+  const [resizeCount, setResizeCount] = useState(0);
+
+  useEffect(() => {
+    const handleResize = () => setResizeCount(prev => prev + 1);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   
   // Slider states
   const [sliderVals, setSliderVals] = useState<Record<string, number>>(() => {
@@ -101,17 +109,18 @@ export function GraphWidget({
     cleaned = cleaned.replace(/^y\s*=\s*/, "");
     
     // Insert implicit multiplication between digits and variables/parentheses (e.g. 2x -> 2*x, 3(x) -> 3*(x))
-    cleaned = cleaned.replace(/(\d+)([a-z(])/g, "$1*$2");
+    cleaned = cleaned.replace(/(\d+)([a-z(θ])/g, "$1*$2");
+    cleaned = cleaned.replace(/\)\(/g, ")*(");
     
     // Normalize shorthand functions without parentheses (e.g. sin x -> sin(x), cosx -> cos(x))
     const mathFuncs = ["sin", "cos", "tan", "cot", "sec", "csc", "log", "ln", "sqrt"];
     mathFuncs.forEach(func => {
-      // sin x -> sin(x)
-      const regexSpace = new RegExp(`\\b${func}\\s+([a-z0-9_().**+\\-/^]+)`, "g");
+      // sin x -> sin(x), sin theta -> sin(theta)
+      const regexSpace = new RegExp(`\\b${func}\\s+([a-z0-9_().**+\\-/^θ]+)`, "g");
       cleaned = cleaned.replace(regexSpace, `${func}($1)`);
       
-      // sinx -> sin(x)
-      const regexVar = new RegExp(`\\b${func}([x])\\b`, "g");
+      // sinx -> sin(x), sintheta -> sin(theta)
+      const regexVar = new RegExp(`\\b${func}([xθt]|theta)\\b`, "g");
       cleaned = cleaned.replace(regexVar, `${func}($1)`);
     });
     
@@ -144,9 +153,11 @@ export function GraphWidget({
     // Power symbol ^ to **
     cleaned = cleaned.replace(/\^/g, "**");
     
-    // Replace independent variable x or t
+    // Replace independent variable x or t or theta
     cleaned = cleaned.replace(/\bx\b/g, `(${xVal})`);
     cleaned = cleaned.replace(/\bt\b/g, `(${xVal})`);
+    cleaned = cleaned.replace(/\btheta\b/g, `(${xVal})`);
+    cleaned = cleaned.replace(/θ/g, `(${xVal})`);
     if (typeof yVal === "number") {
       cleaned = cleaned.replace(/\by\b/g, `(${yVal})`);
     }
@@ -243,6 +254,9 @@ export function GraphWidget({
     const width = rect.width;
     const height = rect.height;
 
+    const toScreenX = (x: number) => ((x - xRange[0]) / (xRange[1] - xRange[0])) * width;
+    const toScreenY = (y: number) => height - ((y - yRange[0]) / (yRange[1] - yRange[0])) * height;
+
     // Clear background
     ctx.fillStyle = "#09090b"; // Pitch black grid background
     ctx.fillRect(0, 0, width, height);
@@ -330,21 +344,221 @@ export function GraphWidget({
     // Colors for multiple functions (neon blue curve is the primary)
     const funcColors = ["#00f0ff", "#38bdf8", "#06b6d4", "#60a5fa"];
 
+    // Helper functions for LaTeX math expression conversion
+    const convertFrac = (str: string): string => {
+      let s = str;
+      let index;
+      const findMatchingBrace = (tempStr: string, startIdx: number) => {
+        let depth = 1;
+        for (let i = startIdx; i < tempStr.length; i++) {
+          if (tempStr[i] === "{") depth++;
+          else if (tempStr[i] === "}") depth--;
+          if (depth === 0) return i;
+        }
+        return -1;
+      };
+
+      while ((index = s.indexOf("\\frac{")) !== -1) {
+        let numStart = index + 6;
+        let numEnd = findMatchingBrace(s, numStart);
+        if (numEnd === -1) break;
+        let numerator = s.substring(numStart, numEnd);
+
+        let denStart = s.indexOf("{", numEnd + 1);
+        if (denStart === -1) break;
+        let denEnd = findMatchingBrace(s, denStart + 1);
+        if (denEnd === -1) break;
+        let denominator = s.substring(denStart + 1, denEnd);
+
+        s = s.substring(0, index) + `((${numerator})/(${denominator}))` + s.substring(denEnd + 1);
+      }
+      return s;
+    };
+
+    const cleanLatex = (str: string): string => {
+      let s = str.trim();
+      if (s.startsWith("{") && s.endsWith("}")) {
+        s = s.substring(1, s.length - 1).trim();
+      }
+      s = s.replace(/\\cdot/g, "*");
+      s = s.replace(/\\left\(/g, "(").replace(/\\right\)/g, ")");
+      s = s.replace(/\\left\[/g, "[").replace(/\\right\]/g, ")");
+      s = s.replace(/\\left\\{/g, "{").replace(/\\right\\}/g, "}");
+      s = s.replace(/\\div/g, "/");
+      s = s.replace(/\\times/g, "*");
+      
+      // Convert fractions
+      s = convertFrac(s);
+      
+      // Remove other backslashes
+      s = s.replace(/\\(sin|cos|tan|cot|sec|csc|ln|log|sqrt|pi|theta|alpha|beta|gamma|phi|omega|t|x|y|r)/g, "$1");
+      
+      return s;
+    };
+
+    const parseConstExpr = (str: string): number => {
+      let cleaned = str.toLowerCase()
+        .replace(/\\/g, "")
+        .replace(/\bpi\b/g, "Math.PI")
+        .replace(/\be\b/g, "Math.E")
+        .replace(/\^/g, "**");
+      try {
+        const fn = new Function(`return ${cleaned};`);
+        return fn();
+      } catch(e) {
+        return NaN;
+      }
+    };
+
     // Plot functions
-    functions.forEach((expr, fIdx) => {
-      if (!expr || typeof expr !== "string" || !expr.trim()) return;
+    functions.forEach((rawExpr, fIdx) => {
+      if (!rawExpr || typeof rawExpr !== "string" || !rawExpr.trim()) return;
       ctx.strokeStyle = funcColors[fIdx % funcColors.length];
       ctx.lineWidth = 2.5;
 
-      const toScreenX = (x: number) => ((x - xRange[0]) / (xRange[1] - xRange[0])) * width;
-      const toScreenY = (y: number) => height - ((y - yRange[0]) / (yRange[1] - yRange[0])) * height;
 
-      // Check if this is an implicit equation
-      const cleanExpr = expr.replace(/^y\s*=\s*/, "").trim();
-      const isImplicit = cleanExpr.includes("y");
 
-      if (isImplicit) {
-        // Implicit equation plot
+      // Clean LaTeX
+      let cleanExpr = cleanLatex(rawExpr);
+
+      // Parse custom range if present
+      let customRange: [number, number] | null = null;
+      const rangeMatch = cleanExpr.match(/,\s*([^,<=≤]+)\s*(?:<=|\\leq|≤)\s*([^,<=≤]+)\s*(?:<=|\\leq|≤)\s*([^,]+)/i);
+      if (rangeMatch) {
+        const lowVal = parseConstExpr(rangeMatch[1]);
+        const highVal = parseConstExpr(rangeMatch[3]);
+        if (!isNaN(lowVal) && !isNaN(highVal)) {
+          customRange = [lowVal, highVal];
+        }
+      }
+
+      // Remove range part
+      const commaIdx = cleanExpr.indexOf(",");
+      if (commaIdx !== -1) {
+        cleanExpr = cleanExpr.substring(0, commaIdx).trim();
+      }
+
+      const isParametric = cleanExpr.includes("x=") && cleanExpr.includes("y=") && (cleanExpr.includes("t") || cleanExpr.includes("\t"));
+      const isPolar = cleanExpr.startsWith("r=") || cleanExpr.includes("theta") || cleanExpr.includes("θ");
+      const isImplicit = !isParametric && !isPolar && cleanExpr.includes("y") && cleanExpr.includes("=");
+
+      if (isParametric) {
+        let xExpr = "";
+        let yExpr = "";
+        const xMatch = cleanExpr.match(/x\s*=\s*([^,;]+)/);
+        const yMatch = cleanExpr.match(/y\s*=\s*([^,;]+)/);
+        if (xMatch && yMatch) {
+          xExpr = xMatch[1].trim();
+          yExpr = yMatch[1].trim();
+        } else {
+          const parts = cleanExpr.split(/[;]+/);
+          if (parts.length >= 2) {
+            xExpr = parts[0].replace(/^x\s*=\s*/, "").trim();
+            yExpr = parts[1].replace(/^y\s*=\s*/, "").trim();
+          }
+        }
+
+        if (xExpr && yExpr) {
+          const tMin = customRange ? customRange[0] : 0;
+          const tMax = customRange ? customRange[1] : 2 * Math.PI;
+          const steps = 1000;
+          ctx.beginPath();
+          let isFirst = true;
+          const pointsList: { x: number; y: number }[] = [];
+
+          for (let i = 0; i <= steps; i++) {
+            const t = tMin + (i / steps) * (tMax - tMin);
+            const xVal = parseAndEval(xExpr, t, sliderVals);
+            const yVal = parseAndEval(yExpr, t, sliderVals);
+
+            if (!isNaN(xVal) && !isNaN(yVal)) {
+              const px = toScreenX(xVal);
+              const py = toScreenY(yVal);
+              if (px >= -100 && px <= width + 100 && py >= -100 && py <= height + 100) {
+                if (isFirst) {
+                  ctx.moveTo(px, py);
+                  isFirst = false;
+                } else {
+                  ctx.lineTo(px, py);
+                }
+                pointsList.push({ x: px, y: py });
+              } else {
+                isFirst = true;
+              }
+            } else {
+              isFirst = true;
+            }
+          }
+          ctx.stroke();
+
+          // Draw nodes
+          ctx.fillStyle = funcColors[fIdx % funcColors.length];
+          const nodeInterval = 40;
+          pointsList.forEach((pt, ptIdx) => {
+            if (ptIdx % nodeInterval === 0) {
+              ctx.beginPath();
+              ctx.arc(pt.x, pt.y, 3.5, 0, Math.PI * 2);
+              ctx.fill();
+              ctx.strokeStyle = "#ffffff";
+              ctx.lineWidth = 1;
+              ctx.stroke();
+            }
+          });
+        }
+      } else if (isPolar) {
+        let polarExpr = cleanExpr;
+        if (polarExpr.startsWith("r=")) {
+          polarExpr = polarExpr.substring(2).trim();
+        }
+        
+        const thetaMin = customRange ? customRange[0] : -Math.PI;
+        const thetaMax = customRange ? customRange[1] : Math.PI;
+        const steps = 1200;
+        ctx.beginPath();
+        let isFirst = true;
+        const pointsList: { x: number; y: number }[] = [];
+
+        for (let i = 0; i <= steps; i++) {
+          const theta = thetaMin + (i / steps) * (thetaMax - thetaMin);
+          const rVal = parseAndEval(polarExpr, theta, sliderVals);
+
+          if (!isNaN(rVal)) {
+            const xVal = rVal * Math.cos(theta);
+            const yVal = rVal * Math.sin(theta);
+            const px = toScreenX(xVal);
+            const py = toScreenY(yVal);
+            
+            if (px >= -100 && px <= width + 100 && py >= -100 && py <= height + 100) {
+              if (isFirst) {
+                ctx.moveTo(px, py);
+                isFirst = false;
+              } else {
+                ctx.lineTo(px, py);
+              }
+              pointsList.push({ x: px, y: py });
+            } else {
+              isFirst = true;
+            }
+          } else {
+            isFirst = true;
+          }
+        }
+        ctx.stroke();
+
+        // Draw nodes
+        ctx.fillStyle = funcColors[fIdx % funcColors.length];
+        const nodeInterval = 40;
+        pointsList.forEach((pt, ptIdx) => {
+          if (ptIdx % nodeInterval === 0) {
+            ctx.beginPath();
+            ctx.arc(pt.x, pt.y, 3.5, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.strokeStyle = "#ffffff";
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          }
+        });
+      } else if (isImplicit) {
         const gridCols = 85;
         const gridRows = 85;
         const grid: number[][] = [];
@@ -401,7 +615,7 @@ export function GraphWidget({
               ctx.lineTo(toScreenX(pts[1].x), toScreenY(pts[1].y));
               ctx.stroke();
 
-              // Draw discrete circular nodes for implicit functions
+              // Draw nodes
               if ((i + j) % 6 === 0) {
                 ctx.fillStyle = funcColors[fIdx % funcColors.length];
                 ctx.beginPath();
@@ -415,7 +629,6 @@ export function GraphWidget({
           }
         }
       } else {
-        // Standard explicit function plot
         ctx.beginPath();
         let isFirst = true;
         const steps = width;
@@ -423,7 +636,7 @@ export function GraphWidget({
         
         for (let px = 0; px <= steps; px++) {
           const xVal = xRange[0] + (px / width) * (xRange[1] - xRange[0]);
-          const yVal = parseAndEval(expr, xVal, sliderVals);
+          const yVal = parseAndEval(cleanExpr, xVal, sliderVals);
 
           if (!isNaN(yVal)) {
             const py = toScreenY(yVal);
@@ -444,9 +657,9 @@ export function GraphWidget({
         }
         ctx.stroke();
 
-        // Draw discrete circular nodes along explicit functions
+        // Draw nodes
         ctx.fillStyle = funcColors[fIdx % funcColors.length];
-        const nodeInterval = 15;
+        const nodeInterval = 30;
         pointsList.forEach((pt, ptIdx) => {
           if (ptIdx % nodeInterval === 0) {
             ctx.beginPath();
@@ -460,7 +673,7 @@ export function GraphWidget({
       }
     });
 
-    // Draw coordinate tracking overlay
+    // Draw coordinate tracking overlay (closest point tracking)
     if (mousePos && mousePos.x >= 0 && mousePos.x <= width && mousePos.y >= 0 && mousePos.y <= height) {
       ctx.strokeStyle = "rgba(255, 255, 255, 0.25)";
       ctx.lineWidth = 1;
@@ -475,127 +688,229 @@ export function GraphWidget({
       ctx.stroke();
       ctx.setLineDash([]);
 
-      // Draw coordinates on function curves
-      functions.forEach((expr, fIdx) => {
-        if (!expr || typeof expr !== "string" || !expr.trim()) return;
-        const curY = parseAndEval(expr, mousePos.graphX, sliderVals);
-        if (!isNaN(curY)) {
-          const py = height - ((curY - yRange[0]) / (yRange[1] - yRange[0])) * height;
-          if (py >= 0 && py <= height) {
-            // Draw dot on curve
-            ctx.fillStyle = funcColors[fIdx % funcColors.length];
-            ctx.beginPath();
-            ctx.arc(mousePos.x, py, 5, 0, Math.PI * 2);
-            ctx.fill();
-            ctx.strokeStyle = "#ffffff";
-            ctx.lineWidth = 1;
-            ctx.stroke();
-
-            // Label coordinate
-            ctx.fillStyle = "#ffffff";
-            ctx.font = "bold 11px sans-serif";
-            const coordText = `f(${mousePos.graphX.toFixed(2)}) = ${curY.toFixed(2)}`;
-            const textWidth = ctx.measureText(coordText).width;
-            
-            ctx.fillStyle = "rgba(15, 23, 42, 0.85)";
-            ctx.fillRect(mousePos.x + 8, py - 18, textWidth + 12, 22);
-            ctx.strokeStyle = funcColors[fIdx % funcColors.length];
-            ctx.strokeRect(mousePos.x + 8, py - 18, textWidth + 12, 22);
-
-            ctx.fillStyle = "#ffffff";
-            ctx.fillText(coordText, mousePos.x + 14, py - 3);
+      // For each function, find the closest plotted point to the mouse cursor
+      functions.forEach((rawExpr, fIdx) => {
+        if (!rawExpr || typeof rawExpr !== "string" || !rawExpr.trim()) return;
+        
+        let cleanExpr = cleanLatex(rawExpr);
+        
+        // Remove range part
+        let customRange: [number, number] | null = null;
+        const rangeMatch = cleanExpr.match(/,\s*([^,<=≤]+)\s*(?:<=|\\leq|≤)\s*([^,<=≤]+)\s*(?:<=|\\leq|≤)\s*([^,]+)/i);
+        if (rangeMatch) {
+          const lowVal = parseConstExpr(rangeMatch[1]);
+          const highVal = parseConstExpr(rangeMatch[3]);
+          if (!isNaN(lowVal) && !isNaN(highVal)) {
+            customRange = [lowVal, highVal];
           }
+        }
+        const commaIdx = cleanExpr.indexOf(",");
+        if (commaIdx !== -1) {
+          cleanExpr = cleanExpr.substring(0, commaIdx).trim();
+        }
+
+        const isParametric = cleanExpr.includes("x=") && cleanExpr.includes("y=") && (cleanExpr.includes("t") || cleanExpr.includes("\t"));
+        const isPolar = cleanExpr.startsWith("r=") || cleanExpr.includes("theta") || cleanExpr.includes("θ");
+
+        let bestPt: { x: number; y: number; graphX: number; graphY: number } | null = null;
+        let minDist = Infinity;
+
+        const checkPoint = (gX: number, gY: number) => {
+          const px = toScreenX(gX);
+          const py = toScreenY(gY);
+          const dx = px - mousePos.x;
+          const dy = py - mousePos.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < minDist) {
+            minDist = dist;
+            bestPt = { x: px, y: py, graphX: gX, graphY: gY };
+          }
+        };
+
+        if (isParametric) {
+          let xExpr = "";
+          let yExpr = "";
+          const xMatch = cleanExpr.match(/x\s*=\s*([^,;]+)/);
+          const yMatch = cleanExpr.match(/y\s*=\s*([^,;]+)/);
+          if (xMatch && yMatch) {
+            xExpr = xMatch[1].trim();
+            yExpr = yMatch[1].trim();
+          } else {
+            const parts = cleanExpr.split(/[;]+/);
+            if (parts.length >= 2) {
+              xExpr = parts[0].replace(/^x\s*=\s*/, "").trim();
+              yExpr = parts[1].replace(/^y\s*=\s*/, "").trim();
+            }
+          }
+          if (xExpr && yExpr) {
+            const tMin = customRange ? customRange[0] : 0;
+            const tMax = customRange ? customRange[1] : 2 * Math.PI;
+            for (let i = 0; i <= 200; i++) {
+              const t = tMin + (i / 200) * (tMax - tMin);
+              const gX = parseAndEval(xExpr, t, sliderVals);
+              const gY = parseAndEval(yExpr, t, sliderVals);
+              if (!isNaN(gX) && !isNaN(gY)) {
+                checkPoint(gX, gY);
+              }
+            }
+          }
+        } else if (isPolar) {
+          let polarExpr = cleanExpr;
+          if (polarExpr.startsWith("r=")) {
+            polarExpr = polarExpr.substring(2).trim();
+          }
+          const thetaMin = customRange ? customRange[0] : -Math.PI;
+          const thetaMax = customRange ? customRange[1] : Math.PI;
+          for (let i = 0; i <= 200; i++) {
+            const theta = thetaMin + (i / 200) * (thetaMax - thetaMin);
+            const rVal = parseAndEval(polarExpr, theta, sliderVals);
+            if (!isNaN(rVal)) {
+              checkPoint(rVal * Math.cos(theta), rVal * Math.sin(theta));
+            }
+          }
+        } else {
+          const xStep = (xRange[1] - xRange[0]) / width;
+          for (let dx = -10; dx <= 10; dx++) {
+            const gX = mousePos.graphX + dx * xStep;
+            const gY = parseAndEval(cleanExpr, gX, sliderVals);
+            if (!isNaN(gY)) {
+              checkPoint(gX, gY);
+            }
+          }
+        }
+
+        if (bestPt && (minDist < 40 || (!isPolar && !isParametric && minDist < 150))) {
+          const pt = bestPt as { x: number; y: number; graphX: number; graphY: number };
+          ctx.fillStyle = funcColors[fIdx % funcColors.length];
+          ctx.beginPath();
+          ctx.arc(pt.x, pt.y, 5, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.strokeStyle = "#ffffff";
+          ctx.lineWidth = 1;
+          ctx.stroke();
+
+          ctx.fillStyle = "#ffffff";
+          ctx.font = "bold 11px sans-serif";
+          const coordText = `(${pt.graphX.toFixed(2)}, ${pt.graphY.toFixed(2)})`;
+          const textWidth = ctx.measureText(coordText).width;
+          
+          ctx.fillStyle = "rgba(15, 23, 42, 0.85)";
+          ctx.fillRect(pt.x + 8, pt.y - 18, textWidth + 12, 22);
+          ctx.strokeStyle = funcColors[fIdx % funcColors.length];
+          ctx.strokeRect(pt.x + 8, pt.y - 18, textWidth + 12, 22);
+
+          ctx.fillStyle = "#ffffff";
+          ctx.fillText(coordText, pt.x + 14, pt.y - 3);
         }
       });
     }
-  }, [functions, xRange, yRange, sliderVals, mousePos, isPanning]);
+  }, [functions, xRange, yRange, sliderVals, mousePos, isPanning, showEquationPanel, resizeCount]);
 
   if (isClosed) return null;
 
   return (
-    <div ref={containerRef} className="w-full h-[320px] sm:h-[365px] bg-[#09090b] border border-zinc-800 rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row text-white font-sans my-4">
+    <div ref={containerRef} className="w-full h-[320px] sm:h-[365px] bg-[#09090b] border border-zinc-800 rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row text-white font-sans my-4 relative">
       {/* Left Panel - Formula and expression details */}
-      <div className="w-full md:w-2/5 bg-[#18181b] p-4 flex flex-col justify-between relative border-b md:border-b-0 md:border-r border-zinc-800">
-        
-        {/* Top controls */}
-        <div className="flex items-center justify-between w-full">
-          <button 
-            onClick={() => setIsClosed(true)}
-            className="p-1 hover:bg-zinc-800 rounded-lg text-zinc-400 hover:text-white transition-all"
-            title="Close Graph"
-          >
-            <X className="h-4 w-4" />
-          </button>
-          
-          <div className="flex items-center gap-1.5">
-            <button
-              onClick={() => {
-                navigator.clipboard.writeText(functions[0] || "");
-                setIsCopied(true);
-                setTimeout(() => setIsCopied(false), 2000);
+      {showEquationPanel && (
+        <div className="w-full md:w-2/5 bg-[#18181b] p-4 flex flex-col justify-between relative border-b md:border-b-0 md:border-r border-zinc-800 animate-in fade-in slide-in-from-left duration-250">
+          {/* Top controls */}
+          <div className="flex items-center justify-between w-full">
+            <button 
+              onClick={() => setShowEquationPanel(false)}
+              className="p-1 hover:bg-zinc-800 rounded-lg text-zinc-400 hover:text-white transition-all"
+              title="Hide Equations"
+            >
+              <X className="h-4 w-4" />
+            </button>
+            
+            <div className="flex items-center gap-1.5">
+              <button
+                onClick={() => {
+                  navigator.clipboard.writeText(functions[0] || "");
+                  setIsCopied(true);
+                  setTimeout(() => setIsCopied(false), 2000);
+                }}
+                className="p-1.5 hover:bg-zinc-800 rounded-lg text-zinc-400 hover:text-white transition-all"
+                title="Copy Formula"
+              >
+                {isCopied ? <Check className="h-3.5 w-3.5 text-green-500" /> : <Copy className="h-3.5 w-3.5" />}
+              </button>
+              <button
+                onClick={() => setIsLiked(prev => prev === 'like' ? null : 'like')}
+                className={cn(
+                  "p-1.5 hover:bg-zinc-800 rounded-lg transition-all",
+                  isLiked === 'like' ? "text-green-400" : "text-zinc-400 hover:text-white"
+                )}
+                title="Like Graph"
+              >
+                <ThumbsUp className="h-3.5 w-3.5" />
+              </button>
+              <button
+                onClick={() => setIsLiked(prev => prev === 'dislike' ? null : 'dislike')}
+                className={cn(
+                  "p-1.5 hover:bg-zinc-800 rounded-lg transition-all",
+                  isLiked === 'dislike' ? "text-red-400" : "text-zinc-400 hover:text-white"
+                )}
+                title="Dislike Graph"
+              >
+                <ThumbsDown className="h-3.5 w-3.5" />
+              </button>
+            </div>
+          </div>
+
+          {/* LaTeX Centered Display */}
+          <div className="flex-1 flex items-center justify-center py-6 px-3">
+            <div 
+              className="text-lg sm:text-xl font-semibold overflow-x-auto max-w-full text-center scrollbar-none font-mono py-2 text-zinc-100"
+              dangerouslySetInnerHTML={{
+                __html: (() => {
+                  try {
+                    const formula = functions[0] || "y = sin(x)";
+                    let latex = typeof formula === "string" ? formula.trim() : String(formula).trim();
+                    if (!latex.startsWith("y") && !latex.includes("=")) {
+                      latex = "y = " + latex;
+                    }
+                    latex = latex.replace(/\\/g, "");
+                    latex = latex.replace(/\*/g, " ");
+                    latex = latex.replace(/\b(sin|cos|tan|cot|sec|csc|log|ln|sqrt|pi|theta|alpha|beta|gamma|lambda|phi)\b/g, "\\$1");
+                    
+                    return katex.renderToString(latex, { throwOnError: false, displayMode: true });
+                  } catch (e) {
+                    return functions[0] || "y = sin(x)";
+                  }
+                })()
               }}
-              className="p-1.5 hover:bg-zinc-800 rounded-lg text-zinc-400 hover:text-white transition-all"
-              title="Copy Formula"
-            >
-              {isCopied ? <Check className="h-3.5 w-3.5 text-green-500" /> : <Copy className="h-3.5 w-3.5" />}
-            </button>
-            <button
-              onClick={() => setIsLiked(prev => prev === 'like' ? null : 'like')}
-              className={cn(
-                "p-1.5 hover:bg-zinc-800 rounded-lg transition-all",
-                isLiked === 'like' ? "text-green-400" : "text-zinc-400 hover:text-white"
-              )}
-              title="Like Graph"
-            >
-              <ThumbsUp className="h-3.5 w-3.5" />
-            </button>
-            <button
-              onClick={() => setIsLiked(prev => prev === 'dislike' ? null : 'dislike')}
-              className={cn(
-                "p-1.5 hover:bg-zinc-800 rounded-lg transition-all",
-                isLiked === 'dislike' ? "text-red-400" : "text-zinc-400 hover:text-white"
-              )}
-              title="Dislike Graph"
-            >
-              <ThumbsDown className="h-3.5 w-3.5" />
-            </button>
+            />
+          </div>
+
+          {/* Panel Footer */}
+          <div className="text-[10px] text-zinc-500 text-center font-mono tracking-wider">
+            MathVerse 2D Graph Engine
           </div>
         </div>
-
-        {/* LaTeX Centered Display */}
-        <div className="flex-1 flex items-center justify-center py-6 px-3">
-          <div 
-            className="text-lg sm:text-xl font-semibold overflow-x-auto max-w-full text-center scrollbar-none font-mono py-2 text-zinc-100"
-            dangerouslySetInnerHTML={{
-              __html: (() => {
-                try {
-                  const formula = functions[0] || "y = sin(x)";
-                  let latex = typeof formula === "string" ? formula.trim() : String(formula).trim();
-                  if (!latex.startsWith("y") && !latex.includes("=")) {
-                    latex = "y = " + latex;
-                  }
-                  // Clean standard formatting to look great in KaTeX
-                  latex = latex.replace(/\\/g, "");
-                  latex = latex.replace(/\*/g, " ");
-                  latex = latex.replace(/\b(sin|cos|tan|cot|sec|csc|log|ln|sqrt|pi|theta|alpha|beta|gamma|lambda|phi)\b/g, "\\$1");
-                  
-                  return katex.renderToString(latex, { throwOnError: false, displayMode: true });
-                } catch (e) {
-                  return functions[0] || "y = sin(x)";
-                }
-              })()
-            }}
-          />
-        </div>
-
-        {/* Panel Footer */}
-        <div className="text-[10px] text-zinc-500 text-center font-mono tracking-wider">
-          MathVerse 2D Graph Engine
-        </div>
-      </div>
+      )}
 
       {/* Right Panel - Grid Graph Canvas */}
-      <div className="w-full md:w-3/5 relative bg-[#09090b]">
+      <div className={cn("relative bg-[#09090b] h-full flex-1 transition-all duration-300", showEquationPanel ? "w-full md:w-3/5" : "w-full")}>
+        {!showEquationPanel && (
+          <button
+            onClick={() => setShowEquationPanel(true)}
+            className="absolute top-4 left-4 p-2 bg-zinc-900/90 hover:bg-zinc-805 border border-zinc-800 rounded-lg text-zinc-400 hover:text-white shadow-lg transition-all backdrop-blur-sm z-10 flex items-center gap-1.5 text-xs font-semibold px-3 animate-in fade-in duration-200"
+            title="Show Equations Panel"
+          >
+            <Sliders className="h-3.5 w-3.5" />
+            <span>Show Equations</span>
+          </button>
+        )}
+
+        <button
+          onClick={() => setIsClosed(true)}
+          className="absolute top-4 right-4 p-2 bg-zinc-900/90 hover:bg-zinc-805 border border-zinc-800 rounded-full text-zinc-400 hover:text-white shadow-lg transition-all backdrop-blur-sm z-10"
+          title="Close Graph"
+        >
+          <X className="h-3.5 w-3.5" />
+        </button>
+
         <canvas 
           ref={canvasRef}
           onMouseDown={handleMouseDown}
@@ -608,24 +923,24 @@ export function GraphWidget({
         {/* Floating reset icon in the bottom-left corner */}
         <button
           onClick={handleReset}
-          className="absolute bottom-4 left-4 p-2 bg-zinc-900/90 hover:bg-zinc-800 border border-zinc-850 hover:border-zinc-700 rounded-full text-zinc-400 hover:text-white shadow-lg transition-all backdrop-blur-sm"
+          className="absolute bottom-4 left-4 p-2 bg-zinc-900/90 hover:bg-zinc-805 border border-zinc-800 rounded-full text-zinc-400 hover:text-white shadow-lg transition-all backdrop-blur-sm z-10"
           title="Reset Graph View"
         >
           <RotateCcw className="h-4 w-4" />
         </button>
 
         {/* Floating Zoom controls in bottom-right corner */}
-        <div className="absolute bottom-4 right-4 flex items-center gap-1 p-1 bg-zinc-900/90 border border-zinc-850 rounded-full shadow-lg backdrop-blur-sm">
+        <div className="absolute bottom-4 right-4 flex items-center gap-1 p-1 bg-zinc-900/90 border border-zinc-800 rounded-full shadow-lg backdrop-blur-sm z-10">
           <button
             onClick={() => handleZoom(0.8)}
-            className="p-1.5 hover:bg-zinc-800 rounded-full text-zinc-400 hover:text-white transition-all"
+            className="p-1.5 hover:bg-zinc-805 rounded-full text-zinc-400 hover:text-white transition-all"
             title="Zoom In"
           >
             <ZoomIn className="h-3.5 w-3.5" />
           </button>
           <button
             onClick={() => handleZoom(1.2)}
-            className="p-1.5 hover:bg-zinc-800 rounded-full text-zinc-400 hover:text-white transition-all"
+            className="p-1.5 hover:bg-zinc-805 rounded-full text-zinc-400 hover:text-white transition-all"
             title="Zoom Out"
           >
             <ZoomOut className="h-3.5 w-3.5" />

@@ -21,7 +21,9 @@ import {
   Lock,
   Shield,
   ShieldAlert,
-  BrainCircuit
+  BrainCircuit,
+  ChevronUp,
+  ChevronDown
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
@@ -31,8 +33,8 @@ import { useLockdown } from "@/context/LockdownContext";
 
 function LockdownPanel({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const [hours, setHours] = useState(0);
-  const [minutes, setMinutes] = useState(25);
-  const [seconds, setSeconds] = useState(0);
+  const [minutes, setMinutes] = useState(0);
+  const [seconds, setSeconds] = useState(10);
   const [countdown, setCountdown] = useState<number | null>(null);
   const { startLockdown } = useLockdown();
 
@@ -45,8 +47,21 @@ function LockdownPanel({ isOpen, onClose }: { isOpen: boolean; onClose: () => vo
       startLockdown((hours * 3600000) + (minutes * 60000) + (seconds * 1000));
       onClose();
       setCountdown(null);
+      return () => {};
     }
   }, [countdown, hours, minutes, seconds, startLockdown, onClose]);
+
+  const increment = (type: 'h' | 'm' | 's') => {
+    if (type === 'h') setHours(h => h + 1);
+    if (type === 'm') setMinutes(m => (m + 1) % 60);
+    if (type === 's') setSeconds(s => (s + 1) % 60);
+  };
+
+  const decrement = (type: 'h' | 'm' | 's') => {
+    if (type === 'h') setHours(h => Math.max(0, h - 1));
+    if (type === 'm') setMinutes(m => (m - 1 + 60) % 60);
+    if (type === 's') setSeconds(s => (s - 1 + 60) % 60);
+  };
 
   if (!isOpen) return null;
 
@@ -68,6 +83,14 @@ function LockdownPanel({ isOpen, onClose }: { isOpen: boolean; onClose: () => vo
     );
   }
 
+  const presets = [
+    { label: "10s", h: 0, m: 0, s: 10 },
+    { label: "15m", h: 0, m: 15, s: 0 },
+    { label: "25m", h: 0, m: 25, s: 0 },
+    { label: "1h", h: 1, m: 0, s: 0 },
+    { label: "2h", h: 2, m: 0, s: 0 }
+  ];
+
   return (
     <div className="fixed inset-0 z-[9999] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
       <motion.div
@@ -77,7 +100,7 @@ function LockdownPanel({ isOpen, onClose }: { isOpen: boolean; onClose: () => vo
       >
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-600 to-orange-500" />
         <h2 className="text-xl font-bold text-foreground flex items-center gap-2 mb-2">
-          <ShieldAlert className="h-6 w-6 text-red-500" />
+          <ShieldAlert className="h-6 w-6 text-red-500 animate-pulse" />
           Hardcore Lockdown
         </h2>
         <p className="text-sm text-muted-foreground mb-6">
@@ -86,26 +109,121 @@ function LockdownPanel({ isOpen, onClose }: { isOpen: boolean; onClose: () => vo
 
         <div className="space-y-4 mb-6">
           <label className="text-xs font-semibold text-foreground uppercase tracking-wide">Duration</label>
-          <div className="flex items-center gap-4">
-            <div className="flex flex-col flex-1">
-              <label className="text-[10px] text-muted-foreground font-semibold uppercase mb-1">Hours</label>
-              <Input type="number" min="0" value={hours} onChange={e => setHours(Math.max(0, parseInt(e.target.value) || 0))} className="bg-muted border-border" />
+          
+          {/* Custom Time Picker */}
+          <div className="flex justify-center items-center gap-2 bg-muted/40 py-3 px-4 rounded-xl border border-border/40 shadow-inner">
+            {/* Hours */}
+            <div className="flex flex-col items-center">
+              <button 
+                onClick={() => increment('h')} 
+                className="p-1 hover:bg-muted-foreground/10 text-muted-foreground hover:text-foreground rounded-md transition-colors"
+                type="button"
+              >
+                <ChevronUp className="h-4 w-4" />
+              </button>
+              <input 
+                type="text" 
+                value={hours.toString().padStart(2, '0')}
+                onChange={e => {
+                  const val = parseInt(e.target.value.replace(/\D/g, '')) || 0;
+                  setHours(Math.max(0, val));
+                }}
+                className="w-10 text-center text-xl font-bold bg-transparent border-none focus:outline-none focus:ring-0 text-foreground"
+              />
+              <span className="text-[9px] text-muted-foreground uppercase font-bold tracking-wider">Hours</span>
+              <button 
+                onClick={() => decrement('h')} 
+                className="p-1 hover:bg-muted-foreground/10 text-muted-foreground hover:text-foreground rounded-md transition-colors"
+                type="button"
+              >
+                <ChevronDown className="h-4 w-4" />
+              </button>
             </div>
-            <div className="flex flex-col flex-1">
-              <label className="text-[10px] text-muted-foreground font-semibold uppercase mb-1">Mins</label>
-              <Input type="number" min="0" max="59" value={minutes} onChange={e => setMinutes(Math.max(0, Math.min(59, parseInt(e.target.value) || 0)))} className="bg-muted border-border" />
+
+            <span className="text-lg font-bold text-muted-foreground/60 mb-3">:</span>
+
+            {/* Minutes */}
+            <div className="flex flex-col items-center">
+              <button 
+                onClick={() => increment('m')} 
+                className="p-1 hover:bg-muted-foreground/10 text-muted-foreground hover:text-foreground rounded-md transition-colors"
+                type="button"
+              >
+                <ChevronUp className="h-4 w-4" />
+              </button>
+              <input 
+                type="text" 
+                value={minutes.toString().padStart(2, '0')}
+                onChange={e => {
+                  const val = parseInt(e.target.value.replace(/\D/g, '')) || 0;
+                  setMinutes(Math.max(0, Math.min(59, val)));
+                }}
+                className="w-10 text-center text-xl font-bold bg-transparent border-none focus:outline-none focus:ring-0 text-foreground"
+              />
+              <span className="text-[9px] text-muted-foreground uppercase font-bold tracking-wider">Mins</span>
+              <button 
+                onClick={() => decrement('m')} 
+                className="p-1 hover:bg-muted-foreground/10 text-muted-foreground hover:text-foreground rounded-md transition-colors"
+                type="button"
+              >
+                <ChevronDown className="h-4 w-4" />
+              </button>
             </div>
-            <div className="flex flex-col flex-1">
-              <label className="text-[10px] text-muted-foreground font-semibold uppercase mb-1">Secs</label>
-              <Input type="number" min="0" max="59" value={seconds} onChange={e => setSeconds(Math.max(0, Math.min(59, parseInt(e.target.value) || 0)))} className="bg-muted border-border" />
+
+            <span className="text-lg font-bold text-muted-foreground/60 mb-3">:</span>
+
+            {/* Seconds */}
+            <div className="flex flex-col items-center">
+              <button 
+                onClick={() => increment('s')} 
+                className="p-1 hover:bg-muted-foreground/10 text-muted-foreground hover:text-foreground rounded-md transition-colors"
+                type="button"
+              >
+                <ChevronUp className="h-4 w-4" />
+              </button>
+              <input 
+                type="text" 
+                value={seconds.toString().padStart(2, '0')}
+                onChange={e => {
+                  const val = parseInt(e.target.value.replace(/\D/g, '')) || 0;
+                  setSeconds(Math.max(0, Math.min(59, val)));
+                }}
+                className="w-10 text-center text-xl font-bold bg-transparent border-none focus:outline-none focus:ring-0 text-foreground"
+              />
+              <span className="text-[9px] text-muted-foreground uppercase font-bold tracking-wider">Secs</span>
+              <button 
+                onClick={() => decrement('s')} 
+                className="p-1 hover:bg-muted-foreground/10 text-muted-foreground hover:text-foreground rounded-md transition-colors"
+                type="button"
+              >
+                <ChevronDown className="h-4 w-4" />
+              </button>
             </div>
+          </div>
+
+          {/* Quick Presets */}
+          <div className="flex justify-between gap-1.5 mt-2">
+            {presets.map(preset => (
+              <button
+                key={preset.label}
+                type="button"
+                onClick={() => {
+                  setHours(preset.h);
+                  setMinutes(preset.m);
+                  setSeconds(preset.s);
+                }}
+                className="text-[10px] bg-muted hover:bg-red-500/10 hover:text-red-500 hover:border-red-500/30 text-muted-foreground px-2.5 py-1.5 rounded-lg border border-border/40 transition-all font-semibold flex-1 text-center"
+              >
+                {preset.label}
+              </button>
+            ))}
           </div>
         </div>
 
         <div className="flex gap-3">
-          <Button variant="outline" className="flex-1" onClick={onClose}>Cancel</Button>
+          <Button variant="outline" className="flex-1 rounded-xl" onClick={onClose}>Cancel</Button>
           <Button 
-            className="flex-1 bg-red-600 hover:bg-red-700 text-white font-bold" 
+            className="flex-1 bg-red-600 hover:bg-red-700 text-white font-bold rounded-xl shadow-lg shadow-red-600/20" 
             disabled={hours === 0 && minutes === 0 && seconds === 0} 
             onClick={() => setCountdown(3)}
           >

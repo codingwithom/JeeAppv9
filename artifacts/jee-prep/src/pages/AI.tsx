@@ -30,6 +30,7 @@ import remarkMath from 'remark-math';
 import remarkGfm from 'remark-gfm';
 import rehypeKatex from 'rehype-katex';
 import 'katex/dist/katex.min.css';
+import { fixLatexFormatting } from "@/lib/latex-formatter";
 
 import {
   GraphWidget,
@@ -550,7 +551,7 @@ function MessageSources({ sources }: { sources: { uri: string; title: string; fa
 const preprocessMarkdown = (content: string): string => {
   if (!content) return content;
   
-  let cleaned = content;
+  let cleaned = fixLatexFormatting(content);
 
   // 1. Match tool calls like <|tool_call_start|>[calculus(..., code="...", ...)]<|tool_call_end|>
   const toolCallRegex = /<\|tool_call_start\|>\[calculus\([\s\S]*?code="([^"]+)"[\s\S]*?\)\](?:<\|tool_call_end\|>)?/g;

@@ -306,3 +306,31 @@ export function extractInlineOptions(text: string): { questionText: string, opti
 
   return null;
 }
+
+/**
+ * Checks if a string contains mathematical or chemical LaTeX expressions
+ * and wraps it in inline math delimiters ($...$) if not already wrapped.
+ */
+export function ensureMathWrapped(str: string): string {
+  if (!str) return str;
+  const trimmed = str.trim();
+  
+  // If already wrapped in $ or $$, leave it
+  if (trimmed.startsWith("$") && trimmed.endsWith("$")) {
+    return str;
+  }
+  
+  // Check if it has LaTeX command (e.g. \frac, \cos, \sin, \theta, \alpha, \beta, \text, etc.)
+  // or math symbols/operators that imply mathematical equations
+  const hasLatexCommand = /\\[a-zA-Z]+/.test(trimmed);
+  const hasMathOperators = /[\^_\=\+\-\*\/<>]/.test(trimmed);
+  const hasSubSuper = /[a-zA-Z0-9\}\)]+[\^_]\{?[a-zA-Z0-9\+\-\=]+/g.test(trimmed);
+  
+  if (hasLatexCommand || hasSubSuper || (hasMathOperators && !/^[a-zA-Z\s\(\)]+$/.test(trimmed))) {
+    // Wrap it in single dollar signs for inline rendering
+    return `$${trimmed}$`;
+  }
+  
+  return str;
+}
+

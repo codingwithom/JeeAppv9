@@ -47,7 +47,7 @@ import remarkGfm from 'remark-gfm';
 import rehypeKatex from 'rehype-katex';
 import 'katex/dist/katex.min.css';
 import AIChatInterface from "./AI";
-import { fixLatexFormatting, extractInlineOptions } from "@/lib/latex-formatter";
+import { fixLatexFormatting, extractInlineOptions, ensureMathWrapped } from "@/lib/latex-formatter";
 
 // ─── Types ─────────────────────────────────────────────────────────────────
 type QuizPhase = "setup" | "analyzing" | "active" | "results";
@@ -83,7 +83,16 @@ interface Question {
   sourceQuestionId?: string;
   imageKey?: string;
   imageUrl?: string;
+  sourceInfo?: {
+    sourceType: "pdf" | "video" | "saves" | "url" | "internet";
+    sourceName: string;
+    page?: number | string;
+    timestamp?: string;
+    questionNum?: string | number;
+    detail?: string;
+  };
 }
+
 
 interface SavedQuiz {
   id: string;
@@ -294,9 +303,63 @@ function buildSubjectPrompt(params: {
   difficulty: string;
   brief: string;
   contextText: string;
-  internetSearch: { enabled: boolean; query: string };
+  sources: SelectedSources;
 }) {
-  const { subject, count, difficulty, brief, contextText, internetSearch } = params;
+  const { subject, count, difficulty, brief, contextText, sources } = params;
+  const internetSearch = sources.internetSearch;
+
+  const selectedTypes: string[] = [];
+  if (sources.pdfs.length > 0) selectedTypes.push("PDF");
+  if (sources.videos.length > 0) selectedTypes.push("Video");
+  if (sources.saves.length > 0) selectedTypes.push("Saves");
+  if (sources.urls.length > 0) selectedTypes.push("URL");
+  if (sources.internetSearch.enabled) selectedTypes.push("Internet Fetching");
+
+  let sourceConstraintInstruction = "";
+  if (selectedTypes.length === 1) {
+    const type = selectedTypes[0];
+    if (type === "PDF") {
+      sourceConstraintInstruction = `
+CRITICAL SOURCE SELECTION CONSTRAINT (STRICT ONLY-PDF MODE):
+- The user has selected ONLY PDF documents as the source.
+- You MUST construct these questions ONLY from the text provided in the "CONTEXT MATERIALS" section under the "[PDF Source File: ...]" headers.
+- Do NOT use internet search, do NOT fetch external data, and do NOT use general knowledge to construct questions outside the context materials. Every question MUST correspond directly to a concept, formula, or problem described in the PDF context.
+- Your "sourceInfo" for every question MUST have: sourceType "pdf", sourceName (the exact PDF file name), page (page number from context), and questionNum (the specific question number or equation on that page).`;
+    } else if (type === "Video") {
+      sourceConstraintInstruction = `
+CRITICAL SOURCE SELECTION CONSTRAINT (STRICT ONLY-VIDEO MODE):
+- The user has selected ONLY video timelines/notes as the source.
+- You MUST construct these questions ONLY from the text provided in the "CONTEXT MATERIALS" section under the "[Video Source: ...]" headers.
+- Do NOT use internet search and do NOT invent questions unrelated to the video notes.
+- Your "sourceInfo" for every question MUST have: sourceType "video", sourceName (video title), timestamp (time string e.g. "12:35"), and questionNum (topic/index number).`;
+    } else if (type === "URL") {
+      sourceConstraintInstruction = `
+CRITICAL SOURCE SELECTION CONSTRAINT (STRICT ONLY-URL MODE):
+- The user has selected ONLY reference URLs as the source.
+- You MUST construct these questions ONLY from the context provided in the "CONTEXT MATERIALS" section under "[URL Source: ...]" or "[PDF Source File Reference: ...]" headers.
+- Do NOT use internet search or training data to generate unrelated questions.
+- Your "sourceInfo" for every question MUST have: sourceType "url", sourceName (the exact URL), page (section/page name), and questionNum (question number if applicable).`;
+    } else if (type === "Saves") {
+      sourceConstraintInstruction = `
+CRITICAL SOURCE SELECTION CONSTRAINT (STRICT ONLY-SAVES MODE):
+- The user has selected ONLY saved questions as the source.
+- You MUST construct these questions ONLY from the saved questions provided in the "CONTEXT MATERIALS" section under "[Saves Source Collection: ...]".
+- Your "sourceInfo" for every question MUST have: sourceType "saves", sourceName (collection name), and detail (exact saved question identifier).`;
+    } else if (type === "Internet Fetching") {
+      sourceConstraintInstruction = `
+CRITICAL SOURCE SELECTION CONSTRAINT (STRICT ONLY-INTERNET MODE):
+- The user has selected ONLY internet fetching/search.
+- You MUST construct these questions from current, high-quality JEE exam sources on the internet matching the query: "${sources.internetSearch.query}".
+- Your "sourceInfo" for every question MUST have: sourceType "internet", sourceName: "${sources.internetSearch.query || 'Internet Fetching'}", and detail (search query/concept used).`;
+    }
+  } else if (selectedTypes.length > 1) {
+    sourceConstraintInstruction = `
+CRITICAL SOURCE SELECTION CONSTRAINT (MIXED MODE):
+- The user has selected multiple sources: ${selectedTypes.join(", ")}.
+- You MUST distribute the generated questions across these selected sources. Specifically, generate a balanced combination of questions directly from the CONTEXT MATERIALS (PDFs/Videos/Saves/URLs) and the INTERNET SEARCH query (if enabled). Do NOT use any sources outside these selected types.
+- Ensure that the questions are tagged with the correct sourceType in "sourceInfo" matching the exact source from which it was taken.
+- For PDF sources, identify page and question number. For URLs, identify page/section and question number. For videos, identify name and timestamp.`;
+  }
   
   return `You are an expert JEE Advanced examiner. Your task is to generate high-quality, exam-style questions for the subject: "${subject}".
 
@@ -304,6 +367,8 @@ CRITICAL SPECIFICATIONS:
 1. Target Subject: "${subject}". Every question generated MUST belong strictly to the subject "${subject}" (e.g. Physics concepts only for Physics). Do NOT mix mathematics concepts in chemistry or physics unless it is a standard interdisciplinary concept, and keep it firmly in "${subject}".
 2. Number of questions to generate: EXACTLY ${count}.
 3. Target Difficulty: ${difficulty} (Note: Hard questions must involve multi-step calculations, deep conceptual understanding, or advanced application of formulas typical of JEE Advanced. Easy/Medium questions should match standard JEE Main levels).
+
+${sourceConstraintInstruction}
 
 INSTRUCTIONS REGARDING USER GUIDELINES:
 ${brief ? `The user has specified the following custom guidelines: "${brief}". Adhere to this as closely as possible when choosing topics, difficulty ratios, or specific sub-topics for this batch.` : "Adhere to the provided source context for topic selection."}
@@ -329,11 +394,15 @@ For example:
 - CORRECT: "\\\\text{(i)}"
 If you do not double-escape backslashes, the JSON parser will fail.
 
-CRITICAL SOURCES LINKING RULE:
+CRITICAL SOURCES LINKING & ATTRIBUTION RULE:
 - If a question from the "SAVED QUESTIONS" in the context has a diagram or image ("Has Diagram/Image: YES"), and you adapt, rewrite, or use this question in the generated quiz, you MUST output its exact "Saved Question ID" (e.g., "src_id::q_id") in the "sourceQuestionId" field of the JSON object.
 - You MUST also refer to the diagram/image in your question text (e.g., "as shown in the figure" or "as shown in the diagram below") and keep it exactly linked so that the UI can render it.
-- This is the ONLY way we can render the diagram/image of the quiz with options just like JEE Mains/Advance! If you fail to supply the exact "Saved Question ID", the image will not be displayed.
-
+- For EACH question, you MUST determine and state the exact source used in the "sourceInfo" JSON object:
+  a. For PDF documents: sourceType "pdf", sourceName: name of the file, page: page number (integer) from the source context, and questionNum: the specific question number or section label on that page from the PDF text.
+  b. For videos: sourceType "video", sourceName: name of the video, timestamp: time string (e.g. "12:35") from the note, and questionNum: the note index or sequence number.
+  c. For saved questions: sourceType "saves", sourceName: collection/saves name, detail: original question identifier.
+  d. For reference URL: sourceType "url", sourceName: exact URL, page: page/section index, and questionNum: question number on that website.
+  e. For general internet search/fetching: sourceType "internet", sourceName: "${internetSearch.query || 'Internet Fetching'}", detail: search query/concept used.
 
 CRITICAL JSON FORMATTING RULES:
 1. Output EXACTLY ONE valid JSON array. No extra text before or after.
@@ -352,7 +421,15 @@ Format for each object:
     "explanation": "Detailed step-by-step explanation including calculations with $math$.",
     "difficulty": "${difficulty}",
     "subject": "${subject}",
-    "sourceQuestionId": ""
+    "sourceQuestionId": "",
+    "sourceInfo": {
+      "sourceType": "pdf",
+      "sourceName": "document_name.pdf",
+      "page": 4,
+      "questionNum": "Question 10",
+      "timestamp": "00:00",
+      "detail": "..."
+    }
   }
 ]
 
@@ -360,9 +437,126 @@ Format for each object:
 ${contextText}
 --- CONTEXT MATERIALS END ---
 
-${internetSearch.enabled && internetSearch.query ? `Additionally, include up-to-date, rigorous questions on this topic: ${internetSearch.query}` : ""}
+${internetSearch.enabled && internetSearch.query ? `Additionally, include up-to-date, rigorous questions on this topic from the internet search query: ${internetSearch.query}` : ""}
 `;
 }
+
+/**
+ * Secondary validation and self-correction pass.
+ * Verifies that the correctOptionIndex matches the correct option described in the explanation,
+ * and fixes the correctOptionIndex and explanation if there are contradictions or math mistakes.
+ */
+async function verifyAndCorrectQuestions(
+  parsedQs: any[], 
+  apiKey: string, 
+  signal?: AbortSignal
+): Promise<any[]> {
+  try {
+    const payload = {
+      model: "meta-llama/llama-3.3-70b-instruct:free",
+      messages: [
+        {
+          role: "user",
+          content: `You are an expert IIT-JEE exam validator and answer-key proofreader.
+We have generated JEE questions, options, and explanations. However, sometimes the "correctOptionIndex" points to the wrong option (e.g. the explanation clearly shows C is the correct answer, which is index 2, but the correctOptionIndex was written as 0).
+
+Your task:
+1. For each question below, solve it mathematically/scientifically.
+2. Determine the exact 0-based index of the option in the "options" array that matches the correct answer.
+3. Check the explanation. If the explanation has mathematical errors, rewrite/correct the explanation to be mathematically rigorous and accurate.
+4. Output a verified list of questions with their verified "correctOptionIndex" and "explanation".
+
+Questions to verify:
+${JSON.stringify(parsedQs.map((q, idx) => ({
+  id: q.id || `q_${idx}`,
+  text: q.text,
+  options: q.options,
+  explanation: q.explanation,
+  currentCorrectIndex: q.correctOptionIndex
+})), null, 2)}
+
+Output format:
+You MUST respond with EXACTLY a JSON array of objects, containing ONLY the "id", the verified "correctOptionIndex" (integer 0, 1, 2, or 3), and the verified "explanation" string.
+Example:
+[
+  {
+    "id": "q_physics_1",
+    "correctOptionIndex": 2,
+    "explanation": "Verified explanation text..."
+  }
+]
+Do not wrap in markdown or write any code block markers. Just return raw JSON array.`
+        }
+      ]
+    };
+
+    let response;
+    try {
+      response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+        method: "POST",
+        headers: {
+          "Authorization": `Bearer ${apiKey}`,
+          "HTTP-Referer": window.location.href, 
+          "X-Title": "JEE Prep App Validator", 
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload),
+        signal
+      });
+    } catch {
+      response = await fetch(`https://corsproxy.io/?${encodeURIComponent("https://openrouter.ai/api/v1/chat/completions")}`, {
+        method: "POST",
+        headers: {
+          "Authorization": `Bearer ${apiKey}`,
+          "HTTP-Referer": window.location.href, 
+          "X-Title": "JEE Prep App Validator", 
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload),
+        signal
+      });
+    }
+
+    if (!response.ok) {
+      console.warn("Verification API request failed, keeping original questions");
+      return parsedQs;
+    }
+
+    const data = await response.json();
+    const rawText = data.choices?.[0]?.message?.content || "[]";
+    
+    // Clean JSON
+    let cleanedText = rawText.replace(/```(?:json)?/gi, "").replace(/```/g, "").trim();
+    const firstBracket = cleanedText.indexOf('[');
+    if (firstBracket !== -1) {
+      cleanedText = cleanedText.substring(firstBracket);
+      const lastBracket = cleanedText.lastIndexOf(']');
+      if (lastBracket !== -1) {
+        cleanedText = cleanedText.substring(0, lastBracket + 1);
+      }
+    }
+
+    const verifiedList = JSON.parse(cleanedText);
+    if (Array.isArray(verifiedList)) {
+      const verifiedMap = new Map(verifiedList.map(item => [item.id, item]));
+      return parsedQs.map(q => {
+        const verified = verifiedMap.get(q.id);
+        if (verified) {
+          return {
+            ...q,
+            correctOptionIndex: typeof verified.correctOptionIndex === 'number' ? verified.correctOptionIndex : q.correctOptionIndex,
+            explanation: verified.explanation || q.explanation
+          };
+        }
+        return q;
+      });
+    }
+  } catch (err) {
+    console.error("Verification step failed:", err);
+  }
+  return parsedQs;
+}
+
 
 // ─── Quiz Generator Manager ───────────────────────────────────────────────
 class QuizGeneratorManager {
@@ -434,15 +628,31 @@ class QuizGeneratorManager {
       if (sources.videos.length > 0) {
          setStatus("Gathering video context...");
          contextText += "--- VIDEO SOURCES ---\n";
+         const allNotes = JSON.parse(localStorage.getItem("vid_notes_v1") || "{}");
          sources.videos.forEach(vidId => {
             const item = availableVideos.find(p => p.id === vidId);
-            if (item) contextText += `Video Topic Covered: ${item.path}\n`;
+            if (item) {
+               contextText += `[Video Source: "${item.name || item.path}", ID: ${vidId}]\n`;
+               const notes = allNotes[vidId] || [];
+               if (notes.length > 0) {
+                  notes.forEach((note: any) => {
+                     const timeStr = note.timestamp ? `${Math.floor(note.timestamp / 60)}:${String(Math.floor(note.timestamp % 60)).padStart(2, '0')}` : "00:00";
+                     contextText += `At timestamp ${timeStr}: ${note.text || ""}\n`;
+                  });
+               } else {
+                  contextText += `Topic: ${item.name || item.path}\n`;
+               }
+            }
          });
          contextText += "\n";
       }
 
       if (sources.urls.length > 0) {
-         contextText += `--- REFERENCE URLS ---\n${sources.urls.join(", ")}\n\n`;
+         contextText += "--- REFERENCE URLS ---\n";
+         sources.urls.forEach(url => {
+            contextText += `[URL Source: "${url}"]\n`;
+         });
+         contextText += "\n";
       }
 
       if (sources.saves.length > 0) {
@@ -452,9 +662,8 @@ class QuizGeneratorManager {
          sources.saves.forEach(srcId => {
             const qs = allSaves[srcId] || [];
             qs.forEach((q: any) => {
-               // Include the exact identifier so LLM can return it for diagram mapping
                const hasImage = !!(q.questionImageKey || q.questionUrl);
-               contextText += `Saved Question ID: ${srcId}::${q.id}\nSaved Topic: ${q.name || ''}\nDetails: ${q.description || ''}\nConcept Answer: ${q.answerText || ''}\nHas Diagram/Image: ${hasImage ? "YES" : "NO"}\n\n`;
+               contextText += `[Saves Source Collection: "${srcId}", Question ID: ${q.id}]\nQuestion Name: ${q.name || ''}\nDetails: ${q.description || ''}\nConcept Answer: ${q.answerText || ''}\nHas Diagram/Image: ${hasImage ? "YES" : "NO"}\n\n`;
             });
          });
       }
@@ -475,11 +684,12 @@ class QuizGeneratorManager {
                   for (let i = 1; i <= maxPages; i++) {
                      const page = await pdf.getPage(i);
                      const content = await page.getTextContent();
-                     contextText += content.items.map((it: any) => it.str).join(" ") + "\n";
+                     const pageText = content.items.map((it: any) => it.str).join(" ") + "\n";
+                     contextText += `[PDF Source File: "${item.name || item.path}", Page: ${i}]\n${pageText}\n`;
                   }
                }
             } else if (item?.url) {
-               contextText += `Document Reference URL: ${item.url}\n`;
+               contextText += `[PDF Source File Reference: "${item.name || item.path}", URL: ${item.url}]\n`;
             }
          }
       }
@@ -639,7 +849,7 @@ class QuizGeneratorManager {
                difficulty: plan.difficulty,
                brief,
                contextText: currentSlice,
-               internetSearch: sources.internetSearch
+               sources: sources
             });
             
             let success = false;
@@ -732,52 +942,119 @@ class QuizGeneratorManager {
                       const validatedQs = parsed
                         .filter(q => q && q.text)
                         .map(q => {
-                           let text = q.text;
-                           let options = Array.isArray(q.options) ? q.options : [];
-                           
-                           // Check for inline options in the question text and pull them out
-                           const inlineResult = extractInlineOptions(text);
-                           if (inlineResult) {
-                             text = inlineResult.questionText;
-                             
-                             // Check if existing options are empty or generic placeholders
-                             const isGeneric = options.length < 4 || options.every(opt => 
-                               opt.trim().length <= 3 || 
-                               /^(option\s*[a-d1-4]|val1|val2|val3|val4|ans1|ans2|ans3|ans4)$/i.test(opt.trim())
-                             );
-                             
-                             if (isGeneric) {
-                               options = inlineResult.options;
-                             }
-                           }
+                            let text = q.text;
+                            let options = Array.isArray(q.options) ? q.options : [];
+                            
+                            // Check for inline options in the question text and pull them out
+                            const inlineResult = extractInlineOptions(text);
+                            if (inlineResult) {
+                              text = inlineResult.questionText;
+                              
+                              // Check if existing options are empty or generic placeholders
+                              // Broaden generic options check to include Option (1), Option A, (A), etc.
+                              const isGeneric = options.length < 4 || options.every(opt => 
+                                opt.trim().length <= 15 && (
+                                  opt.trim().length <= 3 || 
+                                  /^(option\s*\(?[a-d1-4]?\)?|option\s*\(?\d+\)?|val\d+|ans\d+|[a-d1-4])$/i.test(opt.trim())
+                                )
+                              );
+                              
+                              if (isGeneric) {
+                                options = inlineResult.options;
+                              }
+                            }
 
-                           // Ensure options has at least 4 items
-                           while (options.length < 4) {
-                             options.push(`Option ${options.length + 1}`);
-                           }
+                            // Ensure options has at least 4 items
+                            while (options.length < 4) {
+                              options.push(`Option ${options.length + 1}`);
+                            }
 
-                           let correctOptionIndex = typeof q.correctOptionIndex === 'number' 
-                             ? q.correctOptionIndex 
-                             : (typeof q.correctOptionIndex === 'string' 
-                               ? parseInt(q.correctOptionIndex, 10) 
-                               : 0);
-                           if (isNaN(correctOptionIndex) || correctOptionIndex < 0 || correctOptionIndex >= options.length) {
-                             correctOptionIndex = 0;
-                           }
+                            let correctOptionIndex = typeof q.correctOptionIndex === 'number' 
+                              ? q.correctOptionIndex 
+                              : (typeof q.correctOptionIndex === 'string' 
+                                ? parseInt(q.correctOptionIndex, 10) 
+                                : 0);
+                            if (isNaN(correctOptionIndex) || correctOptionIndex < 0 || correctOptionIndex >= options.length) {
+                              correctOptionIndex = 0;
+                            }
 
-                           return {
-                             ...q,
-                             subject: subj,
-                             difficulty: q.difficulty || plan.difficulty,
-                             text: fixLatexFormatting(text),
-                             options: options.map((opt: string) => fixLatexFormatting(opt)),
-                             correctOptionIndex,
-                             explanation: fixLatexFormatting(q.explanation || "")
-                           };
+                            // Enforce user source selection
+                            let sourceInfo = q.sourceInfo;
+                            
+                            const selectedTypes: string[] = [];
+                            if (sources.pdfs.length > 0) selectedTypes.push("pdf");
+                            if (sources.videos.length > 0) selectedTypes.push("video");
+                            if (sources.saves.length > 0) selectedTypes.push("saves");
+                            if (sources.urls.length > 0) selectedTypes.push("url");
+                            if (sources.internetSearch.enabled) selectedTypes.push("internet");
+
+                            const enforceSingleType = selectedTypes.length === 1 ? selectedTypes[0] : null;
+
+                            // If sourceInfo is missing, or does not have a sourceType, OR if in single-source mode and the AI sourceType doesn't match
+                            if (!sourceInfo || !sourceInfo.sourceType || (enforceSingleType && sourceInfo.sourceType !== enforceSingleType)) {
+                              if (sources.pdfs.length > 0) {
+                                const pdfItem = availablePdfs.find(p => sources.pdfs.includes(p.id));
+                                sourceInfo = {
+                                  sourceType: "pdf",
+                                  sourceName: pdfItem?.name || pdfItem?.path || "PDF Document",
+                                  page: sourceInfo?.page || "1",
+                                  questionNum: sourceInfo?.questionNum || "Question 1"
+                                };
+                              } else if (sources.videos.length > 0) {
+                                const videoItem = availableVideos.find(v => sources.videos.includes(v.id));
+                                sourceInfo = {
+                                  sourceType: "video",
+                                  sourceName: videoItem?.name || videoItem?.path || "Video Lecture",
+                                  timestamp: sourceInfo?.timestamp || "00:00",
+                                  questionNum: sourceInfo?.questionNum || "1"
+                                };
+                              } else if (sources.saves.length > 0) {
+                                sourceInfo = {
+                                  sourceType: "saves",
+                                  sourceName: "Saved Questions Collection",
+                                  detail: "Extracted from saves dashboard"
+                                };
+                              } else if (sources.urls.length > 0) {
+                                sourceInfo = {
+                                  sourceType: "url",
+                                  sourceName: sources.urls[0] || "Reference URL",
+                                  page: sourceInfo?.page || "1",
+                                  questionNum: sourceInfo?.questionNum || "Question 1"
+                                };
+                              } else {
+                                sourceInfo = {
+                                  sourceType: "internet",
+                                  sourceName: sources.internetSearch.query || "Internet Fetching",
+                                  detail: "AI web-search retrieval fallback"
+                                };
+                              }
+                            } else {
+                              // If sourceType is valid but missing some required tracking keys for pdf/url, populate default values
+                              if (sourceInfo.sourceType === "pdf") {
+                                if (!sourceInfo.page) sourceInfo.page = "1";
+                                if (!sourceInfo.questionNum) sourceInfo.questionNum = "Question 1";
+                              } else if (sourceInfo.sourceType === "url") {
+                                if (!sourceInfo.page) sourceInfo.page = "1";
+                                if (!sourceInfo.questionNum) sourceInfo.questionNum = "Question 1";
+                              }
+                            }
+
+                            return {
+                              ...q,
+                              subject: subj,
+                              difficulty: q.difficulty || plan.difficulty,
+                              text: fixLatexFormatting(text),
+                              options: options.map((opt: string) => ensureMathWrapped(fixLatexFormatting(opt))),
+                              correctOptionIndex,
+                              explanation: fixLatexFormatting(q.explanation || ""),
+                              sourceInfo
+                            };
                          });
                       
                       if (validatedQs.length > 0) {
-                         subjectQuestions = [...subjectQuestions, ...validatedQs];
+                         setStatus(`Verifying and validating ${subj} answers...`);
+                         const verifiedQs = await verifyAndCorrectQuestions(validatedQs, apiKey.trim(), signal);
+                         subjectQuestions = [...subjectQuestions, ...verifiedQs];
                          success = true;
                          batchIndex++;
                          break;
@@ -970,6 +1247,8 @@ function AIQuizInterface() {
   const [customNum, setCustomNum] = useState<number>(25);
   const [difficulty, setDifficulty] = useState<Difficulty>("Mixed");
   const [showSourceModal, setShowSourceModal] = useState(false);
+  const [showQuestionSourceDialog, setShowQuestionSourceDialog] = useState(false);
+  const [selectedQuestionForSource, setSelectedQuestionForSource] = useState<Question | null>(null);
   
   // Custom Guidelines & AI Settings State
   const [briefInstructions, setBriefInstructions] = useState("");
@@ -1829,7 +2108,22 @@ Respond with ONLY the markdown explanation. Do not wrap it in JSON or HTML. Star
                          <span className="text-muted-foreground border border-border bg-muted/30 px-2.5 py-0.5 rounded-full text-xs font-bold">Marks: <span className="text-emerald-500 font-extrabold">+4</span> <span className="text-red-500 font-extrabold">-1</span></span>
                          <span className="text-muted-foreground border border-border bg-muted/30 px-2.5 py-0.5 rounded-full text-xs font-bold">Type: Single Option Correct</span>
                        </div>
-                       <button className="text-muted-foreground hover:text-foreground"><MoreVertical className="w-5 h-5" /></button>
+                        {reviewMode ? (
+                          <button 
+                            onClick={() => {
+                              setSelectedQuestionForSource(questions[currentIndex]);
+                              setShowQuestionSourceDialog(true);
+                            }}
+                            className="text-primary hover:text-primary/80 hover:bg-primary/10 p-2 rounded-full transition-all relative group"
+                            title="Question Source Origin"
+                          >
+                            <AlertCircle className="w-5 h-5" />
+                          </button>
+                        ) : (
+                          <button className="text-muted-foreground hover:text-foreground">
+                            <MoreVertical className="w-5 h-5" />
+                          </button>
+                        )}
                     </div>
                     
                     <div className="flex-1 overflow-y-auto p-6 md:p-8 space-y-6">
@@ -1901,45 +2195,6 @@ Respond with ONLY the markdown explanation. Do not wrap it in JSON or HTML. Star
                                 <span>Time spent: <span className="text-foreground">{formatTimeSpent(timeSpent[currentIndex] || 0)}</span></span>
                                 <span>Difficulty: <span className="text-foreground">{questions[currentIndex].difficulty}</span></span>
                               </div>
-                            </div>
-
-                            {/* Premium AI Explanation */}
-                            <div className="p-6 bg-purple-500/5 border border-purple-500/20 rounded-2xl space-y-4">
-                              <div className="flex items-center justify-between flex-wrap gap-2">
-                                <div className="flex items-center gap-2 text-purple-600 dark:text-purple-400 font-bold text-sm uppercase tracking-wider">
-                                  <Sparkles className="h-4 w-4 animate-pulse" /> Premium AI Explanation (Multi-Model)
-                                </div>
-                                {aiExplanations[currentIndex]?.model && (
-                                  <span className="text-[10px] bg-purple-500/10 text-purple-600 dark:text-purple-400 px-2 py-0.5 rounded font-mono font-bold">
-                                    {aiExplanations[currentIndex].model}
-                                  </span>
-                                )}
-                              </div>
-                              
-                              {(!aiExplanations[currentIndex] || aiExplanations[currentIndex].error) ? (
-                                <div className="space-y-3">
-                                  {aiExplanations[currentIndex]?.error && (
-                                    <p className="text-xs text-red-500 font-semibold">{aiExplanations[currentIndex].error}</p>
-                                  )}
-                                  <Button 
-                                    onClick={() => handleGenerateExplanation(currentIndex)}
-                                    className="bg-purple-600 hover:bg-purple-700 text-white font-bold rounded text-xs px-4 h-9 flex items-center gap-1.5"
-                                  >
-                                    <Sparkles className="h-3.5 w-3.5" /> Generate Premium AI Explanation
-                                  </Button>
-                                </div>
-                              ) : aiExplanations[currentIndex].loading ? (
-                                <div className="flex items-center gap-2.5 py-4">
-                                  <RefreshCw className="h-4 w-4 text-purple-500 animate-spin" />
-                                  <span className="text-xs font-semibold text-muted-foreground">Generating premium derivation using nousresearch/hermes-3-llama-3.1-405b:free...</span>
-                                </div>
-                              ) : (
-                                <div className="prose dark:prose-invert max-w-none text-sm md:text-base text-foreground leading-relaxed font-sans">
-                                  <ReactMarkdown remarkPlugins={[remarkMath, remarkGfm]} rehypePlugins={[rehypeKatex]}>
-                                    {aiExplanations[currentIndex].text}
-                                  </ReactMarkdown>
-                                </div>
-                              )}
                             </div>
                           </div>
                         )}
@@ -2363,6 +2618,132 @@ Respond with ONLY the markdown explanation. Do not wrap it in JSON or HTML. Star
               <div className="mt-6 shrink-0 pt-4 border-t border-border">
                 <Button onClick={() => setShowSourceModal(false)} className="w-full rounded-xl h-12 text-base font-bold shadow-lg shadow-primary/20">
                   Confirm Sources
+                </Button>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+
+      {/* ── Question Source Attribution Modal ── */}
+      <AnimatePresence>
+        {showQuestionSourceDialog && selectedQuestionForSource && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+              onClick={() => {
+                setShowQuestionSourceDialog(false);
+                setSelectedQuestionForSource(null);
+              }}
+            />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              className="relative w-full max-w-lg bg-card border border-border rounded-3xl p-6 shadow-2xl z-10 flex flex-col max-h-[90vh] overflow-hidden text-foreground"
+            >
+              <div className="flex justify-between items-center pb-4 border-b border-border shrink-0">
+                <div className="flex items-center gap-2">
+                  <AlertCircle className="h-5 w-5 text-primary" />
+                  <h3 className="text-lg font-black tracking-tight">Question Source & Origin</h3>
+                </div>
+                <button 
+                  onClick={() => {
+                    setShowQuestionSourceDialog(false);
+                    setSelectedQuestionForSource(null);
+                  }} 
+                  className="p-2 hover:bg-muted rounded-full transition-colors text-muted-foreground"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              <div className="flex-1 overflow-y-auto py-6 space-y-4">
+                <div className="bg-primary/5 p-4 border border-primary/10 rounded-2xl">
+                  <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Target Question</p>
+                  <div className="text-sm font-bold text-foreground mt-1 line-clamp-3 leading-relaxed whitespace-pre-wrap">
+                    <ReactMarkdown remarkPlugins={[remarkMath, remarkGfm]} rehypePlugins={[rehypeKatex]} components={quizOptionComponents}>
+                      {selectedQuestionForSource.text}
+                    </ReactMarkdown>
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  <div>
+                    <span className="text-xs font-bold text-muted-foreground">Source Type:</span>
+                    <div className="mt-1">
+                      <span className="px-3 py-1.5 rounded-full text-xs font-black bg-primary/10 text-primary capitalize tracking-wide">
+                        {selectedQuestionForSource.sourceInfo?.sourceType || "internet"}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div>
+                    <span className="text-xs font-bold text-muted-foreground">Source Name:</span>
+                    <p className="text-sm font-bold text-foreground mt-1.5 bg-muted/40 p-3.5 border border-border/50 rounded-2xl">
+                      {selectedQuestionForSource.sourceInfo?.sourceName || "Internet Search (AI Fetching)"}
+                    </p>
+                  </div>
+
+                  {selectedQuestionForSource.sourceInfo?.sourceType === "pdf" && selectedQuestionForSource.sourceInfo.page && (
+                    <div>
+                      <span className="text-xs font-bold text-muted-foreground">Page Number:</span>
+                      <p className="text-sm font-bold text-foreground mt-1.5 bg-muted/40 px-3.5 py-2.5 border border-border/50 rounded-2xl">
+                        Page {selectedQuestionForSource.sourceInfo.page}
+                      </p>
+                    </div>
+                  )}
+
+                  {selectedQuestionForSource.sourceInfo?.sourceType === "url" && selectedQuestionForSource.sourceInfo.page && (
+                    <div>
+                      <span className="text-xs font-bold text-muted-foreground">Section / Page:</span>
+                      <p className="text-sm font-bold text-foreground mt-1.5 bg-muted/40 px-3.5 py-2.5 border border-border/50 rounded-2xl">
+                        {selectedQuestionForSource.sourceInfo.page}
+                      </p>
+                    </div>
+                  )}
+
+                  {(selectedQuestionForSource.sourceInfo?.sourceType === "pdf" || selectedQuestionForSource.sourceInfo?.sourceType === "url") && selectedQuestionForSource.sourceInfo.questionNum && (
+                    <div>
+                      <span className="text-xs font-bold text-muted-foreground">Question Number / Label:</span>
+                      <p className="text-sm font-bold text-foreground mt-1.5 bg-muted/40 px-3.5 py-2.5 border border-border/50 rounded-2xl">
+                        {selectedQuestionForSource.sourceInfo.questionNum}
+                      </p>
+                    </div>
+                  )}
+
+                  {selectedQuestionForSource.sourceInfo?.sourceType === "video" && selectedQuestionForSource.sourceInfo.timestamp && (
+                    <div>
+                      <span className="text-xs font-bold text-muted-foreground">Video Timestamp:</span>
+                      <p className="text-sm font-bold text-foreground mt-1.5 bg-muted/40 px-3.5 py-2.5 border border-border/50 rounded-2xl">
+                        Timestamp: {selectedQuestionForSource.sourceInfo.timestamp}
+                      </p>
+                    </div>
+                  )}
+
+                  {selectedQuestionForSource.sourceInfo?.detail && (
+                    <div>
+                      <span className="text-xs font-bold text-muted-foreground">Sourced Context / Query:</span>
+                      <p className="text-xs text-muted-foreground mt-1.5 bg-muted/40 p-3.5 border border-border/50 rounded-2xl leading-relaxed whitespace-pre-wrap font-medium">
+                        {selectedQuestionForSource.sourceInfo.detail}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              <div className="pt-4 border-t border-border shrink-0">
+                <Button 
+                  onClick={() => {
+                    setShowQuestionSourceDialog(false);
+                    setSelectedQuestionForSource(null);
+                  }} 
+                  className="w-full rounded-xl h-12 text-sm font-bold shadow-md"
+                >
+                  Close
                 </Button>
               </div>
             </motion.div>

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useMemo } from "react";
+import { useState, useEffect, useRef, useMemo, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   BrainCircuit,
@@ -34,7 +34,8 @@ import {
   CheckCircle2,
   XCircle,
   Clock,
-  Sparkles
+  Sparkles,
+  FolderPlus
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -48,6 +49,86 @@ import rehypeKatex from 'rehype-katex';
 import 'katex/dist/katex.min.css';
 import AIChatInterface from "./AI";
 import { fixLatexFormatting, extractInlineOptions, ensureMathWrapped } from "@/lib/latex-formatter";
+import JSZip from "jszip";
+
+// ─── Document Parser Helpers ────────────────────────────────────────────────
+async function extractTextFromDocx(arrayBuffer: ArrayBuffer): Promise<string> {
+  try {
+    const zip = await JSZip.loadAsync(arrayBuffer);
+    const docXml = await zip.file("word/document.xml")?.async("text");
+    if (!docXml) return "";
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(docXml, "application/xml");
+    const textNodes = xmlDoc.getElementsByTagName("w:t");
+    let text = "";
+    for (let i = 0; i < textNodes.length; i++) {
+      text += (textNodes[i].textContent || "") + " ";
+    }
+    return text.trim();
+  } catch (err) {
+    console.error("docx parsing failed:", err);
+    return "";
+  }
+}
+
+async function extractTextFromPptx(arrayBuffer: ArrayBuffer): Promise<string> {
+  try {
+    const zip = await JSZip.loadAsync(arrayBuffer);
+    let text = "";
+    const slideFiles = Object.keys(zip.files).filter(name => name.startsWith("ppt/slides/slide") && name.endsWith(".xml"));
+    slideFiles.sort((a, b) => {
+      const numA = parseInt(a.replace("ppt/slides/slide", "").replace(".xml", ""), 10);
+      const numB = parseInt(b.replace("ppt/slides/slide", "").replace(".xml", ""), 10);
+      return numA - numB;
+    });
+    for (const file of slideFiles) {
+      const slideXml = await zip.file(file)?.async("text");
+      if (slideXml) {
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(slideXml, "application/xml");
+        const textNodes = xmlDoc.getElementsByTagName("a:t");
+        for (let i = 0; i < textNodes.length; i++) {
+          text += (textNodes[i].textContent || "") + " ";
+        }
+        text += "\n";
+      }
+    }
+    return text.trim();
+  } catch (err) {
+    console.error("pptx parsing failed:", err);
+    return "";
+  }
+}
+
+function extractStringsFromBinary(buffer: ArrayBuffer): string {
+  const bytes = new Uint8Array(buffer);
+  let result = "";
+  let currentString = "";
+  for (let i = 0; i < bytes.length; i++) {
+    const char = bytes[i];
+    if (char >= 32 && char <= 126) {
+      currentString += String.fromCharCode(char);
+    } else if (char === 10 || char === 13) {
+      if (currentString.trim().length > 4) {
+        result += currentString.trim() + "\n";
+      }
+      currentString = "";
+    } else {
+      if (currentString.trim().length > 4) {
+        result += currentString.trim() + " ";
+      }
+      currentString = "";
+    }
+  }
+  if (currentString.trim().length > 4) {
+    result += currentString.trim();
+  }
+  return result
+    .split("\n")
+    .map(line => line.replace(/[^a-zA-Z0-9\s\.,!\?\-]/g, "").trim())
+    .filter(line => line.split(/\s+/).length > 2)
+    .join("\n");
+}
 
 // ─── Types ─────────────────────────────────────────────────────────────────
 type QuizPhase = "setup" | "analyzing" | "active" | "results";
@@ -62,6 +143,13 @@ interface SelectedSources {
     enabled: boolean;
     query: string;
   };
+  uploads: {
+    id: string;
+    name: string;
+    text?: string;
+    dataUrl?: string;
+    fileType: "pdf" | "image" | "text" | "docx" | "pptx";
+  }[];
 }
 
 interface SelectableItem {
@@ -70,6 +158,7 @@ interface SelectableItem {
   path: string;
   mediaKey?: string;
   url?: string;
+  fileType?: "pdf" | "image";
 }
 
 interface Question {
@@ -80,9 +169,19 @@ interface Question {
   explanation: string;
   difficulty: string;
   subject: string;
+  confidence?: number;
+  consensusAnalysis?: string;
   sourceQuestionId?: string;
   imageKey?: string;
   imageUrl?: string;
+  questionType?: "STANDARD_MCQ" | "STATEMENT_BASED" | "MATCH_THE_FOLLOWING";
+  questionImageUrl?: string;
+  questionCropUrl?: string;
+  hasEmbeddedOptions?: boolean;
+  embeddedOptionsCropUrl?: string | null;
+  hasIsolatedDiagram?: boolean;
+  diagramImageUrl?: string;
+  diagramCropUrl?: string | null;
   sourceInfo?: {
     sourceType: "pdf" | "video" | "saves" | "url" | "internet";
     sourceName: string;
@@ -92,7 +191,6 @@ interface Question {
     detail?: string;
   };
 }
-
 
 interface SavedQuiz {
   id: string;
@@ -104,14 +202,16 @@ interface SavedQuiz {
 
 interface SubjectPlan {
   count: number;
-  difficulty: "Easy" | "Medium" | "Hard" | "Mixed";
+  difficulty: string;
 }
 
 const MODELS = [
+  { id: "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free", name: "Nemotron 3 Nano Omni 30B Reasoning (Free)", desc: "Deep reasoning and high precision for academic quizzes." },
+  { id: "nvidia/llama-nemotron-rerank-vl-1b-v2:free", name: "Llama Nemotron Rerank VL 1B v2 (Free)", desc: "Multimodal and text reranking model." },
+  { id: "nex-agi/nex-n2-pro:free", name: "Nex N2 Pro (Free)", desc: "Advanced chat and reasoning model." },
+  { id: "nvidia/nemotron-3.5-content-safety:free", name: "Nemotron 3.5 Content Safety (Free)", desc: "Nvidia content safety model." },
   { id: "qwen/qwen-2.5-coder-32b-instruct", name: "Qwen 2.5 Coder 32B (JSON Precision)", desc: "Best for structured JSON output and strict format adherence." },
-  { id: "meta-llama/llama-3.3-70b-instruct", name: "Llama 3.3 70B Instruct (Balanced)", desc: "Excellent, highly optimized model that balances reasoning depth with efficiency." },
-  { id: "nousresearch/hermes-3-llama-3.1-405b", name: "Hermes 3 Llama 3.1 405B (Deep Reasoning)", desc: "Most powerful model. Best for deep, multi-concept physics/chemistry problems." },
-  { id: "google/gemma-4-31b-it", name: "Gemma 4 31B IT (Scientific/Math)", desc: "Specifically optimized for scientific knowledge and complex academic-level problems." }
+  { id: "meta-llama/llama-3.3-70b-instruct", name: "Llama 3.3 70B Instruct (Balanced)", desc: "Excellent, highly optimized model that balances reasoning depth with efficiency." }
 ];
 
 // ─── Custom Shapes for JEE Question Palette ──────────────────────────────
@@ -186,19 +286,36 @@ function planSubjects(
     subjects.forEach(subj => {
       const displaySubj = subj === "physics" ? "Physics" : (subj === "chemistry" ? "Chemistry" : "Maths");
       
-      // Matches: "10 tough questions of Maths" or "10 hard maths" or "10 Maths (hard)"
-      const regex = new RegExp(`(\\d+)\\s*(easy|medium|hard|tough|mixed)?\\s*(?:question|q)?s?\\s*(?:of|for)?\\s*${subj.replace("maths", "math")}`, "i");
+      // Matches count and custom difficulty expression (e.g. "5(Hard)" or "7(Hard+Meduim)" or "8 (Easy+Hard)")
+      const regex = new RegExp(`(\\d+)\\s*(?:\\(?([a-z\\+\\s\\/\\\\\\(\\)-]+)\\)?)?\\s*(?:question|q)?s?\\s*(?:of|for)?\\s*${subj.replace("maths", "math")}`, "i");
       const match = text.match(regex);
       
       if (match) {
         const count = parseInt(match[1]);
-        let diffStr = match[2] || "";
-        let diff: "Easy" | "Medium" | "Hard" | "Mixed" = defaultDifficulty as any;
+        let diffStr = (match[2] || "").trim().toLowerCase();
         
-        if (diffStr.includes("easy")) diff = "Easy";
-        else if (diffStr.includes("medium")) diff = "Medium";
-        else if (diffStr.includes("hard") || diffStr.includes("tough")) diff = "Hard";
-        else if (diffStr.includes("mixed")) diff = "Mixed";
+        // Clean up diffStr (remove words like questions, etc. if matched by accident)
+        diffStr = diffStr.replace(/(?:question|q)s?/g, "").trim();
+        
+        let diff = defaultDifficulty;
+        if (diffStr.includes("easy") && diffStr.includes("hard")) {
+          diff = "Easy+Hard";
+        } else if (diffStr.includes("hard") && (diffStr.includes("medium") || diffStr.includes("meduim") || diffStr.includes("md"))) {
+          diff = "Hard+Medium";
+        } else if (diffStr.includes("easy") && (diffStr.includes("medium") || diffStr.includes("meduim"))) {
+          diff = "Easy+Medium";
+        } else if (diffStr.includes("easy")) {
+          diff = "Easy";
+        } else if (diffStr.includes("medium") || diffStr.includes("meduim")) {
+          diff = "Medium";
+        } else if (diffStr.includes("hard") || diffStr.includes("tough")) {
+          diff = "Hard";
+        } else if (diffStr.includes("mixed")) {
+          diff = "Mixed";
+        } else if (diffStr.length > 0) {
+          diff = diffStr.split("+").map(s => s.trim().charAt(0).toUpperCase() + s.trim().slice(1)).join("+");
+          diff = diff.replace("Meduim", "Medium");
+        }
         
         plan[displaySubj].count = count;
         plan[displaySubj].difficulty = diff;
@@ -237,12 +354,10 @@ function planSubjects(
       const unallocated = totalCount - totalAllocated;
       if (unallocated > 0) {
         // Distribute remainder among subjects that currently have 0 count but are NOT excluded
-        // A subject is excluded if we explicitly mentioned other subjects but not this one
         const mentionedInBrief = text.includes("phys") || text.includes("chem") || text.includes("math");
         const zeroSubjs = Object.keys(plan).filter(k => {
           if (plan[k].count > 0) return false;
-          if (!mentionedInBrief) return true; // if brief is general, all are open
-          // If brief mentioned subjects, only count those mentioned
+          if (!mentionedInBrief) return true;
           const lowKey = k.toLowerCase();
           return text.includes(lowKey.replace("maths", "math"));
         });
@@ -441,6 +556,838 @@ ${internetSearch.enabled && internetSearch.query ? `Additionally, include up-to-
 `;
 }
 
+function extractJson(raw: string): any {
+  let cleanedText = raw.replace(/```(?:json)?/gi, "").replace(/```/g, "").trim();
+  const firstBracket = cleanedText.indexOf('[');
+  const firstBrace = cleanedText.indexOf('{');
+  
+  if (firstBracket === -1 && firstBrace === -1) {
+      throw new Error("No JSON structure found");
+  }
+  
+  let isArray = (firstBracket !== -1 && (firstBrace === -1 || firstBracket < firstBrace));
+  let startIndex = isArray ? firstBracket : firstBrace;
+  cleanedText = cleanedText.substring(startIndex);
+  
+  let lastBracket = cleanedText.lastIndexOf(']');
+  let lastBrace = cleanedText.lastIndexOf('}');
+  let endIndex = isArray ? lastBracket : lastBrace;
+  
+  if (endIndex !== -1) {
+      cleanedText = cleanedText.substring(0, endIndex + 1);
+  } else {
+      cleanedText += isArray ? ']' : '}';
+  }
+  
+  let parsed;
+  try {
+      parsed = JSON.parse(cleanedText);
+  } catch (e) {
+      let repaired = cleanedText.replace(/\\(.)/g, (match, char, offset) => {
+        if (char === '"' || char === '\\') return match;
+        if (char === 'n' || char === 'r' || char === 't') {
+          const nextChar = cleanedText[offset + 2];
+          if (nextChar && /[a-zA-Z]/.test(nextChar)) {
+            return '\\\\' + char;
+          }
+          return match;
+        }
+        return '\\\\' + char;
+      });
+
+      repaired = repaired
+          .replace(/\n/g, " ")
+          .replace(/\r/g, "")
+          .replace(/,\s*]/g, "]")
+          .replace(/,\s*}/g, "}");
+      
+      try {
+          parsed = JSON.parse(repaired);
+      } catch(e2) {
+          let lastValidEnd = repaired.lastIndexOf('},');
+          if (lastValidEnd !== -1) {
+              repaired = repaired.substring(0, lastValidEnd + 1) + (isArray ? ']' : '}');
+              try {
+                  parsed = JSON.parse(repaired);
+              } catch(e3) {
+                  return isArray ? [] : {};
+              }
+          } else {
+              return isArray ? [] : {};
+          }
+      }
+  }
+  
+  if (isArray && Array.isArray(parsed) && parsed.length === 1 && parsed[0] && !parsed[0].text) {
+      for (let key in parsed[0]) {
+          if (Array.isArray(parsed[0][key])) {
+              return parsed[0][key];
+          }
+      }
+  } else if (!isArray && typeof parsed === 'object') {
+      for (let key in parsed) {
+          if (Array.isArray(parsed[key])) {
+              return parsed[key];
+          }
+      }
+      return [parsed];
+  }
+  return parsed;
+}
+
+async function fetchWebSearchResults(query: string, timeFilter?: string): Promise<string> {
+  try {
+    let url = `/api/search?q=${encodeURIComponent(query)}`;
+    if (timeFilter) {
+      url += `&df=${timeFilter}`;
+    }
+    const res = await fetch(url);
+    if (!res.ok) throw new Error("Search request failed");
+    
+    const data = await res.json();
+    const results = data.results || [];
+    
+    if (results.length === 0) {
+      return "No search results found.";
+    }
+    
+    let searchSummaries = "";
+    results.slice(0, 5).forEach((item: any, idx: number) => {
+      searchSummaries += `[Source ${idx + 1}] Title: ${item.title}\nURL: ${item.url}\nSnippet: ${item.snippet}\nThumbnail: ${item.thumbnail || ""}\n\n`;
+    });
+    
+    return searchSummaries;
+  } catch (error) {
+    console.warn("Local search API failed or backend server is not running. Falling back to direct client-side search via CORS proxy:", error);
+    try {
+      const encoded = encodeURIComponent(query);
+      let searchUrl = `https://html.duckduckgo.com/html/?q=${encoded}`;
+      if (timeFilter) {
+        searchUrl += `&df=${timeFilter}`;
+      }
+      
+      const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(searchUrl)}`;
+      const res = await fetch(proxyUrl);
+      if (!res.ok) throw new Error("CORS proxy search request failed");
+      
+      const html = await res.text();
+      if (!html.includes("result results_links")) {
+        return "No search results found.";
+      }
+      
+      const decodeHTMLEntities = (str: string): string => {
+        return str
+          .replace(/&amp;/g, "&")
+          .replace(/&lt;/g, "<")
+          .replace(/&gt;/g, ">")
+          .replace(/&quot;/g, '"')
+          .replace(/&#39;/g, "'")
+          .replace(/&#x27;/g, "'")
+          .replace(/&#x2F;/g, "/")
+          .replace(/&ndash;/g, "–")
+          .replace(/&mdash;/g, "—")
+          .replace(/&nbsp;/g, " ");
+      };
+
+      const parts = html.split('class="result results_links');
+      const results = parts.slice(1, 6).map((part) => {
+        const hrefMatch = part.match(/class="result__a"[^>]*href="([^"]+)"/);
+        const titleMatch = part.match(/class="result__a"[^>]*>([\s\S]*?)<\/a>/);
+        const snippetMatch = part.match(/class="result__snippet"[^>]*>([\s\S]*?)<\/a>/);
+        
+        let url = hrefMatch ? hrefMatch[1] : "";
+        if (url.startsWith("//")) {
+          url = "https:" + url;
+        }
+        if (url.startsWith("/l/") || url.includes("uddg=")) {
+          const match = url.match(/[?&]uddg=([^&]+)/);
+          if (match) {
+            url = decodeURIComponent(match[1]);
+          }
+        }
+        
+        let title = titleMatch ? titleMatch[1].replace(/<[^>]*>/g, "").trim() : "";
+        let snippet = snippetMatch ? snippetMatch[1].replace(/<[^>]*>/g, "").trim() : "";
+        
+        title = decodeHTMLEntities(title);
+        snippet = decodeHTMLEntities(snippet);
+        
+        return { url, title, snippet };
+      });
+
+      if (results.length === 0) {
+        return "No search results found.";
+      }
+
+      let searchSummaries = "";
+      results.forEach((item, idx) => {
+        searchSummaries += `[Source ${idx + 1}] Title: ${item.title}\nURL: ${item.url}\nSnippet: ${item.snippet}\nThumbnail: \n\n`;
+      });
+      
+      return searchSummaries;
+    } catch (fallbackError) {
+      console.error("Fallback direct web search failed:", fallbackError);
+      return "Failed to retrieve search results.";
+    }
+  }
+}
+
+async function fetchUrlContent(url: string): Promise<string> {
+  try {
+    const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(url)}`;
+    const res = await fetch(proxyUrl);
+    if (!res.ok) throw new Error(`Failed to fetch URL: ${res.statusText}`);
+    const text = await res.text();
+    
+    try {
+      const parsed = JSON.parse(text);
+      return `[JSON Content from URL ${url}]:\n` + JSON.stringify(parsed, null, 2);
+    } catch {
+      const cleanText = text
+        .replace(/<script[^>]*>[\s\S]*?<\/script>/gi, "")
+        .replace(/<style[^>]*>[\s\S]*?<\/style>/gi, "")
+        .replace(/<[^>]*>/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+      return `[Text Content from URL ${url}]:\n` + cleanText;
+    }
+  } catch (err: any) {
+    console.error(`Error fetching URL content for ${url}:`, err);
+    return `[URL Source: "${url}" (Error fetching content: ${err.message})]`;
+  }
+}
+
+async function renderPageToCanvas(page: any): Promise<HTMLCanvasElement> {
+  const viewport = page.getViewport({ scale: 2.0 });
+  const canvas = document.createElement("canvas");
+  canvas.width = viewport.width;
+  canvas.height = viewport.height;
+  const ctx = canvas.getContext("2d");
+  if (!ctx) throw new Error("Could not get canvas context");
+  
+  const renderContext = {
+    canvasContext: ctx,
+    viewport: viewport
+  };
+  await page.render(renderContext).promise;
+  return canvas;
+}
+
+function cropDiagramFromCanvas(
+  originalCanvas: HTMLCanvasElement,
+  boundingBox: any
+): string {
+  if (!Array.isArray(boundingBox) || boundingBox.length !== 4) return "";
+  let [ymin, xmin, ymax, xmax] = boundingBox.map(Number);
+  
+  if (isNaN(ymin) || isNaN(xmin) || isNaN(ymax) || isNaN(xmax)) return "";
+  
+  ymin = Math.max(0, Math.min(1000, ymin));
+  xmin = Math.max(0, Math.min(1000, xmin));
+  ymax = Math.max(0, Math.min(1000, ymax));
+  xmax = Math.max(0, Math.min(1000, xmax));
+  
+  if (ymax <= ymin || xmax <= xmin) return "";
+  
+  const width = originalCanvas.width;
+  const height = originalCanvas.height;
+  
+  const x = (xmin / 1000) * width;
+  const y = (ymin / 1000) * height;
+  const w = ((xmax - xmin) / 1000) * width;
+  const h = ((ymax - ymin) / 1000) * height;
+  
+  const cropCanvas = document.createElement("canvas");
+  cropCanvas.width = w;
+  cropCanvas.height = h;
+  const ctx = cropCanvas.getContext("2d");
+  
+  if (ctx) {
+    ctx.drawImage(originalCanvas, x, y, w, h, 0, 0, w, h);
+    return cropCanvas.toDataURL("image/png");
+  }
+  return "";
+}
+
+function cropFromCanvas(
+  canvas: HTMLCanvasElement,
+  bounds: { top: number; left: number; width: number; height: number } | null
+): string {
+  if (!bounds) return "";
+  const { top, left, width, height } = bounds;
+  
+  const x = (left / 100) * canvas.width;
+  const y = (top / 100) * canvas.height;
+  const w = (width / 100) * canvas.width;
+  const h = (height / 100) * canvas.height;
+  
+  if (w <= 0 || h <= 0) return "";
+  
+  const cropCanvas = document.createElement("canvas");
+  cropCanvas.width = w;
+  cropCanvas.height = h;
+  const ctx = cropCanvas.getContext("2d");
+  
+  if (ctx) {
+    ctx.drawImage(canvas, x, y, w, h, 0, 0, w, h);
+    return cropCanvas.toDataURL("image/png");
+  }
+  return "";
+}
+
+async function extractQuestionsFromPageImage(
+  imageDataUrl: string,
+  apiKey: string,
+  modelName: string,
+  questionNumbers?: string,
+  signal?: AbortSignal
+): Promise<any[]> {
+  try {
+    const response = await fetch("/api/quiz/extract-page", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${apiKey.trim()}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        imageDataUrl,
+        model: modelName,
+        questionNumbers
+      }),
+      signal
+    });
+    if (!response.ok) {
+      throw new Error(`Backend extraction error: ${response.statusText}`);
+    }
+    const data = await response.json();
+    return Array.isArray(data.questions) ? data.questions : [];
+  } catch (err: any) {
+    console.error("extractQuestionsFromPageImage error:", err);
+    throw err;
+  }
+}
+
+async function extractQuestionsFromContext(
+  contextText: string,
+  apiKey: string,
+  modelName: string,
+  signal?: AbortSignal
+): Promise<any[]> {
+  const promptText = `You are a highly precise scientific text parser.
+Your task is to scan the provided CONTEXT MATERIALS (which contain text from student materials, PDFs, and websites) and extract JEE exam questions.
+
+CRITICAL DIRECTIVES:
+1. Every extracted question's text MUST be a direct, literal copy-paste of the question text found in the CONTEXT MATERIALS. Do NOT paraphrase, summarize, correct, or change even a single character, word, equation, or line. If the question in the source text is "asdfghjkl", then your extracted question text MUST be "asdfghjkl" exactly.
+2. If a question has options listed inline in the source text (e.g. "(1) R = ... \\n(2) R = ..."), extract them exactly as they are. If there are no options, leave the options array empty.
+3. For each question, extract/identify:
+   - "text": The literal question text word-for-word from the context.
+   - "options": An array of the options exactly as written in the context (if available).
+   - "subject": Categorize the question as strictly "Physics", "Chemistry", or "Maths".
+   - "difficulty": Assess its difficulty level as "Easy", "Medium", or "Hard".
+   - "sourceInfo": An object containing:
+     * "sourceType": "pdf" or "url" (or "saves" or "video" depending on headers)
+     * "sourceName": The exact file name or URL of the source
+     * "page": The page number if from PDF (e.g., 5)
+     * "questionNum": The question number or label in the source text (e.g., "Question 12")
+
+Respond with ONLY a valid JSON array of objects. Do not wrap it in markdown code blocks or write any introductory or concluding text.
+
+JSON format:
+[
+  {
+    "text": "Literal question text here...",
+    "options": ["Option 1 text...", "Option 2 text...", "Option 3 text...", "Option 4 text..."],
+    "subject": "Physics",
+    "difficulty": "Hard",
+    "sourceInfo": {
+      "sourceType": "pdf",
+      "sourceName": "chapter1.pdf",
+      "page": 3,
+      "questionNum": "12"
+    }
+  }
+]
+
+CONTEXT MATERIALS:
+${contextText}
+`;
+
+  const payload = {
+    model: modelName,
+    messages: [{ role: "user", content: promptText }]
+  };
+
+  let response;
+  try {
+    response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${apiKey.trim()}`,
+        "HTTP-Referer": window.location.href, 
+        "X-Title": "JEE Prep App Extractor", 
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload),
+      signal
+    });
+  } catch {
+    response = await fetch(`https://corsproxy.io/?${encodeURIComponent("https://openrouter.ai/api/v1/chat/completions")}`, {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${apiKey.trim()}`,
+        "HTTP-Referer": window.location.href, 
+        "X-Title": "JEE Prep App Extractor", 
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload),
+      signal
+    });
+  }
+
+  if (!response.ok) {
+    throw new Error(`OpenRouter Extraction Error: ${response.statusText}`);
+  }
+
+  const data = await response.json();
+  const rawText = data.choices?.[0]?.message?.content || "[]";
+  const parsed = extractJson(rawText);
+  return Array.isArray(parsed) ? parsed : [];
+}
+
+async function extractOrGenerateQuestionsForSource(
+  sourceText: string,
+  sourceInfo: { sourceType: "pdf" | "video" | "url" | "saves" | "internet"; sourceName: string; detail?: string },
+  apiKey: string,
+  modelName: string,
+  signal?: AbortSignal
+): Promise<any[]> {
+  const promptText = `You are an expert IIT-JEE exam question writer and compiler.
+We are analyzing a specific study resource:
+- Source Type: ${sourceInfo.sourceType}
+- Source Name: ${sourceInfo.sourceName}
+${sourceInfo.detail ? `- Detail: ${sourceInfo.detail}` : ""}
+
+Content from this source:
+=== SOURCE CONTENT START ===
+${sourceText}
+=== SOURCE CONTENT END ===
+
+Your tasks:
+1. Scan the SOURCE CONTENT. If it contains explicit multiple-choice questions (e.g. text of a question with option choices), extract them.
+2. If it does NOT contain explicit multiple-choice questions, but discusses academic/scientific concepts, equations, derivations, or problems (which is common for video notes, transcripts, or reference articles), you MUST generate/derive new, high-quality, mathematically rigorous JEE Advanced level multiple-choice questions based on these concepts.
+3. Generate up to 5 questions for this source. Each question MUST be a complete, self-contained question. Do NOT truncate, summarize, or leave descriptions half-finished (no "half-text" questions).
+4. Every question must have:
+   - "text": The complete question text. Ensure it is fully written out, self-contained, and contains all necessary details.
+   - "options": An array of exactly 4 options.
+   - "correctOptionIndex": The 0-based index (0, 1, 2, or 3) of the correct option.
+   - "explanation": A detailed, step-by-step mathematically correct explanation of how to solve the question.
+   - "subject": "Physics", "Chemistry", or "Maths" based on the content.
+   - "difficulty": "Easy", "Medium", or "Hard".
+5. LaTeX Formatting Guidelines:
+   - Wrap all inline equations, variables, and math expressions in single dollar signs ($...$).
+   - Wrap block/standalone equations in double dollar signs ($$...$$).
+   - Double-escape backslashes in your JSON strings (e.g., use "\\\\alpha" instead of "\\alpha").
+   - Remove any invalid/corrupted box characters (like ▢) and replace them with correct math symbols.
+
+Respond with ONLY a valid JSON array of objects. No markdown code blocks, no other text.
+
+JSON format:
+[
+  {
+    "text": "Question text with $math$...",
+    "options": ["Option A", "Option B", "Option C", "Option D"],
+    "correctOptionIndex": 0,
+    "explanation": "Explanation with $math$...",
+    "subject": "Physics",
+    "difficulty": "Hard"
+  }
+]`;
+
+  const payload = {
+    model: modelName,
+    messages: [{ role: "user", content: promptText }]
+  };
+
+  let response;
+  try {
+    response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${apiKey.trim()}`,
+        "HTTP-Referer": window.location.href, 
+        "X-Title": "JEE Prep App Extractor", 
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload),
+      signal
+    });
+  } catch {
+    response = await fetch(`https://corsproxy.io/?${encodeURIComponent("https://openrouter.ai/api/v1/chat/completions")}`, {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${apiKey.trim()}`,
+        "HTTP-Referer": window.location.href, 
+        "X-Title": "JEE Prep App Extractor", 
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload),
+      signal
+    });
+  }
+
+  if (!response.ok) {
+    throw new Error(`OpenRouter Extraction Error: ${response.statusText}`);
+  }
+
+  const data = await response.json();
+  const rawText = data.choices?.[0]?.message?.content || "[]";
+  const parsed = extractJson(rawText);
+  return Array.isArray(parsed) ? parsed : [];
+}
+
+
+async function generateFallbackQuestionsFromContext(
+  subject: string,
+  count: number,
+  difficulty: string,
+  contextText: string,
+  apiKey: string,
+  modelName: string,
+  signal?: AbortSignal
+): Promise<any[]> {
+  const promptText = `You are an expert JEE Advanced examiner.
+Your task is to generate high-quality JEE exam-style questions for the subject "${subject}" based on the concepts described in the CONTEXT MATERIALS.
+Number of questions: ${count}.
+Difficulty: ${difficulty}.
+
+Ensure questions are rigorous and use LaTeX formatting. Respond with ONLY a valid JSON array of objects.
+
+JSON format:
+[
+  {
+    "text": "Question text...",
+    "options": ["A", "B", "C", "D"],
+    "subject": "${subject}",
+    "difficulty": "${difficulty}",
+    "sourceInfo": {
+      "sourceType": "pdf",
+      "sourceName": "Generated from context concepts",
+      "page": 1,
+      "questionNum": "1"
+    }
+  }
+]
+
+CONTEXT MATERIALS:
+${contextText}
+`;
+
+  const payload = {
+    model: modelName,
+    messages: [{ role: "user", content: promptText }]
+  };
+
+  let response;
+  try {
+    response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${apiKey.trim()}`,
+        "HTTP-Referer": window.location.href, 
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload),
+      signal
+    });
+  } catch {
+    response = await fetch(`https://corsproxy.io/?${encodeURIComponent("https://openrouter.ai/api/v1/chat/completions")}`, {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${apiKey.trim()}`,
+        "HTTP-Referer": window.location.href, 
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload),
+      signal
+    });
+  }
+
+  if (!response.ok) return [];
+  const data = await response.json();
+  const rawText = data.choices?.[0]?.message?.content || "[]";
+  const parsed = extractJson(rawText);
+  return Array.isArray(parsed) ? parsed : [];
+}
+
+async function verifyQuestionBackend(
+  questionText: string,
+  options: string[],
+  apiKey: string,
+  subject?: string,
+  rawSearchTextSnippet?: string,
+  signal?: AbortSignal
+): Promise<{
+  questionText: string;
+  correctOptionIndex: number;
+  explanation: string;
+  options: string[];
+  confidence: number;
+  consensusAnalysis: string;
+} | null> {
+  try {
+    const response = await fetch("/api/quiz/verify-question", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${apiKey.trim()}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ questionText, options, subject, rawSearchTextSnippet }),
+      signal
+    });
+    if (response.ok) {
+      return await response.json();
+    }
+  } catch (err) {
+    console.error("verifyQuestionBackend error:", err);
+  }
+  return null;
+}
+
+async function verifyAnswerWithSearch(
+  questionText: string,
+  options: string[],
+  apiKey: string,
+  modelName: string,
+  signal?: AbortSignal
+): Promise<{ correctOptionIndex: number; explanation: string; options: string[]; questionText?: string } | null> {
+  let cleanedText = questionText;
+  
+  // Remove math dollar signs but keep math variables and content
+  cleanedText = cleanedText.replace(/\$/g, "");
+  
+  // Replace fractions syntax with slash notation
+  cleanedText = cleanedText.replace(/\\frac\{([^{}]+)\}\{([^{}]+)\}/g, "$1/$2");
+  
+  // Replace LaTeX commands with space
+  cleanedText = cleanedText.replace(/\\[a-zA-Z]+/g, " ");
+
+  const cleanQuery = cleanedText
+     .replace(/[^a-zA-Z0-9\s]/g, " ")
+     .replace(/\s+/g, " ")
+     .trim()
+     .substring(0, 180);
+
+  let searchResults = "";
+  try {
+     searchResults = await fetchWebSearchResults(cleanQuery);
+  } catch (err) {
+     console.error("Web search failed during verification:", err);
+     searchResults = "No web search results available.";
+  }
+
+  const promptText = `You are an expert IIT-JEE exam validator and answer verifier.
+We have a JEE question and options extracted from a PDF/URL source.
+We need to verify the absolute correct option and answer using web search results containing online keys, forum answers (Toppr, Doubtnut, etc.), or textbook keys.
+
+Question:
+${questionText}
+
+Options:
+${options.map((opt, i) => `${String.fromCharCode(65 + i)}) ${opt}`).join("\n")}
+
+Web Search results for this question:
+${searchResults}
+
+Your tasks:
+1. Review the web search results. Check how this question is solved online and which option (A, B, C, or D) is correct.
+2. Determine the exact 0-based index of the correct option (0 for A, 1 for B, 2 for C, 3 for D).
+3. If the options array has dummy/generic values like "Option (1)" but the correct mathematical choices are listed inside the question body (e.g. (1) R = ... \n(2) R = ...), extract those actual mathematical choice strings and return them in the "options" array. Otherwise, keep the options exactly as they are.
+4. Clean and reconstruct the question text: remove any corrupted/unrecognized character glyphs like "▢" or empty boxes, spelling errors, or OCR noise. Rewrite the question text to be fully correct, complete, and properly formatted using LaTeX. Every formula, equation, mathematical variable (e.g., $v_2$, $a_1$, $m$, $n$, $L_2$, $T_1$, etc.) MUST be wrapped in inline math delimiters ($...$) or block math delimiters ($$...$$). Ensure chemical formulas are formatted as LaTeX (e.g., $\text{H}_2\text{SO}_4$).
+5. Write a comprehensive, step-by-step mathematically correct explanation in LaTeX.
+
+Respond with ONLY a valid JSON object matching the format below. Do not wrap in markdown code blocks.
+
+JSON format:
+{
+  "questionText": "Fully cleaned, corrected, and LaTeX-formatted question text. Replace all ▢ boxes and OCR errors with correct variables and expressions (like v_2 = v_1 m^2 n or similar as found in search results). Wrap all variables, formulas, and math symbols in $...$.",
+  "correctOptionIndex": 1,
+  "explanation": "Verified explanation text with LaTeX...",
+  "options": ["Option A...", "Option B...", "Option C...", "Option D..."]
+}
+`;
+
+  const payload = {
+    model: modelName,
+    messages: [{ role: "user", content: promptText }]
+  };
+
+  let response;
+  try {
+    response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${apiKey.trim()}`,
+        "HTTP-Referer": window.location.href, 
+        "X-Title": "JEE Prep App Verifier", 
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload),
+      signal
+    });
+  } catch {
+    response = await fetch(`https://corsproxy.io/?${encodeURIComponent("https://openrouter.ai/api/v1/chat/completions")}`, {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${apiKey.trim()}`,
+        "HTTP-Referer": window.location.href, 
+        "X-Title": "JEE Prep App Verifier", 
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload),
+      signal
+    });
+  }
+
+  if (!response.ok) {
+     return null;
+  }
+
+  const data = await response.json();
+  const rawText = data.choices?.[0]?.message?.content || "{}";
+  const result = extractJson(rawText);
+  if (result && typeof result === 'object' && !Array.isArray(result)) {
+     return {
+       correctOptionIndex: typeof result.correctOptionIndex === 'number' ? result.correctOptionIndex : 0,
+       explanation: result.explanation || "",
+       options: Array.isArray(result.options) && result.options.length === 4 ? result.options : options,
+       questionText: result.questionText || questionText
+     };
+  }
+  return null;
+}
+
+/**
+ * Uses AI to select the best candidates from the extracted pool
+ * that align with the user's custom instructions/guidelines splits (e.g. specific source allocations).
+ */
+async function selectCandidatesWithAI(
+  candidates: any[],
+  brief: string,
+  subject: string,
+  count: number,
+  apiKey: string,
+  modelName: string,
+  signal?: AbortSignal
+): Promise<any[]> {
+  if (!candidates || candidates.length === 0) return [];
+  if (candidates.length <= count) return candidates;
+
+  const promptText = `You are an expert IIT-JEE exam compiler.
+We have extracted a candidate pool of JEE questions from different student source materials (PDFs, videos, saves, URLs, internet).
+We need to select EXACTLY ${count} questions for the subject "${subject}" to include in the final quiz.
+
+User Custom Guidelines / Distribution Requests:
+"${brief || "Select a balanced combination of questions from the available sources."}"
+
+Here is the candidate pool:
+${JSON.stringify(candidates.map((c, idx) => ({
+  index: idx,
+  subject: c.subject,
+  difficulty: c.difficulty,
+  sourceType: c.sourceInfo?.sourceType || "unknown",
+  sourceName: c.sourceInfo?.sourceName || "unknown",
+  textSnippet: c.text.substring(0, 150)
+})), null, 2)}
+
+Your tasks:
+1. Select exactly ${count} candidate indices from the pool that best satisfy the user's request.
+2. If the user specified taking questions from specific sources (e.g. "from pdf", "from video", "from url"), prioritize selecting questions from those sourceTypes.
+3. If the user specified difficulty splits for specific sources (e.g. "2 hard questions from pdf, 5 from video"), match those options as closely as possible.
+4. If the user did not specify source splits, select a balanced mix of questions distributed evenly across the different source types present in the pool.
+5. Return a JSON array of the selected candidate indices.
+
+Respond with ONLY the JSON array of selected indices. No code block markers, no other text. Example: [0, 4, 12, 19]`;
+
+  try {
+    const payload = {
+      model: modelName,
+      messages: [{ role: "user", content: promptText }]
+    };
+
+    let response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${apiKey}`,
+        "HTTP-Referer": window.location.href,
+        "X-Title": "JEE Prep App Candidate Selector",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload),
+      signal
+    });
+
+    if (!response.ok) {
+      response = await fetch(`https://corsproxy.io/?${encodeURIComponent("https://openrouter.ai/api/v1/chat/completions")}`, {
+        method: "POST",
+        headers: {
+          "Authorization": `Bearer ${apiKey}`,
+          "HTTP-Referer": window.location.href,
+          "X-Title": "JEE Prep App Candidate Selector",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload),
+        signal
+      });
+    }
+
+    if (response.ok) {
+      const data = await response.json();
+      const rawText = data.choices?.[0]?.message?.content || "[]";
+      const parsed = extractJson(rawText);
+      if (Array.isArray(parsed)) {
+        const selected: any[] = [];
+        const seenIndices = new Set<number>();
+        parsed.forEach(idx => {
+          const numIdx = Number(idx);
+          if (!isNaN(numIdx) && candidates[numIdx] && !seenIndices.has(numIdx)) {
+            seenIndices.add(numIdx);
+            selected.push(candidates[numIdx]);
+          }
+        });
+        if (selected.length > 0) {
+          return selected.slice(0, count);
+        }
+      }
+    }
+  } catch (err) {
+    console.warn("AI candidate selection failed, falling back to heuristic:", err);
+  }
+
+  // Fallback heuristic: select balanced questions across different source types
+  const sourceGroups: Record<string, any[]> = {};
+  candidates.forEach(c => {
+    const type = c.sourceInfo?.sourceType || "unknown";
+    if (!sourceGroups[type]) sourceGroups[type] = [];
+    sourceGroups[type].push(c);
+  });
+
+  const selected: any[] = [];
+  const types = Object.keys(sourceGroups);
+  let typeIdx = 0;
+  while (selected.length < count && types.length > 0) {
+    const currentType = types[typeIdx % types.length];
+    const group = sourceGroups[currentType];
+    if (group && group.length > 0) {
+      selected.push(group.shift());
+    } else {
+      types.splice(typeIdx % types.length, 1);
+      continue;
+    }
+    typeIdx++;
+  }
+  return selected.slice(0, count);
+}
+
 /**
  * Secondary validation and self-correction pass.
  * Verifies that the correctOptionIndex matches the correct option described in the explanation,
@@ -451,20 +1398,24 @@ async function verifyAndCorrectQuestions(
   apiKey: string, 
   signal?: AbortSignal
 ): Promise<any[]> {
-  try {
-    const payload = {
-      model: "meta-llama/llama-3.3-70b-instruct:free",
-      messages: [
-        {
-          role: "user",
-          content: `You are an expert IIT-JEE exam validator and answer-key proofreader.
-We have generated JEE questions, options, and explanations. However, sometimes the "correctOptionIndex" points to the wrong option (e.g. the explanation clearly shows C is the correct answer, which is index 2, but the correctOptionIndex was written as 0).
+  const modelsToTry = [
+    "meta-llama/llama-3.3-70b-instruct:free",
+    "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+    "nex-agi/nex-n2-pro:free",
+    "qwen/qwen-2.5-coder-32b-instruct:free",
+    "nvidia/nemotron-3.5-content-safety:free",
+    "google/gemma-2-9b-it:free"
+  ];
+
+  const promptText = `You are an expert IIT-JEE exam validator and answer-key proofreader.
+We have generated JEE questions, options, and explanations. However, there might be formatting issues (like missing LaTeX math $...$ delimiters), unexplanation placeholders, or corrupt symbols like "▢" representing undefined characters/variables (e.g. from PDF OCR extraction errors).
 
 Your task:
 1. For each question below, solve it mathematically/scientifically.
-2. Determine the exact 0-based index of the option in the "options" array that matches the correct answer.
-3. Check the explanation. If the explanation has mathematical errors, rewrite/correct the explanation to be mathematically rigorous and accurate.
-4. Output a verified list of questions with their verified "correctOptionIndex" and "explanation".
+2. Clean and correct the question text: remove any corrupted/unrecognized character glyphs like "▢" or empty boxes, spelling errors, or OCR noise. Rewrite the question text to be fully correct, complete, and properly formatted using LaTeX. Every formula, equation, mathematical variable (e.g., $v_2$, $a_1$, $m$, $n$, $L_2$, $T_1$, etc.) MUST be wrapped in inline math delimiters ($...$) or block math delimiters ($$...$$). Ensure chemical formulas are formatted as LaTeX (e.g., $\\text{H}_2\\text{SO}_4$).
+3. Clean and verify the four options: make sure they are properly LaTeX-formatted.
+4. Verify the exact 0-based index of the correct option in the options array.
+5. Check the explanation. If the explanation has mathematical errors, or is a placeholder like "No explanation provided.", rewrite/correct the explanation to be a comprehensive, step-by-step mathematically/scientifically rigorous derivation in LaTeX.
 
 Questions to verify:
 ${JSON.stringify(parsedQs.map((q, idx) => ({
@@ -476,87 +1427,97 @@ ${JSON.stringify(parsedQs.map((q, idx) => ({
 })), null, 2)}
 
 Output format:
-You MUST respond with EXACTLY a JSON array of objects, containing ONLY the "id", the verified "correctOptionIndex" (integer 0, 1, 2, or 3), and the verified "explanation" string.
+You MUST respond with EXACTLY a JSON array of objects, containing the fields: "id", the verified/cleaned "text" (properly formatted with LaTeX), the verified/cleaned "options" (array of 4 strings, properly formatted with LaTeX), the verified "correctOptionIndex" (integer 0, 1, 2, or 3), and the verified "explanation" string.
 Example:
 [
   {
     "id": "q_physics_1",
+    "text": "Corrected question text with $v_2 = v_1 m^2 n$...",
+    "options": ["$n^3 m^3 L_1 = L_2$", "$L_1 = n^4 m^2 L_2$", "$L_1 = n^2 m L_2$", "$n^2 m L_1 = L_2$"],
     "correctOptionIndex": 2,
-    "explanation": "Verified explanation text..."
+    "explanation": "Verified detailed derivation text with LaTeX..."
   }
 ]
-Do not wrap in markdown or write any code block markers. Just return raw JSON array.`
-        }
-      ]
-    };
+Do not wrap in markdown or write any code block markers. Just return raw JSON array.`;
 
-    let response;
+  for (const modelName of modelsToTry) {
     try {
-      response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-        method: "POST",
-        headers: {
-          "Authorization": `Bearer ${apiKey}`,
-          "HTTP-Referer": window.location.href, 
-          "X-Title": "JEE Prep App Validator", 
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(payload),
-        signal
-      });
-    } catch {
-      response = await fetch(`https://corsproxy.io/?${encodeURIComponent("https://openrouter.ai/api/v1/chat/completions")}`, {
-        method: "POST",
-        headers: {
-          "Authorization": `Bearer ${apiKey}`,
-          "HTTP-Referer": window.location.href, 
-          "X-Title": "JEE Prep App Validator", 
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(payload),
-        signal
-      });
-    }
+      const payload = {
+        model: modelName,
+        messages: [{ role: "user", content: promptText }]
+      };
 
-    if (!response.ok) {
-      console.warn("Verification API request failed, keeping original questions");
-      return parsedQs;
-    }
-
-    const data = await response.json();
-    const rawText = data.choices?.[0]?.message?.content || "[]";
-    
-    // Clean JSON
-    let cleanedText = rawText.replace(/```(?:json)?/gi, "").replace(/```/g, "").trim();
-    const firstBracket = cleanedText.indexOf('[');
-    if (firstBracket !== -1) {
-      cleanedText = cleanedText.substring(firstBracket);
-      const lastBracket = cleanedText.lastIndexOf(']');
-      if (lastBracket !== -1) {
-        cleanedText = cleanedText.substring(0, lastBracket + 1);
+      let response;
+      try {
+        response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+          method: "POST",
+          headers: {
+            "Authorization": `Bearer ${apiKey}`,
+            "HTTP-Referer": window.location.href, 
+            "X-Title": "JEE Prep App Validator", 
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(payload),
+          signal
+        });
+      } catch {
+        response = await fetch(`https://corsproxy.io/?${encodeURIComponent("https://openrouter.ai/api/v1/chat/completions")}`, {
+          method: "POST",
+          headers: {
+            "Authorization": `Bearer ${apiKey}`,
+            "HTTP-Referer": window.location.href, 
+            "X-Title": "JEE Prep App Validator", 
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(payload),
+          signal
+        });
       }
-    }
 
-    const verifiedList = JSON.parse(cleanedText);
-    if (Array.isArray(verifiedList)) {
-      const verifiedMap = new Map(verifiedList.map(item => [item.id, item]));
-      return parsedQs.map(q => {
-        const verified = verifiedMap.get(q.id);
-        if (verified) {
-          return {
-            ...q,
-            correctOptionIndex: typeof verified.correctOptionIndex === 'number' ? verified.correctOptionIndex : q.correctOptionIndex,
-            explanation: verified.explanation || q.explanation
-          };
+      if (!response.ok) {
+        console.warn(`Model ${modelName} returned status ${response.status}. Trying next fallback.`);
+        continue;
+      }
+
+      const data = await response.json();
+      const rawText = data.choices?.[0]?.message?.content || "[]";
+      
+      // Clean JSON
+      let cleanedText = rawText.replace(/```(?:json)?/gi, "").replace(/```/g, "").trim();
+      const firstBracket = cleanedText.indexOf('[');
+      if (firstBracket !== -1) {
+        cleanedText = cleanedText.substring(firstBracket);
+        const lastBracket = cleanedText.lastIndexOf(']');
+        if (lastBracket !== -1) {
+          cleanedText = cleanedText.substring(0, lastBracket + 1);
         }
-        return q;
-      });
+      }
+
+      const verifiedList = JSON.parse(cleanedText);
+      if (Array.isArray(verifiedList)) {
+        const verifiedMap = new Map(verifiedList.map(item => [item.id, item]));
+        return parsedQs.map(q => {
+          const verified = verifiedMap.get(q.id);
+          if (verified) {
+            return {
+              ...q,
+              text: verified.text || q.text,
+              options: Array.isArray(verified.options) && verified.options.length === 4 ? verified.options : q.options,
+              correctOptionIndex: typeof verified.correctOptionIndex === 'number' ? verified.correctOptionIndex : q.correctOptionIndex,
+              explanation: verified.explanation || q.explanation
+            };
+          }
+          return q;
+        });
+      }
+    } catch (err) {
+      console.warn(`Verification step failed with model ${modelName}:`, err);
     }
-  } catch (err) {
-    console.error("Verification step failed:", err);
   }
+
+  console.warn("All correction pass models failed, keeping original questions");
   return parsedQs;
 }
-
 
 // ─── Quiz Generator Manager ───────────────────────────────────────────────
 class QuizGeneratorManager {
@@ -600,6 +1561,7 @@ class QuizGeneratorManager {
     model: string;
     useFree: boolean;
     brief: string;
+    questionNumbers?: string;
   }) {
     const { sources, difficulty, finalQuestionCount, readMediaAsArrayBuffer, availablePdfs, availableVideos, model, useFree, brief } = params;
 
@@ -648,10 +1610,12 @@ class QuizGeneratorManager {
       }
 
       if (sources.urls.length > 0) {
+         setStatus("Fetching content from URLs...");
          contextText += "--- REFERENCE URLS ---\n";
-         sources.urls.forEach(url => {
-            contextText += `[URL Source: "${url}"]\n`;
-         });
+         for (const url of sources.urls) {
+            const urlText = await fetchUrlContent(url);
+            contextText += `${urlText}\n\n`;
+         }
          contextText += "\n";
       }
 
@@ -668,28 +1632,12 @@ class QuizGeneratorManager {
          });
       }
 
-      if (sources.pdfs.length > 0) {
-         setStatus("Reading text directly from your PDFs...");
-         contextText += "--- PDF DOCUMENTS ---\n";
-         const pdfjsLib = await import("pdfjs-dist");
-         pdfjsLib.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.mjs`;
-
-         for (const pdfId of sources.pdfs) {
-            const item = availablePdfs.find(p => p.id === pdfId);
-            if (item?.mediaKey) {
-               const buf = await readMediaAsArrayBuffer(item.mediaKey);
-               if (buf) {
-                  const pdf = await pdfjsLib.getDocument({ data: buf.slice(0) }).promise;
-                  const maxPages = Math.min(pdf.numPages, 100); 
-                  for (let i = 1; i <= maxPages; i++) {
-                     const page = await pdf.getPage(i);
-                     const content = await page.getTextContent();
-                     const pageText = content.items.map((it: any) => it.str).join(" ") + "\n";
-                     contextText += `[PDF Source File: "${item.name || item.path}", Page: ${i}]\n${pageText}\n`;
-                  }
-               }
-            } else if (item?.url) {
-               contextText += `[PDF Source File Reference: "${item.name || item.path}", URL: ${item.url}]\n`;
+      if (sources.uploads && sources.uploads.length > 0) {
+         setStatus("Gathering document uploads...");
+         contextText += "--- DIRECT UPLOADED DOCUMENTS ---\n";
+         for (const upload of sources.uploads) {
+            if (upload.text) {
+               contextText += `[Document Upload: "${upload.name}", Type: ${upload.fileType}]\n${upload.text}\n\n`;
             }
          }
       }
@@ -720,6 +1668,7 @@ class QuizGeneratorManager {
          if (plan.count <= 0) continue;
          totalBatches += Math.ceil(plan.count / 5);
       }
+      if (totalBatches === 0) totalBatches = 1;
 
       // Context slicing helper to avoid OpenRouter rate limits (TPM) and context limits on 40 Qs
       const getContextSlice = (batchIdx: number, totalBCount: number) => {
@@ -743,355 +1692,623 @@ class QuizGeneratorManager {
          return slice;
       };
 
-      const extractJson = (raw: string) => {
-          let cleanedText = raw.replace(/```(?:json)?/gi, "").replace(/```/g, "").trim();
-          const firstBracket = cleanedText.indexOf('[');
-          const firstBrace = cleanedText.indexOf('{');
-          
-          if (firstBracket === -1 && firstBrace === -1) {
-              throw new Error("No JSON structure found");
-          }
-          
-          let isArray = (firstBracket !== -1 && (firstBrace === -1 || firstBracket < firstBrace));
-          let startIndex = isArray ? firstBracket : firstBrace;
-          cleanedText = cleanedText.substring(startIndex);
-          
-          let lastBracket = cleanedText.lastIndexOf(']');
-          let lastBrace = cleanedText.lastIndexOf('}');
-          let endIndex = isArray ? lastBracket : lastBrace;
-          
-          if (endIndex !== -1) {
-              cleanedText = cleanedText.substring(0, endIndex + 1);
-          } else {
-              cleanedText += isArray ? ']' : '}';
-          }
-          
-          let parsed;
-          try {
-              parsed = JSON.parse(cleanedText);
-          } catch (e) {
-              // Smart backslash repair for LaTeX command integrity in JSON strings
-              let repaired = cleanedText.replace(/\\(.)/g, (match, char, offset) => {
-                if (char === '"' || char === '\\') return match;
-                if (char === 'n' || char === 'r' || char === 't') {
-                  const nextChar = cleanedText[offset + 2];
-                  if (nextChar && /[a-zA-Z]/.test(nextChar)) {
-                    return '\\\\' + char;
-                  }
-                  return match;
-                }
-                return '\\\\' + char;
-              });
-
-              repaired = repaired
-                  .replace(/\n/g, " ")
-                  .replace(/\r/g, "")
-                  .replace(/,\s*]/g, "]")
-                  .replace(/,\s*}/g, "}");
-              
-              try {
-                  parsed = JSON.parse(repaired);
-              } catch(e2) {
-                  let lastValidEnd = repaired.lastIndexOf('},');
-                  if (lastValidEnd !== -1) {
-                      repaired = repaired.substring(0, lastValidEnd + 1) + (isArray ? ']' : '}');
-                      try {
-                          parsed = JSON.parse(repaired);
-                      } catch(e3) {
-                          return [];
-                      }
-                  } else {
-                      return [];
-                  }
-              }
-          }
-          
-          if (Array.isArray(parsed) && parsed.length === 1 && parsed[0] && !parsed[0].text) {
-              for (let key in parsed[0]) {
-                  if (Array.isArray(parsed[0][key])) {
-                      return parsed[0][key];
-                  }
-              }
-          } else if (!Array.isArray(parsed) && typeof parsed === 'object') {
-              for (let key in parsed) {
-                  if (Array.isArray(parsed[key])) {
-                      return parsed[key];
-                  }
-              }
-              return [parsed];
-          }
-          return parsed;
-      };
-
       // ─── Execute Subject-Specific Batched Calls ───
       let allParsedQuestions: Question[] = [];
       let primaryApiError = "";
-      let batchIndex = 0;
+
+      // Prioritize the requested models first, with standard fallbacks
+      const modelsToTry = [
+         "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+         "nvidia/llama-nemotron-rerank-vl-1b-v2:free",
+         "nex-agi/nex-n2-pro:free",
+         "nvidia/nemotron-3.5-content-safety:free",
+         "meta-llama/llama-3.3-70b-instruct:free",
+         "qwen/qwen-2.5-coder-32b-instruct:free",
+         "openai/gpt-oss-120b:free",
+         "openai/gpt-oss-20b:free",
+         "z-ai/glm-4.5-air:free",
+         "nousresearch/hermes-3-llama-3.1-405b:free",
+         "google/gemma-2-9b-it:free"
+      ];
+      
+      const uniqueModels = Array.from(new Set(modelsToTry));
+
+      // Extract candidates
+      const candidatePool: any[] = [];
+      const prioritizedVisionModels = [
+         ...(model ? [model] : []),
+         "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free", 
+         "meta-llama/llama-3.2-11b-vision-instruct:free",
+         "meta-llama/llama-3.2-90b-vision-instruct:free",
+         "nvidia/llama-nemotron-rerank-vl-1b-v2:free"
+      ];
+
+      // 1. PDF visual scanning and diagram cropping
+      if (sources.pdfs.length > 0) {
+         setStatus("Initializing PDF visual scanning engine...");
+         const pdfjsLib = await import("pdfjs-dist");
+         pdfjsLib.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.mjs`;
+
+         for (const pdfId of sources.pdfs) {
+            const item = availablePdfs.find(p => p.id === pdfId);
+            let pdfDoc = null;
+            
+            if (item?.mediaKey) {
+               const buf = await readMediaAsArrayBuffer(item.mediaKey);
+               if (buf) {
+                  pdfDoc = await pdfjsLib.getDocument({ data: buf.slice(0) }).promise;
+               }
+            } else if (item?.url) {
+               try {
+                  const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(item.url)}`;
+                  const res = await fetch(proxyUrl);
+                  if (res.ok) {
+                     const buf = await res.arrayBuffer();
+                     pdfDoc = await pdfjsLib.getDocument({ data: buf }).promise;
+                  }
+               } catch (e: any) {
+                  console.error(`Failed to load PDF from URL: ${item.url}`, e);
+               }
+            }
+
+            if (pdfDoc) {
+               const maxPages = Math.min(pdfDoc.numPages, 15);
+               for (let i = 1; i <= maxPages; i++) {
+                  setStatus(`Rendering page ${i}/${maxPages} of PDF "${item?.name || item?.path}"...`);
+                  const page = await pdfDoc.getPage(i);
+                  const canvas = await renderPageToCanvas(page);
+                  const dataUrl = canvas.toDataURL("image/jpeg", 0.9);
+                  
+                  setStatus(`Scanning page ${i}/${maxPages} with AI Vision OCR...`);
+                  let pageQuestions: any[] = [];
+                  
+                  for (const modelName of prioritizedVisionModels) {
+                     try {
+                        pageQuestions = await extractQuestionsFromPageImage(dataUrl, apiKey, modelName, params.questionNumbers, signal);
+                        if (Array.isArray(pageQuestions) && pageQuestions.length > 0) {
+                           for (let qIdx = 0; qIdx < pageQuestions.length; qIdx++) {
+                              const qObj = pageQuestions[qIdx];
+                              let questionImageUrl = qObj.questionCropUrl || qObj.questionImageUrl || "";
+                              let diagramImageUrl = qObj.diagramImageUrl || "";
+                              
+                              if (!questionImageUrl && qObj.questionImageBounds) {
+                                 try {
+                                    questionImageUrl = cropFromCanvas(canvas, qObj.questionImageBounds);
+                                 } catch (cropErr) {
+                                    console.warn("Failed to crop question layout:", cropErr);
+                                 }
+                              }
+                              if (!diagramImageUrl && qObj.hasIsolatedDiagram && qObj.diagramImageBounds) {
+                                 try {
+                                    diagramImageUrl = cropFromCanvas(canvas, qObj.diagramImageBounds);
+                                 } catch (cropErr) {
+                                    console.warn("Failed to crop diagram:", cropErr);
+                                 }
+                              }
+                              
+                              candidatePool.push({
+                                 text: qObj.text || qObj.rawSearchTextSnippet || "",
+                                 options: qObj.options || [],
+                                 difficulty: qObj.difficulty || "Medium",
+                                 subject: qObj.subject || "Physics",
+                                 correctOptionIndex: qObj.correctOptionIndex,
+                                 explanation: qObj.explanation,
+                                 questionType: qObj.questionType || "STANDARD_MCQ",
+                                 questionImageUrl: questionImageUrl,
+                                 questionCropUrl: questionImageUrl,
+                                 hasIsolatedDiagram: qObj.hasIsolatedDiagram || false,
+                                 diagramImageUrl: diagramImageUrl,
+                                 sourceInfo: {
+                                    sourceType: "pdf",
+                                    sourceName: item?.name || item?.path || "PDF Document",
+                                    page: i,
+                                    questionNum: qObj.questionNum || `Q${qIdx + 1}`
+                                 }
+                              });
+                           }
+                           break;
+                        }
+                     } catch (err) {
+                        console.warn(`Vision OCR failed with model ${modelName} on page ${i}:`, err);
+                     }
+                  }
+
+                  if (pageQuestions.length === 0) {
+                     // Fallback: Extract plain text of the PDF page and parse questions using text-only extraction
+                     try {
+                        const textContent = await page.getTextContent();
+                        const pageText = textContent.items
+                           .map((x: any) => x.str)
+                           .join(" ");
+                           
+                        if (pageText.trim().length > 0) {
+                           setStatus(`Scanning page ${i}/${maxPages} using Text Extraction Fallback...`);
+                           for (const modelName of uniqueModels) {
+                              try {
+                                 const parsedTextQuestions = await extractQuestionsFromContext(pageText, apiKey, modelName, signal);
+                                 if (Array.isArray(parsedTextQuestions) && parsedTextQuestions.length > 0) {
+                                    pageQuestions = parsedTextQuestions; // set to prevent entering other fallbacks
+                                    for (let qIdx = 0; qIdx < parsedTextQuestions.length; qIdx++) {
+                                       const qObj = parsedTextQuestions[qIdx];
+                                       candidatePool.push({
+                                          text: qObj.text || "",
+                                          options: qObj.options || [],
+                                          difficulty: qObj.difficulty || "Medium",
+                                          subject: qObj.subject || "Physics",
+                                          correctOptionIndex: qObj.correctOptionIndex,
+                                          explanation: qObj.explanation,
+                                          questionType: qObj.questionType || "STANDARD_MCQ",
+                                          questionImageUrl: "",
+                                          questionCropUrl: "",
+                                          hasIsolatedDiagram: false,
+                                          diagramImageUrl: "",
+                                          sourceInfo: {
+                                             sourceType: "pdf",
+                                             sourceName: item?.name || item?.path || "PDF Document",
+                                             page: i,
+                                             questionNum: qObj.questionNum || `Q${qIdx + 1}`
+                                          }
+                                       });
+                                    }
+                                    break;
+                                 }
+                              } catch (textErr) {
+                                 console.warn(`Text extraction fallback failed with model ${modelName}:`, textErr);
+                              }
+                           }
+                        }
+                     } catch (textExtractErr) {
+                        console.error("Text extraction failed for page:", textExtractErr);
+                     }
+                  }
+               }
+            }
+         }
+      }
+
+      // 1.5. Direct Uploads Visual scanning (PDF or Image)
+      if (sources.uploads && sources.uploads.length > 0) {
+         setStatus("Scanning direct uploads visually...");
+         const pdfjsLib = await import("pdfjs-dist");
+         pdfjsLib.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.mjs`;
+
+         for (const upload of sources.uploads) {
+            if (upload.fileType === "pdf") {
+               const buf = await readMediaAsArrayBuffer(upload.id);
+               if (buf) {
+                  try {
+                     const pdfDoc = await pdfjsLib.getDocument({ data: buf.slice(0) }).promise;
+                     const maxPages = Math.min(pdfDoc.numPages, 15);
+                     for (let i = 1; i <= maxPages; i++) {
+                        setStatus(`Rendering page ${i}/${maxPages} of PDF upload "${upload.name}"...`);
+                        const page = await pdfDoc.getPage(i);
+                        const canvas = await renderPageToCanvas(page);
+                        const dataUrl = canvas.toDataURL("image/jpeg", 0.9);
+                        
+                        setStatus(`Scanning page ${i}/${maxPages} of PDF upload with AI Vision OCR...`);
+                        let pageQuestions: any[] = [];
+                        for (const modelName of prioritizedVisionModels) {
+                           try {
+                              pageQuestions = await extractQuestionsFromPageImage(dataUrl, apiKey, modelName, params.questionNumbers, signal);
+                              if (Array.isArray(pageQuestions) && pageQuestions.length > 0) {
+                                 for (let qIdx = 0; qIdx < pageQuestions.length; qIdx++) {
+                                    const qObj = pageQuestions[qIdx];
+                                    let questionImageUrl = qObj.questionCropUrl || qObj.questionImageUrl || "";
+                                    let diagramImageUrl = qObj.diagramImageUrl || "";
+                                    
+                                    if (!questionImageUrl && qObj.questionImageBounds) {
+                                       try {
+                                          questionImageUrl = cropFromCanvas(canvas, qObj.questionImageBounds);
+                                       } catch (cropErr) {
+                                          console.warn("Failed to crop question layout:", cropErr);
+                                       }
+                                    }
+                                    if (!diagramImageUrl && qObj.hasIsolatedDiagram && qObj.diagramImageBounds) {
+                                       try {
+                                          diagramImageUrl = cropFromCanvas(canvas, qObj.diagramImageBounds);
+                                       } catch (cropErr) {
+                                          console.warn("Failed to crop diagram:", cropErr);
+                                       }
+                                    }
+                                    
+                                    candidatePool.push({
+                                       text: qObj.text || qObj.rawSearchTextSnippet || "",
+                                       options: qObj.options || [],
+                                       difficulty: qObj.difficulty || "Medium",
+                                       subject: qObj.subject || "Physics",
+                                       correctOptionIndex: qObj.correctOptionIndex,
+                                       explanation: qObj.explanation,
+                                       questionType: qObj.questionType || "STANDARD_MCQ",
+                                       questionImageUrl: questionImageUrl,
+                                       questionCropUrl: questionImageUrl,
+                                       hasIsolatedDiagram: qObj.hasIsolatedDiagram || false,
+                                       diagramImageUrl: diagramImageUrl,
+                                       sourceInfo: {
+                                          sourceType: "pdf",
+                                          sourceName: upload.name,
+                                          page: i,
+                                          questionNum: qObj.questionNum || `Q${qIdx + 1}`
+                                       }
+                                    });
+                                 }
+                                 break;
+                              }
+                           } catch (err) {
+                              console.warn(`Vision OCR failed on page ${i} of PDF upload:`, err);
+                           }
+                        }
+                     }
+                  } catch (pdfErr) {
+                     console.error(`Failed to parse PDF upload "${upload.name}":`, pdfErr);
+                  }
+               }
+            } else if (upload.fileType === "image" && upload.dataUrl) {
+               setStatus(`Scanning image upload "${upload.name}" with AI Vision OCR...`);
+               let imageQuestions: any[] = [];
+               for (const modelName of prioritizedVisionModels) {
+                  try {
+                     imageQuestions = await extractQuestionsFromPageImage(upload.dataUrl, apiKey, modelName, params.questionNumbers, signal);
+                     if (Array.isArray(imageQuestions) && imageQuestions.length > 0) {
+                        for (let qIdx = 0; qIdx < imageQuestions.length; qIdx++) {
+                           const qObj = imageQuestions[qIdx];
+                           candidatePool.push({
+                              text: qObj.text || qObj.rawSearchTextSnippet || "",
+                              options: qObj.options || [],
+                              difficulty: qObj.difficulty || "Medium",
+                              subject: qObj.subject || "Physics",
+                              correctOptionIndex: qObj.correctOptionIndex,
+                              explanation: qObj.explanation,
+                              questionType: qObj.questionType || "STANDARD_MCQ",
+                              questionImageUrl: qObj.questionCropUrl || qObj.questionImageUrl || "",
+                              questionCropUrl: qObj.questionCropUrl || "",
+                              hasIsolatedDiagram: qObj.hasIsolatedDiagram || false,
+                              diagramImageUrl: qObj.diagramCropUrl || qObj.diagramImageUrl || "",
+                              diagramCropUrl: qObj.diagramCropUrl || null,
+                              sourceInfo: {
+                                 sourceType: "pdf",
+                                 sourceName: upload.name,
+                                 page: 1,
+                                 questionNum: qObj.questionNum || `Q${qIdx + 1}`
+                              }
+                           });
+                        }
+                        break;
+                     }
+                  } catch (err) {
+                     console.warn(`Vision OCR failed on image upload:`, err);
+                  }
+               }
+            }
+         }
+      }
+
+      // 2. Saves direct load
+      if (sources.saves.length > 0) {
+         setStatus("Extracting saved questions...");
+         const allSaves = JSON.parse(localStorage.getItem("jee_saves_questions_v1") || "{}");
+         sources.saves.forEach(srcId => {
+            const qs = allSaves[srcId] || [];
+            qs.forEach((q: any) => {
+               candidatePool.push({
+                  text: q.description || q.name || "",
+                  options: Array.isArray(q.options) ? q.options : [],
+                  difficulty: q.difficulty || "Medium",
+                  subject: q.subject || "Physics",
+                  imageUrl: q.questionUrl || "",
+                  imageKey: q.questionImageKey || "",
+                  sourceQuestionId: `${srcId}::${q.id}`,
+                  correctOptionIndex: typeof q.correctOptionIndex === 'number' ? q.correctOptionIndex : 0,
+                  explanation: q.explanation || "",
+                  sourceInfo: {
+                     sourceType: "saves",
+                     sourceName: srcId,
+                     detail: q.id
+                  }
+               });
+            });
+         });
+      }
+
+      // 3. Video note generation/extraction
+      if (sources.videos.length > 0) {
+         const allNotes = JSON.parse(localStorage.getItem("vid_notes_v1") || "{}");
+         for (const vidId of sources.videos) {
+            const item = availableVideos.find(p => p.id === vidId);
+            if (item) {
+               setStatus(`Analyzing video notes for "${item.name || item.path}"...`);
+               let videoText = `Video Name: ${item.name || item.path}\n`;
+               const notes = allNotes[vidId] || [];
+               if (notes.length > 0) {
+                  notes.forEach((note: any) => {
+                     const timeStr = note.timestamp ? `${Math.floor(note.timestamp / 60)}:${String(Math.floor(note.timestamp % 60)).padStart(2, '0')}` : "00:00";
+                     videoText += `At timestamp ${timeStr}: ${note.text || ""}\n`;
+                  });
+               } else {
+                  videoText += `Topic: ${item.name || item.path}\n`;
+               }
+
+               let videoQs: any[] = [];
+               for (const modelName of uniqueModels) {
+                  try {
+                     videoQs = await extractOrGenerateQuestionsForSource(
+                        videoText,
+                        { sourceType: "video", sourceName: item.name || item.path || "Video Note" },
+                        apiKey,
+                        modelName,
+                        signal
+                     );
+                     if (videoQs.length > 0) break;
+                  } catch (err) {
+                     console.warn(`Extraction/generation failed for video notes of ${item.name} with model ${modelName}:`, err);
+                  }
+               }
+               videoQs.forEach(q => {
+                  candidatePool.push({
+                     ...q,
+                     sourceInfo: {
+                        sourceType: "video",
+                        sourceName: item.name || item.path || "Video Note",
+                        timestamp: q.timestamp || "00:00"
+                     }
+                  });
+               });
+            }
+         }
+      }
+
+      // 4. URL extraction/generation
+      if (sources.urls.length > 0) {
+         for (const url of sources.urls) {
+            setStatus(`Fetching content from URL "${url}"...`);
+            try {
+               const urlText = await fetchUrlContent(url);
+               if (urlText && urlText.trim().length > 0) {
+                  setStatus(`Analyzing page content for URL "${url}"...`);
+                  let urlQs: any[] = [];
+                  for (const modelName of uniqueModels) {
+                     try {
+                        urlQs = await extractOrGenerateQuestionsForSource(
+                           urlText,
+                           { sourceType: "url", sourceName: url },
+                           apiKey,
+                           modelName,
+                           signal
+                        );
+                        if (urlQs.length > 0) break;
+                     } catch (err) {
+                        console.warn(`Extraction/generation failed for URL ${url} with model ${modelName}:`, err);
+                     }
+                  }
+                  urlQs.forEach(q => {
+                     candidatePool.push({
+                        ...q,
+                        sourceInfo: {
+                           sourceType: "url",
+                           sourceName: url,
+                           page: q.page || 1,
+                           questionNum: q.questionNum || "Q"
+                        }
+                     });
+                  });
+               }
+            } catch (urlErr) {
+               console.error(`Failed to fetch and analyze URL ${url}:`, urlErr);
+            }
+         }
+      }
+
+      // 5. Internet search extraction/generation
+      if (sources.internetSearch.enabled && sources.internetSearch.query) {
+         setStatus(`Searching the web for "${sources.internetSearch.query}"...`);
+         try {
+            const searchResults = await fetchWebSearchResults(sources.internetSearch.query);
+            if (searchResults && searchResults.trim().length > 0) {
+               setStatus(`Generating candidate questions from web search results...`);
+               let searchQs: any[] = [];
+               for (const modelName of uniqueModels) {
+                  try {
+                     searchQs = await extractOrGenerateQuestionsForSource(
+                        searchResults,
+                        { sourceType: "internet", sourceName: sources.internetSearch.query },
+                        apiKey,
+                        modelName,
+                        signal
+                     );
+                     if (searchQs.length > 0) break;
+                  } catch (err) {
+                     console.warn(`Extraction/generation failed for web search results with model ${modelName}:`, err);
+                  }
+               }
+               searchQs.forEach(q => {
+                  candidatePool.push({
+                     ...q,
+                     sourceInfo: {
+                        sourceType: "internet",
+                        sourceName: sources.internetSearch.query,
+                        detail: "Web Search Result"
+                     }
+                  });
+               });
+            }
+         } catch (searchErr) {
+            console.error(`Failed to perform web search:`, searchErr);
+         }
+      }
+
+      // De-duplicate candidates
+      const seenTexts = new Set<string>();
+      const uniqueCandidates: any[] = [];
+      for (const cand of candidatePool) {
+         if (!cand || !cand.text) continue;
+         const normalized = cand.text.toLowerCase().replace(/\s+/g, "");
+         if (!seenTexts.has(normalized)) {
+            seenTexts.add(normalized);
+            uniqueCandidates.push(cand);
+         }
+      }
+
+      const matchDifficulty = (candDiff: string, targetDiff: string): boolean => {
+         const cD = (candDiff || "").toLowerCase();
+         const tD = (targetDiff || "").toLowerCase();
+         if (tD === "mixed") return true;
+         if (tD.includes("+")) {
+            const parts = tD.split("+").map(p => p.trim());
+            return parts.some(p => cD.includes(p));
+         }
+         return cD.includes(tD);
+      };
+
+      const hasAnySource = sources.pdfs.length > 0 || sources.saves.length > 0 || sources.videos.length > 0 || sources.urls.length > 0 || sources.internetSearch.enabled;
 
       for (const [subj, plan] of Object.entries(subjectPlans)) {
          if (plan.count <= 0) continue;
          
-         let subjectQuestions: any[] = [];
-         let attempts = 0;
-         const MAX_ATTEMPTS = Math.ceil(plan.count / 3) * 3; // Retry loop budget
-         
-         while (subjectQuestions.length < plan.count && attempts < MAX_ATTEMPTS) {
-            const needed = plan.count - subjectQuestions.length;
-            const batchSize = Math.min(5, needed);
-            
-            setStatus(`Formulating ${subj} questions (${subjectQuestions.length}/${plan.count} complete)...`);
-            
-            const currentSlice = getContextSlice(batchIndex, totalBatches);
+         let candidates = uniqueCandidates.filter(c => 
+            c.subject && c.subject.toLowerCase() === subj.toLowerCase() && 
+            matchDifficulty(c.difficulty, plan.difficulty)
+         );
 
-            const promptText = buildSubjectPrompt({
-               subject: subj,
-               count: batchSize,
-               difficulty: plan.difficulty,
-               brief,
-               contextText: currentSlice,
-               sources: sources
-            });
-            
-            let success = false;
-            
-            // Prioritize the requested models first, with standard fallbacks
-            const modelsToTry = [
-               "meta-llama/llama-3.3-70b-instruct:free",
-               "qwen/qwen-2.5-coder-32b-instruct:free",
-               "openai/gpt-oss-120b:free",
-               "openai/gpt-oss-20b:free",
-               "z-ai/glm-4.5-air:free",
-               "nvidia/nemotron-3.5-content-safety:free",
-               "nvidia/nemotron-3-ultra-550b-a55b:free",
-               "nousresearch/hermes-3-llama-3.1-405b:free",
-               "moonshotai/kimi-k2.6:free",
-               "google/gemma-2-9b-it:free"
-            ];
-            
-            const uniqueModels = Array.from(new Set(modelsToTry));
+         if (candidates.length < plan.count) {
+            const rest = uniqueCandidates.filter(c => 
+               c.subject && c.subject.toLowerCase() === subj.toLowerCase() && 
+               !candidates.includes(c)
+            );
+            candidates = [...candidates, ...rest];
+         }
+
+         if (candidates.length < plan.count && !hasAnySource) {
+            setStatus(`Generating fallback questions for ${subj}...`);
+            const needed = plan.count - candidates.length;
+            const slice = getContextSlice(0, 1);
+            let fallbackQs: any[] = [];
             
             for (const modelName of uniqueModels) {
                try {
-                   const payload: any = {
-                     model: modelName,
-                     messages: [{ role: "user", content: promptText }],
-                   };
-
-                   // Enable web search plugin if using internet search on search-capable models
-                   if (sources.internetSearch.enabled && ["google/gemma-4-31b-it:free", "google/gemma-4-31b-it", "nousresearch/hermes-3-llama-3.1-405b:free", "nousresearch/hermes-3-llama-3.1-405b", "meta-llama/llama-3.3-70b-instruct:free", "meta-llama/llama-3.3-70b-instruct"].includes(modelName)) {
-                     payload.plugins = [{ id: "web", max_results: 5 }];
-                   }
-
-                   let response;
-                   try {
-                     response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-                       method: "POST",
-                       headers: {
-                         "Authorization": `Bearer ${apiKey.trim()}`,
-                         "HTTP-Referer": window.location.href, 
-                         "X-Title": "JEE Prep App", 
-                         "Content-Type": "application/json"
-                       },
-                       body: JSON.stringify(payload),
-                       signal
-                     });
-                   } catch (e: any) {
-                     if (e.name === "AbortError") throw e;
-                     response = await fetch(`https://corsproxy.io/?${encodeURIComponent("https://openrouter.ai/api/v1/chat/completions")}`, {
-                       method: "POST",
-                       headers: {
-                         "Authorization": `Bearer ${apiKey.trim()}`,
-                         "HTTP-Referer": window.location.href, 
-                         "X-Title": "JEE Prep App", 
-                         "Content-Type": "application/json"
-                       },
-                       body: JSON.stringify(payload),
-                       signal
-                     });
-                   }
-
-                   if (!response.ok) {
-                     const errData = await response.json().catch(() => ({}));
-                     let errorMsg = response.statusText || String(response.status);
-                     let errorCode = response.status;
-                     if (errData.error?.message) errorMsg = errData.error.message;
-                     if (errData.error?.code) errorCode = errData.error.code;
-
-                     const isCreditExhaustedError = (status: number, message: string) => {
-                       const msg = message.toLowerCase();
-                       return status === 402 || 
-                              msg.includes("credit") || 
-                              msg.includes("balance") || 
-                              msg.includes("insufficient funds") || 
-                              msg.includes("insufficient balance") || 
-                              msg.includes("payment required");
-                     };
-
-                     if (isCreditExhaustedError(errorCode, errorMsg)) {
-                        throw new Error(`CREDIT_EXHAUSTED: ${errorMsg}`);
-                     }
-                     throw new Error(`OpenRouter Error (${modelName}): ${errorMsg}`);
-                   }
-
-                   const data = await response.json();
-                   const rawText = data.choices?.[0]?.message?.content || "[]";
-                   const parsed = extractJson(rawText);
-
-                   if (Array.isArray(parsed) && parsed.length > 0) {
-                      // Filter and format questions for this subject
-                      const validatedQs = parsed
-                        .filter(q => q && q.text)
-                        .map(q => {
-                            let text = q.text;
-                            let options = Array.isArray(q.options) ? q.options : [];
-                            
-                            // Check for inline options in the question text and pull them out
-                            const inlineResult = extractInlineOptions(text);
-                            if (inlineResult) {
-                              text = inlineResult.questionText;
-                              
-                              // Check if existing options are empty or generic placeholders
-                              // Broaden generic options check to include Option (1), Option A, (A), etc.
-                              const isGeneric = options.length < 4 || options.every(opt => 
-                                opt.trim().length <= 15 && (
-                                  opt.trim().length <= 3 || 
-                                  /^(option\s*\(?[a-d1-4]?\)?|option\s*\(?\d+\)?|val\d+|ans\d+|[a-d1-4])$/i.test(opt.trim())
-                                )
-                              );
-                              
-                              if (isGeneric) {
-                                options = inlineResult.options;
-                              }
-                            }
-
-                            // Ensure options has at least 4 items
-                            while (options.length < 4) {
-                              options.push(`Option ${options.length + 1}`);
-                            }
-
-                            let correctOptionIndex = typeof q.correctOptionIndex === 'number' 
-                              ? q.correctOptionIndex 
-                              : (typeof q.correctOptionIndex === 'string' 
-                                ? parseInt(q.correctOptionIndex, 10) 
-                                : 0);
-                            if (isNaN(correctOptionIndex) || correctOptionIndex < 0 || correctOptionIndex >= options.length) {
-                              correctOptionIndex = 0;
-                            }
-
-                            // Enforce user source selection
-                            let sourceInfo = q.sourceInfo;
-                            
-                            const selectedTypes: string[] = [];
-                            if (sources.pdfs.length > 0) selectedTypes.push("pdf");
-                            if (sources.videos.length > 0) selectedTypes.push("video");
-                            if (sources.saves.length > 0) selectedTypes.push("saves");
-                            if (sources.urls.length > 0) selectedTypes.push("url");
-                            if (sources.internetSearch.enabled) selectedTypes.push("internet");
-
-                            const enforceSingleType = selectedTypes.length === 1 ? selectedTypes[0] : null;
-
-                            // If sourceInfo is missing, or does not have a sourceType, OR if in single-source mode and the AI sourceType doesn't match
-                            if (!sourceInfo || !sourceInfo.sourceType || (enforceSingleType && sourceInfo.sourceType !== enforceSingleType)) {
-                              if (sources.pdfs.length > 0) {
-                                const pdfItem = availablePdfs.find(p => sources.pdfs.includes(p.id));
-                                sourceInfo = {
-                                  sourceType: "pdf",
-                                  sourceName: pdfItem?.name || pdfItem?.path || "PDF Document",
-                                  page: sourceInfo?.page || "1",
-                                  questionNum: sourceInfo?.questionNum || "Question 1"
-                                };
-                              } else if (sources.videos.length > 0) {
-                                const videoItem = availableVideos.find(v => sources.videos.includes(v.id));
-                                sourceInfo = {
-                                  sourceType: "video",
-                                  sourceName: videoItem?.name || videoItem?.path || "Video Lecture",
-                                  timestamp: sourceInfo?.timestamp || "00:00",
-                                  questionNum: sourceInfo?.questionNum || "1"
-                                };
-                              } else if (sources.saves.length > 0) {
-                                sourceInfo = {
-                                  sourceType: "saves",
-                                  sourceName: "Saved Questions Collection",
-                                  detail: "Extracted from saves dashboard"
-                                };
-                              } else if (sources.urls.length > 0) {
-                                sourceInfo = {
-                                  sourceType: "url",
-                                  sourceName: sources.urls[0] || "Reference URL",
-                                  page: sourceInfo?.page || "1",
-                                  questionNum: sourceInfo?.questionNum || "Question 1"
-                                };
-                              } else {
-                                sourceInfo = {
-                                  sourceType: "internet",
-                                  sourceName: sources.internetSearch.query || "Internet Fetching",
-                                  detail: "AI web-search retrieval fallback"
-                                };
-                              }
-                            } else {
-                              // If sourceType is valid but missing some required tracking keys for pdf/url, populate default values
-                              if (sourceInfo.sourceType === "pdf") {
-                                if (!sourceInfo.page) sourceInfo.page = "1";
-                                if (!sourceInfo.questionNum) sourceInfo.questionNum = "Question 1";
-                              } else if (sourceInfo.sourceType === "url") {
-                                if (!sourceInfo.page) sourceInfo.page = "1";
-                                if (!sourceInfo.questionNum) sourceInfo.questionNum = "Question 1";
-                              }
-                            }
-
-                            return {
-                              ...q,
-                              subject: subj,
-                              difficulty: q.difficulty || plan.difficulty,
-                              text: fixLatexFormatting(text),
-                              options: options.map((opt: string) => ensureMathWrapped(fixLatexFormatting(opt))),
-                              correctOptionIndex,
-                              explanation: fixLatexFormatting(q.explanation || ""),
-                              sourceInfo
-                            };
-                         });
-                      
-                      if (validatedQs.length > 0) {
-                         setStatus(`Verifying and validating ${subj} answers...`);
-                         const verifiedQs = await verifyAndCorrectQuestions(validatedQs, apiKey.trim(), signal);
-                         subjectQuestions = [...subjectQuestions, ...verifiedQs];
-                         success = true;
-                         batchIndex++;
-                         break;
-                      } else {
-                         throw new Error(`No valid questions returned from ${modelName}`);
-                      }
-                   } else {
-                      throw new Error(`Invalid JSON structure from ${modelName}`);
-                   }
-               } catch (err: any) {
-                   if (err.name === "AbortError") throw err;
-                   const errMsg = err.message || "";
-                   if (errMsg.includes("CREDIT_EXHAUSTED") || 
-                       errMsg.toLowerCase().includes("credits exhausted") || 
-                       errMsg.toLowerCase().includes("insufficient balance") ||
-                       errMsg.toLowerCase().includes("insufficient funds")) {
-                      throw new Error("Credit ends: Can't able to generate quiz. Please add credits/balance to your OpenRouter account.");
-                   }
-                   console.warn(`Model ${modelName} failed:`, err);
-                   if (!primaryApiError) primaryApiError = err.message;
+                  fallbackQs = await generateFallbackQuestionsFromContext(subj, needed, plan.difficulty, slice, apiKey, modelName, signal);
+                  if (fallbackQs.length > 0) break;
+               } catch (err) {
+                  console.warn(`Fallback generation failed with ${modelName}:`, err);
                }
             }
-            if (!success) {
-               throw new Error(`Could not generate ${subj} questions. Fallbacks exhausted. Error: ${primaryApiError}`);
+            candidates = [...candidates, ...fallbackQs];
+         }
+
+          setStatus(`Selecting best ${subj} questions matching your guidelines...`);
+          let selectedQuestions = [];
+          try {
+             const selectionModel = uniqueModels[0] || "meta-llama/llama-3.3-70b-instruct:free";
+             selectedQuestions = await selectCandidatesWithAI(
+                candidates,
+                brief,
+                subj,
+                plan.count,
+                apiKey,
+                selectionModel,
+                signal
+             );
+          } catch (selErr) {
+             console.warn("AI candidate selection failed, falling back to heuristic slice:", selErr);
+             selectedQuestions = candidates.slice(0, plan.count);
+          }
+         
+         setStatus(`Verifying ${subj} questions in parallel with Google search backend...`);
+         const verificationPromises = selectedQuestions.map(async (q, qIdx) => {
+            let verificationResult: any = null;
+            const isSaved = q.sourceInfo?.sourceType === "saves" || q.sourceQuestionId;
+            
+            if (!isSaved) {
+               try {
+                  const verified = await verifyQuestionBackend(q.text, q.options || [], apiKey, subj, q.text.substring(0, 120), signal);
+                  if (verified) {
+                     verificationResult = verified;
+                  }
+               } catch (backendVerifyErr) {
+                  console.warn("Backend validation failed, falling back to frontend verifier:", backendVerifyErr);
+               }
+
+               if (!verificationResult) {
+                  for (const modelName of uniqueModels) {
+                     try {
+                        verificationResult = await verifyAnswerWithSearch(q.text, q.options || [], apiKey, modelName, signal);
+                        if (verificationResult) break;
+                     } catch (err) {
+                        console.warn(`Verification failed with model ${modelName} on Q${qIdx + 1}:`, err);
+                     }
+                  }
+               }
             }
-            attempts++;
-         }
-         
-         // Enforce exact count limit per subject
-         if (subjectQuestions.length > plan.count) {
-           subjectQuestions = subjectQuestions.slice(0, plan.count);
-         }
-         
-         allParsedQuestions = [...allParsedQuestions, ...subjectQuestions];
+
+            let cleanedText = (verificationResult && verificationResult.questionText) ? verificationResult.questionText : q.text;
+            let finalOptions = q.options || [];
+            
+            if (!q.questionImageUrl) {
+              const inlineResult = extractInlineOptions(cleanedText);
+              if (inlineResult) {
+                 cleanedText = inlineResult.questionText;
+              }
+
+              finalOptions = (verificationResult && verificationResult.options) ? verificationResult.options : q.options;
+              if (inlineResult && (!finalOptions || finalOptions.length < 4 || finalOptions.every((opt: string) => /option/i.test(opt)))) {
+                 finalOptions = inlineResult.options;
+              }
+            }
+            
+            while (!finalOptions || finalOptions.length < 4) {
+               if (!finalOptions) finalOptions = [];
+               finalOptions.push(`Option ${finalOptions.length + 1}`);
+            }
+
+            const finalCorrectOptionIndex = (verificationResult && typeof verificationResult.correctOptionIndex === 'number') 
+               ? verificationResult.correctOptionIndex 
+               : (q.correctOptionIndex !== undefined ? q.correctOptionIndex : 0);
+               
+            const finalExplanation = (verificationResult && verificationResult.explanation) 
+               ? verificationResult.explanation 
+               : (q.explanation || "No explanation provided.");
+
+            const finalConfidence = (verificationResult && typeof verificationResult.confidence === 'number')
+               ? verificationResult.confidence
+               : undefined;
+
+            const finalConsensus = (verificationResult && verificationResult.consensusAnalysis)
+               ? verificationResult.consensusAnalysis
+               : undefined;
+
+            return {
+               id: q.id || `q_${subj.toLowerCase()}_${Date.now()}_${qIdx}`,
+               text: fixLatexFormatting(cleanedText),
+               options: finalOptions.map((opt: string) => ensureMathWrapped(fixLatexFormatting(opt))),
+               correctOptionIndex: finalCorrectOptionIndex,
+               explanation: fixLatexFormatting(finalExplanation),
+               confidence: finalConfidence,
+               consensusAnalysis: finalConsensus,
+               difficulty: q.difficulty || plan.difficulty,
+               subject: subj,
+               sourceQuestionId: q.sourceQuestionId || "",
+               imageKey: q.imageKey,
+               imageUrl: q.imageUrl,
+               questionType: q.questionType || "STANDARD_MCQ",
+               questionImageUrl: q.questionImageUrl,
+               questionCropUrl: q.questionCropUrl || q.questionImageUrl,
+               hasIsolatedDiagram: q.hasIsolatedDiagram || false,
+               diagramImageUrl: q.diagramImageUrl,
+               sourceInfo: q.sourceInfo || {
+                  sourceType: "pdf",
+                  sourceName: "Source Document",
+                  page: 1,
+                  questionNum: `Q${qIdx + 1}`
+               }
+            };
+         });
+
+         const verifiedSubjectQuestions = await Promise.all(verificationPromises);
+         allParsedQuestions = [...allParsedQuestions, ...verifiedSubjectQuestions];
       }
       
       if (allParsedQuestions.length === 0) {
+          if (hasAnySource) {
+             throw new Error("No questions could be extracted from your selected sources. Please ensure that the PDF pages or files contain clear question texts and option grids, check your API key, or choose a different vision model.");
+          }
           throw new Error(`AI returned no valid questions.\nAPI Error: ${primaryApiError || "Format issue suspected."}`);
       }
 
@@ -1123,13 +2340,13 @@ class QuizGeneratorManager {
         
         // Connect generated questions back to their images/urls
         allParsedQuestions = allParsedQuestions.map(q => {
-          let imageKey = undefined;
-          let imageUrl = undefined;
+          let imageKey = q.imageKey;
+          let imageUrl = q.imageUrl;
           
           if (q.sourceQuestionId && savedQuestionsMap[q.sourceQuestionId]) {
             imageKey = savedQuestionsMap[q.sourceQuestionId].imageKey;
             imageUrl = savedQuestionsMap[q.sourceQuestionId].imageUrl;
-          } else {
+          } else if (!imageKey && !imageUrl) {
             const cleanText = (q.text || "").toLowerCase().replace(/\s+/g, "");
             for (const [key, value] of Object.entries(savedQuestionsMap)) {
               if (key.includes("::")) continue; 
@@ -1156,6 +2373,14 @@ class QuizGeneratorManager {
           const order: Record<string, number> = { "Physics": 1, "Chemistry": 2, "Maths": 3 };
           return (order[a.subject] || 4) - (order[b.subject] || 4);
       });
+
+      // ─── Final Self-Correction Pass ───
+      setStatus("Running final correction and alignment pass...");
+      try {
+         allParsedQuestions = await verifyAndCorrectQuestions(allParsedQuestions, apiKey, signal);
+      } catch (err) {
+         console.warn("Final correction pass failed, using verified questions", err);
+      }
 
       const newQuiz: SavedQuiz = {
          id: Date.now().toString(),
@@ -1236,11 +2461,96 @@ function QuestionImage({ imageKey, imageUrl }: { imageKey?: string, imageUrl?: s
   );
 }
 
+// ─── Job Progress Bar Component ──────────────────────────────────────────
+function JobProgressBar({ status }: { status: string }) {
+  const [progress, setProgress] = useState(0);
+  const [timeLeft, setTimeLeft] = useState(15);
+
+  useEffect(() => {
+    // 15-second baseline countdown
+    const timer = setInterval(() => {
+      setTimeLeft(prev => Math.max(prev - 1, 1));
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    // Dynamic progress parser
+    let targetPct = 0;
+    if (status.includes("Planning")) {
+      targetPct = 15;
+    } else if (status.includes("Rendering page") || status.includes("Scanning page")) {
+      const match = status.match(/page\s+(\d+)\/(\d+)/i);
+      if (match) {
+        const pageNum = parseInt(match[1], 10);
+        const maxPages = parseInt(match[2], 10);
+        targetPct = 15 + Math.round((pageNum / maxPages) * 35); 
+      } else {
+        targetPct = 30;
+      }
+    } else if (status.includes("Verifying")) {
+      const match = status.match(/Q(\d+)\/(\d+)/i);
+      if (match) {
+        const qNum = parseInt(match[1], 10);
+        const totalQ = parseInt(match[2], 10);
+        targetPct = 50 + Math.round((qNum / totalQ) * 45);
+      } else {
+        targetPct = 75;
+      }
+    } else if (status.includes("Extracting")) {
+      targetPct = 40;
+    } else {
+      targetPct = 5;
+    }
+
+    // Smooth progress animation towards targetPct
+    const duration = 1000;
+    const stepTime = 50;
+    const steps = duration / stepTime;
+    let currentStep = 0;
+    const startPct = progress;
+    const diff = targetPct - startPct;
+
+    if (diff <= 0) {
+      if (targetPct > progress) {
+        setProgress(targetPct);
+      }
+      return;
+    }
+
+    const anim = setInterval(() => {
+      currentStep++;
+      const currentVal = Math.round(startPct + (currentStep / steps) * diff);
+      setProgress(Math.min(currentVal, 99));
+      if (currentStep >= steps) {
+        clearInterval(anim);
+      }
+    }, stepTime);
+
+    return () => clearInterval(anim);
+  }, [status]);
+
+  return (
+    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 flex-1 w-full max-w-sm sm:max-w-md">
+      <div className="flex-1 bg-zinc-200 dark:bg-zinc-800/80 h-2 rounded-full overflow-hidden relative w-full border border-border/20">
+        <div 
+          className="bg-primary h-full rounded-full transition-all duration-300 ease-out shadow-sm" 
+          style={{ width: `${progress}%` }} 
+        />
+      </div>
+      <span className="text-xs font-extrabold text-muted-foreground whitespace-nowrap min-w-[145px] text-left sm:text-right bg-muted/40 px-2 py-1 rounded border border-border/10">
+        {timeLeft > 1 ? `Est. time: ${timeLeft}s remaining` : "Almost done..."} ({progress}%)
+      </span>
+    </div>
+  );
+}
+
 // ─── Main Interface ────────────────────────────────────────────────────────
 function AIQuizInterface() {
   const { user } = useAppContext();
-  const { readMediaAsArrayBuffer } = useWorkspaceContext();
+  const { readMediaAsArrayBuffer, writeMedia } = useWorkspaceContext();
   const [phase, setPhase] = useState<QuizPhase>("setup");
+  const [showExitConfirm, setShowExitConfirm] = useState(false);
 
   // Setup State
   const [numQuestions, setNumQuestions] = useState<number | "custom">(10);
@@ -1252,6 +2562,7 @@ function AIQuizInterface() {
   
   // Custom Guidelines & AI Settings State
   const [briefInstructions, setBriefInstructions] = useState("");
+  const [pdfQuestionFilter, setPdfQuestionFilter] = useState("");
 
   // Premium AI Explanations State
   const [aiExplanations, setAiExplanations] = useState<Record<number, { text: string; model?: string; loading: boolean; error?: string }>>({});
@@ -1261,13 +2572,14 @@ function AIQuizInterface() {
     saves: [],
     videos: [],
     urls: [],
+    uploads: [],
     internetSearch: { enabled: false, query: "" }
   });
 
   const [availablePdfs, setAvailablePdfs] = useState<SelectableItem[]>([]);
   const [availableVideos, setAvailableVideos] = useState<SelectableItem[]>([]);
   const [availableSaves, setAvailableSaves] = useState<SelectableItem[]>([]);
-  const [sourceTab, setSourceTab] = useState<"pdfs" | "videos" | "saves" | "urls" | "internet">("pdfs");
+  const [sourceTab, setSourceTab] = useState<"pdfs" | "videos" | "saves" | "urls" | "internet" | "uploads">("pdfs");
   const [urlInput, setUrlInput] = useState("");
 
   // Quiz Attempt State
@@ -1327,8 +2639,9 @@ function AIQuizInterface() {
 
   const [renamingQuizId, setRenamingQuizId] = useState<string | null>(null);
   const [renameVal, setRenameVal] = useState("");
+  const [uploading, setUploading] = useState(false);
 
-  const totalSources = sources.pdfs.length + sources.saves.length + sources.videos.length + sources.urls.length + (sources.internetSearch.enabled ? 1 : 0);
+  const totalSources = sources.pdfs.length + sources.saves.length + sources.videos.length + sources.urls.length + (sources.uploads ? sources.uploads.length : 0) + (sources.internetSearch.enabled ? 1 : 0);
   const finalQuestionCount = numQuestions === "custom" ? customNum : numQuestions;
 
   // Live Auto-parsed preview allocation based on prompt
@@ -1342,6 +2655,41 @@ function AIQuizInterface() {
     }
   }, []);
 
+  const [hasRestorableTest, setHasRestorableTest] = useState<boolean>(false);
+  const [restoredTestState, setRestoredTestState] = useState<any>(null);
+
+  // Check for auto-saved test state on mount
+  useEffect(() => {
+    try {
+      const savedAttempt = localStorage.getItem("jee_active_quiz_attempt_v1");
+      if (savedAttempt) {
+        const parsed = JSON.parse(savedAttempt);
+        if (parsed && parsed.questions && parsed.questions.length > 0) {
+          setHasRestorableTest(true);
+          setRestoredTestState(parsed);
+        }
+      }
+    } catch (e) {
+      console.error("Failed to load saved quiz attempt", e);
+    }
+  }, []);
+
+  // Auto Save active quiz state
+  useEffect(() => {
+    if (phase === "active" && questions.length > 0 && !reviewMode) {
+      localStorage.setItem("jee_active_quiz_attempt_v1", JSON.stringify({
+        quizName,
+        questions,
+        currentIndex,
+        questionStatuses,
+        answers,
+        timeLeft,
+        activeSubject,
+        timeSpent
+      }));
+    }
+  }, [phase, quizName, questions, currentIndex, questionStatuses, answers, timeLeft, activeSubject, timeSpent, reviewMode]);
+
   // Load available sources on mount
   useEffect(() => {
     try {
@@ -1352,9 +2700,27 @@ function AIQuizInterface() {
       const pItems: SelectableItem[] = [];
       pdfs.forEach((sec: any) => {
         sec.subsections?.forEach((sub: any) => {
-          if (sub.pdfKey || sub.pdfUrl || sub.imageKey) pItems.push({ id: sub.id, name: sub.name, path: `${sec.name} > ${sub.name}`, mediaKey: sub.pdfKey, url: sub.pdfUrl });
+          if (sub.pdfKey || sub.pdfUrl || sub.imageKey) {
+            pItems.push({
+              id: sub.id,
+              name: sub.name,
+              path: `${sec.name} > ${sub.name}`,
+              mediaKey: sub.pdfKey || sub.imageKey,
+              url: sub.pdfUrl,
+              fileType: sub.fileType || (sub.imageKey ? "image" : "pdf")
+            });
+          }
           sub.subsubsections?.forEach((ss: any) => {
-             if (ss.pdfKey || ss.pdfUrl || ss.imageKey) pItems.push({ id: ss.id, name: ss.name, path: `${sec.name} > ${sub.name} > ${ss.name}`, mediaKey: ss.pdfKey, url: ss.pdfUrl });
+             if (ss.pdfKey || ss.pdfUrl || ss.imageKey) {
+               pItems.push({
+                 id: ss.id,
+                 name: ss.name,
+                 path: `${sec.name} > ${sub.name} > ${ss.name}`,
+                 mediaKey: ss.pdfKey || ss.imageKey,
+                 url: ss.pdfUrl,
+                 fileType: ss.fileType || (ss.imageKey ? "image" : "pdf")
+               });
+             }
           });
         });
       });
@@ -1393,7 +2759,8 @@ function AIQuizInterface() {
       availableVideos,
       model: "",
       useFree: true,
-      brief: briefInstructions
+      brief: briefInstructions,
+      questionNumbers: pdfQuestionFilter
     });
   };
 
@@ -1416,6 +2783,10 @@ function AIQuizInterface() {
     }
 
     const explanationModels = [
+      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+      "nvidia/llama-nemotron-rerank-vl-1b-v2:free",
+      "nex-agi/nex-n2-pro:free",
+      "nvidia/nemotron-3.5-content-safety:free",
       "nousresearch/hermes-3-llama-3.1-405b:free",
       "google/gemma-4-31b-it:free",
       "meta-llama/llama-3.3-70b-instruct:free"
@@ -1624,6 +2995,30 @@ Respond with ONLY the markdown explanation. Do not wrap it in JSON or HTML. Star
     }
   };
 
+  const handleResumeTest = () => {
+    if (restoredTestState) {
+      setQuizName(restoredTestState.quizName);
+      setQuestions(restoredTestState.questions);
+      setCurrentIndex(restoredTestState.currentIndex);
+      setQuestionStatuses(restoredTestState.questionStatuses);
+      setAnswers(restoredTestState.answers);
+      setTimeLeft(restoredTestState.timeLeft);
+      setActiveSubject(restoredTestState.activeSubject);
+      setTimeSpent(restoredTestState.timeSpent || {});
+      setReviewMode(false);
+      setPhase("active");
+      setHasRestorableTest(false);
+    }
+  };
+
+  const handleDiscardTest = () => {
+    if (confirm("Are you sure you want to discard your ongoing test? All progress will be lost.")) {
+      localStorage.removeItem("jee_active_quiz_attempt_v1");
+      setHasRestorableTest(false);
+      setRestoredTestState(null);
+    }
+  };
+
   const startQuiz = (quiz: SavedQuiz) => {
     setQuizName(quiz.name);
     setQuestions(quiz.questions);
@@ -1671,6 +3066,11 @@ Respond with ONLY the markdown explanation. Do not wrap it in JSON or HTML. Star
     });
     setScore(calculatedScore);
     setShowSummary(false);
+
+    // Clear auto-saved test state upon submission
+    localStorage.removeItem("jee_active_quiz_attempt_v1");
+    setHasRestorableTest(false);
+    setRestoredTestState(null);
     
     const past = JSON.parse(localStorage.getItem("jee_quiz_results") || "[]");
     localStorage.setItem("jee_quiz_results", JSON.stringify([...past, {
@@ -1788,6 +3188,25 @@ Respond with ONLY the markdown explanation. Do not wrap it in JSON or HTML. Star
               className="space-y-8"
             >
               {/* Warnings */}
+              {hasRestorableTest && restoredTestState && (
+                <div className="p-5 rounded-3xl bg-amber-500/10 border border-amber-500/20 text-amber-950 dark:text-amber-300 flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-sm">
+                   <div className="flex items-start gap-3">
+                      <Timer className="h-6 w-6 text-amber-500 shrink-0 mt-0.5 animate-pulse" />
+                      <div>
+                         <p className="font-bold text-sm">Unfinished Test Session Detected</p>
+                         <p className="text-xs opacity-90 mt-0.5">You have an ongoing attempt for <strong>{restoredTestState.quizName || "Practice Quiz"}</strong> with {Math.floor(restoredTestState.timeLeft / 3600)}h {Math.floor((restoredTestState.timeLeft % 3600) / 60)}m {restoredTestState.timeLeft % 60}s remaining.</p>
+                      </div>
+                   </div>
+                   <div className="flex items-center gap-2 shrink-0">
+                      <Button size="sm" variant="outline" className="border-amber-500/30 hover:bg-amber-500/20 font-bold" onClick={handleDiscardTest}>
+                         Discard
+                      </Button>
+                      <Button size="sm" className="bg-amber-500 hover:bg-amber-600 text-black font-bold" onClick={handleResumeTest}>
+                         Resume Test
+                      </Button>
+                   </div>
+                </div>
+              )}
               {!localStorage.getItem("jee_openrouter_api_key") && (
                 <div className="p-4 rounded-2xl bg-red-500/10 border border-red-500/20 text-red-600 dark:text-red-400 flex items-start gap-3 text-sm font-semibold">
                    <AlertCircle className="h-5 w-5 shrink-0 mt-0.5" />
@@ -1937,6 +3356,25 @@ Respond with ONLY the markdown explanation. Do not wrap it in JSON or HTML. Star
                 )}
               </div>
 
+              {/* PDF Specific Options */}
+              {sources.pdfs.length > 0 && (
+                <div className="bg-card border border-border rounded-3xl p-6 shadow-sm">
+                  <div className="flex items-center gap-2 mb-2">
+                    <FileText className="h-5 w-5 text-red-500" />
+                    <h2 className="text-sm font-bold uppercase tracking-wider text-foreground">Specific Question Numbers (PDF only)</h2>
+                  </div>
+                  <p className="text-xs text-muted-foreground mb-4">
+                    Specify which exact question numbers to extract from the selected PDF files (e.g. <code>1, 2, 6</code>). Leaving this empty will extract all questions.
+                  </p>
+                  <Input
+                    value={pdfQuestionFilter}
+                    onChange={(e) => setPdfQuestionFilter(e.target.value)}
+                    placeholder="e.g. 1, 2, 6"
+                    className="h-12 bg-muted/30 rounded-2xl"
+                  />
+                </div>
+              )}
+
               {/* Explain Briefly (Custom distribution box) */}
               <div className="bg-card border border-border rounded-3xl p-6 shadow-sm">
                 <div className="flex items-center gap-2 mb-2">
@@ -1985,15 +3423,19 @@ Respond with ONLY the markdown explanation. Do not wrap it in JSON or HTML. Star
                 
                 <div className="space-y-3">
                   {activeJobs.map(job => (
-                    <div key={job.id} className="p-4 rounded-xl border border-primary/20 bg-primary/5 flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <RefreshCw className="h-5 w-5 text-primary animate-spin" />
-                        <div>
-                           <p className="text-sm font-bold text-foreground">Generating {job.name}...</p>
-                           <p className="text-xs text-muted-foreground font-medium">{job.status}</p>
+                    <div key={job.id} className="p-4 rounded-xl border border-primary/20 bg-primary/5 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                      <div className="flex items-center gap-3 min-w-[200px] flex-1">
+                        <RefreshCw className="h-5 w-5 text-primary animate-spin shrink-0" />
+                        <div className="min-w-0">
+                           <p className="text-sm font-bold text-foreground truncate">Generating {job.name}...</p>
+                           <p className="text-xs text-muted-foreground font-semibold truncate">{job.status}</p>
                         </div>
                       </div>
-                      <Button variant="outline" size="sm" className="h-8 w-8 p-0 text-red-500 hover:text-red-600 hover:bg-red-500/10 border-red-500/20" onClick={() => quizGeneratorManager.stopJob(job.id)}>
+                      
+                      {/* Smooth progress bar tracking completion */}
+                      <JobProgressBar status={job.status} />
+                      
+                      <Button variant="outline" size="sm" className="h-8 w-8 p-0 text-red-500 hover:text-red-600 hover:bg-red-500/10 border-red-500/20 shrink-0" onClick={() => quizGeneratorManager.stopJob(job.id)}>
                         <Square className="h-3.5 w-3.5 fill-current" />
                       </Button>
                     </div>
@@ -2067,8 +3509,19 @@ Respond with ONLY the markdown explanation. Do not wrap it in JSON or HTML. Star
                         <td className="pb-0.5 flex items-center gap-1">: <span className="font-extrabold text-foreground">{quizName}</span> <Info className="w-3.5 h-3.5 text-muted-foreground" /></td>
                       </tr>
                       <tr>
-                        <td className="pr-2 text-muted-foreground font-bold">{reviewMode ? "Mode" : "Remaining Time"}</td>
-                        <td>: <span className={cn("px-2 py-0.5 rounded-full font-bold text-xs shadow-sm text-white", reviewMode ? "bg-emerald-500" : "bg-[#3b82f6]")}>{reviewMode ? "REVIEW SOLUTIONS" : formatTime(timeLeft)}</span></td>
+                        <td className="pr-2 text-muted-foreground font-bold text-sm">{reviewMode ? "Mode" : "Remaining Time"}</td>
+                        <td className="py-1">: {reviewMode ? (
+                          <span className="px-2 py-0.5 rounded-full font-bold text-xs shadow-sm text-white bg-emerald-500">REVIEW SOLUTIONS</span>
+                        ) : (
+                          <span className={cn(
+                            "font-mono font-black tracking-wider shadow-sm border px-3 py-1 text-xs rounded-md inline-block",
+                            timeLeft < 300 
+                              ? "animate-pulse bg-red-600 text-white border-red-500" 
+                              : "bg-[#3b82f6] text-white border-[#2563eb]"
+                          )}>
+                            {formatTime(timeLeft)}
+                          </span>
+                        )}</td>
                       </tr>
                     </tbody>
                   </table>
@@ -2120,25 +3573,48 @@ Respond with ONLY the markdown explanation. Do not wrap it in JSON or HTML. Star
                             <AlertCircle className="w-5 h-5" />
                           </button>
                         ) : (
-                          <button className="text-muted-foreground hover:text-foreground">
-                            <MoreVertical className="w-5 h-5" />
-                          </button>
+                          <div className="flex items-center gap-2">
+                            <button 
+                              onClick={() => setShowExitConfirm(true)}
+                              className="text-muted-foreground hover:text-red-500 hover:bg-red-500/10 p-2 rounded-full transition-all"
+                              title="Quit Test"
+                            >
+                              <X className="w-5 h-5" />
+                            </button>
+                            <button className="text-muted-foreground hover:text-foreground p-2 rounded-full transition-all">
+                              <MoreVertical className="w-5 h-5" />
+                            </button>
+                          </div>
                         )}
                     </div>
                     
                     <div className="flex-1 overflow-y-auto p-6 md:p-8 space-y-6">
-                       {/* LaTeX Rich Question Text */}
-                       <div className="prose dark:prose-invert max-w-none text-base md:text-lg text-foreground leading-relaxed font-serif">
-                          <ReactMarkdown remarkPlugins={[remarkMath, remarkGfm]} rehypePlugins={[rehypeKatex]}>{questions[currentIndex].text}</ReactMarkdown>
-                       </div>
+                       {/* BLOCK 1: Core Text Statement (Image crop, or LaTeX text fallback) */}
+                       {questions[currentIndex].questionCropUrl ? (
+                          <div className="p-3 border border-border rounded-2xl bg-white dark:bg-zinc-900 inline-block max-w-full shadow-sm select-none">
+                             <img src={questions[currentIndex].questionCropUrl} className="w-full h-auto object-contain select-none" alt="Question statement text" />
+                          </div>
+                       ) : (
+                          <div className="prose dark:prose-invert max-w-none text-base md:text-lg text-foreground leading-relaxed font-serif">
+                             <ReactMarkdown remarkPlugins={[remarkMath, remarkGfm]} rehypePlugins={[rehypeKatex]}>{questions[currentIndex].text}</ReactMarkdown>
+                          </div>
+                       )}
 
-                       {/* Question Diagram (If available in sources) */}
-                       <QuestionImage 
-                         imageKey={questions[currentIndex].imageKey}
-                         imageUrl={questions[currentIndex].imageUrl}
-                       />
-                       
-                       {/* Options */}
+                       {/* BLOCK 2: Conditional Embedded Options / Matrices */}
+                       {questions[currentIndex].hasEmbeddedOptions && questions[currentIndex].embeddedOptionsCropUrl && (
+                          <div className="my-4 p-2 bg-white rounded-xl border border-zinc-800 overflow-x-auto">
+                             <img src={questions[currentIndex].embeddedOptionsCropUrl} className="max-w-full h-auto" alt="Matrix Table Context" />
+                          </div>
+                       )}
+
+                       {/* BLOCK 3: Conditional Diagrams */}
+                       {questions[currentIndex].hasIsolatedDiagram && questions[currentIndex].diagramCropUrl && (
+                          <div className="my-4 p-4 bg-white border border-zinc-200 rounded-xl max-w-sm mx-auto shadow-md">
+                             <img src={questions[currentIndex].diagramCropUrl} className="w-full h-auto object-contain" alt="Problem Geometry Diagram" />
+                          </div>
+                       )}
+
+                       {/* BLOCK 4: Final Interactive Choice Grid */}
                        <div className="mt-8 space-y-3">
                          {questions[currentIndex].options.map((opt, i) => {
                             const isSelected = answers[currentIndex] === i;
@@ -2169,7 +3645,7 @@ Respond with ONLY the markdown explanation. Do not wrap it in JSON or HTML. Star
                                   className="mt-1 w-4 h-4 accent-primary cursor-pointer border-border" 
                                 />
                                 <div className="font-semibold prose dark:prose-invert max-w-none text-sm md:text-base text-foreground flex-1">
-                                  <ReactMarkdown remarkPlugins={[remarkMath, remarkGfm]} rehypePlugins={[rehypeKatex]} components={quizOptionComponents}>{`(${String.fromCharCode(65 + i)}) ${opt}`}</ReactMarkdown>
+                                  <ReactMarkdown remarkPlugins={[remarkMath]} rehypePlugins={[rehypeKatex]} components={quizOptionComponents}>{`(${String.fromCharCode(65 + i)}) ${opt}`}</ReactMarkdown>
                                 </div>
                                 {reviewMode && isCorrect && <Check className="h-5 w-5 text-emerald-500 shrink-0 mt-0.5" />}
                                 {reviewMode && isSelected && !isCorrect && <X className="h-5 w-5 text-red-500 shrink-0 mt-0.5" />}
@@ -2183,16 +3659,44 @@ Respond with ONLY the markdown explanation. Do not wrap it in JSON or HTML. Star
                           <div className="space-y-6 mt-8">
                             {/* Standard Explanation */}
                             <div className="p-6 bg-primary/5 border border-primary/15 rounded-2xl space-y-4">
-                              <div className="flex items-center gap-2 text-primary font-bold text-sm uppercase tracking-wider">
-                                <BrainCircuit className="h-4 w-4" /> Comprehensive Scientific Derivation
+                              <div className="flex items-center justify-between flex-wrap gap-2 border-b border-border pb-3">
+                                <div className="flex items-center gap-2 text-primary font-bold text-sm uppercase tracking-wider">
+                                  <BrainCircuit className="h-4 w-4" /> Comprehensive Scientific Derivation
+                                </div>
+                                {questions[currentIndex].confidence !== undefined && (
+                                  <div className={cn(
+                                    "px-2.5 py-1 rounded-full text-xs font-bold border flex items-center gap-1.5 shadow-sm",
+                                    questions[currentIndex].confidence! >= 85
+                                      ? "bg-emerald-500/10 border-emerald-500/30 text-emerald-600 dark:text-emerald-400"
+                                      : questions[currentIndex].confidence! >= 60
+                                        ? "bg-amber-500/10 border-amber-500/30 text-amber-600 dark:text-amber-400"
+                                        : "bg-red-500/10 border-red-500/30 text-red-600 dark:text-red-400"
+                                  )}>
+                                    <span>Verification Confidence:</span>
+                                    <span className="font-extrabold">{questions[currentIndex].confidence}%</span>
+                                  </div>
+                                )}
                               </div>
                               <div className="prose dark:prose-invert max-w-none text-sm md:text-base text-foreground leading-relaxed font-sans">
                                 <ReactMarkdown remarkPlugins={[remarkMath, remarkGfm]} rehypePlugins={[rehypeKatex]}>
                                   {questions[currentIndex].explanation}
                                 </ReactMarkdown>
                               </div>
+                              {questions[currentIndex].consensusAnalysis && (
+                                <div className="mt-4 p-4 bg-muted/40 border border-border/85 rounded-xl space-y-2">
+                                  <div className="flex items-center gap-2 text-xs font-bold text-muted-foreground uppercase tracking-wider">
+                                    <Search className="h-3.5 w-3.5" /> Web Verification Trail (Consensus Analysis)
+                                  </div>
+                                  <p className="text-xs md:text-sm text-foreground/80 leading-relaxed font-medium">
+                                    {questions[currentIndex].consensusAnalysis}
+                                  </p>
+                                </div>
+                              )}
                               <div className="text-xs text-muted-foreground pt-3 border-t border-border flex flex-wrap gap-4 justify-between font-semibold">
                                 <span>Time spent: <span className="text-foreground">{formatTimeSpent(timeSpent[currentIndex] || 0)}</span></span>
+                                {questions[currentIndex].sourceInfo && (
+                                  <span>Source: <span className="text-foreground capitalize">{questions[currentIndex].sourceInfo.sourceType}</span> - <span className="text-foreground">{questions[currentIndex].sourceInfo.sourceName} {questions[currentIndex].sourceInfo.page ? `(Page ${questions[currentIndex].sourceInfo.page})` : ""} {questions[currentIndex].sourceInfo.questionNum ? `(Q${questions[currentIndex].sourceInfo.questionNum})` : ""}</span></span>
+                                )}
                                 <span>Difficulty: <span className="text-foreground">{questions[currentIndex].difficulty}</span></span>
                               </div>
                             </div>
@@ -2499,12 +4003,24 @@ Respond with ONLY the markdown explanation. Do not wrap it in JSON or HTML. Star
                                   setCurrentIndex(idx);
                                 }}
                                 className={cn(
-                                  "h-11 border rounded-xl flex flex-col items-center justify-center font-bold text-xs hover:opacity-80 transition-all select-none",
+                                  "py-1.5 min-h-[56px] h-auto border rounded-xl flex flex-col items-center justify-center font-bold text-xs hover:opacity-80 transition-all select-none relative overflow-hidden",
                                   bgClass
                                 )}
                               >
                                 <span>{localIndex}</span>
-                                <span className="text-[8.5px] font-semibold opacity-70 mt-0.5">{formatTimeSpent(timeSpent[idx] || 0)}</span>
+                                <span className="text-[8px] font-semibold opacity-70">{formatTimeSpent(timeSpent[idx] || 0)}</span>
+                                {q.confidence !== undefined && (
+                                  <span className={cn(
+                                    "text-[7.5px] font-extrabold mt-0.5 px-1 rounded-sm",
+                                    q.confidence >= 85
+                                      ? "text-emerald-600 dark:text-emerald-400 bg-emerald-500/10"
+                                      : q.confidence >= 60
+                                        ? "text-amber-600 dark:text-amber-400 bg-amber-500/10"
+                                        : "text-red-600 dark:text-red-400 bg-red-500/10"
+                                  )}>
+                                    {q.confidence}%
+                                  </span>
+                                )}
                               </button>
                             );
                           })}
@@ -2518,6 +4034,64 @@ Respond with ONLY the markdown explanation. Do not wrap it in JSON or HTML. Star
           )}
         </AnimatePresence>
       </div>
+
+      {/* ── Exit Confirmation Dialog ── */}
+      <AnimatePresence>
+        {showExitConfirm && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="absolute inset-0 bg-background/80 backdrop-blur-sm"
+              onClick={() => setShowExitConfirm(false)}
+            />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              className="relative w-full max-w-md bg-card border border-border rounded-3xl shadow-2xl p-6 flex flex-col z-50"
+            >
+              <div className="flex items-center justify-between mb-4 shrink-0">
+                <div className="flex items-center gap-2 text-red-500 font-extrabold">
+                  <AlertCircle className="w-5 h-5" />
+                  <span className="text-lg">Quit Active Test?</span>
+                </div>
+                <button onClick={() => setShowExitConfirm(false)} className="p-2 hover:bg-muted rounded-full transition-colors text-muted-foreground">
+                  <X className="h-5 w-5" />
+                </button>
+              </div>
+
+              <p className="text-sm font-medium text-muted-foreground mb-6">
+                Are you sure you want to terminate this test session? Your current progress and answers for this session will not be saved.
+              </p>
+
+              <div className="flex items-center gap-3 justify-end">
+                <Button 
+                  variant="outline" 
+                  onClick={() => setShowExitConfirm(false)} 
+                  className="font-bold border-border text-foreground hover:bg-muted"
+                >
+                  Cancel
+                </Button>
+                <Button 
+                  variant="destructive"
+                  onClick={() => {
+                    setShowExitConfirm(false);
+                    localStorage.removeItem("jee_active_quiz_attempt_v1");
+                    setHasRestorableTest(false);
+                    setRestoredTestState(null);
+                    setPhase("setup");
+                  }} 
+                  className="font-bold bg-red-600 hover:bg-red-700 text-white"
+                >
+                  Quit Test
+                </Button>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
 
       {/* ── Source Selection Modal ── */}
       <AnimatePresence>
@@ -2545,13 +4119,13 @@ Respond with ONLY the markdown explanation. Do not wrap it in JSON or HTML. Star
 
               {/* Tabs */}
               <div className="flex gap-2 border-b border-border pb-2 mb-4 shrink-0 overflow-x-auto scrollbar-hide">
-                 {["pdfs", "videos", "saves", "urls", "internet"].map(tab => (
+                 {["pdfs", "videos", "saves", "urls", "internet", "uploads"].map(tab => (
                     <button 
                       key={tab} 
                       onClick={() => setSourceTab(tab as any)}
                       className={cn("px-4 py-2 text-sm font-bold rounded-lg transition-colors whitespace-nowrap", sourceTab === tab ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:bg-muted")}
                     >
-                      {tab === "pdfs" ? "PDFs" : tab.charAt(0).toUpperCase() + tab.slice(1)}
+                      {tab === "pdfs" ? "PDFs" : tab === "uploads" ? "Files / Notes" : tab.charAt(0).toUpperCase() + tab.slice(1)}
                     </button>
                  ))}
               </div>
@@ -2611,6 +4185,115 @@ Respond with ONLY the markdown explanation. Do not wrap it in JSON or HTML. Star
                           </motion.div>
                         )}
                       </AnimatePresence>
+                    </div>
+                 )}
+
+                 {sourceTab === "uploads" && (
+                    <div className="space-y-4">
+                      <div className="flex gap-2 items-center">
+                        <label className="flex-1 flex flex-col items-center justify-center border-2 border-dashed border-border rounded-2xl p-6 bg-muted/20 hover:bg-muted/40 cursor-pointer transition-colors relative">
+                          <Plus className="h-6 w-6 text-muted-foreground mb-2" />
+                          <span className="text-sm font-semibold text-foreground">Click to upload document or image</span>
+                          <span className="text-xs text-muted-foreground mt-1">Supports PDF, Image, Word, PPT, Notes</span>
+                          {uploading && (
+                            <div className="absolute inset-0 bg-background/80 flex items-center justify-center rounded-2xl z-10 gap-2">
+                              <RefreshCw className="h-5 w-5 text-primary animate-spin" />
+                              <span className="text-sm font-bold text-foreground">Parsing document...</span>
+                            </div>
+                          )}
+                          <input 
+                            type="file" 
+                            accept=".pdf,.png,.jpg,.jpeg,.docx,.doc,.pptx,.ppt,.txt,.md" 
+                            className="hidden" 
+                            onChange={async (e) => {
+                              const file = e.target.files?.[0];
+                              if (!file) return;
+                              setUploading(true);
+                              try {
+                                const buf = await file.arrayBuffer();
+                                let text = "";
+                                let dataUrl = "";
+                                const fileExt = file.name.split('.').pop()?.toLowerCase();
+
+                                if (fileExt === "pdf") {
+                                  const key = `upload_pdf_${Date.now()}_${file.name}`;
+                                  if (writeMedia) {
+                                    await writeMedia(key, buf);
+                                  }
+                                  setSources(s => ({
+                                    ...s,
+                                    uploads: [...(s.uploads || []), { id: key, name: file.name, fileType: "pdf" }]
+                                  }));
+                                } else if (["png", "jpg", "jpeg"].includes(fileExt || "")) {
+                                  const key = `upload_img_${Date.now()}_${file.name}`;
+                                  if (writeMedia) {
+                                    await writeMedia(key, buf);
+                                  }
+                                  const blob = new Blob([buf], { type: file.type });
+                                  dataUrl = await new Promise<string>((resolve) => {
+                                    const r = new FileReader();
+                                    r.onloadend = () => resolve(r.result as string);
+                                    r.readAsDataURL(blob);
+                                  });
+                                  setSources(s => ({
+                                    ...s,
+                                    uploads: [...(s.uploads || []), { id: key, name: file.name, fileType: "image", dataUrl }]
+                                  }));
+                                } else if (fileExt === "docx") {
+                                  text = await extractTextFromDocx(buf);
+                                  setSources(s => ({
+                                    ...s,
+                                    uploads: [...(s.uploads || []), { id: `upload_${Date.now()}`, name: file.name, text, fileType: "docx" }]
+                                  }));
+                                } else if (fileExt === "pptx") {
+                                  text = await extractTextFromPptx(buf);
+                                  setSources(s => ({
+                                    ...s,
+                                    uploads: [...(s.uploads || []), { id: `upload_${Date.now()}`, name: file.name, text, fileType: "pptx" }]
+                                  }));
+                                } else if (["txt", "md"].includes(fileExt || "")) {
+                                  text = new TextDecoder().decode(buf);
+                                  setSources(s => ({
+                                    ...s,
+                                    uploads: [...(s.uploads || []), { id: `upload_${Date.now()}`, name: file.name, text, fileType: "text" }]
+                                  }));
+                                } else if (["doc", "ppt"].includes(fileExt || "")) {
+                                  text = extractStringsFromBinary(buf);
+                                  setSources(s => ({
+                                    ...s,
+                                    uploads: [...(s.uploads || []), { id: `upload_${Date.now()}`, name: file.name, text, fileType: "text" }]
+                                  }));
+                                }
+                              } catch (uploadErr) {
+                                console.error("Error loading direct upload file:", uploadErr);
+                              } finally {
+                                setUploading(false);
+                              }
+                              e.target.value = "";
+                            }}
+                          />
+                        </label>
+                      </div>
+                      
+                      <div className="space-y-2">
+                        {(!sources.uploads || sources.uploads.length === 0) && (
+                          <p className="text-sm text-muted-foreground text-center py-6 border-2 border-dashed border-border rounded-xl">No files uploaded.</p>
+                        )}
+                        {sources.uploads?.map((upload) => (
+                          <div key={upload.id} className="flex justify-between items-center p-3 bg-muted/40 border border-border rounded-xl text-sm">
+                            <div className="flex flex-col min-w-0 flex-1 mr-2">
+                              <span className="truncate text-sm font-bold text-foreground">{upload.name}</span>
+                              <span className="text-xs text-muted-foreground capitalize">{upload.fileType} Upload</span>
+                            </div>
+                            <button 
+                              onClick={() => setSources(s => ({ ...s, uploads: s.uploads.filter(u => u.id !== upload.id) }))} 
+                              className="p-1.5 hover:bg-red-500/20 rounded-md text-red-500 transition-colors"
+                            >
+                              <Trash2 className="w-4 h-4" />
+                            </button>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                  )}
               </div>

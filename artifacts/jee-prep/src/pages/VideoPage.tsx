@@ -1131,129 +1131,79 @@ function YouTubeVideoSearchModal({
 
     try {
       const q = encodeURIComponent(searchQuery);
-
-      const fetchWithTimeout = async (url: string, timeoutMs: number) => {
-        const controller = new AbortController();
-        const id = setTimeout(() => controller.abort(), timeoutMs);
-        const response = await fetch(url, { signal: controller.signal });
-        clearTimeout(id);
-        if (!response.ok) throw new Error("HTTP error");
-        return response;
-      };
-
-      const fetchPiped = async (instance: string) => {
-        const res = await fetchWithTimeout(`${instance}/search?q=${q}&filter=all`, 4000);
-        const data = await res.json();
-        if (!data?.items?.length) throw new Error("No data");
-        const videos = data.items.filter((item: any) => item.type === "stream");
-        if (!videos.length) throw new Error("No videos");
-        return videos.slice(0, 50).map((v: any) => {
-          const vId = v.url.includes("?v=") ? v.url.split("?v=")[1].split("&")[0] : v.url.split("/").pop();
-          return {
-            videoId: vId,
-            title: v.title || "Unknown",
-            author: v.uploaderName || "Unknown",
-            length_seconds: v.duration || 0,
-            thumbnail: `https://i.ytimg.com/vi/${vId}/mqdefault.jpg`,
-          };
-        });
-      };
-
-      const fetchInvidious = async (instance: string) => {
-        const res = await fetchWithTimeout(`${instance}/api/v1/search?q=${q}&type=video`, 4000);
-        const data = await res.json();
-        if (!Array.isArray(data) || !data.length) throw new Error("No data");
-        return data.slice(0, 50).map((v: any) => ({
-          videoId: v.videoId,
-          title: v.title || "Unknown",
-          author: v.author || "Unknown",
-          length_seconds: v.lengthSeconds || v.length_seconds || 0,
-          thumbnail: `https://i.ytimg.com/vi/${v.videoId}/mqdefault.jpg`,
-        }));
-      };
-
-      const fetchProxy = async (proxyUrl: string) => {
-        const res = await fetchWithTimeout(proxyUrl, 5000);
-        const contentType = res.headers.get("content-type") || "";
-        let html = "";
-        if (contentType.includes("application/json")) {
-          const data = await res.json();
-          html = data.contents || "";
-        } else {
-          html = await res.text();
-        }
-
-        const match =
-          html.match(/var\s+ytInitialData\s*=\s*(\{[\s\S]+?\});/s) ||
-          html.match(/ytInitialData\s*=\s*(\{[\s\S]+?\});/s) ||
-          html.match(/window\["ytInitialData"\]\s*=\s*(\{[\s\S]+?\});/s);
-        if (!match) throw new Error("No ytInitialData");
-        const ytData = JSON.parse(match[1]);
-        const videos: any[] = [];
-        const findVideos = (obj: any) => {
-          if (videos.length >= 50) return;
-          if (Array.isArray(obj)) {
-            for (const item of obj) findVideos(item);
-          } else if (obj !== null && typeof obj === "object") {
-            if (obj.videoRenderer && obj.videoRenderer.videoId) {
-              videos.push(obj.videoRenderer);
-            } else {
-              for (const key of Object.keys(obj)) findVideos(obj[key]);
-            }
-          }
-        };
-        findVideos(ytData);
-
-        if (videos.length === 0) throw new Error("No videos found in proxy");
-
-        return videos.map((v) => {
-          const timeStr = v.lengthText?.simpleText || "0:00";
-          const parts = timeStr.split(":").map(Number);
-          const length_seconds =
-            parts.length === 3
-              ? parts[0] * 3600 + parts[1] * 60 + parts[2]
-              : parts.length === 2
-                ? parts[0] * 60 + parts[1]
-                : parts[0] || 0;
-
-          return {
-            videoId: v.videoId,
-            title: v.title?.runs?.[0]?.text || "Unknown",
-            author: v.ownerText?.runs?.[0]?.text || "Unknown",
-            length_seconds,
-            thumbnail: `https://i.ytimg.com/vi/${v.videoId}/mqdefault.jpg`,
-          };
-        });
-      };
-
-      const tasks = [
-        fetchPiped("https://pipedapi.kavin.rocks"),
-        fetchPiped("https://pipedapi.smnz.de"),
-        fetchPiped("https://piped-api.lunar.icu"),
-        fetchPiped("https://pipedapi.adminforge.de"),
-        fetchPiped("https://pipedapi.tokhmi.xyz"),
-        fetchInvidious("https://invidious.jing.rocks"),
-        fetchInvidious("https://vid.puffyan.us"),
-        fetchInvidious("https://invidious.nerdvpn.de"),
-        fetchInvidious("https://invidious.privacydev.net"),
-        fetchInvidious("https://inv.tux.pizza"),
-        fetchInvidious("https://invidious.lunar.icu"),
-        fetchInvidious("https://invidious.flokinet.to"),
-        fetchProxy(`https://api.allorigins.win/get?url=${encodeURIComponent(`https://www.youtube.com/results?search_query=${q}&gl=US&hl=en`)}`),
-        fetchProxy(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(`https://www.youtube.com/results?search_query=${q}&gl=US&hl=en`)}`),
-        fetchProxy(`https://corsproxy.io/?${encodeURIComponent(`https://www.youtube.com/results?search_query=${q}&gl=US&hl=en`)}`)
-      ];
-
-      const fastestResults = await Promise.any(tasks);
-
-      if (fastestResults && fastestResults.length > 0) {
-        setResults(fastestResults.slice(0, 50));
+      const res = await fetch(`/api/yt-search?q=${q}`);
+      if (!res.ok) throw new Error("Search failed on backend");
+      const data = await res.json();
+      if (data.results && data.results.length > 0) {
+        setResults(data.results);
       } else {
         setError("No results found. Try a different search term.");
       }
     } catch (err: any) {
-      setError("Search failed. Please try again.");
-      console.error(err);
+      console.warn("Backend search failed, trying direct client-side fallback...", err);
+      try {
+        const q = encodeURIComponent(searchQuery);
+
+        const fetchWithTimeout = async (url: string, timeoutMs: number) => {
+          const controller = new AbortController();
+          const id = setTimeout(() => controller.abort(), timeoutMs);
+          const response = await fetch(url, { signal: controller.signal });
+          clearTimeout(id);
+          if (!response.ok) throw new Error("HTTP error");
+          return response;
+        };
+
+        const fetchPiped = async (instance: string) => {
+          const res = await fetchWithTimeout(`${instance}/search?q=${q}&filter=all`, 4000);
+          const data = await res.json();
+          if (!data?.items?.length) throw new Error("No data");
+          const videos = data.items.filter((item: any) => item.type === "stream");
+          if (!videos.length) throw new Error("No videos");
+          return videos.slice(0, 50).map((v: any) => {
+            const vId = v.url.includes("?v=") ? v.url.split("?v=")[1].split("&")[0] : v.url.split("/").pop();
+            return {
+              videoId: vId,
+              title: v.title || "Unknown",
+              author: v.uploaderName || "Unknown",
+              length_seconds: v.duration || 0,
+              thumbnail: `https://i.ytimg.com/vi/${vId}/mqdefault.jpg`,
+            };
+          });
+        };
+
+        const fetchInvidious = async (instance: string) => {
+          const res = await fetchWithTimeout(`${instance}/api/v1/search?q=${q}&type=video`, 4000);
+          const data = await res.json();
+          if (!Array.isArray(data) || !data.length) throw new Error("No data");
+          return data.slice(0, 50).map((v: any) => ({
+            videoId: v.videoId,
+            title: v.title || "Unknown",
+            author: v.author || "Unknown",
+            length_seconds: v.lengthSeconds || v.length_seconds || 0,
+            thumbnail: `https://i.ytimg.com/vi/${v.videoId}/mqdefault.jpg`,
+          }));
+        };
+
+        const tasks = [
+          fetchPiped("https://pipedapi.kavin.rocks"),
+          fetchPiped("https://pipedapi.smnz.de"),
+          fetchPiped("https://piped-api.lunar.icu"),
+          fetchInvidious("https://invidious.jing.rocks"),
+          fetchInvidious("https://vid.puffyan.us"),
+          fetchInvidious("https://invidious.nerdvpn.de"),
+          fetchInvidious("https://invidious.privacydev.net")
+        ];
+
+        const fastestResults = await Promise.any(tasks);
+        if (fastestResults && fastestResults.length > 0) {
+          setResults(fastestResults.slice(0, 50));
+        } else {
+          setError("No results found. Try a different search term.");
+        }
+      } catch (fallbackErr) {
+        setError("Search failed. Please try again.");
+        console.error(fallbackErr);
+      }
     } finally {
       setLoading(false);
     }

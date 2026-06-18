@@ -21,6 +21,7 @@ export interface Playlist {
   id: string;
   name: string;
   songs: Song[];
+  description?: string;
 }
 
 interface MusicContextType {
@@ -38,8 +39,8 @@ interface MusicContextType {
   setLoopAB: (range: [number, number] | null) => void;
   reorderPlaylists: (newPlaylists: Playlist[]) => void;
   reorderSongs: (playlistId: string, newSongs: Song[]) => void;
-  addPlaylist: (name: string) => void;
-  addPlaylistWithSongs: (name: string, songs: Song[]) => string;
+  addPlaylist: (name: string, description?: string) => void;
+  addPlaylistWithSongs: (name: string, songs: Song[], description?: string) => string;
   deletePlaylist: (id: string) => void;
   renamePlaylist: (id: string, name: string) => void;
   addSongToPlaylist: (playlistId: string, song: Song) => void;
@@ -512,51 +513,105 @@ export function MusicProvider({ children }: { children: ReactNode }) {
               `https://www.youtube.com/results?search_query=${encodeURIComponent(searchQuery)}&gl=US&hl=en`
           );
 
-          const match = html.match(/ytInitialData\s*=\s*(\{[\s\S]+?\});/s)
-            || html.match(/var\s+ytInitialData\s*=\s*(\{[\s\S]+?\});/s)
-            || html.match(/window\["ytInitialData"\]\s*=\s*(\{[\s\S]+?\});/s);
+          let firstVideoId: string | null = null;
+          const rendererKeys = ["videoRenderer", "playlistVideoRenderer", "gridVideoRenderer", "compactVideoRenderer", "childVideoRenderer", "watchCardRichVideoRenderer"];
+          
+          for (const key of rendererKeys) {
+            if (firstVideoId) break;
+            let pos = 0;
+            while (true) {
+              pos = html.indexOf(`"${key}"`, pos);
+              if (pos === -1) break;
 
-          if (match) {
-            try {
-              const ytData = JSON.parse(match[1]);
-              let firstVideoId: string | null = null;
-              const findVideo = (obj: any) => {
-                if (firstVideoId) return;
-                if (Array.isArray(obj)) {
-                  for (const item of obj) findVideo(item);
-                } else if (obj !== null && typeof obj === 'object') {
-                  if (obj.videoRenderer && obj.videoRenderer.videoId) {
-                    firstVideoId = obj.videoRenderer.videoId;
-                  } else {
-                    for (const key of Object.keys(obj)) findVideo(obj[key]);
+              const startIdx = html.indexOf("{", pos + key.length + 2);
+              if (startIdx !== -1 && startIdx - pos < 50) {
+                let braceCount = 0;
+                let inStringDouble = false;
+                let inStringSingle = false;
+                let escape = false;
+                let rendererStr = "";
+
+                for (let i = startIdx; i < html.length; i++) {
+                  const char = html[i];
+                  if (escape) { escape = false; continue; }
+                  if (char === "\\") { escape = true; continue; }
+                  if (char === '"' && !inStringDouble && !inStringSingle) {
+                    inStringDouble = true;
+                    continue;
+                  }
+                  if (char === '"' && inStringDouble && !escape) {
+                    inStringDouble = false;
+                    continue;
+                  }
+                  if (char === "'" && !inStringDouble && !inStringSingle) {
+                    inStringSingle = true;
+                    continue;
+                  }
+                  if (char === "'" && inStringSingle && !escape) {
+                    inStringSingle = false;
+                    continue;
+                  }
+                  if (!inStringDouble && !inStringSingle) {
+                    if (char === "{") braceCount++;
+                    else if (char === "}") {
+                      braceCount--;
+                      if (braceCount === 0) {
+                        rendererStr = html.slice(startIdx, i + 1);
+                        break;
+                      }
+                    }
                   }
                 }
-              };
-              findVideo(ytData);
 
-              if (firstVideoId) {
-                ytId = firstVideoId;
-                console.log(`[Search→Audio SUCCESS] Found via YouTube: ${firstVideoId}`);
-                if (playlistId) {
-                  setPlaylists(prev => prev.map(p => 
-                    p.id === playlistId ? { 
-                      ...p, 
-                      songs: p.songs.map(s => 
-                        s.id === song.id ? { 
-                          ...s, 
-                          youtubeId: firstVideoId ?? undefined, 
-                          url: `https://www.youtube.com/watch?v=${firstVideoId}` 
-                        } : s
-                      ) 
-                    } : p
-                  ));
+                if (rendererStr) {
+                  try {
+                    const r = JSON.parse(rendererStr);
+                    const videoObj = r.videoRenderer || r;
+                    if (videoObj && videoObj.videoId) {
+                      firstVideoId = videoObj.videoId;
+                      break;
+                    }
+                  } catch (e) {
+                    const idMatch = rendererStr.match(/"videoId"\s*:\s*"([a-zA-Z0-9_-]{11})"/);
+                    if (idMatch) {
+                      firstVideoId = idMatch[1];
+                      break;
+                    }
+                  }
                 }
-              } else {
-                console.warn(`[Search→Audio] No results for: "${query}"`);
               }
-            } catch (parseErr) {
-              console.warn(`[Search→Audio] Parse error: ${parseErr instanceof Error ? parseErr.message : String(parseErr)}`);
+              pos += key.length + 2;
             }
+          }
+
+          // Regex fallback search if JSON parsing yielded nothing
+          if (!firstVideoId) {
+            const videoRegex = /"videoId"\s*:\s*"([a-zA-Z0-9_-]{11})"/g;
+            let match;
+            if ((match = videoRegex.exec(html)) !== null) {
+              firstVideoId = match[1];
+            }
+          }
+
+          if (firstVideoId) {
+            ytId = firstVideoId;
+            console.log(`[Search→Audio SUCCESS] Found via YouTube: ${firstVideoId}`);
+            if (playlistId) {
+              setPlaylists(prev => prev.map(p => 
+                p.id === playlistId ? { 
+                  ...p, 
+                  songs: p.songs.map(s => 
+                    s.id === song.id ? { 
+                      ...s, 
+                      youtubeId: firstVideoId ?? undefined, 
+                      url: `https://www.youtube.com/watch?v=${firstVideoId}` 
+                    } : s
+                  ) 
+                } : p
+              ));
+            }
+          } else {
+            console.warn(`[Search→Audio] No results for: "${query}"`);
           }
         } catch (err) {
           console.warn(`[Search→Audio] Scrape failed: ${err instanceof Error ? err.message : String(err)}`);
@@ -600,10 +655,18 @@ export function MusicProvider({ children }: { children: ReactNode }) {
   const togglePlay = useCallback(() => {
     if (!currentSongRef.current) return;
     if (isYtModeRef.current && ytPlayerRef.current) {
-      if (isPlaying) {
-        ytPlayerRef.current.pauseVideo();
-      } else {
-        ytPlayerRef.current.playVideo();
+      try {
+        if (isPlaying) {
+          if (typeof ytPlayerRef.current.pauseVideo === "function") {
+            ytPlayerRef.current.pauseVideo();
+          }
+        } else {
+          if (typeof ytPlayerRef.current.playVideo === "function") {
+            ytPlayerRef.current.playVideo();
+          }
+        }
+      } catch (err) {
+        console.warn("[YouTube Playback] Failed to toggle play/pause:", err);
       }
       return;
     }
@@ -797,12 +860,12 @@ export function MusicProvider({ children }: { children: ReactNode }) {
     playSong(playlist.songs[prevIdx], cpid);
   }, [playSong]);
 
-  const addPlaylist = (name: string) =>
-    setPlaylists(prev => [...prev, { id: Date.now().toString(), name, songs: [] }]);
+  const addPlaylist = (name: string, description?: string) =>
+    setPlaylists(prev => [...prev, { id: Date.now().toString(), name, songs: [], description }]);
 
-  const addPlaylistWithSongs = (name: string, songs: Song[]): string => {
+  const addPlaylistWithSongs = (name: string, songs: Song[], description?: string): string => {
     const newId = Date.now().toString();
-    setPlaylists(prev => [...prev, { id: newId, name, songs }]);
+    setPlaylists(prev => [...prev, { id: newId, name, songs, description }]);
     return newId;
   };
 

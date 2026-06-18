@@ -14,11 +14,11 @@ type UrlType =
   | "unknown";
 
 function detectType(url: string): UrlType {
-  if (url.includes("youtu.be/") || url.includes("youtube.com/watch")) {
-    if (url.includes("list=")) return "yt_playlist";
+  if (url.includes("youtube.com/playlist")) return "yt_playlist";
+  if (url.includes("youtu.be/") || url.includes("youtube.com/watch") || url.includes("youtube.com/shorts/")) {
     return "yt_video";
   }
-  if (url.includes("youtube.com/playlist")) return "yt_playlist";
+  if (url.includes("list=")) return "yt_playlist";
   if (url.includes("spotify.com/track/")) return "sp_track";
   if (url.includes("spotify.com/playlist/")) return "sp_playlist";
   if (url.includes("spotify.com/album/")) return "sp_album";
@@ -245,48 +245,420 @@ router.get("/media-info", async (req: Request, res: Response) => {
   const url = ((req.query.url as string) || "").trim();
   if (!url) { res.status(400).json({ error: "url param required" }); return; }
 
+  // Safe title text-layer cleanup helper
+  const cleanTitle = (t: string): string => {
+    if (!t) return "";
+    return t
+      .replace(/&amp;/g, "&")
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;/g, "'")
+      .replace(/&apos;/g, "'")
+      .replace(/&lt;/g, "<")
+      .replace(/&gt;/g, ">")
+      // Remove tracking parameters or trailing noise or bracketed numbers
+      .replace(/\[\s*\d+\s*\]/g, "")
+      .replace(/\(\s*\d+\s*\)/g, "")
+      .trim();
+  };
+
+  const isPlaceHolder = (t: string): boolean => {
+    const lower = t.toLowerCase();
+    return lower.includes("deleted video") || lower.includes("private video") || lower.includes("hidden video");
+  };
+
+  const extractFieldFromBlock = (block: string, keyName: string): string => {
+    const keyIdx = block.indexOf(`"${keyName}"`);
+    if (keyIdx === -1) return "";
+    
+    const textIdx = block.indexOf('"text"', keyIdx);
+    const simpleTextIdx = block.indexOf('"simpleText"', keyIdx);
+    
+    let valIdx = -1;
+    let searchWord = "";
+    if (textIdx !== -1 && (simpleTextIdx === -1 || textIdx < simpleTextIdx)) {
+      valIdx = textIdx;
+      searchWord = '"text"';
+    } else if (simpleTextIdx !== -1) {
+      valIdx = simpleTextIdx;
+      searchWord = '"simpleText"';
+    }
+    
+    if (valIdx === -1) return "";
+    
+    const quoteStart = block.indexOf('"', valIdx + searchWord.length + 1);
+    if (quoteStart === -1) return "";
+    
+    let escape = false;
+    let quoteEnd = -1;
+    for (let i = quoteStart + 1; i < block.length; i++) {
+      const char = block[i];
+      if (escape) {
+        escape = false;
+        continue;
+      }
+      if (char === '\\') {
+        escape = true;
+        continue;
+      }
+      if (char === '"') {
+        quoteEnd = i;
+        break;
+      }
+    }
+    if (quoteEnd === -1) return "";
+    
+    const rawStringLiteral = block.slice(quoteStart, quoteEnd + 1);
+    try {
+      return JSON.parse(rawStringLiteral);
+    } catch (e) {
+      return rawStringLiteral.slice(1, -1);
+    }
+  };
+
+  const scrapeVideoHtml = async (vidId: string) => {
+    const targetUrl = `https://www.youtube.com/watch?v=${vidId}`;
+    const response = await fetch(targetUrl, {
+      headers: {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "Accept-Language": "en-US,en;q=0.9"
+      },
+      signal: AbortSignal.timeout(4000)
+    });
+    if (!response.ok) throw new Error(`HTTP error ${response.status}`);
+    const html = await response.text();
+    
+    let title = "";
+    const titleMatch = html.match(/<meta\s+name="title"\s+content="([^"]+)"/) || html.match(/<title>(.*?) - YouTube<\/title>/);
+    if (titleMatch) title = cleanTitle(titleMatch[1]);
+    
+    let channelName = "YouTube";
+    const channelMatch = html.match(/"author"\s*:\s*"([^"]+)"/) || html.match(/<link\s+itemprop="name"\s+content="([^"]+)"/);
+    if (channelMatch) channelName = cleanTitle(channelMatch[1]);
+    
+    return {
+      title: title || `YouTube Video [${vidId}]`,
+      artist: channelName || "YouTube",
+      thumbnail: `https://img.youtube.com/vi/${vidId}/hqdefault.jpg`,
+      duration: 0,
+    };
+  };
+
   const type = detectType(url);
 
   try {
     if (type === "yt_video") {
       const clean = stripToVideoUrl(url);
-      const info = await playdl.video_info(clean);
-      const vd = info.video_details;
       const videoId = extractVideoId(clean);
-      res.json({
-        type: "track",
-        youtubeId: videoId,
-        title: vd.title ?? "Unknown",
-        artist: vd.channel?.name ?? "Unknown",
-        thumbnail: vd.thumbnails?.at(-1)?.url,
-        duration: vd.durationInSec ?? 0,
-        streamUrl: `/api/stream?url=${encodeURIComponent(clean)}`,
-      });
-      return;
+      if (!videoId) throw new Error("Could not extract video ID");
+
+      // Try fast oembed first
+      try {
+        const noembedRes = await fetch(`https://noembed.com/embed?url=https://www.youtube.com/watch?v=${videoId}`, {
+          signal: AbortSignal.timeout(2000)
+        });
+        if (noembedRes.ok) {
+          const parsed = (await noembedRes.json()) as any;
+          if (parsed && !parsed.error) {
+            res.json({
+              type: "track",
+              youtubeId: videoId,
+              title: cleanTitle(parsed.title ?? "Unknown Title"),
+              artist: cleanTitle(parsed.author_name ?? "YouTube"),
+              thumbnail: `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`,
+              duration: 0,
+              streamUrl: `/api/stream?url=${encodeURIComponent(clean)}`,
+            });
+            return;
+          }
+        }
+      } catch (e) {
+        // Fallback to play-dl
+      }
+
+      try {
+        const info = await Promise.race([
+          playdl.video_info(clean),
+          new Promise<any>((_, reject) => setTimeout(() => reject(new Error("Timeout")), 2500))
+        ]);
+        const vd = info.video_details;
+        res.json({
+          type: "track",
+          youtubeId: videoId,
+          title: cleanTitle(vd.title ?? "Unknown"),
+          artist: cleanTitle(vd.channel?.name ?? "Unknown"),
+          thumbnail: vd.thumbnails?.at(-1)?.url,
+          duration: vd.durationInSec ?? 0,
+          streamUrl: `/api/stream?url=${encodeURIComponent(clean)}`,
+        });
+        return;
+      } catch (playDlErr) {
+        console.warn("Backend play-dl video_info failed or timed out, trying page scraper:", playDlErr);
+        try {
+          const scraped = await scrapeVideoHtml(videoId);
+          res.json({
+            type: "track",
+            youtubeId: videoId,
+            title: scraped.title,
+            artist: scraped.artist,
+            thumbnail: scraped.thumbnail,
+            duration: scraped.duration,
+            streamUrl: `/api/stream?url=${encodeURIComponent(clean)}`,
+          });
+          return;
+        } catch (scrapeErr) {
+          console.error("Backend video page scraper also failed:", scrapeErr);
+          throw new Error("Failed to fetch media info for video");
+        }
+      }
     }
 
     if (type === "yt_playlist") {
-      const listId = extractListId(url);
-      const playlistUrl = listId ? `https://www.youtube.com/playlist?list=${listId}` : url;
-      const playlist = await playdl.playlist_info(playlistUrl, { incomplete: true });
-      const videos = await playlist.all_videos();
-      const tracks: TrackInfo[] = videos.slice(0, 100).map((v) => {
-        const ytId = extractVideoId(v.url);
-        const cleanVUrl = ytId ? `https://www.youtube.com/watch?v=${ytId}` : v.url;
-        return {
-          title: v.title ?? "Unknown",
-          artist: v.channel?.name ?? "Unknown",
-          thumbnail: v.thumbnails?.[0]?.url,
-          duration: v.durationInSec ?? 0,
-          youtubeId: ytId ?? undefined,
-          streamUrl: `/api/stream?url=${encodeURIComponent(cleanVUrl)}`,
-        };
-      });
+      const listId = extractListId(url) || url;
+      const targetUrl = listId.startsWith("PL") || listId.startsWith("UU") || listId.startsWith("LL") 
+        ? `https://www.youtube.com/playlist?list=${listId}` 
+        : url;
+
+      const scrapePlaylistHtml = async (ytPlaylistId: string) => {
+        const targetUrl = `https://www.youtube.com/playlist?list=${ytPlaylistId}`;
+        const response = await fetch(targetUrl, {
+          headers: {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+            "Accept-Language": "en-US,en;q=0.9"
+          },
+          signal: AbortSignal.timeout(8000)
+        });
+        if (!response.ok) throw new Error(`HTTP error ${response.status}`);
+        const html = await response.text();
+
+        // Extract playlist title
+        let playlistName = "YouTube Playlist";
+        const titleMatch = html.match(/<title>(.*?) - YouTube<\/title>/) 
+          || html.match(/<meta\s+name="title"\s+content="([^"]+)"/);
+        if (titleMatch) playlistName = cleanTitle(titleMatch[1]);
+
+        const tracks: TrackInfo[] = [];
+        const seenIds = new Set<string>();
+
+        // Extract using block-based renderer parser
+        const rendererKeys = [
+          "playlistVideoRenderer",
+          "playlistVideoListRenderer",
+          "gridVideoRenderer",
+          "videoRenderer",
+          "watchCardRichVideoRenderer",
+          "lockupViewModel"
+        ];
+
+        for (const key of rendererKeys) {
+          let pos = 0;
+          while (true) {
+            pos = html.indexOf(`"${key}"`, pos);
+            if (pos === -1) break;
+
+            const startIdx = html.indexOf("{", pos + key.length + 2);
+            if (startIdx !== -1 && startIdx - pos < 50) {
+              let braceCount = 0;
+              let inStringDouble = false;
+              let inStringSingle = false;
+              let escape = false;
+              let rendererStr = "";
+
+              for (let i = startIdx; i < html.length; i++) {
+                const char = html[i];
+                if (escape) { escape = false; continue; }
+                if (char === "\\") { escape = true; continue; }
+                if (char === '"' && !inStringDouble && !inStringSingle) {
+                  inStringDouble = true;
+                  continue;
+                }
+                if (char === '"' && inStringDouble && !escape) {
+                  inStringDouble = false;
+                  continue;
+                }
+                if (char === "'" && !inStringDouble && !inStringSingle) {
+                  inStringSingle = true;
+                  continue;
+                }
+                if (char === "'" && inStringSingle && !escape) {
+                  inStringSingle = false;
+                  continue;
+                }
+                if (!inStringDouble && !inStringSingle) {
+                  if (char === "{") braceCount++;
+                  else if (char === "}") {
+                    braceCount--;
+                    if (braceCount === 0) {
+                      rendererStr = html.slice(startIdx, i + 1);
+                      break;
+                    }
+                  }
+                }
+              }
+
+              if (rendererStr) {
+                try {
+                  const r = JSON.parse(rendererStr);
+                  const videoObj = r.videoRenderer || r;
+                  if (videoObj) {
+                    const vId = videoObj.videoId || videoObj.contentId;
+                    if (vId && !seenIds.has(vId)) {
+                      const rawTitle = videoObj.title?.runs?.[0]?.text || videoObj.title?.simpleText || videoObj.title?.content || videoObj.metadata?.lockupMetadataViewModel?.title?.content || videoObj.title || "";
+                      const rawArtist = videoObj.shortBylineText?.runs?.[0]?.text || videoObj.ownerText?.runs?.[0]?.text || videoObj.longBylineText?.runs?.[0]?.text || videoObj.metadata?.lockupMetadataViewModel?.metadata?.contentMetadataViewModel?.metadataRows?.[0]?.metadataParts?.[0]?.text?.content || "YouTube";
+                      
+                      const tStr = cleanTitle(rawTitle);
+                      if (isPlaceHolder(tStr)) {
+                        pos += key.length + 2;
+                        continue;
+                      }
+                      
+                      const title = tStr || `YouTube Video [${vId}]`;
+                      seenIds.add(vId);
+                      
+                      let duration = 0;
+                      if (videoObj.lengthSeconds) {
+                        duration = parseInt(videoObj.lengthSeconds, 10);
+                      } else if (videoObj.lengthText?.simpleText) {
+                        const parts = videoObj.lengthText.simpleText.split(":").map(Number);
+                        if (parts.every((p: number) => !isNaN(p))) {
+                          if (parts.length === 2) duration = parts[0] * 60 + parts[1];
+                          if (parts.length === 3) duration = parts[0] * 3600 + parts[1] * 60 + parts[2];
+                        }
+                      }
+
+                      tracks.push({
+                        title,
+                        artist: cleanTitle(rawArtist) || "YouTube",
+                        thumbnail: `https://img.youtube.com/vi/${vId}/mqdefault.jpg`,
+                        duration: isNaN(duration) ? 0 : duration,
+                        youtubeId: vId,
+                        streamUrl: `/api/stream?url=${encodeURIComponent(`https://www.youtube.com/watch?v=${vId}`)}`
+                      });
+                    }
+                  }
+                } catch (e) {
+                  // Fallback: extract fields directly using robust substring search
+                  const idMatch = rendererStr.match(/"videoId"\s*:\s*"([a-zA-Z0-9_-]{11})"/)|| rendererStr.match(/"contentId"\s*:\s*"([a-zA-Z0-9_-]{11})"/);
+                  if (idMatch) {
+                    const vId = idMatch[1];
+                    if (!seenIds.has(vId)) {
+                      const title = cleanTitle(extractFieldFromBlock(rendererStr, "title")) || `YouTube Video [${vId}]`;
+                      const artist = cleanTitle(
+                        extractFieldFromBlock(rendererStr, "shortBylineText") ||
+                        extractFieldFromBlock(rendererStr, "ownerText") ||
+                        extractFieldFromBlock(rendererStr, "longBylineText") ||
+                        extractFieldFromBlock(rendererStr, "metadata")
+                      ) || "YouTube";
+                      
+                      if (isPlaceHolder(title)) {
+                        pos += key.length + 2;
+                        continue;
+                      }
+                      seenIds.add(vId);
+                      tracks.push({
+                        title,
+                        artist,
+                        thumbnail: `https://img.youtube.com/vi/${vId}/mqdefault.jpg`,
+                        duration: 0,
+                        youtubeId: vId,
+                        streamUrl: `/api/stream?url=${encodeURIComponent(`https://www.youtube.com/watch?v=${vId}`)}`
+                      });
+                    }
+                  }
+                }
+              }
+            }
+            pos += key.length + 2;
+          }
+        }
+
+        // If JSON parsing blocks throw an error or return an empty array, instantly deploy a secondary string matching loop as a hard fallback
+        if (tracks.length === 0) {
+          const videoRegex = /"(?:videoId|contentId)"\s*:\s*"([a-zA-Z0-9_-]{11})"/g;
+          let match;
+          while ((match = videoRegex.exec(html)) !== null) {
+            const vId = match[1];
+            if (!seenIds.has(vId)) {
+              const searchWindow = html.slice(Math.max(0, match.index - 500), Math.min(html.length, match.index + 500));
+              const title = cleanTitle(extractFieldFromBlock(searchWindow, "title")) || `YouTube Video [${vId}]`;
+              const artist = cleanTitle(
+                extractFieldFromBlock(searchWindow, "shortBylineText") ||
+                extractFieldFromBlock(searchWindow, "ownerText") ||
+                extractFieldFromBlock(searchWindow, "longBylineText") ||
+                extractFieldFromBlock(searchWindow, "metadata")
+              ) || "YouTube";
+              
+              if (isPlaceHolder(title)) continue;
+              
+              seenIds.add(vId);
+              tracks.push({
+                title,
+                artist,
+                thumbnail: `https://img.youtube.com/vi/${vId}/mqdefault.jpg`,
+                duration: 0,
+                youtubeId: vId,
+                streamUrl: `/api/stream?url=${encodeURIComponent(`https://www.youtube.com/watch?v=${vId}`)}`
+              });
+            }
+          }
+        }
+
+        return { name: playlistName, tracks };
+      };
+
+      let playlistName = "YouTube Playlist";
+      let tracks: TrackInfo[] = [];
+      let playlistThumbnail = "";
+      let playlistVideoCount = 0;
+
+      // Try HTML scraping first because it's significantly faster than play-dl API/scrapes
+      try {
+        const scraped = await scrapePlaylistHtml(listId);
+        if (scraped.tracks.length === 0) {
+          throw new Error("No tracks extracted by HTML scraper");
+        }
+        playlistName = scraped.name;
+        tracks = scraped.tracks;
+      } catch (scrapeErr) {
+        console.warn("Fast HTML parser failed, falling back to play-dl...", scrapeErr);
+        try {
+          const playlist = await Promise.race([
+            playdl.playlist_info(targetUrl, { incomplete: true }),
+            new Promise<any>((_, reject) => setTimeout(() => reject(new Error("Timeout")), 3000))
+          ]);
+          playlistName = playlist.title || "YouTube Playlist";
+          playlistThumbnail = playlist.thumbnail?.url || "";
+          playlistVideoCount = playlist.videoCount || 0;
+          
+          const videos = await Promise.race([
+            playlist.all_videos(),
+            new Promise<any>((_, reject) => setTimeout(() => reject(new Error("Timeout")), 4000))
+          ]);
+          tracks = videos.map((v: any) => {
+            const vId = v.id || "";
+            return {
+              title: cleanTitle(v.title || "") || `YouTube Video [${vId}]`,
+              artist: v.channel?.name || "YouTube",
+              thumbnail: v.thumbnails?.at(-1)?.url || `https://img.youtube.com/vi/${vId}/mqdefault.jpg`,
+              duration: v.durationInSec || 0,
+              youtubeId: vId,
+              streamUrl: `/api/stream?url=${encodeURIComponent(`https://www.youtube.com/watch?v=${vId}`)}`
+            };
+          }).filter((t: any) => !isPlaceHolder(t.title));
+        } catch (err) {
+          console.error("Backend play-dl playlist fetching also failed:", err);
+        }
+      }
+
+      if (tracks.length === 0) {
+        res.status(404).json({ error: "No tracks found in playlist or playlist is private" });
+        return;
+      }
+
       res.json({
         type: "playlist",
-        name: playlist.title ?? "YouTube Playlist",
-        thumbnail: playlist.thumbnail?.url ?? tracks[0]?.thumbnail,
-        trackCount: playlist.total_videos ?? tracks.length,
+        name: playlistName,
+        thumbnail: tracks[0]?.thumbnail || playlistThumbnail || "",
+        trackCount: playlistVideoCount || tracks.length,
         tracks,
       });
       return;

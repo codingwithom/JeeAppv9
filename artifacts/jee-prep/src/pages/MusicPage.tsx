@@ -4,6 +4,7 @@ import { useMusicContext, Song } from "@/context/MusicContext";
 import { useAppContext } from "@/context/AppContext";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
   Music, Plus, Play, Pause, Trash2, Upload, Link2, X,
   Library, ChevronRight, Pencil, Check, Clock, Youtube, Loader2, Radio, Search, MoreVertical,
@@ -246,129 +247,79 @@ function YouTubeSearchModal({
 
     try {
       const q = encodeURIComponent(searchQuery);
-
-      const fetchWithTimeout = async (url: string, timeoutMs: number) => {
-        const controller = new AbortController();
-        const id = setTimeout(() => controller.abort(), timeoutMs);
-        const response = await fetch(url, { signal: controller.signal });
-        clearTimeout(id);
-        if (!response.ok) throw new Error("HTTP error");
-        return response;
-      };
-
-      const fetchPiped = async (instance: string) => {
-        const res = await fetchWithTimeout(`${instance}/search?q=${q}&filter=all`, 5000);
-        const data = await res.json();
-        if (!data?.items?.length) throw new Error("No data");
-        const videos = data.items.filter((item: any) => item.type === "stream");
-        if (!videos.length) throw new Error("No videos");
-        return videos.slice(0, 50).map((v: any) => {
-          const vId = v.url.includes("?v=") ? v.url.split("?v=")[1].split("&")[0] : v.url.split("/").pop();
-          return {
-            videoId: vId,
-            title: v.title || "Unknown",
-            author: v.uploaderName || "Unknown",
-            length_seconds: v.duration || 0,
-            thumbnail: `https://i.ytimg.com/vi/${vId}/mqdefault.jpg`,
-          };
-        });
-      };
-
-      const fetchInvidious = async (instance: string) => {
-        const res = await fetchWithTimeout(`${instance}/api/v1/search?q=${q}&type=video`, 4000);
-        const data = await res.json();
-        if (!Array.isArray(data) || !data.length) throw new Error("No data");
-        return data.slice(0, 50).map((v: any) => ({
-          videoId: v.videoId,
-          title: v.title || "Unknown",
-          author: v.author || "Unknown",
-          length_seconds: v.lengthSeconds || v.length_seconds || 0,
-          thumbnail: `https://i.ytimg.com/vi/${v.videoId}/mqdefault.jpg`,
-        }));
-      };
-
-      const fetchProxy = async (proxyUrl: string) => {
-        const res = await fetchWithTimeout(proxyUrl, 5000);
-        const contentType = res.headers.get("content-type") || "";
-        let html = "";
-        if (contentType.includes("application/json")) {
-          const data = await res.json();
-          html = data.contents || "";
-        } else {
-          html = await res.text();
-        }
-
-        const match =
-          html.match(/var\s+ytInitialData\s*=\s*(\{[\s\S]+?\});/s) ||
-          html.match(/ytInitialData\s*=\s*(\{[\s\S]+?\});/s) ||
-          html.match(/window\["ytInitialData"\]\s*=\s*(\{[\s\S]+?\});/s);
-        if (!match) throw new Error("No ytInitialData");
-        const ytData = JSON.parse(match[1]);
-        const videos: any[] = [];
-        const findVideos = (obj: any) => {
-          if (videos.length >= 50) return;
-          if (Array.isArray(obj)) {
-            for (const item of obj) findVideos(item);
-          } else if (obj !== null && typeof obj === "object") {
-            if (obj.videoRenderer && obj.videoRenderer.videoId) {
-              videos.push(obj.videoRenderer);
-            } else {
-              for (const key of Object.keys(obj)) findVideos(obj[key]);
-            }
-          }
-        };
-        findVideos(ytData);
-
-        if (videos.length === 0) throw new Error("No videos found in proxy");
-
-        return videos.map((v) => {
-          const timeStr = v.lengthText?.simpleText || "0:00";
-          const parts = timeStr.split(":").map(Number);
-          const length_seconds =
-            parts.length === 3
-              ? parts[0] * 3600 + parts[1] * 60 + parts[2]
-              : parts.length === 2
-                ? parts[0] * 60 + parts[1]
-                : parts[0] || 0;
-
-          return {
-            videoId: v.videoId,
-            title: v.title?.runs?.[0]?.text || "Unknown",
-            author: v.ownerText?.runs?.[0]?.text || "Unknown",
-            length_seconds,
-            thumbnail: `https://i.ytimg.com/vi/${v.videoId}/mqdefault.jpg`,
-          };
-        });
-      };
-
-      const allTasks = [
-        fetchPiped("https://pipedapi.kavin.rocks"),
-        fetchPiped("https://pipedapi.smnz.de"),
-        fetchPiped("https://piped-api.lunar.icu"),
-        fetchPiped("https://pipedapi.adminforge.de"),
-        fetchPiped("https://pipedapi.tokhmi.xyz"),
-        fetchInvidious("https://invidious.jing.rocks"),
-        fetchInvidious("https://vid.puffyan.us"),
-        fetchInvidious("https://invidious.nerdvpn.de"),
-        fetchInvidious("https://invidious.privacydev.net"),
-        fetchInvidious("https://inv.tux.pizza"),
-        fetchInvidious("https://invidious.lunar.icu"),
-        fetchInvidious("https://invidious.flokinet.to"),
-        fetchProxy(`https://api.allorigins.win/get?url=${encodeURIComponent(`https://www.youtube.com/results?search_query=${q}&gl=US&hl=en`)}`),
-        fetchProxy(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(`https://www.youtube.com/results?search_query=${q}&gl=US&hl=en`)}`),
-        fetchProxy(`https://corsproxy.io/?${encodeURIComponent(`https://www.youtube.com/results?search_query=${q}&gl=US&hl=en`)}`)
-      ];
-
-      const fastestResults = await Promise.any(allTasks);
-
-      if (fastestResults && fastestResults.length > 0) {
-        setResults(fastestResults.slice(0, 50));
+      const res = await fetch(`/api/yt-search?q=${q}`);
+      if (!res.ok) throw new Error("Search failed on backend");
+      const data = await res.json();
+      if (data.results && data.results.length > 0) {
+        setResults(data.results);
       } else {
         setError("No results found. Try a different search term.");
       }
     } catch (err: any) {
-      setError("Search failed. Please try again.");
-      console.error(err);
+      console.warn("Backend search failed, trying direct client-side fallback...", err);
+      try {
+        const q = encodeURIComponent(searchQuery);
+
+        const fetchWithTimeout = async (url: string, timeoutMs: number) => {
+          const controller = new AbortController();
+          const id = setTimeout(() => controller.abort(), timeoutMs);
+          const response = await fetch(url, { signal: controller.signal });
+          clearTimeout(id);
+          if (!response.ok) throw new Error("HTTP error");
+          return response;
+        };
+
+        const fetchPiped = async (instance: string) => {
+          const res = await fetchWithTimeout(`${instance}/search?q=${q}&filter=all`, 4000);
+          const data = await res.json();
+          if (!data?.items?.length) throw new Error("No data");
+          const videos = data.items.filter((item: any) => item.type === "stream");
+          if (!videos.length) throw new Error("No videos");
+          return videos.slice(0, 50).map((v: any) => {
+            const vId = v.url.includes("?v=") ? v.url.split("?v=")[1].split("&")[0] : v.url.split("/").pop();
+            return {
+              videoId: vId,
+              title: v.title || "Unknown",
+              author: v.uploaderName || "Unknown",
+              length_seconds: v.duration || 0,
+              thumbnail: `https://i.ytimg.com/vi/${vId}/mqdefault.jpg`,
+            };
+          });
+        };
+
+        const fetchInvidious = async (instance: string) => {
+          const res = await fetchWithTimeout(`${instance}/api/v1/search?q=${q}&type=video`, 4000);
+          const data = await res.json();
+          if (!Array.isArray(data) || !data.length) throw new Error("No data");
+          return data.slice(0, 50).map((v: any) => ({
+            videoId: v.videoId,
+            title: v.title || "Unknown",
+            author: v.author || "Unknown",
+            length_seconds: v.lengthSeconds || v.length_seconds || 0,
+            thumbnail: `https://i.ytimg.com/vi/${v.videoId}/mqdefault.jpg`,
+          }));
+        };
+
+        const tasks = [
+          fetchPiped("https://pipedapi.kavin.rocks"),
+          fetchPiped("https://pipedapi.smnz.de"),
+          fetchPiped("https://piped-api.lunar.icu"),
+          fetchInvidious("https://invidious.jing.rocks"),
+          fetchInvidious("https://vid.puffyan.us"),
+          fetchInvidious("https://invidious.nerdvpn.de"),
+          fetchInvidious("https://invidious.privacydev.net")
+        ];
+
+        const fastestResults = await Promise.any(tasks);
+        if (fastestResults && fastestResults.length > 0) {
+          setResults(fastestResults.slice(0, 50));
+        } else {
+          setError("No results found. Try a different search term.");
+        }
+      } catch (fallbackErr) {
+        setError("Search failed. Please try again.");
+        console.error(fallbackErr);
+      }
     } finally {
       setLoading(false);
     }
@@ -385,7 +336,8 @@ function YouTubeSearchModal({
       duration: result.length_seconds,
     };
     addSongToPlaylist(playlistId, song);
-    onSongAdded?.(song);
+    playSong(song, playlistId);
+    onClose();
   };
 
   return (
@@ -614,7 +566,37 @@ function AddSongModal({
   const [mediaResult, setMediaResult] = useState<MediaResult | null>(null);
   const [importing, setImporting] = useState(false);
 
-  const currentPlaylistName = playlists.find(p => p.id === playlistId)?.name ?? "playlist";
+  const [selectedTracks, setSelectedTracks] = useState<Record<number, boolean>>({});
+  const [playlistNameInput, setPlaylistNameInput] = useState("");
+  const [playlistNoteInput, setPlaylistNoteInput] = useState("");
+
+  useEffect(() => {
+    if (mediaResult?.type === "playlist") {
+      const initial: Record<number, boolean> = {};
+      mediaResult.tracks.forEach((_, idx) => {
+        initial[idx] = true;
+      });
+      setSelectedTracks(initial);
+      setPlaylistNameInput(mediaResult.name || "");
+      setPlaylistNoteInput("");
+    }
+  }, [mediaResult]);
+
+  const handleToggleTrack = (idx: number) => {
+    setSelectedTracks(prev => ({ ...prev, [idx]: !prev[idx] }));
+  };
+
+  const handleToggleAll = () => {
+    if (!mediaResult || mediaResult.type !== "playlist") return;
+    const allSelected = mediaResult.tracks.every((_, idx) => selectedTracks[idx]);
+    const nextState: Record<number, boolean> = {};
+    mediaResult.tracks.forEach((_, idx) => {
+      nextState[idx] = !allSelected;
+    });
+    setSelectedTracks(nextState);
+  };
+
+  const currentPlaylistName = playlists.find((p: any) => p.id === playlistId)?.name ?? "playlist";
 
   const handleFile = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(e.target.files || []);
@@ -661,95 +643,178 @@ function AddSongModal({
     setMediaResult(null);
     try {
       const res = await fetch(`/api/media-info?url=${encodeURIComponent(raw)}`);
-      const json = await res.json();
-      if (!res.ok) throw new Error(json.error || "Failed to fetch media info");
-      setMediaResult(json as MediaResult);
-      setFetchState("done");
-      return;
-    } catch { /* backend unavailable or error — try client-side fallback */ }
+      if (res.ok) {
+        const json = await res.json();
+        setMediaResult(json as MediaResult);
+        setFetchState("done");
+        return;
+      }
+      throw new Error("Backend failed to resolve media info");
+    } catch (err: any) {
+      // Backend is unavailable or failed — try client-side fallback
+      console.warn("Backend unavailable or failed, trying client-side fallback...", err);
+    }
 
     try {
-        const fetchHtml = async (targetUrl: string) => {
-          try {
+        const fetchHtml = async (targetUrl: string): Promise<string> => {
+          const fetchWithTimeout = async (url: string, timeoutMs: number) => {
             const controller = new AbortController();
-            const timeout = setTimeout(() => controller.abort(), 8000);
-            const res = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(targetUrl)}`, { signal: controller.signal });
-            clearTimeout(timeout);
-            if (res.ok) {
+            const id = setTimeout(() => controller.abort(), timeoutMs);
+            const response = await fetch(url, { signal: controller.signal });
+            clearTimeout(id);
+            if (!response.ok) throw new Error("Proxy error");
+            return response;
+          };
+
+          const tasks = [
+            (async () => {
+              const res = await fetchWithTimeout(`https://api.allorigins.win/get?url=${encodeURIComponent(targetUrl)}`, 4000);
               const data = await res.json();
               if (data.contents) return data.contents;
-            }
-          } catch (e) {}
-          try {
-            const controller = new AbortController();
-            const timeout = setTimeout(() => controller.abort(), 8000);
-            const res = await fetch(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(targetUrl)}`, { signal: controller.signal });
-            clearTimeout(timeout);
-            if (res.ok) return await res.text();
-          } catch (e) {}
-          const controller = new AbortController();
-          const timeout = setTimeout(() => controller.abort(), 8000);
-          const res2 = await fetch(`https://corsproxy.io/?${encodeURIComponent(targetUrl)}`, { signal: controller.signal });
-          clearTimeout(timeout);
-          if (!res2.ok) throw new Error("Failed to fetch proxy");
-          return await res2.text();
+              throw new Error("No contents in allorigins");
+            })(),
+            (async () => {
+              const res = await fetchWithTimeout(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(targetUrl)}`, 4000);
+              return await res.text();
+            })(),
+            (async () => {
+              const res = await fetchWithTimeout(`https://corsproxy.io/?${encodeURIComponent(targetUrl)}`, 4000);
+              return await res.text();
+            })()
+          ];
+
+          return await Promise.any(tasks);
         };
 
         const ytId = extractYouTubeId(raw);
         const ytPlaylistId = extractYouTubePlaylistId(raw);
+        const isWatchUrl = raw.includes("watch?v=") || raw.includes("youtu.be/") || raw.includes("youtube.com/shorts/");
+        const spotifyInfo = (() => {
+          const m = raw.match(/open\.spotify\.com\/(playlist|album|track)\/([a-zA-Z0-9]+)/);
+          return m ? { type: m[1], id: m[2] } : null;
+        })();
 
-        if (ytPlaylistId) {
+        if (ytPlaylistId && !isWatchUrl) {
           try {
             const tracks: TrackResult[] = [];
             let playlistName = "YouTube Playlist";
 
-            const invidious_instances = [
-              "https://invidious.jing.rocks",
-              "https://vid.puffyan.us",
-              "https://invidious.privacydev.net",
-              "https://inv.tux.pizza",
-              "https://invidious.lunar.icu",
-              "https://invidious.flokinet.to",
-              "https://invidious.nerdvpn.de"
+            const piped_instances = [
+              "https://pipedapi.lunar.icu",
+              "https://pipedapi.adminforge.de",
+              "https://pipedapi.privacydev.net",
+              "https://pipedapi.reallyaweso.me",
+              "https://pipedapi.colt.top",
+              "https://pipedapi.swish.tv",
             ];
 
-            let playlistData: any = null;
-            for (const instance of invidious_instances) {
-              try {
-                const res = await fetch(`${instance}/api/v1/playlists/${ytPlaylistId}?fields=title,videos`);
-                if (res.ok) {
-                  playlistData = await res.json();
-                  playlistName = playlistData.title || "YouTube Playlist";
-                  if (playlistData.videos && Array.isArray(playlistData.videos)) {
-                    for (const video of playlistData.videos.slice(0, 100)) {
-                      if (video.videoId) {
-                        tracks.push({
-                          type: "track",
-                          title: video.title || "Unknown Video",
-                          artist: video.author || "YouTube",
-                          thumbnail: `https://img.youtube.com/vi/${video.videoId}/mqdefault.jpg`,
-                          duration: video.length_seconds || 0,
-                          streamUrl: `https://www.youtube.com/watch?v=${video.videoId}`,
-                          youtubeId: video.videoId
-                        });
-                      }
-                    }
-                    if (tracks.length > 0) {
-                      setMediaResult({
-                        type: "playlist",
-                        name: playlistName,
-                        thumbnail: tracks[0]?.thumbnail,
-                        trackCount: tracks.length,
-                        tracks
-                      });
-                      setFetchState("done");
-                      return;
-                    }
+            const invidious_instances = [
+              "https://invidious.jing.rocks",
+              "https://invidious.privacydev.net",
+              "https://inv.tux.pizza",
+              "https://invidious.nerdvpn.de",
+              "https://invidious.lunar.icu",
+              "https://invidious.flokinet.to"
+            ];
+
+            const seenIds = new Set<string>();
+
+            const fetchWithTimeout = async (url: string, timeoutMs: number) => {
+              const controller = new AbortController();
+              const id = setTimeout(() => controller.abort(), timeoutMs);
+              const response = await fetch(url, { signal: controller.signal });
+              clearTimeout(id);
+              if (!response.ok) throw new Error("Fetch error");
+              return response;
+            };
+
+            const fetchPipedPlaylist = async (instance: string) => {
+              const res = await fetchWithTimeout(`${instance}/playlists/${ytPlaylistId}`, 2500);
+              const data = await res.json();
+              if (data.relatedStreams && Array.isArray(data.relatedStreams)) {
+                const subTracks: TrackResult[] = [];
+                for (const video of data.relatedStreams) {
+                  const vId = video.url ? (video.url.includes("?v=") ? video.url.split("?v=")[1].split("&")[0] : video.url.split("/").pop()) : null;
+                  if (vId && vId.length === 11) {
+                    subTracks.push({
+                      type: "track",
+                      title: video.title || "Unknown Video",
+                      artist: video.uploaderName || "YouTube",
+                      thumbnail: video.thumbnail || `https://img.youtube.com/vi/${vId}/mqdefault.jpg`,
+                      duration: video.duration || 0,
+                      streamUrl: `https://www.youtube.com/watch?v=${vId}`,
+                      youtubeId: vId
+                    });
                   }
                 }
-              } catch (e) {
-                // Try next instance
+                if (subTracks.length > 0) {
+                  return {
+                    name: data.name || "YouTube Playlist",
+                    thumbnail: data.thumbnailUrl || subTracks[0]?.thumbnail,
+                    tracks: subTracks
+                  };
+                }
               }
+              throw new Error("No tracks found");
+            };
+
+            const fetchInvidiousPlaylist = async (instance: string) => {
+              const res = await fetchWithTimeout(`${instance}/api/v1/playlists/${ytPlaylistId}?fields=title,videos`, 2500);
+              const playlistData = await res.json();
+              if (playlistData.videos && Array.isArray(playlistData.videos)) {
+                const subTracks: TrackResult[] = [];
+                for (const video of playlistData.videos) {
+                  if (video.videoId) {
+                    subTracks.push({
+                      type: "track",
+                      title: video.title || "Unknown Video",
+                      artist: video.author || "YouTube",
+                      thumbnail: `https://img.youtube.com/vi/${video.videoId}/mqdefault.jpg`,
+                      duration: video.length_seconds || 0,
+                      streamUrl: `https://www.youtube.com/watch?v=${video.videoId}`,
+                      youtubeId: video.videoId
+                    });
+                  }
+                }
+                if (subTracks.length > 0) {
+                  return {
+                    name: playlistData.title || "YouTube Playlist",
+                    thumbnail: subTracks[0]?.thumbnail,
+                    tracks: subTracks
+                  };
+                }
+              }
+              throw new Error("No tracks found");
+            };
+
+            // Run Piped and Invidious queries in parallel
+            const apiTasks = [
+              ...piped_instances.map(inst => fetchPipedPlaylist(inst)),
+              ...invidious_instances.map(inst => fetchInvidiousPlaylist(inst))
+            ];
+
+            try {
+              const fastestResult = await Promise.any(apiTasks);
+              if (fastestResult && fastestResult.tracks.length > 0) {
+                playlistName = fastestResult.name;
+                fastestResult.tracks.forEach(t => {
+                  if (t.youtubeId && !seenIds.has(t.youtubeId)) {
+                    seenIds.add(t.youtubeId);
+                    tracks.push(t);
+                  }
+                });
+                setMediaResult({
+                  type: "playlist",
+                  name: playlistName,
+                  thumbnail: fastestResult.thumbnail,
+                  trackCount: tracks.length,
+                  tracks
+                });
+                setFetchState("done");
+                return;
+              }
+            } catch (err) {
+              console.warn("Parallel playlist API fetching failed. Trying scraping fallbacks...", err);
             }
 
             // Strategy 2: Try fetching YouTube playlist page and extract from multiple sources
@@ -761,69 +826,325 @@ function AddSongModal({
                 || html.match(/<meta\s+name="title"\s+content="([^"]+)"/);
               if (titleMatch) playlistName = titleMatch[1];
 
-              // Try multiple regex patterns for ytInitialData
-              const patterns = [
-                /window\["ytInitialData"\]\s*=\s*(\{[\s\S]*?\});/,
-                /ytInitialData\s*=\s*(\{[\s\S]*?\});/,
-                /var\s+ytInitialData\s*=\s*(\{[\s\S]*?\});/
-              ];
+              // Decode HTML entities helper
+              const decodeHtmlEntities = (str: string): string => {
+                return str
+                  .replace(/&amp;/g, "&")
+                  .replace(/&quot;/g, '"')
+                  .replace(/&#39;/g, "'")
+                  .replace(/&apos;/g, "'")
+                  .replace(/&lt;/g, "<")
+                  .replace(/&gt;/g, ">")
+                  .trim();
+              };
 
-              for (const pattern of patterns) {
-                const match = html.match(pattern);
-                if (match) {
-                  try {
-                    const ytData = JSON.parse(match[1]);
-                    const findVideos = (obj: any) => {
-                      if (tracks.length >= 100) return; // Found enough videos, stop searching
-                      if (Array.isArray(obj)) {
-                        for (const item of obj) findVideos(item);
-                      } else if (obj !== null && typeof obj === 'object') {
-                        if (obj.playlistVideoRenderer?.videoId) {
-                          const r = obj.playlistVideoRenderer;
-                          tracks.push({
-                            type: "track",
-                            title: r.title?.runs?.[0]?.text || "Unknown Video",
-                            artist: r.shortBylineText?.runs?.[0]?.text || "YouTube",
-                            thumbnail: `https://img.youtube.com/vi/${r.videoId}/mqdefault.jpg`,
-                            duration: parseInt(r.lengthSeconds || "0", 10),
-                            streamUrl: `https://www.youtube.com/watch?v=${r.videoId}`,
-                            youtubeId: r.videoId
-                          });
-                        }
-                        for (const key of Object.keys(obj)) {
-                          if (tracks.length >= 100) break;
-                          findVideos(obj[key]);
+              const cleanTitle = (t: string): string => {
+                if (!t) return "";
+                return decodeHtmlEntities(t)
+                  .replace(/\[\s*\d+\s*\]/g, "")
+                  .replace(/\(\s*\d+\s*\)/g, "")
+                  .trim();
+              };
+
+              const isPlaceHolder = (t: string): boolean => {
+                const lower = t.toLowerCase();
+                return lower.includes("deleted video") || lower.includes("private video") || lower.includes("hidden video");
+              };
+
+              const extractFieldFromBlock = (block: string, keyName: string): string => {
+                const keyIdx = block.indexOf(`"${keyName}"`);
+                if (keyIdx === -1) return "";
+                
+                const textIdx = block.indexOf('"text"', keyIdx);
+                const simpleTextIdx = block.indexOf('"simpleText"', keyIdx);
+                
+                let valIdx = -1;
+                let searchWord = "";
+                if (textIdx !== -1 && (simpleTextIdx === -1 || textIdx < simpleTextIdx)) {
+                  valIdx = textIdx;
+                  searchWord = '"text"';
+                } else if (simpleTextIdx !== -1) {
+                  valIdx = simpleTextIdx;
+                  searchWord = '"simpleText"';
+                }
+                
+                if (valIdx === -1) return "";
+                
+                const quoteStart = block.indexOf('"', valIdx + searchWord.length + 1);
+                if (quoteStart === -1) return "";
+                
+                let escape = false;
+                let quoteEnd = -1;
+                for (let i = quoteStart + 1; i < block.length; i++) {
+                  const char = block[i];
+                  if (escape) {
+                    escape = false;
+                    continue;
+                  }
+                  if (char === '\\') {
+                    escape = true;
+                    continue;
+                  }
+                  if (char === '"') {
+                    quoteEnd = i;
+                    break;
+                  }
+                }
+                if (quoteEnd === -1) return "";
+                
+                const rawStringLiteral = block.slice(quoteStart, quoteEnd + 1);
+                try {
+                  return JSON.parse(rawStringLiteral);
+                } catch (e) {
+                  return rawStringLiteral.slice(1, -1);
+                }
+              };
+
+              // Extract video information directly from individual renderer blocks (playlistVideoRenderer, gridVideoRenderer, videoRenderer, compactVideoRenderer, childVideoRenderer, watchCardRichVideoRenderer)
+              const rendererKeys = ["playlistVideoRenderer", "playlistVideoListRenderer", "gridVideoRenderer", "videoRenderer", "compactVideoRenderer", "childVideoRenderer", "watchCardRichVideoRenderer"];
+              for (const key of rendererKeys) {
+                let pos = 0;
+                while (true) {
+                  pos = html.indexOf(`"${key}"`, pos);
+                  if (pos === -1) break;
+                  
+                  // Find the start of the object value (the first '{' after the key)
+                  const startIdx = html.indexOf("{", pos + key.length + 2);
+                  if (startIdx !== -1 && startIdx - pos < 50) { // must be close to the key
+                    let braceCount = 0;
+                    let inStringDouble = false;
+                    let inStringSingle = false;
+                    let escape = false;
+                    let rendererStr = "";
+                    
+                    for (let i = startIdx; i < html.length; i++) {
+                      const char = html[i];
+                      if (escape) {
+                        escape = false;
+                        continue;
+                      }
+                      if (char === "\\") {
+                        escape = true;
+                        continue;
+                      }
+                      if (char === '"' && !inStringSingle) {
+                        inStringDouble = !inStringDouble;
+                        continue;
+                      }
+                      if (char === "'" && !inStringDouble) {
+                        inStringSingle = !inStringSingle;
+                        continue;
+                      }
+                      if (!inStringDouble && !inStringSingle) {
+                        if (char === "{") {
+                          braceCount++;
+                        } else if (char === "}") {
+                          braceCount--;
+                          if (braceCount === 0) {
+                            rendererStr = html.slice(startIdx, i + 1);
+                            break;
+                          }
                         }
                       }
-                    };
-                    findVideos(ytData);
-                    if (tracks.length > 0) break;
-                  } catch (e) {
-                    // Continue to next pattern
+                    }
+                    
+                    if (rendererStr) {
+                      try {
+                        const r = JSON.parse(rendererStr);
+                        const videoObj = r.videoRenderer || r;
+                        if (videoObj && videoObj.videoId) {
+                          const vId = videoObj.videoId;
+                          if (!seenIds.has(vId)) {
+                            const rawTitle = videoObj.title?.runs?.[0]?.text || videoObj.title?.simpleText || videoObj.title || "";
+                            const rawArtist = videoObj.shortBylineText?.runs?.[0]?.text || videoObj.ownerText?.runs?.[0]?.text || videoObj.longBylineText?.runs?.[0]?.text || "YouTube";
+                            
+                            const cleanedT = cleanTitle(rawTitle);
+                            if (isPlaceHolder(cleanedT)) {
+                              pos += key.length + 2;
+                              continue;
+                            }
+                            
+                            const title = cleanedT || `YouTube Video [${vId}]`;
+                            const artist = rawArtist ? cleanTitle(rawArtist) : "YouTube";
+                            seenIds.add(vId);
+                            
+                            let duration = 0;
+                            if (videoObj.lengthSeconds) {
+                              duration = parseInt(videoObj.lengthSeconds, 10);
+                            } else if (videoObj.lengthText?.simpleText) {
+                              const parts = videoObj.lengthText.simpleText.split(":").map(Number);
+                              if (parts.every((p: number) => !isNaN(p))) {
+                                if (parts.length === 2) duration = parts[0] * 60 + parts[1];
+                                if (parts.length === 3) duration = parts[0] * 3600 + parts[1] * 60 + parts[2];
+                              }
+                            }
+                            
+                            tracks.push({
+                              type: "track",
+                              title,
+                              artist,
+                              thumbnail: `https://img.youtube.com/vi/${vId}/mqdefault.jpg`,
+                              duration: isNaN(duration) ? 0 : duration,
+                              streamUrl: `https://www.youtube.com/watch?v=${vId}`,
+                              youtubeId: vId
+                            });
+                          }
+                        }
+                      } catch (e) {
+                        // Fallback: extract videoId and title/artist directly using robust substring search if JSON.parse fails on the small block (e.g. due to unescaped control chars)
+                        const idMatch = rendererStr.match(/"videoId"\s*:\s*"([a-zA-Z0-9_-]{11})"/);
+                        if (idMatch) {
+                          const vId = idMatch[1];
+                          if (!seenIds.has(vId)) {
+                            const title = cleanTitle(extractFieldFromBlock(rendererStr, "title")) || `YouTube Video [${vId}]`;
+                            const artist = cleanTitle(
+                              extractFieldFromBlock(rendererStr, "shortBylineText") ||
+                              extractFieldFromBlock(rendererStr, "ownerText") ||
+                              extractFieldFromBlock(rendererStr, "longBylineText")
+                            ) || "YouTube";
+                            
+                            if (isPlaceHolder(title)) {
+                              pos += key.length + 2;
+                              continue;
+                            }
+                            seenIds.add(vId);
+                            tracks.push({
+                              type: "track",
+                              title,
+                              artist,
+                              thumbnail: `https://img.youtube.com/vi/${vId}/mqdefault.jpg`,
+                              duration: 0,
+                              streamUrl: `https://www.youtube.com/watch?v=${vId}`,
+                              youtubeId: vId
+                            });
+                          }
+                        }
+                      }
+                    }
                   }
+                  pos += key.length + 2;
                 }
               }
 
-              // Strategy 3: Extract video IDs from page links if ytInitialData didn't work
+              // Strategy 3: Extract video IDs and titles from page HTML if ytInitialData/block parsing yielded nothing
               if (tracks.length === 0) {
-                // Look for watch?v= patterns and list= patterns to ensure they're from this playlist
-                const videoPatterns = [
-                  /\/watch\?v=([a-zA-Z0-9_-]{11})[^"&]*list=[^"&]*/g,
-                  /data-video-id="([a-zA-Z0-9_-]{11})"/g,
-                  /\/watch\?v=([a-zA-Z0-9_-]{11})/g
-                ];
+                // Attempt 3A: Search for playlistVideoRenderer and other renderer blocks in raw HTML
+                const rendererRegex = /"(?:playlistVideo|gridVideo|video)Renderer"\s*:\s*\{[\s\S]*?"videoId"\s*:\s*"([a-zA-Z0-9_-]{11})"/g;
+                let rendererMatch;
+                while ((rendererMatch = rendererRegex.exec(html)) !== null) {
+                  const vId = rendererMatch[1];
+                  if (vId && !seenIds.has(vId)) {
+                    // Extract search window around the match
+                    const searchWindow = html.slice(Math.max(0, rendererMatch.index - 500), Math.min(html.length, rendererMatch.index + 2000));
+                    const title = cleanTitle(extractFieldFromBlock(searchWindow, "title")) || `YouTube Video [${vId}]`;
+                    const artist = cleanTitle(
+                      extractFieldFromBlock(searchWindow, "shortBylineText") ||
+                      extractFieldFromBlock(searchWindow, "ownerText") ||
+                      extractFieldFromBlock(searchWindow, "longBylineText")
+                    ) || "YouTube";
+                    
+                    if (isPlaceHolder(title)) continue;
+                    seenIds.add(vId);
+                    tracks.push({
+                      type: "track",
+                      title,
+                      artist,
+                      thumbnail: `https://img.youtube.com/vi/${vId}/mqdefault.jpg`,
+                      duration: 0,
+                      streamUrl: `https://www.youtube.com/watch?v=${vId}`,
+                      youtubeId: vId
+                    });
+                  }
+                }
 
-                const seenIds = new Set<string>();
-                for (const pattern of videoPatterns) {
+                // Attempt 3B: Search for data-title and data-video-id attributes (legacy crawler list structure)
+                if (tracks.length === 0) {
+                  const trRegexes = [
+                    /data-video-id="([a-zA-Z0-9_-]{11})"[^>]*data-title="([^"]+)"/g,
+                    /data-title="([^"]+)"[^>]*data-video-id="([a-zA-Z0-9_-]{11})"/g
+                  ];
+                  for (const r of trRegexes) {
+                    let match;
+                    while ((match = r.exec(html)) !== null) {
+                      const vId = match[1].length === 11 ? match[1] : match[2];
+                      let title = match[1].length === 11 ? match[2] : match[1];
+                      if (vId && title && vId.length === 11 && !seenIds.has(vId)) {
+                        const cleanedT = cleanTitle(title);
+                        if (isPlaceHolder(cleanedT)) continue;
+                        title = cleanedT || `YouTube Video [${vId}]`;
+                        seenIds.add(vId);
+                        tracks.push({
+                          type: "track",
+                          title,
+                          artist: "YouTube",
+                          thumbnail: `https://img.youtube.com/vi/${vId}/mqdefault.jpg`,
+                          duration: 0,
+                          streamUrl: `https://www.youtube.com/watch?v=${vId}`,
+                          youtubeId: vId
+                        });
+                      }
+                    }
+                  }
+                }
+
+                // Attempt 3C: Extract from standard HTML anchor tags that link videoId and title
+                if (tracks.length === 0) {
+                  const anchorRegex = /<a[^>]*href="[^"]*watch\?v=([a-zA-Z0-9_-]{11})[^"]*"[^>]*>([\s\S]*?)<\/a>/gi;
                   let match;
-                  while ((match = pattern.exec(html)) !== null && seenIds.size < 100) {
+                  while ((match = anchorRegex.exec(html)) !== null) {
+                    const attrs = match[0];
+                    const innerHtml = match[2];
+                    const vId = match[1];
+                    if (vId && !seenIds.has(vId)) {
+                      const titleAttrMatch = attrs.match(/title="([^"]+)"/i) || attrs.match(/aria-label="([^"]+)"/i);
+                      let title = "";
+                      if (titleAttrMatch) {
+                        title = titleAttrMatch[1];
+                      } else {
+                        title = innerHtml.replace(/<[^>]*>/g, "").trim();
+                      }
+                      const cleanedT = cleanTitle(title);
+                      if (isPlaceHolder(cleanedT)) continue;
+                      title = cleanedT || `YouTube Video [${vId}]`;
+                      
+                      const lower = title.toLowerCase();
+                      if (title.length > 2 && !lower.includes("play all") && !lower.includes("subscribe") && lower !== "youtube") {
+                        seenIds.add(vId);
+                        tracks.push({
+                          type: "track",
+                          title,
+                          artist: "YouTube",
+                          thumbnail: `https://img.youtube.com/vi/${vId}/mqdefault.jpg`,
+                          duration: 0,
+                          streamUrl: `https://www.youtube.com/watch?v=${vId}`,
+                          youtubeId: vId
+                        });
+                      }
+                    }
+                  }
+                }
+
+                // Attempt 3D: Instantly deploy a secondary string regex matching loop as a hard fallback
+                if (tracks.length === 0) {
+                  const videoRegex = /"videoId"\s*:\s*"([a-zA-Z0-9_-]{11})"/g;
+                  let match;
+                  while ((match = videoRegex.exec(html)) !== null) {
                     const vId = match[1];
                     if (!seenIds.has(vId)) {
+                      const searchWindow = html.slice(Math.max(0, match.index - 500), Math.min(html.length, match.index + 500));
+                      const title = cleanTitle(extractFieldFromBlock(searchWindow, "title")) || `YouTube Video [${vId}]`;
+                      const artist = cleanTitle(
+                        extractFieldFromBlock(searchWindow, "shortBylineText") ||
+                        extractFieldFromBlock(searchWindow, "ownerText") ||
+                        extractFieldFromBlock(searchWindow, "longBylineText")
+                      ) || "YouTube";
+                      
+                      if (isPlaceHolder(title)) continue;
                       seenIds.add(vId);
                       tracks.push({
                         type: "track",
-                        title: `Video ${seenIds.size}`,
-                        artist: "YouTube",
+                        title,
+                        artist,
                         thumbnail: `https://img.youtube.com/vi/${vId}/mqdefault.jpg`,
                         duration: 0,
                         streamUrl: `https://www.youtube.com/watch?v=${vId}`,
@@ -831,7 +1152,6 @@ function AddSongModal({
                       });
                     }
                   }
-                  if (tracks.length > 0) break;
                 }
               }
 
@@ -1050,8 +1370,9 @@ function AddSongModal({
     onSongAdded?.(song, playlistId);
   };
 
-  const buildSongs = (tracks: TrackResult[]): Song[] =>
-    tracks.map((t, i) => ({
+  const buildSongs = (tracks: TrackResult[]): Song[] => {
+    const selected = tracks.filter((_, idx) => selectedTracks[idx]);
+    return selected.map((t, i) => ({
       id: `${Date.now()}_${i}`,
       title: t.title,
       artist: t.artist,
@@ -1060,6 +1381,7 @@ function AddSongModal({
       coverUrl: t.thumbnail,
       duration: t.duration,
     }));
+  };
 
   const handleAddAllToCurrent = () => {
     if (!mediaResult || mediaResult.type !== "playlist") return;
@@ -1073,7 +1395,11 @@ function AddSongModal({
     if (!mediaResult || mediaResult.type !== "playlist") return;
     setImporting(true);
     const songs = buildSongs(mediaResult.tracks);
-    const newId = addPlaylistWithSongs(mediaResult.name, songs);
+    const newId = addPlaylistWithSongs(
+      playlistNameInput.trim() || mediaResult.name || "My YouTube Playlist",
+      songs,
+      playlistNoteInput.trim()
+    );
     setTimeout(() => { setImporting(false); onPlaylistCreated?.(newId); onClose(); }, 400);
   };
 
@@ -1223,67 +1549,105 @@ function AddSongModal({
             {fetchState === "done" && mediaResult?.type === "playlist" && (
               <motion.div
                 initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }}
-                className="bg-muted/60 rounded-xl border border-border overflow-hidden"
+                className="bg-muted/60 rounded-xl border border-border overflow-hidden space-y-4 p-4"
               >
-                {/* Playlist header */}
-                <div className="flex gap-3 p-4 items-center border-b border-border">
-                  {mediaResult.thumbnail ? (
-                    <img src={mediaResult.thumbnail} alt="" className="w-14 h-14 rounded-lg object-cover shrink-0" />
-                  ) : (
-                    <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-purple-700 to-indigo-900 flex items-center justify-center shrink-0">
-                      <Library className="h-6 w-6 text-white/60" />
+                {/* Playlist details inputs */}
+                <div className="space-y-3">
+                  <p className="text-[10px] uppercase tracking-widest text-[#1DB954] font-bold">Playlist Import Settings</p>
+                  <div className="flex gap-3 items-center">
+                    {mediaResult.thumbnail ? (
+                      <img src={mediaResult.thumbnail} alt="" className="w-14 h-14 rounded-lg object-cover shrink-0" />
+                    ) : (
+                      <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-purple-700 to-indigo-900 flex items-center justify-center shrink-0">
+                        <Library className="h-6 w-6 text-white/60" />
+                      </div>
+                    )}
+                    <div className="flex-1 min-w-0 space-y-2">
+                      <Input 
+                        value={playlistNameInput} 
+                        onChange={e => setPlaylistNameInput(e.target.value)} 
+                        placeholder="Playlist Name" 
+                        className="bg-muted/90 border-border text-foreground text-xs h-8 focus-visible:ring-[#1DB954]" 
+                      />
                     </div>
-                  )}
-                  <div className="flex-1 min-w-0">
-                    <p className="text-[10px] uppercase tracking-widest text-[#1DB954] font-bold mb-0.5">Playlist detected</p>
-                    <p className="text-sm font-bold text-foreground truncate">{mediaResult.name}</p>
-                    <p className="text-xs text-muted-foreground">{mediaResult.tracks.length} songs
-                      {mediaResult.trackCount > mediaResult.tracks.length && ` (showing ${mediaResult.tracks.length} of ${mediaResult.trackCount})`}
-                    </p>
+                  </div>
+                  <textarea 
+                    value={playlistNoteInput} 
+                    onChange={e => setPlaylistNoteInput(e.target.value)} 
+                    placeholder="Add a description or note (optional)..." 
+                    className="w-full text-xs p-2 bg-muted/90 text-foreground border border-border rounded-lg outline-none focus:ring-1 focus:ring-[#1DB954] placeholder:text-muted-foreground/60 transition-all resize-none" 
+                    rows={2} 
+                  />
+                </div>
+
+                {/* Track selection controls */}
+                <div className="border border-border rounded-lg overflow-hidden bg-background/30">
+                  <div className="flex items-center justify-between px-3 py-2 border-b border-border bg-muted/40 text-xs text-muted-foreground select-none">
+                    <div className="flex items-center gap-2">
+                      <Checkbox 
+                        id="select-all-tracks"
+                        checked={mediaResult.tracks.length > 0 && mediaResult.tracks.every((_, idx) => selectedTracks[idx])} 
+                        onCheckedChange={handleToggleAll} 
+                        className="border-muted-foreground/50 data-[state=checked]:bg-[#1DB954] data-[state=checked]:text-black"
+                      />
+                      <label htmlFor="select-all-tracks" className="cursor-pointer font-medium text-[11px]">
+                        Select All ({Object.values(selectedTracks).filter(Boolean).length} of {mediaResult.tracks.length})
+                      </label>
+                    </div>
+                  </div>
+
+                  {/* Track list preview */}
+                  <div className="max-h-48 overflow-y-auto divide-y divide-border/40">
+                    {mediaResult.tracks.map((t, i) => (
+                      <div 
+                        key={i} 
+                        onClick={() => handleToggleTrack(i)}
+                        className="flex items-center gap-3 px-3 py-2 hover:bg-accent/45 transition-colors cursor-pointer select-none"
+                      >
+                        <Checkbox 
+                          checked={!!selectedTracks[i]} 
+                          onCheckedChange={() => handleToggleTrack(i)}
+                          onClick={e => e.stopPropagation()}
+                          className="border-muted-foreground/50 data-[state=checked]:bg-[#1DB954] data-[state=checked]:text-black"
+                        />
+                        <span className="text-[10px] text-muted-foreground/50 w-4 text-right shrink-0">{i + 1}</span>
+                        {t.thumbnail ? (
+                          <img src={t.thumbnail} alt="" className="w-8 h-8 rounded object-cover shrink-0" />
+                        ) : (
+                          <div className="w-8 h-8 rounded bg-muted shrink-0" />
+                        )}
+                        <div className="flex-1 min-w-0">
+                          <p className="text-xs text-foreground truncate font-medium">{t.title}</p>
+                          <p className="text-[10px] text-muted-foreground truncate">{t.artist}</p>
+                        </div>
+                        {t.duration > 0 && (
+                          <span className="text-[10px] text-muted-foreground/50 shrink-0">{formatTime(t.duration)}</span>
+                        )}
+                      </div>
+                    ))}
                   </div>
                 </div>
 
-                {/* Track list preview */}
-                <div className="max-h-48 overflow-y-auto">
-                  {mediaResult.tracks.map((t, i) => (
-                    <div key={i} className="flex items-center gap-3 px-4 py-2 hover:bg-accent/30 transition-colors">
-                      <span className="text-[10px] text-muted-foreground/50 w-4 text-right shrink-0">{i + 1}</span>
-                      {t.thumbnail ? (
-                        <img src={t.thumbnail} alt="" className="w-8 h-8 rounded object-cover shrink-0" />
-                      ) : (
-                        <div className="w-8 h-8 rounded bg-muted shrink-0" />
-                      )}
-                      <div className="flex-1 min-w-0">
-                        <p className="text-xs text-foreground truncate">{t.title}</p>
-                        <p className="text-[10px] text-muted-foreground truncate">{t.artist}</p>
-                      </div>
-                      {t.duration > 0 && (
-                        <span className="text-[10px] text-muted-foreground/50 shrink-0">{formatTime(t.duration)}</span>
-                      )}
-                    </div>
-                  ))}
-                </div>
-
                 {/* Import buttons */}
-                <div className="p-3 flex flex-col gap-2 border-t border-border">
+                <div className="flex flex-col gap-2 pt-2">
                   <Button
-                    className="w-full bg-[#1DB954] hover:bg-[#1ed760] text-black font-bold rounded-full text-sm"
+                    className="w-full bg-[#1DB954] hover:bg-[#1ed760] text-black font-bold rounded-full text-xs py-1.5"
                     onClick={handleCreateNewPlaylist}
-                    disabled={importing}
+                    disabled={importing || Object.values(selectedTracks).filter(Boolean).length === 0}
                   >
                     {importing
-                      ? <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                      : <Plus className="h-4 w-4 mr-2" />}
-                    Create new playlist "{mediaResult.name}"
+                      ? <Loader2 className="h-3.5 w-3.5 mr-2 animate-spin" />
+                      : <Plus className="h-3.5 w-3.5 mr-2" />}
+                    Create playlist "{playlistNameInput.trim() || mediaResult.name || "YouTube Playlist"}" ({Object.values(selectedTracks).filter(Boolean).length} songs)
                   </Button>
                   <Button
                     variant="outline"
-                    className="w-full border-border text-foreground hover:bg-muted/60 rounded-full text-sm"
+                    className="w-full border-border text-foreground hover:bg-muted/60 rounded-full text-xs py-1.5"
                     onClick={handleAddAllToCurrent}
-                    disabled={importing}
+                    disabled={importing || Object.values(selectedTracks).filter(Boolean).length === 0}
                   >
-                    <Plus className="h-4 w-4 mr-2" />
-                    Add all {mediaResult.tracks.length} songs to "{currentPlaylistName}"
+                    <Plus className="h-3.5 w-3.5 mr-2" />
+                    Add {Object.values(selectedTracks).filter(Boolean).length} selected songs to "{currentPlaylistName}"
                   </Button>
                 </div>
               </motion.div>
@@ -1483,7 +1847,7 @@ export default function MusicPage() {
       let targetSong: any = null;
 
       if (activeItemId) {
-        targetPlaylist = playlists.find(p => p.id === activeItemId);
+        targetPlaylist = playlists.find((p: any) => p.id === activeItemId);
         if (targetPlaylist) {
           itemType = 'playlist';
         } else {

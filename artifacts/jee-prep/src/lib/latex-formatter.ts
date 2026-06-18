@@ -110,6 +110,66 @@ function replaceOutsideMath(text: string, regex: RegExp, replacement: string | (
   return parts.join("$");
 }
 
+function looksLikeMath(inner: string): boolean {
+  inner = inner.trim();
+  if (!inner) return false;
+  
+  // If it already contains math delimiters, don't wrap the whole thing
+  if (inner.includes('$')) return false;
+  
+  // If it has multiple English words and no backslash, it's likely text
+  const cleanForWordCheck = inner.replace(/\\[a-zA-Z]+/g, "").replace(/\\text\{[^{}]*\}/g, "");
+  const words = cleanForWordCheck.match(/[a-zA-Z]{3,}/g) || [];
+  if (words.length >= 3 && !inner.includes('\\')) return false;
+  
+  // Math criteria:
+  if (inner.includes('\\')) return true;
+  if (inner.includes('_') || inner.includes('^')) return true;
+  if (/[\=\+\-\*\/\<\>\~]/.test(inner)) return true;
+  if (/^[a-zA-Z]$/.test(inner)) return true; // e.g. (m), (x), (a), (R), (Q)
+  if (/^\d+[a-zA-Z]$/.test(inner)) return true; // e.g. (3R), (2d)
+  if (/^[a-zA-Z]\([^)]+\)$/.test(inner)) return true; // e.g. V(x)
+  
+  return false;
+}
+
+export function convertParenthesesMathToDollars(text: string): string {
+  if (!text) return text;
+  
+  // First, let's fix mismatched boundary cases like (Q$ or (n$ or $n) or (large (n$)
+  let fixed = text;
+  fixed = fixed.replace(/\(([a-zA-Z0-9_\^\+]+)\$/g, "$$$1$");
+  fixed = fixed.replace(/\$([a-zA-Z0-9_\^\+]+)\)/g, "$$$1$");
+  
+  // Now find matching nested/flat parentheses of any length
+  let result = "";
+  let i = 0;
+  while (i < fixed.length) {
+    if (fixed[i] === '(') {
+      let parenCount = 1;
+      let j = i + 1;
+      while (j < fixed.length && parenCount > 0) {
+        if (fixed[j] === '(') parenCount++;
+        else if (fixed[j] === ')') parenCount--;
+        j++;
+      }
+      if (parenCount === 0) {
+        const inner = fixed.substring(i + 1, j - 1);
+        if (looksLikeMath(inner)) {
+          result += "$" + inner + "$";
+        } else {
+          result += "(" + convertParenthesesMathToDollars(inner) + ")";
+        }
+        i = j;
+        continue;
+      }
+    }
+    result += fixed[i];
+    i++;
+  }
+  return result;
+}
+
 /**
  * Checks for and repairs common LaTeX/KaTeX issues in AI responses:
  * 1. Unescaped/escaped parentheses inside subscripts (e.g., \)_5 -> )_5).
@@ -128,6 +188,12 @@ export function fixLatexFormatting(text: string): string {
 
   // 1. Clean up literal escaped/forward-slash newlines
   fixed = fixed.replace(/\\n/g, "\n").replace(/\/n/g, "\n");
+
+  // 1b. Clean up OCR unrecognized boxes (like ▢)
+  fixed = fixed.replace(/[▢\u25A0-\u25FF]/g, " ");
+
+  // Convert parenthesized math symbols/equations (like (m) or (V_0)) to LaTeX $...$
+  fixed = convertParenthesesMathToDollars(fixed);
 
   // 2. Fix unescaped/wrongly escaped parentheses in math blocks:
   // e.g. \)_5 -> )_5, \)^{2+} -> )^{2+}, \)_2 -> )_2
@@ -221,6 +287,35 @@ export function fixLatexFormatting(text: string): string {
   // Merge split/mismatched adjacent dollar blocks (e.g. $math1$ raw_latex $math2$)
   fixed = mergeMismatchedMathBlocks(fixed);
 
+  // 13. Forcefully detect and wrap plain-text equations and math variables outside math blocks:
+  // (a) Wrap equations containing = or < or > outside math blocks:
+  fixed = replaceOutsideMath(fixed, /\b([a-zA-Z_]\d*(?:\s*[\+\-\*\/\^_\(\)]+\s*\d*[a-zA-Z_]\d*)*\s*[\=\<\>\~]+\s*[a-zA-Z0-9_\^\+\-\*\/\s\(\)\.\_]+)\b/g, "$$1$");
+  
+  // (b) Wrap un-delimited LaTeX backslash macros outside math blocks:
+  fixed = replaceOutsideMath(fixed, /(\\[a-zA-Z_]+(?:\{[^{}]*\}|_[a-zA-Z0-9_]|\^[a-zA-Z0-9_]|)*)/g, "$$1$");
+
+  // (c) Convert variable-digit sequences (like v2, L1, T1) outside math blocks:
+  fixed = replaceOutsideMath(fixed, /([L|T|v|a|x|y|z|t|d|s|u|w|n|m])(\d)/gi, "$$1_$2$");
+
+  // Re-merge blocks after wrapping
+  fixed = mergeMismatchedMathBlocks(fixed);
+
+  // (d) Format variable-digit sequences *inside* math blocks:
+  if (fixed.includes("$")) {
+    const parts = fixed.split("$");
+    for (let idx = 1; idx < parts.length; idx += 2) {
+      if (parts[idx]) {
+        // Convert powers for n, m, L, T (like n_3 or n3 -> n^3, m_3 or m3 -> m^3)
+        parts[idx] = parts[idx].replace(/([n|m|L|T])_?([234])\b/gi, "$1^$2");
+        // Convert other subscript variables (like v2 -> v_2, L1 -> L_1, T1 -> T_1, a2 -> a_2)
+        parts[idx] = parts[idx].replace(/([a-zA-Z])(\d)/gi, "$1_$2");
+        // Also convert any double subscripts that might have been created
+        parts[idx] = parts[idx].replace(/([a-zA-Z])_(\d)_(\d)/gi, "$1_{$2,$3}");
+      }
+    }
+    fixed = parts.join("$");
+  }
+
   // Clean up any duplicate dollars created by multiple wrapping operations
   fixed = fixed.replace(/\$\$+/g, "$$");
   
@@ -237,69 +332,90 @@ export function fixLatexFormatting(text: string): string {
 export function extractInlineOptions(text: string): { questionText: string, options: string[] } | null {
   if (!text) return null;
 
-  const patterns = [
-    // Style 1: (1) ... (2) ... (3) ... (4) ... or (A) ... (B) ... (C) ... (D) ...
+  const markerSets = [
     {
-      regex: /[\s\n]*\((1|A)\)\s+([\s\S]*?)[\s\n]*\((2|B)\)\s+([\s\S]*?)[\s\n]*\((3|C)\)\s+([\s\S]*?)[\s\n]*\((4|D)\)\s+([\s\S]*)$/i,
-      handler: (match: RegExpMatchArray) => {
-        return {
-          options: [match[2].trim(), match[4].trim(), match[6].trim(), match[8].trim()],
-          matchedIndex: match.index!
-        };
-      }
+      style: "parens-num",
+      patterns: [/(\n|\s|^)\(1\)[\s\d$]/i, /(\n|\s|^)\(2\)[\s\d$]/i, /(\n|\s|^)\(3\)[\s\d$]/i, /(\n|\s|^)\(4\)[\s\d$]/i]
     },
-    // Style 2: 1) ... 2) ... 3) ... 4) ... or A) ... B) ... (C) ... (D) ...
     {
-      regex: /[\s\n]*(1|A)\)\s+([\s\S]*?)[\s\n]*(2|B)\)\s+([\s\S]*?)[\s\n]*(3|C)\)\s+([\s\S]*?)[\s\n]*(4|D)\)\s+([\s\S]*)$/i,
-      handler: (match: RegExpMatchArray) => {
-        return {
-          options: [match[2].trim(), match[4].trim(), match[6].trim(), match[8].trim()],
-          matchedIndex: match.index!
-        };
-      }
+      style: "parens-alpha",
+      patterns: [/(\n|\s|^)\(A\)[\s$]/i, /(\n|\s|^)\(B\)[\s$]/i, /(\n|\s|^)\(C\)[\s$]/i, /(\n|\s|^)\(D\)[\s$]/i]
     },
-    // Style 3: 1. ... 2. ... 3. ... 4. ... or A. ... B. ...
     {
-      regex: /[\s\n]*(1|A)\.\s+([\s\S]*?)[\s\n]*(2|B)\.\s+([\s\S]*?)[\s\n]*(3|C)\.\s+([\s\S]*?)[\s\n]*(4|D)\.\s+([\s\S]*)$/i,
-      handler: (match: RegExpMatchArray) => {
-        return {
-          options: [match[2].trim(), match[4].trim(), match[6].trim(), match[8].trim()],
-          matchedIndex: match.index!
-        };
-      }
+      style: "bracket-num",
+      patterns: [/(\n|\s|^)\[1\][\s\d$]/i, /(\n|\s|^)\[2\][\s\d$]/i, /(\n|\s|^)\[3\][\s\d$]/i, /(\n|\s|^)\[4\][\s\d$]/i]
     },
-    // Style 4: [1] ... [2] ... [3] ... [4] ... or [A] ... [B] ...
     {
-      regex: /[\s\n]*\[(1|A)\]\s+([\s\S]*?)[\s\n]*\[(2|B)\]\s+([\s\S]*?)[\s\n]*\[(3|C)\]\s+([\s\S]*?)[\s\n]*\[(4|D)\]\s+([\s\S]*)$/i,
-      handler: (match: RegExpMatchArray) => {
-        return {
-          options: [match[2].trim(), match[4].trim(), match[6].trim(), match[8].trim()],
-          matchedIndex: match.index!
-        };
-      }
+      style: "bracket-alpha",
+      patterns: [/(\n|\s|^)\[A\][\s$]/i, /(\n|\s|^)\[B\][\s$]/i, /(\n|\s|^)\[C\][\s$]/i, /(\n|\s|^)\[D\][\s$]/i]
+    },
+    {
+      style: "right-paren-num",
+      patterns: [/(\n|\s|^)1\)[\s\d$]/i, /(\n|\s|^)2\)[\s\d$]/i, /(\n|\s|^)3\)[\s\d$]/i, /(\n|\s|^)4\)[\s\d$]/i]
+    },
+    {
+      style: "right-paren-alpha",
+      patterns: [/(\n|\s|^)A\)[\s$]/i, /(\n|\s|^)B\)[\s$]/i, /(\n|\s|^)C\)[\s$]/i, /(\n|\s|^)D\)[\s$]/i]
+    },
+    {
+      style: "dot-num",
+      patterns: [/(\n|\s|^)1\.[\s\d$]/i, /(\n|\s|^)2\.[\s\d$]/i, /(\n|\s|^)3\.[\s\d$]/i, /(\n|\s|^)4\.[\s\d$]/i]
+    },
+    {
+      style: "dot-alpha",
+      patterns: [/(\n|\s|^)A\.[\s$]/i, /(\n|\s|^)B\.[\s$]/i, /(\n|\s|^)C\.[\s$]/i, /(\n|\s|^)D\.[\s$]/i]
     }
   ];
 
-  for (const pattern of patterns) {
-    const match = text.match(pattern.regex);
-    if (match) {
-      const { options, matchedIndex } = pattern.handler(match);
+  for (const set of markerSets) {
+    const indices: number[] = [];
+    const lengths: number[] = [];
+    let foundAll = true;
+
+    let searchStart = 0;
+    for (let i = 0; i < 4; i++) {
+      const regex = new RegExp(set.patterns[i], "i");
+      const subText = text.substring(searchStart);
+      const match = subText.match(regex);
+      if (!match) {
+        foundAll = false;
+        break;
+      }
       
-      let questionText = text.substring(0, matchedIndex).trim();
-      questionText = questionText.replace(/[\s\n,;:]+$/, "");
-      
-      if (options.every(o => o.length > 0)) {
-        const cleanedOptions = options.map(o => {
-          let cleaned = o.trim();
-          while (/^(?:[\n\r\s]+|\\n|\/n|\\\\n)/i.test(cleaned)) {
-            cleaned = cleaned.replace(/^(?:[\n\r\s]+|\\n|\/n|\\\\n)/i, "").trim();
-          }
-          while (/(?:[\n\r\s]+|\\n|\/n|\\\\n)$/i.test(cleaned)) {
-            cleaned = cleaned.replace(/(?:[\n\r\s]+|\\n|\/n|\\\\n)$/i, "").trim();
-          }
-          return cleaned;
-        });
-        return { questionText, options: cleanedOptions };
+      const matchIndex = searchStart + match.index!;
+      const prefix = match[1] || "";
+      const markerIndex = matchIndex + prefix.length;
+      const markerLength = match[0].length - prefix.length;
+
+      if (i > 0 && markerIndex <= indices[i - 1]) {
+        foundAll = false;
+        break;
+      }
+
+      indices.push(markerIndex);
+      lengths.push(markerLength);
+      searchStart = markerIndex + markerLength;
+    }
+
+    if (foundAll) {
+      const questionText = text.substring(0, indices[0]).trim();
+      const opt1 = text.substring(indices[0] + lengths[0], indices[1]).trim();
+      const opt2 = text.substring(indices[1] + lengths[1], indices[2]).trim();
+      const opt3 = text.substring(indices[2] + lengths[2], indices[3]).trim();
+      const opt4 = text.substring(indices[3] + lengths[3]).trim();
+
+      const options = [opt1, opt2, opt3, opt4].map(o => {
+        let cleaned = o.trim();
+        cleaned = cleaned.replace(/^(?:[\n\r\s]+|\\n|\/n|\\\\n)+/gi, "").trim();
+        cleaned = cleaned.replace(/(?:[\n\r\s]+|\\n|\/n|\\\\n)+$/gi, "").trim();
+        return cleaned;
+      });
+
+      if (options.every(o => o.length > 0 && o.length < 1000)) {
+        return {
+          questionText: questionText.replace(/[\s\n,;:]+$/, ""),
+          options
+        };
       }
     }
   }

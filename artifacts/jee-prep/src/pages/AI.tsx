@@ -20,7 +20,14 @@ import {
   Image as ImageIcon,
   TrendingUp,
   ThumbsUp,
-  ThumbsDown
+  ThumbsDown,
+  Database,
+  Sparkles,
+  CheckCircle2,
+  Play,
+  Music,
+  PlusCircle,
+  CheckCircle
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAppContext } from "@/context/AppContext";
@@ -173,12 +180,39 @@ const getMarkdownComponents = (setFullScreenImage?: (url: string) => void): any 
             lang = "news-feed";
           } else if (data.question && data.options && data.answer) {
             lang = "interactive-quiz";
+          } else if (Array.isArray(data.actions)) {
+            lang = "json-action";
+          } else if (data.songName) {
+            lang = "playlist-selector";
           }
         }
       } catch (e) {}
     }
     
     if (lang) {
+      if (lang === "playlist-selector") {
+        try {
+          const data = JSON.parse(codeContent);
+          return (
+            <PlaylistSelectorWidget 
+              songName={data.songName} 
+              targetPlaylistName={data.playlistName || data.targetPlaylistName}
+              position={data.position}
+              autoApply={data.autoApply}
+            />
+          );
+        } catch (e) {
+          return <pre className="bg-slate-900 border border-slate-800 p-4 rounded-xl overflow-x-auto"><code className={className} {...props}>{children}</code></pre>;
+        }
+      }
+      if (lang === "json-action") {
+        try {
+          const data = JSON.parse(codeContent);
+          return <JsonActionWidget actions={data.actions} />;
+        } catch (e) {
+          return <pre className="bg-slate-900 border border-slate-800 p-4 rounded-xl overflow-x-auto"><code className={className} {...props}>{children}</code></pre>;
+        }
+      }
       if (lang === "simulation") {
         try {
           const data = JSON.parse(codeContent);
@@ -486,6 +520,344 @@ function getSourceName(uri: string, title?: string): string {
     return parts[0].charAt(0).toUpperCase() + parts[0].slice(1);
   }
   return "Source";
+}
+
+function PlaylistSelectorWidget({
+  songName,
+  targetPlaylistName,
+  position,
+  autoApply
+}: {
+  songName: string;
+  targetPlaylistName?: string;
+  position?: number;
+  autoApply?: boolean;
+}) {
+  const [status, setStatus] = useState<"searching" | "selecting" | "adding" | "success" | "error">("searching");
+  const [song, setSong] = useState<any>(null);
+  const [playlists, setPlaylists] = useState<any[]>([]);
+  const [selectedPlaylistName, setSelectedPlaylistName] = useState("");
+
+  useEffect(() => {
+    try {
+      const plData = JSON.parse(localStorage.getItem("jee_playlists") || "[]");
+      if (plData.length === 0) {
+        setPlaylists([{ id: "default", name: "Favorites", songs: [] }]);
+      } else {
+        setPlaylists(plData);
+      }
+    } catch {
+      setPlaylists([{ id: "default", name: "Favorites", songs: [] }]);
+    }
+  }, []);
+
+  useEffect(() => {
+    let active = true;
+    
+    async function searchSong() {
+      setStatus("searching");
+      let video: any = null;
+      
+      try {
+        const res = await fetch(`/api/media/smart-search?q=${encodeURIComponent(songName)}`);
+        if (res.ok) {
+          const data = await res.json();
+          video = data.primaryVideo;
+        }
+      } catch (err) {
+        console.warn("Backend smart-search failed, trying direct Piped API fallback:", err);
+      }
+      
+      if (!video && active) {
+        const instances = [
+          "https://pipedapi.kavin.rocks",
+          "https://pipedapi.smnz.de",
+          "https://pipedapi.tokhmi.xyz"
+        ];
+        for (const instance of instances) {
+          try {
+             const res = await fetch(`${instance}/search?q=${encodeURIComponent(songName)}&filter=all`);
+             if (res.ok) {
+                const data = await res.json();
+                const items = data.items || [];
+                const streams = items.filter((item: any) => item.type === "stream");
+                if (streams.length > 0) {
+                   const item = streams[0];
+                   video = {
+                      videoId: item.url.includes("?v=") ? item.url.split("?v=")[1].split("&")[0] : item.url.split("/").pop(),
+                      title: item.title,
+                      channelName: item.uploaderName,
+                      thumbnail: item.thumbnail
+                   };
+                   break;
+                }
+             }
+          } catch (e) {
+             console.warn(`Fallback Piped instance ${instance} failed`);
+          }
+        }
+      }
+
+      if (!active) return;
+      
+      if (video) {
+        setSong(video);
+        if (autoApply && playlists.length > 0) {
+          setStatus("adding");
+          const matchName = targetPlaylistName ? targetPlaylistName.toLowerCase() : "";
+          let pl = playlists.find(p => p.name.toLowerCase().includes(matchName));
+          if (!pl) {
+            pl = playlists[0];
+          }
+          addSong(video, pl.id, pl.name);
+        } else {
+          setStatus("selecting");
+        }
+      } else {
+        setStatus("error");
+      }
+    }
+
+    if (songName && playlists.length > 0 && status === "searching") {
+      searchSong();
+    }
+
+    return () => { active = false; };
+  }, [songName, playlists, autoApply, targetPlaylistName]);
+
+  const addSong = (video: any, plId: string, plName: string) => {
+    try {
+      setStatus("adding");
+      const plData = JSON.parse(localStorage.getItem("jee_playlists") || "[]");
+      const currentPlList = plData.length > 0 ? plData : [{ id: "default", name: "Favorites", songs: [] }];
+      
+      let targetPl = currentPlList.find((p: any) => p.id === plId);
+      if (!targetPl) {
+        targetPl = currentPlList[0];
+      }
+
+      if (targetPl) {
+        const newSong = {
+          id: `song_${Date.now()}_${Math.random().toString(36).substring(2, 6)}`,
+          title: video.title,
+          artist: video.channelName || "Unknown Artist",
+          url: `yt:${video.videoId}`,
+          youtubeId: video.videoId,
+          coverUrl: video.thumbnail || "",
+          duration: 0
+        };
+
+        if (!targetPl.songs) targetPl.songs = [];
+
+        if (position && position > 0) {
+          const idx = position - 1;
+          targetPl.songs.splice(idx, 0, newSong);
+        } else {
+          targetPl.songs.push(newSong);
+        }
+
+        localStorage.setItem("jee_playlists", JSON.stringify(currentPlList));
+        setSelectedPlaylistName(plName);
+        setStatus("success");
+        
+        window.dispatchEvent(new Event("storage"));
+        window.dispatchEvent(new Event("jee_db_changed"));
+      } else {
+        setStatus("error");
+      }
+    } catch (err) {
+      console.error(err);
+      setStatus("error");
+    }
+  };
+
+  if (status === "searching") {
+    return (
+      <div className="my-4 p-4 rounded-2xl bg-muted/40 border border-border/80 flex items-center justify-center gap-3 max-w-sm w-full shadow-inner select-none">
+        <RefreshCw className="h-4 w-4 animate-spin text-blue-500" />
+        <span className="text-xs text-muted-foreground font-medium">Searching YouTube for "{songName}"...</span>
+      </div>
+    );
+  }
+
+  if (status === "selecting" && song) {
+    return (
+      <div className="my-4 p-4 rounded-2xl bg-slate-950/45 border border-slate-800/80 shadow-md max-w-md w-full backdrop-blur-sm relative select-none">
+        <div className="flex items-center gap-3">
+          <img 
+            src={song.thumbnail} 
+            alt={song.title} 
+            className="w-16 h-12 rounded-lg object-cover bg-muted shrink-0 border border-slate-800" 
+          />
+          <div className="flex-1 min-w-0">
+            <h4 className="text-xs font-semibold text-white truncate">{song.title}</h4>
+            <p className="text-[10px] text-muted-foreground truncate mt-0.5">{song.channelName}</p>
+          </div>
+        </div>
+        <div className="mt-4 border-t border-slate-800/60 pt-3">
+          <span className="text-[11px] font-semibold text-slate-400 block mb-2">
+            Select playlist to add this song:
+          </span>
+          <div className="flex flex-wrap gap-2">
+            {playlists.map((pl) => (
+              <button
+                key={pl.id}
+                onClick={() => addSong(song, pl.id, pl.name)}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 hover:bg-blue-500/20 text-xs font-medium text-blue-400 transition-all animate-fade-in"
+              >
+                <PlusCircle className="h-3.5 w-3.5" />
+                {pl.name}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (status === "adding") {
+    return (
+      <div className="my-4 p-4 rounded-2xl bg-muted/40 border border-border/80 flex items-center justify-center gap-3 max-w-sm w-full shadow-inner select-none">
+        <RefreshCw className="h-4 w-4 animate-spin text-blue-500" />
+        <span className="text-xs text-muted-foreground font-medium">Adding song to playlist...</span>
+      </div>
+    );
+  }
+
+  if (status === "success" && song) {
+    return (
+      <div className="my-4 p-4 rounded-2xl bg-gradient-to-br from-emerald-500/10 to-teal-500/5 border border-emerald-500/20 shadow-sm max-w-md w-full backdrop-blur-sm select-none relative overflow-hidden group">
+        <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition-all"></div>
+        <div className="flex gap-3.5 items-start">
+          <div className="w-9 h-9 rounded-xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-500 shrink-0">
+            <CheckCircle className="h-4 w-4 animate-pulse" />
+          </div>
+          <div className="flex-1 min-w-0">
+            <h4 className="text-[13px] font-semibold text-emerald-500">Song Added Successfully</h4>
+            <div className="mt-2.5 flex items-center gap-3 bg-emerald-500/5 border border-emerald-500/10 p-2 rounded-xl">
+              <img 
+                src={song.thumbnail} 
+                alt="" 
+                className="w-12 h-9 rounded-lg object-cover bg-muted border border-emerald-500/10 shrink-0" 
+              />
+              <div className="min-w-0 flex-1">
+                <p className="text-[11px] font-medium text-emerald-400 truncate">{song.title}</p>
+                <p className="text-[9px] text-muted-foreground truncate mt-0.5">Added to playlist: <strong className="text-emerald-500/80">{selectedPlaylistName}</strong> {position ? `at position ${position}` : ""}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (status === "error") {
+    return (
+      <div className="my-4 p-4 rounded-2xl bg-red-500/10 border border-red-500/20 shadow-sm max-w-md w-full select-none">
+        <div className="flex items-start gap-3">
+          <div className="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center text-red-500 shrink-0">
+            <Music className="h-4 w-4" />
+          </div>
+          <div>
+            <h4 className="text-sm font-semibold text-red-500">Song Integration Error</h4>
+            <p className="text-xs text-muted-foreground mt-1">
+              Could not find or verify the song on YouTube, or failed to update the playlist.
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return null;
+}
+
+interface DatabaseAction {
+  type: "set_local_storage";
+  key: string;
+  value: any;
+}
+
+function JsonActionWidget({ actions }: { actions: DatabaseAction[] }) {
+  const [status, setStatus] = useState<"idle" | "applied" | "error">("idle");
+  const [appliedCount, setAppliedCount] = useState(0);
+
+  useEffect(() => {
+    if (!actions || !Array.isArray(actions) || status !== "idle") return;
+    
+    try {
+      let count = 0;
+      actions.forEach(act => {
+        if (act.type === "set_local_storage" && act.key) {
+          const valStr = typeof act.value === "string" ? act.value : JSON.stringify(act.value);
+          localStorage.setItem(act.key, valStr);
+          count++;
+        }
+      });
+      setAppliedCount(count);
+      setStatus("applied");
+      
+      // Dispatch storage update events to sync across context
+      window.dispatchEvent(new Event("storage"));
+      window.dispatchEvent(new Event("jee_db_changed"));
+    } catch (err) {
+      console.error("AI Database action failed:", err);
+      setStatus("error");
+    }
+  }, [actions, status]);
+
+  if (status === "applied") {
+    return (
+      <div className="my-4 p-4 rounded-2xl bg-gradient-to-br from-emerald-500/10 to-teal-500/5 border border-emerald-500/20 shadow-sm max-w-md w-full backdrop-blur-sm relative overflow-hidden group select-none">
+        <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition-all"></div>
+        <div className="flex items-start gap-3.5">
+          <div className="w-9 h-9 rounded-xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-500 shrink-0">
+            <Database className="h-4 w-4" />
+          </div>
+          <div className="flex-1">
+            <div className="flex items-center gap-1.5">
+              <span className="text-[13px] font-semibold text-emerald-500 flex items-center gap-1">
+                Real-time Database Sync Active
+              </span>
+              <Sparkles className="h-3 w-3 text-emerald-400 animate-pulse" />
+            </div>
+            <p className="text-xs text-muted-foreground mt-1">
+              Calculus AI successfully updated the website's database. Your changes are live:
+            </p>
+            <div className="mt-3.5 space-y-1.5 border-t border-emerald-500/10 pt-3">
+              {actions.map((act, idx) => (
+                <div key={idx} className="flex items-center gap-2 text-xs font-mono bg-emerald-500/5 px-2.5 py-1.5 rounded-lg border border-emerald-500/10">
+                  <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500 animate-bounce" />
+                  <span className="text-emerald-400 font-medium">{act.key}</span>
+                  <span className="text-muted-foreground/60">→ updated</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (status === "error") {
+    return (
+      <div className="my-4 p-4 rounded-2xl bg-red-500/10 border border-red-500/20 shadow-sm max-w-md w-full">
+        <div className="flex items-start gap-3">
+          <div className="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center text-red-500 shrink-0">
+            <Database className="h-4 w-4" />
+          </div>
+          <div>
+            <h4 className="text-sm font-semibold text-red-500">Database Action Error</h4>
+            <p className="text-xs text-muted-foreground mt-1">
+              An error occurred while trying to write configuration overrides to browser storage.
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return null;
 }
 
 function MessageSources({ sources }: { sources: { uri: string; title: string; favicon: string; snippet?: string; thumbnail?: string }[] }) {
@@ -1451,7 +1823,66 @@ Formatting guidelines for the \`\`\`graph\`\`\` config:
 If the user uploaded an image of an equation, read/OCR the equation from the image using your visual capabilities and output the \`\`\`graph\`\`\` config for it.`;
       }
 
-      const finalSystemInstruction = systemInstruction + modeInstruction + imageGenerationInstruction + dateInstruction + searchContext + graphDirective;
+      const adminPanelContext = `
+
+=== REAL-TIME ADMIN DATABASE & LOCAL STORAGE ===
+The website stores its configurations, stats, streak data, tasks, calendar events, active times, heatmaps, playlists, and JEE timelines in the browser's localStorage database.
+Here is the current, real-time database content:
+${JSON.stringify({
+  jee_local_name: localStorage.getItem("jee_local_name") || "Guest",
+  jee_streak_data: JSON.parse(localStorage.getItem("jee_streak_data") || "null") || { currentStreak: 2, lastEarnedDate: null, records: [] },
+  jee_streak_today: JSON.parse(localStorage.getItem("jee_streak_today") || "null") || { seconds: 3000 },
+  jee_tasks: JSON.parse(localStorage.getItem("jee_tasks") || "[]"),
+  jee_cal_events: JSON.parse(localStorage.getItem("jee_cal_events") || "[]"),
+  jee_admin_timeline: JSON.parse(localStorage.getItem("jee_admin_timeline") || "[]"),
+  jee_time_tracking: JSON.parse(localStorage.getItem("jee_time_tracking") || "{}"),
+  jee_daily_records: JSON.parse(localStorage.getItem("jee_daily_records") || "{}"),
+  jee_lockdown_records: JSON.parse(localStorage.getItem("jee_lockdown_records") || "[]"),
+  jee_playlists: JSON.parse(localStorage.getItem("jee_playlists") || "[]"),
+  jee_openrouter_api_key: localStorage.getItem("jee_openrouter_api_key") ? "[API KEY PRESENT]" : "[API KEY MISSING]"
+}, null, 2)}
+
+PLAYLIST / SONG INTEGRATION COMMAND CAPABILITY:
+- If the user asks you to add a song to their music playlists (e.g. "Add a song named 'sahiba'"), you MUST output a special JSON config inside a fenced code block with language: playlist-selector
+- If the user did NOT specify which playlist to use, omit the "playlistName" field so the UI can show playlist buttons on screen for the user to choose.
+- If the user explicitly specified the playlist and/or the position (e.g., "Add 'sahiba' in Favorites playlist at 2nd position"), include the "playlistName" (e.g. "favorite"), "position" (e.g., 2), and set "autoApply" to true, so the system automatically fetches the video and inserts it at the specified index without requiring a click.
+
+FORMAT OF THE playlist-selector WIDGET:
+\`\`\`playlist-selector
+{
+  "songName": "Name of the song",
+  "playlistName": "optional matching name of playlist",
+  "position": 1-based index position if specified,
+  "autoApply": boolean
+}
+\`\`\`
+
+DATABASE COMMAND CAPABILITY (REAL-TIME READ/WRITE):
+- If the user asks you to ADD, DELETE, EDIT, OVERRIDE, or RESET any of the data (e.g. streaks, tasks, events, profile, config, api keys), you MUST determine the new correct value for that localStorage key, and output a special JSON action block at the VERY END of your response.
+- You MUST wrap this action block inside a fenced code block with language: json-action
+
+FORMAT OF THE json-action WIDGET:
+\`\`\`json-action
+{
+  "actions": [
+    {
+      "type": "set_local_storage",
+      "key": "jee_streak_data" | "jee_tasks" | "jee_cal_events" | "jee_admin_timeline" | "jee_local_name",
+      "value": <the complete new updated value to replace in localStorage>
+    }
+  ]
+}
+\`\`\`
+
+Rules for Database commands:
+1. Always output the full explanation of what you did first in standard markdown, and then output the \`\`\`json-action\`\`\` block.
+2. Ensure the "value" represents the FULL, complete array or object, not a partial patch. For arrays (like jee_tasks, jee_cal_events, jee_admin_timeline), read the current array from the context above, perform the operation (add, edit, or delete), and output the entire updated array.
+3. For streak edits (e.g. changing streak to 0 or 5), replace "jee_streak_data" with an updated object matching its schema (e.g. update currentStreak and lastEarnedDate).
+4. Do not output multiple json-action blocks; put all operations in the "actions" array of a single block.
+5. Always verify JSON validity of your actions.
+`;
+
+      const finalSystemInstruction = systemInstruction + modeInstruction + imageGenerationInstruction + dateInstruction + searchContext + graphDirective + adminPanelContext;
       
       const visionPrompt = hasImages ? "Please scan, read, and analyze the uploaded image carefully. Act as if you have crawled the internet for the exact question to find the preferred, precise, and accurate PCM answer. Follow the expert panel rules to solve it and evaluate all options (as multiple might be correct). Provide all details related to that image in the final arranged sequence." : "";
 

@@ -273,12 +273,18 @@ importers:
 
   artifacts/jee-prep:
     dependencies:
+      '@distube/ytdl-core':
+        specifier: ^4.16.12
+        version: 4.16.12
       '@openrouter/sdk':
         specifier: ^0.12.79
         version: 0.12.79
       '@types/jszip':
         specifier: ^3.4.1
         version: 3.4.1
+      cors:
+        specifier: ^2.8.5
+        version: 2.8.6
       express:
         specifier: ^5.2.1
         version: 5.2.1
@@ -294,6 +300,9 @@ importers:
       katex:
         specifier: ^0.17.0
         version: 0.17.0
+      play-dl:
+        specifier: ^1.9.7
+        version: 1.9.7
       react-markdown:
         specifier: ^10.1.0
         version: 10.1.0(@types/react@19.2.14)(react@19.1.0)

@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite --config vite.config.ts --host 0.0.0.0",
+    "dev": "node server.js & vite --config vite.config.ts --host 0.0.0.0",
     "build": "vite build --config vite.config.ts",
     "serve": "vite preview --config vite.config.ts --host 0.0.0.0",
     "typecheck": "tsc -p tsconfig.json --noEmit"
@@ -83,6 +83,9 @@
     "@openrouter/sdk": "^0.12.79",
     "@types/jszip": "^3.4.1",
     "express": "^5.2.1",
+    "cors": "^2.8.5",
+    "play-dl": "^1.9.7",
+    "@distube/ytdl-core": "^4.16.12",
     "firebase": "^12.13.0",
     "hls.js": "^1.6.16",
     "jszip": "^3.10.1",

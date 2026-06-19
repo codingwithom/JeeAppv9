@@ -1123,14 +1123,233 @@ function YouTubeVideoSearchModal({
   const itemsPerPage = 10;
 
   const handleSearch = async () => {
-    if (!searchQuery.trim()) return;
+    const raw = searchQuery.trim();
+    if (!raw) return;
     setLoading(true);
     setError("");
     setResults([]);
     setCurrentPage(1);
 
+    const extractYouTubePlaylistId = (url: string): string | null => {
+      const m = url.match(/[?&]list=([^&#]+)/);
+      return m ? m[1] : null;
+    };
+
+    // Check if the query is a YouTube URL
+    const isYtUrl = raw.includes("youtube.com") || raw.includes("youtu.be");
+    if (isYtUrl) {
+      const ytPlaylistId = extractYouTubePlaylistId(raw);
+      const ytId = getYouTubeId(raw);
+
+      if (ytPlaylistId) {
+        try {
+          let tracks: any[] = [];
+          
+          // Try local endpoint first
+          try {
+            const res = await fetch(`/api/media-info?url=${encodeURIComponent(raw)}`);
+            if (res.ok) {
+              const data = await res.json();
+              if (data.type === "playlist" && Array.isArray(data.tracks)) {
+                tracks = data.tracks.map((t: any) => ({
+                  videoId: t.youtubeId || t.videoId,
+                  title: t.title,
+                  author: t.artist || t.author || "YouTube",
+                  length_seconds: t.duration || t.length_seconds || 0,
+                  thumbnail: t.thumbnail || `https://img.youtube.com/vi/${t.youtubeId || t.videoId}/mqdefault.jpg`
+                }));
+              }
+            }
+          } catch (e) {
+            console.warn("Local API failed, falling back to client-side extraction", e);
+          }
+
+          if (tracks.length === 0) {
+            // Client-side fallback Strategy 1: Piped playlist endpoint
+            const piped_instances = [
+              "https://pipedapi.kavin.rocks",
+              "https://pipedapi.smnz.de",
+              "https://piped-api.lunar.icu",
+              "https://pipedapi.adminforge.de",
+              "https://pipedapi.tokhmi.xyz"
+            ];
+            for (const instance of piped_instances) {
+              try {
+                const res = await fetch(`${instance}/playlists/${ytPlaylistId}`);
+                if (res.ok) {
+                  const data = await res.json();
+                  if (data.relatedStreams && Array.isArray(data.relatedStreams)) {
+                    tracks = data.relatedStreams.map((v: any) => {
+                      const vId = v.url ? (v.url.includes("?v=") ? v.url.split("?v=")[1].split("&")[0] : v.url.split("/").pop()) : "";
+                      return {
+                        videoId: vId,
+                        title: v.title || "Unknown Video",
+                        author: v.uploaderName || "YouTube",
+                        length_seconds: v.duration || 0,
+                        thumbnail: v.thumbnail || `https://img.youtube.com/vi/${vId}/mqdefault.jpg`,
+                      };
+                    }).filter((v: any) => v.videoId);
+                    break;
+                  }
+                }
+              } catch (e) {}
+            }
+          }
+
+          if (tracks.length === 0) {
+            // Client-side fallback Strategy 2: Invidious playlist endpoint
+            const invidious_instances = [
+              "https://invidious.jing.rocks",
+              "https://vid.puffyan.us",
+              "https://invidious.privacydev.net",
+              "https://inv.tux.pizza",
+              "https://invidious.lunar.icu"
+            ];
+            for (const instance of invidious_instances) {
+              try {
+                const res = await fetch(`${instance}/api/v1/playlists/${ytPlaylistId}`);
+                if (res.ok) {
+                  const data = await res.json();
+                  if (data.videos && Array.isArray(data.videos)) {
+                    tracks = data.videos.map((v: any) => ({
+                      videoId: v.videoId,
+                      title: v.title || "Unknown Video",
+                      author: v.author || "YouTube",
+                      length_seconds: v.length_seconds || 0,
+                      thumbnail: `https://img.youtube.com/vi/${v.videoId}/mqdefault.jpg`,
+                    })).filter((v: any) => v.videoId);
+                    break;
+                  }
+                }
+              } catch (e) {}
+            }
+          }
+
+          if (tracks.length === 0) {
+            // Client-side fallback Strategy 3: Scrape HTML via CORS proxies
+            try {
+              const fetchHtml = async (targetUrl: string) => {
+                const proxies = [
+                  `https://api.allorigins.win/get?url=${encodeURIComponent(targetUrl)}`,
+                  `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(targetUrl)}`,
+                  `https://corsproxy.io/?${encodeURIComponent(targetUrl)}`
+                ];
+                for (const proxy of proxies) {
+                  try {
+                    const res = await fetch(proxy);
+                    if (res.ok) {
+                      if (proxy.includes("allorigins")) {
+                        const data = await res.json();
+                        if (data.contents) return data.contents;
+                      } else {
+                        return await res.text();
+                      }
+                    }
+                  } catch (e) {}
+                }
+                throw new Error("All proxies failed");
+              };
+
+              const html = await fetchHtml(`https://www.youtube.com/playlist?list=${ytPlaylistId}`);
+              
+              const decodeHTML = (str: string): string => {
+                try {
+                  const txt = document.createElement("textarea");
+                  txt.innerHTML = str;
+                  return txt.value;
+                } catch (e) {
+                  return str;
+                }
+              };
+
+              const seenIds = new Set<string>();
+              const matches = html.matchAll(/<a\s+[^>]*href="[^"]*watch\?v=([a-zA-Z0-9_-]{11})[^"]*"[^>]*>/g);
+              for (const match of matches) {
+                const vId = match[1];
+                if (!seenIds.has(vId) && seenIds.size < 100) {
+                  const tagContent = match[0];
+                  let title = "";
+                  const titleMatch = tagContent.match(/title="([^"]+)"/);
+                  if (titleMatch) {
+                    title = decodeHTML(titleMatch[1]);
+                  } else {
+                    const startIdx = match.index || 0;
+                    const searchWindow = html.slice(startIdx, startIdx + 800);
+                    const windowMatch = searchWindow.match(/title="([^"]+)"/) || searchWindow.match(/>([^<]+)<\//);
+                    if (windowMatch) {
+                      title = decodeHTML(windowMatch[1].trim());
+                    }
+                  }
+                  
+                  if (!title || title.includes("watch?v=") || title.length > 150) {
+                    title = `YouTube Video [${vId}]`;
+                  }
+
+                  seenIds.add(vId);
+                  tracks.push({
+                    videoId: vId,
+                    title: title,
+                    author: "YouTube",
+                    length_seconds: 0,
+                    thumbnail: `https://img.youtube.com/vi/${vId}/mqdefault.jpg`,
+                  });
+                }
+              }
+            } catch (scrapeErr) {
+              console.error("Client side HTML scrape failed", scrapeErr);
+            }
+          }
+
+          if (tracks.length === 0) {
+            throw new Error("No tracks found in playlist or playlist is private.");
+          }
+
+          setResults(tracks);
+        } catch (err: any) {
+          setError(err.message || "Failed to load playlist.");
+        } finally {
+          setLoading(false);
+        }
+        return;
+      } else if (ytId) {
+        // Fetch single video metadata
+        try {
+          let videoTitle = "YouTube Video";
+          let videoAuthor = "YouTube";
+          let videoLength = 0;
+          let videoThumb = `https://img.youtube.com/vi/${ytId}/mqdefault.jpg`;
+
+          try {
+            const res = await fetch(`/api/media-info?url=${encodeURIComponent(raw)}`);
+            if (res.ok) {
+              const data = await res.json();
+              if (data.type === "track") {
+                videoTitle = data.title;
+                videoAuthor = data.artist;
+                videoLength = data.duration;
+                videoThumb = data.thumbnail || videoThumb;
+              }
+            }
+          } catch (e) {}
+
+          setResults([{
+            videoId: ytId,
+            title: videoTitle,
+            author: videoAuthor,
+            length_seconds: videoLength,
+            thumbnail: videoThumb
+          }]);
+        } catch (err: any) {
+          setError("Failed to load video info.");
+        } finally {
+          setLoading(false);
+        }
+        return;
+      }
+    }
+
     try {
-      const q = encodeURIComponent(searchQuery);
+      const q = encodeURIComponent(raw);
 
       const fetchWithTimeout = async (url: string, timeoutMs: number) => {
         const controller = new AbortController();
@@ -1226,7 +1445,16 @@ function YouTubeVideoSearchModal({
         });
       };
 
+      const fetchLocal = async () => {
+        const res = await fetchWithTimeout(`/api/yt-search?q=${q}`, 5000);
+        const data = await res.json();
+        if (data.error) throw new Error(data.error);
+        if (!Array.isArray(data.results) || !data.results.length) throw new Error("No results");
+        return data.results;
+      };
+
       const tasks = [
+        fetchLocal(),
         fetchPiped("https://pipedapi.kavin.rocks"),
         fetchPiped("https://pipedapi.smnz.de"),
         fetchPiped("https://piped-api.lunar.icu"),

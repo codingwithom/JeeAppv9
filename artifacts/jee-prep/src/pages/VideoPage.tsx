@@ -4,6 +4,7 @@ import { idbSet, idbGet, idbDelete } from "@/lib/idb";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
 import { useWorkspaceContext } from "@/context/WorkspaceContext";
 import { useVideoContext, VideoMiniState } from "@/context/VideoContext";
+import { getInvidiousInstances, getPipedInstances } from "@/utils/youtube";
 import { Button } from "@/components/ui/button";
 import {
   Play,
@@ -1147,7 +1148,8 @@ function YouTubeVideoSearchModal({
           
           // Try local endpoint first
           try {
-            const res = await fetch(`/api/media-info?url=${encodeURIComponent(raw)}`);
+            const apiBase = import.meta.env.BASE_URL.replace(/\/$/, "");
+            const res = await fetch(`${apiBase}/api/media-info?url=${encodeURIComponent(raw)}`);
             if (res.ok) {
               const data = await res.json();
               if (data.type === "playlist" && Array.isArray(data.tracks)) {
@@ -1166,13 +1168,7 @@ function YouTubeVideoSearchModal({
 
           if (tracks.length === 0) {
             // Client-side fallback Strategy 1: Piped playlist endpoint
-            const piped_instances = [
-              "https://pipedapi.kavin.rocks",
-              "https://pipedapi.smnz.de",
-              "https://piped-api.lunar.icu",
-              "https://pipedapi.adminforge.de",
-              "https://pipedapi.tokhmi.xyz"
-            ];
+            const piped_instances = getPipedInstances();
             for (const instance of piped_instances) {
               try {
                 const res = await fetch(`${instance}/playlists/${ytPlaylistId}`);
@@ -1198,13 +1194,7 @@ function YouTubeVideoSearchModal({
 
           if (tracks.length === 0) {
             // Client-side fallback Strategy 2: Invidious playlist endpoint
-            const invidious_instances = [
-              "https://invidious.jing.rocks",
-              "https://vid.puffyan.us",
-              "https://invidious.privacydev.net",
-              "https://inv.tux.pizza",
-              "https://invidious.lunar.icu"
-            ];
+            const invidious_instances = await getInvidiousInstances();
             for (const instance of invidious_instances) {
               try {
                 const res = await fetch(`${instance}/api/v1/playlists/${ytPlaylistId}`);
@@ -1222,6 +1212,185 @@ function YouTubeVideoSearchModal({
                   }
                 }
               } catch (e) {}
+            }
+          }
+
+          if (tracks.length === 0) {
+            // Client-side fallback Strategy 2.5: Fetch RSS Feed via dedicated JSON APIs and multiple XML CORS proxies (highly reliable)
+            try {
+              const rssUrl = `https://www.youtube.com/feeds/videos.xml?playlist_id=${ytPlaylistId}`;
+              let rssParsedData: { name: string; tracks: any[] } | null = null;
+
+              // 1. Try rss2json.com API (CORS-friendly, reliable proxying)
+              try {
+                const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`);
+                if (res.ok) {
+                  const data = await res.json();
+                  if (data && data.status === "ok" && Array.isArray(data.items)) {
+                    const name = data.feed?.title || "YouTube Playlist";
+                    const items = data.items.map((item: any) => {
+                      let videoId = "";
+                      if (item.guid && item.guid.startsWith("yt:video:")) {
+                        videoId = item.guid.replace("yt:video:", "");
+                      } else if (item.link) {
+                        const m = item.link.match(/(?:watch\?v=|embed\/|shorts\/|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
+                        if (m) videoId = m[1];
+                      }
+                      return {
+                        videoId,
+                        title: item.title || "Unknown Video",
+                        author: item.author || "YouTube",
+                        thumbnail: item.thumbnail || (videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : "")
+                      };
+                    }).filter((t: any) => t.videoId);
+                    if (items.length > 0) {
+                      rssParsedData = { name, tracks: items };
+                    }
+                  }
+                }
+              } catch (e) {
+                console.warn("rss2json RSS parser failed", e);
+              }
+
+              // 2. Try feed2json.org API if rss2json failed
+              if (!rssParsedData) {
+                try {
+                  const res = await fetch(`https://feed2json.org/convert?url=${encodeURIComponent(rssUrl)}`);
+                  if (res.ok) {
+                    const data = await res.json();
+                    if (data && Array.isArray(data.items)) {
+                      const name = data.title || "YouTube Playlist";
+                      const items = data.items.map((item: any) => {
+                        let videoId = "";
+                        if (item.guid && item.guid.startsWith("yt:video:")) {
+                          videoId = item.guid.replace("yt:video:", "");
+                        } else if (item.url) {
+                          const m = item.url.match(/(?:watch\?v=|embed\/|shorts\/|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
+                          if (m) videoId = m[1];
+                        }
+                        return {
+                          videoId,
+                          title: item.title || "Unknown Video",
+                          author: item.author?.name || item.author || "YouTube",
+                          thumbnail: item.thumbnail || (videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : "")
+                        };
+                      }).filter((t: any) => t.videoId);
+                      if (items.length > 0) {
+                        rssParsedData = { name, tracks: items };
+                      }
+                    }
+                  }
+                } catch (e) {
+                  console.warn("feed2json RSS parser failed", e);
+                }
+              }
+
+              // 3. Try direct XML parser via multiple CORS proxies if both JSON APIs failed
+              if (!rssParsedData) {
+                const xmlProxies = [
+                  `https://api.allorigins.win/raw?url=${encodeURIComponent(rssUrl)}`,
+                  `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(rssUrl)}`,
+                  `https://corsproxy.io/?${encodeURIComponent(rssUrl)}`,
+                  `https://api.allorigins.win/get?url=${encodeURIComponent(rssUrl)}`
+                ];
+
+                for (const proxy of xmlProxies) {
+                  try {
+                    const res = await fetch(proxy);
+                    if (res.ok) {
+                      let xmlText = await res.text();
+                      if (proxy.includes("allorigins.win/get")) {
+                        const json = JSON.parse(xmlText);
+                        xmlText = json.contents || "";
+                      }
+                      if (!xmlText) continue;
+
+                      const parser = new DOMParser();
+                      const xmlDoc = parser.parseFromString(xmlText, "text/xml");
+                      
+                      let name = "YouTube Playlist";
+                      const titleNode = xmlDoc.getElementsByTagName("title")[0];
+                      if (titleNode) name = titleNode.textContent || name;
+
+                      const entries = xmlDoc.getElementsByTagName("entry");
+                      const items: any[] = [];
+
+                      for (let i = 0; i < entries.length; i++) {
+                        const entry = entries[i];
+                        let videoId = "";
+                        const ytVideoIdNode = entry.getElementsByTagName("yt:videoId")[0];
+                        if (ytVideoIdNode) {
+                          videoId = ytVideoIdNode.textContent || "";
+                        }
+                        if (!videoId) {
+                          const videoIdNode = entry.getElementsByTagName("videoId")[0];
+                          if (videoIdNode) videoId = videoIdNode.textContent || "";
+                        }
+                        if (!videoId) {
+                          const idNode = entry.getElementsByTagName("id")[0];
+                          if (idNode?.textContent && idNode.textContent.includes("yt:video:")) {
+                            videoId = idNode.textContent.replace("yt:video:", "");
+                          }
+                        }
+                        if (!videoId) {
+                          const linkNode = entry.getElementsByTagName("link")[0];
+                          const href = linkNode?.getAttribute("href");
+                          if (href) {
+                            const m = href.match(/(?:watch\?v=|embed\/|shorts\/|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
+                            if (m) videoId = m[1];
+                          }
+                        }
+
+                        if (videoId) {
+                          const tNode = entry.getElementsByTagName("title")[0];
+                          const title = tNode?.textContent || "Unknown Video";
+                          
+                          let author = "YouTube";
+                          const authorNode = entry.getElementsByTagName("author")[0];
+                          if (authorNode) {
+                            const nameNode = authorNode.getElementsByTagName("name")[0];
+                            if (nameNode) author = nameNode.textContent || author;
+                          }
+
+                          let thumbnail = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+                          const mediaThumbnail = entry.getElementsByTagName("media:thumbnail")[0];
+                          if (mediaThumbnail) {
+                            thumbnail = mediaThumbnail.getAttribute("url") || thumbnail;
+                          }
+
+                          items.push({
+                            videoId,
+                            title,
+                            author,
+                            thumbnail
+                          });
+                        }
+                      }
+
+                      if (items.length > 0) {
+                        rssParsedData = { name, tracks: items };
+                        break;
+                      }
+                    }
+                  } catch (err) {
+                    console.warn(`XML proxy fetch failed for ${proxy}`, err);
+                  }
+                }
+              }
+
+              if (rssParsedData) {
+                for (const t of rssParsedData.tracks) {
+                  tracks.push({
+                    videoId: t.videoId,
+                    title: t.title,
+                    author: t.author,
+                    length_seconds: 0,
+                    thumbnail: t.thumbnail
+                  });
+                }
+              }
+            } catch (rssErr) {
+              console.warn("RSS feed extraction failed, trying HTML scraping:", rssErr);
             }
           }
 
@@ -1320,7 +1489,8 @@ function YouTubeVideoSearchModal({
           let videoThumb = `https://img.youtube.com/vi/${ytId}/mqdefault.jpg`;
 
           try {
-            const res = await fetch(`/api/media-info?url=${encodeURIComponent(raw)}`);
+            const apiBase = import.meta.env.BASE_URL.replace(/\/$/, "");
+            const res = await fetch(`${apiBase}/api/media-info?url=${encodeURIComponent(raw)}`);
             if (res.ok) {
               const data = await res.json();
               if (data.type === "track") {
@@ -1446,27 +1616,21 @@ function YouTubeVideoSearchModal({
       };
 
       const fetchLocal = async () => {
-        const res = await fetchWithTimeout(`/api/yt-search?q=${q}`, 5000);
+        const apiBase = import.meta.env.BASE_URL.replace(/\/$/, "");
+        const res = await fetchWithTimeout(`${apiBase}/api/yt-search?q=${q}`, 5000);
         const data = await res.json();
         if (data.error) throw new Error(data.error);
         if (!Array.isArray(data.results) || !data.results.length) throw new Error("No results");
         return data.results;
       };
 
+      const invidious_instances = await getInvidiousInstances();
+      const piped_instances = getPipedInstances();
+
       const tasks = [
         fetchLocal(),
-        fetchPiped("https://pipedapi.kavin.rocks"),
-        fetchPiped("https://pipedapi.smnz.de"),
-        fetchPiped("https://piped-api.lunar.icu"),
-        fetchPiped("https://pipedapi.adminforge.de"),
-        fetchPiped("https://pipedapi.tokhmi.xyz"),
-        fetchInvidious("https://invidious.jing.rocks"),
-        fetchInvidious("https://vid.puffyan.us"),
-        fetchInvidious("https://invidious.nerdvpn.de"),
-        fetchInvidious("https://invidious.privacydev.net"),
-        fetchInvidious("https://inv.tux.pizza"),
-        fetchInvidious("https://invidious.lunar.icu"),
-        fetchInvidious("https://invidious.flokinet.to"),
+        ...piped_instances.map((instance) => fetchPiped(instance)),
+        ...invidious_instances.map((instance) => fetchInvidious(instance)),
         fetchProxy(`https://api.allorigins.win/get?url=${encodeURIComponent(`https://www.youtube.com/results?search_query=${q}&gl=US&hl=en`)}`),
         fetchProxy(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(`https://www.youtube.com/results?search_query=${q}&gl=US&hl=en`)}`),
         fetchProxy(`https://corsproxy.io/?${encodeURIComponent(`https://www.youtube.com/results?search_query=${q}&gl=US&hl=en`)}`)

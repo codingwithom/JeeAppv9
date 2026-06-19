@@ -491,7 +491,7 @@ function CropBox({ crop, active, onUpdate, onDelete, containerRef, label, onConf
   active: boolean, 
   onUpdate: (u: Partial<CropArea>) => void,
   onDelete: () => void,
-  containerRef: React.RefObject<HTMLDivElement>,
+  containerRef: React.RefObject<HTMLDivElement | null>,
   label?: string,
   onConfirm?: () => void
 }) {

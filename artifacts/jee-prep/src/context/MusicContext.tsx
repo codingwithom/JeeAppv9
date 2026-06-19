@@ -2,6 +2,7 @@ import { createContext, useContext, ReactNode, useState, useEffect, useRef, useC
 import { idbSet, idbGet } from "@/lib/idb";
 import { loadYouTubeApi } from "@/lib/youtube-api";
 import { useWorkspaceContext } from "./WorkspaceContext";
+import { getInvidiousInstances, getPipedInstances } from "@/utils/youtube";
 
 export interface Song {
   id: string;
@@ -74,7 +75,8 @@ function resolveUrl(url: string): string {
   if (url.startsWith("yt:")) {
     const videoId = url.slice(3);
     const ytUrl = `https://www.youtube.com/watch?v=${videoId}`;
-    return `/api/stream?url=${encodeURIComponent(ytUrl)}`;
+    const apiBase = import.meta.env.BASE_URL.replace(/\/$/, "");
+    return `${apiBase}/api/stream?url=${encodeURIComponent(ytUrl)}`;
   }
   return url;
 }
@@ -394,22 +396,8 @@ export function MusicProvider({ children }: { children: ReactNode }) {
 
       // Strategy 1: Try Invidious API via CORS proxy with timeout
       if (!ytId) {
-        const invidious_instances = [
-          "https://invidious.jing.rocks",
-          "https://vid.puffyan.us",
-          "https://invidious.privacydev.net",
-          "https://inv.tux.pizza",
-          "https://invidious.lunar.icu",
-          "https://invidious.flokinet.to",
-          "https://invidious.nerdvpn.de"];
-        
-        const piped_instances = [
-          "https://pipedapi.kavin.rocks",
-          "https://pipedapi.smnz.de",
-          "https://piped-api.lunar.icu",
-          "https://pipedapi.adminforge.de",
-          "https://pipedapi.tokhmi.xyz",
-        ];
+        const invidious_instances = await getInvidiousInstances();
+        const piped_instances = getPipedInstances();
 
         const allSearchTasks = [
           ...invidious_instances.map(async (instance) => {

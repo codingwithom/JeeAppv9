@@ -9,14 +9,17 @@ const port = Number(process.env.PORT) || 3000;
 export default defineConfig(async () => {
   // Conditionally load Replit plugins asynchronously
   const extraPlugins = [];
-  if (process.env.NODE_ENV !== "production" && process.env.REPL_ID !== undefined) {
-    const { cartographer } = await import("@replit/vite-plugin-cartographer");
-    const { devBanner } = await import("@replit/vite-plugin-dev-banner");
-    
-    extraPlugins.push(
-      cartographer({ root: path.resolve(import.meta.dirname, "..") }),
-      devBanner()
-    );
+  if (process.env.NODE_ENV !== "production") {
+    extraPlugins.push(runtimeErrorOverlay());
+    if (process.env.REPL_ID !== undefined) {
+      const { cartographer } = await import("@replit/vite-plugin-cartographer");
+      const { devBanner } = await import("@replit/vite-plugin-dev-banner");
+      
+      extraPlugins.push(
+        cartographer({ root: path.resolve(import.meta.dirname, "..") }),
+        devBanner()
+      );
+    }
   }
 
   return {
@@ -26,7 +29,6 @@ export default defineConfig(async () => {
     plugins: [
       react(),
       tailwindcss(),
-      runtimeErrorOverlay(),
       ...extraPlugins,
     ],
     resolve: {
@@ -44,6 +46,10 @@ export default defineConfig(async () => {
       outDir: "dist",
       emptyOutDir: true,
       reportCompressedSize: false,
+      sourcemap: false,
+      rollupOptions: {
+        maxParallelFileOps: 2
+      }
     },
     server: {
       port,

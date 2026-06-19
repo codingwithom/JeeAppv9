@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   BrainCircuit,
@@ -20,7 +20,9 @@ import {
   Image as ImageIcon,
   TrendingUp,
   ThumbsUp,
-  ThumbsDown
+  ThumbsDown,
+  HelpCircle,
+  Settings
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAppContext } from "@/context/AppContext";
@@ -709,7 +711,8 @@ function TypewriterMarkdown({ content, isTyping, onComplete, setFullScreenImage 
 
 async function fetchWebSearchResults(query: string, timeFilter?: string): Promise<string> {
   try {
-    let url = `/api/search?q=${encodeURIComponent(query)}`;
+    const apiBase = import.meta.env.BASE_URL.replace(/\/$/, "");
+    let url = `${apiBase}/api/search?q=${encodeURIComponent(query)}`;
     if (timeFilter) {
       url += `&df=${timeFilter}`;
     }
@@ -804,6 +807,15 @@ async function fetchWebSearchResults(query: string, timeFilter?: string): Promis
   }
 }
 
+const SLASH_COMMANDS = [
+  { name: "/clear", description: "Clear current chat history", icon: Trash2 },
+  { name: "/export", description: "Export chat as PNG image", icon: ImageIcon },
+  { name: "/features", description: "View AI features and capabilities", icon: BrainCircuit },
+  { name: "/help", description: "Get help with AI assistant", icon: HelpCircle },
+  { name: "/internet", description: "Enable web search capabilities", icon: Globe },
+  { name: "/system", description: "View system status and configuration", icon: Settings },
+];
+
 export default function AIChatInterface() {
   const { user } = useAppContext();
   const [sessions, setSessions] = useState<ChatSession[]>(() => {
@@ -812,6 +824,65 @@ export default function AIChatInterface() {
   });
   const [activeSessionId, setActiveSessionId] = useState<string | null>(null);
   const [input, setInput] = useState("");
+  const [showCommands, setShowCommands] = useState(false);
+  const [selectedCommandIndex, setSelectedCommandIndex] = useState(0);
+  const commandMenuRef = useRef<HTMLDivElement>(null);
+  const commandListRef = useRef<HTMLDivElement>(null);
+
+  const filteredCommands = useMemo(() => {
+    if (!input.startsWith("/")) return [];
+    const query = input.toLowerCase();
+    return SLASH_COMMANDS.filter(cmd => cmd.name.startsWith(query));
+  }, [input]);
+
+  useEffect(() => {
+    const handleOutsideClick = (e: MouseEvent) => {
+      if (commandMenuRef.current && !commandMenuRef.current.contains(e.target as Node)) {
+        setShowCommands(false);
+      }
+    };
+    if (showCommands) {
+      document.addEventListener("mousedown", handleOutsideClick);
+    }
+    return () => document.removeEventListener("mousedown", handleOutsideClick);
+  }, [showCommands]);
+
+  useEffect(() => {
+    if (commandListRef.current) {
+      const activeEl = commandListRef.current.children[selectedCommandIndex] as HTMLElement;
+      if (activeEl) {
+        const container = commandListRef.current;
+        const activeTop = activeEl.offsetTop;
+        const activeHeight = activeEl.offsetHeight;
+        const containerHeight = container.clientHeight;
+        const containerScrollTop = container.scrollTop;
+        
+        if (activeTop < containerScrollTop) {
+          container.scrollTop = activeTop;
+        } else if (activeTop + activeHeight > containerScrollTop + containerHeight) {
+          container.scrollTop = activeTop + activeHeight - containerHeight;
+        }
+      }
+    }
+  }, [selectedCommandIndex]);
+
+  const selectCommand = (cmd: string) => {
+    if (cmd === "/clear") {
+      if (activeSessionId) {
+        setSessions(prev => prev.map(s => s.id === activeSessionId ? { ...s, messages: [], updatedAt: Date.now() } : s));
+      }
+      setInput("");
+      setAttachedFiles([]);
+    } else if (cmd === "/export") {
+      setInput("");
+      exportAsImage();
+    } else {
+      setInput(cmd + " ");
+      textareaRef.current?.focus();
+    }
+    setShowCommands(false);
+  };
+
   const [loading, setLoading] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(() => typeof window !== "undefined" ? window.innerWidth > 768 : true);
   const [editingId, setEditingId] = useState<string | null>(null);
@@ -1786,6 +1857,22 @@ If the user uploaded an image of an equation, read/OCR the equation from the ima
   const handleSend = async () => {
     if ((!input.trim() && attachedFiles.length === 0) || loading || isTyping) return;
     const userMsg = input.trim();
+    
+    if (userMsg === "/clear") {
+      if (activeSessionId) {
+        setSessions(prev => prev.map(s => s.id === activeSessionId ? { ...s, messages: [], updatedAt: Date.now() } : s));
+      }
+      setInput("");
+      setAttachedFiles([]);
+      return;
+    }
+    
+    if (userMsg === "/export") {
+      setInput("");
+      exportAsImage();
+      return;
+    }
+    
     setInput("");
     
     let filePayloads: any[] = [];
@@ -2052,25 +2139,7 @@ If the user uploaded an image of an equation, read/OCR the equation from the ima
             </h2>
           </div>
           
-          {activeSessionId && messages.length > 0 && (
-            <div className="flex items-center gap-1.5">
-              <Button 
-                variant="outline" 
-                size="sm" 
-                onClick={exportAsImage}
-                disabled={exportingImage}
-                className="h-8 text-xs gap-1.5 text-muted-foreground hover:text-foreground rounded-full px-3"
-                title="Export Chat as Image"
-              >
-                {exportingImage ? (
-                  <div className="h-3.5 w-3.5 rounded-full border border-current border-t-transparent animate-spin" />
-                ) : (
-                  <ImageIcon className="h-3.5 w-3.5" />
-                )}
-                {exportingImage ? "Exporting..." : "Export Image"}
-              </Button>
-            </div>
-          )}
+          {/* Export button removed as it is now triggered by /export slash command */}
         </div>
 
         <div className="flex-1 overflow-y-auto pt-16 pb-32 px-4 md:px-8 lg:px-20 scrollbar-hide">
@@ -2358,6 +2427,44 @@ If the user uploaded an image of an equation, read/OCR the equation from the ima
 
         <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 bg-gradient-to-t from-background via-background to-transparent z-10">
            <div className="max-w-3xl mx-auto relative">
+              {/* Slash Command Suggestions Popover */}
+              {showCommands && filteredCommands.length > 0 && (
+                <div 
+                  ref={commandMenuRef}
+                  className="absolute bottom-full left-4 mb-3 w-full max-w-xs sm:max-w-sm bg-popover/90 backdrop-blur-xl border border-border/80 rounded-2xl shadow-2xl overflow-hidden z-[1000] flex flex-col"
+                  style={{ maxHeight: "80px" }}
+                >
+                  <div 
+                    ref={commandListRef}
+                    className="overflow-y-auto divide-y divide-border/40 scrollbar-hide py-1 max-h-[80px]"
+                  >
+                    {filteredCommands.map((cmd, idx) => {
+                      const isSelected = idx === selectedCommandIndex;
+                      const IconComponent = cmd.icon;
+                      return (
+                        <button
+                          key={cmd.name}
+                          onClick={() => selectCommand(cmd.name)}
+                          className={cn(
+                            "w-full text-left px-4 py-2 text-sm flex items-center justify-between transition-colors outline-none h-[40px]",
+                            isSelected ? "bg-accent text-accent-foreground font-medium" : "text-popover-foreground hover:bg-muted/50"
+                          )}
+                        >
+                          <div className="flex items-center gap-2.5 min-w-0">
+                            <IconComponent className={cn("h-4 w-4 shrink-0", isSelected ? "text-primary" : "text-muted-foreground")} />
+                            <span className={cn("font-semibold font-mono truncate", isSelected ? "text-primary" : "text-muted-foreground")}>
+                              {cmd.name}
+                            </span>
+                          </div>
+                          <span className="text-xs text-muted-foreground font-light italic truncate max-w-[150px] ml-4 shrink-0">
+                            {cmd.description}
+                          </span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
               <div className="flex justify-end mb-2">
                 <select
                   value={chatMode}
@@ -2409,19 +2516,50 @@ If the user uploaded an image of an equation, read/OCR the equation from the ima
                    <Plus className="h-6 w-6" />
                  </button>
              <textarea 
-               ref={textareaRef}
-               value={input}
-               onChange={e => setInput(e.target.value)}
-               onKeyDown={e => {
-                  if (e.key === 'Enter' && !e.shiftKey) {
-                     e.preventDefault();
-                     handleSend();
+                ref={textareaRef}
+                value={input}
+                onChange={e => {
+                  const val = e.target.value;
+                  setInput(val);
+                  if (val.startsWith("/") && !val.includes(" ")) {
+                    setShowCommands(true);
+                    setSelectedCommandIndex(0);
+                  } else {
+                    setShowCommands(false);
                   }
-               }}
-               placeholder="Ask me anything..."
-               className="flex-1 bg-transparent border-none resize-none max-h-48 min-h-[44px] py-3 px-4 text-base focus:outline-none placeholder:text-muted-foreground/60 text-foreground"
-               rows={1}
-             />
+                }}
+                onKeyDown={e => {
+                   if (showCommands && filteredCommands.length > 0) {
+                     if (e.key === 'ArrowDown') {
+                       e.preventDefault();
+                       setSelectedCommandIndex(prev => (prev + 1) % filteredCommands.length);
+                       return;
+                     }
+                     if (e.key === 'ArrowUp') {
+                       e.preventDefault();
+                       setSelectedCommandIndex(prev => (prev - 1 + filteredCommands.length) % filteredCommands.length);
+                       return;
+                     }
+                     if (e.key === 'Enter') {
+                       e.preventDefault();
+                       selectCommand(filteredCommands[selectedCommandIndex].name);
+                       return;
+                     }
+                     if (e.key === 'Escape') {
+                       e.preventDefault();
+                       setShowCommands(false);
+                       return;
+                     }
+                   }
+                   if (e.key === 'Enter' && !e.shiftKey) {
+                      e.preventDefault();
+                      handleSend();
+                   }
+                }}
+                placeholder="Ask me anything..."
+                className="flex-1 bg-transparent border-none resize-none max-h-48 min-h-[44px] py-3 px-4 text-base focus:outline-none placeholder:text-muted-foreground/60 text-foreground"
+                rows={1}
+              />
              {loading || isTyping ? (
                <button 
                  onClick={handleStopGeneration}

@@ -1364,19 +1364,7 @@ export default function AdminPage() {
     },
   ];
 
-  function idbKeyCategory(key: string): string | null {
-    if (key.startsWith("pdf_leaf_") || key.startsWith("img_leaf_")) return "pdf";
-    if (key.startsWith("music_")) return "music";
-    if (key.startsWith("ambient_")) return "ambient";
-    if (
-      key.startsWith("vid_img_") ||
-      key.startsWith("vid_voice_") ||
-      key.startsWith("vid_ss_") ||
-      key.startsWith("vid_file_")
-    ) return "videos";
-    if (key.startsWith("jee_saves_") || key.startsWith("q_img_") || key.startsWith("a_img_") || key.startsWith("q_crop_") || key.startsWith("a_crop_")) return "saves";
-    return null;
-  }
+
 
   // ── Smart Editor Logic ──────────────────────────────────────────────────
   const startEditingCategory = (catKey: string) => {

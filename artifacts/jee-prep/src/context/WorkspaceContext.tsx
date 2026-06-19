@@ -153,22 +153,22 @@ export function WorkspaceProvider({ children }: { children: ReactNode }) {
   };
 
   const readMediaAsBlob = async (key: string): Promise<Blob | null> => {
-    if (!isSupported || !dirHandle) return await idbGet<Blob>(key);
+    if (!isSupported || !dirHandle) return (await idbGet<Blob>(key)) ?? null;
     try {
       const mediaDir = await dirHandle.getDirectoryHandle('Media');
       const fileHandle = await mediaDir.getFileHandle(key);
       return await fileHandle.getFile();
-    } catch (e) { return await idbGet<Blob>(key); }
+    } catch (e) { return (await idbGet<Blob>(key)) ?? null; }
   };
 
   const readMediaAsArrayBuffer = async (key: string): Promise<ArrayBuffer | null> => {
-    if (!isSupported || !dirHandle) return await idbGet<ArrayBuffer>(key);
+    if (!isSupported || !dirHandle) return (await idbGet<ArrayBuffer>(key)) ?? null;
     try {
       const mediaDir = await dirHandle.getDirectoryHandle('Media');
       const fileHandle = await mediaDir.getFileHandle(key);
       const file = await fileHandle.getFile();
       return await file.arrayBuffer();
-    } catch (e) { return await idbGet<ArrayBuffer>(key); }
+    } catch (e) { return (await idbGet<ArrayBuffer>(key)) ?? null; }
   };
 
   const deleteMedia = async (key: string) => {
@@ -179,8 +179,17 @@ export function WorkspaceProvider({ children }: { children: ReactNode }) {
     } catch (e) { await idbDelete(key); }
   };
 
+  // Show loading spinner while loading folder handle state from IndexedDB
+  if (isSupported && isLoading) {
+    return (
+      <div className="flex h-screen items-center justify-center bg-background p-4 relative overflow-hidden">
+        <Loader2 className="h-8 w-8 animate-spin text-primary opacity-80" />
+      </div>
+    );
+  }
+
   // Render Interceptor UI until workspace is bound
-  if (isSupported && !isLoading && !isReady) {
+  if (isSupported && !isReady) {
     return (
       <div className="flex h-screen items-center justify-center bg-background p-4 relative overflow-hidden">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="relative z-10 w-full max-w-md">

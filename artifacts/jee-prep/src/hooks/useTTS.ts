@@ -14,7 +14,7 @@ const getElevenLabsVoiceId = () => localStorage.getItem('elevenLabsVoiceId')?.tr
 export const useTTS = () => {
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
-  const utteranceRef = useRef<SpeechSynthesisUtterance>();
+  const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const stop = useCallback(() => {

@@ -141,6 +141,7 @@ function QuestionEditorModal({
       return () => { active = false; };
     } else {
       setQPreview(null);
+      return () => {};
     }
   }, [qImageFile, initialData?.questionImageKey, readMediaAsBlob]);
 
@@ -158,6 +159,7 @@ function QuestionEditorModal({
       return () => { active = false; };
     } else {
       setAPreview(null);
+      return () => {};
     }
   }, [aImageFile, initialData?.answerImageKey, readMediaAsBlob]);
 
@@ -565,7 +567,6 @@ function QuestionDetailModal({
   sourceId,
   type,
   onClose,
-  handleSRS,
   isBookmarked,
   onBookmark
 }: { 
@@ -757,6 +758,7 @@ export default function SavesPage() {
       }, 1500);
       return () => clearTimeout(timer);
     }
+    return () => {};
   }, [isPrinting]);
 
   const getSourceName = (id: string) => {

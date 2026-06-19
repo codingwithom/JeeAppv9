@@ -4,14 +4,29 @@ import playdl from "play-dl";
 import { spawn } from "child_process";
 import path from "path";
 import { fileURLToPath } from "url";
+import fs from "fs";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: ["https://omnetwork.in", "http://localhost:21847", "http://localhost:3000"],
+  credentials: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Rewrite middleware to strip "/v4" base path prefix if present
+app.use((req, res, next) => {
+  if (req.url === "/v4") {
+    req.url = "/";
+  } else if (req.url.startsWith("/v4/")) {
+    req.url = req.url.substring(3);
+  }
+  next();
+});
+
 
 // ─── HELPER FUNCTIONS ────────────────────────────────────────────────────────
 function decodeHTMLEntities(str) {
@@ -21,7 +36,7 @@ function decodeHTMLEntities(str) {
     .replace(/&gt;/g, ">")
     .replace(/&quot;/g, '"')
     .replace(/&#39;/g, "'")
-    .replace(/&#x27;/g, "'")
+    .replace(/&apos;/g, "'")
     .replace(/&#x2F;/g, "/")
     .replace(/&ndash;/g, "–")
     .replace(/&mdash;/g, "—")
@@ -66,9 +81,9 @@ function detectType(url) {
     return "yt_video";
   }
   if (url.includes("youtube.com/playlist")) return "yt_playlist";
-  if (url.includes("spotify.com/track/")) return "sp_track";
-  if (url.includes("spotify.com/playlist/")) return "sp_playlist";
-  if (url.includes("spotify.com/album/")) return "sp_album";
+  if (url.includes("open.spotify.com/track")) return "sp_track";
+  if (url.includes("open.spotify.com/playlist")) return "sp_playlist";
+  if (url.includes("open.spotify.com/album")) return "sp_album";
   return "unknown";
 }
 
@@ -248,7 +263,14 @@ function streamAndCache(ytUrl, req, res) {
 
 // ─── API ENDPOINTS ────────────────────────────────────────────────────────────
 
-// 1. Health check
+// 1. Health check & Root Welcome Routes
+app.get("/", (req, res) => {
+  res.status(200).json({
+    status: "online",
+    message: "JEE Prep API Backend engine is running cleanly!"
+  });
+});
+
 app.get("/api/healthz", (_req, res) => {
   res.json({ status: "ok" });
 });
@@ -339,7 +361,7 @@ app.get("/api/yt-search", async (req, res) => {
       title: v.title || "Unknown",
       author: v.channel?.name || "Unknown",
       length_seconds: v.durationInSec || 0,
-      thumbnail: v.thumbnails?.at(-1)?.url || `https://img.youtube.com/vi/${v.id}/mqdefault.jpg`
+      thumbnail: v.thumbnails?.at(-1)?.url || `https://img.youtube.com/vi/${v.id}/hqdefault.jpg`
     }));
     
     return res.status(200).json({ results: formatted });
@@ -411,7 +433,7 @@ app.get("/api/yt-search", async (req, res) => {
                     title,
                     author,
                     length_seconds,
-                    thumbnail: `https://i.ytimg.com/vi/${vId}/mqdefault.jpg`
+                    thumbnail: `https://i.ytimg.com/vi/${vId}/hqdefault.jpg`
                   });
                 }
               } catch(e) {}
@@ -618,7 +640,7 @@ app.get("/api/media-info", async (req, res) => {
                   tracks.push({
                     title,
                     artist: cleanTitle(rawArtist) || "YouTube",
-                    thumbnail: `https://img.youtube.com/vi/${vId}/mqdefault.jpg`,
+                    thumbnail: `https://img.youtube.com/vi/${vId}/hqdefault.jpg`,
                     duration: isNaN(duration) ? 0 : duration,
                     youtubeId: vId,
                     streamUrl: `/api/stream?url=${encodeURIComponent(`https://www.youtube.com/watch?v=${vId}`)}`
@@ -646,7 +668,7 @@ app.get("/api/media-info", async (req, res) => {
                   tracks.push({
                     title,
                     artist,
-                    thumbnail: `https://img.youtube.com/vi/${vId}/mqdefault.jpg`,
+                    thumbnail: `https://img.youtube.com/vi/${vId}/hqdefault.jpg`,
                     duration: 0,
                     youtubeId: vId,
                     streamUrl: `/api/stream?url=${encodeURIComponent(`https://www.youtube.com/watch?v=${vId}`)}`
@@ -681,7 +703,7 @@ app.get("/api/media-info", async (req, res) => {
           tracks.push({
             title,
             artist,
-            thumbnail: `https://img.youtube.com/vi/${vId}/mqdefault.jpg`,
+            thumbnail: `https://img.youtube.com/vi/${vId}/hqdefault.jpg`,
             duration: 0,
             youtubeId: vId,
             streamUrl: `/api/stream?url=${encodeURIComponent(`https://www.youtube.com/watch?v=${vId}`)}`
@@ -756,7 +778,7 @@ app.get("/api/media-info", async (req, res) => {
             return {
               title: cleanTitle(v.title || "") || `YouTube Video [${vId}]`,
               artist: v.channel?.name || "YouTube",
-              thumbnail: v.thumbnails?.at(-1)?.url || `https://img.youtube.com/vi/${vId}/mqdefault.jpg`,
+              thumbnail: v.thumbnails?.at(-1)?.url || `https://img.youtube.com/vi/${vId}/hqdefault.jpg`,
               duration: v.durationInSec || 0,
               youtubeId: vId,
               streamUrl: `/api/stream?url=${encodeURIComponent(`https://www.youtube.com/watch?v=${vId}`)}`
@@ -852,25 +874,17 @@ app.get("/api/stream", async (req, res) => {
   }
 });
 
-// Serve static files in production
-const distPath = path.join(__dirname, "dist");
-app.use(express.static(distPath));
-
+// 6. Production Clean API Routing Strategy (Bypasses local file loop boundaries)
 app.get(/.*/, (req, res) => {
   if (req.path.startsWith("/api")) {
     return res.status(404).json({ error: "API route not found" });
   }
-  res.sendFile(path.join(distPath, "index.html"));
+  // Standard fallback text safely answering to Render's internal route ping rules
+  res.status(200).send("Backend production engine running cleanly.");
 });
 
-// PORT resolution
-const rawPort = process.env.PORT || "8080";
-const port = parseInt(rawPort, 10);
-
-app.listen(port, "0.0.0.0", (err) => {
-  if (err) {
-    console.error("Error starting server:", err);
-    process.exit(1);
-  }
-  console.log(`Server listening on port ${port} (serving static assets and APIs)`);
+// PORT resolution and server start
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Backend production engine running cleanly on port ${PORT}`);
 });

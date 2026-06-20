@@ -135,7 +135,7 @@ router.get("/yt-search", async (req: Request, res: Response) => {
       title: v.title || "Unknown",
       author: v.channel?.name || "Unknown",
       length_seconds: v.durationInSec || 0,
-      thumbnail: v.thumbnails?.at(-1)?.url || `https://img.youtube.com/vi/${v.id}/mqdefault.jpg`
+      thumbnail: v.thumbnails?.at(-1)?.url || `https://img.youtube.com/vi/${v.id}/hqdefault.jpg`
     }));
     
     return res.status(200).json({ results: formatted });
@@ -206,7 +206,7 @@ router.get("/yt-search", async (req: Request, res: Response) => {
                     title,
                     author,
                     length_seconds,
-                    thumbnail: `https://i.ytimg.com/vi/${vId}/mqdefault.jpg`
+                    thumbnail: `https://i.ytimg.com/vi/${vId}/hqdefault.jpg`
                   });
                 }
               } catch(e) {}

@@ -54,7 +54,7 @@ export default defineConfig(async () => {
 
   return {
     // Use absolute root path for web routing inside Codespaces
-  base: process.env.NODE_ENV === "production" ? "/" : "/",
+  base: process.env.NODE_ENV === "production" ? "./" : "/",
 
     plugins: [
       react(),

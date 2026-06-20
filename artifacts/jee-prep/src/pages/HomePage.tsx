@@ -88,10 +88,42 @@ const FlipUnit = ({ value, label }: { value: number; label: string }) => (
 );
 
 function CountdownTimer() {
-  const [targetDate, setTargetDate] = useLocalStorage("target_date", "2028-04-06T00:00:00");
+  const { selectedGoal } = useAppContext();
+  
+  const getDefaultTargetDate = () => {
+    const nextYear = new Date().getFullYear() + 1;
+    const currentYear = new Date().getFullYear();
+    if (!selectedGoal) return "2028-04-06T00:00:00";
+    
+    switch (selectedGoal.category) {
+      case "NEET":
+        return `${nextYear}-05-02T00:00:00`;
+      case "UPSC":
+        return `${nextYear}-06-05T00:00:00`;
+      case "Boards":
+      case "School":
+        return `${nextYear}-03-01T00:00:00`;
+      case "Olympiads":
+        return `${nextYear}-11-15T00:00:00`;
+      case "Skills":
+        return `${currentYear}-12-31T23:59:59`;
+      case "JEE":
+      default:
+        return "2028-04-06T00:00:00";
+    }
+  };
+
+  const defaultDate = getDefaultTargetDate();
+  const [targetDate, setTargetDate] = useLocalStorage("target_date", defaultDate);
   const [isEditing, setIsEditing] = useState(false);
   const [editValue, setEditValue] = useState(targetDate);
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+
+  // Update countdown target date when goal changes
+  useEffect(() => {
+    setTargetDate(defaultDate);
+    setEditValue(defaultDate);
+  }, [selectedGoal]);
 
   useEffect(() => {
     const calculateTimeLeft = () => {
@@ -127,7 +159,7 @@ function CountdownTimer() {
 
       <div className="flex justify-between items-center mb-6 relative z-10">
         <h2 className="text-sm font-bold text-muted-foreground tracking-widest uppercase">
-          JEE 2028 Countdown
+          {selectedGoal ? `${selectedGoal.displayName} Countdown` : "JEE 2028 Countdown"}
         </h2>
         {isEditing ? (
           <div className="flex items-center gap-2">

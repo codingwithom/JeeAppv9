@@ -586,7 +586,7 @@ function SystemPerformance() {
 
 // ─── Main Component ─────────────────────────────────────────────────────────
 export default function AdminPage() {
-  const { user, logout } = useAppContext();
+  const { user, logout, selectedGoal, setGoalSelectionOpen } = useAppContext();
   const { streakData, todaySession } = useStreakContext();
   const { isSupported, changeFolder, writeMedia, readMediaAsArrayBuffer } = useWorkspaceContext();
 
@@ -2880,9 +2880,22 @@ export default function AdminPage() {
               <p className="text-sm font-semibold text-foreground">
                 Logged in as <span className="text-primary">{user}</span>
               </p>
-              <p className="text-xs text-muted-foreground mt-0.5">
-                Sign out of your JEE Prep account
-              </p>
+              {selectedGoal ? (
+                <div className="flex items-center gap-2 mt-1.5">
+                  <span className="text-xs text-muted-foreground">Goal:</span>
+                  <button 
+                    onClick={() => setGoalSelectionOpen(true)}
+                    className="px-2 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 transition-all font-semibold text-[10px] flex items-center gap-1 shadow-sm"
+                  >
+                    <span>{selectedGoal.displayName}</span>
+                    <span className="text-[8px] opacity-75">▼</span>
+                  </button>
+                </div>
+              ) : (
+                <p className="text-xs text-muted-foreground mt-0.5">
+                  Sign out of your account
+                </p>
+              )}
             </div>
             <Button variant="destructive" onClick={logout} className="gap-2">
               <LogOut className="h-4 w-4" />

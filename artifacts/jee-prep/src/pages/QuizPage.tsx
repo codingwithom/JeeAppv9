@@ -158,26 +158,24 @@ function planSubjects(
   totalCount: number,
   activeSources: SelectedSources,
   availablePdfs: SelectableItem[],
-  availableSaves: SelectableItem[]
+  availableSaves: SelectableItem[],
+  subjectsList: string[]
 ): Record<string, SubjectPlan> {
   const text = brief.trim().toLowerCase();
   
   // Initialize plan
-  const plan: Record<string, SubjectPlan> = {
-    Physics: { count: 0, difficulty: defaultDifficulty as any },
-    Chemistry: { count: 0, difficulty: defaultDifficulty as any },
-    Maths: { count: 0, difficulty: defaultDifficulty as any }
-  };
+  const plan: Record<string, SubjectPlan> = {};
+  subjectsList.forEach(subj => {
+    plan[subj] = { count: 0, difficulty: defaultDifficulty as any };
+  });
 
   if (text.length > 0) {
-    const subjects = ["physics", "chemistry", "maths"];
     let totalAllocated = 0;
     
-    subjects.forEach(subj => {
-      const displaySubj = subj === "physics" ? "Physics" : (subj === "chemistry" ? "Chemistry" : "Maths");
-      
+    subjectsList.forEach(subj => {
       // Matches: "10 tough questions of Maths" or "10 hard maths" or "10 Maths (hard)"
-      const regex = new RegExp(`(\\d+)\\s*(easy|medium|hard|tough|mixed)?\\s*(?:question|q)?s?\\s*(?:of|for)?\\s*${subj.replace("maths", "math")}`, "i");
+      const subjMatchTerm = subj.toLowerCase().replace(/s$/, ""); // e.g. physics -> physic, chemistry -> chemistry, biology -> biology
+      const regex = new RegExp(`(\\d+)\\s*(easy|medium|hard|tough|mixed)?\\s*(?:question|q)?s?\\s*(?:of|for)?\\s*${subjMatchTerm}`, "i");
       const match = text.match(regex);
       
       if (match) {
@@ -190,22 +188,21 @@ function planSubjects(
         else if (diffStr.includes("hard") || diffStr.includes("tough")) diff = "Hard";
         else if (diffStr.includes("mixed")) diff = "Mixed";
         
-        plan[displaySubj].count = count;
-        plan[displaySubj].difficulty = diff;
+        plan[subj].count = count;
+        plan[subj].difficulty = diff;
         totalAllocated += count;
       }
     });
     
-    // If no counts were found but some subjects were mentioned, or if some subjects are explicitly excluded
+    // If no counts were found but some subjects were mentioned
     if (totalAllocated === 0) {
-      const mentionsPhysics = text.includes("physic") || text.includes("phy");
-      const mentionsChemistry = text.includes("chemist") || text.includes("chem");
-      const mentionsMaths = text.includes("math");
-      
       const mentionedSubjects: string[] = [];
-      if (mentionsPhysics) mentionedSubjects.push("Physics");
-      if (mentionsChemistry) mentionedSubjects.push("Chemistry");
-      if (mentionsMaths) mentionedSubjects.push("Maths");
+      subjectsList.forEach(subj => {
+        const subjMatchTerm = subj.toLowerCase().replace(/s$/, "");
+        if (text.includes(subjMatchTerm)) {
+          mentionedSubjects.push(subj);
+        }
+      });
       
       if (mentionedSubjects.length > 0) {
         // Distribute totalCount evenly among mentioned subjects
@@ -227,14 +224,11 @@ function planSubjects(
       const unallocated = totalCount - totalAllocated;
       if (unallocated > 0) {
         // Distribute remainder among subjects that currently have 0 count but are NOT excluded
-        // A subject is excluded if we explicitly mentioned other subjects but not this one
-        const mentionedInBrief = text.includes("phys") || text.includes("chem") || text.includes("math");
+        const mentionedInBrief = subjectsList.some(s => text.includes(s.toLowerCase().replace(/s$/, "")));
         const zeroSubjs = Object.keys(plan).filter(k => {
           if (plan[k].count > 0) return false;
           if (!mentionedInBrief) return true; // if brief is general, all are open
-          // If brief mentioned subjects, only count those mentioned
-          const lowKey = k.toLowerCase();
-          return text.includes(lowKey.replace("maths", "math"));
+          return text.includes(k.toLowerCase().replace(/s$/, ""));
         });
         
         const activeZeroSubjs = zeroSubjs.length > 0 ? zeroSubjs : Object.keys(plan).filter(k => plan[k].count > 0);
@@ -257,9 +251,11 @@ function planSubjects(
     const item = availablePdfs.find(p => p.id === pdfId);
     if (item) {
       const pathLower = item.path.toLowerCase();
-      if (pathLower.includes("phys")) activeSubjects.add("Physics");
-      if (pathLower.includes("chem")) activeSubjects.add("Chemistry");
-      if (pathLower.includes("math")) activeSubjects.add("Maths");
+      subjectsList.forEach(s => {
+        if (pathLower.includes(s.toLowerCase().replace(/s$/, ""))) {
+          activeSubjects.add(s);
+        }
+      });
     }
   });
   
@@ -268,13 +264,15 @@ function planSubjects(
     const item = availableSaves.find(p => p.id === saveId);
     if (item) {
       const pathLower = item.path.toLowerCase();
-      if (pathLower.includes("phys")) activeSubjects.add("Physics");
-      if (pathLower.includes("chem")) activeSubjects.add("Chemistry");
-      if (pathLower.includes("math")) activeSubjects.add("Maths");
+      subjectsList.forEach(s => {
+        if (pathLower.includes(s.toLowerCase().replace(/s$/, ""))) {
+          activeSubjects.add(s);
+        }
+      });
     }
   });
 
-  const finalActive = activeSubjects.size > 0 ? Array.from(activeSubjects) : ["Physics", "Chemistry", "Maths"];
+  const finalActive = activeSubjects.size > 0 ? Array.from(activeSubjects) : subjectsList;
   
   const baseCount = Math.floor(totalCount / finalActive.length);
   const remainder = totalCount % finalActive.length;
@@ -283,7 +281,7 @@ function planSubjects(
     plan[subj].count = baseCount + (index < remainder ? 1 : 0);
     plan[subj].difficulty = defaultDifficulty as any;
   });
-
+  
   return plan;
 }
 
@@ -404,8 +402,9 @@ class QuizGeneratorManager {
     model: string;
     useFree: boolean;
     brief: string;
+    subjectsList: string[];
   }) {
-    const { sources, difficulty, finalQuestionCount, readMediaAsArrayBuffer, availablePdfs, availableVideos, model, useFree, brief } = params;
+    const { sources, difficulty, finalQuestionCount, readMediaAsArrayBuffer, availablePdfs, availableVideos, model, useFree, brief, subjectsList } = params;
 
     const apiKey = localStorage.getItem("jee_openrouter_api_key") || "";
     
@@ -499,7 +498,8 @@ class QuizGeneratorManager {
          finalQuestionCount,
          sources,
          availablePdfs,
-         savedList
+         savedList,
+         subjectsList
       );
 
       // Determine total number of batches to slice the context
@@ -925,10 +925,13 @@ class QuizGeneratorManager {
         console.warn("Diagram image mapping failed:", imgErr);
       }
 
-      // Sort questions: Physics first, Chemistry second, Maths third
+      // Sort questions based on the selected subjects order
       allParsedQuestions.sort((a, b) => {
-          const order: Record<string, number> = { "Physics": 1, "Chemistry": 2, "Maths": 3 };
-          return (order[a.subject] || 4) - (order[b.subject] || 4);
+          const idxA = subjectsList.indexOf(a.subject);
+          const idxB = subjectsList.indexOf(b.subject);
+          const orderA = idxA !== -1 ? idxA : 99;
+          const orderB = idxB !== -1 ? idxB : 99;
+          return orderA - orderB;
       });
 
       const newQuiz: SavedQuiz = {
@@ -1010,9 +1013,45 @@ function QuestionImage({ imageKey, imageUrl }: { imageKey?: string, imageUrl?: s
   );
 }
 
+const getSubjectsForGoal = (goal: any) => {
+  if (!goal) return ["Physics", "Chemistry", "Maths"];
+  
+  switch (goal.category) {
+    case "JEE":
+      return ["Physics", "Chemistry", "Maths"];
+    case "NEET":
+      return ["Physics", "Chemistry", "Biology"];
+    case "UPSC":
+      return ["History", "Polity", "Geography", "Economy", "CSAT", "Current Affairs"];
+    case "Boards":
+    case "School":
+      {
+        const isArts = goal.path?.includes("Arts");
+        const isCommerce = goal.path?.includes("Commerce");
+        if (isArts) {
+          return ["History", "Geography", "Political Science", "English"];
+        } else if (isCommerce) {
+          return ["Accountancy", "Business Studies", "Economics", "Maths"];
+        } else {
+          return ["Physics", "Chemistry", "Maths", "Biology"];
+        }
+      }
+    case "Olympiads":
+      return ["Mathematics", "Physics", "Chemistry", "Biology", "Astronomy", "Mental Ability"];
+    case "Skills":
+      return ["Theory", "Practice", "Tools", "Coding & Logic"];
+    case "Banking":
+      return ["Quantitative Aptitude", "Reasoning Ability", "English Language", "General Awareness"];
+    case "Govt Exam":
+      return ["General Knowledge", "Quantitative Aptitude", "Reasoning", "English", "General Science"];
+    default:
+      return ["Core Subject", "Secondary Subject", "General Aptitude", "Revision & Mock"];
+  }
+};
+
 // ─── Main Interface ────────────────────────────────────────────────────────
 function AIQuizInterface() {
-  const { user } = useAppContext();
+  const { user, selectedGoal } = useAppContext();
   const { readMediaAsArrayBuffer } = useWorkspaceContext();
   const [phase, setPhase] = useState<QuizPhase>("setup");
 
@@ -1050,7 +1089,11 @@ function AIQuizInterface() {
   const [questionStatuses, setQuestionStatuses] = useState<Record<number, QuestionStatus>>({});
   const [answers, setAnswers] = useState<Record<number, number>>({});
   const [timeLeft, setTimeLeft] = useState(10800);
-  const [activeSubject, setActiveSubject] = useState<string>("Physics");
+  const goalSubjects = useMemo(() => {
+    return getSubjectsForGoal(selectedGoal);
+  }, [selectedGoal]);
+
+  const [activeSubject, setActiveSubject] = useState<string>(() => getSubjectsForGoal(selectedGoal)[0] || "Physics");
   const [showInstructions, setShowInstructions] = useState(false);
   const [showSummary, setShowSummary] = useState(false);
   const [quizName, setQuizName] = useState("");
@@ -1059,11 +1102,19 @@ function AIQuizInterface() {
   const [timeSpent, setTimeSpent] = useState<Record<number, number>>({});
   const [reviewMode, setReviewMode] = useState(false);
 
+  // Sync activeSubject when goal changes
+  useEffect(() => {
+    const fresh = getSubjectsForGoal(selectedGoal);
+    if (fresh.length > 0 && !fresh.includes(activeSubject)) {
+      setActiveSubject(fresh[0]);
+    }
+  }, [selectedGoal]);
+
   const subjects = useMemo(() => {
     const uniqueSubjects = Array.from(new Set(questions.map(q => q.subject).filter(Boolean))) as string[];
-    const standardOrder = ["Physics", "Chemistry", "Maths"];
+    const standardOrder = goalSubjects;
     return uniqueSubjects.sort((a, b) => standardOrder.indexOf(a) - standardOrder.indexOf(b));
-  }, [questions]);
+  }, [questions, goalSubjects]);
 
   // Saved Tests State
   const [savedQuizzes, setSavedQuizzes] = useState<SavedQuiz[]>(() => {
@@ -1105,8 +1156,8 @@ function AIQuizInterface() {
 
   // Live Auto-parsed preview allocation based on prompt
   const detectedBriefPlan = useMemo(() => {
-    return planSubjects(briefInstructions, difficulty, finalQuestionCount, sources, availablePdfs, availableSaves);
-  }, [briefInstructions, difficulty, finalQuestionCount, sources, availablePdfs, availableSaves]);
+    return planSubjects(briefInstructions, difficulty, finalQuestionCount, sources, availablePdfs, availableSaves, goalSubjects);
+  }, [briefInstructions, difficulty, finalQuestionCount, sources, availablePdfs, availableSaves, goalSubjects]);
 
   useEffect(() => {
     if (typeof Notification !== "undefined" && Notification.permission === "default") {
@@ -1165,7 +1216,8 @@ function AIQuizInterface() {
       availableVideos,
       model: "",
       useFree: true,
-      brief: briefInstructions
+      brief: briefInstructions,
+      subjectsList: goalSubjects
     });
   };
 
@@ -1739,10 +1791,17 @@ Respond with ONLY the markdown explanation. Do not wrap it in JSON or HTML. Star
                 {briefInstructions.trim() && (
                   <div className="mt-3 p-3 bg-indigo-500/5 rounded-xl border border-indigo-500/10 text-xs flex flex-wrap gap-4 items-center font-semibold text-foreground">
                     <span className="text-muted-foreground flex items-center gap-1"><Info className="w-3.5 h-3.5" /> Detected Plan:</span>
-                    {detectedBriefPlan.Maths.count > 0 && <span className="text-blue-600 dark:text-blue-400 font-bold">Maths: {detectedBriefPlan.Maths.count} Qs ({detectedBriefPlan.Maths.difficulty})</span>}
-                    {detectedBriefPlan.Physics.count > 0 && <span className="text-indigo-600 dark:text-indigo-400 font-bold">Physics: {detectedBriefPlan.Physics.count} Qs ({detectedBriefPlan.Physics.difficulty})</span>}
-                    {detectedBriefPlan.Chemistry.count > 0 && <span className="text-rose-600 dark:text-rose-400 font-bold">Chemistry: {detectedBriefPlan.Chemistry.count} Qs ({detectedBriefPlan.Chemistry.difficulty})</span>}
-                    <span className="text-foreground font-black ml-auto border-l pl-3 border-border">Total: {detectedBriefPlan.Physics.count + detectedBriefPlan.Chemistry.count + detectedBriefPlan.Maths.count} Qs</span>
+                    {Object.entries(detectedBriefPlan).map(([subj, plan]) => {
+                      if (plan.count <= 0) return null;
+                      return (
+                        <span key={subj} className="text-indigo-600 dark:text-indigo-400 font-bold">
+                          {subj}: {plan.count} Qs ({plan.difficulty})
+                        </span>
+                      );
+                    })}
+                    <span className="text-foreground font-black ml-auto border-l pl-3 border-border">
+                      Total: {Object.values(detectedBriefPlan).reduce((acc, curr) => acc + curr.count, 0)} Qs
+                    </span>
                   </div>
                 )}
               </div>

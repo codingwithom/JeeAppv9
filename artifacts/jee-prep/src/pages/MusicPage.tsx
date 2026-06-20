@@ -731,6 +731,41 @@ function AddSongModal({
   const [fetchError, setFetchError] = useState("");
   const [mediaResult, setMediaResult] = useState<MediaResult | null>(null);
   const [importing, setImporting] = useState(false);
+  const [progress, setProgress] = useState(0);
+
+  const completeFetch = (result: MediaResult) => {
+    setProgress(100);
+    setTimeout(() => {
+      setMediaResult(result);
+      setFetchState("done");
+    }, 450);
+  };
+
+  const failFetch = (errMsg: string) => {
+    setProgress(0);
+    setFetchError(errMsg);
+    setFetchState("error");
+  };
+
+  useEffect(() => {
+    let timer: NodeJS.Timeout;
+    if (fetchState === "loading") {
+      setProgress(5);
+      timer = setInterval(() => {
+        setProgress((prev) => {
+          if (prev >= 95) return prev;
+          if (prev < 30) return prev + 6;
+          if (prev < 60) return prev + 2.5;
+          if (prev < 80) return prev + 1;
+          if (prev < 90) return prev + 0.4;
+          return prev + 0.1;
+        });
+      }, 100);
+    } else if (fetchState !== "done") {
+      setProgress(0);
+    }
+    return () => clearInterval(timer);
+  }, [fetchState]);
 
   const currentPlaylistName = playlists.find(p => p.id === playlistId)?.name ?? "playlist";
 
@@ -777,12 +812,12 @@ function AddSongModal({
     setFetchState("loading");
     setFetchError("");
     setMediaResult(null);
+    setProgress(5);
     try {
       const res = await fetch(`/api/media-info?url=${encodeURIComponent(raw)}`);
       const json = await res.json();
       if (!res.ok) throw new Error(json.error || "Failed to fetch media info");
-      setMediaResult(json as MediaResult);
-      setFetchState("done");
+      completeFetch(json as MediaResult);
       return;
     } catch { /* backend unavailable or error — try client-side fallback */ }
 
@@ -833,14 +868,13 @@ function AddSongModal({
               youtubeId: t.youtubeId
             }));
 
-            setMediaResult({
+            completeFetch({
               type: "playlist",
               name: clientResult.name,
               thumbnail: formattedTracks[0]?.thumbnail || "",
               trackCount: formattedTracks.length,
               tracks: formattedTracks
             });
-            setFetchState("done");
           } catch (err: any) {
             throw new Error(`YouTube Playlist Error: ${err.message}`);
           }
@@ -860,7 +894,7 @@ function AddSongModal({
               const proxyData = await fetchHtml(oembedUrl);
               oData = JSON.parse(proxyData);
             }
-            setMediaResult({
+            completeFetch({
               type: "track",
               title: oData?.title ?? "Unknown Title",
               artist: oData?.author_name ?? "YouTube",
@@ -869,7 +903,6 @@ function AddSongModal({
               streamUrl: `https://www.youtube.com/watch?v=${ytId}`,
               youtubeId: ytId,
             });
-            setFetchState("done");
           } catch (e) {
             throw new Error("Could not fetch YouTube video info.");
           }
@@ -934,14 +967,13 @@ function AddSongModal({
 
             if (tracks.length === 0) throw new Error(`Spotify ${spotifyInfo.type} is empty or unavailable.`);
 
-            setMediaResult({
+            completeFetch({
               type: "playlist",
               name: data?.name || playlistName,
               thumbnail: data?.images?.[0]?.url || tracks.find(t => t.thumbnail)?.thumbnail,
               trackCount: tracks.length,
               tracks
             });
-            setFetchState("done");
             return;
           }
 
@@ -960,7 +992,7 @@ function AddSongModal({
           const trackArtist = oData.provider_name || oData.author_name || "Spotify";
 
           // For single Spotify tracks, create a searchable track with better metadata
-          setMediaResult({
+          completeFetch({
             type: "track",
             title: trackTitle,
             artist: trackArtist,
@@ -968,13 +1000,11 @@ function AddSongModal({
             duration: 0,
             streamUrl: `ytsearch:${trackTitle} ${trackArtist} audio`,
           });
-          setFetchState("done");
         } else {
         throw new Error("Not a recognizable YouTube or Spotify URL");
       }
     } catch (err: unknown) {
-      setFetchError(err instanceof Error ? err.message : "Could not fetch media info. Check the URL.");
-      setFetchState("error");
+      failFetch(err instanceof Error ? err.message : "Could not fetch media info. Check the URL.");
     }
   };
 
@@ -1106,12 +1136,38 @@ function AddSongModal({
               <button
                 onClick={handleFetchStream}
                 disabled={fetchState === "loading" || !streamInput.trim()}
-                className="px-4 py-2.5 bg-[#1DB954] disabled:opacity-40 hover:bg-[#1ed760] text-black font-bold rounded-lg text-sm transition-colors flex items-center gap-1.5"
+                className="relative overflow-hidden px-4 py-2.5 bg-[#1DB954] disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[#1ed760] text-black font-bold rounded-lg text-sm transition-all duration-300 flex items-center gap-1.5 active:scale-95 shrink-0"
               >
-                {fetchState === "loading"
-                  ? <Loader2 className="h-4 w-4 animate-spin" />
-                  : <Radio className="h-4 w-4" />}
-                {fetchState === "loading" ? "Detecting…" : "Fetch"}
+                {fetchState === "loading" && (
+                  <>
+                    {/* Growing progress overlay (white Glassmorphism effect) */}
+                    <motion.div
+                      className="absolute inset-y-0 left-0 bg-gradient-to-r from-white/10 via-white/35 to-white/50 border-r-2 border-white/90 shadow-[0_0_12px_rgba(255,255,255,1)] z-0"
+                      initial={{ width: "0%" }}
+                      animate={{ width: `${progress}%` }}
+                      transition={{ type: "tween", ease: "easeOut", duration: 0.15 }}
+                    />
+                    {/* Infinite Shimmer Sweep overlay (sweeps left-to-right to show active loading) */}
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent z-0"
+                      animate={{ x: ["-100%", "100%"] }}
+                      transition={{ repeat: Infinity, duration: 1.4, ease: "linear" }}
+                    />
+                  </>
+                )}
+                <span className="relative z-10 flex items-center gap-1.5">
+                  {fetchState === "loading" ? (
+                    <>
+                      <Loader2 className="h-4 w-4 animate-spin shrink-0" />
+                      <span>Detecting ({Math.round(progress)}%)</span>
+                    </>
+                  ) : (
+                    <>
+                      <Radio className="h-4 w-4 shrink-0" />
+                      <span>Fetch</span>
+                    </>
+                  )}
+                </span>
               </button>
             </div>
 

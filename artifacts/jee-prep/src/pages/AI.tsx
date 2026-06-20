@@ -22,7 +22,11 @@ import {
   ThumbsUp,
   ThumbsDown,
   HelpCircle,
-  Settings
+  Settings,
+  Sparkles,
+  MoreVertical,
+  Volume2,
+  VolumeX
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAppContext } from "@/context/AppContext";
@@ -816,17 +820,213 @@ const SLASH_COMMANDS = [
 ];
 
 export default function AIChatInterface() {
-  const { user } = useAppContext();
+  const { user, selectedGoal } = useAppContext();
   const [sessions, setSessions] = useState<ChatSession[]>(() => {
     try { return JSON.parse(localStorage.getItem("jee_ai_chats") || "[]"); }
     catch { return []; }
   });
   const [activeSessionId, setActiveSessionId] = useState<string | null>(null);
+  const [visibleMessagesCount, setVisibleMessagesCount] = useState(15);
   const [input, setInput] = useState("");
   const [showCommands, setShowCommands] = useState(false);
   const [selectedCommandIndex, setSelectedCommandIndex] = useState(0);
   const commandMenuRef = useRef<HTMLDivElement>(null);
   const commandListRef = useRef<HTMLDivElement>(null);
+
+  const [activeSourcesDropdown, setActiveSourcesDropdown] = useState<number | null>(null);
+  const [activeTtsIdx, setActiveTtsIdx] = useState<number | null>(null);
+  const synthRef = useRef<SpeechSynthesis | null>(typeof window !== 'undefined' ? window.speechSynthesis : null);
+  const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
+
+  // Clean up SpeechSynthesis on unmount
+  useEffect(() => {
+    return () => {
+      if (synthRef.current) {
+        synthRef.current.cancel();
+      }
+    };
+  }, []);
+
+  const cleanTextForTts = (text: string): string => {
+    let cleaned = text;
+
+    // Remove markdown code blocks
+    cleaned = cleaned.replace(/```[\s\S]*?```/g, " [code block omitted] ");
+    
+    // Remove inline code blocks
+    cleaned = cleaned.replace(/`([^`]+)`/g, "$1");
+    
+    // Remove LaTeX formulas
+    cleaned = cleaned.replace(/\$\$([\s\S]*?)\$\$/g, (match, p1) => {
+      return " [formula: " + p1.replace(/\\frac{([^}]+)}{([^}]+)}/g, "$1 over $2").replace(/\\boxed{([^}]+)}/g, "$1").replace(/\\text{([^}]+)}/g, "$1").replace(/[\\]/g, "") + "] ";
+    });
+    cleaned = cleaned.replace(/\$([^$]+)\$/g, (match, p1) => {
+      return p1.replace(/\\frac{([^}]+)}{([^}]+)}/g, "$1 over $2").replace(/\\boxed{([^}]+)}/g, "$1").replace(/\\text{([^}]+)}/g, "$1").replace(/[\\]/g, "");
+    });
+
+    // Remove HTML tags
+    cleaned = cleaned.replace(/<[^>]*>/g, "");
+
+    // Remove bold, italic, strikethrough markdown
+    cleaned = cleaned.replace(/\*\*([^*]+)\*\*/g, "$1");
+    cleaned = cleaned.replace(/\*([^*]+)\*/g, "$1");
+    cleaned = cleaned.replace(/__([^_]+)__/g, "$1");
+    cleaned = cleaned.replace(/_([^_]+)_/g, "$1");
+    cleaned = cleaned.replace(/~~([^~]+)~~/g, "$1");
+
+    // Convert markdown links
+    cleaned = cleaned.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
+
+    // Strip list bullets
+    cleaned = cleaned.replace(/^\s*[-*+]\s+/gm, "");
+    cleaned = cleaned.replace(/^\s*\d+\.\s+/gm, "");
+
+    // Clean symbols
+    cleaned = cleaned.replace(/[#*~_-]+/g, " ");
+    cleaned = cleaned.replace(/\s+/g, " ").trim();
+
+    return cleaned;
+  };
+
+
+  const detectLanguage = (text: string): "hi" | "hinglish" | "en" => {
+    // 1. Devanagari character detection
+    if (/[\u0900-\u097F]/.test(text)) {
+      return "hi";
+    }
+
+    // 2. Hinglish detection (common Hindi words written in English letters)
+    const hinglishKeywords = /\b(aap|tum|tera|mera|hum|apna|apne|apni|kaise|kya|kyun|kab|kahan|kidhar|udhar|idhar|se|ko|ka|ki|ke|me|mein|par|bhi|hi|toh|to|tha|thi|the|hai|hain|ho|hoga|hogi|hoge|kar|karna|karta|karte|karti|raha|rahe|rahi|gaya|gaye|gayi|chahiye|sakte|sakta|sakti|liye|diya|de|do|le|lo|aur|ya|lekin|magar|parantu|nhi|nahi|mat|na|kuch|sab|koi|kisi|achha|acha|theek|thik|yaar|bhai|chal|chalo)\b/i;
+    const words = text.toLowerCase().split(/\s+/);
+    let matchCount = 0;
+    for (const word of words) {
+      if (hinglishKeywords.test(word)) {
+        matchCount++;
+      }
+    }
+
+    if (matchCount >= 2 || (words.length > 0 && matchCount / words.length > 0.05)) {
+      return "hinglish";
+    }
+
+    return "en";
+  };
+
+  const handleToggleTts = (text: string, index: number) => {
+    if (!synthRef.current) return;
+
+    if (activeTtsIdx === index) {
+      synthRef.current.cancel();
+      setActiveTtsIdx(null);
+      return;
+    }
+
+    synthRef.current.cancel();
+    setActiveTtsIdx(index);
+
+    const cleanedText = cleanTextForTts(text);
+    const utterance = new SpeechSynthesisUtterance(cleanedText);
+    utteranceRef.current = utterance;
+
+    const detectedLang = detectLanguage(text);
+    console.log("[TTS] Detected language:", detectedLang);
+
+    const voices = synthRef.current.getVoices();
+    let selectedVoice = null;
+
+    if (detectedLang === "hi") {
+      // Find premium Hindi female/natural voices
+      selectedVoice = voices.find(v => 
+        (v.lang.startsWith("hi") || v.lang.startsWith("hi-IN") || v.lang.startsWith("hi_IN")) &&
+        (v.name.includes("Online") || v.name.includes("Natural") || v.name.includes("Google") || v.name.includes("Swara") || v.name.includes("Kalpana")) &&
+        (v.name.toLowerCase().includes("female") || v.name.toLowerCase().includes("woman") || v.name.includes("Swara") || v.name.includes("Kalpana") || v.name.includes("Google"))
+      );
+      if (!selectedVoice) {
+        selectedVoice = voices.find(v => 
+          (v.lang.startsWith("hi") || v.lang.startsWith("hi-IN") || v.lang.startsWith("hi_IN")) &&
+          (v.name.includes("Online") || v.name.includes("Natural") || v.name.includes("Google") || v.name.includes("Swara") || v.name.includes("Kalpana"))
+        );
+      }
+      if (!selectedVoice) {
+        selectedVoice = voices.find(v => v.lang.startsWith("hi") || v.lang.startsWith("hi-IN") || v.lang.startsWith("hi_IN"));
+      }
+    } else if (detectedLang === "hinglish") {
+      // Hinglish (Hindi in Latin script) is best pronounced by en-IN (Indian English) voices with natural accents
+      selectedVoice = voices.find(v => 
+        (v.lang.startsWith("en-IN") || v.lang.startsWith("en_IN")) &&
+        (v.name.includes("Online") || v.name.includes("Natural") || v.name.includes("Google")) &&
+        (v.name.toLowerCase().includes("female") || v.name.toLowerCase().includes("woman") || v.name.includes("Neerja") || v.name.includes("Heera") || v.name.includes("Veena") || v.name.includes("Priya") || v.name.includes("Google"))
+      );
+      if (!selectedVoice) {
+        selectedVoice = voices.find(v => 
+          (v.lang.startsWith("en-IN") || v.lang.startsWith("en_IN")) &&
+          (v.name.includes("Neerja") || v.name.includes("Heera") || v.name.includes("Veena") || v.name.includes("Priya"))
+        );
+      }
+      if (!selectedVoice) {
+        selectedVoice = voices.find(v => v.lang.startsWith("en-IN") || v.lang.startsWith("en_IN"));
+      }
+      if (!selectedVoice) {
+        // Fallback to high-quality female English voice
+        selectedVoice = voices.find(v => 
+          v.lang.startsWith("en") && 
+          (v.name.includes("Online") || v.name.includes("Natural") || v.name.includes("Google")) &&
+          (v.name.toLowerCase().includes("female") || v.name.toLowerCase().includes("woman") || v.name.includes("Aria") || v.name.includes("Jenny") || v.name.includes("Sonia") || v.name.includes("Samantha") || v.name.includes("Zira"))
+        );
+      }
+    }
+
+    // Fallback or English language path
+    if (!selectedVoice) {
+      // Prioritize natural neural/premium English female voices
+      selectedVoice = voices.find(v => 
+        v.lang.startsWith("en") && 
+        (v.name.includes("Online") || v.name.includes("Natural") || v.name.includes("Google")) &&
+        (v.name.toLowerCase().includes("female") || v.name.toLowerCase().includes("woman") || v.name.includes("Aria") || v.name.includes("Jenny") || v.name.includes("Sonia") || v.name.includes("Samantha") || v.name.includes("Zira"))
+      );
+      if (!selectedVoice) {
+        selectedVoice = voices.find(v => 
+          v.lang.startsWith("en") && 
+          (v.name.includes("Natural") || v.name.includes("Neural") || v.name.includes("Google") || v.name.includes("Aria") || v.name.includes("Jenny") || v.name.includes("Sonia"))
+        );
+      }
+      if (!selectedVoice) {
+        selectedVoice = voices.find(v => 
+          v.lang.startsWith("en") && 
+          (v.name.includes("Samantha") || v.name.includes("Alex") || v.name.includes("Daniel") || v.name.includes("Karen") || v.name.includes("Zira"))
+        );
+      }
+      if (!selectedVoice) {
+        selectedVoice = voices.find(v => v.lang.startsWith("en-US") || v.lang.startsWith("en_US") || v.lang.startsWith("en-GB") || v.lang.startsWith("en_GB"));
+      }
+      if (!selectedVoice) {
+        selectedVoice = voices.find(v => v.lang.startsWith("en"));
+      }
+    }
+
+    if (selectedVoice) {
+      console.log("[TTS] Selected voice:", selectedVoice.name, selectedVoice.lang);
+      utterance.voice = selectedVoice;
+      utterance.lang = selectedVoice.lang;
+    } else {
+      utterance.lang = detectedLang === "hi" ? "hi-IN" : (detectedLang === "hinglish" ? "en-IN" : "en-US");
+    }
+
+    // Human-like confidence and natural pacing adjustments
+    utterance.rate = detectedLang === "hi" ? 0.95 : 1.0;
+    utterance.pitch = 1.0;
+    utterance.volume = 1.0;
+
+    utterance.onend = () => {
+      setActiveTtsIdx(null);
+    };
+
+    utterance.onerror = () => {
+      setActiveTtsIdx(null);
+    };
+
+    synthRef.current.speak(utterance);
+  };
 
   const filteredCommands = useMemo(() => {
     if (!input.startsWith("/")) return [];
@@ -1014,6 +1214,17 @@ export default function AIChatInterface() {
 
   const activeSession = sessions.find(s => s.id === activeSessionId);
   const messages = activeSession?.messages || [];
+
+  const renderedMessages = useMemo(() => {
+    return messages.slice(-visibleMessagesCount);
+  }, [messages, visibleMessagesCount]);
+
+  const hasMoreMessages = messages.length > visibleMessagesCount;
+
+  useEffect(() => {
+    setVisibleMessagesCount(15);
+  }, [activeSessionId]);
+
   const isTyping = messages.length > 0 && messages[messages.length - 1].role === "model" && messages[messages.length - 1].isTyping;
 
   useEffect(() => {
@@ -1024,9 +1235,13 @@ export default function AIChatInterface() {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const prevMessagesLength = useRef(messages.length);
   useEffect(() => {
-    scrollToBottom();
-  }, [messages]);
+    if (messages.length > prevMessagesLength.current) {
+      scrollToBottom();
+    }
+    prevMessagesLength.current = messages.length;
+  }, [messages.length]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -1177,6 +1392,61 @@ export default function AIChatInterface() {
         throw new Error("Please set your OpenRouter API Key in the Admin Panel first!");
       }
 
+      const goalCategory = selectedGoal?.category || "JEE";
+      const goalName = selectedGoal?.displayName || "JEE Prep";
+      const goalPath = selectedGoal ? selectedGoal.path.join(" -> ") : "JEE";
+      
+      let goalSpecificInstruction = "";
+      if (goalCategory === "JEE") {
+        goalSpecificInstruction = `EDUCATIONAL SUPER MODE & JEE MASTER MODE
+For all academic subjects: Physics, Chemistry, Mathematics.
+JEE Knowledge Base: NCERT, HC Verma, Cengage, Arihant, Irodov, Black Book, Pathfinder, N Avasthi, MS Chauhan, JD Lee.
+Capabilities: JEE Main, JEE Advanced level concepts.
+Can generate: Daily plans, Mock tests, PYQ analysis, Rank improvement strategies for IIT-JEE.`;
+      } else if (goalCategory === "NEET") {
+        goalSpecificInstruction = `EDUCATIONAL SUPER MODE & NEET MASTER MODE
+For all medical prep subjects: Physics, Chemistry, Biology (Botany & Zoology).
+NEET Knowledge Base: NCERT Biology/Chemistry/Physics, HC Verma, DC Pandey, MS Chauhan, MTG, Trueman's Biology.
+Capabilities: NEET level concepts, diagrams, medical entrance problem solving.
+Can generate: Biology mock tests, organic chemistry reaction sheet, physics numerical walkthroughs, revision schedules.`;
+      } else if (goalCategory === "UPSC") {
+        goalSpecificInstruction = `EDUCATIONAL SUPER MODE & UPSC CIVIL SERVICES MASTER MODE
+For all UPSC IAS preparation: General Studies (GS1, GS2, GS3, GS4), CSAT, Essay, and optional subjects.
+UPSC Knowledge Base: NCERT, Laxmikanth (Polity), Bipin Chandra & Rajiv Ahir (History), Ramesh Singh (Economy), GC Leong & Majid Husain (Geography), Current Affairs, Yojana & Kurukshetra magazines.
+Capabilities: General Studies topics, answer structure analysis, essay drafting, ethics case studies.
+Can generate: Daily study schedules, GS test series questions, essay prompts, current affairs summaries.`;
+      } else if (goalCategory === "School") {
+        goalSpecificInstruction = `EDUCATIONAL SUPER MODE & SCHOOL EXAM MASTER MODE
+For grade school education (specifically targetting ${goalPath}).
+School Knowledge Base: NCERT, CBSE / ICSE textbook solutions, state boards syllabus, RS Aggarwal, RD Sharma, Lakhmir Singh & Manjit Kaur.
+Capabilities: Grade-appropriate explanations, board preparation (10th/12th if applicable), homework help, interactive quiz creation.
+Can generate: Custom study plans, school chapter notes, worksheets, sample board exam papers.`;
+      } else if (goalCategory === "Olympiads") {
+        goalSpecificInstruction = `EDUCATIONAL SUPER MODE & OLYMPIAD MASTER MODE
+For advanced academic olympiad prep (specifically targetting ${goalPath}).
+Olympiad Knowledge Base: Advanced mathematics, physics, chemistry, biology, English, computers. PRMO, IOQM, RMO, INMO, SOF IMO/NSO/IEO/NCO syllabus.
+Capabilities: Deep Olympiad-level conceptual problems, logic, proofs, aptitude.
+Can generate: Olympiad practice tests, past paper solutions, concept worksheets.`;
+      } else if (goalCategory === "Skills") {
+        goalSpecificInstruction = `SKILLS DEVELOPMENT & PRACTICAL LEARNING MASTER MODE
+For skills training (specifically targetting ${goalName}).
+Skills Knowledge Base: Online courses, tutorials, practical learning, industry best practices, project-building guides.
+Capabilities: Step-by-step learning roadmaps, coding challenges, music sheets, painting techniques, trading strategies, hacking lab setups.
+Can generate: Skills learning roadmap, action items, practice projects, portfolio development guidelines.`;
+      } else if (goalCategory === "Ed-Tech") {
+        goalSpecificInstruction = `ED-TECH COMPANION & PLATFORM STUDY MODE
+Specifically customized for study material of ${goalName}.
+Knowledge Base: Coaching notes, test series, standard modules, lectures.
+Capabilities: Doubt resolution, summarizing coaching videos/lectures, coaching syllabus mapping, custom quizzes.
+Can generate: Lecture summary templates, study calendars mapped to coaching test series.`;
+      } else {
+        goalSpecificInstruction = `EDUCATIONAL SUPER MODE & ${goalCategory.toUpperCase()} MASTER MODE
+For preparation of ${goalName} (${goalPath}).
+Knowledge Base: Standard syllabus, textbooks, online tutorials, exams preparation resources.
+Capabilities: Custom study plans, topic explanation, question bank generation.
+Can generate: Mock exams, daily timetables, flashcards, concept sheets.`;
+      }
+
       const systemInstruction = `SYSTEM IDENTITY
 
 You are Calculus AI made by OM. Ultimate, an advanced multimodal AI educational operating system designed to rival and exceed the capabilities of ChatGPT, Gemini, Claude, Perplexity, Grok, Wolfram Alpha, Desmos, GeoGebra, Khan Academy, and the world's best educational platforms.
@@ -1260,11 +1530,7 @@ YOUTUBE INTELLIGENCE MODE
 When user asks for best video, latest video, tutorial, one-shot, lecture, or playlist, search YouTube. Analyze: upload date, views, watch time, likes, student feedback, channel quality, content quality.
 Return using the exact \`\`\`youtube-card\`\`\` widget formatting specified below.
 
-EDUCATIONAL SUPER MODE & JEE MASTER MODE
-For all academic subjects: Physics, Chemistry, Mathematics, Biology, Computer Science, Economics, Statistics, English, History, Geography, Political Science, Engineering, Artificial Intelligence.
-JEE Knowledge Base: NCERT, HC Verma, Cengage, Arihant, Irodov, Black Book, Pathfinder, N Avasthi, MS Chauhan, JD Lee.
-Capabilities: JEE Main, JEE Advanced, NEET, Olympiads, KVPY level concepts.
-Can generate: Daily plans, Weekly plans, Revision schedules, Mock tests, PYQ analysis, Rank improvement strategies.
+${goalSpecificInstruction}
 
 MATHEMATICS ENGINE & LATEX SYSTEM
 Must support: Algebra, Calculus, Trigonometry, Coordinate Geometry, Vectors, 3D Geometry, Probability, Statistics, Number Theory, Complex Numbers, Matrices, Differential Equations.
@@ -1379,7 +1645,7 @@ You have the ability to embed live, interactive widgets directly in your respons
 \`\`\`
 
 FINAL MISSION
-Create an experience that feels like a combination of ChatGPT, GPT-5, Gemini, Claude, Perplexity, Grok, Wolfram Alpha, Desmos, GeoGebra, Khan Academy, Physics Wallah, Unacademy, Coursera, YouTube, and a Personal JEE Mentor. The AI should always strive to be the most intelligent, accurate, interactive, visually rich, educational, and useful study assistant possible, helping students learn faster, understand deeper, score higher, and achieve their academic goals.`;
+Create an experience that feels like a combination of ChatGPT, GPT-5, Gemini, Claude, Perplexity, Grok, Wolfram Alpha, Desmos, GeoGebra, Khan Academy, Physics Wallah, Unacademy, Coursera, YouTube, and a Personal ${goalCategory} Mentor. The AI should always strive to be the most intelligent, accurate, interactive, visually rich, educational, and useful study assistant possible, helping students learn faster, understand deeper, score higher, and achieve their academic goals.`;
 
       let modeInstruction = "";
       if (chatMode === "academic") {
@@ -1520,7 +1786,9 @@ Formatting guidelines for the \`\`\`graph\`\`\` config:
 If the user uploaded an image of an equation, read/OCR the equation from the image using your visual capabilities and output the \`\`\`graph\`\`\` config for it.`;
       }
 
-      const finalSystemInstruction = systemInstruction + modeInstruction + imageGenerationInstruction + dateInstruction + searchContext + graphDirective;
+      const codeAndWidgetRestriction = `\n\n[CRITICAL RESTRICTION - CODE AND WIDGETS]\n1. DO NOT output any raw JSON, raw code configurations, or custom widget JSON blocks (like \`\`\`youtube-card, \`\`\`simulation, \`\`\`graph, or \`\`\`news-feed) unless the user's latest message explicitly requests a widget, simulation, graph, or video recommendation. Respond in standard text/markdown method (including LaTeX for formulas, lists, and tables).\n2. DO NOT write code blocks (like Python, C++, Java, JS, HTML, etc.) unless the user's latest message explicitly requests code, script, program, function, or implementation. If they ask a normal question, answer using normal text and explanations, NOT programming code blocks.\n`;
+
+      const finalSystemInstruction = systemInstruction + modeInstruction + imageGenerationInstruction + dateInstruction + searchContext + graphDirective + codeAndWidgetRestriction;
       
       const visionPrompt = hasImages ? "Please scan, read, and analyze the uploaded image carefully. Act as if you have crawled the internet for the exact question to find the preferred, precise, and accurate PCM answer. Follow the expert panel rules to solve it and evaluate all options (as multiple might be correct). Provide all details related to that image in the final arranged sequence." : "";
 
@@ -2156,7 +2424,21 @@ If the user uploaded an image of an equation, read/OCR the equation from the ima
           )}
           
           <div id="chat-capture-area" className="max-w-3xl mx-auto space-y-6 p-4 rounded-2xl bg-background">
-            {messages.map((m, i) => (
+            {hasMoreMessages && (
+              <div className="flex justify-center py-2" data-html2canvas-ignore="true">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="text-xs text-muted-foreground hover:text-foreground font-medium flex items-center gap-2 cursor-pointer transition-all bg-muted/40 hover:bg-muted/80 rounded-full px-4 py-1.5 border border-border/40"
+                  onClick={() => setVisibleMessagesCount(prev => prev + 20)}
+                >
+                  Load older messages ({messages.length - visibleMessagesCount} remaining)
+                </Button>
+              </div>
+            )}
+            {renderedMessages.map((m, idx) => {
+              const i = messages.length - renderedMessages.length + idx;
+              return (
                <motion.div key={i} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className={cn("flex w-full group relative", m.role === "user" ? "justify-end" : "justify-start")}>
                  {m.role === "model" && (
                     <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center shrink-0 mr-4 mt-1">
@@ -2187,9 +2469,117 @@ If the user uploaded an image of an equation, read/OCR the equation from the ima
                  )}
 
                  <div className={cn("max-w-[90%] text-[15px] leading-relaxed", m.role === "user" ? "bg-muted px-5 py-3 rounded-3xl" : "text-foreground pt-1 w-full", m.isStopped ? "opacity-80" : "")}>
-                   {m.role === "model" && m.sources && m.sources.length > 0 && (
-                      <MessageSources sources={m.sources} />
-                   )}
+                    {m.role === "model" && !m.isTyping && (
+                      <div className="flex items-center justify-between border-b border-border/40 pb-2 mb-3 select-none relative w-full">
+                        {/* Left Side: Sparkles Icon, Title, Sound controls */}
+                        <div className="flex items-center gap-2">
+                          <Sparkles className="h-4 w-4 text-blue-500 animate-pulse" />
+                          <span className="text-xs font-bold text-foreground">AI Overview</span>
+
+                          <button 
+                            onClick={() => handleToggleTts(m.content, i)}
+                            className={cn(
+                              "h-6 w-6 rounded-full hover:bg-muted flex items-center justify-center border transition-all text-muted-foreground hover:text-foreground shrink-0 cursor-pointer shadow-sm",
+                              activeTtsIdx === i ? "bg-primary/10 border-primary/20 text-primary animate-pulse" : "border-border/40"
+                            )}
+                            title={activeTtsIdx === i ? "Stop listening" : "Read response aloud"}
+                          >
+                            {activeTtsIdx === i ? (
+                              <VolumeX className="h-3 w-3 text-primary" />
+                            ) : (
+                              <Volume2 className="h-3 w-3" />
+                            )}
+                          </button>
+                        </div>
+
+                        {/* Right Side: Overlapping Source icons + count + dropdown button */}
+                        {m.sources && m.sources.length > 0 && (
+                          <div className="flex items-center gap-1">
+                            <div 
+                              className="flex -space-x-1.5 items-center cursor-pointer hover:opacity-90 active:scale-95 transition-all"
+                              onClick={() => setActiveSourcesDropdown(activeSourcesDropdown === i ? null : i)}
+                            >
+                              {m.sources.slice(0, 3).map((src, srcIdx) => {
+                                let hostname = "Source";
+                                try { hostname = new URL(src.uri).hostname; } catch(e) {}
+                                const faviconUrl = `https://www.google.com/s2/favicons?domain=${hostname}&sz=64`;
+                                return (
+                                  <div 
+                                    key={srcIdx} 
+                                    className="h-5 w-5 rounded-full border border-border bg-card flex items-center justify-center overflow-hidden shadow-sm ring-1 ring-card hover:translate-y-[-2px] transition-transform duration-200"
+                                    title={src.title || hostname}
+                                  >
+                                    <img
+                                      src={faviconUrl}
+                                      alt=""
+                                      className="h-3 w-3 object-contain rounded-full"
+                                      onError={(e) => { e.currentTarget.src = "https://www.google.com/s2/favicons?domain=wikipedia.org"; }}
+                                    />
+                                  </div>
+                                );
+                              })}
+                              {m.sources.length > 3 && (
+                                <span className="text-[10px] font-bold text-muted-foreground ml-1.5 bg-muted px-1.5 py-0.5 rounded-full border border-border/80 scale-90">
+                                  +{m.sources.length - 3}
+                                </span>
+                              )}
+                            </div>
+                            
+                            <button 
+                              onClick={() => setActiveSourcesDropdown(activeSourcesDropdown === i ? null : i)}
+                              className="h-6 w-6 rounded-full hover:bg-muted flex items-center justify-center border border-border/40 text-muted-foreground hover:text-foreground transition-all shrink-0 cursor-pointer ml-1"
+                              title="View all search sources"
+                            >
+                              <MoreVertical className="h-3.5 w-3.5" />
+                            </button>
+
+                            {/* Floating Dropdown for all sources links */}
+                            {activeSourcesDropdown === i && (
+                              <div className="absolute right-0 top-full mt-2 w-80 bg-card border border-border rounded-2xl p-4 shadow-2xl z-[150] animate-in fade-in slide-in-from-top-2 duration-200">
+                                <div className="flex items-center justify-between border-b border-border/60 pb-2 mb-3">
+                                  <h4 className="text-xs font-bold text-foreground">All Search Sources</h4>
+                                  <button 
+                                    onClick={() => setActiveSourcesDropdown(null)} 
+                                    className="text-muted-foreground hover:text-foreground text-[10px] font-semibold"
+                                  >
+                                    Close
+                                  </button>
+                                </div>
+                                <div className="max-h-60 overflow-y-auto space-y-2 pr-1 no-scrollbar text-left">
+                                  {m.sources.map((src, srcIdx) => {
+                                    let hostname = "Source";
+                                    try { hostname = new URL(src.uri).hostname; } catch(e) {}
+                                    const faviconUrl = `https://www.google.com/s2/favicons?domain=${hostname}&sz=64`;
+                                    return (
+                                      <a 
+                                        key={srcIdx} 
+                                        href={src.uri} 
+                                        target="_blank" 
+                                        rel="noopener noreferrer"
+                                        className="flex items-start gap-2.5 p-2 rounded-xl hover:bg-muted/50 border border-transparent hover:border-border/40 transition-all group text-left"
+                                      >
+                                        <div className="h-7 w-7 rounded-lg bg-background border border-border flex items-center justify-center shrink-0 shadow-sm">
+                                          <img 
+                                            src={faviconUrl} 
+                                            alt="" 
+                                            className="h-4.5 w-4.5 object-contain rounded-full" 
+                                            onError={(e) => { e.currentTarget.src = "https://www.google.com/s2/favicons?domain=wikipedia.org"; }}
+                                          />
+                                        </div>
+                                        <div className="min-w-0 flex-1 text-left">
+                                          <h5 className="text-[11px] font-bold text-foreground line-clamp-1 group-hover:text-blue-500 transition-colors leading-snug">{src.title}</h5>
+                                          <span className="text-[9px] text-muted-foreground truncate block mt-0.5">{hostname}</span>
+                                        </div>
+                                      </a>
+                                    );
+                                  })}
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        )}
+                      </div>
+                    )}
                    <div className="prose dark:prose-invert prose-p:leading-relaxed prose-pre:bg-muted prose-pre:border prose-pre:border-border max-w-none w-full overflow-x-auto prose-table:w-full prose-table:border-collapse prose-th:border prose-th:border-border prose-th:p-2 prose-td:border prose-td:border-border prose-td:p-2 prose-img:rounded-xl prose-img:max-h-[350px] prose-img:w-auto prose-img:object-contain prose-a:text-blue-500 hover:prose-a:text-blue-600 transition-colors">
                      {m.attachments && m.attachments.length > 0 && (
                         <div className="flex flex-wrap gap-2 mb-3">
@@ -2271,127 +2661,64 @@ If the user uploaded an image of an equation, read/OCR the equation from the ima
                      )}
                      {m.role === "model" && !m.isTyping && (
                        <div data-html2canvas-ignore="true" className="mt-3 flex flex-wrap items-center justify-between gap-3 border-t border-border/40 pt-2.5">
-                         <div className="flex flex-wrap items-center gap-2">
-                           <Button 
-                             variant="outline" 
-                             size="sm" 
-                             onClick={() => copyToClipboard(m.content, i)} 
-                             className="h-7 text-[11px] gap-1.5 text-muted-foreground hover:text-foreground rounded-full px-3"
-                             title="Copy response content"
-                           >
-                             {copiedIdx === i ? (
-                               <>
-                                 <Check className="h-3 w-3 text-green-500" /> Copied
-                               </>
-                             ) : (
-                               <>
-                                 <Copy className="h-3 w-3" /> Copy
-                               </>
-                             )}
-                           </Button>
-                           {i === messages.length - 1 && !loading && (
-                             <Button 
-                               variant="outline" 
-                               size="sm" 
-                               onClick={handleRegenerate} 
-                               className="h-7 text-[11px] gap-1.5 text-muted-foreground hover:text-foreground rounded-full px-3"
-                             >
-                               <RefreshCw className="h-3 w-3" /> Regenerate
-                             </Button>
-                           )}
-                           
-                           <Button
-                             variant="outline"
-                             size="sm"
-                             onClick={() => handleLikeMessage(i)}
-                             className={cn("h-7 w-7 p-0 rounded-full", likedMsgs[i] === 'like' ? "text-green-500 border-green-500/30 bg-green-500/10 hover:bg-green-500/20" : "text-muted-foreground hover:text-foreground")}
-                             title="Like response"
-                           >
-                             <ThumbsUp className="h-3.5 w-3.5" />
-                           </Button>
-                           <Button
-                             variant="outline"
-                             size="sm"
-                             onClick={() => handleDislikeMessage(i)}
-                             className={cn("h-7 w-7 p-0 rounded-full", likedMsgs[i] === 'dislike' ? "text-red-500 border-red-500/30 bg-red-500/10 hover:bg-red-500/20" : "text-muted-foreground hover:text-foreground")}
-                             title="Dislike response"
-                           >
-                             <ThumbsDown className="h-3.5 w-3.5" />
-                           </Button>
-                         </div>
+                          <div className="flex flex-wrap items-center gap-2">
+                            <Button 
+                              variant="outline" 
+                              size="sm" 
+                              onClick={() => copyToClipboard(m.content, i)} 
+                              className="h-7 text-[11px] gap-1.5 text-muted-foreground hover:text-foreground rounded-full px-3"
+                              title="Copy response content"
+                            >
+                              {copiedIdx === i ? (
+                                <>
+                                  <Check className="h-3 w-3 text-green-500" /> Copied
+                                </>
+                              ) : (
+                                <>
+                                  <Copy className="h-3 w-3" /> Copy
+                                </>
+                              )}
+                            </Button>
+                            {i === messages.length - 1 && !loading && (
+                              <Button 
+                                variant="outline" 
+                                size="sm" 
+                                onClick={handleRegenerate} 
+                                className="h-7 text-[11px] gap-1.5 text-muted-foreground hover:text-foreground rounded-full px-3"
+                              >
+                                <RefreshCw className="h-3 w-3" /> Regenerate
+                              </Button>
+                            )}
+                            
 
-                         {m.sources && m.sources.length > 0 && (
-                           <div className="flex items-center gap-2">
-                             <span className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider">Sources:</span>
-                             <div className="flex items-center gap-1.5">
-                               {m.sources.map((src, srcIdx) => {
-                                 let hostname = "External Source";
-                                 try { hostname = new URL(src.uri).hostname; } catch(e) {}
-                                 const faviconUrl = `https://www.google.com/s2/favicons?domain=${hostname}&sz=64`;
-                                 
-                                 return (
-                                   <div key={srcIdx} className="relative group/src">
-                                     <a
-                                       href={src.uri}
-                                       target="_blank"
-                                       rel="noopener noreferrer"
-                                       className="h-6 w-6 rounded-full border border-border flex items-center justify-center hover:scale-110 hover:border-primary transition-all bg-background overflow-hidden cursor-pointer shadow-sm"
-                                     >
-                                       <img
-                                         src={faviconUrl}
-                                         alt={src.title || hostname}
-                                         className="h-4 w-4 object-contain rounded-full"
-                                         onError={(e) => { e.currentTarget.src = "https://www.google.com/s2/favicons?domain=wikipedia.org"; }}
-                                       />
-                                     </a>
-                                     
-                                     <div className="absolute z-[100] bottom-full right-0 mb-2 w-72 bg-slate-950 border border-slate-800 rounded-2xl p-4 shadow-2xl scale-0 group-hover/src:scale-100 transition-all origin-bottom-right text-white">
-                                       <div className="flex items-start gap-3 mb-2.5">
-                                         <div className="h-10 w-10 rounded-xl bg-slate-900 flex items-center justify-center shrink-0 border border-slate-800">
-                                           <img 
-                                             src={faviconUrl} 
-                                             alt="" 
-                                             className="h-6 w-6 object-contain"
-                                             onError={(e) => { e.currentTarget.src = "https://www.google.com/s2/favicons?domain=wikipedia.org&sz=64"; }}
-                                           />
-                                         </div>
-                                         <div className="min-w-0 flex-1">
-                                           <h4 className="text-xs font-bold text-slate-200 line-clamp-2 leading-snug">{src.title}</h4>
-                                           <p className="text-[10px] text-slate-500 font-medium font-mono truncate">{hostname}</p>
-                                         </div>
-                                       </div>
-                                       
-                                       {src.snippet && (
-                                         <p className="text-[11px] text-slate-400 leading-relaxed font-medium mb-3 line-clamp-3">
-                                           {src.snippet}
-                                         </p>
-                                       )}
-                                       
-                                       <div className="flex items-center justify-between border-t border-slate-900 pt-2.5">
-                                         <span className="text-[9px] font-semibold text-slate-650 font-mono">Verified Link</span>
-                                         <a
-                                           href={src.uri}
-                                           target="_blank"
-                                           rel="noopener noreferrer"
-                                           className="text-[10px] font-bold text-blue-400 hover:text-blue-300 flex items-center gap-1"
-                                         >
-                                           Visit Site <ExternalLink className="h-2.5 w-2.5" />
-                                         </a>
-                                       </div>
-                                     </div>
-                                   </div>
-                                 );
-                               })}
-                             </div>
-                           </div>
-                         )}
+
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              onClick={() => handleLikeMessage(i)}
+                              className={cn("h-7 w-7 p-0 rounded-full", likedMsgs[i] === 'like' ? "text-green-500 border-green-500/30 bg-green-500/10 hover:bg-green-500/20" : "text-muted-foreground hover:text-foreground")}
+                              title="Like response"
+                            >
+                              <ThumbsUp className="h-3.5 w-3.5" />
+                            </Button>
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              onClick={() => handleDislikeMessage(i)}
+                              className={cn("h-7 w-7 p-0 rounded-full", likedMsgs[i] === 'dislike' ? "text-red-500 border-red-500/30 bg-red-500/10 hover:bg-red-500/20" : "text-muted-foreground hover:text-foreground")}
+                              title="Dislike response"
+                            >
+                              <ThumbsDown className="h-3.5 w-3.5" />
+                            </Button>
+                          </div>
                        </div>
                      )}
                    </div>
                  </div>
                </motion.div>
-            ))}
-            
+              );
+            })}
+
             {loading && (
                <div className="flex w-full justify-start items-start">
                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center shrink-0 mr-4 mt-1">

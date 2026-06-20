@@ -26,6 +26,7 @@ import QuizPage from "@/pages/QuizPage";
 import { AmbientMixer } from "@/components/AmbientMixer";
 import { MiniPlayer } from "@/components/MiniPlayer";
 import { AnimatePresence, motion } from "framer-motion";
+import { GoalSelection } from "@/components/GoalSelection";
 import { 
   Sun, 
   Moon, 
@@ -122,7 +123,7 @@ function CommandPalette() {
 }
 
 function TopBar() {
-  const { theme, toggleTheme } = useAppContext();
+  const { theme, toggleTheme, selectedGoal, setGoalSelectionOpen } = useAppContext();
   const [location] = useLocation();
   const label = PAGE_LABELS[location] || "";
   const { isActive, endTime } = useLockdown();
@@ -148,7 +149,20 @@ function TopBar() {
 
   return (
     <div className="h-12 flex items-center justify-between pr-5 pl-14 md:px-5 border-b border-border/60 bg-background/80 backdrop-blur-md flex-shrink-0 z-20">
-      <span className="text-sm font-medium text-muted-foreground truncate">{label}</span>
+      <div className="flex items-center gap-3 min-w-0">
+        <span className="text-sm font-medium text-muted-foreground truncate">{label}</span>
+        {selectedGoal && (
+          <motion.button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            onClick={() => setGoalSelectionOpen(true)}
+            className="flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-primary/10 hover:bg-primary/20 text-primary border border-primary/20 transition-all shrink-0 cursor-pointer shadow-sm"
+          >
+            <span>{selectedGoal.displayName}</span>
+            <span className="text-[9px] opacity-60">▼</span>
+          </motion.button>
+        )}
+      </div>
       <div className="flex items-center gap-3">
         {isActive && (
           <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/30 shadow-inner">
@@ -169,6 +183,7 @@ function TopBar() {
     </div>
   );
 }
+
 
 function AutoSyncWorkspace() {
   const { writeMedia, readMediaAsArrayBuffer, isSupported } = useWorkspaceContext();
@@ -326,7 +341,7 @@ function TimeTracker() {
 }
 
 function ProtectedLayout({ children }: { children: React.ReactNode }) {
-  const { user } = useAppContext();
+  const { user, isGoalSelectionOpen, selectedGoal } = useAppContext();
 
   if (!user) return <LoginPage />;
 
@@ -348,6 +363,11 @@ function ProtectedLayout({ children }: { children: React.ReactNode }) {
         <MiniPlayer />
         <VideoMiniPlayer />
       </main>
+      <AnimatePresence>
+        {isGoalSelectionOpen && (
+          <GoalSelection canClose={selectedGoal !== null} />
+        )}
+      </AnimatePresence>
     </div>
   );
 }

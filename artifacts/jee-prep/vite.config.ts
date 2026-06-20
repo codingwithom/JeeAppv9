@@ -54,7 +54,7 @@ export default defineConfig(async () => {
 
   return {
     // Use absolute root path for web routing inside Codespaces
-  base: process.env.NODE_ENV === "production" ? "./" : "/",
+  base: process.env.NODE_ENV === "production" ? "/v4/" : "/",
 
     plugins: [
       react(),
@@ -80,29 +80,7 @@ export default defineConfig(async () => {
       sourcemap: false,
       rollupOptions: {
         maxParallelFileOps: 1,
-        cache: false,
-        output: {
-          manualChunks(id) {
-            if (id.includes("node_modules")) {
-              if (id.includes("firebase")) {
-                return "vendor-firebase";
-              }
-              if (id.includes("katex") || id.includes("rehype-katex") || id.includes("remark-math")) {
-                return "vendor-math";
-              }
-              if (id.includes("recharts") || id.includes("d3")) {
-                return "vendor-charts";
-              }
-              if (id.includes("lucide-react") || id.includes("react-icons")) {
-                return "vendor-icons";
-              }
-              if (id.includes("pdfjs-dist")) {
-                return "vendor-pdf";
-              }
-              return "vendor-core";
-            }
-          }
-        }
+        cache: false
       }
     },
     server: {

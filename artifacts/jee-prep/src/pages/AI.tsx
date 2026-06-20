@@ -711,8 +711,7 @@ function TypewriterMarkdown({ content, isTyping, onComplete, setFullScreenImage 
 
 async function fetchWebSearchResults(query: string, timeFilter?: string): Promise<string> {
   try {
-    const apiBase = import.meta.env.BASE_URL.replace(/\/$/, "");
-    let url = `${apiBase}/api/search?q=${encodeURIComponent(query)}`;
+    let url = `/api/search?q=${encodeURIComponent(query)}`;
     if (timeFilter) {
       url += `&df=${timeFilter}`;
     }

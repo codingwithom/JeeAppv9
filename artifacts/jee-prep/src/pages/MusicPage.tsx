@@ -3,6 +3,8 @@ import { motion, AnimatePresence, Reorder, useDragControls } from "framer-motion
 import { useMusicContext, Song } from "@/context/MusicContext";
 import { useAppContext } from "@/context/AppContext";
 import { getInvidiousInstances, getPipedInstances } from "@/utils/youtube";
+import { fetchPlaylistClientSide } from "@/utils/search";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -278,8 +280,7 @@ function YouTubeSearchModal({
           
           // Try local endpoint first
           try {
-            const apiBase = import.meta.env.BASE_URL.replace(/\/$/, "");
-            const res = await fetch(`${apiBase}/api/media-info?url=${encodeURIComponent(raw)}`);
+            const res = await fetch(`/api/media-info?url=${encodeURIComponent(raw)}`);
             if (res.ok) {
               const data = await res.json();
               if (data.type === "playlist" && Array.isArray(data.tracks)) {
@@ -297,126 +298,17 @@ function YouTubeSearchModal({
           }
 
           if (tracks.length === 0) {
-            // Client-side fallback Strategy 1: Piped playlist endpoint
-            const piped_instances = getPipedInstances();
-            for (const instance of piped_instances) {
-              try {
-                const res = await fetch(`${instance}/playlists/${ytPlaylistId}`);
-                if (res.ok) {
-                  const data = await res.json();
-                  if (data.relatedStreams && Array.isArray(data.relatedStreams)) {
-                    tracks = data.relatedStreams.map((v: any) => {
-                      const vId = v.url ? (v.url.includes("?v=") ? v.url.split("?v=")[1].split("&")[0] : v.url.split("/").pop()) : "";
-                      return {
-                        videoId: vId,
-                        title: v.title || "Unknown Video",
-                        author: v.uploaderName || "YouTube",
-                        length_seconds: v.duration || 0,
-                        thumbnail: v.thumbnail || `https://img.youtube.com/vi/${vId}/mqdefault.jpg`,
-                      };
-                    }).filter((v: any) => v.videoId);
-                    break;
-                  }
-                }
-              } catch (e) {}
-            }
-          }
-
-          if (tracks.length === 0) {
-            // Client-side fallback Strategy 2: Invidious playlist endpoint
-            const invidious_instances = await getInvidiousInstances();
-            for (const instance of invidious_instances) {
-              try {
-                const res = await fetch(`${instance}/api/v1/playlists/${ytPlaylistId}`);
-                if (res.ok) {
-                  const data = await res.json();
-                  if (data.videos && Array.isArray(data.videos)) {
-                    tracks = data.videos.map((v: any) => ({
-                      videoId: v.videoId,
-                      title: v.title || "Unknown Video",
-                      author: v.author || "YouTube",
-                      length_seconds: v.length_seconds || 0,
-                      thumbnail: `https://img.youtube.com/vi/${v.videoId}/hqdefault.jpg`,
-                    })).filter((v: any) => v.videoId);
-                    break;
-                  }
-                }
-              } catch (e) {}
-            }
-          }
-
-          if (tracks.length === 0) {
-            // Client-side fallback Strategy 3: Scrape HTML via CORS proxies
             try {
-              const fetchHtml = async (targetUrl: string) => {
-                const proxies = [
-                  `https://api.allorigins.win/get?url=${encodeURIComponent(targetUrl)}`,
-                  `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(targetUrl)}`,
-                  `https://corsproxy.io/?${encodeURIComponent(targetUrl)}`
-                ];
-                for (const proxy of proxies) {
-                  try {
-                    const res = await fetch(proxy);
-                    if (res.ok) {
-                      if (proxy.includes("allorigins")) {
-                        const data = await res.json();
-                        if (data.contents) return data.contents;
-                      } else {
-                        return await res.text();
-                      }
-                    }
-                  } catch (e) {}
-                }
-                throw new Error("All proxies failed");
-              };
-
-              const html = await fetchHtml(`https://www.youtube.com/playlist?list=${ytPlaylistId}`);
-              
-              const decodeHTML = (str: string): string => {
-                try {
-                  const txt = document.createElement("textarea");
-                  txt.innerHTML = str;
-                  return txt.value;
-                } catch (e) {
-                  return str;
-                }
-              };
-
-              const seenIds = new Set<string>();
-              const matches = html.matchAll(/<a\s+[^>]*href="[^"]*watch\?v=([a-zA-Z0-9_-]{11})[^"]*"[^>]*>/g);
-              for (const match of matches) {
-                const vId = match[1];
-                if (!seenIds.has(vId) && seenIds.size < 100) {
-                  const tagContent = match[0];
-                  let title = "";
-                  const titleMatch = tagContent.match(/title="([^"]+)"/);
-                  if (titleMatch) {
-                    title = decodeHTML(titleMatch[1]);
-                  } else {
-                    const startIdx = match.index || 0;
-                    const searchWindow = html.slice(startIdx, startIdx + 800);
-                    const windowMatch = searchWindow.match(/title="([^"]+)"/) || searchWindow.match(/>([^<]+)<\//);
-                    if (windowMatch) {
-                      title = decodeHTML(windowMatch[1].trim());
-                    }
-                  }
-                  
-                  if (!title || title.includes("watch?v=") || title.length > 150) {
-                    title = `YouTube Video [${vId}]`;
-                  }
-
-                  seenIds.add(vId);
-                  tracks.push({
-                    videoId: vId,
-                    title: title,
-                    author: "YouTube",
-                    length_seconds: 0,
-                    thumbnail: `https://img.youtube.com/vi/${vId}/hqdefault.jpg`,
-                  });
-                }
-              }
-            } catch (scrapeErr) {
-              console.error("Client side HTML scrape failed", scrapeErr);
+              const clientResult = await fetchPlaylistClientSide(ytPlaylistId);
+              tracks = clientResult.tracks.map((t) => ({
+                videoId: t.youtubeId,
+                title: t.title,
+                author: t.artist,
+                length_seconds: t.duration,
+                thumbnail: t.thumbnail
+              }));
+            } catch (clientErr) {
+              console.error("Client-side fallback extraction failed", clientErr);
             }
           }
 
@@ -440,8 +332,7 @@ function YouTubeSearchModal({
           let videoThumb = `https://img.youtube.com/vi/${ytId}/hqdefault.jpg`;
 
           try {
-            const apiBase = import.meta.env.BASE_URL.replace(/\/$/, "");
-            const res = await fetch(`${apiBase}/api/media-info?url=${encodeURIComponent(raw)}`);
+            const res = await fetch(`/api/media-info?url=${encodeURIComponent(raw)}`);
             if (res.ok) {
               const data = await res.json();
               if (data.type === "track") {
@@ -567,8 +458,7 @@ function YouTubeSearchModal({
       };
 
       const fetchLocal = async () => {
-        const apiBase = import.meta.env.BASE_URL.replace(/\/$/, "");
-        const res = await fetchWithTimeout(`${apiBase}/api/yt-search?q=${q}`, 5000);
+        const res = await fetchWithTimeout(`/api/yt-search?q=${q}`, 5000);
         const data = await res.json();
         if (data.error) throw new Error(data.error);
         if (!Array.isArray(data.results) || !data.results.length) throw new Error("No results");
@@ -888,8 +778,7 @@ function AddSongModal({
     setFetchError("");
     setMediaResult(null);
     try {
-      const apiBase = import.meta.env.BASE_URL.replace(/\/$/, "");
-      const res = await fetch(`${apiBase}/api/media-info?url=${encodeURIComponent(raw)}`);
+      const res = await fetch(`/api/media-info?url=${encodeURIComponent(raw)}`);
       const json = await res.json();
       if (!res.ok) throw new Error(json.error || "Failed to fetch media info");
       setMediaResult(json as MediaResult);
@@ -933,387 +822,23 @@ function AddSongModal({
 
         if (ytPlaylistId) {
           try {
-            const tracks: TrackResult[] = [];
-            let playlistName = "YouTube Playlist";
-
-            const invidious_instances = await getInvidiousInstances();
-
-            let playlistData: any = null;
-            for (const instance of invidious_instances) {
-              try {
-                const res = await fetch(`${instance}/api/v1/playlists/${ytPlaylistId}?fields=title,videos`);
-                if (res.ok) {
-                  playlistData = await res.json();
-                  playlistName = playlistData.title || "YouTube Playlist";
-                  if (playlistData.videos && Array.isArray(playlistData.videos)) {
-                    for (const video of playlistData.videos.slice(0, 100)) {
-                      if (video.videoId) {
-                        tracks.push({
-                          type: "track",
-                          title: video.title || "Unknown Video",
-                          artist: video.author || "YouTube",
-                          thumbnail: `https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`,
-                          duration: video.length_seconds || 0,
-                          streamUrl: `https://www.youtube.com/watch?v=${video.videoId}`,
-                          youtubeId: video.videoId
-                        });
-                      }
-                    }
-                    if (tracks.length > 0) {
-                      setMediaResult({
-                        type: "playlist",
-                        name: playlistName,
-                        thumbnail: tracks[0]?.thumbnail,
-                        trackCount: tracks.length,
-                        tracks
-                      });
-                      setFetchState("done");
-                      return;
-                    }
-                  }
-                }
-              } catch (e) {
-                // Try next instance
-              }
-            }
-
-            // Strategy 1.5: Fetch RSS Feed via dedicated JSON APIs and multiple XML CORS proxies (highly reliable)
-            try {
-              const rssUrl = `https://www.youtube.com/feeds/videos.xml?playlist_id=${ytPlaylistId}`;
-              let rssParsedData: { name: string; tracks: any[] } | null = null;
-
-              // 1. Try rss2json.com API (CORS-friendly, reliable proxying)
-              try {
-                const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`);
-                if (res.ok) {
-                  const data = await res.json();
-                  if (data && data.status === "ok" && Array.isArray(data.items)) {
-                    const name = data.feed?.title || playlistName;
-                    const items = data.items.map((item: any) => {
-                      let videoId = "";
-                      if (item.guid && item.guid.startsWith("yt:video:")) {
-                        videoId = item.guid.replace("yt:video:", "");
-                      } else if (item.link) {
-                        const m = item.link.match(/(?:watch\?v=|embed\/|shorts\/|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
-                        if (m) videoId = m[1];
-                      }
-                      return {
-                        videoId,
-                        title: item.title || "Unknown Video",
-                        author: item.author || "YouTube",
-                        thumbnail: item.thumbnail || (videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : "")
-                      };
-                    }).filter((t: any) => t.videoId);
-                    if (items.length > 0) {
-                      rssParsedData = { name, tracks: items };
-                    }
-                  }
-                }
-              } catch (e) {
-                console.warn("rss2json RSS parser failed", e);
-              }
-
-              // 2. Try feed2json.org API if rss2json failed
-              if (!rssParsedData) {
-                try {
-                  const res = await fetch(`https://feed2json.org/convert?url=${encodeURIComponent(rssUrl)}`);
-                  if (res.ok) {
-                    const data = await res.json();
-                    if (data && Array.isArray(data.items)) {
-                      const name = data.title || playlistName;
-                      const items = data.items.map((item: any) => {
-                        let videoId = "";
-                        if (item.guid && item.guid.startsWith("yt:video:")) {
-                          videoId = item.guid.replace("yt:video:", "");
-                        } else if (item.url) {
-                          const m = item.url.match(/(?:watch\?v=|embed\/|shorts\/|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
-                          if (m) videoId = m[1];
-                        }
-                        return {
-                          videoId,
-                          title: item.title || "Unknown Video",
-                          author: item.author?.name || item.author || "YouTube",
-                          thumbnail: item.thumbnail || (videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : "")
-                        };
-                      }).filter((t: any) => t.videoId);
-                      if (items.length > 0) {
-                        rssParsedData = { name, tracks: items };
-                      }
-                    }
-                  }
-                } catch (e) {
-                  console.warn("feed2json RSS parser failed", e);
-                }
-              }
-
-              // 3. Try direct XML parser via multiple CORS proxies if both JSON APIs failed
-              if (!rssParsedData) {
-                const xmlProxies = [
-                  `https://api.allorigins.win/raw?url=${encodeURIComponent(rssUrl)}`,
-                  `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(rssUrl)}`,
-                  `https://corsproxy.io/?${encodeURIComponent(rssUrl)}`,
-                  `https://api.allorigins.win/get?url=${encodeURIComponent(rssUrl)}`
-                ];
-
-                for (const proxy of xmlProxies) {
-                  try {
-                    const res = await fetch(proxy);
-                    if (res.ok) {
-                      let xmlText = await res.text();
-                      if (proxy.includes("allorigins.win/get")) {
-                        const json = JSON.parse(xmlText);
-                        xmlText = json.contents || "";
-                      }
-                      if (!xmlText) continue;
-
-                      const parser = new DOMParser();
-                      const xmlDoc = parser.parseFromString(xmlText, "text/xml");
-                      
-                      let name = playlistName;
-                      const titleNode = xmlDoc.getElementsByTagName("title")[0];
-                      if (titleNode) name = titleNode.textContent || name;
-
-                      const entries = xmlDoc.getElementsByTagName("entry");
-                      const items: any[] = [];
-
-                      for (let i = 0; i < entries.length; i++) {
-                        const entry = entries[i];
-                        let videoId = "";
-                        const ytVideoIdNode = entry.getElementsByTagName("yt:videoId")[0];
-                        if (ytVideoIdNode) {
-                          videoId = ytVideoIdNode.textContent || "";
-                        }
-                        if (!videoId) {
-                          const videoIdNode = entry.getElementsByTagName("videoId")[0];
-                          if (videoIdNode) videoId = videoIdNode.textContent || "";
-                        }
-                        if (!videoId) {
-                          const idNode = entry.getElementsByTagName("id")[0];
-                          if (idNode?.textContent && idNode.textContent.includes("yt:video:")) {
-                            videoId = idNode.textContent.replace("yt:video:", "");
-                          }
-                        }
-                        if (!videoId) {
-                          const linkNode = entry.getElementsByTagName("link")[0];
-                          const href = linkNode?.getAttribute("href");
-                          if (href) {
-                            const m = href.match(/(?:watch\?v=|embed\/|shorts\/|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
-                            if (m) videoId = m[1];
-                          }
-                        }
-
-                        if (videoId) {
-                          const tNode = entry.getElementsByTagName("title")[0];
-                          const title = tNode?.textContent || "Unknown Video";
-                          
-                          let author = "YouTube";
-                          const authorNode = entry.getElementsByTagName("author")[0];
-                          if (authorNode) {
-                            const nameNode = authorNode.getElementsByTagName("name")[0];
-                            if (nameNode) author = nameNode.textContent || author;
-                          }
-
-                          let thumbnail = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
-                          const mediaThumbnail = entry.getElementsByTagName("media:thumbnail")[0];
-                          if (mediaThumbnail) {
-                            thumbnail = mediaThumbnail.getAttribute("url") || thumbnail;
-                          }
-
-                          items.push({
-                            videoId,
-                            title,
-                            author,
-                            thumbnail
-                          });
-                        }
-                      }
-
-                      if (items.length > 0) {
-                        rssParsedData = { name, tracks: items };
-                        break;
-                      }
-                    }
-                  } catch (err) {
-                    console.warn(`XML proxy fetch failed for ${proxy}`, err);
-                  }
-                }
-              }
-
-              if (rssParsedData) {
-                playlistName = rssParsedData.name || playlistName;
-                for (const t of rssParsedData.tracks) {
-                  tracks.push({
-                    type: "track",
-                    title: t.title,
-                    artist: t.author,
-                    thumbnail: t.thumbnail,
-                    duration: 0,
-                    streamUrl: `https://www.youtube.com/watch?v=${t.videoId}`,
-                    youtubeId: t.videoId
-                  });
-                }
-
-                if (tracks.length > 0) {
-                  setMediaResult({
-                    type: "playlist",
-                    name: playlistName,
-                    thumbnail: tracks[0]?.thumbnail,
-                    trackCount: tracks.length,
-                    tracks
-                  });
-                  setFetchState("done");
-                  return;
-                }
-              }
-            } catch (rssErr) {
-              console.warn("RSS feed extraction failed, trying HTML scraping:", rssErr);
-            }
-
-            // Strategy 2: Try fetching YouTube playlist page and extract from multiple sources
-            try {
-              const html = await fetchHtml(`https://www.youtube.com/playlist?list=${ytPlaylistId}`);
-
-              // Extract title
-              const titleMatch = html.match(/<title>(.*?) - YouTube<\/title>/) 
-                || html.match(/<meta\s+name="title"\s+content="([^"]+)"/);
-              if (titleMatch) playlistName = titleMatch[1];
-
-              // Try multiple regex patterns for ytInitialData
-              const patterns = [
-                /window\["ytInitialData"\]\s*=\s*(\{[\s\S]*?\});/,
-                /ytInitialData\s*=\s*(\{[\s\S]*?\});/,
-                /var\s+ytInitialData\s*=\s*(\{[\s\S]*?\});/
-              ];
-
-              for (const pattern of patterns) {
-                const match = html.match(pattern);
-                if (match) {
-                  try {
-                    const ytData = JSON.parse(match[1]);
-                    const findVideos = (obj: any) => {
-                      if (tracks.length >= 100) return; // Found enough videos, stop searching
-                      if (Array.isArray(obj)) {
-                        for (const item of obj) findVideos(item);
-                      } else if (obj !== null && typeof obj === 'object') {
-                        if (obj.playlistVideoRenderer?.videoId) {
-                          const r = obj.playlistVideoRenderer;
-                          tracks.push({
-                            type: "track",
-                            title: r.title?.runs?.[0]?.text || "Unknown Video",
-                            artist: r.shortBylineText?.runs?.[0]?.text || "YouTube",
-                            thumbnail: `https://img.youtube.com/vi/${r.videoId}/hqdefault.jpg`,
-                            duration: parseInt(r.lengthSeconds || "0", 10),
-                            streamUrl: `https://www.youtube.com/watch?v=${r.videoId}`,
-                            youtubeId: r.videoId
-                          });
-                        }
-                        for (const key of Object.keys(obj)) {
-                          if (tracks.length >= 100) break;
-                          findVideos(obj[key]);
-                        }
-                      }
-                    };
-                    findVideos(ytData);
-                    if (tracks.length > 0) break;
-                  } catch (e) {
-                    // Continue to next pattern
-                  }
-                }
-              }
-
-              // Strategy 3: Try parsing the page for anchor tags to get video IDs and actual titles
-              if (tracks.length === 0) {
-                try {
-                  const decodeHTML = (str: string): string => {
-                    try {
-                      const txt = document.createElement("textarea");
-                      txt.innerHTML = str;
-                      return txt.value;
-                    } catch (e) {
-                      return str;
-                    }
-                  };
-
-                  const seenIds = new Set<string>();
-                  const matches = html.matchAll(/<a\s+[^>]*href="[^"]*watch\?v=([a-zA-Z0-9_-]{11})[^"]*"[^>]*>/g);
-                  for (const match of matches) {
-                    const vId = match[1];
-                    if (!seenIds.has(vId) && seenIds.size < 100) {
-                      const tagContent = match[0];
-                      let title = "";
-                      const titleMatch = tagContent.match(/title="([^"]+)"/);
-                      if (titleMatch) {
-                        title = decodeHTML(titleMatch[1]);
-                      } else {
-                        const startIdx = match.index || 0;
-                        const searchWindow = html.slice(startIdx, startIdx + 800);
-                        const windowMatch = searchWindow.match(/title="([^"]+)"/) || searchWindow.match(/>([^<]+)<\//);
-                        if (windowMatch) {
-                          title = decodeHTML(windowMatch[1].trim());
-                        }
-                      }
-                      
-                      if (!title || title.includes("watch?v=") || title.length > 150) {
-                        title = `YouTube Video [${vId}]`;
-                      }
-
-                      seenIds.add(vId);
-                      tracks.push({
-                        type: "track",
-                        title: title,
-                        artist: "YouTube",
-                        thumbnail: `https://img.youtube.com/vi/${vId}/hqdefault.jpg`,
-                        duration: 0,
-                        streamUrl: `https://www.youtube.com/watch?v=${vId}`,
-                        youtubeId: vId
-                      });
-                    }
-                  }
-                } catch (scrapeErr) {
-                  console.error("Client side HTML scrape failed", scrapeErr);
-                }
-              }
-
-              if (tracks.length > 0) {
-                setMediaResult({
-                  type: "playlist",
-                  name: playlistName,
-                  thumbnail: tracks[0]?.thumbnail,
-                  trackCount: tracks.length,
-                  tracks
-                });
-                setFetchState("done");
-                return;
-              }
-            } catch (e) {
-              // Continue to next strategy
-            }
-
-            // Strategy 4: Try YouTube's OEmbed endpoint (limited but reliable)
-            try {
-              const res = await fetch(`https://www.youtube.com/oembed?url=${encodeURIComponent(`https://www.youtube.com/playlist?list=${ytPlaylistId}`)}&format=json`);
-              if (res.ok) {
-                const data = await res.json();
-                playlistName = data.title || playlistName;
-              }
-            } catch (e) {
-              // OEmbed might not work for playlists, continue
-            }
-
-            if (tracks.length === 0) {
-              throw new Error(
-                `Could not extract playlist (ID: ${ytPlaylistId}). ` +
-                `Playlist might be private, age-restricted, or embeds might be disabled. ` +
-                `Please try a different public playlist.`
-              );
-            }
+            const clientResult = await fetchPlaylistClientSide(ytPlaylistId);
+            const formattedTracks = clientResult.tracks.map((t) => ({
+              type: "track" as const,
+              title: t.title,
+              artist: t.artist,
+              thumbnail: t.thumbnail,
+              duration: t.duration,
+              streamUrl: t.streamUrl,
+              youtubeId: t.youtubeId
+            }));
 
             setMediaResult({
               type: "playlist",
-              name: playlistName,
-              thumbnail: tracks[0]?.thumbnail,
-              trackCount: tracks.length,
-              tracks
+              name: clientResult.name,
+              thumbnail: formattedTracks[0]?.thumbnail || "",
+              trackCount: formattedTracks.length,
+              tracks: formattedTracks
             });
             setFetchState("done");
           } catch (err: any) {

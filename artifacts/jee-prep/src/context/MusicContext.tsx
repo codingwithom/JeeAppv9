@@ -75,8 +75,7 @@ function resolveUrl(url: string): string {
   if (url.startsWith("yt:")) {
     const videoId = url.slice(3);
     const ytUrl = `https://www.youtube.com/watch?v=${videoId}`;
-    const apiBase = import.meta.env.BASE_URL.replace(/\/$/, "");
-    return `${apiBase}/api/stream?url=${encodeURIComponent(ytUrl)}`;
+    return `/api/stream?url=${encodeURIComponent(ytUrl)}`;
   }
   return url;
 }

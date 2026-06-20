@@ -6,6 +6,36 @@ import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
 const port = Number(process.env.PORT) || 3000;
 
+const gcPlugin = () => {
+  let count = 0;
+  return {
+    name: "gc-plugin",
+    transform() {
+      count++;
+      if (count % 40 === 0) {
+        if (typeof global !== "undefined" && (global as any).gc) {
+          (global as any).gc();
+        }
+      }
+    },
+    buildEnd() {
+      if (typeof global !== "undefined" && (global as any).gc) {
+        (global as any).gc();
+      }
+    },
+    generateBundle() {
+      if (typeof global !== "undefined" && (global as any).gc) {
+        (global as any).gc();
+      }
+    },
+    writeBundle() {
+      if (typeof global !== "undefined" && (global as any).gc) {
+        (global as any).gc();
+      }
+    }
+  };
+};
+
 export default defineConfig(async () => {
   // Conditionally load Replit plugins asynchronously
   const extraPlugins = [];
@@ -24,11 +54,12 @@ export default defineConfig(async () => {
 
   return {
     // Use absolute root path for web routing inside Codespaces
-  base: process.env.NODE_ENV === "production" ? "/v4/" : "/",
+  base: process.env.NODE_ENV === "production" ? "/" : "/",
 
     plugins: [
       react(),
       tailwindcss(),
+      gcPlugin(),
       ...extraPlugins,
     ],
     resolve: {
@@ -48,7 +79,30 @@ export default defineConfig(async () => {
       reportCompressedSize: false,
       sourcemap: false,
       rollupOptions: {
-        maxParallelFileOps: 2
+        maxParallelFileOps: 1,
+        cache: false,
+        output: {
+          manualChunks(id) {
+            if (id.includes("node_modules")) {
+              if (id.includes("firebase")) {
+                return "vendor-firebase";
+              }
+              if (id.includes("katex") || id.includes("rehype-katex") || id.includes("remark-math")) {
+                return "vendor-math";
+              }
+              if (id.includes("recharts") || id.includes("d3")) {
+                return "vendor-charts";
+              }
+              if (id.includes("lucide-react") || id.includes("react-icons")) {
+                return "vendor-icons";
+              }
+              if (id.includes("pdfjs-dist")) {
+                return "vendor-pdf";
+              }
+              return "vendor-core";
+            }
+          }
+        }
       }
     },
     server: {

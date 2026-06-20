@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js & vite --config vite.config.ts --host 0.0.0.0",
-    "build": "NODE_OPTIONS=\"--max-old-space-size=2048\" vite build --config vite.config.ts",
+    "build": "NODE_OPTIONS=\"--max-old-space-size=1024 --expose-gc\" vite build --config vite.config.ts",
     "serve": "vite preview --config vite.config.ts --host 0.0.0.0",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },

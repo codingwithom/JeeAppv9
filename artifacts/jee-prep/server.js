@@ -11,21 +11,11 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 app.use(cors({
-  origin: ["https://omnetwork.in", "http://localhost:21847", "http://localhost:3000"],
+  origin: ["https://omnetwork.in/v4", "http://localhost:21847", "http://localhost:3000"],
   credentials: true
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-// Rewrite middleware to strip "/v4" base path prefix if present
-app.use((req, res, next) => {
-  if (req.url === "/v4") {
-    req.url = "/";
-  } else if (req.url.startsWith("/v4/")) {
-    req.url = req.url.substring(3);
-  }
-  next();
-});
 
 
 // ─── HELPER FUNCTIONS ────────────────────────────────────────────────────────

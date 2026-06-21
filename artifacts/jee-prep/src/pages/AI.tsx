@@ -278,7 +278,8 @@ function SourceCitationBadge({ href, children, sources }: { href: string; childr
   const snippetText = matchingSource?.snippet || "Explore this source for more details and verified information.";
   
   let sourceName = children ? String(children).trim() : "";
-  if (!sourceName || /^\d+$/.test(sourceName) || /^source/i.test(sourceName) || sourceName.startsWith("[")) {
+  const isUrl = sourceName.startsWith("http") || sourceName.includes("/") || sourceName.includes(".");
+  if (!sourceName || /^\d+$/.test(sourceName) || /^source/i.test(sourceName) || sourceName.startsWith("[") || isUrl) {
     if (matchingSource?.title) {
       const parts = matchingSource.title.split(/[-|—]/);
       sourceName = parts[parts.length - 1]?.trim() || cleanHostname;
@@ -292,6 +293,38 @@ function SourceCitationBadge({ href, children, sources }: { href: string; childr
 
   const cleanName = getSourceName(href, sourceName);
 
+  const isPdf = href.toLowerCase().endsWith(".pdf") || href.toLowerCase().includes(".pdf?");
+  let displayFavicon = faviconUrl;
+  if (isPdf) {
+    displayFavicon = "https://cdn-icons-png.flaticon.com/512/337/337946.png";
+  }
+
+  let displayTitle = titleText;
+  let displaySnippet = snippetText;
+  let displayPublisher = cleanName;
+
+  if (isPdf) {
+    displayPublisher = "PDF Document";
+    try {
+      const filename = decodeURIComponent(href.split("/").pop() || "document.pdf").split("?")[0];
+      displayTitle = filename;
+    } catch(e) {
+      displayTitle = "PDF Document";
+    }
+    displaySnippet = "Portable Document Format (PDF) file containing prep notes or reference material.";
+  }
+
+  const handleBadgeClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (!isHovered) {
+      e.preventDefault();
+      setIsHovered(true);
+      // Auto close after 6 seconds
+      setTimeout(() => {
+        setIsHovered(false);
+      }, 6000);
+    }
+  };
+
   return (
     <span className="relative inline-block align-middle my-0.5 mx-0.5 z-[50]">
       <a
@@ -301,27 +334,30 @@ function SourceCitationBadge({ href, children, sources }: { href: string; childr
         rel="noopener noreferrer"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-slate-900/60 hover:bg-slate-800 border border-slate-800/80 text-[10px] font-semibold text-slate-200 transition-all hover:scale-105 duration-200 shadow-sm cursor-pointer select-none"
+        onClick={handleBadgeClick}
+        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-slate-200 text-[10px] font-bold text-slate-800 hover:bg-slate-50 transition-all hover:scale-105 duration-200 shadow-sm cursor-pointer select-none"
       >
         <img
-          src={faviconUrl}
+          src={displayFavicon}
           alt=""
-          className="h-3.5 w-3.5 object-contain rounded shrink-0 bg-white p-0.5"
+          className="h-3.5 w-3.5 object-contain rounded shrink-0 bg-white p-0.5 border border-slate-100"
           onError={(e) => {
-            e.currentTarget.src = "https://www.google.com/s2/favicons?domain=wikipedia.org";
+            e.currentTarget.src = isPdf 
+              ? "https://cdn-icons-png.flaticon.com/512/337/337946.png"
+              : "https://www.google.com/s2/favicons?domain=wikipedia.org";
           }}
         />
-        <span className="max-w-[120px] truncate">{cleanName}</span>
+        <span className="max-w-[150px] truncate">{displayPublisher}</span>
       </a>
 
       {isHovered && (
         <div 
-          className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-80 bg-[#1a1a1a]/95 backdrop-blur-md border border-[#2d2d2d] rounded-2xl p-4 shadow-[0_10px_30px_rgba(0,0,0,0.6)] z-[9999] text-left pointer-events-none animate-in fade-in slide-in-from-bottom-2 duration-200"
+          className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-80 bg-[#1a1a1a]/95 backdrop-blur-md border border-[#2d2d2d] rounded-2xl p-4 shadow-[0_10px_30px_rgba(0,0,0,0.6)] z-[9999] text-left pointer-events-auto animate-in fade-in slide-in-from-bottom-2 duration-200"
         >
           <div className="flex items-center gap-2 mb-2">
             <div className="h-5 w-5 rounded bg-white border border-slate-800 flex items-center justify-center overflow-hidden shrink-0">
               <img
-                src={faviconUrl}
+                src={displayFavicon}
                 alt=""
                 className="h-3.5 w-3.5 object-contain"
                 onError={(e) => {
@@ -329,16 +365,23 @@ function SourceCitationBadge({ href, children, sources }: { href: string; childr
                 }}
               />
             </div>
-            <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">{cleanName || cleanHostname}</span>
-            <span className="text-[10px] text-slate-500 ml-auto flex items-center gap-0.5">Verified Source <ExternalLink className="h-2.5 w-2.5 inline" /></span>
+            <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">{displayPublisher}</span>
+            <span className="text-[10px] text-slate-500 ml-auto flex items-center gap-0.5">
+              Verified Link <ExternalLink className="h-2.5 w-2.5 inline" />
+            </span>
           </div>
 
-          <div className="text-xs font-bold text-white leading-snug mb-1.5 line-clamp-2">
-            {titleText}
-          </div>
+          <a 
+            href={href} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-xs font-bold text-white hover:text-blue-400 transition-colors leading-snug mb-1.5 line-clamp-2 block"
+          >
+            {displayTitle}
+          </a>
 
           <div className="text-[11px] text-slate-400 leading-relaxed line-clamp-3">
-            {snippetText}
+            {displaySnippet}
           </div>
         </div>
       )}

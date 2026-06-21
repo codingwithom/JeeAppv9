@@ -165,6 +165,7 @@ function streamAndCache(ytUrl, req, res) {
   const existing = audioCache.get(ytUrl);
 
   if (existing?.status === "ready" && existing.buffer) {
+    existing.lastAccessed = Date.now();
     serveFromBuffer(existing.buffer, existing.ext, req, res);
     return;
   }
@@ -200,6 +201,7 @@ function streamAndCache(ytUrl, req, res) {
     ext: "mp4",
     chunks: [],
     listeners: [],
+    lastAccessed: Date.now(),
   };
   audioCache.set(ytUrl, entry);
 
@@ -233,6 +235,24 @@ function streamAndCache(ytUrl, req, res) {
       entry.buffer = Buffer.concat(entry.chunks);
       entry.status = "ready";
       entry.chunks = [];
+      entry.lastAccessed = Date.now();
+
+      // Perform LRU Eviction check: Keep max 3 ready items in memory
+      const readyKeys = [];
+      for (const [key, val] of audioCache.entries()) {
+        if (val.status === "ready") {
+          readyKeys.push({ key, lastAccessed: val.lastAccessed || 0 });
+        }
+      }
+
+      if (readyKeys.length > 3) {
+        readyKeys.sort((a, b) => a.lastAccessed - b.lastAccessed);
+        const evictCount = readyKeys.length - 3;
+        for (let i = 0; i < evictCount; i++) {
+          audioCache.delete(readyKeys[i].key);
+          console.log(`[Cache Eviction] Evicted old audio buffer for: ${readyKeys[i].key}`);
+        }
+      }
     } else {
       entry.status = "error";
       entry.error = stderrBuf.replace(/WARNING:[^\n]+\n/g, "").trim() || `yt-dlp exit ${code}`;

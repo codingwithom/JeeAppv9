@@ -1636,7 +1636,19 @@ export default function VideoPage() {
   const durationRef = useRef(duration);
   const controlsTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const lastSaveRef = useRef(0);
-  const activeLeafIdRef = useRef(activeLeafId);
+  // Recording resources cleanup on unmount
+  useEffect(() => {
+    return () => {
+      if (recordTimerRef.current) {
+        clearInterval(recordTimerRef.current);
+      }
+      if (mediaRecorderRef.current) {
+        try {
+          mediaRecorderRef.current.stop();
+        } catch (e) {}
+      }
+    };
+  }, []);
 
   // Keep refs in sync
   useEffect(() => {

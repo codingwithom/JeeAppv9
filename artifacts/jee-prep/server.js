@@ -380,17 +380,25 @@ app.get("/api/scrape", async (req, res) => {
       if (cleanUrl.includes("/channel/") || cleanUrl.includes("/c/") || cleanUrl.includes("/user/") || cleanUrl.includes("/@")) {
         try {
           console.log(`[Scraper] YouTube channel detected: ${cleanUrl}. Resolving details...`);
-          const channelInfo = await playdl.channel_info(cleanUrl);
-          const textContent = `=== YOUTUBE CHANNEL METADATA ===
-URL: ${cleanUrl}
-Channel Name: ${channelInfo.name || "Unknown"}
-Description: ${channelInfo.description || "No description."}
-Subscribers: ${channelInfo.subscribers || "N/A"}
-Video Count: ${channelInfo.videoCount || 0}
-URL: ${channelInfo.url || "N/A"}`;
+          let channelName = "";
+          const handleMatch = cleanUrl.match(/@([a-zA-Z0-9_-]+)/);
+          if (handleMatch) {
+            channelName = "@" + handleMatch[1];
+          } else {
+            const parts = cleanUrl.split("/");
+            channelName = parts[parts.length - 1] || parts[parts.length - 2] || "YouTube Channel";
+          }
+          
+          const searchResults = await playdl.search(channelName, { limit: 10, source: { youtube: "video" } });
+          let textContent = `=== YOUTUBE CHANNEL METADATA ===\nURL: ${cleanUrl}\nChannel Name: ${channelName}\n\n=== LATEST VIDEOS FROM THIS CHANNEL ===\n`;
+          
+          searchResults.forEach((v, idx) => {
+            textContent += `[Video ${idx + 1}] Title: ${v.title || "Unknown"}\nURL: https://www.youtube.com/watch?v=${v.id}\nDuration: ${v.durationInSec || 0} seconds\nViews: ${v.views || 0}\nUploaded: ${v.uploadedAt || "N/A"}\nThumbnail: ${v.thumbnails?.[0]?.url || ""}\nCreator: ${v.channel?.name || "Unknown"}\n\n`;
+          });
+          
           return res.status(200).json({ url: cleanUrl, text: textContent, links: [] });
         } catch (ytChanErr) {
-          console.warn("[Scraper] play-dl channel metadata fetch failed, falling back to page scraper...", ytChanErr);
+          console.warn("[Scraper] play-dl channel metadata fetch failed:", ytChanErr);
         }
       }
     }

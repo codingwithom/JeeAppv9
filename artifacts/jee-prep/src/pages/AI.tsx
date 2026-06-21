@@ -191,7 +191,105 @@ function YoutubePreview({ videoId, href, children }: { videoId: string; href: st
   );
 }
 
-const getMarkdownComponents = (setFullScreenImage?: (url: string) => void): any => ({
+function SourceCitationBadge({ href, children, sources }: { href: string; children: React.ReactNode; sources?: ChatMessage['sources'] }) {
+  const [isHovered, setIsHovered] = useState(false);
+  const badgeRef = useRef<HTMLAnchorElement>(null);
+
+  const matchingSource = sources?.find(s => {
+    try {
+      const url1 = new URL(s.uri).href;
+      const url2 = new URL(href).href;
+      return url1 === url2 || url1.replace(/\/$/, '') === url2.replace(/\/$/, '');
+    } catch(e) {
+      return s.uri === href;
+    }
+  });
+
+  let hostname = "";
+  try {
+    hostname = new URL(href).hostname;
+  } catch (e) {
+    hostname = href;
+  }
+  const cleanHostname = hostname.replace(/^www\./i, "");
+
+  const faviconUrl = matchingSource?.favicon || `https://www.google.com/s2/favicons?domain=${hostname}&sz=64`;
+  const titleText = matchingSource?.title || cleanHostname;
+  const snippetText = matchingSource?.snippet || "Explore this source for more details and verified information.";
+  
+  let sourceName = children ? String(children).trim() : "";
+  if (!sourceName || /^\d+$/.test(sourceName) || /^source/i.test(sourceName) || sourceName.startsWith("[")) {
+    if (matchingSource?.title) {
+      const parts = matchingSource.title.split(/[-|—]/);
+      sourceName = parts[parts.length - 1]?.trim() || cleanHostname;
+      if (sourceName.length > 25) {
+        sourceName = cleanHostname;
+      }
+    } else {
+      sourceName = cleanHostname;
+    }
+  }
+
+  return (
+    <span className="relative inline-block align-middle my-0.5 mx-0.5 z-[50]">
+      <a
+        ref={badgeRef}
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-slate-900/60 hover:bg-slate-800 border border-slate-800/80 text-[10px] font-semibold text-slate-200 transition-all hover:scale-105 duration-200 shadow-sm cursor-pointer select-none"
+      >
+        <img
+          src={faviconUrl}
+          alt=""
+          className="h-3.5 w-3.5 object-contain rounded shrink-0 bg-white p-0.5"
+          onError={(e) => {
+            e.currentTarget.src = "https://www.google.com/s2/favicons?domain=wikipedia.org";
+          }}
+        />
+        <span className="max-w-[120px] truncate">{sourceName}</span>
+        {sources && matchingSource && sources.indexOf(matchingSource) !== -1 && (
+          <span className="text-[8px] text-slate-500 font-extrabold ml-0.5 bg-slate-950 px-1 py-0.2 rounded border border-slate-800/50">
+            {sources.indexOf(matchingSource) + 1}
+          </span>
+        )}
+      </a>
+
+      {isHovered && (
+        <div 
+          className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-80 bg-slate-950 border border-slate-800 rounded-xl p-3.5 shadow-2xl z-[9999] text-left pointer-events-none animate-in fade-in slide-in-from-bottom-2 duration-200"
+        >
+          <div className="flex items-center gap-2 mb-2">
+            <div className="h-5 w-5 rounded bg-white border border-slate-800 flex items-center justify-center overflow-hidden shrink-0">
+              <img
+                src={faviconUrl}
+                alt=""
+                className="h-3.5 w-3.5 object-contain"
+                onError={(e) => {
+                  e.currentTarget.src = "https://www.google.com/s2/favicons?domain=wikipedia.org";
+                }}
+              />
+            </div>
+            <span className="text-[11px] font-bold text-slate-300 truncate">{cleanHostname}</span>
+            <span className="text-[10px] text-slate-500 ml-auto flex items-center gap-0.5">Verified Source <ExternalLink className="h-2.5 w-2.5 inline" /></span>
+          </div>
+
+          <div className="text-xs font-extrabold text-white leading-tight mb-1.5 line-clamp-2">
+            {titleText}
+          </div>
+
+          <div className="text-[11px] text-slate-400 leading-relaxed line-clamp-3">
+            {snippetText}
+          </div>
+        </div>
+      )}
+    </span>
+  );
+}
+
+const getMarkdownComponents = (setFullScreenImage?: (url: string) => void, sources?: ChatMessage['sources']): any => ({
   a: ({ node, children, href, ...props }: any) => {
     const isImageLink = node?.children?.length === 1 && node.children[0].tagName === 'img';
     if (isImageLink) {
@@ -216,6 +314,10 @@ const getMarkdownComponents = (setFullScreenImage?: (url: string) => void): any 
     if (ytMatch && ytMatch[1]) {
       const videoId = ytMatch[1];
       return <YoutubePreview videoId={videoId} href={href}>{children}</YoutubePreview>;
+    }
+
+    if (href && (href.startsWith("http://") || href.startsWith("https://"))) {
+      return <SourceCitationBadge href={href} sources={sources}>{children}</SourceCitationBadge>;
     }
 
     return <a href={href} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600 underline transition-colors font-medium break-words" {...props}>{children}</a>;
@@ -641,10 +743,38 @@ function MessageSources({ sources }: { sources: { uri: string; title: string; fa
   );
 }
 
-const preprocessMarkdown = (content: string): string => {
+const preprocessMarkdown = (content: string, sources?: ChatMessage['sources']): string => {
   if (!content) return content;
   
   let cleaned = content;
+
+  // Replace plain-text citations with markdown links
+  if (sources && sources.length > 0) {
+    // 1. [Source X] -> [Source X](uri)
+    cleaned = cleaned.replace(/\[Source\s+(\d+)\]/gi, (match, numStr) => {
+      const idx = parseInt(numStr, 10) - 1;
+      if (idx >= 0 && idx < sources.length) {
+        return `[Source ${idx + 1}](${sources[idx].uri})`;
+      }
+      return match;
+    });
+
+    // 2. [X] -> [Publisher/Site Name](uri) if matches a valid source
+    cleaned = cleaned.replace(/\[(\d+)\]/g, (match, numStr) => {
+      const idx = parseInt(numStr, 10) - 1;
+      if (idx >= 0 && idx < sources.length) {
+        let title = "";
+        try {
+          const hostname = new URL(sources[idx].uri).hostname;
+          title = hostname.replace(/^www\./i, "");
+        } catch(e) {
+          title = sources[idx].title || `Source ${idx + 1}`;
+        }
+        return `[${title}](${sources[idx].uri})`;
+      }
+      return match;
+    });
+  }
 
   // 1. Match tool calls like <|tool_call_start|>[calculus(..., code="...", ...)]<|tool_call_end|>
   const toolCallRegex = /<\|tool_call_start\|>\[calculus\([\s\S]*?code="([^"]+)"[\s\S]*?\)\](?:<\|tool_call_end\|>)?/g;
@@ -774,7 +904,7 @@ const preprocessMarkdown = (content: string): string => {
   return cleaned;
 };
 
-function TypewriterMarkdown({ content, isTyping, onComplete, setFullScreenImage }: { content: string, isTyping?: boolean, onComplete?: () => void, setFullScreenImage?: (url: string) => void }) {
+function TypewriterMarkdown({ content, isTyping, onComplete, setFullScreenImage, sources }: { content: string, isTyping?: boolean, onComplete?: () => void, setFullScreenImage?: (url: string) => void, sources?: ChatMessage['sources'] }) {
   const [displayed, setDisplayed] = useState(isTyping ? "" : content);
 
   useEffect(() => {
@@ -798,10 +928,10 @@ function TypewriterMarkdown({ content, isTyping, onComplete, setFullScreenImage 
     return () => clearInterval(interval);
   }, [content, isTyping, onComplete]);
 
-  return <ReactMarkdown remarkPlugins={[remarkMath, remarkGfm]} rehypePlugins={[rehypeKatex]} components={getMarkdownComponents(setFullScreenImage)}>{preprocessMarkdown(displayed)}</ReactMarkdown>;
+  return <ReactMarkdown remarkPlugins={[remarkMath, remarkGfm]} rehypePlugins={[rehypeKatex]} components={getMarkdownComponents(setFullScreenImage, sources)}>{preprocessMarkdown(displayed, sources)}</ReactMarkdown>;
 }
 
-async function fetchWebSearchResults(query: string, timeFilter?: string): Promise<string> {
+async function fetchWebSearchResults(query: string, timeFilter?: string): Promise<{ results: { url: string; title: string; snippet: string; thumbnail?: string }[]; text: string }> {
   try {
     let url = `/api/search?q=${encodeURIComponent(query)}`;
     if (timeFilter) {
@@ -814,7 +944,7 @@ async function fetchWebSearchResults(query: string, timeFilter?: string): Promis
     const results = data.results || [];
     
     if (results.length === 0) {
-      return "No search results found.";
+      return { results: [], text: "No search results found." };
     }
     
     let searchSummaries = "";
@@ -822,7 +952,14 @@ async function fetchWebSearchResults(query: string, timeFilter?: string): Promis
       searchSummaries += `[Source ${idx + 1}] Title: ${item.title}\nURL: ${item.url}\nSnippet: ${item.snippet}\nThumbnail: ${item.thumbnail || ""}\n\n`;
     });
     
-    return searchSummaries;
+    const mappedResults = results.slice(0, 5).map((item: any) => ({
+      url: item.url,
+      title: item.title,
+      snippet: item.snippet,
+      thumbnail: item.thumbnail
+    }));
+
+    return { results: mappedResults, text: searchSummaries };
   } catch (error) {
     console.warn("Local search API failed or backend server is not running. Falling back to direct client-side search via CORS proxy:", error);
     try {
@@ -838,7 +975,7 @@ async function fetchWebSearchResults(query: string, timeFilter?: string): Promis
       
       const html = await res.text();
       if (!html.includes("result results_links")) {
-        return "No search results found.";
+        return { results: [], text: "No search results found." };
       }
       
       const decodeHTMLEntities = (str: string): string => {
@@ -882,7 +1019,7 @@ async function fetchWebSearchResults(query: string, timeFilter?: string): Promis
       });
 
       if (results.length === 0) {
-        return "No search results found.";
+        return { results: [], text: "No search results found." };
       }
 
       let searchSummaries = "";
@@ -890,10 +1027,10 @@ async function fetchWebSearchResults(query: string, timeFilter?: string): Promis
         searchSummaries += `[Source ${idx + 1}] Title: ${item.title}\nURL: ${item.url}\nSnippet: ${item.snippet}\nThumbnail: \n\n`;
       });
       
-      return searchSummaries;
+      return { results, text: searchSummaries };
     } catch (fallbackError) {
       console.error("Fallback direct web search failed:", fallbackError);
-      return "Failed to retrieve search results.";
+      return { results: [], text: "Failed to retrieve search results." };
     }
   }
 }
@@ -1486,23 +1623,108 @@ Do not include any explanation or markdown outside the code block.` : "";
       const isLatestRequest = /latest|today|recent|current|trending|updated|news|situation|real-time|realtime/i.test(lastMsg);
       if (isLatestRequest) {
         const adjustedQuery = lastMsg + " " + currentYear;
-        let searchResults = "";
+        let searchObj: any = null;
         try {
-          searchResults = await fetchWebSearchResults(adjustedQuery, "m");
-          if (!searchResults) {
-             searchResults = await fetchWebSearchResults(adjustedQuery, "y");
+          searchObj = await fetchWebSearchResults(adjustedQuery, "m");
+          if (!searchObj || !searchObj.results || searchObj.results.length === 0) {
+             searchObj = await fetchWebSearchResults(adjustedQuery, "y");
           }
-          if (!searchResults) {
-             searchResults = await fetchWebSearchResults(adjustedQuery);
+          if (!searchObj || !searchObj.results || searchObj.results.length === 0) {
+             searchObj = await fetchWebSearchResults(adjustedQuery);
           }
         } catch(e) {
           try {
-            searchResults = await fetchWebSearchResults(adjustedQuery);
+            searchObj = await fetchWebSearchResults(adjustedQuery);
           } catch(err) {}
         }
         
-        if (searchResults) {
-          searchContext = `\n\n[CRITICAL DIRECTIVE: REAL-TIME RAG MODE ACTIVATED]\nThe user is requesting information that requires real-time data. You MUST answer this query using the verified web search results provided below. Cite all facts by referencing the relevant [Source X] link.\n\nREAL-TIME WEB SEARCH RESULTS FOR "${adjustedQuery}":\n${searchResults}\n\nINSTRUCTIONS: Write a comprehensive, precise response synthesizing the search results. Cite sources exactly.`;
+        if (searchObj && searchObj.text) {
+          searchContext = `\n\n[CRITICAL DIRECTIVE: REAL-TIME RAG MODE ACTIVATED]\nThe user is requesting information that requires real-time data. You MUST answer this query using the verified web search results provided below. Cite all facts by referencing the relevant [Source X] link.\n\nREAL-TIME WEB SEARCH RESULTS FOR "${adjustedQuery}":\n${searchObj.text}\n\nINSTRUCTIONS: Write a comprehensive, precise response synthesizing the search results. Cite sources exactly.`;
+          
+          if (searchObj.results && Array.isArray(searchObj.results)) {
+            searchObj.results.forEach((item: any) => {
+              let hostname = "";
+              try { hostname = new URL(item.url).hostname; } catch(e) {}
+              generatedSources.push({
+                uri: item.url,
+                title: item.title,
+                favicon: hostname ? `https://www.google.com/s2/favicons?domain=${hostname}` : "",
+                snippet: item.snippet
+              });
+            });
+          }
+        }
+      }
+
+      // YouTube Channel or Video Search Detection
+      let ytContext = "";
+      const isYtRequest = /latest\s+video|youtube\b|yt\b|video\s+of|video\s+from|upload\s+of|upload\s+from|tell me.*video/i.test(lastMsg);
+      if (isYtRequest) {
+        let cleanQuery = lastMsg
+          .replace(/tell me/gi, "")
+          .replace(/latest video of/gi, "")
+          .replace(/latest video from/gi, "")
+          .replace(/video of/gi, "")
+          .replace(/video from/gi, "")
+          .replace(/upload of/gi, "")
+          .replace(/upload from/gi, "")
+          .replace(/show me/gi, "")
+          .replace(/what is/gi, "")
+          .replace(/the/gi, "")
+          .trim();
+        
+        if (!cleanQuery) {
+          cleanQuery = lastMsg;
+        }
+
+        const searchQuery = `${cleanQuery} latest video`;
+        try {
+          const ytSearchUrl = `/api/yt-search?q=${encodeURIComponent(searchQuery)}`;
+          const ytRes = await fetch(ytSearchUrl);
+          if (ytRes.ok) {
+            const ytData = await ytRes.json();
+            const results = ytData.results || [];
+            if (results.length > 0) {
+              ytContext = `\n\n[CRITICAL DIRECTIVE: REAL-TIME YOUTUBE VIDEO MODE ACTIVATED]
+The user is requesting video suggestions, latest uploads, or channel info. You MUST use the verified YouTube search results provided below.
+To present the primary video, you MUST render a YouTube Card Widget.
+The YouTube Card Widget is generated by returning a single JSON block wrapped in \`\`\`youtube-card:
+\`\`\`youtube-card
+{
+  "videoId": "${results[0].videoId}",
+  "title": ${JSON.stringify(results[0].title)},
+  "creator": ${JSON.stringify(results[0].author)},
+  "views": "${results[0].views || '1M+'}",
+  "uploadDate": "${results[0].uploadedAt || 'Recently'}",
+  "whyRecommend": "This is the latest video uploaded by the creator/channel matching your query."
+}
+\`\`\`
+
+Here are the top search results returned from YouTube for "${searchQuery}":
+`;
+              results.slice(0, 5).forEach((v: any, idx: number) => {
+                ytContext += `[Video ${idx + 1}] Title: ${v.title}
+Link: https://www.youtube.com/watch?v=${v.videoId}
+Channel/Creator: ${v.author}
+Duration: ${v.length_seconds} seconds
+Thumbnail: ${v.thumbnail}
+Views: ${v.views}
+Uploaded: ${v.uploadedAt}
+
+`;
+                generatedSources.push({
+                  uri: `https://www.youtube.com/watch?v=${v.videoId}`,
+                  title: v.title,
+                  favicon: "https://www.google.com/s2/favicons?domain=youtube.com",
+                  snippet: `YouTube Video by ${v.author}. Views: ${v.views}. Uploaded: ${v.uploadedAt}. Length: ${Math.floor(v.length_seconds / 60)}m ${v.length_seconds % 60}s.`
+                });
+              });
+              
+              ytContext += `\nINSTRUCTIONS: Formulate a detailed, premium response describing the latest video and other recent ones. Output the primary video's \`\`\`youtube-card\`\`\` block. Under that, cite the other relevant videos as standard text or list links, which will be styled as inline sources.`;
+            }
+          }
+        } catch (ytErr) {
+          console.warn("YouTube live search query failed:", ytErr);
         }
       }
 
@@ -1599,7 +1821,7 @@ If the user uploaded an image of an equation, read/OCR the equation from the ima
 
       const codeAndWidgetRestriction = `\n\n[CRITICAL RESTRICTION - CODE AND WIDGETS]\n1. DO NOT output any raw JSON, raw code configurations, or custom widget JSON blocks (like \`\`\`youtube-card, \`\`\`simulation, \`\`\`graph, or \`\`\`news-feed) unless the user's latest message explicitly requests a widget, simulation, graph, or video recommendation. Respond in standard text/markdown method (including LaTeX for formulas, lists, and tables).\n2. DO NOT write code blocks (like Python, C++, Java, JS, HTML, etc.) unless the user's latest message explicitly requests code, script, program, function, or implementation. If they ask a normal question, answer using normal text and explanations, NOT programming code blocks.\n`;
 
-      const finalSystemInstruction = systemInstruction + goalSpecificInstruction + imageGenerationInstruction + dateInstruction + searchContext + crawlContext + graphDirective + codeAndWidgetRestriction;
+      const finalSystemInstruction = systemInstruction + goalSpecificInstruction + imageGenerationInstruction + dateInstruction + searchContext + crawlContext + ytContext + graphDirective + codeAndWidgetRestriction;
       
       const visionPrompt = hasImages ? "Please scan, read, and analyze the uploaded image carefully. Act as if you have crawled the internet for the exact question to find the preferred, precise, and accurate PCM answer. Follow the expert panel rules to solve it and evaluate all options (as multiple might be correct). Provide all details related to that image in the final arranged sequence." : "";
 
@@ -2915,6 +3137,7 @@ export default function AIChatInterface() {
                           isTyping={m.isTyping}
                           onComplete={() => markAsDone(i)}
                           setFullScreenImage={setFullScreenImage}
+                          sources={m.sources}
                        />
                      ) : editingMessageIdx === i ? (
                        <div className="flex flex-col gap-2 min-w-[240px] sm:min-w-[450px] bg-background border border-border/80 rounded-2xl p-3 shadow-inner">

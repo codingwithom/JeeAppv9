@@ -8,11 +8,11 @@ JEE Prep Hub is an advanced study dashboard and productivity workspace custom-ta
 1. [Key Architectural Designs](#key-architectural-designs)
 2. [Global Layout & UI Shell Components](#global-layout--ui-shell-components)
 3. [Page-by-Page Feature Matrix](#page-by-page-feature-matrix)
-4. [Interactive AI Companion & Simulation Widgets](#interactive-ai-companion--simulation-widgets)
-5. [Single-File Express Server Architecture (`server.js`)](#single-file-express-server-architecture-serverjs)
-6. [Multi-Stage Static Playlist Fetching Algorithm](#multi-stage-static-playlist-fetching-algorithm)
+4. [Deep Dive: YouTube Video & Playlist Fetching & Streaming Subsystem](#deep-dive-youtube-video--playlist-fetching--streaming-subsystem)
+5. [Deep Dive: AI Real-Time Web Search & RAG Information Gathering](#deep-dive-ai-real-time-web-search--rag-information-gathering)
+6. [Interactive AI Companion & Simulation Widgets](#interactive-ai-companion--simulation-widgets)
 7. [Workspace Local Directory Synchronizer](#workspace-local-directory-synchronizer)
-8. [Offline Local Storage & Cache Purification](#offline-local-storage-cache-purification)
+8. [Offline Local Storage & Cache Purification](#offline-local-storage--cache-purification)
 9. [Low-Level Helpers & Custom Synthesizers](#low-level-helpers--custom-synthesizers)
 10. [Getting Started & Development Guides](#getting-started--development-guides)
 11. [Workspace Dependency Breakdown](#workspace-dependency-breakdown)
@@ -136,17 +136,208 @@ The workspace supports both:
 
 ---
 
+## Deep Dive: YouTube Video & Playlist Fetching & Streaming Subsystem
+
+One of the most complex subsystems in the app is the YouTube audio/video parser and media-streaming backend. It is designed to work in two scenarios: when the backend Express server is running, and when the frontend is compiled as a static client-only app.
+
+```mermaid
+flowchart TD
+    A[User inputs YouTube Playlist URL] --> B{Is backend server online?}
+    
+    B -- Yes --> C[HTTP GET /api/media-info?url=...]
+    C --> D{Which Strategy succeeds?}
+    D -- Strategy 1 --> E[Backend Node-Fetch HTML Scraper]
+    D -- Strategy 2 --> F[Backend play-dl Extraction]
+    
+    B -- No / Offline --> G[Client-Side fetchPlaylistClientSide]
+    G --> H{Which Client Strategy succeeds?}
+    H -- Client Strategy 1 --> I[Race CORS proxies for HTML + ytInitialData JSON extraction]
+    H -- Client Strategy 2 --> J[Race CORS proxies for YouTube XML RSS Feed]
+    H -- Client Strategy 3 --> K[Race Public Piped / Invidious API Mirror instances]
+    
+    E & F & I & J & K --> L[Standardized Track Array Returned]
+    L --> M[Populated in state & Synced to Workspace local JSON storage]
+```
+
+### 1. Client-Side Playlist Parsing (`fetchPlaylistClientSide`)
+* **Location**: [src/utils/search.ts](file:///workspaces/JeeAppv9/artifacts/jee-prep/src/utils/search.ts#L345-L498)
+* **Trigger**: Invoked when the user enters a YouTube playlist URL inside the Lecture suite or Music hub, and the local backend server is offline or fails to respond.
+* **Processing Chain**:
+  1. **URL Sanitization**: Extracts the `list=` parameter from the URL using Regex.
+  2. **Strategy 1: HTML Scrape & Brace-Counting JSON Extraction (Up to 100 items)**
+     * Races three public CORS-bypass proxies:
+       * `https://api.allorigins.win/get?url=...`
+       * `https://api.codetabs.com/v1/proxy?quest=...`
+       * `https://corsproxy.io/?url=...`
+     * On first proxy success, retrieves the full YouTube HTML string.
+     * Searches for the JS initialization block `"ytInitialData"`.
+     * **Brace Counting Algorithm**: Scans character-by-character from the initial `{` following `ytInitialData`. Increments a counter on `{` and decrements it on `}` while respecting string borders (`"` or `'`) and backslash escapes (`\`). Once the counter hits zero, it extracts the exact JSON block and parses it.
+     * Recursively traverses the JSON object to locate any keys named `playlistVideoRenderer` or `videoRenderer`.
+     * If the JSON parser fails, it runs a fallback anchor tag Regex search matching `/watch\?v=([a-zA-Z0-9_-]{11})/` to locate video IDs and titles.
+  3. **Strategy 2: XML RSS Feed Fallback (Up to 15 items)**
+     * If Strategy 1 yields 0 items, the client hits the YouTube RSS XML playlist endpoint: `https://www.youtube.com/feeds/videos.xml?playlist_id={listId}`.
+     * Races the request across the CORS proxies.
+     * Uses the browser's native `DOMParser()` to parse the text as `text/xml`.
+     * Traverses the XML document for `<entry>` tags, extracting `<yt:videoId>`, `<title>`, and `<author>` tags using namespace-insensitive search (`getElementsByTagNameNS`).
+  4. **Strategy 3: Multi-Tier Mirror Racing**
+     * If RSS also fails, it fetches the list from public YouTube API mirrors (Piped and Invidious).
+     * Retrieves instance lists via [src/utils/youtube.ts](file:///workspaces/JeeAppv9/artifacts/jee-prep/src/utils/youtube.ts) and filters them.
+     * Races requests to the top 3 Piped endpoints (hitting `/playlists/${playlistId}`) and the top 3 Invidious endpoints (hitting `/api/v1/playlists/${playlistId}`) with a strict 6-second timeout.
+     * Decodes the custom schemas of Piped (`v.relatedStreams`) and Invidious (`v.videos`) into a uniform format.
+  5. **Deduplication and Limits**: Groups results, filters out deleted/private placeholders, deduplicates by YouTube ID, and returns the top 150 items.
+
+### 2. Backend Playlist Parsing (Express REST API)
+* **Location**: [server.js](file:///workspaces/JeeAppv9/artifacts/jee-prep/server.js#L447-L835)
+* **Endpoint**: `GET /api/media-info?url={URL}`
+* **Process**:
+  1. Detects type of URL (`yt_video`, `yt_playlist`, `sp_track`).
+  2. **Strategy 1: Scraping YouTube Page HTML**:
+     * Node performs a `fetch()` with Chrome headers directly to the YouTube playlist page.
+     * Scans for renderer keys (`playlistVideoRenderer`, `lockupViewModel`, `gridVideoRenderer`, etc.).
+     * Performs character block extraction (brace counting) to extract individual metadata blocks without parsing the entire page's massive HTML script, ensuring fast resolution.
+  3. **Strategy 2: play-dl Library Fallback**:
+     * Runs `playdl.playlist_info(url, { incomplete: true })` inside a promise race with an 8-second timeout.
+     * Extracts tracks from the playlist page.
+  4. **Spotify Track Resolution**:
+     * Hitting Spotify oEmbed: `https://open.spotify.com/oembed?url={spotifyUrl}`.
+     * Extracts track name and artist.
+     * Queries YouTube search API internally: `playdl.search(query, { source: { youtube: "video" }, limit: 1 })`.
+     * Obtains the top YouTube video match and returns its details pointing to the backend stream endpoint.
+
+### 3. Media Audio Streaming Engine (`/api/stream`)
+* **Location**: [server.js](file:///workspaces/JeeAppv9/artifacts/jee-prep/server.js#L120-L254)
+* **Endpoint**: `GET /api/stream?url={YT_URL}`
+* **Architecture**:
+  * **Memory Cache Map (`audioCache`)**: Holds entries under the key `{ytUrl}` containing:
+    * `status`: `"downloading"` or `"ready"` or `"error"`.
+    * `buffer`: Combined binary buffer of the audio file.
+    * `ext`: Audio format extension (defaults to `"mp4"`).
+    * `chunks`: Array of raw buffer chunks loaded during download.
+    * `listeners`: Array of callbacks to execute when the download concludes.
+  * **Piping and Range Support**:
+    * If the file is already cached as `"ready"`, the server handles HTTP Range requests (`res.status(206)`), slicing the buffer to stream requested bytes (`Buffer.slice(start, end + 1)`). This allows students to seek back and forth instantly.
+    * If a request is made for a file that is currently downloading, it adds the request to the `listeners` array. Once the download completes, the listener is invoked and streams the full completed buffer.
+    * If the track is not present in cache, the backend starts a new child process:
+      ```javascript
+      const ytdlp = spawn("yt-dlp", [
+        "-f", "bestaudio/best",
+        "--no-playlist",
+        "--quiet",
+        "--no-warnings",
+        "-o", "-",
+        ytUrl,
+      ]);
+      ```
+    * Standard output stream (`ytdlp.stdout`) handles chunk events:
+      1. Pipes chunks to the client's HTTP response in real-time (`res.write(chunk)`) so playback starts immediately without waiting for download to finish.
+      2. Appends chunks to the in-memory array `entry.chunks`.
+    * On process `close`, it checks the exit code. If successful, it combines all chunks: `entry.buffer = Buffer.concat(entry.chunks)`. It updates status to `"ready"`, flushes `chunks`, and runs all callbacks in `listeners` to satisfy pending range requests.
+
+---
+
+## Deep Dive: AI Real-Time Web Search & RAG Information Gathering
+
+When a student queries the AI companion about real-time news, internet syllabus changes, or recent notifications, the application triggers a real-time Retrieval-Augmented Generation (RAG) loop.
+
+```mermaid
+sequenceDiagram
+    participant User as Chat UI (AI.tsx)
+    participant Search as Search Utility / API
+    participant DDG as DuckDuckGo (HTML Scraper)
+    participant OG as Web Link OG Scraper
+    participant LLM as OpenRouter Models
+
+    User->>User: Checks prompt for news keywords
+    Note over User: Keyword match ("latest news")
+    User->>User: Appends current year (e.g. 2026)
+    
+    User->>Search: Calls fetchWebSearchResults(query, "m") [month filter]
+    alt Backend online
+        Search->>DDG: HTTP GET /api/search?q=query&df=m
+        DDG-->>Search: Return DDG Results HTML
+    else Backend offline
+        Search->>Search: CORS proxy fallback
+        Search->>DDG: HTTP GET corsproxy.io/?url=html.duckduckgo.com...&df=m
+        DDG-->>Search: Return DDG Results HTML
+    </td>
+    
+    Note over Search: Splits class="result results_links"<br/>Extracts URL, Title, Snippet (top 6)
+    
+    Search->>OG: Fetches landing HTML of top 4 results
+    OG-->>Search: Returns og:image/twitter:image URLs
+    
+    Search-->>User: Structured Search summaries (Text/Thumbnails)
+    
+    User->>User: Injects date reference prompt (2026 local time)
+    User->>User: Compiles [CRITICAL DIRECTIVE: REAL-TIME RAG MODE] context
+    
+    User->>LLM: POST /chat/completions (RAG prompt + context)
+    LLM-->>User: Synthesized text response with citations
+    
+    User->>User: Displays response with hover citations, favicons & high-res image cards
+```
+
+### 1. Step 1: Request Intent Classification
+Inside [src/pages/AI.tsx](file:///workspaces/JeeAppv9/artifacts/jee-prep/src/pages/AI.tsx#L1676-L1770), before dispatching a query to the LLM, the system processes the user's message text:
+* It scans the text for news-related keywords: `news`, `today`, `latest`, `current`, `now`, `realtime`, `real-time`, `today's`, `todays`, or `situation`.
+* If a match occurs (`isLatestRequest`), it ensures the current year is appended: `adjustedQuery = lastMsg + " " + currentYear`.
+* It also detects if the query is a mathematical graph plot request. If so, it flags a web search to fetch equations.
+
+### 2. Step 2: Running the Web Search
+The system triggers search calls to DuckDuckGo using time-sensitive boundaries to fetch the most recent data:
+1. **Month-Filtered Search**: Calls `fetchWebSearchResults(adjustedQuery, "m")` (which appends `&df=m` to target content published in the last month).
+2. **Year-Filtered Fallback**: If the month-filtered search yields empty records, it falls back to `fetchWebSearchResults(adjustedQuery, "y")` (published in the last year).
+3. **No-Filter Fallback**: If both fail, it makes a general query: `fetchWebSearchResults(adjustedQuery)`.
+
+### 3. Step 3: Harvesting DuckDuckGo & OG Images
+The search handler queries the backend endpoint `/api/search?q={query}`. If the backend is offline, the client queries DuckDuckGo via a CORS proxy wrapper: `https://corsproxy.io/?${encodeURIComponent('https://html.duckduckgo.com/html/?q=...')}`.
+* **HTML Parsing**: Splits the HTML output using the keyword `'class="result results_links'`.
+* **RegEx Extraction**: Matches and parses elements within the first 6 blocks:
+  * URL: `href="..."` (decodes `uddg=` redirect queries if present).
+  * Title: `class="result__a"...>Text</a>` (strips HTML tags and decodes entities).
+  * Snippet: `class="result__snippet"...>Snippet Text</a>` (cleans up formatting).
+* **OG Image Fetching**: For the top 4 URLs, it queries the landing page and scrapes OpenGraph image tags:
+  ```html
+  <meta property="og:image" content="..." />
+  <meta name="twitter:image" content="..." />
+  ```
+  This is returned as `thumbnail` links to render visual cards next to the search sources.
+
+### 4. Step 4: System Instruction & Prompt Assembly
+The gathered web search results are formatted into a markdown chunk:
+```markdown
+[CRITICAL DIRECTIVE: REAL-TIME RAG MODE ACTIVATED]
+The user is requesting information. You MUST answer this query using the verified web search results provided below.
+Cite all facts by referencing the relevant [Source X] link.
+
+REAL-TIME WEB SEARCH RESULTS FOR "Syllabus Changes 2026":
+[Source 1] Title: JEE Mains 2026 Updated Syllabus
+URL: https://example.com/jee-syllabus
+Snippet: Mathematics section has added three practical topics...
+Thumbnail: https://example.com/images/og.jpg
+
+INSTRUCTIONS: Write a comprehensive, precise response synthesizing the search results. Cite sources exactly.
+```
+Additionally, the system generates a **Date Reference Anchor**:
+`The current local date is Sunday, June 21, 2026. You MUST treat this date as the absolute present time...`
+This prevents the LLM from using its static pre-training date cut-off and forces it to evaluate current news context correctly.
+
+### 5. Step 5: Fallback LLM Execution
+The frontend loops through a list of available free OpenRouter models (like Qwen, Llama, Gemma) with a strict 8-second abort timeout per model. If a model times out or returns an error, the code falls back to the next model in the list.
+* If a model is marked as `searchCapableModels` (like Llama-3.3 or Qwen-2.5), it adds a native plugin configuration: `plugins: [{ id: "web", max_results: 5 }]` as an extra search tier.
+* If the API fails directly, it retries by routing the OpenRouter request through `corsproxy.io`.
+
+### 6. Step 6: Rendering Search Citations
+When the model returns the text, the UI displays the response:
+* Natively extracts citations arrays from OpenRouter (if any) or parses user `[Source X]` text citations.
+* Injects a clean web search source section at the bottom of the message card.
+* Fetches site favicons dynamically using Google's favicon helper: `https://www.google.com/s2/favicons?domain={hostname}`.
+* Renders visual link cards containing the page titles, description snippets, and og:image thumbnails so students can click to visit source pages directly.
+
+---
+
 ## Interactive AI Companion & Simulation Widgets
 
-### 1. Interactive Chat Interface
-* **File Location**: [src/pages/AI.tsx](file:///workspaces/JeeAppv9/artifacts/jee-prep/src/pages/AI.tsx).
-* **Description**: A comprehensive chatbot dashboard connected to OpenRouter models (Qwen, Llama, Hermes, Gemma).
-* **Features**:
-  * *LaTeX Equations*: Fully processes inline math formulas (wrapped in `$`) and block equations (wrapped in `$$`) via KaTeX.
-  * *Image Draw Editor*: Upload drawing sheets or math question images. Before sending, click to draw vectors, crop boundaries, or point out equations on the canvas.
-  * *Custom LLM Markdown Widgets*: Renders interactive widgets dynamically if the LLM responds with specialized JSON blocks (e.g. `type: "simulation"` or `type: "plot"`).
-
-### 2. Specialized Interactive Widgets
 The custom widgets are defined in [src/components/AICustomWidgets.tsx](file:///workspaces/JeeAppv9/artifacts/jee-prep/src/components/AICustomWidgets.tsx):
 
 | Widget Name | Renders | Key Inputs & Interactive Controls | Math/Physics Calculations |
@@ -162,104 +353,13 @@ The custom widgets are defined in [src/components/AICustomWidgets.tsx](file:///w
 | **`YouTubeCardWidget`** | Study video recommended row | Structured YouTube description layouts | Displays custom descriptions, view counts, ratings, and creator badges |
 | **`NewsFeedWidget`** | Renders study resources | Lists recommended articles and study resources | Categorizes links by subject, and displays favicons |
 
-### 3. AI Quiz Test Sheet Generator
-* **File Location**: [src/pages/QuizPage.tsx](file:///workspaces/JeeAppv9/artifacts/jee-prep/src/pages/QuizPage.tsx).
-* **Description**: Spawns customized multiple-choice tests on Physics, Chemistry, and Maths using LLMs.
-* **Features**:
-  * *Exclusions*: Generates questions targeting specific subjects based on selected contexts, chapters, or files (PDFs, Videos, URLs).
-  * *Snippet Matching*: Adapts question structures from the bookmarked saves library, matching parent `sourceQuestionId` keys to retain original diagrams and images:
-  * *JEE Test Layout*: Replicates the official JEE computer-based exam platform palette. Features color-coded status badges for question states:
-    * **Answered Shape**: Green polygon (`polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%)`).
-    * **Not Answered Shape**: Red polygon.
-    * **Not Visited Shape**: Grey square.
-    * **Marked for Review Shape**: Purple circle.
-    * **Answered & Marked for Review Shape**: Purple circle with a small green badge.
-
----
-
-## Single-File Express Server Architecture (`server.js`)
-
-The backend is packaged inside [server.js](file:///workspaces/JeeAppv9/artifacts/jee-prep/server.js). It manages REST operations and stream piping.
-
-### 1. Unified Route Endpoints
-
-#### `GET /api/healthz`
-Returns `{ "status": "ok" }` for health monitoring.
-
-#### `GET /api/search?q=QUERY`
-DuckDuckGo search scraper. Fetches raw HTML search result pages and extracts OpenGraph titles and thumbnail image attributes (`og:image`) concurrently to create visual link cards in the React UI.
-
-#### `GET /api/yt-search?q=QUERY`
-Resolves YouTube search requests. It uses the `play-dl` client API, falling back to a raw YouTube page parser if the API is rate-limited.
-
-#### `GET /api/stream?url=YT_URL`
-YouTube audio streaming engine. Spawns `yt-dlp` as a piped standard output stream. It caches downloaded audio chunks in an in-memory buffer (`audioCache`) to handle subsequent byte-range seek requests without reloading the source:
-```typescript
-const ytdlp = spawn("yt-dlp", [
-  "-f", "bestaudio/best",
-  "--no-playlist",
-  "--quiet",
-  "--no-warnings",
-  "-o", "-",
-  ytUrl,
-]);
-```
-
-#### `GET /api/media-info?url=MEDIA_URL`
-Retrieves detailed metadata:
-* **YouTube Video URL**: Fetches titles, descriptions, lengths, and thumbnails.
-* **YouTube Playlist URL**: Fetches all video references. Returns up to the first 100 tracks in under 1 second.
-* **Spotify track/playlist/album URL**: Extracts track metadata and queries YouTube to find matching audio streaming links.
-
-### 2. Express 5 Wildcard Compatibility
-Express v5 uses the newer `path-to-regexp` v8 parser, which throws path errors for wildcard strings like `"*"` and `"/*"`. To bypass compilation constraints and ensure path routing stability, catch-all routes at the bottom of the server use a direct JavaScript regular expression object:
-```typescript
-app.get(/.*/, (req, res) => {
-  res.sendFile(path.join(__dirname, "dist", "index.html"));
-});
-```
-
----
-
-## Multi-Stage Static Playlist Fetching Algorithm
-
-If the backend Express server on port 8080 is offline (e.g. when hosting the app as a static build on GitHub Pages), the client-side code automatically routes YouTube video and playlist URL imports through a robust client-side multi-stage fallback queue:
-
-```mermaid
-graph TD
-    A[Pasted YouTube Playlist URL] --> B[Fetch Local Express /api/media-info]
-    B -- Success --> C[Load Playlist instantly]
-    B -- Backend Offline / Error --> D[Strategy 1: Request Piped Public APIs]
-    D -- Success --> C
-    D -- Instances Fail/Blocked --> E[Strategy 2: Request Invidious Public APIs]
-    E -- Success --> C
-    E -- Instances Fail/Blocked --> F[Strategy 3: Scrape Raw YouTube Page HTML via CORS Proxies]
-    F -- Success --> C
-    F -- Failure --> G[Throw Error: Could not extract playlist]
-```
-
-### Fallback Strategies Details
-
-#### Strategy 1: Piped API Fallback
-Queries five public Piped instances concurrently:
-* `kavin.rocks`, `smnz.de`, `lunar.icu`, `adminforge.de`, `tokhmi.xyz`
-
-#### Strategy 2: Invidious API Fallback
-Queries five public Invidious instances concurrently:
-* `jing.rocks`, `puffyan.us`, `privacydev.net`, `tux.pizza`, `lunar.icu`
-
-#### Strategy 3: Client CORS Proxy Scraper (With Original Video Titles)
-Fetches raw YouTube HTML pages via public CORS-bypass proxies:
-* `allorigins.win`, `codetabs.com`, `corsproxy.io`
-* Parses video links (`/watch?v=ID`) and extracts the original video titles from the `title` attributes on scraped elements. Titles are decoded in the browser, avoiding generic renames like `"Video 1"`, `"Video 2"`, etc.
-
 ---
 
 ## Workspace Local Directory Synchronizer
 
 * **Context File**: [src/context/WorkspaceContext.tsx](file:///workspaces/JeeAppv9/artifacts/jee-prep/src/context/WorkspaceContext.tsx).
 * **Automatic Synchronization**: [src/App.tsx](file:///workspaces/JeeAppv9/artifacts/jee-prep/src/App.tsx#L173-L245).
-* **Description**: Integrates local workspace directories using the **File System Access API** (`showDirectoryPicker`).
+* **Description**: Integrates local workspace directories using the browser's **File System Access API** (`showDirectoryPicker`).
 
 ### Workspace Synchronization Flow
 

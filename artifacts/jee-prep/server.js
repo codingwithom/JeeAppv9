@@ -5,6 +5,7 @@ import { spawn } from "child_process";
 import path from "path";
 import { fileURLToPath } from "url";
 import fs from "fs";
+import { MsEdgeTTS, OUTPUT_FORMAT } from "msedge-tts";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -861,6 +862,56 @@ app.get("/api/stream", async (req, res) => {
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);
     if (!res.headersSent) res.status(500).json({ error: msg });
+  }
+});
+
+// 5.5. Text to Speech Endpoint (Microsoft Edge Neural Voices)
+app.post("/api/tts", async (req, res) => {
+  const { text, gender } = req.body;
+  if (!text) {
+    return res.status(400).json({ error: "text payload is required" });
+  }
+
+  try {
+    const tts = new MsEdgeTTS();
+    
+    // Check for native Devanagari character script (Hindi characters)
+    const hasHindi = /[\u0900-\u097F]/.test(text);
+    
+    // Select Voice ID based on Gender & Script:
+    // Female: SwaraNeural (Hindi Devanagari) vs NeerjaNeural (English/Hinglish)
+    // Male: MadhurNeural (Hindi Devanagari) vs PrabhatNeural (English/Hinglish)
+    let voice = "en-IN-NeerjaNeural"; 
+    if (gender === "male") {
+      voice = hasHindi ? "hi-IN-MadhurNeural" : "en-IN-PrabhatNeural";
+    } else {
+      voice = hasHindi ? "hi-IN-SwaraNeural" : "en-IN-NeerjaNeural";
+    }
+
+    console.log(`[TTS] Request received for voice: ${voice}, text length: ${text.length}`);
+
+    // Set standard MP3 format
+    const format = OUTPUT_FORMAT.AUDIO_24KHZ_96KBITRATE_MONO_MP3 || "audio-24khz-96kbitrate-mono-mp3";
+    await tts.setMetadata(voice, format);
+
+    const { audioStream } = tts.toStream(text);
+    
+    res.setHeader("Content-Type", "audio/mpeg");
+    res.setHeader("Transfer-Encoding", "chunked");
+    
+    audioStream.pipe(res);
+
+    audioStream.on("error", (streamErr) => {
+      console.error("[TTS] Stream piping error:", streamErr);
+      if (!res.headersSent) {
+        res.status(500).json({ error: "Audio streaming error occurred" });
+      }
+    });
+  } catch (err) {
+    console.error("[TTS] Error:", err);
+    if (!res.headersSent) {
+      res.status(500).json({ error: err.message || "Failed to generate speech synthesis" });
+    }
   }
 });
 

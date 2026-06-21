@@ -1,0 +1,1146 @@
+=== File: /workspaces/JeeAppv9/artifacts/jee-prep/src/App.tsx ===
+Total imports: 30
+useState hooks found:
+  - isOpen (init: false)
+  - search (init: "")
+  - timeLeft (init: "")
+useEffect hooks found: 7
+  - Effect #1 deps: [isActive], starts with: 'const down = (e: KeyboardEvent) => {'
+  - Effect #2 deps: [isActive, endTime], starts with: 'if (!isActive || !endTime) return;'
+  - Effect #3 deps: [isSupported, readMediaAsArrayBuffer], starts with: 'if (!isSupported) return;'
+  - Effect #4 deps: [isSupported, writeMedia], starts with: 'if (!isSupported) return;'
+  - Effect #5 deps: [], starts with: 'try {'
+  - Effect #6 deps: [location], starts with: 'let lastTick = Date.now();'
+  - Effect #7 deps: [], starts with: '// Ping the PHP logger when the app initially loads.'
+useContext hooks found: []
+Functions defined: 12
+  - App
+  - AutoSyncWorkspace
+  - CommandPalette
+  - ProtectedLayout
+  - Router
+  - TimeTracker
+  - TopBar
+  - down
+  - onVisibilityChange
+  - restore
+  - save
+  - update
+Fetch calls made to: ['/logger.php']
+
+==================================================
+
+=== File: /workspaces/JeeAppv9/artifacts/jee-prep/src/pages/AI.tsx ===
+Total imports: 9
+useState hooks found:
+  - play (init: false)
+  - penColor (init: "#EF4444")
+  - penSize (init: 3)
+  - drawing (init: false)
+  - displayed (init: isTyping ? "" : content)
+  - sessions (init: ()
+  - activeSessionId (init: null)
+  - visibleMessagesCount (init: 15)
+  - input (init: "")
+  - showCommands (init: false)
+  - selectedCommandIndex (init: 0)
+  - activeSourcesDropdown (init: null)
+  - activeTtsIdx (init: null)
+  - loading (init: false)
+  - sidebarOpen (init: ()
+  - editingId (init: null)
+  - editTitle (init: "")
+  - attachedFiles (init: [])
+  - isDragging (init: false)
+  - imageToEdit (init: null)
+  - generatingImageType (init: false)
+  - fullScreenImage (init: null)
+  - chatMode (init: "academic")
+  - showManualGrapher (init: false)
+  - copiedIdx (init: null)
+  - exportingImage (init: false)
+  - editingMessageIdx (init: null)
+  - editingMessageText (init: "")
+  - likedMsgs (init: {})
+useEffect hooks found: 12
+  - Effect #1 deps: [play, videoId], starts with: 'if (!play || !containerRef.current) return;'
+  - Effect #2 deps: [attachment.url], starts with: 'if (!canvasRef.current) return;'
+  - Effect #3 deps: [content, isTyping, onComplete], starts with: 'if (!isTyping) {'
+  - Effect #4 deps: [], starts with: 'return () => {'
+  - Effect #5 deps: [showCommands], starts with: 'const handleOutsideClick = (e: MouseEvent) => {'
+  - Effect #6 deps: [selectedCommandIndex], starts with: 'if (commandListRef.current) {'
+  - Effect #7 deps: [activeSessionId], starts with: 'setLikedMsgs({});'
+  - Effect #8 deps: [activeSessionId], starts with: 'setVisibleMessagesCount(15);'
+  - Effect #9 deps: [sessions], starts with: 'localStorage.setItem("jee_ai_chats", JSON.stringify(sessions));'
+  - Effect #10 deps: [messages.length], starts with: 'if (messages.length > prevMessagesLength.current) {'
+  - Effect #11 deps: [], starts with: 'const handleScroll = () => {'
+  - Effect #12 deps: [input], starts with: 'if (textareaRef.current) {'
+useContext hooks found: []
+Functions defined: 39
+  - AIChatInterface
+  - ChatImageEditor
+  - MessageSources
+  - TypewriterMarkdown
+  - YoutubePreview
+  - autoGenerateTitle
+  - copyToClipboard
+  - createNewChat
+  - exportAsImage
+  - fetchAIResponse
+  - fetchCrawlResults
+  - fetchWebSearchResults
+  - fixMath
+  - getImagePayloadsFromAttachments
+  - getMarkdownComponents
+  - getPos
+  - getSourceName
+  - handleDeleteMessage
+  - handleDislikeMessage
+  - handleDragLeave
+  - handleDragOver
+  - handleDrop
+  - handleFiles
+  - handleLikeMessage
+  - handleOutsideClick
+  - handleRegenerate
+  - handleSave
+  - handleSaveEdit
+  - handleScroll
+  - handleSend
+  - handleStopGeneration
+  - handleToggleTts
+  - markAsDone
+  - onParentAbort
+  - onPointerDown
+  - onPointerMove
+  - onPointerUp
+  - scrollToBottom
+  - selectCommand
+Fetch calls made to: ['https://openrouter.ai/api/v1/chat/completions', '/api/scrape?url=${encodeURIComponent(url)}', 'https://corsproxy.io/?${encodeURIComponent(', '${mirror}/api/v1/videos/${videoId}', 'https://youtube-transcript.ai/transcript/${videoId}.txt', '/api/scrape?url=${encodeURIComponent(targetUrl)}']
+
+==================================================
+
+=== File: /workspaces/JeeAppv9/artifacts/jee-prep/src/pages/AdminPage.tsx ===
+Total imports: 14
+useState hooks found:
+  - val (init: 0)
+  - selectedDate (init: null)
+  - currentMonth (init: ()
+  - data (init: Array.from({ length: 30 }, ()
+  - storage (init: { usage: 0, quota: 0 })
+  - isCleaning (init: false)
+  - workspaceName (init: null)
+  - timeline (init: ()
+  - showTLForm (init: false)
+  - editTL (init: null)
+  - importMsg (init: "")
+  - editingCategory (init: null)
+  - isExpertMode (init: false)
+  - editJsonBuffer (init: "")
+  - restoreCategories (init: [])
+  - refreshKey (init: 0)
+  - showStats (init: false)
+  - spikeOffset (init: 0)
+  - dateRangeOffset (init: 0)
+  - accName (init: "")
+  - accDob (init: "")
+  - accPic (init: "")
+  - accPass (init: "")
+  - accLoading (init: false)
+  - accMsg (init: "")
+  - otpStep (init: "idle")
+  - otpInput (init: "")
+  - generatedOtp (init: "")
+  - openRouterKey (init: ()
+  - openRouterStatus (init: "idle")
+  - openRouterMsg (init: "")
+  - tmdbKey (init: ()
+  - tmdbStatus (init: "idle")
+  - tmdbMsg (init: "")
+useEffect hooks found: 6
+  - Effect #1 deps: [to, duration], starts with: 'const start = performance.now();'
+  - Effect #2 deps: [], starts with: 'if (navigator.storage && navigator.storage.estimate) {'
+  - Effect #3 deps: [], starts with: 'idbGet("jee_workspace_handle").then((handle: any) => {'
+  - Effect #4 deps: [], starts with: 'if (auth.currentUser) {'
+  - Effect #5 deps: [], starts with: 'const id = setInterval(() => setRefreshKey((k) => k + 1), 60000);'
+  - Effect #6 deps: [timeline], starts with: 'localStorage.setItem("jee_admin_timeline", JSON.stringify(timeline));'
+useContext hooks found: []
+Functions defined: 34
+  - AdminPage
+  - AnimCounter
+  - ChartTooltip
+  - Section
+  - StatCard
+  - StudyHeatmap
+  - SystemPerformance
+  - TimeSpentHistory
+  - deleteTL
+  - formatBytes
+  - formatDuration
+  - formatTime
+  - getDateRange
+  - handleOptimize
+  - handlePicUpload
+  - handleSaveAccount
+  - handleSaveOpenRouterKey
+  - handleSaveTmdbKey
+  - handleTestOpenRouterKey
+  - handleTestTmdbKey
+  - idbKeyCategory
+  - isInRange
+  - nextMonth
+  - openAdd
+  - openEdit
+  - prevMonth
+  - renderSmartEditor
+  - safeParse
+  - saveEditedCategory
+  - saveTL
+  - sendResetLink
+  - startEditingCategory
+  - tick
+  - updateWorkingKey
+Fetch calls made to: ['https://openrouter.ai/api/v1/chat/completions', 'https://corsproxy.io/?${encodeURIComponent(', 'https://api.themoviedb.org/3/configuration?api_key=${tmdbKey.trim()}']
+
+==================================================
+
+=== File: /workspaces/JeeAppv9/artifacts/jee-prep/src/pages/CalendarPage.tsx ===
+Total imports: 7
+useState hooks found:
+  - title (init: event?.title || "")
+  - description (init: event?.description || "")
+  - start (init: fmt(d0)
+  - end (init: fmt(d1)
+  - color (init: event?.color || EVENT_COLORS[0])
+  - tags (init: event?.tags || [])
+  - dragOffsetHour (init: 0)
+  - draggingId (init: null)
+  - resizingId (init: null)
+  - resizeEndY (init: 0)
+  - expanded (init: true)
+  - newName (init: "")
+  - newColor (init: "#3b82f6")
+  - editingId (init: null)
+  - editName (init: "")
+  - editColor (init: "")
+  - currentDate (init: new Date()
+  - view (init: "week")
+  - activeTag (init: null)
+  - searchQuery (init: "")
+  - showSearch (init: false)
+  - showMobileSidebar (init: ()
+useEffect hooks found: 0
+useContext hooks found: []
+Functions defined: 23
+  - CalendarPage
+  - EventModal
+  - MiniCalendar
+  - MonthView
+  - TagEditorSection
+  - WeekView
+  - addTag
+  - deleteEvent
+  - eventsForDay
+  - fmt
+  - getEventStatus
+  - getTodayStr
+  - handleSave
+  - isCurMonth
+  - isSel
+  - isToday
+  - navigate
+  - pad
+  - saveEdit
+  - saveEvent
+  - startAdd
+  - startEdit
+  - updateEvent
+Fetch calls made to: []
+
+==================================================
+
+=== File: /workspaces/JeeAppv9/artifacts/jee-prep/src/pages/HomePage.tsx ===
+Total imports: 15
+useState hooks found:
+  - isEditing (init: false)
+  - editValue (init: targetDate)
+  - timeLeft (init: { days: 0, hours: 0, minutes: 0, seconds: 0 })
+useEffect hooks found: 2
+  - Effect #1 deps: [selectedGoal], starts with: 'setTargetDate(defaultDate);'
+  - Effect #2 deps: [targetDate], starts with: 'const calculateTimeLeft = () => {'
+useContext hooks found: []
+Functions defined: 8
+  - CountdownTimer
+  - FlipUnit
+  - HomePage
+  - LockdownOverlay
+  - TodoTrackerCard
+  - calculateTimeLeft
+  - getDefaultTargetDate
+  - handleSave
+Fetch calls made to: []
+
+==================================================
+
+=== File: /workspaces/JeeAppv9/artifacts/jee-prep/src/pages/LoginPage.tsx ===
+Total imports: 10
+useState hooks found:
+  - username (init: "")
+  - password (init: "")
+  - showPassword (init: false)
+  - error (init: "")
+  - loading (init: false)
+  - rememberMe (init: true)
+  - step (init: "login")
+  - googleUser (init: null)
+  - phone (init: "")
+  - dob (init: "")
+  - localUser (init: "")
+  - localPass (init: "")
+  - resetOobCode (init: "")
+  - resetEmail (init: "")
+  - newPassword (init: "")
+  - newUsername (init: "")
+useEffect hooks found: 2
+  - Effect #1 deps: [], starts with: 'const canvas = canvasRef.current;'
+  - Effect #2 deps: [], starts with: '// Intercept Firebase Action Codes in URL'
+useContext hooks found: []
+Functions defined: 11
+  - LoginPage
+  - ParticleBackground
+  - draw
+  - handleGoogleSignIn
+  - handleLogin
+  - handlePasswordReset
+  - handleSetupComplete
+  - initParticles
+  - onMouseMove
+  - onMouseOut
+  - resize
+Fetch calls made to: ['https://ipapi.co/json/']
+
+==================================================
+
+=== File: /workspaces/JeeAppv9/artifacts/jee-prep/src/pages/MovieHub.tsx ===
+Total imports: 3
+useState hooks found:
+  - hero (init: null)
+  - trending (init: [])
+  - latestMovies (init: [])
+  - popularSeries (init: [])
+  - searchQuery (init: "")
+  - searchResults (init: null)
+  - isSearching (init: false)
+  - playing (init: null)
+  - activeServer (init: "vidking")
+  - season (init: 1)
+  - episode (init: 1)
+useEffect hooks found: 3
+  - Effect #1 deps: [playing], starts with: 'if (!playing) return;'
+  - Effect #2 deps: [], starts with: 'const loadData = async () => {'
+  - Effect #3 deps: [searchQuery], starts with: 'if (!searchQuery.trim()) {'
+useContext hooks found: []
+Functions defined: 7
+  - MediaRow
+  - MovieHub
+  - fetchTMDB
+  - getStreamingUrl
+  - getTmdbApiKey
+  - handleWindowBlur
+  - loadData
+Fetch calls made to: ['${TMDB_BASE_URL}${endpoint}${joiner}api_key=${apiKey}']
+
+==================================================
+
+=== File: /workspaces/JeeAppv9/artifacts/jee-prep/src/pages/MusicPage.tsx ===
+Total imports: 8
+useState hooks found:
+  - open (init: false)
+  - title (init: song.title)
+  - artist (init: song.artist)
+  - description (init: song.description || "")
+  - tags (init: song.tags || [])
+  - tagInput (init: "")
+  - loaded (init: false)
+  - searchQuery (init: "")
+  - results (init: [])
+  - loading (init: false)
+  - error (init: "")
+  - currentPage (init: 1)
+  - tab (init: "file")
+  - url (init: "")
+  - title (init: "")
+  - artist (init: "")
+  - streamInput (init: "")
+  - fetchState (init: "idle")
+  - fetchError (init: "")
+  - mediaResult (init: null)
+  - importing (init: false)
+  - progress (init: 0)
+  - selId (init: playlists[0]?.id || "default")
+  - showAdd (init: false)
+  - showSearch (init: false)
+  - editSong (init: null)
+  - newName (init: "")
+  - showNew (init: false)
+  - editId (init: null)
+  - editName (init: "")
+  - filterTab (init: "all")
+  - showMobileSidebar (init: ()
+  - activeItemId (init: null)
+  - localPlaylists (init: playlists)
+useEffect hooks found: 3
+  - Effect #1 deps: [open], starts with: 'const handleClick = (e: MouseEvent) => {'
+  - Effect #2 deps: [fetchState], starts with: 'let timer: NodeJS.Timeout;'
+  - Effect #3 deps: [activeItemId, playlists, deletePlaylist, removeSongFromPlaylist], starts with: 'const onKey = (e: KeyboardEvent) => {'
+useContext hooks found: []
+Functions defined: 36
+  - AddSongModal
+  - BlurImage
+  - EditSongModal
+  - MenuItem
+  - MusicPage
+  - SongListItem
+  - ThreeDotMenu
+  - YouTubeSearchModal
+  - addTag
+  - completeFetch
+  - createPlaylist
+  - extractYouTubeId
+  - extractYouTubePlaylistId
+  - failFetch
+  - fetchHtml
+  - fetchInvidious
+  - fetchLocal
+  - fetchPiped
+  - fetchProxy
+  - fetchWithTimeout
+  - findVideos
+  - formatTime
+  - getGrad
+  - handleAddAllToCurrent
+  - handleAddSong
+  - handleAddTrack
+  - handleClick
+  - handleCreateNewPlaylist
+  - handleFetchStream
+  - handleFile
+  - handleSave
+  - handleSearch
+  - handleUrl
+  - onKey
+  - saveRename
+  - spotifyInfo
+Fetch calls made to: ['https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(targetUrl)}', 'https://corsproxy.io/?${encodeURIComponent(targetUrl)}', 'https://api.allorigins.win/get?url=${encodeURIComponent(targetUrl)}', '/api/media-info?url=${encodeURIComponent(raw)}', 'https://noembed.com/embed?url=https://www.youtube.com/watch?v=${ytId}', 'https://open.spotify.com/get_access_token?reason=transport&productType=embed']
+
+==================================================
+
+=== File: /workspaces/JeeAppv9/artifacts/jee-prep/src/pages/PDFPage.tsx ===
+Total imports: 7
+useState hooks found:
+  - open (init: false)
+  - tab (init: "file")
+  - url (init: "")
+  - loading (init: false)
+  - err (init: "")
+  - isDragging (init: false)
+  - isResizing (init: null)
+  - subjects (init: [])
+  - isLoading (init: true)
+  - sel (init: "")
+  - activeItemId (init: null)
+  - activeLeafId (init: null)
+  - renamingId (init: null)
+  - renameVal (init: "")
+  - showMobileSidebar (init: ()
+  - isCropMode (init: false)
+  - crops (init: [])
+  - activeCropId (init: null)
+  - showSourcePicker (init: false)
+  - pendingCrops (init: [])
+  - selectedSourceId (init: null)
+  - isSavingCrops (init: false)
+  - capturingAnswerFor (init: null)
+  - answerCrop (init: null)
+  - pdfDoc (init: null)
+  - pageNum (init: 1)
+  - numPages (init: 0)
+  - scale (init: 1.2)
+  - activeImageUrl (init: null)
+  - tool (init: "pen")
+  - color (init: "#3B82F6")
+  - strokeWidth (init: 4)
+  - undoStack (init: [[]])
+  - undoIdx (init: 0)
+  - drawing (init: false)
+  - currentItem (init: null)
+useEffect hooks found: 10
+  - Effect #1 deps: [open], starts with: 'const handleClick = (e: MouseEvent) => {'
+  - Effect #2 deps: [], starts with: 'try {'
+  - Effect #3 deps: [items], starts with: 'itemsRef.current = items;'
+  - Effect #4 deps: [items, activeLeafId, saveAnnotations], starts with: 'if (!activeLeafId) return;'
+  - Effect #5 deps: [pageNum, activeLeafId], starts with: 'if (!activeLeafId) return;'
+  - Effect #6 deps: [undo, redo], starts with: 'const onKey = (e: KeyboardEvent) => {'
+  - Effect #7 deps: [pdfDoc, pageNum, scale, renderPage], starts with: 'if (!pdfDoc) return;'
+  - Effect #8 deps: [items, currentItem], starts with: 'const canvas = drawCanvasRef.current;'
+  - Effect #9 deps: [], starts with: 'const onEsc = (e: KeyboardEvent) => {'
+  - Effect #10 deps: [activeItemId, sections, setSections], starts with: 'const onKey = (e: KeyboardEvent) => {'
+useContext hooks found: []
+Functions defined: 42
+  - CropBox
+  - MenuItem
+  - MultiCropEditor
+  - PDFPage
+  - SourcePicker
+  - ThreeDotMenu
+  - UploadModal
+  - addSection
+  - addSubSubsection
+  - addSubsection
+  - annoKey
+  - commitRename
+  - commitText
+  - confirmAnswerCrop
+  - deleteSection
+  - deleteSubSubsection
+  - deleteSubsection
+  - drawItem
+  - handleClick
+  - handleExport
+  - handleImportAll
+  - handleSectionFileUpload
+  - handleSectionImageUpload
+  - handleUrl
+  - handleUrlLoad
+  - onAnswerCropPointerDown
+  - onAnswerCropPointerMove
+  - onAnswerCropPointerUp
+  - onCropPointerDown
+  - onCropPointerMove
+  - onCropPointerUp
+  - onEsc
+  - onKey
+  - onMouseDown
+  - onMouseMove
+  - onMouseUp
+  - onPointerDown
+  - onPointerMove
+  - onPointerUp
+  - prepareCropsForEditing
+  - toggleSection
+  - toggleSubsection
+Fetch calls made to: []
+
+==================================================
+
+=== File: /workspaces/JeeAppv9/artifacts/jee-prep/src/pages/QuizPage.tsx ===
+Total imports: 12
+useState hooks found:
+  - src (init: null)
+  - loading (init: false)
+  - phase (init: "setup")
+  - numQuestions (init: 10)
+  - customNum (init: 25)
+  - difficulty (init: "Mixed")
+  - showSourceModal (init: false)
+  - briefInstructions (init: "")
+  - aiExplanations (init: {})
+  - availablePdfs (init: [])
+  - availableVideos (init: [])
+  - availableSaves (init: [])
+  - sourceTab (init: "pdfs")
+  - urlInput (init: "")
+  - questions (init: [])
+  - currentIndex (init: 0)
+  - score (init: 0)
+  - questionStatuses (init: {})
+  - answers (init: {})
+  - timeLeft (init: 10800)
+  - activeSubject (init: ()
+  - showInstructions (init: false)
+  - showSummary (init: false)
+  - quizName (init: "")
+  - timeSpent (init: {})
+  - reviewMode (init: false)
+  - savedQuizzes (init: ()
+  - isGenerating (init: quizGeneratorManager.isGenerating)
+  - activeJobs (init: Array.from(quizGeneratorManager.activeJobs.values()
+  - renamingQuizId (init: null)
+  - renameVal (init: "")
+  - activeTab (init: "chat")
+useEffect hooks found: 8
+  - Effect #1 deps: [imageKey, imageUrl, readMediaAsBlob], starts with: 'if (imageUrl) {'
+  - Effect #2 deps: [selectedGoal], starts with: 'const fresh = getSubjectsForGoal(selectedGoal);'
+  - Effect #3 deps: [savedQuizzes], starts with: 'localStorage.setItem("jee_saved_quizzes_v1", JSON.stringify(savedQuizzes));'
+  - Effect #4 deps: [], starts with: 'let prevJobCount = quizGeneratorManager.activeJobs.size;'
+  - Effect #5 deps: [], starts with: 'if (typeof Notification !== "undefined" && Notification.permission === "default") {'
+  - Effect #6 deps: [], starts with: 'try {'
+  - Effect #7 deps: [currentIndex, reviewMode, questions], starts with: 'if (reviewMode && questions[currentIndex]) {'
+  - Effect #8 deps: [phase, timeLeft, showSummary, showInstructions, currentIndex, reviewMode], starts with: 'if (phase === "active" && timeLeft > 0 && !showSummary && !showInstructions && !reviewMode) {'
+useContext hooks found: []
+Functions defined: 38
+  - AIQuizInterface
+  - AnsweredMarkedShape
+  - AnsweredShape
+  - MarkedShape
+  - NotAnsweredShape
+  - NotVisitedShape
+  - QuestionImage
+  - QuizPage
+  - ReviewShape
+  - addUrl
+  - buildSubjectPrompt
+  - commitRename
+  - deleteQuiz
+  - extractJson
+  - finalSubmit
+  - fixExplanationMath
+  - fixMath
+  - formatTime
+  - formatTimeSpent
+  - getContextSlice
+  - getSubjectStats
+  - getSubjectsForGoal
+  - goToNext
+  - handleBack
+  - handleClear
+  - handleGenerateExplanation
+  - handleMarkAndNext
+  - handleSaveAndMark
+  - handleSaveAndNext
+  - handleStartAnalysis
+  - handleSubmit
+  - handleTabClick
+  - isCreditExhaustedError
+  - planSubjects
+  - renderCheckboxList
+  - setStatus
+  - startQuiz
+  - updateStatus
+Fetch calls made to: ['https://openrouter.ai/api/v1/chat/completions', 'https://corsproxy.io/?${encodeURIComponent(']
+
+==================================================
+
+=== File: /workspaces/JeeAppv9/artifacts/jee-prep/src/pages/SavesPage.tsx ===
+Total imports: 8
+useState hooks found:
+  - open (init: false)
+  - name (init: initialData?.name || "")
+  - description (init: initialData?.description || "")
+  - answerText (init: initialData?.answerText || "")
+  - questionUrl (init: initialData?.questionUrl || "")
+  - answerUrl (init: initialData?.answerUrl || "")
+  - isCorrect (init: initialData?.isCorrect)
+  - qImageFile (init: null)
+  - aImageFile (init: null)
+  - qPreview (init: null)
+  - aPreview (init: null)
+  - isSaving (init: false)
+  - newFolderName (init: "")
+  - url (init: null)
+  - scale (init: 1)
+  - pos (init: { x: 0, y: 0 })
+  - dragging (init: false)
+  - startPos (init: { x: 0, y: 0 })
+  - isExtracting (init: false)
+  - extracted (init: false)
+  - url (init: null)
+  - isRunning (init: false)
+  - savedTimes (init: [])
+  - isLoading (init: false)
+  - activeItemId (init: null)
+  - activeSourceId (init: null)
+  - activeBookmarkFolderId (init: null)
+  - renamingId (init: null)
+  - renameVal (init: "")
+  - showSidebar (init: true)
+  - showBookmarksPanel (init: false)
+  - showAddModal (init: false)
+  - editingQuestion (init: null)
+  - detailQuestion (init: null)
+  - showAddPanel (init: false)
+  - showStopwatch (init: false)
+  - bookmarkingQuestion (init: null)
+  - newBookmarkFolderName (init: "")
+  - filterBy (init: "date")
+  - filterOpen (init: false)
+  - isCompactMode (init: false)
+  - isPrinting (init: false)
+  - isAnswerRevealed (init: false)
+  - isMinimized (init: false)
+useEffect hooks found: 8
+  - Effect #1 deps: [open], starts with: 'const handleClick = (e: MouseEvent) => {'
+  - Effect #2 deps: [qImageFile, initialData?.questionImageKey, readMediaAsBlob], starts with: 'if (qImageFile) {'
+  - Effect #3 deps: [aImageFile, initialData?.answerImageKey, readMediaAsBlob], starts with: 'if (aImageFile) {'
+  - Effect #4 deps: [mediaKey, readMediaAsBlob], starts with: 'if (mediaKey) {'
+  - Effect #5 deps: [mediaKey, readMediaAsBlob], starts with: 'if (mediaKey) {'
+  - Effect #6 deps: [isRunning, update], starts with: 'if (isRunning) {'
+  - Effect #7 deps: [isPrinting], starts with: 'if (isPrinting) {'
+  - Effect #8 deps: [activeSourceId, activeBookmarkFolderId, bookmarkFolders, allQuestions], starts with: 'const onKey = (e: KeyboardEvent) => {'
+useContext hooks found: []
+Functions defined: 28
+  - BookmarkSelectModal
+  - MenuItem
+  - QuestionCard
+  - QuestionDetailModal
+  - QuestionEditorModal
+  - SavesPage
+  - StopwatchWidget
+  - ThreeDotMenu
+  - WorkspaceImage
+  - ZoomableImage
+  - ZoomableWorkspaceImage
+  - commitRename
+  - createFolder
+  - deleteQuestion
+  - formatTime
+  - getSourceName
+  - handleClick
+  - handleExtractText
+  - handleSave
+  - handleSaveQuestion
+  - onKey
+  - onPointerDown
+  - onPointerMove
+  - onPointerUp
+  - onWheel
+  - toggleBookmark
+  - toggleChapter
+  - toggleSubject
+Fetch calls made to: []
+
+==================================================
+
+=== File: /workspaces/JeeAppv9/artifacts/jee-prep/src/pages/VideoPage.tsx ===
+Total imports: 11
+useState hooks found:
+  - open (init: false)
+  - dragging (init: null)
+  - penColor (init: "#EF4444")
+  - penSize (init: 3)
+  - drawing (init: false)
+  - captured (init: false)
+  - inputUrl (init: "")
+  - err (init: "")
+  - inputVal (init: String(speed)
+  - view (init: "main")
+  - ccTracks (init: [])
+  - activeCc (init: null)
+  - qualities (init: [])
+  - activeQuality (init: null)
+  - audioTracks (init: [])
+  - activeAudio (init: null)
+  - loaded (init: false)
+  - searchQuery (init: "")
+  - results (init: [])
+  - loading (init: false)
+  - error (init: "")
+  - currentPage (init: 1)
+  - activeItemId (init: null)
+  - activeLeafId (init: null)
+  - renamingId (init: null)
+  - renameVal (init: "")
+  - videoType (init: null)
+  - videoSrc (init: null)
+  - videoTitle (init: "")
+  - isPlaying (init: false)
+  - volume (init: 0.8)
+  - muted (init: false)
+  - currentTime (init: 0)
+  - duration (init: 0)
+  - speed (init: 1)
+  - showSpeedPopup (init: false)
+  - isMiniPlayer (init: false)
+  - isFullscreen (init: false)
+  - showControls (init: true)
+  - showNotes (init: true)
+  - showMobileSidebar (init: ()
+  - recording (init: false)
+  - recordingTime (init: 0)
+  - editingBlockId (init: null)
+  - editingText (init: "")
+  - mediaUrls (init: {})
+  - addBlockOpen (init: false)
+  - newNoteText (init: "")
+  - showYouTubeSearch (init: false)
+  - showSettingsMenu (init: false)
+  - showAB (init: false)
+  - loopAB (init: null)
+useEffect hooks found: 22
+  - Effect #1 deps: [open], starts with: 'const handleClick = (e: MouseEvent) => {'
+  - Effect #2 deps: [isYoutube, videoRef], starts with: 'if (!canvasRef.current) return;'
+  - Effect #3 deps: [syncVideoSettings], starts with: 'syncVideoSettings();'
+  - Effect #4 deps: [videoType, videoEl, syncVideoSettings], starts with: 'if (videoType !== "html5" || !videoEl) return;'
+  - Effect #5 deps: [loopAB], starts with: 'loopABRef.current = loopAB;'
+  - Effect #6 deps: [volume], starts with: 'volumeObjRef.current = volume;'
+  - Effect #7 deps: [muted], starts with: 'mutedObjRef.current = muted;'
+  - Effect #8 deps: [speed], starts with: 'speedObjRef.current = speed;'
+  - Effect #9 deps: [currentTime], starts with: 'currentTimeRef.current = currentTime;'
+  - Effect #10 deps: [duration], starts with: 'durationRef.current = duration;'
+  - Effect #11 deps: [activeLeafId], starts with: 'activeLeafIdRef.current = activeLeafId;'
+  - Effect #12 deps: [showAB, duration], starts with: 'if (showAB && duration > 0 && !loopAB) {'
+  - Effect #13 deps: [notes, activeLeafId], starts with: 'if (!activeLeafId) return;'
+  - Effect #14 deps: [activeLeafId, loadLeafVideo], starts with: 'if (activeLeafId) loadLeafVideo(activeLeafId);'
+  - Effect #15 deps: [activeLeafId, videoSrc], starts with: 'if (!activeLeafId || !videoType || !videoSrc) return;'
+  - Effect #16 deps: [videoType, videoSrc], starts with: 'if (videoType !== "youtube" || !videoSrc) return;'
+  - Effect #17 deps: [isPlaying, videoType, isMiniPlayer, videoCtx], starts with: 'if (!isPlaying) {'
+  - Effect #18 deps: [], starts with: 'const onFsChange = () => setIsFullscreen(!!document.fullscreenElement);'
+  - Effect #19 deps: [isFullscreen, resetControlsTimer], starts with: 'if (!isFullscreen) {'
+  - Effect #20 deps: [], starts with: 'const handler = (e: KeyboardEvent) => {'
+  - Effect #21 deps: [videoSrc, videoType], starts with: 'const v = videoRef.current;'
+  - Effect #22 deps: [activeItemId, sections, setSections], starts with: 'const onKey = (e: KeyboardEvent) => {'
+useContext hooks found: []
+Functions defined: 73
+  - BlurImage
+  - ColorPicker
+  - DualRangeSlider
+  - MenuItem
+  - ScreenshotEditor
+  - SpeedPopup
+  - ThreeDotMenu
+  - VideoPage
+  - VideoSettingsPopup
+  - VideoUploadModal
+  - YouTubeVideoSearchModal
+  - addImageToBlock
+  - addQuickNote
+  - addSection
+  - addSubSubsection
+  - addSubsection
+  - addTextBlock
+  - addTimelineBlock
+  - apply
+  - applyVideoToLeaf
+  - commitRename
+  - deleteBlock
+  - deleteSection
+  - deleteSubSubsection
+  - deleteSubsection
+  - fetchInvidious
+  - fetchLocal
+  - fetchPiped
+  - fetchProxy
+  - fetchWithTimeout
+  - findVideos
+  - formatTime
+  - getPos
+  - getSourceLabel
+  - getYouTubeId
+  - handleBlockImageFile
+  - handleClick
+  - handlePointerDown
+  - handlePointerMove
+  - handlePointerUp
+  - handleSave
+  - handleScreenshotSave
+  - handleSearch
+  - handleSelectVideo
+  - handleSubmitUrl
+  - handleVideoUpload
+  - handler
+  - jumpToTimestamp
+  - loadMedia
+  - onFsChange
+  - onKey
+  - onMeta
+  - onMouseDown
+  - onMouseMove
+  - onMouseUp
+  - onPause
+  - onPlay
+  - onTime
+  - refresh
+  - renderControls
+  - renderNotesPanelContent
+  - saveTextEdit
+  - setAudio
+  - setCc
+  - setNotes
+  - setQuality
+  - setSubColor
+  - setSubSubColor
+  - startRecordingForBlock
+  - stopRecording
+  - toggleSection
+  - toggleSubsection
+  - uuid
+Fetch calls made to: ['/api/media-info?url=${encodeURIComponent(raw)}', '${apiBase}/api/media-info?url=${encodeURIComponent(raw)}']
+
+==================================================
+
+=== File: /workspaces/JeeAppv9/artifacts/jee-prep/src/components/AICustomWidgets.tsx ===
+Total imports: 6
+useState hooks found:
+  - functions (init: ()
+  - newFuncInput (init: "")
+  - xRange (init: initialXRange)
+  - yRange (init: initialYRange)
+  - isClosed (init: false)
+  - isCopied (init: false)
+  - isLiked (init: null)
+  - showEquationPanel (init: true)
+  - resizeCount (init: 0)
+  - sliderVals (init: ()
+  - mousePos (init: null)
+  - isPanning (init: false)
+  - isPlaying (init: false)
+  - simTime (init: 0)
+  - pAngle (init: 45)
+  - pVelocity (init: 20)
+  - pGravity (init: 9.8)
+  - pHeight (init: 0)
+  - dMass (init: 8)
+  - dVolume (init: 10)
+  - dDensity (init: 1.0)
+  - eVoltage (init: 12)
+  - eResistance (init: 20)
+  - bohrLevel (init: 1)
+  - bohrTargetLevel (init: 1)
+  - bohrTransitioning (init: false)
+  - bohrPhoton (init: null)
+  - bondingMolecule (init: "h2o")
+  - shmMode (init: "pendulum")
+  - shmLength (init: 3.0)
+  - shmMass (init: 2.0)
+  - shmK (init: 20)
+  - shmAmplitude (init: 30)
+  - activeCategory (init: "technology")
+  - selectedQuizAns (init: {})
+  - selectedOption (init: null)
+  - showExplanation (init: false)
+useEffect hooks found: 4
+  - Effect #1 deps: [], starts with: 'const handleResize = () => setResizeCount(prev => prev + 1);'
+  - Effect #2 deps: [functions, xRange, yRange, sliderVals, mousePos, isPanning, showEquationPanel, resizeCount], starts with: 'const canvas = canvasRef.current;'
+  - Effect #3 deps: [isPlaying], starts with: 'requestRef.current = requestAnimationFrame(animate);'
+  - Effect #4 deps: [type, simTime, isPlaying, pAngle, pVelocity, pGravity, pHeight, dMass, dVolume, dDensity, eVoltage, eResistance, bohrLevel, bohrTargetLevel, bohrPhoton, bohrTransitioning, bondingMolecule, shmMode, shmLength, shmMass, shmK, shmAmplitude], starts with: 'const canvas = canvasRef.current;'
+useContext hooks found: []
+Functions defined: 19
+  - GraphWidget
+  - InteractiveQuizWidget
+  - NewsFeedWidget
+  - SimulationWidget
+  - YouTubeCardWidget
+  - animate
+  - checkPoint
+  - findMatchingBrace
+  - handleMouseDown
+  - handleMouseMove
+  - handleMouseUp
+  - handleReset
+  - handleResize
+  - handleSelect
+  - handleZoom
+  - parseAndEval
+  - toScreenX
+  - toScreenY
+  - triggerBohrTransition
+Fetch calls made to: []
+
+==================================================
+
+=== File: /workspaces/JeeAppv9/artifacts/jee-prep/src/components/AmbientMixer.tsx ===
+Total imports: 9
+useState hooks found:
+  - volumes (init: {})
+  - playing (init: {})
+  - isFullscreen (init: false)
+  - showLibrary (init: false)
+  - searchQuery (init: "")
+  - libraryTab (init: "local")
+  - onlineResults (init: [])
+  - isSearchingOnline (init: false)
+  - onlineError (init: "")
+  - resolvingId (init: null)
+  - onlineSource (init: "mixkit")
+  - previewUrl (init: null)
+useEffect hooks found: 3
+  - Effect #1 deps: [], starts with: 'return () => {'
+  - Effect #2 deps: [showLibrary], starts with: 'if (!showLibrary && previewAudioRef.current) {'
+  - Effect #3 deps: [], starts with: 'const handleFullscreenChange = () => {'
+useContext hooks found: []
+Functions defined: 14
+  - AmbientMixer
+  - fetchMixkit
+  - handleAddOnlineTrack
+  - handleDeleteCustom
+  - handleFileUpload
+  - handleFullscreenChange
+  - handleOnlineSearch
+  - handleVolume
+  - loadAudio
+  - playOnLoad
+  - toggleFullscreen
+  - toggleMix
+  - togglePlay
+  - togglePreview
+Fetch calls made to: ['https://api.allorigins.win/get?url=${encodeURIComponent(targetUrl)}', 'https://archive.org/advancedsearch.php?q=mediatype:audio+AND+title:(${q})&fl[]=identifier,title,creator&sort[]=downloads+desc&rows=50&output=json', 'https://archive.org/metadata/${result.originalId}', 'https://corsproxy.io/?${encodeURIComponent(targetUrl)}']
+
+==================================================
+
+=== File: /workspaces/JeeAppv9/artifacts/jee-prep/src/components/TodoSystem.tsx ===
+Total imports: 8
+useState hooks found:
+  - viewYear (init: now.getFullYear()
+  - viewMonth (init: now.getMonth()
+  - local (init: selected)
+  - title (init: "")
+  - priority (init: "Medium")
+  - deadlineMonth (init: getCurrentMonth)
+  - recurring (init: false)
+  - scheduledDates (init: [])
+  - tagId (init: undefined)
+  - expanded (init: false)
+  - showCal (init: false)
+  - editing (init: false)
+  - editTitle (init: task.title)
+  - editPriority (init: task.priority)
+  - editDeadline (init: task.deadlineMonth ?? "")
+  - editTagId (init: task.tagId)
+  - sortBy (init: "default")
+useEffect hooks found: 2
+  - Effect #1 deps: [task.timerRunning, task.timerSeconds], starts with: 'if (task.timerRunning) {'
+  - Effect #2 deps: [completed, todayTasks.length], starts with: 'if (todayTasks.length > 0) {'
+useContext hooks found: []
+Functions defined: 18
+  - AddTaskForm
+  - MiniCalendar
+  - TagSelector
+  - TaskItem
+  - TodoSystem
+  - addTask
+  - deleteTask
+  - formatTimer
+  - getCurrentMonth
+  - getTodayStr
+  - isVisibleToday
+  - nextMonth
+  - prevMonth
+  - saveEdit
+  - submit
+  - toggleDate
+  - updateTask
+  - useTodoStats
+Fetch calls made to: []
+
+==================================================
+
+=== File: /workspaces/JeeAppv9/artifacts/jee-prep/src/components/StreakCard.tsx ===
+Total imports: 5
+useState hooks found:
+  - extended (init: false)
+  - showModal (init: false)
+useEffect hooks found: 0
+useContext hooks found: []
+Functions defined: 7
+  - FireIcon
+  - StreakCard
+  - StreakModal
+  - WeekGrid
+  - fmtDate
+  - fmtTime
+  - handleExtend
+Fetch calls made to: []
+
+==================================================
+
+=== File: /workspaces/JeeAppv9/artifacts/jee-prep/src/components/GoalSelection.tsx ===
+Total imports: 6
+useState hooks found:
+  - currentStep (init: "root")
+  - selectedCategory (init: null)
+  - selectedSubOption (init: null)
+  - selectedStream (init: null)
+  - customEdTech (init: "")
+useEffect hooks found: 0
+useContext hooks found: []
+Functions defined: 12
+  - GoalSelection
+  - getHeaderTitle
+  - getOlympiadList
+  - getSubOptions
+  - handleBack
+  - handleBoardClick
+  - handleCategoryClick
+  - handleComplete
+  - handleCustomEdTechSubmit
+  - handleStreamClick
+  - handleSubOptionClick
+  - navigateTo
+Fetch calls made to: []
+
+==================================================
+
+=== File: /workspaces/JeeAppv9/artifacts/jee-prep/src/components/TimeManagementWidget.tsx ===
+Total imports: 7
+useState hooks found:
+  - raw (init: String(value)
+  - vol (init: ()
+  - timers (init: loadTimers)
+  - modalOpen (init: false)
+  - editing (init: null)
+  - name (init: "Timer")
+  - h (init: 0)
+  - m (init: 5)
+  - s (init: 0)
+  - running (init: false)
+  - laps (init: [])
+  - alarms (init: loadAlarms)
+  - modalOpen (init: false)
+  - editing (init: null)
+  - label (init: "Alarm")
+  - hour (init: 8)
+  - minute (init: 0)
+  - isPM (init: false)
+  - days (init: Array(7)
+  - sound (init: "Chime")
+  - snooze (init: 5)
+  - repeat (init: false)
+  - plants (init: [])
+  - tab (init: "timers")
+useEffect hooks found: 8
+  - Effect #1 deps: [value], starts with: 'setRaw(String(value).padStart(2, "0"));'
+  - Effect #2 deps: [timers], starts with: 'const onMove = (e: MouseEvent) => { if (dragging.current) applyVol(posToVol(e.clientX)); };'
+  - Effect #3 deps: [], starts with: 'const interval = setInterval(() => {'
+  - Effect #4 deps: [alarms], starts with: 'localStorage.setItem(STORAGE_ALARMS, JSON.stringify(alarms));'
+  - Effect #5 deps: [], starts with: 'const id = setInterval(() => tick(t => t + 1), 60000);'
+  - Effect #6 deps: [alarms], starts with: 'const check = () => {'
+  - Effect #7 deps: [], starts with: 'const raw = localStorage.getItem("jee_tm_garden");'
+  - Effect #8 deps: [], starts with: 'if ("Notification" in window && Notification.permission === "default") {'
+useContext hooks found: []
+Functions defined: 32
+  - AlarmsSection
+  - GardenSection
+  - ProgressRing
+  - SpinInput
+  - StopwatchSection
+  - TimeManagementWidget
+  - TimersSection
+  - VolumeControl
+  - applyVol
+  - check
+  - clamp
+  - commit
+  - del
+  - fmtMs
+  - fmtSecs
+  - lap
+  - loadAlarms
+  - loadTimers
+  - onMouseDown
+  - onMove
+  - onUp
+  - onWheel
+  - openAdd
+  - openEdit
+  - pause
+  - posToVol
+  - reset
+  - save
+  - start
+  - timeUntil
+  - toggle
+  - toggleActive
+Fetch calls made to: []
+
+==================================================
+

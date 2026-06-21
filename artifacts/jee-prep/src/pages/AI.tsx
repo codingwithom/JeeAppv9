@@ -26,7 +26,8 @@ import {
   Sparkles,
   MoreVertical,
   Volume2,
-  VolumeX
+  VolumeX,
+  ChevronDown
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAppContext } from "@/context/AppContext";
@@ -89,6 +90,11 @@ function YoutubePreview({ videoId, href, children }: { videoId: string; href: st
   const [play, setPlay] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const playerRef = useRef<any>(null);
+  const [thumbUrl, setThumbUrl] = useState(`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`);
+
+  useEffect(() => {
+    setThumbUrl(`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`);
+  }, [videoId]);
 
   useEffect(() => {
     if (!play || !containerRef.current) return;
@@ -132,10 +138,23 @@ function YoutubePreview({ videoId, href, children }: { videoId: string; href: st
     };
   }, [play, videoId]);
 
+  let channelName = "";
+  let videoTitle = "";
+  if (children) {
+    const textStr = String(children).trim();
+    const parts = textStr.split(/ - (.+)/);
+    if (parts.length >= 2) {
+      channelName = parts[0].trim();
+      videoTitle = parts[1].trim().replace(/^["']|["']$/g, '');
+    } else {
+      videoTitle = textStr;
+    }
+  }
+
   return (
-    <div className="my-4 rounded-xl overflow-hidden border border-border shadow-sm max-w-md w-full bg-card hover:shadow-md transition-shadow duration-200">
+    <div className="my-5 rounded-2xl overflow-hidden border border-slate-800 w-full max-w-2xl bg-[#0b0f19] hover:border-slate-700 transition-all duration-300 shadow-xl group">
       <div 
-        className="relative pt-[56.25%] bg-black group cursor-pointer" 
+        className="relative pt-[56.25%] bg-black cursor-pointer overflow-hidden" 
         onClick={() => setPlay(true)}
       >
         {play ? (
@@ -145,42 +164,83 @@ function YoutubePreview({ videoId, href, children }: { videoId: string; href: st
         ) : (
           <>
             <img 
-              src={`https://img.youtube.com/vi/${videoId}/mqdefault.jpg`} 
+              src={thumbUrl} 
               alt="YouTube Video Thumbnail" 
-              className="absolute top-0 left-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 transition-opacity duration-200"
+              className="absolute top-0 left-0 w-full h-full object-cover opacity-90 group-hover:scale-[1.02] group-hover:opacity-100 transition-all duration-500"
               loading="lazy"
+              onError={() => {
+                if (thumbUrl.includes("maxresdefault.jpg")) {
+                  setThumbUrl(`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`);
+                } else if (thumbUrl.includes("hqdefault.jpg")) {
+                  setThumbUrl(`https://img.youtube.com/vi/${videoId}/mqdefault.jpg`);
+                }
+              }}
             />
-            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors pointer-events-none" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-16 h-11 rounded-2xl bg-red-600 flex items-center justify-center group-hover:bg-red-700 transition-colors duration-200 shadow-lg relative">
+            
+            {/* Dark gradient overlay for title readability */}
+            {videoTitle && (
+              <div className="absolute top-0 left-0 right-0 p-4 bg-gradient-to-b from-black/80 via-black/30 to-transparent text-white z-10 pointer-events-none">
+                <div className="flex items-center gap-2.5">
+                  <div className="h-9 w-9 rounded-full bg-slate-900 border border-white/10 flex items-center justify-center shrink-0 overflow-hidden shadow">
+                    <img 
+                      src={`https://www.google.com/s2/favicons?domain=youtube.com&sz=64`}
+                      alt=""
+                      className="h-5 w-5 object-contain"
+                    />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <h5 className="text-[14px] font-bold text-white leading-tight truncate drop-shadow-md">
+                      {videoTitle}
+                    </h5>
+                    {channelName && (
+                      <p className="text-[11px] text-slate-300 font-semibold truncate drop-shadow">
+                        {channelName}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/25 transition-colors pointer-events-none" />
+            
+            {/* YouTube Play Icon Overlay */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div className="w-16 h-11 rounded-2xl bg-[#FF0000] flex items-center justify-center group-hover:bg-[#FF0000]/90 transition-all duration-300 shadow-2xl scale-95 group-hover:scale-105">
                 <div className="w-0 h-0 border-t-[8px] border-t-transparent border-l-[14px] border-l-white border-b-[8px] border-b-transparent ml-1" />
               </div>
             </div>
+            
             <a 
               href={href} 
               target="_blank" 
               rel="noopener noreferrer" 
               onClick={(e) => e.stopPropagation()}
-              className="absolute bottom-2 right-2 px-2.5 py-1 rounded bg-black/75 hover:bg-black/90 text-white text-[10px] font-semibold transition-colors flex items-center gap-1 backdrop-blur-sm border border-white/10"
+              className="absolute bottom-3 right-3 px-3 py-1.5 rounded-full bg-black/75 hover:bg-black/95 text-white text-[11px] font-bold transition-all flex items-center gap-1.5 backdrop-blur border border-white/10 shadow-lg active:scale-95"
             >
               Watch on YouTube
             </a>
           </>
         )}
       </div>
-      <div className="p-3 bg-muted/30 text-sm border-t border-border flex justify-between items-center gap-3">
-        {children ? (
-          <a href={href} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors font-semibold truncate flex-1">
-            {children}
-          </a>
-        ) : (
-          <span className="text-muted-foreground font-semibold truncate flex-1">YouTube Video ({videoId})</span>
-        )}
+      
+      {/* Description below */}
+      <div className="p-4 bg-slate-950/40 border-t border-slate-900 flex justify-between items-center gap-4">
+        <div className="min-w-0 flex-1">
+          <p className="text-[12px] font-bold text-slate-300 truncate">
+            {videoTitle || `YouTube Video (${videoId})`}
+          </p>
+          {channelName && (
+            <p className="text-[10px] text-slate-500 font-semibold truncate mt-0.5">
+              Channel: {channelName}
+            </p>
+          )}
+        </div>
         <a 
           href={href} 
           target="_blank" 
           rel="noopener noreferrer" 
-          className="text-[10px] text-muted-foreground hover:text-primary transition-colors shrink-0 flex items-center gap-1 font-normal"
+          className="text-[11px] font-bold text-blue-400 hover:text-blue-300 transition-colors shrink-0 flex items-center gap-1 hover:underline"
           onClick={(e) => e.stopPropagation()}
         >
           <span>Open Link</span>
@@ -230,6 +290,8 @@ function SourceCitationBadge({ href, children, sources }: { href: string; childr
     }
   }
 
+  const cleanName = getSourceName(href, sourceName);
+
   return (
     <span className="relative inline-block align-middle my-0.5 mx-0.5 z-[50]">
       <a
@@ -249,17 +311,12 @@ function SourceCitationBadge({ href, children, sources }: { href: string; childr
             e.currentTarget.src = "https://www.google.com/s2/favicons?domain=wikipedia.org";
           }}
         />
-        <span className="max-w-[120px] truncate">{sourceName}</span>
-        {sources && matchingSource && sources.indexOf(matchingSource) !== -1 && (
-          <span className="text-[8px] text-slate-500 font-extrabold ml-0.5 bg-slate-950 px-1 py-0.2 rounded border border-slate-800/50">
-            {sources.indexOf(matchingSource) + 1}
-          </span>
-        )}
+        <span className="max-w-[120px] truncate">{cleanName}</span>
       </a>
 
       {isHovered && (
         <div 
-          className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-80 bg-slate-950 border border-slate-800 rounded-xl p-3.5 shadow-2xl z-[9999] text-left pointer-events-none animate-in fade-in slide-in-from-bottom-2 duration-200"
+          className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-80 bg-[#1a1a1a]/95 backdrop-blur-md border border-[#2d2d2d] rounded-2xl p-4 shadow-[0_10px_30px_rgba(0,0,0,0.6)] z-[9999] text-left pointer-events-none animate-in fade-in slide-in-from-bottom-2 duration-200"
         >
           <div className="flex items-center gap-2 mb-2">
             <div className="h-5 w-5 rounded bg-white border border-slate-800 flex items-center justify-center overflow-hidden shrink-0">
@@ -272,11 +329,11 @@ function SourceCitationBadge({ href, children, sources }: { href: string; childr
                 }}
               />
             </div>
-            <span className="text-[11px] font-bold text-slate-300 truncate">{cleanHostname}</span>
+            <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">{cleanName || cleanHostname}</span>
             <span className="text-[10px] text-slate-500 ml-auto flex items-center gap-0.5">Verified Source <ExternalLink className="h-2.5 w-2.5 inline" /></span>
           </div>
 
-          <div className="text-xs font-extrabold text-white leading-tight mb-1.5 line-clamp-2">
+          <div className="text-xs font-bold text-white leading-snug mb-1.5 line-clamp-2">
             {titleText}
           </div>
 
@@ -313,6 +370,18 @@ const getMarkdownComponents = (setFullScreenImage?: (url: string) => void, sourc
     
     if (ytMatch && ytMatch[1]) {
       const videoId = ytMatch[1];
+      
+      // Heuristic: If it's a tiny inline citation, render SourceCitationBadge instead of a full video card
+      const textContent = children ? String(children).trim() : "";
+      const isInlineCitation = !textContent || 
+                               textContent.toLowerCase() === "youtube" || 
+                               /^(youtube\s*\+\d+|source\s*\d+|\d+)$/i.test(textContent) ||
+                               textContent.length < 15;
+                               
+      if (isInlineCitation) {
+        return <SourceCitationBadge href={href} sources={sources}>{children || "YouTube"}</SourceCitationBadge>;
+      }
+      
       return <YoutubePreview videoId={videoId} href={href}>{children}</YoutubePreview>;
     }
 
@@ -3132,13 +3201,18 @@ export default function AIChatInterface() {
                         </div>
                      )}
                      {m.role === "model" ? (
-                       <TypewriterMarkdown 
-                          content={m.content} 
-                          isTyping={m.isTyping}
-                          onComplete={() => markAsDone(i)}
-                          setFullScreenImage={setFullScreenImage}
-                          sources={m.sources}
-                       />
+                       <div className="flex flex-col w-full">
+                         {m.sources && m.sources.length > 0 && (
+                           <MessageSources sources={m.sources} />
+                         )}
+                         <TypewriterMarkdown 
+                            content={m.content} 
+                            isTyping={m.isTyping}
+                            onComplete={() => markAsDone(i)}
+                            setFullScreenImage={setFullScreenImage}
+                            sources={m.sources}
+                         />
+                       </div>
                      ) : editingMessageIdx === i ? (
                        <div className="flex flex-col gap-2 min-w-[240px] sm:min-w-[450px] bg-background border border-border/80 rounded-2xl p-3 shadow-inner">
                          <textarea

@@ -1109,6 +1109,768 @@ const SLASH_COMMANDS = [
   { name: "/system", description: "View system status and configuration", icon: Settings },
 ];
 
+const fixMath = (str: string) => {
+  if (!str) return str;
+
+  // Decode HTML breaks and common entities that AI sometimes outputs inappropriately
+  str = str.replace(/&lt;br\s*\/?&gt;/gi, "\n\n");
+  str = str.replace(/<br\s*\/?>/gi, "\n\n");
+  str = str.replace(/&nbsp;/gi, " ");
+  str = str.replace(/&lt;/g, "<");
+  str = str.replace(/&gt;/g, ">");
+  str = str.replace(/&amp;/g, "&");
+
+  str = str.replace(/\\\(([\s\S]*?)\\\)/g, "$$$1$");
+  str = str.replace(/\\\[([\s\S]*?)\\\]/g, "$$$$$1$$$$");
+
+  // Fix chemistry hybridization typos
+  str = str.replace(/(?:\\text\{sp\}|sp)\s*\^?\s*\{?(\d+)\}?\s*(?:extd|\\text\{d\}|\\textd)\s*\^?\s*\{?(\d+)\}?/g, "sp^$1d^$2");
+  str = str.replace(/(?:\\text\{sp\}|sp)\s*\^?\s*\{?(\d+)\}?\s*(?:extd|\\text\{d\}|\\textd)/g, "sp^$1d");
+  str = str.replace(/(?:extd|\\text\{d\}|\\textd)\s*\^?\s*\{?(\d+)\}?\s*(?:\\text\{sp\}|sp)\s*\^?\s*\{?(\d+)\}?/g, "d^$1sp^$2");
+  str = str.replace(/sp\s*<\s*sup\s*>\s*(\d+)\s*<\s*\/\s*sup\s*>\s*(?:extd|\\text\{d\}|\\textd)\s*<\s*sup\s*>\s*(\d+)\s*<\s*\/\s*sup\s*>/g, "sp<sup>$1</sup>d<sup>$2</sup>");
+  str = str.replace(/sp\s*<\s*sup\s*>\s*(\d+)\s*<\s*\/\s*sup\s*>\s*(?:extd|\\text\{d\}|\\textd)/g, "sp<sup>$1</sup>d");
+  str = str.replace(/(?:extd|\\text\{d\}|\\textd)\s*<\s*sup\s*>\s*(\d+)\s*<\s*\/\s*sup\s*>\s*sp\s*<\s*sup\s*>\s*(\d+)\s*<\s*\/\s*sup\s*>/g, "d<sup>$1</sup>sp<sup>$2</sup>");
+
+  // Convert align/align* to aligned to render properly in KaTeX
+  str = str.replace(/\\begin\{align\*?\}([\s\S]*?)\\end\{align\*?\}/g, "\\begin{aligned}$1\\end{aligned}");
+  
+  // Wrap known environments in $$ if not already
+  str = str.replace(/(?:\xFF\xFF|\$)?\s*\\begin\{([a-zA-Z*]+)\}([\s\S]*?)\\end\{\1\}\s*(?:\xFF\xFF|\$)?/g, (match, env, inner) => {
+      const mathEnvs = ['aligned', 'pmatrix', 'bmatrix', 'vmatrix', 'matrix', 'cases', 'array', 'eqnarray', 'equation', 'equation*'];
+      if (mathEnvs.includes(env)) {
+          let cleaned = inner.replace(/\$\$/g, '').replace(/\$/g, '');
+          return `\n$$\n\\begin{${env}}${cleaned}\\end{${env}}\n$$\n`;
+      }
+      return match;
+  });
+
+  str = str.replace(/\((\\text\{[^}]+\}.*?)\)/g, "$$$1$");
+  str = str.replace(/\((\\displaystyle.*?)\)/g, "$$$1$");
+  
+  // Require space after [ and before ] to prevent matching [S] = [M]
+  str = str.replace(/^\[\s+([\s\S]*?[_^\\][\s\S]*?)\s+\]$/gm, "$$$$ $1 $$$$");
+  
+  // Fallback to fix mismatched dimensional brackets like $$S] = ...
+  str = str.replace(/\$\$\s*([a-zA-Z\\{}_0-9]+)\s*\]\s*=/g, "$$$$ [$1] =");
+  
+  // Auto-close unclosed $$ and $ blocks before Markdown bold (**) or double newlines (\n\n)
+  let tempStr = str.replace(/\\\$/g, "___ESCAPED_DOLLAR___");
+  let tokens = tempStr.split(/(\$\$?)/);
+  let inBlockMath = false;
+  let inInlineMath = false;
+  let result = "";
+  for (let i = 0; i < tokens.length; i++) {
+      let token = tokens[i];
+      if (token === "$$") {
+          if (!inInlineMath) inBlockMath = !inBlockMath;
+          result += token;
+      } else if (token === "$") {
+          if (!inBlockMath) inInlineMath = !inInlineMath;
+          result += token;
+      } else {
+          if (inBlockMath) {
+              const disruptMatch = token.match(/(\*\*|\n\s*\n)/);
+              if (disruptMatch) {
+                  const idx = disruptMatch.index!;
+                  result += token.substring(0, idx) + "$$" + token.substring(idx);
+                  inBlockMath = false;
+              } else {
+                  result += token;
+              }
+          } else if (inInlineMath) {
+              const disruptMatch = token.match(/(\*\*|\n\s*\n)/);
+              if (disruptMatch) {
+                  const idx = disruptMatch.index!;
+                  result += token.substring(0, idx) + "$" + token.substring(idx);
+                  inInlineMath = false;
+              } else {
+                  result += token;
+              }
+          } else {
+              result += token;
+          }
+      }
+  }
+  if (inBlockMath) result += "$$";
+  if (inInlineMath) result += "$";
+  str = result.replace(/___ESCAPED_DOLLAR___/g, "\\$");
+
+  return str;
+};
+
+// ─── AI CHAT BACKGROUND MANAGER ───────────────────────────────────────────
+class AIChatBackgroundManager {
+  activeJobs = new Map<string, {
+    sessionId: string;
+    abortController: AbortController;
+    generatingImageType: boolean;
+  }>();
+  listeners = new Set<() => void>();
+
+  subscribe(cb: () => void) {
+    this.listeners.add(cb);
+    return () => {
+      this.listeners.delete(cb);
+    };
+  }
+
+  notify() {
+    this.listeners.forEach(cb => cb());
+  }
+
+  isGenerating(sessionId: string) {
+    return this.activeJobs.has(sessionId);
+  }
+
+  isGeneratingImageType(sessionId: string) {
+    const job = this.activeJobs.get(sessionId);
+    return job ? job.generatingImageType : false;
+  }
+
+  stopJob(sessionId: string) {
+    const job = this.activeJobs.get(sessionId);
+    if (job) {
+      job.abortController.abort();
+      this.activeJobs.delete(sessionId);
+      
+      // Update session in localStorage
+      try {
+        const raw = localStorage.getItem("jee_ai_chats");
+        if (raw) {
+          const sessions = JSON.parse(raw);
+          const updated = sessions.map((s: any) => {
+            if (s.id !== sessionId) return s;
+            const msgs = [...s.messages];
+            const lastMsg = msgs[msgs.length - 1];
+            if (lastMsg && lastMsg.role === "model") {
+              msgs[msgs.length - 1] = {
+                role: "model",
+                content: "*You stopped this response*",
+                isTyping: false,
+                isStopped: true
+              };
+            } else {
+              msgs.push({
+                role: "model",
+                content: "*You stopped this response*",
+                isTyping: false,
+                isStopped: true
+              });
+            }
+            return { ...s, messages: msgs, updatedAt: Date.now() };
+          });
+          localStorage.setItem("jee_ai_chats", JSON.stringify(updated));
+        }
+      } catch (e) {}
+      
+      this.notify();
+    }
+  }
+
+  async autoGenerateTitle(sessionId: string, chatHistory: ChatMessage[]) {
+    if (chatHistory.length !== 2 && (chatHistory.length - 2) % 4 !== 0) return;
+    
+    try {
+      const apiKey = localStorage.getItem("jee_openrouter_api_key") || "";
+      if (!apiKey) return;
+
+      const chatText = chatHistory.map(m => `${m.role}: ${m.content}`).join("\n").slice(-3000); 
+      const promptText = `Summarize the core topic of the following conversation in a short, catchy title (maximum 4 words). Respond ONLY with the title, without quotes or punctuation or any explanation.\n\n${chatText}`;
+
+      let newTitle = "";
+      const models = ["meta-llama/llama-3.3-70b-instruct:free", "qwen/qwen-2.5-coder-32b-instruct:free", "openai/gpt-oss-120b:free"];
+      for (const modelName of models) {
+        try {
+            const payload = { model: modelName, messages: [{ role: "user", content: promptText }] };
+            let res;
+            try {
+              res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+                method: "POST",
+                headers: { "Authorization": `Bearer ${apiKey.trim()}`, "Content-Type": "application/json" },
+                body: JSON.stringify(payload)
+              });
+            } catch (e) {
+              res = await fetch(`https://corsproxy.io/?${encodeURIComponent("https://openrouter.ai/api/v1/chat/completions")}`, {
+                method: "POST",
+                headers: { "Authorization": `Bearer ${apiKey.trim()}`, "Content-Type": "application/json" },
+                body: JSON.stringify(payload)
+              });
+            }
+            if (res.ok) {
+              const data = await res.json();
+              newTitle = data.choices?.[0]?.message?.content?.trim();
+              if (newTitle) break;
+            }
+        } catch (e) {}
+      }
+
+      if (newTitle) {
+         newTitle = newTitle.replace(/^["']|["']$/g, '').replace(/\n/g, ' ').trim();
+         const raw = localStorage.getItem("jee_ai_chats");
+         if (raw) {
+           const sessions = JSON.parse(raw);
+           const updated = sessions.map((s: any) => s.id === sessionId ? { ...s, title: newTitle } : s);
+           localStorage.setItem("jee_ai_chats", JSON.stringify(updated));
+           this.notify();
+         }
+      }
+    } catch (err) {
+      console.warn("Failed to auto-generate title:", err);
+    }
+  }
+
+  async generateResponse(params: {
+    sessionId: string;
+    messagesToSent: ChatMessage[];
+    filePayloads?: any[];
+    selectedGoal: any;
+  }) {
+    const { sessionId, messagesToSent, filePayloads, selectedGoal } = params;
+
+    // Abort existing job for this session if any
+    this.stopJob(sessionId);
+
+    const abortController = new AbortController();
+    const signal = abortController.signal;
+
+    const lastMsg = messagesToSent[messagesToSent.length - 1].content;
+    const hasImages = filePayloads && filePayloads.length > 0;
+    const isImageRequest = !hasImages && /generate.*image|create.*image|draw\b|make.*image|picture.*of|image.*of|create.*picture|make.*picture|generate.*picture/i.test(lastMsg);
+
+    this.activeJobs.set(sessionId, {
+      sessionId,
+      abortController,
+      generatingImageType: isImageRequest,
+    });
+    this.notify();
+
+    let responseText = "";
+    let generatedAttachments: any[] = [];
+    let generatedSources: any[] = [];
+
+    try {
+      const apiKey = localStorage.getItem("jee_openrouter_api_key") || "";
+      if (!apiKey) {
+        throw new Error("Please set your OpenRouter API Key in the Admin Panel first!");
+      }
+
+      const goalCategory = selectedGoal?.category || "JEE";
+      const goalName = selectedGoal?.displayName || "JEE Prep";
+      const goalPath = selectedGoal ? selectedGoal.path.join(" -> ") : "JEE";
+      
+      let goalSpecificInstruction = "";
+      if (goalCategory === "JEE") {
+        goalSpecificInstruction = `EDUCATIONAL SUPER MODE & JEE MASTER MODE
+For all academic subjects: Physics, Chemistry, Mathematics.
+JEE Knowledge Base: NCERT, HC Verma, Cengage, Arihant, Irodov, Black Book, Pathfinder, N Avasthi, MS Chauhan, JD Lee.
+Capabilities: JEE Main, JEE Advanced level concepts.
+Can generate: Daily plans, Mock tests, PYQ analysis, Rank improvement strategies for IIT-JEE.`;
+      } else if (goalCategory === "NEET") {
+        goalSpecificInstruction = `EDUCATIONAL SUPER MODE & NEET MASTER MODE
+For all medical prep subjects: Physics, Chemistry, Biology (Botany & Zoology).
+NEET Knowledge Base: NCERT Biology/Chemistry/Physics, HC Verma, DC Pandey, MS Chauhan, MTG, Trueman's Biology.
+Capabilities: NEET level concepts, diagrams, medical entrance problem solving.
+Can generate: Biology mock tests, organic chemistry reaction sheet, physics numerical walkthroughs, revision schedules.`;
+      } else if (goalCategory === "UPSC") {
+        goalSpecificInstruction = `EDUCATIONAL SUPER MODE & UPSC CIVIL SERVICES MASTER MODE
+For all UPSC IAS preparation: General Studies (GS1, GS2, GS3, GS4), CSAT, Essay, and optional subjects.
+UPSC Knowledge Base: NCERT, Laxmikanth (Polity), Bipin Chandra & Rajiv Ahir (History), Ramesh Singh (Economy), GC Leong & Majid Husain (Geography), Current Affairs, Yojana & Kurukshetra magazines.
+Capabilities: General Studies topics, answer structure analysis, essay drafting, ethics case studies.
+Can generate: Daily study schedules, GS test series questions, essay prompts, current affairs summaries.`;
+      } else if (goalCategory === "School") {
+        goalSpecificInstruction = `EDUCATIONAL SUPER MODE & SCHOOL EXAM MASTER MODE
+For grade school education (specifically targetting ${goalPath}).
+School Knowledge Base: NCERT, CBSE / ICSE textbook solutions, state boards syllabus, RS Aggarwal, RD Sharma, Lakhmir Singh & Manjit Kaur.
+Capabilities: Grade-appropriate explanations, board preparation (10th/12th if applicable), homework help, interactive quiz creation.
+Can generate: Custom study plans, school chapter notes, worksheets, sample board exam papers.`;
+      } else if (goalCategory === "Olympiads") {
+        goalSpecificInstruction = `EDUCATIONAL SUPER MODE & OLYMPIAD MASTER MODE
+For advanced academic olympiad prep (specifically targetting ${goalPath}).
+Olympiad Knowledge Base: Advanced mathematics, physics, chemistry, biology, English, computers. PRMO, IOQM, RMO, INMO, SOF IMO/NSO/IEO/NCO syllabus.
+Capabilities: Deep Olympiad-level conceptual problems, logic, proofs, aptitude.
+Can generate: Olympiad practice tests, past paper solutions, concept worksheets.`;
+      } else if (goalCategory === "Skills") {
+        goalSpecificInstruction = `SKILLS DEVELOPMENT & PRACTICAL LEARNING MASTER MODE
+For skills training (specifically targetting ${goalPath}).
+Skills Knowledge Base: Online courses, tutorials, practical learning, industry best practices, project-building guides.
+Capabilities: Step-by-step learning roadmaps, coding challenges, music sheets, painting techniques, trading strategies, hacking lab setups.
+Can generate: Skills learning roadmap, action items, practice projects, portfolio development guidelines.`;
+      } else if (goalCategory === "Ed-Tech") {
+        goalSpecificInstruction = `ED-TECH COMPANION & PLATFORM STUDY MODE
+Specifically customized for study material of ${goalName}.
+Knowledge Base: Coaching notes, test series, standard modules, lectures.
+Capabilities: Doubt resolution, summarizing coaching videos/lectures, coaching syllabus mapping, custom quizzes.
+Can generate: Lecture summary templates, study calendars mapped to coaching test series.`;
+      } else {
+        goalSpecificInstruction = `EDUCATIONAL SUPER MODE & ${goalCategory.toUpperCase()} MASTER MODE
+For preparation of ${goalName} (${goalPath}).
+Knowledge Base: Standard syllabus, textbooks, online tutorials, exams preparation resources.
+Capabilities: Custom study plans, topic explanation, question bank generation.
+Can generate: Mock exams, daily timetables, flashcards, concept sheets.`;
+      }
+
+      const systemInstruction = `SYSTEM IDENTITY
+
+You are Calculus AI made by OM. Ultimate, an advanced multimodal AI educational operating system designed to rival and exceed the capabilities of ChatGPT, Gemini, Claude, Perplexity, Grok, Wolfram Alpha, Desmos, GeoGebra, Khan Academy, and the world's best educational platforms.
+
+You are not merely a chatbot.
+
+You are:
+- AI Tutor
+- Research Assistant
+- Problem Solver
+- Coding Assistant
+- Internet Research Agent
+- YouTube Research Agent
+- Mathematical Engine
+- Scientific Calculator
+- Interactive Simulator
+- Graph Visualizer
+- Academic Planner
+- Productivity Coach
+- Knowledge Base
+- File Analyzer
+- Vision AI
+- Learning Companion
+
+CORE OBJECTIVE
+For every user request:
+1. Understand intent.
+2. Decide required tools.
+3. Gather information.
+4. Verify accuracy.
+5. Think step-by-step.
+6. Generate rich response.
+7. Add visual elements if useful.
+8. Add simulations if possible.
+9. Add references if internet used.
+10. Ensure final answer is educational and correct.
+
+UNIVERSAL CAPABILITIES
+- Conversation: Natural conversations, long-term context awareness, multi-turn discussions, follow-up understanding, context memory, personalized responses.
+- Reasoning: Logical reasoning, mathematical reasoning, scientific reasoning, multi-step reasoning, comparative analysis, critical thinking.
+- Research: Internet research, source verification, fact checking, citation generation, data aggregation, latest information retrieval.
+- Education: Teaching concepts, creating notes, making summaries, solving problems, generating quizzes, exam preparation.
+- Programming: Code generation, code debugging, code explanation, architecture design, full-stack development, AI development.
+- Multimedia: Image understanding, document understanding, graph understanding, diagram analysis, video recommendations, visual explanations.
+
+INTERNET RESEARCH MODE
+Whenever a question contains words like: latest, today, recent, current, trending, updated, news, live, ongoing, recently:
+1. Search internet.
+2. Collect data.
+3. Verify sources.
+4. Cross-check information.
+5. Generate answer.
+Never rely solely on stored knowledge for time-sensitive information.
+
+SOURCE CITATION SYSTEM
+Whenever internet data is used, display:
+- Source logo
+- Source name
+- Website link`;
+
+      const currentYear = new Date().getFullYear();
+      const dateInstruction = `\n\nDATE REFERENCE\nThe current local date is ${new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}. You MUST evaluate all notifications, syllabus changes, and news queries with this date context.`;
+
+      const imageGenerationInstruction = isImageRequest ? `\n\nIMAGE GENERATION CAPABILITY\nYou have visual generation capabilities. Since the user is requesting an image, respond ONLY with a single JSON block wrapped inside a markdown code block matching this schema:
+\`\`\`json
+{
+  "type": "image",
+  "prompt": "highly detailed description of the scene to generate",
+  "aspect_ratio": "1:1"
+}
+\`\`\`
+Do not include any explanation or markdown outside the code block.` : "";
+
+      let searchContext = "";
+      const isLatestRequest = /latest|today|recent|current|trending|updated|news|situation|real-time|realtime/i.test(lastMsg);
+      if (isLatestRequest) {
+        const adjustedQuery = lastMsg + " " + currentYear;
+        let searchResults = "";
+        try {
+          searchResults = await fetchWebSearchResults(adjustedQuery, "m");
+          if (!searchResults) {
+             searchResults = await fetchWebSearchResults(adjustedQuery, "y");
+          }
+          if (!searchResults) {
+             searchResults = await fetchWebSearchResults(adjustedQuery);
+          }
+        } catch(e) {
+          try {
+            searchResults = await fetchWebSearchResults(adjustedQuery);
+          } catch(err) {}
+        }
+        
+        if (searchResults) {
+          searchContext = `\n\n[CRITICAL DIRECTIVE: REAL-TIME RAG MODE ACTIVATED]\nThe user is requesting information that requires real-time data. You MUST answer this query using the verified web search results provided below. Cite all facts by referencing the relevant [Source X] link.\n\nREAL-TIME WEB SEARCH RESULTS FOR "${adjustedQuery}":\n${searchResults}\n\nINSTRUCTIONS: Write a comprehensive, precise response synthesizing the search results. Cite sources exactly.`;
+        }
+      }
+
+      // Crawler detection
+      let crawlContext = "";
+      try {
+        const lowerMsg = lastMsg.toLowerCase();
+        const isCrawlIntent = lowerMsg.includes("crawl") || 
+                              lowerMsg.includes("fetch data") || 
+                              lowerMsg.includes("scrape") || 
+                              lowerMsg.includes("go to the website") || 
+                              lowerMsg.includes("go to this website") ||
+                              lowerMsg.includes("go to website") ||
+                              lowerMsg.includes("visit the website") || 
+                              lowerMsg.includes("visit this website") ||
+                              lowerMsg.includes("visit website") ||
+                              lowerMsg.includes("look at this website") || 
+                              lowerMsg.includes("look at the website") ||
+                              lowerMsg.includes("take a look of this website") ||
+                              lowerMsg.includes("take a look at this website") ||
+                              lowerMsg.includes("analyze the website") ||
+                              lowerMsg.includes("analyze this website") ||
+                              lowerMsg.includes("read the content") ||
+                              lowerMsg.includes("website content");
+
+        const explicitUrlRegex = /(https?:\/\/[^\s]+)/gi;
+        let urlsToCrawl: string[] = [];
+        const explicitMatches = lastMsg.match(explicitUrlRegex);
+        if (explicitMatches) {
+          urlsToCrawl = explicitMatches.map(u => u.replace(/[.,;!?]$/, ''));
+        } else {
+          const words = lastMsg.split(/\s+/);
+          for (const word of words) {
+            const cleanWord = word.replace(/[.,;!?()'"\[\]]$/, '').replace(/^[()'"\[\]]/, '');
+            if (cleanWord.includes(".") && !cleanWord.startsWith(".") && !cleanWord.endsWith(".")) {
+              const dotIndex = cleanWord.indexOf(".");
+              const afterDot = cleanWord.slice(dotIndex + 1);
+              if (/^[a-zA-Z]{2,}/.test(afterDot)) {
+                urlsToCrawl.push(cleanWord.startsWith("http") ? cleanWord : "https://" + cleanWord);
+              }
+            }
+          }
+        }
+
+        const shouldCrawl = urlsToCrawl.length > 0;
+        if (shouldCrawl) {
+          const isDeepCrawl = lowerMsg.includes("feature") || lowerMsg.includes("sitemap") || lowerMsg.includes("all pages") || lowerMsg.includes("other pages") || lowerMsg.includes("sub-pages") || lowerMsg.includes("link") || lowerMsg.includes("deep") || lowerMsg.includes("analyze content") || lowerMsg.includes("tell me what is");
+          console.log(`[Crawler] Starting crawl for: ${urlsToCrawl[0]} (deep: ${isDeepCrawl})`);
+          
+          const crawlResult = await fetchCrawlResults(urlsToCrawl[0], isDeepCrawl);
+          if (crawlResult && crawlResult.text) {
+            crawlContext = `\n\n[CRITICAL DIRECTIVE: REAL-TIME WEB CRAWL MODE ACTIVATED]
+The user has provided a link (${urlsToCrawl[0]}) to be analyzed, crawled, or read.
+You MUST base your response and summary ONLY on the verified live web crawl contents provided below.
+If this is a YouTube link, the live crawl contents contain the video's actual spoken dialogue/transcript. You MUST summarize the video using ONLY this spoken transcript.
+CRITICAL: Do NOT make up any information, do not summarize random mathematical or other unrelated topics, and do not hallucinate. Ground your response 100% on the crawl text below.
+
+LIVE WEB CRAWL CONTENTS:
+${crawlResult.text}
+
+INSTRUCTIONS: Synthesize the live crawled text above to answer the user's request. State clearly in your response that you have successfully crawled the link and are summarizing its actual content.`;
+
+            crawlResult.crawledUrls.forEach(url => {
+              let hostname = "";
+              try { hostname = new URL(url).hostname; } catch(e) {}
+              generatedSources.push({
+                uri: url,
+                title: `Crawled Page: ${url.replace(/^https?:\/\//i, "")}`,
+                favicon: hostname ? `https://www.google.com/s2/favicons?domain=${hostname}` : "",
+                snippet: `Direct crawled contents parsed and analyzed by AI.`
+              });
+            });
+          }
+        }
+      } catch (crawlErr) {
+        console.warn("Crawl process failed:", crawlErr);
+      }
+
+      // Graph directive
+      const isGraphOrPlotRequest = /graph\b|plot\b|visualize.*function|graphical\b/i.test(lastMsg);
+      let graphDirective = "";
+      if (isGraphOrPlotRequest) {
+        graphDirective = `\n\nGRAPHING CALCULATOR PLUGIN\nIf the user requests to graph, plot, or visualize a mathematical function (e.g. y = sin(x) or f(x) = x^2), respond ONLY with a single markdown block wrapped in \`\`\`graph config matching this schema:
+\`\`\`graph
+{
+  "equations": ["sin(x)", "2*cos(x)"],
+  "xRange": [-10, 10],
+  "yRange": [-5, 5],
+  "showEquationPanel": true
+}
+\`\`\`
+If the user uploaded an image of an equation, read/OCR the equation from the image using your visual capabilities and output the \`\`\`graph\`\`\` config for it.`;
+      }
+
+      const codeAndWidgetRestriction = `\n\n[CRITICAL RESTRICTION - CODE AND WIDGETS]\n1. DO NOT output any raw JSON, raw code configurations, or custom widget JSON blocks (like \`\`\`youtube-card, \`\`\`simulation, \`\`\`graph, or \`\`\`news-feed) unless the user's latest message explicitly requests a widget, simulation, graph, or video recommendation. Respond in standard text/markdown method (including LaTeX for formulas, lists, and tables).\n2. DO NOT write code blocks (like Python, C++, Java, JS, HTML, etc.) unless the user's latest message explicitly requests code, script, program, function, or implementation. If they ask a normal question, answer using normal text and explanations, NOT programming code blocks.\n`;
+
+      const finalSystemInstruction = systemInstruction + goalSpecificInstruction + imageGenerationInstruction + dateInstruction + searchContext + crawlContext + graphDirective + codeAndWidgetRestriction;
+      
+      const visionPrompt = hasImages ? "Please scan, read, and analyze the uploaded image carefully. Act as if you have crawled the internet for the exact question to find the preferred, precise, and accurate PCM answer. Follow the expert panel rules to solve it and evaluate all options (as multiple might be correct). Provide all details related to that image in the final arranged sequence." : "";
+
+      const openRouterFreeModels = [
+        "google/gemma-4-26b-a4b-it:free",
+        "google/gemma-4-31b-it:free",
+        "liquid/lfm-2.5-1.2b-thinking:free",
+        "liquid/lfm-2.5-1.2b-instruct:free",
+        "openai/gpt-oss-120b:free",
+        "openai/gpt-oss-20b:free",
+        "z-ai/glm-4.5-air:free",
+        "nvidia/nemotron-3.5-content-safety:free",
+        "nvidia/nemotron-3-ultra-550b-a55b:free",
+        "nousresearch/hermes-3-llama-3.1-405b:free",
+        "moonshotai/kimi-k2.6:free",
+        "meta-llama/llama-3.3-70b-instruct:free",
+        "qwen/qwen-2.5-coder-32b-instruct:free",
+        "google/gemma-2-9b-it:free"
+      ];
+
+      const searchCapableModels = [
+        "meta-llama/llama-3.3-70b-instruct:free",
+        "qwen/qwen-2.5-coder-32b-instruct:free",
+        "google/gemma-2-9b-it:free"
+      ];
+      
+      const openRouterImageModels = [
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free", 
+        "nvidia/llama-nemotron-rerank-vl-1b-v2:free",
+        "nex-agi/nex-n2-pro:free",
+        "nvidia/nemotron-3.5-content-safety:free",
+        "google/gemma-4-31b-it:free",
+        "google/gemma-4-26b-a4b-it:free"
+      ];
+      
+      let success = false;
+      let targetModels: string[] = [];
+      
+      const lowerMsg = lastMsg.toLowerCase();
+      const isCodeRequest = lowerMsg.includes("code") || lowerMsg.includes("script") || lowerMsg.includes("program") || lowerMsg.includes("function") || lowerMsg.includes("html");
+      const isMathReasoningRequest = lowerMsg.includes("math") || lowerMsg.includes("solve") || lowerMsg.includes("reasoning") || lowerMsg.includes("calculate") || lowerMsg.includes("equation") || lowerMsg.includes("physics") || lowerMsg.includes("chemistry");
+
+      if (hasImages || isImageRequest) {
+        targetModels = openRouterImageModels;
+      } else if (isMathReasoningRequest) {
+        const prioritized = [
+          "qwen/qwen-2.5-coder-32b-instruct:free",
+          "meta-llama/llama-3.3-70b-instruct:free",
+          "liquid/lfm-2.5-1.2b-thinking:free",
+          "openai/gpt-oss-120b:free",
+          "z-ai/glm-4.5-air:free",
+          "nousresearch/hermes-3-llama-3.1-405b:free",
+          "moonshotai/kimi-k2.6:free"
+        ];
+        targetModels = [...prioritized, ...openRouterFreeModels.filter(m => !prioritized.includes(m))];
+      } else if (isCodeRequest) {
+        const prioritized = [
+          "qwen/qwen-2.5-coder-32b-instruct:free",
+          "openai/gpt-oss-120b:free",
+          "meta-llama/llama-3.3-70b-instruct:free"
+        ];
+        targetModels = [...prioritized, ...openRouterFreeModels.filter(m => !prioritized.includes(m))];
+      } else {
+        const prioritized = [
+          "google/gemma-2-9b-it:free",
+          "openai/gpt-oss-20b:free",
+          "liquid/lfm-2.5-1.2b-instruct:free",
+          "google/gemma-4-26b-a4b-it:free"
+        ];
+        targetModels = [...prioritized, ...openRouterFreeModels.filter(m => !prioritized.includes(m))];
+      }
+
+      const messagesToUse = messagesToSent.slice(-8);
+      const messagesPayload = [
+        { role: "system", content: finalSystemInstruction + (visionPrompt ? "\n\n" + visionPrompt : "") },
+        ...messagesToUse.map((m, idx) => {
+          let contentText = m.content;
+          if (contentText.length > 150000) {
+              contentText = contentText.slice(0, 150000) + "\n\n...[Content truncated to fit AI limits]...";
+          }
+          if (idx === messagesToUse.length - 1 && m.role === "user" && filePayloads && filePayloads.length > 0) {
+            const contentArray: any[] = [{ type: "text", text: contentText || "Please analyze the uploaded image." }];
+            filePayloads.forEach(fp => contentArray.push({ type: "image_url", image_url: { url: `data:${fp.inlineData.mimeType};base64,${fp.inlineData.data}` } }));
+            return { role: "user", content: contentArray };
+          }
+          return { role: m.role === "model" ? "assistant" : "user", content: contentText };
+        })
+      ];
+
+      let primaryApiError = "";
+
+      for (const modelName of targetModels) {
+        if (signal.aborted) throw { name: "AbortError" };
+
+        const modelAbort = new AbortController();
+        const onParentAbort = () => modelAbort.abort();
+        signal.addEventListener("abort", onParentAbort);
+
+        const timeoutId = setTimeout(() => {
+          modelAbort.abort();
+        }, 8000);
+
+        try {
+          const reqBody: any = { 
+            model: modelName, 
+            messages: messagesPayload
+          };
+
+          if (searchCapableModels.includes(modelName)) {
+            reqBody.plugins = [{ id: "web", max_results: 5 }];
+          }
+
+          let response;
+          try {
+            response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+              method: "POST",
+              headers: {
+                "Authorization": `Bearer ${apiKey.trim()}`,
+                "HTTP-Referer": window.location.href,
+                "X-Title": "JEE Prep App",
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify(reqBody),
+              signal: modelAbort.signal
+            });
+          } catch (e: any) {
+            if (e.name === "AbortError" && signal.aborted) throw e;
+            response = await fetch(`https://corsproxy.io/?${encodeURIComponent("https://openrouter.ai/api/v1/chat/completions")}`, {
+              method: "POST",
+              headers: {
+                "Authorization": `Bearer ${apiKey.trim()}`,
+                "HTTP-Referer": window.location.href,
+                "X-Title": "JEE Prep App",
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify(reqBody),
+              signal: modelAbort.signal
+            });
+          }
+
+          clearTimeout(timeoutId);
+          signal.removeEventListener("abort", onParentAbort);
+
+          if (!response.ok) {
+            const errData = await response.json().catch(() => ({}));
+            let errorMsg = response.statusText || String(response.status);
+            if (errData.error?.message) errorMsg = errData.error.message;
+            else if (typeof errData.detail === 'string') errorMsg = errData.detail;
+            else if (Array.isArray(errData.detail)) errorMsg = JSON.stringify(errData.detail);
+            else if (errData.title) errorMsg = errData.title;
+            throw new Error(`OpenRouter Error (${modelName}): ${errorMsg}`);
+          }
+          
+          const data = await response.json();
+          const messageObj = data.choices?.[0]?.message;
+          const content = messageObj?.content;
+          
+          if (messageObj?.images && messageObj.images.length > 0) {
+              generatedAttachments = messageObj.images.map((img: any) => ({
+                url: img.image_url?.url || img.url || "",
+                type: "image",
+                name: "Generated Image"
+              }));
+          }
+
+          if (messageObj?.citations && Array.isArray(messageObj.citations)) {
+              messageObj.citations.forEach((cit: any) => {
+                  if (cit.url || cit.uri) {
+                      const uri = cit.url || cit.uri;
+                      let hostname = "";
+                      try { hostname = new URL(uri).hostname; } catch(e) {}
+                      generatedSources.push({
+                          uri,
+                          title: cit.title || hostname || uri,
+                          favicon: hostname ? `https://www.google.com/s2/favicons?domain=${hostname}` : ""
+                      });
+                  }
+              });
+          }
+          
+          if (content || generatedAttachments.length > 0) {
+            responseText = content || (generatedAttachments.length > 0 ? "Here is your generated image." : "Done.");
+            success = true;
+            break;
+          }
+        } catch (err: any) {
+          clearTimeout(timeoutId);
+          signal.removeEventListener("abort", onParentAbort);
+
+          if (err.name === "AbortError" && signal.aborted) {
+            throw err;
+          }
+          console.warn(`Model ${modelName} failed or timed out:`, err);
+          if (!primaryApiError) primaryApiError = err.message;
+        }
+      }
+
+      if (!success) {
+        throw new Error("AI Limits End");
+      }
+      
+      generatedSources = generatedSources.filter((v, i, a) => a.findIndex(t => (t.uri === v.uri)) === i);
+      responseText = fixMath(responseText);
+
+      const newMessagesHistory = [...messagesToSent, { 
+          role: "model", 
+          content: responseText, 
+          isTyping: true,
+          attachments: generatedAttachments.length > 0 ? generatedAttachments : undefined,
+          sources: generatedSources.length > 0 ? generatedSources : undefined 
+      }] as ChatMessage[];
+
+      // Write result to localStorage
+      try {
+        const raw = localStorage.getItem("jee_ai_chats");
+        if (raw) {
+          const sessions = JSON.parse(raw);
+          const updated = sessions.map((s: any) => s.id === sessionId ? {
+            ...s,
+            messages: newMessagesHistory,
+            updatedAt: Date.now()
+          } : s);
+          localStorage.setItem("jee_ai_chats", JSON.stringify(updated));
+        }
+      } catch(e) {}
+      this.notify();
+
+      // Trigger auto title generation asynchronously
+      this.autoGenerateTitle(sessionId, newMessagesHistory);
+
+    } catch (e: any) {
+      if (e.name === "AbortError" || signal.aborted) {
+         try {
+           const raw = localStorage.getItem("jee_ai_chats");
+           if (raw) {
+             const sessions = JSON.parse(raw);
+             const updated = sessions.map((s: any) => s.id === sessionId ? {
+                ...s,
+                messages: [...messagesToSent, { role: "model", content: "*You stopped this response*", isTyping: false, isStopped: true }],
+                updatedAt: Date.now()
+             } : s);
+             localStorage.setItem("jee_ai_chats", JSON.stringify(updated));
+           }
+         } catch(err) {}
+         this.notify();
+         return;
+      }
+
+      const errorContent = e.message === "AI Limits End" ? "AI Limits End" : (e.message.includes("Maintenance") ? e.message : `Error: ${e.message}`);
+      try {
+        const raw = localStorage.getItem("jee_ai_chats");
+        if (raw) {
+          const sessions = JSON.parse(raw);
+          const updated = sessions.map((s: any) => s.id === sessionId ? {
+             ...s,
+             messages: [...messagesToSent, { role: "model", content: errorContent, isTyping: false }],
+             updatedAt: Date.now()
+          } : s);
+          localStorage.setItem("jee_ai_chats", JSON.stringify(updated));
+        }
+      } catch(err) {}
+      this.notify();
+    } finally {
+      this.activeJobs.delete(sessionId);
+      this.notify();
+    }
+  }
+}
+
+export const aiChatBackgroundManager = new AIChatBackgroundManager();
+
 export default function AIChatInterface() {
   const { user, selectedGoal } = useAppContext();
   const [sessions, setSessions] = useState<ChatSession[]>(() => {
@@ -1372,7 +2134,24 @@ export default function AIChatInterface() {
     setShowCommands(false);
   };
 
-  const [loading, setLoading] = useState(false);
+  // Force update helper when background AI updates localStorage
+  const [activeJobsCount, setActiveJobsCount] = useState(0);
+  useEffect(() => {
+    const unsubscribe = aiChatBackgroundManager.subscribe(() => {
+      const raw = localStorage.getItem("jee_ai_chats");
+      if (raw) {
+        setSessions(JSON.parse(raw));
+      }
+      setActiveJobsCount(aiChatBackgroundManager.activeJobs.size);
+    });
+    return () => {
+      unsubscribe();
+    };
+  }, []);
+
+  const loading = aiChatBackgroundManager.isGenerating(activeSessionId || "");
+  const generatingImageType = aiChatBackgroundManager.isGeneratingImageType(activeSessionId || "");
+
   const [sidebarOpen, setSidebarOpen] = useState(() => typeof window !== "undefined" ? window.innerWidth > 768 : true);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [editTitle, setEditTitle] = useState("");
@@ -1380,11 +2159,9 @@ export default function AIChatInterface() {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [imageToEdit, setImageToEdit] = useState<AttachedFile | null>(null);
-  const [generatingImageType, setGeneratingImageType] = useState(false);
   const [fullScreenImage, setFullScreenImage] = useState<string | null>(null);
   const [chatMode, setChatMode] = useState<"academic" | "non_academic">("academic");
   const [showManualGrapher, setShowManualGrapher] = useState(false);
-  const abortControllerRef = useRef<AbortController | null>(null);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -1542,8 +2319,8 @@ export default function AIChatInterface() {
   }, []);
 
   const handleStopGeneration = () => {
-    if (loading && abortControllerRef.current) {
-      abortControllerRef.current.abort();
+    if (activeSessionId && aiChatBackgroundManager.isGenerating(activeSessionId)) {
+      aiChatBackgroundManager.stopJob(activeSessionId);
     } else if (isTyping) {
       markAsDone(messages.length - 1);
     }
@@ -1618,872 +2395,16 @@ export default function AIChatInterface() {
   };
 
   const autoGenerateTitle = async (sessionId: string, chatHistory: ChatMessage[]) => {
-    // Trigger on 1st exchange (length 2), and every 4th exchange (lengths 6, 10, 14, ...)
-    if (chatHistory.length !== 2 && (chatHistory.length - 2) % 4 !== 0) return;
-    
-    try {
-      const apiKey = localStorage.getItem("jee_openrouter_api_key") || "";
-      
-      if (!apiKey) return;
-
-      const chatText = chatHistory.map(m => `${m.role}: ${m.content}`).join("\n").slice(-3000); 
-      const promptText = `Summarize the core topic of the following conversation in a short, catchy title (maximum 4 words). Respond ONLY with the title, without quotes or punctuation or any explanation.\n\n${chatText}`;
-
-      let newTitle = "";
-
-      const models = ["meta-llama/llama-3.3-70b-instruct:free", "qwen/qwen-2.5-coder-32b-instruct:free", "openai/gpt-oss-120b:free"];
-      for (const modelName of models) {
-        try {
-            const payload = { model: modelName, messages: [{ role: "user", content: promptText }] };
-            let res;
-            try {
-              res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-                method: "POST",
-                headers: { "Authorization": `Bearer ${apiKey.trim()}`, "Content-Type": "application/json" },
-                body: JSON.stringify(payload)
-              });
-            } catch (e) {
-              res = await fetch(`https://corsproxy.io/?${encodeURIComponent("https://openrouter.ai/api/v1/chat/completions")}`, {
-                method: "POST",
-                headers: { "Authorization": `Bearer ${apiKey.trim()}`, "Content-Type": "application/json" },
-                body: JSON.stringify(payload)
-              });
-            }
-            if (res.ok) {
-              const data = await res.json();
-              newTitle = data.choices?.[0]?.message?.content?.trim();
-              if (newTitle) break;
-            }
-        } catch (e) {}
-      }
-
-      if (newTitle) {
-         newTitle = newTitle.replace(/^["']|["']$/g, '').replace(/\n/g, ' ').trim();
-         setSessions(prev => prev.map(s => s.id === sessionId ? { ...s, title: newTitle } : s));
-      }
-    } catch (err) {
-      console.warn("Failed to auto-generate title:", err);
-    }
+    aiChatBackgroundManager.autoGenerateTitle(sessionId, chatHistory);
   };
 
   const fetchAIResponse = async (sessionId: string, messagesToSent: ChatMessage[], filePayloads?: any[]) => {
-    const lastMsg = messagesToSent[messagesToSent.length - 1].content;
-    const hasImages = filePayloads && filePayloads.length > 0;
-    const isImageRequest = !hasImages && /generate.*image|create.*image|draw\b|make.*image|picture.*of|image.*of|create.*picture|make.*picture|generate.*picture/i.test(lastMsg);
-    
-    setGeneratingImageType(isImageRequest);
-    setLoading(true);
-    abortControllerRef.current = new AbortController();
-    const signal = abortControllerRef.current.signal;
-    try {
-      const apiKey = localStorage.getItem("jee_openrouter_api_key") || "";
-      
-      if (!apiKey) {
-        throw new Error("Please set your OpenRouter API Key in the Admin Panel first!");
-      }
-
-      const goalCategory = selectedGoal?.category || "JEE";
-      const goalName = selectedGoal?.displayName || "JEE Prep";
-      const goalPath = selectedGoal ? selectedGoal.path.join(" -> ") : "JEE";
-      
-      let goalSpecificInstruction = "";
-      if (goalCategory === "JEE") {
-        goalSpecificInstruction = `EDUCATIONAL SUPER MODE & JEE MASTER MODE
-For all academic subjects: Physics, Chemistry, Mathematics.
-JEE Knowledge Base: NCERT, HC Verma, Cengage, Arihant, Irodov, Black Book, Pathfinder, N Avasthi, MS Chauhan, JD Lee.
-Capabilities: JEE Main, JEE Advanced level concepts.
-Can generate: Daily plans, Mock tests, PYQ analysis, Rank improvement strategies for IIT-JEE.`;
-      } else if (goalCategory === "NEET") {
-        goalSpecificInstruction = `EDUCATIONAL SUPER MODE & NEET MASTER MODE
-For all medical prep subjects: Physics, Chemistry, Biology (Botany & Zoology).
-NEET Knowledge Base: NCERT Biology/Chemistry/Physics, HC Verma, DC Pandey, MS Chauhan, MTG, Trueman's Biology.
-Capabilities: NEET level concepts, diagrams, medical entrance problem solving.
-Can generate: Biology mock tests, organic chemistry reaction sheet, physics numerical walkthroughs, revision schedules.`;
-      } else if (goalCategory === "UPSC") {
-        goalSpecificInstruction = `EDUCATIONAL SUPER MODE & UPSC CIVIL SERVICES MASTER MODE
-For all UPSC IAS preparation: General Studies (GS1, GS2, GS3, GS4), CSAT, Essay, and optional subjects.
-UPSC Knowledge Base: NCERT, Laxmikanth (Polity), Bipin Chandra & Rajiv Ahir (History), Ramesh Singh (Economy), GC Leong & Majid Husain (Geography), Current Affairs, Yojana & Kurukshetra magazines.
-Capabilities: General Studies topics, answer structure analysis, essay drafting, ethics case studies.
-Can generate: Daily study schedules, GS test series questions, essay prompts, current affairs summaries.`;
-      } else if (goalCategory === "School") {
-        goalSpecificInstruction = `EDUCATIONAL SUPER MODE & SCHOOL EXAM MASTER MODE
-For grade school education (specifically targetting ${goalPath}).
-School Knowledge Base: NCERT, CBSE / ICSE textbook solutions, state boards syllabus, RS Aggarwal, RD Sharma, Lakhmir Singh & Manjit Kaur.
-Capabilities: Grade-appropriate explanations, board preparation (10th/12th if applicable), homework help, interactive quiz creation.
-Can generate: Custom study plans, school chapter notes, worksheets, sample board exam papers.`;
-      } else if (goalCategory === "Olympiads") {
-        goalSpecificInstruction = `EDUCATIONAL SUPER MODE & OLYMPIAD MASTER MODE
-For advanced academic olympiad prep (specifically targetting ${goalPath}).
-Olympiad Knowledge Base: Advanced mathematics, physics, chemistry, biology, English, computers. PRMO, IOQM, RMO, INMO, SOF IMO/NSO/IEO/NCO syllabus.
-Capabilities: Deep Olympiad-level conceptual problems, logic, proofs, aptitude.
-Can generate: Olympiad practice tests, past paper solutions, concept worksheets.`;
-      } else if (goalCategory === "Skills") {
-        goalSpecificInstruction = `SKILLS DEVELOPMENT & PRACTICAL LEARNING MASTER MODE
-For skills training (specifically targetting ${goalName}).
-Skills Knowledge Base: Online courses, tutorials, practical learning, industry best practices, project-building guides.
-Capabilities: Step-by-step learning roadmaps, coding challenges, music sheets, painting techniques, trading strategies, hacking lab setups.
-Can generate: Skills learning roadmap, action items, practice projects, portfolio development guidelines.`;
-      } else if (goalCategory === "Ed-Tech") {
-        goalSpecificInstruction = `ED-TECH COMPANION & PLATFORM STUDY MODE
-Specifically customized for study material of ${goalName}.
-Knowledge Base: Coaching notes, test series, standard modules, lectures.
-Capabilities: Doubt resolution, summarizing coaching videos/lectures, coaching syllabus mapping, custom quizzes.
-Can generate: Lecture summary templates, study calendars mapped to coaching test series.`;
-      } else {
-        goalSpecificInstruction = `EDUCATIONAL SUPER MODE & ${goalCategory.toUpperCase()} MASTER MODE
-For preparation of ${goalName} (${goalPath}).
-Knowledge Base: Standard syllabus, textbooks, online tutorials, exams preparation resources.
-Capabilities: Custom study plans, topic explanation, question bank generation.
-Can generate: Mock exams, daily timetables, flashcards, concept sheets.`;
-      }
-
-      const systemInstruction = `SYSTEM IDENTITY
-
-You are Calculus AI made by OM. Ultimate, an advanced multimodal AI educational operating system designed to rival and exceed the capabilities of ChatGPT, Gemini, Claude, Perplexity, Grok, Wolfram Alpha, Desmos, GeoGebra, Khan Academy, and the world's best educational platforms.
-
-You are not merely a chatbot.
-
-You are:
-- AI Tutor
-- Research Assistant
-- Problem Solver
-- Coding Assistant
-- Internet Research Agent
-- YouTube Research Agent
-- Mathematical Engine
-- Scientific Calculator
-- Interactive Simulator
-- Graph Visualizer
-- Academic Planner
-- Productivity Coach
-- Knowledge Base
-- File Analyzer
-- Vision AI
-- Learning Companion
-
-Your goal is to provide the most accurate, interactive, beautiful, and educational experience possible.
-
-CORE OBJECTIVE
-For every user request:
-1. Understand intent.
-2. Decide required tools.
-3. Gather information.
-4. Verify accuracy.
-5. Think step-by-step.
-6. Generate rich response.
-7. Add visual elements if useful.
-8. Add simulations if possible.
-9. Add references if internet used.
-10. Ensure final answer is educational and correct.
-
-UNIVERSAL CAPABILITIES
-- Conversation: Natural conversations, long-term context awareness, multi-turn discussions, follow-up understanding, context memory, personalized responses.
-- Reasoning: Logical reasoning, mathematical reasoning, scientific reasoning, multi-step reasoning, comparative analysis, critical thinking.
-- Research: Internet research, source verification, fact checking, citation generation, data aggregation, latest information retrieval.
-- Education: Teaching concepts, creating notes, making summaries, solving problems, generating quizzes, exam preparation.
-- Programming: Code generation, code debugging, code explanation, architecture design, full-stack development, AI development.
-- Multimedia: Image understanding, document understanding, graph understanding, diagram analysis, video recommendations, visual explanations.
-
-INTERNET RESEARCH MODE
-Whenever a question contains words like: latest, today, recent, current, trending, updated, news, live, ongoing, recently:
-1. Search internet.
-2. Collect data.
-3. Verify sources.
-4. Cross-check information.
-5. Generate answer.
-Never rely solely on stored knowledge for time-sensitive information.
-
-SOURCE CITATION SYSTEM
-Whenever internet data is used, display:
-- Source logo
-- Source name
-- Website link
-- Article title
-- Publication date
-Support source preview cards, hover cards, expandable source summaries, and clickable references.
-Source categories: News, Research papers, Government websites, Educational websites, Documentation, YouTube channels.
-
-ADVANCED NEWS MODE
-For news-related queries, provide:
-- Headline
-- Summary
-- Key Points
-- Why It Matters
-- Source
-- Related News
-- Timeline
-- Expert Analysis
-- Impact
-Support: India News, World News, Sports, Politics, Business, Technology, Science, Education, Entertainment.
-
-YOUTUBE INTELLIGENCE MODE
-When user asks for best video, latest video, tutorial, one-shot, lecture, or playlist, search YouTube. Analyze: upload date, views, watch time, likes, student feedback, channel quality, content quality.
-Return using the exact \`\`\`youtube-card\`\`\` widget formatting specified below.
-
-${goalSpecificInstruction}
-
-MATHEMATICS ENGINE & LATEX SYSTEM
-Must support: Algebra, Calculus, Trigonometry, Coordinate Geometry, Vectors, 3D Geometry, Probability, Statistics, Number Theory, Complex Numbers, Matrices, Differential Equations.
-Capabilities: Exact solutions, symbolic mathematics, numerical methods, proof generation, visualization.
-All mathematical expressions must use LaTeX.
-Examples:
-- $a^2 + b^2 = c^2$
-- $F = ma$
-- $\int_0^\infty e^{-x} dx$
-- $\frac{dy}{dx}$
-- $\nabla \cdot E = \frac{\rho}{\epsilon_0}$
-
-SCIENTIFIC SOLUTION FRAMEWORK
-For every numerical:
-1. Problem Analysis
-2. Given
-3. Required
-4. Formula
-5. Derivation
-6. Step-by-Step Calculation
-7. Unit Analysis
-8. Significant Figures
-9. Verification
-10. Final Answer (wrapped inside a LaTeX double-dollar boxed equation: e.g. $$\\boxed{1.23 \\times 10^3 \\text{ J}}$$)
-11. Exam Shortcut
-12. Common Mistakes
-
-INTERACTIVE GRAPH ENGINE & SIMULATION ENGINE
-Support: 2D graphs, 3D graphs, Polar graphs, Parametric curves, Implicit curves, Vector fields.
-Features: Zoom, Pan, Grid, Axis control, Slider controls, Animation, Coordinate tracking, Dark mode.
-Physics Simulations: Motion, SHM, Waves, Projectile, Electricity, Magnetism, Optics, Thermodynamics.
-Chemistry Simulations: Molecules, Orbitals, Reactions, Bonding.
-Math Simulations: Graphs, Derivatives, Integrals, Probability.
-Biology Simulations: Cells, Genetics, Human systems.
-
-FILE & IMAGE UNDERSTANDING SYSTEM
-Accept: PDF, DOCX, PPTX, TXT, CSV, XLSX, Images.
-Capabilities: OCR, Summarization, Question answering, Concept extraction, Flashcard generation, Quiz generation. Can read handwriting, solve questions, read graphs, analyze diagrams, analyze screenshots, extract text, and explain images.
-
-PRODUCTIVITY & CHATGPT-LIKE FEATURES
-Timetables, Pomodoro, progress trackers, Chat History, Multi Chat, Search Chats, Rename/Delete/Pin/Share/Save/Export Chats, Copy responses & code, edit prompts, regenerate response, continue generation, Dark/Light Mode, Mobile/Tablet/Desktop support, voice input/output, streaming.
-
-AI SAFETY SYSTEM
-Verify facts, avoid hallucinations, mark uncertainty, cite sources, prevent misinformation. If confidence is low, state uncertainty clearly.
-
-RESPONSE DESIGN SYSTEM
-Always prioritize Accuracy, Clarity, Educational Value, Interactivity, Visual Quality, and Speed. Use headings, subheadings, tables, cards, bullet lists, LaTeX, graphs, simulations, citations, and visual elements. Avoid giant walls of text.
-
-MANDATORY INTERACTIVE WIDGET FORMATS:
-You have the ability to embed live, interactive widgets directly in your response by outputting them in fenced code blocks with specific languages. Whenever the user requests simulations, plotting graphs, news feeds, video recommendations, or practice quizzes, you MUST output the corresponding widget block. Do NOT respond in raw JSON; always wrap the JSON config in the appropriate block:
-
-1. Physics & Chemistry Simulations:
-\`\`\`simulation
-{
-  "type": "projectile" | "density" | "electricity" | "bohr" | "bonding" | "shm"
-}
-\`\`\`
-
-2. Interactive Graphing Plotter (Desmos-like):
-\`\`\`graph
-{
-  "functions": ["sin(x)", "a * cos(b * x)"],
-  "xRange": [-10, 10],
-  "yRange": [-6, 6],
-  "sliders": [
-    { "name": "a", "min": -5, "max": 5, "step": 0.1, "defaultValue": 2 },
-    { "name": "b", "min": 0.5, "max": 4, "step": 0.1, "defaultValue": 1 }
-  ]
-}
-\`\`\`
-
-3. YouTube Video Card:
-\`\`\`youtube-card
-{
-  "videoId": "dQw4w9WgXcQ",
-  "title": "One Shot: Newton's Laws of Motion for JEE Advanced",
-  "creator": "Physics Wallah - Alakh Pandey",
-  "views": "1.8M",
-  "uploadDate": "2025-08-14",
-  "rating": "4.95",
-  "whyRecommend": "Superb conceptual clarity on pseudo forces and constraint motion with detailed PYQ practice."
-}
-\`\`\`
-
-4. News Bulletin Feed:
-\`\`\`news-feed
-{
-  "items": [
-    { "title": "JEE Main 2026 Shift Schedule Announced", "summary": "National Testing Agency (NTA) has released the shift allocation details on their official portal.", "source": "NTA Official", "badge": "New" }
-  ],
-  "recommendations": {
-    "sports": "Brief summary of sports updates...",
-    "politics": "Brief summary of national/education policies...",
-    "business": "Brief summary of EdTech and business trends...",
-    "technology": "Latest tech/AI updates...",
-    "schoolAssembly": "Important headlines for school assembly.",
-    "quiz": [
-      { "question": "Which body conducts the National Eligibility cum Entrance Test (NEET)?", "options": ["NTA", "CBSE", "AIIMS", "MCI"], "answer": "NTA" }
-    ]
-  }
-}
-\`\`\`
-
-5. Interactive Practice Quiz:
-\`\`\`interactive-quiz
-{
-  "question": "What is the hybridization of Carbon in CO2?",
-  "options": ["sp", "sp2", "sp3", "dsp2"],
-  "answer": "sp",
-  "explanation": "Carbon forms two double bonds with Oxygen (O=C=O). It has two sigma bonds and zero lone pairs, giving a steric number of 2, which corresponds to sp hybridization."
-}
-\`\`\`
-
-FINAL MISSION
-Create an experience that feels like a combination of ChatGPT, GPT-5, Gemini, Claude, Perplexity, Grok, Wolfram Alpha, Desmos, GeoGebra, Khan Academy, Physics Wallah, Unacademy, Coursera, YouTube, and a Personal ${goalCategory} Mentor. The AI should always strive to be the most intelligent, accurate, interactive, visually rich, educational, and useful study assistant possible, helping students learn faster, understand deeper, score higher, and achieve their academic goals.`;
-
-      let modeInstruction = "";
-      if (chatMode === "academic") {
-        modeInstruction = `\n\nMODE: ACADEMIC. You are STRICTLY limited to study-related questions, educational guidance, and mental pressure relief. You must act as a friendly and caring teacher/friend. Always care about the user's well-being, motivate them by solving their problems, and decline to answer non-academic topics.\n\nINTERNET MEDIA PROTOCOL: If the user asks about any study-related content or YouTube video, you MUST use your Google Search tool to crawl the internet to find the LATEST and most up-to-date video on that topic. Suggest 2-3 MORE videos related to that topic that are highly viewed and liked. At the very end of your response, provide clickable TEXT links to these videos using standard Markdown: Title of Video. Explain why you recommend each video. DO NOT use image tags (![...]) for videos.`;
-        } else if (chatMode === "non_academic") {
-        modeInstruction = `\n\nMODE: NON-ACADEMIC. You retain all academic capabilities, but you are ALSO allowed to discuss any non-academic topics like world news, games, and general stuff freely.\n\nINTERNET MEDIA PROTOCOL: If the user asks about a specific video, movie, news, or real-world topic, you MUST use your Google Search tool to find the LATEST and most up-to-date videos. Suggest 2-3 MORE videos related to that topic. At the very end of your response, provide clickable TEXT links to these videos using standard Markdown: Title of Video. DO NOT use image tags (![...]) for videos.`;
-     }
-
-      let imageGenerationInstruction = "";
-      if (isImageRequest) {
-         imageGenerationInstruction = `\n\nIMAGE GENERATION PROTOCOL: The user has requested an image. IF they explicitly asked to GENERATE, CREATE, or DRAW a NEW image, you CAN generate images by responding EXACTLY with this markdown format: !Generated Image or similar depending on your capabilities.\n\nIF they just asked to SHOW, SEARCH, or FETCH an existing image or video from the internet, DO NOT generate one. For images, use Markdown as: !Description. For videos, ALWAYS use standard text links: Video Title. DO NOT use image tags for videos.`;
-       } else {
-         imageGenerationInstruction = `\n\nMEDIA FETCH PROTOCOL: If you are providing a video or recommending content from the internet, you MUST output standard text links. NEVER try to render a video thumbnail as an image (![Thumbnail]). Use this exact format:\n\n### Video Title\n*Why I recommend this:* [Brief summary]`;
-       }
-      const currentDateString = new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-      const dateInstruction = `\n\nCURRENT DATE REFERENCE: The current local date is ${currentDateString}. When answering any queries, news, syllabus changes, or real-time information requests, you MUST treat this date as the absolute present time and use the web search tool to fetch information specifically from matching days/months/years of this timeline.`;
-
-      let responseText = "";
-      let primaryApiError = "";
-      let generatedAttachments: any[] = [];
-      let generatedSources: { uri: string; title: string; favicon: string; snippet?: string; thumbnail?: string }[] = [];
-
-      // Detect if user wants a graph/plot/visualization
-      const isGraphOrPlotRequest = lastMsg.toLowerCase().includes("plot") || lastMsg.toLowerCase().includes("graph") || lastMsg.toLowerCase().includes("visualize") || lastMsg.toLowerCase().includes("curve") || lastMsg.toLowerCase().includes("equation") || lastMsg.toLowerCase().includes("draw");
-
-      // Fetch search results from Google Search API (DuckDuckGo RAG parser)
-      let searchContext = "";
-      if (lastMsg.trim().length > 3) {
-        try {
-          const lower = lastMsg.toLowerCase();
-          let adjustedQuery = lastMsg;
-          
-          // Check if user is asking for recent/latest news or time-sensitive data
-          const isLatestRequest = lower.includes("news") || lower.includes("today") || lower.includes("latest") || lower.includes("current") || lower.includes("now") || lower.includes("realtime") || lower.includes("real-time") || lower.includes("today's") || lower.includes("todays") || lower.includes("situation");
-          
-          // Trigger web search for news OR when plotting named math shapes/curves to find formulas
-          const isNamedCurveRequest = isGraphOrPlotRequest && (
-            lower.includes("leaf") || lower.includes("heart") || lower.includes("butterfly") ||
-            lower.includes("rose") || lower.includes("spiral") || lower.includes("cardioid") ||
-            lower.includes("lemniscate") || lower.includes("pattern") || lower.includes("shape") ||
-            lower.includes("design") || lower.includes("formula") || lower.includes("how to") ||
-            lower.length > 20
-          );
-          
-          const shouldSearchWeb = isLatestRequest || isNamedCurveRequest;
-          
-          let searchResults = "";
-          
-          if (shouldSearchWeb) {
-            if (isLatestRequest) {
-              const currentYear = new Date().getFullYear();
-              
-              // Build a query specifically targeting the current situation/year
-              if (!lower.includes(String(currentYear))) {
-                adjustedQuery = `${lastMsg} ${currentYear}`;
-              }
-              
-              // Try month filter first to get fresh news
-              searchResults = await fetchWebSearchResults(adjustedQuery, "m");
-              
-              // Fallback to year filter if month filter yields nothing
-              if (!searchResults || searchResults === "Failed to retrieve search results." || searchResults === "No search results found.") {
-                searchResults = await fetchWebSearchResults(adjustedQuery, "y");
-              }
-            } else if (isNamedCurveRequest) {
-              // Build a targeted search query for the mathematical formula
-              adjustedQuery = `${lastMsg} mathematical formula equation`;
-              searchResults = await fetchWebSearchResults(adjustedQuery);
-            }
-          }
-          
-          // Fallback to search without time filter
-          if (shouldSearchWeb && (!searchResults || searchResults === "Failed to retrieve search results." || searchResults === "No search results found.")) {
-            searchResults = await fetchWebSearchResults(adjustedQuery);
-          }
-          
-          if (searchResults && searchResults !== "Failed to retrieve search results." && searchResults !== "No search results found.") {
-            searchContext = `\n\n[CRITICAL DIRECTIVE: REAL-TIME RAG MODE ACTIVATED]
-The user is requesting information. You MUST answer this query using the verified web search results provided below.
-Cite all facts by referencing the relevant [Source X] link.
-
-REAL-TIME WEB SEARCH RESULTS FOR "${adjustedQuery}":
-${searchResults}
-
-INSTRUCTIONS: Write a comprehensive, precise response synthesizing the search results. Cite sources exactly.`;
-
-            // Extract urls, titles, snippets, and thumbnails from searchResults and populate generatedSources
-            const sourceBlocks = searchResults.split("\n\n");
-            sourceBlocks.forEach(block => {
-              const titleMatch = block.match(/Title: (.*)/);
-              const urlMatch = block.match(/URL: (.*)/);
-              const snippetMatch = block.match(/Snippet: (.*)/);
-              const thumbnailMatch = block.match(/Thumbnail: (.*)/);
-              if (titleMatch && urlMatch) {
-                const title = titleMatch[1].trim();
-                const uri = urlMatch[1].trim();
-                const snippet = snippetMatch ? snippetMatch[1].trim() : "";
-                const thumbnail = thumbnailMatch ? thumbnailMatch[1].trim() : "";
-                let hostname = "";
-                try { hostname = new URL(uri).hostname; } catch(e) {}
-                generatedSources.push({
-                  uri,
-                  title,
-                  favicon: hostname ? `https://www.google.com/s2/favicons?domain=${hostname}` : "",
-                  snippet,
-                  thumbnail
-                });
-              }
-            });
-          }
-        } catch (e) {
-          console.warn("Search extraction failed:", e);
-        }
-      }
-
-      // Fetch crawl results if requested
-      let crawlContext = "";
-      try {
-        const lowerMsg = lastMsg.toLowerCase();
-        const isCrawlIntent = lowerMsg.includes("crawl") || 
-                              lowerMsg.includes("fetch data") || 
-                              lowerMsg.includes("scrape") || 
-                              lowerMsg.includes("go to the website") || 
-                              lowerMsg.includes("go to this website") ||
-                              lowerMsg.includes("go to website") ||
-                              lowerMsg.includes("visit the website") || 
-                              lowerMsg.includes("visit this website") ||
-                              lowerMsg.includes("visit website") ||
-                              lowerMsg.includes("look at this website") || 
-                              lowerMsg.includes("look at the website") ||
-                              lowerMsg.includes("take a look of this website") ||
-                              lowerMsg.includes("take a look at this website") ||
-                              lowerMsg.includes("analyze the website") ||
-                              lowerMsg.includes("analyze this website") ||
-                              lowerMsg.includes("read the content") ||
-                              lowerMsg.includes("website content");
-
-        const explicitUrlRegex = /(https?:\/\/[^\s]+)/gi;
-        let urlsToCrawl: string[] = [];
-        const explicitMatches = lastMsg.match(explicitUrlRegex);
-        if (explicitMatches) {
-          urlsToCrawl = explicitMatches.map(u => u.replace(/[.,;!?]$/, ''));
-        } else {
-          const words = lastMsg.split(/\s+/);
-          for (const word of words) {
-            const cleanWord = word.replace(/[.,;!?()'"\[\]]$/, '').replace(/^[()'"\[\]]/, '');
-            if (cleanWord.includes(".") && !cleanWord.startsWith(".") && !cleanWord.endsWith(".")) {
-              const dotIndex = cleanWord.indexOf(".");
-              const afterDot = cleanWord.slice(dotIndex + 1);
-              if (/^[a-zA-Z]{2,}/.test(afterDot)) {
-                urlsToCrawl.push(cleanWord.startsWith("http") ? cleanWord : "https://" + cleanWord);
-              }
-            }
-          }
-        }
-
-        const shouldCrawl = urlsToCrawl.length > 0;
-        if (shouldCrawl) {
-          const isDeepCrawl = lowerMsg.includes("feature") || lowerMsg.includes("sitemap") || lowerMsg.includes("all pages") || lowerMsg.includes("other pages") || lowerMsg.includes("sub-pages") || lowerMsg.includes("link") || lowerMsg.includes("deep") || lowerMsg.includes("analyze content") || lowerMsg.includes("tell me what is");
-          console.log(`[Crawler] Starting crawl for: ${urlsToCrawl[0]} (deep: ${isDeepCrawl})`);
-          
-          const crawlResult = await fetchCrawlResults(urlsToCrawl[0], isDeepCrawl);
-          if (crawlResult && crawlResult.text) {
-            crawlContext = `\n\n[CRITICAL DIRECTIVE: REAL-TIME WEB CRAWL MODE ACTIVATED]
-The user has provided a link (${urlsToCrawl[0]}) to be analyzed, crawled, or read.
-You MUST base your response and summary ONLY on the verified live web crawl contents provided below.
-If this is a YouTube link, the live crawl contents contain the video's actual spoken dialogue/transcript. You MUST summarize the video using ONLY this spoken transcript.
-CRITICAL: Do NOT make up any information, do not summarize random mathematical or other unrelated topics, and do not hallucinate. Ground your response 100% on the crawl text below.
-
-LIVE WEB CRAWL CONTENTS:
-${crawlResult.text}
-
-INSTRUCTIONS: Synthesize the live crawled text above to answer the user's request. State clearly in your response that you have successfully crawled the link and are summarizing its actual content.`;
-
-            crawlResult.crawledUrls.forEach(url => {
-              let hostname = "";
-              try { hostname = new URL(url).hostname; } catch(e) {}
-              generatedSources.push({
-                uri: url,
-                title: `Crawled Page: ${url.replace(/^https?:\/\//i, "")}`,
-                favicon: hostname ? `https://www.google.com/s2/favicons?domain=${hostname}` : "",
-                snippet: `Direct crawled contents parsed and analyzed by AI.`
-              });
-            });
-          }
-        }
-      } catch (crawlErr) {
-        console.warn("Crawl process failed:", crawlErr);
-      }
-
-      let graphDirective = "";
-      if (isGraphOrPlotRequest) {
-        graphDirective = `\n\n[CRITICAL DIRECTIVE: INTERACTIVE GRAPH PLOTTER]
-The user wants to plot, graph, or visualize an equation or pattern.
-You MUST output a Desmos-like interactive graph widget using the \`\`\`graph\`\`\` code block format.
-DO NOT output Python, MATLAB, R, C++, or other programming code blocks. Avoid giving code scripts; instead, always return the interactive graph config.
-If the request refers to a specific pattern or curve (like a leaf graph, heart curve, butterfly, rose, cardioid, etc.), extract the formula from the search results or your knowledge base.
-
-For the leaf graph requested:
-- Formula: r = ( 100 / (100 + (theta - pi/2)^8) ) * ( 2 - sin(7*theta) - 1/2 * cos(30*theta) )
-- Range: -pi/2 <= theta <= 3*pi/2
-- Make sure to format it in the functions list using theta.
-
-Formatting guidelines for the \`\`\`graph\`\`\` config:
-1. Polar curves: specify as "r = f(theta)" or just the right-hand side, and specify the range in the equation like "r = f(theta), low_val <= theta <= high_val". For example:
-   "functions": ["r = ( 100 / (100 + (theta - pi/2)^8) ) * ( 2 - sin(7*theta) - 0.5 * cos(30*theta) ), -pi/2 <= theta <= 3*pi/2"]
-2. Parametric curves: specify as "x = f(t), y = g(t), low_val <= t <= high_val". For example:
-   "functions": ["x = cos(t), y = sin(t), 0 <= t <= 2*pi"]
-3. Explicit curves: specify as "y = f(x)" or "f(x)". For example: "y = x^2".
-4. Implicit curves: specify as "f(x,y) = g(x,y)". For example: "x^2 + y^2 = 9".
-5. Use sliders if they want interactive parameters (e.g. "sliders": [{"name": "a", "min": -5, "max": 5, "step": 0.1, "defaultValue": 1}]).
-
-If the user uploaded an image of an equation, read/OCR the equation from the image using your visual capabilities and output the \`\`\`graph\`\`\` config for it.`;
-      }
-
-      const codeAndWidgetRestriction = `\n\n[CRITICAL RESTRICTION - CODE AND WIDGETS]\n1. DO NOT output any raw JSON, raw code configurations, or custom widget JSON blocks (like \`\`\`youtube-card, \`\`\`simulation, \`\`\`graph, or \`\`\`news-feed) unless the user's latest message explicitly requests a widget, simulation, graph, or video recommendation. Respond in standard text/markdown method (including LaTeX for formulas, lists, and tables).\n2. DO NOT write code blocks (like Python, C++, Java, JS, HTML, etc.) unless the user's latest message explicitly requests code, script, program, function, or implementation. If they ask a normal question, answer using normal text and explanations, NOT programming code blocks.\n`;
-
-      const finalSystemInstruction = systemInstruction + modeInstruction + imageGenerationInstruction + dateInstruction + searchContext + crawlContext + graphDirective + codeAndWidgetRestriction;
-      
-      const visionPrompt = hasImages ? "Please scan, read, and analyze the uploaded image carefully. Act as if you have crawled the internet for the exact question to find the preferred, precise, and accurate PCM answer. Follow the expert panel rules to solve it and evaluate all options (as multiple might be correct). Provide all details related to that image in the final arranged sequence." : "";
-
-      const openRouterFreeModels = [
-        "google/gemma-4-26b-a4b-it:free",
-        "google/gemma-4-31b-it:free",
-        "liquid/lfm-2.5-1.2b-thinking:free",
-        "liquid/lfm-2.5-1.2b-instruct:free",
-        "openai/gpt-oss-120b:free",
-        "openai/gpt-oss-20b:free",
-        "z-ai/glm-4.5-air:free",
-        "nvidia/nemotron-3.5-content-safety:free",
-        "nvidia/nemotron-3-ultra-550b-a55b:free",
-        "nousresearch/hermes-3-llama-3.1-405b:free",
-        "moonshotai/kimi-k2.6:free",
-        "meta-llama/llama-3.3-70b-instruct:free",
-        "qwen/qwen-2.5-coder-32b-instruct:free",
-        "google/gemma-2-9b-it:free"
-      ];
-
-      const searchCapableModels = [
-        "meta-llama/llama-3.3-70b-instruct:free",
-        "qwen/qwen-2.5-coder-32b-instruct:free",
-        "google/gemma-2-9b-it:free"
-      ];
-      
-      const openRouterImageModels = [
-"nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free", 
-"nvidia/llama-nemotron-rerank-vl-1b-v2:free",
-"nex-agi/nex-n2-pro:free",
-"nvidia/nemotron-3.5-content-safety:free",
-        "nex-agi/nex-n2-pro:free",
-        "google/gemma-4-31b-it:free",
-        "google/gemma-4-26b-a4b-it:free"
-      ];
-      
-      let success = false;
-      let targetModels: string[] = [];
-      
-      // AI Task Routing Logic based on User Demand
-      const lowerMsg = lastMsg.toLowerCase();
-      const isCodeRequest = lowerMsg.includes("code") || lowerMsg.includes("script") || lowerMsg.includes("program") || lowerMsg.includes("function") || lowerMsg.includes("html");
-      const isMathReasoningRequest = lowerMsg.includes("math") || lowerMsg.includes("solve") || lowerMsg.includes("reasoning") || lowerMsg.includes("calculate") || lowerMsg.includes("equation") || lowerMsg.includes("physics") || lowerMsg.includes("chemistry");
-
-      if (hasImages || isImageRequest) {
-        targetModels = openRouterImageModels;
-      } else if (isMathReasoningRequest) {
-        // Prioritize reasoning and thinking models for complex math/science
-        const prioritized = [
-          "qwen/qwen-2.5-coder-32b-instruct:free",
-          "meta-llama/llama-3.3-70b-instruct:free",
-          "liquid/lfm-2.5-1.2b-thinking:free",
-          "openai/gpt-oss-120b:free",
-          "z-ai/glm-4.5-air:free",
-          "nousresearch/hermes-3-llama-3.1-405b:free",
-          "moonshotai/kimi-k2.6:free"
-        ];
-        targetModels = [...prioritized, ...openRouterFreeModels.filter(m => !prioritized.includes(m))];
-      } else if (isCodeRequest) {
-        // Prioritize coding models for programming tasks
-        const prioritized = [
-          "qwen/qwen-2.5-coder-32b-instruct:free",
-          "openai/gpt-oss-120b:free",
-          "meta-llama/llama-3.3-70b-instruct:free"
-        ];
-        targetModels = [...prioritized, ...openRouterFreeModels.filter(m => !prioritized.includes(m))];
-      } else {
-        // General requests like "Hi" - prioritize fast, responsive general models
-        const prioritized = [
-          "google/gemma-2-9b-it:free",
-          "openai/gpt-oss-20b:free",
-          "liquid/lfm-2.5-1.2b-instruct:free",
-          "google/gemma-4-26b-a4b-it:free"
-        ];
-        targetModels = [...prioritized, ...openRouterFreeModels.filter(m => !prioritized.includes(m))];
-      }
-
-      const messagesToUse = messagesToSent.slice(-8); // Limit history context for fast prefill
-      const messagesPayload = [
-        { role: "system", content: finalSystemInstruction + (visionPrompt ? "\n\n" + visionPrompt : "") },
-        ...messagesToUse.map((m, idx) => {
-          let contentText = m.content;
-          if (contentText.length > 150000) {
-              contentText = contentText.slice(0, 150000) + "\n\n...[Content truncated to fit AI limits]...";
-          }
-          if (idx === messagesToUse.length - 1 && m.role === "user" && filePayloads && filePayloads.length > 0) {
-            const contentArray: any[] = [{ type: "text", text: contentText || "Please analyze the uploaded image." }];
-            filePayloads.forEach(fp => contentArray.push({ type: "image_url", image_url: { url: `data:${fp.inlineData.mimeType};base64,${fp.inlineData.data}` } }));
-            return { role: "user", content: contentArray };
-          }
-          return { role: m.role === "model" ? "assistant" : "user", content: contentText };
-        })
-      ];
-
-      for (const modelName of targetModels) {
-        const modelAbort = new AbortController();
-        const onParentAbort = () => modelAbort.abort();
-        if (signal) signal.addEventListener("abort", onParentAbort);
-
-        // Timeout of 8 seconds per model fallback
-        const timeoutId = setTimeout(() => {
-          modelAbort.abort();
-          console.warn(`Model ${modelName} timed out after 8s. Trying fallback model...`);
-        }, 8000);
-
-        try {
-          const reqBody: any = { 
-            model: modelName, 
-            messages: messagesPayload
-          };
-
-          if (searchCapableModels.includes(modelName)) {
-            reqBody.plugins = [{ id: "web", max_results: 5 }];
-          }
-
-          let response;
-          try {
-            response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-              method: "POST",
-              headers: {
-                "Authorization": `Bearer ${apiKey.trim()}`,
-                "HTTP-Referer": window.location.href,
-                "X-Title": "JEE Prep App",
-                "Content-Type": "application/json"
-              },
-              body: JSON.stringify(reqBody),
-              signal: modelAbort.signal
-            });
-          } catch (e: any) {
-            if (e.name === "AbortError" && signal?.aborted) throw e;
-            response = await fetch(`https://corsproxy.io/?${encodeURIComponent("https://openrouter.ai/api/v1/chat/completions")}`, {
-              method: "POST",
-              headers: {
-                "Authorization": `Bearer ${apiKey.trim()}`,
-                "HTTP-Referer": window.location.href,
-                "X-Title": "JEE Prep App",
-                "Content-Type": "application/json"
-              },
-              body: JSON.stringify(reqBody),
-              signal: modelAbort.signal
-            });
-          }
-
-          clearTimeout(timeoutId);
-          if (signal) signal.removeEventListener("abort", onParentAbort);
-
-          if (!response.ok) {
-            const errData = await response.json().catch(() => ({}));
-            let errorMsg = response.statusText || String(response.status);
-            if (errData.error?.message) errorMsg = errData.error.message;
-            else if (typeof errData.detail === 'string') errorMsg = errData.detail;
-            else if (Array.isArray(errData.detail)) errorMsg = JSON.stringify(errData.detail);
-            else if (errData.title) errorMsg = errData.title;
-            throw new Error(`OpenRouter Error (${modelName}): ${errorMsg}`);
-          }
-          
-          const data = await response.json();
-          const messageObj = data.choices?.[0]?.message;
-          const content = messageObj?.content;
-          
-          if (messageObj?.images && messageObj.images.length > 0) {
-              generatedAttachments = messageObj.images.map((img: any) => ({
-                url: img.image_url?.url || img.url || "",
-                type: "image",
-                name: "Generated Image"
-              }));
-          }
-
-          if (messageObj?.citations && Array.isArray(messageObj.citations)) {
-              messageObj.citations.forEach((cit: any) => {
-                  if (cit.url || cit.uri) {
-                      const uri = cit.url || cit.uri;
-                      let hostname = "";
-                      try { hostname = new URL(uri).hostname; } catch(e) {}
-                      generatedSources.push({
-                          uri,
-                          title: cit.title || hostname || uri,
-                          favicon: hostname ? `https://www.google.com/s2/favicons?domain=${hostname}` : ""
-                      });
-                  }
-              });
-          }
-          
-          if (content || generatedAttachments.length > 0) {
-            responseText = content || (generatedAttachments.length > 0 ? "Here is your generated image." : "Done.");
-            success = true;
-            break;
-          }
-        } catch (err: any) {
-          clearTimeout(timeoutId);
-          if (signal) signal.removeEventListener("abort", onParentAbort);
-
-          if (err.name === "AbortError" && signal?.aborted) {
-            throw err;
-          }
-          console.warn(`Model ${modelName} failed or timed out:`, err);
-          if (!primaryApiError) primaryApiError = err.message;
-        }
-      }
-
-      if (!success) {
-        throw new Error("AI Limits End");
-      }
-      
-      generatedSources = generatedSources.filter((v, i, a) => a.findIndex(t => (t.uri === v.uri)) === i);
-      
-      const fixMath = (str: string) => {
-          if (!str) return str;
-
-          // Decode HTML breaks and common entities that AI sometimes outputs inappropriately
-          str = str.replace(/&lt;br\s*\/?&gt;/gi, "\n\n");
-          str = str.replace(/<br\s*\/?>/gi, "\n\n");
-          str = str.replace(/&nbsp;/gi, " ");
-          str = str.replace(/&lt;/g, "<");
-          str = str.replace(/&gt;/g, ">");
-          str = str.replace(/&amp;/g, "&");
-
-          str = str.replace(/\\\(([\s\S]*?)\\\)/g, "$$$1$");
-          str = str.replace(/\\\[([\s\S]*?)\\\]/g, "$$$$$1$$$$");
-
-          // Fix chemistry hybridization typos
-          str = str.replace(/(?:\\text\{sp\}|sp)\s*\^?\s*\{?(\d+)\}?\s*(?:extd|\\text\{d\}|\\textd)\s*\^?\s*\{?(\d+)\}?/g, "sp^$1d^$2");
-          str = str.replace(/(?:\\text\{sp\}|sp)\s*\^?\s*\{?(\d+)\}?\s*(?:extd|\\text\{d\}|\\textd)/g, "sp^$1d");
-          str = str.replace(/(?:extd|\\text\{d\}|\\textd)\s*\^?\s*\{?(\d+)\}?\s*(?:\\text\{sp\}|sp)\s*\^?\s*\{?(\d+)\}?/g, "d^$1sp^$2");
-          str = str.replace(/sp\s*<\s*sup\s*>\s*(\d+)\s*<\s*\/\s*sup\s*>\s*(?:extd|\\text\{d\}|\\textd)\s*<\s*sup\s*>\s*(\d+)\s*<\s*\/\s*sup\s*>/g, "sp<sup>$1</sup>d<sup>$2</sup>");
-          str = str.replace(/sp\s*<\s*sup\s*>\s*(\d+)\s*<\s*\/\s*sup\s*>\s*(?:extd|\\text\{d\}|\\textd)/g, "sp<sup>$1</sup>d");
-          str = str.replace(/(?:extd|\\text\{d\}|\\textd)\s*<\s*sup\s*>\s*(\d+)\s*<\s*\/\s*sup\s*>\s*sp\s*<\s*sup\s*>\s*(\d+)\s*<\s*\/\s*sup\s*>/g, "d<sup>$1</sup>sp<sup>$2</sup>");
-
-          // Convert align/align* to aligned to render properly in KaTeX
-          str = str.replace(/\\begin\{align\*?\}([\s\S]*?)\\end\{align\*?\}/g, "\\begin{aligned}$1\\end{aligned}");
-          
-          // Wrap known environments in $$ if not already
-          str = str.replace(/(?:\$\$|\$)?\s*\\begin\{([a-zA-Z*]+)\}([\s\S]*?)\\end\{\1\}\s*(?:\$\$|\$)?/g, (match, env, inner) => {
-              const mathEnvs = ['aligned', 'pmatrix', 'bmatrix', 'vmatrix', 'matrix', 'cases', 'array', 'eqnarray', 'equation', 'equation*'];
-              if (mathEnvs.includes(env)) {
-                  let cleaned = inner.replace(/\$\$/g, '').replace(/\$/g, '');
-                  return `\n$$\n\\begin{${env}}${cleaned}\\end{${env}}\n$$\n`;
-              }
-              return match;
-          });
-
-          str = str.replace(/\((\\text\{[^}]+\}.*?)\)/g, "$$$1$");
-          str = str.replace(/\((\\displaystyle.*?)\)/g, "$$$1$");
-          
-          // Require space after [ and before ] to prevent matching [S] = [M]
-          str = str.replace(/^\[\s+([\s\S]*?[_^\\][\s\S]*?)\s+\]$/gm, "$$$$ $1 $$$$");
-          
-          // Fallback to fix mismatched dimensional brackets like $$S] = ...
-          str = str.replace(/\$\$\s*([a-zA-Z\\{}_0-9]+)\s*\]\s*=/g, "$$$$ [$1] =");
-          
-          // Auto-close unclosed $$ and $ blocks before Markdown bold (**) or double newlines (\n\n)
-          let tempStr = str.replace(/\\\$/g, "___ESCAPED_DOLLAR___");
-          let tokens = tempStr.split(/(\$\$?)/);
-          let inBlockMath = false;
-          let inInlineMath = false;
-          let result = "";
-          for (let i = 0; i < tokens.length; i++) {
-              let token = tokens[i];
-              if (token === "$$") {
-                  if (!inInlineMath) inBlockMath = !inBlockMath;
-                  result += token;
-              } else if (token === "$") {
-                  if (!inBlockMath) inInlineMath = !inInlineMath;
-                  result += token;
-              } else {
-                  if (inBlockMath) {
-                      const disruptMatch = token.match(/(\*\*|\n\s*\n)/);
-                      if (disruptMatch) {
-                          const idx = disruptMatch.index!;
-                          result += token.substring(0, idx) + "$$" + token.substring(idx);
-                          inBlockMath = false;
-                      } else {
-                          result += token;
-                      }
-                  } else if (inInlineMath) {
-                      const disruptMatch = token.match(/(\*\*|\n\s*\n)/);
-                      if (disruptMatch) {
-                          const idx = disruptMatch.index!;
-                          result += token.substring(0, idx) + "$" + token.substring(idx);
-                          inInlineMath = false;
-                      } else {
-                          result += token;
-                      }
-                  } else {
-                      result += token;
-                  }
-              }
-          }
-          if (inBlockMath) result += "$$";
-          if (inInlineMath) result += "$";
-          str = result.replace(/___ESCAPED_DOLLAR___/g, "\\$");
-
-          return str;
-      };
-      responseText = fixMath(responseText);
-
-      const newMessagesHistory = [...messagesToSent, { 
-          role: "model", 
-          content: responseText, 
-          isTyping: true,
-          attachments: generatedAttachments.length > 0 ? generatedAttachments : undefined,
-          sources: generatedSources.length > 0 ? generatedSources : undefined 
-      }] as ChatMessage[];
-
-      setSessions(prev => prev.map(s => s.id === sessionId ? {
-         ...s,
-         messages: newMessagesHistory,
-         updatedAt: Date.now()
-      } : s));
-
-      autoGenerateTitle(sessionId, newMessagesHistory);
-    } catch (e: any) {
-      if (e.name === "AbortError") {
-         setSessions(prev => prev.map(s => s.id === sessionId ? {
-            ...s,
-            messages: [...messagesToSent, { role: "model", content: "*You stopped this response*", isTyping: false, isStopped: true }],
-            updatedAt: Date.now()
-         } : s));
-         return;
-      }
-      const errorContent = e.message === "AI Limits End" ? "AI Limits End" : (e.message.includes("Maintenance") ? e.message : `Error: ${e.message}`);
-      setSessions(prev => prev.map(s => s.id === sessionId ? {
-         ...s,
-         messages: [...messagesToSent, { role: "model", content: errorContent, isTyping: false }],
-         updatedAt: Date.now()
-      } : s));
-    } finally {
-      setLoading(false);
-      setGeneratingImageType(false);
-    }
+    aiChatBackgroundManager.generateResponse({
+      sessionId,
+      messagesToSent,
+      filePayloads,
+      selectedGoal
+    });
   };
 
   const handleSend = async () => {

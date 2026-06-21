@@ -294,6 +294,114 @@ app.get("/api/healthz", (_req, res) => {
   res.json({ status: "ok" });
 });
 
+// Helper to extract JSON from HTML via brace matching
+function extractJsonFromHtml(html, varName) {
+  const index = html.indexOf(varName);
+  if (index === -1) return null;
+  
+  const startIndex = html.indexOf('{', index);
+  if (startIndex === -1) return null;
+  
+  let braceCount = 0;
+  let inString = false;
+  let escaped = false;
+  
+  for (let i = startIndex; i < html.length; i++) {
+    const char = html[i];
+    
+    if (inString) {
+      if (escaped) {
+        escaped = false;
+      } else if (char === '\\') {
+        escaped = true;
+      } else if (char === '"') {
+        inString = false;
+      }
+    } else {
+      if (char === '"') {
+        inString = true;
+      } else if (char === '{') {
+        braceCount++;
+      } else if (char === '}') {
+        braceCount--;
+        if (braceCount === 0) {
+          const jsonStr = html.substring(startIndex, i + 1);
+          try {
+            return JSON.parse(jsonStr);
+          } catch (e) {
+            return null;
+          }
+        }
+      }
+    }
+  }
+  return null;
+}
+
+// Fetch YouTube subtitles directly from captionTracks inside ytInitialPlayerResponse
+async function fetchYouTubeCaptionsFromHtml(html) {
+  try {
+    const data = extractJsonFromHtml(html, "ytInitialPlayerResponse");
+    if (!data) return "";
+    
+    const capTracks = data.captions?.playerCaptionsTracklistRenderer?.captionTracks;
+    if (capTracks && capTracks.length > 0) {
+      // Prioritize English, then Hindi, then whatever is first
+      const track = capTracks.find(t => t.languageCode === "en") || 
+                    capTracks.find(t => t.languageCode === "hi") || 
+                    capTracks[0];
+      if (track && track.baseUrl) {
+        const subtitleRes = await fetch(track.baseUrl + "&fmt=json3", {
+          headers: { "User-Agent": "Mozilla/5.0" },
+          signal: AbortSignal.timeout(6000)
+        });
+        if (subtitleRes.ok) {
+          const subJson = await subtitleRes.json();
+          if (subJson && subJson.events) {
+            const textLines = subJson.events
+              .map(ev => ev.segs?.map(s => s.utf8).join("").trim() || "")
+              .filter(Boolean);
+            if (textLines.length > 0) {
+              return textLines.join(" ");
+            }
+          }
+        }
+      }
+    }
+  } catch (err) {
+    console.warn("[Scraper] Error parsing captions from HTML:", err.message);
+  }
+  return "";
+}
+
+// Extract YouTube metadata directly from HTML tags
+function extractMetadataFromYtHtml(html, cleanUrl) {
+  try {
+    const titleMatch = html.match(/<meta\s+name=["']title["']\s+content=["']([^"']+)["']/i) || 
+                       html.match(/<meta\s+property=["']og:title["']\s+content=["']([^"']+)["']/i) ||
+                       html.match(/<title>([\s\S]*?)<\/title>/i);
+    const descMatch = html.match(/<meta\s+name=["']description["']\s+content=["']([^"']+)["']/i) || 
+                      html.match(/<meta\s+property=["']og:description["']\s+content=["']([^"']+)["']/i);
+    const keyMatch = html.match(/<meta\s+name=["']keywords["']\s+content=["']([^"']+)["']/i);
+    const authorMatch = html.match(/<link\s+itemprop=["']name["']\s+content=["']([^"']+)["']/i);
+    
+    let title = titleMatch ? decodeHTMLEntities(titleMatch[1].replace(/ - YouTube$/, "").trim()) : "Unknown Video";
+    let description = descMatch ? decodeHTMLEntities(descMatch[1].trim()) : "No description provided.";
+    let keywords = keyMatch ? decodeHTMLEntities(keyMatch[1].trim()) : "";
+    let author = authorMatch ? decodeHTMLEntities(authorMatch[1].trim()) : "Unknown Channel";
+    
+    return {
+      title,
+      description,
+      keywords,
+      author,
+      metaText: `=== YOUTUBE VIDEO METADATA (EXTRACTED VIA HTML) ===\nURL: ${cleanUrl}\nTitle: ${title}\nChannel Name: ${author}\nKeywords: ${keywords}\nDescription:\n${description}\n`
+    };
+  } catch (e) {
+    return null;
+  }
+}
+
 // 1.5 Web scraper endpoint for crawling links and page content
 app.get("/api/scrape", async (req, res) => {
   try {
@@ -312,6 +420,7 @@ app.get("/api/scrape", async (req, res) => {
         console.log(`[Scraper] YouTube video detected: ${yvId}. Resolving metadata & transcript...`);
         let metaText = "";
         let transcriptText = "";
+        let htmlInfo = null;
 
         // A. Fetch Invidious metadata
         const mirrors = [
@@ -354,6 +463,31 @@ app.get("/api/scrape", async (req, res) => {
           console.warn(`[Scraper] Failed transcript fetch: ${e.message}`);
         }
 
+        // C. Parse directly from YouTube HTML if metadata or transcript is missing
+        if (!metaText || !transcriptText) {
+          try {
+            const ytPageRes = await fetch(cleanUrl, {
+              headers: {
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+                "Accept-Language": "en-US,en;q=0.9"
+              },
+              signal: AbortSignal.timeout(6000)
+            });
+            if (ytPageRes.ok) {
+              const html = await ytPageRes.text();
+              htmlInfo = extractMetadataFromYtHtml(html, cleanUrl);
+              if (htmlInfo && !metaText) {
+                metaText = htmlInfo.metaText;
+              }
+              if (!transcriptText) {
+                transcriptText = await fetchYouTubeCaptionsFromHtml(html);
+              }
+            }
+          } catch (htmlErr) {
+            console.warn("[Scraper] Direct YouTube HTML fetch/parse failed:", htmlErr.message);
+          }
+        }
+
         // Fallback to play-dl if both failed
         if (!metaText && !transcriptText) {
           try {
@@ -371,6 +505,7 @@ app.get("/api/scrape", async (req, res) => {
           combinedText += `=== SPOKEN DIALOGUE / TRANSCRIPT ===\n${transcriptText}\n`;
         }
 
+        // Fallback Search if metaText is empty or if we only have noembed title
         if (!metaText) {
           let noembedTitle = "";
           let noembedAuthor = "";
@@ -389,42 +524,106 @@ app.get("/api/scrape", async (req, res) => {
 
           if (noembedTitle) {
             combinedText = `=== YOUTUBE VIDEO METADATA (RESOLVED VIA NOEMBED) ===\nURL: ${cleanUrl}\nTitle: ${noembedTitle}\nChannel Name: ${noembedAuthor}\nDescription: This video is titled "${noembedTitle}" by channel "${noembedAuthor}".\n`;
-            
+          }
+        }
+
+        // IF transcript is empty or very short, aggregate Web summaries using multiple searches to guarantee accuracy
+        const isTranscriptShort = !transcriptText || transcriptText.trim().length < 200;
+        if (isTranscriptShort) {
+          let videoTitle = "";
+          let videoAuthor = "";
+          let searchKeywords = "";
+          
+          if (htmlInfo) {
+            videoTitle = htmlInfo.title;
+            videoAuthor = htmlInfo.author;
+            searchKeywords = htmlInfo.keywords;
+          } else if (metaText) {
+            const titleMatch = metaText.match(/Title:\s*(.+)/);
+            const authorMatch = metaText.match(/Channel Name:\s*(.+)/);
+            if (titleMatch) videoTitle = titleMatch[1].trim();
+            if (authorMatch) videoAuthor = authorMatch[1].trim();
+          }
+
+          if (!videoTitle) {
             try {
-              const query = `${noembedTitle} YouTube video summary`;
-              const encoded = encodeURIComponent(query);
-              const searchUrl = `https://html.duckduckgo.com/html/?q=${encoded}`;
-              const searchRes = await fetch(searchUrl, {
-                headers: {
-                  "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-                },
-                signal: AbortSignal.timeout(5000)
-              });
-              if (searchRes.ok) {
-                const searchHtml = await searchRes.text();
-                const parts = searchHtml.split('class="result results_links');
-                const scrapedSummaries = parts.slice(1, 4).map((part) => {
-                  const titleMatch = part.match(/class="result__a"[^>]*>([\s\S]*?)<\/a>/);
-                  const snippetMatch = part.match(/class="result__snippet"[^>]*>([\s\S]*?)<\/a>/);
-                  let title = titleMatch ? titleMatch[1].replace(/<[^>]*>/g, "").trim() : "";
-                  let snippet = snippetMatch ? snippetMatch[1].replace(/<[^>]*>/g, "").trim() : "";
-                  
-                  title = title.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"');
-                  snippet = snippet.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"');
-                  
-                  return `- ${title}: ${snippet}`;
-                }).join("\n");
-                
-                if (scrapedSummaries) {
-                  combinedText += `\n=== ADDITIONAL CONTEXT / WEB SUMMARIES ===\nBelow is information scraped from the web regarding this video topic:\n${scrapedSummaries}\n`;
+              const noembedRes = await fetch(`https://noembed.com/embed?url=${encodeURIComponent(cleanUrl)}`, { signal: AbortSignal.timeout(4000) });
+              if (noembedRes.ok) {
+                const noembedData = await noembedRes.json();
+                if (noembedData && noembedData.title) {
+                  videoTitle = noembedData.title;
+                  videoAuthor = noembedData.author_name;
                 }
               }
-            } catch (searchErr) {
-              console.warn("[Scraper] Fallback search summaries failed:", searchErr);
-            }
-          } else {
-            combinedText = "Failed to retrieve YouTube video metadata or transcript due to network or bot restrictions.";
+            } catch (neErr) {}
           }
+
+          if (videoTitle) {
+            const queries = [];
+            queries.push(`${videoTitle} plot OR summary`);
+            if (videoAuthor && videoAuthor !== "Unknown Channel") {
+              queries.push(`${videoAuthor} ${videoTitle} summary`);
+            }
+            if (searchKeywords) {
+              const firstKeys = searchKeywords.split(",").slice(0, 3).map(k => k.trim()).filter(Boolean).join(" ");
+              if (firstKeys) {
+                queries.push(`${firstKeys} ${videoTitle} summary`);
+              }
+            }
+            
+            const searchResultsMap = new Map();
+            await Promise.all(
+              queries.slice(0, 2).map(async (qStr) => {
+                try {
+                  const encoded = encodeURIComponent(qStr);
+                  const searchUrl = `https://html.duckduckgo.com/html/?q=${encoded}`;
+                  const searchRes = await fetch(searchUrl, {
+                    headers: {
+                      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+                    },
+                    signal: AbortSignal.timeout(5000)
+                  });
+                  if (searchRes.ok) {
+                    const searchHtml = await searchRes.text();
+                    const parts = searchHtml.split('class="result results_links');
+                    parts.slice(1, 4).forEach((part) => {
+                      const titleMatch = part.match(/class="result__a"[^>]*>([\s\S]*?)<\/a>/);
+                      const snippetMatch = part.match(/class="result__snippet"[^>]*>([\s\S]*?)<\/a>/);
+                      const hrefMatch = part.match(/class="result__a"[^>]*href="([^"]+)"/);
+                      
+                      let title = titleMatch ? titleMatch[1].replace(/<[^>]*>/g, "").trim() : "";
+                      let snippet = snippetMatch ? snippetMatch[1].replace(/<[^>]*>/g, "").trim() : "";
+                      let href = hrefMatch ? hrefMatch[1] : "";
+                      
+                      if (href.startsWith("//")) href = "https:" + href;
+                      if (href.startsWith("/l/") || href.includes("uddg=")) {
+                        const m = href.match(/[?&]uddg=([^&]+)/);
+                        if (m) href = decodeURIComponent(m[1]);
+                      }
+
+                      title = decodeHTMLEntities(title);
+                      snippet = decodeHTMLEntities(snippet);
+                      
+                      if (title && snippet && !searchResultsMap.has(href)) {
+                        searchResultsMap.set(href, `- [${title}](${href}): ${snippet}`);
+                      }
+                    });
+                  }
+                } catch (searchErr) {
+                  console.warn(`[Scraper] Fallback search failed for query "${qStr}":`, searchErr.message);
+                }
+              })
+            );
+
+            if (searchResultsMap.size > 0) {
+              const scrapedSummaries = Array.from(searchResultsMap.values()).join("\n");
+              combinedText += `\n=== ADDITIONAL CONTEXT / WEB SUMMARIES ===\nBelow is information aggregated from multiple search queries regarding this video topic to ensure correctness:\n${scrapedSummaries}\n`;
+            }
+          }
+        }
+
+        if (!combinedText) {
+          combinedText = "Failed to retrieve YouTube video metadata or transcript due to network or bot restrictions.";
         }
 
         return res.status(200).json({ url: cleanUrl, text: combinedText, links: [] });

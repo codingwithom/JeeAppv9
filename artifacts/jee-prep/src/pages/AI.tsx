@@ -1173,6 +1173,9 @@ async function fetchCrawlResults(targetUrl: string, deep: boolean): Promise<{ te
     // Client-side fallback: fetch metadata from Invidious and transcript from youtube-transcript.ai
     let metaText = "";
     let transcriptText = "";
+    let htmlTitle = "";
+    let htmlAuthor = "";
+    let htmlKeywords = "";
 
     try {
       const mirrors = [
@@ -1205,6 +1208,105 @@ async function fetchCrawlResults(targetUrl: string, deep: boolean): Promise<{ te
       }
     } catch (e) {}
 
+    // Direct YouTube page fetch via CORS proxy to parse captions & metadata
+    if (!metaText || !transcriptText) {
+      try {
+        const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(`https://www.youtube.com/watch?v=${videoId}`)}`;
+        const ytPageRes = await fetch(proxyUrl, { signal: AbortSignal.timeout(6000) });
+        if (ytPageRes.ok) {
+          const html = await ytPageRes.text();
+
+          // 1. Extract metadata from HTML meta tags
+          const titleMatch = html.match(/<meta\s+name=["']title["']\s+content=["']([^"']+)["']/i) || 
+                             html.match(/<meta\s+property=["']og:title["']\s+content=["']([^"']+)["']/i) ||
+                             html.match(/<title>([\s\S]*?)<\/title>/i);
+          const descMatch = html.match(/<meta\s+name=["']description["']\s+content=["']([^"']+)["']/i) || 
+                            html.match(/<meta\s+property=["']og:description["']\s+content=["']([^"']+)["']/i);
+          const keyMatch = html.match(/<meta\s+name=["']keywords["']\s+content=["']([^"']+)["']/i);
+          const authorMatch = html.match(/<link\s+itemprop=["']name["']\s+content=["']([^"']+)["']/i);
+
+          htmlTitle = titleMatch ? titleMatch[1].replace(/ - YouTube$/, "").trim() : "";
+          htmlAuthor = authorMatch ? authorMatch[1].trim() : "";
+          htmlKeywords = keyMatch ? keyMatch[1].trim() : "";
+          const description = descMatch ? descMatch[1].trim() : "No description provided.";
+          
+          if (htmlTitle) {
+            if (!metaText) {
+              metaText = `=== YOUTUBE VIDEO METADATA (EXTRACTED VIA CLIENT HTML) ===\nURL: ${targetUrl}\nTitle: ${htmlTitle}\nChannel Name: ${htmlAuthor || "Unknown"}\nKeywords: ${htmlKeywords}\nDescription:\n${description}\n`;
+            }
+          }
+
+          // 2. Extract transcript using brace-matching on ytInitialPlayerResponse
+          if (!transcriptText) {
+            const index = html.indexOf("ytInitialPlayerResponse");
+            if (index !== -1) {
+              const startIndex = html.indexOf('{', index);
+              if (startIndex !== -1) {
+                let braceCount = 0;
+                let inString = false;
+                let escaped = false;
+                let jsonStr = "";
+                
+                for (let i = startIndex; i < html.length; i++) {
+                  const char = html[i];
+                  if (inString) {
+                    if (escaped) {
+                      escaped = false;
+                    } else if (char === '\\') {
+                      escaped = true;
+                    } else if (char === '"') {
+                      inString = false;
+                    }
+                  } else {
+                    if (char === '"') {
+                      inString = true;
+                    } else if (char === '{') {
+                      braceCount++;
+                    } else if (char === '}') {
+                      braceCount--;
+                      if (braceCount === 0) {
+                        jsonStr = html.substring(startIndex, i + 1);
+                        break;
+                      }
+                    }
+                  }
+                }
+                
+                if (jsonStr) {
+                  try {
+                    const data = JSON.parse(jsonStr);
+                    const capTracks = data.captions?.playerCaptionsTracklistRenderer?.captionTracks;
+                    if (capTracks && capTracks.length > 0) {
+                      const track = capTracks.find((t: any) => t.languageCode === "en") || 
+                                    capTracks.find((t: any) => t.languageCode === "hi") || 
+                                    capTracks[0];
+                      if (track && track.baseUrl) {
+                        const subtitleProxy = `https://corsproxy.io/?${encodeURIComponent(track.baseUrl + "&fmt=json3")}`;
+                        const subtitleRes = await fetch(subtitleProxy, { signal: AbortSignal.timeout(6000) });
+                        if (subtitleRes.ok) {
+                          const subJson = await subtitleRes.json();
+                          if (subJson && subJson.events) {
+                            const textLines = subJson.events
+                              .map((ev: any) => ev.segs?.map((s: any) => s.utf8).join("").trim() || "")
+                              .filter(Boolean);
+                            if (textLines.length > 0) {
+                              transcriptText = textLines.join(" ");
+                            }
+                          }
+                        }
+                      }
+                    }
+                  } catch (e) {}
+                }
+              }
+            }
+          }
+        }
+      } catch (err) {
+        console.warn("Client-side direct HTML scrape failed:", err);
+      }
+    }
+
     let combinedTextResult = "";
     if (metaText) combinedTextResult += metaText + "\n";
     if (transcriptText) {
@@ -1217,10 +1319,83 @@ async function fetchCrawlResults(targetUrl: string, deep: boolean): Promise<{ te
         if (noembedRes.ok) {
           const noembedData = await noembedRes.json();
           if (noembedData && noembedData.title) {
+            htmlTitle = noembedData.title;
+            htmlAuthor = noembedData.author_name;
             combinedTextResult = `=== YOUTUBE VIDEO METADATA (RESOLVED VIA NOEMBED) ===\nURL: ${targetUrl}\nTitle: ${noembedData.title}\nChannel Name: ${noembedData.author_name}\nDescription: This video is titled "${noembedData.title}" by channel "${noembedData.author_name}". (No captions or transcripts are available for this video, but you can explain or discuss its topic using this metadata or your knowledge).\n`;
           }
         }
       } catch (neErr) {}
+    }
+
+    // Client-side fallback searches if transcript is missing or short
+    const isTranscriptShort = !transcriptText || transcriptText.trim().length < 200;
+    if (isTranscriptShort && (htmlTitle || metaText)) {
+      let videoTitle = htmlTitle;
+      let videoAuthor = htmlAuthor;
+      if (!videoTitle && metaText) {
+        const titleMatch = metaText.match(/Title:\s*(.+)/);
+        const authorMatch = metaText.match(/Channel Name:\s*(.+)/);
+        if (titleMatch) videoTitle = titleMatch[1].trim();
+        if (authorMatch) videoAuthor = authorMatch[1].trim();
+      }
+
+      if (videoTitle) {
+        const queries = [];
+        queries.push(`${videoTitle} plot OR summary`);
+        if (videoAuthor && videoAuthor !== "Unknown Channel") {
+          queries.push(`${videoAuthor} ${videoTitle} summary`);
+        }
+        if (htmlKeywords) {
+          const firstKeys = htmlKeywords.split(",").slice(0, 3).map(k => k.trim()).filter(Boolean).join(" ");
+          if (firstKeys) {
+            queries.push(`${firstKeys} ${videoTitle} summary`);
+          }
+        }
+
+        const searchResultsMap = new Map();
+        await Promise.all(
+          queries.slice(0, 2).map(async (qStr) => {
+            try {
+              const encoded = encodeURIComponent(qStr);
+              const searchUrl = `https://html.duckduckgo.com/html/?q=${encoded}`;
+              const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(searchUrl)}`;
+              const searchRes = await fetch(proxyUrl, { signal: AbortSignal.timeout(5000) });
+              if (searchRes.ok) {
+                const searchHtml = await searchRes.text();
+                const parts = searchHtml.split('class="result results_links');
+                parts.slice(1, 4).forEach((part) => {
+                  const titleMatch = part.match(/class="result__a"[^>]*>([\s\S]*?)<\/a>/);
+                  const snippetMatch = part.match(/class="result__snippet"[^>]*>([\s\S]*?)<\/a>/);
+                  const hrefMatch = part.match(/class="result__a"[^>]*href="([^"]+)"/);
+                  
+                  let title = titleMatch ? titleMatch[1].replace(/<[^>]*>/g, "").trim() : "";
+                  let snippet = snippetMatch ? snippetMatch[1].replace(/<[^>]*>/g, "").trim() : "";
+                  let href = hrefMatch ? hrefMatch[1] : "";
+                  
+                  if (href.startsWith("//")) href = "https:" + href;
+                  if (href.startsWith("/l/") || href.includes("uddg=")) {
+                    const m = href.match(/[?&]uddg=([^&]+)/);
+                    if (m) href = decodeURIComponent(m[1]);
+                  }
+                  
+                  // decode entities
+                  title = title.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&#39;/g, "'");
+                  snippet = snippet.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&#39;/g, "'");
+                  
+                  if (title && snippet && !searchResultsMap.has(href)) {
+                    searchResultsMap.set(href, `- [${title}](${href}): ${snippet}`);
+                  }
+                });
+              }
+            } catch (e) {}
+          })
+        );
+
+        if (searchResultsMap.size > 0) {
+          const scrapedSummaries = Array.from(searchResultsMap.values()).join("\n");
+          combinedTextResult += `\n=== ADDITIONAL CONTEXT / WEB SUMMARIES ===\nBelow is information aggregated from multiple search queries regarding this video topic to ensure correctness:\n${scrapedSummaries}\n`;
+        }
+      }
     }
 
     if (!combinedTextResult) {
@@ -1744,39 +1919,89 @@ Whenever internet data is used, display:
 Do not include any explanation or markdown outside the code block.` : "";
 
       let searchContext = "";
-      const isLatestRequest = /latest|today|recent|current|trending|updated|news|situation|real-time|realtime/i.test(lastMsg);
+      const isLatestRequest = /latest|latets|today|recent|current|trending|updated|updates|new|news|situation|real-time|realtime|up-to-date|recently/i.test(lastMsg);
       if (isLatestRequest) {
-        const adjustedQuery = lastMsg + " " + currentYear;
-        let searchObj: any = null;
-        try {
-          searchObj = await fetchWebSearchResults(adjustedQuery, "m");
-          if (!searchObj || !searchObj.results || searchObj.results.length === 0) {
-             searchObj = await fetchWebSearchResults(adjustedQuery, "y");
+        // Detect if Hindi script is present
+        const hasHindi = /[\u0900-\u097F]/.test(lastMsg);
+        let englishQuery = lastMsg;
+        if (hasHindi) {
+          const hindiToEng: { [key: string]: string } = {
+            "नया": "new", "नये": "new", "नई": "new",
+            "ताजा": "latest", "ताज़ा": "latest", "लेटेस्ट": "latest",
+            "अपडेट": "update", "सिलेबस": "syllabus", "पैटर्न": "pattern",
+            "खबर": "news", "समाचार": "news", "परीक्षा": "exam",
+            "तैयारी": "preparation", "बोर्ड": "board", "किताब": "book",
+            "सवाल": "question", "जवाब": "answer", "कहानी": "story",
+            "एपिसोड": "episode", "वीडियो": "video", "क्या है": "what is",
+            "क्या": "what", "कब": "when", "कैसे": "how"
+          };
+          let eng = lastMsg;
+          for (const [hindi, english] of Object.entries(hindiToEng)) {
+            eng = eng.replace(new RegExp(hindi, "gi"), english);
           }
-          if (!searchObj || !searchObj.results || searchObj.results.length === 0) {
-             searchObj = await fetchWebSearchResults(adjustedQuery);
+          const cleanWords = eng.split(/\s+/).filter(w => !/[\u0900-\u097F]/.test(w));
+          if (cleanWords.length > 0) {
+            englishQuery = cleanWords.join(" ");
           }
-        } catch(e) {
-          try {
-            searchObj = await fetchWebSearchResults(adjustedQuery);
-          } catch(err) {}
         }
+
+        const query1 = lastMsg + " " + currentYear;
+        const query2 = englishQuery + " " + currentYear;
         
-        if (searchObj && searchObj.text) {
-          searchContext = `\n\n[CRITICAL DIRECTIVE: REAL-TIME RAG MODE ACTIVATED]\nThe user is requesting information that requires real-time data. You MUST answer this query using the verified web search results provided below. Cite all facts by referencing the relevant [Source X] link.\n\nREAL-TIME WEB SEARCH RESULTS FOR "${adjustedQuery}":\n${searchObj.text}\n\nINSTRUCTIONS: Write a comprehensive, precise response synthesizing the search results. Cite sources exactly.`;
-          
-          if (searchObj.results && Array.isArray(searchObj.results)) {
+        const fetchSearchWithFallbacks = async (q: string) => {
+          try {
+            let resObj = await fetchWebSearchResults(q, "m");
+            if (!resObj || !resObj.results || resObj.results.length === 0) {
+              resObj = await fetchWebSearchResults(q, "y");
+            }
+            if (!resObj || !resObj.results || resObj.results.length === 0) {
+              resObj = await fetchWebSearchResults(q);
+            }
+            return resObj;
+          } catch (e) {
+            try {
+              return await fetchWebSearchResults(q);
+            } catch (err) {
+              return null;
+            }
+          }
+        };
+
+        // Run both searches in parallel to avoid single source dependency
+        const resultsMap = new Map();
+        const searchPromises = [fetchSearchWithFallbacks(query1)];
+        if (query1 !== query2) {
+          searchPromises.push(fetchSearchWithFallbacks(query2));
+        }
+
+        const searchObjs = await Promise.all(searchPromises);
+        searchObjs.forEach((searchObj) => {
+          if (searchObj && searchObj.results) {
             searchObj.results.forEach((item: any) => {
-              let hostname = "";
-              try { hostname = new URL(item.url).hostname; } catch(e) {}
-              generatedSources.push({
-                uri: item.url,
-                title: item.title,
-                favicon: hostname ? `https://www.google.com/s2/favicons?domain=${hostname}` : "",
-                snippet: item.snippet
-              });
+              if (item.url && !resultsMap.has(item.url)) {
+                resultsMap.set(item.url, item);
+              }
             });
           }
+        });
+
+        if (resultsMap.size > 0) {
+          const mergedResults = Array.from(resultsMap.values());
+          let searchSummaries = "";
+          mergedResults.slice(0, 7).forEach((item: any, idx: number) => {
+            searchSummaries += `[Source ${idx + 1}] Title: ${item.title}\nURL: ${item.url}\nSnippet: ${item.snippet}\nThumbnail: ${item.thumbnail || ""}\n\n`;
+            
+            let hostname = "";
+            try { hostname = new URL(item.url).hostname; } catch(e) {}
+            generatedSources.push({
+              uri: item.url,
+              title: item.title,
+              favicon: hostname ? `https://www.google.com/s2/favicons?domain=${hostname}` : "",
+              snippet: item.snippet
+            });
+          });
+
+          searchContext = `\n\n[CRITICAL DIRECTIVE: REAL-TIME RAG MODE ACTIVATED]\nThe user is requesting information that requires real-time data. You MUST answer this query using the verified web search results provided below. Cite all facts by referencing the relevant [Source X] link.\n\nREAL-TIME WEB SEARCH RESULTS:\n${searchSummaries}\n\nINSTRUCTIONS: Write a comprehensive, precise response synthesizing the search results. Cite sources exactly.`;
         }
       }
 

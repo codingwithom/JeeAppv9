@@ -372,13 +372,13 @@ export default function LoginPage() {
               animate={{ scale: 1 }}
               transition={{ delay: 0.1, type: "spring", stiffness: 200 }}
             >
-              <div className="h-16 w-16 rounded-2xl bg-primary/15 flex items-center justify-center border border-primary/30 shadow-lg">
-                <Lock className="h-8 w-8 text-primary" />
+              <div className="h-20 w-20 rounded-2xl overflow-hidden flex items-center justify-center border border-primary/20 shadow-lg bg-background p-1">
+                <img src="/logo.png" alt="StudE Logo" className="h-full w-full object-contain rounded-xl" />
               </div>
             </motion.div>
-            <CardTitle className="text-3xl font-bold tracking-tight text-foreground">JEE Prep Hub</CardTitle>
+            <CardTitle className="text-3xl font-bold tracking-tight text-foreground">StudE</CardTitle>
             <CardDescription className="text-muted-foreground">
-              {step === "login" && "Command center for JEE 2028"}
+              {step === "login" && "Your JEE Preparation & Study Hub"}
               {step === "setup" && "Complete your profile & set offline credentials"}
               {step === "reset" && "Set a new secure password"}
             </CardDescription>

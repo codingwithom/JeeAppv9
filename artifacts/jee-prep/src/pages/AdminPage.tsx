@@ -784,13 +784,13 @@ export default function AdminPage() {
           try {
             res = await fetch("https://openrouter.ai/api/v1/chat/completions", { 
               method: "POST", 
-              headers: { "Authorization": `Bearer ${openRouterKey.trim()}`, "Content-Type": "application/json", "HTTP-Referer": window.location.href, "X-Title": "JEE Prep App" },
+              headers: { "Authorization": `Bearer ${openRouterKey.trim()}`, "Content-Type": "application/json", "HTTP-Referer": window.location.href, "X-Title": "StudE" },
               body: JSON.stringify(payload)
             });
           } catch (e) {
             res = await fetch(`https://corsproxy.io/?${encodeURIComponent("https://openrouter.ai/api/v1/chat/completions")}`, { 
               method: "POST", 
-              headers: { "Authorization": `Bearer ${openRouterKey.trim()}`, "Content-Type": "application/json", "HTTP-Referer": window.location.href, "X-Title": "JEE Prep App" },
+              headers: { "Authorization": `Bearer ${openRouterKey.trim()}`, "Content-Type": "application/json", "HTTP-Referer": window.location.href, "X-Title": "StudE" },
               body: JSON.stringify(payload)
             });
           }

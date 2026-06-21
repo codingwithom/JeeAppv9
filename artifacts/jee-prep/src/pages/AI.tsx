@@ -1177,7 +1177,7 @@ Do not complain about missing transcripts. Retain only verified, consistent fact
       headers: {
         "Authorization": `Bearer ${apiKey.trim()}`,
         "HTTP-Referer": window.location.href,
-        "X-Title": "JEE Prep App",
+        "X-Title": "StudE",
         "Content-Type": "application/json"
       },
       body: JSON.stringify(reqBody)
@@ -1189,7 +1189,7 @@ Do not complain about missing transcripts. Retain only verified, consistent fact
         headers: {
           "Authorization": `Bearer ${apiKey.trim()}`,
           "HTTP-Referer": window.location.href,
-          "X-Title": "JEE Prep App",
+          "X-Title": "StudE",
           "Content-Type": "application/json"
         },
         body: JSON.stringify(reqBody)
@@ -2368,7 +2368,7 @@ If the user uploaded an image of an equation, read/OCR the equation from the ima
               headers: {
                 "Authorization": `Bearer ${apiKey.trim()}`,
                 "HTTP-Referer": window.location.href,
-                "X-Title": "JEE Prep App",
+                "X-Title": "StudE",
                 "Content-Type": "application/json"
               },
               body: JSON.stringify(reqBody),
@@ -2381,7 +2381,7 @@ If the user uploaded an image of an equation, read/OCR the equation from the ima
               headers: {
                 "Authorization": `Bearer ${apiKey.trim()}`,
                 "HTTP-Referer": window.location.href,
-                "X-Title": "JEE Prep App",
+                "X-Title": "StudE",
                 "Content-Type": "application/json"
               },
               body: JSON.stringify(reqBody),

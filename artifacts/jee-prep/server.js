@@ -602,7 +602,9 @@ app.get("/api/yt-search", async (req, res) => {
       title: v.title || "Unknown",
       author: v.channel?.name || "Unknown",
       length_seconds: v.durationInSec || 0,
-      thumbnail: v.thumbnails?.at(-1)?.url || `https://img.youtube.com/vi/${v.id}/hqdefault.jpg`
+      thumbnail: v.thumbnails?.at(-1)?.url || `https://img.youtube.com/vi/${v.id}/hqdefault.jpg`,
+      views: v.views ? (v.views >= 1000000 ? (v.views / 1000000).toFixed(1) + "M" : v.views >= 1000 ? (v.views / 1000).toFixed(0) + "K" : v.views.toString()) : "N/A",
+      uploadedAt: v.uploadedAt || "Recently"
     }));
     
     return res.status(200).json({ results: formatted });
@@ -669,12 +671,16 @@ app.get("/api/yt-search", async (req, res) => {
                       if (parts.length === 3) length_seconds = parts[0] * 3600 + parts[1] * 60 + parts[2];
                     }
                   }
+                  const views = r.viewCountText?.simpleText || r.shortViewCountText?.simpleText || "N/A";
+                  const uploadedAt = r.publishedTimeText?.simpleText || "Recently";
                   videos.push({
                     videoId: vId,
                     title,
                     author,
                     length_seconds,
-                    thumbnail: `https://i.ytimg.com/vi/${vId}/hqdefault.jpg`
+                    thumbnail: `https://i.ytimg.com/vi/${vId}/hqdefault.jpg`,
+                    views,
+                    uploadedAt
                   });
                 }
               } catch(e) {}

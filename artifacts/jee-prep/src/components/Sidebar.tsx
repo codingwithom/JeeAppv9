@@ -23,7 +23,8 @@ import {
   ShieldAlert,
   BrainCircuit,
   ChevronUp,
-  ChevronDown
+  ChevronDown,
+  Search
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";

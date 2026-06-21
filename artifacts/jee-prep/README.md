@@ -50,7 +50,7 @@ The workspace supports both:
 * **Features**: Displays the current page tag and handles dynamic dark/light mode switches, storing state in `localStorage` under the `"theme"` key. When Focus Lockdown Mode is active, a red-pulsing badge shows the time remaining.
 
 ### 4. Floating Mini-Players
-* **Audio MiniPlayer**: [src/components/MiniPlayer.tsx](file:///workspaces/JeeAppv9/artifacts/jee-prep/src/components/MiniPlayer.tsx) stays persistent at the bottom of the layout, managing playback states, volume, track timeline seek-scrubbing, and visualizer nodes.
+* **Audio MiniPlayer**: [src/components/MiniPlayer.tsx](file:///workspaces/JeeAppv9/artifacts/jee-prep/src/components/MiniPlayer.tsx) stays persistent at the bottom of the layout, managing playback states, volume, track timeline seek-scrubbing, and visualizer nodes. Includes an interactive minimize/maximize morphing engine: clicking the ChevronDown ("Hide player") button slides/morphs the player into a small floating centered progress pill, showing an "Expand audio player" tooltip on hover. Tapping the pill animates it back to maximized state, which also happens automatically when a new track is loaded.
 * **Video Picture-in-Picture Player**: [src/components/VideoMiniPlayer.tsx](file:///workspaces/JeeAppv9/artifacts/jee-prep/src/components/VideoMiniPlayer.tsx) detaches from the main lecture page, floating over other dashboard sections so students can review notes or schedules while keeping the lecture visual in sight.
 
 ---
@@ -334,9 +334,33 @@ When the model returns the text, the UI displays the response:
 * Fetches site favicons dynamically using Google's favicon helper: `https://www.google.com/s2/favicons?domain={hostname}`.
 * Renders visual link cards containing the page titles, description snippets, and og:image thumbnails so students can click to visit source pages directly.
 
+### 7. Step 7: Live Website Crawling & Scraping (Direct Crawl Mode)
+When the student explicitly mentions words like `crawl`, `scrape`, `visit`, `fetch data`, or `go to the website` accompanied by a link or domain (e.g., `omnetwork.in/v4` or `g.dev/omkumar`), the system activates **Live Web Crawl Mode** with specialized extraction channels:
+1. **URL Extraction**: The frontend runs a regex pattern over the text to extract URLs or domain names, automatically prepending `https://` if a protocol is missing.
+2. **Dual Scraper Pipeline**:
+   * **Primary Scraper Endpoint**: Hits `/api/scrape?url=...` on the Express backend.
+   * **Client Proxy Fallback**: If the server is offline, the client browser fetches content through `corsproxy.io`.
+3. **Domain-Specific Scrapers (Backend)**:
+   * **YouTube Video Resolver**: If a YouTube video is detected, it utilizes `play-dl` to pull detailed metadata (title, channel, upload date, views, likes, description) and feeds it to the AI context.
+   * **YouTube Channel Resolver**: If a channel link is parsed, `play-dl` retrieves details (name, subscribers, video count, bio).
+   * **GitHub Code Rewriter**: If a GitHub repository file link (`/blob/`) is inputted, it automatically rewrites the URL to fetch the raw file contents from `raw.githubusercontent.com` directly.
+   * **Social Media Metadata Harvester**: For platforms with login walls or complex scripts (e.g., Instagram, Snapchat, LinkedIn), it scrapes OpenGraph and Twitter meta properties (`og:title`, `og:description`, etc.) which typically summarize post captions or user bios.
+   * **SPA JSON Data Extraction**: For single-page apps (like Google Developer profiles `g.dev`), it parses `<script>` type tag contents (such as `application/ld+json` or `application/json`), capturing the client-side initial data models.
+4. **Client-Side PDF Text Extractor**: If the URL points to a `.pdf` file, the browser fetches it as an arrayBuffer and dynamically initiates `pdfjs-dist` to parse and extract text pages (capped at 10 pages for model context limits).
+5. **RAG Context Integration**: Formulates a detailed markdown data block and feeds it to the model prompt as verified live crawled text. All crawled links populate interactive sources cards with page titles, host favicons, and snippets.
+
 ---
 
 ## Interactive AI Companion & Simulation Widgets
+
+### 1. Interactive Chat Interface
+* **File Location**: [src/pages/AI.tsx](file:///workspaces/JeeAppv9/artifacts/jee-prep/src/pages/AI.tsx).
+* **Description**: A comprehensive chatbot dashboard connected to OpenRouter models (Qwen, Llama, Hermes, Gemma).
+* **Features**:
+  * *LaTeX Equations*: Fully processes inline math formulas (wrapped in `$`) and block equations (wrapped in `$$`) via KaTeX.
+  * *Image Draw Editor*: Upload drawing sheets or math question images. Before sending, click to draw vectors, crop boundaries, or point out equations on the canvas.
+  * *Lazy-Loaded YouTube Preview*: To prevent age-gate, security blocks, and local domain referrer policy issues (such as **Error 153** seen in sandboxed workspaces), YouTube video links in chat messages are rendered as lazy-loaded cards showing the video thumbnail and a custom play button. Only when the user taps to play does it load the privacy-enhanced `youtube-nocookie.com` embed iframe. It also provides an explicit external link button to open the video directly in a new tab.
+  * *Custom LLM Markdown Widgets*: Renders interactive widgets dynamically if the LLM responds with specialized JSON blocks (e.g. `type: "simulation"` or `type: "plot"`).
 
 The custom widgets are defined in [src/components/AICustomWidgets.tsx](file:///workspaces/JeeAppv9/artifacts/jee-prep/src/components/AICustomWidgets.tsx):
 

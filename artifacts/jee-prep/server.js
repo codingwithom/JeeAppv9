@@ -34,6 +34,14 @@ function decodeHTMLEntities(str) {
     .replace(/&nbsp;/g, " ");
 }
 
+function cleanHtmlToText(html) {
+  let clean = html.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '');
+  clean = clean.replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, '');
+  clean = clean.replace(/<[^>]+>/g, ' ');
+  clean = decodeHTMLEntities(clean);
+  return clean.replace(/\s+/g, ' ').trim();
+}
+
 async function fetchOgImage(url) {
   try {
     const response = await fetch(url, {
@@ -264,6 +272,220 @@ app.get("/", (req, res) => {
 
 app.get("/api/healthz", (_req, res) => {
   res.json({ status: "ok" });
+});
+
+// 1.5 Web scraper endpoint for crawling links and page content
+app.get("/api/scrape", async (req, res) => {
+  try {
+    const targetUrl = req.query.url;
+    if (!targetUrl) {
+      return res.status(400).json({ error: "Missing 'url' parameter" });
+    }
+
+    const cleanUrl = targetUrl.trim();
+
+    // --- CASE 1: YOUTUBE LINK RESOLVER ---
+    if (cleanUrl.includes("youtube.com/") || cleanUrl.includes("youtu.be/")) {
+      // 1. YouTube Video
+      const yvId = extractVideoId(cleanUrl);
+      if (yvId) {
+        console.log(`[Scraper] YouTube video detected: ${yvId}. Resolving metadata & transcript...`);
+        let metaText = "";
+        let transcriptText = "";
+
+        // A. Fetch Invidious metadata
+        const mirrors = [
+          "https://inv.thepixora.com",
+          "https://invidious.f5.si",
+          "https://invidious.tiekoetter.com"
+        ];
+        for (const mirror of mirrors) {
+          try {
+            const vres = await fetch(`${mirror}/api/v1/videos/${yvId}`, {
+              headers: { "User-Agent": "Mozilla/5.0" },
+              signal: AbortSignal.timeout(5000)
+            });
+            if (vres.ok) {
+              const data = await vres.json();
+              if (data && data.title) {
+                metaText = `=== YOUTUBE VIDEO METADATA ===\nURL: ${cleanUrl}\nTitle: ${data.title}\nChannel Name: ${data.author || "Unknown"} (URL: ${data.authorUrl || "N/A"})\nUpload Date: ${data.publishedText || "N/A"}\nDuration: ${data.lengthSeconds || 0} seconds\nViews: ${data.viewCount || 0}\nLikes: ${data.likeCount || 0}\nDescription:\n${data.description || "No description provided."}\n`;
+                break;
+              }
+            }
+          } catch (e) {
+            console.warn(`[Scraper] Failed metadata fetch from ${mirror}: ${e.message}`);
+          }
+        }
+
+        // B. Fetch transcript from youtube-transcript.ai
+        try {
+          const tres = await fetch(`https://youtube-transcript.ai/transcript/${yvId}.txt`, {
+            headers: { "User-Agent": "Mozilla/5.0" },
+            signal: AbortSignal.timeout(8000)
+          });
+          if (tres.ok) {
+            const contentType = tres.headers.get("content-type") || "";
+            const body = await tres.text();
+            if (!contentType.includes("text/html") && !body.trim().startsWith("<!DOCTYPE")) {
+              transcriptText = body;
+            }
+          }
+        } catch (e) {
+          console.warn(`[Scraper] Failed transcript fetch: ${e.message}`);
+        }
+
+        // Fallback to play-dl if both failed
+        if (!metaText && !transcriptText) {
+          try {
+            const info = await playdl.video_info(cleanUrl);
+            const vd = info.video_details;
+            metaText = `=== YOUTUBE VIDEO METADATA ===\nURL: ${cleanUrl}\nTitle: ${vd.title || "Unknown"}\nChannel Name: ${vd.channel?.name || "Unknown"} (URL: ${vd.channel?.url || "N/A"})\nUpload Date: ${vd.uploadDate || "N/A"}\nDuration: ${vd.durationInSec || 0} seconds\nViews: ${vd.views || 0}\nLikes: ${vd.likes || 0}\nDescription:\n${vd.description || "No description provided."}\n`;
+          } catch (ytErr) {
+            console.warn("[Scraper] play-dl video metadata fetch failed", ytErr);
+          }
+        }
+
+        let combinedText = "";
+        if (metaText) combinedText += metaText + "\n";
+        if (transcriptText) {
+          combinedText += `=== SPOKEN DIALOGUE / TRANSCRIPT ===\n${transcriptText}\n`;
+        } else if (!metaText) {
+          combinedText = "Failed to retrieve YouTube video metadata or transcript due to bot restrictions.";
+        }
+
+        return res.status(200).json({ url: cleanUrl, text: combinedText, links: [] });
+      }
+      
+      // 2. YouTube Channel
+      if (cleanUrl.includes("/channel/") || cleanUrl.includes("/c/") || cleanUrl.includes("/user/") || cleanUrl.includes("/@")) {
+        try {
+          console.log(`[Scraper] YouTube channel detected: ${cleanUrl}. Resolving details...`);
+          const channelInfo = await playdl.channel_info(cleanUrl);
+          const textContent = `=== YOUTUBE CHANNEL METADATA ===
+URL: ${cleanUrl}
+Channel Name: ${channelInfo.name || "Unknown"}
+Description: ${channelInfo.description || "No description."}
+Subscribers: ${channelInfo.subscribers || "N/A"}
+Video Count: ${channelInfo.videoCount || 0}
+URL: ${channelInfo.url || "N/A"}`;
+          return res.status(200).json({ url: cleanUrl, text: textContent, links: [] });
+        } catch (ytChanErr) {
+          console.warn("[Scraper] play-dl channel metadata fetch failed, falling back to page scraper...", ytChanErr);
+        }
+      }
+    }
+
+    // --- CASE 2: GITHUB FILE REWRITER ---
+    if (cleanUrl.includes("github.com/") && cleanUrl.includes("/blob/")) {
+      try {
+        const rawUrl = cleanUrl
+          .replace("github.com", "raw.githubusercontent.com")
+          .replace("/blob/", "/");
+        console.log(`[Scraper] GitHub file link detected. Rewriting to raw link: ${rawUrl}`);
+        const response = await fetch(rawUrl, {
+          headers: { "User-Agent": "Mozilla/5.0" },
+          signal: AbortSignal.timeout(10000)
+        });
+        if (response.ok) {
+          let codeContent = await response.text();
+          if (codeContent.length > 20000) {
+            codeContent = codeContent.slice(0, 20000) + "\n\n... [File content truncated due to size limits] ...";
+          }
+          const textContent = `=== GITHUB FILE CONTENTS (${cleanUrl}) ===\n\n${codeContent}`;
+          return res.status(200).json({ url: cleanUrl, text: textContent, links: [] });
+        }
+      } catch (gitErr) {
+        console.warn("[Scraper] Failed to fetch raw GitHub content, falling back to normal HTML fetch...", gitErr);
+      }
+    }
+
+    // --- CASE 3: GENERIC WEB PAGE SCRAPER WITH SPA & SOCIAL CONTENT EXTRACTION ---
+    console.log(`[Scraper] Fetching HTML content for: ${cleanUrl}`);
+    const response = await fetch(cleanUrl, {
+      headers: {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+      },
+      signal: AbortSignal.timeout(10000)
+    });
+
+    if (!response.ok) {
+      throw new Error(`Failed to fetch web page: HTTP ${response.status}`);
+    }
+
+    const html = await response.text();
+
+    // 1. Extract and summarize Meta tags (critical for social media post captions/profile cards)
+    const metaTags = [];
+    const metaRegex = /<meta[^>]+(?:name|property)=["']([^"']+)["'][^>]+content=["']([^"']+)["']/gi;
+    const metaRegexAlt = /<meta[^>]+content=["']([^"']+)["'][^>]+(?:name|property)=["']([^"']+)["']/gi;
+    let metaMatch;
+    
+    while ((metaMatch = metaRegex.exec(html)) !== null) {
+      metaTags.push({ key: metaMatch[1], value: metaMatch[2] });
+    }
+    while ((metaMatch = metaRegexAlt.exec(html)) !== null) {
+      metaTags.push({ key: metaMatch[2], value: metaMatch[1] });
+    }
+
+    let metaSummary = "=== WEB PAGE METADATA ===\n";
+    metaTags.forEach(m => {
+      const k = m.key.toLowerCase();
+      if (k.startsWith("og:") || k.startsWith("twitter:") || k === "description" || k === "keywords" || k === "title") {
+        metaSummary += `${m.key}: ${decodeHTMLEntities(m.value)}\n`;
+      }
+    });
+
+    // 2. Extract embedded JSON or JSON-LD blocks (critical for SPA profiles like g.dev)
+    const jsonBlocks = [];
+    const jsonScriptRegex = /<script\b[^>]*type=["']application\/(?:ld\+)?json["'][^>]*>([\s\S]*?)<\/script>/gi;
+    let scriptMatch;
+    while ((scriptMatch = jsonScriptRegex.exec(html)) !== null) {
+      const inner = scriptMatch[1].trim();
+      if (inner.length > 50 && inner.length < 15000) {
+        jsonBlocks.push(decodeHTMLEntities(inner));
+      }
+    }
+
+    // 3. Extract and clean standard HTML Text
+    let pageText = cleanHtmlToText(html);
+    if (pageText.length > 15000) {
+      pageText = pageText.slice(0, 15000) + "... [Plaintext truncated due to context limits]";
+    }
+
+    // 4. Combine elements
+    let combinedText = `${metaSummary}\n=== PAGE PLAINTEXT CONTENT ===\n${pageText}`;
+    if (jsonBlocks.length > 0) {
+      combinedText += `\n\n=== EXTRACTED EMBEDDED DATA STRUCTURES (SPA DATA DUMPS) ===\n` + jsonBlocks.slice(0, 4).join("\n\n");
+    }
+
+    // 5. Extract links for sitemap parsing
+    const links = [];
+    const linkRegex = /<a\s+[^>]*href=["']([^"']+)["']/gi;
+    const parsedUrl = new URL(cleanUrl);
+    const hostname = parsedUrl.hostname;
+    let linkMatch;
+
+    while ((linkMatch = linkRegex.exec(html)) !== null) {
+      const rawHref = linkMatch[1].trim();
+      try {
+        const resolvedUrl = new URL(rawHref, cleanUrl);
+        resolvedUrl.hash = ""; // discard fragments
+        const href = resolvedUrl.href;
+        if (resolvedUrl.hostname === hostname && !links.includes(href) && href !== cleanUrl) {
+          links.push(href);
+        }
+      } catch (e) {}
+    }
+
+    res.status(200).json({
+      url: cleanUrl,
+      text: combinedText,
+      links: links.slice(0, 20)
+    });
+  } catch (error) {
+    console.error("Backend Scrape Error:", error);
+    res.status(500).json({ error: error.message || "Failed to scrape web page" });
+  }
 });
 
 // 2. DuckDuckGo search

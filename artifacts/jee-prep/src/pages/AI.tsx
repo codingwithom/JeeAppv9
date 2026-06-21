@@ -85,6 +85,112 @@ const loadHtml2Canvas = (): Promise<any> => {
   });
 };
 
+function YoutubePreview({ videoId, href, children }: { videoId: string; href: string; children?: any }) {
+  const [play, setPlay] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const playerRef = useRef<any>(null);
+
+  useEffect(() => {
+    if (!play || !containerRef.current) return;
+
+    let cancelled = false;
+    import("@/lib/youtube-api").then(({ loadYouTubeApi }) => {
+      loadYouTubeApi().then(() => {
+        if (cancelled || !containerRef.current) return;
+
+        if (playerRef.current) {
+          try {
+            playerRef.current.destroy();
+          } catch {}
+          playerRef.current = null;
+        }
+
+        playerRef.current = new (window as any).YT.Player(containerRef.current, {
+          videoId,
+          playerVars: {
+            autoplay: 1,
+            controls: 1,
+            showinfo: 0,
+            rel: 0,
+            modestbranding: 1,
+            iv_load_policy: 3,
+            playsinline: 1,
+            origin: window.location.origin,
+          },
+        });
+      });
+    });
+
+    return () => {
+      cancelled = true;
+      if (playerRef.current) {
+        try {
+          playerRef.current.destroy();
+        } catch {}
+        playerRef.current = null;
+      }
+    };
+  }, [play, videoId]);
+
+  return (
+    <div className="my-4 rounded-xl overflow-hidden border border-border shadow-sm max-w-md w-full bg-card hover:shadow-md transition-shadow duration-200">
+      <div 
+        className="relative pt-[56.25%] bg-black group cursor-pointer" 
+        onClick={() => setPlay(true)}
+      >
+        {play ? (
+          <div className="absolute inset-0 w-full h-full">
+            <div ref={containerRef} className="w-full h-full" />
+          </div>
+        ) : (
+          <>
+            <img 
+              src={`https://img.youtube.com/vi/${videoId}/mqdefault.jpg`} 
+              alt="YouTube Video Thumbnail" 
+              className="absolute top-0 left-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 transition-opacity duration-200"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors pointer-events-none" />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-16 h-11 rounded-2xl bg-red-600 flex items-center justify-center group-hover:bg-red-700 transition-colors duration-200 shadow-lg relative">
+                <div className="w-0 h-0 border-t-[8px] border-t-transparent border-l-[14px] border-l-white border-b-[8px] border-b-transparent ml-1" />
+              </div>
+            </div>
+            <a 
+              href={href} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              onClick={(e) => e.stopPropagation()}
+              className="absolute bottom-2 right-2 px-2.5 py-1 rounded bg-black/75 hover:bg-black/90 text-white text-[10px] font-semibold transition-colors flex items-center gap-1 backdrop-blur-sm border border-white/10"
+            >
+              Watch on YouTube
+            </a>
+          </>
+        )}
+      </div>
+      <div className="p-3 bg-muted/30 text-sm border-t border-border flex justify-between items-center gap-3">
+        {children ? (
+          <a href={href} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors font-semibold truncate flex-1">
+            {children}
+          </a>
+        ) : (
+          <span className="text-muted-foreground font-semibold truncate flex-1">YouTube Video ({videoId})</span>
+        )}
+        <a 
+          href={href} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="text-[10px] text-muted-foreground hover:text-primary transition-colors shrink-0 flex items-center gap-1 font-normal"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <span>Open Link</span>
+          <ExternalLink className="h-3 w-3" />
+        </a>
+      </div>
+    </div>
+  );
+}
+
 const getMarkdownComponents = (setFullScreenImage?: (url: string) => void): any => ({
   a: ({ node, children, href, ...props }: any) => {
     const isImageLink = node?.children?.length === 1 && node.children[0].tagName === 'img';
@@ -109,25 +215,7 @@ const getMarkdownComponents = (setFullScreenImage?: (url: string) => void): any 
     
     if (ytMatch && ytMatch[1]) {
       const videoId = ytMatch[1];
-      return (
-        <div className="my-4 rounded-xl overflow-hidden border border-border shadow-sm max-w-md w-full bg-card">
-          <div className="relative pt-[56.25%] bg-black">
-            <iframe 
-              src={`https://www.youtube.com/embed/${videoId}`} 
-              className="absolute top-0 left-0 w-full h-full border-0" 
-              allowFullScreen
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            />
-          </div>
-          {children && (
-            <div className="p-3 bg-muted/30 text-sm font-semibold text-foreground border-t border-border line-clamp-2">
-              <a href={href} target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 transition-colors">
-                 {children}
-              </a>
-            </div>
-          )}
-        </div>
-      );
+      return <YoutubePreview videoId={videoId} href={href}>{children}</YoutubePreview>;
     }
 
     return <a href={href} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600 underline transition-colors font-medium break-words" {...props}>{children}</a>;
@@ -808,6 +896,208 @@ async function fetchWebSearchResults(query: string, timeFilter?: string): Promis
       return "Failed to retrieve search results.";
     }
   }
+}
+
+async function fetchCrawlResults(targetUrl: string, deep: boolean): Promise<{ text: string; crawledUrls: string[] }> {
+  let combinedText = "";
+  const crawledUrls: string[] = [targetUrl];
+
+  // Intercept YouTube URLs to fetch metadata & spoken transcript
+  const ytRegex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+  const ytMatch = targetUrl.match(ytRegex);
+  if (ytMatch && ytMatch[1]) {
+    const videoId = ytMatch[1];
+    
+    // First try the backend scraper API
+    try {
+      const res = await fetch(`/api/scrape?url=${encodeURIComponent(targetUrl)}`);
+      if (res.ok) {
+        const data = await res.json();
+        if (data.text && !data.text.includes("Failed to scrape") && !data.text.includes("Failed to retrieve")) {
+          return { text: data.text, crawledUrls };
+        }
+      }
+    } catch (err) {
+      console.warn("Backend scraper failed for YouTube URL, attempting client-side extraction...", err);
+    }
+
+    // Client-side fallback: fetch metadata from Invidious and transcript from youtube-transcript.ai
+    let metaText = "";
+    let transcriptText = "";
+
+    try {
+      const mirrors = [
+        "https://inv.thepixora.com",
+        "https://invidious.f5.si",
+        "https://invidious.tiekoetter.com"
+      ];
+      for (const mirror of mirrors) {
+        try {
+          const vres = await fetch(`${mirror}/api/v1/videos/${videoId}`, { signal: AbortSignal.timeout(5000) });
+          if (vres.ok) {
+            const data = await vres.json();
+            if (data && data.title) {
+              metaText = `=== YOUTUBE VIDEO METADATA ===\nURL: ${targetUrl}\nTitle: ${data.title}\nChannel Name: ${data.author || "Unknown"} (URL: ${data.authorUrl || "N/A"})\nUpload Date: ${data.publishedText || "N/A"}\nDuration: ${data.lengthSeconds || 0} seconds\nViews: ${data.viewCount || 0}\nLikes: ${data.likeCount || 0}\nDescription:\n${data.description || "No description provided."}\n`;
+              break;
+            }
+          }
+        } catch (e) {}
+      }
+    } catch (e) {}
+
+    try {
+      const tres = await fetch(`https://youtube-transcript.ai/transcript/${videoId}.txt`, { signal: AbortSignal.timeout(8000) });
+      if (tres.ok) {
+        const contentType = tres.headers.get("content-type") || "";
+        const body = await tres.text();
+        if (!contentType.includes("text/html") && !body.trim().startsWith("<!DOCTYPE")) {
+          transcriptText = body;
+        }
+      }
+    } catch (e) {}
+
+    let combinedTextResult = "";
+    if (metaText) combinedTextResult += metaText + "\n";
+    if (transcriptText) {
+      combinedTextResult += `=== SPOKEN DIALOGUE / TRANSCRIPT ===\n${transcriptText}\n`;
+    }
+
+    if (!combinedTextResult) {
+      combinedTextResult = `YouTube Video URL: ${targetUrl}\nVideo ID: ${videoId}\n(Failed to retrieve transcript or metadata due to network restrictions)`;
+    }
+
+    return { text: combinedTextResult, crawledUrls };
+  }
+
+  // If the target is a PDF, parse it directly via browser PDF.js (pdfjs-dist)
+  if (targetUrl.toLowerCase().endsWith(".pdf") || targetUrl.toLowerCase().includes(".pdf?")) {
+    try {
+      console.log(`[Crawler] Parsing PDF file client-side: ${targetUrl}`);
+      try {
+        const res = await fetch(`/api/scrape?url=${encodeURIComponent(targetUrl)}`);
+        if (res.ok) {
+          const data = await res.json();
+          if (data.text && !data.text.includes("Failed to scrape")) {
+            return { text: data.text, crawledUrls };
+          }
+        }
+      } catch (err) {}
+
+      // Client-side download and parse using pdfjs-dist
+      try {
+        const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(targetUrl)}`;
+        const response = await fetch(proxyUrl);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const buffer = await response.arrayBuffer();
+        
+        const pdfjsLib = await import("pdfjs-dist");
+        pdfjsLib.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.mjs`;
+        
+        const doc = await pdfjsLib.getDocument({ data: buffer }).promise;
+        let parsedText = `=== CRAWLED PDF FILE: ${targetUrl} ===\n`;
+        const numPages = Math.min(doc.numPages, 10);
+        for (let i = 1; i <= numPages; i++) {
+          const page = await doc.getPage(i);
+          const textContent = await page.getTextContent();
+          const pageText = textContent.items.map((item: any) => item.str).join(" ");
+          parsedText += `--- PAGE ${i} ---\n${pageText}\n\n`;
+        }
+        return { text: parsedText, crawledUrls };
+      } catch (clientPdfErr: any) {
+        console.error("Browser PDF.js extraction failed:", clientPdfErr);
+        return { text: `Failed to fetch and parse PDF contents: ${clientPdfErr.message || clientPdfErr}`, crawledUrls };
+      }
+    } catch (e: any) {
+      return { text: `Failed to load PDF file: ${e.message || e}`, crawledUrls };
+    }
+  }
+
+  const scrapeSingle = async (url: string): Promise<{ text: string; links: string[] }> => {
+    try {
+      const res = await fetch(`/api/scrape?url=${encodeURIComponent(url)}`);
+      if (res.ok) {
+        const data = await res.json();
+        return { text: data.text || "", links: data.links || [] };
+      }
+    } catch (e) {
+      console.warn(`Local API scrape failed for ${url}, falling back to client-side proxy...`, e);
+    }
+
+    try {
+      const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(url)}`;
+      const res = await fetch(proxyUrl);
+      if (!res.ok) throw new Error(`HTTP status ${res.status}`);
+      
+      const html = await res.text();
+      
+      const cleanHtmlToText = (htmlStr: string): string => {
+        let clean = htmlStr.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '');
+        clean = clean.replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, '');
+        clean = clean.replace(/<[^>]+>/g, ' ');
+        
+        clean = clean
+          .replace(/&amp;/g, "&")
+          .replace(/&lt;/g, "<")
+          .replace(/&gt;/g, ">")
+          .replace(/&quot;/g, '"')
+          .replace(/&#39;/g, "'")
+          .replace(/&apos;/g, "'")
+          .replace(/&nbsp;/g, " ");
+        
+        return clean.replace(/\s+/g, ' ').trim();
+      };
+
+      let text = cleanHtmlToText(html);
+      if (text.length > 12000) {
+        text = text.slice(0, 12000) + "... [Content truncated for length]";
+      }
+
+      // Extract same-origin links
+      const links: string[] = [];
+      const linkRegex = /<a\s+[^>]*href=["']([^"']+)["']/gi;
+      const parsedUrl = new URL(url);
+      const hostname = parsedUrl.hostname;
+      let match;
+
+      while ((match = linkRegex.exec(html)) !== null) {
+        const rawHref = match[1].trim();
+        try {
+          const resolvedUrl = new URL(rawHref, url);
+          resolvedUrl.hash = "";
+          const href = resolvedUrl.href;
+          if (resolvedUrl.hostname === hostname && !links.includes(href) && href !== url) {
+            links.push(href);
+          }
+        } catch (e) {}
+      }
+
+      return { text, links: links.slice(0, 15) };
+    } catch (err: any) {
+      console.error(`Client fallback scraping failed for ${url}:`, err);
+      return { text: `Failed to fetch page content: ${err.message || String(err)}`, links: [] };
+    }
+  };
+
+  const primaryResult = await scrapeSingle(targetUrl);
+  combinedText += `[CRAWLED PAGE: ${targetUrl}]\n${primaryResult.text}\n\n`;
+
+  if (deep && primaryResult.links.length > 0) {
+    // Prioritize links that look like subpages (about, features, services, products, contact, info)
+    const keywords = ["about", "feature", "service", "product", "contact", "info"];
+    const subpageLinks = primaryResult.links.filter(link => {
+      const lower = link.toLowerCase();
+      return keywords.some(kw => lower.includes(kw));
+    });
+
+    const targets = (subpageLinks.length > 0 ? subpageLinks : primaryResult.links).slice(0, 2);
+    for (const link of targets) {
+      crawledUrls.push(link);
+      const subResult = await scrapeSingle(link);
+      combinedText += `[CRAWLED PAGE: ${link}]\n${subResult.text}\n\n`;
+    }
+  }
+
+  return { text: combinedText, crawledUrls };
 }
 
 const SLASH_COMMANDS = [
@@ -1761,6 +2051,81 @@ INSTRUCTIONS: Write a comprehensive, precise response synthesizing the search re
         }
       }
 
+      // Fetch crawl results if requested
+      let crawlContext = "";
+      try {
+        const lowerMsg = lastMsg.toLowerCase();
+        const isCrawlIntent = lowerMsg.includes("crawl") || 
+                              lowerMsg.includes("fetch data") || 
+                              lowerMsg.includes("scrape") || 
+                              lowerMsg.includes("go to the website") || 
+                              lowerMsg.includes("go to this website") ||
+                              lowerMsg.includes("go to website") ||
+                              lowerMsg.includes("visit the website") || 
+                              lowerMsg.includes("visit this website") ||
+                              lowerMsg.includes("visit website") ||
+                              lowerMsg.includes("look at this website") || 
+                              lowerMsg.includes("look at the website") ||
+                              lowerMsg.includes("take a look of this website") ||
+                              lowerMsg.includes("take a look at this website") ||
+                              lowerMsg.includes("analyze the website") ||
+                              lowerMsg.includes("analyze this website") ||
+                              lowerMsg.includes("read the content") ||
+                              lowerMsg.includes("website content");
+
+        const explicitUrlRegex = /(https?:\/\/[^\s]+)/gi;
+        let urlsToCrawl: string[] = [];
+        const explicitMatches = lastMsg.match(explicitUrlRegex);
+        if (explicitMatches) {
+          urlsToCrawl = explicitMatches.map(u => u.replace(/[.,;!?]$/, ''));
+        } else {
+          const words = lastMsg.split(/\s+/);
+          for (const word of words) {
+            const cleanWord = word.replace(/[.,;!?()'"\[\]]$/, '').replace(/^[()'"\[\]]/, '');
+            if (cleanWord.includes(".") && !cleanWord.startsWith(".") && !cleanWord.endsWith(".")) {
+              const dotIndex = cleanWord.indexOf(".");
+              const afterDot = cleanWord.slice(dotIndex + 1);
+              if (/^[a-zA-Z]{2,}/.test(afterDot)) {
+                urlsToCrawl.push(cleanWord.startsWith("http") ? cleanWord : "https://" + cleanWord);
+              }
+            }
+          }
+        }
+
+        const shouldCrawl = urlsToCrawl.length > 0;
+        if (shouldCrawl) {
+          const isDeepCrawl = lowerMsg.includes("feature") || lowerMsg.includes("sitemap") || lowerMsg.includes("all pages") || lowerMsg.includes("other pages") || lowerMsg.includes("sub-pages") || lowerMsg.includes("link") || lowerMsg.includes("deep") || lowerMsg.includes("analyze content") || lowerMsg.includes("tell me what is");
+          console.log(`[Crawler] Starting crawl for: ${urlsToCrawl[0]} (deep: ${isDeepCrawl})`);
+          
+          const crawlResult = await fetchCrawlResults(urlsToCrawl[0], isDeepCrawl);
+          if (crawlResult && crawlResult.text) {
+            crawlContext = `\n\n[CRITICAL DIRECTIVE: REAL-TIME WEB CRAWL MODE ACTIVATED]
+The user has provided a link (${urlsToCrawl[0]}) to be analyzed, crawled, or read.
+You MUST base your response and summary ONLY on the verified live web crawl contents provided below.
+If this is a YouTube link, the live crawl contents contain the video's actual spoken dialogue/transcript. You MUST summarize the video using ONLY this spoken transcript.
+CRITICAL: Do NOT make up any information, do not summarize random mathematical or other unrelated topics, and do not hallucinate. Ground your response 100% on the crawl text below.
+
+LIVE WEB CRAWL CONTENTS:
+${crawlResult.text}
+
+INSTRUCTIONS: Synthesize the live crawled text above to answer the user's request. State clearly in your response that you have successfully crawled the link and are summarizing its actual content.`;
+
+            crawlResult.crawledUrls.forEach(url => {
+              let hostname = "";
+              try { hostname = new URL(url).hostname; } catch(e) {}
+              generatedSources.push({
+                uri: url,
+                title: `Crawled Page: ${url.replace(/^https?:\/\//i, "")}`,
+                favicon: hostname ? `https://www.google.com/s2/favicons?domain=${hostname}` : "",
+                snippet: `Direct crawled contents parsed and analyzed by AI.`
+              });
+            });
+          }
+        }
+      } catch (crawlErr) {
+        console.warn("Crawl process failed:", crawlErr);
+      }
+
       let graphDirective = "";
       if (isGraphOrPlotRequest) {
         graphDirective = `\n\n[CRITICAL DIRECTIVE: INTERACTIVE GRAPH PLOTTER]
@@ -1788,7 +2153,7 @@ If the user uploaded an image of an equation, read/OCR the equation from the ima
 
       const codeAndWidgetRestriction = `\n\n[CRITICAL RESTRICTION - CODE AND WIDGETS]\n1. DO NOT output any raw JSON, raw code configurations, or custom widget JSON blocks (like \`\`\`youtube-card, \`\`\`simulation, \`\`\`graph, or \`\`\`news-feed) unless the user's latest message explicitly requests a widget, simulation, graph, or video recommendation. Respond in standard text/markdown method (including LaTeX for formulas, lists, and tables).\n2. DO NOT write code blocks (like Python, C++, Java, JS, HTML, etc.) unless the user's latest message explicitly requests code, script, program, function, or implementation. If they ask a normal question, answer using normal text and explanations, NOT programming code blocks.\n`;
 
-      const finalSystemInstruction = systemInstruction + modeInstruction + imageGenerationInstruction + dateInstruction + searchContext + graphDirective + codeAndWidgetRestriction;
+      const finalSystemInstruction = systemInstruction + modeInstruction + imageGenerationInstruction + dateInstruction + searchContext + crawlContext + graphDirective + codeAndWidgetRestriction;
       
       const visionPrompt = hasImages ? "Please scan, read, and analyze the uploaded image carefully. Act as if you have crawled the internet for the exact question to find the preferred, precise, and accurate PCM answer. Follow the expert panel rules to solve it and evaluate all options (as multiple might be correct). Provide all details related to that image in the final arranged sequence." : "";
 

@@ -617,7 +617,7 @@ app.get("/api/scrape", async (req, res) => {
 
             if (searchResultsMap.size > 0) {
               const scrapedSummaries = Array.from(searchResultsMap.values()).join("\n");
-              combinedText += `\n=== ADDITIONAL CONTEXT / WEB SUMMARIES ===\nBelow is information aggregated from multiple search queries regarding this video topic to ensure correctness:\n${scrapedSummaries}\n`;
+              combinedText += `\n=== 3RD-PARTY AI YOUTUBE VIDEO ANALYZER REPORT ===\nBelow is the aggregated analysis, plot details, and topic summaries fetched from multiple high-authority web databases for this video to ensure correctness:\n${scrapedSummaries}\n`;
             }
           }
         }

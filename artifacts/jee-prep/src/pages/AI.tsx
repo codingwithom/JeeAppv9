@@ -1879,11 +1879,9 @@ export default function AIChatInterface() {
   });
 
   const updateSessions = (updater: ChatSession[] | ((prev: ChatSession[]) => ChatSession[])) => {
-    setSessions(prev => {
-      const next = typeof updater === "function" ? updater(prev) : updater;
-      localStorage.setItem("jee_ai_chats", JSON.stringify(next));
-      return next;
-    });
+    const next = typeof updater === "function" ? updater(sessions) : updater;
+    localStorage.setItem("jee_ai_chats", JSON.stringify(next));
+    setSessions(next);
   };
   const [activeSessionId, setActiveSessionId] = useState<string | null>(null);
   const [visibleMessagesCount, setVisibleMessagesCount] = useState(15);
@@ -2506,7 +2504,7 @@ export default function AIChatInterface() {
     setAttachedFiles([]);
 
     let currentId = activeSessionId;
-    let currentMessages = messages;
+    let nextSessions = [...sessions];
 
     if (!currentId) {
        currentId = Date.now().toString();
@@ -2517,12 +2515,17 @@ export default function AIChatInterface() {
          updatedAt: Date.now(),
          messages: []
        };
-       updateSessions(prev => [newSession, ...prev]);
-       setActiveSessionId(currentId);
+       nextSessions = [newSession, ...nextSessions];
     }
 
-    const newMessages: ChatMessage[] = [...currentMessages, { role: "user", content: finalUserMsg, attachments: attachmentsToSave }];
-    updateSessions(prev => prev.map(s => s.id === currentId ? { ...s, messages: newMessages, updatedAt: Date.now() } : s));
+    const newMessages: ChatMessage[] = [...(activeSessionId ? (sessions.find(s => s.id === activeSessionId)?.messages || []) : []), { role: "user", content: finalUserMsg, attachments: attachmentsToSave }];
+    const finalSessions = nextSessions.map(s => s.id === currentId ? { ...s, messages: newMessages, updatedAt: Date.now() } : s);
+
+    updateSessions(finalSessions);
+
+    if (!activeSessionId) {
+      setActiveSessionId(currentId);
+    }
     
     await fetchAIResponse(currentId, newMessages, filePayloads);
   };

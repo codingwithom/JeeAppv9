@@ -378,7 +378,7 @@ export default function LoginPage() {
             </motion.div>
             <CardTitle className="text-3xl font-bold tracking-tight text-foreground">StudE</CardTitle>
             <CardDescription className="text-muted-foreground">
-              {step === "login" && "Your JEE Preparation & Study Hub"}
+              {step === "login" && "A Complete Study Hub4 U"}
               {step === "setup" && "Complete your profile & set offline credentials"}
               {step === "reset" && "Set a new secure password"}
             </CardDescription>

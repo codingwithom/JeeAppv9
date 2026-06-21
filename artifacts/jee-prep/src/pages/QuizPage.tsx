@@ -2524,7 +2524,13 @@ export default function QuizPage() {
        </div>
        
        <div className="flex-1 overflow-hidden relative">
-          {activeTab === "chat" ? <AIChatInterface /> : <AIQuizInterface />}
+          {activeTab === "chat" ? (
+            <AIChatInterface />
+          ) : activeTab === "quiz" ? (
+            <AIQuizInterface />
+          ) : (
+            <AIEngin />
+          )}
        </div>
     </div>
   );

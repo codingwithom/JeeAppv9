@@ -769,6 +769,63 @@ app.get("/api/scrape", async (req, res) => {
   }
 });
 
+// 1.75 Web proxy endpoint to bypass iframe frame restrictions (X-Frame-Options, CSP)
+app.get("/api/proxy", async (req, res) => {
+  try {
+    const targetUrl = req.query.url;
+    if (!targetUrl || typeof targetUrl !== "string") {
+      return res.status(400).send("Missing URL parameter 'url'");
+    }
+
+    const response = await fetch(targetUrl, {
+      headers: {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+      }
+    });
+
+    const contentType = response.headers.get("content-type") || "";
+    const finalUrl = response.url || targetUrl;
+
+    if (contentType.includes("text/html")) {
+      let html = await response.text();
+      const parsedUrl = new URL(finalUrl);
+      const baseUrl = parsedUrl.origin + parsedUrl.pathname;
+
+      // Rewrite relative URLs to absolute URLs routed through the proxy
+      html = html.replace(/(href|src|action)=["'](?!http|\/\/|javascript:|#)([^"']+)["']/gi, (match, attr, path) => {
+        try {
+          const absoluteUrl = new URL(path, baseUrl).href;
+          return `${attr}="/api/proxy?url=${encodeURIComponent(absoluteUrl)}"`;
+        } catch (e) {
+          return match;
+        }
+      });
+
+      // Rewrite absolute navigation URLs to route through the proxy
+      html = html.replace(/(href|action)=["'](https?:\/\/[^"']+)["']/gi, (match, attr, fullUrl) => {
+        return `${attr}="/api/proxy?url=${encodeURIComponent(fullUrl)}"`;
+      });
+
+      // Inject a script to prevent iframe escaping
+      html = html.replace("</head>", `<script>
+        if (window.top !== window.self) {
+          window.top.onbeforeunload = function() {};
+        }
+      </script></head>`);
+
+      res.setHeader("Content-Type", "text/html");
+      return res.send(html);
+    } else {
+      const buffer = await response.arrayBuffer();
+      res.setHeader("Content-Type", contentType);
+      return res.send(Buffer.from(buffer));
+    }
+  } catch (err) {
+    console.error("Proxy Error:", err);
+    return res.status(500).send(`Proxy Error: ${err.message}`);
+  }
+});
+
 // 2. DuckDuckGo search
 app.get("/api/search", async (req, res) => {
   try {

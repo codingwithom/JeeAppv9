@@ -1,21 +1,21 @@
 {
-  "name": "JEE Prep Hub",
-  "short_name": "JEE Prep",
-  "description": "JEE 2028 Preparation Command Center",
+  "name": "StudE",
+  "short_name": "StudE",
+  "description": "JEE Preparation and Study App by OM Network",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#0a0e1a",
   "theme_color": "#4f46e5",
   "icons": [
     {
-      "src": "favicon.svg",
+      "src": "logo.png",
       "sizes": "192x192",
-      "type": "image/svg+xml"
+      "type": "image/png"
     },
     {
-      "src": "favicon.svg",
+      "src": "logo.png",
       "sizes": "512x512",
-      "type": "image/svg+xml"
+      "type": "image/png"
     }
   ]
 }

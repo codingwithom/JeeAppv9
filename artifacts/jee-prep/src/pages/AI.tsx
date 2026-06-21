@@ -1212,6 +1212,18 @@ async function fetchCrawlResults(targetUrl: string, deep: boolean): Promise<{ te
     }
 
     if (!combinedTextResult) {
+      try {
+        const noembedRes = await fetch(`https://noembed.com/embed?url=${encodeURIComponent(targetUrl)}`);
+        if (noembedRes.ok) {
+          const noembedData = await noembedRes.json();
+          if (noembedData && noembedData.title) {
+            combinedTextResult = `=== YOUTUBE VIDEO METADATA (RESOLVED VIA NOEMBED) ===\nURL: ${targetUrl}\nTitle: ${noembedData.title}\nChannel Name: ${noembedData.author_name}\nDescription: This video is titled "${noembedData.title}" by channel "${noembedData.author_name}". (No captions or transcripts are available for this video, but you can explain or discuss its topic using this metadata or your knowledge).\n`;
+          }
+        }
+      } catch (neErr) {}
+    }
+
+    if (!combinedTextResult) {
       combinedTextResult = `YouTube Video URL: ${targetUrl}\nVideo ID: ${videoId}\n(Failed to retrieve transcript or metadata due to network restrictions)`;
     }
 
@@ -1244,7 +1256,7 @@ async function fetchCrawlResults(targetUrl: string, deep: boolean): Promise<{ te
         
         const doc = await pdfjsLib.getDocument({ data: buffer }).promise;
         let parsedText = `=== CRAWLED PDF FILE: ${targetUrl} ===\n`;
-        const numPages = Math.min(doc.numPages, 10);
+        const numPages = Math.min(doc.numPages, 50);
         for (let i = 1; i <= numPages; i++) {
           const page = await doc.getPage(i);
           const textContent = await page.getTextContent();
@@ -1890,8 +1902,8 @@ Uploaded: ${v.uploadedAt}
           if (crawlResult && crawlResult.text) {
             crawlContext = `\n\n[CRITICAL DIRECTIVE: REAL-TIME WEB CRAWL MODE ACTIVATED]
 The user has provided a link (${urlsToCrawl[0]}) to be analyzed, crawled, or read.
-You MUST base your response and summary ONLY on the verified live web crawl contents provided below.
-If this is a YouTube link, the live crawl contents contain the video's actual spoken dialogue/transcript. You MUST summarize the video using ONLY this spoken transcript.
+You MUST base your response and summary on the verified live web crawl contents provided below.
+If this is a YouTube link, you are acting as an AI video summarizer. Analyze the video using the provided metadata, title, channel name, description, and transcript text. If the transcript is not fully detailed or is missing, synthesize a comprehensive summary of the video's topic using the provided title, channel name, and any search/description context. Do NOT state that the crawl failed or complain about network restrictions; explain the video content or topic as best as possible using the available info!
 CRITICAL: Do NOT make up any information, do not summarize random mathematical or other unrelated topics, and do not hallucinate. Ground your response 100% on the crawl text below.
 
 LIVE WEB CRAWL CONTENTS:
@@ -2813,12 +2825,12 @@ export default function AIChatInterface() {
         const arrayBuffer = await af.file.arrayBuffer();
         const pdf = await pdfjsLib.getDocument({ data: arrayBuffer.slice(0) }).promise;
         let text = "";
-        for (let i = 1; i <= Math.min(pdf.numPages, 10); i++) {
+        for (let i = 1; i <= Math.min(pdf.numPages, 50); i++) {
           const page = await pdf.getPage(i);
           const content = await page.getTextContent();
-          text += content.items.map((it: any) => it.str).join(" ") + "\n";
+          text += `--- PAGE ${i} ---\n` + content.items.map((it: any) => it.str).join(" ") + "\n\n";
         }
-        textFilesContent += `\n\n--- Contents of ${af.file.name} (First ${Math.min(pdf.numPages, 10)} pages) ---\n${text.slice(0, 15000)}`;
+        textFilesContent += `\n\n--- Contents of ${af.file.name} (First ${Math.min(pdf.numPages, 50)} pages) ---\n${text.slice(0, 30000)}`;
       } catch (err) {
         console.error("PDF Parsing Error: ", err);
       }

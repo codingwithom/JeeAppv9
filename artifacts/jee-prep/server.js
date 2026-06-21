@@ -369,8 +369,62 @@ app.get("/api/scrape", async (req, res) => {
         if (metaText) combinedText += metaText + "\n";
         if (transcriptText) {
           combinedText += `=== SPOKEN DIALOGUE / TRANSCRIPT ===\n${transcriptText}\n`;
-        } else if (!metaText) {
-          combinedText = "Failed to retrieve YouTube video metadata or transcript due to bot restrictions.";
+        }
+
+        if (!metaText) {
+          let noembedTitle = "";
+          let noembedAuthor = "";
+          try {
+            const noembedRes = await fetch(`https://noembed.com/embed?url=${encodeURIComponent(cleanUrl)}`, { signal: AbortSignal.timeout(4000) });
+            if (noembedRes.ok) {
+              const noembedData = await noembedRes.json();
+              if (noembedData && noembedData.title) {
+                noembedTitle = noembedData.title;
+                noembedAuthor = noembedData.author_name;
+              }
+            }
+          } catch (neErr) {
+            console.warn("[Scraper] noembed metadata resolver failed:", neErr);
+          }
+
+          if (noembedTitle) {
+            combinedText = `=== YOUTUBE VIDEO METADATA (RESOLVED VIA NOEMBED) ===\nURL: ${cleanUrl}\nTitle: ${noembedTitle}\nChannel Name: ${noembedAuthor}\nDescription: This video is titled "${noembedTitle}" by channel "${noembedAuthor}".\n`;
+            
+            try {
+              const query = `${noembedTitle} YouTube video summary`;
+              const encoded = encodeURIComponent(query);
+              const searchUrl = `https://html.duckduckgo.com/html/?q=${encoded}`;
+              const searchRes = await fetch(searchUrl, {
+                headers: {
+                  "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+                },
+                signal: AbortSignal.timeout(5000)
+              });
+              if (searchRes.ok) {
+                const searchHtml = await searchRes.text();
+                const parts = searchHtml.split('class="result results_links');
+                const scrapedSummaries = parts.slice(1, 4).map((part) => {
+                  const titleMatch = part.match(/class="result__a"[^>]*>([\s\S]*?)<\/a>/);
+                  const snippetMatch = part.match(/class="result__snippet"[^>]*>([\s\S]*?)<\/a>/);
+                  let title = titleMatch ? titleMatch[1].replace(/<[^>]*>/g, "").trim() : "";
+                  let snippet = snippetMatch ? snippetMatch[1].replace(/<[^>]*>/g, "").trim() : "";
+                  
+                  title = title.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"');
+                  snippet = snippet.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"');
+                  
+                  return `- ${title}: ${snippet}`;
+                }).join("\n");
+                
+                if (scrapedSummaries) {
+                  combinedText += `\n=== ADDITIONAL CONTEXT / WEB SUMMARIES ===\nBelow is information scraped from the web regarding this video topic:\n${scrapedSummaries}\n`;
+                }
+              }
+            } catch (searchErr) {
+              console.warn("[Scraper] Fallback search summaries failed:", searchErr);
+            }
+          } else {
+            combinedText = "Failed to retrieve YouTube video metadata or transcript due to network or bot restrictions.";
+          }
         }
 
         return res.status(200).json({ url: cleanUrl, text: combinedText, links: [] });

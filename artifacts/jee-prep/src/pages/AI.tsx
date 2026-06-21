@@ -1877,6 +1877,14 @@ export default function AIChatInterface() {
     try { return JSON.parse(localStorage.getItem("jee_ai_chats") || "[]"); }
     catch { return []; }
   });
+
+  const updateSessions = (updater: ChatSession[] | ((prev: ChatSession[]) => ChatSession[])) => {
+    setSessions(prev => {
+      const next = typeof updater === "function" ? updater(prev) : updater;
+      localStorage.setItem("jee_ai_chats", JSON.stringify(next));
+      return next;
+    });
+  };
   const [activeSessionId, setActiveSessionId] = useState<string | null>(null);
   const [visibleMessagesCount, setVisibleMessagesCount] = useState(15);
   const [input, setInput] = useState("");
@@ -2120,7 +2128,7 @@ export default function AIChatInterface() {
   const selectCommand = (cmd: string) => {
     if (cmd === "/clear") {
       if (activeSessionId) {
-        setSessions(prev => prev.map(s => s.id === activeSessionId ? { ...s, messages: [], updatedAt: Date.now() } : s));
+        updateSessions(prev => prev.map(s => s.id === activeSessionId ? { ...s, messages: [], updatedAt: Date.now() } : s));
       }
       setInput("");
       setAttachedFiles([]);
@@ -2330,7 +2338,7 @@ export default function AIChatInterface() {
   useEffect(() => {
     if (textareaRef.current) {
       textareaRef.current.style.height = "auto";
-      textareaRef.current.style.height = Math.min(textareaRef.current.scrollHeight, 200) + "px";
+      textareaRef.current.style.height = Math.min(textareaRef.current.scrollHeight, 120) + "px";
     }
   }, [input]);
 
@@ -2341,7 +2349,7 @@ export default function AIChatInterface() {
   };
 
   const markAsDone = (msgIndex: number) => {
-    setSessions(prev => prev.map(s => s.id === activeSessionId ? {
+    updateSessions(prev => prev.map(s => s.id === activeSessionId ? {
       ...s,
       messages: s.messages.map((msg, i) => i === msgIndex ? { ...msg, isTyping: false } : msg)
     } : s));
@@ -2378,7 +2386,7 @@ export default function AIChatInterface() {
   };
 
   const handleDeleteMessage = (sessionId: string, msgIndex: number) => {
-    setSessions(prev => prev.map(s => {
+    updateSessions(prev => prev.map(s => {
         if (s.id !== sessionId) return s;
         const newMessages = [...s.messages];
         const msgRole = newMessages[msgIndex]?.role;
@@ -2413,7 +2421,7 @@ export default function AIChatInterface() {
     
     if (userMsg === "/clear") {
       if (activeSessionId) {
-        setSessions(prev => prev.map(s => s.id === activeSessionId ? { ...s, messages: [], updatedAt: Date.now() } : s));
+        updateSessions(prev => prev.map(s => s.id === activeSessionId ? { ...s, messages: [], updatedAt: Date.now() } : s));
       }
       setInput("");
       setAttachedFiles([]);
@@ -2509,12 +2517,12 @@ export default function AIChatInterface() {
          updatedAt: Date.now(),
          messages: []
        };
-       setSessions(prev => [newSession, ...prev]);
+       updateSessions(prev => [newSession, ...prev]);
        setActiveSessionId(currentId);
     }
 
     const newMessages: ChatMessage[] = [...currentMessages, { role: "user", content: finalUserMsg, attachments: attachmentsToSave }];
-    setSessions(prev => prev.map(s => s.id === currentId ? { ...s, messages: newMessages, updatedAt: Date.now() } : s));
+    updateSessions(prev => prev.map(s => s.id === currentId ? { ...s, messages: newMessages, updatedAt: Date.now() } : s));
     
     await fetchAIResponse(currentId, newMessages, filePayloads);
   };
@@ -2577,7 +2585,7 @@ export default function AIChatInterface() {
     if (msgs[msgs.length - 1].role === "model") {
        msgs.pop();
     }
-    setSessions(prev => prev.map(s => s.id === activeSessionId ? { ...s, messages: msgs, updatedAt: Date.now() } : s));
+    updateSessions(prev => prev.map(s => s.id === activeSessionId ? { ...s, messages: msgs, updatedAt: Date.now() } : s));
     
     const lastUserMsg = msgs[msgs.length - 1];
     const filePayloads = await getImagePayloadsFromAttachments(lastUserMsg?.attachments);
@@ -2598,7 +2606,7 @@ export default function AIChatInterface() {
     
     const truncatedMessages = updatedMessages.slice(0, idx + 1);
     
-    setSessions(prev => prev.map(s => s.id === activeSessionId ? {
+    updateSessions(prev => prev.map(s => s.id === activeSessionId ? {
       ...s,
       messages: truncatedMessages,
       updatedAt: Date.now()
@@ -2636,12 +2644,12 @@ export default function AIChatInterface() {
                         value={editTitle}
                         onChange={e => setEditTitle(e.target.value)}
                         onBlur={() => {
-                          if(editTitle.trim()) setSessions(prev => prev.map(x => x.id === s.id ? {...x, title: editTitle.trim()} : x));
+                          if(editTitle.trim()) updateSessions(prev => prev.map(x => x.id === s.id ? {...x, title: editTitle.trim()} : x));
                           setEditingId(null);
                         }}
                         onKeyDown={e => {
                           if (e.key === 'Enter') {
-                            if(editTitle.trim()) setSessions(prev => prev.map(x => x.id === s.id ? {...x, title: editTitle.trim()} : x));
+                            if(editTitle.trim()) updateSessions(prev => prev.map(x => x.id === s.id ? {...x, title: editTitle.trim()} : x));
                             setEditingId(null);
                           }
                         }}
@@ -2655,7 +2663,7 @@ export default function AIChatInterface() {
                     )}
                     <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
                       <button onClick={(e) => { e.stopPropagation(); setEditingId(s.id); setEditTitle(s.title); }} className="p-1 hover:text-primary"><Pencil className="h-3.5 w-3.5" /></button>
-                      <button onClick={(e) => { e.stopPropagation(); setSessions(prev => prev.filter(x => x.id !== s.id)); if (activeSessionId === s.id) setActiveSessionId(null); }} className="p-1 hover:text-destructive"><Trash2 className="h-3.5 w-3.5" /></button>
+                      <button onClick={(e) => { e.stopPropagation(); updateSessions(prev => prev.filter(x => x.id !== s.id)); if (activeSessionId === s.id) setActiveSessionId(null); }} className="p-1 hover:text-destructive"><Trash2 className="h-3.5 w-3.5" /></button>
                     </div>
                   </div>
                ))}
@@ -3087,7 +3095,7 @@ export default function AIChatInterface() {
                   <option value="non_academic">Non-Academic Mode</option>
                 </select>
               </div>
-              <div className="flex flex-col bg-muted/70 border border-border shadow-lg rounded-[28px] overflow-hidden focus-within:bg-muted/90 focus-within:shadow-xl transition-all p-2 backdrop-blur-md">
+              <div className="flex flex-col bg-muted/70 border border-border shadow-lg rounded-[24px] overflow-hidden focus-within:bg-muted/90 focus-within:shadow-xl transition-all p-1.5 backdrop-blur-md">
                  <AnimatePresence>
                    {attachedFiles.length > 0 && (
                      <motion.div 
@@ -3124,8 +3132,8 @@ export default function AIChatInterface() {
                    if (e.target.files) handleFiles(Array.from(e.target.files));
                    e.target.value = "";
                  }} />
-                 <button onClick={() => fileInputRef.current?.click()} className="h-11 w-11 shrink-0 rounded-full flex items-center justify-center transition-all mx-1 mb-0.5 text-muted-foreground hover:bg-muted hover:text-foreground">
-                   <Plus className="h-6 w-6" />
+                 <button onClick={() => fileInputRef.current?.click()} className="h-9 w-9 shrink-0 rounded-full flex items-center justify-center transition-all mx-0.5 mb-0.5 text-muted-foreground hover:bg-muted hover:text-foreground">
+                   <Plus className="h-5 w-5" />
                  </button>
              <textarea 
                 ref={textareaRef}
@@ -3169,13 +3177,13 @@ export default function AIChatInterface() {
                    }
                 }}
                 placeholder="Ask me anything..."
-                className="flex-1 bg-transparent border-none resize-none max-h-48 min-h-[44px] py-3 px-4 text-base focus:outline-none placeholder:text-muted-foreground/60 text-foreground"
+                className="flex-1 bg-transparent border-none resize-none max-h-48 min-h-[36px] py-1.5 px-3 text-sm focus:outline-none placeholder:text-muted-foreground/60 text-foreground"
                 rows={1}
               />
              {loading || isTyping ? (
                <button 
                  onClick={handleStopGeneration}
-                 className="h-11 w-11 shrink-0 rounded-full flex items-center justify-center transition-all mx-1 mb-0.5 bg-red-500 text-white shadow-md hover:scale-105"
+                 className="h-9 w-9 shrink-0 rounded-full flex items-center justify-center transition-all mx-0.5 mb-0.5 bg-red-500 text-white shadow-md hover:scale-105"
                >
                  <Square className="h-4 w-4 fill-current" />
                </button>
@@ -3183,7 +3191,7 @@ export default function AIChatInterface() {
                <button 
                  onClick={handleSend}
                  disabled={!input.trim() && attachedFiles.length === 0}
-                 className={cn("h-11 w-11 shrink-0 rounded-full flex items-center justify-center transition-all mx-1 mb-0.5", (input.trim() || attachedFiles.length > 0) ? "bg-foreground text-background shadow-md hover:scale-105" : "bg-muted-foreground/20 text-muted-foreground cursor-not-allowed")}
+                 className={cn("h-9 w-9 shrink-0 rounded-full flex items-center justify-center transition-all mx-0.5 mb-0.5", (input.trim() || attachedFiles.length > 0) ? "bg-foreground text-background shadow-md hover:scale-105" : "bg-muted-foreground/20 text-muted-foreground cursor-not-allowed")}
                >
                  <ArrowRight className="h-5 w-5" />
                </button>

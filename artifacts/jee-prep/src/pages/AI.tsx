@@ -1151,21 +1151,20 @@ async function fetchThirdPartyAiVideoAnalysis(videoId: string, rawText: string):
   const apiKey = localStorage.getItem("jee_openrouter_api_key") || "";
   if (!apiKey) return "";
 
-  const prompt = `You are an AI orchestrator simulating third-party YouTube video analyzer tools.
-I will give you the metadata, transcripts, and web search results extracted from a YouTube video URL:
+  const prompt = `You are a YouTube video analyzer and multi-source verification expert.
 VIDEO URL: https://www.youtube.com/watch?v=${videoId}
 RAW DATA:
 ${rawText}
 
-Please generate three separate AI analysis reports representing outputs from different specialized YouTube AI video analyzer websites:
+Please perform the following verification and analysis:
+1. **Identify the True Video Topic:** Determine the exact show, anime, or topic based on the video title and description metadata (e.g. "SPY×FAMILY - Episode 36 (S2E11) [Hindi dub]").
+2. **Cross-Validate Across Sources:** Analyze all the web search results in the RAW DATA. Cross-reference the plot, characters (e.g., Loid, Yor, Anya, Becky, Fiona Frost), and events to verify which details are consistent across multiple sources. Ignore and filter out any search matches or summaries that belong to different shows or topics.
+3. **Generate AI Analyzer Reports:** Using ONLY the verified and cross-checked facts for the identified video topic, output the following structured reports:
+   - **YTSummary.app (Core Insights):** A concise bullet outline of verified highlights and key takeaways.
+   - **NoteGPT.io (Structured Notes & Plot Progression):** Detailed, verified summaries of chapters, themes, and characters.
+   - **Recall.ai (Multi-Source Verification Audit):** A checklist of verified facts, noting the sources they match, to ensure 100% correct, hallucination-free summaries.
 
-1. YTSummary.app (AI Key Insights & High-Yield Summary): Core takeaways, main highlights, and target points.
-2. NoteGPT.io (AI Structured Notes & Chapters): Detailed timestamped notes, major topics discussed, and a structured outline.
-3. Recall.ai (AI Cross-Referenced Verification Report): A cross-reference checklist that verifies the video's details and claims against public knowledge and high-authority web databases to guarantee 100% correct facts (including plot details, names, characters, timelines, etc.).
-
-Ensure that if transcripts are missing or short, you use the web search results in the RAW DATA to analyze the exact topic, anime, or video plot accurately (e.g. if the video is "Spy x Family Episode 36 [Hindi dub]" and has no transcript, look at the web search results about Spy x Family Episode 36 to verify its actual plot, characters Yor, Fiona, Becky, Loid, etc., and summarize it correctly).
-
-Do not state that transcripts are missing or complain. Format the output with clear markdown headers for each source.`;
+Do not complain about missing transcripts. Retain only verified, consistent facts. Format the output with clear markdown headers for each source.`;
 
   const reqBody = {
     model: "google/gemma-2-9b-it:free",
@@ -2085,7 +2084,8 @@ Do not include any explanation or markdown outside the code block.` : "";
 
       // YouTube Channel or Video Search Detection
       let ytContext = "";
-      const isYtRequest = /latest\s+video|youtube\b|yt\b|video\s+of|video\s+from|upload\s+of|upload\s+from|tell me.*video/i.test(lastMsg);
+      const containsYtUrl = /(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)/i.test(lastMsg);
+      const isYtRequest = !containsYtUrl && /latest\s+video|youtube\b|yt\b|video\s+of|video\s+from|upload\s+of|upload\s+from|tell me.*video/i.test(lastMsg);
       if (isYtRequest) {
         let cleanQuery = lastMsg
           .replace(/tell me/gi, "")

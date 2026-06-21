@@ -4,7 +4,8 @@ self.addEventListener('install', (event) => {
       return cache.addAll([
         '/',
         '/index.html',
-        '/favicon.svg'
+        '/favicon.png',
+        '/logo.png'
       ]);
     })
   );

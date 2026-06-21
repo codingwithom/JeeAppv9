@@ -767,7 +767,7 @@ class QuizGeneratorManager {
                        headers: {
                          "Authorization": `Bearer ${apiKey.trim()}`,
                          "HTTP-Referer": window.location.href, 
-                         "X-Title": "JEE Prep App", 
+                         "X-Title": "StudE", 
                          "Content-Type": "application/json"
                        },
                        body: JSON.stringify(payload),
@@ -780,7 +780,7 @@ class QuizGeneratorManager {
                        headers: {
                          "Authorization": `Bearer ${apiKey.trim()}`,
                          "HTTP-Referer": window.location.href, 
-                         "X-Title": "JEE Prep App", 
+                         "X-Title": "StudE", 
                          "Content-Type": "application/json"
                        },
                        body: JSON.stringify(payload),
@@ -1294,7 +1294,7 @@ Respond with ONLY the markdown explanation. Do not wrap it in JSON or HTML. Star
             headers: {
               "Authorization": `Bearer ${apiKey.trim()}`,
               "HTTP-Referer": window.location.href, 
-              "X-Title": "JEE Prep App", 
+              "X-Title": "StudE", 
               "Content-Type": "application/json"
             },
             body: JSON.stringify(payload)
@@ -1305,7 +1305,7 @@ Respond with ONLY the markdown explanation. Do not wrap it in JSON or HTML. Star
             headers: {
               "Authorization": `Bearer ${apiKey.trim()}`,
               "HTTP-Referer": window.location.href, 
-              "X-Title": "JEE Prep App", 
+              "X-Title": "StudE", 
               "Content-Type": "application/json"
             },
             body: JSON.stringify(payload)

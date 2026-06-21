@@ -100,11 +100,12 @@ export function GoalSelection({ canClose = false }: GoalSelectionProps) {
   };
 
   // Complete selection
-  const handleComplete = (displayName: string, path: string[]) => {
-    if (!selectedCategory) return;
+  const handleComplete = (displayName: string, path: string[], overrideCategory?: string | null) => {
+    const finalCategory = overrideCategory || selectedCategory;
+    if (!finalCategory) return;
     
     const goal: SelectedGoal = {
-      category: selectedCategory,
+      category: finalCategory,
       path: path,
       displayName: displayName
     };
@@ -170,7 +171,7 @@ export function GoalSelection({ canClose = false }: GoalSelectionProps) {
     const directRedirects = ["UPSC", "CA", "Banking", "Digital Courses", "PG Exams", "YouTube courses"];
     
     if (directRedirects.includes(catId)) {
-      handleComplete(catId, [catId]);
+      handleComplete(catId, [catId], catId);
     } else {
       navigateTo("sub_options", catId);
     }
@@ -511,7 +512,7 @@ export function GoalSelection({ canClose = false }: GoalSelectionProps) {
                     <button
                       onClick={() => {
                         setSelectedCategory("Govt Exam");
-                        handleComplete("Teacher Training & NET", ["Govt Exam", "Teaching"]);
+                        handleComplete("Teacher Training & NET", ["Govt Exam", "Teaching"], "Govt Exam");
                       }}
                       className="flex items-center gap-4 p-4 rounded-2xl border border-border/80 bg-card hover:bg-muted/40 hover:border-emerald-500/20 hover:scale-[1.01] active:scale-95 transform-gpu duration-200 text-left group shadow-sm"
                     >
@@ -592,7 +593,7 @@ export function GoalSelection({ canClose = false }: GoalSelectionProps) {
                   <button
                     onClick={() => {
                       setSelectedCategory("PG Exams");
-                      handleComplete("PG Entrance Exams", ["PG Exams"]);
+                      handleComplete("PG Entrance Exams", ["PG Exams"], "PG Exams");
                     }}
                     className="flex flex-col items-center justify-center p-8 rounded-2xl border border-indigo-100/40 dark:border-indigo-900/30 bg-indigo-50/50 dark:bg-indigo-950/10 text-indigo-700 dark:text-indigo-300 transition-all hover:bg-indigo-50 dark:hover:bg-indigo-950/20 hover:scale-[1.02] active:scale-95 transform-gpu duration-200"
                   >

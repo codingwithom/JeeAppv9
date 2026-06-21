@@ -23,7 +23,6 @@ import VideoPage from "@/pages/VideoPage";
 import MovieHub from "@/pages/MovieHub";
 import SavesPage from "@/pages/SavesPage";
 import QuizPage from "@/pages/QuizPage";
-import AIEngin from "@/pages/AIEngin";
 import { AmbientMixer } from "@/components/AmbientMixer";
 import { MiniPlayer } from "@/components/MiniPlayer";
 import { AnimatePresence, motion } from "framer-motion";
@@ -60,7 +59,6 @@ const PAGE_LABELS: Record<string, string> = {
   "/admin": "Admin Panel",
   "/saves": "Saves",
   "/quiz": "AI",
-  "/engin": "AI Engin",
   "/ambient": "Zen Mixer",
 };
 
@@ -93,7 +91,6 @@ function CommandPalette() {
     { name: "Admin Panel", path: "/admin", icon: Shield },
     { name: "Saves & Flashcards", path: "/saves", icon: Bookmark },
     { name: "AI", path: "/quiz", icon: BrainCircuit },
-    { name: "AI Engin", path: "/engin", icon: Search },
     { name: "Zen Mixer", path: "/ambient", icon: Headphones },
   ];
 
@@ -388,7 +385,6 @@ function Router() {
         <Route path="/admin" component={AdminPage} />
         <Route path="/saves" component={SavesPage} /> {/* Add the new route for SavesPage */}
         <Route path="/quiz" component={QuizPage} />
-        <Route path="/engin" component={AIEngin} />
         <Route path="/ambient" component={AmbientMixer} />
         <Route component={NotFound} />
       </Switch>

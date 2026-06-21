@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useMemo } from "react";
-import { useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
+import AIEngin from "./AIEngin";
 import {
   BrainCircuit,
   Settings,
@@ -2496,8 +2496,7 @@ Respond with ONLY the markdown explanation. Do not wrap it in JSON or HTML. Star
 }
 
 export default function QuizPage() {
-  const [activeTab, setActiveTab] = useState<"chat" | "quiz">("chat");
-  const [, navigate] = useLocation();
+  const [activeTab, setActiveTab] = useState<"chat" | "quiz" | "engin">("chat");
 
   return (
     <div className="flex flex-col h-full bg-background overflow-hidden relative w-full text-foreground">
@@ -2516,8 +2515,8 @@ export default function QuizPage() {
                <Target className="h-4 w-4" /> AI Quizzes
              </button>
              <button 
-               onClick={() => navigate("/engin")}
-               className="px-6 py-1.5 text-sm font-bold rounded-lg transition-all flex items-center gap-2 text-muted-foreground hover:text-foreground"
+               onClick={() => setActiveTab("engin")}
+               className={cn("px-6 py-1.5 text-sm font-bold rounded-lg transition-all flex items-center gap-2", activeTab === "engin" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground")}
              >
                <Search className="h-4 w-4" /> AI Engin
              </button>

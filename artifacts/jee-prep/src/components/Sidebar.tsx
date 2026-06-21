@@ -285,7 +285,6 @@ export function Sidebar() {
     { href: "/video", label: "Videos", icon: Video },
     { href: "/saves", label: "Saves", icon: Bookmark },
     { href: "/quiz", label: "AI", icon: BrainCircuit },
-    { href: "/engin", label: "AI Engin", icon: Search },
     { href: "/movies", label: "Movie Hub", icon: Film },
   ];
 

@@ -3245,9 +3245,6 @@ export default function AIChatInterface() {
                      )}
                      {m.role === "model" ? (
                        <div className="flex flex-col w-full">
-                         {m.sources && m.sources.length > 0 && (
-                           <MessageSources sources={m.sources} />
-                         )}
                          <TypewriterMarkdown 
                             content={m.content} 
                             isTyping={m.isTyping}
@@ -3348,88 +3345,6 @@ export default function AIChatInterface() {
                               <ThumbsDown className="h-3.5 w-3.5" />
                             </Button>
                           </div>
-                          {/* Bottom Right: Sources Dropdown */}
-                          {m.sources && m.sources.length > 0 && (
-                            <div className="relative flex items-center gap-1.5 ml-auto z-[60]">
-                              <button 
-                                onClick={() => setActiveSourcesDropdown(activeSourcesDropdown === i ? null : i)}
-                                className="flex items-center gap-1.5 px-3 py-1 bg-slate-900/60 hover:bg-slate-800 border border-slate-800/80 rounded-full text-xs font-semibold text-slate-300 hover:text-white transition-all shadow-sm cursor-pointer select-none active:scale-95"
-                              >
-                                <div className="flex -space-x-1 items-center">
-                                  {m.sources.slice(0, 3).map((src, srcIdx) => {
-                                    let hostname = "Source";
-                                    try { hostname = new URL(src.uri).hostname; } catch(e) {}
-                                    const faviconUrl = `https://www.google.com/s2/favicons?domain=${hostname}&sz=64`;
-                                    return (
-                                      <div 
-                                        key={srcIdx} 
-                                        className="h-4.5 w-4.5 rounded-full border border-slate-950 bg-white flex items-center justify-center overflow-hidden shrink-0 shadow-sm"
-                                      >
-                                        <img
-                                          src={faviconUrl}
-                                          alt=""
-                                          className="h-3 w-3 object-contain rounded-full"
-                                          onError={(e) => { e.currentTarget.src = "https://www.google.com/s2/favicons?domain=wikipedia.org"; }}
-                                        />
-                                      </div>
-                                    );
-                                  })}
-                                </div>
-                                <span className="text-[10px] text-slate-400 font-bold">
-                                  {m.sources.length} {m.sources.length === 1 ? "Source" : "Sources"}
-                                </span>
-                                <ChevronDown className={cn("h-3 w-3 text-slate-400 transition-transform", activeSourcesDropdown === i ? "rotate-180" : "")} />
-                              </button>
-
-                              {/* Floating Dropdown for all sources links */}
-                              {activeSourcesDropdown === i && (
-                                <div className="absolute right-0 bottom-full mb-2 w-80 bg-slate-950 border border-slate-850 rounded-2xl p-4 shadow-2xl z-[150] animate-in fade-in slide-in-from-bottom-2 duration-200">
-                                  <div className="flex items-center justify-between border-b border-slate-800/60 pb-2 mb-3">
-                                    <h4 className="text-xs font-bold text-slate-200">All Search Sources</h4>
-                                    <button 
-                                      onClick={() => setActiveSourcesDropdown(null)} 
-                                      className="text-slate-400 hover:text-white text-[10px] font-semibold"
-                                    >
-                                      Close
-                                    </button>
-                                  </div>
-                                  <div className="max-h-60 overflow-y-auto space-y-1.5 pr-1 no-scrollbar text-left">
-                                    {m.sources.map((src, srcIdx) => {
-                                      let hostname = "Source";
-                                      try { hostname = new URL(src.uri).hostname; } catch(e) {}
-                                      const faviconUrl = `https://www.google.com/s2/favicons?domain=${hostname}&sz=64`;
-                                      return (
-                                        <a 
-                                          key={srcIdx} 
-                                          href={src.uri} 
-                                          target="_blank" 
-                                          rel="noopener noreferrer"
-                                          className="flex items-start gap-2.5 p-2 rounded-xl hover:bg-slate-900 border border-transparent hover:border-slate-800/60 transition-all group text-left"
-                                        >
-                                          <div className="h-7 w-7 rounded-lg bg-white border border-slate-800 flex items-center justify-center shrink-0 shadow-sm">
-                                            <img
-                                              src={faviconUrl}
-                                              alt=""
-                                              className="h-4.5 w-4.5 object-contain"
-                                              onError={(e) => { e.currentTarget.src = "https://www.google.com/s2/favicons?domain=wikipedia.org"; }}
-                                            />
-                                          </div>
-                                          <div className="flex-1 min-w-0">
-                                            <div className="text-[11px] font-bold text-white group-hover:text-blue-400 transition-colors line-clamp-1 leading-normal">
-                                              {src.title || hostname}
-                                            </div>
-                                            <div className="text-[9px] text-slate-400 truncate mt-0.5">
-                                              {src.uri}
-                                            </div>
-                                          </div>
-                                        </a>
-                                      );
-                                    })}
-                                  </div>
-                                </div>
-                              )}
-                            </div>
-                          )}
                        </div>
                      )}
                    </div>

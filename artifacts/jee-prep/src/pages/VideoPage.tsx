@@ -1636,6 +1636,7 @@ export default function VideoPage() {
   const durationRef = useRef(duration);
   const controlsTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const lastSaveRef = useRef(0);
+  const activeLeafIdRef = useRef(activeLeafId);
   // Recording resources cleanup on unmount
   useEffect(() => {
     return () => {

@@ -27,7 +27,9 @@ import {
   MoreVertical,
   Volume2,
   VolumeX,
-  ChevronDown
+  ChevronDown,
+  Mic,
+  MicOff
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAppContext } from "@/context/AppContext";
@@ -2996,6 +2998,77 @@ export default function AIChatInterface() {
     setTimeout(() => setCopiedIdx(null), 2000);
   };
 
+  // Voice input / Speech Recognition states
+  const [isRecording, setIsRecording] = useState(false);
+  const recognitionRef = useRef<any>(null);
+  const speechBaseTextRef = useRef("");
+
+  useEffect(() => {
+    const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+    if (SpeechRecognition) {
+      const rec = new SpeechRecognition();
+      rec.continuous = true;
+      rec.interimResults = true;
+      rec.lang = 'en-US';
+
+      rec.onstart = () => {
+        setIsRecording(true);
+      };
+
+      rec.onresult = (event: any) => {
+        let speechText = '';
+        for (let i = event.resultIndex; i < event.results.length; ++i) {
+          speechText += event.results[i][0].transcript;
+        }
+        
+        const base = speechBaseTextRef.current;
+        const separator = base && !base.endsWith(' ') ? ' ' : '';
+        setInput(base + separator + speechText);
+      };
+
+      rec.onerror = (event: any) => {
+        console.error("Speech recognition error:", event.error);
+        if (event.error === 'not-allowed') {
+          alert("Microphone access was denied. Please allow microphone permissions in your browser settings.");
+        }
+        setIsRecording(false);
+      };
+
+      rec.onend = () => {
+        setIsRecording(false);
+      };
+
+      recognitionRef.current = rec;
+    }
+
+    return () => {
+      if (recognitionRef.current) {
+        try {
+          recognitionRef.current.abort();
+        } catch (e) {}
+      }
+    };
+  }, []);
+
+  const handleMicClick = () => {
+    const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+    if (!SpeechRecognition) {
+      alert("Speech recognition is not supported in this browser. Please try Chrome, Safari, or Edge.");
+      return;
+    }
+
+    if (isRecording) {
+      recognitionRef.current?.stop();
+    } else {
+      speechBaseTextRef.current = input;
+      try {
+        recognitionRef.current?.start();
+      } catch (e) {
+        console.error("Failed to start speech recognition:", e);
+      }
+    }
+  };
+
   const exportAsImage = async () => {
     const element = document.getElementById("chat-capture-area");
     if (!element) return;
@@ -3928,58 +4001,100 @@ export default function AIChatInterface() {
                    )}
                  </AnimatePresence>
                  <div className="flex items-end w-full">
-                 <input type="file" ref={fileInputRef} className="hidden" multiple onChange={e => {
-                   if (e.target.files) handleFiles(Array.from(e.target.files));
-                   e.target.value = "";
-                 }} />
-                 <button onClick={() => fileInputRef.current?.click()} className="h-9 w-9 shrink-0 rounded-full flex items-center justify-center transition-all mx-0.5 mb-0.5 text-muted-foreground hover:bg-muted hover:text-foreground">
-                   <Plus className="h-5 w-5" />
-                 </button>
-             <textarea 
-                ref={textareaRef}
-                value={input}
-                onChange={e => {
-                  const val = e.target.value;
-                  setInput(val);
-                  if (val.startsWith("/") && !val.includes(" ")) {
-                    setShowCommands(true);
-                    setSelectedCommandIndex(0);
-                  } else {
-                    setShowCommands(false);
-                  }
-                }}
-                onKeyDown={e => {
-                   if (showCommands && filteredCommands.length > 0) {
-                     if (e.key === 'ArrowDown') {
-                       e.preventDefault();
-                       setSelectedCommandIndex(prev => (prev + 1) % filteredCommands.length);
-                       return;
-                     }
-                     if (e.key === 'ArrowUp') {
-                       e.preventDefault();
-                       setSelectedCommandIndex(prev => (prev - 1 + filteredCommands.length) % filteredCommands.length);
-                       return;
-                     }
-                     if (e.key === 'Enter') {
-                       e.preventDefault();
-                       selectCommand(filteredCommands[selectedCommandIndex].name);
-                       return;
-                     }
-                     if (e.key === 'Escape') {
-                       e.preventDefault();
-                       setShowCommands(false);
-                       return;
-                     }
-                   }
-                   if (e.key === 'Enter' && !e.shiftKey) {
-                      e.preventDefault();
-                      handleSend();
-                   }
-                }}
-                placeholder="Ask me anything..."
-                className="flex-1 bg-transparent border-none resize-none max-h-48 min-h-[36px] py-1.5 px-3 text-sm focus:outline-none placeholder:text-muted-foreground/60 text-foreground"
-                rows={1}
-              />
+                  <input type="file" ref={fileInputRef} className="hidden" multiple onChange={e => {
+                    if (e.target.files) handleFiles(Array.from(e.target.files));
+                    e.target.value = "";
+                  }} />
+                  <button onClick={() => fileInputRef.current?.click()} className="h-9 w-9 shrink-0 rounded-full flex items-center justify-center transition-all mx-0.5 mb-0.5 text-muted-foreground hover:bg-muted hover:text-foreground" title="Upload files">
+                    <Plus className="h-5 w-5" />
+                  </button>
+                  <button 
+                    onClick={handleMicClick}
+                    type="button"
+                    className={cn(
+                      "h-9 w-9 shrink-0 rounded-full flex items-center justify-center transition-all mx-0.5 mb-0.5 relative overflow-visible",
+                      isRecording 
+                        ? "bg-red-500/20 text-red-500 border border-red-500/30 shadow-[0_0_15px_rgba(239,68,68,0.3)] hover:bg-red-500/30" 
+                        : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                    )}
+                    title={isRecording ? "Stop recording" : "Type with your voice"}
+                  >
+                    {isRecording ? (
+                      <>
+                        <motion.span 
+                          className="absolute inset-0 rounded-full bg-red-500/20"
+                          animate={{ scale: [1, 1.6, 1], opacity: [0.6, 0, 0.6] }}
+                          transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                        />
+                        <MicOff className="h-5 w-5" />
+                      </>
+                    ) : (
+                      <Mic className="h-5 w-5" />
+                    )}
+                  </button>
+                  <div className="relative flex-1 flex items-center min-w-0">
+                    <textarea 
+                       ref={textareaRef}
+                       value={input}
+                       onChange={e => {
+                         const val = e.target.value;
+                         setInput(val);
+                         if (val.startsWith("/") && !val.includes(" ")) {
+                           setShowCommands(true);
+                           setSelectedCommandIndex(0);
+                         } else {
+                           setShowCommands(false);
+                         }
+                       }}
+                       onKeyDown={e => {
+                          if (showCommands && filteredCommands.length > 0) {
+                            if (e.key === 'ArrowDown') {
+                              e.preventDefault();
+                              setSelectedCommandIndex(prev => (prev + 1) % filteredCommands.length);
+                              return;
+                            }
+                            if (e.key === 'ArrowUp') {
+                              e.preventDefault();
+                              setSelectedCommandIndex(prev => (prev - 1 + filteredCommands.length) % filteredCommands.length);
+                              return;
+                            }
+                            if (e.key === 'Enter') {
+                              e.preventDefault();
+                              selectCommand(filteredCommands[selectedCommandIndex].name);
+                              return;
+                            }
+                            if (e.key === 'Escape') {
+                              e.preventDefault();
+                              setShowCommands(false);
+                              return;
+                            }
+                          }
+                          if (e.key === 'Enter' && !e.shiftKey) {
+                             e.preventDefault();
+                             handleSend();
+                          }
+                       }}
+                       placeholder={isRecording ? "Listening... Speak now." : "Ask me anything..."}
+                       className="flex-1 bg-transparent border-none resize-none max-h-48 min-h-[36px] py-1.5 px-3 pr-24 text-sm focus:outline-none placeholder:text-muted-foreground/60 text-foreground"
+                       rows={1}
+                     />
+                     {isRecording && (
+                       <div className="absolute right-3 bottom-1.5 flex items-center gap-1.5 bg-background/90 backdrop-blur-sm px-2 py-1 rounded-full border border-red-500/20 text-[10px] text-red-500 font-medium select-none pointer-events-none shadow-sm animate-pulse">
+                         <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0" />
+                         <span>Listening</span>
+                         <div className="flex gap-0.5 items-end h-2 w-3 shrink-0">
+                           {[1, 2, 3].map((bar) => (
+                             <motion.span
+                               key={bar}
+                               className="w-[2px] bg-red-500 rounded-full"
+                               animate={{ height: ["2px", "8px", "2px"] }}
+                               transition={{ repeat: Infinity, duration: 0.6, delay: bar * 0.15 }}
+                             />
+                           ))}
+                         </div>
+                       </div>
+                     )}
+                  </div>
              {loading || isTyping ? (
                <button 
                  onClick={handleStopGeneration}

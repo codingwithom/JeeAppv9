@@ -3001,7 +3001,6 @@ export default function AIChatInterface() {
   // Voice input / Speech Recognition states
   const [isRecording, setIsRecording] = useState(false);
   const [isTransliterating, setIsTransliterating] = useState(false);
-  const [micLang, setMicLang] = useState<'hi-IN' | 'en-US'>('hi-IN');
   const recognitionRef = useRef<any>(null);
   const speechBaseTextRef = useRef("");
 
@@ -3010,9 +3009,8 @@ export default function AIChatInterface() {
     inputRef.current = input;
   }, [input]);
 
-  const transliterateDevanagariToHinglish = async (text: string): Promise<string> => {
-    const hasDevanagari = /[\u0900-\u097F]/.test(text);
-    if (!hasDevanagari) return text;
+  const processAudioTranscriptWithAI = async (text: string): Promise<string> => {
+    if (!text.trim()) return text;
 
     try {
       const apiKey = localStorage.getItem("jee_openrouter_api_key") || "";
@@ -3021,12 +3019,17 @@ export default function AIChatInterface() {
         headers["Authorization"] = `Bearer ${apiKey.trim()}`;
       }
 
-      const promptText = `Transliterate the following Hindi Devanagari text into Hinglish (Latin script). Hinglish is Hindi written in English letters phonetically.
-Example input: "तुम बताओ अपने बारे में कि तुम क्या कर रहे हो"
-Example output: "tum batao apne bare mai ki tum kya kar rahe ho"
+      const promptText = `You are a speech transcription post-processor. The user spoke into a microphone. The speech-to-text engine generated a raw phonetic transcript (which is represented in Hindi Devanagari script).
+Your task is to:
+1. Auto-detect the spoken language (e.g., Hindi, English, Hinglish, Spanish, French, etc.).
+2. Convert and format it accordingly:
+   - If it is Hindi or Hinglish (e.g., "तुम कैसे हो", "तुम क्या कर रहे हो"), transliterate it into Hinglish (Latin script, e.g., "tum kaise ho", "tum kya kar rahe ho").
+   - If it is English (e.g., "व्हाट इज योर नेम"), convert it into grammatically correct English (e.g., "What is your name?").
+   - If it is any other language (e.g., French "बोंजुर", Spanish "ओला"), translate it to correct English or represent it accurately.
+3. Respond ONLY with the final corrected transcription. Do not include any explanations, greetings, quotes, notes, or extra text.
 
-Now convert: "${text}"
-Respond ONLY with the transliterated Hinglish text. Do not include any translation, quotes, explanations, or extra text.`;
+Here is the raw transcription:
+"${text}"`;
 
       const payload = {
         model: "meta-llama/llama-3.3-70b-instruct:free",
@@ -3057,7 +3060,7 @@ Respond ONLY with the transliterated Hinglish text. Do not include any translati
         }
       }
     } catch (err) {
-      console.error("Failed to transliterate to Hinglish:", err);
+      console.error("Failed to process audio transcript with AI:", err);
     }
     return text;
   };
@@ -3068,7 +3071,7 @@ Respond ONLY with the transliterated Hinglish text. Do not include any translati
       const rec = new SpeechRecognition();
       rec.continuous = false; // automatically stop when user pauses speaking
       rec.interimResults = true;
-      rec.lang = micLang;
+      rec.lang = 'hi-IN'; // listen in hi-IN phonetics to capture hindi/hinglish/english
 
       rec.onstart = () => {
         setIsRecording(true);
@@ -3096,19 +3099,19 @@ Respond ONLY with the transliterated Hinglish text. Do not include any translati
       rec.onend = async () => {
         setIsRecording(false);
 
-        // Perform transliteration if Hindi text was recorded
+        // Perform transliteration and language correction using AI
         const latestText = inputRef.current;
         const base = speechBaseTextRef.current;
         const newText = latestText.slice(base.length).trim();
         
-        if (newText && /[\u0900-\u097F]/.test(newText)) {
+        if (newText) {
           setIsTransliterating(true);
           try {
-            const HinglishText = await transliterateDevanagariToHinglish(newText);
+            const processedText = await processAudioTranscriptWithAI(newText);
             const separator = base && !base.endsWith(' ') ? ' ' : '';
-            setInput(base + separator + HinglishText);
+            setInput(base + separator + processedText);
           } catch (e) {
-            console.error("Transliteration error in onend:", e);
+            console.error("Processing error in onend:", e);
           } finally {
             setIsTransliterating(false);
           }
@@ -3125,7 +3128,7 @@ Respond ONLY with the transliterated Hinglish text. Do not include any translati
         } catch (e) {}
       }
     };
-  }, [micLang]);
+  }, []);
 
   const handleMicClick = () => {
     const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
@@ -4085,43 +4088,6 @@ Respond ONLY with the transliterated Hinglish text. Do not include any translati
                   <button onClick={() => fileInputRef.current?.click()} className="h-9 w-9 shrink-0 rounded-full flex items-center justify-center transition-all mx-0.5 mb-0.5 text-muted-foreground hover:bg-muted hover:text-foreground" title="Upload files">
                     <Plus className="h-5 w-5" />
                   </button>
-                  <button 
-                    onClick={handleMicClick}
-                    type="button"
-                    className={cn(
-                      "h-9 w-9 shrink-0 rounded-full flex items-center justify-center transition-all mx-0.5 mb-0.5 relative overflow-visible",
-                      isRecording 
-                        ? "bg-red-500/20 text-red-500 border border-red-500/30 shadow-[0_0_15px_rgba(239,68,68,0.3)] hover:bg-red-500/30" 
-                        : "text-muted-foreground hover:bg-muted hover:text-foreground"
-                    )}
-                    title={isRecording ? "Stop recording" : "Type with your voice"}
-                  >
-                    {isRecording ? (
-                      <>
-                        <motion.span 
-                          className="absolute inset-0 rounded-full bg-red-500/20"
-                          animate={{ scale: [1, 1.6, 1], opacity: [0.6, 0, 0.6] }}
-                          transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-                        />
-                        <MicOff className="h-5 w-5" />
-                      </>
-                    ) : (
-                      <Mic className="h-5 w-5" />
-                    )}
-                  </button>
-                  <button
-                    onClick={() => setMicLang(prev => prev === 'hi-IN' ? 'en-US' : 'hi-IN')}
-                    type="button"
-                    className={cn(
-                      "h-8 px-2.5 rounded-full text-[10px] font-bold transition-all duration-300 border mb-1 mx-0.5 select-none active:scale-95 shrink-0",
-                      micLang === 'hi-IN' 
-                        ? "border-violet-500/20 bg-violet-500/10 text-violet-400 hover:bg-violet-500/25" 
-                        : "border-border bg-background/50 text-muted-foreground hover:bg-muted"
-                    )}
-                    title="Toggle speech recognition language"
-                  >
-                    {micLang === 'hi-IN' ? 'हि / Hinglish' : 'English'}
-                  </button>
                   <div className="relative flex-1 flex items-center min-w-0">
                     <textarea 
                        ref={textareaRef}
@@ -4167,7 +4133,7 @@ Respond ONLY with the transliterated Hinglish text. Do not include any translati
                        placeholder={isRecording ? "Listening... Speak now." : "Ask me anything..."}
                        className={cn(
                          "flex-1 bg-transparent border-none resize-none max-h-48 min-h-[36px] py-1.5 px-3 text-sm focus:outline-none placeholder:text-muted-foreground/60 text-foreground",
-                         isTransliterating ? "pr-36" : (isRecording ? "pr-24" : "pr-3")
+                         isTransliterating ? "pr-40" : (isRecording ? "pr-24" : "pr-3")
                        )}
                        rows={1}
                      />
@@ -4190,11 +4156,35 @@ Respond ONLY with the transliterated Hinglish text. Do not include any translati
                      {isTransliterating && (
                        <div className="absolute right-3 bottom-1.5 flex items-center gap-1.5 bg-background/90 backdrop-blur-sm px-2.5 py-1 rounded-full border border-violet-500/20 text-[10px] text-violet-400 font-medium select-none pointer-events-none shadow-sm">
                          <span className="w-1.5 h-1.5 rounded-full bg-violet-400 shrink-0" />
-                         <span>Converting to Hinglish</span>
+                         <span>AI processing voice...</span>
                          <RefreshCw className="h-2.5 w-2.5 animate-spin text-violet-400 shrink-0" />
                        </div>
                      )}
                   </div>
+                  <button 
+                    onClick={handleMicClick}
+                    type="button"
+                    className={cn(
+                      "h-9 w-9 shrink-0 rounded-full flex items-center justify-center transition-all mx-0.5 mb-0.5 relative overflow-visible",
+                      isRecording 
+                        ? "bg-red-500/20 text-red-500 border border-red-500/30 shadow-[0_0_15px_rgba(239,68,68,0.3)] hover:bg-red-500/30" 
+                        : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                    )}
+                    title={isRecording ? "Stop recording" : "Type with your voice"}
+                  >
+                    {isRecording ? (
+                      <>
+                        <motion.span 
+                          className="absolute inset-0 rounded-full bg-red-500/20"
+                          animate={{ scale: [1, 1.6, 1], opacity: [0.6, 0, 0.6] }}
+                          transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                        />
+                        <MicOff className="h-5 w-5" />
+                      </>
+                    ) : (
+                      <Mic className="h-5 w-5" />
+                    )}
+                  </button>
              {loading || isTyping ? (
                <button 
                  onClick={handleStopGeneration}

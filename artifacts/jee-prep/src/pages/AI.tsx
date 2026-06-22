@@ -3385,7 +3385,7 @@ export default function AIChatInterface() {
             {renderedMessages.map((m, idx) => {
               const i = messages.length - renderedMessages.length + idx;
               return (
-               <motion.div key={i} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className={cn("flex w-full group relative", m.role === "user" ? "justify-end" : "justify-start")}>
+               <motion.div key={i} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className={cn("flex w-full group relative items-start", m.role === "user" ? "justify-end" : "justify-start")}>
                  {m.role === "model" && (
                     <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center shrink-0 mr-4 mt-1">
                        <BrainCircuit className="h-4 w-4 text-white" />

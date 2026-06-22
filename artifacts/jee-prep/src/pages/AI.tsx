@@ -3414,7 +3414,7 @@ export default function AIChatInterface() {
                     </div>
                  )}
 
-                 <div className={cn("max-w-[90%] text-[15px] leading-relaxed", m.role === "user" ? "bg-muted px-5 py-3 rounded-3xl" : "text-foreground pt-1 w-full", m.isStopped ? "opacity-80" : "")}>
+                 <div className={cn("max-w-[90%] text-[15px] leading-relaxed", m.role === "user" ? "bg-muted px-5 py-3 rounded-3xl user-message-bubble" : "text-foreground pt-1 w-full", m.isStopped ? "opacity-80" : "")}>
                     {m.role === "model" && !m.isTyping && (
                       <div className="flex items-center justify-between border-b border-border/40 pb-2 mb-3 select-none relative w-full">
                         {/* Left Side: Sparkles Icon, Title, Sound controls */}

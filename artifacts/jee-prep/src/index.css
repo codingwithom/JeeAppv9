@@ -290,3 +290,17 @@
   .border.hover-elevate-2:not(.no-hover-interaction-elevate)::after,
   .border.active-elevate-2:not(.no-active-interaction-elevate)::after { inset: -1px; }
 }
+
+/* Overrides to prevent gap at the bottom/top of user chat bubbles */
+.user-message-bubble .prose,
+.user-message-bubble .prose p,
+.user-message-bubble .prose > :first-child,
+.user-message-bubble .prose > :last-child {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.user-message-bubble .prose p + p {
+  margin-top: 0.5rem !important;
+}
+

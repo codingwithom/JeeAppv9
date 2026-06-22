@@ -856,7 +856,7 @@ app.get("/api/search", async (req, res) => {
     }
 
     const parts = html.split('class="result results_links');
-    const rawResults = parts.slice(1, 7).map((part) => {
+    const rawResults = parts.slice(1).map((part) => {
       const hrefMatch = part.match(/class="result__a"[^>]*href="([^"]+)"/);
       const titleMatch = part.match(/class="result__a"[^>]*>([\s\S]*?)<\/a>/);
       const snippetMatch = part.match(/class="result__snippet"[^>]*>([\s\S]*?)<\/a>/);
@@ -883,7 +883,7 @@ app.get("/api/search", async (req, res) => {
 
     const withThumbnails = await Promise.all(
       rawResults.map(async (item, idx) => {
-        if (idx < 4 && item.url) {
+        if (idx < 8 && item.url) {
           const thumbnail = await fetchOgImage(item.url);
           return { ...item, thumbnail };
         }

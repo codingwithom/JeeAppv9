@@ -777,6 +777,19 @@ function getSourceName(uri: string, title?: string): string {
   
   if (hostname.includes("indianexpress.com")) return "The Indian Express";
   if (hostname.includes("abplive.com")) return "ABP Live";
+  if (hostname.includes("aajtak.in")) return "Aaj Tak";
+  if (hostname.includes("republicworld.com")) return "Republic World";
+  if (hostname.includes("tv9bharatvarsh.com")) return "TV9 Bharatvarsh";
+  if (hostname.includes("ddnews.gov.in")) return "DD News";
+  if (hostname.includes("foxnews.com")) return "Fox News";
+  if (hostname.includes("bbc.com") || hostname.includes("bbc.co.uk")) return "BBC News";
+  if (hostname.includes("indiatvnews.com")) return "India TV";
+  if (hostname.includes("thehindu.com")) return "The Hindu";
+  if (hostname.includes("news18.com")) return "News18";
+  if (hostname.includes("zeenews.india.com")) return "Zee News";
+  if (hostname.includes("moneycontrol.com")) return "Moneycontrol";
+  if (hostname.includes("jagran.com")) return "Dainik Jagran";
+  if (hostname.includes("bhaskar.com")) return "Dainik Bhaskar";
   if (hostname.includes("careers360.com")) return "Careers360";
   if (hostname.includes("sarvgyan.com")) return "SarvGyan";
   if (hostname.includes("josaa.nic.in")) return "JoSAA";
@@ -1066,11 +1079,11 @@ async function fetchWebSearchResults(query: string, timeFilter?: string): Promis
     }
     
     let searchSummaries = "";
-    results.slice(0, 5).forEach((item: any, idx: number) => {
+    results.forEach((item: any, idx: number) => {
       searchSummaries += `[Source ${idx + 1}] Title: ${item.title}\nURL: ${item.url}\nSnippet: ${item.snippet}\nThumbnail: ${item.thumbnail || ""}\n\n`;
     });
     
-    const mappedResults = results.slice(0, 5).map((item: any) => ({
+    const mappedResults = results.map((item: any) => ({
       url: item.url,
       title: item.title,
       snippet: item.snippet,
@@ -1111,7 +1124,7 @@ async function fetchWebSearchResults(query: string, timeFilter?: string): Promis
       };
 
       const parts = html.split('class="result results_links');
-      const results = parts.slice(1, 6).map((part) => {
+      const results = parts.slice(1).map((part) => {
         const hrefMatch = part.match(/class="result__a"[^>]*href="([^"]+)"/);
         const titleMatch = part.match(/class="result__a"[^>]*>([\s\S]*?)<\/a>/);
         const snippetMatch = part.match(/class="result__snippet"[^>]*>([\s\S]*?)<\/a>/);

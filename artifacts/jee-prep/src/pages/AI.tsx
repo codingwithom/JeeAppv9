@@ -1062,6 +1062,115 @@ function TypewriterMarkdown({ content, isTyping, onComplete, setFullScreenImage,
   return <ReactMarkdown remarkPlugins={[remarkMath, remarkGfm]} rehypePlugins={[rehypeKatex]} components={getMarkdownComponents(setFullScreenImage, sources)}>{preprocessMarkdown(displayed, sources)}</ReactMarkdown>;
 }
 
+interface SourceDefinition {
+  names: string[];
+  domain: string;
+}
+
+const POPULAR_NEWS_SOURCES: SourceDefinition[] = [
+  { names: ["aajtak", "aaj tak"], domain: "aajtak.in" },
+  { names: ["republic world", "republicworld", "republic tv", "republic"], domain: "republicworld.com" },
+  { names: ["abp news", "abplive", "abp live", "abpnews", "abp"], domain: "abplive.com" },
+  { names: ["indiatv", "india tv", "indiatvnews"], domain: "indiatvnews.com" },
+  { names: ["tv9 bharatverse", "tv9 bharatvarsh", "tv9"], domain: "tv9bharatvarsh.com" },
+  { names: ["bbc", "bbc news", "bbcnews"], domain: "bbc.com" },
+  { names: ["fox news", "foxnews", "fox"], domain: "foxnews.com" },
+  { names: ["dd news", "ddnews", "dd"], domain: "ddnews.gov.in" },
+  { names: ["hindustan times", "hindustantimes", "ht"], domain: "hindustantimes.com" },
+  { names: ["ndtv"], domain: "ndtv.com" },
+  { names: ["times of india", "toi"], domain: "timesofindia.indiatimes.com" },
+  { names: ["indian express", "indianexpress"], domain: "indianexpress.com" },
+  { names: ["the hindu"], domain: "thehindu.com" },
+  { names: ["news18"], domain: "news18.com" },
+  { names: ["zee news", "zeenews"], domain: "zeenews.india.com" },
+  { names: ["livemint", "mint"], domain: "livemint.com" },
+  { names: ["moneycontrol"], domain: "moneycontrol.com" },
+  { names: ["jagran", "dainik jagran"], domain: "jagran.com" },
+  { names: ["bhaskar", "dainik bhaskar"], domain: "bhaskar.com" },
+  { names: ["cnn"], domain: "cnn.com" },
+  { names: ["nytimes", "new york times"], domain: "nytimes.com" },
+  { names: ["reuters"], domain: "reuters.com" },
+  { names: ["ap news", "apnews"], domain: "apnews.com" },
+  { names: ["al jazeera", "aljazeera"], domain: "aljazeera.com" },
+  { names: ["guardian", "the guardian"], domain: "theguardian.com" },
+  { names: ["washington post", "washingtonpost"], domain: "washingtonpost.com" },
+  { names: ["bloomberg"], domain: "bloomberg.com" },
+  { names: ["cnbc"], domain: "cnbc.com" },
+  { names: ["forbes"], domain: "forbes.com" },
+  { names: ["wsj", "wall street journal"], domain: "wsj.com" }
+];
+
+function getCleanQueryAndSources(prompt: string): { cleanQuery: string; sources: string[] } {
+  const lowercasePrompt = prompt.toLowerCase();
+  const matchedDomains = new Set<string>();
+
+  // 1. Match known sources by their defined names
+  for (const src of POPULAR_NEWS_SOURCES) {
+    for (const name of src.names) {
+      const regex = new RegExp(`\\b${name.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')}\\b`, 'gi');
+      if (regex.test(lowercasePrompt)) {
+        matchedDomains.add(src.domain);
+        break;
+      }
+    }
+  }
+
+  // 2. Match any word looking like a domain, e.g. aajtak.in, bbc.com, etc.
+  const domainRegex = /\b([a-z0-9-]+\.[a-z]{2,6})\b/gi;
+  let match;
+  while ((match = domainRegex.exec(prompt)) !== null) {
+    const dom = match[1].toLowerCase();
+    matchedDomains.add(dom);
+  }
+
+  // 3. Match comma/and separated lists following keywords like sources/websites/sites
+  const listMatches = prompt.match(/(?:sources|websites|sites)\s*:\s*([^.?!]+)/i);
+  if (listMatches) {
+    const listContent = listMatches[1];
+    const items = listContent.split(/,|\band\b/).map(s => s.trim().toLowerCase()).filter(Boolean);
+    for (const item of items) {
+      if (item.length > 2 && item.length < 30 && !["other news source", "other news sources", "other websites", "others", "other"].includes(item)) {
+        let found = false;
+        for (const src of POPULAR_NEWS_SOURCES) {
+          if (src.names.includes(item) || item.includes(src.domain)) {
+            matchedDomains.add(src.domain);
+            found = true;
+            break;
+          }
+        }
+        if (!found) {
+          matchedDomains.add(item);
+        }
+      }
+    }
+  }
+
+  // 4. Construct a clean query by removing source configurations to make search queries more effective
+  let cleanQuery = prompt;
+  cleanQuery = cleanQuery.replace(/(?:use\s+these\s+websites?\s+as\s+sources?|using\s+these\s+websites?\s+as\s+sources?|sources?\s*:\s*|websites?\s*:\s*)/gi, "");
+  
+  for (const src of POPULAR_NEWS_SOURCES) {
+    for (const name of src.names) {
+      const regex = new RegExp(`\\b${name.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')}\\b`, 'gi');
+      cleanQuery = cleanQuery.replace(regex, "");
+    }
+  }
+  
+  cleanQuery = cleanQuery.replace(/and\s+other\s+news\s+sources?/gi, "");
+  cleanQuery = cleanQuery.replace(/and\s+other\s+sources?/gi, "");
+  cleanQuery = cleanQuery.replace(/and\s+other\s+websites?/gi, "");
+  cleanQuery = cleanQuery.replace(/[\s,;.-]+/g, " ").trim();
+
+  if (cleanQuery.split(/\s+/).filter(Boolean).length < 2) {
+    cleanQuery = prompt;
+  }
+
+  return {
+    cleanQuery,
+    sources: Array.from(matchedDomains)
+  };
+}
+
 async function fetchWebSearchResults(query: string, timeFilter?: string): Promise<{ results: { url: string; title: string; snippet: string; thumbnail?: string }[]; text: string }> {
   try {
     let url = `/api/search?q=${encodeURIComponent(query)}`;
@@ -2063,11 +2172,28 @@ Do not include any explanation or markdown outside the code block.` : "";
           }
         };
 
-        // Run both searches in parallel to avoid single source dependency
+        // Run general searches and targeted searches for mentioned sources in parallel
         const resultsMap = new Map();
         const searchPromises = [fetchSearchWithFallbacks(query1)];
         if (query1 !== query2) {
           searchPromises.push(fetchSearchWithFallbacks(query2));
+        }
+
+        const { cleanQuery, sources: targetedSources } = getCleanQueryAndSources(lastMsg);
+        if (targetedSources.length > 0) {
+          const groupSize = 5;
+          for (let i = 0; i < targetedSources.length; i += groupSize) {
+            const group = targetedSources.slice(i, i + groupSize);
+            const siteOperators = group.map(src => {
+              if (src.includes(".")) {
+                return `site:${src}`;
+              } else {
+                return src;
+              }
+            });
+            const targetedQuery = `${cleanQuery} (${siteOperators.join(" OR ")}) ${currentYear}`;
+            searchPromises.push(fetchSearchWithFallbacks(targetedQuery));
+          }
         }
 
         const searchObjs = await Promise.all(searchPromises);
@@ -2084,7 +2210,7 @@ Do not include any explanation or markdown outside the code block.` : "";
         if (resultsMap.size > 0) {
           const mergedResults = Array.from(resultsMap.values());
           let searchSummaries = "";
-          mergedResults.slice(0, 7).forEach((item: any, idx: number) => {
+          mergedResults.forEach((item: any, idx: number) => {
             searchSummaries += `[Source ${idx + 1}] Title: ${item.title}\nURL: ${item.url}\nSnippet: ${item.snippet}\nThumbnail: ${item.thumbnail || ""}\n\n`;
             
             let hostname = "";

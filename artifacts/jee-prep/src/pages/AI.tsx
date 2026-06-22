@@ -326,7 +326,7 @@ function SourceCitationBadge({ href, children, sources }: { href: string; childr
   };
 
   return (
-    <span className="relative inline-block align-middle my-0.5 mx-0.5 z-[50]">
+    <span className={cn("relative inline-block align-middle my-0.5 mx-0.5", isHovered ? "z-[30]" : "z-0")}>
       <a
         ref={badgeRef}
         href={href}
@@ -335,12 +335,12 @@ function SourceCitationBadge({ href, children, sources }: { href: string; childr
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         onClick={handleBadgeClick}
-        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-slate-200 text-[10px] font-bold text-slate-800 hover:bg-slate-50 transition-all hover:scale-105 duration-200 shadow-sm cursor-pointer select-none"
+        className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-black/5 dark:bg-white/10 border border-black/5 dark:border-white/5 text-[10px] font-medium text-zinc-600 dark:text-zinc-300 hover:bg-black/10 dark:hover:bg-white/15 hover:text-zinc-950 dark:hover:text-zinc-50 transition-all duration-150 cursor-pointer select-none align-middle"
       >
         <img
           src={displayFavicon}
           alt=""
-          className="h-3.5 w-3.5 object-contain rounded shrink-0 bg-white p-0.5 border border-slate-100"
+          className="h-3 w-3 object-contain rounded-full shrink-0"
           onError={(e) => {
             e.currentTarget.src = isPdf 
               ? "https://cdn-icons-png.flaticon.com/512/337/337946.png"

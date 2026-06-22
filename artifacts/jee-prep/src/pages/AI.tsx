@@ -3023,9 +3023,9 @@ export default function AIChatInterface() {
 Your task is to:
 1. Auto-detect the spoken language (e.g., Hindi, English, Hinglish, Spanish, French, etc.).
 2. Convert and format it accordingly:
-   - If it is Hindi or Hinglish (e.g., "तुम कैसे हो", "तुम क्या कर रहे हो"), transliterate it into Hinglish (Latin script, e.g., "tum kaise ho", "tum kya kar rahe ho").
-   - If it is English (e.g., "व्हाट इज योर नेम"), convert it into grammatically correct English (e.g., "What is your name?").
-   - If it is any other language (e.g., French "बोंजुर", Spanish "ओला"), translate it to correct English or represent it accurately.
+   - If the user spoke in Hindi or Hinglish (e.g., "हाँ भाई तुम कैसे हो", "तुम क्या कर रहे हो"), transliterate/write it in Hinglish format (Latin script, using phonetic words like "h bhai tum keisaye ho", "tum kya kar rahe ho") instead of Hindi Devanagari script characters.
+   - If the user spoke in English (e.g., "व्हाट इज योर नेम", "हाउ आर यू"), convert it into grammatically correct English letters and words (e.g., "What is your name?", "How are you").
+   - If it is any other language, translate it to correct English or represent it accurately in its standard alphabet.
 3. Respond ONLY with the final corrected transcription. Do not include any explanations, greetings, quotes, notes, or extra text.
 
 Here is the raw transcription:

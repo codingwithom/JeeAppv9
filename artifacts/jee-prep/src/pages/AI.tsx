@@ -326,7 +326,7 @@ function SourceCitationBadge({ href, children, sources }: { href: string; childr
   };
 
   return (
-    <span className={cn("relative inline-block align-middle my-0.5 mx-0.5", isHovered ? "z-[30]" : "z-0")}>
+    <span className={cn("relative inline-block align-middle my-0.5 mx-0.5 leading-none", isHovered ? "z-[30]" : "z-0")}>
       <a
         ref={badgeRef}
         href={href}
@@ -335,7 +335,7 @@ function SourceCitationBadge({ href, children, sources }: { href: string; childr
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         onClick={handleBadgeClick}
-        className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-black/5 dark:bg-white/10 border border-black/5 dark:border-white/5 text-[10px] font-medium text-zinc-600 dark:text-zinc-300 hover:bg-black/10 dark:hover:bg-white/15 hover:text-zinc-950 dark:hover:text-zinc-50 transition-all duration-150 cursor-pointer select-none align-middle"
+        className="citation-badge inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-black/5 dark:bg-white/10 border border-black/5 dark:border-white/5 text-[10px] font-medium text-zinc-600 dark:text-zinc-300 hover:bg-black/10 dark:hover:bg-white/15 hover:text-zinc-950 dark:hover:text-zinc-50 transition-all duration-150 cursor-pointer select-none align-middle leading-none"
       >
         <img
           src={displayFavicon}
@@ -347,7 +347,7 @@ function SourceCitationBadge({ href, children, sources }: { href: string; childr
               : "https://www.google.com/s2/favicons?domain=wikipedia.org";
           }}
         />
-        <span className="max-w-[150px] truncate">{displayPublisher}</span>
+        <span className="max-w-[150px] truncate leading-none">{displayPublisher}</span>
       </a>
 
       {isHovered && (

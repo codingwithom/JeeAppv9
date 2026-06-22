@@ -304,3 +304,25 @@
   margin-top: 0.5rem !important;
 }
 
+/* Precise styles for citation badges to override Tailwind Typography defaults */
+.prose a.citation-badge {
+  color: #52525b !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  line-height: 1 !important;
+}
+
+.dark .prose a.citation-badge {
+  color: #d4d4d8 !important;
+}
+
+.prose a.citation-badge:hover {
+  color: #09090b !important;
+  text-decoration: none !important;
+}
+
+.dark .prose a.citation-badge:hover {
+  color: #fafafa !important;
+}
+
+

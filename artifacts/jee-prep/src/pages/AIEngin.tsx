@@ -429,7 +429,7 @@ export default function AIEngin() {
                     <Globe className="w-12 h-12 text-muted-foreground/45 mb-3" />
                     <h3 className="font-semibold text-sm mb-1 text-foreground/80">No active page</h3>
                     <p className="text-xs text-muted-foreground max-w-sm leading-relaxed">
-                      Enter a URL or search query in the address bar at the top to load a site securely through the AI Engin proxy.
+                      Enter a URL or search query in the address bar at the top to load a site securely through the AI Engine proxy.
                     </p>
                   </div>
                 )}

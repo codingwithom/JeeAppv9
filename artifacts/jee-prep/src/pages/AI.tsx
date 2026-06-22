@@ -3019,13 +3019,12 @@ export default function AIChatInterface() {
         headers["Authorization"] = `Bearer ${apiKey.trim()}`;
       }
 
-      const promptText = `You are a speech transcription post-processor. The user spoke into a microphone. The speech-to-text engine generated a raw phonetic transcript (which is represented in Hindi Devanagari script).
+      const promptText = `You are a speech transcription post-processor. The user spoke into a microphone. The speech-to-text engine generated a raw phonetic transcript (which is written in the Latin alphabet, containing a mix of English and Hinglish/Hindi words).
 Your task is to:
-1. Auto-detect the spoken language (e.g., Hindi, English, Hinglish, Spanish, French, etc.).
-2. Convert and format it accordingly:
-   - If the user spoke in Hindi or Hinglish (e.g., "हाँ भाई तुम कैसे हो", "तुम क्या कर रहे हो"), transliterate/write it in Hinglish format (Latin script, using phonetic words like "h bhai tum keisaye ho", "tum kya kar rahe ho") instead of Hindi Devanagari script characters.
-   - If the user spoke in English (e.g., "व्हाट इज योर नेम", "हाउ आर यू"), convert it into grammatically correct English letters and words (e.g., "What is your name?", "How are you").
-   - If it is any other language, translate it to correct English or represent it accurately in its standard alphabet.
+1. Clean up and format the transcript, correcting any misrecognized words (for example, if the speech recognizer transcribed "Jockey" instead of "jo ki", correct it to "jo ki").
+2. Ensure that:
+   - Any English parts remain in grammatically correct English.
+   - Any Hindi parts are written in Hinglish format (Latin script, using phonetic words like "ha bhai samajh aaya na?", "h bhai tum keisaye ho", "tum kaise ho") instead of Hindi Devanagari script characters.
 3. Respond ONLY with the final corrected transcription. Do not include any explanations, greetings, quotes, notes, or extra text.
 
 Here is the raw transcription:
@@ -3071,7 +3070,7 @@ Here is the raw transcription:
       const rec = new SpeechRecognition();
       rec.continuous = false; // automatically stop when user pauses speaking
       rec.interimResults = true;
-      rec.lang = 'hi-IN'; // listen in hi-IN phonetics to capture hindi/hinglish/english
+      rec.lang = 'en-IN'; // listen in Indian English to capture real-time English and Hinglish in Latin letters directly
 
       rec.onstart = () => {
         setIsRecording(true);

@@ -3000,16 +3000,75 @@ export default function AIChatInterface() {
 
   // Voice input / Speech Recognition states
   const [isRecording, setIsRecording] = useState(false);
+  const [isTransliterating, setIsTransliterating] = useState(false);
+  const [micLang, setMicLang] = useState<'hi-IN' | 'en-US'>('hi-IN');
   const recognitionRef = useRef<any>(null);
   const speechBaseTextRef = useRef("");
+
+  const inputRef = useRef(input);
+  useEffect(() => {
+    inputRef.current = input;
+  }, [input]);
+
+  const transliterateDevanagariToHinglish = async (text: string): Promise<string> => {
+    const hasDevanagari = /[\u0900-\u097F]/.test(text);
+    if (!hasDevanagari) return text;
+
+    try {
+      const apiKey = localStorage.getItem("jee_openrouter_api_key") || "";
+      const headers: Record<string, string> = { "Content-Type": "application/json" };
+      if (apiKey) {
+        headers["Authorization"] = `Bearer ${apiKey.trim()}`;
+      }
+
+      const promptText = `Transliterate the following Hindi Devanagari text into Hinglish (Latin script). Hinglish is Hindi written in English letters phonetically.
+Example input: "तुम बताओ अपने बारे में कि तुम क्या कर रहे हो"
+Example output: "tum batao apne bare mai ki tum kya kar rahe ho"
+
+Now convert: "${text}"
+Respond ONLY with the transliterated Hinglish text. Do not include any translation, quotes, explanations, or extra text.`;
+
+      const payload = {
+        model: "meta-llama/llama-3.3-70b-instruct:free",
+        messages: [{ role: "user", content: promptText }]
+      };
+
+      let res;
+      const url = "https://openrouter.ai/api/v1/chat/completions";
+      try {
+        res = await fetch(url, {
+          method: "POST",
+          headers,
+          body: JSON.stringify(payload)
+        });
+      } catch (e) {
+        res = await fetch(`https://corsproxy.io/?${encodeURIComponent(url)}`, {
+          method: "POST",
+          headers,
+          body: JSON.stringify(payload)
+        });
+      }
+
+      if (res.ok) {
+        const data = await res.json();
+        const result = data.choices?.[0]?.message?.content?.trim();
+        if (result) {
+          return result.replace(/^["']|["']$/g, '').trim();
+        }
+      }
+    } catch (err) {
+      console.error("Failed to transliterate to Hinglish:", err);
+    }
+    return text;
+  };
 
   useEffect(() => {
     const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
     if (SpeechRecognition) {
       const rec = new SpeechRecognition();
-      rec.continuous = true;
+      rec.continuous = false; // automatically stop when user pauses speaking
       rec.interimResults = true;
-      rec.lang = 'en-US';
+      rec.lang = micLang;
 
       rec.onstart = () => {
         setIsRecording(true);
@@ -3034,8 +3093,26 @@ export default function AIChatInterface() {
         setIsRecording(false);
       };
 
-      rec.onend = () => {
+      rec.onend = async () => {
         setIsRecording(false);
+
+        // Perform transliteration if Hindi text was recorded
+        const latestText = inputRef.current;
+        const base = speechBaseTextRef.current;
+        const newText = latestText.slice(base.length).trim();
+        
+        if (newText && /[\u0900-\u097F]/.test(newText)) {
+          setIsTransliterating(true);
+          try {
+            const HinglishText = await transliterateDevanagariToHinglish(newText);
+            const separator = base && !base.endsWith(' ') ? ' ' : '';
+            setInput(base + separator + HinglishText);
+          } catch (e) {
+            console.error("Transliteration error in onend:", e);
+          } finally {
+            setIsTransliterating(false);
+          }
+        }
       };
 
       recognitionRef.current = rec;
@@ -3048,7 +3125,7 @@ export default function AIChatInterface() {
         } catch (e) {}
       }
     };
-  }, []);
+  }, [micLang]);
 
   const handleMicClick = () => {
     const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
@@ -4032,6 +4109,19 @@ export default function AIChatInterface() {
                       <Mic className="h-5 w-5" />
                     )}
                   </button>
+                  <button
+                    onClick={() => setMicLang(prev => prev === 'hi-IN' ? 'en-US' : 'hi-IN')}
+                    type="button"
+                    className={cn(
+                      "h-8 px-2.5 rounded-full text-[10px] font-bold transition-all duration-300 border mb-1 mx-0.5 select-none active:scale-95 shrink-0",
+                      micLang === 'hi-IN' 
+                        ? "border-violet-500/20 bg-violet-500/10 text-violet-400 hover:bg-violet-500/25" 
+                        : "border-border bg-background/50 text-muted-foreground hover:bg-muted"
+                    )}
+                    title="Toggle speech recognition language"
+                  >
+                    {micLang === 'hi-IN' ? 'हि / Hinglish' : 'English'}
+                  </button>
                   <div className="relative flex-1 flex items-center min-w-0">
                     <textarea 
                        ref={textareaRef}
@@ -4075,7 +4165,10 @@ export default function AIChatInterface() {
                           }
                        }}
                        placeholder={isRecording ? "Listening... Speak now." : "Ask me anything..."}
-                       className="flex-1 bg-transparent border-none resize-none max-h-48 min-h-[36px] py-1.5 px-3 pr-24 text-sm focus:outline-none placeholder:text-muted-foreground/60 text-foreground"
+                       className={cn(
+                         "flex-1 bg-transparent border-none resize-none max-h-48 min-h-[36px] py-1.5 px-3 text-sm focus:outline-none placeholder:text-muted-foreground/60 text-foreground",
+                         isTransliterating ? "pr-36" : (isRecording ? "pr-24" : "pr-3")
+                       )}
                        rows={1}
                      />
                      {isRecording && (
@@ -4092,6 +4185,13 @@ export default function AIChatInterface() {
                              />
                            ))}
                          </div>
+                       </div>
+                     )}
+                     {isTransliterating && (
+                       <div className="absolute right-3 bottom-1.5 flex items-center gap-1.5 bg-background/90 backdrop-blur-sm px-2.5 py-1 rounded-full border border-violet-500/20 text-[10px] text-violet-400 font-medium select-none pointer-events-none shadow-sm">
+                         <span className="w-1.5 h-1.5 rounded-full bg-violet-400 shrink-0" />
+                         <span>Converting to Hinglish</span>
+                         <RefreshCw className="h-2.5 w-2.5 animate-spin text-violet-400 shrink-0" />
                        </div>
                      )}
                   </div>

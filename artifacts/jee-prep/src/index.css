@@ -304,25 +304,39 @@
   margin-top: 0.5rem !important;
 }
 
-/* Precise styles for citation badges to override Tailwind Typography defaults */
+/* Precise styles for citation badges to override Tailwind Typography defaults and match ChatGPT 100% */
 .prose a.citation-badge {
-  color: #52525b !important;
-  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  height: 18px !important;
+  padding-left: 4px !important;
+  padding-right: 8px !important;
+  border-radius: 12px !important;
+  font-size: 9px !important;
   font-weight: 500 !important;
-  line-height: 1 !important;
+  text-decoration: none !important;
+  border: none !important;
+  background-color: #F4F4F4 !important;
+  color: #555555 !important;
+  transition: background-color 150ms ease-in-out, color 150ms ease-in-out !important;
+  line-height: normal !important;
 }
 
 .dark .prose a.citation-badge {
-  color: #d4d4d8 !important;
+  background-color: #303030 !important;
+  color: #c4c4c4 !important;
 }
 
 .prose a.citation-badge:hover {
-  color: #09090b !important;
+  background-color: #e4e4e4 !important;
+  color: #222222 !important;
   text-decoration: none !important;
 }
 
 .dark .prose a.citation-badge:hover {
-  color: #fafafa !important;
+  background-color: #404040 !important;
+  color: #ffffff !important;
 }
+
 
 

@@ -326,7 +326,7 @@ function SourceCitationBadge({ href, children, sources }: { href: string; childr
   };
 
   return (
-    <span className={cn("relative inline-block align-middle my-0.5 mx-0.5 leading-none", isHovered ? "z-[30]" : "z-0")}>
+    <span className={cn("ms-1 inline-flex max-w-full items-center select-none relative top-[-0.094rem] translate-y-0.5", isHovered ? "z-[30]" : "z-0")}>
       <a
         ref={badgeRef}
         href={href}
@@ -335,19 +335,25 @@ function SourceCitationBadge({ href, children, sources }: { href: string; childr
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         onClick={handleBadgeClick}
-        className="citation-badge inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-black/5 dark:bg-white/10 border border-black/5 dark:border-white/5 text-[10px] font-medium text-zinc-600 dark:text-zinc-300 hover:bg-black/10 dark:hover:bg-white/15 hover:text-zinc-950 dark:hover:text-zinc-50 transition-all duration-150 cursor-pointer select-none align-middle leading-none"
+        className="citation-badge flex items-center overflow-hidden rounded-xl text-[9px] font-medium h-[18px] ps-1 pe-2 transition-colors duration-150 ease-in-out bg-[#F4F4F4] dark:bg-[#303030] text-[#555] dark:text-[#c4c4c4] select-none"
       >
-        <img
-          src={displayFavicon}
-          alt=""
-          className="h-3 w-3 object-contain rounded-full shrink-0"
-          onError={(e) => {
-            e.currentTarget.src = isPdf 
-              ? "https://cdn-icons-png.flaticon.com/512/337/337946.png"
-              : "https://www.google.com/s2/favicons?domain=wikipedia.org";
-          }}
-        />
-        <span className="max-w-[150px] truncate leading-none">{displayPublisher}</span>
+        <span className="flex items-center gap-1">
+          <span className="inline-flex shrink-0 items-center justify-center overflow-hidden rounded-full">
+            <img
+              src={displayFavicon}
+              alt=""
+              className="h-3 w-3 rounded-full"
+              onError={(e) => {
+                e.currentTarget.src = isPdf 
+                  ? "https://cdn-icons-png.flaticon.com/512/337/337946.png"
+                  : "https://www.google.com/s2/favicons?domain=wikipedia.org";
+              }}
+            />
+          </span>
+          <span className="max-w-[15ch] grow truncate overflow-hidden text-center leading-none">
+            {displayPublisher}
+          </span>
+        </span>
       </a>
 
       {isHovered && (

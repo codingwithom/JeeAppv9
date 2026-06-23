@@ -65,7 +65,7 @@ export interface ChatMessage {
   isTyping?: boolean;
   isStopped?: boolean;
   attachments?: { url: string; type: string; name: string }[];
-  sources?: { uri: string; title: string; favicon: string; snippet?: string; thumbnail?: string }[];
+  sources?: { uri: string; title: string; favicon: string; snippet?: string; thumbnail?: string; scrapedSolution?: string }[];
 }
 
 export interface ChatSession {
@@ -2073,15 +2073,28 @@ class AIChatBackgroundManager {
     const useVerify = selectedSettings?.verify ?? true;
     
     let extractedQuestionText = "";
-    if (hasImages && useInternet) {
+    let diagramDescriptionText = "";
+    if (hasImages) {
       try {
         const apiKey = localStorage.getItem("jee_openrouter_api_key") || "";
         if (apiKey) {
+          const ocrPrompt = `Analyze the academic/study question shown in this image. Do not solve it.
+Your job is to extract all details from the image:
+1. QUESTION TEXT: Transcribe the clean, exact text of the question. If there are multiple-choice options (A, B, C, D), include them verbatim.
+2. VISUAL DIAGRAM DESCRIPTION: If there is any diagram, graph, schematic, circuit, chemical reaction/mechanism, chemical structure, or geometry figure, describe it in absolute structural detail. Mention every label, numerical value, coordinate, component, force arrow, node, battery voltage, resistance, chemical symbol, chemical bond, and angle. Be extremely precise so that a solver could understand the exact structure and solve the question based only on your text description.
+
+Output in this exact format:
+[QUESTION TEXT]
+(insert transcribed text here)
+
+[DIAGRAM DESCRIPTION]
+(insert detailed description here or write "None" if there is no diagram)`;
+
           const ocrPayload = [
             {
               role: "user",
               content: [
-                { type: "text", text: "Identify and transcribe the clean text of the academic/study question shown in this image. Do not solve it. Output ONLY the exact text of the question. If there are options (A, B, C, D), include them. Do not include any introductory remarks or explanations." },
+                { type: "text", text: ocrPrompt },
                 ...filePayloads.map(fp => ({ type: "image_url", image_url: { url: `data:${fp.inlineData.mimeType};base64,${fp.inlineData.data}` } }))
               ]
             }
@@ -2108,8 +2121,18 @@ class AIChatBackgroundManager {
               });
               if (res.ok) {
                 const ocrData = await res.json();
-                extractedQuestionText = ocrData.choices?.[0]?.message?.content?.trim() || "";
-                if (extractedQuestionText) break;
+                const ocrResponseText = ocrData.choices?.[0]?.message?.content?.trim() || "";
+                if (ocrResponseText) {
+                  const questionMatch = ocrResponseText.match(/\[QUESTION TEXT\]([\s\S]*?)(?:\[DIAGRAM DESCRIPTION\]|$)/i);
+                  const diagramMatch = ocrResponseText.match(/\[DIAGRAM DESCRIPTION\]([\s\S]*?)$/i);
+                  
+                  extractedQuestionText = questionMatch ? questionMatch[1].trim() : ocrResponseText;
+                  const rawDiag = diagramMatch ? diagramMatch[1].trim() : "";
+                  if (rawDiag && !/^none/i.test(rawDiag)) {
+                    diagramDescriptionText = rawDiag;
+                  }
+                  break;
+                }
               }
             } catch (e) {}
           }
@@ -2676,6 +2699,9 @@ ${codeAndWidgetRestriction}`;
       let visionPrompt = hasImages ? "Please scan, read, and analyze the uploaded image carefully. Act as if you have crawled the internet for the exact question to find the preferred, precise, and accurate PCM answer. Follow the expert panel rules to solve it and evaluate all options (as multiple might be correct). Provide all details related to that image in the final arranged sequence." : "";
       if (hasImages && useVerify) {
         visionPrompt += " Cross-reference this image analysis with the scraped web solution data to ensure 100% accuracy.";
+      }
+      if (hasImages && diagramDescriptionText) {
+        visionPrompt += `\n\n[DETAILED DIAGRAM/VISUAL TRANSCRIPTION AND SPECIFICATION]:\n${diagramDescriptionText}`;
       }
 
       const openRouterFreeModels = [

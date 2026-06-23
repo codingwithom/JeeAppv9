@@ -2453,7 +2453,13 @@ Do not include any explanation or markdown outside the code block.` : "";
                 const item = scrapeTargets[index];
                 if (scraped && scraped.text && !scraped.text.includes("[Failed to retrieve")) {
                   scrapedContext += `\n--- SOURCE ${index + 1}: ${item.title} (${item.url}) ---\n`;
-                  scrapedContext += `${scraped.text.slice(0, 4000)}\n\n`;
+                  const solutionText = scraped.text.slice(0, 4000);
+                  scrapedContext += `${solutionText}\n\n`;
+
+                  const matchingGenSource = generatedSources.find(gs => gs.uri === item.url);
+                  if (matchingGenSource) {
+                    matchingGenSource.scrapedSolution = solutionText;
+                  }
                 }
               });
             } catch (err) {
@@ -4236,26 +4242,47 @@ Here is the raw transcription:
                                     try { hostname = new URL(src.uri).hostname; } catch(e) {}
                                     const faviconUrl = `https://www.google.com/s2/favicons?domain=${hostname}&sz=64`;
                                     return (
-                                      <a 
+                                      <div 
                                         key={srcIdx} 
-                                        href={src.uri} 
-                                        target="_blank" 
-                                        rel="noopener noreferrer"
-                                        className="flex items-start gap-2.5 p-2 rounded-xl hover:bg-muted/50 border border-transparent hover:border-border/40 transition-all group text-left"
+                                        className="flex flex-col p-2.5 rounded-xl hover:bg-muted/40 border border-border/10 transition-all text-left bg-muted/10"
                                       >
-                                        <div className="h-7 w-7 rounded-lg bg-background border border-border flex items-center justify-center shrink-0 shadow-sm">
-                                          <img 
-                                            src={faviconUrl} 
-                                            alt="" 
-                                            className="h-4.5 w-4.5 object-contain rounded-full" 
-                                            onError={(e) => { e.currentTarget.src = "https://www.google.com/s2/favicons?domain=wikipedia.org"; }}
-                                          />
+                                        <div className="flex items-start gap-2.5">
+                                          <div className="h-7 w-7 rounded-lg bg-background border border-border flex items-center justify-center shrink-0 shadow-sm mt-0.5">
+                                            <img 
+                                              src={faviconUrl} 
+                                              alt="" 
+                                              className="h-4.5 w-4.5 object-contain rounded-full" 
+                                              onError={(e) => { e.currentTarget.src = "https://www.google.com/s2/favicons?domain=wikipedia.org"; }}
+                                            />
+                                          </div>
+                                          <div className="min-w-0 flex-1 text-left">
+                                            <a 
+                                              href={src.uri} 
+                                              target="_blank" 
+                                              rel="noopener noreferrer" 
+                                              className="text-[11px] font-bold text-foreground hover:text-blue-500 transition-colors leading-snug line-clamp-1 block"
+                                            >
+                                              {src.title}
+                                            </a>
+                                            <span className="text-[9px] text-muted-foreground/60 truncate block mt-0.5">{hostname}</span>
+                                          </div>
                                         </div>
-                                        <div className="min-w-0 flex-1 text-left">
-                                          <h5 className="text-[11px] font-bold text-foreground line-clamp-1 group-hover:text-blue-500 transition-colors leading-snug">{src.title}</h5>
-                                          <span className="text-[9px] text-muted-foreground truncate block mt-0.5">{hostname}</span>
-                                        </div>
-                                      </a>
+
+                                        {src.snippet && (
+                                          <p className="text-[10.5px] text-muted-foreground line-clamp-2 mt-2 leading-relaxed pr-1">
+                                            {src.snippet}
+                                          </p>
+                                        )}
+
+                                        {src.scrapedSolution && (
+                                          <details className="mt-2 text-[10px] text-muted-foreground bg-muted/40 rounded-lg p-2 border border-border/40 select-text">
+                                            <summary className="cursor-pointer font-semibold text-[9px] hover:text-foreground text-muted-foreground select-none">View Scraped Solution Text</summary>
+                                            <div className="mt-1.5 whitespace-pre-wrap font-mono text-[9px] max-h-32 overflow-y-auto custom-scrollbar leading-relaxed">
+                                              {src.scrapedSolution}
+                                            </div>
+                                          </details>
+                                        )}
+                                      </div>
                                     );
                                   })}
                                 </div>

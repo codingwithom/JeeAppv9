@@ -26,6 +26,13 @@ export function WorkspaceProvider({ children }: { children: ReactNode }) {
   const [isReady, setIsReady] = useState(false);
   const [needsPermission, setNeedsPermission] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [isBypassed, setIsBypassed] = useState(() => {
+    try {
+      return localStorage.getItem("jee_workspace_bypassed") === "true";
+    } catch {
+      return false;
+    }
+  });
 
   const loadWorkspace = async (handle: any) => {
     try {
@@ -64,23 +71,33 @@ export function WorkspaceProvider({ children }: { children: ReactNode }) {
       setIsLoading(false);
       return;
     }
-    idbGet('workspace_dir_handle').then(async (handle) => {
-      if (handle) {
-        if (typeof (handle as any).queryPermission !== 'function') {
-          console.warn("Corrupted workspace handle found in IDB. Ignoring.");
-          setIsLoading(false);
-          return;
+    idbGet('workspace_dir_handle')
+      .then(async (handle) => {
+        if (handle) {
+          if (typeof (handle as any).queryPermission !== 'function') {
+            console.warn("Corrupted workspace handle found in IDB. Ignoring.");
+            setIsLoading(false);
+            return;
+          }
+          setDirHandle(handle);
+          try {
+            const perm = await (handle as any).queryPermission({ mode: 'readwrite' });
+            if (perm === 'granted') {
+              await loadWorkspace(handle);
+            } else {
+              setNeedsPermission(true);
+            }
+          } catch (permErr) {
+            console.error("Failed to query permission for workspace handle:", permErr);
+            setNeedsPermission(true);
+          }
         }
-        setDirHandle(handle);
-        const perm = await (handle as any).queryPermission({ mode: 'readwrite' });
-        if (perm === 'granted') {
-          await loadWorkspace(handle);
-        } else {
-          setNeedsPermission(true);
-        }
-      }
-      setIsLoading(false);
-    });
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        console.error("Failed to load workspace handle from IndexedDB:", err);
+        setIsLoading(false);
+      });
   }, [isSupported]);
 
   // Sync Loop
@@ -120,24 +137,39 @@ export function WorkspaceProvider({ children }: { children: ReactNode }) {
     return () => clearInterval(interval);
   }, [isReady, dirHandle]);
 
+  const bypassWorkspace = () => {
+    try {
+      localStorage.setItem("jee_workspace_bypassed", "true");
+    } catch {}
+    setIsBypassed(true);
+  };
+
   const selectFolder = async () => {
     try {
       const handle = await (window as any).showDirectoryPicker({ mode: 'readwrite' });
       await idbSet('workspace_dir_handle', handle);
       setDirHandle(handle);
       setNeedsPermission(false);
+      try {
+        localStorage.removeItem("jee_workspace_bypassed");
+      } catch {}
+      setIsBypassed(false);
       await loadWorkspace(handle);
     } catch (e) {
-      console.error("User cancelled or failed to select directory.");
+      console.error("User cancelled or failed to select directory.", e);
     }
   };
 
   const requestPermission = async () => {
     if (!dirHandle) return;
-    const perm = await dirHandle.requestPermission({ mode: 'readwrite' });
-    if (perm === 'granted') {
-      setNeedsPermission(false);
-      await loadWorkspace(dirHandle);
+    try {
+      const perm = await dirHandle.requestPermission({ mode: 'readwrite' });
+      if (perm === 'granted') {
+        setNeedsPermission(false);
+        await loadWorkspace(dirHandle);
+      }
+    } catch (e) {
+      console.error("Failed to request permission:", e);
     }
   };
 
@@ -189,45 +221,63 @@ export function WorkspaceProvider({ children }: { children: ReactNode }) {
   }
 
   // Render Interceptor UI until workspace is bound
-  if (isSupported && !isReady) {
+  if (isSupported && !isReady && !isBypassed) {
     return (
       <div className="flex h-screen items-center justify-center bg-background p-4 relative overflow-hidden">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="relative z-10 w-full max-w-md">
-          <Card className="p-8 text-center bg-card/80 backdrop-blur-xl border-border shadow-2xl">
+          <Card className="p-8 text-center bg-card/80 backdrop-blur-xl border-border shadow-2xl flex flex-col gap-4">
             {needsPermission ? (
               <>
-                <ShieldAlert className="h-12 w-12 mx-auto mb-4 text-primary opacity-80" />
-                <h1 className="text-2xl font-bold mb-2">Resume Workspace</h1>
-                <p className="text-muted-foreground text-sm mb-6">
-                  Welcome back! Please grant access to your local workspace folder to continue.
-                </p>
-                {dirHandle?.name && (
-                  <div className="mb-6 p-3 bg-muted/30 rounded-lg border border-border/50 flex items-center justify-center gap-2 overflow-hidden">
-                    <span className="text-[10px] uppercase text-muted-foreground font-bold shrink-0">Location:</span>
-                    <span className="text-xs font-mono font-semibold text-primary truncate">...\{dirHandle.name}</span>
-                  </div>
-                )}
+                <div>
+                  <ShieldAlert className="h-12 w-12 mx-auto mb-4 text-primary opacity-80" />
+                  <h1 className="text-2xl font-bold mb-2">Resume Workspace</h1>
+                  <p className="text-muted-foreground text-sm mb-6">
+                    Welcome back! Please grant access to your local workspace folder to continue.
+                  </p>
+                  {dirHandle?.name && (
+                    <div className="mb-6 p-3 bg-muted/30 rounded-lg border border-border/50 flex items-center justify-center gap-2 overflow-hidden">
+                      <span className="text-[10px] uppercase text-muted-foreground font-bold shrink-0">Location:</span>
+                      <span className="text-xs font-mono font-semibold text-primary truncate">...\{dirHandle.name}</span>
+                    </div>
+                  )}
+                </div>
                 <Button onClick={requestPermission} className="w-full h-12 font-semibold">Grant Access</Button>
               </>
             ) : (
               <>
-                <Database className="h-12 w-12 mx-auto mb-4 text-primary opacity-80" />
-                <h1 className="text-2xl font-bold mb-2">Local Workspace</h1>
-                <p className="text-muted-foreground text-sm mb-6">
-                  Select a folder on your PC (e.g. D:\JEE_Data) to save all your PDFs, Media, and site data completely locally.
-                </p>
+                <div>
+                  <Database className="h-12 w-12 mx-auto mb-4 text-primary opacity-80" />
+                  <h1 className="text-2xl font-bold mb-2">Local Workspace</h1>
+                  <p className="text-muted-foreground text-sm mb-6">
+                    Select a folder on your PC (e.g. D:\JEE_Data) to save all your PDFs, Media, and site data completely locally.
+                  </p>
+                </div>
                 <Button onClick={selectFolder} className="w-full h-12 font-semibold gap-2">
                   <FolderPlus className="h-5 w-5" /> Select Local Folder
                 </Button>
               </>
             )}
+
+            <div className="relative flex items-center py-2 shrink-0">
+              <div className="flex-grow border-t border-border"></div>
+              <span className="flex-shrink-0 mx-4 text-muted-foreground text-[10px] uppercase tracking-wider font-semibold">Or Bypass</span>
+              <div className="flex-grow border-t border-border"></div>
+            </div>
+
+            <Button 
+              variant="outline" 
+              onClick={bypassWorkspace}
+              className="w-full h-11 border-border/60 hover:bg-muted text-muted-foreground hover:text-foreground text-xs transition-all font-medium"
+            >
+              Use Browser Storage (Offline Only)
+            </Button>
           </Card>
         </motion.div>
       </div>
     );
   }
 
-  return <WorkspaceContext.Provider value={{ isSupported, isReady, needsPermission, selectFolder, changeFolder: selectFolder, requestPermission, writeMedia, readMediaAsBlob, readMediaAsArrayBuffer, deleteMedia }}>{children}</WorkspaceContext.Provider>;
+  return <WorkspaceContext.Provider value={{ isSupported, isReady: isReady || isBypassed, needsPermission, selectFolder, changeFolder: selectFolder, requestPermission, writeMedia, readMediaAsBlob, readMediaAsArrayBuffer, deleteMedia }}>{children}</WorkspaceContext.Provider>;
 }
 
 export function useWorkspaceContext() {

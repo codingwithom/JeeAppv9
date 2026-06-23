@@ -360,6 +360,7 @@ function SourceCitationBadge({ href, children, sources }: { href: string; childr
 
       {isHovered && (
         <div 
+          data-html2canvas-ignore="true"
           className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-80 bg-[#1a1a1a]/95 backdrop-blur-md border border-[#2d2d2d] rounded-2xl p-4 shadow-[0_10px_30px_rgba(0,0,0,0.6)] z-[9999] text-left pointer-events-auto animate-in fade-in slide-in-from-bottom-2 duration-200"
         >
           <div className="flex items-center gap-2 mb-2">

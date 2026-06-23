@@ -30,7 +30,9 @@ import {
   ChevronDown,
   ChevronLeft,
   Mic,
-  MicOff
+  MicOff,
+  PanelLeft,
+  PanelLeftClose
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAppContext } from "@/context/AppContext";
@@ -3671,8 +3673,12 @@ Here is the raw transcription:
                 <ChevronLeft className="h-5 w-5 text-foreground" />
               </button>
             )}
-            <button onClick={() => setSidebarOpen(!sidebarOpen)} className="p-2 hover:bg-muted rounded-full text-muted-foreground transition-colors">
-               <Menu className="h-5 w-5" />
+            <button 
+              onClick={() => setSidebarOpen(!sidebarOpen)} 
+              className="p-2 hover:bg-muted rounded-full text-muted-foreground transition-colors"
+              title={sidebarOpen ? "Collapse Sidebar" : "Expand Sidebar"}
+            >
+               {sidebarOpen ? <PanelLeftClose className="h-5 w-5" /> : <PanelLeft className="h-5 w-5" />}
             </button>
             <h2 className="ml-3 font-semibold text-lg text-foreground flex items-center gap-2">
                Calculus AI

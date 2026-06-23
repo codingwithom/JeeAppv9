@@ -399,6 +399,15 @@ function SourceCitationBadge({ href, children, sources }: { href: string; childr
 }
 
 const getMarkdownComponents = (setFullScreenImage?: (url: string) => void, sources?: ChatMessage['sources']): any => ({
+  table: ({ node, children, ...props }: any) => {
+    return (
+      <div className="w-full overflow-x-auto my-4 border border-border/80 rounded-xl scrollbar-hide">
+        <table className="w-full border-collapse" {...props}>
+          {children}
+        </table>
+      </div>
+    );
+  },
   a: ({ node, children, href, ...props }: any) => {
     const isImageLink = node?.children?.length === 1 && node.children[0].tagName === 'img';
     if (isImageLink) {

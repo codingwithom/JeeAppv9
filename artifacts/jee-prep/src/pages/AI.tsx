@@ -3666,6 +3666,11 @@ Here is the raw transcription:
         </AnimatePresence>
         <div className="h-14 flex items-center justify-between px-4 shrink-0 absolute top-0 left-0 z-10 w-full bg-gradient-to-b from-background via-background/90 to-transparent border-b border-border/10 backdrop-blur-md">
           <div className="flex items-center">
+            {onBack && (
+              <button onClick={onBack} className="p-2 mr-1.5 hover:bg-muted rounded-full text-muted-foreground transition-colors flex items-center justify-center" title="Back to Options">
+                <ChevronLeft className="h-5 w-5 text-foreground" />
+              </button>
+            )}
             <button onClick={() => setSidebarOpen(!sidebarOpen)} className="p-2 hover:bg-muted rounded-full text-muted-foreground transition-colors">
                <Menu className="h-5 w-5" />
             </button>

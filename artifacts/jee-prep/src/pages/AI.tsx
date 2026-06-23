@@ -361,7 +361,7 @@ function SourceCitationBadge({ href, children, sources }: { href: string; childr
       {isHovered && (
         <div 
           data-html2canvas-ignore="true"
-          className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-80 bg-[#1a1a1a]/95 backdrop-blur-md border border-[#2d2d2d] rounded-2xl p-4 shadow-[0_10px_30px_rgba(0,0,0,0.6)] z-[9999] text-left pointer-events-auto animate-in fade-in slide-in-from-bottom-2 duration-200"
+          className="fixed bottom-24 left-4 right-4 md:absolute md:bottom-full md:left-1/2 md:right-auto md:translate-y-0 md:-translate-x-1/2 mb-2 md:w-80 max-w-sm mx-auto bg-[#1a1a1a]/95 backdrop-blur-md border border-[#2d2d2d] rounded-2xl p-4 shadow-[0_10px_30px_rgba(0,0,0,0.6)] z-[9999] text-left pointer-events-auto animate-in fade-in slide-in-from-bottom-2 duration-200"
         >
           <div className="flex items-center gap-2 mb-2">
             <div className="h-5 w-5 rounded bg-white border border-slate-800 flex items-center justify-center overflow-hidden shrink-0">
@@ -3726,7 +3726,7 @@ Here is the raw transcription:
                     </div>
                  )}
 
-                 <div className={cn("max-w-[90%] text-[15px] leading-relaxed", m.role === "user" ? "bg-muted px-5 py-3 rounded-3xl user-message-bubble" : "text-foreground pt-1 w-full", m.isStopped ? "opacity-80" : "")}>
+                 <div className={cn("text-[15px] leading-relaxed", m.role === "user" ? "bg-muted px-5 py-3 rounded-3xl user-message-bubble max-w-[85%] sm:max-w-[80%]" : "text-foreground pt-1 w-full", m.isStopped ? "opacity-80" : "")}>
                     {m.role === "model" && !m.isTyping && (
                       <div className="flex items-center justify-between border-b border-border/40 pb-2 mb-3 select-none relative w-full">
                         {/* Left Side: Sparkles Icon, Title, Sound controls */}

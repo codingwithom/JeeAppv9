@@ -2456,7 +2456,7 @@ Uploaded: ${v.uploadedAt}
       // Crawler detection
       let crawlContext = "";
       try {
-        const lowerMsg = lastMsg.toLowerCase();
+        const lowerMsg = searchQuery.toLowerCase();
         const isCrawlIntent = lowerMsg.includes("crawl") || 
                               lowerMsg.includes("fetch data") || 
                               lowerMsg.includes("scrape") || 
@@ -2477,11 +2477,11 @@ Uploaded: ${v.uploadedAt}
 
         const explicitUrlRegex = /(https?:\/\/[^\s]+)/gi;
         let urlsToCrawl: string[] = [];
-        const explicitMatches = lastMsg.match(explicitUrlRegex);
+        const explicitMatches = searchQuery.match(explicitUrlRegex);
         if (explicitMatches) {
           urlsToCrawl = explicitMatches.map(u => u.replace(/[.,;!?]$/, ''));
         } else {
-          const words = lastMsg.split(/\s+/);
+          const words = searchQuery.split(/\s+/);
           for (const word of words) {
             const cleanWord = word.replace(/[.,;!?()'"\[\]]$/, '').replace(/^[()'"\[\]]/, '');
             if (cleanWord.includes(".") && !cleanWord.startsWith(".") && !cleanWord.endsWith(".")) {
@@ -2529,7 +2529,7 @@ INSTRUCTIONS: Synthesize the live crawled text above to answer the user's reques
       }
 
       // Graph directive
-      const isGraphOrPlotRequest = /graph\b|plot\b|visualize.*function|graphical\b/i.test(lastMsg);
+      const isGraphOrPlotRequest = /graph\b|plot\b|visualize.*function|graphical\b/i.test(searchQuery);
       let graphDirective = "";
       if (isGraphOrPlotRequest) {
         graphDirective = `\n\nGRAPHING CALCULATOR PLUGIN\nIf the user requests to graph, plot, or visualize a mathematical function (e.g. y = sin(x) or f(x) = x^2), respond ONLY with a single markdown block wrapped in \`\`\`graph config matching this schema:
@@ -2600,6 +2600,9 @@ ${codeAndWidgetRestriction}`;
       ];
       
       const openRouterImageModels = [
+        "google/gemini-2.5-flash",
+        "meta-llama/llama-3.2-11b-vision-instruct:free",
+        "meta-llama/llama-3.2-90b-vision-instruct:free",
         "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free", 
         "nvidia/llama-nemotron-rerank-vl-1b-v2:free",
         "nex-agi/nex-n2-pro:free",

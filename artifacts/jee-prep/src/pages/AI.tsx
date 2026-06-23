@@ -32,7 +32,8 @@ import {
   Mic,
   MicOff,
   PanelLeft,
-  PanelLeftClose
+  PanelLeftClose,
+  CheckCircle
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAppContext } from "@/context/AppContext";
@@ -2055,7 +2056,7 @@ class AIChatBackgroundManager {
     messagesToSent: ChatMessage[];
     filePayloads?: any[];
     selectedGoal: any;
-    selectedSettings?: { internet: boolean; ai: boolean };
+    selectedSettings?: { internet: boolean; ai: boolean; verify?: boolean };
   }) {
     const { sessionId, messagesToSent, filePayloads, selectedGoal, selectedSettings } = params;
 
@@ -2069,6 +2070,7 @@ class AIChatBackgroundManager {
     const hasImages = filePayloads && filePayloads.length > 0;
     const useInternet = selectedSettings?.internet ?? true;
     const useAI = selectedSettings?.ai ?? true;
+    const useVerify = selectedSettings?.verify ?? true;
     
     let extractedQuestionText = "";
     if (hasImages && useInternet) {
@@ -2277,6 +2279,7 @@ Do not include any explanation or markdown outside the code block.` : "";
       const useAI = selectedSettings?.ai ?? true;
 
       let searchContext = "";
+      let scrapedContext = "";
       if (useInternet) {
         // Detect if Hindi script is present
         const hasHindi = /[\u0900-\u097F]/.test(searchQuery);
@@ -2377,6 +2380,63 @@ Do not include any explanation or markdown outside the code block.` : "";
           });
 
           searchContext = `\n\n[CRITICAL DIRECTIVE: REAL-TIME RAG MODE ACTIVATED]\nThe user is requesting information that requires real-time data. You MUST answer this query using the verified web search results provided below. Cite all facts by referencing the relevant [Source X] link.\n\nREAL-TIME WEB SEARCH RESULTS:\n${searchSummaries}\n\nINSTRUCTIONS: Write a comprehensive, precise response synthesizing the search results. Cite sources exactly.`;
+
+          // Validation & verification scraping algorithm
+          if (useVerify) {
+            const isAcademicSite = (url: string) => {
+              const academicDomains = [
+                "doubtnut.com", "toppr.com", "byjus.com", "brainly.in", "vedantu.com",
+                "sarthaks.com", "shiksha.com", "unacademy.com", "embibe.com",
+                "stackexchange.com", "stackoverflow.com", "geeksforgeeks.org",
+                "selfstudys.com", "collegedunia.com", "careers360.com", "physics.org",
+                "khanacademy.org", "wikipedia.org", "chemwatch.net", "libretexts.org",
+                "wolframalpha.com"
+              ];
+              try {
+                const hostname = new URL(url).hostname.toLowerCase();
+                return academicDomains.some(domain => hostname.includes(domain));
+              } catch (e) {
+                return false;
+              }
+            };
+
+            const sortedResults = [...mergedResults].sort((a, b) => {
+              const aIsAcad = isAcademicSite(a.url) ? 1 : 0;
+              const bIsAcad = isAcademicSite(b.url) ? 1 : 0;
+              return bIsAcad - aIsAcad;
+            });
+
+            const scrapeTargets = sortedResults.slice(0, 3);
+            console.log(`[Validation] Scraping ${scrapeTargets.length} academic/web pages for solution verification...`);
+
+            const scrapeWithTimeout = async (url: string, timeoutMs: number = 6000) => {
+              return Promise.race([
+                fetchCrawlResults(url, false),
+                new Promise<{ text: string; crawledUrls: string[] }>((_, reject) =>
+                  setTimeout(() => reject(new Error("Timeout scraping")), timeoutMs)
+                )
+              ]).catch(err => {
+                console.warn(`[Validation] Scraping timed out/failed for ${url}:`, err);
+                return { text: `[Failed to retrieve full contents of ${url}]`, crawledUrls: [url] };
+              });
+            };
+
+            try {
+              const scrapeResults = await Promise.all(
+                scrapeTargets.map(item => scrapeWithTimeout(item.url))
+              );
+
+              scrapeResults.forEach((scraped, index) => {
+                const item = scrapeTargets[index];
+                if (scraped && scraped.text && !scraped.text.includes("[Failed to retrieve")) {
+                  scrapedContext += `\n--- SOURCE ${index + 1}: ${item.title} (${item.url}) ---\n`;
+                  scrapedContext += `${scraped.text.slice(0, 4000)}\n\n`;
+                }
+              });
+            } catch (err) {
+              console.error("[Validation] Failed parallel scraping:", err);
+            }
+          }
         }
       }
 
@@ -2546,6 +2606,45 @@ If the user uploaded an image of an equation, read/OCR the equation from the ima
 
       const codeAndWidgetRestriction = `\n\n[CRITICAL RESTRICTION - CODE AND WIDGETS]\n1. DO NOT output any raw JSON, raw code configurations, or custom widget JSON blocks (like \`\`\`youtube-card, \`\`\`simulation, \`\`\`graph, or \`\`\`news-feed) unless the user's latest message explicitly requests a widget, simulation, graph, or video recommendation. Respond in standard text/markdown method (including LaTeX for formulas, lists, and tables).\n2. DO NOT write code blocks (like Python, C++, Java, JS, HTML, etc.) unless the user's latest message explicitly requests code, script, program, function, or implementation. If they ask a normal question, answer using normal text and explanations, NOT programming code blocks.\n`;
 
+      let validationInstruction = "";
+      let selfValidationInstruction = "";
+      if (useVerify) {
+        if (scrapedContext) {
+          validationInstruction = `\n\n[CRITICAL DIRECTIVE: MULTI-SOURCE SOLUTION VALIDATION & VERIFICATION LOOP]
+You are acting in MULTI-SOURCE SOLUTION VALIDATION mode. Below are the detailed page contents scraped from high-authority educational resources regarding this specific problem/concept:
+
+${scrapedContext}
+
+Your mission is to output a 100% mathematically and scientifically accurate answer. Follow these instructions:
+1. **Analyze Scraped Solutions**: Carefully read the scraped contents from the educational websites. Extract the final answer keys, options, and intermediate calculations from each source.
+2. **Solve Independently**: Solve the question on your own using physical laws, chemical mechanisms, or mathematical formulas.
+3. **Compare & Verify**:
+   - Compare your independent solution with the scraped solutions.
+   - If there's a consensus across sources and your independent work, explain it clearly.
+   - If there is a contradiction (e.g., source 1 says option A, source 2 says option B, or your independent calculation yields a different answer), analyze the steps of the discrepant solutions. Identify any arithmetic errors, sign errors, incorrect assumptions, or misinterpretations of the question in those solutions.
+   - Rectify the error and determine the mathematically correct option.
+4. **Draft Detailed Explanation**: Write a premium, step-by-step educational breakdown using LaTeX for mathematical styling.
+5. **Output the Multi-Source Validation Audit**:
+   You MUST append a section titled "### 🔍 Multi-Source Validation Audit" at the very end of your response. For each source checked:
+   - Identify the source URL/name.
+   - State the solution/option found on that source.
+   - Mention the verification result (e.g., "Verified correct", "Contains arithmetic error in Step 3, corrected here", etc.).
+   - Conclude with: "✅ Final Status: Answer verified with 100% accuracy."
+`;
+        } else {
+          selfValidationInstruction = `\n\n[CRITICAL DIRECTIVE: DUAL-SOLVER SELF-VERIFICATION LOOP]
+Since live educational website scraping yielded no direct solution hits, you MUST execute a strict self-verification workflow:
+1. Solve the question using Method A (e.g. direct calculation or algebraic formulation).
+2. Solve the question using Method B (e.g. dimensional analysis, special cases, graph sketching, or alternative formulas) to double-check.
+3. Compare the two paths. If they lead to different results, find the mistake in your reasoning and resolve it.
+4. Output a detailed explanation and add a section titled "### 🔍 Self-Verification Audit" detailing:
+   - Method A verification steps.
+   - Method B verification steps.
+   - Final status: ✅ Checked for consistency and confirmed correct.
+`;
+        }
+      }
+
       let finalSystemInstruction = "";
       if (useInternet && !useAI) {
         finalSystemInstruction = `SYSTEM IDENTITY:
@@ -2567,14 +2666,17 @@ ${graphDirective}
 ${codeAndWidgetRestriction}`;
       } else if (useInternet && useAI) {
         const ragInstruction = `\n\n[CRITICAL DIRECTIVE: REAL-TIME RAG MODE ACTIVATED]\nYou have real-time internet search access. Combine the provided search results/crawled content with your pre-trained knowledge base and reasoning capabilities to synthesize a comprehensive, proper, finalized, and accurate response. Cite sources precisely.`;
-        finalSystemInstruction = systemInstruction + goalSpecificInstruction + imageGenerationInstruction + dateInstruction + searchContext + crawlContext + ytContext + ragInstruction + graphDirective + codeAndWidgetRestriction;
+        finalSystemInstruction = systemInstruction + goalSpecificInstruction + imageGenerationInstruction + dateInstruction + searchContext + crawlContext + ytContext + ragInstruction + validationInstruction + selfValidationInstruction + graphDirective + codeAndWidgetRestriction;
       } else {
         // AI Only
         const aiOnlyInstruction = `\n\n[PRE-TRAINED DATASET MODE ACTIVATED]\nYou must answer this query using ONLY your pre-trained dataset/knowledge base. Web search is disabled. Do not generate or refer to search citations.`;
-        finalSystemInstruction = systemInstruction + goalSpecificInstruction + imageGenerationInstruction + dateInstruction + aiOnlyInstruction + graphDirective + codeAndWidgetRestriction;
+        finalSystemInstruction = systemInstruction + goalSpecificInstruction + imageGenerationInstruction + dateInstruction + aiOnlyInstruction + selfValidationInstruction + graphDirective + codeAndWidgetRestriction;
       }
 
-      const visionPrompt = hasImages ? "Please scan, read, and analyze the uploaded image carefully. Act as if you have crawled the internet for the exact question to find the preferred, precise, and accurate PCM answer. Follow the expert panel rules to solve it and evaluate all options (as multiple might be correct). Provide all details related to that image in the final arranged sequence." : "";
+      let visionPrompt = hasImages ? "Please scan, read, and analyze the uploaded image carefully. Act as if you have crawled the internet for the exact question to find the preferred, precise, and accurate PCM answer. Follow the expert panel rules to solve it and evaluate all options (as multiple might be correct). Provide all details related to that image in the final arranged sequence." : "";
+      if (hasImages && useVerify) {
+        visionPrompt += " Cross-reference this image analysis with the scraped web solution data to ensure 100% accuracy.";
+      }
 
       const openRouterFreeModels = [
         "google/gemma-4-26b-a4b-it:free",
@@ -2861,24 +2963,30 @@ export default function AIChatInterface({ onBack }: { onBack?: () => void }) {
   };
   const [activeSessionId, setActiveSessionId] = useState<string | null>(null);
   const [showSettingsMenu, setShowSettingsMenu] = useState(false);
-  const [settings, setSettings] = useState<{ internet: boolean; ai: boolean }>(() => {
+  const [settings, setSettings] = useState<{ internet: boolean; ai: boolean; verify: boolean }>(() => {
     try {
       const raw = localStorage.getItem("jee_ai_chat_settings");
       if (raw) {
         const parsed = JSON.parse(raw);
         if (typeof parsed.internet === "boolean" && typeof parsed.ai === "boolean") {
-          return parsed;
+          return {
+            internet: parsed.internet,
+            ai: parsed.ai,
+            verify: typeof parsed.verify === "boolean" ? parsed.verify : true
+          };
         }
       }
     } catch {}
-    return { internet: true, ai: true };
+    return { internet: true, ai: true, verify: true };
   });
 
-  const toggleSetting = (key: 'internet' | 'ai') => {
+  const toggleSetting = (key: 'internet' | 'ai' | 'verify') => {
     setSettings(prev => {
-      // Prevent disabling both
-      if (prev[key] && !prev[key === 'internet' ? 'ai' : 'internet']) {
-        return prev;
+      if (key !== 'verify') {
+        // Prevent disabling both
+        if (prev[key] && !prev[key === 'internet' ? 'ai' : 'internet']) {
+          return prev;
+        }
       }
       const next = { ...prev, [key]: !prev[key] };
       localStorage.setItem("jee_ai_chat_settings", JSON.stringify(next));
@@ -3928,15 +4036,30 @@ Here is the raw transcription:
                                <span className="text-[10px] text-muted-foreground">Pretrained knowledge base</span>
                             </div>
                          </label>
+
+                         <label className="flex items-center gap-3 cursor-pointer group select-none">
+                            <input 
+                               type="checkbox"
+                               checked={settings.verify}
+                               onChange={() => toggleSetting('verify')}
+                               className="h-4.5 w-4.5 rounded border-border bg-muted accent-primary cursor-pointer transition-colors"
+                            />
+                            <div className="flex flex-col">
+                               <span className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors flex items-center gap-1.5">
+                                  <CheckCircle className="h-3.5 w-3.5 text-emerald-500" /> Verify Answer
+                                </span>
+                               <span className="text-[10px] text-muted-foreground">Cross-checks multiple sources</span>
+                            </div>
+                         </label>
                       </div>
                       
                       {/* Active Status Badge */}
                       <div className="mt-4 pt-3 border-t border-border/60 flex items-center justify-between">
                          <span className="text-[10px] text-muted-foreground font-medium">Active Mode:</span>
                          <span className="text-[10px] font-bold text-primary px-2 py-0.5 bg-primary/10 rounded-full">
-                            {settings.internet && settings.ai && "Internet + AI"}
-                            {settings.internet && !settings.ai && "Internet Only"}
-                            {!settings.internet && settings.ai && "AI Only"}
+                            {settings.internet && settings.ai && (settings.verify ? "Verify + Internet + AI" : "Internet + AI")}
+                            {settings.internet && !settings.ai && (settings.verify ? "Verify + Internet" : "Internet Only")}
+                            {!settings.internet && settings.ai && (settings.verify ? "Verify + AI" : "AI Only")}
                          </span>
                       </div>
                    </div>

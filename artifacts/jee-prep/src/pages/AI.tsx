@@ -3838,7 +3838,7 @@ Here is the raw transcription:
                         )}
                       </div>
                     )}
-                   <div className="prose dark:prose-invert prose-p:leading-relaxed prose-pre:bg-muted prose-pre:border prose-pre:border-border max-w-none w-full overflow-x-auto prose-table:w-full prose-table:border-collapse prose-th:border prose-th:border-border prose-th:p-2 prose-td:border prose-td:border-border prose-td:p-2 prose-img:rounded-xl prose-img:max-h-[350px] prose-img:w-auto prose-img:object-contain prose-a:text-blue-500 hover:prose-a:text-blue-600 transition-colors">
+                   <div className="prose dark:prose-invert prose-p:leading-relaxed prose-pre:bg-muted prose-pre:border prose-pre:border-border max-w-none w-full prose-table:w-full prose-table:border-collapse prose-th:border prose-th:border-border prose-th:p-2 prose-td:border prose-td:border-border prose-td:p-2 prose-img:rounded-xl prose-img:max-h-[350px] prose-img:w-auto prose-img:object-contain prose-a:text-blue-500 hover:prose-a:text-blue-600 transition-colors">
                      {m.attachments && m.attachments.length > 0 && (
                         <div className="flex flex-wrap gap-2 mb-3">
                            {m.attachments.map((a, idx) => (

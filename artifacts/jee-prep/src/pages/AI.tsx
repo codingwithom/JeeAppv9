@@ -2067,6 +2067,65 @@ class AIChatBackgroundManager {
 
     const lastMsg = messagesToSent[messagesToSent.length - 1].content;
     const hasImages = filePayloads && filePayloads.length > 0;
+    const useInternet = selectedSettings?.internet ?? true;
+    const useAI = selectedSettings?.ai ?? true;
+    
+    let extractedQuestionText = "";
+    if (hasImages && useInternet) {
+      try {
+        const apiKey = localStorage.getItem("jee_openrouter_api_key") || "";
+        if (apiKey) {
+          const ocrPayload = [
+            {
+              role: "user",
+              content: [
+                { type: "text", text: "Identify and transcribe the clean text of the academic/study question shown in this image. Do not solve it. Output ONLY the exact text of the question. If there are options (A, B, C, D), include them. Do not include any introductory remarks or explanations." },
+                ...filePayloads.map(fp => ({ type: "image_url", image_url: { url: `data:${fp.inlineData.mimeType};base64,${fp.inlineData.data}` } }))
+              ]
+            }
+          ];
+          
+          const ocrModels = [
+            "google/gemini-2.5-flash",
+            "meta-llama/llama-3.2-11b-vision-instruct:free",
+            "google/gemma-4-26b-a4b-it:free"
+          ];
+          
+          for (const model of ocrModels) {
+            try {
+              const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+                method: "POST",
+                headers: {
+                  "Authorization": `Bearer ${apiKey.trim()}`,
+                  "HTTP-Referer": window.location.href,
+                  "X-Title": "StudE",
+                  "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ model, messages: ocrPayload }),
+                signal: signal
+              });
+              if (res.ok) {
+                const ocrData = await res.json();
+                extractedQuestionText = ocrData.choices?.[0]?.message?.content?.trim() || "";
+                if (extractedQuestionText) break;
+              }
+            } catch (e) {}
+          }
+        }
+      } catch (ocrErr) {
+        console.warn("Failed to transcribe image question via OCR:", ocrErr);
+      }
+    }
+
+    let searchQuery = lastMsg;
+    if (extractedQuestionText) {
+      if (lastMsg.length < 25 || /solve|answer|what is|calculate|explain|this|image|picture|photo/i.test(lastMsg)) {
+        searchQuery = extractedQuestionText;
+      } else {
+        searchQuery = `${lastMsg} ${extractedQuestionText}`;
+      }
+    }
+
     const isImageRequest = !hasImages && /generate.*image|create.*image|draw\b|make.*image|picture.*of|image.*of|create.*picture|make.*picture|generate.*picture/i.test(lastMsg);
 
     this.activeJobs.set(sessionId, {
@@ -2220,8 +2279,8 @@ Do not include any explanation or markdown outside the code block.` : "";
       let searchContext = "";
       if (useInternet) {
         // Detect if Hindi script is present
-        const hasHindi = /[\u0900-\u097F]/.test(lastMsg);
-        let englishQuery = lastMsg;
+        const hasHindi = /[\u0900-\u097F]/.test(searchQuery);
+        let englishQuery = searchQuery;
         if (hasHindi) {
           const hindiToEng: { [key: string]: string } = {
             "नया": "new", "नये": "new", "नई": "new",
@@ -2233,7 +2292,7 @@ Do not include any explanation or markdown outside the code block.` : "";
             "एपिसोड": "episode", "वीडियो": "video", "क्या है": "what is",
             "क्या": "what", "कब": "when", "कैसे": "how"
           };
-          let eng = lastMsg;
+          let eng = searchQuery;
           for (const [hindi, english] of Object.entries(hindiToEng)) {
             eng = eng.replace(new RegExp(hindi, "gi"), english);
           }
@@ -2243,8 +2302,8 @@ Do not include any explanation or markdown outside the code block.` : "";
           }
         }
 
-        const isLatest = /latest|latets|today|recent|current|trending|updated|updates|new|news|situation|real-time|realtime|up-to-date|recently/i.test(lastMsg);
-        const query1 = isLatest ? (lastMsg + " " + currentYear) : lastMsg;
+        const isLatest = /latest|latets|today|recent|current|trending|updated|updates|new|news|situation|real-time|realtime|up-to-date|recently/i.test(searchQuery);
+        const query1 = isLatest ? (searchQuery + " " + currentYear) : searchQuery;
         const query2 = isLatest ? (englishQuery + " " + currentYear) : englishQuery;
         
         const fetchSearchWithFallbacks = async (q: string) => {
@@ -2273,7 +2332,7 @@ Do not include any explanation or markdown outside the code block.` : "";
           searchPromises.push(fetchSearchWithFallbacks(query2));
         }
 
-        const { cleanQuery, sources: targetedSources } = getCleanQueryAndSources(lastMsg);
+        const { cleanQuery, sources: targetedSources } = getCleanQueryAndSources(searchQuery);
         if (targetedSources.length > 0) {
           const groupSize = 5;
           for (let i = 0; i < targetedSources.length; i += groupSize) {
@@ -2323,10 +2382,10 @@ Do not include any explanation or markdown outside the code block.` : "";
 
       // YouTube Channel or Video Search Detection
       let ytContext = "";
-      const containsYtUrl = /(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)/i.test(lastMsg);
-      const isYtRequest = !containsYtUrl && /latest\s+video|youtube\b|yt\b|video\s+of|video\s+from|upload\s+of|upload\s+from|tell me.*video/i.test(lastMsg);
+      const containsYtUrl = /(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)/i.test(searchQuery);
+      const isYtRequest = !containsYtUrl && /latest\s+video|youtube\b|yt\b|video\s+of|video\s+from|upload\s+of|upload\s+from|tell me.*video/i.test(searchQuery);
       if (useInternet && isYtRequest) {
-        let cleanQuery = lastMsg
+        let cleanQuery = searchQuery
           .replace(/tell me/gi, "")
           .replace(/latest video of/gi, "")
           .replace(/latest video from/gi, "")
@@ -2340,12 +2399,12 @@ Do not include any explanation or markdown outside the code block.` : "";
           .trim();
         
         if (!cleanQuery) {
-          cleanQuery = lastMsg;
+          cleanQuery = searchQuery;
         }
 
-        const searchQuery = `${cleanQuery} latest video`;
+        const ytSearchQuery = `${cleanQuery} latest video`;
         try {
-          const ytSearchUrl = `/api/yt-search?q=${encodeURIComponent(searchQuery)}`;
+          const ytSearchUrl = `/api/yt-search?q=${encodeURIComponent(ytSearchQuery)}`;
           const ytRes = await fetch(ytSearchUrl);
           if (ytRes.ok) {
             const ytData = await ytRes.json();

@@ -3194,6 +3194,15 @@ Here is the raw transcription:
           ? getComputedStyle(element).backgroundColor
           : '#020817';
 
+      // Find the scroll container and scroll it to 0 temporarily to ensure the full chat is captured without being shifted/cut off by scrolling
+      const scrollContainer = element.closest('.overflow-y-auto');
+      const originalScrollTop = scrollContainer ? scrollContainer.scrollTop : 0;
+      if (scrollContainer) {
+        scrollContainer.scrollTop = 0;
+        // Wait a brief moment for the browser to render the scrolled layout
+        await new Promise((resolve) => setTimeout(resolve, 100));
+      }
+
       const canvas = await html2canvas(element, {
         useCORS: true,
         allowTaint: true,
@@ -3205,6 +3214,11 @@ Here is the raw transcription:
         scrollX: 0,
         scrollY: 0,
       });
+
+      // Restore original scroll position
+      if (scrollContainer) {
+        scrollContainer.scrollTop = originalScrollTop;
+      }
       
       // If we got a file handle from showSaveFilePicker, write directly to it
       if (fileHandle) {

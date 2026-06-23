@@ -32,7 +32,7 @@ const DEFAULT_SHORTCUTS: Shortcut[] = [
   { id: "6", name: "Chemistry", url: "https://www.masterorganicchemistry.com" },
 ];
 
-export default function AIEngin() {
+export default function AIEngin({ onBack }: { onBack?: () => void }) {
   const [query, setQuery] = useState("");
   const [currentUrl, setCurrentUrl] = useState("");
   const [browserMode, setBrowserMode] = useState<"newtab" | "browse">("newtab");
@@ -178,6 +178,12 @@ export default function AIEngin() {
             <div className="w-3 h-3 rounded-full bg-yellow-500/80 hover:bg-yellow-600 transition-colors cursor-pointer" />
             <div className="w-3 h-3 rounded-full bg-green-500/80 hover:bg-green-600 transition-colors cursor-pointer" onClick={() => setFullscreen(!fullscreen)} />
           </div>
+
+          {onBack && (
+            <Button variant="ghost" size="sm" onClick={onBack} className="h-7 px-2 font-bold text-xs gap-1 hover:bg-accent rounded-lg text-muted-foreground hover:text-foreground mr-1.5 transition-all">
+              <ArrowLeft className="h-3.5 w-3.5" /> Back
+            </Button>
+          )}
 
           {/* Tab Element */}
           <div className={className(

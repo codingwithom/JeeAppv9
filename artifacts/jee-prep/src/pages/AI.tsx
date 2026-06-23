@@ -28,6 +28,7 @@ import {
   Volume2,
   VolumeX,
   ChevronDown,
+  ChevronLeft,
   Mic,
   MicOff
 } from "lucide-react";
@@ -2677,7 +2678,7 @@ If the user uploaded an image of an equation, read/OCR the equation from the ima
 
 export const aiChatBackgroundManager = new AIChatBackgroundManager();
 
-export default function AIChatInterface() {
+export default function AIChatInterface({ onBack }: { onBack?: () => void }) {
   const { user, selectedGoal } = useAppContext();
   const [sessions, setSessions] = useState<ChatSession[]>(() => {
     try { return JSON.parse(localStorage.getItem("jee_ai_chats") || "[]"); }

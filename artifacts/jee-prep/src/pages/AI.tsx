@@ -3667,7 +3667,7 @@ Here is the raw transcription:
           {/* Export button removed as it is now triggered by /export slash command */}
         </div>
 
-        <div className="flex-1 overflow-y-auto pt-16 pb-32 px-4 md:px-8 lg:px-20 scrollbar-hide">
+        <div className="flex-1 overflow-y-auto overflow-x-hidden pt-16 pb-32 px-4 md:px-8 lg:px-20 scrollbar-hide w-full">
           {messages.length === 0 && (
              <div className="h-full flex flex-col items-center justify-center text-center mt-10 md:mt-20">
                <motion.div initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 0.8, ease: "easeOut" }} className="mb-8 select-none">
@@ -3681,7 +3681,7 @@ Here is the raw transcription:
              </div>
           )}
           
-          <div id="chat-capture-area" className="max-w-3xl mx-auto space-y-6 p-4 rounded-2xl bg-background">
+          <div id="chat-capture-area" className="w-full max-w-3xl mx-auto space-y-6 p-4 rounded-2xl bg-background">
             {hasMoreMessages && (
               <div className="flex justify-center py-2" data-html2canvas-ignore="true">
                 <Button

@@ -1051,7 +1051,7 @@ const getSubjectsForGoal = (goal: any) => {
 };
 
 // ─── Main Interface ────────────────────────────────────────────────────────
-function AIQuizInterface() {
+function AIQuizInterface({ onBack }: { onBack?: () => void }) {
   const { user, selectedGoal } = useAppContext();
   const { readMediaAsArrayBuffer } = useWorkspaceContext();
   const [phase, setPhase] = useState<QuizPhase>("setup");
@@ -1602,6 +1602,15 @@ Respond with ONLY the markdown explanation. Do not wrap it in JSON or HTML. Star
       <div className="w-full relative overflow-hidden bg-gradient-to-br from-primary/10 via-card to-background border-b border-border px-6 py-8 shrink-0">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_hsl(var(--primary)/0.1),_transparent_50%)]" />
         <div className="max-w-4xl mx-auto flex items-center gap-4 relative z-10">
+          {onBack && (
+            <button 
+              onClick={onBack} 
+              className="p-2.5 hover:bg-muted rounded-2xl border border-border text-muted-foreground hover:text-foreground transition-all flex items-center justify-center" 
+              title="Back to Options"
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </button>
+          )}
           <div className="h-12 w-12 rounded-2xl bg-primary/20 flex items-center justify-center border border-primary/30 shrink-0 shadow-lg shadow-primary/20">
             <BrainCircuit className="h-6 w-6 text-primary" />
           </div>
@@ -2496,40 +2505,149 @@ Respond with ONLY the markdown explanation. Do not wrap it in JSON or HTML. Star
 }
 
 export default function QuizPage() {
-  const [activeTab, setActiveTab] = useState<"chat" | "quiz" | "engin">("chat");
+  const [activeTab, setActiveTab] = useState<"select" | "chat" | "quiz" | "engin">("select");
+
+  if (activeTab === "select") {
+    return (
+      <div className="min-h-full w-full bg-background flex flex-col items-center justify-center p-6 md:p-12 overflow-y-auto relative text-foreground">
+        {/* Background ambient glows */}
+        <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-blue-500/10 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-[350px] h-[350px] bg-purple-500/10 rounded-full blur-[120px] pointer-events-none" />
+
+        <div className="max-w-4xl w-full z-10 space-y-10 text-center py-8">
+          {/* Title Section */}
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="space-y-4"
+          >
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 text-primary text-xs font-semibold tracking-wide uppercase">
+              <Sparkles className="h-3.5 w-3.5 animate-pulse" />
+              Intelligent Study Suite
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-foreground bg-clip-text text-transparent bg-gradient-to-r from-foreground via-foreground/90 to-muted-foreground">
+              Empower Your Prep
+            </h1>
+            <p className="text-muted-foreground text-sm md:text-base max-w-xl mx-auto font-medium">
+              Choose from our advanced suite of AI learning tools designed to optimize your preparation and maximize performance.
+            </p>
+          </motion.div>
+
+          {/* Options Grid */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left"
+          >
+            {/* AI Chat Card */}
+            <motion.div
+              whileHover={{ scale: 1.03, y: -4 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => setActiveTab("chat")}
+              className="group relative cursor-pointer overflow-hidden rounded-3xl border border-border bg-card/45 backdrop-blur-md p-6 transition-all hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/5"
+            >
+              <div className="absolute -right-8 -bottom-8 w-24 h-24 bg-blue-500/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500" />
+              
+              <div className="flex flex-col h-full justify-between gap-8">
+                <div className="space-y-4">
+                  <div className="h-12 w-12 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-500 group-hover:scale-110 transition-transform duration-300">
+                    <BrainCircuit className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-foreground group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors">
+                      AI Chat
+                    </h3>
+                    <p className="text-xs text-muted-foreground mt-2 leading-relaxed">
+                      Interactive companion for solving doubts, clarifying concepts step-by-step, and exploring formulas with deep context.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-1.5 text-xs font-bold text-blue-500 dark:text-blue-400">
+                  Launch Chat
+                  <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1.5 transition-transform" />
+                </div>
+              </div>
+            </motion.div>
+
+            {/* AI Quizzes Card */}
+            <motion.div
+              whileHover={{ scale: 1.03, y: -4 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => setActiveTab("quiz")}
+              className="group relative cursor-pointer overflow-hidden rounded-3xl border border-border bg-card/45 backdrop-blur-md p-6 transition-all hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/5"
+            >
+              <div className="absolute -right-8 -bottom-8 w-24 h-24 bg-purple-500/10 rounded-full blur-2xl group-hover:bg-purple-500/20 transition-all duration-500" />
+              
+              <div className="flex flex-col h-full justify-between gap-8">
+                <div className="space-y-4">
+                  <div className="h-12 w-12 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-500 group-hover:scale-110 transition-transform duration-300">
+                    <Target className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-foreground group-hover:text-purple-500 dark:group-hover:text-purple-400 transition-colors">
+                      AI Quizzes
+                    </h3>
+                    <p className="text-xs text-muted-foreground mt-2 leading-relaxed">
+                      Custom quiz generator designed to build mock exams using your uploaded PDFs, video notes, and targeted topics.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-1.5 text-xs font-bold text-purple-500 dark:text-purple-400">
+                  Launch Quizzes
+                  <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1.5 transition-transform" />
+                </div>
+              </div>
+            </motion.div>
+
+            {/* AI Engine Card */}
+            <motion.div
+              whileHover={{ scale: 1.03, y: -4 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => setActiveTab("engin")}
+              className="group relative cursor-pointer overflow-hidden rounded-3xl border border-border bg-card/45 backdrop-blur-md p-6 transition-all hover:border-indigo-500/50 hover:shadow-2xl hover:shadow-indigo-500/5"
+            >
+              <div className="absolute -right-8 -bottom-8 w-24 h-24 bg-indigo-500/10 rounded-full blur-2xl group-hover:bg-indigo-500/20 transition-all duration-500" />
+              
+              <div className="flex flex-col h-full justify-between gap-8">
+                <div className="space-y-4">
+                  <div className="h-12 w-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-500 group-hover:scale-110 transition-transform duration-300">
+                    <Search className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-foreground group-hover:text-indigo-500 dark:group-hover:text-indigo-400 transition-colors">
+                      AI Engine
+                    </h3>
+                    <p className="text-xs text-muted-foreground mt-2 leading-relaxed">
+                      Advanced search engine for indexing web resources, querying study papers, and crawling complex academic notes.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-1.5 text-xs font-bold text-indigo-500 dark:text-indigo-400">
+                  Launch Engine
+                  <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1.5 transition-transform" />
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col h-full bg-background overflow-hidden relative w-full text-foreground">
-       <div className="flex justify-center p-3 border-b border-border bg-card/80 backdrop-blur-sm shrink-0 z-10 relative">
-          <div className="flex bg-muted/50 p-1 rounded-xl border border-border/50">
-             <button 
-               onClick={() => setActiveTab("chat")}
-               className={cn("px-6 py-1.5 text-sm font-bold rounded-lg transition-all flex items-center gap-2", activeTab === "chat" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground")}
-             >
-               <BrainCircuit className="h-4 w-4" /> AI Chat
-             </button>
-             <button 
-               onClick={() => setActiveTab("quiz")}
-               className={cn("px-6 py-1.5 text-sm font-bold rounded-lg transition-all flex items-center gap-2", activeTab === "quiz" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground")}
-             >
-               <Target className="h-4 w-4" /> AI Quizzes
-             </button>
-             <button 
-               onClick={() => setActiveTab("engin")}
-               className={cn("px-6 py-1.5 text-sm font-bold rounded-lg transition-all flex items-center gap-2", activeTab === "engin" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground")}
-             >
-               <Search className="h-4 w-4" /> AI Engin
-             </button>
-          </div>
-       </div>
-       
        <div className="flex-1 overflow-hidden relative">
           {activeTab === "chat" ? (
-            <AIChatInterface />
+            <AIChatInterface onBack={() => setActiveTab("select")} />
           ) : activeTab === "quiz" ? (
-            <AIQuizInterface />
+            <AIQuizInterface onBack={() => setActiveTab("select")} />
           ) : (
-            <AIEngin />
+            <AIEngin onBack={() => setActiveTab("select")} />
           )}
        </div>
     </div>

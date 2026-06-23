@@ -240,7 +240,7 @@ export function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [location, navigate] = useLocation();
-  const { theme, toggleTheme, logout } = useAppContext();
+  const { theme, toggleTheme, logout, selectedGoal } = useAppContext();
   const [collapsed, setCollapsed] = useState(false);
   const { isActive: isLockdownActive } = useLockdown();
   const [lockdownPanelOpen, setLockdownPanelOpen] = useState(false);
@@ -365,7 +365,9 @@ export function Sidebar() {
                   <User className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
                 )}
               </button>
-              <span className="truncate text-lg sm:text-xl">JEE '28</span>
+              <span className="truncate text-lg sm:text-xl">
+                {selectedGoal ? selectedGoal.displayName : "JEE '28"}
+              </span>
             </motion.div>
           )}
           

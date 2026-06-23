@@ -777,21 +777,49 @@ app.get("/api/proxy", async (req, res) => {
       return res.status(400).send("Missing URL parameter 'url'");
     }
 
+    // Bypass SSL/TLS unauthorized errors locally for the proxy requests
+    process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+
+    // Set headers to fetch the resource, mimicking a real Chrome browser
+    const fetchHeaders = {
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept": req.headers["accept"] || "*/*",
+      "Accept-Language": req.headers["accept-language"] || "en-US,en;q=0.9",
+    };
+
+    // Forward cookies if available
+    if (req.headers["cookie"]) {
+      fetchHeaders["Cookie"] = req.headers["cookie"];
+    }
+
     const response = await fetch(targetUrl, {
-      headers: {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-      }
+      headers: fetchHeaders
     });
 
     const contentType = response.headers.get("content-type") || "";
     const finalUrl = response.url || targetUrl;
 
+    // Strip frame restrict headers from the response to allow displaying in iframe
+    res.setHeader("X-Frame-Options", "ALLOWALL");
+    res.setHeader("Content-Security-Policy", "");
+    res.setHeader("X-Content-Security-Policy", "");
+    res.setHeader("X-WebKit-CSP", "");
+
     if (contentType.includes("text/html")) {
       let html = await response.text();
       const parsedUrl = new URL(finalUrl);
       const baseUrl = parsedUrl.origin + parsedUrl.pathname;
+      const protocol = parsedUrl.protocol; // "https:" or "http:"
 
-      // Rewrite relative URLs to absolute URLs routed through the proxy
+      // 1. Convert protocol-relative URLs starting with // to absolute URLs
+      html = html.replace(/(href|src|action)=["']\/\/([^"']+)["']/gi, (match, attr, path) => {
+        return `${attr}="${protocol}//${path}"`;
+      });
+
+      // 1.5 Convert target="_top" or target="_parent" to target="_self" to keep navigation inside iframe
+      html = html.replace(/target\s*=\s*["']?\s*(_top|_parent)\s*["']?/gi, 'target="_self"');
+
+      // 2. Rewrite relative URLs to absolute URLs routed through the proxy
       html = html.replace(/(href|src|action)=["'](?!http|\/\/|javascript:|#)([^"']+)["']/gi, (match, attr, path) => {
         try {
           const absoluteUrl = new URL(path, baseUrl).href;
@@ -801,20 +829,249 @@ app.get("/api/proxy", async (req, res) => {
         }
       });
 
-      // Rewrite absolute navigation URLs to route through the proxy
-      html = html.replace(/(href|action)=["'](https?:\/\/[^"']+)["']/gi, (match, attr, fullUrl) => {
+      // 3. Rewrite absolute URLs to route through the proxy
+      html = html.replace(/(href|src|action)=["'](https?:\/\/[^"']+)["']/gi, (match, attr, fullUrl) => {
         return `${attr}="/api/proxy?url=${encodeURIComponent(fullUrl)}"`;
       });
 
-      // Inject a script to prevent iframe escaping
-      html = html.replace("</head>", `<script>
-        if (window.top !== window.self) {
-          window.top.onbeforeunload = function() {};
+      // 4. Rewrite inline styles with url(...) inside HTML elements
+      html = html.replace(/style=["']([^"']*)url\(['"]?(?!data:|http:\/\/|https:\/\/|\/\/)([^'")]+)['"]?\)([^"']*)["']/gi, (match, prefix, path, suffix) => {
+        try {
+          const absoluteUrl = new URL(path, baseUrl).href;
+          return `style="${prefix}url('/api/proxy?url=${encodeURIComponent(absoluteUrl)}')${suffix}"`;
+        } catch (e) {
+          return match;
         }
-      </script></head>`);
+      });
+      html = html.replace(/style=["']([^"']*)url\(['"]?(https?:\/\/[^'")]+)['"]?\)([^"']*)["']/gi, (match, prefix, fullUrl, suffix) => {
+        return `style="${prefix}url('/api/proxy?url=${encodeURIComponent(fullUrl)}')${suffix}"`;
+      });
+
+      // 5. Rewrite url(...) and @import in <style> blocks
+      html = html.replace(/<style\b[^>]*>([\s\S]*?)<\/style>/gi, (match, cssContent) => {
+        let rewrittenCss = cssContent.replace(/url\(['"]?(?!data:|http:\/\/|https:\/\/|\/\/)([^'")]+)['"]?\)/gi, (m, path) => {
+          try {
+            const absoluteUrl = new URL(path, baseUrl).href;
+            return `url("/api/proxy?url=${encodeURIComponent(absoluteUrl)}")`;
+          } catch (e) {
+            return m;
+          }
+        });
+        rewrittenCss = rewrittenCss.replace(/url\(['"]?(https?:\/\/[^'")]+)['"]?\)/gi, (m, fullUrl) => {
+          return `url("/api/proxy?url=${encodeURIComponent(fullUrl)}")`;
+        });
+        return `<style>${rewrittenCss}</style>`;
+      });
+
+      // 6. Inject the Strome Browser Proxy Helper Script at the beginning of head or document
+      const scriptToInject = `
+<script>
+(function() {
+  // Prevent iframe escape
+  if (window.top !== window.self) {
+    window.top.onbeforeunload = function() {};
+  }
+
+  const proxyBase = "/api/proxy?url=";
+  let targetBaseUrl = ${JSON.stringify(finalUrl)};
+
+  function resolveUrl(url) {
+    if (!url) return url;
+    const urlStr = url.toString();
+    if (urlStr.startsWith(proxyBase) || urlStr.startsWith(window.location.origin + proxyBase) || urlStr.startsWith("javascript:") || urlStr.startsWith("data:") || urlStr.startsWith("#")) {
+      return urlStr;
+    }
+    try {
+      const resolved = new URL(urlStr, targetBaseUrl).href;
+      return window.location.origin + proxyBase + encodeURIComponent(resolved);
+    } catch (e) {
+      return urlStr;
+    }
+  }
+
+  // Override target="_top" or target="_parent" in capture phase to prevent escaping iframe
+  document.addEventListener("click", function(e) {
+    const target = e.target.closest("a");
+    if (target && (target.target === "_top" || target.target === "_parent")) {
+      target.target = "_self";
+    }
+  }, true);
+
+  document.addEventListener("submit", function(e) {
+    const target = e.target;
+    if (target && (target.target === "_top" || target.target === "_parent")) {
+      target.target = "_self";
+    }
+  }, true);
+
+  // Hook Fetch
+  const originalFetch = window.fetch;
+  window.fetch = async function(input, init) {
+    let url;
+    if (typeof input === 'string') {
+      url = input;
+    } else if (input instanceof Request) {
+      url = input.url;
+    } else if (input && typeof input.toString === 'function') {
+      url = input.toString();
+    }
+    
+    if (url) {
+      const newUrl = resolveUrl(url);
+      if (typeof input === 'string') {
+        input = newUrl;
+      } else if (input instanceof Request) {
+        const headers = new Headers(input.headers);
+        input = new Request(newUrl, {
+          method: input.method,
+          headers: headers,
+          body: input.body,
+          mode: input.mode,
+          credentials: input.credentials,
+          cache: input.cache,
+          redirect: input.redirect,
+          referrer: input.referrer,
+          integrity: input.integrity,
+          keepalive: input.keepalive,
+          signal: input.signal
+        });
+      }
+    }
+    return originalFetch.call(window, input, init);
+  };
+
+  // Hook XHR open
+  const originalXHR = window.XMLHttpRequest;
+  const originalOpen = originalXHR.prototype.open;
+  originalXHR.prototype.open = function(method, url, async, user, password) {
+    if (url) {
+      url = resolveUrl(url);
+    }
+    return originalOpen.call(this, method, url, async !== false, user, password);
+  };
+
+  // Hook History API to keep proxy URL intact
+  const originalPushState = history.pushState;
+  const originalReplaceState = history.replaceState;
+
+  history.pushState = function(state, title, url) {
+    if (url) {
+      const absoluteUrl = new URL(url, targetBaseUrl).href;
+      const proxiedUrl = window.location.origin + proxyBase + encodeURIComponent(absoluteUrl);
+      targetBaseUrl = absoluteUrl;
+      return originalPushState.call(this, state, title, proxiedUrl);
+    }
+    return originalPushState.apply(this, arguments);
+  };
+
+  history.replaceState = function(state, title, url) {
+    if (url) {
+      const absoluteUrl = new URL(url, targetBaseUrl).href;
+      const proxiedUrl = window.location.origin + proxyBase + encodeURIComponent(absoluteUrl);
+      targetBaseUrl = absoluteUrl;
+      return originalReplaceState.call(this, state, title, proxiedUrl);
+    }
+    return originalReplaceState.apply(this, arguments);
+  };
+
+  // Hook window.open to redirect popups through Strome proxy
+  const originalWindowOpen = window.open;
+  window.open = function(url, target, features) {
+    if (url) {
+      const absoluteUrl = new URL(url, targetBaseUrl).href;
+      const proxiedUrl = window.location.origin + proxyBase + encodeURIComponent(absoluteUrl);
+      const finalTarget = (target === "_top" || target === "_parent") ? "_self" : target;
+      return originalWindowOpen.call(window, proxiedUrl, finalTarget, features);
+    }
+    return originalWindowOpen.apply(this, arguments);
+  };
+
+  // Intercept all link clicks inside the iframe to load them inside the proxy
+  document.addEventListener("click", function(e) {
+    if (e.defaultPrevented) return;
+    const target = e.target.closest("a");
+    if (target) {
+      const rawUrl = target.getAttribute("href");
+      if (rawUrl && !rawUrl.startsWith("javascript:") && !rawUrl.startsWith("#")) {
+        // If already proxied, let it navigate naturally
+        if (rawUrl.startsWith(proxyBase) || rawUrl.startsWith(window.location.origin + proxyBase)) {
+          return;
+        }
+        e.preventDefault();
+        const absoluteUrl = new URL(rawUrl, targetBaseUrl).href;
+        window.location.href = window.location.origin + proxyBase + encodeURIComponent(absoluteUrl);
+      }
+    }
+  }, false);
+
+  // Intercept form submissions to proxy target requests
+  document.addEventListener("submit", function(e) {
+    if (e.defaultPrevented) return;
+    const target = e.target;
+    if (target && target.action) {
+      const rawUrl = target.getAttribute("action") || "";
+      if (!rawUrl.startsWith("javascript:") && !rawUrl.startsWith("#")) {
+        // If already proxied, let it submit naturally
+        if (rawUrl.includes(proxyBase)) {
+          return;
+        }
+        e.preventDefault();
+        const method = (target.method || "GET").toUpperCase();
+        const absoluteUrl = new URL(rawUrl, targetBaseUrl).href;
+        
+        if (method === "GET") {
+          const formData = new FormData(target);
+          const params = new URLSearchParams();
+          for (const [key, value] of formData.entries()) {
+            params.append(key, value.toString());
+          }
+          const sep = absoluteUrl.includes("?") ? "&" : "?";
+          const finalFormUrl = absoluteUrl + sep + params.toString();
+          window.location.href = window.location.origin + proxyBase + encodeURIComponent(finalFormUrl);
+        } else {
+          const proxyFormUrl = window.location.origin + proxyBase + encodeURIComponent(absoluteUrl);
+          target.action = proxyFormUrl;
+          target.submit();
+        }
+      }
+    }
+  }, false);
+})();
+</script>
+`;
+
+      if (html.includes("<head>")) {
+        html = html.replace("<head>", `<head>${scriptToInject}`);
+      } else if (html.includes("<HEAD>")) {
+        html = html.replace("<HEAD>", `<HEAD>${scriptToInject}`);
+      } else {
+        html = scriptToInject + html;
+      }
 
       res.setHeader("Content-Type", "text/html");
       return res.send(html);
+    } else if (contentType.includes("text/css")) {
+      let css = await response.text();
+      const parsedUrl = new URL(finalUrl);
+      const baseUrl = parsedUrl.origin + parsedUrl.pathname;
+
+      // Rewrite relative url(...) in CSS
+      css = css.replace(/url\(['"]?(?!data:|http:\/\/|https:\/\/|\/\/)([^'")]+)['"]?\)/gi, (match, path) => {
+        try {
+          const absoluteUrl = new URL(path, baseUrl).href;
+          return `url("/api/proxy?url=${encodeURIComponent(absoluteUrl)}")`;
+        } catch (e) {
+          return match;
+        }
+      });
+
+      // Rewrite absolute url(...) in CSS
+      css = css.replace(/url\(['"]?(https?:\/\/[^'")]+)['"]?\)/gi, (match, fullUrl) => {
+        return `url("/api/proxy?url=${encodeURIComponent(fullUrl)}")`;
+      });
+
+      res.setHeader("Content-Type", "text/css");
+      return res.send(css);
     } else {
       const buffer = await response.arrayBuffer();
       res.setHeader("Content-Type", contentType);

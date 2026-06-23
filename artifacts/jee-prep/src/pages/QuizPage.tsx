@@ -2603,7 +2603,7 @@ export default function QuizPage() {
               </div>
             </motion.div>
 
-            {/* AI Engine Card */}
+            {/* Strome Card */}
             <motion.div
               whileHover={{ scale: 1.03, y: -4 }}
               whileTap={{ scale: 0.98 }}
@@ -2619,7 +2619,7 @@ export default function QuizPage() {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-foreground group-hover:text-indigo-500 dark:group-hover:text-indigo-400 transition-colors">
-                      AI Engine
+                      Strome
                     </h3>
                     <p className="text-xs text-muted-foreground mt-2 leading-relaxed">
                       Advanced search engine for indexing web resources, querying study papers, and crawling complex academic notes.
@@ -2628,7 +2628,7 @@ export default function QuizPage() {
                 </div>
 
                 <div className="flex items-center gap-1.5 text-xs font-bold text-indigo-500 dark:text-indigo-400">
-                  Launch Engine
+                  Launch Strome
                   <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1.5 transition-transform" />
                 </div>
               </div>

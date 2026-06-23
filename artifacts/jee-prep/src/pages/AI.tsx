@@ -259,6 +259,80 @@ function YoutubePreview({ videoId, href, children }: { videoId: string; href: st
 function SourceCitationBadge({ href, children, sources }: { href: string; children: React.ReactNode; sources?: ChatMessage['sources'] }) {
   const [isHovered, setIsHovered] = useState(false);
   const badgeRef = useRef<HTMLAnchorElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const [coords, setCoords] = useState<{ top: number; left: number } | null>(null);
+  const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  const updateCoords = () => {
+    if (badgeRef.current) {
+      const rect = badgeRef.current.getBoundingClientRect();
+      setCoords({
+        top: rect.top,
+        left: rect.left + rect.width / 2
+      });
+    }
+  };
+
+  useEffect(() => {
+    if (!isHovered) return;
+    
+    const handleScrollOrResize = () => {
+      updateCoords();
+    };
+    
+    window.addEventListener("scroll", handleScrollOrResize, { capture: true, passive: true });
+    window.addEventListener("resize", handleScrollOrResize);
+    
+    return () => {
+      window.removeEventListener("scroll", handleScrollOrResize, { capture: true });
+      window.removeEventListener("resize", handleScrollOrResize);
+    };
+  }, [isHovered]);
+
+  useEffect(() => {
+    if (!isHovered || !isMobile) return;
+    
+    const handleDocumentClick = (e: MouseEvent) => {
+      if (badgeRef.current && !badgeRef.current.contains(e.target as Node)) {
+        setIsHovered(false);
+      }
+    };
+    
+    document.addEventListener("click", handleDocumentClick);
+    return () => document.removeEventListener("click", handleDocumentClick);
+  }, [isHovered, isMobile]);
+
+  const handleMouseEnter = () => {
+    if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
+    updateCoords();
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    hoverTimeoutRef.current = setTimeout(() => {
+      setIsHovered(false);
+    }, 200);
+  };
+
+  const handleBadgeClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (isMobile) {
+      updateCoords();
+      setIsHovered(prev => !prev);
+    } else {
+      window.open(href, "_blank", "noopener,noreferrer");
+    }
+  };
 
   const matchingSource = sources?.find(s => {
     try {
@@ -319,26 +393,17 @@ function SourceCitationBadge({ href, children, sources }: { href: string; childr
     displaySnippet = "Portable Document Format (PDF) file containing prep notes or reference material.";
   }
 
-  const handleBadgeClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (!isHovered) {
-      e.preventDefault();
-      setIsHovered(true);
-      // Auto close after 6 seconds
-      setTimeout(() => {
-        setIsHovered(false);
-      }, 6000);
-    }
-  };
-
   return (
-    <span className={cn("ms-1 inline-flex max-w-full items-center select-none relative top-[-0.094rem] translate-y-0.5", isHovered ? "z-[30]" : "z-0")}>
+    <span 
+      className={cn("ms-1 inline-flex max-w-full items-center select-none relative top-[-0.094rem] translate-y-0.5", isHovered ? "z-[30]" : "z-0")}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <a
         ref={badgeRef}
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
         onClick={handleBadgeClick}
         className="citation-badge flex items-center overflow-hidden rounded-xl text-[9px] font-medium h-[18px] ps-1 pe-2 transition-colors duration-150 ease-in-out bg-[#F4F4F4] dark:bg-[#303030] text-[#555] dark:text-[#c4c4c4] select-none"
       >
@@ -364,7 +429,17 @@ function SourceCitationBadge({ href, children, sources }: { href: string; childr
       {isHovered && (
         <div 
           data-html2canvas-ignore="true"
-          className="fixed bottom-24 left-4 right-4 md:absolute md:bottom-full md:left-1/2 md:right-auto md:translate-y-0 md:-translate-x-1/2 mb-2 md:w-80 max-w-sm mx-auto bg-[#1a1a1a]/95 backdrop-blur-md border border-[#2d2d2d] rounded-2xl p-4 shadow-[0_10px_30px_rgba(0,0,0,0.6)] z-[9999] text-left pointer-events-auto animate-in fade-in slide-in-from-bottom-2 duration-200"
+          className={cn(
+            "fixed bg-[#1a1a1a]/95 backdrop-blur-md border border-[#2d2d2d] rounded-2xl p-4 shadow-[0_10px_30px_rgba(0,0,0,0.6)] z-[9999] text-left pointer-events-auto animate-in fade-in duration-200",
+            isMobile ? "bottom-24 left-4 right-4 max-w-sm mx-auto slide-in-from-bottom-2" : "w-80 slide-in-from-bottom-1"
+          )}
+          style={!isMobile && coords ? {
+            top: `${coords.top - 8}px`,
+            left: `${coords.left}px`,
+            transform: 'translate(-50%, -100%)'
+          } : undefined}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
         >
           <div className="flex items-center gap-2 mb-2">
             <div className="h-5 w-5 rounded bg-white border border-slate-800 flex items-center justify-center overflow-hidden shrink-0">
@@ -1980,8 +2055,9 @@ class AIChatBackgroundManager {
     messagesToSent: ChatMessage[];
     filePayloads?: any[];
     selectedGoal: any;
+    selectedSettings?: { internet: boolean; ai: boolean };
   }) {
-    const { sessionId, messagesToSent, filePayloads, selectedGoal } = params;
+    const { sessionId, messagesToSent, filePayloads, selectedGoal, selectedSettings } = params;
 
     // Abort existing job for this session if any
     this.stopJob(sessionId);
@@ -2138,9 +2214,11 @@ Whenever internet data is used, display:
 \`\`\`
 Do not include any explanation or markdown outside the code block.` : "";
 
+      const useInternet = selectedSettings?.internet ?? true;
+      const useAI = selectedSettings?.ai ?? true;
+
       let searchContext = "";
-      const isLatestRequest = /latest|latets|today|recent|current|trending|updated|updates|new|news|situation|real-time|realtime|up-to-date|recently/i.test(lastMsg);
-      if (isLatestRequest) {
+      if (useInternet) {
         // Detect if Hindi script is present
         const hasHindi = /[\u0900-\u097F]/.test(lastMsg);
         let englishQuery = lastMsg;
@@ -2165,8 +2243,9 @@ Do not include any explanation or markdown outside the code block.` : "";
           }
         }
 
-        const query1 = lastMsg + " " + currentYear;
-        const query2 = englishQuery + " " + currentYear;
+        const isLatest = /latest|latets|today|recent|current|trending|updated|updates|new|news|situation|real-time|realtime|up-to-date|recently/i.test(lastMsg);
+        const query1 = isLatest ? (lastMsg + " " + currentYear) : lastMsg;
+        const query2 = isLatest ? (englishQuery + " " + currentYear) : englishQuery;
         
         const fetchSearchWithFallbacks = async (q: string) => {
           try {
@@ -2206,7 +2285,7 @@ Do not include any explanation or markdown outside the code block.` : "";
                 return src;
               }
             });
-            const targetedQuery = `${cleanQuery} (${siteOperators.join(" OR ")}) ${currentYear}`;
+            const targetedQuery = `${cleanQuery} (${siteOperators.join(" OR ")})` + (isLatest ? ` ${currentYear}` : "");
             searchPromises.push(fetchSearchWithFallbacks(targetedQuery));
           }
         }
@@ -2246,7 +2325,7 @@ Do not include any explanation or markdown outside the code block.` : "";
       let ytContext = "";
       const containsYtUrl = /(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)/i.test(lastMsg);
       const isYtRequest = !containsYtUrl && /latest\s+video|youtube\b|yt\b|video\s+of|video\s+from|upload\s+of|upload\s+from|tell me.*video/i.test(lastMsg);
-      if (isYtRequest) {
+      if (useInternet && isYtRequest) {
         let cleanQuery = lastMsg
           .replace(/tell me/gi, "")
           .replace(/latest video of/gi, "")
@@ -2357,7 +2436,7 @@ Uploaded: ${v.uploadedAt}
         }
 
         const shouldCrawl = urlsToCrawl.length > 0;
-        if (shouldCrawl) {
+        if (useInternet && shouldCrawl) {
           const isDeepCrawl = lowerMsg.includes("feature") || lowerMsg.includes("sitemap") || lowerMsg.includes("all pages") || lowerMsg.includes("other pages") || lowerMsg.includes("sub-pages") || lowerMsg.includes("link") || lowerMsg.includes("deep") || lowerMsg.includes("analyze content") || lowerMsg.includes("tell me what is");
           console.log(`[Crawler] Starting crawl for: ${urlsToCrawl[0]} (deep: ${isDeepCrawl})`);
           
@@ -2408,8 +2487,34 @@ If the user uploaded an image of an equation, read/OCR the equation from the ima
 
       const codeAndWidgetRestriction = `\n\n[CRITICAL RESTRICTION - CODE AND WIDGETS]\n1. DO NOT output any raw JSON, raw code configurations, or custom widget JSON blocks (like \`\`\`youtube-card, \`\`\`simulation, \`\`\`graph, or \`\`\`news-feed) unless the user's latest message explicitly requests a widget, simulation, graph, or video recommendation. Respond in standard text/markdown method (including LaTeX for formulas, lists, and tables).\n2. DO NOT write code blocks (like Python, C++, Java, JS, HTML, etc.) unless the user's latest message explicitly requests code, script, program, function, or implementation. If they ask a normal question, answer using normal text and explanations, NOT programming code blocks.\n`;
 
-      const finalSystemInstruction = systemInstruction + goalSpecificInstruction + imageGenerationInstruction + dateInstruction + searchContext + crawlContext + ytContext + graphDirective + codeAndWidgetRestriction;
-      
+      let finalSystemInstruction = "";
+      if (useInternet && !useAI) {
+        finalSystemInstruction = `SYSTEM IDENTITY:
+You are Calculus AI made by OM, running in strict SEARCH RESULTS ONLY mode.
+All your pre-trained academic, general, and historical knowledge has been disabled.
+You MUST compile, format, and present the response using ONLY the real-time internet search results and web crawled contents provided below.
+Do NOT modify, speculate, extrapolate, or add details not found in the search/crawling data.
+If the provided search results/crawled content do not contain the answer, you must respond with: "I'm sorry, but that information is not available in the real-time search results."
+Do not write programming code blocks unless code is explicitly present in the search results and requested.
+Always display search source logos, names, and links for citation.
+
+${searchContext}
+${crawlContext}
+${ytContext}
+
+${dateInstruction}
+${imageGenerationInstruction}
+${graphDirective}
+${codeAndWidgetRestriction}`;
+      } else if (useInternet && useAI) {
+        const ragInstruction = `\n\n[CRITICAL DIRECTIVE: REAL-TIME RAG MODE ACTIVATED]\nYou have real-time internet search access. Combine the provided search results/crawled content with your pre-trained knowledge base and reasoning capabilities to synthesize a comprehensive, proper, finalized, and accurate response. Cite sources precisely.`;
+        finalSystemInstruction = systemInstruction + goalSpecificInstruction + imageGenerationInstruction + dateInstruction + searchContext + crawlContext + ytContext + ragInstruction + graphDirective + codeAndWidgetRestriction;
+      } else {
+        // AI Only
+        const aiOnlyInstruction = `\n\n[PRE-TRAINED DATASET MODE ACTIVATED]\nYou must answer this query using ONLY your pre-trained dataset/knowledge base. Web search is disabled. Do not generate or refer to search citations.`;
+        finalSystemInstruction = systemInstruction + goalSpecificInstruction + imageGenerationInstruction + dateInstruction + aiOnlyInstruction + graphDirective + codeAndWidgetRestriction;
+      }
+
       const visionPrompt = hasImages ? "Please scan, read, and analyze the uploaded image carefully. Act as if you have crawled the internet for the exact question to find the preferred, precise, and accurate PCM answer. Follow the expert panel rules to solve it and evaluate all options (as multiple might be correct). Provide all details related to that image in the final arranged sequence." : "";
 
       const openRouterFreeModels = [
@@ -2693,6 +2798,31 @@ export default function AIChatInterface({ onBack }: { onBack?: () => void }) {
     setSessions(next);
   };
   const [activeSessionId, setActiveSessionId] = useState<string | null>(null);
+  const [showSettingsMenu, setShowSettingsMenu] = useState(false);
+  const [settings, setSettings] = useState<{ internet: boolean; ai: boolean }>(() => {
+    try {
+      const raw = localStorage.getItem("jee_ai_chat_settings");
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (typeof parsed.internet === "boolean" && typeof parsed.ai === "boolean") {
+          return parsed;
+        }
+      }
+    } catch {}
+    return { internet: true, ai: true };
+  });
+
+  const toggleSetting = (key: 'internet' | 'ai') => {
+    setSettings(prev => {
+      // Prevent disabling both
+      if (prev[key] && !prev[key === 'internet' ? 'ai' : 'internet']) {
+        return prev;
+      }
+      const next = { ...prev, [key]: !prev[key] };
+      localStorage.setItem("jee_ai_chat_settings", JSON.stringify(next));
+      return next;
+    });
+  };
   const [visibleMessagesCount, setVisibleMessagesCount] = useState(15);
   const [input, setInput] = useState("");
   const [showCommands, setShowCommands] = useState(false);
@@ -3382,7 +3512,8 @@ Here is the raw transcription:
       sessionId,
       messagesToSent,
       filePayloads,
-      selectedGoal
+      selectedGoal,
+      selectedSettings: settings
     });
   };
 
@@ -3685,7 +3816,71 @@ Here is the raw transcription:
             </h2>
           </div>
           
-          {/* Export button removed as it is now triggered by /export slash command */}
+          <div className="flex items-center gap-2 relative">
+             <button
+                onClick={() => setShowSettingsMenu(!showSettingsMenu)}
+                className="p-2 hover:bg-muted rounded-full text-muted-foreground hover:text-foreground transition-colors flex items-center justify-center"
+                title="AI Chat Settings"
+             >
+                <Settings className="h-5 w-5" />
+             </button>
+             
+             {showSettingsMenu && (
+                <>
+                   {/* Backdrop for closing click */}
+                   <div 
+                      className="fixed inset-0 z-30" 
+                      onClick={() => setShowSettingsMenu(false)}
+                   />
+                   
+                   {/* Dropdown Card */}
+                   <div className="absolute right-0 top-full mt-2 w-56 bg-card border border-border rounded-2xl shadow-xl p-4 z-40 animate-in fade-in slide-in-from-top-2 duration-150">
+                      <h3 className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-3">AI & Internet Mode</h3>
+                      <div className="space-y-3">
+                         <label className="flex items-center gap-3 cursor-pointer group select-none">
+                            <input 
+                               type="checkbox"
+                               checked={settings.internet}
+                               onChange={() => toggleSetting('internet')}
+                               className="h-4.5 w-4.5 rounded border-border bg-muted accent-primary cursor-pointer transition-colors"
+                            />
+                            <div className="flex flex-col">
+                               <span className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors flex items-center gap-1.5">
+                                  <Globe className="h-3.5 w-3.5" /> Internet
+                                </span>
+                               <span className="text-[10px] text-muted-foreground">Realtime search & updates</span>
+                            </div>
+                         </label>
+                         
+                         <label className="flex items-center gap-3 cursor-pointer group select-none">
+                            <input 
+                               type="checkbox"
+                               checked={settings.ai}
+                               onChange={() => toggleSetting('ai')}
+                               className="h-4.5 w-4.5 rounded border-border bg-muted accent-primary cursor-pointer transition-colors"
+                            />
+                            <div className="flex flex-col">
+                               <span className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors flex items-center gap-1.5">
+                                  <BrainCircuit className="h-3.5 w-3.5" /> AI Model
+                               </span>
+                               <span className="text-[10px] text-muted-foreground">Pretrained knowledge base</span>
+                            </div>
+                         </label>
+                      </div>
+                      
+                      {/* Active Status Badge */}
+                      <div className="mt-4 pt-3 border-t border-border/60 flex items-center justify-between">
+                         <span className="text-[10px] text-muted-foreground font-medium">Active Mode:</span>
+                         <span className="text-[10px] font-bold text-primary px-2 py-0.5 bg-primary/10 rounded-full">
+                            {settings.internet && settings.ai && "Internet + AI"}
+                            {settings.internet && !settings.ai && "Internet Only"}
+                            {!settings.internet && settings.ai && "AI Only"}
+                         </span>
+                      </div>
+                   </div>
+                </>
+             )}
+          </div>
         </div>
 
         <div className="flex-1 overflow-y-auto overflow-x-hidden pt-16 pb-32 px-4 md:px-8 lg:px-20 scrollbar-hide w-full">

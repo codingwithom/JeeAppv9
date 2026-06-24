@@ -43,6 +43,7 @@ import remarkMath from 'remark-math';
 import remarkGfm from 'remark-gfm';
 import rehypeKatex from 'rehype-katex';
 import 'katex/dist/katex.min.css';
+import { fixLatexFormatting } from "@/lib/latex-formatter";
 
 import {
   GraphWidget,
@@ -968,7 +969,7 @@ function MessageSources({ sources }: { sources: { uri: string; title: string; fa
 const preprocessMarkdown = (content: string, sources?: ChatMessage['sources']): string => {
   if (!content) return content;
   
-  let cleaned = content;
+  let cleaned = fixLatexFormatting(content);
 
   // Replace plain-text citations with markdown links
   if (sources && sources.length > 0) {

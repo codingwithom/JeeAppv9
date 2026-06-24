@@ -96,6 +96,15 @@ export default defineConfig(async () => {
         "/api": {
           target: "http://localhost:8080",
           changeOrigin: true,
+          configure: (proxy) => {
+            proxy.on("error", (err, _req, res) => {
+              // Suppress connection refused logs from cluttering the terminal, return 502 instead
+              if ("writeHead" in res) {
+                res.writeHead(502, { "Content-Type": "application/json" });
+                res.end(JSON.stringify({ error: "Backend server unreachable", details: err.message }));
+              }
+            });
+          },
         },
       },
     },

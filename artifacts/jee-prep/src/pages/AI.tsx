@@ -2285,30 +2285,27 @@ Output in this exact format:
       try {
         const options = parseImageRequest(lastMsg);
         
-        const serverOrigin = "https://image-generation.perchance.org";
+        const serverOrigin = "https://ai-text-to-image-generator.perchance.org";
         const iframeUrls: string[] = [];
         const iframeIds: string[] = [];
 
         for (let i = 0; i < options.count; i++) {
-          const requestId = Math.random().toString();
           const privateIframeId = "id" + Math.random().toString().replace(".", "");
 
-          const urlHashData = {
-            saveChannel: "ai-text-to-image-generator",
-            saveTitle: "",
-            saveDescription: "",
-            prompt: options.prompt,
-            seed: -1,
-            resolution: options.resolution,
-            guidanceScale: 7,
-            defaultGuidanceScale: 7,
-            negativePrompt: "",
-            requestId: requestId,
-            iframeId: privateIframeId,
-            verifyOnly: false,
+          const shareData: any = {
+            description: options.prompt,
+            shape: options.resolution,
+            artStyle: "𝗡𝗼 𝘀𝘁𝘆𝗹𝗲",
           };
 
-          const url = `/api/proxy?url=${encodeURIComponent(serverOrigin + "/embed")}#${encodeURIComponent(JSON.stringify(urlHashData))}`;
+          if (options.count > 1) {
+            if (options.count <= 2) shareData.numImages = 2;
+            else if (options.count <= 4) shareData.numImages = 4;
+            else if (options.count <= 6) shareData.numImages = 6;
+            else shareData.numImages = 8;
+          }
+
+          const url = `${serverOrigin}/#share-${encodeURIComponent(JSON.stringify(shareData))}`;
           iframeUrls.push(url);
           iframeIds.push(privateIframeId);
         }
@@ -2319,7 +2316,9 @@ Output in this exact format:
 - **Prompt**: "${options.originalPrompt}"
 - **Style**: ${options.styleName}
 - **Shape**: ${shapeName} (${options.resolution})
-- **Count**: ${options.count} image(s)`;
+- **Count**: ${options.count} image(s)
+
+*Please click the **"Generate"** button inside the frame(s) below to complete Turnstile verification and output the image.*`;
 
         const newMessagesHistory = [...messagesToSent, {
           role: "model",
@@ -2330,7 +2329,6 @@ Output in this exact format:
           attachments: []
         }] as ChatMessage[];
 
-        // Initial save to localStorage to render the iframes inside the chat window
         try {
           const raw = localStorage.getItem("jee_ai_chats");
           if (raw) {
@@ -2340,97 +2338,6 @@ Output in this exact format:
               messages: newMessagesHistory,
               updatedAt: Date.now()
             } : s);
-            localStorage.setItem("jee_ai_chats", JSON.stringify(updated));
-          }
-        } catch (e) {}
-        this.notify();
-
-        // Now wait for postMessage events from the loaded iframes
-        const imageUrls: string[] = [];
-        const completedIds = new Set<string>();
-
-        await new Promise<void>((resolvePromise) => {
-          const handleMessage = (event: MessageEvent) => {
-            const origin = event.origin || (event as any).originalEvent?.origin;
-            if (origin !== serverOrigin && origin !== window.location.origin) return;
-
-            if (event.data.type === 'finished' && iframeIds.includes(event.data.id)) {
-              if (event.data.dataUrl && !completedIds.has(event.data.id)) {
-                completedIds.add(event.data.id);
-                imageUrls.push(event.data.dataUrl);
-
-                // Update localStorage dynamically with the new image attachment
-                try {
-                  const raw = localStorage.getItem("jee_ai_chats");
-                  if (raw) {
-                    const sessions = JSON.parse(raw);
-                    const updated = sessions.map((s: any) => {
-                      if (s.id !== sessionId) return s;
-                      const msgs = [...s.messages];
-                      const lastMsg = msgs[msgs.length - 1];
-                      if (lastMsg && lastMsg.role === "model") {
-                        const currentAttachments = lastMsg.attachments || [];
-                        const exists = currentAttachments.some((a: any) => a.url === event.data.dataUrl);
-                        if (!exists) {
-                          lastMsg.attachments = [
-                            ...currentAttachments,
-                            {
-                              url: event.data.dataUrl,
-                              type: "image",
-                              name: `Generated Image ${imageUrls.length}`
-                            }
-                          ];
-                        }
-                      }
-                      return { ...s, messages: msgs, updatedAt: Date.now() };
-                    });
-                    localStorage.setItem("jee_ai_chats", JSON.stringify(updated));
-                  }
-                } catch (e) {}
-                this.notify();
-              }
-
-              if (completedIds.size === iframeIds.length) {
-                window.removeEventListener('message', handleMessage);
-                resolvePromise();
-              }
-            }
-          };
-
-          window.addEventListener('message', handleMessage);
-
-          // Handle abort signal
-          const onAbort = () => {
-            window.removeEventListener('message', handleMessage);
-            resolvePromise();
-          };
-          signal.addEventListener('abort', onAbort);
-
-          // Add a safety timeout of 90 seconds
-          setTimeout(() => {
-            window.removeEventListener('message', handleMessage);
-            resolvePromise();
-          }, 90000);
-        });
-
-        // Final cleanup to remove iframes from state once generation settles or times out
-        try {
-          const raw = localStorage.getItem("jee_ai_chats");
-          if (raw) {
-            const sessions = JSON.parse(raw);
-            const updated = sessions.map((s: any) => {
-              if (s.id !== sessionId) return s;
-              const msgs = [...s.messages];
-              const lastMsg = msgs[msgs.length - 1];
-              if (lastMsg && lastMsg.role === "model") {
-                delete lastMsg.iframeUrls;
-                delete lastMsg.iframeIds;
-                if (!lastMsg.attachments || lastMsg.attachments.length === 0) {
-                  lastMsg.content += "\n\n*(Failed to generate images or Turnstile verification was not completed.)*";
-                }
-              }
-              return { ...s, messages: msgs, updatedAt: Date.now() };
-            });
             localStorage.setItem("jee_ai_chats", JSON.stringify(updated));
           }
         } catch (e) {}

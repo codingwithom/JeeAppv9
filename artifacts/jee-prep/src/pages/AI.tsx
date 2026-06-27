@@ -2330,7 +2330,8 @@ Output in this exact format:
             w = 768; h = 1024;
           }
 
-          const url = `https://image.pollinations.ai/prompt/${encodeURIComponent(options.prompt)}?width=${w}&height=${h}&model=${model}&seed=${seed}&nologo=true`;
+          const sanitizedPrompt = options.prompt.replace(/[\r\n]+/g, " ").trim();
+          const url = `https://image.pollinations.ai/prompt/${encodeURIComponent(sanitizedPrompt)}?width=${w}&height=${h}&model=${model}&seed=${seed}&nologo=true`;
           
           try {
             const resp = await fetch(url);

@@ -2308,7 +2308,7 @@ Output in this exact format:
             verifyOnly: false,
           };
 
-          const url = `${serverOrigin}/embed#${encodeURIComponent(JSON.stringify(urlHashData))}`;
+          const url = `/api/proxy?url=${encodeURIComponent(serverOrigin + "/embed")}#${encodeURIComponent(JSON.stringify(urlHashData))}`;
           iframeUrls.push(url);
           iframeIds.push(privateIframeId);
         }
@@ -2352,7 +2352,7 @@ Output in this exact format:
         await new Promise<void>((resolvePromise) => {
           const handleMessage = (event: MessageEvent) => {
             const origin = event.origin || (event as any).originalEvent?.origin;
-            if (origin !== serverOrigin) return;
+            if (origin !== serverOrigin && origin !== window.location.origin) return;
 
             if (event.data.type === 'finished' && iframeIds.includes(event.data.id)) {
               if (event.data.dataUrl && !completedIds.has(event.data.id)) {

@@ -66,6 +66,8 @@ export interface ChatMessage {
   isStopped?: boolean;
   attachments?: { url: string; type: string; name: string }[];
   sources?: { uri: string; title: string; favicon: string; snippet?: string; thumbnail?: string; scrapedSolution?: string }[];
+  iframeUrls?: string[];
+  iframeIds?: string[];
 }
 
 export interface ChatSession {
@@ -2283,67 +2285,32 @@ Output in this exact format:
       try {
         const options = parseImageRequest(lastMsg);
         
-        const promises: Promise<string>[] = [];
+        const serverOrigin = "https://image-generation.perchance.org";
+        const iframeUrls: string[] = [];
+        const iframeIds: string[] = [];
+
         for (let i = 0; i < options.count; i++) {
-          promises.push(new Promise<string>((resolve, reject) => {
-            const serverOrigin = "https://image-generation.perchance.org";
-            const requestId = Math.random().toString();
-            const privateIframeId = "id" + Math.random().toString().replace(".", "");
+          const requestId = Math.random().toString();
+          const privateIframeId = "id" + Math.random().toString().replace(".", "");
 
-            const urlHashData = {
-              saveChannel: "ai-text-to-image-generator",
-              saveTitle: "",
-              saveDescription: "",
-              prompt: options.prompt,
-              seed: -1,
-              resolution: options.resolution,
-              guidanceScale: 7,
-              defaultGuidanceScale: 7,
-              negativePrompt: "",
-              requestId: requestId,
-              iframeId: privateIframeId,
-              verifyOnly: false,
-            };
+          const urlHashData = {
+            saveChannel: "ai-text-to-image-generator",
+            saveTitle: "",
+            saveDescription: "",
+            prompt: options.prompt,
+            seed: -1,
+            resolution: options.resolution,
+            guidanceScale: 7,
+            defaultGuidanceScale: 7,
+            negativePrompt: "",
+            requestId: requestId,
+            iframeId: privateIframeId,
+            verifyOnly: false,
+          };
 
-            const handleMessage = (event: MessageEvent) => {
-              const origin = event.origin || (event as any).originalEvent?.origin;
-              if (origin !== serverOrigin) return;
-
-              if (event.data.type === 'finished' && event.data.id === privateIframeId) {
-                window.removeEventListener('message', handleMessage);
-                iframe.remove();
-                if (event.data.dataUrl) {
-                  resolve(event.data.dataUrl);
-                } else {
-                  reject(new Error("No data URL returned"));
-                }
-              }
-            };
-
-            window.addEventListener('message', handleMessage);
-
-            const iframe = document.createElement('iframe');
-            iframe.className = `text-to-image-plugin-image-iframe ${privateIframeId}`;
-            iframe.style.cssText = 'opacity:0; pointer-events:none; position:fixed; top:0; left:0; width:1px; height:1px;';
-            iframe.src = `${serverOrigin}/embed#${encodeURIComponent(JSON.stringify(urlHashData))}`;
-            document.body.appendChild(iframe);
-
-            // Add a timeout of 45 seconds per image
-            setTimeout(() => {
-              window.removeEventListener('message', handleMessage);
-              iframe.remove();
-              reject(new Error("Image generation timed out"));
-            }, 45000);
-          }));
-        }
-
-        const results = await Promise.allSettled(promises);
-        const imageUrls = results
-          .filter(r => r.status === 'fulfilled')
-          .map(r => (r as PromiseFulfilledResult<string>).value);
-
-        if (imageUrls.length === 0) {
-          throw new Error("Failed to generate any images from Perchance generator. Please try again.");
+          const url = `${serverOrigin}/embed#${encodeURIComponent(JSON.stringify(urlHashData))}`;
+          iframeUrls.push(url);
+          iframeIds.push(privateIframeId);
         }
 
         const shapeName = options.resolution === "768x512" ? "Landscape" : options.resolution === "512x768" ? "Portrait" : "Square";
@@ -2352,22 +2319,18 @@ Output in this exact format:
 - **Prompt**: "${options.originalPrompt}"
 - **Style**: ${options.styleName}
 - **Shape**: ${shapeName} (${options.resolution})
-- **Count**: ${imageUrls.length} image(s)`;
-
-        const generatedAttachments = imageUrls.map((url, idx) => ({
-          url,
-          type: "image",
-          name: `Generated Image ${idx + 1}`
-        }));
+- **Count**: ${options.count} image(s)`;
 
         const newMessagesHistory = [...messagesToSent, {
           role: "model",
           content: responseContent,
           isTyping: false,
-          attachments: generatedAttachments
+          iframeUrls: iframeUrls,
+          iframeIds: iframeIds,
+          attachments: []
         }] as ChatMessage[];
 
-        // Save to localStorage
+        // Initial save to localStorage to render the iframes inside the chat window
         try {
           const raw = localStorage.getItem("jee_ai_chats");
           if (raw) {
@@ -2380,7 +2343,97 @@ Output in this exact format:
             localStorage.setItem("jee_ai_chats", JSON.stringify(updated));
           }
         } catch (e) {}
+        this.notify();
 
+        // Now wait for postMessage events from the loaded iframes
+        const imageUrls: string[] = [];
+        const completedIds = new Set<string>();
+
+        await new Promise<void>((resolvePromise) => {
+          const handleMessage = (event: MessageEvent) => {
+            const origin = event.origin || (event as any).originalEvent?.origin;
+            if (origin !== serverOrigin) return;
+
+            if (event.data.type === 'finished' && iframeIds.includes(event.data.id)) {
+              if (event.data.dataUrl && !completedIds.has(event.data.id)) {
+                completedIds.add(event.data.id);
+                imageUrls.push(event.data.dataUrl);
+
+                // Update localStorage dynamically with the new image attachment
+                try {
+                  const raw = localStorage.getItem("jee_ai_chats");
+                  if (raw) {
+                    const sessions = JSON.parse(raw);
+                    const updated = sessions.map((s: any) => {
+                      if (s.id !== sessionId) return s;
+                      const msgs = [...s.messages];
+                      const lastMsg = msgs[msgs.length - 1];
+                      if (lastMsg && lastMsg.role === "model") {
+                        const currentAttachments = lastMsg.attachments || [];
+                        const exists = currentAttachments.some((a: any) => a.url === event.data.dataUrl);
+                        if (!exists) {
+                          lastMsg.attachments = [
+                            ...currentAttachments,
+                            {
+                              url: event.data.dataUrl,
+                              type: "image",
+                              name: `Generated Image ${imageUrls.length}`
+                            }
+                          ];
+                        }
+                      }
+                      return { ...s, messages: msgs, updatedAt: Date.now() };
+                    });
+                    localStorage.setItem("jee_ai_chats", JSON.stringify(updated));
+                  }
+                } catch (e) {}
+                this.notify();
+              }
+
+              if (completedIds.size === iframeIds.length) {
+                window.removeEventListener('message', handleMessage);
+                resolvePromise();
+              }
+            }
+          };
+
+          window.addEventListener('message', handleMessage);
+
+          // Handle abort signal
+          const onAbort = () => {
+            window.removeEventListener('message', handleMessage);
+            resolvePromise();
+          };
+          signal.addEventListener('abort', onAbort);
+
+          // Add a safety timeout of 90 seconds
+          setTimeout(() => {
+            window.removeEventListener('message', handleMessage);
+            resolvePromise();
+          }, 90000);
+        });
+
+        // Final cleanup to remove iframes from state once generation settles or times out
+        try {
+          const raw = localStorage.getItem("jee_ai_chats");
+          if (raw) {
+            const sessions = JSON.parse(raw);
+            const updated = sessions.map((s: any) => {
+              if (s.id !== sessionId) return s;
+              const msgs = [...s.messages];
+              const lastMsg = msgs[msgs.length - 1];
+              if (lastMsg && lastMsg.role === "model") {
+                delete lastMsg.iframeUrls;
+                delete lastMsg.iframeIds;
+                if (!lastMsg.attachments || lastMsg.attachments.length === 0) {
+                  lastMsg.content += "\n\n*(Failed to generate images or Turnstile verification was not completed.)*";
+                }
+              }
+              return { ...s, messages: msgs, updatedAt: Date.now() };
+            });
+            localStorage.setItem("jee_ai_chats", JSON.stringify(updated));
+          }
+        } catch (e) {}
         this.notify();
         this.autoGenerateTitle(sessionId, newMessagesHistory);
         return;
@@ -4540,6 +4593,24 @@ Here is the raw transcription:
                       </div>
                     )}
                    <div className="prose dark:prose-invert prose-p:leading-relaxed prose-pre:bg-muted prose-pre:border prose-pre:border-border max-w-none w-full prose-table:w-full prose-table:border-collapse prose-th:border prose-th:border-border prose-th:p-2 prose-td:border prose-td:border-border prose-td:p-2 prose-img:rounded-xl prose-img:max-h-[350px] prose-img:w-auto prose-img:object-contain prose-a:text-blue-500 hover:prose-a:text-blue-600 transition-colors">
+                     {m.iframeUrls && m.iframeUrls.length > 0 && (
+                        <div className="flex flex-wrap gap-3 mb-3">
+                          {m.iframeUrls.map((url, idx) => (
+                            <div key={idx} className="relative w-full max-w-[320px] h-[320px] rounded-2xl border border-border bg-muted/30 overflow-hidden shadow-sm flex items-center justify-center">
+                              <iframe
+                                src={url}
+                                style={{
+                                  width: "100%",
+                                  height: "100%",
+                                  border: "none",
+                                  background: "transparent",
+                                }}
+                                allow="clipboard-write"
+                              />
+                            </div>
+                          ))}
+                        </div>
+                     )}
                      {m.attachments && m.attachments.length > 0 && (
                         <div className="flex flex-wrap gap-2 mb-3">
                            {m.attachments.map((a, idx) => (

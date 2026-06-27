@@ -2284,48 +2284,18 @@ Output in this exact format:
     if (isImageRequest) {
       try {
         const options = parseImageRequest(lastMsg);
-        
-        const serverOrigin = "https://ai-text-to-image-generator.perchance.org";
-        const iframeUrls: string[] = [];
-        const iframeIds: string[] = [];
+        const imageUrls: string[] = [];
 
-        for (let i = 0; i < options.count; i++) {
-          const privateIframeId = "id" + Math.random().toString().replace(".", "");
-
-          const shareData: any = {
-            description: options.prompt,
-            shape: options.resolution,
-            artStyle: "𝗡𝗼 𝘀𝘁𝘆𝗹𝗲",
-          };
-
-          if (options.count > 1) {
-            if (options.count <= 2) shareData.numImages = 2;
-            else if (options.count <= 4) shareData.numImages = 4;
-            else if (options.count <= 6) shareData.numImages = 6;
-            else shareData.numImages = 8;
-          }
-
-          const url = `${serverOrigin}/#share-${encodeURIComponent(JSON.stringify(shareData))}`;
-          iframeUrls.push(url);
-          iframeIds.push(privateIframeId);
-        }
-
-        const shapeName = options.resolution === "768x512" ? "Landscape" : options.resolution === "512x768" ? "Portrait" : "Square";
-        const responseContent = `Here are your generated images from **Perchance AI Text-to-Image Generator**:
-
+        // Save a typing message to let the user know we are generating
+        const responseContent = `Generating ${options.count} image(s) using **Pollinations AI**...
 - **Prompt**: "${options.originalPrompt}"
 - **Style**: ${options.styleName}
-- **Shape**: ${shapeName} (${options.resolution})
-- **Count**: ${options.count} image(s)
+- **Shape**: ${options.resolution === "768x512" ? "Landscape" : options.resolution === "512x768" ? "Portrait" : "Square"}`;
 
-*Please click the **"Generate"** button inside the frame(s) below to complete Turnstile verification and output the image.*`;
-
-        const newMessagesHistory = [...messagesToSent, {
+        const intermediateHistory = [...messagesToSent, {
           role: "model",
           content: responseContent,
-          isTyping: false,
-          iframeUrls: iframeUrls,
-          iframeIds: iframeIds,
+          isTyping: true,
           attachments: []
         }] as ChatMessage[];
 
@@ -2335,14 +2305,108 @@ Output in this exact format:
             const sessions = JSON.parse(raw);
             const updated = sessions.map((s: any) => s.id === sessionId ? {
               ...s,
-              messages: newMessagesHistory,
+              messages: intermediateHistory,
               updatedAt: Date.now()
             } : s);
             localStorage.setItem("jee_ai_chats", JSON.stringify(updated));
           }
         } catch (e) {}
         this.notify();
-        this.autoGenerateTitle(sessionId, newMessagesHistory);
+
+        // Start generating images in background
+        for (let i = 0; i < options.count; i++) {
+          const seed = Math.floor(Math.random() * 1000000);
+          let model = "flux";
+          if (options.styleName === "Painted Anime" || options.styleName === "Waifu") {
+            model = "flux-anime";
+          } else if (options.styleName === "Casual Photo") {
+            model = "flux-realism";
+          }
+          
+          let w = 768, h = 768;
+          if (options.resolution === "768x512") {
+            w = 1024; h = 768;
+          } else if (options.resolution === "512x768") {
+            w = 768; h = 1024;
+          }
+
+          const url = `https://image.pollinations.ai/prompt/${encodeURIComponent(options.prompt)}?width=${w}&height=${h}&model=${model}&seed=${seed}&nologo=true`;
+          
+          try {
+            const resp = await fetch(url);
+            if (!resp.ok) throw new Error("Status " + resp.status);
+            const blob = await resp.blob();
+            const base64 = await new Promise<string>((resolve) => {
+              const reader = new FileReader();
+              reader.onloadend = () => resolve(reader.result as string);
+              reader.readAsDataURL(blob);
+            });
+            imageUrls.push(base64);
+
+            // Update intermediate progress to UI
+            try {
+              const raw = localStorage.getItem("jee_ai_chats");
+              if (raw) {
+                const sessions = JSON.parse(raw);
+                const updated = sessions.map((s: any) => {
+                  if (s.id !== sessionId) return s;
+                  const msgs = [...s.messages];
+                  const last = msgs[msgs.length - 1];
+                  if (last && last.role === "model") {
+                    last.attachments = imageUrls.map((img, idx) => ({
+                      url: img,
+                      type: "image",
+                      name: `Generated Image ${idx + 1}`
+                    }));
+                  }
+                  return { ...s, messages: msgs, updatedAt: Date.now() };
+                });
+                localStorage.setItem("jee_ai_chats", JSON.stringify(updated));
+              }
+            } catch (e) {}
+            this.notify();
+          } catch (e: any) {
+            console.error("Pollinations generation failed:", e);
+          }
+        }
+
+        // Final save with typing state finished
+        const shapeName = options.resolution === "768x512" ? "Landscape" : options.resolution === "512x768" ? "Portrait" : "Square";
+        const finalResponseContent = imageUrls.length > 0 
+          ? `Here are your generated images from **Pollinations AI**:
+
+- **Prompt**: "${options.originalPrompt}"
+- **Style**: ${options.styleName}
+- **Shape**: ${shapeName} (${options.resolution})
+- **Count**: ${imageUrls.length} image(s)`
+          : `Failed to generate any images from the Pollinations AI generator. Please try again.`;
+
+        let finalHistory: ChatMessage[] = [];
+        try {
+          const raw = localStorage.getItem("jee_ai_chats");
+          if (raw) {
+            const sessions = JSON.parse(raw);
+            const updated = sessions.map((s: any) => {
+              if (s.id !== sessionId) return s;
+              const msgs = [...s.messages];
+              const last = msgs[msgs.length - 1];
+              if (last && last.role === "model") {
+                last.content = finalResponseContent;
+                last.isTyping = false;
+                last.attachments = imageUrls.map((img, idx) => ({
+                  url: img,
+                  type: "image",
+                  name: `Generated Image ${idx + 1}`
+                }));
+              }
+              finalHistory = msgs;
+              return { ...s, messages: msgs, updatedAt: Date.now() };
+            });
+            localStorage.setItem("jee_ai_chats", JSON.stringify(updated));
+          }
+        } catch (e) {}
+        this.notify();
+        this.autoGenerateTitle(sessionId, finalHistory);
         return;
       } catch (err: any) {
         console.error("Perchance image generation error:", err);

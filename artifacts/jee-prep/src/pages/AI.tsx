@@ -1930,6 +1930,125 @@ const fixMath = (str: string) => {
   return str;
 };
 
+// ─── PARSE IMAGE REQUEST FOR PERCHANCE ──────────────────────────────────────
+function parseImageRequest(msg: string) {
+  const lower = msg.toLowerCase();
+  
+  // 1. Detect shape (Landscape, Portrait, Square)
+  let resolution = "768x768"; // default Square
+  if (/\blandscape\b/i.test(lower)) {
+    resolution = "768x512";
+  } else if (/\bportrait\b/i.test(lower)) {
+    resolution = "512x768";
+  } else if (/\bsquare\b/i.test(lower)) {
+    resolution = "768x768";
+  }
+
+  // 2. Detect how many images
+  let count = 1;
+  const countMatch = lower.match(/(\d+)\s*(?:images?|pictures?|photos?|generations?|drawings?)/i) ||
+                     lower.match(/(?:generate|make|create|imagine|draw|get|want)\s*(\d+)\s*(?:images?|pictures?|photos?|generations?|drawings?)/i);
+  if (countMatch && countMatch[1]) {
+    const val = parseInt(countMatch[1], 10);
+    if (!isNaN(val) && val > 0) {
+      count = Math.min(val, 10); // cap at 10 to avoid performance bottleneck
+    }
+  }
+
+  // 3. Detect Art Style
+  let styleName = "No style";
+  let promptPrefix = "";
+  let promptSuffix = "";
+  let negativePrompt = "";
+
+  // Check which style is mentioned
+  if (/\banime\b/i.test(lower) || /\bwaifu\b/i.test(lower)) {
+    if (/\bwaifu\b/i.test(lower)) {
+      styleName = "Waifu";
+      promptSuffix = ", waifu character portrait, 1girl, very high resolution, semi-realistic anime art. Intricate and impressive anime artwork with stunningly beautiful composition and style.\n\nOverall, it's an absolute world-class masterpiece anime artwork. It's an aesthetically pleasing waifu artwork with impeccable attention to detail and impressive composition. It's an aesthetically pleasing character portrait. It's an aesthetically pleasing image.";
+    } else {
+      styleName = "Painted Anime";
+      const isMale = /\bmale\b|\bboy\b|\bman\b/i.test(lower);
+      if (isMale) {
+        promptSuffix = ", art in the style of atey ghailan, painterly anime style at pixiv, art in the style of kantoku, in art style of redjuice/necömi/rella/tiv pixiv collab, your name anime art style, masterpiece digital painting, exquisite lighting and composition, inspired by wlop art style, 8k, sharp, very detailed, high resolution, illustration.\n\nOverall, it's an absolute world-class masterpiece painterly anime-inspired digital art. It's an aesthetically pleasing painterly anime-inspired digital artwork with impeccable attention to detail and impressive composition.";
+      } else {
+        promptPrefix = "painterly anime artwork, ";
+        promptSuffix = ", world-class masterpiece, fine details, breathtaking artwork, painterly art style, high quality, 8k, very detailed, high resolution, exquisite composition and lighting.\n\nOverall, it's an absolute world-class masterpiece painterly anime artwork. It's an aesthetically pleasing painterly anime artwork with impeccable attention to detail and impressive composition.";
+      }
+    }
+  } else if (/\bphoto\b/i.test(lower) || /\brealistic\b/i.test(lower) || /\bphotorealistic\b/i.test(lower)) {
+    styleName = "Casual Photo";
+    promptPrefix = "A casual photo. A casual photo of ";
+    promptSuffix = ". It's a casual photo.";
+  } else if (/\bfantasy\s*map\b/i.test(lower) || /\bworld\s*map\b/i.test(lower)) {
+    styleName = "Fantasy World Map";
+    promptPrefix = "beautiful fantasy map of ";
+    promptSuffix = ", beautiful fantasy map inspired by middle earth and azeroth and discworld and westeros and essos and the witcher world and tamriel and faerûn and thedas, 4k, beautiful colors, crisp, high-resolution artistic map, topographic 3D terrain, artistic map.\n\nOverall, it's an absolute world-class masterpiece fantasy world map. It's an aesthetically pleasing fantasy world map artwork with impeccable attention to detail and impressive composition.";
+  } else if (/\bisometric\b/i.test(lower)) {
+    styleName = "3D Isometric Icon";
+    promptSuffix = ", 3D isometric render of cute, 3D app icon, clean isometric design, beautiful design, soft gradient background, soft colors, centered, 3D blender render, masterpiece, best quality, high resolution, 8k octane render, beautiful color scheme, soft smooth lighting, physically based rendering, square image, high polycount";
+  } else if (/\bflat style icon\b/i.test(lower) || /\bflat icon\b/i.test(lower)) {
+    styleName = "Flat Style Icon";
+    promptSuffix = ", creative icon, flat style icon, masterpiece, high resolution, crisp, beautiful composition and color choice, beautiful flat painted style, behance contest-winner, award winning icon illustration, 8k, best quality";
+  } else if (/\bflat style logo\b/i.test(lower) || /\bflat logo\b/i.test(lower)) {
+    styleName = "Flat Style Logo";
+    promptPrefix = "beautiful flat-style logo design depicting ";
+    promptSuffix = ", creative flat-style logo design, trending on dribbble, featured on behance, portfolio piece, minimal flat design, breathtaking graphic design, 8k, high resolution vector logo, plain background, amazingly beautiful logo design, winner of best logo award";
+  } else if (/\bgame art\b/i.test(lower) || /\bgame icon\b/i.test(lower)) {
+    styleName = "Game Art Icon";
+    promptSuffix = ", a concept art icon for league of legends, a digital art logo, illustration, league of legends style icon, inspired by wlop style, 8k, dota 2 style icon, fine details, sharp, very detailed icon, high resolution rpg ability/spell/item icon";
+  } else if (/\bclaymation\b/i.test(lower)) {
+    styleName = "Claymation";
+    promptSuffix = ", claymation, incredible claymation style, kubo and the two strings style art, Missing Link 2019 art style, clay texture, clay animation, stop-motion clay";
+  } else if (/\bcartoon\b/i.test(lower)) {
+    styleName = "Cartoon";
+    promptSuffix = ", cartoon-style art, superb linework, nice colors and composition, bold linework, masterpiece, cute art in the style of Dana Terrace, in the style of Rebecca Sugar, in the style of ry-spirit, amazing and wholesome cartoon-style art, cute art style, (trending on artstation)";
+  } else if (/\bpencil\b/i.test(lower) || /\bsketch\b/i.test(lower)) {
+    styleName = "Pencil";
+    promptPrefix = "black and white pencil drawing, ";
+    promptSuffix = ", black and white, breathtaking pencil illustration, highly detailed, 4k, textured paper, pencil texture, sketch";
+  } else if (/\btattoo\b/i.test(lower)) {
+    styleName = "Tattoo Design";
+    promptPrefix = "amazing tattoo design, ";
+    promptSuffix = ", breathtaking tattoo design, incredible tattoo design";
+  } else if (/\bcursed\b/i.test(lower)) {
+    styleName = "Cursed Photo";
+    promptPrefix = "cursed photo of ";
+    promptSuffix = ", creepy and cursed, absolutely cursed photo, nope nope nope nope, what the actual f, unsettling photo, cursed_thing, cursedimages, no context, cursed image, bad photo, weird photo, very strange, color photo, creepy photo, nightmare fuel";
+  }
+
+  // 4. Extract core prompt description
+  let corePrompt = msg;
+  corePrompt = corePrompt.replace(/\b(generate|create|make|imagine|draw|picture|photo|illustration|paint|imaging|imagin)\s*(?:an?|the)?\s*(?:images?|pictures?|photos?)?\s*(?:of|for)?\b/i, "");
+  corePrompt = corePrompt.replace(/\b(landscape|portrait|square)\b/i, "");
+  corePrompt = corePrompt.replace(/\b\d+\s*(?:images?|pictures?|photos?|generations?|drawings?)\b/i, "");
+  // Remove style names
+  corePrompt = corePrompt.replace(/\b(anime|waifu|realistic|photorealistic|fantasy map|isometric|flat style icon|flat icon|flat style logo|flat logo|game art|game icon|claymation|cartoon|pencil|sketch|tattoo|cursed)\b/i, "");
+  corePrompt = corePrompt.replace(/\b(art\s+)?style\b/i, "");
+  // Clean up punctuation
+  corePrompt = corePrompt.replace(/^[,\s.!?\-\/]+|[,\s.!?\-\/]+$/g, "");
+  if (!corePrompt.trim()) {
+    corePrompt = msg; // fallback
+  }
+
+  let finalPrompt = corePrompt;
+  if (styleName === "Casual Photo") {
+    const promptCleaned = corePrompt.replace(/\b(realistic)\b/i, "actual");
+    finalPrompt = `${promptPrefix}${promptCleaned}${promptSuffix}`;
+  } else {
+    finalPrompt = `${promptPrefix}${corePrompt}${promptSuffix}`;
+  }
+
+  return {
+    prompt: finalPrompt,
+    originalPrompt: corePrompt,
+    resolution,
+    count,
+    styleName,
+    negativePrompt
+  };
+}
+
 // ─── AI CHAT BACKGROUND MANAGER ───────────────────────────────────────────
 class AIChatBackgroundManager {
   activeJobs = new Map<string, {
@@ -2151,7 +2270,7 @@ Output in this exact format:
       }
     }
 
-    const isImageRequest = !hasImages && /generate.*image|create.*image|draw\b|make.*image|picture.*of|image.*of|create.*picture|make.*picture|generate.*picture/i.test(lastMsg);
+    const isImageRequest = !hasImages && /generate.*image|create.*image|draw\b|make.*image|picture.*of|image.*of|create.*picture|make.*picture|generate.*picture|imagin.*image|imagine.*image|imagine\b/i.test(lastMsg);
 
     this.activeJobs.set(sessionId, {
       sessionId,
@@ -2159,6 +2278,134 @@ Output in this exact format:
       generatingImageType: isImageRequest,
     });
     this.notify();
+
+    if (isImageRequest) {
+      try {
+        const options = parseImageRequest(lastMsg);
+        
+        const promises: Promise<string>[] = [];
+        for (let i = 0; i < options.count; i++) {
+          promises.push(new Promise<string>((resolve, reject) => {
+            const serverOrigin = "https://image-generation.perchance.org";
+            const requestId = Math.random().toString();
+            const privateIframeId = "id" + Math.random().toString().replace(".", "");
+
+            const urlHashData = {
+              saveChannel: "ai-text-to-image-generator",
+              saveTitle: "",
+              saveDescription: "",
+              prompt: options.prompt,
+              seed: -1,
+              resolution: options.resolution,
+              guidanceScale: 7,
+              defaultGuidanceScale: 7,
+              negativePrompt: "",
+              requestId: requestId,
+              iframeId: privateIframeId,
+              verifyOnly: false,
+            };
+
+            const handleMessage = (event: MessageEvent) => {
+              const origin = event.origin || (event as any).originalEvent?.origin;
+              if (origin !== serverOrigin) return;
+
+              if (event.data.type === 'finished' && event.data.id === privateIframeId) {
+                window.removeEventListener('message', handleMessage);
+                iframe.remove();
+                if (event.data.dataUrl) {
+                  resolve(event.data.dataUrl);
+                } else {
+                  reject(new Error("No data URL returned"));
+                }
+              }
+            };
+
+            window.addEventListener('message', handleMessage);
+
+            const iframe = document.createElement('iframe');
+            iframe.className = `text-to-image-plugin-image-iframe ${privateIframeId}`;
+            iframe.style.cssText = 'opacity:0; pointer-events:none; position:fixed; top:0; left:0; width:1px; height:1px;';
+            iframe.src = `${serverOrigin}/embed#${encodeURIComponent(JSON.stringify(urlHashData))}`;
+            document.body.appendChild(iframe);
+
+            // Add a timeout of 45 seconds per image
+            setTimeout(() => {
+              window.removeEventListener('message', handleMessage);
+              iframe.remove();
+              reject(new Error("Image generation timed out"));
+            }, 45000);
+          }));
+        }
+
+        const results = await Promise.allSettled(promises);
+        const imageUrls = results
+          .filter(r => r.status === 'fulfilled')
+          .map(r => (r as PromiseFulfilledResult<string>).value);
+
+        if (imageUrls.length === 0) {
+          throw new Error("Failed to generate any images from Perchance generator. Please try again.");
+        }
+
+        const shapeName = options.resolution === "768x512" ? "Landscape" : options.resolution === "512x768" ? "Portrait" : "Square";
+        const responseContent = `Here are your generated images from **Perchance AI Text-to-Image Generator**:
+
+- **Prompt**: "${options.originalPrompt}"
+- **Style**: ${options.styleName}
+- **Shape**: ${shapeName} (${options.resolution})
+- **Count**: ${imageUrls.length} image(s)`;
+
+        const generatedAttachments = imageUrls.map((url, idx) => ({
+          url,
+          type: "image",
+          name: `Generated Image ${idx + 1}`
+        }));
+
+        const newMessagesHistory = [...messagesToSent, {
+          role: "model",
+          content: responseContent,
+          isTyping: false,
+          attachments: generatedAttachments
+        }] as ChatMessage[];
+
+        // Save to localStorage
+        try {
+          const raw = localStorage.getItem("jee_ai_chats");
+          if (raw) {
+            const sessions = JSON.parse(raw);
+            const updated = sessions.map((s: any) => s.id === sessionId ? {
+              ...s,
+              messages: newMessagesHistory,
+              updatedAt: Date.now()
+            } : s);
+            localStorage.setItem("jee_ai_chats", JSON.stringify(updated));
+          }
+        } catch (e) {}
+
+        this.notify();
+        this.autoGenerateTitle(sessionId, newMessagesHistory);
+        return;
+      } catch (err: any) {
+        console.error("Perchance image generation error:", err);
+        const errorContent = `Failed to generate image: ${err.message}`;
+        try {
+          const raw = localStorage.getItem("jee_ai_chats");
+          if (raw) {
+            const sessions = JSON.parse(raw);
+            const updated = sessions.map((s: any) => s.id === sessionId ? {
+               ...s,
+               messages: [...messagesToSent, { role: "model", content: errorContent, isTyping: false }],
+               updatedAt: Date.now()
+            } : s);
+            localStorage.setItem("jee_ai_chats", JSON.stringify(updated));
+          }
+        } catch (e) {}
+        this.notify();
+        return;
+      } finally {
+        this.activeJobs.delete(sessionId);
+        this.notify();
+      }
+    }
 
     let responseText = "";
     let generatedAttachments: any[] = [];

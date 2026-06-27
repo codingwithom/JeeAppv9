@@ -2371,14 +2371,8 @@ Output in this exact format:
         }
 
         // Final save with typing state finished
-        const shapeName = options.resolution === "768x512" ? "Landscape" : options.resolution === "512x768" ? "Portrait" : "Square";
         const finalResponseContent = imageUrls.length > 0 
-          ? `Here are your generated images from **Pollinations AI**:
-
-- **Prompt**: "${options.originalPrompt}"
-- **Style**: ${options.styleName}
-- **Shape**: ${shapeName} (${options.resolution})
-- **Count**: ${imageUrls.length} image(s)`
+          ? ""
           : `Failed to generate any images from the Pollinations AI generator. Please try again.`;
 
         let finalHistory: ChatMessage[] = [];

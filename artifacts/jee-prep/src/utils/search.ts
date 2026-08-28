@@ -338,6 +338,99 @@ function parseXMLFeed(xmlText: string, defaultName: string): PlaylistResult {
 }
 
 /**
+ * Fetches standalone video metadata client-side using noembed, oEmbed, and mirror fallbacks.
+ * Guaranteed to return a valid PlaylistItem even if all network lookups fail.
+ */
+export async function fetchVideoMetadataClientSide(youtubeId: string): Promise<PlaylistItem> {
+  const cleanId = youtubeId.trim();
+  let title = "YouTube Video";
+  let artist = "YouTube";
+  let duration = 0;
+  const thumbnail = `https://img.youtube.com/vi/${cleanId}/hqdefault.jpg`;
+  const streamUrl = `https://www.youtube.com/embed/${cleanId}`;
+
+  // 1. Try noembed.com (free, high-reliability CORS-enabled oEmbed proxy)
+  try {
+    const controller = new AbortController();
+    const t = setTimeout(() => controller.abort(), 4000);
+    const res = await fetch(`https://noembed.com/embed?url=https://www.youtube.com/watch?v=${cleanId}`, { signal: controller.signal });
+    clearTimeout(t);
+    if (res.ok) {
+      const data = await res.json();
+      if (data && !data.error && data.title) {
+        title = cleanTitleString(data.title);
+        if (data.author_name) artist = cleanTitleString(data.author_name);
+        return { title, artist, thumbnail: data.thumbnail_url || thumbnail, duration, youtubeId: cleanId, streamUrl };
+      }
+    }
+  } catch (e) {}
+
+  // 2. Try Invidious / Piped video endpoint
+  try {
+    const invidiousList = await getInvidiousInstances();
+    const pipedList = getPipedInstances();
+    const candidateInstances = [...invidiousList.slice(0, 3), ...pipedList.slice(0, 2)];
+
+    const fetchSingle = async (inst: string) => {
+      const controller = new AbortController();
+      const t = setTimeout(() => controller.abort(), 4000);
+      try {
+        if (inst.includes("piped")) {
+          const res = await fetch(`${inst}/streams/${cleanId}`, { signal: controller.signal });
+          clearTimeout(t);
+          if (!res.ok) throw new Error("Piped fail");
+          const d = await res.json();
+          return {
+            title: cleanTitleString(d.title || title),
+            artist: cleanTitleString(d.uploader || artist),
+            duration: Number(d.duration || 0),
+            thumbnail: d.thumbnailUrl || thumbnail,
+            youtubeId: cleanId,
+            streamUrl
+          };
+        } else {
+          const res = await fetch(`${inst}/api/v1/videos/${cleanId}`, { signal: controller.signal });
+          clearTimeout(t);
+          if (!res.ok) throw new Error("Invidious fail");
+          const d = await res.json();
+          return {
+            title: cleanTitleString(d.title || title),
+            artist: cleanTitleString(d.author || artist),
+            duration: Number(d.lengthSeconds || 0),
+            thumbnail: d.videoThumbnails?.[0]?.url || thumbnail,
+            youtubeId: cleanId,
+            streamUrl
+          };
+        }
+      } catch (err) {
+        clearTimeout(t);
+        throw err;
+      }
+    };
+
+    const result = await raceSuccessful(candidateInstances.map(inst => fetchSingle(inst)));
+    return result;
+  } catch (e) {}
+
+  // 3. Try YouTube oEmbed through CORS proxy
+  try {
+    const oembedUrl = `https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${cleanId}&format=json`;
+    const text = await raceSuccessful([
+      fetchWithProxy(`https://api.allorigins.win/raw?url=${encodeURIComponent(oembedUrl)}`, "text"),
+      fetchWithProxy(`https://api.allorigins.win/get?url=${encodeURIComponent(oembedUrl)}`, "allorigins"),
+      fetchWithProxy(`https://corsproxy.io/?url=${encodeURIComponent(oembedUrl)}`, "text"),
+      fetchWithProxy(`https://corsproxy.io/?${encodeURIComponent(oembedUrl)}`, "text"),
+      fetchWithProxy(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(oembedUrl)}`, "text")
+    ]);
+    const d = JSON.parse(text);
+    if (d.title) title = cleanTitleString(d.title);
+    if (d.author_name) artist = cleanTitleString(d.author_name);
+  } catch (e) {}
+
+  return { title, artist, thumbnail, duration, youtubeId: cleanId, streamUrl };
+}
+
+/**
  * Pure client-side parsing system that extracts YouTube playlist data.
  * Races multiple open CORS proxies to scrap playlist page HTML and falls back to
  * XML RSS feed, and finally to raced public API mirrors (Piped/Invidious) as a last-resort.
@@ -354,39 +447,65 @@ export async function fetchPlaylistClientSide(ytPlaylistId: string): Promise<Pla
     if (match) playlistId = match[1];
   }
 
+  // Also check if there's a video ID embedded in the string
+  let embeddedVideoId: string | null = null;
+  const vMatch = ytPlaylistId.match(/[?&]v=([^&#]+)/) || ytPlaylistId.match(/youtu\.be\/([^?#]+)/);
+  if (vMatch) {
+    embeddedVideoId = vMatch[1];
+  } else if (playlistId.length === 11 && !playlistId.startsWith("PL") && !playlistId.startsWith("RD")) {
+    embeddedVideoId = playlistId;
+  }
+
+  // If playlist ID is a YouTube Mix (RD...), Liked (LL), Watch Later (WL), or User Uploads (UL)
+  // These are user-specific radio/mixes that cannot be queried as public playlists.
+  if (playlistId.startsWith("RD") || playlistId.startsWith("LL") || playlistId.startsWith("WL") || playlistId.startsWith("UL")) {
+    if (embeddedVideoId) {
+      const single = await fetchVideoMetadataClientSide(embeddedVideoId);
+      return {
+        type: "playlist",
+        name: single.title,
+        tracks: [single]
+      };
+    }
+  }
+
   let playlistName = "YouTube Playlist";
   let tracks: PlaylistItem[] = [];
 
-  // Strategy 1: Fetch raw YouTube Watch / Playlist page layout and extract ytInitialData (holds up to 100 items)
+  // Strategy 1: Fetch raw YouTube Playlist page layout and extract ytInitialData
   try {
     const playlistUrl = `https://www.youtube.com/playlist?list=${playlistId}`;
     const htmlText = await raceSuccessful([
+      fetchWithProxy(`https://api.allorigins.win/raw?url=${encodeURIComponent(playlistUrl)}`, "text"),
       fetchWithProxy(`https://api.allorigins.win/get?url=${encodeURIComponent(playlistUrl)}`, "allorigins"),
-      fetchWithProxy(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(playlistUrl)}`, "text"),
-      fetchWithProxy(`https://corsproxy.io/?url=${encodeURIComponent(playlistUrl)}`, "text")
+      fetchWithProxy(`https://corsproxy.io/?url=${encodeURIComponent(playlistUrl)}`, "text"),
+      fetchWithProxy(`https://corsproxy.io/?${encodeURIComponent(playlistUrl)}`, "text"),
+      fetchWithProxy(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(playlistUrl)}`, "text")
     ]);
 
     const result = extractTracksFromHTML(htmlText);
     tracks = result.tracks;
-    playlistName = result.name;
+    if (result.name && result.name !== "YouTube Playlist") playlistName = result.name;
   } catch (htmlErr) {
-    console.warn("All HTML CORS proxies failed to fetch playlist page, using RSS XML fallback...", htmlErr);
+    console.warn("HTML CORS proxies failed to fetch playlist page, trying RSS XML...", htmlErr);
   }
 
-  // Strategy 2: Fallback to YouTube playlist XML feed (usually returns max 15 items)
+  // Strategy 2: Fallback to YouTube playlist XML feed
   if (tracks.length === 0) {
     try {
       const feedUrl = `https://www.youtube.com/feeds/videos.xml?playlist_id=${playlistId}`;
       const xmlText = await raceSuccessful([
+        fetchWithProxy(`https://api.allorigins.win/raw?url=${encodeURIComponent(feedUrl)}`, "text"),
         fetchWithProxy(`https://api.allorigins.win/get?url=${encodeURIComponent(feedUrl)}`, "allorigins"),
-        fetchWithProxy(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(feedUrl)}`, "text"),
-        fetchWithProxy(`https://corsproxy.io/?url=${encodeURIComponent(feedUrl)}`, "text")
+        fetchWithProxy(`https://corsproxy.io/?url=${encodeURIComponent(feedUrl)}`, "text"),
+        fetchWithProxy(`https://corsproxy.io/?${encodeURIComponent(feedUrl)}`, "text"),
+        fetchWithProxy(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(feedUrl)}`, "text")
       ]);
       const rssResult = parseXMLFeed(xmlText, playlistName);
       tracks = rssResult.tracks;
-      playlistName = rssResult.name;
+      if (rssResult.name && rssResult.name !== "YouTube Playlist") playlistName = rssResult.name;
     } catch (rssErr) {
-      console.warn("RSS Feed extraction failed on all proxies, trying Mirror instances next...", rssErr);
+      console.warn("RSS Feed extraction failed on proxies, trying Mirror instances...", rssErr);
     }
   }
 
@@ -396,8 +515,8 @@ export async function fetchPlaylistClientSide(ytPlaylistId: string): Promise<Pla
       const piped_instances = getPipedInstances();
       const invidious_instances = await getInvidiousInstances();
 
-      const top_piped = Array.from(new Set(["https://pipedapi.adminforge.de", "https://pipedapi.tokhmi.xyz", ...piped_instances])).slice(0, 3);
-      const top_invidious = Array.from(new Set(["https://vid.puffyan.us", "https://invidious.jing.rocks", "https://invidious.f5.si", ...invidious_instances])).slice(0, 3);
+      const top_piped = Array.from(new Set(["https://pipedapi.tokhmi.xyz", "https://pipedapi.adminforge.de", "https://piped-api.lunar.icu", ...piped_instances])).slice(0, 4);
+      const top_invidious = Array.from(new Set(["https://inv.tux.pizza", "https://invidious.nerdvpn.de", "https://invidious.flokinet.to", "https://vid.puffyan.us", "https://invidious.jing.rocks", "https://invidious.f5.si", ...invidious_instances])).slice(0, 4);
 
       interface MirrorResult {
         name: string;
@@ -477,8 +596,20 @@ export async function fetchPlaylistClientSide(ytPlaylistId: string): Promise<Pla
     }
   }
 
+  // Strategy 4: If playlist scraping returned empty BUT an embedded video ID was in the URL, return that video!
+  if (tracks.length === 0 && embeddedVideoId) {
+    try {
+      const single = await fetchVideoMetadataClientSide(embeddedVideoId);
+      return {
+        type: "playlist",
+        name: single.title,
+        tracks: [single]
+      };
+    } catch (e) {}
+  }
+
   if (tracks.length === 0) {
-    throw new Error("Could not extract playlist using client-side XML/HTML scraping or API mirror fallbacks.");
+    throw new Error("Could not extract playlist. Please ensure the playlist is public or try adding individual video links.");
   }
 
   // Deduplicate and enforce 150 safety threshold limit
@@ -495,4 +626,180 @@ export async function fetchPlaylistClientSide(ytPlaylistId: string): Promise<Pla
     name: playlistName,
     tracks: uniqueTracks.slice(0, 150)
   };
+}
+
+export interface YouTubeSearchResult {
+  videoId: string;
+  title: string;
+  author: string;
+  length_seconds: number;
+  thumbnail: string;
+}
+
+/**
+ * Searches for YouTube videos across multi-tiered public providers and CORS proxies.
+ * Returns up to 50 parsed videos.
+ */
+export async function searchYouTubeVideos(query: string): Promise<YouTubeSearchResult[]> {
+  const q = encodeURIComponent(query.trim());
+  if (!q) return [];
+
+  const fetchWithTimeout = async (url: string, timeoutMs: number) => {
+    const controller = new AbortController();
+    const id = setTimeout(() => controller.abort(), timeoutMs);
+    const response = await fetch(url, { signal: controller.signal });
+    clearTimeout(id);
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    return response;
+  };
+
+  const fetchPiped = async (instance: string): Promise<YouTubeSearchResult[]> => {
+    const res = await fetchWithTimeout(`${instance}/search?q=${q}&filter=all`, 4500);
+    const data = await res.json();
+    if (!data?.items?.length) throw new Error("No items in Piped");
+    const videos = data.items.filter((item: any) => item.type === "stream" || item.url?.includes("watch?v=") || item.id);
+    if (!videos.length) throw new Error("No video streams in Piped");
+    return videos.slice(0, 50).map((v: any) => {
+      const vId = v.url?.includes("?v=") 
+        ? v.url.split("?v=")[1].split("&")[0] 
+        : (v.id || v.url?.split("/").pop() || "");
+      if (!vId) return null;
+      return {
+        videoId: vId,
+        title: cleanTitleString(v.title || "Unknown"),
+        author: cleanTitleString(v.uploaderName || v.uploader || "YouTube"),
+        length_seconds: Number(v.duration || v.durationInSec || 0),
+        thumbnail: `https://i.ytimg.com/vi/${vId}/hq720.jpg`,
+      };
+    }).filter((v: YouTubeSearchResult | null): v is YouTubeSearchResult => Boolean(v && v.videoId));
+  };
+
+  const fetchInvidious = async (instance: string): Promise<YouTubeSearchResult[]> => {
+    const res = await fetchWithTimeout(`${instance}/api/v1/search?q=${q}&type=video`, 4500);
+    const data = await res.json();
+    if (!Array.isArray(data) || !data.length) throw new Error("No data in Invidious");
+    return data.slice(0, 50).map((v: any) => {
+      const vId = v.videoId || "";
+      if (!vId) return null;
+      return {
+        videoId: vId,
+        title: cleanTitleString(v.title || "Unknown"),
+        author: cleanTitleString(v.author || "YouTube"),
+        length_seconds: Number(v.lengthSeconds || v.length_seconds || v.duration || 0),
+        thumbnail: `https://i.ytimg.com/vi/${vId}/hq720.jpg`,
+      };
+    }).filter((v: YouTubeSearchResult | null): v is YouTubeSearchResult => Boolean(v && v.videoId));
+  };
+
+  const fetchProxyScrape = async (proxyUrl: string): Promise<YouTubeSearchResult[]> => {
+    const res = await fetchWithTimeout(proxyUrl, 5000);
+    const contentType = res.headers.get("content-type") || "";
+    let html = "";
+    if (contentType.includes("application/json")) {
+      const data = await res.json();
+      html = data.contents || "";
+    } else {
+      html = await res.text();
+    }
+
+    const match =
+      html.match(/var\s+ytInitialData\s*=\s*(\{[\s\S]+?\});/s) ||
+      html.match(/ytInitialData\s*=\s*(\{[\s\S]+?\});/s) ||
+      html.match(/window\["ytInitialData"\]\s*=\s*(\{[\s\S]+?\});/s);
+    
+    if (match) {
+      try {
+        const ytData = JSON.parse(match[1]);
+        const videos: any[] = [];
+        const findVideos = (obj: any) => {
+          if (videos.length >= 50) return;
+          if (Array.isArray(obj)) {
+            for (const item of obj) findVideos(item);
+          } else if (obj !== null && typeof obj === "object") {
+            if (obj.videoRenderer && obj.videoRenderer.videoId) {
+              videos.push(obj.videoRenderer);
+            } else {
+              for (const key of Object.keys(obj)) findVideos(obj[key]);
+            }
+          }
+        };
+        findVideos(ytData);
+
+        if (videos.length > 0) {
+          return videos.map((v) => {
+            const timeStr = v.lengthText?.simpleText || "0:00";
+            const parts = timeStr.split(":").map(Number);
+            const length_seconds =
+              parts.length === 3
+                ? parts[0] * 3600 + parts[1] * 60 + parts[2]
+                : parts.length === 2
+                  ? parts[0] * 60 + parts[1]
+                  : parts[0] || 0;
+
+            return {
+              videoId: v.videoId,
+              title: cleanTitleString(v.title?.runs?.[0]?.text || v.title?.simpleText || "Unknown"),
+              author: cleanTitleString(v.ownerText?.runs?.[0]?.text || v.shortBylineText?.runs?.[0]?.text || "YouTube"),
+              length_seconds,
+              thumbnail: `https://i.ytimg.com/vi/${v.videoId}/hq720.jpg`,
+            };
+          });
+        }
+      } catch (e) {}
+    }
+
+    // Anchor regex fallback
+    const anchorMatches = Array.from(html.matchAll(/href="[^"]*watch\?v=([a-zA-Z0-9_-]{11})[^"]*"/g));
+    const fallbackResults: YouTubeSearchResult[] = [];
+    const seen = new Set<string>();
+    for (const m of anchorMatches) {
+      const vId = m[1];
+      if (!seen.has(vId) && seen.size < 30) {
+        seen.add(vId);
+        fallbackResults.push({
+          videoId: vId,
+          title: `YouTube Video [${vId}]`,
+          author: "YouTube",
+          length_seconds: 0,
+          thumbnail: `https://i.ytimg.com/vi/${vId}/hq720.jpg`,
+        });
+      }
+    }
+    if (fallbackResults.length > 0) return fallbackResults;
+    throw new Error("No videos parsed from proxy scrape");
+  };
+
+  const fetchLocalApi = async (): Promise<YouTubeSearchResult[]> => {
+    const apiBase = (typeof import.meta !== "undefined" && import.meta.env?.BASE_URL) ? import.meta.env.BASE_URL.replace(/\/$/, "") : "";
+    const res = await fetchWithTimeout(`${apiBase}/api/yt-search?q=${q}`, 4000);
+    const data = await res.json();
+    if (data.error) throw new Error(data.error);
+    if (!Array.isArray(data.results) || !data.results.length) throw new Error("No results");
+    return data.results;
+  };
+
+  const invidiousInstances = await getInvidiousInstances();
+  const pipedInstances = getPipedInstances();
+
+  const searchTasks: Promise<YouTubeSearchResult[]>[] = [
+    fetchLocalApi(),
+    ...pipedInstances.map(inst => fetchPiped(inst)),
+    ...invidiousInstances.map(inst => fetchInvidious(inst)),
+    fetchProxyScrape(`https://api.allorigins.win/raw?url=${encodeURIComponent(`https://www.youtube.com/results?search_query=${q}&gl=US&hl=en`)}`),
+    fetchProxyScrape(`https://api.allorigins.win/get?url=${encodeURIComponent(`https://www.youtube.com/results?search_query=${q}&gl=US&hl=en`)}`),
+    fetchProxyScrape(`https://corsproxy.io/?url=${encodeURIComponent(`https://www.youtube.com/results?search_query=${q}&gl=US&hl=en`)}`),
+    fetchProxyScrape(`https://corsproxy.io/?${encodeURIComponent(`https://www.youtube.com/results?search_query=${q}&gl=US&hl=en`)}`),
+    fetchProxyScrape(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(`https://www.youtube.com/results?search_query=${q}&gl=US&hl=en`)}`)
+  ];
+
+  try {
+    const fastest = await raceSuccessful(searchTasks);
+    if (fastest && fastest.length > 0) {
+      return fastest.slice(0, 50);
+    }
+  } catch (err) {
+    console.warn("Search providers failed:", err);
+  }
+
+  throw new Error("No search results found.");
 }

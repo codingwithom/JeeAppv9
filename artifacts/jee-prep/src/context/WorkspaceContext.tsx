@@ -41,8 +41,8 @@ export function WorkspaceProvider({ children }: { children: ReactNode }) {
       const text = await file.text();
       const data = JSON.parse(text);
       for (const key in data) {
-        // If it's a nested JSON object/array from the file, stringify it back for React's local storage hooks to consume
-        const val = typeof data[key] === 'object' ? JSON.stringify(data[key]) : String(data[key]);
+        // Stringify values so React's useLocalStorage hooks can cleanly JSON.parse them without syntax errors
+        const val = typeof data[key] === 'string' ? JSON.stringify(data[key]) : JSON.stringify(data[key]);
         localStorage.setItem(key, val);
       }
       

@@ -1,12 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Switch, Route, Router as WouterRouter, useLocation } from "wouter";
+import { useHashLocation } from "wouter/use-hash-location";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { AppProvider, useAppContext } from "@/context/AppContext";
 import { WorkspaceProvider, useWorkspaceContext } from "@/context/WorkspaceContext";
 import { MusicProvider } from "@/context/MusicContext";
-import { StreakProvider } from "@/context/StreakContext";
+import { StreakProvider, useStreakContext, formatDigitalClock } from "@/context/StreakContext";
 import { TagsProvider } from "@/context/TagsContext";
 import { VideoProvider } from "@/context/VideoContext";
 import { LockdownProvider, useLockdown } from "@/context/LockdownContext";
@@ -20,7 +21,6 @@ import MusicPage from "@/pages/MusicPage";
 import PDFPage from "@/pages/PDFPage";
 import AdminPage from "@/pages/AdminPage";
 import VideoPage from "@/pages/VideoPage";
-import MovieHub from "@/pages/MovieHub";
 import SavesPage from "@/pages/SavesPage";
 import QuizPage from "@/pages/QuizPage";
 import { AmbientMixer } from "@/components/AmbientMixer";
@@ -36,7 +36,6 @@ import {
   Music, 
   FileText, 
   Video, 
-  Film, 
   Shield, 
   Bookmark,
   X,
@@ -55,7 +54,6 @@ const PAGE_LABELS: Record<string, string> = {
   "/music": "Focus Music",
   "/pdf": "PDF Viewer",
   "/video": "Videos",
-  "/movies": "Movie Hub",
   "/admin": "Admin Panel",
   "/saves": "Saves",
   "/quiz": "AI",
@@ -87,7 +85,6 @@ function CommandPalette() {
     { name: "Focus Music", path: "/music", icon: Music },
     { name: "PDF Viewer", path: "/pdf", icon: FileText },
     { name: "Videos", path: "/video", icon: Video },
-    { name: "Movie Hub", path: "/movies", icon: Film },
     { name: "Admin Panel", path: "/admin", icon: Shield },
     { name: "Saves & Flashcards", path: "/saves", icon: Bookmark },
     { name: "AI", path: "/quiz", icon: BrainCircuit },
@@ -124,9 +121,10 @@ function CommandPalette() {
 
 function TopBar() {
   const { theme, toggleTheme, selectedGoal, setGoalSelectionOpen } = useAppContext();
-  const [location] = useLocation();
+  const [location, setLocation] = useLocation();
   const label = PAGE_LABELS[location] || "";
   const { isActive, endTime } = useLockdown();
+  const { sessionState, sessionElapsedSeconds } = useStreakContext();
   const [timeLeft, setTimeLeft] = useState("");
 
   useEffect(() => {
@@ -164,6 +162,34 @@ function TopBar() {
         )}
       </div>
       <div className="flex items-center gap-3">
+        {sessionState !== "idle" && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            onClick={() => setLocation("/admin")}
+            className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold border cursor-pointer transition-all shadow-xs ${
+              sessionState === "running"
+                ? "bg-emerald-500/10 border-emerald-500/30 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500/20"
+                : "bg-amber-500/10 border-amber-500/30 text-amber-600 dark:text-amber-400 hover:bg-amber-500/20"
+            }`}
+            title="Active Study Session — Click to view in Admin Panel"
+          >
+            <span className="relative flex h-2 w-2">
+              {sessionState === "running" && (
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              )}
+              <span
+                className={`relative inline-flex rounded-full h-2 w-2 ${
+                  sessionState === "running" ? "bg-emerald-500" : "bg-amber-500"
+                }`}
+              ></span>
+            </span>
+            <span className="tabular-nums font-mono text-[11px]">
+              {formatDigitalClock(sessionElapsedSeconds)}
+            </span>
+          </motion.div>
+        )}
+
         {isActive && (
           <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/30 shadow-inner">
             <Shield className="h-4 w-4 text-red-500 animate-pulse" />
@@ -183,7 +209,6 @@ function TopBar() {
     </div>
   );
 }
-
 
 function AutoSyncWorkspace() {
   const { writeMedia, readMediaAsArrayBuffer, isSupported } = useWorkspaceContext();
@@ -261,81 +286,27 @@ function AutoSyncWorkspace() {
 
 function TimeTracker() {
   const [location] = useLocation();
-  const recordsRef = useRef<any>(null);
+  const { sessionState, recordSectionTime } = useStreakContext();
   
   useEffect(() => {
-    try {
-      const raw = localStorage.getItem('jee_time_tracking');
-      if (raw) recordsRef.current = JSON.parse(raw);
-      else recordsRef.current = {};
-    } catch (e) {
-      recordsRef.current = {};
-    }
-    
-    const save = () => {
-      if (recordsRef.current) {
-        localStorage.setItem('jee_time_tracking', JSON.stringify(recordsRef.current));
-      }
-    };
-    
-    const onVisibilityChange = () => {
-      if (document.visibilityState === 'hidden') save();
-    };
-    
-    window.addEventListener('visibilitychange', onVisibilityChange);
-    window.addEventListener('beforeunload', save);
-    
-    const saveInterval = setInterval(save, 30000);
-    
-    return () => {
-      save();
-      window.removeEventListener('visibilitychange', onVisibilityChange);
-      window.removeEventListener('beforeunload', save);
-      clearInterval(saveInterval);
-    };
-  }, []);
+    if (sessionState !== "running") return;
 
-  useEffect(() => {
-    let lastTick = Date.now();
+    let sectionName = "Dashboard";
+    if (location.startsWith("/pdf")) sectionName = "PDF Viewer";
+    else if (location.startsWith("/music")) sectionName = "Music";
+    else if (location.startsWith("/video")) sectionName = "Videos";
+    else if (location.startsWith("/saves")) sectionName = "Saves";
+    else if (location.startsWith("/calendar")) sectionName = "Calendar";
+    else if (location.startsWith("/quiz")) sectionName = "AI";
+    else if (location.startsWith("/admin")) sectionName = "Admin Panel";
+    else if (location.startsWith("/ambient")) sectionName = "Zen Mixer";
+
     const interval = setInterval(() => {
-       const now = Date.now();
-       const deltaSecs = (now - lastTick) / 1000;
-       lastTick = now;
-
-       if (!recordsRef.current) return;
-       let records = recordsRef.current;
-
-       const dateStr = new Date().toISOString().slice(0, 10);
-       
-       if (!records[dateStr]) {
-         records[dateStr] = {
-           date: dateStr,
-           startTime: now,
-           endTime: now,
-           totalSeconds: 0,
-           sections: {}
-         };
-       }
-       
-       const rec = records[dateStr];
-       rec.endTime = now;
-       rec.totalSeconds += deltaSecs;
-       
-       let sectionName = "Dashboard";
-       if (location.startsWith("/pdf")) sectionName = "PDF Viewer";
-       else if (location.startsWith("/music")) sectionName = "Music";
-       else if (location.startsWith("/video")) sectionName = "Videos";
-       else if (location.startsWith("/movies")) sectionName = "Movie Hub";
-       else if (location.startsWith("/saves")) sectionName = "Saves";
-       else if (location.startsWith("/calendar")) sectionName = "Calendar";
-       else if (location.startsWith("/quiz")) sectionName = "AI";
-       else if (location.startsWith("/admin")) sectionName = "Admin Panel";
-       else if (location.startsWith("/ambient")) sectionName = "Zen Mixer";
-       
-       rec.sections[sectionName] = (rec.sections[sectionName] || 0) + deltaSecs;
+      recordSectionTime(sectionName, 1);
     }, 1000);
+
     return () => clearInterval(interval);
-  }, [location]);
+  }, [location, sessionState, recordSectionTime]);
 
   return null;
 }
@@ -381,9 +352,8 @@ function Router() {
         <Route path="/music" component={MusicPage} />
         <Route path="/pdf" component={PDFPage} />
         <Route path="/video" component={VideoPage} />
-        <Route path="/movies" component={MovieHub} />
         <Route path="/admin" component={AdminPage} />
-        <Route path="/saves" component={SavesPage} /> {/* Add the new route for SavesPage */}
+        <Route path="/saves" component={SavesPage} />
         <Route path="/quiz" component={QuizPage} />
         <Route path="/ambient" component={AmbientMixer} />
         <Route component={NotFound} />
@@ -396,7 +366,7 @@ export default function App() {
   useEffect(() => {
     // Ping the PHP logger when the app initially loads.
     // This triggers the server to save the visitor's IP and device info.
-    fetch("/logger.php").catch(() => {});
+    fetch("./logger.php").catch(() => {});
   }, []);
 
   return (
@@ -408,7 +378,7 @@ export default function App() {
               <StreakProvider>
                 <VideoProvider>
                   <TooltipProvider>
-                    <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+                    <WouterRouter hook={useHashLocation}>
                       {/* LockdownProvider requires router context, so it sits inside WouterRouter */}
                       <LockdownProvider key="lockdown-provider">
                         <Router />

@@ -2,8 +2,7 @@ import { useState, useRef, useEffect, useMemo } from "react";
 import { motion, AnimatePresence, Reorder, useDragControls } from "framer-motion";
 import { useMusicContext, Song } from "@/context/MusicContext";
 import { useAppContext } from "@/context/AppContext";
-import { getInvidiousInstances, getPipedInstances } from "@/utils/youtube";
-import { fetchPlaylistClientSide } from "@/utils/search";
+import { fetchPlaylistClientSide, fetchVideoMetadataClientSide, searchYouTubeVideos } from "@/utils/search";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -211,20 +210,60 @@ function EditSongModal({
   );
 }
 
-// ── YouTube Search Modal ──────────────────────────────────────────────────────
 function BlurImage({ src, alt, className }: { src: string; alt?: string; className?: string }) {
   const [loaded, setLoaded] = useState(false);
+  const [hasError, setHasError] = useState(false);
+  const [errorIndex, setErrorIndex] = useState(0);
+
+  useEffect(() => {
+    setLoaded(false);
+    setHasError(false);
+    setErrorIndex(0);
+  }, [src]);
+
+  const ytIdMatch = src ? src.match(/\/vi\/([a-zA-Z0-9_-]{11})\//) : null;
+  const ytId = ytIdMatch ? ytIdMatch[1] : null;
+
+  const fallbacks = ytId ? [
+    `https://i.ytimg.com/vi/${ytId}/hq720.jpg`,
+    `https://img.youtube.com/vi/${ytId}/hq720.jpg`,
+    `https://i.ytimg.com/vi/${ytId}/hqdefault.jpg`,
+    `https://img.youtube.com/vi/${ytId}/hqdefault.jpg`,
+    `https://i.ytimg.com/vi/${ytId}/mqdefault.jpg`,
+    `https://img.youtube.com/vi/${ytId}/mqdefault.jpg`,
+    `https://img.youtube.com/vi/${ytId}/0.jpg`,
+  ] : (src ? [src] : []);
+
+  const currentSrc = fallbacks[errorIndex] || "";
+
   return (
-    <img
-      src={src}
-      alt={alt || ""}
-      className={`${className || ""} transition-all duration-500 ${loaded ? "blur-0 scale-100" : "blur-md scale-110"}`}
-      onLoad={() => setLoaded(true)}
-      onError={(e) => {
-        (e.currentTarget as HTMLImageElement).src = "";
-        setLoaded(true);
-      }}
-    />
+    <div className={`relative w-full h-full bg-muted/60 flex items-center justify-center overflow-hidden rounded ${className || ""}`}>
+      {!hasError && currentSrc ? (
+        <img
+          src={currentSrc}
+          alt=""
+          referrerPolicy="no-referrer"
+          loading="lazy"
+          className={`w-full h-full object-cover transition-opacity duration-300 ${
+            loaded ? "opacity-100" : "opacity-0"
+          }`}
+          onLoad={() => setLoaded(true)}
+          onError={() => {
+            if (errorIndex + 1 < fallbacks.length) {
+              setErrorIndex(prev => prev + 1);
+            } else {
+              setHasError(true);
+              setLoaded(true);
+            }
+          }}
+        />
+      ) : null}
+      {(!loaded || hasError || !currentSrc) && (
+        <div className="absolute inset-0 bg-muted/90 flex items-center justify-center">
+          <Youtube className="w-5 h-5 opacity-40 text-muted-foreground" />
+        </div>
+      )}
+    </div>
   );
 }
 
@@ -274,7 +313,8 @@ function YouTubeSearchModal({
       const ytPlaylistId = extractYouTubePlaylistId(raw);
       const ytId = extractYouTubeId(raw);
 
-      if (ytPlaylistId) {
+      // If it's a pure playlist URL (without watch?v=) and not a mix/radio
+      if (ytPlaylistId && !ytPlaylistId.startsWith("RD") && !ytPlaylistId.startsWith("LL") && !ytPlaylistId.startsWith("WL") && !raw.includes("watch?v=")) {
         try {
           let tracks: any[] = [];
           
@@ -293,9 +333,7 @@ function YouTubeSearchModal({
                 }));
               }
             }
-          } catch (e) {
-            console.warn("Local API failed, falling back to client-side extraction", e);
-          }
+          } catch (e) {}
 
           if (tracks.length === 0) {
             try {
@@ -312,47 +350,51 @@ function YouTubeSearchModal({
             }
           }
 
-          if (tracks.length === 0) {
-            throw new Error("No tracks found in playlist or playlist is private.");
+          if (tracks.length > 0) {
+            setResults(tracks);
+            setLoading(false);
+            return;
           }
+        } catch (err: any) {}
+      }
 
-          setResults(tracks);
+      if (ytId) {
+        // Fetch single video metadata reliably
+        try {
+          const trackMeta = await fetchVideoMetadataClientSide(ytId);
+          setResults([{
+            videoId: ytId,
+            title: trackMeta.title,
+            author: trackMeta.artist,
+            length_seconds: trackMeta.duration,
+            thumbnail: trackMeta.thumbnail
+          }]);
         } catch (err: any) {
-          setError(err.message || "Failed to load playlist.");
+          setResults([{
+            videoId: ytId,
+            title: "YouTube Video",
+            author: "YouTube",
+            length_seconds: 0,
+            thumbnail: `https://img.youtube.com/vi/${ytId}/hqdefault.jpg`
+          }]);
         } finally {
           setLoading(false);
         }
         return;
-      } else if (ytId) {
-        // Fetch single video metadata
+      } else if (ytPlaylistId) {
         try {
-          let videoTitle = "YouTube Video";
-          let videoAuthor = "YouTube";
-          let videoLength = 0;
-          let videoThumb = `https://img.youtube.com/vi/${ytId}/hqdefault.jpg`;
-
-          try {
-            const res = await fetch(`/api/media-info?url=${encodeURIComponent(raw)}`);
-            if (res.ok) {
-              const data = await res.json();
-              if (data.type === "track") {
-                videoTitle = data.title;
-                videoAuthor = data.artist;
-                videoLength = data.duration;
-                videoThumb = data.thumbnail || videoThumb;
-              }
-            }
-          } catch (e) {}
-
-          setResults([{
-            videoId: ytId,
-            title: videoTitle,
-            author: videoAuthor,
-            length_seconds: videoLength,
-            thumbnail: videoThumb
-          }]);
+          const clientResult = await fetchPlaylistClientSide(ytPlaylistId);
+          const tracks = clientResult.tracks.map((t) => ({
+            videoId: t.youtubeId,
+            title: t.title,
+            author: t.artist,
+            length_seconds: t.duration,
+            thumbnail: t.thumbnail
+          }));
+          if (tracks.length === 0) throw new Error("No tracks found in playlist or playlist is private.");
+          setResults(tracks);
         } catch (err: any) {
-          setError("Failed to load video info.");
+          setError(err.message || "Failed to load playlist.");
         } finally {
           setLoading(false);
         }
@@ -361,126 +403,9 @@ function YouTubeSearchModal({
     }
 
     try {
-      const q = encodeURIComponent(raw);
-
-      const fetchWithTimeout = async (url: string, timeoutMs: number) => {
-        const controller = new AbortController();
-        const id = setTimeout(() => controller.abort(), timeoutMs);
-        const response = await fetch(url, { signal: controller.signal });
-        clearTimeout(id);
-        if (!response.ok) throw new Error("HTTP error");
-        return response;
-      };
-
-      const fetchPiped = async (instance: string) => {
-        const res = await fetchWithTimeout(`${instance}/search?q=${q}&filter=all`, 5000);
-        const data = await res.json();
-        if (!data?.items?.length) throw new Error("No data");
-        const videos = data.items.filter((item: any) => item.type === "stream");
-        if (!videos.length) throw new Error("No videos");
-        return videos.slice(0, 50).map((v: any) => {
-          const vId = v.url.includes("?v=") ? v.url.split("?v=")[1].split("&")[0] : v.url.split("/").pop();
-          return {
-            videoId: vId,
-            title: v.title || "Unknown",
-            author: v.uploaderName || "Unknown",
-            length_seconds: v.duration || 0,
-            thumbnail: `https://i.ytimg.com/vi/${vId}/hqdefault.jpg`,
-          };
-        });
-      };
-
-      const fetchInvidious = async (instance: string) => {
-        const res = await fetchWithTimeout(`${instance}/api/v1/search?q=${q}&type=video`, 4000);
-        const data = await res.json();
-        if (!Array.isArray(data) || !data.length) throw new Error("No data");
-        return data.slice(0, 50).map((v: any) => ({
-          videoId: v.videoId,
-          title: v.title || "Unknown",
-          author: v.author || "Unknown",
-          length_seconds: v.lengthSeconds || v.length_seconds || 0,
-          thumbnail: `https://i.ytimg.com/vi/${v.videoId}/hqdefault.jpg`,
-        }));
-      };
-
-      const fetchProxy = async (proxyUrl: string) => {
-        const res = await fetchWithTimeout(proxyUrl, 5000);
-        const contentType = res.headers.get("content-type") || "";
-        let html = "";
-        if (contentType.includes("application/json")) {
-          const data = await res.json();
-          html = data.contents || "";
-        } else {
-          html = await res.text();
-        }
-
-        const match =
-          html.match(/var\s+ytInitialData\s*=\s*(\{[\s\S]+?\});/s) ||
-          html.match(/ytInitialData\s*=\s*(\{[\s\S]+?\});/s) ||
-          html.match(/window\["ytInitialData"\]\s*=\s*(\{[\s\S]+?\});/s);
-        if (!match) throw new Error("No ytInitialData");
-        const ytData = JSON.parse(match[1]);
-        const videos: any[] = [];
-        const findVideos = (obj: any) => {
-          if (videos.length >= 50) return;
-          if (Array.isArray(obj)) {
-            for (const item of obj) findVideos(item);
-          } else if (obj !== null && typeof obj === "object") {
-            if (obj.videoRenderer && obj.videoRenderer.videoId) {
-              videos.push(obj.videoRenderer);
-            } else {
-              for (const key of Object.keys(obj)) findVideos(obj[key]);
-            }
-          }
-        };
-        findVideos(ytData);
-
-        if (videos.length === 0) throw new Error("No videos found in proxy");
-
-        return videos.map((v) => {
-          const timeStr = v.lengthText?.simpleText || "0:00";
-          const parts = timeStr.split(":").map(Number);
-          const length_seconds =
-            parts.length === 3
-              ? parts[0] * 3600 + parts[1] * 60 + parts[2]
-              : parts.length === 2
-                ? parts[0] * 60 + parts[1]
-                : parts[0] || 0;
-
-          return {
-            videoId: v.videoId,
-            title: v.title?.runs?.[0]?.text || "Unknown",
-            author: v.ownerText?.runs?.[0]?.text || "Unknown",
-            length_seconds,
-            thumbnail: `https://i.ytimg.com/vi/${v.videoId}/hqdefault.jpg`,
-          };
-        });
-      };
-
-      const fetchLocal = async () => {
-        const res = await fetchWithTimeout(`/api/yt-search?q=${q}`, 5000);
-        const data = await res.json();
-        if (data.error) throw new Error(data.error);
-        if (!Array.isArray(data.results) || !data.results.length) throw new Error("No results");
-        return data.results;
-      };
-
-      const invidious_instances = await getInvidiousInstances();
-      const piped_instances = getPipedInstances();
-
-      const allTasks = [
-        fetchLocal(),
-        ...piped_instances.map((instance) => fetchPiped(instance)),
-        ...invidious_instances.map((instance) => fetchInvidious(instance)),
-        fetchProxy(`https://api.allorigins.win/get?url=${encodeURIComponent(`https://www.youtube.com/results?search_query=${q}&gl=US&hl=en`)}`),
-        fetchProxy(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(`https://www.youtube.com/results?search_query=${q}&gl=US&hl=en`)}`),
-        fetchProxy(`https://corsproxy.io/?${encodeURIComponent(`https://www.youtube.com/results?search_query=${q}&gl=US&hl=en`)}`)
-      ];
-
-      const fastestResults = await Promise.any(allTasks);
-
-      if (fastestResults && fastestResults.length > 0) {
-        setResults(fastestResults.slice(0, 50));
+      const searchResults = await searchYouTubeVideos(raw);
+      if (searchResults && searchResults.length > 0) {
+        setResults(searchResults.slice(0, 50));
       } else {
         setError("No results found. Try a different search term.");
       }
@@ -855,7 +780,7 @@ function AddSongModal({
           return m ? { type: m[1], id: m[2] } : null;
         })();
 
-        if (ytPlaylistId) {
+        if (ytPlaylistId && !ytPlaylistId.startsWith("RD") && !ytPlaylistId.startsWith("LL") && !ytPlaylistId.startsWith("WL") && !raw.includes("watch?v=")) {
           try {
             const clientResult = await fetchPlaylistClientSide(ytPlaylistId);
             const formattedTracks = clientResult.tracks.map((t) => ({
@@ -875,38 +800,54 @@ function AddSongModal({
               trackCount: formattedTracks.length,
               tracks: formattedTracks
             });
+            return;
           } catch (err: any) {
-            throw new Error(`YouTube Playlist Error: ${err.message}`);
-          }
-
-        } else if (ytId) {
-          try {
-            let oData: any = null;
-            try {
-              const noembedRes = await fetch(`https://noembed.com/embed?url=https://www.youtube.com/watch?v=${ytId}`);
-              if (noembedRes.ok) {
-                const parsed = await noembedRes.json();
-                if (!parsed.error) oData = parsed;
-              }
-            } catch (e) {}
-            if (!oData) {
-              const oembedUrl = `https://www.youtube.com/oembed?url=${encodeURIComponent(`https://www.youtube.com/watch?v=${ytId}`)}&format=json`;
-              const proxyData = await fetchHtml(oembedUrl);
-              oData = JSON.parse(proxyData);
+            if (!ytId) {
+              throw new Error(`YouTube Playlist Error: ${err.message}`);
             }
+          }
+        }
+
+        if (ytId) {
+          try {
+            const trackMeta = await fetchVideoMetadataClientSide(ytId);
             completeFetch({
               type: "track",
-              title: oData?.title ?? "Unknown Title",
-              artist: oData?.author_name ?? "YouTube",
-              thumbnail: `https://img.youtube.com/vi/${ytId}/hqdefault.jpg`,
-              duration: 0,
-              streamUrl: `https://www.youtube.com/watch?v=${ytId}`,
+              title: trackMeta.title,
+              artist: trackMeta.artist,
+              thumbnail: trackMeta.thumbnail,
+              duration: trackMeta.duration,
+              streamUrl: trackMeta.streamUrl,
               youtubeId: ytId,
             });
+            return;
           } catch (e) {
             throw new Error("Could not fetch YouTube video info.");
           }
+        } else if (ytPlaylistId) {
+          try {
+            const clientResult = await fetchPlaylistClientSide(ytPlaylistId);
+            const formattedTracks = clientResult.tracks.map((t) => ({
+              type: "track" as const,
+              title: t.title,
+              artist: t.artist,
+              thumbnail: t.thumbnail,
+              duration: t.duration,
+              streamUrl: t.streamUrl,
+              youtubeId: t.youtubeId
+            }));
 
+            completeFetch({
+              type: "playlist",
+              name: clientResult.name,
+              thumbnail: formattedTracks[0]?.thumbnail || "",
+              trackCount: formattedTracks.length,
+              tracks: formattedTracks
+            });
+            return;
+          } catch (err: any) {
+            throw new Error(`YouTube Playlist Error: ${err.message}`);
+          }
         } else if (spotifyInfo) {
           let isPlaylist = spotifyInfo.type === "playlist" || spotifyInfo.type === "album";
           let token = "";

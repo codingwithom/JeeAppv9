@@ -8,7 +8,13 @@ export function useLocalStorage<T>(key: string, initialValue: T) {
   const [storedValue, setStoredValue] = useState<T>(() => {
     try {
       const item = window.localStorage.getItem(prefixedKey);
-      if (item !== null) return JSON.parse(item);
+      if (item !== null) {
+        try {
+          return JSON.parse(item);
+        } catch {
+          return item as unknown as T;
+        }
+      }
 
       // One-time auto-migration: if the caller passed a jee_-prefixed key, the old hook
       // would have stored it under jee_jee_<key>. Copy that data to the correct key.
@@ -19,7 +25,11 @@ export function useLocalStorage<T>(key: string, initialValue: T) {
           try {
             window.localStorage.setItem(prefixedKey, legacyItem);
             window.localStorage.removeItem(legacyKey);
-            return JSON.parse(legacyItem);
+            try {
+              return JSON.parse(legacyItem);
+            } catch {
+              return legacyItem as unknown as T;
+            }
           } catch {
             return initialValue;
           }

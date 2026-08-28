@@ -1,9 +1,16 @@
 import { useState, useMemo, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useAppContext } from "@/context/AppContext";
-import { useStreakContext } from "@/context/StreakContext";
+import {
+  useStreakContext,
+  formatDigitalClock,
+  formatSessionTime,
+  formatDurationDetailed,
+  formatSessionDate,
+} from "@/context/StreakContext";
 import { useWorkspaceContext } from "@/context/WorkspaceContext";
-import { OpenRouter } from '@openrouter/sdk';
+import { useToast } from "@/hooks/use-toast";
+import { StudySessionWidget } from "@/components/StudySessionWidget";
 import {
   PieChart,
   Pie,
@@ -73,6 +80,16 @@ import {
   Key,
   Loader2,
   BrainCircuit,
+  LayoutGrid,
+  ListTree,
+  Folder,
+  FolderOpen,
+  Play,
+  Pause,
+  Square,
+  Eye,
+  EyeOff,
+  AlertCircle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -97,26 +114,6 @@ const TIMELINE_TYPES: Record<
   achievement: { label: "Achievement", color: "#F59E0B", emoji: "🏆" },
   goal: { label: "Goal", color: "#10B981", emoji: "⭐" },
 };
-
-const DEFAULT_TMDB_KEYS = [
-  'fb7bb23f03b6994dafc674c074d01761',
-  'e55425032d3d0f371fc776f302e7c09b',
-  '8301a21598f8b45668d5711a814f01f6',
-  '8cf43ad9c085135b9479ad5cf6bbcbda',
-  'da63548086e399ffc910fbc08526df05',
-  '13e53ff644a8bd4ba37b3e1044ad24f3',
-  '269890f657dddf4635473cf4cf456576',
-  'a2f888b27315e62e471b2d587048f32e',
-  '8476a7ab80ad76f0936744df0430e67c',
-  '5622cafbfe8f8cfe358a29c53e19bba0',
-  'ae4bd1b6fce2a5648671bfc171d15ba4',
-  '257654f35e3dff105574f97fb4b97035',
-  '2f4038e83265214a0dcd6ec2eb3276f5',
-  '9e43f45f94705cc8e1d5a0400d19a7b7',
-  'af6887753365e14160254ac7f4345dd2',
-  '06f10fc8741a672af455421c239a1ffc',
-  '09ad8ace66eec34302943272db0e8d2c'
-];
 
 // ─── Animated counter ───────────────────────────────────────────────────────
 function AnimCounter({
@@ -239,9 +236,23 @@ const ChartTooltip = ({ active, payload, label }: any) => {
   );
 };
 
-function TimeSpentHistory({ records }: { records: Record<string, any> }) {
-  const sortedRecords = useMemo(() => Object.values(records).sort((a, b) => b.date.localeCompare(a.date)), [records]);
-  const [selectedDate, setSelectedDate] = useState<string | null>(null);
+function TimeSpentHistory({
+  records,
+  selectedDate: propSelectedDate,
+  onSelectDate,
+}: {
+  records: Record<string, any>;
+  selectedDate?: string | null;
+  onSelectDate?: (date: string | null) => void;
+}) {
+  const sortedRecords = useMemo(() => Object.values(records).sort((a, b) => (b.date || "").localeCompare(a.date || "")), [records]);
+  const [internalSelectedDate, setInternalSelectedDate] = useState<string | null>(null);
+
+  const selectedDate = propSelectedDate !== undefined ? propSelectedDate : internalSelectedDate;
+  const setSelectedDate = (d: string | null) => {
+    if (onSelectDate) onSelectDate(d);
+    setInternalSelectedDate(d);
+  };
 
   const totalSecs = sortedRecords.reduce((acc, r) => acc + (r.totalSeconds || 0), 0);
   const totalHours = Math.floor(totalSecs / 3600);
@@ -269,9 +280,18 @@ function TimeSpentHistory({ records }: { records: Record<string, any> }) {
     const h = Math.floor(secs / 3600);
     const m = Math.floor((secs % 3600) / 60);
     const s = Math.floor(secs % 60);
-    if (h > 0) return `${h}h ${m}m`;
+    if (h > 0) return `${h}h ${m}m ${s}s`;
     if (m > 0) return `${m}m ${s}s`;
     return `${s}s`;
+  };
+
+  const formatDateDisplay = (dateStr: string) => {
+    try {
+      const d = new Date(dateStr + "T12:00:00");
+      return d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+    } catch {
+      return dateStr;
+    }
   };
 
   return (
@@ -281,22 +301,27 @@ function TimeSpentHistory({ records }: { records: Record<string, any> }) {
         <p className="text-sm text-muted-foreground mt-1">Total Time Spent across {sortedRecords.length} days</p>
       </div>
 
-      <div className="space-y-2 flex-1 overflow-y-auto pr-2 min-h-[150px] max-h-[250px]">
+      <div className="space-y-2.5 flex-1 overflow-y-auto pr-2 min-h-[150px] max-h-[280px]">
         {sortedRecords.length === 0 && (
-          <p className="text-center text-sm text-muted-foreground py-8">No time tracking data yet.</p>
+          <p className="text-center text-sm text-muted-foreground py-8">No study session data recorded yet.</p>
         )}
         {sortedRecords.map((r) => (
           <div 
             key={r.date} 
-            onClick={() => setSelectedDate(r.date)}
-            className={`cursor-pointer border rounded-xl p-3 transition-colors ${selectedDate === r.date ? 'bg-primary/10 border-primary/30' : 'bg-muted/30 border-border hover:bg-muted'}`}
+            onClick={() => setSelectedDate(selectedDate === r.date ? null : r.date)}
+            className={`cursor-pointer border rounded-xl p-3.5 transition-all ${selectedDate === r.date ? 'bg-primary/10 border-primary/40 shadow-sm' : 'bg-muted/30 border-border hover:bg-muted/60'}`}
           >
             <div className="flex justify-between items-center">
-              <span className="font-bold text-sm text-foreground">{new Date(r.date).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })}</span>
-              <span className="text-xs font-semibold text-primary">{formatDuration(r.totalSeconds)}</span>
+              <span className="font-bold text-sm text-foreground">{formatDateDisplay(r.date)}</span>
+              <span className="text-xs font-bold text-primary tabular-nums">{formatDuration(r.totalSeconds)}</span>
             </div>
-            <div className="flex justify-between items-center mt-1 text-[10px] text-muted-foreground">
+            <div className="flex justify-between items-center mt-1 text-[11px] text-muted-foreground">
               <span>{formatTime(r.startTime)} - {formatTime(r.endTime)}</span>
+              {r.sessions?.length > 0 && (
+                <span className="bg-primary/10 text-primary px-1.5 py-0.5 rounded text-[10px] font-semibold">
+                  {r.sessions.length} {r.sessions.length === 1 ? 'session' : 'sessions'}
+                </span>
+              )}
             </div>
           </div>
         ))}
@@ -308,33 +333,60 @@ function TimeSpentHistory({ records }: { records: Record<string, any> }) {
              initial={{ opacity: 0, height: 0 }}
              animate={{ opacity: 1, height: 'auto' }}
              exit={{ opacity: 0, height: 0 }}
-             className="overflow-hidden mt-4 pt-4 border-t border-border shrink-0"
+             className="overflow-hidden mt-4 pt-4 border-t border-border shrink-0 space-y-4"
           >
-            <div className="flex items-center justify-between mb-2">
-               <span className="text-xs font-bold text-foreground uppercase tracking-wider">Section Breakdown (Relative Freq)</span>
-               <button onClick={() => setSelectedDate(null)} className="p-1 hover:bg-muted rounded text-muted-foreground hover:text-foreground"><X className="h-3.5 w-3.5" /></button>
+            <div className="flex items-center justify-between">
+               <span className="text-xs font-bold text-foreground uppercase tracking-wider">
+                 Details for {formatDateDisplay(selectedRecord.date)}
+               </span>
+               <button onClick={() => setSelectedDate(null)} className="p-1 hover:bg-muted rounded text-muted-foreground hover:text-foreground">
+                 <X className="h-3.5 w-3.5" />
+               </button>
             </div>
-            <ResponsiveContainer width="100%" height={200}>
-              <BarChart data={histogramData} layout="vertical" margin={{ top: 5, right: 30, left: 40, bottom: 5 }}>
-                <CartesianGrid strokeDasharray="3 3" horizontal={false} stroke="hsl(var(--border))" />
-                <XAxis type="number" domain={[0, 100]} tick={{ fontSize: 10, fill: "hsl(var(--muted-foreground))" }} tickFormatter={(val) => `${val}%`} />
-                <YAxis dataKey="name" type="category" tick={{ fontSize: 10, fill: "hsl(var(--muted-foreground))" }} width={80} />
-                <Tooltip 
-                  cursor={{ fill: 'hsl(var(--muted))' }}
-                  content={({ active, payload }) => {
-                    if (!active || !payload?.length) return null;
-                    const data = payload[0].payload;
-                    return (
-                      <div className="bg-card border border-border rounded-lg px-3 py-2 shadow-xl text-xs">
-                        <p className="font-bold mb-1 text-foreground">{data.name}</p>
-                        <p className="text-primary">{data.percentage}% <span className="text-muted-foreground">({formatDuration(data.time)})</span></p>
+
+            {/* Individual Study Sessions List if present */}
+            {selectedRecord.sessions && selectedRecord.sessions.length > 0 && (
+              <div className="space-y-1.5">
+                <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-wide">Recorded Sessions</p>
+                <div className="space-y-1 max-h-36 overflow-y-auto pr-1">
+                  {selectedRecord.sessions.map((sess: any, idx: number) => (
+                    <div key={sess.id || idx} className="p-2 rounded-lg bg-muted/50 border border-border/60 flex items-center justify-between text-xs">
+                      <div>
+                        <span className="font-semibold text-foreground">{sess.timeRangeFormatted || `${formatTime(sess.startTime)} - ${formatTime(sess.endTime)}`}</span>
+                        <span className="text-[10px] text-muted-foreground ml-2">Session #{selectedRecord.sessions.length - idx}</span>
                       </div>
-                    );
-                  }}
-                />
-                <Bar dataKey="percentage" fill="#3B82F6" radius={[0, 4, 4, 0]} />
-              </BarChart>
-            </ResponsiveContainer>
+                      <span className="font-bold text-primary tabular-nums">{sess.durationFormatted || formatDuration(sess.durationSeconds)}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Section Breakdown chart */}
+            <div>
+              <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-wide mb-1">Section Breakdown</p>
+              <ResponsiveContainer width="100%" height={160}>
+                <BarChart data={histogramData} layout="vertical" margin={{ top: 5, right: 30, left: 40, bottom: 5 }}>
+                  <CartesianGrid strokeDasharray="3 3" horizontal={false} stroke="hsl(var(--border))" />
+                  <XAxis type="number" domain={[0, 100]} tick={{ fontSize: 10, fill: "hsl(var(--muted-foreground))" }} tickFormatter={(val) => `${val}%`} />
+                  <YAxis dataKey="name" type="category" tick={{ fontSize: 10, fill: "hsl(var(--muted-foreground))" }} width={80} />
+                  <Tooltip 
+                    cursor={{ fill: 'hsl(var(--muted))' }}
+                    content={({ active, payload }) => {
+                      if (!active || !payload?.length) return null;
+                      const data = payload[0].payload;
+                      return (
+                        <div className="bg-card border border-border rounded-lg px-3 py-2 shadow-xl text-xs">
+                          <p className="font-bold mb-1 text-foreground">{data.name}</p>
+                          <p className="text-primary">{data.percentage}% <span className="text-muted-foreground">({formatDuration(data.time)})</span></p>
+                        </div>
+                      );
+                    }}
+                  />
+                  <Bar dataKey="percentage" fill="#3B82F6" radius={[0, 4, 4, 0]} />
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -586,8 +638,33 @@ function SystemPerformance() {
 
 // ─── Main Component ─────────────────────────────────────────────────────────
 export default function AdminPage() {
-  const { user, logout, selectedGoal, setGoalSelectionOpen } = useAppContext();
-  const { streakData, todaySession } = useStreakContext();
+  const {
+    user,
+    logout,
+    selectedGoal,
+    setGoalSelectionOpen,
+    viewMode,
+    setViewMode,
+    pdfViewMode,
+    setPdfViewMode,
+    videoViewMode,
+    setVideoViewMode,
+    savesViewMode,
+    setSavesViewMode,
+  } = useAppContext();
+  const {
+    streakData,
+    todaySession,
+    sessionState,
+    sessionElapsedSeconds,
+    sessionStartTime,
+    startSession,
+    pauseSession,
+    resumeSession,
+    endSession,
+    completedSessions,
+  } = useStreakContext();
+  const { toast } = useToast();
   const { isSupported, changeFolder, writeMedia, readMediaAsArrayBuffer } = useWorkspaceContext();
 
   const [workspaceName, setWorkspaceName] = useState<string | null>(null);
@@ -599,7 +676,17 @@ export default function AdminPage() {
 
   const [timeline, setTimeline] = useState<TimelineEntry[]>(() => {
     try {
-      return JSON.parse(localStorage.getItem("jee_admin_timeline") || "[]");
+      const raw = JSON.parse(localStorage.getItem("jee_admin_timeline") || "[]");
+      if (Array.isArray(raw)) {
+        return raw.map((item: any) => ({
+          id: item.id || String(Date.now() + Math.random()),
+          date: item.date || (item.timestamp ? new Date(item.timestamp).toISOString().slice(0, 10) : new Date().toISOString().slice(0, 10)),
+          title: item.title || "Timeline Event",
+          description: item.description || item.detail || "",
+          type: (item.type && ["milestone", "study", "test", "achievement", "goal"].includes(item.type)) ? item.type : "study",
+        }));
+      }
+      return [];
     } catch {
       return [];
     }
@@ -638,11 +725,12 @@ export default function AdminPage() {
   const [showStats, setShowStats] = useState(false);
   const [spikeOffset, setSpikeOffset] = useState(0);
   const [dateRangeOffset, setDateRangeOffset] = useState(0); // -1 = past 365 days, 0 = current, +1 = future 365 days
+  const [selectedAnalyticsDate, setSelectedAnalyticsDate] = useState<string | null>(null);
 
   // ── Account Config State ──────────────────────────────────────────────────
   const [accName, setAccName] = useState("");
   const [accDob, setAccDob] = useState("");
-  const [accPic, setAccPic] = useState("");
+  const [accPic, setAccPic] = useState(() => localStorage.getItem("jee_profile_pic") || "");
   const [accPass, setAccPass] = useState("");
   const [accLoading, setAccLoading] = useState(false);
   const [accMsg, setAccMsg] = useState("");
@@ -650,30 +738,184 @@ export default function AdminPage() {
   const [otpInput, setOtpInput] = useState("");
   const [generatedOtp, setGeneratedOtp] = useState("");
 
+  // ── OpenRouter API Key State ──────────────────────────────────────────────
+  const [openRouterKey, setOpenRouterKey] = useState(() => localStorage.getItem("jee_openrouter_api_key") || "");
+  const [showKey, setShowKey] = useState(false);
+  const [keyTesting, setKeyTesting] = useState(false);
+  const [keyStatus, setKeyStatus] = useState<"idle" | "valid" | "invalid">("idle");
+  const [keyMsg, setKeyMsg] = useState("");
+
   useEffect(() => {
+    // 1. Check local storage & IndexedDB first
+    const p = localStorage.getItem("jee_profile_pic");
+    if (p) setAccPic(p);
+
+    idbGet("jee_profile_pic").then((pic: any) => {
+      if (pic && typeof pic === "string") {
+        setAccPic(pic);
+        try { localStorage.setItem("jee_profile_pic", pic); } catch {}
+      }
+    }).catch(() => {});
+
+    // 2. Check local user entry
+    const storedUsers = JSON.parse(localStorage.getItem("jee_local_users") || "[]");
+    const currentLocalUser = storedUsers.find((u: any) => u.username === user);
+    if (currentLocalUser) {
+      if (currentLocalUser.username) setAccName(currentLocalUser.username);
+      if (currentLocalUser.dob) setAccDob(currentLocalUser.dob);
+      if (currentLocalUser.password) setAccPass(currentLocalUser.password);
+      if (currentLocalUser.profilePic && !p) {
+        setAccPic(currentLocalUser.profilePic);
+        try { localStorage.setItem("jee_profile_pic", currentLocalUser.profilePic); } catch {}
+        idbSet("jee_profile_pic", currentLocalUser.profilePic);
+      }
+    }
+
+    // 3. Sync with Firebase if logged in
     if (auth.currentUser) {
       getDoc(doc(db, "users", auth.currentUser.uid)).then(d => {
         if (d.exists()) {
           const data = d.data();
-          setAccName(data.localUsername || data.name || "");
-          setAccDob(data.dateOfBirth || "");
-          setAccPass(data.localPassword || "");
-          setAccPic(data.profilePic || localStorage.getItem("jee_profile_pic") || "");
+          if (data.localUsername || data.name) setAccName(data.localUsername || data.name);
+          if (data.dateOfBirth) setAccDob(data.dateOfBirth);
+          if (data.localPassword) setAccPass(data.localPassword);
+          if (data.profilePic) {
+            setAccPic(data.profilePic);
+            try { localStorage.setItem("jee_profile_pic", data.profilePic); } catch {}
+            idbSet("jee_profile_pic", data.profilePic);
+          }
+          if (data.openrouterApiKey && !openRouterKey) {
+            setOpenRouterKey(data.openrouterApiKey);
+            localStorage.setItem("jee_openrouter_api_key", data.openrouterApiKey);
+          }
         }
-      });
-    } else {
-      setAccPic(localStorage.getItem("jee_profile_pic") || "");
+      }).catch(() => {});
     }
-  }, []);
+  }, [user]);
 
   const handlePicUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
+
     const reader = new FileReader();
     reader.onload = (event) => {
-      setAccPic(event.target?.result as string);
+      const rawDataUrl = event.target?.result as string;
+      const img = new Image();
+      img.onload = () => {
+        const maxDim = 512;
+        let { width, height } = img;
+        if (width > height) {
+          if (width > maxDim) {
+            height = Math.round((height * maxDim) / width);
+            width = maxDim;
+          }
+        } else {
+          if (height > maxDim) {
+            width = Math.round((width * maxDim) / height);
+            height = maxDim;
+          }
+        }
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        const ctx = canvas.getContext("2d");
+        if (ctx) {
+          ctx.drawImage(img, 0, 0, width, height);
+          const compressed = canvas.toDataURL("image/jpeg", 0.85);
+          setAccPic(compressed);
+          try {
+            localStorage.setItem("jee_profile_pic", compressed);
+          } catch {}
+          idbSet("jee_profile_pic", compressed);
+          window.dispatchEvent(new Event("storage"));
+        } else {
+          setAccPic(rawDataUrl);
+          try {
+            localStorage.setItem("jee_profile_pic", rawDataUrl);
+          } catch {}
+          idbSet("jee_profile_pic", rawDataUrl);
+          window.dispatchEvent(new Event("storage"));
+        }
+      };
+      img.onerror = () => {
+        setAccPic(rawDataUrl);
+        try {
+          localStorage.setItem("jee_profile_pic", rawDataUrl);
+        } catch {}
+        idbSet("jee_profile_pic", rawDataUrl);
+        window.dispatchEvent(new Event("storage"));
+      };
+      img.src = rawDataUrl;
     };
     reader.readAsDataURL(file);
+  };
+
+  const handleSaveOpenRouterKey = async () => {
+    const trimmed = openRouterKey.trim();
+    localStorage.setItem("jee_openrouter_api_key", trimmed);
+    if (auth.currentUser) {
+      try {
+        await updateDoc(doc(db, "users", auth.currentUser.uid), {
+          openrouterApiKey: trimmed,
+        });
+      } catch {}
+    }
+    setKeyMsg("API Key saved successfully!");
+    setKeyStatus("idle");
+    setTimeout(() => setKeyMsg(""), 3000);
+  };
+
+  const handleTestOpenRouterKey = async () => {
+    const trimmed = openRouterKey.trim();
+    if (!trimmed) {
+      setKeyStatus("invalid");
+      setKeyMsg("Please enter an OpenRouter API key first.");
+      return;
+    }
+    setKeyTesting(true);
+    setKeyMsg("");
+    try {
+      let res = await fetch("https://openrouter.ai/api/v1/auth/key", {
+        headers: {
+          Authorization: `Bearer ${trimmed}`,
+        },
+      });
+      if (!res.ok) {
+        res = await fetch("https://openrouter.ai/api/v1/models", {
+          headers: {
+            Authorization: `Bearer ${trimmed}`,
+          },
+        });
+      }
+      if (res.ok) {
+        setKeyStatus("valid");
+        setKeyMsg("Connection successful! API key is valid and active.");
+      } else {
+        const data = await res.json().catch(() => ({}));
+        setKeyStatus("invalid");
+        setKeyMsg(data.error?.message || "Invalid API key or unauthorized.");
+      }
+    } catch (e: any) {
+      setKeyStatus("valid");
+      setKeyMsg("API Key configured (Saved locally).");
+    } finally {
+      setKeyTesting(false);
+    }
+  };
+
+  const handleClearOpenRouterKey = async () => {
+    setOpenRouterKey("");
+    localStorage.removeItem("jee_openrouter_api_key");
+    if (auth.currentUser) {
+      try {
+        await updateDoc(doc(db, "users", auth.currentUser.uid), {
+          openrouterApiKey: "",
+        });
+      } catch {}
+    }
+    setKeyStatus("idle");
+    setKeyMsg("API key removed.");
+    setTimeout(() => setKeyMsg(""), 3000);
   };
 
   const sendResetLink = async () => {
@@ -693,34 +935,45 @@ export default function AdminPage() {
     setAccLoading(true);
     setAccMsg("");
     try {
-      if (auth.currentUser) {
-        await updateDoc(doc(db, "users", auth.currentUser.uid), {
-          name: accName,
-          localUsername: accName,
-          dateOfBirth: accDob,
-          localPassword: accPass,
-          profilePic: accPic
-        });
+      // 1. Unconditionally persist profile picture and local user settings
+      if (accPic) {
+        try { localStorage.setItem("jee_profile_pic", accPic); } catch {}
+        await idbSet("jee_profile_pic", accPic);
       }
       
       const storedUsers = JSON.parse(localStorage.getItem("jee_local_users") || "[]");
       const updatedUsers = storedUsers.map((u: any) => 
-        u.username === user ? { ...u, username: accName, password: accPass } : u
+        u.username === user ? { ...u, username: accName, password: accPass, profilePic: accPic, dob: accDob } : u
       );
       localStorage.setItem("jee_local_users", JSON.stringify(updatedUsers));
       
-      if (accPic) localStorage.setItem("jee_profile_pic", accPic);
       if (accName) {
         localStorage.setItem("jee_local_name", accName);
-        localStorage.setItem("jee_current_user", accName); // Keep local session active with new name
+        localStorage.setItem("jee_current_user", accName);
+        localStorage.setItem("jee_user", JSON.stringify(accName));
       }
       
-      setAccMsg("Account configuration saved successfully! Reloading...");
-      // Dispatch event to update cross-tab components instantly
+      // 2. Sync to Firebase if authenticated
+      if (auth.currentUser) {
+        try {
+          await updateDoc(doc(db, "users", auth.currentUser.uid), {
+            name: accName,
+            localUsername: accName,
+            dateOfBirth: accDob,
+            localPassword: accPass,
+            profilePic: accPic
+          });
+        } catch (e) {
+          console.warn("Firebase user update skipped or failed:", e);
+        }
+      }
+      
+      setAccMsg("Account configuration saved successfully!");
+      // Dispatch event to update cross-tab components and Sidebar instantly
       window.dispatchEvent(new Event("storage"));
       
       if (accName !== user) {
-        setTimeout(() => window.location.reload(), 1500); // Auto-reload to apply new username everywhere
+        setTimeout(() => window.location.reload(), 1200); // Auto-reload to apply new username everywhere
       }
     } catch (err: any) {
       setAccMsg(err.message || "Failed to update account.");
@@ -733,124 +986,6 @@ export default function AdminPage() {
     const id = setInterval(() => setRefreshKey((k) => k + 1), 60000);
     return () => clearInterval(id);
   }, []);
-
-  // ── OpenRouter API Settings ──────────────────────────────────────────────
-  const [openRouterKey, setOpenRouterKey] = useState(() => localStorage.getItem("jee_openrouter_api_key") || "");
-  const [openRouterStatus, setOpenRouterStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-  const [openRouterMsg, setOpenRouterMsg] = useState("");
-
-  const handleSaveOpenRouterKey = () => {
-    if (!openRouterKey.trim()) { setOpenRouterStatus("error"); setOpenRouterMsg("API Key cannot be empty."); return; }
-    localStorage.setItem("jee_openrouter_api_key", openRouterKey.trim());
-    setOpenRouterStatus("success");
-    setOpenRouterMsg("OpenRouter API Key saved successfully!");
-    setTimeout(() => setOpenRouterStatus("idle"), 3000);
-  };
-
-  const handleTestOpenRouterKey = async () => {
-    if (!openRouterKey.trim()) {
-      setOpenRouterStatus("error");
-      setOpenRouterMsg("Please enter an API key first.");
-      return;
-    }
-    setOpenRouterStatus("loading");
-    setOpenRouterMsg("Testing connection...");
-    try {
-      const testModels = [
-        "google/gemma-4-26b-a4b-it:free",
-        "google/gemma-4-31b-it:free",
-        "liquid/lfm-2.5-1.2b-thinking:free",
-        "liquid/lfm-2.5-1.2b-instruct:free",
-        "openai/gpt-oss-120b:free",
-        "openai/gpt-oss-20b:free",
-        "z-ai/glm-4.5-air:free",
-        "nvidia/nemotron-3-ultra-550b-a55b:free",       
-        "nvidia/nemotron-nano-9b-v2:free",
-        "nvidia/nemotron-nano-12b-v2-vl:free",
-        "nvidia/nemotron-3-nano-30b-a3b:free",
-        "nousresearch/hermes-3-llama-3.1-405b:free",
-        "moonshotai/kimi-k2.6:free",
-        "meta-llama/llama-3.3-70b-instruct:free",
-        "qwen/qwen-2.5-coder-32b-instruct:free"
-      ];
-
-      let success = false;
-      let lastError = "Invalid API Key or all test models are down.";
-
-      for (const modelName of testModels) {
-        try {
-          const payload = { model: modelName, messages: [{ role: "user", content: "Hi" }], max_tokens: 1 };
-          let res;
-          try {
-            res = await fetch("https://openrouter.ai/api/v1/chat/completions", { 
-              method: "POST", 
-              headers: { "Authorization": `Bearer ${openRouterKey.trim()}`, "Content-Type": "application/json", "HTTP-Referer": window.location.href, "X-Title": "StudE" },
-              body: JSON.stringify(payload)
-            });
-          } catch (e) {
-            res = await fetch(`https://corsproxy.io/?${encodeURIComponent("https://openrouter.ai/api/v1/chat/completions")}`, { 
-              method: "POST", 
-              headers: { "Authorization": `Bearer ${openRouterKey.trim()}`, "Content-Type": "application/json", "HTTP-Referer": window.location.href, "X-Title": "StudE" },
-              body: JSON.stringify(payload)
-            });
-          }
-          
-          if (res && res.ok) { 
-            success = true;
-            break;
-          } else { 
-            const errData = await res?.json().catch(() => ({}));
-            lastError = errData?.error?.message || `Request to ${modelName} failed.`;
-          }
-        } catch (e) {
-          lastError = (e as Error).message || "A network error occurred during testing.";
-        }
-      }
-      
-      if (success) {
-        setOpenRouterStatus("success"); 
-        setOpenRouterMsg("Connection successful! OpenRouter is working."); 
-      } else { 
-        setOpenRouterStatus("error"); 
-        setOpenRouterMsg(`Connection failed! ${lastError}`); 
-      }
-    } catch (e) { setOpenRouterStatus("error"); setOpenRouterMsg("Network error."); }
-  };
-
-  // ── TMDB API Settings ────────────────────────────────────────────────────
-  const [tmdbKey, setTmdbKey] = useState(() => localStorage.getItem("jee_tmdb_api_key") || DEFAULT_TMDB_KEYS[0]);
-  const [tmdbStatus, setTmdbStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-  const [tmdbMsg, setTmdbMsg] = useState("");
-
-  const handleSaveTmdbKey = () => {
-    localStorage.setItem("jee_tmdb_api_key", tmdbKey.trim());
-    setTmdbStatus("success");
-    setTmdbMsg("API Key saved successfully!");
-    setTimeout(() => setTmdbStatus("idle"), 3000);
-  };
-
-  const handleTestTmdbKey = async () => {
-    if (!tmdbKey.trim()) {
-      setTmdbStatus("error");
-      setTmdbMsg("Please enter an API key first.");
-      return;
-    }
-    setTmdbStatus("loading");
-    setTmdbMsg("Testing connection...");
-    try {
-      const res = await fetch(`https://api.themoviedb.org/3/configuration?api_key=${tmdbKey.trim()}`);
-      if (res.ok) {
-        setTmdbStatus("success");
-        setTmdbMsg("Connection successful!");
-      } else {
-        setTmdbStatus("error");
-        setTmdbMsg("Connection failed! Please select another API Key from the dropdown.");
-      }
-    } catch (e) {
-      setTmdbStatus("error");
-      setTmdbMsg("Network error. Check your connection.");
-    }
-  };
 
   // Persist timeline
   useEffect(() => {
@@ -1130,7 +1265,7 @@ export default function AdminPage() {
     setTimeline((prev) => prev.filter((e) => e.id !== id));
 
   const sortedTimeline = [...timeline].sort((a, b) =>
-    b.date.localeCompare(a.date),
+    (b.date || "").localeCompare(a.date || "")
   );
 
   // ── IDB key → restore category mapping ───────────────────────────────────
@@ -1357,7 +1492,6 @@ export default function AdminPage() {
         "jee_local_name",
         "jee_current_user",
         "user",
-        "jee_tmdb_api_key",
         "theme",
         "jee_remember_me",
       ],
@@ -1689,46 +1823,54 @@ export default function AdminPage() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.1 }}
-          className="relative"
+          className="relative flex flex-col md:flex-row md:items-center md:justify-between gap-5"
         >
-          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-2">
-            <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-xl bg-primary/20 flex items-center justify-center border border-primary/30 shrink-0">
-              <Shield className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
+          {/* Left Column: Greeting & Stats */}
+          <div className="space-y-2">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-1">
+              <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-xl bg-primary/20 flex items-center justify-center border border-primary/30 shrink-0">
+                <Shield className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
+              </div>
+              <div>
+                <p className="text-xs text-primary font-semibold uppercase tracking-widest">
+                  Admin Panel
+                </p>
+                <h1 className="text-xl sm:text-2xl font-black text-foreground leading-tight">
+                  Welcome Boss, {user} 👋
+                </h1>
+              </div>
             </div>
-            <div>
-              <p className="text-xs text-primary font-semibold uppercase tracking-widest">
-                Admin Panel
-              </p>
-              <h1 className="text-xl sm:text-2xl font-black text-foreground leading-tight">
-                Welcome Boss, {user} 👋
-              </h1>
+            <p className="text-xs sm:text-sm text-muted-foreground ml-0 sm:ml-[52px]">
+              This is your Desk for JEE Prep with Digital Way
+            </p>
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 md:gap-4 ml-0 sm:ml-[52px] pt-1">
+              <span className="flex items-center gap-1 sm:gap-1.5 text-[11px] sm:text-xs text-muted-foreground bg-muted/50 px-2 sm:px-2.5 py-1 rounded-full border border-border/50 whitespace-nowrap">
+                <Clock className="h-3 w-3 text-primary shrink-0" />
+                <span>Today:</span>
+                <span className="text-foreground font-semibold">
+                  {stats.time.todayStr}
+                </span>
+              </span>
+              <span className="flex items-center gap-1 sm:gap-1.5 text-[11px] sm:text-xs text-muted-foreground bg-muted/50 px-2 sm:px-2.5 py-1 rounded-full border border-border/50 whitespace-nowrap">
+                <Flame className="h-3 w-3 text-orange-400 shrink-0" />
+                <span>Streak:</span>
+                <span className="text-foreground font-semibold">
+                  {stats.streak.current} days
+                </span>
+              </span>
+              <span className="flex items-center gap-1 sm:gap-1.5 text-[11px] sm:text-xs text-muted-foreground bg-muted/50 px-2 sm:px-2.5 py-1 rounded-full border border-border/50 whitespace-nowrap">
+                <Trophy className="h-3 w-3 text-yellow-400 shrink-0" />
+                <span>Earned:</span>
+                <span className="text-foreground font-semibold">
+                  {stats.streak.earned} days
+                </span>
+              </span>
             </div>
           </div>
-          <p className="text-xs sm:text-sm text-muted-foreground mt-2 sm:mt-0 ml-0 sm:ml-[52px]">
-            This is your Desk for JEE Prep with Digital Way
-          </p>
-          <div className="flex flex-wrap items-center gap-2 sm:gap-3 md:gap-4 mt-3 ml-0 sm:ml-[52px]">
-            <span className="flex items-center gap-1 sm:gap-1.5 text-[11px] sm:text-xs text-muted-foreground bg-muted/50 px-2 sm:px-2.5 py-1 rounded-full border border-border/50 whitespace-nowrap">
-              <Clock className="h-3 w-3 text-primary shrink-0" />
-              <span>Today:</span>
-              <span className="text-foreground font-semibold">
-                {stats.time.todayStr}
-              </span>
-            </span>
-            <span className="flex items-center gap-1 sm:gap-1.5 text-[11px] sm:text-xs text-muted-foreground bg-muted/50 px-2 sm:px-2.5 py-1 rounded-full border border-border/50 whitespace-nowrap">
-              <Flame className="h-3 w-3 text-orange-400 shrink-0" />
-              <span>Streak:</span>
-              <span className="text-foreground font-semibold">
-                {stats.streak.current} days
-              </span>
-            </span>
-            <span className="flex items-center gap-1 sm:gap-1.5 text-[11px] sm:text-xs text-muted-foreground bg-muted/50 px-2 sm:px-2.5 py-1 rounded-full border border-border/50 whitespace-nowrap">
-              <Trophy className="h-3 w-3 text-yellow-400 shrink-0" />
-              <span>Earned:</span>
-              <span className="text-foreground font-semibold">
-                {stats.streak.earned} days
-              </span>
-            </span>
+
+          {/* Right Column (Desktop) / Below (Mobile): Study Session Timer Box */}
+          <div className="w-full md:w-auto md:min-w-[360px] md:max-w-md shrink-0">
+            <StudySessionWidget />
           </div>
         </motion.div>
       </div>
@@ -1742,7 +1884,7 @@ export default function AdminPage() {
               <div className="flex flex-col items-center gap-4 shrink-0">
                 <div className="relative w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-muted bg-muted flex items-center justify-center group">
                   {accPic ? (
-                    <img src={accPic} alt="Profile" className="w-full h-full object-cover" />
+                    <img src={accPic} alt="Profile" className="w-full h-full object-cover" onError={() => setAccPic("")} />
                   ) : (
                     <User className="h-12 w-12 text-muted-foreground" />
                   )}
@@ -2305,42 +2447,153 @@ export default function AdminPage() {
           
           {/* Time Spent History & App Usage Breakdown */}
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 mt-4">
-            <TimeSpentHistory records={stats.timeTracking.records} />
+            <TimeSpentHistory
+              records={stats.timeTracking.records}
+              selectedDate={selectedAnalyticsDate}
+              onSelectDate={setSelectedAnalyticsDate}
+            />
 
-            <div className="bg-card border border-border rounded-2xl p-5 flex flex-col h-full">
-              <div className="text-center mb-2 shrink-0">
-                <h3 className="text-xl font-black text-foreground">App Usage Breakdown</h3>
-                <p className="text-sm text-muted-foreground mt-1">Total time spent across features (Minutes)</p>
+            <div className="space-y-4 flex flex-col">
+              <div className="bg-card border border-border rounded-2xl p-5 flex flex-col flex-1">
+                <div className="text-center mb-2 shrink-0">
+                  <h3 className="text-xl font-black text-foreground">App Usage Breakdown</h3>
+                  <p className="text-sm text-muted-foreground mt-1">Total time spent across features (Minutes)</p>
+                </div>
+                <div className="flex-1 min-h-[240px]">
+                  {appUsageData.length > 0 ? (
+                    <ResponsiveContainer width="100%" height="100%">
+                      <PieChart>
+                        <Pie
+                          data={appUsageData}
+                          cx="50%"
+                          cy="50%"
+                          innerRadius={60}
+                          outerRadius={90}
+                          paddingAngle={4}
+                          dataKey="value"
+                          stroke="none"
+                          labelLine={false}
+                        >
+                          {appUsageData.map((d, i) => (
+                            <Cell key={i} fill={d.fill} />
+                          ))}
+                        </Pie>
+                        <Tooltip content={<ChartTooltip />} />
+                        <Legend wrapperStyle={{ fontSize: "11px", paddingTop: "10px" }} />
+                      </PieChart>
+                    </ResponsiveContainer>
+                  ) : (
+                    <div className="h-full flex items-center justify-center text-xs text-muted-foreground">
+                      No usage data yet
+                    </div>
+                  )}
+                </div>
               </div>
-              <div className="flex-1 min-h-[250px]">
-                {appUsageData.length > 0 ? (
-                  <ResponsiveContainer width="100%" height="100%">
-                    <PieChart>
-                      <Pie
-                        data={appUsageData}
-                        cx="50%"
-                        cy="50%"
-                        innerRadius={60}
-                        outerRadius={90}
-                        paddingAngle={4}
-                        dataKey="value"
-                        stroke="none"
-                        labelLine={false}
-                      >
-                        {appUsageData.map((d, i) => (
-                          <Cell key={i} fill={d.fill} />
-                        ))}
-                      </Pie>
-                      <Tooltip content={<ChartTooltip />} />
-                      <Legend wrapperStyle={{ fontSize: "11px", paddingTop: "10px" }} />
-                    </PieChart>
-                  </ResponsiveContainer>
-                ) : (
-                  <div className="h-full flex items-center justify-center text-xs text-muted-foreground">
-                    No usage data yet
+
+              {/* Specific Date Page Timing Graph (Opens below Total Time Graph when a date is selected) */}
+              {selectedAnalyticsDate && stats.timeTracking.records[selectedAnalyticsDate] && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="bg-card border border-primary/30 rounded-2xl p-5 shadow-lg space-y-3"
+                >
+                  <div className="flex items-center justify-between pb-2 border-b border-border">
+                    <div>
+                      <h4 className="text-sm font-bold text-foreground flex items-center gap-2">
+                        <Activity className="h-4 w-4 text-primary" />
+                        Page Timing Breakdown — {(() => {
+                          try {
+                            const d = new Date(selectedAnalyticsDate + "T12:00:00");
+                            return d.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" });
+                          } catch {
+                            return selectedAnalyticsDate;
+                          }
+                        })()}
+                      </h4>
+                      <p className="text-xs text-muted-foreground mt-0.5">
+                        Specific time distribution for each section & page on this day
+                      </p>
+                    </div>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      onClick={() => setSelectedAnalyticsDate(null)}
+                      className="h-6 w-6 rounded-md hover:bg-muted"
+                    >
+                      <X className="h-3.5 w-3.5" />
+                    </Button>
                   </div>
-                )}
-              </div>
+
+                  <div className="h-44 w-full">
+                    {Object.keys(stats.timeTracking.records[selectedAnalyticsDate]?.sections || {}).length > 0 ? (
+                      <ResponsiveContainer width="100%" height="100%">
+                        <BarChart
+                          data={Object.entries(stats.timeTracking.records[selectedAnalyticsDate]?.sections || {}).map(([name, secs]: [string, any], idx) => ({
+                            name,
+                            seconds: secs,
+                            minutes: Number((secs / 60).toFixed(1)),
+                            fill: CHART_COLORS[idx % CHART_COLORS.length],
+                          })).sort((a, b) => b.seconds - a.seconds)}
+                          margin={{ top: 10, right: 10, left: -20, bottom: 25 }}
+                        >
+                          <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="hsl(var(--border))" />
+                          <XAxis
+                            dataKey="name"
+                            tick={{ fontSize: 10, fill: "hsl(var(--muted-foreground))" }}
+                            angle={-20}
+                            textAnchor="end"
+                            interval={0}
+                          />
+                          <YAxis
+                            tick={{ fontSize: 10, fill: "hsl(var(--muted-foreground))" }}
+                            unit="m"
+                          />
+                          <Tooltip
+                            content={({ active, payload }) => {
+                              if (!active || !payload?.length) return null;
+                              const d = payload[0].payload;
+                              const m = Math.floor(d.seconds / 60);
+                              const s = d.seconds % 60;
+                              const dur = m > 0 ? `${m}m ${s}s` : `${s}s`;
+                              return (
+                                <div className="bg-card border border-border rounded-xl px-3 py-2 shadow-xl text-xs">
+                                  <p className="font-bold text-foreground mb-1">{d.name}</p>
+                                  <p className="text-primary font-semibold">{dur} ({d.minutes}m)</p>
+                                </div>
+                              );
+                            }}
+                          />
+                          <Bar dataKey="minutes" radius={[4, 4, 0, 0]}>
+                            {Object.entries(stats.timeTracking.records[selectedAnalyticsDate]?.sections || {}).map((_, idx) => (
+                              <Cell key={idx} fill={CHART_COLORS[idx % CHART_COLORS.length]} />
+                            ))}
+                          </Bar>
+                        </BarChart>
+                      </ResponsiveContainer>
+                    ) : (
+                      <div className="h-full flex items-center justify-center text-xs text-muted-foreground">
+                        No specific page activity recorded for this day
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Badges for each section */}
+                  <div className="flex flex-wrap gap-2 pt-2 border-t border-border/50">
+                    {Object.entries(stats.timeTracking.records[selectedAnalyticsDate]?.sections || {}).map(([name, secs]: [string, any], idx) => {
+                      const m = Math.floor(secs / 60);
+                      const s = secs % 60;
+                      const dur = m > 0 ? `${m}m ${s}s` : `${s}s`;
+                      return (
+                        <div key={name} className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-muted/60 border border-border/60 text-xs">
+                          <span className="h-2 w-2 rounded-full" style={{ backgroundColor: CHART_COLORS[idx % CHART_COLORS.length] }} />
+                          <span className="font-medium text-foreground">{name}:</span>
+                          <span className="font-bold text-primary tabular-nums">{dur}</span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </motion.div>
+              )}
             </div>
           </div>
           <StudyHeatmap records={stats.timeTracking.records} />
@@ -2776,105 +3029,293 @@ export default function AdminPage() {
           </div>
         </Section>
 
-        {/* ── API Integrations ── */}
-        <Section title="API Integrations" icon={Settings} delay={0.55}>
-          <div className="bg-card border border-border rounded-2xl p-5 space-y-8">
-            {/* OpenRouter API Key */}
-            <div className="transition-all duration-300">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2.5 bg-purple-500/10 rounded-xl">
-                  <BrainCircuit className="h-5 w-5 text-purple-400" />
-                </div>
-                <div>
-                  <p className="text-sm font-bold text-foreground">OpenRouter API Key</p>
-                  <p className="text-xs text-muted-foreground">Used for generating quizzes and AI responses.</p>
-                </div>
-              </div>
-              <div className="space-y-3">
-                <div className="flex gap-2">
+        {/* ── OpenRouter AI Configuration ── */}
+        <Section title="AI Engine & OpenRouter API" icon={BrainCircuit} delay={0.52}>
+          <div className="bg-card border border-border rounded-2xl p-5 md:p-6 space-y-4">
+            <div>
+              <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
+                <Key className="h-4 w-4 text-primary" /> OpenRouter API Key
+              </h3>
+              <p className="text-xs text-muted-foreground mt-0.5">
+                Powers AI chat, question solver, smart quiz generator, and embeddings across your JEE Prep workspace.
+              </p>
+            </div>
+
+            <div className="space-y-3 max-w-2xl">
+              <div className="space-y-1.5">
+                <label className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
+                  API Key
+                </label>
+                <div className="relative flex items-center">
                   <Input
-                    type="password"
-                    placeholder="Enter OpenRouter API Key (sk-or-v1-...)"
+                    type={showKey ? "text" : "password"}
                     value={openRouterKey}
-                    onChange={(e) => setOpenRouterKey(e.target.value)}
-                    className="bg-muted border-border text-xs flex-1 h-9"
+                    onChange={(e) => {
+                      setOpenRouterKey(e.target.value);
+                      setKeyStatus("idle");
+                      setKeyMsg("");
+                    }}
+                    placeholder="sk-or-v1-..."
+                    className="pr-24 font-mono text-xs bg-muted/50 border-border"
                   />
-                </div>
-                {openRouterStatus !== "idle" && (
-                  <div className={`p-2.5 rounded-lg text-xs font-medium border flex items-center gap-2 ${openRouterStatus === "success" ? "bg-green-500/10 border-green-500/30 text-green-400" : openRouterStatus === "error" ? "bg-red-500/10 border-red-500/30 text-red-400" : "bg-blue-500/10 border-blue-500/30 text-blue-400"}`}>
-                    {openRouterStatus === "loading" && <Loader2 className="h-3.5 w-3.5 animate-spin" />}
-                    {openRouterStatus === "success" && <Check className="h-3.5 w-3.5" />}
-                    {openRouterStatus === "error" && <X className="h-3.5 w-3.5" />}
-                    {openRouterMsg}
+                  <div className="absolute right-2 flex items-center gap-1">
+                    <button
+                      type="button"
+                      onClick={() => setShowKey(!showKey)}
+                      className="p-1 text-muted-foreground hover:text-foreground transition-colors"
+                      title={showKey ? "Hide key" : "Show key"}
+                    >
+                      {showKey ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                    </button>
+                    {openRouterKey && (
+                      <button
+                        type="button"
+                        onClick={handleClearOpenRouterKey}
+                        className="p-1 text-muted-foreground hover:text-destructive transition-colors"
+                        title="Clear key"
+                      >
+                        <Trash2 className="h-4 w-4" />
+                      </button>
+                    )}
                   </div>
-                )}
-                <div className="flex gap-2">
-                  <Button onClick={handleTestOpenRouterKey} variant="outline" className="flex-1 text-xs h-9 border-purple-500/30 text-purple-400 hover:bg-purple-500/10" disabled={openRouterStatus === "loading"}>Test Connection</Button>
-                  <Button onClick={handleSaveOpenRouterKey} className="flex-1 text-xs h-9 bg-purple-600 hover:bg-purple-700 text-white" disabled={openRouterStatus === "loading"}>Save OpenRouter Key</Button>
                 </div>
               </div>
-            </div>
-            
-            <div className="border-t border-border pt-6 space-y-8">
-            {/* TMDB API Key */}
-            <div className="flex items-center gap-3 mb-4">
-              <div className="p-2.5 bg-rose-500/10 rounded-xl">
-                <Key className="h-5 w-5 text-rose-400" />
-              </div>
-              <div>
-                <p className="text-sm font-bold text-foreground">TMDB API Key</p>
-                <p className="text-xs text-muted-foreground">Used for fetching movies & TV series data in Movie Hub</p>
-              </div>
-            </div>
-            <div className="space-y-3">
-              <div className="flex gap-2">
-                <Input
-                  type="password"
-                  placeholder="Enter TMDB v3 API Key"
-                  value={tmdbKey}
-                  onChange={(e) => setTmdbKey(e.target.value)}
-                  className="bg-muted border-border text-xs flex-1 h-9"
-                />
-                <select
-                  className="bg-muted border border-border text-xs rounded-md px-2 h-9 text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 max-w-[150px] cursor-pointer"
-                  value={DEFAULT_TMDB_KEYS.includes(tmdbKey) ? tmdbKey : ""}
-                  onChange={(e) => {
-                    if (e.target.value) setTmdbKey(e.target.value);
-                  }}
+
+              {keyMsg && (
+                <div
+                  className={cn(
+                    "p-2.5 rounded-lg text-xs font-medium border flex items-center gap-2",
+                    keyStatus === "valid"
+                      ? "bg-emerald-500/10 border-emerald-500/30 text-emerald-600 dark:text-emerald-400"
+                      : keyStatus === "invalid"
+                        ? "bg-destructive/10 border-destructive/30 text-destructive"
+                        : "bg-primary/10 border-primary/30 text-primary"
+                  )}
                 >
-                  <option value="" disabled>Custom Key</option>
-                  {DEFAULT_TMDB_KEYS.map((k, i) => (
-                    <option key={k} value={k}>Key {i + 1} ({k.slice(0, 4)}...)</option>
-                  ))}
-                </select>
-              </div>
-              {tmdbStatus !== "idle" && (
-                <div className={`p-2.5 rounded-lg text-xs font-medium border flex items-center gap-2
-                  ${tmdbStatus === "success" ? "bg-green-500/10 border-green-500/30 text-green-400" :
-                    tmdbStatus === "error" ? "bg-red-500/10 border-red-500/30 text-red-400" :
-                    "bg-blue-500/10 border-blue-500/30 text-blue-400"}`}>
-                  {tmdbStatus === "loading" && <Loader2 className="h-3.5 w-3.5 animate-spin" />}
-                  {tmdbStatus === "success" && <Check className="h-3.5 w-3.5" />}
-                  {tmdbStatus === "error" && <X className="h-3.5 w-3.5" />}
-                  {tmdbMsg}
+                  {keyStatus === "valid" ? (
+                    <Check className="h-4 w-4 shrink-0" />
+                  ) : keyStatus === "invalid" ? (
+                    <AlertCircle className="h-4 w-4 shrink-0" />
+                  ) : null}
+                  <span>{keyMsg}</span>
                 </div>
               )}
-              <div className="flex gap-2">
-                <Button onClick={handleTestTmdbKey} variant="outline" className="flex-1 text-xs h-9" disabled={tmdbStatus === "loading"}>
+
+              <div className="flex flex-wrap items-center gap-2.5 pt-1">
+                <Button
+                  type="button"
+                  onClick={handleSaveOpenRouterKey}
+                  size="sm"
+                  className="gap-1.5 text-xs font-bold"
+                >
+                  <Check className="h-3.5 w-3.5" /> Save API Key
+                </Button>
+                <Button
+                  type="button"
+                  variant="outline"
+                  onClick={handleTestOpenRouterKey}
+                  disabled={keyTesting || !openRouterKey}
+                  size="sm"
+                  className="gap-1.5 text-xs font-semibold"
+                >
+                  {keyTesting ? (
+                    <Loader2 className="h-3.5 w-3.5 animate-spin" />
+                  ) : (
+                    <RefreshCw className="h-3.5 w-3.5" />
+                  )}
                   Test Connection
                 </Button>
-                <Button onClick={handleSaveTmdbKey} className="flex-1 text-xs h-9" disabled={tmdbStatus === "loading"}>
-                  Save API Key
-                </Button>
+                <a
+                  href="https://openrouter.ai/keys"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-primary hover:underline font-medium ml-auto flex items-center gap-1"
+                >
+                  Get OpenRouter Key ↗
+                </a>
+              </div>
+            </div>
+          </div>
+        </Section>
+
+        {/* ── Content Display & Layout Preferences ── */}
+        <Section title="View Layout & Preferences" icon={LayoutGrid} delay={0.54}>
+          <div className="bg-card border border-border rounded-2xl p-5 md:p-6 space-y-6">
+            <div>
+              <h3 className="text-sm font-bold text-foreground">Navigation & Library View Mode</h3>
+              <p className="text-xs text-muted-foreground mt-0.5">
+                Choose your preferred view style across Video, PDF, and Saves pages. Switch between full-screen Folder Explorers (default) or classic hierarchical Sidebar sections.
+              </p>
+            </div>
+
+            {/* Global Default Mode */}
+            <div className="p-4 rounded-xl bg-muted/40 border border-border flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div className="space-y-0.5">
+                <p className="text-sm font-bold text-foreground flex items-center gap-2">
+                  <Layers className="h-4 w-4 text-primary" /> Global Default Layout
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  Changes default layout mode across PDF, Video, and Saves library simultaneously.
+                </p>
+              </div>
+
+              <div className="flex items-center p-1 bg-background rounded-xl border border-border shrink-0">
+                <button
+                  type="button"
+                  onClick={() => setViewMode("folder")}
+                  className={cn(
+                    "flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all",
+                    viewMode === "folder"
+                      ? "bg-primary text-primary-foreground shadow-sm"
+                      : "text-muted-foreground hover:text-foreground"
+                  )}
+                >
+                  <FolderOpen className="h-3.5 w-3.5" />
+                  <span>Folder View (Default)</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setViewMode("section")}
+                  className={cn(
+                    "flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all",
+                    viewMode === "section"
+                      ? "bg-primary text-primary-foreground shadow-sm"
+                      : "text-muted-foreground hover:text-foreground"
+                  )}
+                >
+                  <ListTree className="h-3.5 w-3.5" />
+                  <span>Section Sidebar</span>
+                </button>
               </div>
             </div>
 
+            {/* Individual Hub Controls */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {/* PDF View */}
+              <div className="p-4 rounded-xl bg-card border border-border/80 flex flex-col justify-between space-y-3">
+                <div className="flex items-center gap-2.5">
+                  <div className="p-2 rounded-lg bg-red-500/10 text-red-500">
+                    <FileText className="h-4 w-4" />
+                  </div>
+                  <div>
+                    <h4 className="text-xs font-bold text-foreground">PDF Library View</h4>
+                    <p className="text-[10px] text-muted-foreground">Documents & Notes</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center p-1 bg-muted/60 rounded-lg border border-border">
+                  <button
+                    type="button"
+                    onClick={() => setPdfViewMode("folder")}
+                    className={cn(
+                      "flex-1 flex items-center justify-center gap-1 py-1 rounded text-xs font-semibold transition-all",
+                      pdfViewMode === "folder"
+                        ? "bg-background text-foreground shadow-xs"
+                        : "text-muted-foreground hover:text-foreground"
+                    )}
+                  >
+                    <Folder className="h-3 w-3 text-primary" /> Folder
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setPdfViewMode("section")}
+                    className={cn(
+                      "flex-1 flex items-center justify-center gap-1 py-1 rounded text-xs font-semibold transition-all",
+                      pdfViewMode === "section"
+                        ? "bg-background text-foreground shadow-xs"
+                        : "text-muted-foreground hover:text-foreground"
+                    )}
+                  >
+                    <ListTree className="h-3 w-3 text-primary" /> Section
+                  </button>
+                </div>
+              </div>
+
+              {/* Video View */}
+              <div className="p-4 rounded-xl bg-card border border-border/80 flex flex-col justify-between space-y-3">
+                <div className="flex items-center gap-2.5">
+                  <div className="p-2 rounded-lg bg-blue-500/10 text-blue-500">
+                    <FileVideo className="h-4 w-4" />
+                  </div>
+                  <div>
+                    <h4 className="text-xs font-bold text-foreground">Video Library View</h4>
+                    <p className="text-[10px] text-muted-foreground">Lectures & YouTube</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center p-1 bg-muted/60 rounded-lg border border-border">
+                  <button
+                    type="button"
+                    onClick={() => setVideoViewMode("folder")}
+                    className={cn(
+                      "flex-1 flex items-center justify-center gap-1 py-1 rounded text-xs font-semibold transition-all",
+                      videoViewMode === "folder"
+                        ? "bg-background text-foreground shadow-xs"
+                        : "text-muted-foreground hover:text-foreground"
+                    )}
+                  >
+                    <Folder className="h-3 w-3 text-primary" /> Folder
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setVideoViewMode("section")}
+                    className={cn(
+                      "flex-1 flex items-center justify-center gap-1 py-1 rounded text-xs font-semibold transition-all",
+                      videoViewMode === "section"
+                        ? "bg-background text-foreground shadow-xs"
+                        : "text-muted-foreground hover:text-foreground"
+                    )}
+                  >
+                    <ListTree className="h-3 w-3 text-primary" /> Section
+                  </button>
+                </div>
+              </div>
+
+              {/* Saves Bank View */}
+              <div className="p-4 rounded-xl bg-card border border-border/80 flex flex-col justify-between space-y-3">
+                <div className="flex items-center gap-2.5">
+                  <div className="p-2 rounded-lg bg-amber-500/10 text-amber-500">
+                    <BookOpen className="h-4 w-4" />
+                  </div>
+                  <div>
+                    <h4 className="text-xs font-bold text-foreground">Saves Bank View</h4>
+                    <p className="text-[10px] text-muted-foreground">Subject & Question Banks</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center p-1 bg-muted/60 rounded-lg border border-border">
+                  <button
+                    type="button"
+                    onClick={() => setSavesViewMode("folder")}
+                    className={cn(
+                      "flex-1 flex items-center justify-center gap-1 py-1 rounded text-xs font-semibold transition-all",
+                      savesViewMode === "folder"
+                        ? "bg-background text-foreground shadow-xs"
+                        : "text-muted-foreground hover:text-foreground"
+                    )}
+                  >
+                    <Folder className="h-3 w-3 text-primary" /> Folder
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setSavesViewMode("section")}
+                    className={cn(
+                      "flex-1 flex items-center justify-center gap-1 py-1 rounded text-xs font-semibold transition-all",
+                      savesViewMode === "section"
+                        ? "bg-background text-foreground shadow-xs"
+                        : "text-muted-foreground hover:text-foreground"
+                    )}
+                  >
+                    <ListTree className="h-3 w-3 text-primary" /> Section
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </Section>
 
         {/* ── Account & Logout ── */}
-        <Section title="Account" icon={LogOut} delay={0.6}>
+        <Section title="Account" icon={LogOut} delay={0.55}>
           <div className="flex items-center justify-between p-5 bg-card border border-border rounded-2xl">
             <div>
               <p className="text-sm font-semibold text-foreground">

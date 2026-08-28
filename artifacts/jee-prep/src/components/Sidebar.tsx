@@ -11,7 +11,6 @@ import {
   ChevronLeft,
   ChevronRight,
   Video,
-  Film,
   Bookmark,
   X,
   Menu,
@@ -29,6 +28,7 @@ import {
 import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { idbGet } from "@/lib/idb";
 import { Input } from "@/components/ui/input";
 import { useLockdown } from "@/context/LockdownContext";
 
@@ -247,8 +247,21 @@ export function Sidebar() {
   const [profilePic, setProfilePic] = useState(() => localStorage.getItem("jee_profile_pic") || "");
 
   useEffect(() => {
+    idbGet("jee_profile_pic").then((pic: any) => {
+      if (pic && typeof pic === "string") {
+        setProfilePic(pic);
+      }
+    }).catch(() => {});
+
     const handleStorage = () => {
-      setProfilePic(localStorage.getItem("jee_profile_pic") || "");
+      const p = localStorage.getItem("jee_profile_pic") || "";
+      if (p) {
+        setProfilePic(p);
+      } else {
+        idbGet("jee_profile_pic").then((pic: any) => {
+          if (pic && typeof pic === "string") setProfilePic(pic);
+        }).catch(() => {});
+      }
     };
     window.addEventListener("storage", handleStorage);
     return () => window.removeEventListener("storage", handleStorage);
@@ -285,7 +298,6 @@ export function Sidebar() {
     { href: "/video", label: "Videos", icon: Video },
     { href: "/saves", label: "Saves", icon: Bookmark },
     { href: "/quiz", label: "AI", icon: BrainCircuit },
-    { href: "/movies", label: "Movie Hub", icon: Film },
   ];
 
   const allowedLockdownLinks = ["/", "/pdf", "/saves"];
@@ -296,9 +308,11 @@ export function Sidebar() {
       {isMobile && !isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="absolute top-2 left-4 z-[60] p-1.5 bg-card rounded-md border border-border/60 text-foreground shadow-sm hover:bg-accent transition-colors"
+          className="fixed top-2.5 left-3.5 z-[60] p-2 bg-card/95 backdrop-blur-md rounded-xl border border-border/80 text-foreground shadow-md hover:bg-accent transition-all cursor-pointer flex items-center justify-center"
+          title="Open Navigation Menu"
+          aria-label="Open Navigation Menu"
         >
-          <Menu className="w-5 h-5" />
+          <Menu className="w-5 h-5 text-foreground" />
         </button>
       )}
 
@@ -360,7 +374,7 @@ export function Sidebar() {
                 )}
               >
                 {profilePic ? (
-                  <img src={profilePic} alt="Profile" className="w-full h-full object-cover" />
+                  <img src={profilePic} alt="Profile" className="w-full h-full object-cover" onError={() => setProfilePic("")} />
                 ) : (
                   <User className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
                 )}
@@ -383,7 +397,7 @@ export function Sidebar() {
                 title="Open Admin Panel"
               >
                 {profilePic ? (
-                  <img src={profilePic} alt="Profile" className="w-full h-full object-cover" />
+                  <img src={profilePic} alt="Profile" className="w-full h-full object-cover" onError={() => setProfilePic("")} />
                 ) : (
                   <User className="h-5 w-5 text-primary" />
                 )}

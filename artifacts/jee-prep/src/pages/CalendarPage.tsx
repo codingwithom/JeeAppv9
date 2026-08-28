@@ -489,6 +489,104 @@ function MonthView({
   );
 }
 
+// ─── Week View Layout Helper ──────────────────────────────────────────────────
+interface LayoutEvent {
+  event: CalEvent;
+  startH: number;
+  endH: number;
+  top: number;
+  height: number;
+  col: number;
+  totalCols: number;
+}
+
+function layoutDayEvents(
+  events: CalEvent[],
+  resizingId: string | null,
+  ghostEndHour: number,
+): LayoutEvent[] {
+  if (!events.length) return [];
+
+  // 1. Calculate time bounds for each event
+  const items: LayoutEvent[] = events.map((ev) => {
+    const evStart = new Date(ev.start);
+    const evEnd = new Date(ev.end);
+    const startH = evStart.getHours() + evStart.getMinutes() / 60;
+    const isResizingThis = resizingId === ev.id;
+    const rawEndH = isResizingThis
+      ? ghostEndHour
+      : evEnd.getHours() + evEnd.getMinutes() / 60;
+    const endH = Math.max(startH + 0.25, rawEndH);
+    const top = startH * CELL_H;
+    const height = Math.max(CELL_H * 0.35, (endH - startH) * CELL_H);
+    return {
+      event: ev,
+      startH,
+      endH,
+      top,
+      height,
+      col: 0,
+      totalCols: 1,
+    };
+  });
+
+  // 2. Sort by start time ascending, then by duration descending
+  items.sort((a, b) => {
+    if (Math.abs(a.startH - b.startH) > 0.001) return a.startH - b.startH;
+    return (b.endH - b.startH) - (a.endH - a.startH);
+  });
+
+  // 3. Cluster overlapping events
+  const clusters: LayoutEvent[][] = [];
+  let currentCluster: LayoutEvent[] = [];
+  let clusterEndH = -1;
+
+  for (const item of items) {
+    if (currentCluster.length === 0) {
+      currentCluster.push(item);
+      clusterEndH = item.endH;
+    } else {
+      if (item.startH < clusterEndH - 0.001) {
+        currentCluster.push(item);
+        clusterEndH = Math.max(clusterEndH, item.endH);
+      } else {
+        clusters.push(currentCluster);
+        currentCluster = [item];
+        clusterEndH = item.endH;
+      }
+    }
+  }
+  if (currentCluster.length > 0) {
+    clusters.push(currentCluster);
+  }
+
+  // 4. Assign columns within each cluster
+  for (const cluster of clusters) {
+    const colEnds: number[] = [];
+    for (const item of cluster) {
+      let placedCol = -1;
+      for (let i = 0; i < colEnds.length; i++) {
+        if (colEnds[i] <= item.startH + 0.001) {
+          placedCol = i;
+          colEnds[i] = item.endH;
+          break;
+        }
+      }
+      if (placedCol === -1) {
+        placedCol = colEnds.length;
+        colEnds.push(item.endH);
+      }
+      item.col = placedCol;
+    }
+    const maxCols = colEnds.length;
+    for (const item of cluster) {
+      item.totalCols = maxCols;
+    }
+  }
+
+  return items;
+}
+
 // ─── Week View ────────────────────────────────────────────────────────────────
 function WeekView({
   date,
@@ -595,7 +693,7 @@ function WeekView({
           {days.map((day, dayIdx) => (
             <div
               key={dayIdx}
-              className="flex-1 border-l border-border relative"
+              className="flex-1 border-l border-border relative h-full"
             >
               {/* Hour slots (drop targets + click) */}
               {hours.map((h) => (
@@ -637,17 +735,16 @@ function WeekView({
               ))}
 
               {/* Events */}
-              {eventsForDay(day).map((ev) => {
+              {layoutDayEvents(eventsForDay(day), resizingId, ghostEndHour).map((layoutItem) => {
+                const { event: ev, startH, endH, top, height, col, totalCols } = layoutItem;
                 const evStart = new Date(ev.start);
                 const evEnd = new Date(ev.end);
-                const startH = evStart.getHours() + evStart.getMinutes() / 60;
-                const isResizingThis = resizingId === ev.id;
-                const endH = isResizingThis
-                  ? ghostEndHour
-                  : evEnd.getHours() + evEnd.getMinutes() / 60;
-                const top = startH * CELL_H;
-                const height = Math.max(CELL_H * 0.4, (endH - startH) * CELL_H);
                 const eventStatus = getEventStatus?.(ev.id);
+
+                const widthPct = 100 / totalCols;
+                const leftPct = col * widthPct;
+                const leftStyle = totalCols === 1 ? "2px" : `calc(${leftPct}% + 2px)`;
+                const widthStyle = totalCols === 1 ? "calc(100% - 4px)" : `calc(${widthPct}% - 4px)`;
 
                 return (
                   <div
@@ -666,11 +763,13 @@ function WeekView({
                       e.dataTransfer.effectAllowed = "move";
                     }}
                     onDragEnd={() => setDraggingId(null)}
-                    className={`absolute left-0.5 right-0.5 rounded-lg overflow-hidden group select-none transition-opacity z-10 relative
+                    className={`absolute rounded-lg overflow-hidden group select-none transition-opacity z-10
                       ${draggingId === ev.id ? "opacity-40 cursor-grabbing" : "opacity-100 cursor-grab"}`}
                     style={{
                       top,
                       height,
+                      left: leftStyle,
+                      width: widthStyle,
                       backgroundColor: ev.color,
                       minHeight: 20,
                     }}

@@ -144,7 +144,7 @@ function StreakModal({ onClose }: { onClose: () => void }) {
   const minsLeft = Math.ceil(secsLeft / 60);
 
   const sortedRecords = [...streakData.records].sort((a: StreakRecord, b: StreakRecord) =>
-    b.date.localeCompare(a.date)
+    (b.date || "").localeCompare(a.date || "")
   );
 
   return (

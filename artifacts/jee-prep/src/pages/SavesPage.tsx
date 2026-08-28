@@ -3,13 +3,15 @@ import { useState, useRef, useEffect, useCallback, useMemo, useLayoutEffect } fr
 import { motion, AnimatePresence, Reorder } from "framer-motion";
 import { useWorkspaceContext } from "@/context/WorkspaceContext";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
+import { useAppContext } from "@/context/AppContext";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
   Plus, X, FolderPlus, FilePlus, ChevronDown, ChevronRight as ChevRight, Pencil, Trash2,
   Clock, Filter, Eye, EyeOff, Save, Image as ImageIcon, Check, Link as LinkIcon, Upload, MoreVertical, Loader2,
   BookCopy, Bookmark, Bot, HelpCircle,
-  ChevronLeft, Minus, ZoomIn, ZoomOut, CheckCircle, Copy
+  ChevronLeft, Minus, ZoomIn, ZoomOut, CheckCircle, Copy,
+  Folder, FolderOpen, ArrowLeft, LayoutGrid, ListTree, Layers, Search
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -725,6 +727,14 @@ export default function SavesPage() {
   const [bookmarkFolders, setBookmarkFolders] = useLocalStorage<BookmarkFolder[]>("jee_saves_bookmarks_v1", []);
   const [isLoading, setIsLoading] = useState(false);
 
+  const { savesViewMode, setSavesViewMode } = useAppContext();
+  const [folderSubjId, setFolderSubjId] = useState<string | null>(null);
+  const [folderChapId, setFolderChapId] = useState<string | null>(null);
+  const [folderSearch, setFolderSearch] = useState("");
+
+  const currentFolderSubj = useMemo(() => subjects.find((s) => s.id === folderSubjId), [subjects, folderSubjId]);
+  const currentFolderChap = useMemo(() => currentFolderSubj?.chapters.find((c) => c.id === folderChapId), [currentFolderSubj, folderChapId]);
+
   const [activeItemId, setActiveItemId] = useState<string | null>(null);
   const [activeSourceId, setActiveSourceId] = useState<string | null>(null);
   const [activeBookmarkFolderId, setActiveBookmarkFolderId] = useState<string | null>(null);
@@ -1074,49 +1084,474 @@ export default function SavesPage() {
     );
   };
 
-  return (
-    <>
-      {isPrinting && createPortal(
-        <div id="print-root" className="fixed inset-0 z-[9999] bg-white text-black overflow-y-auto p-8 print:p-0 print:static print:inset-auto print:overflow-visible">
-          <div className="w-full max-w-none mx-auto space-y-6">
-            <h1 className="text-2xl font-bold mb-4 text-center border-b border-gray-200 pb-4 print:mb-6">
-              {activeBookmarkFolderId ? bookmarkFolders.find(f => f.id === activeBookmarkFolderId)?.name : (activeSourceId ? getSourceName(activeSourceId) : 'Export')}
-            </h1>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 print:grid-cols-4 gap-6 print:gap-4">
-              {sortedQuestions.map((item, i) => {
-                const q = item.question;
-                return (
-                <div key={`${item.sourceId}-${q.id}`} className="break-inside-avoid border border-gray-200 rounded-lg p-3 bg-white shadow-sm flex flex-col mb-4 print:mb-0 print:border-gray-300" style={{ pageBreakInside: 'avoid' }}>
-                  <h2 className="font-bold text-sm mb-2 text-gray-800 border-b border-gray-100 pb-1">{q.name || `Q${i + 1}`}</h2>
-                  
-                  <div className="flex-1 flex flex-col justify-start">
-                    <div className="mb-2">
-                      {q.questionImageKey || q.questionUrl ? (
-                        <WorkspaceImage mediaKey={q.questionImageKey} fallbackUrl={q.questionUrl} className="w-full h-auto object-contain rounded-sm" />
-                      ) : null}
-                    </div>
+  // --- Folder Explorer View for Saves Bank ---
+  const renderSavesFolderExplorer = () => {
+    return (
+      <div className="flex-1 flex flex-col h-full overflow-hidden bg-background">
+        {/* Top Header / Breadcrumbs Toolbar */}
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 px-4 py-3 border-b border-border bg-card/50 backdrop-blur-md shrink-0">
+          {/* Breadcrumb path */}
+          <div className="flex items-center gap-1.5 flex-wrap min-w-0 text-sm">
+            {folderSubjId !== null && (
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => {
+                  if (folderChapId) setFolderChapId(null);
+                  else setFolderSubjId(null);
+                }}
+                className="h-8 px-2 text-xs gap-1 mr-1 text-muted-foreground hover:text-foreground"
+                title="Go back"
+              >
+                <ArrowLeft className="h-3.5 w-3.5" />
+                <span>Back</span>
+              </Button>
+            )}
 
-                    {(q.answerText || q.answerImageKey || q.answerUrl) && (
-                      <div className="mt-2 pt-2 border-t border-dashed border-gray-200">
-                        {q.answerText && <p className="whitespace-pre-wrap text-xs text-gray-700 mb-1.5">{q.answerText}</p>}
-                        {(q.answerImageKey || q.answerUrl) && (
-                          <WorkspaceImage mediaKey={q.answerImageKey} fallbackUrl={q.answerUrl} className="w-full h-auto object-contain rounded-sm" />
-                        )}
-                      </div>
-                    )}
-                  </div>
-                </div>
-                );
-              })}
+            <button
+              onClick={() => { setFolderSubjId(null); setFolderChapId(null); }}
+              className={cn(
+                "flex items-center gap-1.5 font-bold transition-colors hover:text-primary",
+                !folderSubjId ? "text-foreground" : "text-muted-foreground"
+              )}
+            >
+              <FolderOpen className="h-4 w-4 text-primary shrink-0" />
+              <span>Saves Bank</span>
+            </button>
+
+            {currentFolderSubj && (
+              <>
+                <span className="text-muted-foreground font-semibold">/</span>
+                <button
+                  onClick={() => setFolderChapId(null)}
+                  className={cn(
+                    "font-semibold transition-colors hover:text-primary truncate max-w-[140px] sm:max-w-[200px]",
+                    !folderChapId ? "text-foreground font-bold" : "text-muted-foreground"
+                  )}
+                >
+                  {currentFolderSubj.name}
+                </button>
+              </>
+            )}
+
+            {currentFolderChap && (
+              <>
+                <span className="text-muted-foreground font-semibold">/</span>
+                <span className="font-bold text-foreground truncate max-w-[140px] sm:max-w-[200px]">
+                  {currentFolderChap.name}
+                </span>
+              </>
+            )}
+          </div>
+
+          {/* Right side tools: Search + Actions + View Switcher */}
+          <div className="flex items-center gap-2 shrink-0 flex-wrap">
+            {/* Search bar */}
+            <div className="relative flex-1 sm:w-48">
+              <Search className="absolute left-2.5 top-2.5 h-3.5 w-3.5 text-muted-foreground" />
+              <Input
+                value={folderSearch}
+                onChange={(e) => setFolderSearch(e.target.value)}
+                placeholder="Search saves bank..."
+                className="h-8 pl-8 text-xs bg-muted/50 border-border rounded-lg"
+              />
+              {folderSearch && (
+                <button onClick={() => setFolderSearch("")} className="absolute right-2 top-2 text-muted-foreground hover:text-foreground">
+                  <X className="h-3.5 w-3.5" />
+                </button>
+              )}
+            </div>
+
+            {/* Action button */}
+            {!folderSubjId ? (
+              <Button size="sm" onClick={addSubject} className="h-8 gap-1.5 text-xs font-semibold shadow-sm">
+                <FolderPlus className="h-3.5 w-3.5" />
+                <span className="hidden sm:inline">New Subject</span>
+              </Button>
+            ) : !folderChapId ? (
+              <div className="flex items-center gap-1.5">
+                <Button size="sm" variant="outline" onClick={() => currentFolderSubj && addChapter(currentFolderSubj.id)} className="h-8 gap-1.5 text-xs">
+                  <FolderPlus className="h-3.5 w-3.5 text-primary" />
+                  <span>New Chapter</span>
+                </Button>
+              </div>
+            ) : (
+              <Button size="sm" onClick={() => currentFolderSubj && currentFolderChap && addSource(currentFolderSubj.id, currentFolderChap.id)} className="h-8 gap-1.5 text-xs">
+                <FilePlus className="h-3.5 w-3.5" />
+                <span>New Source</span>
+              </Button>
+            )}
+
+            {/* Bookmarks quick button */}
+            <Button variant="outline" size="sm" className="h-8 gap-1.5 text-xs" onClick={() => setShowBookmarksPanel(true)}>
+              <Bookmark className="h-3.5 w-3.5 text-yellow-500 fill-yellow-500" />
+              <span className="hidden md:inline">Bookmarks</span>
+            </Button>
+
+            {/* View Mode Switcher Toggle */}
+            <div className="flex items-center p-0.5 bg-muted rounded-lg border border-border shrink-0">
+              <button
+                onClick={() => setSavesViewMode("folder")}
+                className={cn(
+                  "flex items-center gap-1 px-2.5 py-1 text-xs font-semibold rounded-md transition-all",
+                  savesViewMode === "folder" ? "bg-card text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"
+                )}
+                title="Folder Explorer View"
+              >
+                <LayoutGrid className="h-3.5 w-3.5 text-primary" />
+                <span className="hidden md:inline">Folders</span>
+              </button>
+              <button
+                onClick={() => setSavesViewMode("section")}
+                className={cn(
+                  "flex items-center gap-1 px-2.5 py-1 text-xs font-semibold rounded-md transition-all",
+                  savesViewMode === "section" ? "bg-card text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"
+                )}
+                title="Classic Section Sidebar View"
+              >
+                <ListTree className="h-3.5 w-3.5" />
+                <span className="hidden md:inline">Sections</span>
+              </button>
             </div>
           </div>
-          <style dangerouslySetInnerHTML={{__html: `
+        </div>
+
+        {/* Main Grid View */}
+        <div className="flex-1 overflow-y-auto p-4 sm:p-6">
+          {/* If searching */}
+          {folderSearch.trim() !== "" ? (
+            <div>
+              <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4">
+                Search Results for "{folderSearch}"
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                {subjects.flatMap((sub) => [
+                  ...(sub.name.toLowerCase().includes(folderSearch.toLowerCase()) ? [{ type: 'subj', item: sub, subjId: sub.id, path: [sub.name] }] : []),
+                  ...(sub.chapters?.flatMap((chap) => [
+                    ...(chap.name.toLowerCase().includes(folderSearch.toLowerCase()) ? [{ type: 'chap', item: chap, subjId: sub.id, chapId: chap.id, path: [sub.name, chap.name] }] : []),
+                    ...(chap.sources?.map((src) => ({
+                      type: 'src',
+                      item: src,
+                      subjId: sub.id,
+                      chapId: chap.id,
+                      srcId: src.id,
+                      path: [sub.name, chap.name, src.name],
+                      count: allQuestions[src.id]?.length || 0,
+                      isMatch: src.name.toLowerCase().includes(folderSearch.toLowerCase()) || allQuestions[src.id]?.some(q => q.name.toLowerCase().includes(folderSearch.toLowerCase()) || q.description?.toLowerCase().includes(folderSearch.toLowerCase()))
+                    })).filter(s => s.isMatch) || [])
+                  ]) || [])
+                ]).map((res: any, idx: number) => (
+                  <div
+                    key={idx}
+                    onClick={() => {
+                      if (res.type === 'subj') {
+                        setFolderSubjId(res.subjId);
+                        setFolderChapId(null);
+                        setFolderSearch("");
+                      } else if (res.type === 'chap') {
+                        setFolderSubjId(res.subjId);
+                        setFolderChapId(res.chapId);
+                        setFolderSearch("");
+                      } else if (res.type === 'src') {
+                        setActiveItemId(res.srcId);
+                        setActiveSourceId(res.srcId);
+                        setActiveBookmarkFolderId(null);
+                      }
+                    }}
+                    className="p-4 rounded-xl bg-card border border-border hover:border-primary/50 hover:shadow-md transition-all cursor-pointer group flex flex-col justify-between"
+                  >
+                    <div className="flex items-start gap-3 mb-2">
+                      <div className="p-2.5 rounded-xl bg-primary/10 text-primary shrink-0 group-hover:scale-105 transition-transform">
+                        {res.type === 'src' ? <BookCopy className="h-5 w-5" /> : <Folder className="h-5 w-5" />}
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <p className="text-sm font-bold text-foreground truncate group-hover:text-primary transition-colors">
+                          {res.item.name}
+                        </p>
+                        <p className="text-[10px] text-muted-foreground truncate mt-0.5">
+                          {res.path.join(" / ")}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="text-[11px] text-primary font-semibold flex items-center justify-end gap-1">
+                      <span>{res.type === 'src' ? `Open Bank (${res.count} Qs)` : "Open Folder"}</span>
+                      <ChevRight className="h-3 w-3" />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : !folderSubjId ? (
+            /* Level 1: Root Subject Folders */
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-sm font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-2">
+                  <Folder className="h-4 w-4 text-primary" /> Subject Folders ({subjects.length})
+                </h2>
+              </div>
+
+              {subjects.length === 0 ? (
+                <div className="text-center py-20 border-2 border-dashed border-border rounded-2xl max-w-lg mx-auto">
+                  <FolderPlus className="h-12 w-12 mx-auto text-primary/30 mb-3" />
+                  <p className="text-base font-bold text-foreground mb-1">No question subjects yet</p>
+                  <p className="text-xs text-muted-foreground mb-4">Create your first subject folder (e.g. Physics, Chemistry, Maths) to organize question banks.</p>
+                  <Button onClick={addSubject} className="gap-2 text-xs font-semibold">
+                    <FolderPlus className="h-4 w-4" /> Create Subject Folder
+                  </Button>
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                  {subjects.map((sub) => {
+                    const totalChaps = sub.chapters?.length || 0;
+                    const totalQs = sub.chapters?.reduce((acc, chap) => acc + (chap.sources?.reduce((sacc, src) => sacc + (allQuestions[src.id]?.length || 0), 0) || 0), 0) || 0;
+
+                    return (
+                      <div
+                        key={sub.id}
+                        onClick={() => setFolderSubjId(sub.id)}
+                        className="group relative p-5 rounded-2xl bg-card border border-border/80 hover:border-primary/50 hover:shadow-lg hover:-translate-y-0.5 transition-all cursor-pointer flex flex-col justify-between min-h-[140px]"
+                      >
+                        <div className="flex items-start justify-between gap-2 mb-3">
+                          <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/20 flex items-center justify-center text-primary group-hover:scale-110 transition-transform shadow-inner">
+                            <Folder className="h-6 w-6 fill-primary/20" />
+                          </div>
+
+                          <ThreeDotMenu>
+                            <MenuItem icon={FolderPlus} label="Add Chapter" onClick={(e: any) => { e.stopPropagation(); addChapter(sub.id); }} />
+                            <MenuItem icon={Pencil} label="Rename" onClick={(e: any) => { e.stopPropagation(); setRenamingId(sub.id); setRenameVal(sub.name); }} />
+                            <MenuItem icon={Trash2} label="Delete" destructive onClick={(e: any) => { e.stopPropagation(); deleteSubject(sub.id); }} />
+                          </ThreeDotMenu>
+                        </div>
+
+                        <div>
+                          {renamingId === sub.id ? (
+                            <Input
+                              autoFocus
+                              value={renameVal}
+                              onChange={(e) => setRenameVal(e.target.value)}
+                              onBlur={commitRename}
+                              onKeyDown={(e) => e.key === "Enter" && commitRename()}
+                              onClick={(e) => e.stopPropagation()}
+                              className="h-7 text-xs font-bold"
+                            />
+                          ) : (
+                            <h3 className="text-base font-bold text-foreground group-hover:text-primary transition-colors truncate">
+                              {sub.name}
+                            </h3>
+                          )}
+                          <p className="text-xs text-muted-foreground mt-1 font-medium">
+                            {totalChaps} {totalChaps === 1 ? "chapter" : "chapters"} · {totalQs} {totalQs === 1 ? "question" : "questions"}
+                          </p>
+                        </div>
+                      </div>
+                    );
+                  })}
+
+                  {/* Quick Add Card */}
+                  <button
+                    onClick={addSubject}
+                    className="p-5 rounded-2xl border-2 border-dashed border-border/80 hover:border-primary/50 hover:bg-primary/5 transition-all flex flex-col items-center justify-center gap-2 text-muted-foreground hover:text-primary min-h-[140px] group"
+                  >
+                    <div className="p-3 rounded-full bg-muted group-hover:bg-primary/10 group-hover:scale-110 transition-all">
+                      <Plus className="h-5 w-5" />
+                    </div>
+                    <span className="text-xs font-bold">New Subject Folder</span>
+                  </button>
+                </div>
+              )}
+            </div>
+          ) : !folderChapId ? (
+            /* Level 2: Inside a Subject -> Chapters */
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-sm font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-2">
+                  <FolderOpen className="h-4 w-4 text-primary" /> Chapters in {currentFolderSubj?.name} ({currentFolderSubj?.chapters?.length || 0})
+                </h2>
+              </div>
+
+              {(!currentFolderSubj?.chapters || currentFolderSubj.chapters.length === 0) ? (
+                <div className="text-center py-20 border-2 border-dashed border-border rounded-2xl max-w-lg mx-auto">
+                  <FolderPlus className="h-12 w-12 mx-auto text-primary/30 mb-3" />
+                  <p className="text-base font-bold text-foreground mb-1">No chapters added yet</p>
+                  <p className="text-xs text-muted-foreground mb-4">Add a chapter to organize sources and questions under {currentFolderSubj?.name}.</p>
+                  <Button onClick={() => currentFolderSubj && addChapter(currentFolderSubj.id)} className="gap-2 text-xs font-semibold">
+                    <FolderPlus className="h-4 w-4" /> Add Chapter
+                  </Button>
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                  {currentFolderSubj.chapters.map((chap) => {
+                    const totalSources = chap.sources?.length || 0;
+                    const totalQs = chap.sources?.reduce((acc, src) => acc + (allQuestions[src.id]?.length || 0), 0) || 0;
+
+                    return (
+                      <div
+                        key={chap.id}
+                        onClick={() => setFolderChapId(chap.id)}
+                        className="group relative p-5 rounded-2xl bg-card border border-border/80 hover:border-primary/50 hover:shadow-lg hover:-translate-y-0.5 transition-all cursor-pointer flex flex-col justify-between min-h-[140px]"
+                      >
+                        <div className="flex items-start justify-between gap-2 mb-3">
+                          <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/20 flex items-center justify-center text-primary group-hover:scale-110 transition-transform shadow-inner">
+                            <Folder className="h-6 w-6 fill-primary/20" />
+                          </div>
+
+                          <ThreeDotMenu>
+                            <MenuItem icon={FilePlus} label="Add Source" onClick={(e: any) => { e.stopPropagation(); if (currentFolderSubj) addSource(currentFolderSubj.id, chap.id); }} />
+                            <MenuItem icon={Pencil} label="Rename" onClick={(e: any) => { e.stopPropagation(); setRenamingId(chap.id); setRenameVal(chap.name); }} />
+                            <MenuItem icon={Trash2} label="Delete" destructive onClick={(e: any) => { e.stopPropagation(); if (currentFolderSubj) deleteChapter(currentFolderSubj.id, chap.id); }} />
+                          </ThreeDotMenu>
+                        </div>
+
+                        <div>
+                          {renamingId === chap.id ? (
+                            <Input
+                              autoFocus
+                              value={renameVal}
+                              onChange={(e) => setRenameVal(e.target.value)}
+                              onBlur={commitRename}
+                              onKeyDown={(e) => e.key === "Enter" && commitRename()}
+                              onClick={(e) => e.stopPropagation()}
+                              className="h-7 text-xs font-bold"
+                            />
+                          ) : (
+                            <h3 className="text-base font-bold text-foreground group-hover:text-primary transition-colors truncate">
+                              {chap.name}
+                            </h3>
+                          )}
+                          <p className="text-xs text-muted-foreground mt-1 font-medium truncate">
+                            {totalSources} {totalSources === 1 ? "source" : "sources"} · {totalQs} {totalQs === 1 ? "question" : "questions"}
+                          </p>
+                        </div>
+                      </div>
+                    );
+                  })}
+
+                  {/* Quick Add Card */}
+                  <button
+                    onClick={() => currentFolderSubj && addChapter(currentFolderSubj.id)}
+                    className="p-5 rounded-2xl border-2 border-dashed border-border/80 hover:border-primary/50 hover:bg-primary/5 transition-all flex flex-col items-center justify-center gap-2 text-muted-foreground hover:text-primary min-h-[140px] group"
+                  >
+                    <div className="p-3 rounded-full bg-muted group-hover:bg-primary/10 group-hover:scale-110 transition-all">
+                      <Plus className="h-5 w-5" />
+                    </div>
+                    <span className="text-xs font-bold">New Chapter</span>
+                  </button>
+                </div>
+              )}
+            </div>
+          ) : (
+            /* Level 3: Inside a Chapter -> Sources */
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-sm font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-2">
+                  <BookCopy className="h-4 w-4 text-primary" /> Sources in {currentFolderChap?.name} ({currentFolderChap?.sources?.length || 0})
+                </h2>
+              </div>
+
+              {(!currentFolderChap?.sources || currentFolderChap.sources.length === 0) ? (
+                <div className="text-center py-20 border-2 border-dashed border-border rounded-2xl max-w-lg mx-auto">
+                  <FilePlus className="h-12 w-12 mx-auto text-primary/30 mb-3" />
+                  <p className="text-base font-bold text-foreground mb-1">No question sources yet</p>
+                  <p className="text-xs text-muted-foreground mb-4">Add a source folder (e.g. PYQs 2024, Irodov, Mock Tests) to save questions.</p>
+                  <Button onClick={() => currentFolderSubj && currentFolderChap && addSource(currentFolderSubj.id, currentFolderChap.id)} className="gap-2 text-xs font-semibold">
+                    <FilePlus className="h-4 w-4" /> Add Source
+                  </Button>
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                  {currentFolderChap.sources.map((src) => {
+                    const count = allQuestions[src.id]?.length || 0;
+
+                    return (
+                      <div
+                        key={src.id}
+                        onClick={() => {
+                          setActiveItemId(src.id);
+                          setActiveSourceId(src.id);
+                          setActiveBookmarkFolderId(null);
+                        }}
+                        className="group relative p-5 rounded-2xl bg-card border border-border/80 hover:border-primary/50 hover:shadow-lg hover:-translate-y-0.5 transition-all cursor-pointer flex flex-col justify-between min-h-[140px]"
+                      >
+                        <div className="flex items-start justify-between gap-2 mb-3">
+                          <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/20 flex items-center justify-center text-primary group-hover:scale-110 transition-transform shadow-inner">
+                            <BookCopy className="h-6 w-6 text-primary" />
+                          </div>
+
+                          <ThreeDotMenu>
+                            <MenuItem icon={Pencil} label="Rename" onClick={(e: any) => { e.stopPropagation(); setRenamingId(src.id); setRenameVal(src.name); }} />
+                            <MenuItem icon={Trash2} label="Delete" destructive onClick={(e: any) => { e.stopPropagation(); if (currentFolderSubj && currentFolderChap) deleteSource(currentFolderSubj.id, currentFolderChap.id, src.id); }} />
+                          </ThreeDotMenu>
+                        </div>
+
+                        <div>
+                          {renamingId === src.id ? (
+                            <Input
+                              autoFocus
+                              value={renameVal}
+                              onChange={(e) => setRenameVal(e.target.value)}
+                              onBlur={commitRename}
+                              onKeyDown={(e) => e.key === "Enter" && commitRename()}
+                              onClick={(e) => e.stopPropagation()}
+                              className="h-7 text-xs font-bold"
+                            />
+                          ) : (
+                            <h3 className="text-base font-bold text-foreground group-hover:text-primary transition-colors truncate">
+                              {src.name}
+                            </h3>
+                          )}
+                          <p className="text-xs text-muted-foreground mt-1 font-medium truncate">
+                            {count} {count === 1 ? "question saved" : "questions saved"}
+                          </p>
+                        </div>
+                      </div>
+                    );
+                  })}
+
+                  {/* Quick Add Card */}
+                  <button
+                    onClick={() => currentFolderSubj && currentFolderChap && addSource(currentFolderSubj.id, currentFolderChap.id)}
+                    className="p-5 rounded-2xl border-2 border-dashed border-border/80 hover:border-primary/50 hover:bg-primary/5 transition-all flex flex-col items-center justify-center gap-2 text-muted-foreground hover:text-primary min-h-[140px] group"
+                  >
+                    <div className="p-3 rounded-full bg-muted group-hover:bg-primary/10 group-hover:scale-110 transition-all">
+                      <Plus className="h-5 w-5" />
+                    </div>
+                    <span className="text-xs font-bold">New Source</span>
+                  </button>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  };
+
+  return (
+    <>
+      <div id="print-root" />
+      {isPrinting && createPortal(
+        <div className="p-8 max-w-4xl mx-auto space-y-6 bg-white text-black font-sans">
+          <div className="border-b-2 border-black pb-4 flex justify-between items-end">
+            <div>
+              <h1 className="text-2xl font-black uppercase tracking-wider">JEE Question Bank</h1>
+              <p className="text-xs text-gray-500 mt-1">Source: {activeSourceId ? getSourceName(activeSourceId) : 'Bookmarks'}</p>
+            </div>
+            <div className="text-right">
+              <p className="text-xs font-bold">Total: {activeQuestionsWithSource.length} Questions</p>
+              <p className="text-[10px] text-gray-400">{new Date().toLocaleDateString()}</p>
+            </div>
+          </div>
+          <div className="space-y-6">
+            {sortedQuestions.map(({ question, sourceId }) => (
+              <QuestionCard key={question.id} question={question} sourceId={sourceId} />
+            ))}
+          </div>
+          <style dangerouslySetInnerHTML={{ __html: `
             @media print {
-              @page { margin: 10mm; size: auto; }
-              html, body {
+              body, html {
+                background: white !important;
+                color: black !important;
                 height: auto !important;
-                min-height: 100% !important;
                 overflow: visible !important;
               }
               #root {
@@ -1139,134 +1574,142 @@ export default function SavesPage() {
         exit={{ opacity: 0, y: -20 }}
         className={cn("flex h-full overflow-hidden bg-background", isPrinting && "hidden")}
       >
-      {/* Sidebar */}
-      <div className={cn("w-full md:w-64 shrink-0 border-r border-border flex flex-col bg-sidebar", showSidebar ? "flex fixed inset-0 z-[200] bg-background/95 backdrop-blur-xl md:relative md:z-auto md:bg-sidebar" : "hidden")}>
-        <div className="flex items-center justify-between px-3 py-2.5 border-b border-border shrink-0">
-          <div className="flex items-center gap-2">
-            <button onClick={() => setShowSidebar(false)} className="h-6 w-6 flex items-center justify-center rounded hover:bg-muted text-muted-foreground hover:text-foreground transition-colors" title="Close sidebar">
-              <ChevronLeft className="h-3.5 w-3.5" />
-            </button>
-            <span className="text-xs font-semibold text-foreground uppercase tracking-wide flex items-center gap-2"><Bookmark className="h-4 w-4"/>Saves</span>
-          </div>
-           <div className="flex items-center gap-1.5">
-            <button onClick={addSubject} className="h-6 w-6 flex items-center justify-center rounded hover:bg-muted text-muted-foreground hover:text-foreground transition-colors" title="New Subject">
-              <FolderPlus className="h-3.5 w-3.5" />
-            </button>
-          </div>
-        </div>
-        
-        <Reorder.Group as="div" axis="y" values={subjects} onReorder={setSubjects} className="flex-1 overflow-y-auto p-1.5 space-y-0.5">
-          {isLoading ? (
-            <div className="flex items-center justify-center h-full text-muted-foreground">
-              <Loader2 className="h-6 w-6 animate-spin" />
+      {/* Sidebar - only show in section view mode */}
+      {savesViewMode === "section" && (
+        <div className={cn("w-full md:w-64 shrink-0 border-r border-border flex flex-col bg-sidebar", showSidebar ? "flex fixed inset-0 z-[200] bg-background/95 backdrop-blur-xl md:relative md:z-auto md:bg-sidebar" : "hidden")}>
+          <div className="flex items-center justify-between px-3 py-2.5 border-b border-border shrink-0">
+            <div className="flex items-center gap-2">
+              <button onClick={() => setShowSidebar(false)} className="h-6 w-6 flex items-center justify-center rounded hover:bg-muted text-muted-foreground hover:text-foreground transition-colors" title="Close sidebar">
+                <ChevronLeft className="h-3.5 w-3.5" />
+              </button>
+              <span className="text-xs font-semibold text-foreground uppercase tracking-wide flex items-center gap-2"><Bookmark className="h-4 w-4"/>Saves</span>
             </div>
-          )
-          : subjects.length === 0 ? (
-            <div className="text-center py-8 px-3">
-              <Bookmark className="h-8 w-8 mx-auto mb-2 text-primary/30" />
-              <p className="text-xs text-muted-foreground">No subjects yet</p>
-              <button
-                onClick={addSubject}
-                className="text-[10px] text-primary hover:underline mt-1"
-              >
-                + Create subject
+             <div className="flex items-center gap-1">
+              <button onClick={() => setSavesViewMode("folder")} className="h-6 w-6 flex items-center justify-center rounded hover:bg-muted text-muted-foreground hover:text-foreground transition-colors" title="Switch to Folder View">
+                <LayoutGrid className="h-3.5 w-3.5 text-primary" />
+              </button>
+              <button onClick={addSubject} className="h-6 w-6 flex items-center justify-center rounded hover:bg-muted text-muted-foreground hover:text-foreground transition-colors" title="New Subject">
+                <FolderPlus className="h-3.5 w-3.5" />
               </button>
             </div>
-          ) : null}
-          {subjects.map(sub => (
-            <Reorder.Item as="div" key={sub.id} value={sub}>
-              {/* Subject (L1) */}
-              <div className={cn("group flex items-center gap-1 px-2 py-1.5 cursor-pointer rounded-lg", activeItemId === sub.id ? "bg-accent/40" : "hover:bg-muted/50")} onClick={() => setActiveItemId(sub.id)}>
-                <button onClick={(e) => {e.stopPropagation(); toggleSubject(sub.id)}} className="text-muted-foreground hover:text-foreground"><ChevronDown className={cn("h-3 w-3 transition-transform", !sub.expanded && "-rotate-90")} /></button>
-                {renamingId === sub.id ? (
-                  <Input autoFocus value={renameVal} onChange={e => setRenameVal(e.target.value)} onBlur={commitRename} onKeyDown={e => e.key === 'Enter' && commitRename()} className="h-6 text-xs" />
-                ) : (
-                  <span className="flex-1 text-xs font-semibold text-foreground truncate">{sub.name}</span>
-                )}
-                <ThreeDotMenu>
-                  <MenuItem icon={FilePlus} label="Add Chapter" onClick={() => addChapter(sub.id)} />
-                  <MenuItem icon={Pencil} label="Rename" onClick={() => {setRenamingId(sub.id); setRenameVal(sub.name);}} />
-                  <MenuItem icon={Trash2} label="Delete" destructive onClick={() => deleteSubject(sub.id)} />
-                </ThreeDotMenu>
+          </div>
+          
+          <Reorder.Group as="div" axis="y" values={subjects} onReorder={setSubjects} className="flex-1 overflow-y-auto p-1.5 space-y-0.5">
+            {isLoading ? (
+              <div className="flex items-center justify-center h-full text-muted-foreground">
+                <Loader2 className="h-6 w-6 animate-spin" />
               </div>
-
-              {/* Chapters (L2) */}
-              {sub.expanded && (
-                <div onPointerDown={e => e.stopPropagation()} className="pl-4">
-                  <Reorder.Group as="div" axis="y" values={sub.chapters} onReorder={(newChaps) => {
-                    const newSubjects = subjects.map(s => s.id === sub.id ? {...s, chapters: newChaps} : s);
-                    setSubjects(newSubjects);
-                  }} className="space-y-0.5 mt-0.5">
-                    {sub.chapters.map(chap => (
-                      <Reorder.Item as="div" key={chap.id} value={chap}>
-                        <div className={cn("group flex items-center gap-1 pl-5 pr-2 py-1.5 cursor-pointer rounded-lg", activeItemId === chap.id ? "bg-accent/40" : "hover:bg-muted/50")} onClick={() => setActiveItemId(chap.id)}>
-                          <button onClick={(e) => {e.stopPropagation(); toggleChapter(sub.id, chap.id)}} className="text-muted-foreground hover:text-foreground"><ChevronDown className={cn("h-3 w-3 transition-transform", !chap.expanded && "-rotate-90")} /></button>
-                          {renamingId === chap.id ? (
-                            <Input autoFocus value={renameVal} onChange={e => setRenameVal(e.target.value)} onBlur={commitRename} onKeyDown={e => e.key === 'Enter' && commitRename()} className="h-6 text-xs" />
-                          ) : (
-                            <span className="flex-1 text-xs text-foreground truncate">{chap.name}</span>
-                          )}
-                          <ThreeDotMenu>
-                            <MenuItem icon={FilePlus} label="Add Source" onClick={() => addSource(sub.id, chap.id)} />
-                            <MenuItem icon={Pencil} label="Rename" onClick={() => {setRenamingId(chap.id); setRenameVal(chap.name);}} />
-                            <MenuItem icon={Trash2} label="Delete" destructive onClick={() => deleteChapter(sub.id, chap.id)} />
-                          </ThreeDotMenu>
-                        </div>
-
-                        {/* Sources (L3) */}
-                        {chap.expanded && (
-                          <div onPointerDown={e => e.stopPropagation()} className="pl-4">
-                            <Reorder.Group as="div" axis="y" values={chap.sources} onReorder={(newSrcs) => {
-                              const newSubjects = subjects.map(s => s.id === sub.id ? {...s, chapters: s.chapters.map(c => c.id === chap.id ? {...c, sources: newSrcs} : c)} : s);
-                              setSubjects(newSubjects);
-                            }} className="space-y-0.5 mt-0.5">
-                              {chap.sources.map(src => (
-                                <Reorder.Item as="div" key={src.id} value={src}>
-                                  <div className={cn("group flex items-center gap-1 pl-9 pr-2 py-1.5 cursor-pointer rounded-lg", activeSourceId === src.id && !activeBookmarkFolderId ? "bg-primary/10 text-primary" : "hover:bg-muted/50 text-muted-foreground hover:text-foreground")} onClick={() => {setActiveItemId(src.id); setActiveSourceId(src.id); setActiveBookmarkFolderId(null); setShowSidebar(false);}}>
-                                    <div className="w-3 h-3 flex items-center justify-center"><div className="w-1 h-1 bg-muted-foreground rounded-full"/></div>
-                                    {renamingId === src.id ? (
-                                      <Input autoFocus value={renameVal} onChange={e => setRenameVal(e.target.value)} onBlur={commitRename} onKeyDown={e => e.key === 'Enter' && commitRename()} className="h-5 text-xs" />
-                                    ) : (
-                                      <span className="flex-1 text-xs truncate">{src.name}</span>
-                                    )}
-                                    <ThreeDotMenu>
-                                      <MenuItem icon={Pencil} label="Rename" onClick={() => {setRenamingId(src.id); setRenameVal(src.name);}} />
-                                      <MenuItem icon={Trash2} label="Delete" destructive onClick={() => deleteSource(sub.id, chap.id, src.id)} />
-                                    </ThreeDotMenu>
-                                  </div>
-                                </Reorder.Item>
-                              ))}
-                              {/* Add source shortcut */}
-                              <button
-                                onClick={() => addSource(sub.id, chap.id)}
-                                className="flex items-center gap-1 pl-9 pr-2 py-1 text-[10px] text-muted-foreground hover:text-primary transition-colors w-full"
-                              >
-                                <FilePlus className="h-2.5 w-2.5" />
-                                + Add source
-                              </button>
-                            </Reorder.Group>
-                          </div>
-                        )}
-                      </Reorder.Item>
-                    ))}
-                  </Reorder.Group>
-                </div>
-              )}
-              {/* Add chapter shortcut */}
-              {sub.expanded && (
+            )
+            : subjects.length === 0 ? (
+              <div className="text-center py-8 px-3">
+                <Bookmark className="h-8 w-8 mx-auto mb-2 text-primary/30" />
+                <p className="text-xs text-muted-foreground">No subjects yet</p>
                 <button
-                  onClick={() => addChapter(sub.id)}
-                  className="flex items-center gap-1 pl-5 pr-2 py-1 text-[10px] text-muted-foreground hover:text-primary transition-colors w-full"
+                  onClick={addSubject}
+                  className="text-[10px] text-primary hover:underline mt-1"
                 >
-                  <FilePlus className="h-2.5 w-2.5" />+ Add chapter
+                  + Create subject
                 </button>
-              )}
-            </Reorder.Item>
-          ))}
-        </Reorder.Group>
-      </div>
+              </div>
+            ) : null}
+            {subjects.map(sub => (
+              <Reorder.Item as="div" key={sub.id} value={sub}>
+                {/* Subject (L1) */}
+                <div className={cn("group flex items-center gap-1 px-2 py-1.5 cursor-pointer rounded-lg", activeItemId === sub.id ? "bg-accent/40" : "hover:bg-muted/50")} onClick={() => setActiveItemId(sub.id)}>
+                  <button onClick={(e) => {e.stopPropagation(); toggleSubject(sub.id)}} className="text-muted-foreground hover:text-foreground"><ChevronDown className={cn("h-3 w-3 transition-transform", !sub.expanded && "-rotate-90")} /></button>
+                  {renamingId === sub.id ? (
+                    <Input autoFocus value={renameVal} onChange={e => setRenameVal(e.target.value)} onBlur={commitRename} onKeyDown={e => e.key === 'Enter' && commitRename()} className="h-6 text-xs" />
+                  ) : (
+                    <span className="flex-1 text-xs font-semibold text-foreground truncate">{sub.name}</span>
+                  )}
+                  <ThreeDotMenu>
+                    <MenuItem icon={FilePlus} label="Add Chapter" onClick={() => addChapter(sub.id)} />
+                    <MenuItem icon={Pencil} label="Rename" onClick={() => {setRenamingId(sub.id); setRenameVal(sub.name);}} />
+                    <MenuItem icon={Trash2} label="Delete" destructive onClick={() => deleteSubject(sub.id)} />
+                  </ThreeDotMenu>
+                </div>
+
+                {/* Chapters (L2) */}
+                {sub.expanded && (
+                  <div onPointerDown={e => e.stopPropagation()} className="pl-4">
+                    <Reorder.Group as="div" axis="y" values={sub.chapters} onReorder={(newChaps) => {
+                      const newSubjects = subjects.map(s => s.id === sub.id ? {...s, chapters: newChaps} : s);
+                      setSubjects(newSubjects);
+                    }} className="space-y-0.5 mt-0.5">
+                      {sub.chapters.map(chap => (
+                        <Reorder.Item as="div" key={chap.id} value={chap}>
+                          <div className={cn("group flex items-center gap-1 pl-5 pr-2 py-1.5 cursor-pointer rounded-lg", activeItemId === chap.id ? "bg-accent/40" : "hover:bg-muted/50")} onClick={() => setActiveItemId(chap.id)}>
+                            <button onClick={(e) => {e.stopPropagation(); toggleChapter(sub.id, chap.id)}} className="text-muted-foreground hover:text-foreground"><ChevronDown className={cn("h-3 w-3 transition-transform", !chap.expanded && "-rotate-90")} /></button>
+                            {renamingId === chap.id ? (
+                              <Input autoFocus value={renameVal} onChange={e => setRenameVal(e.target.value)} onBlur={commitRename} onKeyDown={e => e.key === 'Enter' && commitRename()} className="h-6 text-xs" />
+                            ) : (
+                              <span className="flex-1 text-xs text-foreground truncate">{chap.name}</span>
+                            )}
+                            <ThreeDotMenu>
+                              <MenuItem icon={FilePlus} label="Add Source" onClick={() => addSource(sub.id, chap.id)} />
+                              <MenuItem icon={Pencil} label="Rename" onClick={() => {setRenamingId(chap.id); setRenameVal(chap.name);}} />
+                              <MenuItem icon={Trash2} label="Delete" destructive onClick={() => deleteChapter(sub.id, chap.id)} />
+                            </ThreeDotMenu>
+                          </div>
+
+                          {/* Sources (L3) */}
+                          {chap.expanded && (
+                            <div onPointerDown={e => e.stopPropagation()} className="pl-4">
+                              <Reorder.Group as="div" axis="y" values={chap.sources} onReorder={(newSrcs) => {
+                                const newSubjects = subjects.map(s => s.id === sub.id ? {...s, chapters: s.chapters.map(c => c.id === chap.id ? {...c, sources: newSrcs} : c)} : s);
+                                setSubjects(newSubjects);
+                              }} className="space-y-0.5 mt-0.5">
+                                {chap.sources.map(src => (
+                                  <Reorder.Item as="div" key={src.id} value={src}>
+                                    <div className={cn("group flex items-center gap-1 pl-9 pr-2 py-1.5 cursor-pointer rounded-lg", activeSourceId === src.id && !activeBookmarkFolderId ? "bg-primary/10 text-primary" : "hover:bg-muted/50 text-muted-foreground hover:text-foreground")} onClick={() => {setActiveItemId(src.id); setActiveSourceId(src.id); setActiveBookmarkFolderId(null); setShowSidebar(false);}}>
+                                      <div className="w-3 h-3 flex items-center justify-center"><div className="w-1 h-1 bg-muted-foreground rounded-full"/></div>
+                                      {renamingId === src.id ? (
+                                        <Input autoFocus value={renameVal} onChange={e => setRenameVal(e.target.value)} onBlur={commitRename} onKeyDown={e => e.key === 'Enter' && commitRename()} className="h-5 text-xs" />
+                                      ) : (
+                                        <span className="flex-1 text-xs truncate">{src.name}</span>
+                                      )}
+                                      <ThreeDotMenu>
+                                        <MenuItem icon={Pencil} label="Rename" onClick={() => {setRenamingId(src.id); setRenameVal(src.name);}} />
+                                        <MenuItem icon={Trash2} label="Delete" destructive onClick={() => deleteSource(sub.id, chap.id, src.id)} />
+                                      </ThreeDotMenu>
+                                    </div>
+                                  </Reorder.Item>
+                                ))}
+                                {/* Add source shortcut */}
+                                <button
+                                  onClick={() => addSource(sub.id, chap.id)}
+                                  className="flex items-center gap-1 pl-9 pr-2 py-1 text-[10px] text-muted-foreground hover:text-primary transition-colors w-full"
+                                >
+                                  <FilePlus className="h-2.5 w-2.5" />
+                                  + Add source
+                                </button>
+                              </Reorder.Group>
+                            </div>
+                          )}
+                        </Reorder.Item>
+                      ))}
+                    </Reorder.Group>
+                  </div>
+                )}
+                {/* Add chapter shortcut */}
+                {sub.expanded && (
+                  <button
+                    onClick={() => addChapter(sub.id)}
+                    className="flex items-center gap-1 pl-5 pr-2 py-1 text-[10px] text-muted-foreground hover:text-primary transition-colors w-full"
+                  >
+                    <FilePlus className="h-2.5 w-2.5" />+ Add chapter
+                  </button>
+                )}
+              </Reorder.Item>
+            ))}
+          </Reorder.Group>
+        </div>
+      )}
 
       {/* Main Content */}
+      {savesViewMode === "folder" && !activeSourceId && !activeBookmarkFolderId ? (
+        renderSavesFolderExplorer()
+      ) : (
       <div className="flex-1 flex flex-col overflow-hidden min-w-0">
         <div className={cn("flex items-center px-3 py-2 bg-card border-b border-border shrink-0", showSidebar && "hidden")}>
           <button onClick={() => setShowSidebar(true)} className="flex items-center gap-1.5 text-xs font-semibold text-foreground">
@@ -1275,6 +1718,22 @@ export default function SavesPage() {
         </div>
         {/* Toolbar */}
         <div className="flex items-center gap-2 px-3 py-1.5 border-b border-border bg-card/80 backdrop-blur-sm flex-shrink-0 flex-wrap">
+          {savesViewMode === "folder" && (
+            <Button
+              variant="outline"
+              size="sm"
+              className="h-7 gap-1.5 text-xs shrink-0 bg-primary/10 hover:bg-primary/20 text-primary border-primary/20 font-semibold"
+              onClick={() => {
+                setActiveSourceId(null);
+                setActiveBookmarkFolderId(null);
+              }}
+              title="Back to Folders"
+            >
+              <ArrowLeft className="h-3 w-3" />
+              <span>Back to Folders</span>
+            </Button>
+          )}
+
           <Button size="sm" className="h-7 gap-1.5 text-xs shrink-0" onClick={() => activeSourceId && setShowAddPanel(p => !p)} disabled={!activeSourceId}>
             <Plus className="h-3 w-3" /> Add New Ques
           </Button>
@@ -1294,6 +1753,16 @@ export default function SavesPage() {
             {isCompactMode ? <Eye className="h-3 w-3" /> : <EyeOff className="h-3 w-3" />}
             {isCompactMode ? 'Show Full' : 'Hide/Show'}
           </Button>
+
+          {/* View Mode Switcher */}
+          <button
+            onClick={() => setSavesViewMode(savesViewMode === "folder" ? "section" : "folder")}
+            className="h-7 px-2 flex items-center gap-1 rounded-md border border-border bg-muted/60 text-xs font-semibold text-muted-foreground hover:text-foreground transition-all shrink-0"
+            title="Switch layout mode"
+          >
+            {savesViewMode === "folder" ? <ListTree className="h-3 w-3 text-primary" /> : <LayoutGrid className="h-3 w-3 text-primary" />}
+            <span>{savesViewMode === "folder" ? "Sidebar Mode" : "Folder Mode"}</span>
+          </button>
 
           <div className="flex-1" />
 
@@ -1412,6 +1881,7 @@ export default function SavesPage() {
           </AnimatePresence>
         </div>
       </div>
+      )}
 
       {/* Modals */}
       <AnimatePresence>

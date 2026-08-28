@@ -54,7 +54,6 @@ target_files = [
     os.path.join(pages_dir, "CalendarPage.tsx"),
     os.path.join(pages_dir, "HomePage.tsx"),
     os.path.join(pages_dir, "LoginPage.tsx"),
-    os.path.join(pages_dir, "MovieHub.tsx"),
     os.path.join(pages_dir, "MusicPage.tsx"),
     os.path.join(pages_dir, "PDFPage.tsx"),
     os.path.join(pages_dir, "QuizPage.tsx"),

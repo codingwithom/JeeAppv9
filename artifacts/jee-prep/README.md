@@ -292,17 +292,11 @@ If the AI companion detects a mathematical or physical concept instruction (or a
 * **Agenda Grids**: Month, Week, and Day grids. Custom color tags categorize different domains (classes, self-study, mocks).
 * **Synthesizer Alarms**: Setup alarms that trigger custom oscillator sound wave patterns.
 
-### 7. Movie Hub (Study Breaks)
-* **Code Location**: [src/pages/MovieHub.tsx](file:///workspaces/JeeAppv9/artifacts/jee-prep/src/pages/MovieHub.tsx)
-* **TMDB watchlists**: Custom watchlists backed by TMDB keys to bypass rate limits.
-* **Redundant Stream Servers**: Automatically cycles through 5 embed servers: `vidking`, `2Embed`, `XPS`, `VidSrc Pro`, and `Hindi Multi-Audio`.
-* **Ad-Hijack Prevention**: Event listeners capture window `blur` events. If an iframe tries to redirect focus to an external tab, it instantly refocuses the main viewport to block ad page hijacking.
-
-### 8. Admin Page & Analytics
+### 7. Admin Page & Analytics
 * **Code Location**: [src/pages/AdminPage.tsx](file:///workspaces/JeeAppv9/artifacts/jee-prep/src/pages/AdminPage.tsx)
 * **Study Milestones**: Log mock test scores, predicts score percentiles, and records study targets.
 * **Performance Charts**: Plots heap memory allocation, simulated CPU loads, and storage quotas using Recharts.
-* **API Keyring**: Secure keyring panel to register and test connections for OpenRouter (AI Models) and TMDB (Movies).
+* **Data Management**: Export and restore full ZIP backups, manage workspace folder, and profile settings.
 
 ---
 

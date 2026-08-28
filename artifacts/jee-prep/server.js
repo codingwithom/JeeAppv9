@@ -1507,7 +1507,7 @@ app.get("/api/yt-search", async (req, res) => {
                   title: titleMatch[1].replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&amp;/g, '&'),
                   author: channel.name,
                   length_seconds: 0,
-                  thumbnail: `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`,
+                  thumbnail: `https://i.ytimg.com/vi/${videoId}/hq720.jpg`,
                   views: "N/A",
                   uploadedAt: published ? timeAgo(published) : "Recently"
                 });
@@ -1545,7 +1545,7 @@ app.get("/api/yt-search", async (req, res) => {
         title: v.title || "Unknown",
         author: v.channel?.name || "Unknown",
         length_seconds: v.durationInSec || 0,
-        thumbnail: v.thumbnails?.at(-1)?.url || `https://img.youtube.com/vi/${v.id}/hqdefault.jpg`,
+        thumbnail: `https://i.ytimg.com/vi/${v.id}/hq720.jpg`,
         views: v.views ? (v.views >= 1000000 ? (v.views / 1000000).toFixed(1) + "M" : v.views >= 1000 ? (v.views / 1000).toFixed(0) + "K" : v.views.toString()) : "N/A",
         uploadedAt: v.uploadedAt || "Recently"
       }));

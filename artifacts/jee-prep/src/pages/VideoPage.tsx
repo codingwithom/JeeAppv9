@@ -4,8 +4,8 @@ import { idbSet, idbGet, idbDelete } from "@/lib/idb";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
 import { useWorkspaceContext } from "@/context/WorkspaceContext";
 import { useVideoContext, VideoMiniState } from "@/context/VideoContext";
-import { getInvidiousInstances, getPipedInstances } from "@/utils/youtube";
-import { fetchPlaylistClientSide } from "@/utils/search";
+import { useAppContext } from "@/context/AppContext";
+import { fetchPlaylistClientSide, fetchVideoMetadataClientSide, searchYouTubeVideos } from "@/utils/search";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -51,6 +51,12 @@ import {
   ChevronLeft,
   Music,
   Repeat,
+  Folder,
+  FolderOpen,
+  ArrowLeft,
+  LayoutGrid,
+  ListTree,
+  Layers
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { loadYouTubeApi } from "@/lib/youtube-api";
@@ -1086,20 +1092,61 @@ function VideoSettingsPopup({
   );
 }
 
-// ─── YouTube Search Modal for Videos ──────────────────────────────────────────
 function BlurImage({ src, alt, className }: { src: string; alt?: string; className?: string }) {
   const [loaded, setLoaded] = useState(false);
+  const [hasError, setHasError] = useState(false);
+  const [errorIndex, setErrorIndex] = useState(0);
+
+  useEffect(() => {
+    setLoaded(false);
+    setHasError(false);
+    setErrorIndex(0);
+  }, [src]);
+
+  const ytIdMatch = src ? src.match(/\/vi\/([a-zA-Z0-9_-]{11})\//) : null;
+  const ytId = ytIdMatch ? ytIdMatch[1] : null;
+
+  const fallbacks = ytId ? [
+    `https://i.ytimg.com/vi/${ytId}/hq720.jpg`,
+    `https://img.youtube.com/vi/${ytId}/hq720.jpg`,
+    `https://i.ytimg.com/vi/${ytId}/hqdefault.jpg`,
+    `https://img.youtube.com/vi/${ytId}/hqdefault.jpg`,
+    `https://i.ytimg.com/vi/${ytId}/mqdefault.jpg`,
+    `https://img.youtube.com/vi/${ytId}/mqdefault.jpg`,
+    `https://img.youtube.com/vi/${ytId}/0.jpg`,
+  ] : (src ? [src] : []);
+
+  const currentSrc = fallbacks[errorIndex] || "";
+
   return (
-    <img
-      src={src}
-      alt={alt || ""}
-      className={cn(className, "transition-all duration-500", loaded ? "blur-0 scale-100" : "blur-md scale-110")}
-      onLoad={() => setLoaded(true)}
-      onError={(e) => {
-        (e.currentTarget as HTMLImageElement).src = "";
-        setLoaded(true);
-      }}
-    />
+    <div className={cn("relative w-full h-full bg-muted/60 flex items-center justify-center overflow-hidden rounded", className)}>
+      {!hasError && currentSrc ? (
+        <img
+          src={currentSrc}
+          alt=""
+          referrerPolicy="no-referrer"
+          loading="lazy"
+          className={cn(
+            "w-full h-full object-cover transition-opacity duration-300",
+            loaded ? "opacity-100" : "opacity-0"
+          )}
+          onLoad={() => setLoaded(true)}
+          onError={() => {
+            if (errorIndex + 1 < fallbacks.length) {
+              setErrorIndex(prev => prev + 1);
+            } else {
+              setHasError(true);
+              setLoaded(true);
+            }
+          }}
+        />
+      ) : null}
+      {(!loaded || hasError || !currentSrc) && (
+        <div className="absolute inset-0 bg-muted/90 flex items-center justify-center">
+          <Youtube className="w-5 h-5 opacity-40 text-muted-foreground" />
+        </div>
+      )}
+    </div>
   );
 }
 
@@ -1144,7 +1191,8 @@ function YouTubeVideoSearchModal({
       const ytPlaylistId = extractYouTubePlaylistId(raw);
       const ytId = getYouTubeId(raw);
 
-      if (ytPlaylistId) {
+      // If it's a pure playlist URL (without watch?v=) and not a mix/radio
+      if (ytPlaylistId && !ytPlaylistId.startsWith("RD") && !ytPlaylistId.startsWith("LL") && !ytPlaylistId.startsWith("WL") && !raw.includes("watch?v=")) {
         try {
           let tracks: any[] = [];
           
@@ -1163,9 +1211,7 @@ function YouTubeVideoSearchModal({
                 }));
               }
             }
-          } catch (e) {
-            console.warn("Local API failed, falling back to client-side extraction", e);
-          }
+          } catch (e) {}
 
           if (tracks.length === 0) {
             try {
@@ -1182,48 +1228,51 @@ function YouTubeVideoSearchModal({
             }
           }
 
-          if (tracks.length === 0) {
-            throw new Error("No tracks found in playlist or playlist is private.");
+          if (tracks.length > 0) {
+            setResults(tracks);
+            setLoading(false);
+            return;
           }
+        } catch (err: any) {}
+      }
 
-          setResults(tracks);
+      if (ytId) {
+        // Fetch single video metadata reliably
+        try {
+          const trackMeta = await fetchVideoMetadataClientSide(ytId);
+          setResults([{
+            videoId: ytId,
+            title: trackMeta.title,
+            author: trackMeta.artist,
+            length_seconds: trackMeta.duration,
+            thumbnail: trackMeta.thumbnail
+          }]);
         } catch (err: any) {
-          setError(err.message || "Failed to load playlist.");
+          setResults([{
+            videoId: ytId,
+            title: "YouTube Video",
+            author: "YouTube",
+            length_seconds: 0,
+            thumbnail: `https://img.youtube.com/vi/${ytId}/hqdefault.jpg`
+          }]);
         } finally {
           setLoading(false);
         }
         return;
-      } else if (ytId) {
-        // Fetch single video metadata
+      } else if (ytPlaylistId) {
         try {
-          let videoTitle = "YouTube Video";
-          let videoAuthor = "YouTube";
-          let videoLength = 0;
-          let videoThumb = `https://img.youtube.com/vi/${ytId}/mqdefault.jpg`;
-
-          try {
-            const apiBase = import.meta.env.BASE_URL.replace(/\/$/, "");
-            const res = await fetch(`${apiBase}/api/media-info?url=${encodeURIComponent(raw)}`);
-            if (res.ok) {
-              const data = await res.json();
-              if (data.type === "track") {
-                videoTitle = data.title;
-                videoAuthor = data.artist;
-                videoLength = data.duration;
-                videoThumb = data.thumbnail || videoThumb;
-              }
-            }
-          } catch (e) {}
-
-          setResults([{
-            videoId: ytId,
-            title: videoTitle,
-            author: videoAuthor,
-            length_seconds: videoLength,
-            thumbnail: videoThumb
-          }]);
+          const clientResult = await fetchPlaylistClientSide(ytPlaylistId);
+          const tracks = clientResult.tracks.map((t) => ({
+            videoId: t.youtubeId,
+            title: t.title,
+            author: t.artist,
+            length_seconds: t.duration,
+            thumbnail: t.thumbnail
+          }));
+          if (tracks.length === 0) throw new Error("No tracks found in playlist or playlist is private.");
+          setResults(tracks);
         } catch (err: any) {
-          setError("Failed to load video info.");
+          setError(err.message || "Failed to load playlist.");
         } finally {
           setLoading(false);
         }
@@ -1232,127 +1281,9 @@ function YouTubeVideoSearchModal({
     }
 
     try {
-      const q = encodeURIComponent(raw);
-
-      const fetchWithTimeout = async (url: string, timeoutMs: number) => {
-        const controller = new AbortController();
-        const id = setTimeout(() => controller.abort(), timeoutMs);
-        const response = await fetch(url, { signal: controller.signal });
-        clearTimeout(id);
-        if (!response.ok) throw new Error("HTTP error");
-        return response;
-      };
-
-      const fetchPiped = async (instance: string) => {
-        const res = await fetchWithTimeout(`${instance}/search?q=${q}&filter=all`, 4000);
-        const data = await res.json();
-        if (!data?.items?.length) throw new Error("No data");
-        const videos = data.items.filter((item: any) => item.type === "stream");
-        if (!videos.length) throw new Error("No videos");
-        return videos.slice(0, 50).map((v: any) => {
-          const vId = v.url.includes("?v=") ? v.url.split("?v=")[1].split("&")[0] : v.url.split("/").pop();
-          return {
-            videoId: vId,
-            title: v.title || "Unknown",
-            author: v.uploaderName || "Unknown",
-            length_seconds: v.duration || 0,
-            thumbnail: `https://i.ytimg.com/vi/${vId}/mqdefault.jpg`,
-          };
-        });
-      };
-
-      const fetchInvidious = async (instance: string) => {
-        const res = await fetchWithTimeout(`${instance}/api/v1/search?q=${q}&type=video`, 4000);
-        const data = await res.json();
-        if (!Array.isArray(data) || !data.length) throw new Error("No data");
-        return data.slice(0, 50).map((v: any) => ({
-          videoId: v.videoId,
-          title: v.title || "Unknown",
-          author: v.author || "Unknown",
-          length_seconds: v.lengthSeconds || v.length_seconds || 0,
-          thumbnail: `https://i.ytimg.com/vi/${v.videoId}/mqdefault.jpg`,
-        }));
-      };
-
-      const fetchProxy = async (proxyUrl: string) => {
-        const res = await fetchWithTimeout(proxyUrl, 5000);
-        const contentType = res.headers.get("content-type") || "";
-        let html = "";
-        if (contentType.includes("application/json")) {
-          const data = await res.json();
-          html = data.contents || "";
-        } else {
-          html = await res.text();
-        }
-
-        const match =
-          html.match(/var\s+ytInitialData\s*=\s*(\{[\s\S]+?\});/s) ||
-          html.match(/ytInitialData\s*=\s*(\{[\s\S]+?\});/s) ||
-          html.match(/window\["ytInitialData"\]\s*=\s*(\{[\s\S]+?\});/s);
-        if (!match) throw new Error("No ytInitialData");
-        const ytData = JSON.parse(match[1]);
-        const videos: any[] = [];
-        const findVideos = (obj: any) => {
-          if (videos.length >= 50) return;
-          if (Array.isArray(obj)) {
-            for (const item of obj) findVideos(item);
-          } else if (obj !== null && typeof obj === "object") {
-            if (obj.videoRenderer && obj.videoRenderer.videoId) {
-              videos.push(obj.videoRenderer);
-            } else {
-              for (const key of Object.keys(obj)) findVideos(obj[key]);
-            }
-          }
-        };
-        findVideos(ytData);
-
-        if (videos.length === 0) throw new Error("No videos found in proxy");
-
-        return videos.map((v) => {
-          const timeStr = v.lengthText?.simpleText || "0:00";
-          const parts = timeStr.split(":").map(Number);
-          const length_seconds =
-            parts.length === 3
-              ? parts[0] * 3600 + parts[1] * 60 + parts[2]
-              : parts.length === 2
-                ? parts[0] * 60 + parts[1]
-                : parts[0] || 0;
-
-          return {
-            videoId: v.videoId,
-            title: v.title?.runs?.[0]?.text || "Unknown",
-            author: v.ownerText?.runs?.[0]?.text || "Unknown",
-            length_seconds,
-            thumbnail: `https://i.ytimg.com/vi/${v.videoId}/mqdefault.jpg`,
-          };
-        });
-      };
-
-      const fetchLocal = async () => {
-        const apiBase = import.meta.env.BASE_URL.replace(/\/$/, "");
-        const res = await fetchWithTimeout(`${apiBase}/api/yt-search?q=${q}`, 5000);
-        const data = await res.json();
-        if (data.error) throw new Error(data.error);
-        if (!Array.isArray(data.results) || !data.results.length) throw new Error("No results");
-        return data.results;
-      };
-
-      const invidious_instances = await getInvidiousInstances();
-      const piped_instances = getPipedInstances();
-
-      const tasks = [
-        fetchLocal(),
-        ...piped_instances.map((instance) => fetchPiped(instance)),
-        ...invidious_instances.map((instance) => fetchInvidious(instance)),
-        fetchProxy(`https://api.allorigins.win/get?url=${encodeURIComponent(`https://www.youtube.com/results?search_query=${q}&gl=US&hl=en`)}`),
-        fetchProxy(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(`https://www.youtube.com/results?search_query=${q}&gl=US&hl=en`)}`),
-        fetchProxy(`https://corsproxy.io/?${encodeURIComponent(`https://www.youtube.com/results?search_query=${q}&gl=US&hl=en`)}`)
-      ];
-
-      const fastestResults = await Promise.any(tasks);
-
-      if (fastestResults && fastestResults.length > 0) {
-        setResults(fastestResults.slice(0, 50));
+      const searchResults = await searchYouTubeVideos(raw);
+      if (searchResults && searchResults.length > 0) {
+        setResults(searchResults.slice(0, 50));
       } else {
         setError("No results found. Try a different search term.");
       }
@@ -1546,6 +1477,14 @@ export default function VideoPage() {
     "vid_notes_v1",
     {},
   );
+  const { videoViewMode, setVideoViewMode } = useAppContext();
+  const [folderSecId, setFolderSecId] = useState<string | null>(null);
+  const [folderSubId, setFolderSubId] = useState<string | null>(null);
+  const [folderSearch, setFolderSearch] = useState("");
+
+  const currentFolderSec = useMemo(() => sections.find((s) => s.id === folderSecId), [sections, folderSecId]);
+  const currentFolderSub = useMemo(() => currentFolderSec?.subsections.find((sub) => sub.id === folderSubId), [currentFolderSec, folderSubId]);
+
   const [activeLeafId, setActiveLeafId] = useState<string | null>(null);
   const [renamingId, setRenamingId] = useState<string | null>(null);
   const [renameVal, setRenameVal] = useState("");
@@ -3129,6 +3068,13 @@ export default function VideoPage() {
           </span>
           <div className="flex items-center gap-1">
             <button
+              onClick={() => setVideoViewMode("folder")}
+              className="h-6 w-6 rounded-lg bg-primary/10 hover:bg-primary/20 flex items-center justify-center text-primary transition-colors flex-shrink-0"
+              title="Switch to Folder View"
+            >
+              <LayoutGrid className="h-3.5 w-3.5" />
+            </button>
+            <button
               onClick={addSection}
               className="h-6 w-6 rounded-lg bg-primary/10 hover:bg-primary/20 flex items-center justify-center text-primary transition-colors flex-shrink-0"
               title="Add section"
@@ -3410,6 +3356,466 @@ export default function VideoPage() {
 
   const MemoizedNotesPanel = useMemo(() => renderNotesPanelContent(), [notes, editingBlockId, editingText, mediaUrls, recording, recordingTime, recordingTargetBlockId, newNoteText, screenshotTargetBlockId]);
 
+  // Folder Explorer View for Video Hub
+  const renderVideoFolderExplorer = () => {
+    return (
+      <div className="flex-1 flex flex-col h-full overflow-hidden bg-background">
+        {/* Top Header / Breadcrumbs Toolbar */}
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 px-4 py-3 border-b border-border bg-card/50 backdrop-blur-md shrink-0">
+          {/* Breadcrumb path */}
+          <div className="flex items-center gap-1.5 flex-wrap min-w-0 text-sm">
+            {folderSecId !== null && (
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => {
+                  if (folderSubId) setFolderSubId(null);
+                  else setFolderSecId(null);
+                }}
+                className="h-8 px-2 text-xs gap-1 mr-1 text-muted-foreground hover:text-foreground"
+                title="Go back"
+              >
+                <ArrowLeft className="h-3.5 w-3.5" />
+                <span>Back</span>
+              </Button>
+            )}
+
+            <button
+              onClick={() => { setFolderSecId(null); setFolderSubId(null); }}
+              className={cn(
+                "flex items-center gap-1.5 font-bold transition-colors hover:text-primary",
+                !folderSecId ? "text-foreground" : "text-muted-foreground"
+              )}
+            >
+              <FolderOpen className="h-4 w-4 text-primary shrink-0" />
+              <span>Video Library</span>
+            </button>
+
+            {currentFolderSec && (
+              <>
+                <span className="text-muted-foreground font-semibold">/</span>
+                <button
+                  onClick={() => setFolderSubId(null)}
+                  className={cn(
+                    "font-semibold transition-colors hover:text-primary truncate max-w-[140px] sm:max-w-[200px]",
+                    !folderSubId ? "text-foreground font-bold" : "text-muted-foreground"
+                  )}
+                >
+                  {currentFolderSec.name}
+                </button>
+              </>
+            )}
+
+            {currentFolderSub && (
+              <>
+                <span className="text-muted-foreground font-semibold">/</span>
+                <span className="font-bold text-foreground truncate max-w-[140px] sm:max-w-[200px]">
+                  {currentFolderSub.name}
+                </span>
+              </>
+            )}
+          </div>
+
+          {/* Right side tools: Search + Actions + View Switcher */}
+          <div className="flex items-center gap-2 shrink-0 flex-wrap">
+            {/* Search bar */}
+            <div className="relative flex-1 sm:w-48">
+              <Search className="absolute left-2.5 top-2.5 h-3.5 w-3.5 text-muted-foreground" />
+              <input
+                value={folderSearch}
+                onChange={(e) => setFolderSearch(e.target.value)}
+                placeholder="Search videos..."
+                className="h-8 w-full pl-8 pr-7 text-xs bg-muted/50 border border-border rounded-lg text-foreground placeholder:text-muted-foreground outline-none focus:ring-1 focus:ring-primary/50"
+              />
+              {folderSearch && (
+                <button onClick={() => setFolderSearch("")} className="absolute right-2 top-2 text-muted-foreground hover:text-foreground">
+                  <X className="h-3.5 w-3.5" />
+                </button>
+              )}
+            </div>
+
+            {/* Action button */}
+            {!folderSecId ? (
+              <Button size="sm" onClick={addSection} className="h-8 gap-1.5 text-xs font-semibold shadow-sm">
+                <FolderPlus className="h-3.5 w-3.5" />
+                <span className="hidden sm:inline">New Folder</span>
+              </Button>
+            ) : !folderSubId ? (
+              <div className="flex items-center gap-1.5">
+                <Button size="sm" variant="outline" onClick={() => currentFolderSec && addSubsection(currentFolderSec.id)} className="h-8 gap-1.5 text-xs">
+                  <FolderPlus className="h-3.5 w-3.5 text-primary" />
+                  <span>New Sub-folder</span>
+                </Button>
+              </div>
+            ) : (
+              <Button size="sm" onClick={() => currentFolderSec && currentFolderSub && addSubSubsection(currentFolderSec.id, currentFolderSub.id)} className="h-8 gap-1.5 text-xs">
+                <FilePlus className="h-3.5 w-3.5" />
+                <span>Add Video Item</span>
+              </Button>
+            )}
+
+            {/* View Mode Switcher Toggle */}
+            <div className="flex items-center p-0.5 bg-muted rounded-lg border border-border shrink-0">
+              <button
+                onClick={() => setVideoViewMode("folder")}
+                className={cn(
+                  "flex items-center gap-1 px-2.5 py-1 text-xs font-semibold rounded-md transition-all",
+                  videoViewMode === "folder" ? "bg-card text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"
+                )}
+                title="Folder Explorer View"
+              >
+                <LayoutGrid className="h-3.5 w-3.5 text-primary" />
+                <span className="hidden md:inline">Folders</span>
+              </button>
+              <button
+                onClick={() => setVideoViewMode("section")}
+                className={cn(
+                  "flex items-center gap-1 px-2.5 py-1 text-xs font-semibold rounded-md transition-all",
+                  videoViewMode === "section" ? "bg-card text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"
+                )}
+                title="Classic Section Sidebar View"
+              >
+                <ListTree className="h-3.5 w-3.5" />
+                <span className="hidden md:inline">Sections</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Main Grid View */}
+        <div className="flex-1 overflow-y-auto p-4 sm:p-6">
+          {/* If searching */}
+          {folderSearch.trim() !== "" ? (
+            <div>
+              <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4">
+                Search Results for "{folderSearch}"
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                {sections.flatMap((sec) => [
+                  ...(sec.name.toLowerCase().includes(folderSearch.toLowerCase()) ? [{ type: 'sec', item: sec, secId: sec.id, path: [sec.name] }] : []),
+                  ...(sec.subsections?.flatMap((sub) => [
+                    ...(sub.name.toLowerCase().includes(folderSearch.toLowerCase()) || sub.video?.fileName?.toLowerCase().includes(folderSearch.toLowerCase()) ? [{ type: 'sub', item: sub, secId: sec.id, subId: sub.id, path: [sec.name, sub.name], hasVideo: !!sub.video }] : []),
+                    ...(sub.subsubsections?.filter((ss) => ss.name.toLowerCase().includes(folderSearch.toLowerCase()) || ss.video?.fileName?.toLowerCase().includes(folderSearch.toLowerCase())).map((ss) => ({ type: 'ssub', item: ss, secId: sec.id, subId: sub.id, subSubId: ss.id, path: [sec.name, sub.name, ss.name], hasVideo: !!ss.video })) || [])
+                  ]) || [])
+                ]).map((res: any, idx: number) => (
+                  <div
+                    key={idx}
+                    onClick={() => {
+                      if (res.type === 'sec') {
+                        setFolderSecId(res.secId);
+                        setFolderSubId(null);
+                        setFolderSearch("");
+                      } else if (res.type === 'sub') {
+                        if (res.hasVideo) {
+                          setActiveItemId(res.subId);
+                          setActiveLeafId(res.subId);
+                        } else {
+                          setFolderSecId(res.secId);
+                          setFolderSubId(res.subId);
+                          setFolderSearch("");
+                        }
+                      } else if (res.type === 'ssub') {
+                        setActiveItemId(res.subSubId);
+                        setActiveLeafId(res.subSubId);
+                      }
+                    }}
+                    className="p-4 rounded-xl bg-card border border-border hover:border-primary/50 hover:shadow-md transition-all cursor-pointer group flex flex-col justify-between"
+                  >
+                    <div className="flex items-start gap-3 mb-2">
+                      <div className="p-2.5 rounded-xl bg-primary/10 text-primary shrink-0 group-hover:scale-105 transition-transform">
+                        {res.hasVideo ? <FileVideo className="h-5 w-5" /> : <Folder className="h-5 w-5" />}
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <p className="text-sm font-bold text-foreground truncate group-hover:text-primary transition-colors">
+                          {res.item.name}
+                        </p>
+                        <p className="text-[10px] text-muted-foreground truncate mt-0.5">
+                          {res.path.join(" / ")}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="text-[11px] text-primary font-semibold flex items-center justify-end gap-1">
+                      <span>{res.hasVideo ? "Play Video" : "Open Folder"}</span>
+                      <ChevRight className="h-3 w-3" />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : !folderSecId ? (
+            /* Level 1: Root Section Folders */
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-sm font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-2">
+                  <Folder className="h-4 w-4 text-primary" /> Video Folders ({sections.length})
+                </h2>
+              </div>
+
+              {sections.length === 0 ? (
+                <div className="text-center py-20 border-2 border-dashed border-border rounded-2xl max-w-lg mx-auto">
+                  <FolderPlus className="h-12 w-12 mx-auto text-primary/30 mb-3" />
+                  <p className="text-base font-bold text-foreground mb-1">No video folders yet</p>
+                  <p className="text-xs text-muted-foreground mb-4">Create your first subject folder to organize lectures and YouTube playlists.</p>
+                  <Button onClick={addSection} className="gap-2 text-xs font-semibold">
+                    <FolderPlus className="h-4 w-4" /> Create Video Folder
+                  </Button>
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                  {sections.map((sec) => {
+                    const totalSubs = sec.subsections?.length || 0;
+                    const totalVideos = sec.subsections?.reduce((acc, sub) => acc + (sub.subsubsections?.length || (sub.video ? 1 : 0)), 0) || 0;
+
+                    return (
+                      <div
+                        key={sec.id}
+                        onClick={() => setFolderSecId(sec.id)}
+                        className="group relative p-5 rounded-2xl bg-card border border-border/80 hover:border-primary/50 hover:shadow-lg hover:-translate-y-0.5 transition-all cursor-pointer flex flex-col justify-between min-h-[140px]"
+                      >
+                        <div className="flex items-start justify-between gap-2 mb-3">
+                          <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/20 flex items-center justify-center text-primary group-hover:scale-110 transition-transform shadow-inner">
+                            <Folder className="h-6 w-6 fill-primary/20" />
+                          </div>
+
+                          <ThreeDotMenu>
+                            <MenuItem icon={FolderPlus} label="Add Sub-folder" onClick={(e: any) => { e.stopPropagation(); addSubsection(sec.id); }} />
+                            <MenuItem icon={Pencil} label="Rename" onClick={(e: any) => { e.stopPropagation(); setRenamingId(sec.id); setRenameVal(sec.name); }} />
+                            <MenuItem icon={Trash2} label="Delete" destructive onClick={(e: any) => { e.stopPropagation(); deleteSection(sec.id); }} />
+                          </ThreeDotMenu>
+                        </div>
+
+                        <div>
+                          {renamingId === sec.id ? (
+                            <input
+                              autoFocus
+                              value={renameVal}
+                              onChange={(e) => setRenameVal(e.target.value)}
+                              onBlur={() => commitRename("section", sec.id)}
+                              onKeyDown={(e) => {
+                                if (e.key === "Enter") commitRename("section", sec.id);
+                                if (e.key === "Escape") setRenamingId(null);
+                              }}
+                              onClick={(e) => e.stopPropagation()}
+                              className="w-full text-sm font-bold bg-background border border-primary rounded px-2 py-1 outline-none text-foreground"
+                            />
+                          ) : (
+                            <h3 className="text-base font-bold text-foreground group-hover:text-primary transition-colors truncate">
+                              {sec.name}
+                            </h3>
+                          )}
+                          <p className="text-xs text-muted-foreground mt-1 font-medium">
+                            {totalSubs} {totalSubs === 1 ? "subfolder" : "subfolders"} · {totalVideos} {totalVideos === 1 ? "video" : "videos"}
+                          </p>
+                        </div>
+                      </div>
+                    );
+                  })}
+
+                  {/* Quick Add Card */}
+                  <button
+                    onClick={addSection}
+                    className="p-5 rounded-2xl border-2 border-dashed border-border/80 hover:border-primary/50 hover:bg-primary/5 transition-all flex flex-col items-center justify-center gap-2 text-muted-foreground hover:text-primary min-h-[140px] group"
+                  >
+                    <div className="p-3 rounded-full bg-muted group-hover:bg-primary/10 group-hover:scale-110 transition-all">
+                      <Plus className="h-5 w-5" />
+                    </div>
+                    <span className="text-xs font-bold">New Video Folder</span>
+                  </button>
+                </div>
+              )}
+            </div>
+          ) : !folderSubId ? (
+            /* Level 2: Inside a Section -> Subsections & Direct Videos */
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-sm font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-2">
+                  <FolderOpen className="h-4 w-4 text-primary" /> Inside {currentFolderSec?.name} ({currentFolderSec?.subsections?.length || 0})
+                </h2>
+              </div>
+
+              {(!currentFolderSec?.subsections || currentFolderSec.subsections.length === 0) ? (
+                <div className="text-center py-20 border-2 border-dashed border-border rounded-2xl max-w-lg mx-auto">
+                  <FolderPlus className="h-12 w-12 mx-auto text-primary/30 mb-3" />
+                  <p className="text-base font-bold text-foreground mb-1">Folder is empty</p>
+                  <p className="text-xs text-muted-foreground mb-4">Add a sub-folder or lecture videos to this section.</p>
+                  <Button onClick={() => currentFolderSec && addSubsection(currentFolderSec.id)} className="gap-2 text-xs font-semibold">
+                    <FolderPlus className="h-4 w-4" /> Add Sub-folder
+                  </Button>
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                  {currentFolderSec.subsections.map((sub) => {
+                    const isSubFolder = sub.subsubsections && sub.subsubsections.length > 0;
+                    const hasVideo = !!sub.video;
+
+                    return (
+                      <div
+                        key={sub.id}
+                        onClick={() => {
+                          if (isSubFolder) {
+                            setFolderSubId(sub.id);
+                          } else if (hasVideo) {
+                            setActiveItemId(sub.id);
+                            setActiveLeafId(sub.id);
+                          } else {
+                            setFolderSubId(sub.id);
+                          }
+                        }}
+                        className="group relative p-5 rounded-2xl bg-card border border-border/80 hover:border-primary/50 hover:shadow-lg hover:-translate-y-0.5 transition-all cursor-pointer flex flex-col justify-between min-h-[140px]"
+                      >
+                        <div className="flex items-start justify-between gap-2 mb-3">
+                          <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/20 flex items-center justify-center text-primary group-hover:scale-110 transition-transform shadow-inner">
+                            {hasVideo && !isSubFolder ? (
+                              sub.video?.type === "youtube" ? <Youtube className="h-6 w-6 text-red-500" /> : <FileVideo className="h-6 w-6 text-primary" />
+                            ) : (
+                              <Folder className="h-6 w-6 fill-primary/20" />
+                            )}
+                          </div>
+
+                          <ThreeDotMenu>
+                            <MenuItem icon={Plus} label="Add/Replace Video" onClick={(e: any) => { e.stopPropagation(); if (currentFolderSec) setUploadTarget({ sectionId: currentFolderSec.id, subId: sub.id }); }} />
+                            <MenuItem icon={FilePlus} label="Add Sub-item" onClick={(e: any) => { e.stopPropagation(); if (currentFolderSec) addSubSubsection(currentFolderSec.id, sub.id); }} />
+                            <MenuItem icon={Pencil} label="Rename" onClick={(e: any) => { e.stopPropagation(); setRenamingId(sub.id); setRenameVal(sub.name); }} />
+                            <MenuItem icon={Trash2} label="Delete" destructive onClick={(e: any) => { e.stopPropagation(); if (currentFolderSec) deleteSubsection(currentFolderSec.id, sub.id); }} />
+                          </ThreeDotMenu>
+                        </div>
+
+                        <div>
+                          {renamingId === sub.id ? (
+                            <input
+                              autoFocus
+                              value={renameVal}
+                              onChange={(e) => setRenameVal(e.target.value)}
+                              onBlur={() => commitRename("sub", currentFolderSec.id, sub.id)}
+                              onKeyDown={(e) => {
+                                if (e.key === "Enter") commitRename("sub", currentFolderSec.id, sub.id);
+                                if (e.key === "Escape") setRenamingId(null);
+                              }}
+                              onClick={(e) => e.stopPropagation()}
+                              className="w-full text-sm font-bold bg-background border border-primary rounded px-2 py-1 outline-none text-foreground"
+                            />
+                          ) : (
+                            <h3 className="text-base font-bold text-foreground group-hover:text-primary transition-colors truncate">
+                              {sub.name}
+                            </h3>
+                          )}
+                          <p className="text-xs text-muted-foreground mt-1 font-medium truncate">
+                            {isSubFolder
+                              ? `${sub.subsubsections.length} items inside`
+                              : hasVideo
+                                ? (sub.video?.type === "youtube" ? "YouTube Video" : "Local / URL Video")
+                                : "Empty folder"}
+                          </p>
+                        </div>
+                      </div>
+                    );
+                  })}
+
+                  {/* Quick Add Card */}
+                  <button
+                    onClick={() => currentFolderSec && addSubsection(currentFolderSec.id)}
+                    className="p-5 rounded-2xl border-2 border-dashed border-border/80 hover:border-primary/50 hover:bg-primary/5 transition-all flex flex-col items-center justify-center gap-2 text-muted-foreground hover:text-primary min-h-[140px] group"
+                  >
+                    <div className="p-3 rounded-full bg-muted group-hover:bg-primary/10 group-hover:scale-110 transition-all">
+                      <Plus className="h-5 w-5" />
+                    </div>
+                    <span className="text-xs font-bold">New Sub-folder</span>
+                  </button>
+                </div>
+              )}
+            </div>
+          ) : (
+            /* Level 3: Inside a Subsection -> Video Items */
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-sm font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-2">
+                  <FileVideo className="h-4 w-4 text-primary" /> Videos in {currentFolderSub?.name} ({currentFolderSub?.subsubsections?.length || 0})
+                </h2>
+              </div>
+
+              {(!currentFolderSub?.subsubsections || currentFolderSub.subsubsections.length === 0) ? (
+                <div className="text-center py-20 border-2 border-dashed border-border rounded-2xl max-w-lg mx-auto">
+                  <FilePlus className="h-12 w-12 mx-auto text-primary/30 mb-3" />
+                  <p className="text-base font-bold text-foreground mb-1">No videos added yet</p>
+                  <p className="text-xs text-muted-foreground mb-4">Add a video item to this folder.</p>
+                  <Button onClick={() => currentFolderSec && currentFolderSub && addSubSubsection(currentFolderSec.id, currentFolderSub.id)} className="gap-2 text-xs font-semibold">
+                    <FilePlus className="h-4 w-4" /> Add Video Item
+                  </Button>
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                  {currentFolderSub.subsubsections.map((ssub) => {
+                    const hasVideo = !!ssub.video;
+
+                    return (
+                      <div
+                        key={ssub.id}
+                        onClick={() => {
+                          setActiveItemId(ssub.id);
+                          setActiveLeafId(ssub.id);
+                        }}
+                        className="group relative p-5 rounded-2xl bg-card border border-border/80 hover:border-primary/50 hover:shadow-lg hover:-translate-y-0.5 transition-all cursor-pointer flex flex-col justify-between min-h-[140px]"
+                      >
+                        <div className="flex items-start justify-between gap-2 mb-3">
+                          <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/20 flex items-center justify-center text-primary group-hover:scale-110 transition-transform shadow-inner">
+                            {ssub.video?.type === "youtube" ? <Youtube className="h-6 w-6 text-red-500" /> : <FileVideo className="h-6 w-6 text-primary" />}
+                          </div>
+
+                          <ThreeDotMenu>
+                            <MenuItem icon={Plus} label="Add/Replace Video" onClick={(e: any) => { e.stopPropagation(); if (currentFolderSec && currentFolderSub) setUploadTarget({ sectionId: currentFolderSec.id, subId: currentFolderSub.id, subSubId: ssub.id }); }} />
+                            <MenuItem icon={Pencil} label="Rename" onClick={(e: any) => { e.stopPropagation(); setRenamingId(ssub.id); setRenameVal(ssub.name); }} />
+                            <MenuItem icon={Trash2} label="Delete" destructive onClick={(e: any) => { e.stopPropagation(); if (currentFolderSec && currentFolderSub) deleteSubSubsection(currentFolderSec.id, currentFolderSub.id, ssub.id); }} />
+                          </ThreeDotMenu>
+                        </div>
+
+                        <div>
+                          {renamingId === ssub.id ? (
+                            <input
+                              autoFocus
+                              value={renameVal}
+                              onChange={(e) => setRenameVal(e.target.value)}
+                              onBlur={() => {
+                                if (currentFolderSec && currentFolderSub) commitRename("subsub", currentFolderSec.id, currentFolderSub.id, ssub.id);
+                              }}
+                              onKeyDown={(e) => {
+                                if (e.key === "Enter" && currentFolderSec && currentFolderSub) commitRename("subsub", currentFolderSec.id, currentFolderSub.id, ssub.id);
+                                if (e.key === "Escape") setRenamingId(null);
+                              }}
+                              onClick={(e) => e.stopPropagation()}
+                              className="w-full text-sm font-bold bg-background border border-primary rounded px-2 py-1 outline-none text-foreground"
+                            />
+                          ) : (
+                            <h3 className="text-base font-bold text-foreground group-hover:text-primary transition-colors truncate">
+                              {ssub.name}
+                            </h3>
+                          )}
+                          <p className="text-xs text-muted-foreground mt-1 font-medium truncate">
+                            {hasVideo ? (ssub.video?.type === "youtube" ? "YouTube Video" : "Local / URL Video") : "No video attached"}
+                          </p>
+                        </div>
+                      </div>
+                    );
+                  })}
+
+                  {/* Quick Add Card */}
+                  <button
+                    onClick={() => currentFolderSec && currentFolderSub && addSubSubsection(currentFolderSec.id, currentFolderSub.id)}
+                    className="p-5 rounded-2xl border-2 border-dashed border-border/80 hover:border-primary/50 hover:bg-primary/5 transition-all flex flex-col items-center justify-center gap-2 text-muted-foreground hover:text-primary min-h-[140px] group"
+                  >
+                    <div className="p-3 rounded-full bg-muted group-hover:bg-primary/10 group-hover:scale-110 transition-all">
+                      <Plus className="h-5 w-5" />
+                    </div>
+                    <span className="text-xs font-bold">Add Video Item</span>
+                  </button>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  };
+
   // ─── Render ───────────────────────────────────────────────────────────────
   return (
     <motion.div
@@ -3418,64 +3824,109 @@ export default function VideoPage() {
       exit={{ opacity: 0 }}
       className="flex h-full overflow-hidden bg-background flex-col md:flex-row"
     >
-      {SidebarContent}
+      {/* Conditionally render sidebar in section mode */}
+      {videoViewMode === "section" && SidebarContent}
 
-      {/* ── Main Area ── Responsive */}
-      <div className="flex-1 flex flex-col overflow-hidden">
-        {!activeLeafId && (
-          <div className="flex-1 flex flex-col relative">
-            <div className="md:hidden flex items-center px-3 py-2 bg-card border-b border-border shrink-0">
-              <button
-                onClick={() => setShowMobileSidebar(true)}
-                className="flex items-center gap-1.5 text-xs font-semibold text-foreground"
-              >
-                <FolderPlus className="h-4 w-4 text-primary" /> Open Library
-              </button>
-            </div>
-            <div className="flex-1 flex items-center justify-center p-4 md:p-6">
-              <div className="text-center">
-                <FileVideo className="h-12 md:h-16 w-12 md:w-16 mx-auto mb-3 md:mb-4 text-primary/20" />
-                <p className="text-base md:text-lg font-bold text-foreground mb-1">
-                  Select a video
-                </p>
-                <p className="text-xs md:text-sm text-muted-foreground mb-4">
-                  Choose a section in the left panel, then add a video
-                </p>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-2 md:gap-4 text-[10px] md:text-xs text-muted-foreground">
-                  <span className="flex items-center gap-1 md:gap-1.5">
-                    <FileVideo className="h-3 md:h-3.5 w-3 md:w-3.5" />
-                    Local MP4
-                  </span>
-                  <span className="flex items-center gap-1 md:gap-1.5">
-                    <Youtube className="h-3 md:h-3.5 w-3 md:w-3.5 text-red-400" />
-                    YouTube
-                  </span>
-                  <span className="flex items-center gap-1 md:gap-1.5">
-                    <Globe className="h-3 md:h-3.5 w-3 md:w-3.5" />
-                    Video URL
-                  </span>
+      {/* Main Area */}
+      {videoViewMode === "folder" && !activeLeafId ? (
+        renderVideoFolderExplorer()
+      ) : (
+        <div className="flex-1 flex flex-col overflow-hidden">
+          {!activeLeafId && (
+            <div className="flex-1 flex flex-col relative">
+              <div className="md:hidden flex items-center px-3 py-2 bg-card border-b border-border shrink-0">
+                <button
+                  onClick={() => setShowMobileSidebar(true)}
+                  className="flex items-center gap-1.5 text-xs font-semibold text-foreground"
+                >
+                  <FolderPlus className="h-4 w-4 text-primary" /> Open Library
+                </button>
+              </div>
+              <div className="flex-1 flex items-center justify-center p-4 md:p-6">
+                <div className="text-center">
+                  <FileVideo className="h-12 md:h-16 w-12 md:w-16 mx-auto mb-3 md:mb-4 text-primary/20" />
+                  <p className="text-base md:text-lg font-bold text-foreground mb-1">
+                    Select a video
+                  </p>
+                  <p className="text-xs md:text-sm text-muted-foreground mb-4">
+                    Choose a section in the left panel, then add a video
+                  </p>
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-2 md:gap-4 text-[10px] md:text-xs text-muted-foreground">
+                    <span className="flex items-center gap-1 md:gap-1.5">
+                      <FileVideo className="h-3 md:h-3.5 w-3 md:w-3.5" />
+                      Local MP4
+                    </span>
+                    <span className="flex items-center gap-1 md:gap-1.5">
+                      <Youtube className="h-3 md:h-3.5 w-3 md:w-3.5 text-red-400" />
+                      YouTube
+                    </span>
+                    <span className="flex items-center gap-1 md:gap-1.5">
+                      <Globe className="h-3 md:h-3.5 w-3 md:w-3.5" />
+                      Video URL
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
 
-        {activeLeafId && (
-          <div className="flex-1 flex flex-col overflow-hidden">
-            <div className="md:hidden flex items-center justify-between px-3 py-2 bg-card border-b border-border shrink-0">
-              <button
-                onClick={() => setShowMobileSidebar(true)}
-                className="flex items-center gap-1.5 text-xs font-semibold text-foreground"
-              >
-                <FolderPlus className="h-4 w-4 text-primary" /> Library
-              </button>
-              <button
-                onClick={() => setShowNotes(true)}
-                className="flex items-center gap-1.5 text-xs font-semibold text-foreground"
-              >
-                <StickyNote className="h-4 w-4 text-primary" /> Notes
-              </button>
-            </div>
+          {activeLeafId && (
+            <div className="flex-1 flex flex-col overflow-hidden">
+              {/* Top Bar with Back to Folders and View Toggle */}
+              <div className="flex items-center justify-between gap-2 px-3 py-1.5 bg-card/80 border-b border-border backdrop-blur-sm shrink-0 flex-wrap">
+                <div className="flex items-center gap-2">
+                  {videoViewMode === "folder" && (
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="h-7 gap-1.5 text-xs shrink-0 bg-primary/10 hover:bg-primary/20 text-primary border-primary/20 font-semibold"
+                      onClick={() => setActiveLeafId(null)}
+                      title="Back to Folders"
+                    >
+                      <ArrowLeft className="h-3 w-3" />
+                      <span>Back to Folders</span>
+                    </Button>
+                  )}
+                  <span className="text-xs font-bold text-foreground truncate max-w-[180px] sm:max-w-xs">
+                    {videoTitle || "Video Player"}
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-1.5">
+                  <button
+                    onClick={() => setVideoViewMode(videoViewMode === "folder" ? "section" : "folder")}
+                    className="h-7 px-2 flex items-center gap-1 rounded-md border border-border bg-muted/60 text-xs font-semibold text-muted-foreground hover:text-foreground transition-all shrink-0"
+                    title="Switch layout mode"
+                  >
+                    {videoViewMode === "folder" ? <ListTree className="h-3 w-3 text-primary" /> : <LayoutGrid className="h-3 w-3 text-primary" />}
+                    <span>{videoViewMode === "folder" ? "Sidebar Mode" : "Folder Mode"}</span>
+                  </button>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="h-7 gap-1 text-xs text-muted-foreground hover:text-foreground"
+                    onClick={() => setShowNotes(!showNotes)}
+                  >
+                    <StickyNote className="h-3.5 w-3.5" />
+                    <span className="hidden sm:inline">{showNotes ? "Hide Notes" : "Show Notes"}</span>
+                  </Button>
+                </div>
+              </div>
+
+              <div className="md:hidden flex items-center justify-between px-3 py-2 bg-card border-b border-border shrink-0">
+                <button
+                  onClick={() => setShowMobileSidebar(true)}
+                  className="flex items-center gap-1.5 text-xs font-semibold text-foreground"
+                >
+                  <FolderPlus className="h-4 w-4 text-primary" /> Library
+                </button>
+                <button
+                  onClick={() => setShowNotes(true)}
+                  className="flex items-center gap-1.5 text-xs font-semibold text-foreground"
+                >
+                  <StickyNote className="h-4 w-4 text-primary" /> Notes
+                </button>
+              </div>
             <div className="flex-1 flex flex-col lg:flex-row overflow-hidden gap-0 lg:gap-2">
               {/* Video + Controls column */}
               <div className="flex-1 flex flex-col overflow-hidden rounded-none lg:rounded-lg bg-black">
@@ -3880,6 +4331,7 @@ export default function VideoPage() {
           </div>
         )}
       </div>
+      )}
 
       {/* ── Local Mini Player (on /video page only) ───────────────────── */}
       <AnimatePresence>

@@ -4,8 +4,10 @@ import { useLocalStorage } from "@/hooks/useLocalStorage";
 import { useWorkspaceContext } from "@/context/WorkspaceContext";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useAppContext } from "@/context/AppContext";
 import {
   Upload,
+  Plus,
   ZoomIn,
   ZoomOut,
   ChevronLeft,
@@ -36,7 +38,16 @@ import {
   MoreVertical,
   Scissors,
   Save,
-  Check as CheckIcon
+  Check as CheckIcon,
+  Folder,
+  FolderOpen,
+  FileText,
+  ArrowLeft,
+  Search,
+  LayoutGrid,
+  ListTree,
+  Layers,
+  File
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -795,9 +806,16 @@ export default function PDFPage() {
   const [renamingId, setRenamingId] = useState<string | null>(null);
   const [renameVal, setRenameVal] = useState("");
   const { writeMedia, readMediaAsArrayBuffer } = useWorkspaceContext();
+  const { pdfViewMode, setPdfViewMode } = useAppContext();
+  const [folderSecId, setFolderSecId] = useState<string | null>(null);
+  const [folderSubId, setFolderSubId] = useState<string | null>(null);
+  const [folderSearch, setFolderSearch] = useState("");
   const [showMobileSidebar, setShowMobileSidebar] = useState(() =>
     typeof window !== "undefined" ? window.innerWidth < 768 : false,
   );
+
+  const currentFolderSec = useMemo(() => sections.find((s) => s.id === folderSecId), [sections, folderSecId]);
+  const currentFolderSub = useMemo(() => currentFolderSec?.subsections.find((sub) => sub.id === folderSubId), [currentFolderSec, folderSubId]);
 
   // Multi-Crop State
   const [isCropMode, setIsCropMode] = useState(false);
@@ -1189,6 +1207,36 @@ export default function PDFPage() {
     );
 
     await loadLeafPdf(leafId, undefined, url);
+  };
+
+  const openLeafItem = async (secId: string, subId: string, subSubId?: string) => {
+    const leafId = subSubId || subId;
+    setActiveItemId(leafId);
+    setFolderSecId(secId);
+    if (subSubId) setFolderSubId(subId);
+    
+    const sec = sections.find((s) => s.id === secId);
+    const sub = sec?.subsections.find((s) => s.id === subId);
+    const target = subSubId ? sub?.subsubsections.find((ss) => ss.id === subSubId) : sub;
+
+    if (target) {
+      if (target.fileType === "image" && target.imageKey) {
+        const buf = await readMediaAsArrayBuffer(target.imageKey);
+        if (buf) {
+          const blob = new Blob([buf]);
+          if (activeImageUrl) URL.revokeObjectURL(activeImageUrl);
+          setActiveImageUrl(URL.createObjectURL(blob));
+          setPdfDoc(null);
+          prevLeafRef.current = null;
+          setActiveLeafId(leafId);
+        }
+      } else if (target.pdfKey || target.pdfUrl) {
+        setActiveImageUrl(null);
+        loadLeafPdf(leafId, target.pdfKey, target.pdfUrl);
+      } else {
+        setActiveLeafId(leafId);
+      }
+    }
   };
 
   // ── Render PDF page ──────────────────────────────────────────────────────────
@@ -1718,6 +1766,449 @@ export default function PDFPage() {
           ? "default"
           : "crosshair";
 
+  // Folder Explorer View Component
+  const renderFolderExplorer = () => {
+    return (
+      <div className="flex-1 flex flex-col h-full overflow-hidden bg-background">
+        {/* Top Header / Breadcrumbs Toolbar */}
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 px-4 py-3 border-b border-border bg-card/50 backdrop-blur-md shrink-0">
+          {/* Breadcrumb path */}
+          <div className="flex items-center gap-1.5 flex-wrap min-w-0 text-sm">
+            {folderSecId !== null && (
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => {
+                  if (folderSubId) setFolderSubId(null);
+                  else setFolderSecId(null);
+                }}
+                className="h-8 px-2 text-xs gap-1 mr-1 text-muted-foreground hover:text-foreground"
+                title="Go back"
+              >
+                <ArrowLeft className="h-3.5 w-3.5" />
+                <span>Back</span>
+              </Button>
+            )}
+
+            <button
+              onClick={() => { setFolderSecId(null); setFolderSubId(null); }}
+              className={cn(
+                "flex items-center gap-1.5 font-bold transition-colors hover:text-primary",
+                !folderSecId ? "text-foreground" : "text-muted-foreground"
+              )}
+            >
+              <FolderOpen className="h-4 w-4 text-primary shrink-0" />
+              <span>Library</span>
+            </button>
+
+            {currentFolderSec && (
+              <>
+                <span className="text-muted-foreground font-semibold">/</span>
+                <button
+                  onClick={() => setFolderSubId(null)}
+                  className={cn(
+                    "font-semibold transition-colors hover:text-primary truncate max-w-[140px] sm:max-w-[200px]",
+                    !folderSubId ? "text-foreground font-bold" : "text-muted-foreground"
+                  )}
+                >
+                  {currentFolderSec.name}
+                </button>
+              </>
+            )}
+
+            {currentFolderSub && (
+              <>
+                <span className="text-muted-foreground font-semibold">/</span>
+                <span className="font-bold text-foreground truncate max-w-[140px] sm:max-w-[200px]">
+                  {currentFolderSub.name}
+                </span>
+              </>
+            )}
+          </div>
+
+          {/* Right side tools: Search + Actions + View Switcher */}
+          <div className="flex items-center gap-2 shrink-0 flex-wrap">
+            {/* Search bar */}
+            <div className="relative flex-1 sm:w-48">
+              <Search className="absolute left-2.5 top-2.5 h-3.5 w-3.5 text-muted-foreground" />
+              <Input
+                value={folderSearch}
+                onChange={(e) => setFolderSearch(e.target.value)}
+                placeholder="Search library..."
+                className="h-8 pl-8 text-xs bg-muted/50 border-border rounded-lg"
+              />
+              {folderSearch && (
+                <button onClick={() => setFolderSearch("")} className="absolute right-2 top-2 text-muted-foreground hover:text-foreground">
+                  <X className="h-3.5 w-3.5" />
+                </button>
+              )}
+            </div>
+
+            {/* Action button */}
+            {!folderSecId ? (
+              <Button size="sm" onClick={addSection} className="h-8 gap-1.5 text-xs font-semibold shadow-sm">
+                <FolderPlus className="h-3.5 w-3.5" />
+                <span className="hidden sm:inline">New Folder</span>
+              </Button>
+            ) : !folderSubId ? (
+              <div className="flex items-center gap-1.5">
+                <Button size="sm" variant="outline" onClick={() => currentFolderSec && addSubsection(currentFolderSec.id)} className="h-8 gap-1.5 text-xs">
+                  <FolderPlus className="h-3.5 w-3.5 text-primary" />
+                  <span>New Sub-folder</span>
+                </Button>
+              </div>
+            ) : (
+              <Button size="sm" onClick={() => currentFolderSec && currentFolderSub && addSubSubsection(currentFolderSec.id, currentFolderSub.id)} className="h-8 gap-1.5 text-xs">
+                <FilePlus className="h-3.5 w-3.5" />
+                <span>Add File</span>
+              </Button>
+            )}
+
+            {/* View Mode Switcher Toggle */}
+            <div className="flex items-center p-0.5 bg-muted rounded-lg border border-border shrink-0">
+              <button
+                onClick={() => setPdfViewMode("folder")}
+                className={cn(
+                  "flex items-center gap-1 px-2.5 py-1 text-xs font-semibold rounded-md transition-all",
+                  pdfViewMode === "folder" ? "bg-card text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"
+                )}
+                title="Folder Explorer View"
+              >
+                <LayoutGrid className="h-3.5 w-3.5 text-primary" />
+                <span className="hidden md:inline">Folders</span>
+              </button>
+              <button
+                onClick={() => setPdfViewMode("section")}
+                className={cn(
+                  "flex items-center gap-1 px-2.5 py-1 text-xs font-semibold rounded-md transition-all",
+                  pdfViewMode === "section" ? "bg-card text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"
+                )}
+                title="Classic Section Sidebar View"
+              >
+                <ListTree className="h-3.5 w-3.5" />
+                <span className="hidden md:inline">Sections</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Main Grid View */}
+        <div className="flex-1 overflow-y-auto p-4 sm:p-6">
+          {/* If searching */}
+          {folderSearch.trim() !== "" ? (
+            <div>
+              <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4">
+                Search Results for "{folderSearch}"
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                {sections.flatMap((sec) => [
+                  ...(sec.name.toLowerCase().includes(folderSearch.toLowerCase()) ? [{ type: 'sec', item: sec, secId: sec.id, path: [sec.name] }] : []),
+                  ...(sec.subsections?.flatMap((sub) => [
+                    ...(sub.name.toLowerCase().includes(folderSearch.toLowerCase()) || sub.pdfName?.toLowerCase().includes(folderSearch.toLowerCase()) || sub.imageName?.toLowerCase().includes(folderSearch.toLowerCase()) ? [{ type: 'sub', item: sub, secId: sec.id, subId: sub.id, path: [sec.name, sub.name], hasFile: !!(sub.pdfKey || sub.pdfUrl || sub.imageKey) }] : []),
+                    ...(sub.subsubsections?.filter((ss) => ss.name.toLowerCase().includes(folderSearch.toLowerCase()) || ss.pdfName?.toLowerCase().includes(folderSearch.toLowerCase()) || ss.imageName?.toLowerCase().includes(folderSearch.toLowerCase())).map((ss) => ({ type: 'ssub', item: ss, secId: sec.id, subId: sub.id, subSubId: ss.id, path: [sec.name, sub.name, ss.name], hasFile: true })) || [])
+                  ]) || [])
+                ]).map((res: any, idx: number) => (
+                  <div
+                    key={idx}
+                    onClick={() => {
+                      if (res.type === 'sec') {
+                        setFolderSecId(res.secId);
+                        setFolderSubId(null);
+                        setFolderSearch("");
+                      } else if (res.type === 'sub') {
+                        if (res.hasFile) {
+                          openLeafItem(res.secId, res.subId);
+                        } else {
+                          setFolderSecId(res.secId);
+                          setFolderSubId(res.subId);
+                          setFolderSearch("");
+                        }
+                      } else if (res.type === 'ssub') {
+                        openLeafItem(res.secId, res.subId, res.subSubId);
+                      }
+                    }}
+                    className="p-4 rounded-xl bg-card border border-border hover:border-primary/50 hover:shadow-md transition-all cursor-pointer group flex flex-col justify-between"
+                  >
+                    <div className="flex items-start gap-3 mb-2">
+                      <div className="p-2.5 rounded-xl bg-primary/10 text-primary shrink-0 group-hover:scale-105 transition-transform">
+                        {res.hasFile ? <FileText className="h-5 w-5" /> : <Folder className="h-5 w-5" />}
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <p className="text-sm font-bold text-foreground truncate group-hover:text-primary transition-colors">
+                          {res.item.name}
+                        </p>
+                        <p className="text-[10px] text-muted-foreground truncate mt-0.5">
+                          {res.path.join(" / ")}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="text-[11px] text-primary font-semibold flex items-center justify-end gap-1">
+                      <span>{res.hasFile ? "Open PDF" : "Open Folder"}</span>
+                      <ChevRight className="h-3 w-3" />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : !folderSecId ? (
+            /* Level 1: Root Section Folders */
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-sm font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-2">
+                  <Folder className="h-4 w-4 text-primary" /> Folders ({sections.length})
+                </h2>
+              </div>
+
+              {sections.length === 0 ? (
+                <div className="text-center py-20 border-2 border-dashed border-border rounded-2xl max-w-lg mx-auto">
+                  <FolderPlus className="h-12 w-12 mx-auto text-primary/30 mb-3" />
+                  <p className="text-base font-bold text-foreground mb-1">No folders yet</p>
+                  <p className="text-xs text-muted-foreground mb-4">Create your first section folder to organize your PDF notes and question papers.</p>
+                  <Button onClick={addSection} className="gap-2 text-xs font-semibold">
+                    <FolderPlus className="h-4 w-4" /> Create Section Folder
+                  </Button>
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                  {sections.map((sec) => {
+                    const totalSubs = sec.subsections?.length || 0;
+                    const totalFiles = sec.subsections?.reduce((acc, sub) => acc + (sub.subsubsections?.length || (sub.pdfKey || sub.pdfUrl || sub.imageKey ? 1 : 0)), 0) || 0;
+
+                    return (
+                      <div
+                        key={sec.id}
+                        onClick={() => setFolderSecId(sec.id)}
+                        className="group relative p-5 rounded-2xl bg-card border border-border/80 hover:border-primary/50 hover:shadow-lg hover:-translate-y-0.5 transition-all cursor-pointer flex flex-col justify-between min-h-[140px]"
+                      >
+                        <div className="flex items-start justify-between gap-2 mb-3">
+                          <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/20 flex items-center justify-center text-primary group-hover:scale-110 transition-transform shadow-inner">
+                            <Folder className="h-6 w-6 fill-primary/20" />
+                          </div>
+
+                          <ThreeDotMenu>
+                            <MenuItem icon={FolderPlus} label="Add Sub-folder" onClick={(e: any) => { e.stopPropagation(); addSubsection(sec.id); }} />
+                            <MenuItem icon={Pencil} label="Rename" onClick={(e: any) => { e.stopPropagation(); setRenamingId(sec.id); setRenameVal(sec.name); }} />
+                            <MenuItem icon={Trash2} label="Delete" destructive onClick={(e: any) => { e.stopPropagation(); deleteSection(sec.id); }} />
+                          </ThreeDotMenu>
+                        </div>
+
+                        <div>
+                          {renamingId === sec.id ? (
+                            <input
+                              autoFocus
+                              value={renameVal}
+                              onChange={(e) => setRenameVal(e.target.value)}
+                              onBlur={commitRename}
+                              onKeyDown={(e) => e.key === "Enter" && commitRename()}
+                              onClick={(e) => e.stopPropagation()}
+                              className="w-full text-sm font-bold bg-background border border-primary rounded px-2 py-1 outline-none text-foreground"
+                            />
+                          ) : (
+                            <h3 className="text-base font-bold text-foreground group-hover:text-primary transition-colors truncate">
+                              {sec.name}
+                            </h3>
+                          )}
+                          <p className="text-xs text-muted-foreground mt-1 font-medium">
+                            {totalSubs} {totalSubs === 1 ? "sub-folder" : "sub-folders"} · {totalFiles} {totalFiles === 1 ? "file" : "files"}
+                          </p>
+                        </div>
+                      </div>
+                    );
+                  })}
+
+                  {/* Quick Add Card */}
+                  <button
+                    onClick={addSection}
+                    className="p-5 rounded-2xl border-2 border-dashed border-border/80 hover:border-primary/50 hover:bg-primary/5 transition-all flex flex-col items-center justify-center gap-2 text-muted-foreground hover:text-primary min-h-[140px] group"
+                  >
+                    <div className="p-3 rounded-full bg-muted group-hover:bg-primary/10 group-hover:scale-110 transition-all">
+                      <Plus className="h-5 w-5" />
+                    </div>
+                    <span className="text-xs font-bold">New Section Folder</span>
+                  </button>
+                </div>
+              )}
+            </div>
+          ) : !folderSubId ? (
+            /* Level 2: Inside a Section -> Subsections & Files */
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-sm font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-2">
+                  <FolderOpen className="h-4 w-4 text-primary" /> Inside {currentFolderSec?.name} ({currentFolderSec?.subsections?.length || 0})
+                </h2>
+              </div>
+
+              {(!currentFolderSec?.subsections || currentFolderSec.subsections.length === 0) ? (
+                <div className="text-center py-20 border-2 border-dashed border-border rounded-2xl max-w-lg mx-auto">
+                  <FolderPlus className="h-12 w-12 mx-auto text-primary/30 mb-3" />
+                  <p className="text-base font-bold text-foreground mb-1">Folder is empty</p>
+                  <p className="text-xs text-muted-foreground mb-4">Add a sub-folder or upload files to this section.</p>
+                  <Button onClick={() => currentFolderSec && addSubsection(currentFolderSec.id)} className="gap-2 text-xs font-semibold">
+                    <FolderPlus className="h-4 w-4" /> Add Sub-folder
+                  </Button>
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                  {currentFolderSec.subsections.map((sub) => {
+                    const isSubFolder = sub.subsubsections && sub.subsubsections.length > 0;
+                    const hasFile = !!(sub.pdfKey || sub.pdfUrl || sub.imageKey);
+
+                    return (
+                      <div
+                        key={sub.id}
+                        onClick={() => {
+                          if (isSubFolder) {
+                            setFolderSubId(sub.id);
+                          } else if (hasFile) {
+                            if (currentFolderSec) openLeafItem(currentFolderSec.id, sub.id);
+                          } else {
+                            setFolderSubId(sub.id);
+                          }
+                        }}
+                        className="group relative p-5 rounded-2xl bg-card border border-border/80 hover:border-primary/50 hover:shadow-lg hover:-translate-y-0.5 transition-all cursor-pointer flex flex-col justify-between min-h-[140px]"
+                      >
+                        <div className="flex items-start justify-between gap-2 mb-3">
+                          <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/20 flex items-center justify-center text-primary group-hover:scale-110 transition-transform shadow-inner">
+                            {hasFile && !isSubFolder ? (
+                              sub.fileType === "image" ? <ImageIcon className="h-6 w-6" /> : <FileText className="h-6 w-6" />
+                            ) : (
+                              <Folder className="h-6 w-6 fill-primary/20" />
+                            )}
+                          </div>
+
+                          <ThreeDotMenu>
+                            <MenuItem icon={Upload} label="Upload PDF / Image" onClick={(e: any) => { e.stopPropagation(); if (currentFolderSec) setUploadTarget({ sectionId: currentFolderSec.id, subId: sub.id }); }} />
+                            <MenuItem icon={FilePlus} label="Add Sub-folder" onClick={(e: any) => { e.stopPropagation(); if (currentFolderSec) addSubSubsection(currentFolderSec.id, sub.id); }} />
+                            <MenuItem icon={Pencil} label="Rename" onClick={(e: any) => { e.stopPropagation(); setRenamingId(sub.id); setRenameVal(sub.name); }} />
+                            <MenuItem icon={Trash2} label="Delete" destructive onClick={(e: any) => { e.stopPropagation(); if (currentFolderSec) deleteSubsection(currentFolderSec.id, sub.id); }} />
+                          </ThreeDotMenu>
+                        </div>
+
+                        <div>
+                          {renamingId === sub.id ? (
+                            <input
+                              autoFocus
+                              value={renameVal}
+                              onChange={(e) => setRenameVal(e.target.value)}
+                              onBlur={commitRename}
+                              onKeyDown={(e) => e.key === "Enter" && commitRename()}
+                              onClick={(e) => e.stopPropagation()}
+                              className="w-full text-sm font-bold bg-background border border-primary rounded px-2 py-1 outline-none text-foreground"
+                            />
+                          ) : (
+                            <h3 className="text-base font-bold text-foreground group-hover:text-primary transition-colors truncate">
+                              {sub.name}
+                            </h3>
+                          )}
+                          <p className="text-xs text-muted-foreground mt-1 font-medium truncate">
+                            {isSubFolder
+                              ? `${sub.subsubsections.length} sub-items inside`
+                              : hasFile
+                                ? (sub.pdfName || sub.imageName || "Document loaded")
+                                : "Empty folder"}
+                          </p>
+                        </div>
+                      </div>
+                    );
+                  })}
+
+                  {/* Quick Add Card */}
+                  <button
+                    onClick={() => currentFolderSec && addSubsection(currentFolderSec.id)}
+                    className="p-5 rounded-2xl border-2 border-dashed border-border/80 hover:border-primary/50 hover:bg-primary/5 transition-all flex flex-col items-center justify-center gap-2 text-muted-foreground hover:text-primary min-h-[140px] group"
+                  >
+                    <div className="p-3 rounded-full bg-muted group-hover:bg-primary/10 group-hover:scale-110 transition-all">
+                      <Plus className="h-5 w-5" />
+                    </div>
+                    <span className="text-xs font-bold">New Sub-folder</span>
+                  </button>
+                </div>
+              )}
+            </div>
+          ) : (
+            /* Level 3: Inside a Subsection -> Files */
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-sm font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-2">
+                  <FileText className="h-4 w-4 text-primary" /> Files in {currentFolderSub?.name} ({currentFolderSub?.subsubsections?.length || 0})
+                </h2>
+              </div>
+
+              {(!currentFolderSub?.subsubsections || currentFolderSub.subsubsections.length === 0) ? (
+                <div className="text-center py-20 border-2 border-dashed border-border rounded-2xl max-w-lg mx-auto">
+                  <FilePlus className="h-12 w-12 mx-auto text-primary/30 mb-3" />
+                  <p className="text-base font-bold text-foreground mb-1">No files added yet</p>
+                  <p className="text-xs text-muted-foreground mb-4">Add or upload a PDF / Image to this folder.</p>
+                  <Button onClick={() => currentFolderSec && currentFolderSub && addSubSubsection(currentFolderSec.id, currentFolderSub.id)} className="gap-2 text-xs font-semibold">
+                    <FilePlus className="h-4 w-4" /> Add File Item
+                  </Button>
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                  {currentFolderSub.subsubsections.map((ssub) => {
+                    const hasFile = !!(ssub.pdfKey || ssub.pdfUrl || ssub.imageKey);
+
+                    return (
+                      <div
+                        key={ssub.id}
+                        onClick={() => currentFolderSec && currentFolderSub && openLeafItem(currentFolderSec.id, currentFolderSub.id, ssub.id)}
+                        className="group relative p-5 rounded-2xl bg-card border border-border/80 hover:border-primary/50 hover:shadow-lg hover:-translate-y-0.5 transition-all cursor-pointer flex flex-col justify-between min-h-[140px]"
+                      >
+                        <div className="flex items-start justify-between gap-2 mb-3">
+                          <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/20 flex items-center justify-center text-primary group-hover:scale-110 transition-transform shadow-inner">
+                            {ssub.fileType === "image" ? <ImageIcon className="h-6 w-6" /> : <FileText className="h-6 w-6" />}
+                          </div>
+
+                          <ThreeDotMenu>
+                            <MenuItem icon={Upload} label="Upload / Replace" onClick={(e: any) => { e.stopPropagation(); if (currentFolderSec && currentFolderSub) setUploadTarget({ sectionId: currentFolderSec.id, subId: currentFolderSub.id, subSubId: ssub.id }); }} />
+                            <MenuItem icon={Pencil} label="Rename" onClick={(e: any) => { e.stopPropagation(); setRenamingId(ssub.id); setRenameVal(ssub.name); }} />
+                            <MenuItem icon={Trash2} label="Delete" destructive onClick={(e: any) => { e.stopPropagation(); if (currentFolderSec && currentFolderSub) deleteSubSubsection(currentFolderSec.id, currentFolderSub.id, ssub.id); }} />
+                          </ThreeDotMenu>
+                        </div>
+
+                        <div>
+                          {renamingId === ssub.id ? (
+                            <input
+                              autoFocus
+                              value={renameVal}
+                              onChange={(e) => setRenameVal(e.target.value)}
+                              onBlur={commitRename}
+                              onKeyDown={(e) => e.key === "Enter" && commitRename()}
+                              onClick={(e) => e.stopPropagation()}
+                              className="w-full text-sm font-bold bg-background border border-primary rounded px-2 py-1 outline-none text-foreground"
+                            />
+                          ) : (
+                            <h3 className="text-base font-bold text-foreground group-hover:text-primary transition-colors truncate">
+                              {ssub.name}
+                            </h3>
+                          )}
+                          <p className="text-xs text-muted-foreground mt-1 font-medium truncate">
+                            {ssub.pdfName || ssub.imageName || (hasFile ? "Document ready" : "Empty (click to upload)")}
+                          </p>
+                        </div>
+                      </div>
+                    );
+                  })}
+
+                  {/* Quick Add Card */}
+                  <button
+                    onClick={() => currentFolderSec && currentFolderSub && addSubSubsection(currentFolderSec.id, currentFolderSub.id)}
+                    className="p-5 rounded-2xl border-2 border-dashed border-border/80 hover:border-primary/50 hover:bg-primary/5 transition-all flex flex-col items-center justify-center gap-2 text-muted-foreground hover:text-primary min-h-[140px] group"
+                  >
+                    <div className="p-3 rounded-full bg-muted group-hover:bg-primary/10 group-hover:scale-110 transition-all">
+                      <Plus className="h-5 w-5" />
+                    </div>
+                    <span className="text-xs font-bold">Add File Item</span>
+                  </button>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -1725,332 +2216,368 @@ export default function PDFPage() {
       exit={{ opacity: 0, y: -20 }}
       className="flex h-full overflow-hidden bg-background"
     >
-      {/* ── Sections sidebar ── */}
-      <div
-        className={cn(
-          "w-full md:w-56 shrink-0 border-r border-border flex-col bg-sidebar overflow-hidden",
-          showMobileSidebar
-            ? "flex fixed inset-0 z-[200] bg-background/95 backdrop-blur-xl md:relative md:z-auto md:bg-sidebar"
-            : "hidden md:flex",
-        )}
-      >
-        <div className="flex items-center justify-between px-3 py-2.5 border-b border-border shrink-0">
-          <span className="text-xs font-semibold text-foreground uppercase tracking-wide">
-            Sections
-          </span>
-          <div className="flex items-center gap-1">
-            <button
-              onClick={addSection}
-              className="h-6 w-6 flex items-center justify-center rounded hover:bg-muted text-muted-foreground hover:text-foreground transition-colors"
-              title="New section"
+      {/* ── Render Folder View when in Folder Mode and no file actively open ── */}
+      {pdfViewMode === "folder" && !activeLeafId ? (
+        renderFolderExplorer()
+      ) : (
+        <>
+          {/* ── Sections sidebar (Shown in Section Mode, or as slide-over on mobile) ── */}
+          {pdfViewMode === "section" && (
+            <div
+              className={cn(
+                "w-full md:w-56 shrink-0 border-r border-border flex-col bg-sidebar overflow-hidden",
+                showMobileSidebar
+                  ? "flex fixed inset-0 z-[200] bg-background/95 backdrop-blur-xl md:relative md:z-auto md:bg-sidebar"
+                  : "hidden md:flex",
+              )}
             >
-              <FolderPlus className="h-3.5 w-3.5" />
-            </button>
-            <button
-              onClick={() => setShowMobileSidebar(false)}
-              className="md:hidden h-6 w-6 rounded hover:bg-muted text-muted-foreground hover:text-foreground flex items-center justify-center transition-colors"
-            >
-              <X className="h-4 w-4" />
-            </button>
-          </div>
-        </div>
-
-        <Reorder.Group as="div" axis="y" values={sections} onReorder={setSections} className="flex-1 overflow-y-auto py-1 space-y-0.5">
-          {sections.length === 0 && (
-            <div className="px-3 py-4 text-center">
-              <p className="text-xs text-muted-foreground mb-2">
-                No sections yet
-              </p>
-              <button
-                onClick={addSection}
-                className="text-xs text-primary hover:underline"
-              >
-                + Create section
-              </button>
-            </div>
-          )}
-
-          {sections.map((sec) => (
-            <Reorder.Item as="div" key={sec.id} value={sec}>
-              {/* ── Section row (level 1) ── */}
-              <div 
-                className={`group flex items-center gap-1 px-2 py-1.5 cursor-pointer transition-colors ${activeItemId === sec.id ? "bg-muted" : "hover:bg-muted/50"}`}
-                onClick={() => setActiveItemId(sec.id)}
-              >
-                <button
-                  onClick={() => toggleSection(sec.id)}
-                  className="text-muted-foreground hover:text-foreground transition-colors shrink-0"
-                >
-                  {sec.expanded ? (
-                    <ChevronDown className="h-3 w-3" />
-                  ) : (
-                    <ChevRight className="h-3 w-3" />
-                  )}
-                </button>
-                {renamingId === sec.id ? (
-                  <input
-                    autoFocus
-                    value={renameVal}
-                    onChange={(e) => setRenameVal(e.target.value)}
-                    onBlur={commitRename}
-                    onKeyDown={(e) => e.key === "Enter" && commitRename()}
-                    className="flex-1 text-xs bg-background border border-primary/50 rounded px-1 py-0.5 text-foreground outline-none min-w-0"
-                  />
-                ) : (
-                  <span className="flex-1 text-xs font-semibold text-foreground truncate">
-                    {sec.name}
-                  </span>
-                )}
-                <ThreeDotMenu>
-                  <MenuItem icon={FilePlus} label="Add Subsection" shortcut="N" onClick={(e: any) => { e.stopPropagation(); addSubsection(sec.id); }} />
-                  <MenuItem icon={Pencil} label="Rename" shortcut="F2" onClick={(e: any) => { e.stopPropagation(); setRenamingId(sec.id); setRenameVal(sec.name); }} />
-                  <MenuItem icon={Trash2} label="Delete" shortcut="Del" destructive onClick={(e: any) => { e.stopPropagation(); deleteSection(sec.id); }} />
-                </ThreeDotMenu>
+              <div className="flex items-center justify-between px-3 py-2.5 border-b border-border shrink-0">
+                <span className="text-xs font-semibold text-foreground uppercase tracking-wide">
+                  Sections
+                </span>
+                <div className="flex items-center gap-1">
+                  <button
+                    onClick={() => setPdfViewMode("folder")}
+                    className="h-6 w-6 flex items-center justify-center rounded hover:bg-muted text-muted-foreground hover:text-foreground transition-colors"
+                    title="Switch to Folder View"
+                  >
+                    <LayoutGrid className="h-3.5 w-3.5" />
+                  </button>
+                  <button
+                    onClick={addSection}
+                    className="h-6 w-6 flex items-center justify-center rounded hover:bg-muted text-muted-foreground hover:text-foreground transition-colors"
+                    title="New section"
+                  >
+                    <FolderPlus className="h-3.5 w-3.5" />
+                  </button>
+                  <button
+                    onClick={() => setShowMobileSidebar(false)}
+                    className="md:hidden h-6 w-6 rounded hover:bg-muted text-muted-foreground hover:text-foreground flex items-center justify-center transition-colors"
+                  >
+                    <X className="h-4 w-4" />
+                  </button>
+                </div>
               </div>
 
-              {/* ── Subsections (level 2) ── */}
-              {sec.expanded && (
-                <div onPointerDown={(e) => e.stopPropagation()}>
-                  <Reorder.Group as="div" axis="y" values={sec.subsections} onReorder={(newSubs) => setSections(prev => prev.map(s => s.id === sec.id ? { ...s, subsections: newSubs } : s))} className="space-y-0.5 mt-0.5">
-                    {sec.subsections.map((sub) => (
-                      <Reorder.Item as="div" key={sub.id} value={sub}>
-                    <div
-                      className={`group flex items-center gap-1 pl-5 pr-2 py-1.5 cursor-pointer transition-colors
-                      ${activeLeafId === sub.id && !sub.subsubsections.length ? "bg-primary/15 border-l-2 border-primary" : (activeItemId === sub.id ? "bg-muted/70" : "hover:bg-muted/50")}`}
-                      onClick={async () => {
-                        setActiveItemId(sub.id);
-                        if (sub.fileType === "image" && sub.imageKey) {
-                          const buf = await readMediaAsArrayBuffer(sub.imageKey);
-                          if (buf) {
-                            const blob = new Blob([buf]);
-                            if (activeImageUrl)
-                              URL.revokeObjectURL(activeImageUrl);
-                            setActiveImageUrl(URL.createObjectURL(blob));
-                            setPdfDoc(null);
-                            setActiveLeafId(sub.id);
-                          }
-                        } else if (sub.pdfKey || sub.pdfUrl) {
-                          setActiveImageUrl(null);
-                          loadLeafPdf(sub.id, sub.pdfKey, sub.pdfUrl);
-                        } else {
-                          setActiveLeafId(sub.id);
-                        }
-                        setShowMobileSidebar(false);
-                      }}
+              <Reorder.Group as="div" axis="y" values={sections} onReorder={setSections} className="flex-1 overflow-y-auto py-1 space-y-0.5">
+                {sections.length === 0 && (
+                  <div className="px-3 py-4 text-center">
+                    <p className="text-xs text-muted-foreground mb-2">
+                      No sections yet
+                    </p>
+                    <button
+                      onClick={addSection}
+                      className="text-xs text-primary hover:underline"
+                    >
+                      + Create section
+                    </button>
+                  </div>
+                )}
+
+                {sections.map((sec) => (
+                  <Reorder.Item as="div" key={sec.id} value={sec}>
+                    {/* ── Section row (level 1) ── */}
+                    <div 
+                      className={`group flex items-center gap-1 px-2 py-1.5 cursor-pointer transition-colors ${activeItemId === sec.id ? "bg-muted" : "hover:bg-muted/50"}`}
+                      onClick={() => setActiveItemId(sec.id)}
                     >
                       <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          toggleSubsection(sec.id, sub.id);
-                        }}
+                        onClick={() => toggleSection(sec.id)}
                         className="text-muted-foreground hover:text-foreground transition-colors shrink-0"
                       >
-                        {sub.subsubsections.length > 0 ? (
-                          sub.expanded ? (
-                            <ChevronDown className="h-2.5 w-2.5" />
-                          ) : (
-                            <ChevRight className="h-2.5 w-2.5" />
-                          )
+                        {sec.expanded ? (
+                          <ChevronDown className="h-3 w-3" />
                         ) : (
-                          <div className="w-2 h-2 rounded-full bg-muted-foreground/40" />
+                          <ChevRight className="h-3 w-3" />
                         )}
                       </button>
-
-                      {renamingId === sub.id ? (
+                      {renamingId === sec.id ? (
                         <input
                           autoFocus
                           value={renameVal}
                           onChange={(e) => setRenameVal(e.target.value)}
                           onBlur={commitRename}
                           onKeyDown={(e) => e.key === "Enter" && commitRename()}
-                          onClick={(e) => e.stopPropagation()}
                           className="flex-1 text-xs bg-background border border-primary/50 rounded px-1 py-0.5 text-foreground outline-none min-w-0"
                         />
                       ) : (
-                        <div className="flex-1 min-w-0">
-                          <p
-                            className={`text-xs truncate font-medium ${activeLeafId === sub.id ? "text-primary" : "text-foreground"}`}
-                          >
-                            {sub.name}
-                          </p>
-                          {(sub.pdfName || sub.imageName) && (
-                            <p className="text-[9px] text-muted-foreground truncate">
-                              {sub.fileType === "image" ? "🖼 " : ""}
-                              {sub.imageName || sub.pdfName}
-                            </p>
-                          )}
-                        </div>
+                        <span className="flex-1 text-xs font-semibold text-foreground truncate">
+                          {sec.name}
+                        </span>
                       )}
-
                       <ThreeDotMenu>
-                        <MenuItem icon={Upload} label="Upload / Add" onClick={(e: any) => { e.stopPropagation(); setUploadTarget({ sectionId: sec.id, subId: sub.id }); }} />
-                        <MenuItem icon={FilePlus} label="Add Sub-subsection" shortcut="N" onClick={(e: any) => { e.stopPropagation(); addSubSubsection(sec.id, sub.id); }} />
-                        <MenuItem icon={Pencil} label="Rename" shortcut="F2" onClick={(e: any) => { e.stopPropagation(); setRenamingId(sub.id); setRenameVal(sub.name); }} />
-                        <MenuItem icon={Trash2} label="Delete" shortcut="Del" destructive onClick={(e: any) => { e.stopPropagation(); deleteSubsection(sec.id, sub.id); }} />
+                        <MenuItem icon={FilePlus} label="Add Subsection" shortcut="N" onClick={(e: any) => { e.stopPropagation(); addSubsection(sec.id); }} />
+                        <MenuItem icon={Pencil} label="Rename" shortcut="F2" onClick={(e: any) => { e.stopPropagation(); setRenamingId(sec.id); setRenameVal(sec.name); }} />
+                        <MenuItem icon={Trash2} label="Delete" shortcut="Del" destructive onClick={(e: any) => { e.stopPropagation(); deleteSection(sec.id); }} />
                       </ThreeDotMenu>
                     </div>
 
-                    {/* ── Sub-subsections (level 3) ── */}
-                    {sub.expanded && (
+                    {/* ── Subsections (level 2) ── */}
+                    {sec.expanded && (
                       <div onPointerDown={(e) => e.stopPropagation()}>
-                        <Reorder.Group as="div" axis="y" values={sub.subsubsections} onReorder={(newSubSubs) => setSections(prev => prev.map(s => s.id === sec.id ? { ...s, subsections: s.subsections.map(su => su.id === sub.id ? { ...su, subsubsections: newSubSubs } : su) } : s))} className="space-y-0.5 mt-0.5">
-                          {sub.subsubsections.map((ssub) => (
-                            <Reorder.Item as="div" key={ssub.id} value={ssub}>
-                              <div
-                          key={ssub.id}
-                          className={`group flex items-center gap-1 pl-9 pr-2 py-1.5 cursor-pointer transition-colors
-                        ${activeLeafId === ssub.id ? "bg-primary/15 border-l-2 border-primary" : (activeItemId === ssub.id ? "bg-muted/70" : "hover:bg-muted/50")}`}
-                          onClick={async () => {
-                            setActiveItemId(ssub.id);
-                            if (ssub.fileType === "image" && ssub.imageKey) {
-                              const buf = await readMediaAsArrayBuffer(ssub.imageKey);
-                              if (buf) {
-                                const blob = new Blob([buf]);
-                                if (activeImageUrl)
-                                  URL.revokeObjectURL(activeImageUrl);
-                                setActiveImageUrl(URL.createObjectURL(blob));
-                                setPdfDoc(null);
-                                setActiveLeafId(ssub.id);
+                        <Reorder.Group as="div" axis="y" values={sec.subsections} onReorder={(newSubs) => setSections(prev => prev.map(s => s.id === sec.id ? { ...s, subsections: newSubs } : s))} className="space-y-0.5 mt-0.5">
+                          {sec.subsections.map((sub) => (
+                            <Reorder.Item as="div" key={sub.id} value={sub}>
+                          <div
+                            className={`group flex items-center gap-1 pl-5 pr-2 py-1.5 cursor-pointer transition-colors
+                            ${activeLeafId === sub.id && !sub.subsubsections.length ? "bg-primary/15 border-l-2 border-primary" : (activeItemId === sub.id ? "bg-muted/70" : "hover:bg-muted/50")}`}
+                            onClick={async () => {
+                              setActiveItemId(sub.id);
+                              if (sub.fileType === "image" && sub.imageKey) {
+                                const buf = await readMediaAsArrayBuffer(sub.imageKey);
+                                if (buf) {
+                                  const blob = new Blob([buf]);
+                                  if (activeImageUrl)
+                                    URL.revokeObjectURL(activeImageUrl);
+                                  setActiveImageUrl(URL.createObjectURL(blob));
+                                  setPdfDoc(null);
+                                  setActiveLeafId(sub.id);
+                                }
+                              } else if (sub.pdfKey || sub.pdfUrl) {
+                                setActiveImageUrl(null);
+                                loadLeafPdf(sub.id, sub.pdfKey, sub.pdfUrl);
+                              } else {
+                                setActiveLeafId(sub.id);
                               }
-                            } else {
-                              setActiveImageUrl(null);
-                              loadLeafPdf(ssub.id, ssub.pdfKey, ssub.pdfUrl);
-                            }
-                            setShowMobileSidebar(false);
-                          }}
-                        >
-                          <div className="w-1 h-1 rounded-full bg-muted-foreground/30 shrink-0" />
-
-                          {renamingId === ssub.id ? (
-                            <input
-                              autoFocus
-                              value={renameVal}
-                              onChange={(e) => setRenameVal(e.target.value)}
-                              onBlur={commitRename}
-                              onKeyDown={(e) =>
-                                e.key === "Enter" && commitRename()
-                              }
-                              onClick={(e) => e.stopPropagation()}
-                              className="flex-1 text-xs bg-background border border-primary/50 rounded px-1 py-0.5 text-foreground outline-none min-w-0"
-                            />
-                          ) : (
-                            <div className="flex-1 min-w-0">
-                              <p
-                                className={`text-[11px] truncate ${activeLeafId === ssub.id ? "text-primary font-medium" : "text-muted-foreground"}`}
-                              >
-                                {ssub.name}
-                              </p>
-                              {(ssub.pdfName || ssub.imageName) && (
-                                <p className="text-[9px] text-muted-foreground/70 truncate">
-                                  {ssub.fileType === "image" ? "🖼 " : ""}
-                                  {ssub.imageName || ssub.pdfName}
-                                </p>
+                              setShowMobileSidebar(false);
+                            }}
+                          >
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                toggleSubsection(sec.id, sub.id);
+                              }}
+                              className="text-muted-foreground hover:text-foreground transition-colors shrink-0"
+                            >
+                              {sub.subsubsections.length > 0 ? (
+                                sub.expanded ? (
+                                  <ChevronDown className="h-2.5 w-2.5" />
+                                ) : (
+                                  <ChevRight className="h-2.5 w-2.5" />
+                                )
+                              ) : (
+                                <div className="w-2 h-2 rounded-full bg-muted-foreground/40" />
                               )}
+                            </button>
+
+                            {renamingId === sub.id ? (
+                              <input
+                                autoFocus
+                                value={renameVal}
+                                onChange={(e) => setRenameVal(e.target.value)}
+                                onBlur={commitRename}
+                                onKeyDown={(e) => e.key === "Enter" && commitRename()}
+                                onClick={(e) => e.stopPropagation()}
+                                className="flex-1 text-xs bg-background border border-primary/50 rounded px-1 py-0.5 text-foreground outline-none min-w-0"
+                              />
+                            ) : (
+                              <div className="flex-1 min-w-0">
+                                <p
+                                  className={`text-xs truncate font-medium ${activeLeafId === sub.id ? "text-primary" : "text-foreground"}`}
+                                >
+                                  {sub.name}
+                                </p>
+                                {(sub.pdfName || sub.imageName) && (
+                                  <p className="text-[9px] text-muted-foreground truncate">
+                                    {sub.fileType === "image" ? "🖼 " : ""}
+                                    {sub.imageName || sub.pdfName}
+                                  </p>
+                                )}
+                              </div>
+                            )}
+
+                            <ThreeDotMenu>
+                              <MenuItem icon={Upload} label="Upload / Add" onClick={(e: any) => { e.stopPropagation(); setUploadTarget({ sectionId: sec.id, subId: sub.id }); }} />
+                              <MenuItem icon={FilePlus} label="Add Sub-subsection" shortcut="N" onClick={(e: any) => { e.stopPropagation(); addSubSubsection(sec.id, sub.id); }} />
+                              <MenuItem icon={Pencil} label="Rename" shortcut="F2" onClick={(e: any) => { e.stopPropagation(); setRenamingId(sub.id); setRenameVal(sub.name); }} />
+                              <MenuItem icon={Trash2} label="Delete" shortcut="Del" destructive onClick={(e: any) => { e.stopPropagation(); deleteSubsection(sec.id, sub.id); }} />
+                            </ThreeDotMenu>
+                          </div>
+
+                          {/* ── Sub-subsections (level 3) ── */}
+                          {sub.expanded && (
+                            <div onPointerDown={(e) => e.stopPropagation()}>
+                              <Reorder.Group as="div" axis="y" values={sub.subsubsections} onReorder={(newSubSubs) => setSections(prev => prev.map(s => s.id === sec.id ? { ...s, subsections: s.subsections.map(su => su.id === sub.id ? { ...su, subsubsections: newSubSubs } : su) } : s))} className="space-y-0.5 mt-0.5">
+                                {sub.subsubsections.map((ssub) => (
+                                  <Reorder.Item as="div" key={ssub.id} value={ssub}>
+                                    <div
+                                key={ssub.id}
+                                className={`group flex items-center gap-1 pl-9 pr-2 py-1.5 cursor-pointer transition-colors
+                              ${activeLeafId === ssub.id ? "bg-primary/15 border-l-2 border-primary" : (activeItemId === ssub.id ? "bg-muted/70" : "hover:bg-muted/50")}`}
+                                onClick={async () => {
+                                  setActiveItemId(ssub.id);
+                                  if (ssub.fileType === "image" && ssub.imageKey) {
+                                    const buf = await readMediaAsArrayBuffer(ssub.imageKey);
+                                    if (buf) {
+                                      const blob = new Blob([buf]);
+                                      if (activeImageUrl)
+                                        URL.revokeObjectURL(activeImageUrl);
+                                      setActiveImageUrl(URL.createObjectURL(blob));
+                                      setPdfDoc(null);
+                                      setActiveLeafId(ssub.id);
+                                    }
+                                  } else {
+                                    setActiveImageUrl(null);
+                                    loadLeafPdf(ssub.id, ssub.pdfKey, ssub.pdfUrl);
+                                  }
+                                  setShowMobileSidebar(false);
+                                }}
+                              >
+                                <div className="w-1 h-1 rounded-full bg-muted-foreground/30 shrink-0" />
+
+                                {renamingId === ssub.id ? (
+                                  <input
+                                    autoFocus
+                                    value={renameVal}
+                                    onChange={(e) => setRenameVal(e.target.value)}
+                                    onBlur={commitRename}
+                                    onKeyDown={(e) =>
+                                      e.key === "Enter" && commitRename()
+                                    }
+                                    onClick={(e) => e.stopPropagation()}
+                                    className="flex-1 text-xs bg-background border border-primary/50 rounded px-1 py-0.5 text-foreground outline-none min-w-0"
+                                  />
+                                ) : (
+                                  <div className="flex-1 min-w-0">
+                                    <p
+                                      className={`text-[11px] truncate ${activeLeafId === ssub.id ? "text-primary font-medium" : "text-muted-foreground"}`}
+                                    >
+                                      {ssub.name}
+                                    </p>
+                                    {(ssub.pdfName || ssub.imageName) && (
+                                      <p className="text-[9px] text-muted-foreground/70 truncate">
+                                        {ssub.fileType === "image" ? "🖼 " : ""}
+                                        {ssub.imageName || ssub.pdfName}
+                                      </p>
+                                    )}
+                                  </div>
+                                )}
+
+                                <ThreeDotMenu>
+                                  <MenuItem icon={Upload} label="Upload / Add" onClick={(e: any) => { e.stopPropagation(); setUploadTarget({ sectionId: sec.id, subId: sub.id, subSubId: ssub.id }); }} />
+                                  <MenuItem icon={Pencil} label="Rename" shortcut="F2" onClick={(e: any) => { e.stopPropagation(); setRenamingId(ssub.id); setRenameVal(ssub.name); }} />
+                                  <MenuItem icon={Trash2} label="Delete" shortcut="Del" destructive onClick={(e: any) => { e.stopPropagation(); deleteSubSubsection(sec.id, sub.id, ssub.id); }} />
+                                </ThreeDotMenu>
+                                    </div>
+                                  </Reorder.Item>
+                                ))}
+                              </Reorder.Group>
                             </div>
                           )}
 
-                          <ThreeDotMenu>
-                            <MenuItem icon={Upload} label="Upload / Add" onClick={(e: any) => { e.stopPropagation(); setUploadTarget({ sectionId: sec.id, subId: sub.id, subSubId: ssub.id }); }} />
-                            <MenuItem icon={Pencil} label="Rename" shortcut="F2" onClick={(e: any) => { e.stopPropagation(); setRenamingId(ssub.id); setRenameVal(ssub.name); }} />
-                            <MenuItem icon={Trash2} label="Delete" shortcut="Del" destructive onClick={(e: any) => { e.stopPropagation(); deleteSubSubsection(sec.id, sub.id, ssub.id); }} />
-                          </ThreeDotMenu>
-                              </div>
+                          {/* Add sub-subsection shortcut */}
+                          {sub.expanded && (
+                            <button
+                              onClick={() => addSubSubsection(sec.id, sub.id)}
+                              className="flex items-center gap-1 pl-9 pr-2 py-1 text-[10px] text-muted-foreground hover:text-primary transition-colors w-full"
+                            >
+                              <FilePlus className="h-2.5 w-2.5" />+ Add sub-subsection
+                            </button>
+                          )}
                             </Reorder.Item>
                           ))}
                         </Reorder.Group>
                       </div>
                     )}
 
-                    {/* Add sub-subsection shortcut */}
-                    {sub.expanded && (
+                    {/* Add subsection shortcut */}
+                    {sec.expanded && (
                       <button
-                        onClick={() => addSubSubsection(sec.id, sub.id)}
-                        className="flex items-center gap-1 pl-9 pr-2 py-1 text-[10px] text-muted-foreground hover:text-primary transition-colors w-full"
+                        onClick={() => addSubsection(sec.id)}
+                        className="flex items-center gap-1 pl-5 pr-2 py-1 text-[10px] text-muted-foreground hover:text-primary transition-colors w-full"
                       >
-                        <FilePlus className="h-2.5 w-2.5" />+ Add sub-subsection
+                        <FilePlus className="h-2.5 w-2.5" />+ Add subsection
                       </button>
                     )}
-                      </Reorder.Item>
-                    ))}
-                  </Reorder.Group>
-                </div>
-              )}
+                  </Reorder.Item>
+                ))}
+              </Reorder.Group>
+            </div>
+          )}
 
-              {/* Add subsection shortcut */}
-              {sec.expanded && (
-                <button
-                  onClick={() => addSubsection(sec.id)}
-                  className="flex items-center gap-1 pl-5 pr-2 py-1 text-[10px] text-muted-foreground hover:text-primary transition-colors w-full"
+          {/* ── PDF viewer area ── */}
+          <div className="flex-1 flex flex-col overflow-hidden min-w-0">
+            {/* Hidden file inputs */}
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept=".pdf"
+              className="hidden"
+              onChange={async (e) => {
+                const file = e.target.files?.[0];
+                if (!file) return;
+                const buf = await file.arrayBuffer();
+                await loadPdfFromBuffer(buf);
+                e.target.value = "";
+              }}
+            />
+            <input
+              ref={sectionFileInputRef}
+              type="file"
+              accept=".pdf"
+              className="hidden"
+              onChange={handleSectionFileUpload}
+            />
+            <input
+              ref={sectionImageInputRef}
+              type="file"
+              accept="image/*"
+              className="hidden"
+              onChange={handleSectionImageUpload}
+            />
+
+            {/* ── Toolbar ── */}
+            <div className="flex items-center gap-2 px-3 py-1.5 border-b border-border bg-card/80 backdrop-blur-sm flex-shrink-0 flex-wrap">
+              {/* Back to Folders Button when in folder mode */}
+              {pdfViewMode === "folder" && (
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="h-7 gap-1.5 text-xs shrink-0 bg-primary/10 hover:bg-primary/20 text-primary border-primary/20 font-semibold"
+                  onClick={() => {
+                    setActiveLeafId(null);
+                    setPdfDoc(null);
+                    setActiveImageUrl(null);
+                  }}
+                  title="Back to Folders"
                 >
-                  <FilePlus className="h-2.5 w-2.5" />+ Add subsection
-                </button>
+                  <ArrowLeft className="h-3 w-3" />
+                  <span>Back to Folders</span>
+                </Button>
               )}
-            </Reorder.Item>
-          ))}
-        </Reorder.Group>
-      </div>
 
-      {/* ── PDF viewer area ── */}
-      <div className="flex-1 flex flex-col overflow-hidden min-w-0">
-        <div className="md:hidden flex items-center px-3 py-2 bg-card border-b border-border shrink-0">
-          <button
-            onClick={() => setShowMobileSidebar(true)}
-            className="flex items-center gap-1.5 text-xs font-semibold text-foreground"
-          >
-            <FolderPlus className="h-4 w-4 text-primary" /> Open Library
-          </button>
-        </div>
-        {/* Hidden file inputs */}
-        <input
-          ref={fileInputRef}
-          type="file"
-          accept=".pdf"
-          className="hidden"
-          onChange={async (e) => {
-            const file = e.target.files?.[0];
-            if (!file) return;
-            const buf = await file.arrayBuffer();
-            await loadPdfFromBuffer(buf);
-            e.target.value = "";
-          }}
-        />
-        <input
-          ref={sectionFileInputRef}
-          type="file"
-          accept=".pdf"
-          className="hidden"
-          onChange={handleSectionFileUpload}
-        />
-        <input
-          ref={sectionImageInputRef}
-          type="file"
-          accept="image/*"
-          className="hidden"
-          onChange={handleSectionImageUpload}
-        />
+              {/* View mode toggle button */}
+              <button
+                onClick={() => setPdfViewMode(pdfViewMode === "folder" ? "section" : "folder")}
+                className="h-7 px-2 flex items-center gap-1 rounded-md border border-border bg-muted/60 text-xs font-semibold text-muted-foreground hover:text-foreground transition-all shrink-0"
+                title="Switch layout mode"
+              >
+                {pdfViewMode === "folder" ? <ListTree className="h-3 w-3 text-primary" /> : <LayoutGrid className="h-3 w-3 text-primary" />}
+                <span>{pdfViewMode === "folder" ? "Sidebar Mode" : "Folder Mode"}</span>
+              </button>
 
-        {/* ── Toolbar ── */}
-        <div className="flex items-center gap-2 px-3 py-1.5 border-b border-border bg-card/80 backdrop-blur-sm flex-shrink-0 flex-wrap">
-          <Button
-            variant="outline"
-            size="sm"
-            className={cn("h-7 gap-1.5 text-xs shrink-0 transition-all", isCropMode ? "bg-primary text-primary-foreground border-primary" : "hover:bg-primary/10")}
-            onClick={() => { setIsCropMode(!isCropMode); setCrops([]); }}
-            disabled={!pdfDoc}
-          >
-            <Scissors className="h-3 w-3" />
-            {isCropMode ? "Exit Crop" : "Add Ques to Saves"}
-          </Button>
+              <div className="h-4 w-px bg-border shrink-0" />
 
-          <Button
-            variant="outline"
-            size="sm"
-            className="h-7 gap-1.5 text-xs shrink-0"
-            onClick={() => fileInputRef.current?.click()}
-          >
-            <Upload className="h-3 w-3" />
-            {activeLeafId ? "Preview" : "Open PDF"}
-          </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                className={cn("h-7 gap-1.5 text-xs shrink-0 transition-all", isCropMode ? "bg-primary text-primary-foreground border-primary" : "hover:bg-primary/10")}
+                onClick={() => { setIsCropMode(!isCropMode); setCrops([]); }}
+                disabled={!pdfDoc}
+              >
+                <Scissors className="h-3 w-3" />
+                {isCropMode ? "Exit Crop" : "Add Ques to Saves"}
+              </Button>
+
+              <Button
+                variant="outline"
+                size="sm"
+                className="h-7 gap-1.5 text-xs shrink-0"
+                onClick={() => fileInputRef.current?.click()}
+              >
+                <Upload className="h-3 w-3" />
+                {activeLeafId ? "Preview" : "Open PDF"}
+              </Button>
 
           {pdfDoc && (
             <>
@@ -2386,6 +2913,8 @@ export default function PDFPage() {
           )}
         </div>
       </div>
+      </>
+      )}
 
       {/* ── Upload / URL modal ── */}
       <AnimatePresence>

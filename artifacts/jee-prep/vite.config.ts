@@ -53,8 +53,8 @@ export default defineConfig(async () => {
   }
 
   return {
-    // Use absolute root path for web routing inside Codespaces
-  base: process.env.NODE_ENV === "production" ? "/v4/" : "/",
+    // Use relative path for universal static site hosting in final build
+    base: "./",
 
     plugins: [
       react(),

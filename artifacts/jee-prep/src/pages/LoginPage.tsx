@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { auth, db, googleProvider } from "@/lib/firebase";
 import { signInWithPopup, verifyPasswordResetCode, confirmPasswordReset } from "firebase/auth";
 import { doc, getDoc, setDoc, collection, query, where, getDocs, updateDoc } from "firebase/firestore";
+import logoImg from "@/assets/logo.png";
 
 function ParticleBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -106,12 +107,37 @@ export default function LoginPage() {
   const { login } = useAppContext();
 
   // Main Login State
-  const [username, setUsername] = useState("");
+  const [username, setUsername] = useState(() => {
+    try {
+      const remember = localStorage.getItem("jee_remember_me");
+      if (remember === "true") {
+        const saved = localStorage.getItem("jee_saved_username");
+        if (saved) {
+          try {
+            const parsed = JSON.parse(saved);
+            const str = typeof parsed === "string" ? parsed : String(saved);
+            return str.replace(/^["']|["']$/g, "").trim();
+          } catch {
+            return String(saved).replace(/^["']|["']$/g, "").trim();
+          }
+        }
+      }
+      return "";
+    } catch {
+      return "";
+    }
+  });
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const [rememberMe, setRememberMe] = useState(true);
+  const [rememberMe, setRememberMe] = useState(() => {
+    try {
+      return localStorage.getItem("jee_remember_me") === "true";
+    } catch {
+      return false;
+    }
+  });
 
   // Registration / Google Sign-in flow state
   const [step, setStep] = useState<"login" | "setup" | "reset">("login");
@@ -162,11 +188,21 @@ export default function LoginPage() {
 
     if (username === "OM" && password === "9801") {
       localStorage.setItem("jee_remember_me", rememberMe ? "true" : "false");
+      if (rememberMe) {
+        localStorage.setItem("jee_saved_username", username);
+      } else {
+        localStorage.removeItem("jee_saved_username");
+      }
       sessionStorage.setItem("jee_session_active", "true");
       localStorage.setItem("jee_last_active", Date.now().toString());
       login(username);
     } else if (isLocalUser) {
       localStorage.setItem("jee_remember_me", rememberMe ? "true" : "false");
+      if (rememberMe) {
+        localStorage.setItem("jee_saved_username", username);
+      } else {
+        localStorage.removeItem("jee_saved_username");
+      }
       sessionStorage.setItem("jee_session_active", "true");
       localStorage.setItem("jee_last_active", Date.now().toString());
       login(username);
@@ -373,7 +409,14 @@ export default function LoginPage() {
               transition={{ delay: 0.1, type: "spring", stiffness: 200 }}
             >
               <div className="h-20 w-20 rounded-2xl overflow-hidden flex items-center justify-center border border-primary/20 shadow-lg bg-background p-1">
-                <img src="/logo.png" alt="StudE Logo" className="h-full w-full object-contain rounded-xl" />
+                <img 
+                  src={logoImg} 
+                  alt="StudE Logo" 
+                  className="h-full w-full object-contain rounded-xl" 
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = "./logo.png";
+                  }}
+                />
               </div>
             </motion.div>
             <CardTitle className="text-3xl font-bold tracking-tight text-foreground">StudE</CardTitle>

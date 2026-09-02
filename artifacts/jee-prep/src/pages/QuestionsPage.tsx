@@ -1667,92 +1667,110 @@ export default function QuestionsPage() {
 
           {/* Right Main Question Area */}
           <div className="flex-1 overflow-y-auto p-4 sm:p-8 flex flex-col justify-between space-y-6">
-            <div className="max-w-3xl w-full mx-auto space-y-6">
-              {/* Previous / Next top bar */}
-              <div className="flex items-center justify-between gap-4">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  disabled={currentQuestionIndex === 0}
-                  onClick={() => {
-                    const prevIdx = currentQuestionIndex - 1;
-                    setCurrentQuestionIndex(prevIdx);
-                    resetAnswerState();
-                    const q = currentPaperQuestions[prevIdx];
-                    if (isFullyLoaded(q)) {
-                      setActiveQuestionData(q);
-                    } else if (q) {
-                      loadQuestionDetail(selectedPaper.key, q.question_id, selectedPaper.exam, q, prevIdx);
-                    }
-                  }}
-                  className="rounded-xl text-xs gap-1.5"
-                >
-                  <ChevronLeft className="w-4 h-4" /> Previous
-                </Button>
-
-                <Button
-                  variant="default"
-                  size="sm"
-                  disabled={currentQuestionIndex >= currentPaperQuestions.length - 1}
-                  onClick={() => {
-                    const nextIdx = currentQuestionIndex + 1;
-                    setCurrentQuestionIndex(nextIdx);
-                    resetAnswerState();
-                    const q = currentPaperQuestions[nextIdx];
-                    if (isFullyLoaded(q)) {
-                      setActiveQuestionData(q);
-                    } else if (q) {
-                      loadQuestionDetail(selectedPaper.key, q.question_id, selectedPaper.exam, q, nextIdx);
-                    }
-                  }}
-                  className="rounded-xl text-xs gap-1.5"
-                >
-                  Next <ChevronRight className="w-4 h-4" />
-                </Button>
+            {currentPaperQuestions.length === 0 ? (
+              <div className="flex-1 flex items-center justify-center p-8 my-auto">
+                <div className="max-w-md text-center space-y-4 p-8 bg-card border border-border/80 rounded-2xl shadow-xs">
+                  <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary border border-primary/20 flex items-center justify-center mx-auto">
+                    <FileQuestion className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-base font-bold text-foreground">Paper Offline Pack</h3>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    Questions for <strong>{selectedPaper?.title || "this paper"}</strong> are not currently present in your offline data folder.
+                    You can copy the paper JSON into <code>dist/data/pyq/papers/</code> or select one of the available papers from the list.
+                  </p>
+                  <Button onClick={() => setMode("paper_list")} variant="outline" className="rounded-xl text-xs">
+                    Back to Papers List
+                  </Button>
+                </div>
               </div>
+            ) : (
+              <div className="max-w-3xl w-full mx-auto space-y-6">
+                {/* Previous / Next top bar */}
+                <div className="flex items-center justify-between gap-4">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    disabled={currentQuestionIndex === 0}
+                    onClick={() => {
+                      const prevIdx = currentQuestionIndex - 1;
+                      setCurrentQuestionIndex(prevIdx);
+                      resetAnswerState();
+                      const q = currentPaperQuestions[prevIdx];
+                      if (isFullyLoaded(q)) {
+                        setActiveQuestionData(q);
+                      } else if (q) {
+                        loadQuestionDetail(selectedPaper.key, q.question_id, selectedPaper.exam, q, prevIdx);
+                      }
+                    }}
+                    className="rounded-xl text-xs gap-1.5"
+                  >
+                    <ChevronLeft className="w-4 h-4" /> Previous
+                  </Button>
 
-              {/* Question Card */}
-              <div className="space-y-6 bg-card border border-border/80 rounded-2xl p-6 sm:p-8 shadow-xs">
-                {/* Question Header & Context */}
-                <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-border/60">
-                  <div className="flex items-center gap-3">
-                    <span className="w-8 h-8 rounded-xl bg-primary/10 text-primary border border-primary/20 flex items-center justify-center font-extrabold text-sm shadow-xs">
-                      Q{currentQuestionIndex + 1}
-                    </span>
-                    <div className="min-w-0">
-                      <div className="text-sm font-bold text-foreground flex items-center gap-2">
-                        <span className="truncate">
-                          {formatTopicName(activeQuestionData?.topic || activeQuestionData?.chapter || currentPaperQuestions[currentQuestionIndex]?.topic || currentPaperQuestions[currentQuestionIndex]?.chapter) || `Question ${currentQuestionIndex + 1}`}
-                        </span>
-                        {activeQuestionData?.subject && (
-                          <span className="capitalize text-[10px] px-2 py-0.5 rounded-full bg-muted text-muted-foreground font-medium shrink-0">
-                            {activeQuestionData.subject}
+                  <Button
+                    variant="default"
+                    size="sm"
+                    disabled={currentQuestionIndex >= currentPaperQuestions.length - 1}
+                    onClick={() => {
+                      const nextIdx = currentQuestionIndex + 1;
+                      setCurrentQuestionIndex(nextIdx);
+                      resetAnswerState();
+                      const q = currentPaperQuestions[nextIdx];
+                      if (isFullyLoaded(q)) {
+                        setActiveQuestionData(q);
+                      } else if (q) {
+                        loadQuestionDetail(selectedPaper.key, q.question_id, selectedPaper.exam, q, nextIdx);
+                      }
+                    }}
+                    className="rounded-xl text-xs gap-1.5"
+                  >
+                    Next <ChevronRight className="w-4 h-4" />
+                  </Button>
+                </div>
+
+                {/* Question Card */}
+                <div className="space-y-6 bg-card border border-border/80 rounded-2xl p-6 sm:p-8 shadow-xs">
+                  {/* Question Header & Context */}
+                  <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-border/60">
+                    <div className="flex items-center gap-3">
+                      <span className="w-8 h-8 rounded-xl bg-primary/10 text-primary border border-primary/20 flex items-center justify-center font-extrabold text-sm shadow-xs">
+                        Q{currentQuestionIndex + 1}
+                      </span>
+                      <div className="min-w-0">
+                        <div className="text-sm font-bold text-foreground flex items-center gap-2">
+                          <span className="truncate">
+                            {formatTopicName(activeQuestionData?.topic || activeQuestionData?.chapter || currentPaperQuestions[currentQuestionIndex]?.topic || currentPaperQuestions[currentQuestionIndex]?.chapter) || `Question ${currentQuestionIndex + 1}`}
                           </span>
-                        )}
-                      </div>
-                      <div className="text-[11px] text-muted-foreground truncate max-w-[320px]">
-                        {selectedPaper?.title}
+                          {activeQuestionData?.subject && (
+                            <span className="capitalize text-[10px] px-2 py-0.5 rounded-full bg-muted text-muted-foreground font-medium shrink-0">
+                              {activeQuestionData.subject}
+                            </span>
+                          )}
+                        </div>
+                        <div className="text-[11px] text-muted-foreground truncate max-w-[320px]">
+                          {selectedPaper?.title}
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
 
-                <QuestionInteractiveArea
-                  question={activeQuestionData || currentPaperQuestions[currentQuestionIndex]}
-                  userSelectedOption={userSelectedOption}
-                  selectedOptionsList={selectedOptionsList}
-                  numericalInput={numericalInput}
-                  isChecked={isChecked}
-                  isSolutionVisible={isSolutionVisible}
-                  isLoading={questionDetailLoading}
-                  onSelectOption={(id) => setUserSelectedOption(id)}
-                  onToggleMultiOption={(id) => setSelectedOptionsList(prev => prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id])}
-                  onChangeNumerical={(val) => setNumericalInput(val)}
-                  onCheckAnswer={() => setIsChecked(true)}
-                  onToggleSolution={() => setIsSolutionVisible(!isSolutionVisible)}
-                />
+                  <QuestionInteractiveArea
+                    question={activeQuestionData || currentPaperQuestions[currentQuestionIndex]}
+                    userSelectedOption={userSelectedOption}
+                    selectedOptionsList={selectedOptionsList}
+                    numericalInput={numericalInput}
+                    isChecked={isChecked}
+                    isSolutionVisible={isSolutionVisible}
+                    isLoading={questionDetailLoading}
+                    onSelectOption={(id) => setUserSelectedOption(id)}
+                    onToggleMultiOption={(id) => setSelectedOptionsList(prev => prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id])}
+                    onChangeNumerical={(val) => setNumericalInput(val)}
+                    onCheckAnswer={() => setIsChecked(true)}
+                    onToggleSolution={() => setIsSolutionVisible(!isSolutionVisible)}
+                  />
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>

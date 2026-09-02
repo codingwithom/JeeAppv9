@@ -48,6 +48,7 @@ import remarkGfm from 'remark-gfm';
 import rehypeKatex from 'rehype-katex';
 import 'katex/dist/katex.min.css';
 import AIChatInterface from "./AI";
+import { fixLatexFormatting, extractInlineOptions } from "@/lib/latex-formatter";
 
 // ─── Types ─────────────────────────────────────────────────────────────────
 type QuizPhase = "setup" | "analyzing" | "active" | "results";
@@ -313,8 +314,9 @@ CRITICAL FORMATTING INSTRUCTIONS FOR MATH/PHYSICS/CHEMISTRY AND TABLES:
 - NEVER leave math, vectors (like [1, 2, -2]), or formulas as plain text. Always wrap them in $...$
 - NEVER use [ ... ] or \\[ ... \\] or \\( ... \\) for math. ALWAYS use $$ ... $$ for block math and $ ... $ for inline math.
 - For chemical equations, use LaTeX notation (e.g. $\\text{H}_2\\text{SO}_4$).
-- For tables, ALWAYS use standard Markdown tables (using | and -). NEVER use LaTeX table environments like \\begin{table} or \\begin{tabular}. Ensure they are clean and properly aligned. DO NOT put block math ($$) inside a Markdown table cell; use inline math ($) inside tables.
 - If the question contains multiple statements, items, or internal options (e.g., (1) ..., (2) ..., (3) ... or Statement I, Statement II), YOU MUST format them vertically by adding newlines (\\n) before each item in the "text" field so they appear on separate lines.
+- NEVER embed the main four multiple-choice options (e.g., (A), (B), (C), (D) or (1), (2), (3), (4)) inside the "text" field. You MUST place the full text of each option exclusively inside the "options" array. The "text" field must only contain the question description and statement.
+- DO NOT output literal "/n" or "\\n" as text; format equations and lists with correct LaTeX or real newlines.
 Do not use Unicode approximations. Output strict LaTeX.
 
 CRITICAL JSON ESCAPING REQUIREMENT:
@@ -612,95 +614,6 @@ class QuizGeneratorManager {
           return parsed;
       };
 
-      const fixMath = (str: string) => {
-          if (!str) return str;
-          
-          // Replace \ce{...} with \text{...} or raw formatting for KaTeX mhchem lack of support
-          str = str.replace(/\\ce\{([a-zA-Z0-9\+\-\s\(\)]+)\}/g, (match, chem) => {
-              let converted = chem.replace(/([a-zA-Z]+)(\d+)/g, "\\text{$1}_$2");
-              converted = converted.replace(/(?<!\d|_|{)([a-zA-Z]+)(?!\d|_|})/g, "\\text{$1}");
-              return converted;
-          });
-
-          str = str.replace(/&lt;br\s*\/?&gt;/gi, "\n\n");
-          str = str.replace(/<br\s*\/?>/gi, "\n\n");
-          str = str.replace(/&nbsp;/gi, " ");
-          str = str.replace(/&lt;/g, "<");
-          str = str.replace(/&gt;/g, ">");
-          str = str.replace(/&amp;/g, "&");
-
-          str = str.replace(/\\\(([\s\S]*?)\\\)/g, "$$$1$");
-          str = str.replace(/\\\[([\s\S]*?)\\\]/g, "$$$$$1$$$$");
-          
-          str = str.replace(/(?:\\text\{sp\}|sp)\s*\^?\s*\{?(\d+)\}?\s*(?:extd|\\text\{d\}|\\textd)\s*\^?\s*\{?(\d+)\}?/g, "sp^$1d^$2");
-          str = str.replace(/(?:\\text\{sp\}|sp)\s*\^?\s*\{?(\d+)\}?\s*(?:extd|\\text\{d\}|\\textd)/g, "sp^$1d");
-          str = str.replace(/(?:extd|\\text\{d\}|\\textd)\s*\^?\s*\{?(\d+)\}?\s*(?:\\text\{sp\}|sp)\s*\^?\s*\{?(\d+)\}?/g, "d^$1sp^$2");
-          str = str.replace(/sp\s*<\s*sup\s*>\s*(\d+)\s*<\s*\/\s*sup\s*>\s*(?:extd|\\text\{d\}|\\textd)\s*<\s*sup\s*>\s*(\d+)\s*<\s*\/\s*sup\s*>/g, "sp<sup>$1</sup>d<sup>$2</sup>");
-          str = str.replace(/sp\s*<\s*sup\s*>\s*(\d+)\s*<\s*\/\s*sup\s*>\s*(?:extd|\\text\{d\}|\\textd)/g, "sp<sup>$1</sup>d");
-          str = str.replace(/(?:extd|\\text\{d\}|\\textd)\s*<\s*sup\s*>\s*(\d+)\s*<\s*\/\s*sup\s*>\s*sp\s*<\s*sup\s*>\s*(\d+)\s*<\s*\/\s*sup\s*>/g, "d<sup>$1</sup>sp<sup>$2</sup>");
-
-          str = str.replace(/\\begin\{align\*?\}([\s\S]*?)\\end\{align\*?\}/g, "\\begin{aligned}$1\\end{aligned}");
-
-          str = str.replace(/(?:\$\$|\$)?\s*\\begin\{([a-zA-Z*]+)\}([\s\S]*?)\\end\{\1\}\s*(?:\$\$|\$)?/g, (match, env, inner) => {
-              const mathEnvs = ['aligned', 'pmatrix', 'bmatrix', 'vmatrix', 'matrix', 'cases', 'array', 'eqnarray', 'equation', 'equation*'];
-              if (mathEnvs.includes(env)) {
-                  let cleaned = inner.replace(/\$\$/g, '').replace(/\$/g, '');
-                  return `\n$$\n\\begin{${env}}${cleaned}\\end{${env}}\n$$\n`;
-              }
-              return match;
-          });
-
-          str = str.replace(/\((\\text\{[^}]+\}.*?)\)/g, "$$$1$");
-          str = str.replace(/\((\\displaystyle.*?)\)/g, "$$$1$");
-          
-          str = str.replace(/^\[\s+([\s\S]*?[_^\\][\s\S]*?)\s+\]$/gm, "$$$$ $1 $$$$");
-          str = str.replace(/\dots/g, "\\dots");
-          str = str.replace(/\$\$\s*([a-zA-Z\\{}_0-9]+)\s*\]\s*=/g, "$$$$ [$1] =");
-
-          let tempStr = str.replace(/\\\$/g, "___ESCAPED_DOLLAR___");
-          let tokens = tempStr.split(/(\$\$?)/);
-          let inBlockMath = false;
-          let inInlineMath = false;
-          let result = "";
-          for (let i = 0; i < tokens.length; i++) {
-              let token = tokens[i];
-              if (token === "$$") {
-                  if (!inInlineMath) inBlockMath = !inBlockMath;
-                  result += token;
-              } else if (token === "$") {
-                  if (!inBlockMath) inInlineMath = !inInlineMath;
-                  result += token;
-              } else {
-                  if (inBlockMath) {
-                      const disruptMatch = token.match(/(\*\*|\n\s*\n)/);
-                      if (disruptMatch) {
-                          const idx = disruptMatch.index!;
-                          result += token.substring(0, idx) + "$$" + token.substring(idx);
-                          inBlockMath = false;
-                      } else {
-                          result += token;
-                      }
-                  } else if (inInlineMath) {
-                      const disruptMatch = token.match(/(\*\*|\n\s*\n)/);
-                      if (disruptMatch) {
-                          const idx = disruptMatch.index!;
-                          result += token.substring(0, idx) + "$" + token.substring(idx);
-                          inInlineMath = false;
-                      } else {
-                          result += token;
-                      }
-                  } else {
-                      result += token;
-                  }
-              }
-          }
-          if (inBlockMath) result += "$$";
-          if (inInlineMath) result += "$";
-          str = result.replace(/___ESCAPED_DOLLAR___/g, "\\$");
-
-          return str;
-      };
-
       // ─── Execute Subject-Specific Batched Calls ───
       let allParsedQuestions: Question[] = [];
       let primaryApiError = "";
@@ -818,15 +731,51 @@ class QuizGeneratorManager {
                    if (Array.isArray(parsed) && parsed.length > 0) {
                       // Filter and format questions for this subject
                       const validatedQs = parsed
-                        .filter(q => q && q.text && Array.isArray(q.options) && typeof q.correctOptionIndex === 'number')
-                        .map(q => ({
-                          ...q,
-                          subject: subj, // Enforce correct subject allocation
-                          difficulty: q.difficulty || plan.difficulty,
-                          text: fixMath(q.text),
-                          options: q.options.map((opt: string) => fixMath(opt)),
-                          explanation: fixMath(q.explanation)
-                        }));
+                        .filter(q => q && q.text)
+                        .map(q => {
+                           let text = q.text;
+                           let options = Array.isArray(q.options) ? q.options : [];
+                           
+                           // Check for inline options in the question text and pull them out
+                           const inlineResult = extractInlineOptions(text);
+                           if (inlineResult) {
+                             text = inlineResult.questionText;
+                             
+                             // Check if existing options are empty or generic placeholders
+                             const isGeneric = options.length < 4 || options.every(opt => 
+                               opt.trim().length <= 3 || 
+                               /^(option\s*[a-d1-4]|val1|val2|val3|val4|ans1|ans2|ans3|ans4)$/i.test(opt.trim())
+                             );
+                             
+                             if (isGeneric) {
+                               options = inlineResult.options;
+                             }
+                           }
+
+                           // Ensure options has at least 4 items
+                           while (options.length < 4) {
+                             options.push(`Option ${options.length + 1}`);
+                           }
+
+                           let correctOptionIndex = typeof q.correctOptionIndex === 'number' 
+                             ? q.correctOptionIndex 
+                             : (typeof q.correctOptionIndex === 'string' 
+                               ? parseInt(q.correctOptionIndex, 10) 
+                               : 0);
+                           if (isNaN(correctOptionIndex) || correctOptionIndex < 0 || correctOptionIndex >= options.length) {
+                             correctOptionIndex = 0;
+                           }
+
+                           return {
+                             ...q,
+                             subject: subj,
+                             difficulty: q.difficulty || plan.difficulty,
+                             text: fixLatexFormatting(text),
+                             options: options.map((opt: string) => fixLatexFormatting(opt)),
+                             correctOptionIndex,
+                             explanation: fixLatexFormatting(q.explanation || "")
+                           };
+                         });
                       
                       if (validatedQs.length > 0) {
                          subjectQuestions = [...subjectQuestions, ...validatedQs];
@@ -1264,20 +1213,9 @@ Respond with ONLY the markdown explanation. Do not wrap it in JSON or HTML. Star
     let success = false;
     let lastError = "";
 
-    // Helper to fix math and chemical formulas
     const fixExplanationMath = (str: string) => {
       if (!str) return str;
-      
-      // Replace \ce{...} with \text{...} or raw formatting for KaTeX mhchem lack of support
-      str = str.replace(/\\ce\{([a-zA-Z0-9\+\-\s\(\)]+)\}/g, (match, chem) => {
-          let converted = chem.replace(/([a-zA-Z]+)(\d+)/g, "\\text{$1}_$2");
-          converted = converted.replace(/(?<!\d|_|{)([a-zA-Z]+)(?!\d|_|})/g, "\\text{$1}");
-          return converted;
-      });
-
-      str = str.replace(/\\\(([\s\S]*?)\\\)/g, "$$$1$");
-      str = str.replace(/\\\[([\s\S]*?)\\\]/g, "$$$$$1$$$$");
-      return str;
+      return fixLatexFormatting(str);
     };
 
     for (const modelName of explanationModels) {

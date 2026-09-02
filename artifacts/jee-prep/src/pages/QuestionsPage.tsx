@@ -215,9 +215,8 @@ export default function QuestionsPage() {
         try {
           let idxData = searchIndexData;
           if (!idxData) {
-            let res = await fetch("/data/pyq/search_index.json");
-            if (!res.ok) res = await fetch("./data/pyq/search_index.json");
-            if (res.ok) {
+            const res = await fetchStaticData("data/pyq/search_index.json");
+            if (res && res.ok) {
               idxData = await res.json();
               setSearchIndexData(idxData);
             }
@@ -289,9 +288,8 @@ export default function QuestionsPage() {
       // 1. If question came from a paper, check local paper JSON
       if (item.paperKey && item.questionId) {
         try {
-          let pRes = await fetch(`/data/pyq/papers/${item.paperKey}.json`);
-          if (!pRes.ok) pRes = await fetch(`./data/pyq/papers/${item.paperKey}.json`);
-          if (pRes.ok) {
+          const pRes = await fetchStaticData(`data/pyq/papers/${item.paperKey}.json`);
+          if (pRes && pRes.ok) {
             const pData = await pRes.json();
             for (const sec of (pData.sections || [])) {
               const qIndex = (sec.questions || []).findIndex((x: any) => x.question_id === item.questionId);
@@ -344,9 +342,8 @@ export default function QuestionsPage() {
       // 2. If question has permalink, try static local question file or API
       if (!fullQ && item.permalink) {
         try {
-          let sRes = await fetch(`/data/pyq/questions/${encodeURIComponent(item.permalink)}.json`);
-          if (!sRes.ok) sRes = await fetch(`./data/pyq/questions/${encodeURIComponent(item.permalink)}.json`);
-          if (sRes.ok) {
+          const sRes = await fetchStaticData(`data/pyq/questions/${encodeURIComponent(item.permalink)}.json`);
+          if (sRes && sRes.ok) {
             const sData = await sRes.json();
             const sq = sData.questions?.[0] || sData;
             if (sq) {
@@ -445,9 +442,8 @@ export default function QuestionsPage() {
     setPapersLoading(true);
 
     try {
-      let res = await fetch(`/data/pyq/catalogs/${exam}-papers.json`);
-      if (!res.ok) res = await fetch(`./data/pyq/catalogs/${exam}-papers.json`);
-      if (res.ok) {
+      const res = await fetchStaticData(`data/pyq/catalogs/${exam}-papers.json`);
+      if (res && res.ok) {
         const localData = await res.json();
         if (localData && localData.papers && localData.papers.length > 0) {
           setPapersData(localData.papers);
@@ -480,11 +476,8 @@ export default function QuestionsPage() {
 
       // 1. Check local static pre-scraped paper file first
       try {
-        let localRes = await fetch(`/data/pyq/papers/${paper.key}.json`);
-        if (!localRes.ok) {
-          localRes = await fetch(`./data/pyq/papers/${paper.key}.json`);
-        }
-        if (localRes.ok) {
+        const localRes = await fetchStaticData(`data/pyq/papers/${paper.key}.json`);
+        if (localRes && localRes.ok) {
           data = await localRes.json();
         }
       } catch (e) {}
@@ -652,9 +645,8 @@ export default function QuestionsPage() {
     setChaptersLoading(true);
 
     try {
-      let res = await fetch(`/data/pyq/catalogs/${exam}-${subject}-chapters.json`);
-      if (!res.ok) res = await fetch(`./data/pyq/catalogs/${exam}-${subject}-chapters.json`);
-      if (res.ok) {
+      const res = await fetchStaticData(`data/pyq/catalogs/${exam}-${subject}-chapters.json`);
+      if (res && res.ok) {
         const localData = await res.json();
         if (localData && (localData.chapterGroups || localData.chapters)) {
           setChapterGroups(localData.chapterGroups || []);
@@ -689,11 +681,8 @@ export default function QuestionsPage() {
     try {
       let data: any = null;
       try {
-        let localRes = await fetch(`/data/pyq/chapters/${selectedExam}_${chapter.key}.json`);
-        if (!localRes.ok) {
-          localRes = await fetch(`./data/pyq/chapters/${selectedExam}_${chapter.key}.json`);
-        }
-        if (localRes.ok) {
+        const localRes = await fetchStaticData(`data/pyq/chapters/${selectedExam}_${chapter.key}.json`);
+        if (localRes && localRes.ok) {
           data = await localRes.json();
         }
       } catch (e) {}
@@ -767,11 +756,8 @@ export default function QuestionsPage() {
       let q = null;
       // 3. Try loading static local question file first (works 100% offline & in static build without API)
       try {
-        let staticRes = await fetch(`/data/pyq/questions/${encodeURIComponent(permalink)}.json`);
-        if (!staticRes.ok) {
-          staticRes = await fetch(`./data/pyq/questions/${encodeURIComponent(permalink)}.json`);
-        }
-        if (staticRes.ok) {
+        const staticRes = await fetchStaticData(`data/pyq/questions/${encodeURIComponent(permalink)}.json`);
+        if (staticRes && staticRes.ok) {
           const sData = await staticRes.json();
           q = sData.questions?.[0] || sData;
         }

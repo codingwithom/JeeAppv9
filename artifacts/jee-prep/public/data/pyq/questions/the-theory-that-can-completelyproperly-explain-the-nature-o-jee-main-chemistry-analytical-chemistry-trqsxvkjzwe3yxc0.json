@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "uGblS1FzMMqObBG6QR7k9k2k5dynlpn",
+      "paperTitle": "JEE Main 2020 (Online) 7th January Morning Slot",
+      "year": 2020,
+      "examDate": "2020-01-07 09:30",
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "crystal-field-theory-cft",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-theory-that-can-completelyproperly-explain-the-nature-o-jee-main-chemistry-analytical-chemistry-trqsxvkjzwe3yxc0",
+      "content": "The theory that can completely/properly explain the nature of bonding in [Ni(Co)<sub>4</sub>] is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Wemer's theory"
+        },
+        {
+          "identifier": "B",
+          "content": "Valence bond theory"
+        },
+        {
+          "identifier": "C",
+          "content": "Crystal field theory"
+        },
+        {
+          "identifier": "D",
+          "content": "Molecular orbital theory"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "In complex [Ni(CO)<sub>4</sub>] decrease in Ni–C bond\nlength and increase in C–O bond length as well\nas it's magnetic property is explained by MOT."
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "fEIuz17rr6XPqPBBuX2nZ",
+      "paperTitle": "JEE Main 2016 (Online) 9th April Morning Slot",
+      "year": 2016,
+      "examDate": "2016-04-09 09:30",
+      "subject": "chemistry",
+      "chapter": "p-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "group-18-elements-inert-or-noble-gases",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-intermolecular-force-is-most-responsible-in-allowing-x-jee-main-physics-units-and-measurements-2om0orkhzbo8nflw",
+      "content": "Which intermolecular force is most responsible in allowing xenon gas to liquefy?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Dipole - dipole"
+        },
+        {
+          "identifier": "B",
+          "content": "Ion - dipole"
+        },
+        {
+          "identifier": "C",
+          "content": "Instantaneous dipole - induced dipole"
+        },
+        {
+          "identifier": "D",
+          "content": "Ionic"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Instantaneous dipole-induced dipole forces or van der Waals’ forces are most responsible in allowing xenon gas to\nliquify.\n"
+    }
+  ]
+}

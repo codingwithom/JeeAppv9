@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "DdF7R8tTzx4Kv40prc7k9k2k5khz7tx",
+      "paperTitle": "JEE Main 2020 (Online) 9th January Evening Slot",
+      "year": 2020,
+      "examDate": "2020-01-09 14:30",
+      "subject": "mathematics",
+      "chapter": "differentiation",
+      "chapterGroup": "calculus",
+      "topic": "methods-of-differentiation",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "let--and-g-be-differentiable-functions-on-r-such-that-fog-i-jee-main-mathematics-complex-numbers-wnha8izxqwbyqm2b",
+      "content": "Let ƒ and g be differentiable functions on R\nsuch that fog is the identity function. If for some\na, b <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.312ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 667 580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2208\" xlink:href=\"#MJX-TEX-N-2208\"></use></g></g></g></svg></mjx-container> R, g'(a) = 5 and g(a) = b, then ƒ'(b) is\nequal to :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "1"
+        },
+        {
+          "identifier": "B",
+          "content": "5"
+        },
+        {
+          "identifier": "C",
+          "content": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.816ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.795ex\" height=\"2.773ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864.9 793.6 1225.5\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mn\" transform=\"translate(220,394) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mn\" transform=\"translate(220,-345) scale(0.707)\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use></g><rect width=\"553.6\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container>"
+        },
+        {
+          "identifier": "D",
+          "content": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.816ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.795ex\" height=\"2.773ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864.9 793.6 1225.5\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mn\" transform=\"translate(220,394) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mn\" transform=\"translate(220,-345) scale(0.707)\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use></g><rect width=\"553.6\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container>"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Given the function composition f(g(x)) is the identity function, it means f(g(x)) = x for all x.\n\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> ƒ'(g(x)) g'(x) = 1\n<br><br>put x = a\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> ƒ'(b) g'(a) = 1\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> ƒ'(b) = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.816ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.795ex\" height=\"2.773ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864.9 793.6 1225.5\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mn\" transform=\"translate(220,394) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mn\" transform=\"translate(220,-345) scale(0.707)\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use></g><rect width=\"553.6\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container>"
+    }
+  ]
+}

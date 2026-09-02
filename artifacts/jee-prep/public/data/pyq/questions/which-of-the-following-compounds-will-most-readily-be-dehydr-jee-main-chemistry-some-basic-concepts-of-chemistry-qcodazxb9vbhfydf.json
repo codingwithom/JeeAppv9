@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "vrPW5hzwZvj1eZf3axXNC",
+      "paperTitle": "JEE Main 2018 (Online) 16th April Morning Slot",
+      "year": 2018,
+      "examDate": "2018-04-16 09:30",
+      "subject": "chemistry",
+      "chapter": "aldehydes-ketones-and-carboxylic-acids",
+      "chapterGroup": "organic-chemistry",
+      "topic": "chemical-reactions-for-aldehydes-and-ketones",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-compounds-will-most-readily-be-dehydr-jee-main-chemistry-some-basic-concepts-of-chemistry-qcodazxb9vbhfydf",
+      "content": "Which of the following compounds will most readily be dehydrated to give alkene under acidic condition ? ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "1- Pentanol "
+        },
+        {
+          "identifier": "B",
+          "content": "4-Hydroxypentan - 2-one"
+        },
+        {
+          "identifier": "C",
+          "content": "3-Hydroxypentan - 2-one"
+        },
+        {
+          "identifier": "D",
+          "content": "2-Hydroxycyclopentanone"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Among those compounds which have most acidic hydrogen will undergo dehydration most readily. That is why 4 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container> Hydroxypentan <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container> 2 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container> one will most readily dehydrated to give unsaturated ketone. \n<br><br><img src=\"https://imagex.cdn.examgoal.net/eW8KdG0RnvnjFy9f0/d654qDzNJXKOaH6lqccgUqqjTesFz/hAW868ZsQAKZX2ZOlGzpqu/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2018 (Online) 16th April Morning Slot Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 251 English Explanation\">"
+    }
+  ]
+}

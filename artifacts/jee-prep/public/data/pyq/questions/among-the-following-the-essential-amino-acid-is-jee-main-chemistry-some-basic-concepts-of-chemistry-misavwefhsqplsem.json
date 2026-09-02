@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "qGVXiPGs5uKY8fUJN5smr",
+      "paperTitle": "JEE Main 2017 (Online) 8th April Morning Slot",
+      "year": 2017,
+      "examDate": "2017-04-08 09:30",
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "proteins-and-enzymes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "among-the-following-the-essential-amino-acid-is-jee-main-chemistry-some-basic-concepts-of-chemistry-misavwefhsqplsem",
+      "content": "Among the following, the essential amino acid is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Alanine"
+        },
+        {
+          "identifier": "B",
+          "content": "Valine"
+        },
+        {
+          "identifier": "C",
+          "content": "Aspartic acid "
+        },
+        {
+          "identifier": "D",
+          "content": "Serine"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<p>Valine is considered as an essential amino acid since the human body is not capable of synthesising it. Alanine, aspartic acid and serine can be synthesised by all living organisms, plants and animals. Therefore, they are known as non-essential amino acids.</p>"
+    }
+  ]
+}

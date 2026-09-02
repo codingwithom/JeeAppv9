@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l55mwdtf",
+      "paperTitle": "JEE Main 2022 (Online) 28th June Evening Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "hybridization-and-vsepr-theory",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pin-the-structure-of-sfsub4sub-the-lone-pair-of-elec-jee-main-chemistry-some-basic-concepts-of-chemistry-6ufwszcw67f8kv8r",
+      "content": "<p>In the structure of SF<sub>4</sub>, the lone pair of electrons on S is in.</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "equatorial position and there are two lone pair - bond pair repulsions at 90<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"0.988ex\" height=\"1.532ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -677 436.6 677\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"></g><g data-mml-node=\"mo\" transform=\"translate(33,363) scale(0.707)\"><use data-c=\"2218\" xlink:href=\"#MJX-TEX-N-2218\"></use></g></g></g></g></svg></mjx-container>."
+        },
+        {
+          "identifier": "B",
+          "content": "equatorial position and there are three lone pair - bond pair repulsions at 90<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"0.988ex\" height=\"1.532ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -677 436.6 677\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"></g><g data-mml-node=\"mo\" transform=\"translate(33,363) scale(0.707)\"><use data-c=\"2218\" xlink:href=\"#MJX-TEX-N-2218\"></use></g></g></g></g></svg></mjx-container>."
+        },
+        {
+          "identifier": "C",
+          "content": "axial position and there are three lone pair - bond pair repulsion at 90<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"0.988ex\" height=\"1.532ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -677 436.6 677\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"></g><g data-mml-node=\"mo\" transform=\"translate(33,363) scale(0.707)\"><use data-c=\"2218\" xlink:href=\"#MJX-TEX-N-2218\"></use></g></g></g></g></svg></mjx-container>."
+        },
+        {
+          "identifier": "D",
+          "content": "axial position and there are two lone pair - bond pair repulsion at 90<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"0.988ex\" height=\"1.532ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -677 436.6 677\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"></g><g data-mml-node=\"mo\" transform=\"translate(33,363) scale(0.707)\"><use data-c=\"2218\" xlink:href=\"#MJX-TEX-N-2218\"></use></g></g></g></g></svg></mjx-container>."
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "SF<sub>4</sub> → sp<sup>3</sup>d hybridisation.<br><br>\n<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l5iu8g2m/f6e3a0e9-18f5-4382-97a8-c36fd2d57935/0b4e00d0-023f-11ed-9915-b142ef5d751a/file-1l5iu8g2n.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l5iu8g2m/f6e3a0e9-18f5-4382-97a8-c36fd2d57935/0b4e00d0-023f-11ed-9915-b142ef5d751a/file-1l5iu8g2n.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2022 (Online) 28th June Evening Shift Chemistry - Chemical Bonding &amp; Molecular Structure Question 152 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l5iu8g2m/f6e3a0e9-18f5-4382-97a8-c36fd2d57935/0b4e00d0-023f-11ed-9915-b142ef5d751a/file-1l5iu8g2n.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l5iu8g2m/f6e3a0e9-18f5-4382-97a8-c36fd2d57935/0b4e00d0-023f-11ed-9915-b142ef5d751a/file-1l5iu8g2n.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l5iu8g2m/f6e3a0e9-18f5-4382-97a8-c36fd2d57935/0b4e00d0-023f-11ed-9915-b142ef5d751a/file-1l5iu8g2n.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l5iu8g2m/f6e3a0e9-18f5-4382-97a8-c36fd2d57935/0b4e00d0-023f-11ed-9915-b142ef5d751a/file-1l5iu8g2n.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l5iu8g2m/f6e3a0e9-18f5-4382-97a8-c36fd2d57935/0b4e00d0-023f-11ed-9915-b142ef5d751a/file-1l5iu8g2n.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l5iu8g2m/f6e3a0e9-18f5-4382-97a8-c36fd2d57935/0b4e00d0-023f-11ed-9915-b142ef5d751a/file-1l5iu8g2n.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"><br>\nThe lone pair of electrons on S is in an equatorial position and there are two lone pair-bond pair repulsions at 90°."
+    }
+  ]
+}

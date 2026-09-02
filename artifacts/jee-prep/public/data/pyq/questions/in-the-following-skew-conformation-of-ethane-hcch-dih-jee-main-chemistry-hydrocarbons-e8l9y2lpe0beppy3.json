@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "T7UIanTTVWttBVV7tn3rsa0w2w9jx7zisi8",
+      "paperTitle": "JEE Main 2019 (Online) 12th April Evening Slot",
+      "year": 2019,
+      "examDate": "2019-04-12 14:30",
+      "subject": "chemistry",
+      "chapter": "hydrocarbons",
+      "chapterGroup": "organic-chemistry",
+      "topic": "properties-and-preparation-of-alkenes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "in-the-following-skew-conformation-of-ethane-hcch-dih-jee-main-chemistry-hydrocarbons-e8l9y2lpe0beppy3",
+      "content": "In the following skew conformation of ethane, H'–C–C–H'' dihedral angle is :\n<img src=\"https://imagex.cdn.examgoal.net/3rsa0w2w9jxg728lc/ace14096-9ea4-4482-ba48-ad9aa9d821e7/56bb3000-99b1-11e9-86c1-73f7f991b766/file-3rsa0w2w9jxg728ld.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th April Evening Slot Chemistry - Hydrocarbons Question 129 English\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "120<sup>o</sup>"
+        },
+        {
+          "identifier": "B",
+          "content": "58<sup>o</sup>"
+        },
+        {
+          "identifier": "C",
+          "content": "151<sup>o</sup>"
+        },
+        {
+          "identifier": "D",
+          "content": "149<sup>o</sup>"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/3rsa0w2w9jxg786rh/6be5d11e-2de9-467f-8753-446bb20f8141/fc2c3ed0-99b1-11e9-86c1-73f7f991b766/file-3rsa0w2w9jxg786ri.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th April Evening Slot Chemistry - Hydrocarbons Question 129 English Explanation\">\n<br><br>So the angle H'–C–C–H' = 120<sup>o</sup> + 29<sup>o</sup> = 149<sup>o</sup>"
+    }
+  ]
+}

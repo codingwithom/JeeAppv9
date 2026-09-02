@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "trch1UDIBda7MNflGZL6s",
+      "paperTitle": "JEE Main 2019 (Online) 10th January Morning Slot",
+      "year": 2019,
+      "examDate": "2019-01-10 09:30",
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "hybridization-and-vsepr-theory",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-type-of-hybridisation-and-number-of-lone-pair-s-of-ele-jee-main-chemistry-some-basic-concepts-of-chemistry-dwvvfsmdhw3evhmh",
+      "content": "The type of hybridisation and number of lone pair (s) of electrons of Xe in XeOF<sub>4</sub>, respectively, are: ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "sp<sup>3</sup>d and 2"
+        },
+        {
+          "identifier": "B",
+          "content": "sp<sup>3</sup>d<sup>2</sup> and 2"
+        },
+        {
+          "identifier": "C",
+          "content": "sp<sup>3</sup>d and 1"
+        },
+        {
+          "identifier": "D",
+          "content": "sp<sup>3</sup>d<sup>2</sup> and 1"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "H = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.781ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.795ex\" height=\"2.737ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864.9 793.6 1209.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mn\" transform=\"translate(220,394) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mn\" transform=\"translate(220,-345) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><rect width=\"553.6\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container> (V + M - c + a)\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> H = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.781ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.795ex\" height=\"2.737ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864.9 793.6 1209.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mn\" transform=\"translate(220,394) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mn\" transform=\"translate(220,-345) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><rect width=\"553.6\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container>(8 + 4) = 6\n<br><img src=\"https://imagex.cdn.examgoal.net/3xmhtm2xjkbjisfqb/b1abd055-adea-4ec5-bcbc-bb6fd788f928/94f4df30-b0b0-11ea-9207-bfdf7589d371/file-3xmhtm2xjkbjisfqc-345w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 10th January Morning Slot Chemistry - Chemical Bonding &amp; Molecular Structure Question 213 English Explanation\">\n<br><br>From structure, it is clear that it has five bond pairs and one\nlone pair."
+    }
+  ]
+}

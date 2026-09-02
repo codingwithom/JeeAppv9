@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "lgnzeywd",
+      "paperTitle": "JEE Main 2023 (Online) 15th April Morning Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "purification-of-organic-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-statement-is-correct-for-paper-chroma-jee-main-chemistry-aph1uwbwrsqlwpcz",
+      "content": "Which of the following statement is correct for paper chromatography?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Water present in the mobile phase gets absorbed by the paper which then forms the stationary phase."
+        },
+        {
+          "identifier": "B",
+          "content": "Water present in the pores of the paper forms the stationary phase."
+        },
+        {
+          "identifier": "C",
+          "content": " Paper sheet forms the stationary phase."
+        },
+        {
+          "identifier": "D",
+          "content": "Paper and water present in its pores together form the stationary phase."
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "The correct statement for paper chromatography is:\n<br/><br/>\n(B) Water present in the pores of the paper forms the stationary phase.\n<br/><br/>\nIn paper chromatography, the stationary phase is the water that is absorbed and trapped in the pores of the paper, while the mobile phase is a liquid solvent that moves through the paper carrying the sample with it. The different components of the sample have different affinities for the stationary phase and the mobile phase, causing them to move at different rates and separate from each other on the paper."
+    }
+  ]
+}

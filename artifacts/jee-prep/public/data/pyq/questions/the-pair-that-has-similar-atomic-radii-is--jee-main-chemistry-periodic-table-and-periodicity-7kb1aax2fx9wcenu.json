@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "72wdcRU913iyDz3goz3rsa0w2w9jx84mp1q",
+      "paperTitle": "JEE Main 2019 (Online) 12th April Evening Slot",
+      "year": 2019,
+      "examDate": "2019-04-12 14:30",
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "properties-of-transition-elements",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-pair-that-has-similar-atomic-radii-is--jee-main-chemistry-periodic-table-and-periodicity-7kb1aax2fx9wcenu",
+      "content": "The pair that has similar atomic radii is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Mo and W"
+        },
+        {
+          "identifier": "B",
+          "content": "Mn and Fe"
+        },
+        {
+          "identifier": "C",
+          "content": "Ti and Hf"
+        },
+        {
+          "identifier": "D",
+          "content": "Sc and Ni"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Electron configuration of Mo(Molybdenum) = [Kr] 4d<sup>5</sup> 5s<sup>1</sup>. So it belongs to 4d series.\n<br><br/>Electron configuration of W(Tungsten) = [Xe] 4f<sup>14</sup> 5d<sup>4</sup> 6s<sup>2</sup>. So it belongs to 5d series.\n<br><br>Size of 3d &lt; 4d = 5d. Due to lanthanoid contraction size of 4d and 5d series elements are almost same.\n<br>"
+    }
+  ]
+}

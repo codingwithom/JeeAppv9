@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "hCDDyE57KWgkhZFWSS1kjbow9qk",
+      "paperTitle": "JEE Advanced 2019 Paper 1 Offline",
+      "year": 2019,
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "important-compounds-of-transition-elements",
+      "type": "mcq",
+      "marks": 3,
+      "negMarks": 1,
+      "permalink": "the-green-colour-produced-in-the-borax-bead-test-of-a-chromi-jee-advanced-chemistry-some-basic-concepts-of-chemistry-mtdave5mpefdxjrs",
+      "content": "The green colour produced in the borax bead test of a chromium (III) salt is due to ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Cr<sub>2</sub>O<sub>3</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "CrB"
+        },
+        {
+          "identifier": "C",
+          "content": "Cr(BO<sub>2</sub>)<sub>3</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "Cr<sub>2</sub>(B<sub>4</sub>O<sub>7</sub>)<sub>3</sub>"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Borax bead test is performed only for coloured salt. Borax (sodium pyroborate), Na<sub>2</sub>B<sub>4</sub>O<sub>7</sub>.10H<sub>2</sub>O on heating gets fused and lose water of crystallisation. It swells up into fluffy white porous mass which melts into a colourless liquid which later form a clear transparent glassy bead consisting of boric anhydride and sodium metaborate.<br><br> <picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1ksus9wsj/fd352163-777e-4fc8-be03-b6826eda089f/f9a39930-0771-11ec-a0ab-05c984536117/file-1ksus9wsk-320w.jpeg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1ksus9wsj/fd352163-777e-4fc8-be03-b6826eda089f/f9a39930-0771-11ec-a0ab-05c984536117/file-1ksus9wsk-500w.jpeg\"><source media=\"(max-width: 680px)\" srcset=\"https://imagex.cdn.examgoal.net/1ksus9wsj/fd352163-777e-4fc8-be03-b6826eda089f/f9a39930-0771-11ec-a0ab-05c984536117/file-1ksus9wsk-680w.jpeg\"><img src=\"https://imagex.cdn.examgoal.net/1ksus9wsj/fd352163-777e-4fc8-be03-b6826eda089f/f9a39930-0771-11ec-a0ab-05c984536117/file-1ksus9wsk.jpeg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2019 Paper 1 Offline Chemistry - d and f Block Elements Question 20 English Explanation 1\"></picture> <br><br>Boric anhydride is non-volatile. When it react with Cr(III) salt then deep green complex is formed.<br><br> <picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1ksusak32/a8d7592d-011e-48f1-aa9c-68e54ff0b1ea/0ba1ebf0-0772-11ec-a0ab-05c984536117/file-1ksusak33-320w.jpeg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1ksusak32/a8d7592d-011e-48f1-aa9c-68e54ff0b1ea/0ba1ebf0-0772-11ec-a0ab-05c984536117/file-1ksusak33-500w.jpeg\"><img src=\"https://imagex.cdn.examgoal.net/1ksusak32/a8d7592d-011e-48f1-aa9c-68e54ff0b1ea/0ba1ebf0-0772-11ec-a0ab-05c984536117/file-1ksusak33.jpeg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2019 Paper 1 Offline Chemistry - d and f Block Elements Question 20 English Explanation 2\"></picture> <br><br>Hence, option (c) is correct."
+    }
+  ]
+}

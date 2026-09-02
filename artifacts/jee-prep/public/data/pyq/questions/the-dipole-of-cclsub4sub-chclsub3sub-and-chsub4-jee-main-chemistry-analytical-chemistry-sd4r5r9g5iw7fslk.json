@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "J4tsIqf7yGQjgt3luQ7k9k2k5dzd7pc",
+      "paperTitle": "JEE Main 2020 (Online) 7th January Morning Slot",
+      "year": 2020,
+      "examDate": "2020-01-07 09:30",
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "dipole-moment",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-dipole-of-cclsub4sub-chclsub3sub-and-chsub4-jee-main-chemistry-analytical-chemistry-sd4r5r9g5iw7fslk",
+      "content": "The dipole of CCl<sub>4</sub>, CHCl<sub>3</sub> and CH<sub>4</sub> are in the order :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "CCl<sub>4</sub> &lt; CH<sub>4</sub> &lt; CHCl<sub>3</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "CH<sub>4</sub> = CCl<sub>4</sub> &lt; CHCl<sub>3</sub>\n"
+        },
+        {
+          "identifier": "C",
+          "content": "CH<sub>4</sub> &lt; CCl<sub>4</sub> &lt; CHCl<sub>3</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "CHCl<sub>3</sub> &lt; CH<sub>4</sub>= CCl<sub>4</sub>"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "CHCl<sub>3</sub> is polar while CH<sub>4</sub> and CCl<sub>4</sub> are nonpolar.\n<br><br>So, dipole moment order is :\n<br><br> CH<sub>4</sub> = CCl<sub>4</sub> &lt; CHCl<sub>3</sub>\n"
+    }
+  ]
+}

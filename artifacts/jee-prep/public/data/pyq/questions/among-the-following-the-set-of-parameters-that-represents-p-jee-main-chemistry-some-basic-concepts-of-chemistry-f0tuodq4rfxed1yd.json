@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "AIptkfEbUM5X7S2PuA8A1",
+      "paperTitle": "JEE Main 2019 (Online) 9th April Morning Slot",
+      "year": 2019,
+      "examDate": "2019-04-09 09:30",
+      "subject": "chemistry",
+      "chapter": "thermodynamics",
+      "chapterGroup": "physical-chemistry",
+      "topic": "fundamentals-of-thermodynamics",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "among-the-following-the-set-of-parameters-that-represents-p-jee-main-chemistry-some-basic-concepts-of-chemistry-f0tuodq4rfxed1yd",
+      "content": "Among the following, the set of parameters that\nrepresents path function, is :<br>\n(A) q + w<br>\n(B) q<br>\n(C) w<br>\n(D) H–TS<br>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(B) and (C)"
+        },
+        {
+          "identifier": "B",
+          "content": "(A) and (D)"
+        },
+        {
+          "identifier": "C",
+          "content": "(B), (C) and (D)"
+        },
+        {
+          "identifier": "D",
+          "content": "(A), (B) and (C)"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "(A) q + w = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.885ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 833 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></svg></mjx-container>E, state function\n<br><br>(B) q, Path function\n<br><br>(C) w, Path function\n<br><br>(D) H – TS = G, State function"
+    }
+  ]
+}

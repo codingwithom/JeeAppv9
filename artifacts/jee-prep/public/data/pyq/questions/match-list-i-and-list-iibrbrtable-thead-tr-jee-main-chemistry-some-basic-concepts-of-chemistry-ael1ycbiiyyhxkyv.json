@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "tl6X7wPyrNZzx24GAB1klruo0a8",
+      "paperTitle": "JEE Main 2021 (Online) 24th February Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "vitamins-and-nucleic-acids",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "match-list-i-and-list-iibrbrtable-thead-tr-jee-main-chemistry-some-basic-concepts-of-chemistry-ael1ycbiiyyhxkyv",
+      "content": "Match List - I and List - II.<br><br><table>\n<thead>\n  <tr>\n    <th></th>\n    <th>List I</th>\n    <th></th>\n    <th>List II</th>\n  </tr>\n</thead>\n<tbody>\n  <tr>\n    <td>(a)</td>\n    <td>Valium</td>\n    <td>(i)</td>\n    <td>Antifertility drug</td>\n  </tr>\n  <tr>\n    <td>(b)</td>\n    <td>Morphine</td>\n    <td>(ii)</td>\n    <td>Pernicious anaemia</td>\n  </tr>\n  <tr>\n    <td>(c)</td>\n    <td>Norethindrone</td>\n    <td>(iii)</td>\n    <td>Analgesic</td>\n  </tr>\n  <tr>\n    <td>(d)</td>\n    <td>Vitamin <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.505ex\" height=\"1.885ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -683 1549.1 833\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D435\" xlink:href=\"#MJX-TEX-I-1D435\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(792,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\" transform=\"translate(500,0)\"></use></g></g></g></g></g></g></svg></mjx-container></td>\n    <td>(iv)</td>\n    <td>Tranquilizer</td>\n  </tr>\n</tbody>\n</table>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(a)-(i), (b)-(iii), (c)-(iv), (d)-(ii)"
+        },
+        {
+          "identifier": "B",
+          "content": "(a)-(iv), (b)-(iii), (c)-(ii), (d)-(i)"
+        },
+        {
+          "identifier": "C",
+          "content": "(a)-(ii), (b)-(iv), (c)-(iii), (d)-(i)"
+        },
+        {
+          "identifier": "D",
+          "content": "(a)-(iv), (b)-(iii), (c)-(i), (d)-(ii)"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<p><b>(A) Valium – (4) Tranquilizer</b> <br/><br/>A tranquilizer drug became a standard drug for the treatment of anxiety and one of most commonly prescribed drugs of all time.</p>\n\n<p><b>(B) Morphine – (3) Analgesic</b> <br/><br/>Morphine is effective for both acute and chronic pain and often used before and after surgery.</p>\n\n<p><b>(C) Norethindrone – (1) Antifertility drug</b> <br/><br/>It is a form of progesterone, a female hormone important for regulating ovulation and menstruation.</p>\n\n<p><b>(D) Vitamin B<sub>12</sub> – (2) Pernicious anaemia</b> <br/><br/>It is a nutrient that helps to keep our body blood cells and nerve cells healthy and help in making DNA.</p>"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "akZurTFxlgV1qckvCp3rsa0w2w9jx55grkw",
+      "paperTitle": "JEE Main 2019 (Online) 12th April Morning Slot",
+      "year": 2019,
+      "examDate": "2019-04-12 09:30",
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "crystal-field-theory-cft",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "complete-removal-of-both-the-axial-ligands-along-the-z-axis-jee-main-chemistry-coordination-compounds-m5tsuqtcdstu25xb",
+      "content": "Complete removal of both the axial ligands (along the z-axis) from an octahedral complex leads to which of\nthe following splitting patterns? (relative orbital energies not on scale).",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jf7697gjya0n7bd/e3316ce4-15e2-4a80-9df7-6546b4c62ab3/c150ab90-aa17-11e9-a277-6507805b1ccf/file-jf7697gjya0n7be-320w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/jf7697gjya0n7bd/e3316ce4-15e2-4a80-9df7-6546b4c62ab3/c150ab90-aa17-11e9-a277-6507805b1ccf/file-jf7697gjya0n7be-500w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th April Morning Slot Chemistry - Coordination Compounds Question 279 English Option 1\"></picture>"
+        },
+        {
+          "identifier": "B",
+          "content": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jf7697gjya0if1c/81900b1d-3c9c-4f16-81e3-0e82ab639c86/3c3bea00-aa17-11e9-a277-6507805b1ccf/file-jf7697gjya0if1d-320w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/jf7697gjya0if1c/81900b1d-3c9c-4f16-81e3-0e82ab639c86/3c3bea00-aa17-11e9-a277-6507805b1ccf/file-jf7697gjya0if1d-500w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th April Morning Slot Chemistry - Coordination Compounds Question 279 English Option 2\"></picture>"
+        },
+        {
+          "identifier": "C",
+          "content": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jf7697gjya0qdws/6a0d105c-aaf8-440a-b565-002206d1c2c6/19d642c0-aa18-11e9-a277-6507805b1ccf/file-jf7697gjya0qdwt-320w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/jf7697gjya0qdws/6a0d105c-aaf8-440a-b565-002206d1c2c6/19d642c0-aa18-11e9-a277-6507805b1ccf/file-jf7697gjya0qdwt-500w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th April Morning Slot Chemistry - Coordination Compounds Question 279 English Option 3\"></picture>"
+        },
+        {
+          "identifier": "D",
+          "content": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jf7697gjya0v9d0/285b261f-7222-47c5-875e-4fa08fcc03e4/a15e4e40-aa18-11e9-a277-6507805b1ccf/file-jf7697gjya0v9d1-320w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/jf7697gjya0v9d0/285b261f-7222-47c5-875e-4fa08fcc03e4/a15e4e40-aa18-11e9-a277-6507805b1ccf/file-jf7697gjya0v9d1-500w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th April Morning Slot Chemistry - Coordination Compounds Question 279 English Option 4\"></picture>"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "The field becomes square planar and the order\nof energy is\n<br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.744ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"29.762ex\" height=\"2.314ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 13154.8 1022.7\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D451\" xlink:href=\"#MJX-TEX-I-1D451\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(553,-183.8) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g><g data-mml-node=\"mn\" transform=\"translate(605,289) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(1008.6,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1786.6,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"1D466\" xlink:href=\"#MJX-TEX-I-1D466\"></use></g><g data-mml-node=\"mn\" transform=\"translate(579.3,289) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></g></g><g data-mml-node=\"mo\" transform=\"translate(2839,0)\"><use data-c=\"3E\" xlink:href=\"#MJX-TEX-N-3E\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(3894.8,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D451\" xlink:href=\"#MJX-TEX-I-1D451\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(553,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g><g data-mml-node=\"mi\" transform=\"translate(572,0)\"><use data-c=\"1D466\" xlink:href=\"#MJX-TEX-I-1D466\"></use></g></g></g></g><g data-mml-node=\"mo\" transform=\"translate(5530.8,0)\"><use data-c=\"3E\" xlink:href=\"#MJX-TEX-N-3E\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(6586.6,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D451\" xlink:href=\"#MJX-TEX-I-1D451\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(553,-183.8) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"1D467\" xlink:href=\"#MJX-TEX-I-1D467\"></use></g><g data-mml-node=\"mn\" transform=\"translate(551.1,289) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></g></g><g data-mml-node=\"mo\" transform=\"translate(8142.4,0)\"><use data-c=\"3E\" xlink:href=\"#MJX-TEX-N-3E\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(9198.2,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D451\" xlink:href=\"#MJX-TEX-I-1D451\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(553,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D467\" xlink:href=\"#MJX-TEX-I-1D467\"></use></g><g data-mml-node=\"mi\" transform=\"translate(468,0)\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g></g></g></g><g data-mml-node=\"mo\" transform=\"translate(10814.4,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(11870.1,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D451\" xlink:href=\"#MJX-TEX-I-1D451\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(553,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D466\" xlink:href=\"#MJX-TEX-I-1D466\"></use></g><g data-mml-node=\"mi\" transform=\"translate(496,0)\"><use data-c=\"1D467\" xlink:href=\"#MJX-TEX-I-1D467\"></use></g></g></g></g></g></g></svg></mjx-container>"
+    }
+  ]
+}

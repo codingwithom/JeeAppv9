@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "xHFNpBdzLG5c0XnCu5seX",
+      "paperTitle": "JEE Main 2019 (Online) 8th April Evening Slot",
+      "year": 2019,
+      "examDate": "2019-04-08 14:30",
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "periodic-table-and-its-features",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-iupac-symbol-for-the-element-with-atomic-number-119-woul-jee-main-chemistry-some-basic-concepts-of-chemistry-nbotqf0enozmxltx",
+      "content": "The IUPAC symbol for the element with atomic\nnumber 119 would be :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "uun"
+        },
+        {
+          "identifier": "B",
+          "content": "une"
+        },
+        {
+          "identifier": "C",
+          "content": "uue"
+        },
+        {
+          "identifier": "D",
+          "content": "unh"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/7km5fk0915vuo/dc698480-5d9d-4157-87ab-a6e6212121e2/6ef11800-d125-11e9-acf6-6d09a288f7f2/file-7km5fk0915vup-320w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/7km5fk0915vuo/dc698480-5d9d-4157-87ab-a6e6212121e2/6ef11800-d125-11e9-acf6-6d09a288f7f2/file-7km5fk0915vup-500w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 8th April Evening Slot Chemistry - Periodic Table &amp; Periodicity Question 142 English Explanation\"></picture>"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktfs3rzv",
+      "paperTitle": "JEE Main 2021 (Online) 27th August Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "aldehydes-ketones-and-carboxylic-acids",
+      "chapterGroup": "organic-chemistry",
+      "topic": "preparation-properties-and-uses-of-carboxylic-acids",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-one-of-the-following-reactions-will-not-yield-propioni-jee-main-chemistry-some-basic-concepts-of-chemistry-ssdvm3culq1mtau9",
+      "content": "Which one of the following reactions will not yield propionic acid?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "CH<sub>3</sub>CH<sub>2</sub>COCH<sub>3</sub> + OI<sup><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container></sup>/H<sub>3</sub>O<sup>+</sup>"
+        },
+        {
+          "identifier": "B",
+          "content": "CH<sub>3</sub>CH<sub>2</sub>CH<sub>3</sub> + KMnO<sub>4</sub>(Heat), OH<sup><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container></sup>/H<sub>3</sub>O<sup>+</sup>"
+        },
+        {
+          "identifier": "C",
+          "content": "CH<sub>3</sub>CH<sub>2</sub>CCl<sub>3</sub> + OH<sup><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container></sup>/H<sub>3</sub>O<sup>+</sup>"
+        },
+        {
+          "identifier": "D",
+          "content": "CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>Br + Mg, CO<sub>2</sub> dry ether/H<sub>3</sub>O<sup>+</sup>"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "All gives propanoic acid as product but option (d) gives butanoic as product<br><br><img src=\"https://imagex.cdn.examgoal.net/1ktsc4z2j/7c392167-8071-403d-8f7d-2fc026e7e4f7/845dd5b0-19e5-11ec-8cd3-e32b94d20e48/file-1ktsc4z2k.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 27th August Evening Shift Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 158 English Explanation\">"
+    }
+  ]
+}

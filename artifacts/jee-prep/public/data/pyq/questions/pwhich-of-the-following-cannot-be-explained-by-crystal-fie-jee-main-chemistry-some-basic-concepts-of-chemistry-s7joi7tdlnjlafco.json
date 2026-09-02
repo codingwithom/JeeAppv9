@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ldwv1u69",
+      "paperTitle": "JEE Main 2023 (Online) 24th January Evening Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "crystal-field-theory-cft",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pwhich-of-the-following-cannot-be-explained-by-crystal-fie-jee-main-chemistry-some-basic-concepts-of-chemistry-s7joi7tdlnjlafco",
+      "content": "<p>Which of the following cannot be explained by crystal field theory?</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "The order of spectrochemical series"
+        },
+        {
+          "identifier": "B",
+          "content": "Stability of metal complexes"
+        },
+        {
+          "identifier": "C",
+          "content": "Magnetic properties of transition metal complexes"
+        },
+        {
+          "identifier": "D",
+          "content": "Colour of metal complexes"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "CFT does not explain the order of spectrochemical\nseries because as per CFT, anionic ligands should\nexert greatest splitting effect. However, they lie on\nlower end of the spectrochemical series."
+    }
+  ]
+}

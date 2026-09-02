@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "OqdbyXIPmG3ZzYVE4t7k9k2k5icuagp",
+      "paperTitle": "JEE Main 2020 (Online) 9th January Morning Slot",
+      "year": 2020,
+      "examDate": "2020-01-09 09:30",
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "nature-of-oxide",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-acidic-basic-and-amphoteric-oxides-respectively-are--jee-main-chemistry-analytical-chemistry-6h6nxnkuhhkavcpj",
+      "content": "The acidic, basic and amphoteric oxides,\nrespectively, are :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Cl<sub>2</sub>O, CaO, P<sub>4</sub>O<sub>10</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "N<sub>2</sub>O<sub>3</sub>, Li<sub>2</sub>O, Al<sub>2</sub>O<sub>3</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "MgO, Cl<sub>2</sub>O, Al<sub>2</sub>O<sub>3</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "Na<sub>2</sub>O, SO<sub>3</sub>, Al<sub>2</sub>O<sub>3</sub>"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Non metal oxide <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> acidic.\n<br><br>Metal oxide <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> basic.\n<br><br>Al<sub>2</sub>O<sub>3</sub> amphoteric."
+    }
+  ]
+}

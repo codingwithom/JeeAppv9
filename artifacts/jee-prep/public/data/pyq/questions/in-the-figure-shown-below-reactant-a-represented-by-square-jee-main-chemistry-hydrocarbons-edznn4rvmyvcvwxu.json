@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "UZbTpLs7LFbcmlQe4b7k9k2k5ll44t0",
+      "paperTitle": "JEE Main 2020 (Online) 9th January Evening Slot",
+      "year": 2020,
+      "examDate": "2020-01-09 14:30",
+      "subject": "chemistry",
+      "chapter": "chemical-equilibrium",
+      "chapterGroup": "physical-chemistry",
+      "topic": "chemical-equilibrium-law-of-mass-action-and-equilibrium-constant",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "in-the-figure-shown-below-reactant-a-represented-by-square-jee-main-chemistry-hydrocarbons-edznn4rvmyvcvwxu",
+      "content": "In the figure shown below reactant A\n(represented by square) is in equilibrium with\nproduct B (represented by circle). The\nequilibrium constant is :\n<img src=\"https://imagex.cdn.examgoal.net/7k9k2k5ll3dk2/1400503e-efb4-40a6-aca0-74dd0769d2c1/dc763420-3b09-11ea-92dd-4b9c3519996f/file-7k9k2k5ll3dk3-327w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 9th January Evening Slot Chemistry - Chemical Equilibrium Question 87 English\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "1"
+        },
+        {
+          "identifier": "B",
+          "content": "2"
+        },
+        {
+          "identifier": "C",
+          "content": "8"
+        },
+        {
+          "identifier": "D",
+          "content": "4"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "In the figure, Reactant A is represented by square.\n<br>And there are 6 squares. So at equilibrium\n<br>[A]<sub>eq</sub> = 6\n<br><br>In the figure, Product B is represented by circle.\n<br>And there are 11 circles. So at equilibrium\n<br>[B]<sub>eq</sub> = 11\n<br><br>For reaction, A ⇌ B\n<br><br>K<sub>eq</sub> = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -1.238ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.099ex\" height=\"3.607ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1047.1 1369.8 1594.2\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(220,516.8) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mrow\"><g data-mml-node=\"mo\"><use data-c=\"5B\" xlink:href=\"#MJX-TEX-N-5B\"></use></g><g data-mml-node=\"mi\" transform=\"translate(278,0)\"><use data-c=\"1D435\" xlink:href=\"#MJX-TEX-I-1D435\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1037,0)\"><use data-c=\"5D\" xlink:href=\"#MJX-TEX-N-5D\"></use></g></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(223.2,-370.3) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mrow\"><g data-mml-node=\"mo\"><use data-c=\"5B\" xlink:href=\"#MJX-TEX-N-5B\"></use></g><g data-mml-node=\"mi\" transform=\"translate(278,0)\"><use data-c=\"1D434\" xlink:href=\"#MJX-TEX-I-1D434\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1028,0)\"><use data-c=\"5D\" xlink:href=\"#MJX-TEX-N-5D\"></use></g></g></g><rect width=\"1129.8\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container> = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.816ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.595ex\" height=\"2.773ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864.9 1147.1 1225.5\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(220,394) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\" transform=\"translate(500,0)\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(396.8,-345) scale(0.707)\"><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\"></use></g><rect width=\"907.1\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.124ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"0.968ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -483 778 428\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2248\" xlink:href=\"#MJX-TEX-N-2248\"></use></g></g></g></svg></mjx-container> 2"
+    }
+  ]
+}

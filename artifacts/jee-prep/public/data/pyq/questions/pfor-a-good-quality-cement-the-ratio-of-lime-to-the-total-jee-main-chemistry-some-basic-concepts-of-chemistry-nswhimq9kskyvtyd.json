@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1lgys9jsl",
+      "paperTitle": "JEE Main 2023 (Online) 8th April Evening Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "s-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "compounds-of-alkaline-earth-metals",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pfor-a-good-quality-cement-the-ratio-of-lime-to-the-total-jee-main-chemistry-some-basic-concepts-of-chemistry-nswhimq9kskyvtyd",
+      "content": "<p>For a good quality cement, the ratio of lime to the total of the oxides of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.439ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.219ex\" height=\"2.059ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 2306.7 910\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"53\" xlink:href=\"#MJX-TEX-N-53\"></use><use data-c=\"69\" xlink:href=\"#MJX-TEX-N-69\" transform=\"translate(556,0)\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(834,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1278.7,0)\"><g data-mml-node=\"mi\"><use data-c=\"41\" xlink:href=\"#MJX-TEX-N-41\"></use><use data-c=\"6C\" xlink:href=\"#MJX-TEX-N-6C\" transform=\"translate(750,0)\"></use></g></g></g></g></svg></mjx-container> and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.482ex\" height=\"1.563ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -680 1097 691\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"46\" xlink:href=\"#MJX-TEX-N-46\"></use><use data-c=\"65\" xlink:href=\"#MJX-TEX-N-65\" transform=\"translate(653,0)\"></use></g></g></g></g></svg></mjx-container> should be as close as to :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "3"
+        },
+        {
+          "identifier": "B",
+          "content": "2"
+        },
+        {
+          "identifier": "C",
+          "content": "1"
+        },
+        {
+          "identifier": "D",
+          "content": "4"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "For good quality cement, the ratio of lime (CaO) to the sum of the oxides of silicon (SiO₂), aluminum (Al₂O₃), and iron (Fe₂O₃) should be approximately 2:1.\n<br/><br/>\nThis proportion ensures that the cement has good strength and setting properties, as well as resistance to chemical attack."
+    }
+  ]
+}

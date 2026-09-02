@@ -1,0 +1,526 @@
+{
+  "exam": "jee-advanced",
+  "subject": "physics",
+  "chapterKey": "impulse-and-momentum",
+  "title": "Impulse & Momentum | Physics | JEE Advanced Previous Year Questions",
+  "chapter": {
+    "metaId": "336dacdb-e183-5244-962f-5bd8780f3de8",
+    "country": "in",
+    "exam": "jee-advanced",
+    "examGroup": "jee",
+    "key": "impulse-and-momentum",
+    "subject": "physics",
+    "chapterGroup": "mechanics",
+    "createdAt": "2020-12-28T13:30:38.771Z",
+    "description": null,
+    "keyValuePairs": {},
+    "order": 4,
+    "subjectGroup": null,
+    "title": "Impulse & Momentum",
+    "updatedAt": "2024-01-09T12:40:18.849Z",
+    "type": "chapter",
+    "pyq_stats": [
+      {
+        "year": 2026,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2025,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 3.13
+      },
+      {
+        "year": 2024,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.94
+      },
+      {
+        "year": 2023,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.94
+      },
+      {
+        "year": 2022,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2021,
+        "total": 4,
+        "avg": 2,
+        "weightage": 10.53
+      },
+      {
+        "year": 2020,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2019,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2018,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2017,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2016,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2015,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2014,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2013,
+        "total": 2,
+        "avg": 1,
+        "weightage": 5
+      },
+      {
+        "year": 2012,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2011,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.33
+      },
+      {
+        "year": 2010,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.13
+      },
+      {
+        "year": 2009,
+        "total": 2,
+        "avg": 1,
+        "weightage": 5.13
+      },
+      {
+        "year": 2008,
+        "total": 2,
+        "avg": 1,
+        "weightage": 4.44
+      },
+      {
+        "year": 2007,
+        "total": 1,
+        "avg": 0.33,
+        "weightage": 2.22
+      },
+      {
+        "year": 2006,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2005,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2004,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2003,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2002,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2001,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2000,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1999,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1998,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1997,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1996,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1995,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1994,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1993,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1992,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1991,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1990,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1989,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1988,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1987,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1986,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1985,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1984,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1983,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1982,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1981,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1980,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1979,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1978,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      }
+    ],
+    "pyq": {
+      "count": {
+        "out_of_syllabus": 0,
+        "total": 16,
+        "private": 11,
+        "public": 16,
+        "bucket": 0
+      },
+      "isTopicWise": true
+    },
+    "image": null,
+    "isOutOfSyllabus": false,
+    "hideFromClassify": false,
+    "groups": [
+      {
+        "title": "Numerical",
+        "key": "integer"
+      },
+      {
+        "title": "MCQ (Single Correct Answer)",
+        "key": "mcq"
+      },
+      {
+        "title": "MCQ (Multiple Correct Answer)",
+        "key": "mcqm"
+      }
+    ]
+  },
+  "questions": [
+    {
+      "title": "MCQ (Single Correct Answer)",
+      "key": "mcq",
+      "questions": [
+        {
+          "examGroup": "jee",
+          "permalink": "pin-a-scattering-experiment-a-particle-of-mass-b2mb-jee-advanced-physics-o1g5mvuw7trxs2lw",
+          "paperTitle": "JEE Advanced 2025 Paper 1 Online",
+          "question": {
+            "en": {
+              "content": "<p>In a scattering experiment, a particle of mass <b>2m</b> collides with another particle of mass <b>m</b>, which is initially at rest. Assuming the collision to be perfectly elastic, the maximum angular deviation <b>θ</b> of the heavier particle, as shown in the figure, in radians is:</p>\n<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/jaoe38c1mb0d0p1x/0204133b-95f9-4322-bb75-acf58e062c51/b2cc7050-3796-11f0-831e-111c9abd7f64/file-jaoe38c1mb0d0p1y.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/jaoe38c1mb0d0p1x/0204133b-95f9-4322-bb75-acf58e062c51/b2cc7050-3796-11f0-831e-111c9abd7f64/file-jaoe38c1mb0d0p1y.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0 auto;max-height:40vh;vertical-align:baseline\" alt=\"JEE Advanced 2025 Paper 1 Online Physics - Impulse &amp; Momentum Question 1 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/jaoe38c1mb0d0p1x/0204133b-95f9-4322-bb75-acf58e062c51/b2cc7050-3796-11f0-831e-111c9abd7f64/file-jaoe38c1mb0d0p1y.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/jaoe38c1mb0d0p1x/0204133b-95f9-4322-bb75-acf58e062c51/b2cc7050-3796-11f0-831e-111c9abd7f64/file-jaoe38c1mb0d0p1y.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/jaoe38c1mb0d0p1x/0204133b-95f9-4322-bb75-acf58e062c51/b2cc7050-3796-11f0-831e-111c9abd7f64/file-jaoe38c1mb0d0p1y.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/jaoe38c1mb0d0p1x/0204133b-95f9-4322-bb75-acf58e062c51/b2cc7050-3796-11f0-831e-111c9abd7f64/file-jaoe38c1mb0d0p1y.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/jaoe38c1mb0d0p1x/0204133b-95f9-4322-bb75-acf58e062c51/b2cc7050-3796-11f0-831e-111c9abd7f64/file-jaoe38c1mb0d0p1y.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/jaoe38c1mb0d0p1x/0204133b-95f9-4322-bb75-acf58e062c51/b2cc7050-3796-11f0-831e-111c9abd7f64/file-jaoe38c1mb0d0p1y.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pa-block-of-mass-5-mathrmkg-moves-along-the-x-dire-jee-advanced-physics-5bayiwbu8ydbv6vj",
+          "paperTitle": "JEE Advanced 2024 Paper 1 Online",
+          "question": {
+            "en": {
+              "content": "<p>A block of mass <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.466ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.814ex\" height=\"2.163ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 2128 956\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(500,0)\"><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\"> </text></g><g data-mml-node=\"mi\" transform=\"translate(600,0)\"><use data-c=\"6B\" xlink:href=\"#MJX-TEX-N-6B\"></use><use data-c=\"67\" xlink:href=\"#MJX-TEX-N-67\" transform=\"translate(528,0)\"></use></g></g></g></g></svg></mjx-container> moves along the <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.294ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 572 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g></g></g></svg></mjx-container>-direction subject to the force <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.566ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"18.514ex\" height=\"2.262ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 8183 1000\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D439\" xlink:href=\"#MJX-TEX-I-1D439\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1026.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2082.6,0)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2471.6,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(3249.6,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"mi\" transform=\"translate(4249.6,0)\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g><g data-mml-node=\"mo\" transform=\"translate(5043.8,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(6044,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(7044,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(7433,0)\"><g data-mml-node=\"mi\"><use data-c=\"4E\" xlink:href=\"#MJX-TEX-N-4E\"></use></g></g></g></g></svg></mjx-container>, with the value of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.294ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 572 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g></g></g></svg></mjx-container> in metre. At time <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.452ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"7.214ex\" height=\"2.149ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 3188.6 950\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D461\" xlink:href=\"#MJX-TEX-I-1D461\"></use></g><g data-mml-node=\"mo\" transform=\"translate(638.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1694.6,0)\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2194.6,0)\"><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\"> </text></g><g data-mml-node=\"mi\" transform=\"translate(600,0)\"><use data-c=\"73\" xlink:href=\"#MJX-TEX-N-73\"></use></g></g></g></g></svg></mjx-container>, it is at rest at position <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.452ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"8.685ex\" height=\"2.149ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 3838.6 950\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g><g data-mml-node=\"mo\" transform=\"translate(849.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1905.6,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2405.6,0)\"><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\"> </text></g><g data-mml-node=\"mi\" transform=\"translate(600,0)\"><use data-c=\"6D\" xlink:href=\"#MJX-TEX-N-6D\"></use></g></g></g></g></svg></mjx-container>. The position and momentum of the block at <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.781ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"6.637ex\" height=\"2.361ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -698.8 2933.7 1043.8\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D461\" xlink:href=\"#MJX-TEX-I-1D461\"></use></g><g data-mml-node=\"mo\" transform=\"translate(638.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1694.6,0)\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mi\" transform=\"translate(220,394) scale(0.707)\"><use data-c=\"1D70B\" xlink:href=\"#MJX-TEX-I-1D70B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(245.8,-345) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g><rect width=\"605.2\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2539.7,0)\"><g data-mml-node=\"mi\"><use data-c=\"73\" xlink:href=\"#MJX-TEX-N-73\"></use></g></g></g></g></svg></mjx-container> are</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "a-particle-of-mass-m-is-projected-from-the-ground-with-an-in-2013-marks-2-jnvxffklhai9cner.htm",
+          "paperTitle": "JEE Advanced 2013 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "A particle of mass m is projected from the ground with an initial speed u<sub>0</sub> at an angle <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.448ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 640 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D6FC\" xlink:href=\"#MJX-TEX-I-1D6FC\"></use></g></g></g></svg></mjx-container> with the horizontal. At the highest point of its trajectory, it makes a completely inelastic collision with another identical particle, which was thrown vertically upward from the ground with the same initial speed u<sub>0</sub>. The angle that the composite system makes with the horizontal immediately after the collision is "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "a-ball-of-mass-02-kg-rests-on-a-vertical-post-of-height-5-m-2011-marks-3-rwfkgstefxrvrgbs.htm",
+          "paperTitle": "IIT-JEE 2011 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "<p>A ball of mass 0.2 kg rests on a vertical post of height 5 m. A bullet\nof mass 0.01 kg, traveling with a velocity V m/s in a horizontal\ndirection, hits the center of the ball. After the collision, the ball and\nbullet travel independently. The ball hits the ground at a distance of\n20 m and the bullet at a distance of 100 m from the foot of the post.\nThe velocity V of the bullet is</p>\n<p><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l2jmg9rn/055e3b55-cec9-4572-a077-76dff48a89a5/be633c30-c748-11ec-8aaf-d9798c3d819c/file-1l2jmg9ro.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l2jmg9rn/055e3b55-cec9-4572-a077-76dff48a89a5/be633c30-c748-11ec-8aaf-d9798c3d819c/file-1l2jmg9ro.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"IIT-JEE 2011 Paper 2 Offline Physics - Impulse &amp; Momentum Question 16 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l2jmg9rn/055e3b55-cec9-4572-a077-76dff48a89a5/be633c30-c748-11ec-8aaf-d9798c3d819c/file-1l2jmg9ro.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l2jmg9rn/055e3b55-cec9-4572-a077-76dff48a89a5/be633c30-c748-11ec-8aaf-d9798c3d819c/file-1l2jmg9ro.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l2jmg9rn/055e3b55-cec9-4572-a077-76dff48a89a5/be633c30-c748-11ec-8aaf-d9798c3d819c/file-1l2jmg9ro.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l2jmg9rn/055e3b55-cec9-4572-a077-76dff48a89a5/be633c30-c748-11ec-8aaf-d9798c3d819c/file-1l2jmg9ro.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l2jmg9rn/055e3b55-cec9-4572-a077-76dff48a89a5/be633c30-c748-11ec-8aaf-d9798c3d819c/file-1l2jmg9ro.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l2jmg9rn/055e3b55-cec9-4572-a077-76dff48a89a5/be633c30-c748-11ec-8aaf-d9798c3d819c/file-1l2jmg9ro.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"></p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plook-at-the-drawing-given-in-the-figure-below-which-has-b-jee-advanced-physics-motion-yhnw6zeqjy6nslnq",
+          "paperTitle": "IIT-JEE 2009 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "<p>Look at the drawing given in the figure below which has been drawn with ink of uniform line-thickness. The mass of ink used to draw each of the two inner circles, and each of the two line segments is <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.986ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 878 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D45A\" xlink:href=\"#MJX-TEX-I-1D45A\"></use></g></g></g></svg></mjx-container>. the mass of the ink used to draw the outer circle is <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.118ex\" height=\"1.557ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -666 1378 688\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\"></use></g><g data-mml-node=\"mi\" transform=\"translate(500,0)\"><use data-c=\"1D45A\" xlink:href=\"#MJX-TEX-I-1D45A\"></use></g></g></g></svg></mjx-container>. The coordinates of the centres of the different parts are: outer circle (0, 0), left inner circle (<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.439ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.16ex\" height=\"1.758ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 2280.7 777\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mi\" transform=\"translate(778,0)\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1307,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1751.7,0)\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g></g></g></svg></mjx-container>), right inner circle (<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.439ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.4ex\" height=\"1.437ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -441 1502.7 635\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(529,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(973.7,0)\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g></g></g></svg></mjx-container>), vertical line (0, 0) and horizontal line (<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.439ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.094ex\" height=\"1.946ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -666 2251.7 860\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mo\" transform=\"translate(944.7,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1722.7,0)\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g></g></g></svg></mjx-container>). The y-coordinate of the centre of mass of the ink in this drawing is</p>\n<p><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1lfrlj825/0a2046ea-91c6-4a5a-8e55-63638848662b/3c7cc3d0-cd0a-11ed-8631-ff69b196c8e3/file-1lfrlj826.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1lfrlj825/0a2046ea-91c6-4a5a-8e55-63638848662b/3c7cc3d0-cd0a-11ed-8631-ff69b196c8e3/file-1lfrlj826.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"IIT-JEE 2009 Paper 1 Offline Physics - Impulse &amp; Momentum Question 7 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1lfrlj825/0a2046ea-91c6-4a5a-8e55-63638848662b/3c7cc3d0-cd0a-11ed-8631-ff69b196c8e3/file-1lfrlj826.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1lfrlj825/0a2046ea-91c6-4a5a-8e55-63638848662b/3c7cc3d0-cd0a-11ed-8631-ff69b196c8e3/file-1lfrlj826.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1lfrlj825/0a2046ea-91c6-4a5a-8e55-63638848662b/3c7cc3d0-cd0a-11ed-8631-ff69b196c8e3/file-1lfrlj826.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1lfrlj825/0a2046ea-91c6-4a5a-8e55-63638848662b/3c7cc3d0-cd0a-11ed-8631-ff69b196c8e3/file-1lfrlj826.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1lfrlj825/0a2046ea-91c6-4a5a-8e55-63638848662b/3c7cc3d0-cd0a-11ed-8631-ff69b196c8e3/file-1lfrlj826.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1lfrlj825/0a2046ea-91c6-4a5a-8e55-63638848662b/3c7cc3d0-cd0a-11ed-8631-ff69b196c8e3/file-1lfrlj826.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"></p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "ptwo-small-particles-of-equal-masses-start-moving-in-oppos-jee-advanced-physics-motion-dnhvejq9i0z3kila",
+          "paperTitle": "IIT-JEE 2009 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "<p>Two small particles of equal masses start moving in opposite directions from a point A in a horizontal circular orbit. Their tangential velocities are <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.097ex\" height=\"1.027ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -443 485 454\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D463\" xlink:href=\"#MJX-TEX-I-1D463\"></use></g></g></g></svg></mjx-container> and 2<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.097ex\" height=\"1.027ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -443 485 454\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D463\" xlink:href=\"#MJX-TEX-I-1D463\"></use></g></g></g></svg></mjx-container>, respectively, as shown in the figure. Between collisions, the particles move with constant speeds. After making how many elastic collisions, other than that at A, these two particles will again reach the point A?</p>\n<p><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1lfrllifl/ed4f5fa5-b18e-4d80-a5a4-1cb7200e875a/7c1e7010-cd0a-11ed-8124-cf50c8498624/file-1lfrllifm.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1lfrllifl/ed4f5fa5-b18e-4d80-a5a4-1cb7200e875a/7c1e7010-cd0a-11ed-8124-cf50c8498624/file-1lfrllifm.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"IIT-JEE 2009 Paper 1 Offline Physics - Impulse &amp; Momentum Question 8 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1lfrllifl/ed4f5fa5-b18e-4d80-a5a4-1cb7200e875a/7c1e7010-cd0a-11ed-8124-cf50c8498624/file-1lfrllifm.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1lfrllifl/ed4f5fa5-b18e-4d80-a5a4-1cb7200e875a/7c1e7010-cd0a-11ed-8124-cf50c8498624/file-1lfrllifm.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1lfrllifl/ed4f5fa5-b18e-4d80-a5a4-1cb7200e875a/7c1e7010-cd0a-11ed-8124-cf50c8498624/file-1lfrllifm.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1lfrllifl/ed4f5fa5-b18e-4d80-a5a4-1cb7200e875a/7c1e7010-cd0a-11ed-8124-cf50c8498624/file-1lfrllifm.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1lfrllifl/ed4f5fa5-b18e-4d80-a5a4-1cb7200e875a/7c1e7010-cd0a-11ed-8124-cf50c8498624/file-1lfrllifm.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1lfrllifl/ed4f5fa5-b18e-4d80-a5a4-1cb7200e875a/7c1e7010-cd0a-11ed-8124-cf50c8498624/file-1lfrllifm.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"></p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-collision-between-the-block-and-the-incline-is-complet-jee-advanced-physics-motion-ahjtoxkmqydehbbo",
+          "paperTitle": "IIT-JEE 2008 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "<p>If collision between the block and the incline is completely elastic, then the vertical (upward) component of the velocity of the block at point B, immediately after it strikes the second incline is</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pstatement-1p-pin-an-elastic-collision-between-two-bo-jee-advanced-physics-motion-fucixunvvspk53ty",
+          "paperTitle": "IIT-JEE 2007 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "<p><b>Statement 1 :</b></p>\n<p>In an elastic collision between two bodies, the relative speed of the bodies after collision is equal to the relative speed before the collision.</p>\n<p><b>Statement 2 :</b></p>\n<p>In an elastic collision, the linear momentum of the system is conserved.</p>"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "MCQ (More than One Correct Answer)",
+      "key": "mcqm",
+      "questions": [
+        {
+          "examGroup": "jee",
+          "permalink": "a-slide-with-a-frictionless-curved-surface-which-becomes-ho-jee-advanced-physics-tgexnrj2jkm8skgk",
+          "paperTitle": "JEE Advanced 2023 Paper 1 Online",
+          "question": {
+            "en": {
+              "content": "A slide with a frictionless curved surface, which becomes horizontal at its lower end, is fixed on the terrace of a building of height <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.434ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 1076 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g><g data-mml-node=\"mi\" transform=\"translate(500,0)\"><use data-c=\"210E\" xlink:href=\"#MJX-TEX-I-210E\"></use></g></g></g></svg></mjx-container> from the ground, as shown in the figure. A spherical ball of mass <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.986ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 878 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D45A\" xlink:href=\"#MJX-TEX-I-1D45A\"></use></g></g></g></svg></mjx-container> is released on the slide from rest at a height <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.303ex\" height=\"1.595ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 576 705\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"210E\" xlink:href=\"#MJX-TEX-I-210E\"></use></g></g></g></svg></mjx-container> from the top of the terrace. The ball leaves the slide with a velocity <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.375ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"8.875ex\" height=\"2.286ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -845 3922.7 1010.6\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mover\"><g data-mml-node=\"mi\"><use data-c=\"1D462\" xlink:href=\"#MJX-TEX-I-1D462\"></use></g><g data-mml-node=\"mo\" transform=\"translate(55,31)\"><use data-c=\"20D7\" xlink:href=\"#MJX-TEX-N-20D7\"></use></g></g></g><g data-mml-node=\"mn\" transform=\"translate(605,-150) scale(0.707)\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(1286.3,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"msub\" transform=\"translate(2342.1,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D462\" xlink:href=\"#MJX-TEX-I-1D462\"></use></g><g data-mml-node=\"mn\" transform=\"translate(605,-150) scale(0.707)\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(3350.7,0)\"><g data-mml-node=\"mover\"><g data-mml-node=\"mi\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g><g data-mml-node=\"mo\" transform=\"translate(329,16) translate(-250 0)\"><use data-c=\"2C6\" xlink:href=\"#MJX-TEX-N-2C6\"></use></g></g></g></g></g></svg></mjx-container> and falls on the ground at a distance <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.023ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.183ex\" height=\"1.593ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 523 704\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D451\" xlink:href=\"#MJX-TEX-I-1D451\"></use></g></g></g></svg></mjx-container> from the building making an angle <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.023ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.061ex\" height=\"1.618ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 469 715\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D703\" xlink:href=\"#MJX-TEX-I-1D703\"></use></g></g></g></svg></mjx-container> with the horizontal. It bounces off with a velocity <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.247ex\" height=\"1.939ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -846 551 857\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mover\"><g data-mml-node=\"mi\" transform=\"translate(7.5,0)\"><use data-c=\"1D463\" xlink:href=\"#MJX-TEX-I-1D463\"></use></g><g data-mml-node=\"mo\" transform=\"translate(51,32)\"><use data-c=\"20D7\" xlink:href=\"#MJX-TEX-N-20D7\"></use></g></g></g></g></g></svg></mjx-container> and reaches a maximum height <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.291ex\" height=\"1.91ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 1012.6 844\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"210E\" xlink:href=\"#MJX-TEX-I-210E\"></use></g><g data-mml-node=\"mn\" transform=\"translate(609,-150) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g></g></svg></mjx-container>. The acceleration due to gravity is <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.464ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.086ex\" height=\"1.464ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 480 647\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D454\" xlink:href=\"#MJX-TEX-I-1D454\"></use></g></g></g></svg></mjx-container> and the coefficient of restitution of the ground is <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.566ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.324ex\" height=\"2.713ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -949 2353 1199\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"2F\" xlink:href=\"#MJX-TEX-N-2F\"></use></g><g data-mml-node=\"msqrt\" transform=\"translate(1000,0)\"><g data-mml-node=\"mo\" transform=\"translate(0,89)\"><use data-c=\"221A\" xlink:href=\"#MJX-TEX-N-221A\"></use></g><g transform=\"translate(853,0)\"><g data-mml-node=\"mn\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g><rect width=\"500\" height=\"60\" x=\"853\" y=\"829\"></rect></g></g></g></svg></mjx-container>. Which of the following statement(s) is(are) correct?<br><br>\n<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1liip5c28/52af7e88-1b06-4b2b-a4bf-bc382693f2e1/f70f6c10-0389-11ee-add3-0f52d4fe427d/file-1liip5c29.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1liip5c28/52af7e88-1b06-4b2b-a4bf-bc382693f2e1/f70f6c10-0389-11ee-add3-0f52d4fe427d/file-1liip5c29.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Advanced 2023 Paper 1 Online Physics - Impulse &amp; Momentum Question 3 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1liip5c28/52af7e88-1b06-4b2b-a4bf-bc382693f2e1/f70f6c10-0389-11ee-add3-0f52d4fe427d/file-1liip5c29.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1liip5c28/52af7e88-1b06-4b2b-a4bf-bc382693f2e1/f70f6c10-0389-11ee-add3-0f52d4fe427d/file-1liip5c29.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1liip5c28/52af7e88-1b06-4b2b-a4bf-bc382693f2e1/f70f6c10-0389-11ee-add3-0f52d4fe427d/file-1liip5c29.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1liip5c28/52af7e88-1b06-4b2b-a4bf-bc382693f2e1/f70f6c10-0389-11ee-add3-0f52d4fe427d/file-1liip5c29.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1liip5c28/52af7e88-1b06-4b2b-a4bf-bc382693f2e1/f70f6c10-0389-11ee-add3-0f52d4fe427d/file-1liip5c29.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1liip5c28/52af7e88-1b06-4b2b-a4bf-bc382693f2e1/f70f6c10-0389-11ee-add3-0f52d4fe427d/file-1liip5c29.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "one-end-of-a-horizontal-uniform-beam-of-weight-w-and-length-jee-advanced-physics-units-and-measurements-pkrjo9vrrxm1jmmi",
+          "paperTitle": "JEE Advanced 2021 Paper 2 Online",
+          "question": {
+            "en": {
+              "content": "One end of a horizontal uniform beam of weight W and length L is hinged on a vertical wall at point O and its other end is supported by a light inextensible rope. The other end of the rope is fixed at point Q, at a height L above the hinge at point O. A block of weight <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.448ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 640 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D6FC\" xlink:href=\"#MJX-TEX-I-1D6FC\"></use></g></g></g></svg></mjx-container>W is attached at the point P of the beam, as shown in the figure (not to scale). The rope can sustain a maximum tension of (2<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.225ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.061ex\" height=\"2.398ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -960.5 1353 1060\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msqrt\"><g data-mml-node=\"mo\" transform=\"translate(0,100.5)\"><use data-c=\"221A\" xlink:href=\"#MJX-TEX-N-221A\"></use></g><g transform=\"translate(853,0)\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g><rect width=\"500\" height=\"60\" x=\"853\" y=\"840.5\"></rect></g></g></g></svg></mjx-container>)W. Which of the following statement(s) is(are) correct?<br><br><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1kwjbiswa/2d7fbf54-c365-45e2-aacb-a0fdf0073590/b416a2a0-5054-11ec-8daf-b39f40cb0a62/file-1kwjbiswb.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Advanced 2021 Paper 2 Online Physics - Impulse &amp; Momentum Question 10 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1kwjbiswa/2d7fbf54-c365-45e2-aacb-a0fdf0073590/b416a2a0-5054-11ec-8daf-b39f40cb0a62/file-1kwjbiswb.png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1kwjbiswa/2d7fbf54-c365-45e2-aacb-a0fdf0073590/b416a2a0-5054-11ec-8daf-b39f40cb0a62/file-1kwjbiswb.png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1kwjbiswa/2d7fbf54-c365-45e2-aacb-a0fdf0073590/b416a2a0-5054-11ec-8daf-b39f40cb0a62/file-1kwjbiswb.png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1kwjbiswa/2d7fbf54-c365-45e2-aacb-a0fdf0073590/b416a2a0-5054-11ec-8daf-b39f40cb0a62/file-1kwjbiswb.png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1kwjbiswa/2d7fbf54-c365-45e2-aacb-a0fdf0073590/b416a2a0-5054-11ec-8daf-b39f40cb0a62/file-1kwjbiswb.png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1kwjbiswa/2d7fbf54-c365-45e2-aacb-a0fdf0073590/b416a2a0-5054-11ec-8daf-b39f40cb0a62/file-1kwjbiswb.png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "a-particle-of-mass-m--02-kg-is-initially-at-rest-in-the-xy-jee-advanced-physics-units-and-measurements-tgw5vdmpxtchwaun",
+          "paperTitle": "JEE Advanced 2021 Paper 1 Online",
+          "question": {
+            "en": {
+              "content": "A particle of mass M = 0.2 kg is initially at rest in the xy-plane at a point (x = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>l, y = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>h), where l = 10 m and h = 1 m. The particle is accelerated at time t = 0 with a constant acceleration a = 10 m/s<sup>2</sup> along the positive x-direction. Its angular momentum and torque with respect to the origin, in SI units, are represented by <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.305ex\" height=\"3.19ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1410 1019 1410\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mover\"><g data-mml-node=\"mi\" transform=\"translate(159.5,0)\"><use data-c=\"1D43F\" xlink:href=\"#MJX-TEX-I-1D43F\"></use></g><g data-mml-node=\"mo\" transform=\"translate(19,799)\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></g></svg></mjx-container> and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.029ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.398ex\" height=\"2.674ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1169 1060 1182\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mover\"><g data-mml-node=\"mi\" transform=\"translate(281.5,0)\"><use data-c=\"1D70F\" xlink:href=\"#MJX-TEX-I-1D70F\"></use></g><g data-mml-node=\"mo\" transform=\"translate(60,558)\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></g></svg></mjx-container> respectively. <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"0.781ex\" height=\"2.353ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1029 345 1040\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mover\"><g data-mml-node=\"mi\"><use data-c=\"1D456\" xlink:href=\"#MJX-TEX-I-1D456\"></use></g><g data-mml-node=\"mo\" transform=\"translate(246.5,235) translate(-250 0)\"><use data-c=\"2C6\" xlink:href=\"#MJX-TEX-N-2C6\"></use></g></g></g></g></g></svg></mjx-container>, <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.462ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"0.932ex\" height=\"2.79ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1029 412 1233\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mover\"><g data-mml-node=\"mi\"><use data-c=\"1D457\" xlink:href=\"#MJX-TEX-I-1D457\"></use></g><g data-mml-node=\"mo\" transform=\"translate(359,235) translate(-250 0)\"><use data-c=\"2C6\" xlink:href=\"#MJX-TEX-N-2C6\"></use></g></g></g></g></g></svg></mjx-container> and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.179ex\" height=\"2.495ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1092 521 1103\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mover\"><g data-mml-node=\"mi\"><use data-c=\"1D458\" xlink:href=\"#MJX-TEX-I-1D458\"></use></g><g data-mml-node=\"mo\" transform=\"translate(212.5,248) translate(-282 0)\"><use data-c=\"2C6\" xlink:href=\"#MJX-TEX-SO-2C6\"></use></g></g></g></g></g></svg></mjx-container> are unit vectors along the positive x, y and z-directions, respectively. If <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.179ex\" height=\"2.495ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1092 521 1103\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mover\"><g data-mml-node=\"mi\"><use data-c=\"1D458\" xlink:href=\"#MJX-TEX-I-1D458\"></use></g><g data-mml-node=\"mo\" transform=\"translate(212.5,248) translate(-282 0)\"><use data-c=\"2C6\" xlink:href=\"#MJX-TEX-SO-2C6\"></use></g></g></g></g></g></svg></mjx-container> = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"0.781ex\" height=\"2.353ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1029 345 1040\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mover\"><g data-mml-node=\"mi\"><use data-c=\"1D456\" xlink:href=\"#MJX-TEX-I-1D456\"></use></g><g data-mml-node=\"mo\" transform=\"translate(246.5,235) translate(-250 0)\"><use data-c=\"2C6\" xlink:href=\"#MJX-TEX-N-2C6\"></use></g></g></g></g></g></svg></mjx-container> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.462ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"0.932ex\" height=\"2.79ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1029 412 1233\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mover\"><g data-mml-node=\"mi\"><use data-c=\"1D457\" xlink:href=\"#MJX-TEX-I-1D457\"></use></g><g data-mml-node=\"mo\" transform=\"translate(359,235) translate(-250 0)\"><use data-c=\"2C6\" xlink:href=\"#MJX-TEX-N-2C6\"></use></g></g></g></g></g></svg></mjx-container> then which of the following statement(s) is(are) correct?"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "a-particle-of-mass-m-is-attached-to-one-end-of-a-mass-less-s-2013-marks-3-zquindf6rydndjpk.htm",
+          "paperTitle": "JEE Advanced 2013 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "A particle of mass m is attached to one end of a mass-less spring of force constant k, lying on a frictionless horizontal plane. The other end of the spring is fixed. The particle starts moving horizontally from its equilibrium position at time t = 0 with an initial velocity u<sub>0</sub>. When the speed of the particle is 0.5 u<sub>0</sub>. It collides elastically with a rigid wall. After this collision,"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "a-point-mass-of-1-kg-collides-elastically-with-a-stationary-2010-marks-3-11g5olevnxjrqbmq.htm",
+          "paperTitle": "IIT-JEE 2010 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "A point mass of 1 kg collides elastically with a stationary point mass of 5 kg. After their collision, the 1 kg\nmass reverses its direction and moves with a speed of 2 ms<sup>−1</sup>. Which of the following statement(s) is (are) correct for the system of these two masses?"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "ptwo-balls-having-linear-momenta-overrightarrow-p-1-jee-advanced-physics-motion-pabv2zleafjb615c",
+          "paperTitle": "IIT-JEE 2008 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "<p>Two balls, having linear momenta <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.439ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"8.186ex\" height=\"3.084ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1169 3618.1 1363\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mover\"><g data-mml-node=\"mi\" transform=\"translate(248.5,0)\"><use data-c=\"1D45D\" xlink:href=\"#MJX-TEX-I-1D45D\"></use></g><g data-mml-node=\"mo\" transform=\"translate(0,558)\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(1033,-150) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(1714.3,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2770.1,0)\"><use data-c=\"1D45D\" xlink:href=\"#MJX-TEX-I-1D45D\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(3273.1,0)\"><g data-mml-node=\"mover\"><g data-mml-node=\"mi\"><use data-c=\"1D456\" xlink:href=\"#MJX-TEX-I-1D456\"></use></g><g data-mml-node=\"mo\" transform=\"translate(246.5,235) translate(-250 0)\"><use data-c=\"2C6\" xlink:href=\"#MJX-TEX-N-2C6\"></use></g></g></g></g></g></svg></mjx-container> and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.439ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"9.946ex\" height=\"3.084ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1169 4396.1 1363\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mover\"><g data-mml-node=\"mi\" transform=\"translate(248.5,0)\"><use data-c=\"1D45D\" xlink:href=\"#MJX-TEX-I-1D45D\"></use></g><g data-mml-node=\"mo\" transform=\"translate(0,558)\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(1033,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(1714.3,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2770.1,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mi\" transform=\"translate(3548.1,0)\"><use data-c=\"1D45D\" xlink:href=\"#MJX-TEX-I-1D45D\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(4051.1,0)\"><g data-mml-node=\"mover\"><g data-mml-node=\"mi\"><use data-c=\"1D456\" xlink:href=\"#MJX-TEX-I-1D456\"></use></g><g data-mml-node=\"mo\" transform=\"translate(246.5,235) translate(-250 0)\"><use data-c=\"2C6\" xlink:href=\"#MJX-TEX-N-2C6\"></use></g></g></g></g></g></svg></mjx-container>, undergo a collision in free space. There is no external force acting on the balls. Let <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.519ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.25ex\" height=\"3.713ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1412 1436.6 1641.3\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mover\"><g data-mml-node=\"msup\" transform=\"translate(109.8,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D45D\" xlink:href=\"#MJX-TEX-I-1D45D\"></use></g><g data-mml-node=\"mo\" transform=\"translate(536,289) scale(0.707)\"><use data-c=\"2032\" xlink:href=\"#MJX-TEX-V-2032\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(0,801)\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(1033,-229.4) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g></g></g></svg></mjx-container> and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.519ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.25ex\" height=\"3.713ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1412 1436.6 1641.3\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mover\"><g data-mml-node=\"msup\" transform=\"translate(109.8,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D45D\" xlink:href=\"#MJX-TEX-I-1D45D\"></use></g><g data-mml-node=\"mo\" transform=\"translate(536,289) scale(0.707)\"><use data-c=\"2032\" xlink:href=\"#MJX-TEX-V-2032\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(0,801)\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(1033,-229.4) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></g></svg></mjx-container> be their final momenta. The following option(s) is (are) <b>NOT ALLOWED</b> for any non-zero value of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.439ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"16.421ex\" height=\"2.009ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 7258.1 888\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D45D\" xlink:href=\"#MJX-TEX-I-1D45D\"></use></g><g data-mml-node=\"mo\" transform=\"translate(503,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(947.7,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"mn\" transform=\"translate(562,-150) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(1913.2,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2357.9,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"mn\" transform=\"translate(562,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(3323.4,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(3768.1,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D44F\" xlink:href=\"#MJX-TEX-I-1D44F\"></use></g><g data-mml-node=\"mn\" transform=\"translate(462,-150) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(4633.7,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(5078.3,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D44F\" xlink:href=\"#MJX-TEX-I-1D44F\"></use></g><g data-mml-node=\"mn\" transform=\"translate(462,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(5943.9,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(6388.5,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D450\" xlink:href=\"#MJX-TEX-I-1D450\"></use></g><g data-mml-node=\"mn\" transform=\"translate(466,-150) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g></g></g></svg></mjx-container> and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.967ex\" height=\"1.339ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 869.6 592\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D450\" xlink:href=\"#MJX-TEX-I-1D450\"></use></g><g data-mml-node=\"mn\" transform=\"translate(466,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></g></svg></mjx-container> :</p>"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Numerical",
+      "key": "integer",
+      "questions": [
+        {
+          "examGroup": "jee",
+          "permalink": "a-pendulum-consists-of-a-bob-of-mass-m--01-kg-and-a-massle-jee-advanced-physics-units-and-measurements-bxvmuftbdbkr3ekx",
+          "paperTitle": "JEE Advanced 2021 Paper 2 Online",
+          "question": {
+            "en": {
+              "content": "A pendulum consists of a bob of mass m = 0.1 kg and a massless inextensible string of length L = 1.0 m. It is suspended from a fixed point at height H = 0.9 m above a frictionless horizontal floor. Initially, the bob of the pendulum is lying on the floor at rest vertically below the point of suspension. A horizontal impulse P = 0.2 kg-m/s is imparted to the bob at some instant. After the bob slides for some distance, the string becomes taut and the bob lifts off the floor. The magnitude of the angular momentum of the pendulum about the point of suspension just before the bob lifts off is J kg-m<sup>2</sup>/s. The kinetic energy of the pendulum just after the lift-off is K Joules.<br><br>The value of J is ___________."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "a-pendulum-consists-of-a-bob-of-mass-m--01-kg-and-a-massle-jee-advanced-physics-units-and-measurements-zzse0zerutjfpxeq",
+          "paperTitle": "JEE Advanced 2021 Paper 2 Online",
+          "question": {
+            "en": {
+              "content": "A pendulum consists of a bob of mass m = 0.1 kg and a massless inextensible string of length L = 1.0 m. It is suspended from a fixed point at height H = 0.9 m above a frictionless horizontal floor. Initially, the bob of the pendulum is lying on the floor at rest vertically below the point of suspension. A horizontal impulse P = 0.2 kg-m/s is imparted to the bob at some instant. After the bob slides for some distance, the string becomes taut and the bob lifts off the floor. The magnitude of the angular momentum of the pendulum about the point of suspension just before the bob lifts off is J kg-m<sup>2</sup>/s. The kinetic energy of the pendulum just after the lift-off is K Joules.<br><br>The value of K is ___________."
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

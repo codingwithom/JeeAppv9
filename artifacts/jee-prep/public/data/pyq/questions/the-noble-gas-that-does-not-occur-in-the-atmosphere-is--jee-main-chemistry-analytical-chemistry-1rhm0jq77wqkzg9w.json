@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "W50NsUwBBAgAFpPgKe3rsa0w2w9jx0u14hm",
+      "paperTitle": "JEE Main 2019 (Online) 10th April Evening Slot",
+      "year": 2019,
+      "examDate": "2019-04-10 14:30",
+      "subject": "chemistry",
+      "chapter": "p-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "group-18-elements-inert-or-noble-gases",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-noble-gas-that-does-not-occur-in-the-atmosphere-is--jee-main-chemistry-analytical-chemistry-1rhm0jq77wqkzg9w",
+      "content": "The noble gas that does not occur in the atmosphere is : ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Ne"
+        },
+        {
+          "identifier": "B",
+          "content": "He"
+        },
+        {
+          "identifier": "C",
+          "content": "Kr"
+        },
+        {
+          "identifier": "D",
+          "content": "Ra"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Inert gas Radon(Ra) is not present in atmosphere. Remaining all the inert gas can be found in the atmosphere."
+    }
+  ]
+}

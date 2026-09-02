@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
-@import "tailwindcss";
+@import "tailwindcss" source(none);
+@source "./";
+@source "not ../public";
 @import "tw-animate-css";
 @plugin "@tailwindcss/typography";
 
@@ -338,5 +340,56 @@
   color: #ffffff !important;
 }
 
+/* MathJax SVG & LaTeX formatting */
+mjx-container[jax="SVG"] {
+  display: inline-block;
+  line-height: 0;
+  text-indent: 0;
+  text-align: left;
+  text-transform: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100%;
+  letter-spacing: normal;
+  overflow-wrap: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  padding: 1px 0;
+  vertical-align: middle;
+}
 
+mjx-container[jax="SVG"] > svg {
+  display: inline-block;
+  overflow: visible;
+  max-width: 100%;
+  height: auto;
+  fill: currentColor;
+  stroke: currentColor;
+}
 
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"] > svg {
+  vertical-align: 0;
+}
+
+/* Rich Math Question & Solution styling */
+.rich-math-content p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  line-height: 1.7;
+}
+
+.rich-math-content img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}

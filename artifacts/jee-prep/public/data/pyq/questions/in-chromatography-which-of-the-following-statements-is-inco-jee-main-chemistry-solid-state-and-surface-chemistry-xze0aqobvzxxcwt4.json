@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "fDVEXjpq8DCMIPKMDb3rsa0w2w9jx0v14co",
+      "paperTitle": "JEE Main 2019 (Online) 10th April Evening Slot",
+      "year": 2019,
+      "examDate": "2019-04-10 14:30",
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "purification-of-organic-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "in-chromatography-which-of-the-following-statements-is-inco-jee-main-chemistry-solid-state-and-surface-chemistry-xze0aqobvzxxcwt4",
+      "content": "In chromatography, which of the following statements is incorrect for R<sub>f</sub> ?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "R<sub>f</sub>  value depends on the type of chromatography."
+        },
+        {
+          "identifier": "B",
+          "content": "Higher R<sub>f</sub>\n value means higher adsorption."
+        },
+        {
+          "identifier": "C",
+          "content": "R<sub>f</sub>\n value is dependent on the mobile phase."
+        },
+        {
+          "identifier": "D",
+          "content": "The value of R<sub>f</sub>\n can not be more than one. "
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "R<sub>f</sub> = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -1.108ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.911ex\" height=\"2.707ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -706.5 844.5 1196.5\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mi\" transform=\"translate(220,394) scale(0.707)\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g><g data-mml-node=\"mi\" transform=\"translate(246.9,-345) scale(0.707)\"><use data-c=\"1D466\" xlink:href=\"#MJX-TEX-I-1D466\"></use></g><rect width=\"604.5\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container>\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.294ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 572 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g></g></g></svg></mjx-container> = Distance moved by the substance from baseline\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.464ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.122ex\" height=\"1.464ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 496 647\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D466\" xlink:href=\"#MJX-TEX-I-1D466\"></use></g></g></g></svg></mjx-container> = Distance moved by the solvent from baseline\n<br><br>Option A : Correct. The R<sub>f</sub> value can depend on the type of chromatography being used because different methods can use different stationary and mobile phases, which can influence how far a substance travels.\n\n<br><br>Option B : Incorrect. The R<sub>f</sub> value is actually inversely related to adsorption. A higher Rf value indicates that the substance is less strongly adsorbed to the stationary phase, and therefore moves further along with the mobile phase.\n\n<br><br>Option C : Correct. The nature of the mobile phase can greatly influence the R<sub>f</sub> value. The more compatible the substance is with the mobile phase, the further it will travel, leading to a higher Rf value.\n\n<br><br>Option D : Correct. By definition, the R<sub>f</sub> value cannot exceed one, as a substance cannot travel further than the solvent.\n\n<br><br>So, Option B is incorrect for the R<sub>f</sub> value in chromatography."
+    }
+  ]
+}

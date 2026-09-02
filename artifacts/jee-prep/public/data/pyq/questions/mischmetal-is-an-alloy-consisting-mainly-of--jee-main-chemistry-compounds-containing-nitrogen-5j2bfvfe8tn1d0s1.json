@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "ccqOfVQo69dnf1hXLSjgy2xukg395sas",
+      "paperTitle": "JEE Main 2020 (Online) 6th September Evening Slot",
+      "year": 2020,
+      "examDate": "2020-09-06 15:00",
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "inner-transition-elements-lanthanoids-and-actinoids",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "mischmetal-is-an-alloy-consisting-mainly-of--jee-main-chemistry-compounds-containing-nitrogen-5j2bfvfe8tn1d0s1",
+      "content": "Mischmetal is an alloy consisting mainly of :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "lanthanoid and actinoid metals"
+        },
+        {
+          "identifier": "B",
+          "content": "actinoid and transition metals"
+        },
+        {
+          "identifier": "C",
+          "content": "lanthanoid metals"
+        },
+        {
+          "identifier": "D",
+          "content": "actinoid metals"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Misch metal is an alloy consisting mainly of\nlanthanoid metals."
+    }
+  ]
+}

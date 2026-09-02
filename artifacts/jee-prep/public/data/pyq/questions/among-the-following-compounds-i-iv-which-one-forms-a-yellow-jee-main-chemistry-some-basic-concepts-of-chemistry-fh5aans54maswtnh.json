@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktb4qore",
+      "paperTitle": "JEE Main 2021 (Online) 26th August Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "haloalkanes-and-haloarenes",
+      "chapterGroup": "organic-chemistry",
+      "topic": "haloarenes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "among-the-following-compounds-i-iv-which-one-forms-a-yellow-jee-main-chemistry-some-basic-concepts-of-chemistry-fh5aans54maswtnh",
+      "content": "Among the following compounds I-IV, which one forms a yellow precipitate on reacting sequentially with (i) NaOH (ii) dil. HNO<sub>3</sub> (iii) AgNO<sub>3</sub>?<br><br><picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1ktciamvh/980b6e24-e75b-4ffd-a45a-3ed3320eebf6/0e2f3fd0-1131-11ec-a8f2-7da4f0f15eab/file-1ktciamvi-320w.jpg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1ktciamvh/980b6e24-e75b-4ffd-a45a-3ed3320eebf6/0e2f3fd0-1131-11ec-a8f2-7da4f0f15eab/file-1ktciamvi-500w.jpg\"><source media=\"(max-width: 680px)\" srcset=\"https://imagex.cdn.examgoal.net/1ktciamvh/980b6e24-e75b-4ffd-a45a-3ed3320eebf6/0e2f3fd0-1131-11ec-a8f2-7da4f0f15eab/file-1ktciamvi-680w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/1ktciamvh/980b6e24-e75b-4ffd-a45a-3ed3320eebf6/0e2f3fd0-1131-11ec-a8f2-7da4f0f15eab/file-1ktciamvi.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 26th August Morning Shift Chemistry - Haloalkanes and Haloarenes Question 107 English\"></picture>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "II"
+        },
+        {
+          "identifier": "B",
+          "content": "IV"
+        },
+        {
+          "identifier": "C",
+          "content": "I"
+        },
+        {
+          "identifier": "D",
+          "content": "III"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1ktcictg9/af349615-2f8a-4c6f-a0db-528d982acb04/4ae23090-1131-11ec-a8f2-7da4f0f15eab/file-1ktcictga.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 26th August Morning Shift Chemistry - Haloalkanes and Haloarenes Question 107 English Explanation\"><br>Other compounds halide can't be removed because corresponding C<sup>+</sup> is highly unstable."
+    }
+  ]
+}

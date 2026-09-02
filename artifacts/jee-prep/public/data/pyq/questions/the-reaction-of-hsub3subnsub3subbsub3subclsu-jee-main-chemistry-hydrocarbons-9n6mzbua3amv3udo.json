@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "eHmVE8SCvxX0Dv4LEp7k9k2k5lljc6c",
+      "paperTitle": "JEE Main 2020 (Online) 9th January Evening Slot",
+      "year": 2020,
+      "examDate": "2020-01-09 14:30",
+      "subject": "chemistry",
+      "chapter": "p-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "group-13-elements-boron-family",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-reaction-of-hsub3subnsub3subbsub3subclsu-jee-main-chemistry-hydrocarbons-9n6mzbua3amv3udo",
+      "content": "The reaction of H<sub>3</sub>N<sub>3</sub>B<sub>3</sub>Cl<sub>3</sub> (A) with LiBH<sub>4</sub> in\ntetrahydrofuran gives inorganic benzene (B).\nFurther, the reaction of (A) with (C) leads to\nH<sub>3</sub>N<sub>3</sub>B<sub>3</sub>(Me)<sub>3</sub>. Compounds (B) and (C)\nrespectively, are :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Borazine and MeBr"
+        },
+        {
+          "identifier": "B",
+          "content": "Diborane and MeMgBr"
+        },
+        {
+          "identifier": "C",
+          "content": "Boron nitride and MeBr"
+        },
+        {
+          "identifier": "D",
+          "content": "Borazine and MeMgBr"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "B<sub>3</sub>N<sub>3</sub>H<sub>3</sub>Cl<sub>3</sub>(A) + LiBH<sub>4</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> B<sub>3</sub>N<sub>3</sub>H<sub>6</sub> (B)\n<br><br>B = inorganic\n benzene or Borazine\n<br><br>B<sub>3</sub>N<sub>3</sub>H<sub>3</sub>Cl +\nMeMgBr(C) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> B<sub>3</sub>N<sub>3</sub>H<sub>3</sub>(CH<sub>3</sub>)<sub>3</sub> + 3MgBrCl"
+    }
+  ]
+}

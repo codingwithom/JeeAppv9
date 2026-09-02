@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "CZw8iRqaJAkptjk3dB3rsa0w2w9jx56xgdk",
+      "paperTitle": "JEE Main 2019 (Online) 12th April Morning Slot",
+      "year": 2019,
+      "examDate": "2019-04-12 09:30",
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "hybridization-and-vsepr-theory",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-correct-statement-among-the-following-is--jee-main-chemistry-chemical-bonding-and-molecular-structure-fo1ssquaemnnxulh",
+      "content": "The correct statement among the following is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(SiH<sub>3</sub>)<sub>3</sub>N is planar and more basic than (CH<sub>3</sub>)<sub>3</sub>N"
+        },
+        {
+          "identifier": "B",
+          "content": "(SiH<sub>3</sub>)<sub>3</sub>N is pyramidal and more basic than (CH<sub>3</sub>)<sub>3</sub>N"
+        },
+        {
+          "identifier": "C",
+          "content": "(SiH<sub>3</sub>)<sub>3</sub>N is pyramidal and less basic than (CH<sub>3</sub>)<sub>3</sub>N"
+        },
+        {
+          "identifier": "D",
+          "content": "(SiH<sub>3</sub>)<sub>3</sub>N is planar and less basic than (CH<sub>3</sub>)<sub>3</sub>N"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jf7697gjyfa5c6j/451d5b87-36ec-4b7e-bdb4-7a8697b71b80/d70c62c0-acfc-11e9-a277-6507805b1ccf/file-jf7697gjyfa5c6k-320w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/jf7697gjyfa5c6j/451d5b87-36ec-4b7e-bdb4-7a8697b71b80/d70c62c0-acfc-11e9-a277-6507805b1ccf/file-jf7697gjyfa5c6k-500w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th April Morning Slot Chemistry - Chemical Bonding &amp; Molecular Structure Question 202 English Explanation 1\"></picture>\n\n<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jf7697gjyfaevzo/481a08ba-5a09-487d-8300-c6eddcdeba59/e0a1e340-acfd-11e9-a277-6507805b1ccf/file-jf7697gjyfaevzp-320w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/jf7697gjyfaevzo/481a08ba-5a09-487d-8300-c6eddcdeba59/e0a1e340-acfd-11e9-a277-6507805b1ccf/file-jf7697gjyfaevzp-500w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th April Morning Slot Chemistry - Chemical Bonding &amp; Molecular Structure Question 202 English Explanation 2\"></picture>\n<br>In (CH<sub>3</sub>)<sub>3</sub>N, one lone pair and 3 sigma bond present. So it's shape is pyramidal.\n<br><br>But in (SiH<sub>3</sub>)<sub>3</sub>N, due to backbonding lone pair of N shift to vacant 3d orbital of Si. So now N have only 3 sigma bond and hybridization is sp<sup>2</sup>, that is why it has triangular planar geometry.\n<br><br>As in (SiH<sub>3</sub>)<sub>3</sub>N. nitrogen(N) don't have any lone pair to donate but in (CH<sub>3</sub>)<sub>3</sub>N, lone pair of nitrogen(N) can easily be donated. That is why (CH<sub>3</sub>)<sub>3</sub>N is more basic."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ks1hv0hx",
+      "paperTitle": "JEE Main 2021 (Online) 27th July Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "salt-analysis",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "systematic-analysis-of-cations",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "to-an-aqueous-solution-containing-ions-such-as-alsup3su-jee-main-chemistry-some-basic-concepts-of-chemistry-5jtqqp3cijnbaueu",
+      "content": "To an aqueous solution containing ions such as Al<sup>3+</sup>, Zn<sup>2+</sup>, Ca<sup>2+</sup>, Fe<sup>3+</sup>, Ni<sup>2+</sup>, Ba<sup>2+</sup> and Cu<sup>2+</sup> was added conc. HCl, followed by H<sub>2</sub>S.<br><br>The total number of cations precipitated during this reaction is/are :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "1"
+        },
+        {
+          "identifier": "B",
+          "content": "3"
+        },
+        {
+          "identifier": "C",
+          "content": "4"
+        },
+        {
+          "identifier": "D",
+          "content": "2"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Al<sup>3+</sup> and Fe<sup>3+</sup> sulphides hydrolyse in water.<br><br>Ni<sup>2+</sup> and Zn<sup>2+</sup> require basic medium with H<sub>2</sub>S to form ppt<br><br>Ca<sup>2+</sup> and Ba<sup>2+</sup> sulphides are soluble<br><br>hence, we will receive only CuS ppt."
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "6dIx9zUiYCgIHiDh8wVey",
+      "paperTitle": "JEE Main 2019 (Online) 9th January Evening Slot",
+      "year": 2019,
+      "examDate": "2019-01-09 14:30",
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "crystal-field-theory-cft",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "homoleptic-octahedral-complexes-of-a-metal-ion-m3-with-th-jee-main-chemistry-some-basic-concepts-of-chemistry-anksnnrufi6slttz",
+      "content": "Homoleptic octahedral complexes of a metal ion 'M<sup>3+</sup>' with three monodenate ligands L<sub>1</sub>, L<sub>2</sub> and L<sub>3</sub> adsorb wavelenths in the region of green, blue and red  respectively. The increasing order of the ligands strength is : ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "L<sub>3</sub> &lt; L<sub>1</sub> &lt; L<sub>2</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "L<sub>3</sub> &lt; L<sub>2</sub> &lt; L<sub>1</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "L<sub>1</sub> &lt; L<sub>2</sub> &lt; L<sub>3</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "L<sub>2</sub> &lt; L<sub>1</sub> &lt; L<sub>3</sub>"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Stronger the ligand, absorption of light having lower wavelength is more.\n<br><br>Order of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.027ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.319ex\" height=\"1.597ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 583 706\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D706\" xlink:href=\"#MJX-TEX-I-1D706\"></use></g></g></g></svg></mjx-container> :  Red <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.312ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 778 580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"3E\" xlink:href=\"#MJX-TEX-N-3E\"></use></g></g></g></svg></mjx-container> Green <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.312ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 778 580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"3E\" xlink:href=\"#MJX-TEX-N-3E\"></use></g></g></g></svg></mjx-container> Blue\n\n<br><br>Hence, ligand strength is L<sub>3</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.312ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 778 580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"3C\" xlink:href=\"#MJX-TEX-N-3C\"></use></g></g></g></svg></mjx-container> L<sub>1</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.312ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 778 580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"3C\" xlink:href=\"#MJX-TEX-N-3C\"></use></g></g></g></svg></mjx-container> L<sub>2</sub>"
+    }
+  ]
+}

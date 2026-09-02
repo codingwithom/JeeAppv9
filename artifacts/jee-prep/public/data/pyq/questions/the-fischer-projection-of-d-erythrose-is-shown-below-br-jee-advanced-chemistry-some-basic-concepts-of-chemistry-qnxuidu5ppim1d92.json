@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "g4MF02HDK3pPeqxyHj1kk2a9cw6",
+      "paperTitle": "JEE Advanced 2020 Paper 1 Offline",
+      "year": 2020,
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "isomerism",
+      "type": "mcq",
+      "marks": 3,
+      "negMarks": 1,
+      "permalink": "the-fischer-projection-of-d-erythrose-is-shown-below-br-jee-advanced-chemistry-some-basic-concepts-of-chemistry-qnxuidu5ppim1d92",
+      "content": "The Fischer projection of D-erythrose is shown below :<br><br> <img src=\"https://imagex.cdn.examgoal.net/1ks56w904/4d57ab6c-f1f7-4007-9e4a-c1fd6a8dddfc/c5cbc540-f95e-11eb-896d-4d830e0f8af0/file-1ks56w905.jpeg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2020 Paper 1 Offline Chemistry - Basics of Organic Chemistry Question 36 English 1\"> <br><br>D-erythrose and its isomers are listed as P, Q, R, and S in Column - I. Choose the correct relationship of P, Q, R, and S with D-erythrose from Column - II.\n<br> <picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1ks56y7sd/4531f690-40b7-49ca-9454-23257e93d79f/fc79b9d0-f95e-11eb-a269-21f97bcfdc63/file-1ks56y7se-320w.jpeg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1ks56y7sd/4531f690-40b7-49ca-9454-23257e93d79f/fc79b9d0-f95e-11eb-a269-21f97bcfdc63/file-1ks56y7se-500w.jpeg\"><source media=\"(max-width: 680px)\" srcset=\"https://imagex.cdn.examgoal.net/1ks56y7sd/4531f690-40b7-49ca-9454-23257e93d79f/fc79b9d0-f95e-11eb-a269-21f97bcfdc63/file-1ks56y7se-680w.jpeg\"><source media=\"(max-width: 860px)\" srcset=\"https://imagex.cdn.examgoal.net/1ks56y7sd/4531f690-40b7-49ca-9454-23257e93d79f/fc79b9d0-f95e-11eb-a269-21f97bcfdc63/file-1ks56y7se-860w.jpeg\"><source media=\"(max-width: 1040px)\" srcset=\"https://imagex.cdn.examgoal.net/1ks56y7sd/4531f690-40b7-49ca-9454-23257e93d79f/fc79b9d0-f95e-11eb-a269-21f97bcfdc63/file-1ks56y7se-1040w.jpeg\"><img src=\"https://imagex.cdn.examgoal.net/1ks56y7sd/4531f690-40b7-49ca-9454-23257e93d79f/fc79b9d0-f95e-11eb-a269-21f97bcfdc63/file-1ks56y7se.jpeg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2020 Paper 1 Offline Chemistry - Basics of Organic Chemistry Question 36 English 2\"></picture>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<table>\n<thead>\n  <tr>\n    <th>P</th>\n    <th>Q</th>\n    <th>R</th>\n    <th>S</th>\n  </tr>\n</thead>\n<tbody>\n  <tr>\n    <td>2</td>\n    <td>3</td>\n    <td>2</td>\n    <td>2</td>\n  </tr>\n</tbody>\n</table>"
+        },
+        {
+          "identifier": "B",
+          "content": "<table>\n<thead>\n  <tr>\n    <th>P</th>\n    <th>Q</th>\n    <th>R</th>\n    <th>S</th>\n  </tr>\n</thead>\n<tbody>\n  <tr>\n    <td>3</td>\n    <td>1</td>\n    <td>1</td>\n    <td>2</td>\n  </tr>\n</tbody>\n</table>"
+        },
+        {
+          "identifier": "C",
+          "content": "<table>\n<thead>\n  <tr>\n    <th>P</th>\n    <th>Q</th>\n    <th>R</th>\n    <th>S</th>\n  </tr>\n</thead>\n<tbody>\n  <tr>\n    <td>2</td>\n    <td>1</td>\n    <td>1</td>\n    <td>3</td>\n  </tr>\n</tbody>\n</table>"
+        },
+        {
+          "identifier": "D",
+          "content": "<table>\n<thead>\n  <tr>\n    <th>P</th>\n    <th>Q</th>\n    <th>R</th>\n    <th>S</th>\n  </tr>\n</thead>\n<tbody>\n  <tr>\n    <td>2</td>\n    <td>3</td>\n    <td>3</td>\n    <td>1</td>\n  </tr>\n</tbody>\n</table>"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "First of all, we need to convert wedge-dash formula into Fischer projection formula.<br><br> <picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1ks5732bl/93d58e00-2c08-4429-8274-de9661441345/834c7f10-f95f-11eb-896d-4d830e0f8af0/file-1ks5732bm-320w.jpeg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1ks5732bl/93d58e00-2c08-4429-8274-de9661441345/834c7f10-f95f-11eb-896d-4d830e0f8af0/file-1ks5732bm-500w.jpeg\"><source media=\"(max-width: 680px)\" srcset=\"https://imagex.cdn.examgoal.net/1ks5732bl/93d58e00-2c08-4429-8274-de9661441345/834c7f10-f95f-11eb-896d-4d830e0f8af0/file-1ks5732bm-680w.jpeg\"><source media=\"(max-width: 860px)\" srcset=\"https://imagex.cdn.examgoal.net/1ks5732bl/93d58e00-2c08-4429-8274-de9661441345/834c7f10-f95f-11eb-896d-4d830e0f8af0/file-1ks5732bm-860w.jpeg\"><source media=\"(max-width: 1040px)\" srcset=\"https://imagex.cdn.examgoal.net/1ks5732bl/93d58e00-2c08-4429-8274-de9661441345/834c7f10-f95f-11eb-896d-4d830e0f8af0/file-1ks5732bm-1040w.jpeg\"><img src=\"https://imagex.cdn.examgoal.net/1ks5732bl/93d58e00-2c08-4429-8274-de9661441345/834c7f10-f95f-11eb-896d-4d830e0f8af0/file-1ks5732bm.jpeg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2020 Paper 1 Offline Chemistry - Basics of Organic Chemistry Question 36 English Explanation 1\"></picture> <picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1ks573k7u/bb59c1a6-0397-406a-8ddd-19e6fc882f80/911f9eb0-f95f-11eb-896d-4d830e0f8af0/file-1ks573k7v-320w.jpeg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1ks573k7u/bb59c1a6-0397-406a-8ddd-19e6fc882f80/911f9eb0-f95f-11eb-896d-4d830e0f8af0/file-1ks573k7v-500w.jpeg\"><source media=\"(max-width: 680px)\" srcset=\"https://imagex.cdn.examgoal.net/1ks573k7u/bb59c1a6-0397-406a-8ddd-19e6fc882f80/911f9eb0-f95f-11eb-896d-4d830e0f8af0/file-1ks573k7v-680w.jpeg\"><img src=\"https://imagex.cdn.examgoal.net/1ks573k7u/bb59c1a6-0397-406a-8ddd-19e6fc882f80/911f9eb0-f95f-11eb-896d-4d830e0f8af0/file-1ks573k7v.jpeg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2020 Paper 1 Offline Chemistry - Basics of Organic Chemistry Question 36 English Explanation 2\"></picture> <br><br>Now we can clearly see, that compound P is same as given compound, thus compound P is identical to D-erythrose.<br><br>Compound Q and D-erythrose are not mirror images of one another and are non-superimposable on one another. Thus, they are diastereomers.<br><br>Compound R and D-erythrose are also not mirror images of one another and are non-superimposable on one another. Thus, they are diastereomers.<br><br>Compound S and D-erythrose are chiral molecules. They are mirror images of one another. Furthermore, the molecules are non-superimposable on one another. This means that the molecules cannot be placed on top of one another and give the same molecule. Chiral molecules with one or more stereocenters can be enantiomers.<br><br>Hence, the correct option is (c)."
+    }
+  ]
+}

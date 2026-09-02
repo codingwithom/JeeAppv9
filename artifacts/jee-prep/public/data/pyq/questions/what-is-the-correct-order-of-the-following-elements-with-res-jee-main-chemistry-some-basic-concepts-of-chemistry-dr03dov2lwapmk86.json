@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "X2VwEKJZGNlP1mQDw51klruko33",
+      "paperTitle": "JEE Main 2021 (Online) 24th February Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "properties-of-transition-elements",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "what-is-the-correct-order-of-the-following-elements-with-res-jee-main-chemistry-some-basic-concepts-of-chemistry-dr03dov2lwapmk86",
+      "content": "What is the correct order of the following elements with respect to their density?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Cr &lt; Zn &lt; Co &lt; Cu &lt; Fe"
+        },
+        {
+          "identifier": "B",
+          "content": "Cr &lt; Fe &lt; Co &lt; Cu &lt; Zn"
+        },
+        {
+          "identifier": "C",
+          "content": "Zn &lt; Cr &lt; Fe &lt; Co &lt; Cu"
+        },
+        {
+          "identifier": "D",
+          "content": "Zn &lt; Cu &lt; Co &lt; Fe &lt; Cr"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<p>Generally, due to decrease in metallic radius and increase in atomic mass density increase across the period from left to right.</p>\n<p><table style=\"undefined;table-layout: fixed; width: 308px\">\n<colgroup>\n<col style=\"width: 152px\">\n<col style=\"width: 156px\">\n</colgroup>\n<thead>\n  <tr>\n    <th>Metal</th>\n    <th>Density <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.566ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"7.931ex\" height=\"2.451ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -833.2 3505.6 1083.2\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"mi\" transform=\"translate(389,0)\"><use data-c=\"1D454\" xlink:href=\"#MJX-TEX-I-1D454\"></use></g><g data-mml-node=\"mo\" transform=\"translate(869,0)\"><use data-c=\"2F\" xlink:href=\"#MJX-TEX-N-2F\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1369,0)\"><use data-c=\"1D450\" xlink:href=\"#MJX-TEX-I-1D450\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1802,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"1D45A\" xlink:href=\"#MJX-TEX-I-1D45A\"></use></g><g data-mml-node=\"mn\" transform=\"translate(911,363) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(3116.6,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g></g></svg></mjx-container></th>\n  </tr>\n</thead>\n<tbody>\n  <tr>\n    <td>Zn</td>\n    <td>7.13</td>\n  </tr>\n  <tr>\n    <td>Cr</td>\n    <td>7.19</td>\n  </tr>\n  <tr>\n    <td>Fe</td>\n    <td>7.8</td>\n  </tr>\n  <tr>\n    <td>Co</td>\n    <td>8.7</td>\n  </tr>\n  <tr>\n    <td>Cu</td>\n    <td>8.9</td>\n  </tr>\n</tbody>\n</table></p>\n<p>Correct order is Cu &gt; Co &gt; Fe &gt; Cr &gt; Zn.</p>"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "6vtDB7CTzoMoJOL3oO3rsa0w2w9jx0uhb35",
+      "paperTitle": "JEE Main 2019 (Online) 10th April Evening Slot",
+      "year": 2019,
+      "examDate": "2019-04-10 14:30",
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "carbohydrates",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "number-of-stereo-centers-present-in-linear-and-cyclic-struct-jee-main-chemistry-carbohydrates-amino-acids-and-polymers-uimjlwucbyayijkd",
+      "content": "Number of stereo centers present in linear and cyclic structures of glucose are respectively :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "4 &amp; 4\n"
+        },
+        {
+          "identifier": "B",
+          "content": "4 &amp; 5"
+        },
+        {
+          "identifier": "C",
+          "content": "5 &amp; 4"
+        },
+        {
+          "identifier": "D",
+          "content": "5 &amp; 5"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jf7697gjyigrb8x/23c79a96-de82-469e-ac6e-7f3212aed22c/0ad9d210-aebd-11e9-a277-6507805b1ccf/file-jf7697gjyigrb8y-320w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/jf7697gjyigrb8x/23c79a96-de82-469e-ac6e-7f3212aed22c/0ad9d210-aebd-11e9-a277-6507805b1ccf/file-jf7697gjyigrb8y-500w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 10th April Evening Slot Chemistry - Biomolecules Question 155 English Explanation 1\"></picture>\n<br>In this linear structure 4 chiral carbons present.\n<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jf7697gjyihbr2e/6829d688-6ec6-41a0-aec9-e4b91f4e42ea/4340d660-aebf-11e9-a277-6507805b1ccf/file-jf7697gjyihbr2f-320w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/jf7697gjyihbr2e/6829d688-6ec6-41a0-aec9-e4b91f4e42ea/4340d660-aebf-11e9-a277-6507805b1ccf/file-jf7697gjyihbr2f-500w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 10th April Evening Slot Chemistry - Biomolecules Question 155 English Explanation 2\"></picture>\n<br>In this cyclic structure 5 chiral carbons present."
+    }
+  ]
+}

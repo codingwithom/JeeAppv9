@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "qZLig152B79JwxKeDl8G3",
+      "paperTitle": "JEE Main 2019 (Online) 8th April Evening Slot",
+      "year": 2019,
+      "examDate": "2019-04-08 14:30",
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "application-of-coordination-compound-and-organometallic-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-compound-that-inhibits-the-growth-of-tumors-is-jee-main-chemistry-some-basic-concepts-of-chemistry-jm2xh8mxzjva4ged",
+      "content": "The compound that inhibits the growth of\ntumors is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "cis-[Pd(Cl)<sub>2</sub>(NH<sub>3</sub>)<sub>2</sub>]"
+        },
+        {
+          "identifier": "B",
+          "content": "trans-[Pd(Cl)<sub>2</sub>(NH<sub>3</sub>)<sub>2</sub>]"
+        },
+        {
+          "identifier": "C",
+          "content": "cis-[Pt(Cl)<sub>2</sub>(NH<sub>3</sub>)<sub>2</sub>]"
+        },
+        {
+          "identifier": "D",
+          "content": "trans-[Pt(Cl)<sub>2</sub>(NH<sub>3</sub>)<sub>2</sub>]"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Cis-platin or cis-[Pt(Cl)<sub>2</sub>(NH<sub>3</sub>)<sub>2</sub>] is used as an anti-cancer drug."
+    }
+  ]
+}

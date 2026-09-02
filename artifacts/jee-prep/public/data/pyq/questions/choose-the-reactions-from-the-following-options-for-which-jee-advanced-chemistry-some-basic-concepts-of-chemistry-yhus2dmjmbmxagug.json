@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "A8g0p6witsWypgXMEh1kjbpkjk7",
+      "paperTitle": "JEE Advanced 2019 Paper 1 Offline",
+      "year": 2019,
+      "subject": "chemistry",
+      "chapter": "thermodynamics",
+      "chapterGroup": "physical-chemistry",
+      "topic": "reactions-related-to-enthalpies-and-hesss-law",
+      "type": "mcqm",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "choose-the-reactions-from-the-following-options-for-which-jee-advanced-chemistry-some-basic-concepts-of-chemistry-yhus2dmjmbmxagug",
+      "content": "Choose the reaction(s) from the following options, for which the standard enthalpy of reaction of equal to the standard enthalpy of formation.",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "2C(g) + 3H<sub>2</sub>(g) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> C<sub>2</sub>H<sub>6</sub>(g)"
+        },
+        {
+          "identifier": "B",
+          "content": "2H<sub>2</sub>(g) + O<sub>2</sub>(g) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> 2H<sub>2</sub>O(l)"
+        },
+        {
+          "identifier": "C",
+          "content": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.781ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.795ex\" height=\"2.736ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864.2 793.6 1209.2\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mn\" transform=\"translate(220,394) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g><g data-mml-node=\"mn\" transform=\"translate(220,-345) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><rect width=\"553.6\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container>O<sub>2</sub>(g) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> O<sub>3</sub>(g)"
+        },
+        {
+          "identifier": "D",
+          "content": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.816ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.795ex\" height=\"2.773ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864.9 793.6 1225.5\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mn\" transform=\"translate(220,394) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mn\" transform=\"translate(220,-345) scale(0.707)\"><use data-c=\"38\" xlink:href=\"#MJX-TEX-N-38\"></use></g><rect width=\"553.6\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container>S<sub>8</sub>(s) + O<sub>2</sub>(g) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> SO<sub>2</sub>(g)"
+        }
+      ],
+      "correct_options": [
+        "C",
+        "D"
+      ],
+      "explanation": "The standard enthalpy of formation is defined as standard enthalpy change for formation of 1 mole of a substance from its elements, present in their most stable state of aggregation.<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.781ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.795ex\" height=\"2.736ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864.2 793.6 1209.2\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mn\" transform=\"translate(220,394) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g><g data-mml-node=\"mn\" transform=\"translate(220,-345) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><rect width=\"553.6\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container>O<sub>2</sub>(g) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> O<sub>3</sub>(g);<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.816ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.795ex\" height=\"2.773ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864.9 793.6 1225.5\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mn\" transform=\"translate(220,394) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mn\" transform=\"translate(220,-345) scale(0.707)\"><use data-c=\"38\" xlink:href=\"#MJX-TEX-N-38\"></use></g><rect width=\"553.6\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container>S<sub>8</sub>(s) + O<sub>2</sub>(g) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> SO<sub>2</sub>(g)<br><br>In the above two reactions standard enthalpy of reaction is equal to standard enthalpy of formation."
+    }
+  ]
+}

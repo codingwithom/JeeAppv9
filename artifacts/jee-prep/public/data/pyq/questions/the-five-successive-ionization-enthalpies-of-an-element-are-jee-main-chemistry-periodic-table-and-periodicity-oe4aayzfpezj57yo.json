@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "287GCn5IPHqKhcuBwBjgy2xukf3ipq51",
+      "paperTitle": "JEE Main 2020 (Online) 3rd September Evening Slot",
+      "year": 2020,
+      "examDate": "2020-09-03 15:00",
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "ionization-energy",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-five-successive-ionization-enthalpies-of-an-element-are-jee-main-chemistry-periodic-table-and-periodicity-oe4aayzfpezj57yo",
+      "content": "The five successive ionization enthalpies of an\nelement are 800, 2427, 3658, 25024 and 32824\nkJ mol<sup>–1</sup>. The number of valence electrons in\nthe element is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "2"
+        },
+        {
+          "identifier": "B",
+          "content": "3"
+        },
+        {
+          "identifier": "C",
+          "content": "4"
+        },
+        {
+          "identifier": "D",
+          "content": "5"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "There is a sudden jump after 3<sup>rd</sup> I.E. due to\nattainment of noble gas configuration.\n<br><br>So, the number of valence electrons in this\nelement are 3."
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "Q7VKeI1XWxrg8kUF8NDHp",
+      "paperTitle": "JEE Main 2016 (Online) 9th April Morning Slot",
+      "year": 2016,
+      "examDate": "2016-04-09 09:30",
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "warners-theory-and-valence-bond-theory",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-one-of-the-following-complexes-will-consume-more-equiv-jee-main-physics-units-and-measurements-4f9sf1udaxwoimja",
+      "content": "Which one of the following complexes will consume more equivalents of aqueous\nsolution of Ag(NO<sub>3</sub>)?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Na<sub>3</sub>[CrCl<sub>6</sub>]\n"
+        },
+        {
+          "identifier": "B",
+          "content": "[Cr(H<sub>2</sub>O)<sub>5</sub>Cl]Cl<sub>2</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "[Cr(H<sub>2</sub>O)<sub>6</sub>]Cl<sub>3</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "Na<sub>2</sub>[CrCl<sub>5</sub>(H<sub>2</sub>O)]"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<p>[Cr(H<sub>2</sub>O)<sub>6</sub>]Cl<sub>3</sub> has the highest primary valency among the given complexes, that is, three, therefore, it will consume three moles of AgNO<sub>3</sub> and precipitate three moles of AgCl.</p>\n<p>[Cr(H<sub>2</sub>O)<sub>6</sub>]Cl<sub>3</sub> + 3AgNo<sub>3</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> 3AgCl + [Cr(H<sub>2</sub>O)<sub>6</sub>](NO)<sub>3</sub></p>"
+    }
+  ]
+}

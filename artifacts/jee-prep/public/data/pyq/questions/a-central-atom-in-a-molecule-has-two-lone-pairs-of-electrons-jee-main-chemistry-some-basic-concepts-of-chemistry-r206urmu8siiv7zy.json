@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "eAwLd70abt7Dh4fFYm1kmj7ywbn",
+      "paperTitle": "JEE Main 2021 (Online) 17th March Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "hybridization-and-vsepr-theory",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "a-central-atom-in-a-molecule-has-two-lone-pairs-of-electrons-jee-main-chemistry-some-basic-concepts-of-chemistry-r206urmu8siiv7zy",
+      "content": "A central atom in a molecule has two lone pairs of electrons and forms three single bonds. The shape of this molecule is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "trigonal pyramidal"
+        },
+        {
+          "identifier": "B",
+          "content": "T-shaped"
+        },
+        {
+          "identifier": "C",
+          "content": "see-saw"
+        },
+        {
+          "identifier": "D",
+          "content": "planar triangular"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1kn1yaji9/40fc1a37-a9d8-41b4-af4d-c72082b69f95/b23b9b10-9499-11eb-a011-9b3eb6f542eb/file-1kn1yajia.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 17th March Morning Shift Chemistry - Chemical Bonding &amp; Molecular Structure Question 174 English Explanation\"><br>\nsp<sup>3</sup>d hybridised<br>\nT-shaped"
+    }
+  ]
+}

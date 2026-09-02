@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "uBVPt3jTNxlbyRzAXz6l4",
+      "paperTitle": "JEE Main 2019 (Online) 9th April Morning Slot",
+      "year": 2019,
+      "examDate": "2019-04-09 09:30",
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "crystal-field-theory-cft",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-degenerate-orbitals-of-crh2o63-are-jee-main-chemistry-some-basic-concepts-of-chemistry-b9zdpiqjrxbsb3di",
+      "content": "The degenerate orbitals of [Cr(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> are :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "d<sub>x<sup>2</sup></sub> and d<sub>xz</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "d<sub>xz</sub> and d<sub>yz</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "d<sub>yz</sub> and d<sub>z<sup>2</sup></sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "d<sub>x<sup>2</sup> - y<sup>2</sup></sub> and d<sub>xy</sub>"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Degenerate orbitals means orbitals of equal energy.\n<br><br>Cr<sup>3+</sup> forms an\noctahedral inner orbitals complex and its d orbital get splitted into two differnt energy level.\n<br><br>The two set of degenerate orbitals are \n<br><br>(1) d<sub>xy</sub>, d<sub>yz</sub> and\nd<sub>xz</sub>\n<br><br>(2) d<sub>x<sup>2</sup> - y<sup>2</sup></sub> and d<sub>z<sup>2</sup></sub>"
+    }
+  ]
+}

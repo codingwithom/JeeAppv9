@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "SQdlZGDAX2v9SsT2dj0Rf",
+      "paperTitle": "JEE Main 2019 (Online) 11th January Morning Slot",
+      "year": 2019,
+      "examDate": "2019-01-11 09:30",
+      "subject": "mathematics",
+      "chapter": "matrices-and-determinants",
+      "chapterGroup": "algebra",
+      "topic": "solutions-of-system-of-linear-equations-in-two-or-three-variables-using-determinants-and-matrices",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "if-the-system-of-linear-equations-2x-2y-3z-a-3x-y-jee-main-mathematics-trigonometric-functions-and-equations-mkpri6g25nayagfb",
+      "content": "If the system of linear equations\n<br>2x + 2y + 3z = a\n<br>3x – y + 5z = b\n<br>x – 3y + 2z = c\n<br>where a, b, c are non zero real numbers, has more one solution, then : ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "b – c – a = 0"
+        },
+        {
+          "identifier": "B",
+          "content": "a + b + c = 0"
+        },
+        {
+          "identifier": "C",
+          "content": "b – c + a = 0"
+        },
+        {
+          "identifier": "D",
+          "content": "b + c – a = 0"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "P<sub>1</sub> : 2x + 2y + 3z = a\n<br><br>P<sub>2</sub> : 3x <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container> y + 5z = b\n<br><br>P<sub>3</sub> : x <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container> 3y + 2z = c\n<br><br>We find\n<br><br>P<sub>1</sub> + P<sub>3</sub> = P<sub>2</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> a + c = b\n"
+    }
+  ]
+}

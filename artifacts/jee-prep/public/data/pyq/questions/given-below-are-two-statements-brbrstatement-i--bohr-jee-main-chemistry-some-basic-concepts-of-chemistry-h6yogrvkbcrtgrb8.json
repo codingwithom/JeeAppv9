@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "lv5Bovq3AsJnnksFw01kmm1a72t",
+      "paperTitle": "JEE Main 2021 (Online) 18th March Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "structure-of-atom",
+      "chapterGroup": "physical-chemistry",
+      "topic": "bohrs-model-for-hydrogen-atom",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "given-below-are-two-statements-brbrstatement-i--bohr-jee-main-chemistry-some-basic-concepts-of-chemistry-h6yogrvkbcrtgrb8",
+      "content": "Given below are two statements :<br><br>Statement I : Bohr's theory accounts for the stability and line spectrum of Li<sup>+</sup> ion.<br><br>Statement II : Bohr's theory was unable to explain the splitting of spectral lines in the presence of a magnetic field.<br><br>In the light of the above statements, choose the most appropriate answer from the options given below :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Statement I is false but statement II is true."
+        },
+        {
+          "identifier": "B",
+          "content": "Both statement I and statement II are true."
+        },
+        {
+          "identifier": "C",
+          "content": "Statement I is true but statement II is false."
+        },
+        {
+          "identifier": "D",
+          "content": "Both statement I and statement II are false."
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Bohr’s theory is applicable for unielectronic species only\nLi<sup>+</sup> has two electrons.<br><br>\nBohr’s theory could not explain the splitting of\nspectral lines in the presence of external magnetic\nfield (Zeeman effect)<br><br>\n<b>Statement I</b> – false<br><br>\n<b>Statement II</b> – true"
+    }
+  ]
+}

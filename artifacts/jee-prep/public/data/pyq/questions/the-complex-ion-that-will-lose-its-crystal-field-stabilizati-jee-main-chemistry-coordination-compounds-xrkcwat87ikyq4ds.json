@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "nFoa49GsjG2yyQYcOj3rsa0w2w9jx54ur5b",
+      "paperTitle": "JEE Main 2019 (Online) 12th April Morning Slot",
+      "year": 2019,
+      "examDate": "2019-04-12 09:30",
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "crystal-field-theory-cft",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-complex-ion-that-will-lose-its-crystal-field-stabilizati-jee-main-chemistry-coordination-compounds-xrkcwat87ikyq4ds",
+      "content": "The complex ion that will lose its crystal field stabilization energy upon oxidation of its metal to +3 state is :\n<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jf7697gjy5moung/54cfcd6c-ae27-4a1b-8a26-8249d3cffe49/0cbecdd0-a7ae-11e9-a277-6507805b1ccf/file-jf7697gjy5mounh-320w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/jf7697gjy5moung/54cfcd6c-ae27-4a1b-8a26-8249d3cffe49/0cbecdd0-a7ae-11e9-a277-6507805b1ccf/file-jf7697gjy5mounh-500w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th April Morning Slot Chemistry - Coordination Compounds Question 280 English\"></picture>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "[Fe(phen)<sub>3</sub>]<sup>2+</sup>"
+        },
+        {
+          "identifier": "B",
+          "content": "[Zn(phen)<sub>3</sub>]<sup>2+</sup>"
+        },
+        {
+          "identifier": "C",
+          "content": "[Co(phen)<sub>3</sub>]<sup>2+</sup>"
+        },
+        {
+          "identifier": "D",
+          "content": "[Ni(phen)<sub>3</sub>]<sup>2+</sup>"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "[Fe(phen)<sub>3</sub>]<sup>2+</sup> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> [Fe(phen)<sub>3</sub>]<sup>3+</sup>\n<br><br>Here for Fe<sup>+2</sup>(3d<sup>6</sup>) :\n<br><br>CFSE = (-0.4 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 4 + 0.6 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 2)<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.885ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 833 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></svg></mjx-container><sub>0</sub>\n<br><br>           = -0.4<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.885ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 833 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></svg></mjx-container><sub>0</sub>\n<br><br>for Fe<sup>+3</sup>(3d<sup>5</sup>) :\n<br><br>CFSE = (-0.4 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 3 + 0.6 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 2)<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.885ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 833 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></svg></mjx-container><sub>0</sub>\n<br><br>           = 0\n<br><br>Here crystal field stabilization energy(CFSE) decreses."
+    }
+  ]
+}

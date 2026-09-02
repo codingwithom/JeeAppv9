@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "PGLMsl7rJFTER4ZNpx1klre2fzp",
+      "paperTitle": "JEE Main 2021 (Online) 24th February Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "hybridization-and-vsepr-theory",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-are-isostructural-pairs-brbr-a-jee-main-chemistry-some-basic-concepts-of-chemistry-2wpjsxu2td1cruji",
+      "content": "Which of the following are isostructural pairs ?<br><br>\nA. <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.69ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.418ex\" height=\"2.687ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -882.5 2394.7 1187.6\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D446\" xlink:href=\"#MJX-TEX-I-1D446\"></use></g><g data-mml-node=\"msubsup\" transform=\"translate(645,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(796,411.6) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(796,-305.1) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g></g></svg></mjx-container> and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.69ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"6.698ex\" height=\"2.687ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -882.5 2960.7 1187.6\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mi\" transform=\"translate(760,0)\"><use data-c=\"1D45F\" xlink:href=\"#MJX-TEX-I-1D45F\"></use></g><g data-mml-node=\"msubsup\" transform=\"translate(1211,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(796,411.6) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(796,-305.1) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g></g></svg></mjx-container><br><br>\nB. SiCl<sub>4</sub>, and TiCl<sub>4</sub><br><br>\nC. NH<sub>3</sub> and NO<sub>3</sub><sup>-</sup><br><br>\nD. BCl<sub>3</sub> and BrCl<sub>3</sub>\n",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "B and C only"
+        },
+        {
+          "identifier": "B",
+          "content": "C and D only"
+        },
+        {
+          "identifier": "C",
+          "content": "A and B only"
+        },
+        {
+          "identifier": "D",
+          "content": "A and C only"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<p>Isostructural compounds are those compounds which have same structure as well as same hybridisation.\n</p>\n<p>Formula for find hybridisation : H = (Lone pair + Sigma bond\n + coordinate bond )</p>\n<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1kxfpnkhi/1072f9be-7404-4d11-82c2-6523275bd44e/0d3a0160-6225-11ec-a078-91dc14c283f1/file-1kxfpnkhj.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1kxfpnkhi/1072f9be-7404-4d11-82c2-6523275bd44e/0d3a0160-6225-11ec-a078-91dc14c283f1/file-1kxfpnkhj.png\" loading=\"lazy\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;max-height: 60vh\" alt=\"JEE Main 2021 (Online) 24th February Morning Shift Chemistry - Chemical Bonding &amp; Molecular Structure Question 183 English Explanation 1\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1kxfpnkhi/1072f9be-7404-4d11-82c2-6523275bd44e/0d3a0160-6225-11ec-a078-91dc14c283f1/file-1kxfpnkhj.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1kxfpnkhi/1072f9be-7404-4d11-82c2-6523275bd44e/0d3a0160-6225-11ec-a078-91dc14c283f1/file-1kxfpnkhj.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1kxfpnkhi/1072f9be-7404-4d11-82c2-6523275bd44e/0d3a0160-6225-11ec-a078-91dc14c283f1/file-1kxfpnkhj.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1kxfpnkhi/1072f9be-7404-4d11-82c2-6523275bd44e/0d3a0160-6225-11ec-a078-91dc14c283f1/file-1kxfpnkhj.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1kxfpnkhi/1072f9be-7404-4d11-82c2-6523275bd44e/0d3a0160-6225-11ec-a078-91dc14c283f1/file-1kxfpnkhj.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1kxfpnkhi/1072f9be-7404-4d11-82c2-6523275bd44e/0d3a0160-6225-11ec-a078-91dc14c283f1/file-1kxfpnkhj.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">\n<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1kxfppb7y/69ce7295-bdf8-45f4-b366-0455b3223f1e/3db029f0-6225-11ec-886b-c5cce0aa1086/file-1kxfppb7z.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1kxfppb7y/69ce7295-bdf8-45f4-b366-0455b3223f1e/3db029f0-6225-11ec-886b-c5cce0aa1086/file-1kxfppb7z.png\" loading=\"lazy\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;max-height: 60vh\" alt=\"JEE Main 2021 (Online) 24th February Morning Shift Chemistry - Chemical Bonding &amp; Molecular Structure Question 183 English Explanation 2\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1kxfppb7y/69ce7295-bdf8-45f4-b366-0455b3223f1e/3db029f0-6225-11ec-886b-c5cce0aa1086/file-1kxfppb7z.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1kxfppb7y/69ce7295-bdf8-45f4-b366-0455b3223f1e/3db029f0-6225-11ec-886b-c5cce0aa1086/file-1kxfppb7z.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1kxfppb7y/69ce7295-bdf8-45f4-b366-0455b3223f1e/3db029f0-6225-11ec-886b-c5cce0aa1086/file-1kxfppb7z.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1kxfppb7y/69ce7295-bdf8-45f4-b366-0455b3223f1e/3db029f0-6225-11ec-886b-c5cce0aa1086/file-1kxfppb7z.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1kxfppb7y/69ce7295-bdf8-45f4-b366-0455b3223f1e/3db029f0-6225-11ec-886b-c5cce0aa1086/file-1kxfppb7z.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1kxfppb7y/69ce7295-bdf8-45f4-b366-0455b3223f1e/3db029f0-6225-11ec-886b-c5cce0aa1086/file-1kxfppb7z.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">\nIf number of sigma bond (<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.294ex\" height=\"1ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -431 572 442\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D70E\" xlink:href=\"#MJX-TEX-I-1D70E\"></use></g></g></g></svg></mjx-container>), co-ordinate bond and lone pair are same for given pairs, they are isostructural."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "3peIu40D9LGkXhBsHn1kmlmzdy7",
+      "paperTitle": "JEE Main 2021 (Online) 18th March Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "isomerism",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "compound-with-molecular-formula-csub3subhsub6subo-jee-main-chemistry-some-basic-concepts-of-chemistry-aglvnasy7fuysdxh",
+      "content": "Compound with molecular formula C<sub>3</sub>H<sub>6</sub>O can show :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Positional isomerism"
+        },
+        {
+          "identifier": "B",
+          "content": "Both positional isomerism and metamerism"
+        },
+        {
+          "identifier": "C",
+          "content": "Metamerism"
+        },
+        {
+          "identifier": "D",
+          "content": "Functional group isomerism"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "C<sub>3</sub>H<sub>6</sub>O (degree of unsaturation = 1)<br><br>\n<img src=\"https://imagex.cdn.examgoal.net/1kmuyqznv/e74d8b4b-ea46-4740-94e3-6354b5881e28/ff1cfdb0-90c1-11eb-819c-e5060a72f12b/file-1kmuyqznw.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 18th March Morning Shift Chemistry - Basics of Organic Chemistry Question 194 English Explanation\"><br>Functional group isomerism."
+    }
+  ]
+}

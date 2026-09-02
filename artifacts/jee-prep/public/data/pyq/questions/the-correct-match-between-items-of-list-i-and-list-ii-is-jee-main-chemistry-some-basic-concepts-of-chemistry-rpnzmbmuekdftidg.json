@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "FltkfgWFfsS8fciFtw8HF",
+      "paperTitle": "JEE Main 2018 (Online) 15th April Morning Slot",
+      "year": 2018,
+      "examDate": "2018-04-15 09:30",
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "purification-of-organic-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-correct-match-between-items-of-list-i-and-list-ii-is-jee-main-chemistry-some-basic-concepts-of-chemistry-rpnzmbmuekdftidg",
+      "content": "The correct match between items of <b>List-I</b> and <b>List-II</b> is :\n<br><br>\n<table class=\"tg\">\n  <tbody><tr>\n    <th class=\"tg-p7ly\" colspan=\"2\">List - I</th>\n    <th class=\"tg-p7ly\" colspan=\"2\">List - II</th>\n  </tr>\n  <tr>\n    <td class=\"tg-p7ly\">(A)</td>\n    <td class=\"tg-13k7\">Coloured impurity</td>\n    <td class=\"tg-p7ly\">(P)</td>\n    <td class=\"tg-13k7\">Steam distilation</td>\n  </tr>\n  <tr>\n    <td class=\"tg-p7ly\">(B)</td>\n    <td class=\"tg-13k7\">Mixture of o-nitrophenol <br>and p-nitrophenol</td>\n    <td class=\"tg-p7ly\">(Q)</td>\n    <td class=\"tg-13k7\">Fractional distilation</td>\n  </tr>\n  <tr>\n    <td class=\"tg-p7ly\">(C)</td>\n    <td class=\"tg-13k7\">Crude Naphtha </td>\n    <td class=\"tg-p7ly\">(R)</td>\n    <td class=\"tg-13k7\">Charcoal treatment</td>\n  </tr>\n  <tr>\n    <td class=\"tg-p7ly\">(d)</td>\n    <td class=\"tg-13k7\">Mixture of glycerol <br>and sugars</td>\n    <td class=\"tg-p7ly\">(S)</td>\n    <td class=\"tg-13k7\">Distillation under <br>reduced pressure</td>\n  </tr>\n</tbody></table>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(A)-(R), (B)-(S), (C)-(P), (D)-(Q)"
+        },
+        {
+          "identifier": "B",
+          "content": "(A)-(R), (B)-(P), (C)-(S), (D)-(Q)"
+        },
+        {
+          "identifier": "C",
+          "content": "(A)-(R), (B)-(P), (C)-(Q), (D)-(S)"
+        },
+        {
+          "identifier": "D",
+          "content": "(A)-(P), (B)-(S), (C)-(R), (D)-(Q)"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "(a) Charcoal treatment removes coloured impurity through adsorption.\n<br><br>(b) Steam distillation separates the mixture of o-nitrophenol and p-nitrophenol. The o-nitrophenol is\nsteam volatile (due to intramolecular hydrogen bonding), and the para isomer is not volatile.\n<br><br>(c) Fractional distillation separates crude naphtha. Naphtha is a flammable liquid hydrocarbon\nmixture.\n<br><br>(d) Distillation under reduced pressure separates mixture of glycerol and sugars. Vacuum distillation\nlowers the boiling point and prevents decomposition.\n"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1lh28w6g2",
+      "paperTitle": "JEE Main 2023 (Online) 6th April Morning Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "proteins-and-enzymes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pmatch-list-i-with-list-iip-pstyle-typetextcss-jee-main-chemistry-some-basic-concepts-of-chemistry-wfun2jvjddwi623p",
+      "content": "<p>Match List I with List II</p>\n<p>\n<table class=\"tg\" style=\"undefined;table-layout: fixed; width: 616px\">\n<colgroup>\n<col style=\"width: 46px\">\n<col style=\"width: 258px\">\n<col style=\"width: 48px\">\n<col style=\"width: 264px\">\n</colgroup>\n<thead>\n  <tr>\n    <th class=\"tg-7btt\"></th>\n    <th class=\"tg-7btt\">LIST I <br>Enzymatic reaction</th>\n    <th class=\"tg-7btt\"></th>\n    <th class=\"tg-7btt\">LIST II <br>Enzyme</th>\n  </tr>\n</thead>\n<tbody>\n  <tr>\n    <td class=\"tg-c3ow\">A.</td>\n    <td class=\"tg-0pky\">Sucrose <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> Glocuse and Fructose</td>\n    <td class=\"tg-c3ow\">I.</td>\n    <td class=\"tg-0pky\">Zymase</td>\n  </tr>\n  <tr>\n    <td class=\"tg-c3ow\">B.</td>\n    <td class=\"tg-0pky\">Glucose <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> ethyl alcohol and CO<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"0.988ex\" height=\"1.065ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -320.9 436.6 470.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"></g><g data-mml-node=\"mn\" transform=\"translate(33,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></svg></mjx-container></td>\n    <td class=\"tg-c3ow\">II.</td>\n    <td class=\"tg-0pky\">Pepsin</td>\n  </tr>\n  <tr>\n    <td class=\"tg-c3ow\">C.</td>\n    <td class=\"tg-0pky\">Starch <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> Maltose</td>\n    <td class=\"tg-c3ow\">III.</td>\n    <td class=\"tg-0pky\">Invertase</td>\n  </tr>\n  <tr>\n    <td class=\"tg-c3ow\">D.</td>\n    <td class=\"tg-0pky\">Proteins <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> Amino acids</td>\n    <td class=\"tg-c3ow\">IV.</td>\n    <td class=\"tg-0pky\">Diastase</td>\n  </tr>\n</tbody>\n</table></p>\n<p>Choose the correct answer from the options given below:</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "A-III, B-I, C-II, D-IV"
+        },
+        {
+          "identifier": "B",
+          "content": "A-III, B-I, C-IV, D-II"
+        },
+        {
+          "identifier": "C",
+          "content": "A-I, B-IV, C-III, D-II"
+        },
+        {
+          "identifier": "D",
+          "content": "A-I, B-II, C-IV, D-III"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<p>Let&#39;s match the enzymes with the corresponding reactions:</p>\n<ul>\n<li>The enzyme that catalyzes the hydrolysis of sucrose to glucose and fructose is invertase. So, A matches with III.</li><br/>\n<li>The enzyme that catalyzes the conversion of glucose to ethyl alcohol and CO(_2) (a step in fermentation) is zymase. So, B matches with I.</li><br/>\n<li>The enzyme that catalyzes the conversion of starch to maltose is diastase. So, C matches with IV.</li><br/>\n<li>The enzyme that breaks down proteins into amino acids is pepsin. So, D matches with II.</li>\n</ul>\n<p>So, the correct option is:</p>\n<p>Option B\nA-III, B-I, C-IV, D-II</p>\n"
+    }
+  ]
+}

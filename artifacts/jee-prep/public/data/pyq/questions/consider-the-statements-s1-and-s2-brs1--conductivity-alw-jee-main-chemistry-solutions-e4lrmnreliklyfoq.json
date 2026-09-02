@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "QiJQ3TTC2PU4GT8FGk3rsa0w2w9jwv8740b",
+      "paperTitle": "JEE Main 2019 (Online) 10th April Morning Slot",
+      "year": 2019,
+      "examDate": "2019-04-10 09:30",
+      "subject": "chemistry",
+      "chapter": "electrochemistry",
+      "chapterGroup": "physical-chemistry",
+      "topic": "conductance-and-electrolysis",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "consider-the-statements-s1-and-s2-brs1--conductivity-alw-jee-main-chemistry-solutions-e4lrmnreliklyfoq",
+      "content": "Consider the statements S1 and S2\n<br><br/>S1 : Conductivity always increases with decrease in the concentration of electrolyte.\n<br><br/>S2 : Molar conductivity always increases with decrease in the concentration of electrolyte.\n<br><br/>The correct option among the following is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Both S1 and S2 are wrong"
+        },
+        {
+          "identifier": "B",
+          "content": "S1 is correct and S2 is wrong"
+        },
+        {
+          "identifier": "C",
+          "content": "Both S1 and S2 are correct"
+        },
+        {
+          "identifier": "D",
+          "content": "S1 is wrong and S2 is correct "
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "We know conductivity (k) = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.816ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.253ex\" height=\"2.835ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -892.5 995.8 1253.1\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mi\" transform=\"translate(220,394) scale(0.707)\"><use data-c=\"1D43A\" xlink:href=\"#MJX-TEX-I-1D43A\"></use></g><g data-mml-node=\"mi\" transform=\"translate(226,-345) scale(0.707)\"><use data-c=\"1D449\" xlink:href=\"#MJX-TEX-I-1D449\"></use></g><rect width=\"755.8\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container>\n<br><br>V = volume\n<br><br>When concentration decreases volume increases and when volume increases then conductivity (k) decreases.\n<br><br>So, we can say S1 is incorrect.\n<br><br>We know that,\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.798ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"7.757ex\" height=\"2.8ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -884.7 3428.8 1237.5\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D706\" xlink:href=\"#MJX-TEX-I-1D706\"></use></g><g data-mml-node=\"mi\" transform=\"translate(616,-150) scale(0.707)\"><use data-c=\"1D45A\" xlink:href=\"#MJX-TEX-I-1D45A\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(1564.6,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2620.4,0)\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mi\" transform=\"translate(220,394) scale(0.707)\"><use data-c=\"1D458\" xlink:href=\"#MJX-TEX-I-1D458\"></use></g><g data-mml-node=\"mi\" transform=\"translate(251.1,-345) scale(0.707)\"><use data-c=\"1D450\" xlink:href=\"#MJX-TEX-I-1D450\"></use></g><rect width=\"568.4\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container>\n<br><br>where\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.027ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.319ex\" height=\"1.597ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 583 706\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D706\" xlink:href=\"#MJX-TEX-I-1D706\"></use></g></g></g></svg></mjx-container><sub>m</sub> = molar conductivity\n<br>k = conductivity\n<br>c = concentration\n<br><br>So, when concentration decreases molar conductivity increases.\n<br><br>So, we can say S2 is correct."
+    }
+  ]
+}

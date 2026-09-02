@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l54yldjx",
+      "paperTitle": "JEE Main 2022 (Online) 29th June Evening Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "p-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "group-16-elements-oxygen-family",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "psulphur-dioxide-is-one-of-the-components-of-polluted-air-jee-main-chemistry-some-basic-concepts-of-chemistry-szxjanigzixmtejy",
+      "content": "<p>Sulphur dioxide is one of the components of polluted air. SO<sub>2</sub> is also a major contributor to acid rain. The correct and complete reaction to represent acid rain caused by SO<sub>2</sub> is :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "2SO<sub>2</sub> + O<sub>2</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> 2SO<sub>3</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "SO<sub>2</sub> + O<sub>3</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> SO<sub>3</sub> + O<sub>2</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "SO<sub>2</sub> + H<sub>2</sub>O<sub>2</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> H<sub>2</sub>SO<sub>4</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "2SO<sub>2</sub> + O<sub>2</sub> + 2H<sub>2</sub>O <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> 2H<sub>2</sub>SO<sub>4</sub>"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<p><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.532ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"30.138ex\" height=\"2.229ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 13321.2 985.4\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"msub\" transform=\"translate(500,0)\"><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\">SO</text></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1233,-235.4) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(2358.8,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"msub\" transform=\"translate(3359,0)\"><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\">O</text></g><g data-mml-node=\"TeXAtom\" transform=\"translate(633,-235.4) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(4617.8,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"msub\" transform=\"translate(5618,0)\"><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\">2H</text></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1233,-235.4) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\" transform=\"translate(7254.5,0)\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\">O</text></g><g data-mml-node=\"mo\" transform=\"translate(8132.3,0)\"><use data-c=\"27F6\" xlink:href=\"#MJX-TEX-N-27F6\"></use></g><g data-mml-node=\"msub\" transform=\"translate(10048.1,0)\"><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\">2H</text></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1233,-235.4) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"msub\" transform=\"translate(11684.7,0)\"><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\">SO</text></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1233,-235.4) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g></g></g></svg></mjx-container></p>\n<p>Acid rain occurs due to increased concentration of\noxides of sulphur and Nitrogen.</p>"
+    }
+  ]
+}

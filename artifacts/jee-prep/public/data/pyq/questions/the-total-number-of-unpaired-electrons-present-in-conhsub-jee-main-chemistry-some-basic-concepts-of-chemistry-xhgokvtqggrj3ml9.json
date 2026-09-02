@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "1krt6bv7o",
+      "paperTitle": "JEE Main 2021 (Online) 22th July Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "crystal-field-theory-cft",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-total-number-of-unpaired-electrons-present-in-conhsub-jee-main-chemistry-some-basic-concepts-of-chemistry-xhgokvtqggrj3ml9",
+      "content": "The total number of unpaired electrons present in [Co(NH<sub>3</sub>)<sub>6</sub>]Cl<sub>2</sub> and [Co(NH<sub>3</sub>)<sub>6</sub>]Cl<sub>3</sub> is :",
+      "options": [],
+      "correct_options": [],
+      "explanation": "[Co(NH<sub>3</sub>)<sub>6</sub>]Cl<sub>2</sub><br><br>Co<sup>2+</sup> : [Ar]3d<sup>7</sup>4s<sup>0</sup>4p<sup>0</sup><br><br>For this complex <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.885ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 833 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></svg></mjx-container><sub>0</sub> &lt; P.E., so pairing of electron does not take place.<br><br>sp<sup>3</sup>d<sup>2</sup> hybridisation<br><br>Total 3 unpaired electrons are present.<br><br>[Co(NH<sub>3</sub>)<sub>6</sub>]Cl<sub>3</sub><br><br>Co<sup>3+</sup> : [Ar]3d<sup>6</sup> 4s<sup>0</sup> 4p<sup>0</sup><br><br>d<sup>2</sup>sp<sup>3</sup> hybridistion<br><br>NH<sub>3</sub> acts as SFL because <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.885ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 833 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></svg></mjx-container><sub>0</sub> &gt; P.E.<br><br>So, here all electrons becomes paired."
+    }
+  ]
+}

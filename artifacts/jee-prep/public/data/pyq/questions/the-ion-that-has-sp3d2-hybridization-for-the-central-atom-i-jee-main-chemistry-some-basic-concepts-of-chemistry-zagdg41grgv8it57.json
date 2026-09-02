@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "xrxSs5Zo7exG8RTfiTO76",
+      "paperTitle": "JEE Main 2019 (Online) 8th April Evening Slot",
+      "year": 2019,
+      "examDate": "2019-04-08 14:30",
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "hybridization-and-vsepr-theory",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-ion-that-has-sp3d2-hybridization-for-the-central-atom-i-jee-main-chemistry-some-basic-concepts-of-chemistry-zagdg41grgv8it57",
+      "content": "The ion that has sp<sup>3</sup>d<sup>2</sup> hybridization for the\ncentral atom, is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "[ICl<sub>2</sub>]<sup>-</sup>"
+        },
+        {
+          "identifier": "B",
+          "content": "[ICl<sub>4</sub>]<sup>-</sup>"
+        },
+        {
+          "identifier": "C",
+          "content": "[IF<sub>6</sub>]<sup>-</sup>"
+        },
+        {
+          "identifier": "D",
+          "content": "[BrF<sub>2</sub>]<sup>-</sup>"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/7km5fk0614cak/78476add-0a21-4307-ab95-93c080dda9eb/ea1367c0-cf7e-11e9-acf6-6d09a288f7f2/file-7km5fk0614cal-320w.jpg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/7km5fk0614cak/78476add-0a21-4307-ab95-93c080dda9eb/ea1367c0-cf7e-11e9-acf6-6d09a288f7f2/file-7km5fk0614cal-500w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/7km5fk0614cak/78476add-0a21-4307-ab95-93c080dda9eb/ea1367c0-cf7e-11e9-acf6-6d09a288f7f2/file-7km5fk0614cal-680w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 8th April Evening Slot Chemistry - Chemical Bonding &amp; Molecular Structure Question 211 English Explanation\"></picture>"
+    }
+  ]
+}

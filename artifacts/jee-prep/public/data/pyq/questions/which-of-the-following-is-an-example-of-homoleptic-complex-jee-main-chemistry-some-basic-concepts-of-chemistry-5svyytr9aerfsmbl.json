@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "s2RtTKpizKRKhZjzKd4Ww",
+      "paperTitle": "JEE Main 2016 (Online) 10th April Morning Slot",
+      "year": 2016,
+      "examDate": "2016-04-10 09:30",
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "coordination-number",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-is-an-example-of-homoleptic-complex-jee-main-chemistry-some-basic-concepts-of-chemistry-5svyytr9aerfsmbl",
+      "content": "Which of the following is an example of homoleptic complex?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "[Co(NH<sub>3</sub>)<sub>6</sub>]Cl<sub>3</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "[Pt(NH<sub>3</sub>)<sub>2</sub>Cl<sub>2</sub>]\n"
+        },
+        {
+          "identifier": "C",
+          "content": "[Co(NH<sub>3</sub>)<sub>4</sub>Cl<sub>2</sub>]"
+        },
+        {
+          "identifier": "D",
+          "content": "[Co(NH<sub>3</sub>)<sub>5</sub>Cl]Cl<sub>2</sub>\n"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<p>Homoleptic complexes are those compounds in which all the ligands bound to the central metal are identical. Thus, these types of complexes have only one type of ligands. In the complex [Co(NH<sub>3</sub>)<sub>6</sub>]Cl<sub>3</sub> , central atom Co has ammonia ligands as all six.</p>\n\n<p>Heteroleptic complexes are those compounds in which central transition metal has more than one type of ligands. So, rest of the options are examples of heteroleptic complexes.</p>"
+    }
+  ]
+}

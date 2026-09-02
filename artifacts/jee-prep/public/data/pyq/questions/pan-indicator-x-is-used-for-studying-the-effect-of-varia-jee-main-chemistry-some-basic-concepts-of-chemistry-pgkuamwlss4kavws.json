@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ldsdaytw",
+      "paperTitle": "JEE Main 2023 (Online) 29th January Evening Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "important-compounds-of-transition-elements",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pan-indicator-x-is-used-for-studying-the-effect-of-varia-jee-main-chemistry-some-basic-concepts-of-chemistry-pgkuamwlss4kavws",
+      "content": "<p>An indicator 'X' is used for studying the effect of variation in concentration of iodide on the rate of reaction of iodide ion with <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.432ex\" height=\"1.934ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 2401.1 855\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"48\" xlink:href=\"#MJX-TEX-N-48\"></use></g><g data-mml-node=\"mn\" transform=\"translate(783,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g><g data-mml-node=\"msub\" transform=\"translate(1186.6,0)\"><g data-mml-node=\"mi\"><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\"></use></g><g data-mml-node=\"mn\" transform=\"translate(811,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></g></svg></mjx-container> at room temp. The indicator 'X' forms blue coloured complex with compound 'A' present in the solution. The indicator 'X' and compound 'A' respectively are :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Methyl orange and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.432ex\" height=\"1.934ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 2401.1 855\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"48\" xlink:href=\"#MJX-TEX-N-48\"></use></g><g data-mml-node=\"mn\" transform=\"translate(783,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g><g data-mml-node=\"msub\" transform=\"translate(1186.6,0)\"><g data-mml-node=\"mi\"><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\"></use></g><g data-mml-node=\"mn\" transform=\"translate(811,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></g></svg></mjx-container>"
+        },
+        {
+          "identifier": "B",
+          "content": "Methyl orange and iodine"
+        },
+        {
+          "identifier": "C",
+          "content": "Starch and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.432ex\" height=\"1.934ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 2401.1 855\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"48\" xlink:href=\"#MJX-TEX-N-48\"></use></g><g data-mml-node=\"mn\" transform=\"translate(783,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g><g data-mml-node=\"msub\" transform=\"translate(1186.6,0)\"><g data-mml-node=\"mi\"><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\"></use></g><g data-mml-node=\"mn\" transform=\"translate(811,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></g></svg></mjx-container>"
+        },
+        {
+          "identifier": "D",
+          "content": "Starch and iodine"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<p>The indicator 'X' is starch, and it forms a blue colored complex with iodine (compound 'A'). Therefore, the correct option is:</p>\n<p><strong>Option D:</strong> Starch and iodine</p>\n<p>In this situation, starch is commonly used as an indicator to detect the presence of iodine because starch forms a deep blue complex with iodine. This color change is visible and helps in monitoring the progress of the reaction involving iodide ions and hydrogen peroxide, which ultimately produces iodine. The blue color indicates the presence of iodine in the solution.</p>"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "nsNSJSMsWHkLexcvYi1kmlmoebj",
+      "paperTitle": "JEE Main 2021 (Online) 18th March Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "important-compounds-of-transition-elements",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "match-list-i-with-list-iibrbrtable-thead-tr-jee-main-chemistry-some-basic-concepts-of-chemistry-chtish3zuhqhrogy",
+      "content": "Match List - I with List - II<br><br><table>\n<thead>\n  <tr>\n    <th></th>\n    <th>List - I<br></th>\n    <th></th>\n    <th>List - II<br></th>\n  </tr>\n</thead>\n<tbody>\n  <tr>\n    <td>(a)</td>\n    <td>Chlorophyll</td>\n    <td>(i)</td>\n    <td>Ruthenium</td>\n  </tr>\n  <tr>\n    <td>(b)</td>\n    <td>Vitamin-<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.505ex\" height=\"1.885ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -683 1549.1 833\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D435\" xlink:href=\"#MJX-TEX-I-1D435\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(792,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\" transform=\"translate(500,0)\"></use></g></g></g></g></g></g></svg></mjx-container></td>\n    <td>(ii)</td>\n    <td>Platinum</td>\n  </tr>\n  <tr>\n    <td>(c)</td>\n    <td>Anticancer drug</td>\n    <td>(iii)</td>\n    <td>Cobalt</td>\n  </tr>\n  <tr>\n    <td>(d)</td>\n    <td>Grubbs catalyst</td>\n    <td>(iv)</td>\n    <td>Magnesium</td>\n  </tr>\n</tbody>\n</table><br><br>Choose the most appropriate answer from the options given below :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(a) - (iii), (b) - (ii), (c) - (iv), (d) - (i)"
+        },
+        {
+          "identifier": "B",
+          "content": "(a) - (iv), (b) - (iii), (c) - (ii), (d) - (i)"
+        },
+        {
+          "identifier": "C",
+          "content": "(a) - (iv), (b) - (iii), (c) - (i), (d) - (ii)"
+        },
+        {
+          "identifier": "D",
+          "content": "(a) - (iv), (b) - (ii), (c) - (iii), (d) - (i)"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Chlorophyll is a coordination compound of\nmagnesium.<br><br>\nVitamin B-12, cyanocobalamine is a\ncoordination compound of cobalt.<br><br>\nCisplatin is used as an anti-cancer drug and\nis a coordination compound of platinum.\nGrubbs catalyst is a compound of Ruthenium."
+    }
+  ]
+}

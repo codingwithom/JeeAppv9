@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "4A8YA1GKIJUjMwmsAF3rsa0w2w9jx4yz9x9",
+      "paperTitle": "JEE Main 2019 (Online) 12th April Morning Slot",
+      "year": 2019,
+      "examDate": "2019-04-12 09:30",
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "vitamins-and-nucleic-acids",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-statements-is-not-true-about-rna-jee-main-chemistry-carbohydrates-amino-acids-and-polymers-cnng3ypdsdvk545n",
+      "content": "Which of the following statements is not true about RNA?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "It controls the synthesis of protein"
+        },
+        {
+          "identifier": "B",
+          "content": "It is present in the nucleus of the cell"
+        },
+        {
+          "identifier": "C",
+          "content": "It usually does not replicate"
+        },
+        {
+          "identifier": "D",
+          "content": "It has always double stranded <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.448ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 640 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D6FC\" xlink:href=\"#MJX-TEX-I-1D6FC\"></use></g></g></g></svg></mjx-container>-helix structure"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "RNA has a single standard helix structure.\n<br><br>DNA has a double standard helix structure"
+    }
+  ]
+}

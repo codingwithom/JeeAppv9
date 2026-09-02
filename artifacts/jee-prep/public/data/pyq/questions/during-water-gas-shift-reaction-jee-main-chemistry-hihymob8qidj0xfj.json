@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "lgnz9975",
+      "paperTitle": "JEE Main 2023 (Online) 15th April Morning Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "p-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "group-14-elements-carbon-family",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "during-water-gas-shift-reaction-jee-main-chemistry-hihymob8qidj0xfj",
+      "content": " During water-gas shift reaction",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "water is evaporated in presence of catalyst."
+        },
+        {
+          "identifier": "B",
+          "content": "carbon monoxide is oxidized to carbon dioxide."
+        },
+        {
+          "identifier": "C",
+          "content": "carbon is oxidized to carbon monoxide."
+        },
+        {
+          "identifier": "D",
+          "content": "carbon dioxide is reduced to carbon monoxide."
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<p>During the water-gas shift reaction, carbon monoxide (CO) + H<sub>2</sub> reacts with steam (H<sub>2</sub>O) to produce carbon dioxide (CO<sub>2</sub>) and hydrogen gas (H<sub>2</sub>). The chemical equation for the reaction is :</p>\n\n<p><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1lgqbl9ek/9851b8bd-933a-49ee-a520-be89265cb9ab/c89521c0-e022-11ed-bd12-57a485ef8988/file-1lgqbl9el.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1lgqbl9ek/9851b8bd-933a-49ee-a520-be89265cb9ab/c89521c0-e022-11ed-bd12-57a485ef8988/file-1lgqbl9el.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2023 (Online) 15th April Morning Shift Chemistry - p-Block Elements Question 77 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1lgqbl9ek/9851b8bd-933a-49ee-a520-be89265cb9ab/c89521c0-e022-11ed-bd12-57a485ef8988/file-1lgqbl9el.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1lgqbl9ek/9851b8bd-933a-49ee-a520-be89265cb9ab/c89521c0-e022-11ed-bd12-57a485ef8988/file-1lgqbl9el.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1lgqbl9ek/9851b8bd-933a-49ee-a520-be89265cb9ab/c89521c0-e022-11ed-bd12-57a485ef8988/file-1lgqbl9el.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1lgqbl9ek/9851b8bd-933a-49ee-a520-be89265cb9ab/c89521c0-e022-11ed-bd12-57a485ef8988/file-1lgqbl9el.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1lgqbl9ek/9851b8bd-933a-49ee-a520-be89265cb9ab/c89521c0-e022-11ed-bd12-57a485ef8988/file-1lgqbl9el.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1lgqbl9ek/9851b8bd-933a-49ee-a520-be89265cb9ab/c89521c0-e022-11ed-bd12-57a485ef8988/file-1lgqbl9el.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"></p>\n\n<p>Therefore, option B is correct, which states that carbon monoxide is oxidized to carbon dioxide. This reaction is typically catalyzed by metal catalysts such as iron, nickel, or copper, which promote the reaction rate by providing a surface for the reactants to adsorb and react.</p>\n<p>Option A is not correct as water is not evaporated during the reaction, but rather reacts with carbon monoxide to produce hydrogen gas and carbon dioxide.\n</p>\n<p>Option C is not correct as carbon is not directly involved in the reaction.</p>\n\n<p>Option D is also not correct as carbon dioxide is not reduced to carbon monoxide during the water-gas shift reaction.</p>"
+    }
+  ]
+}

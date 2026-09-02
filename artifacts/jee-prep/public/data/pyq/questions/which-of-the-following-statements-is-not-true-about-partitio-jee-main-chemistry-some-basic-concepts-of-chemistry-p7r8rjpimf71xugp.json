@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "mOFUQmvkIYxuqBaxsBxWQ",
+      "paperTitle": "JEE Main 2017 (Online) 8th April Morning Slot",
+      "year": 2017,
+      "examDate": "2017-04-08 09:30",
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "purification-of-organic-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-statements-is-not-true-about-partitio-jee-main-chemistry-some-basic-concepts-of-chemistry-p7r8rjpimf71xugp",
+      "content": "Which of the following statements is not true about partition chromatography?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Mobile phase can be a gas"
+        },
+        {
+          "identifier": "B",
+          "content": "Stationary phase is a finely divided solid adsorbent"
+        },
+        {
+          "identifier": "C",
+          "content": "Separation depends upon equilibration of solute between a mobile and a stationary phase\n"
+        },
+        {
+          "identifier": "D",
+          "content": "Paper chromatography is an example of partition chromatography"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<p>In partition chromatography, which includes paper chromatography, the stationary phase is typically water held by cellulose fibers in the paper. This paper acts as an inert support. When a mixture is applied to the paper, its components partition between this stationary phase and the mobile phase (which can be a liquid or a gas). The varying affinities of the mixture&#39;s components for the stationary and mobile phases allow for their separation. </p>\n<p>Now, let&#39;s address the options :</p>\n<p>Option A : Mobile phase can be a gas - This is true. In partition chromatography, the mobile phase can be either a liquid or a gas.</p>\n<p>Option B : Stationary phase is a finely divided solid adsorbent - This is typically false for partition chromatography. Here, the stationary phase is a liquid (like water in paper chromatography) that&#39;s held by an inert solid support (like cellulose paper). </p>\n<p>Option C : Separation depends upon equilibration of solute between a mobile and a stationary phase - This is true. In partition chromatography, the mixture&#39;s components equilibrate between the mobile and stationary phases, leading to their separation.</p>\n<p>Option D : Paper chromatography is an example of partition chromatography - This is true. As explained above, in paper chromatography, the stationary phase (water) is held by an inert support (cellulose paper), fitting the definition of partition chromatography.</p>\n"
+    }
+  ]
+}

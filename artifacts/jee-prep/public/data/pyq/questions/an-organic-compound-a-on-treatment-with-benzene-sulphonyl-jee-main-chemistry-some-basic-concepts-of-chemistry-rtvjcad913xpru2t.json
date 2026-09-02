@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "UwBxxnTsfLvQVeZKog1kmm1esnl",
+      "paperTitle": "JEE Main 2021 (Online) 18th March Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "compounds-containing-nitrogen",
+      "chapterGroup": "organic-chemistry",
+      "topic": "aliphatic-amines",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "an-organic-compound-a-on-treatment-with-benzene-sulphonyl-jee-main-chemistry-some-basic-concepts-of-chemistry-rtvjcad913xpru2t",
+      "content": "An organic compound \"A\" on treatment with benzene sulphonyl chloride gives compound B. B is soluble in dil. NaOH solution. Compound A is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kmnu35d5/f9e92a6d-1ac1-4810-8150-9ac3f9eb417e/470964a0-8cd6-11eb-8cc2-550974166083/file-1kmnu35d6.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 18th March Evening Shift Chemistry - Compounds Containing Nitrogen Question 169 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "C<sub>6</sub>H<sub>5</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container> NHCH<sub>2</sub>CH<sub>3</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "C<sub>6</sub>H<sub>5</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container> N <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container> (CH<sub>3</sub>)<sub>2</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "C<sub>6</sub>H<sub>5</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container> CH<sub>2</sub>NHCH<sub>3</sub>"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1kmtl4asd/088f1afc-ae67-40d7-9d75-667a086fa199/e8c4b4d0-8fff-11eb-ab3d-b520898c3b37/file-1kmtl4ase.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 18th March Evening Shift Chemistry - Compounds Containing Nitrogen Question 169 English Explanation\">"
+    }
+  ]
+}

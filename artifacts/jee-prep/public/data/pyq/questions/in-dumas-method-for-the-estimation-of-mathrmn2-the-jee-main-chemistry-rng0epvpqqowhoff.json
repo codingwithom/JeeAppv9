@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "ldo9h8z1",
+      "paperTitle": "JEE Main 2023 (Online) 31st January Evening Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "practical-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "detection-of-extra-elements-and-functional-groups",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "in-dumas-method-for-the-estimation-of-mathrmn2-the-jee-main-chemistry-rng0epvpqqowhoff",
+      "content": "In Dumas method for the estimation of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.685ex\" height=\"1.885ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -683 1186.6 833\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"4E\" xlink:href=\"#MJX-TEX-N-4E\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(783,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></g></svg></mjx-container>, the sample is heated with copper oxide and the gas evolved is passed over :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Copper oxide"
+        },
+        {
+          "identifier": "B",
+          "content": "Copper gauze"
+        },
+        {
+          "identifier": "C",
+          "content": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.799ex\" height=\"1.595ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 1237 705\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"50\" xlink:href=\"#MJX-TEX-N-50\"></use><use data-c=\"64\" xlink:href=\"#MJX-TEX-N-64\" transform=\"translate(681,0)\"></use></g></g></g></g></svg></mjx-container>"
+        },
+        {
+          "identifier": "D",
+          "content": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.326ex\" height=\"1.545ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -683 1028 683\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"4E\" xlink:href=\"#MJX-TEX-N-4E\"></use><use data-c=\"69\" xlink:href=\"#MJX-TEX-N-69\" transform=\"translate(750,0)\"></use></g></g></g></g></svg></mjx-container>"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "In dumas method for the estimation of N<sub>2</sub>, the\nsample is heated with copper oxide and the gas\nevolved is passed over copper gauze."
+    }
+  ]
+}

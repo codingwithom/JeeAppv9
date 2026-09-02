@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "VLonTGvaaXvC2Rn2Px7k9k2k5dz61w9",
+      "paperTitle": "JEE Main 2020 (Online) 7th January Morning Slot",
+      "year": 2020,
+      "examDate": "2020-01-07 09:30",
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "van-der-walls-forces",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-relative-strength-of-interionicintermolecular-forces-in-jee-main-chemistry-analytical-chemistry-61dielcl25aop24x",
+      "content": "The relative strength of interionic/intermolecular forces in decreasing order is :\n",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "dipole-dipole <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.312ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 778 580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"3E\" xlink:href=\"#MJX-TEX-N-3E\"></use></g></g></g></svg></mjx-container> ion-dipole <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.312ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 778 580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"3E\" xlink:href=\"#MJX-TEX-N-3E\"></use></g></g></g></svg></mjx-container> ion-ion"
+        },
+        {
+          "identifier": "B",
+          "content": "ion-dipole <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.312ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 778 580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"3E\" xlink:href=\"#MJX-TEX-N-3E\"></use></g></g></g></svg></mjx-container> dipole-dipole <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.312ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 778 580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"3E\" xlink:href=\"#MJX-TEX-N-3E\"></use></g></g></g></svg></mjx-container> ion-ion"
+        },
+        {
+          "identifier": "C",
+          "content": "ion-dipole <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.312ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 778 580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"3E\" xlink:href=\"#MJX-TEX-N-3E\"></use></g></g></g></svg></mjx-container> ion-ion <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.312ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 778 580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"3E\" xlink:href=\"#MJX-TEX-N-3E\"></use></g></g></g></svg></mjx-container> dipole-dipole"
+        },
+        {
+          "identifier": "D",
+          "content": "ion-ion <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.312ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 778 580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"3E\" xlink:href=\"#MJX-TEX-N-3E\"></use></g></g></g></svg></mjx-container> ion-dipole <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.312ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 778 580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"3E\" xlink:href=\"#MJX-TEX-N-3E\"></use></g></g></g></svg></mjx-container> dipole-dipole"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Ionic interactions are stronger as compared to\nvan der waal interactions.\n<br><br>So, correct order is\n<br><br>ion-ion <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.312ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 778 580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"3E\" xlink:href=\"#MJX-TEX-N-3E\"></use></g></g></g></svg></mjx-container> ion-dipole <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.312ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 778 580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"3E\" xlink:href=\"#MJX-TEX-N-3E\"></use></g></g></g></svg></mjx-container> dipole-dipole"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l6jkf94j",
+      "paperTitle": "JEE Main 2022 (Online) 27th July Morning Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "structure-of-atom",
+      "chapterGroup": "physical-chemistry",
+      "topic": "bohrs-model-for-hydrogen-atom",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pgiven-below-are-two-statements-one-is-labelled-as-assert-jee-main-chemistry-some-basic-concepts-of-chemistry-eleu6wbqi5l3xdk9",
+      "content": "<p>Given below are two statements. One is labelled as Assertion A and the other is labelled as Reason R.</p>\n<p>Assertion A: Energy of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.023ex\" height=\"1.532ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -666 894 677\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(500,0)\"><g data-mml-node=\"mi\"><use data-c=\"73\" xlink:href=\"#MJX-TEX-N-73\"></use></g></g></g></g></svg></mjx-container> orbital of hydrogen atom is greater than that of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.023ex\" height=\"1.532ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -666 894 677\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(500,0)\"><g data-mml-node=\"mi\"><use data-c=\"73\" xlink:href=\"#MJX-TEX-N-73\"></use></g></g></g></g></svg></mjx-container> orbital of lithium.</p>\n<p>Reason R: Energies of the orbitals in the same subshell decrease with increase in the atomic number.</p>\n<p>In the light of the above statements, choose the correct answer from the options given below.</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Both A and R are true and R is the correct explanation of A."
+        },
+        {
+          "identifier": "B",
+          "content": "Both A and R are true but R is NOT the correct explanation of A."
+        },
+        {
+          "identifier": "C",
+          "content": "A is true but R is false."
+        },
+        {
+          "identifier": "D",
+          "content": "A is false but R is true."
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "As the atomic number increases then the potential energy of electrons present in same shell becomes more and more negative. And therefore total energy also becomes more negative.\n<br><br>\n<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.854ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"21.572ex\" height=\"3.079ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -983.7 9535 1361\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"45\" xlink:href=\"#MJX-TEX-N-45\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(714,-176.7) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\">total </text></g></g></g><g data-mml-node=\"mo\" transform=\"translate(3587.4,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mo\" transform=\"translate(4643.1,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(5421.1,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\" transform=\"translate(500,0)\"></use><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\" transform=\"translate(1000,0)\"></use><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\" transform=\"translate(1278,0)\"></use></g><g data-mml-node=\"mfrac\" transform=\"translate(7199.1,0)\"><g data-mml-node=\"msup\" transform=\"translate(259.6,394) scale(0.707)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"7A\" xlink:href=\"#MJX-TEX-N-7A\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(477,363) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"msup\" transform=\"translate(220,-377.4) scale(0.707)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"6E\" xlink:href=\"#MJX-TEX-N-6E\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(589,289) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><rect width=\"901.8\" height=\"60\" x=\"120\" y=\"220\"></rect></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(8341,0)\"><g data-mml-node=\"mi\"><use data-c=\"65\" xlink:href=\"#MJX-TEX-N-65\"></use><use data-c=\"56\" xlink:href=\"#MJX-TEX-N-56\" transform=\"translate(444,0)\"></use></g></g></g></g></svg></mjx-container>\n<br><br>\n<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> Energies of the orbitals in the same subshell decreases with increase in atomic number. "
+    }
+  ]
+}

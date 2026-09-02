@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l56aq6vq",
+      "paperTitle": "JEE Main 2022 (Online) 28th June Morning Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "p-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "group-15-elements-nitrogen-family",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pnitrogen-gas-is-obtained-by-thermal-decomposition-ofp-jee-main-chemistry-some-basic-concepts-of-chemistry-6oy3rr28njdez2a9",
+      "content": "<p>Nitrogen gas is obtained by thermal decomposition of :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Ba(NO<sub>3</sub>)<sub>2</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "Ba(N<sub>3</sub>)<sub>2</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "NaNO<sub>2</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "NaNO<sub>3</sub>"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.646ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"23.8ex\" height=\"3.626ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1317.3 10519.7 1602.6\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"42\" xlink:href=\"#MJX-TEX-N-42\"></use><use data-c=\"61\" xlink:href=\"#MJX-TEX-N-61\" transform=\"translate(708,0)\"></use></g></g><g data-mml-node=\"msub\" transform=\"translate(1208,0)\"><g data-mml-node=\"mrow\"><g data-mml-node=\"mo\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"msub\" transform=\"translate(389,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"4E\" xlink:href=\"#MJX-TEX-N-4E\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(783,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(1575.6,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1997.6,-285.4) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"REL\" transform=\"translate(3886.9,0)\"><g data-mml-node=\"mover\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"OP\"><g data-mml-node=\"mo\"><use data-c=\"27F6\" xlink:href=\"#MJX-TEX-N-27F6\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(524.5,711) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(5802.7,0)\"><g data-mml-node=\"mi\"><use data-c=\"42\" xlink:href=\"#MJX-TEX-N-42\"></use><use data-c=\"61\" xlink:href=\"#MJX-TEX-N-61\" transform=\"translate(708,0)\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(7232.9,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(8233.1,0)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g><g data-mml-node=\"msub\" transform=\"translate(8733.1,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\"> </text></g><g data-mml-node=\"mi\" transform=\"translate(600,0)\"><use data-c=\"4E\" xlink:href=\"#MJX-TEX-N-4E\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1383,-235.4) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></g></svg></mjx-container>"
+    }
+  ]
+}

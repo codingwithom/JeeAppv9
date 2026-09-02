@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "bStxnIbOS1q0TO4EeC1kmki78mh",
+      "paperTitle": "JEE Main 2021 (Online) 17th March Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "hybridization-and-vsepr-theory",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "amongst-the-following-the-linear-species-is--jee-main-chemistry-some-basic-concepts-of-chemistry-zm9p5vvwmibwbdlz",
+      "content": "Amongst the following, the linear species is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "O<sub>3</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "Cl<sub>2</sub>O"
+        },
+        {
+          "identifier": "C",
+          "content": "N<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.706ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.432ex\" height=\"2.57ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -823.8 633.1 1136\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msubsup\"><g data-mml-node=\"mi\"></g><g data-mml-node=\"mo\" transform=\"translate(33,411.6) scale(0.707)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(33,-296.6) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g></g></svg></mjx-container>"
+        },
+        {
+          "identifier": "D",
+          "content": "NO<sub>2</sub>"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1kncvug55/0b4f0aec-e54f-4947-a7da-530cbebc350c/bf92b290-9a9c-11eb-af16-4b60add055a3/file-1kncvug56.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 17th March Evening Shift Chemistry - Chemical Bonding &amp; Molecular Structure Question 173 English Explanation\">"
+    }
+  ]
+}

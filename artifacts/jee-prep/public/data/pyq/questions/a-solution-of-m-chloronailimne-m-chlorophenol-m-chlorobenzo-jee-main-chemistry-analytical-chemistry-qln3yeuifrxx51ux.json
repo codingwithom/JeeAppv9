@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "Mj4iu7R0msrjkrddr57k9k2k5dyy2ep",
+      "paperTitle": "JEE Main 2020 (Online) 7th January Morning Slot",
+      "year": 2020,
+      "examDate": "2020-01-07 09:30",
+      "subject": "chemistry",
+      "chapter": "salt-analysis",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "chemical-principles",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "a-solution-of-m-chloronailimne-m-chlorophenol-m-chlorobenzo-jee-main-chemistry-analytical-chemistry-qln3yeuifrxx51ux",
+      "content": "A solution of m-chloronailimne, m-chlorophenol and m-chlorobenzoic acid in ethyal acetate was extracted initially with a saturated solution of NaHCO<sub>3</sub>\n to give fraction A. The left over organic phase\nwas extracted with dilute NaoH solution tio give fraction B. The final organiic layer was labelled as\nfraction C. Fractions A,B and C, contain respectively :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "m-chlorobenzoic acid, m-chloroaniline and m-chlorophenol."
+        },
+        {
+          "identifier": "B",
+          "content": "m-chlorobenzoic acid, m-chlorophenol and m-chloroaniline."
+        },
+        {
+          "identifier": "C",
+          "content": "m-chlorophenol, m-chlorobenzoic acid and m-chloronailine."
+        },
+        {
+          "identifier": "D",
+          "content": "m-chloroaniline m-chlorobenzoic acid and m-chlorophenol."
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "m-chlorobenzoic acid dissolves in aq NaHCO<sub>3</sub>\nwhile m-chlorophenol dissolves in aq NaOH."
+    }
+  ]
+}

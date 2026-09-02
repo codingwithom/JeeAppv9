@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ldpo9hzf",
+      "paperTitle": "JEE Main 2023 (Online) 31st January Morning Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "properties-of-transition-elements",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pmathrmnd2--p-jee-main-chemistry-some-basic-concepts-of-chemistry-pry2ov7pxfljsddg",
+      "content": "<p><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.187ex\" height=\"2.043ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -892 2292.7 903\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"4E\" xlink:href=\"#MJX-TEX-N-4E\"></use><use data-c=\"64\" xlink:href=\"#MJX-TEX-N-64\" transform=\"translate(750,0)\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1339,421.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g></g></g></g></g></g></svg></mjx-container> = __________</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"6.091ex\" height=\"1.954ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -841.7 2692.4 863.7\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g><g data-mml-node=\"msup\" transform=\"translate(500,0)\"><g data-mml-node=\"mi\"><use data-c=\"66\" xlink:href=\"#MJX-TEX-N-66\"></use></g><g data-mml-node=\"mn\" transform=\"translate(458.3,363) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(1361.9,0)\"><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\"></use></g><g data-mml-node=\"msup\" transform=\"translate(1861.9,0)\"><g data-mml-node=\"mi\"><use data-c=\"73\" xlink:href=\"#MJX-TEX-N-73\"></use></g><g data-mml-node=\"mn\" transform=\"translate(427,363) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></g></svg></mjx-container>"
+        },
+        {
+          "identifier": "B",
+          "content": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.081ex\" height=\"1.885ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -833.2 1361.9 833.2\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g><g data-mml-node=\"msup\" transform=\"translate(500,0)\"><g data-mml-node=\"mi\"><use data-c=\"66\" xlink:href=\"#MJX-TEX-N-66\"></use></g><g data-mml-node=\"mn\" transform=\"translate(458.3,363) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g></g></g></svg></mjx-container>"
+        },
+        {
+          "identifier": "C",
+          "content": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.081ex\" height=\"1.904ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -841.7 1361.9 841.7\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g><g data-mml-node=\"msup\" transform=\"translate(500,0)\"><g data-mml-node=\"mi\"><use data-c=\"66\" xlink:href=\"#MJX-TEX-N-66\"></use></g><g data-mml-node=\"mn\" transform=\"translate(458.3,363) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g></g></g></svg></mjx-container>"
+        },
+        {
+          "identifier": "D",
+          "content": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"6.091ex\" height=\"1.937ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -833.9 2692.4 855.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g><g data-mml-node=\"msup\" transform=\"translate(500,0)\"><g data-mml-node=\"mi\"><use data-c=\"66\" xlink:href=\"#MJX-TEX-N-66\"></use></g><g data-mml-node=\"mn\" transform=\"translate(458.3,363) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(1361.9,0)\"><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\"></use></g><g data-mml-node=\"msup\" transform=\"translate(1861.9,0)\"><g data-mml-node=\"mi\"><use data-c=\"73\" xlink:href=\"#MJX-TEX-N-73\"></use></g><g data-mml-node=\"mn\" transform=\"translate(427,363) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></g></svg></mjx-container>"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Nd(60) = [Xe] 4f<sup>4</sup> 5d<sup>0</sup> 6s<sup>2</sup>\n<br/><br/>Nd<sup>2+</sup>\n= [Xe] 4f<sup>4</sup> 5d<sup>0</sup> 5s<sup>0</sup>"
+    }
+  ]
+}

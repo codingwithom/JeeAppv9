@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "5BVvstOicz7u7lLOaVjIi",
+      "paperTitle": "JEE Main 2019 (Online) 10th January Morning Slot",
+      "year": 2019,
+      "examDate": "2019-01-10 09:30",
+      "subject": "chemistry",
+      "chapter": "electrochemistry",
+      "chapterGroup": "physical-chemistry",
+      "topic": "electrochemical-series-cell-and-their-emf",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "consider-the-following-reduction-processes-zn2-2e-jee-main-chemistry-some-basic-concepts-of-chemistry-kwa7zcgoogc2m0ao",
+      "content": "Consider the following reduction processes :\n<br>Zn<sup>2+</sup> + 2e<sup>–</sup> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> Zn(s) ; E<sup>o</sup> = – 0.76 V\n<br>Ca<sup>2+</sup> + 2e<sup>–</sup> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> Ca(s); E<sup>o</sup> = –2.87 V\n<br>Mg<sup>2+</sup> + 2e<sup>–</sup> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> Mg(s) ; E<sup>o</sup> = – 2.36 V\n<br>Ni<sup>2</sup> + 2e<sup>–</sup> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> Ni(s) ; E<sup>o</sup> = – 0.25 \n<br>The reducing power of the metals increases in the order :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Ca &lt; Mg &lt; Zn &lt; Ni "
+        },
+        {
+          "identifier": "B",
+          "content": "Ni &lt; Zn &lt; Mg &lt; Ca"
+        },
+        {
+          "identifier": "C",
+          "content": "Zn &lt; Mg &lt; Ni &lt; Ca"
+        },
+        {
+          "identifier": "D",
+          "content": "Ca &lt; Zn &lt; Mg &lt; Ni "
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Higher the oxidation potential better will be reducing power."
+    }
+  ]
+}

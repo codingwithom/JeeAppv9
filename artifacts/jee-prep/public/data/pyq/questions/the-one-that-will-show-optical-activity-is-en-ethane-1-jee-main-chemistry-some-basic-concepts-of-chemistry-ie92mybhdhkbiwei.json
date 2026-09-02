@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "VEutkL2JfIOEa6Q5jGoQE",
+      "paperTitle": "JEE Main 2019 (Online) 9th April Morning Slot",
+      "year": 2019,
+      "examDate": "2019-04-09 09:30",
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "isomerism-of-coordination-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-one-that-will-show-optical-activity-is-en-ethane-1-jee-main-chemistry-some-basic-concepts-of-chemistry-ie92mybhdhkbiwei",
+      "content": "The one that will show optical activity is :<br>\n(en = ethane-1,2-diamine)",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/18hoxe66ijwi3rcze/1785ca99-a37c-4bb2-a4ea-26d3a032fc7f/c6c12da0-86f1-11e9-8081-1d558b7f1d26/file-18hoxe66ijwi3rczf.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 9th April Morning Slot Chemistry - Coordination Compounds Question 286 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/18hoxe66ijwi3rqqr/19cf2876-86ae-4603-b153-cbe29a72f44c/d1626e40-86f1-11e9-8081-1d558b7f1d26/file-18hoxe66ijwi3rqqs.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 9th April Morning Slot Chemistry - Coordination Compounds Question 286 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/18hoxe66ijwi3s2lb/6cd71680-f0fb-4490-8daa-c905168f6dea/da896af0-86f1-11e9-8081-1d558b7f1d26/file-18hoxe66ijwi3s2lc.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 9th April Morning Slot Chemistry - Coordination Compounds Question 286 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/18hoxe66ijwi3sepg/75e1e838-2e3d-4af8-b54c-7dc09b9c9980/e3e53340-86f1-11e9-8081-1d558b7f1d26/file-18hoxe66ijwi3seph.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 9th April Morning Slot Chemistry - Coordination Compounds Question 286 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/7km5fk03a4y76/82584f50-5a79-41fc-bd4e-c50131e5b17b/d3363020-cdfb-11e9-acf6-6d09a288f7f2/file-7km5fk03a4y77-320w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/7km5fk03a4y76/82584f50-5a79-41fc-bd4e-c50131e5b17b/d3363020-cdfb-11e9-acf6-6d09a288f7f2/file-7km5fk03a4y77-500w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 9th April Morning Slot Chemistry - Coordination Compounds Question 286 English Explanation\"></picture>"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "2San0gkpPqtZNXmtsbjgy2xukfjfemc7",
+      "paperTitle": "JEE Main 2020 (Online) 5th September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-05 09:00",
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "hydrogen-bonding",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-potential-energy-curve-for-the-hsub2sub-molecule-a-jee-main-chemistry-chemical-bonding-and-molecular-structure-zmtzyet6arrdjjym",
+      "content": "The potential energy curve for the H<sub>2</sub>\n molecule as a function of internuclear distance is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukfjf27a9/fabcae76-cf1d-45f3-8594-9bd99c0b2875/dd85cd10-ffd2-11ea-8293-3b6cc591631c/file-jgy2xukfjf27aa-369w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 5th September Morning Slot Chemistry - Chemical Bonding &amp; Molecular Structure Question 186 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukfjf2wb4/dd2a5b18-5c87-4a3d-aa86-0eba5da72fbc/f0da8810-ffd2-11ea-8293-3b6cc591631c/file-jgy2xukfjf2wb5-368w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 5th September Morning Slot Chemistry - Chemical Bonding &amp; Molecular Structure Question 186 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukfjf3ojz/26bbbeed-81f4-40a4-8b7f-05e97d0490af/06ac29f0-ffd3-11ea-8293-3b6cc591631c/file-jgy2xukfjf3ok0-369w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 5th September Morning Slot Chemistry - Chemical Bonding &amp; Molecular Structure Question 186 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukfjf4aan/48d29d8e-df10-46c6-8144-828d65b7e352/17777af0-ffd3-11ea-8293-3b6cc591631c/file-jgy2xukfjf4aao-364w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 5th September Morning Slot Chemistry - Chemical Bonding &amp; Molecular Structure Question 186 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Potential energy curve for H<sub>2</sub> molecules is\n<img src=\"https://imagex.cdn.examgoal.net/jgy2xukfjf3ojz/26bbbeed-81f4-40a4-8b7f-05e97d0490af/06ac29f0-ffd3-11ea-8293-3b6cc591631c/file-jgy2xukfjf3ok0-369w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 5th September Morning Slot Chemistry - Chemical Bonding &amp; Molecular Structure Question 186 English Explanation\">"
+    }
+  ]
+}

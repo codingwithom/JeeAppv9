@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1lgsugvol",
+      "paperTitle": "JEE Main 2023 (Online) 11th April Evening Shift",
+      "year": 2023,
+      "subject": "mathematics",
+      "chapter": "permutations-and-combinations",
+      "chapterGroup": "algebra",
+      "topic": "number-of-permutations",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pif-the-letters-of-the-word-maths-are-permuted-and-all-pos-jee-main-mathematics-trigonometric-functions-and-equations-wcmltozgf8hibyju",
+      "content": "<p>If the letters of the word MATHS are permuted and all possible words so formed are arranged as in a dictionary with serial numbers, then the serial number of the word THAMS is :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "103"
+        },
+        {
+          "identifier": "B",
+          "content": "104"
+        },
+        {
+          "identifier": "C",
+          "content": "102"
+        },
+        {
+          "identifier": "D",
+          "content": "101"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "To solve this problem, we start by finding the number of permutations before we reach a word that begins with T.\n\n<br><br>We have 5 letters in the word MATHS. If we fix the first letter, there are 4! (=4<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container>3<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container>2<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container>1=24) ways to arrange the remaining letters. \n\n<br><br>The letters before T in alphabetical order are A, H, M, and S. For each of these 4 letters, there are 4! ways to arrange the rest of the word, giving 4<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container>4! = 96 words that come before any words starting with T.\n\n<br><br>Then, in the section of words that start with 'T', we start with 'TA'. There are 3 remaining letters after 'TA', hence the permutations for words that start with 'TA' are (5-2)!=3!=6.\n\n<br><br>So, the total permutations for all words that come before 'TH' is 96 + 6 = 102.\n\n\n<br><br>Now, we need to count the words that come before 'THAMS'. After 'TH', the letters left are 'AMS'. Arranged in dictionary order, they would be 'AMS', 'ASM', 'MAS', 'MSA', 'SAM', 'SMA'. So, 'THAMS' is the first word in the 'TH' category, so it is the 103<sup>rd</sup> word overall when counting from the beginning.\n\n<br><br>So, the correct answer is 103, which corresponds to Option A."
+    }
+  ]
+}

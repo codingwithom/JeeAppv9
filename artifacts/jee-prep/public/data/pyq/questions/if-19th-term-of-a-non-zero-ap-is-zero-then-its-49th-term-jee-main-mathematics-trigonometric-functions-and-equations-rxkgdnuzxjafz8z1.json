@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "jMQGhZPXti3X7SerSWxl2",
+      "paperTitle": "JEE Main 2019 (Online) 11th January Evening Slot",
+      "year": 2019,
+      "examDate": "2019-01-11 14:30",
+      "subject": "mathematics",
+      "chapter": "sequences-and-series",
+      "chapterGroup": "algebra",
+      "topic": "arithmetic-progression",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "if-19th-term-of-a-non-zero-ap-is-zero-then-its-49th-term-jee-main-mathematics-trigonometric-functions-and-equations-rxkgdnuzxjafz8z1",
+      "content": "If 19<sup>th</sup> term of a non-zero A.P. is zero, then its (49<sup>th</sup> term) : (29<sup>th</sup> term) is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "2 : 1"
+        },
+        {
+          "identifier": "B",
+          "content": "4 : 1"
+        },
+        {
+          "identifier": "C",
+          "content": "1 : 3"
+        },
+        {
+          "identifier": "D",
+          "content": "3 : 1"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "a + 18d = 0        . . . . .(1)\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.912ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"21.71ex\" height=\"2.922ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -888.7 9595.9 1291.7\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(220,398) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(529,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1307,0)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use><use data-c=\"38\" xlink:href=\"#MJX-TEX-N-38\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2307,0)\"><use data-c=\"1D451\" xlink:href=\"#MJX-TEX-I-1D451\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(220,-345) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(529,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1307,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use><use data-c=\"38\" xlink:href=\"#MJX-TEX-N-38\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2307,0)\"><use data-c=\"1D451\" xlink:href=\"#MJX-TEX-I-1D451\"></use></g></g><rect width=\"2201.1\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g><g data-mml-node=\"mo\" transform=\"translate(2718.9,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(3774.7,0)\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(220,398) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(778,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"38\" xlink:href=\"#MJX-TEX-N-38\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1778,0)\"><use data-c=\"1D451\" xlink:href=\"#MJX-TEX-I-1D451\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2301,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(3079,0)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use><use data-c=\"38\" xlink:href=\"#MJX-TEX-N-38\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"mi\" transform=\"translate(4079,0)\"><use data-c=\"1D451\" xlink:href=\"#MJX-TEX-I-1D451\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(220,-345) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(778,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"38\" xlink:href=\"#MJX-TEX-N-38\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1778,0)\"><use data-c=\"1D451\" xlink:href=\"#MJX-TEX-I-1D451\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2301,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(3079,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use><use data-c=\"38\" xlink:href=\"#MJX-TEX-N-38\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"mi\" transform=\"translate(4079,0)\"><use data-c=\"1D451\" xlink:href=\"#MJX-TEX-I-1D451\"></use></g></g><rect width=\"3454.1\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g><g data-mml-node=\"mo\" transform=\"translate(7746.6,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(8802.3,0)\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mn\" transform=\"translate(220,394) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g><g data-mml-node=\"mn\" transform=\"translate(220,-345) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><rect width=\"553.6\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container>"
+    }
+  ]
+}

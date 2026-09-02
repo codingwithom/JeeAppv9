@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "A2m7JRQYhDBKsgWl7L7k9k2k5hlej38",
+      "paperTitle": "JEE Main 2020 (Online) 8th January Evening Slot",
+      "year": 2020,
+      "examDate": "2020-01-08 14:30",
+      "subject": "chemistry",
+      "chapter": "p-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "group-15-elements-nitrogen-family",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "a-metal-a-on-heating-in-nitrogen-gas-gives-compound-b-b-o-jee-main-chemistry-analytical-chemistry-pahlu8l3uhc5c221",
+      "content": "A metal (A) on heating in nitrogen gas gives\ncompound B. B on treatment with H<sub>2</sub>O gives\na colourless gas which when passed through\nCuSO<sub>4</sub> solution gives a dark blue-violet\ncoloured solution. A and B respectively, are :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Na and NaNO<sub>3</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "Na and Na<sub>3</sub>N"
+        },
+        {
+          "identifier": "C",
+          "content": "Mg and Mg<sub>3</sub>N<sub>2</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "Mg and Mg(NO<sub>3</sub>)<sub>2</sub>"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "3Mg(A) + N<sub>2</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.706ex\" height=\"3.005ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1317.3 1638 1328.3\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"REL\"><g data-mml-node=\"mover\"><g data-mml-node=\"mo\"><use data-c=\"27F6\" xlink:href=\"#MJX-TEX-N-27F6\"></use></g><g data-mml-node=\"mi\" transform=\"translate(524.5,711) scale(0.707)\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></g></g></svg></mjx-container>\nMg<sub>3</sub>N<sub>2</sub>(B) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.048ex\" height=\"3.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1325.9 1789.4 1336.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"REL\"><g data-mml-node=\"mover\"><g data-mml-node=\"mo\" transform=\"translate(75.7,0)\"><use data-c=\"27F6\" xlink:href=\"#MJX-TEX-N-27F6\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(0,728.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(500,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D43B\" xlink:href=\"#MJX-TEX-I-1D43B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(864,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"mi\" transform=\"translate(1767.6,0)\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g></g></g></g></g></g></svg></mjx-container> <br>3Mg(OH)<sub>2</sub> + 2NH<sub>3</sub> (colourless gas)\n<br><br>CuSO + 4NH<sub>3</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> [Cu(NH<sub>3</sub>)<sub>4</sub>]SO<sub>4</sub> (deep blue solution)"
+    }
+  ]
+}

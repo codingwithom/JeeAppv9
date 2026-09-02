@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ldyfls2h",
+      "paperTitle": "JEE Main 2023 (Online) 24th January Morning Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "hydrogen-bonding",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pdecreasing-order-of-the-hydrogen-bonding-in-following-for-jee-main-chemistry-some-basic-concepts-of-chemistry-n2ytmuvvnyellehs",
+      "content": "<p>Decreasing order of the hydrogen bonding in following forms of water is correctly represented by</p>\n<p>A. Liquid water</p>\n<p>B. Ice</p>\n<p>C. Impure water</p>\n<p>Choose the correct answer from the options given below :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "A = B > C"
+        },
+        {
+          "identifier": "B",
+          "content": "B > A > C"
+        },
+        {
+          "identifier": "C",
+          "content": "A > B > C"
+        },
+        {
+          "identifier": "D",
+          "content": "C > B > A"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Extent of hydrogen bonding :\n<br><br>\nIce <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.312ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 778 580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"3E\" xlink:href=\"#MJX-TEX-N-3E\"></use></g></g></g></svg></mjx-container> liquid water <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.312ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 778 580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"3E\" xlink:href=\"#MJX-TEX-N-3E\"></use></g></g></g></svg></mjx-container> impure water\n<br><br>\n- In ice, 4 molecules of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.445ex\" height=\"1.934ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 1964.6 855\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"48\" xlink:href=\"#MJX-TEX-N-48\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(783,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1186.6,0)\"><g data-mml-node=\"mi\"><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\"></use></g></g></g></g></svg></mjx-container> are connected to <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.445ex\" height=\"1.934ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 1964.6 855\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"48\" xlink:href=\"#MJX-TEX-N-48\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(783,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1186.6,0)\"><g data-mml-node=\"mi\"><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\"></use></g></g></g></g></svg></mjx-container> molecule.\n<br><br>\n- Impure water will have less hydrogen bonding."
+    }
+  ]
+}

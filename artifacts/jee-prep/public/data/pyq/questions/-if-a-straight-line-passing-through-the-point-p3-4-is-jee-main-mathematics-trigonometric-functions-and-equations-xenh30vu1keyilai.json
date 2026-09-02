@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "OoONgLpzJPuR08YqU4ZzC",
+      "paperTitle": "JEE Main 2019 (Online) 12th January Evening Slot",
+      "year": 2019,
+      "examDate": "2019-01-12 14:30",
+      "subject": "mathematics",
+      "chapter": "straight-lines-and-pair-of-straight-lines",
+      "chapterGroup": "coordinate-geometry",
+      "topic": "various-forms-of-straight-line",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "-if-a-straight-line-passing-through-the-point-p3-4-is-jee-main-mathematics-trigonometric-functions-and-equations-xenh30vu1keyilai",
+      "content": "If a straight line passing through the point P(–3, 4) is such that its intercepted portion between the coordinate axes is bisected at P, then its equation is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "x – y + 7 = 0"
+        },
+        {
+          "identifier": "B",
+          "content": "4x – 3y + 24 = 0"
+        },
+        {
+          "identifier": "C",
+          "content": "4x + 3y = 0"
+        },
+        {
+          "identifier": "D",
+          "content": "3x – 4y + 25 = 0"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/pI4OApWbg8BkQ2vCN/gUFpXCcDkgwsQtDagsRPhIi03XZg5/j3szhAoXjI9JmfFVw7dx24/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th January Evening Slot Mathematics - Straight Lines and Pair of Straight Lines Question 127 English Explanation\">\n<br>Let the line be <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.798ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"10.614ex\" height=\"2.602ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -797.5 4691.2 1150.3\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mi\" transform=\"translate(220,394) scale(0.707)\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g><g data-mml-node=\"mi\" transform=\"translate(235.2,-345) scale(0.707)\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><rect width=\"604.5\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g><g data-mml-node=\"mo\" transform=\"translate(1066.7,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2066.9,0)\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mi\" transform=\"translate(220,485) scale(0.707)\"><use data-c=\"1D466\" xlink:href=\"#MJX-TEX-I-1D466\"></use></g><g data-mml-node=\"mi\" transform=\"translate(243.7,-345) scale(0.707)\"><use data-c=\"1D44F\" xlink:href=\"#MJX-TEX-I-1D44F\"></use></g><rect width=\"550.7\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g><g data-mml-node=\"mo\" transform=\"translate(3135.4,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(4191.2,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g></svg></mjx-container>\n<br><br>(<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container> 3, 4) = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.791ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"6.716ex\" height=\"2.792ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -884.7 2968.3 1234.2\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mrow\"><g data-mml-node=\"mo\" transform=\"translate(0 -0.5)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-SO-28\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(458,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mi\" transform=\"translate(220,394) scale(0.707)\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"mn\" transform=\"translate(230.3,-345) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><rect width=\"574.1\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g><g data-mml-node=\"mo\" transform=\"translate(814.1,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1258.7,0)\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mi\" transform=\"translate(245.1,394) scale(0.707)\"><use data-c=\"1D44F\" xlink:href=\"#MJX-TEX-I-1D44F\"></use></g><g data-mml-node=\"mn\" transform=\"translate(220,-345) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><rect width=\"553.6\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g><g data-mml-node=\"mo\" transform=\"translate(2510.3,0) translate(0 -0.5)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-SO-29\"></use></g></g></g></g></svg></mjx-container>\n<br><br>a = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>6, b = 8\n<br><br>equation of line is 4x <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container> 3y + 24 = 0"
+    }
+  ]
+}

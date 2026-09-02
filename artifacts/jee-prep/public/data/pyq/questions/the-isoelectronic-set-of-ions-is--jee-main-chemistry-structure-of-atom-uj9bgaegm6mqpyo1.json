@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "1t8KnCesGIAARFRIeC3rsa0w2w9jwup40cd",
+      "paperTitle": "JEE Main 2019 (Online) 10th April Morning Slot",
+      "year": 2019,
+      "examDate": "2019-04-10 09:30",
+      "subject": "chemistry",
+      "chapter": "structure-of-atom",
+      "chapterGroup": "physical-chemistry",
+      "topic": "electronic-configuration-and-nodes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-isoelectronic-set-of-ions-is--jee-main-chemistry-structure-of-atom-uj9bgaegm6mqpyo1",
+      "content": "The isoelectronic set of ions is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "F<sup>–</sup>, Li<sup>+</sup>, Na<sup>+</sup> and Mg<sup>2+ </sup>"
+        },
+        {
+          "identifier": "B",
+          "content": "Li<sup>+</sup>, Na<sup>+</sup>, O<sup>2-</sup> and F<sup>- </sup>"
+        },
+        {
+          "identifier": "C",
+          "content": "N<sup>3–</sup>, O<sup>2-</sup>, F<sup>-</sup> and Na<sup>+ </sup>"
+        },
+        {
+          "identifier": "D",
+          "content": "N<sup>3–</sup>, Li<sup>+</sup>, Mg<sup>2+</sup> and O<sup>2-</sup>"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Atomic numbers of N, O, F and Na are 7, 8, 9\nand 11 respectively. \n<br><br>Therefore, total number of\nelectrons in each of N<sup>3-</sup>, O<sup>2–</sup>, F<sup>–</sup> and Na<sup>+</sup> is 10\nand hence they are isoelectronic."
+    }
+  ]
+}

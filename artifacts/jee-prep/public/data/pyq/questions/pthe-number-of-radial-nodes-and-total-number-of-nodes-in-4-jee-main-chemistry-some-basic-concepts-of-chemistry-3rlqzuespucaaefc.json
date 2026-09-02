@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l5w5fan6",
+      "paperTitle": "JEE Main 2022 (Online) 30th June Morning Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "structure-of-atom",
+      "chapterGroup": "physical-chemistry",
+      "topic": "quantum-numbers-and-orbitals",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pthe-number-of-radial-nodes-and-total-number-of-nodes-in-4-jee-main-chemistry-some-basic-concepts-of-chemistry-3rlqzuespucaaefc",
+      "content": "<p>The number of radial nodes and total number of nodes in 4p orbital respectively are :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "2 and 3"
+        },
+        {
+          "identifier": "B",
+          "content": "2 and 2"
+        },
+        {
+          "identifier": "C",
+          "content": "3 and 4"
+        },
+        {
+          "identifier": "D",
+          "content": "4 and 4"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "For <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.439ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.269ex\" height=\"1.971ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -677 1003 871\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g><g data-mml-node=\"mi\" transform=\"translate(500,0)\"><use data-c=\"1D45D\" xlink:href=\"#MJX-TEX-I-1D45D\"></use></g></g></g></svg></mjx-container>\n<br><br>\n<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.439ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"11.334ex\" height=\"2.009ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 5009.8 888\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mo\" transform=\"translate(877.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1933.6,0)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2433.6,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2878.2,0)\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g><g data-mml-node=\"mo\" transform=\"translate(3454,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(4509.8,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g></svg></mjx-container>\n<br><br>\nTotal number of nodes <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"19.837ex\" height=\"1.717ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -677 8767.8 759\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1055.8,0)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1878,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(2878.2,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mo\" transform=\"translate(3656,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(4711.8,0)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g><g data-mml-node=\"mo\" transform=\"translate(5434,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(6434.2,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mo\" transform=\"translate(7212,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(8267.8,0)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g></svg></mjx-container>\n<br><br>\nTotal radial nodes <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"27.173ex\" height=\"1.756ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 12010.7 776\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1055.8,0)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1878,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2878.2,0)\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g><g data-mml-node=\"mo\" transform=\"translate(3398.4,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(4398.7,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mo\" transform=\"translate(5176.4,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(6232.2,0)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g><g data-mml-node=\"mo\" transform=\"translate(6954.4,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(7954.7,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mo\" transform=\"translate(8676.9,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(9677.1,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mo\" transform=\"translate(10454.9,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(11510.7,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></svg></mjx-container>"
+    }
+  ]
+}

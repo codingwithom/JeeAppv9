@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "TRbgXhH7Da5NP2lHnv1kmj85yjg",
+      "paperTitle": "JEE Main 2021 (Online) 17th March Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "purification-of-organic-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "given-below-are-two-statements-brbrstatement-i--reta-jee-main-chemistry-some-basic-concepts-of-chemistry-a9r95lzcganehsfy",
+      "content": "Given below are two statements :<br><br>Statement I : Retardation factor (R<sub>f</sub>) can be measured in meter/centimeter.<br><br>Statement II : R<sub>f</sub> value of a compound remains constant in all solvents.<br><br>Choose the most appropriate answer from the options given below :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Statement I is true but statement II is false"
+        },
+        {
+          "identifier": "B",
+          "content": "Statement I is false but statement II is true"
+        },
+        {
+          "identifier": "C",
+          "content": "Both statement I and statement II are true"
+        },
+        {
+          "identifier": "D",
+          "content": "Both statement I and statement II are false"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Retardation factor (R<sub>f</sub>) is the ratio of the distance\nmoved by the substance from the baseline to the\ndistance moved by the solvent from the baseline.\nSo, it is dimensionless. The distance moved by the\nsubstance is due to the adsorption of the substance on\nthe stationary phase. It does not depend on the\nnature of the solvent. But the distance moved by the\nsolvent will change with the nature of the solvent.\nTherefore, R<sub>f</sub> will vary with the change in the solvent.<br><br>\nSo, both the statements are false."
+    }
+  ]
+}

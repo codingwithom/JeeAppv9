@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "hxibXXrIJqOcv64lxcjgy2xukftcqe4v",
+      "paperTitle": "JEE Main 2020 (Online) 6th September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-06 09:00",
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "inner-transition-elements-lanthanoids-and-actinoids",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-lanthanoid-that-does-not-show-4-oxidation-state-is--jee-main-chemistry-d-and-f-block-elements-0l7enazeokqncvfs",
+      "content": "The lanthanoid that does NOT show +4 oxidation\nstate is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Tb"
+        },
+        {
+          "identifier": "B",
+          "content": "Dy"
+        },
+        {
+          "identifier": "C",
+          "content": "Ce"
+        },
+        {
+          "identifier": "D",
+          "content": "Eu"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Europium (Eu)\n<br>Atomic No = 63\n<br>Electronic configuration = [Xe]4f<sup>7</sup>6s<sup>2</sup>\n<br>Can show only + 2 and + 3 oxidation state."
+    }
+  ]
+}

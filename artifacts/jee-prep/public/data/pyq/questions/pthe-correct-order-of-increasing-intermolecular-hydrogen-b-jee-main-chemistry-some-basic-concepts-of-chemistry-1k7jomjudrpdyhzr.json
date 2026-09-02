@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l56wur7s",
+      "paperTitle": "JEE Main 2022 (Online) 27th June Evening Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "hydrogen-bonding",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pthe-correct-order-of-increasing-intermolecular-hydrogen-b-jee-main-chemistry-some-basic-concepts-of-chemistry-1k7jomjudrpdyhzr",
+      "content": "<p>The correct order of increasing intermolecular hydrogen bond strength is :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "HCN < H<sub>2</sub>O < NH<sub>3</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "HCN < CH<sub>4</sub> < NH<sub>3</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "CH<sub>4</sub> < HCN < NH<sub>3</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "CH<sub>4</sub> < NH<sub>3</sub> < HCN"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Due to the high difference in electronegativity of H and\nN the H-bond strength of NH<sub>3</sub> is highest. There is\nno H-bond in CH<sub>4</sub>.<br/><br/>\nCH<sub>4</sub> < HCN < NH<sub>3</sub>"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ldr3f16z",
+      "paperTitle": "JEE Main 2023 (Online) 30th January Morning Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "salt-analysis",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "systematic-analysis-of-cations",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pin-the-wet-tests-for-identification-of-various-cations-by-jee-main-chemistry-some-basic-concepts-of-chemistry-upzxj52ecvwv4mz6",
+      "content": "<p>In the wet tests for identification of various cations by precipitation, which transition element cation doesn't belong to group IV in qualitative inorganic analysis?</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Co<sup>2+</sup>"
+        },
+        {
+          "identifier": "B",
+          "content": "Ni<sup>2+</sup>"
+        },
+        {
+          "identifier": "C",
+          "content": "Zn<sup>2+</sup>"
+        },
+        {
+          "identifier": "D",
+          "content": "Fe<sup>3+</sup>"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<p>In qualitative inorganic analysis, cations are divided into different groups based on their precipitation reactions. Group IV cations typically include those that form sulfides or hydroxides that are insoluble in water and dilute acids, but soluble in excess ammonia or sodium hydroxide.</p>\n\n<p><p><strong>Co<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.232ex\" height=\"1.887ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -833.9 986.7 833.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"></g><g data-mml-node=\"TeXAtom\" transform=\"translate(33,363) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g></g></g></g></g></svg></mjx-container></strong> (Cobalt)</p></p>\n<p><p><strong>Ni<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.232ex\" height=\"1.887ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -833.9 986.7 833.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"></g><g data-mml-node=\"TeXAtom\" transform=\"translate(33,363) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g></g></g></g></g></svg></mjx-container></strong> (Nickel)</p></p>\n<p><p><strong>Zn<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.232ex\" height=\"1.887ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -833.9 986.7 833.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"></g><g data-mml-node=\"TeXAtom\" transform=\"translate(33,363) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g></g></g></g></g></svg></mjx-container></strong> (Zinc)</p></p>\n\n<p>These cations are generally placed in Group IV because they form precipitates with specific reagents used in the separation process.</p>\n<p><strong>Fe<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.232ex\" height=\"1.885ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -833.2 986.7 833.2\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"></g><g data-mml-node=\"TeXAtom\" transform=\"translate(33,363) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g></g></g></g></g></svg></mjx-container></strong> (Iron), on the other hand, is not typically included in Group IV. It belongs to Group III because it forms insoluble hydroxides that precipitate in the presence of ammonia. </p>\n<p>Thus, the transition element cation that doesn't belong to Group IV is:</p>\n<p>Option D  </p>\n<p><strong>Fe<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.232ex\" height=\"1.885ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -833.2 986.7 833.2\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"></g><g data-mml-node=\"TeXAtom\" transform=\"translate(33,363) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g></g></g></g></g></svg></mjx-container></strong></p>"
+    }
+  ]
+}

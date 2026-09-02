@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "7WCoZ43jUqQDISg2wd1kmht9z0m",
+      "paperTitle": "JEE Main 2021 (Online) 16th March Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "p-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "group-15-elements-nitrogen-family",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "a-group-of-15-element-which-is-a-metal-and-forms-a-hydride-jee-main-chemistry-some-basic-concepts-of-chemistry-9fwn32ix5ec6ej94",
+      "content": "A group of 15 element, which is a metal and forms a hydride with strongest reducing power among group 15 hydrides. The element is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "As"
+        },
+        {
+          "identifier": "B",
+          "content": "Sb"
+        },
+        {
+          "identifier": "C",
+          "content": "Bi"
+        },
+        {
+          "identifier": "D",
+          "content": "P"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "BiH<sub>3</sub> is the strongest reducing agent among the hydrides of 15 group elements as Bi – H bond dissociation energy is very less."
+    }
+  ]
+}

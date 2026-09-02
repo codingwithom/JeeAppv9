@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "bymMlZOak3pTMyxTzM7k9k2k5dz3vg6",
+      "paperTitle": "JEE Main 2020 (Online) 7th January Morning Slot",
+      "year": 2020,
+      "examDate": "2020-01-07 09:30",
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "electron-gain-enthalpy",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-electron-gain-enthalpy-in-kjmol-of-fluorine-chlorine-jee-main-chemistry-analytical-chemistry-qgn5pcefrhczr9u7",
+      "content": "The electron gain enthalpy (in KJ/mol) of fluorine, chlorine, bromine and iodine, respectively are:",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "-296, -325, -333 and -349"
+        },
+        {
+          "identifier": "B",
+          "content": "349, -333, -325 and -296 "
+        },
+        {
+          "identifier": "C",
+          "content": "-333, -349, -325 and -296"
+        },
+        {
+          "identifier": "D",
+          "content": "-333, -325, -349 and -296\n"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Order of electron gain enthalpy (magnitude) is\nCl &gt; F &gt; Br &gt; I\n<br><br><b>Note:</b> Electron gain enthalpy increases with electro negativity but chlorine has higher electron gain enthalpy than\nfluorine (exception)."
+    }
+  ]
+}

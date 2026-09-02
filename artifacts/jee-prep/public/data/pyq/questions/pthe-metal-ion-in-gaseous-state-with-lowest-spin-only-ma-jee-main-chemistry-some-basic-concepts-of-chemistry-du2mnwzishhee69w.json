@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l59qzy9a",
+      "paperTitle": "JEE Main 2022 (Online) 25th June Evening Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "properties-of-transition-elements",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pthe-metal-ion-in-gaseous-state-with-lowest-spin-only-ma-jee-main-chemistry-some-basic-concepts-of-chemistry-du2mnwzishhee69w",
+      "content": "<p>The metal ion (in gaseous state) with lowest spin-only magnetic moment value is :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "V<sup>2+</sup>"
+        },
+        {
+          "identifier": "B",
+          "content": "Ni<sup>2+</sup>"
+        },
+        {
+          "identifier": "C",
+          "content": "Cr<sup>2+</sup>"
+        },
+        {
+          "identifier": "D",
+          "content": "Fe<sup>2+</sup>"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<table style=\"width:100%;text-align:left;min-width:460px\">\n<thead>\n  <tr>\n    <th></th>\n    <th>Valence shell configuration</th>\n    <th>Unpaired electrons</th>\n  </tr>\n</thead>\n<tbody>\n  <tr>\n    <td>V<sup>2+</sup></td>\n    <td>3d<sup>3</sup>4s<sup>0</sup></td>\n    <td>n = 3</td>\n  </tr>\n  <tr>\n    <td>Ni<sup>2+</sup></td>\n    <td>3d<sup>8</sup>4s<sup>0</sup></td>\n    <td>n = 2</td>\n  </tr>\n  <tr>\n    <td>Cr<sup>2+</sup></td>\n    <td>3d<sup>4</sup>4s<sup>0</sup></td>\n    <td>n = 4</td>\n  </tr>\n  <tr>\n    <td>Fe<sup>2+</sup></td>\n    <td>3d<sup>6</sup>4s<sup>0</sup></td>\n    <td>n = 4</td>\n  </tr>\n</tbody>\n</table><br/><br/>\nSince Ni<sup>2+</sup> has least number of unpaired electrons.\nHence Ni<sup>2+</sup> will have lowest spin only magnetic\nmoment Value."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1kteci83s",
+      "paperTitle": "JEE Main 2021 (Online) 27th August Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "alcohols-phenols-and-ethers",
+      "chapterGroup": "organic-chemistry",
+      "topic": "properties-preparation-and-uses-of-ethers",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "given-below-are-two-statements--one-is-labelled-as-assertio-jee-main-chemistry-some-basic-concepts-of-chemistry-2x71qebxyp6dh2qc",
+      "content": "Given below are two statements : one is labelled as Assertion (A) and the other is labelled as Reason (R). <br><br>Assertion (A) : Synthesis of ethyl phenyl ether may be achieved by Williamson synthesis.<br><br>Reason (R) : Reaction of bromobenzene with sodium ethoxide yields ethyl phenyl ether.<br><br>In the light of the above statements, choose the most appropriate answer from the options given below :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Both (A) and (R) are correct and (R) is the correct explanation of (A)"
+        },
+        {
+          "identifier": "B",
+          "content": "(A) is correct but (R) is not correct"
+        },
+        {
+          "identifier": "C",
+          "content": "(A) is not correct but (R) is correct"
+        },
+        {
+          "identifier": "D",
+          "content": "Both (A) and (R) are correct but (R) is not the correct explanation of (A)."
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1ktp3qby9/718c9773-9345-4c12-a85f-8af1ad6f0ae7/4a32c710-181e-11ec-842f-574929d5f313/file-1ktp3qbya.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 27th August Morning Shift Chemistry - Alcohols, Phenols and Ethers Question 106 English Explanation\">"
+    }
+  ]
+}

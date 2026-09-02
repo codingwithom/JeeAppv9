@@ -1,0 +1,746 @@
+{
+  "exam": "jee-advanced",
+  "subject": "chemistry",
+  "chapterKey": "redox-reactions",
+  "title": "Redox Reactions | Chemistry | JEE Advanced Previous Year Questions",
+  "chapter": {
+    "metaId": "6ee85de2-232a-548d-8fb6-985795e3734a",
+    "country": "in",
+    "exam": "jee-advanced",
+    "examGroup": "jee",
+    "key": "redox-reactions",
+    "subject": "chemistry",
+    "chapterGroup": "physical-chemistry",
+    "createdAt": "2021-08-15T19:43:01.564Z",
+    "description": null,
+    "image": null,
+    "keyValuePairs": {},
+    "order": 2,
+    "subjectGroup": null,
+    "title": "Redox Reactions",
+    "updatedAt": "2024-04-24T19:21:24.621Z",
+    "type": "chapter",
+    "pyq_stats": [
+      {
+        "year": 2026,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.94
+      },
+      {
+        "year": 2025,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 3.13
+      },
+      {
+        "year": 2024,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2023,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2022,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2021,
+        "total": 3,
+        "avg": 1.5,
+        "weightage": 7.89
+      },
+      {
+        "year": 2020,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.78
+      },
+      {
+        "year": 2019,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2018,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2017,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.78
+      },
+      {
+        "year": 2016,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.78
+      },
+      {
+        "year": 2015,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.5
+      },
+      {
+        "year": 2014,
+        "total": 2,
+        "avg": 1,
+        "weightage": 5
+      },
+      {
+        "year": 2013,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2012,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2011,
+        "total": 2,
+        "avg": 1,
+        "weightage": 4.65
+      },
+      {
+        "year": 2010,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2009,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2008,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2007,
+        "total": 1,
+        "avg": 0.33,
+        "weightage": 2.13
+      },
+      {
+        "year": 2006,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2005,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2004,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2003,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2002,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2001,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 9.09
+      },
+      {
+        "year": 2000,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 6.67
+      },
+      {
+        "year": 1999,
+        "total": 1,
+        "avg": 1,
+        "weightage": 6.67
+      },
+      {
+        "year": 1998,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1997,
+        "total": 1,
+        "avg": 1,
+        "weightage": 8.33
+      },
+      {
+        "year": 1996,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1995,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 12.5
+      },
+      {
+        "year": 1994,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1993,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1992,
+        "total": 1,
+        "avg": 1,
+        "weightage": 5.88
+      },
+      {
+        "year": 1991,
+        "total": 1,
+        "avg": 1,
+        "weightage": 5.26
+      },
+      {
+        "year": 1990,
+        "total": 1,
+        "avg": 1,
+        "weightage": 8.33
+      },
+      {
+        "year": 1989,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1988,
+        "total": 1,
+        "avg": 1,
+        "weightage": 7.14
+      },
+      {
+        "year": 1987,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1986,
+        "total": 5,
+        "avg": 5,
+        "weightage": 20.83
+      },
+      {
+        "year": 1985,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1984,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1983,
+        "total": 5,
+        "avg": 5,
+        "weightage": 23.81
+      },
+      {
+        "year": 1982,
+        "total": 1,
+        "avg": 1,
+        "weightage": 5.26
+      },
+      {
+        "year": 1981,
+        "total": 2,
+        "avg": 2,
+        "weightage": 13.33
+      },
+      {
+        "year": 1980,
+        "total": 1,
+        "avg": 1,
+        "weightage": 5.56
+      },
+      {
+        "year": 1979,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1978,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      }
+    ],
+    "pyq": {
+      "count": {
+        "out_of_syllabus": 0,
+        "total": 37,
+        "private": 0,
+        "public": 37,
+        "bucket": 0
+      },
+      "isTopicWise": true
+    },
+    "isOutOfSyllabus": false,
+    "hideFromClassify": false,
+    "groups": [
+      {
+        "title": "Numerical",
+        "key": "integer"
+      },
+      {
+        "title": "MCQ (Single Correct Answer)",
+        "key": "mcq"
+      },
+      {
+        "title": "MCQ (Multiple Correct Answer)",
+        "key": "mcqm"
+      },
+      {
+        "title": "Subjective",
+        "key": "subjective"
+      }
+    ]
+  },
+  "questions": [
+    {
+      "title": "MCQ (More than One Correct Answer)",
+      "key": "mcqm",
+      "questions": [
+        {
+          "examGroup": "jee",
+          "permalink": "preaction-of-ptfsub6sub-with-oxygen-osub2sub-g-jee-advanced-chemistry-evayb4wo3k6uj962",
+          "paperTitle": "JEE Advanced 2026 Paper 1 Online",
+          "question": {
+            "en": {
+              "content": "<p>Reaction of PtF<sub>6</sub> with oxygen (O<sub>2</sub>) gas results in the formation of an ionic compound, X<sup>+</sup>Y<sup>-</sup>.<br>Correct statement(s) is(are)</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "choose-the-correct-statements-among-the-following--jee-advanced-chemistry-some-basic-concepts-of-chemistry-34aq6hdyudw8nc8k",
+          "paperTitle": "JEE Advanced 2020 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "Choose the correct statement(s) among the following :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pfesup3sup-is-reduced-to-fesup2sup-by-usingp-jee-advanced-chemistry-some-basic-concepts-of-chemistry-xxeoopeaxlxf4urs",
+          "paperTitle": "JEE Advanced 2015 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "<p>Fe<sup>3+</sup> is reduced to Fe<sup>2+</sup> by using</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "for-the-reactionbrbri---cio3--h2so-jee-advanced-chemistry-some-basic-concepts-of-chemistry-aybgvendhkfvw1pr",
+          "paperTitle": "JEE Advanced 2014 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "For the reaction,<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.706ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"42.305ex\" height=\"2.57ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -823.8 18698.7 1136\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"1D43C\" xlink:href=\"#MJX-TEX-I-1D43C\"></use></g><g data-mml-node=\"mo\" transform=\"translate(590.2,363) scale(0.707)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(1412.6,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2412.8,0)\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mi\" transform=\"translate(3172.8,0)\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g><g data-mml-node=\"msubsup\" transform=\"translate(3470.8,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mo\" transform=\"translate(796,411.6) scale(0.707)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-296.6) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(5089.1,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(6089.3,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D43B\" xlink:href=\"#MJX-TEX-I-1D43B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(864,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"mi\" transform=\"translate(7356.9,0)\"><use data-c=\"1D446\" xlink:href=\"#MJX-TEX-I-1D446\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(8001.9,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-150) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(9479.2,0)\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g><g data-mml-node=\"mi\" transform=\"translate(10757,0)\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(11517,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g><g data-mml-node=\"mo\" transform=\"translate(331,363) scale(0.707)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(12670.4,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mi\" transform=\"translate(13670.6,0)\"><use data-c=\"1D43B\" xlink:href=\"#MJX-TEX-I-1D43B\"></use></g><g data-mml-node=\"mi\" transform=\"translate(14558.6,0)\"><use data-c=\"1D446\" xlink:href=\"#MJX-TEX-I-1D446\"></use></g><g data-mml-node=\"msubsup\" transform=\"translate(15203.6,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mo\" transform=\"translate(796,411.6) scale(0.707)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-305.1) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(16821.9,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(17822.2,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D43C\" xlink:href=\"#MJX-TEX-I-1D43C\"></use></g><g data-mml-node=\"mn\" transform=\"translate(473,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></g></svg></mjx-container><br><br>the correct statement(s) in the balanced equation is/are"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "preduction-of-the-metal-centre-in-aqueous-permanganate-ion-jee-advanced-chemistry-some-basic-concepts-of-chemistry-9fld5vwhua9cv1i6",
+          "paperTitle": "IIT-JEE 2011 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "<p>Reduction of the metal centre in aqueous permanganate ion involves</p>"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "MCQ (Single Correct Answer)",
+      "key": "mcq",
+      "questions": [
+        {
+          "examGroup": "jee",
+          "permalink": "pone-of-the-products-formed-from-the-reaction-of-permangan-jee-advanced-chemistry-fbtn6y6xkthan7er",
+          "paperTitle": "JEE Advanced 2025 Paper 1 Online",
+          "question": {
+            "en": {
+              "content": "<p>One of the products formed from the reaction of permanganate ion with iodide ion in neutral aqueous medium is</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-order-of-the-oxidation-state-of-the-phosphorous-atom-in-2017-marks-3-xnwnmzxx4e0z3ldn.htm",
+          "paperTitle": "JEE Advanced 2017 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "The order of the oxidation state of the phosphorous atom in \n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.439ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"23.854ex\" height=\"2.032ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -704 10543.7 898\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D43B\" xlink:href=\"#MJX-TEX-I-1D43B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(864,-150) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g><g data-mml-node=\"mi\" transform=\"translate(1267.6,0)\"><use data-c=\"1D443\" xlink:href=\"#MJX-TEX-I-1D443\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2018.6,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(3218.1,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(3662.8,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D43B\" xlink:href=\"#MJX-TEX-I-1D43B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(864,-150) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g><g data-mml-node=\"mi\" transform=\"translate(4930.3,0)\"><use data-c=\"1D443\" xlink:href=\"#MJX-TEX-I-1D443\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(5681.3,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-150) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(6880.9,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(7325.5,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D43B\" xlink:href=\"#MJX-TEX-I-1D43B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(864,-150) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g><g data-mml-node=\"mi\" transform=\"translate(8593.1,0)\"><use data-c=\"1D443\" xlink:href=\"#MJX-TEX-I-1D443\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(9344.1,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-150) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g></g></g></svg></mjx-container> and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.375ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"8.022ex\" height=\"1.967ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -704 3545.7 869.6\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D43B\" xlink:href=\"#MJX-TEX-I-1D43B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(864,-150) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1267.6,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D443\" xlink:href=\"#MJX-TEX-I-1D443\"></use></g><g data-mml-node=\"mn\" transform=\"translate(675,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2346.1,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-150) scale(0.707)\"><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\"></use></g></g></g></g></g></svg></mjx-container> is "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pmatch-the-reactions-in-column-i-with-nature-of-the-reacti-jee-advanced-chemistry-some-basic-concepts-of-chemistry-4yyoc0kzuuek9f7u",
+          "paperTitle": "IIT-JEE 2007 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "<p>Match the reactions in Column I with nature of the reactions/type of the products in Column II. Indicate your answer by darkening the appropriate bubbles of the 4 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 4 matrix given in the ORS.</p>\n<p>\n<table class=\"tg\" style=\"undefined;table-layout: fixed; width: 472px\">\n<colgroup>\n<col style=\"width: 48px\">\n<col style=\"width: 192px\">\n<col style=\"width: 53px\">\n<col style=\"width: 179px\">\n</colgroup>\n<thead>\n  <tr>\n    <th class=\"tg-7btt\"></th>\n    <th class=\"tg-7btt\">Column I</th>\n    <th class=\"tg-7btt\"></th>\n    <th class=\"tg-7btt\">Column II</th>\n  </tr>\n</thead>\n<tbody>\n  <tr>\n    <td class=\"tg-c3ow\">(A)</td>\n    <td class=\"tg-0pky\"><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.673ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"16.218ex\" height=\"2.669ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -882.5 7168.4 1179.8\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msubsup\"><g data-mml-node=\"mi\"><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\"></use></g><g data-mml-node=\"mo\" transform=\"translate(811,411.6) scale(0.707)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(811,-297.3) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(1688.9,0)\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2966.7,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\"></use></g><g data-mml-node=\"mn\" transform=\"translate(811,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(4403.5,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"msubsup\" transform=\"translate(5403.7,0)\"><g data-mml-node=\"mi\"><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(811,411.6) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(811,-297.3) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></g></svg></mjx-container></td>\n    <td class=\"tg-c3ow\">(P)</td>\n    <td class=\"tg-0pky\">redox reaction</td>\n  </tr>\n  <tr>\n    <td class=\"tg-c3ow\">(B)</td>\n    <td class=\"tg-0pky\"><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.644ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"12.408ex\" height=\"2.687ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -903 5484.3 1187.6\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msubsup\"><g data-mml-node=\"mi\"><use data-c=\"43\" xlink:href=\"#MJX-TEX-N-43\"></use><use data-c=\"72\" xlink:href=\"#MJX-TEX-N-72\" transform=\"translate(722,0)\"></use><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\" transform=\"translate(1114,0)\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1925,432.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(1925,-284.6) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(3100.9,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(4101.1,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"48\" xlink:href=\"#MJX-TEX-N-48\"></use></g><g data-mml-node=\"mo\" transform=\"translate(783,363) scale(0.707)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g></g></g></g></g></g></svg></mjx-container></td>\n    <td class=\"tg-c3ow\">(Q)</td>\n    <td class=\"tg-0pky\">one of the products has trigonal planar structure</td>\n  </tr>\n  <tr>\n    <td class=\"tg-c3ow\">(C)</td>\n    <td class=\"tg-0pky\"><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.644ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"22.966ex\" height=\"2.554ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -844.3 10151.1 1128.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msubsup\"><g data-mml-node=\"mi\"><use data-c=\"4D\" xlink:href=\"#MJX-TEX-N-4D\"></use><use data-c=\"6E\" xlink:href=\"#MJX-TEX-N-6E\" transform=\"translate(917,0)\"></use><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\" transform=\"translate(1473,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2284,432.1) scale(0.707)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(2284,-284.6) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(3106.4,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"msubsup\" transform=\"translate(4106.6,0)\"><g data-mml-node=\"mi\"><use data-c=\"4E\" xlink:href=\"#MJX-TEX-N-4E\"></use><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\" transform=\"translate(750,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1561,432.1) scale(0.707)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1561,-276.9) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(6489.9,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(7490.1,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"48\" xlink:href=\"#MJX-TEX-N-48\"></use></g><g data-mml-node=\"mo\" transform=\"translate(783,363) scale(0.707)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(9151.1,0)\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></g></svg></mjx-container></td>\n    <td class=\"tg-c3ow\">(R)</td>\n    <td class=\"tg-0pky\">dimeric bridged tetrahedral metal ion</td>\n  </tr>\n  <tr>\n    <td class=\"tg-c3ow\">(D)</td>\n    <td class=\"tg-0pky\"><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.66ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24.716ex\" height=\"2.57ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -844.3 10924.6 1136\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msubsup\"><g data-mml-node=\"mi\"><use data-c=\"4E\" xlink:href=\"#MJX-TEX-N-4E\"></use><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\" transform=\"translate(750,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1561,432.1) scale(0.707)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1561,-276.2) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(2383.4,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(3383.6,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"48\" xlink:href=\"#MJX-TEX-N-48\"></use></g><g data-mml-node=\"mn\" transform=\"translate(783,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"mi\" transform=\"translate(4570.1,0)\"><use data-c=\"53\" xlink:href=\"#MJX-TEX-N-53\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(5126.1,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\"></use></g><g data-mml-node=\"mn\" transform=\"translate(811,-150) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(6562.9,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mi\" transform=\"translate(7563.1,0)\"><use data-c=\"46\" xlink:href=\"#MJX-TEX-N-46\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(8216.1,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"65\" xlink:href=\"#MJX-TEX-N-65\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(477,363) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g></g></g></g><g data-mml-node=\"mo\" transform=\"translate(9924.6,0)\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></g></svg></mjx-container></td>\n    <td class=\"tg-c3ow\">(S)</td>\n    <td class=\"tg-0pky\">disproportionation</td>\n  </tr>\n</tbody>\n</table></p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-reaction-3clo-aq-to-clo3-aq-2cl-aq-is-an-example-of-jee-advanced-2001-screening-marks-2-axweo38a2afqtrsg.htm",
+          "paperTitle": "IIT-JEE 2001 Screening",
+          "question": {
+            "en": {
+              "content": "The reaction, <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.566ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"10.681ex\" height=\"2.32ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -775.2 4721.1 1025.2\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g><g data-mml-node=\"mi\" transform=\"translate(500,0)\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1260,0)\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1558,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mo\" transform=\"translate(796,363) scale(0.707)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(2954.1,0)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"mi\" transform=\"translate(3343.1,0)\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(3872.1,0)\"><use data-c=\"1D45E\" xlink:href=\"#MJX-TEX-I-1D45E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(4332.1,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g></g></svg></mjx-container><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.706ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24.162ex\" height=\"2.57ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -823.8 10679.5 1136\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1277.8,0)\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2037.8,0)\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g><g data-mml-node=\"msubsup\" transform=\"translate(2335.8,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mo\" transform=\"translate(796,411.6) scale(0.707)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-296.6) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(3731.9,0)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"mi\" transform=\"translate(4120.9,0)\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(4649.9,0)\"><use data-c=\"1D45E\" xlink:href=\"#MJX-TEX-I-1D45E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(5109.9,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g><g data-mml-node=\"mo\" transform=\"translate(5721.1,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(6721.4,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mi\" transform=\"translate(7221.4,0)\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(7981.4,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g><g data-mml-node=\"mo\" transform=\"translate(331,363) scale(0.707)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(8912.5,0)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"mi\" transform=\"translate(9301.5,0)\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(9830.5,0)\"><use data-c=\"1D45E\" xlink:href=\"#MJX-TEX-I-1D45E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(10290.5,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g></g></svg></mjx-container> is an example of :\n"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "amongst-the-following-identify-the-species-with-an-atom-in-6-jee-advanced-2000-screening-marks-2-mcqbvzarxvkngm4d.htm",
+          "paperTitle": "IIT-JEE 2000 Screening",
+          "question": {
+            "en": {
+              "content": "Amongst the following identify the species with an atom in +6 oxidation state"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-normality-of-03-m-phosphorus-acid-h3po3-is-jee-advanced-1999-marks-2-2spsgj5scgoxq3o0.htm",
+          "paperTitle": "IIT-JEE 1999",
+          "question": {
+            "en": {
+              "content": "The normality of 0.3 M phosphorus acid (H<sub>3</sub>PO<sub>3</sub>) is"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "for-the-redox-reactionmno4-c2o4-2-h-to-mn2-co2-h2othe-correc-jee-advanced-1992-marks-1-4isfhrypobo4teea.htm",
+          "paperTitle": "IIT-JEE 1992",
+          "question": {
+            "en": {
+              "content": "For the redox reaction:<br>\n<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.69ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"22.55ex\" height=\"2.687ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -882.5 9967.2 1187.6\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D440\" xlink:href=\"#MJX-TEX-I-1D440\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1051,0)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"msubsup\" transform=\"translate(1651,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mo\" transform=\"translate(796,411.6) scale(0.707)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-305.1) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(3269.4,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(4269.6,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mn\" transform=\"translate(748,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"msubsup\" transform=\"translate(5421.1,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(796,411.6) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(778,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(796,-305.1) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(7393,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(8393.3,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"1D43B\" xlink:href=\"#MJX-TEX-I-1D43B\"></use></g><g data-mml-node=\"mo\" transform=\"translate(973.9,363) scale(0.707)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g></g></g></g></g></svg></mjx-container> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"23.417ex\" height=\"2.226ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -833.9 10350.5 983.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1277.8,0)\"><use data-c=\"1D440\" xlink:href=\"#MJX-TEX-I-1D440\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2328.8,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(633,363) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g></g></g></g><g data-mml-node=\"mo\" transform=\"translate(4137.7,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mi\" transform=\"translate(5137.9,0)\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(5897.9,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(7319.7,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(8319.9,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D43B\" xlink:href=\"#MJX-TEX-I-1D43B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(864,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"mi\" transform=\"translate(9587.5,0)\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g></g></g></svg></mjx-container><br>\nThe correct coefficients of the reactants for the balanced \nreaction are"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-volume-strength-of-15-n-h2o2-solution-is-1991-marks-1-cv6oq7vkv51wfjhn.htm",
+          "paperTitle": "IIT-JEE 1991",
+          "question": {
+            "en": {
+              "content": "The volume strength of 1.5 N H<sub>2</sub>O<sub>2</sub> solution is"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-oxidation-number-of-phosphorus-in-bah2po2-is-jee-advanced-1990-marks-1-ndupw0cjvlcqnxk9.htm",
+          "paperTitle": "IIT-JEE 1990",
+          "question": {
+            "en": {
+              "content": "The oxidation number of phosphorus in Ba(H<sub>2</sub>PO<sub>2</sub>) is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-equivalent-weight-of-mnso4-is-half-of-its-molecular-weig-jee-advanced-1988-marks-1-zyojyfhdjnpjaard.htm",
+          "paperTitle": "IIT-JEE 1988",
+          "question": {
+            "en": {
+              "content": "The equivalent weight of MnSO<sub>4</sub> is half of its molecular weight, when it converts to "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-oxidation-number-of-carbon-in-ch2o-is-jee-advanced-1982-marks-1-denths4paodxeq5p.htm",
+          "paperTitle": "IIT-JEE 1982",
+          "question": {
+            "en": {
+              "content": "The oxidation number of carbon in CH<sub>2</sub>O is"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "1-mole-of-n2h4-loses-10-moles-of-electrons-to-form-a-new-com-jee-advanced-1981-marks-1-kfqhencj7bklsheh.htm",
+          "paperTitle": "IIT-JEE 1981",
+          "question": {
+            "en": {
+              "content": "1 mole of N<sub>2</sub>H<sub>4</sub> loses 10 moles of electrons to form a new compound Y. assuming that all nitrogen appears in the new compound , what is the oxidation state of nitrogen in Y  ? (there is no change in the oxidation state of hydrogen)"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "m-is-molecular-weight-of-kmno4-the-equivalent-wight-of-kmno4-jee-advanced-1980-marks-2-xi2ddellok10l2ik.htm",
+          "paperTitle": "IIT-JEE 1980",
+          "question": {
+            "en": {
+              "content": "M is molecular weight of KMnO<sub>4</sub>. The equivalent wight of KMnO<sub>4</sub> when it is converted into K<sub>2</sub>MnO<sub>4</sub> is"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Numerical",
+      "key": "integer",
+      "questions": [
+        {
+          "examGroup": "jee",
+          "permalink": "a-sample-56-g-containing-iron-is-completely-dissolved-in-jee-advanced-chemistry-some-basic-concepts-of-chemistry-ptyyrbgoujskjvqh",
+          "paperTitle": "JEE Advanced 2021 Paper 2 Online",
+          "question": {
+            "en": {
+              "content": "A sample (5.6 g) containing iron is completely dissolved in cold dilute HCl to prepare a 250 mL of solution. Titration of 25.0 mL of this solution requires 12.5 mL of 0.03 M KMnO<sub>4</sub> solution to reach the end point. Number of moles of Fe<sup>2+</sup> present in 250 mL solution is x <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 10<sup><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>2</sup> (consider complete dissolution of FeCl<sub>2</sub>). The amount of iron present in the sample is y% by weight.<br><br>(Assume : KMnO<sub>4</sub> reacts only with Fe<sup>2+</sup> in the solution <br><br>Use : Molar mass of iron as 56 g mol<sup><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>1</sup>)<br><br>The value of x is ______."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "a-sample-56-g-containing-iron-is-completely-dissolved-in-jee-advanced-chemistry-some-basic-concepts-of-chemistry-pznvifgx5ojk61j4",
+          "paperTitle": "JEE Advanced 2021 Paper 2 Online",
+          "question": {
+            "en": {
+              "content": "A sample (5.6 g) containing iron is completely dissolved in cold dilute HCl to prepare a 250 mL of solution. Titration of 25.0 mL of this solution requires 12.5 mL of 0.03 M KMnO<sub>4</sub> solution to reach the end point. Number of moles of Fe<sup>2+</sup> present in 250 mL solution is x <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 10<sup><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>2</sup> (consider complete dissolution of FeCl<sub>2</sub>). The amount of iron present in the sample is y% by weight.<br><br>(Assume : KMnO<sub>4</sub> reacts only with Fe<sup>2+</sup> in the solution <br><br>Use : Molar mass of iron as 56 g mol<sup><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>1</sup>)<br><br>The value of y is ______."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "ozonolysis-of-closub2sub-produces-an-oxide-of-chlorine-jee-advanced-chemistry-some-basic-concepts-of-chemistry-0hdbppldh5iyqgla",
+          "paperTitle": "JEE Advanced 2021 Paper 2 Online",
+          "question": {
+            "en": {
+              "content": "Ozonolysis of ClO<sub>2</sub> produces an oxide of chlorine. The average oxidation state of chlorine in this oxide is __________."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "in-neutral-or-faintly-alkaline-solution-8-moles-of-permanga-jee-advanced-chemistry-some-basic-concepts-of-chemistry-wlsfdk6w3bqtpfpp",
+          "paperTitle": "JEE Advanced 2016 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "In neutral or faintly alkaline solution, 8 moles of permanganate anion quantitative oxidise thiosulphate anions to produce X moles of a sulphur containing product. The magnitude of X is.... "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "consider-the-following-list-of-reagents-acidified-ksub2-jee-advanced-chemistry-some-basic-concepts-of-chemistry-ak3i1jos0kcj6atp",
+          "paperTitle": "JEE Advanced 2014 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "Consider the following list of reagents, acidified K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub>, alkaline KMnO<sub>4</sub>, CuSO<sub>4</sub>, H<sub>2</sub>O<sub>2</sub>, Cl<sub>2</sub>, O<sub>3</sub>, FeCl<sub>3</sub>, HNO<sub>3</sub> and Na<sub>2</sub>S<sub>2</sub>O<sub>3</sub>. The total number of reagents that can oxidise aqueous iodide to iodine is"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-difference-in-the-oxidation-numbers-of-the-two-types-of-jee-advanced-2011-marks-2-rwdgvbk3iml5bxut.htm",
+          "paperTitle": "IIT-JEE 2011 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "The difference in the oxidation numbers of the two types of sulphur atoms in Na<sub>2</sub>S<sub>4</sub>O<sub>6</sub> is"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Subjective",
+      "key": "subjective",
+      "questions": [
+        {
+          "examGroup": "jee",
+          "permalink": "to-a-25ml-h2o2-solution-excess-of-acidified-solution-of-pot-1997-marks-5-iqfprov2kay8pstk.htm",
+          "paperTitle": "IIT-JEE 1997",
+          "question": {
+            "en": {
+              "content": "To a 25ml H<sub>2</sub>O<sub>2</sub> solution, excess of acidified solution of potassium iodide was added. The iodine liberated required 20 ml of 0.3 N sodium thiosulphate solution. Calculate the volume strength of H<sub>2</sub>O<sub>2</sub> solution."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "a-50-cm3-solution-of-h2o2-liberates-0508-g-of-iodine-from-1995-marks-2-1j4b9dd4l2yykbkv.htm",
+          "paperTitle": "IIT-JEE 1995",
+          "question": {
+            "en": {
+              "content": "A 5.0 cm<sup>3</sup> solution of H<sub>2</sub>O<sub>2</sub> liberates 0.508 g of iodine from an acidified KI solution. Calculate the strength of H<sub>2</sub>O<sub>2</sub> solution in terms of volume strength at STP."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "complete-and-balance-the-following-equationag-ash3-to-h3aso3-jee-advanced-1986-marks-1-gpvncctgw7mhc1ve.htm",
+          "paperTitle": "IIT-JEE 1986",
+          "question": {
+            "en": {
+              "content": "Complete and balance the following equation:<br><br>\nAg<sup>+</sup> + AsH<sub>3</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> H<sub>3</sub>AsO<sub>3</sub> + H<sup>+</sup> "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "arrange-the-following-in-increasing-oxidation-number-of-iodi-jee-advanced-1986-marks-1-ule6fw8b86x7thhk.htm",
+          "paperTitle": "IIT-JEE 1986",
+          "question": {
+            "en": {
+              "content": "Arrange the following in increasing oxidation number of iodine.<br><br>\nI<sub>2</sub>, HI, HIO<sub>4</sub>, ICl"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "complete-and-balance-the-following-equationclo3-i-h2so4-to-c-jee-advanced-1986-marks-1-xl0vghbqtrdljhji.htm",
+          "paperTitle": "IIT-JEE 1986",
+          "question": {
+            "en": {
+              "content": "Complete and balance the following equation:<br><br>\n<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.706ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.552ex\" height=\"2.57ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -823.8 2454.1 1136\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mi\" transform=\"translate(760,0)\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g><g data-mml-node=\"msubsup\" transform=\"translate(1058,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mo\" transform=\"translate(796,411.6) scale(0.707)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-296.6) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g></g></svg></mjx-container> + I<sup>-</sup> + H<sub>2</sub>SO<sub>4</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> Cl<sup>-</sup> + <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.69ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"6.627ex\" height=\"2.554ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -823.8 2929.1 1128.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D43B\" xlink:href=\"#MJX-TEX-I-1D43B\"></use></g><g data-mml-node=\"mi\" transform=\"translate(888,0)\"><use data-c=\"1D446\" xlink:href=\"#MJX-TEX-I-1D446\"></use></g><g data-mml-node=\"msubsup\" transform=\"translate(1533,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mo\" transform=\"translate(796,411.6) scale(0.707)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-305.1) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g></g></svg></mjx-container>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "complete-and-balance-the-following-equationmn2-pbo2-to-mno4-jee-advanced-1986-marks-1-3828wjxtt5mbotyf.htm",
+          "paperTitle": "IIT-JEE 1986",
+          "question": {
+            "en": {
+              "content": "Complete and balance the following equation:<br><br>\nMn<sup>2+</sup> + PbO<sub>2</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.69ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"6.894ex\" height=\"2.554ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -823.8 3047.1 1128.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D440\" xlink:href=\"#MJX-TEX-I-1D440\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1051,0)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"msubsup\" transform=\"translate(1651,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mo\" transform=\"translate(796,411.6) scale(0.707)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-305.1) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g></g></svg></mjx-container> + H<sub>2</sub>O "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "complete-and-balance-the-following-equations-oh-to-s2-s2o3-jee-advanced-1986-marks-1-zpravzxn8yv5sd9g.htm",
+          "paperTitle": "IIT-JEE 1986",
+          "question": {
+            "en": {
+              "content": "Complete and balance the following equation:<br><br>\nS + OH<sup>-</sup> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> S<sup>2-</sup> + <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.706ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.533ex\" height=\"2.57ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -823.8 2445.7 1136\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D446\" xlink:href=\"#MJX-TEX-I-1D446\"></use></g><g data-mml-node=\"mn\" transform=\"translate(646,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g><g data-mml-node=\"msubsup\" transform=\"translate(1049.6,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mo\" transform=\"translate(796,411.6) scale(0.707)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-296.6) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g></g></svg></mjx-container>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "complete-and-balance-the-following-equationhno3-hcl-to-no-cl-jee-advanced-1983-marks-1-xr3km5rdzadweqpy.htm",
+          "paperTitle": "IIT-JEE 1983",
+          "question": {
+            "en": {
+              "content": "Complete and balance the following equation:<br><br>\nHNO<sub>3</sub> + HCl <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> NO + Cl<sub>2</sub> "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "complete-and-balance-the-following-equationce3-s2o8-2-to-so4-jee-advanced-1983-marks-1-odqands6fjtupspt.htm",
+          "paperTitle": "IIT-JEE 1983",
+          "question": {
+            "en": {
+              "content": "Complete and balance the following equation:<br><br>\nCe<sup>3+</sup> + <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.708ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"9.224ex\" height=\"2.705ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -882.5 4077 1195.4\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D446\" xlink:href=\"#MJX-TEX-I-1D446\"></use></g><g data-mml-node=\"mn\" transform=\"translate(646,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g><g data-mml-node=\"msubsup\" transform=\"translate(1049.6,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(796,411.6) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(778,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(796,-297.3) scale(0.707)\"><use data-c=\"38\" xlink:href=\"#MJX-TEX-N-38\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(3077,0)\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.69ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.418ex\" height=\"2.687ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -882.5 2394.7 1187.6\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D446\" xlink:href=\"#MJX-TEX-I-1D446\"></use></g><g data-mml-node=\"msubsup\" transform=\"translate(645,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(796,411.6) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(778,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(796,-305.1) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g></g></svg></mjx-container> + Ce<sup>4+</sup>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "complete-and-balance-the-following-equationscl2-oh-to-cl-clo-jee-advanced-1983-marks-1-pcmatrcxm0sgja5q.htm",
+          "paperTitle": "IIT-JEE 1983",
+          "question": {
+            "en": {
+              "content": "Complete and balance the following equations:<br><br>\nCl<sub>2</sub> + OH<sup>-</sup> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> Cl<sup>-</sup> + ClO<sup>-</sup> "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "complete-and-balance-the-following-equationcr2o72-c2h4o-to-c-jee-advanced-1983-marks-1-muzgm0u95l6l12mq.htm",
+          "paperTitle": "IIT-JEE 1983",
+          "question": {
+            "en": {
+              "content": "Complete and balance the following equation:<br><br>\n<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.724ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"7.686ex\" height=\"2.721ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -882.5 3397.2 1202.5\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"msub\" transform=\"translate(760,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D45F\" xlink:href=\"#MJX-TEX-I-1D45F\"></use></g><g data-mml-node=\"mn\" transform=\"translate(484,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g><g data-mml-node=\"msubsup\" transform=\"translate(1647.6,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(796,411.6) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(796,-304.4) scale(0.707)\"><use data-c=\"37\" xlink:href=\"#MJX-TEX-N-37\"></use></g></g></g></g></svg></mjx-container> + C<sub>2</sub>H<sub>4</sub>O <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> C<sub>2</sub>H<sub>4</sub>O<sub>2</sub> + Cr<sup>3+</sup>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "complete-and-balance-the-following-equationzn-no3-to-zn2-nh4-jee-advanced-1983-marks-1-z4w4nhf3muut21cq.htm",
+          "paperTitle": "IIT-JEE 1983",
+          "question": {
+            "en": {
+              "content": "Complete and balance the following equation:<br><br>\nZn + <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.706ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"8.059ex\" height=\"2.57ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -823.8 3561.9 1136\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D441\" xlink:href=\"#MJX-TEX-I-1D441\"></use></g><g data-mml-node=\"msubsup\" transform=\"translate(888,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mo\" transform=\"translate(796,411.6) scale(0.707)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-296.6) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(2561.9,0)\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> Zn<sup>2+</sup> + <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.69ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.57ex\" height=\"2.554ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -823.8 2462 1128.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D441\" xlink:href=\"#MJX-TEX-I-1D441\"></use></g><g data-mml-node=\"msubsup\" transform=\"translate(888,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D43B\" xlink:href=\"#MJX-TEX-I-1D43B\"></use></g><g data-mml-node=\"mo\" transform=\"translate(973.9,411.6) scale(0.707)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(864,-305.1) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g></g></svg></mjx-container>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "balance-the-following-equationsi-cu2o-h-no3-to-cu2-no-h2oii-jee-advanced-1981-marks-3-hjxlerisnt1tart6.htm",
+          "paperTitle": "IIT-JEE 1981",
+          "question": {
+            "en": {
+              "content": "Balance the following Equations:<br><br>\n<b>(i)</b> Cu<sub>2</sub>O + H<sup>+</sup> + <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.706ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"8.059ex\" height=\"2.57ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -823.8 3561.9 1136\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D441\" xlink:href=\"#MJX-TEX-I-1D441\"></use></g><g data-mml-node=\"msubsup\" transform=\"translate(888,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mo\" transform=\"translate(796,411.6) scale(0.707)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-296.6) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(2561.9,0)\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> Cu<sup>2+</sup> + NO + H<sub>2</sub>O<br><br>\n<b>(ii)</b> K<sub>4</sub>[Fe(CN)<sub>6</sub>] + H<sub>2</sub>SO<sub>4</sub> + H<sub>2</sub>O <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> K<sub>2</sub>SO<sub>4</sub> + FeSO<sub>4</sub> + (NH<sub>4</sub>)<sub>2</sub>SO<sub>4</sub> + CO<br><br> \n<b>(iii)</b> C2H5OH + I<sub>2</sub> + OH<sup>-</sup> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> CHI<sub>3</sub> + <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.706ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"6.887ex\" height=\"2.57ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -823.8 3044.1 1136\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D43B\" xlink:href=\"#MJX-TEX-I-1D43B\"></use></g><g data-mml-node=\"mi\" transform=\"translate(888,0)\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"msubsup\" transform=\"translate(1648,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mo\" transform=\"translate(796,411.6) scale(0.707)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-296.6) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g></g></svg></mjx-container> + I<sup>-</sup> + 4H<sub>2</sub>O"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

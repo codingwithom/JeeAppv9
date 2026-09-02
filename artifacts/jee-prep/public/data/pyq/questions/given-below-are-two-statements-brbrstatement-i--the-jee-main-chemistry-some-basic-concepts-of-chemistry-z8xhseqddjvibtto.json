@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "J5V2MxZKBw3M7JtYg81kltbjh7x",
+      "paperTitle": "JEE Main 2021 (Online) 25th February Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "salt-analysis",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "systematic-analysis-of-cations",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "given-below-are-two-statements-brbrstatement-i--the-jee-main-chemistry-some-basic-concepts-of-chemistry-z8xhseqddjvibtto",
+      "content": "Given below are two statements :<br><br>Statement I : The identification of Ni<sup>2+</sup> is carried out by dimethyl glyoxime in the presence of NH<sub>4</sub>OH. <br><br>Statement II : The dimethyl glyoxime is a bidentate neutral ligand.<br><br>In the light of the above statements, choose the correct answer from the options given below :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Statement I is false but Statement II is true."
+        },
+        {
+          "identifier": "B",
+          "content": "Statement I is true but Statement II is false."
+        },
+        {
+          "identifier": "C",
+          "content": "Both Statement I and Statement II are false."
+        },
+        {
+          "identifier": "D",
+          "content": "Both Statement I and Statement II are true."
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<p><b>Statement I</b> is true. Dimethyl glyoxime (DMG) is a chelating reagent commonly used for the identification of Ni<sup>2+</sup> ions in aqueous solution. In the presence of ammonium hydroxide (NH<sub>4</sub>OH), Ni<sup>2+</sup> reacts with dimethyl glyoxime to form a deep red-colored complex, which can be used to confirm the presence of Ni<sup>2+</sup> ions.</p>\n\n<p><b>Statement II</b> is also true. Dimethyl glyoxime is a neutral bidentate ligand, which means it has two donor atoms that can coordinate with a metal ion, and its overall charge is neutral.</p>\n<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l3pepyf8/303589cb-2e0e-479b-8a91-9871db081a32/6df4fd30-de43-11ec-a44f-e3762c775e6c/file-1l3pepyf9.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l3pepyf8/303589cb-2e0e-479b-8a91-9871db081a32/6df4fd30-de43-11ec-a44f-e3762c775e6c/file-1l3pepyf9.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2021 (Online) 25th February Evening Shift Chemistry - Salt Analysis Question 40 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l3pepyf8/303589cb-2e0e-479b-8a91-9871db081a32/6df4fd30-de43-11ec-a44f-e3762c775e6c/file-1l3pepyf9.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l3pepyf8/303589cb-2e0e-479b-8a91-9871db081a32/6df4fd30-de43-11ec-a44f-e3762c775e6c/file-1l3pepyf9.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l3pepyf8/303589cb-2e0e-479b-8a91-9871db081a32/6df4fd30-de43-11ec-a44f-e3762c775e6c/file-1l3pepyf9.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l3pepyf8/303589cb-2e0e-479b-8a91-9871db081a32/6df4fd30-de43-11ec-a44f-e3762c775e6c/file-1l3pepyf9.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l3pepyf8/303589cb-2e0e-479b-8a91-9871db081a32/6df4fd30-de43-11ec-a44f-e3762c775e6c/file-1l3pepyf9.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l3pepyf8/303589cb-2e0e-479b-8a91-9871db081a32/6df4fd30-de43-11ec-a44f-e3762c775e6c/file-1l3pepyf9.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">"
+    }
+  ]
+}

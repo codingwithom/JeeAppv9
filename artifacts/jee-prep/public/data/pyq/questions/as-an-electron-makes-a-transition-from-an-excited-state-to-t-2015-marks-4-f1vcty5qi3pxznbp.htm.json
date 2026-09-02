@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "f1VCtY5QI3pxZNBP",
+      "paperTitle": "JEE Main 2015 (Offline)",
+      "year": 2015,
+      "examDate": null,
+      "subject": "physics",
+      "chapter": "atoms-and-nuclei",
+      "chapterGroup": "modern-physics",
+      "topic": "bohrs-model-and-hydrogen-spectrum",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "as-an-electron-makes-a-transition-from-an-excited-state-to-t-2015-marks-4-f1vcty5qi3pxznbp.htm",
+      "content": "As an electron makes a transition from an excited state to the ground state of a hydrogen - like atom/ion : ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "kinetic energy decreases, potential energy increases but total energy remains same "
+        },
+        {
+          "identifier": "B",
+          "content": "kinetic energy and total energy decrease but potential energy increases "
+        },
+        {
+          "identifier": "C",
+          "content": "its kinetic energy increases but potential energy and total energy decrease"
+        },
+        {
+          "identifier": "D",
+          "content": "kinetic energy, potential energy and total energy decrease "
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.798ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"25.487ex\" height=\"3.024ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -983.7 11265.4 1336.5\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D448\" xlink:href=\"#MJX-TEX-I-1D448\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1044.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2100.6,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2878.6,0)\"><use data-c=\"1D43E\" xlink:href=\"#MJX-TEX-I-1D43E\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(3767.6,0)\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(220,394) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D467\" xlink:href=\"#MJX-TEX-I-1D467\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(468,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"1D452\" xlink:href=\"#MJX-TEX-I-1D452\"></use></g><g data-mml-node=\"mn\" transform=\"translate(499,363) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g><g data-mml-node=\"mi\" transform=\"translate(545.1,-345) scale(0.707)\"><use data-c=\"1D45F\" xlink:href=\"#MJX-TEX-I-1D45F\"></use></g><rect width=\"1169.1\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g><g data-mml-node=\"mo\" transform=\"translate(5176.7,0)\"><use data-c=\"3B\" xlink:href=\"#MJX-TEX-N-3B\"></use></g><g data-mml-node=\"mspace\" transform=\"translate(5454.7,0)\"></g><g data-mml-node=\"mspace\" transform=\"translate(5621.7,0)\"></g><g data-mml-node=\"mi\" transform=\"translate(5955.3,0)\"><use data-c=\"1D447\" xlink:href=\"#MJX-TEX-I-1D447\"></use></g><g data-mml-node=\"mo\" transform=\"translate(6672.3,0)\"><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(6950.3,0)\"><use data-c=\"1D438\" xlink:href=\"#MJX-TEX-I-1D438\"></use></g><g data-mml-node=\"mo\" transform=\"translate(7992.1,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(9047.9,0)\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mi\" transform=\"translate(220,394) scale(0.707)\"><use data-c=\"1D458\" xlink:href=\"#MJX-TEX-I-1D458\"></use></g><g data-mml-node=\"mn\" transform=\"translate(227.4,-345) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><rect width=\"568.4\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(9856.3,0)\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(220,394) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D467\" xlink:href=\"#MJX-TEX-I-1D467\"></use></g><g data-mml-node=\"msup\" transform=\"translate(468,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D452\" xlink:href=\"#MJX-TEX-I-1D452\"></use></g><g data-mml-node=\"mn\" transform=\"translate(499,363) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"mi\" transform=\"translate(545.1,-345) scale(0.707)\"><use data-c=\"1D45F\" xlink:href=\"#MJX-TEX-I-1D45F\"></use></g><rect width=\"1169.1\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container>\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.798ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"13.032ex\" height=\"3.024ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -983.7 5760.1 1336.5\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D43E\" xlink:href=\"#MJX-TEX-I-1D43E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(889,0)\"><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1167,0)\"><use data-c=\"1D438\" xlink:href=\"#MJX-TEX-I-1D438\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2208.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(3264.6,0)\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mi\" transform=\"translate(220,394) scale(0.707)\"><use data-c=\"1D458\" xlink:href=\"#MJX-TEX-I-1D458\"></use></g><g data-mml-node=\"mn\" transform=\"translate(227.4,-345) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><rect width=\"568.4\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(4073,0)\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(220,394) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D467\" xlink:href=\"#MJX-TEX-I-1D467\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(468,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"1D452\" xlink:href=\"#MJX-TEX-I-1D452\"></use></g><g data-mml-node=\"mn\" transform=\"translate(499,363) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g><g data-mml-node=\"mi\" transform=\"translate(545.1,-345) scale(0.707)\"><use data-c=\"1D45F\" xlink:href=\"#MJX-TEX-I-1D45F\"></use></g><rect width=\"1169.1\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g><g data-mml-node=\"mo\" transform=\"translate(5482.1,0)\"><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\"></use></g></g></g></svg></mjx-container> Here <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.02ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 451 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D45F\" xlink:href=\"#MJX-TEX-I-1D45F\"></use></g></g></g></svg></mjx-container> decreases"
+    }
+  ]
+}

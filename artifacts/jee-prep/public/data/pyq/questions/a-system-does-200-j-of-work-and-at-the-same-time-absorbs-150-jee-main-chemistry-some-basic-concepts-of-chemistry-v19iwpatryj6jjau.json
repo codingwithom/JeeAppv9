@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "1krxbdi4f",
+      "paperTitle": "JEE Main 2021 (Online) 25th July Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "thermodynamics",
+      "chapterGroup": "physical-chemistry",
+      "topic": "first-law-of-thermodynamics",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "a-system-does-200-j-of-work-and-at-the-same-time-absorbs-150-jee-main-chemistry-some-basic-concepts-of-chemistry-v19iwpatryj6jjau",
+      "content": "A system does 200 J of work and at the same time absorbs 150 J of heat. The magnitude of the change in internal energy is ____________ J. (Nearest integer)",
+      "options": [],
+      "correct_options": [],
+      "explanation": "w = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>200 J, q = +150 : <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.885ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 833 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></svg></mjx-container>U = q + w<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.885ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 833 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></svg></mjx-container>U = 150 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container> 200 = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>50 J <br><br>Magnitude = 50 J = |<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.885ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 833 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></svg></mjx-container>U |"
+    }
+  ]
+}

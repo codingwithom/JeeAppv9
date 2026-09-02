@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l57r5qly",
+      "paperTitle": "JEE Main 2022 (Online) 27th June Morning Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "solutions",
+      "chapterGroup": "physical-chemistry",
+      "topic": "depression-in-freezing-point",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pgiven-below-are-two-statements--one-is-labelled-as-asser-jee-main-chemistry-some-basic-concepts-of-chemistry-r6hikd9cvqp9mho3",
+      "content": "<p>Given below are two statements : one is labelled as Assertion (A) and the other is labelled as Reason (R).</p>\n<p>Assertion (A) : At 10<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"0.988ex\" height=\"1.532ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -677 436.6 677\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"></g><g data-mml-node=\"mo\" transform=\"translate(33,363) scale(0.707)\"><use data-c=\"2218\" xlink:href=\"#MJX-TEX-N-2218\"></use></g></g></g></g></svg></mjx-container>C, the density of a 5 M solution of KCl [atomic masses of K &amp; Cl are 39 &amp; 35.5 g mol<sup><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>1</sup> respectively], is 'x' g ml<sup><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>1</sup>. The solution is cooled to <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>21<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"0.988ex\" height=\"1.532ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -677 436.6 677\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"></g><g data-mml-node=\"mo\" transform=\"translate(33,363) scale(0.707)\"><use data-c=\"2218\" xlink:href=\"#MJX-TEX-N-2218\"></use></g></g></g></g></svg></mjx-container>C. The molality of the solution will remain unchanged.</p>\n<p>Reason (R) : The molality of a solution does not change with temperature as mass remains unaffected with temperature.</p>\n<p>In the light of the above statements, choose the correct answer from the options given below :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Both (A) and (R) are true and (R) is the correct explanation of (A)."
+        },
+        {
+          "identifier": "B",
+          "content": "Both (A) and (R) are true but (R) is not the correct explanation of (A)."
+        },
+        {
+          "identifier": "C",
+          "content": "(A) is true but (R) is false."
+        },
+        {
+          "identifier": "D",
+          "content": "(A) is false but (R) is true."
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Molality and Mass are temperature Independent so on changing temp., molality and mass remain unchanged."
+    }
+  ]
+}

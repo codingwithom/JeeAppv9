@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "Ldjm6F2RcUZqrW6WdQjgy2xukevcl4v7",
+      "paperTitle": "JEE Main 2020 (Online) 2nd September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-02 09:00",
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "hybridization-and-vsepr-theory",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "if-absub4sub-molecule-is-a-polar-molecule-a-possible-g-jee-main-chemistry-chemical-bonding-and-molecular-structure-yo1n1mvifvjpxxul",
+      "content": "If AB<sub>4</sub> molecule is a polar molecule, a possible\ngeometry of AB<sub>4</sub> is",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Tetrahedral"
+        },
+        {
+          "identifier": "B",
+          "content": "see-saw"
+        },
+        {
+          "identifier": "C",
+          "content": "Square pyramidal"
+        },
+        {
+          "identifier": "D",
+          "content": "Square planar"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<table class=\"tg\">\n<thead>\n  <tr>\n    <th class=\"tg-amwm\">Compound</th>\n    <th class=\"tg-amwm\">Electronic Geometry</th>\n    <th class=\"tg-amwm\">Moleculer Geometry<br>or <br>Moleculer Shape</th>\n    <th class=\"tg-amwm\">Lone Pair</th>\n    <th class=\"tg-amwm\">Polarity</th>\n  </tr>\n</thead>\n<tbody>\n  <tr>\n    <td class=\"tg-baqh\">AB<sub>4</sub></td>\n    <td class=\"tg-baqh\">Tetrahedral</td>\n    <td class=\"tg-baqh\">Tetrahedral</td>\n    <td class=\"tg-baqh\">0</td>\n    <td class=\"tg-baqh\">Nonpolar</td>\n  </tr>\n  <tr>\n    <td class=\"tg-baqh\">AB<sub>4</sub></td>\n    <td class=\"tg-baqh\">Trigonal Bipyramidal</td>\n    <td class=\"tg-baqh\">see-saw</td>\n    <td class=\"tg-baqh\">1</td>\n    <td class=\"tg-baqh\">Polar</td>\n  </tr>\n  <tr>\n    <td class=\"tg-baqh\">AB<sub>4</sub></td>\n    <td class=\"tg-baqh\">Octahedral<br>(Square Bipyramidal)</td>\n    <td class=\"tg-baqh\">Square Planar</td>\n    <td class=\"tg-baqh\">2</td>\n    <td class=\"tg-baqh\">Nonpolar</td>\n  </tr>\n</tbody>\n</table>\n<br><br><b>Note :</b> The difference between Electronic Geometry and Moleculer Geometry(Moleculer Shape) is that in Electronic Geometry we include lone pair but in Moleculer Geometry(Moleculer Shape) we do not include lone pair.\n<br><br>Here in this question it is not clear which geometry they are talking about, correct answer should be either Trigonal Bipyramidal or see-saw."
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "d02h5fIw8PMD42WGT93rsa0w2w9jx0x1gkb",
+      "paperTitle": "JEE Main 2019 (Online) 10th April Evening Slot",
+      "year": 2019,
+      "examDate": "2019-04-10 14:30",
+      "subject": "chemistry",
+      "chapter": "chemical-equilibrium",
+      "chapterGroup": "physical-chemistry",
+      "topic": "le-chateliers-principle-and-factors-affecting-chemical-equilibrium",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "for-the-reaction-br-2sosub2subg--osub2subg-jee-main-chemistry-equilibrium-xkowcyqhyo8pfmkx",
+      "content": "For the reaction,\n<br> 2SO<sub>2</sub>(g) + O<sub>2</sub>(g) = 2SO<sub>3</sub>(g), <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.885ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 833 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></svg></mjx-container>H = –57.2 kJ mol<sup>–1</sup>\n and K<sub>C</sub> = 1.7 × 10<sup>16</sup>\n<br>Which of the following statement is incorrect ? ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "The equilibrium will shift in forward direction as the pressure increase."
+        },
+        {
+          "identifier": "B",
+          "content": "The addition of inert gas at constant volume will be not affect the equilibrium constant."
+        },
+        {
+          "identifier": "C",
+          "content": "The equilibrium constant is large suggestive of reaction going to completion and so no catalyst is\nrequired."
+        },
+        {
+          "identifier": "D",
+          "content": "The equilibrium constant decreases as the temperature increase."
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Equilibrium constant has no relation with\ncatalyst.\n<br><br>Catalyst only affects the rate with\nwhich a reaction proceeds.\n<br><br>Here we use catalyst V<sub>2</sub>O<sub>5</sub> to\nspeed up the reaction."
+    }
+  ]
+}

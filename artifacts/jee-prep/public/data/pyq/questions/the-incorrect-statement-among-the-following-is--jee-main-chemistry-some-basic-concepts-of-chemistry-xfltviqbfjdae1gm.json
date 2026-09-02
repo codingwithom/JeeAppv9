@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "gUir0qIwpPZX21KJaN1klrtkun7",
+      "paperTitle": "JEE Main 2021 (Online) 24th February Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "important-compounds-of-transition-elements",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-incorrect-statement-among-the-following-is--jee-main-chemistry-some-basic-concepts-of-chemistry-xfltviqbfjdae1gm",
+      "content": "The <b>incorrect</b> statement among the following is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "RuO<sub>4</sub> is an oxidizing agent"
+        },
+        {
+          "identifier": "B",
+          "content": "Cr<sub>2</sub>O<sub>3</sub> is an amphoteric oxide."
+        },
+        {
+          "identifier": "C",
+          "content": "VOSO<sub>4</sub> is a reducing agent"
+        },
+        {
+          "identifier": "D",
+          "content": "Red colour of ruby is due to the presence of Co<sup>3+</sup>"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Red colour of ruby is due to presence of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.972ex\" height=\"2.091ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -902.3 2197.7 924.3\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msup\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mi\" transform=\"translate(760,0)\"><use data-c=\"1D45F\" xlink:href=\"#MJX-TEX-I-1D45F\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1244,432.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g></g></g></g></g></svg></mjx-container> (chromium ions), not <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.049ex\" height=\"2.091ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -902.3 2231.7 924.3\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msup\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mi\" transform=\"translate(760,0)\"><use data-c=\"1D45C\" xlink:href=\"#MJX-TEX-I-1D45C\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1278,432.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g></g></g></g></g></svg></mjx-container> (cobalt ions). in Al<sub>2</sub>O<sub>3</sub>.\nChromium is the trace element that causes ruby’s red colour, which\nranges from an orange red to a publish red. The strength of ruby’s\nred depends on how much chromium is present."
+    }
+  ]
+}

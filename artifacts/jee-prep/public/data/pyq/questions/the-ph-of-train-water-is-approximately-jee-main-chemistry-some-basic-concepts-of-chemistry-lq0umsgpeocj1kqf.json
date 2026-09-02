@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "66N4haRBTOcgD7A54JVS7",
+      "paperTitle": "JEE Main 2019 (Online) 9th January Evening Slot",
+      "year": 2019,
+      "examDate": "2019-01-09 14:30",
+      "subject": "chemistry",
+      "chapter": "ionic-equilibrium",
+      "chapterGroup": "physical-chemistry",
+      "topic": "ph-buffer-and-indicators",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-ph-of-train-water-is-approximately-jee-main-chemistry-some-basic-concepts-of-chemistry-lq0umsgpeocj1kqf",
+      "content": "The pH of rain water, is approximately : ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "5.6 "
+        },
+        {
+          "identifier": "B",
+          "content": "7.5"
+        },
+        {
+          "identifier": "C",
+          "content": "7.0"
+        },
+        {
+          "identifier": "D",
+          "content": "6.5"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "pH of rain water is approximate 5.6"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1lgrefqkf",
+      "paperTitle": "JEE Main 2023 (Online) 12th April Morning Shift",
+      "year": 2023,
+      "subject": "mathematics",
+      "chapter": "permutations-and-combinations",
+      "chapterGroup": "algebra",
+      "topic": "conditional-permutations",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pthe-number-of-five-digit-numbers-greater-than-40000-and-jee-main-mathematics-trigonometric-functions-and-equations-q1rfe7bbdve8v2uc",
+      "content": "<p>The number of five digit numbers, greater than 40000 and divisible by 5 , which can be formed using the digits <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.439ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"9.68ex\" height=\"1.968ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -676 4278.7 870\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mn\" transform=\"translate(944.7,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1444.7,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1889.3,0)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2389.3,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mn\" transform=\"translate(2834,0)\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use></g><g data-mml-node=\"mo\" transform=\"translate(3334,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mn\" transform=\"translate(3778.7,0)\"><use data-c=\"37\" xlink:href=\"#MJX-TEX-N-37\"></use></g></g></g></svg></mjx-container> and 9 without repetition, is equal to :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "132"
+        },
+        {
+          "identifier": "B",
+          "content": "72"
+        },
+        {
+          "identifier": "C",
+          "content": "120"
+        },
+        {
+          "identifier": "D",
+          "content": "96"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Since the five-digit number must be greater than 40000, the only options for the first digit are 5, 7, or 9. That leaves 3 remaining choices for the first digit. \n\n<br><br>Since the number has to be divisible by 5, the last digit must be 0 or 5. If the first digit is 5, the last digit can only be 0, since digits cannot be repeated. If the first digit is 7 or 9, the last digit can be 0 or 5, so there are 2 choices. \n\n<br><br>Five possible configurations for the first and last digits :\n\n<br><br>- 5xxx0\n<br><br>- 7xxx0\n<br><br>- 7xxx5\n<br><br>- 9xxx0\n<br><br>- 9xxx5\n\n<br><br>For each of these configurations, there are three places in the middle that can be filled with the remaining 4 unused digits. \n\n<br><br>Since repetition isn't allowed, there are 4 options for the second digit, 3 for the third, and 2 for the fourth, which can be represented as <sup>4</sup>P<sub>3</sub>, or permutations of 4 items taken 3 at a time. This is equal to 4 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 3 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 2 = 24.\n\n<br><br>So, for each of the 5 configurations, there are 24 ways to arrange the middle three digits. Therefore, the total number of five-digit numbers that meet the criteria is 5 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 24 = 120.\n"
+    }
+  ]
+}

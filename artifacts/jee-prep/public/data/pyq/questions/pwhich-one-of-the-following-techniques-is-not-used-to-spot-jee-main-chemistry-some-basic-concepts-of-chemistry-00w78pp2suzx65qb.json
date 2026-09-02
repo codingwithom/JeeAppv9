@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l56b0tm8",
+      "paperTitle": "JEE Main 2022 (Online) 28th June Morning Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "purification-of-organic-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pwhich-one-of-the-following-techniques-is-not-used-to-spot-jee-main-chemistry-some-basic-concepts-of-chemistry-00w78pp2suzx65qb",
+      "content": "<p>Which one of the following techniques is not used to spot components of a mixture separated on thin layer chromatographic plate?</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "I<sub>2</sub> (Solid)"
+        },
+        {
+          "identifier": "B",
+          "content": "U.V. Light"
+        },
+        {
+          "identifier": "C",
+          "content": "Visualisation agent as a component of mobile phase"
+        },
+        {
+          "identifier": "D",
+          "content": "Spraying of an appropriate reagent"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "TLC is a technique used to separate mixture of compounds based on differences in polarity. In TLC a glass\nplate coated with a stationary phase is spotted with the mixture to be separated."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1kucaz6cu",
+      "paperTitle": "JEE Advanced 2021 Paper 1 Online",
+      "year": 2021,
+      "subject": "physics",
+      "chapter": "units-and-measurements",
+      "chapterGroup": "mechanics",
+      "topic": "vernier-calipers",
+      "type": "mcq",
+      "marks": 3,
+      "negMarks": 1,
+      "permalink": "the-smallest-division-on-the-main-scale-of-a-vernier-caliper-jee-advanced-physics-units-and-measurements-qyelrmvwtiso8ekt",
+      "content": "The smallest division on the main scale of a Vernier calipers is 0.1 cm. Ten divisions of the Vernier scale correspond to nine divisions of the main scale. The figure below on the left shows the reading of this calipers with no gap between its two jaws. The figure on the right shows the reading with a solid sphere held between the jaws. The correct diameter of the sphere is <br><br><img src=\"https://imagex.cdn.examgoal.net/1kuckdnfy/ed539d62-a4ce-4198-9964-dc2ade84be21/6bb040e0-2505-11ec-b291-1df06cb45b25/file-1kuckdnfz.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2021 Paper 1 Online Physics - Units &amp; Measurements Question 14 English\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "3.07 cm"
+        },
+        {
+          "identifier": "B",
+          "content": "3.11 cm"
+        },
+        {
+          "identifier": "C",
+          "content": "3.15 cm"
+        },
+        {
+          "identifier": "D",
+          "content": "3.17 cm"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<p>Least count of Vernier calipers (L.C) = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.816ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"11.833ex\" height=\"2.773ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864.9 5230.2 1225.5\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mrow\"><g data-mml-node=\"mo\" transform=\"translate(0 -0.5)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-SO-28\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(458,0)\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mo\" transform=\"translate(722.2,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1722.4,0)\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mn\" transform=\"translate(396.8,394) scale(0.707)\"><use data-c=\"39\" xlink:href=\"#MJX-TEX-N-39\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(220,-345) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use></g></g><rect width=\"907.1\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g><g data-mml-node=\"mo\" transform=\"translate(3327.6,0) translate(0 -0.5)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-SO-29\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(3952.2,0)\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\" transform=\"translate(500,0)\"></use><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\" transform=\"translate(778,0)\"></use></g></g></g></svg></mjx-container> = 0.01 cm</p>\n<p>We know that main scale reading (MSR) is the first reading on the main scale immediately to\nthe left of the zero of the Vernier scale. But there are\nno marks on the main scale before zero of the Vernier\nscale. We claim that MSR = −0.1 cm. The\nVernier scale reading is VSR = 6 and the least count\nis LC = 0.01 cm.</p> <p>Substitute these values to get,</p>\n<p>Zero Error = MSR + VSR <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> LC</p>\n<p>= -0.1 + 6 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 0.01 = -0.04 cm</p>\n<p>Now in the second figure, the reading from main scale is 3.1 cm will be added to 1<sup>st</sup> matching\ndivision of vernier so,</p>\n<p>Reading = 3.1 cm + 1 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> L.C</p>\n<p>= 3.1 cm + 0.01</p>\n<p>= 3.11 cm</p>\n<p>So correct diameter of the sphere</p>\n<p>= 3.11 - (Zero Error)</p>\n<p>= (3.11 + 0.04) cm</p>\n<p>= 3.15 cm</p>"
+    }
+  ]
+}

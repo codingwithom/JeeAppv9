@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1lgsybj0x",
+      "paperTitle": "JEE Main 2023 (Online) 11th April Evening Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "aldehydes-ketones-and-carboxylic-acids",
+      "chapterGroup": "organic-chemistry",
+      "topic": "preparation-properties-and-uses-of-carboxylic-acids",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pgiven-below-are-two-statements-one-is-labelled-as-assert-jee-main-chemistry-some-basic-concepts-of-chemistry-ofz4l7cektqxu1wr",
+      "content": "<p>Given below are two statements, one is labelled as Assertion A and the other is labelled as Reason R.</p>\n<p>Assertion A : A solution of the product obtained by heating a mole of glycine with a mole of chlorine in presence of red phosphorous generates chiral carbon atom.</p>\n<p>Reason R : A molecule with 2 chiral carbons is always optically active.</p>\n<p>In the light of the above statements, choose the correct answer from the options given below:</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Both A and R are true and R is the correct explanation of A"
+        },
+        {
+          "identifier": "B",
+          "content": "Both A and R are true but R is NOT the correct explanation of A"
+        },
+        {
+          "identifier": "C",
+          "content": "A is true but R is false"
+        },
+        {
+          "identifier": "D",
+          "content": "A is false but R is true"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1libm5ngg/24f28c50-e2c2-4a57-aafa-ce6edaa17551/c7edc000-ffa4-11ed-b6d4-23f7435f51f2/file-1libm5ngh.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1libm5ngg/24f28c50-e2c2-4a57-aafa-ce6edaa17551/c7edc000-ffa4-11ed-b6d4-23f7435f51f2/file-1libm5ngh.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2023 (Online) 11th April Evening Shift Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 96 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1libm5ngg/24f28c50-e2c2-4a57-aafa-ce6edaa17551/c7edc000-ffa4-11ed-b6d4-23f7435f51f2/file-1libm5ngh.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1libm5ngg/24f28c50-e2c2-4a57-aafa-ce6edaa17551/c7edc000-ffa4-11ed-b6d4-23f7435f51f2/file-1libm5ngh.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1libm5ngg/24f28c50-e2c2-4a57-aafa-ce6edaa17551/c7edc000-ffa4-11ed-b6d4-23f7435f51f2/file-1libm5ngh.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1libm5ngg/24f28c50-e2c2-4a57-aafa-ce6edaa17551/c7edc000-ffa4-11ed-b6d4-23f7435f51f2/file-1libm5ngh.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1libm5ngg/24f28c50-e2c2-4a57-aafa-ce6edaa17551/c7edc000-ffa4-11ed-b6d4-23f7435f51f2/file-1libm5ngh.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1libm5ngg/24f28c50-e2c2-4a57-aafa-ce6edaa17551/c7edc000-ffa4-11ed-b6d4-23f7435f51f2/file-1libm5ngh.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">\n<br><br>As for Reason R, it is false. A molecule with 2 chiral carbons is not necessarily optically active. It may be if the molecule is not superimposable on its mirror image (i.e., it's chiral). But if the molecule is superimposable on its mirror image (i.e., it's achiral), then it will not be optically active. This can occur if the molecule has a plane of symmetry, in which case it is a meso compound."
+    }
+  ]
+}

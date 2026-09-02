@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "UACK82Cmm2rR7QsgIA1kmkj7wz5",
+      "paperTitle": "JEE Main 2021 (Online) 17th March Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "carbohydrates",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "fructose-is-an-example-of--jee-main-chemistry-some-basic-concepts-of-chemistry-obbux8cfql19ujlx",
+      "content": "Fructose is an example of :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Heptose"
+        },
+        {
+          "identifier": "B",
+          "content": "Pyranose"
+        },
+        {
+          "identifier": "C",
+          "content": "Ketohexose"
+        },
+        {
+          "identifier": "D",
+          "content": "Aldohexose"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Fructose contains ketone group so it is ketose.<br><br>\n<img src=\"https://imagex.cdn.examgoal.net/1kn0jge3k/3ae61980-4a5b-4d41-b07a-25691c626201/e352c600-93d2-11eb-8623-f72d71d50eb9/file-1kn0jge3l.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 17th March Evening Shift Chemistry - Biomolecules Question 127 English Explanation\">"
+    }
+  ]
+}

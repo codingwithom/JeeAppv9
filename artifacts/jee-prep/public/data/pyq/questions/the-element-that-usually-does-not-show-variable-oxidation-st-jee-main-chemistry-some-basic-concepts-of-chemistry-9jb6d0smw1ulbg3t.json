@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "46UxNzW3L3kHE8SIbHDFz",
+      "paperTitle": "JEE Main 2019 (Online) 11th January Morning Slot",
+      "year": 2019,
+      "examDate": "2019-01-11 09:30",
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "properties-of-transition-elements",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-element-that-usually-does-not-show-variable-oxidation-st-jee-main-chemistry-some-basic-concepts-of-chemistry-9jb6d0smw1ulbg3t",
+      "content": "The element that usually does NOT show variable oxidation states is : ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "V"
+        },
+        {
+          "identifier": "B",
+          "content": "Cu"
+        },
+        {
+          "identifier": "C",
+          "content": "Sc"
+        },
+        {
+          "identifier": "D",
+          "content": "ti"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Sc<sup>3+</sup> has noble gas configuration hence only +3 exists.\n<br><br>Most common oxidation states of :\n<br><br/>(i) Sc : +3\n<br><br/>(ii) V : +2, +3, +4, +5\n<br><br/>(iii) Ti : +2, +3, +4\n<br><br/>(iv) Cu : +1, +2"
+    }
+  ]
+}

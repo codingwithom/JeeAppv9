@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l0w0pb9y",
+      "paperTitle": "JEE Advanced 2015 Paper 2 Offline",
+      "year": 2015,
+      "subject": "chemistry",
+      "chapter": "polymers",
+      "chapterGroup": "organic-chemistry",
+      "topic": "classification-preparations-and-properties-of-polymers",
+      "type": "mcqm",
+      "marks": 4,
+      "negMarks": 2,
+      "permalink": "punder-hydrolytic-conditions-the-compounds-used-for-prepa-jee-advanced-chemistry-some-basic-concepts-of-chemistry-ckynpx5af1ontqhl",
+      "content": "<p>Under hydrolytic conditions, the compounds used for preparation of linear polymer and for chain termination, respectively, are</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "CH<sub>3</sub>SiCl<sub>3</sub> and Si(CH<sub>3</sub>)<sub>4</sub>."
+        },
+        {
+          "identifier": "B",
+          "content": "(CH<sub>3</sub>)<sub>2</sub>SiCl<sub>2</sub> and (CH<sub>3</sub>)<sub>3</sub>SiCl."
+        },
+        {
+          "identifier": "C",
+          "content": "(CH<sub>3</sub>)<sub>2</sub>SiCl<sub>2</sub> and CH<sub>3</sub>SiCl<sub>3</sub>."
+        },
+        {
+          "identifier": "D",
+          "content": "SiCl<sub>4</sub> and (CH<sub>3</sub>)<sub>3</sub>SiCl."
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<p>The reaction involved in the preparation of liner polymer is</p>\n<p><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l0w7s8oy/fe31c3b9-f5fd-4f72-adf7-ed3e42a29a7b/2403ae20-a69d-11ec-8b67-4d9118e5b0bb/file-1l0w7s8oz.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l0w7s8oy/fe31c3b9-f5fd-4f72-adf7-ed3e42a29a7b/2403ae20-a69d-11ec-8b67-4d9118e5b0bb/file-1l0w7s8oz.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Advanced 2015 Paper 2 Offline Chemistry - Polymers Question 8 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l0w7s8oy/fe31c3b9-f5fd-4f72-adf7-ed3e42a29a7b/2403ae20-a69d-11ec-8b67-4d9118e5b0bb/file-1l0w7s8oz.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l0w7s8oy/fe31c3b9-f5fd-4f72-adf7-ed3e42a29a7b/2403ae20-a69d-11ec-8b67-4d9118e5b0bb/file-1l0w7s8oz.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l0w7s8oy/fe31c3b9-f5fd-4f72-adf7-ed3e42a29a7b/2403ae20-a69d-11ec-8b67-4d9118e5b0bb/file-1l0w7s8oz.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l0w7s8oy/fe31c3b9-f5fd-4f72-adf7-ed3e42a29a7b/2403ae20-a69d-11ec-8b67-4d9118e5b0bb/file-1l0w7s8oz.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l0w7s8oy/fe31c3b9-f5fd-4f72-adf7-ed3e42a29a7b/2403ae20-a69d-11ec-8b67-4d9118e5b0bb/file-1l0w7s8oz.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l0w7s8oy/fe31c3b9-f5fd-4f72-adf7-ed3e42a29a7b/2403ae20-a69d-11ec-8b67-4d9118e5b0bb/file-1l0w7s8oz.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"></p>"
+    }
+  ]
+}

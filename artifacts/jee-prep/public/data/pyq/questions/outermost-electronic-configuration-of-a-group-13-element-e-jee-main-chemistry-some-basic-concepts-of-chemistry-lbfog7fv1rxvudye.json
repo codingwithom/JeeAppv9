@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1krrhsppx",
+      "paperTitle": "JEE Main 2021 (Online) 20th July Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "structure-of-atom",
+      "chapterGroup": "physical-chemistry",
+      "topic": "electronic-configuration-and-nodes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "outermost-electronic-configuration-of-a-group-13-element-e-jee-main-chemistry-some-basic-concepts-of-chemistry-lbfog7fv1rxvudye",
+      "content": "Outermost electronic configuration of a group 13 element, E, is 4s<sup>2</sup>, 4p<sup>1</sup>. The electronic configuration of an element of p-block period-five placed diagonally to element, E is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "[Kr] 3d<sup>10</sup> 4s<sup>2</sup> 4p<sup>2</sup>"
+        },
+        {
+          "identifier": "B",
+          "content": "[Ar] 3d<sup>10</sup> 4s<sup>2</sup> 4p<sup>2</sup>"
+        },
+        {
+          "identifier": "C",
+          "content": "[Xe] 5d<sup>10</sup> 6s<sup>2</sup> 6p<sup>2</sup>"
+        },
+        {
+          "identifier": "D",
+          "content": "[Kr] 4d<sup>10</sup> 5s<sup>2</sup> 5p<sup>2</sup>"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "The element E is Ga and the diagonal element of 5<sup>th</sup> period is <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.375ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.604ex\" height=\"1.97ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 2035.1 870.6\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"></g><g data-mml-node=\"TeXAtom\" transform=\"translate(33,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use></g></g></g><g data-mml-node=\"mi\" transform=\"translate(790.1,0)\"><use data-c=\"1D446\" xlink:href=\"#MJX-TEX-I-1D446\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1435.1,0)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g></g></g></svg></mjx-container> having outer electronic configuration will be [Kr] 4d<sup>10</sup> 5s<sup>2</sup> 5p<sup>2</sup>."
+    }
+  ]
+}

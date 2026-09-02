@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "1krq6gf1t",
+      "paperTitle": "JEE Main 2021 (Online) 20th July Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "structure-of-atom",
+      "chapterGroup": "physical-chemistry",
+      "topic": "quantum-numbers-and-orbitals",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-azimuthal-quantum-number-for-the-valence-electrons-of-ga-jee-main-chemistry-some-basic-concepts-of-chemistry-g4bydcbfkruzmci1",
+      "content": "The Azimuthal quantum number for the valence electrons of Ga<sup>+</sup> ion is ___________.<br><br>(Atomic number of Ga = 31)",
+      "options": [],
+      "correct_options": [],
+      "explanation": "Ga = 1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>6</sup> 3s<sup>2</sup> 3p<sup>6</sup> 3d<sup>10</sup> 4s<sup>2</sup> 4p<sup>1</sup>\n<br><br>Ga<sup>+</sup>\n = 1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>6</sup> 3s<sup>2</sup> 3p<sup>6</sup> 3d<sup>10</sup> 4s<sup>2</sup>\n<br><br>Azimuthal Quantum number (l) for valence shell electron is 0."
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "7XuuEwZHdouWCRqaWVD5q",
+      "paperTitle": "JEE Main 2019 (Online) 12th January Evening Slot",
+      "year": 2019,
+      "examDate": "2019-01-12 14:30",
+      "subject": "chemistry",
+      "chapter": "p-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "group-14-elements-carbon-family",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-element-that-does-not-show-catenation-is-jee-main-chemistry-some-basic-concepts-of-chemistry-k6ukekon3z0hcqys",
+      "content": "The element that does NOT show catenation is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Ge"
+        },
+        {
+          "identifier": "B",
+          "content": "Si"
+        },
+        {
+          "identifier": "C",
+          "content": "Sn"
+        },
+        {
+          "identifier": "D",
+          "content": "Pb"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/2bt0DkjYhkX4nUJH9/rnZCfxeJ3nsNxttecqL7tl8tAoCG0/4DFnqP602Q2RcwwApCbZCI/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th January Evening Slot Chemistry - p-Block Elements Question 203 English Explanation\">\n<br>All the four given element belongs to the carbon family.\n<br><br>Pb will show last catenation."
+    }
+  ]
+}

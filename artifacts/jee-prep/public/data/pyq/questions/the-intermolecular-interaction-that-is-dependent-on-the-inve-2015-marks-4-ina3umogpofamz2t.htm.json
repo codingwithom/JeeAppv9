@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "InA3umoGpofamZ2t",
+      "paperTitle": "JEE Main 2015 (Offline)",
+      "year": 2015,
+      "examDate": null,
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "hydrogen-bonding",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-intermolecular-interaction-that-is-dependent-on-the-inve-2015-marks-4-ina3umogpofamz2t.htm",
+      "content": "The intermolecular interaction that is dependent on the inverse cube of distance between the molecule is:",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "ion-dipole interaction"
+        },
+        {
+          "identifier": "B",
+          "content": "London force"
+        },
+        {
+          "identifier": "C",
+          "content": "hydrogen bond"
+        },
+        {
+          "identifier": "D",
+          "content": "ion-ion interaction"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Hydrogen bond is a type of strong electrostatic dipole- dipole intersection and dependent on the inverse cube of distance between the molecular ion-dipole -\n<br><br> interaction  <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.87ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.433ex\" height=\"2.827ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864.9 2401.4 1249.6\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"221D\" xlink:href=\"#MJX-TEX-N-221D\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1055.8,0)\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mn\" transform=\"translate(357,394) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(220,-376.9) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"1D45F\" xlink:href=\"#MJX-TEX-I-1D45F\"></use></g><g data-mml-node=\"mn\" transform=\"translate(484,289) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g></g><rect width=\"827.6\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g><g data-mml-node=\"mo\" transform=\"translate(2123.4,0)\"><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\"></use></g></g></g></svg></mjx-container> "
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "xFuZjzUptaNFdoUgdM1klrmy2in",
+      "paperTitle": "JEE Main 2021 (Online) 24th February Evening Shift",
+      "year": 2021,
+      "subject": "mathematics",
+      "chapter": "permutations-and-combinations",
+      "chapterGroup": "algebra",
+      "topic": "conditional-combinations",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-students-ssub1sub-ssub2sub--ssub10-jee-main-mathematics-trigonometric-functions-and-equations-eqmu5xdy9xz88mvk",
+      "content": "The students S<sub>1</sub>, S<sub>2</sub>, ....., S<sub>10</sub> are to be divided into 3 groups A, B and C such that each group has at least one student and the group C has at most 3 students. Then the total number of possibilities of forming such groups is ___________.",
+      "options": [],
+      "correct_options": [],
+      "explanation": "If group C has one student then number of\ngroups\n<br><br>= <sup>10</sup>C<sub>1</sub>\n[2<sup>9</sup>\n – 2] = 5100\n<br><br>If group C has two students then number of\ngroups\n<br><br>= <sup>10</sup>C<sub>2</sub>\n[2<sup>8</sup>\n – 2] = 11430\n<br><br>If group C has three students then number of\ngroups\n<br><br>= <sup>10</sup>C<sub>3</sub>\n × [2<sup>7</sup>\n – 2] = 15120\n<br><br>So total groups = 31650"
+    }
+  ]
+}

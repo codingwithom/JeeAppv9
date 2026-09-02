@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "c1FL4mkVPUwV7MZv",
+      "paperTitle": "JEE Main 2017 (Offline)",
+      "year": 2017,
+      "examDate": null,
+      "subject": "chemistry",
+      "chapter": "some-basic-concepts-of-chemistry",
+      "chapterGroup": "physical-chemistry",
+      "topic": "mole-concept",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-most-abundant-elements-by-mass-in-the-body-of-a-healthy-2017-marks-4-c1fl4mkvpuwv7mzv.htm",
+      "content": "The most abundant elements by mass in the body of a healthy human adult are: Oxygen (61.4%); Carbon\n(22.9%), Hydrogen (10.0%); and Nitrogen (2.6%). The weight which a 75 kg person would gain if all\n<sup>1</sup>H atoms are replaced by <sup>2</sup>H atoms is: ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "37.5 kg"
+        },
+        {
+          "identifier": "B",
+          "content": "7.5 kg"
+        },
+        {
+          "identifier": "C",
+          "content": "10 kg"
+        },
+        {
+          "identifier": "D",
+          "content": "15 kg"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Given that weight of human adult is = 75 kg\n<br><br>Among those 75 kg, 10% is Hydrogen(<sup>1</sup>H).\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> Mass of <sup>1</sup>H = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.816ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"8.423ex\" height=\"2.773ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864.9 3723.1 1225.5\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"37\" xlink:href=\"#MJX-TEX-N-37\"></use><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1222.2,0)\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2222.4,0)\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(396.8,394) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(220,-345) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(1000,0)\"></use></g></g><rect width=\"1260.7\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container> = 7.5 kg\n<br><br>Now when every <sup>1</sup>H atom is replaced by <sup>2</sup>H atom then weight of every atom is become double. So total weight of <sup>2</sup>H becomes = 2<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container>7.5 = 15 kg.\n<br><br>So the weight gain by the person = 15 - 7.5 = 7.5 kg"
+    }
+  ]
+}

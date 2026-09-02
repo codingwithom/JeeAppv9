@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "kIA7Z1DjmA1MGVgiIi1kmki58j1",
+      "paperTitle": "JEE Main 2021 (Online) 17th March Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "purification-of-organic-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "nitrogen-can-be-estimated-by-kjeldahls-method-for-which-of-jee-main-chemistry-some-basic-concepts-of-chemistry-1hwmsuqrg7i5z7tl",
+      "content": "Nitrogen can be estimated by Kjeldahl's method for which of the following compound?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kmlizmkd/cfbc1a0c-e64e-412f-907b-b69366aa5d23/4f5dfad0-8b91-11eb-8bc4-81bde7104d98/file-1kmlizmke.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 17th March Evening Shift Chemistry - Basics of Organic Chemistry Question 195 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kmlizfxi/70583bd5-5fa4-45d5-b3e2-a18c2eefcb70/4a3de060-8b91-11eb-8bc4-81bde7104d98/file-1kmlizfxj.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 17th March Evening Shift Chemistry - Basics of Organic Chemistry Question 195 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kmliz8yf/e2396538-237a-43ad-a8cb-c63ac1f90f32/44daa270-8b91-11eb-8bc4-81bde7104d98/file-1kmliz8yg.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 17th March Evening Shift Chemistry - Basics of Organic Chemistry Question 195 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kmliz2x4/da7554a4-a370-49a9-aa19-54c28a97ac19/40311790-8b91-11eb-8bc4-81bde7104d98/file-1kmliz2x5.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 17th March Evening Shift Chemistry - Basics of Organic Chemistry Question 195 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Kjeldahl’s method can’t be used for compounds\ncontaining nitro or azo groups.<br><br>\nAlso for compounds containing nitrogen in the ring,\nKjeldahl’s method can’t be used."
+    }
+  ]
+}

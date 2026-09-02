@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "niMc3ekcWrrHsB3J",
+      "paperTitle": "JEE Main 2018 (Offline)",
+      "year": 2018,
+      "examDate": null,
+      "subject": "chemistry",
+      "chapter": "alcohols-phenols-and-ethers",
+      "chapterGroup": "organic-chemistry",
+      "topic": "properties-preparation-and-uses-of-phenols",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "phenol-on-treatment-with-co2-in-the-presence-of-naoh-followe-2018-marks-4-nimc3ekcwrrhsb3j.htm",
+      "content": "Phenol on treatment with CO<sub>2</sub> in the presence of NaOH followed by acidification produces compound X as\nthe major product. X on treatment with (CH<sub>3</sub>CO)<sub>2</sub>O in the presence of catalytic amount of H<sub>2</sub>SO<sub>4</sub> produces: ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img class=\"question-image\" src=\"https://imagex.cdn.examgoal.net/SL3FPDDfQ1mbShilL/ngOX4ys6ZgbCQnjEztUU0XrCXUhca/aaoWTQsq8fp9559usFNlN9/image.png\" loading=\"lazy\" alt=\"JEE Main 2018 (Offline) Chemistry - Alcohols, Phenols and Ethers Question 169 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img class=\"question-image\" src=\"https://imagex.cdn.examgoal.net/KZt7UDGEApeJGUW16/LhGsc2qUnTbePiCfejvmkbgD2ohsg/vBe4oFCfmtEo4tl77VzmiU/image.png\" loading=\"lazy\" alt=\"JEE Main 2018 (Offline) Chemistry - Alcohols, Phenols and Ethers Question 169 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img class=\"question-image\" src=\"https://imagex.cdn.examgoal.net/Ppcq6XBhEIeIxk56T/waNqHqUmVHX0Ro1OvgQaDAO9NEqbR/Civ3iQrhjVuSYPdAXWBiOO/image.png\" loading=\"lazy\" alt=\"JEE Main 2018 (Offline) Chemistry - Alcohols, Phenols and Ethers Question 169 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img class=\"question-image\" src=\"https://imagex.cdn.examgoal.net/154AAimOuxCoOL3VZ/LMxG8z4KLWJTkaIqPBGh1LULP83fx/7ghzx5A28y8ME4dzpB5rRl/image.png\" loading=\"lazy\" alt=\"JEE Main 2018 (Offline) Chemistry - Alcohols, Phenols and Ethers Question 169 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<img class=\"question-image\" src=\"https://imagex.cdn.examgoal.net/xOgQXesDLtYhmBuUp/wb2N3EQ2uWjEMXwYYrjxu6q036JEK/cPSNDeqN2Hwq6yNS1Kq4B3/image.png\" loading=\"lazy\" alt=\"JEE Main 2018 (Offline) Chemistry - Alcohols, Phenols and Ethers Question 169 English Explanation\"> "
+    }
+  ]
+}

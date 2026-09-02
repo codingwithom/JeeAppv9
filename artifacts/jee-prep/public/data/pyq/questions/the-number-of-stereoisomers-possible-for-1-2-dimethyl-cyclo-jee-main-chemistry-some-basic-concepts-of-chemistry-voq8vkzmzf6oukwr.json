@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktcrctpl",
+      "paperTitle": "JEE Main 2021 (Online) 26th August Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "isomerism",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-number-of-stereoisomers-possible-for-1-2-dimethyl-cyclo-jee-main-chemistry-some-basic-concepts-of-chemistry-voq8vkzmzf6oukwr",
+      "content": "The number of stereoisomers possible for 1, 2-dimethyl cyclopropane is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "One"
+        },
+        {
+          "identifier": "B",
+          "content": "Four"
+        },
+        {
+          "identifier": "C",
+          "content": "Two"
+        },
+        {
+          "identifier": "D",
+          "content": "Three"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1ktmentl6/2defc021-fc40-4a9e-94ce-79e22dcfb9f0/aeddfea0-16a2-11ec-b9ea-d19e19d71419/file-1ktmentl7-320w.jpeg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1ktmentl6/2defc021-fc40-4a9e-94ce-79e22dcfb9f0/aeddfea0-16a2-11ec-b9ea-d19e19d71419/file-1ktmentl7-500w.jpeg\"><img src=\"https://imagex.cdn.examgoal.net/1ktmentl6/2defc021-fc40-4a9e-94ce-79e22dcfb9f0/aeddfea0-16a2-11ec-b9ea-d19e19d71419/file-1ktmentl7.jpeg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 26th August Evening Shift Chemistry - Basics of Organic Chemistry Question 178 English Explanation\"></picture>"
+    }
+  ]
+}

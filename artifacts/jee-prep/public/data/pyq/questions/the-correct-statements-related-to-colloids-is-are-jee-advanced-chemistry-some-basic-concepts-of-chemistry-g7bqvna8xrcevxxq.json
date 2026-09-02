@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "1kufl4fb4",
+      "paperTitle": "JEE Advanced 2021 Paper 1 Online",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "surface-chemistry",
+      "chapterGroup": "physical-chemistry",
+      "topic": "colloids",
+      "type": "mcqm",
+      "marks": 4,
+      "negMarks": 2,
+      "permalink": "the-correct-statements-related-to-colloids-is-are-jee-advanced-chemistry-some-basic-concepts-of-chemistry-g7bqvna8xrcevxxq",
+      "content": "The correct statement(s) related to colloids is (are)",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "The process of precipitating colloidal sol by an electrolyte is called peptization."
+        },
+        {
+          "identifier": "B",
+          "content": "Colloidal solution freezes at higher temperature than the true solution at the same concentration."
+        },
+        {
+          "identifier": "C",
+          "content": "Surfactants form micelle above critical micelle concentration (CMC). CMC depends on temperature."
+        },
+        {
+          "identifier": "D",
+          "content": "Micelles are macromolecular colloids."
+        }
+      ],
+      "correct_options": [
+        "B",
+        "C"
+      ],
+      "explanation": "<p>Statements (b) and (c) are correct whereas statements\n(a) and (d) are incorrect.</p>\n<p>(a) Process of precipitating colloidal sol is known as\ncoagulation.</p>\n<p>(b) Concentration of colloidal solutions is small due to large\nmolar mass and thus, their colligative properties are very\nsmall compared to true solutions. Hence, these solution\nfreezes at higher temperature.</p>\n<p>(c) Micelles are formed at the critical micelle concentration\n(CMC) which depends to temperature.</p>\n<p>(d) Micelles and macromolecular colloids are two different\ntypes of colloid.</p>"
+    }
+  ]
+}

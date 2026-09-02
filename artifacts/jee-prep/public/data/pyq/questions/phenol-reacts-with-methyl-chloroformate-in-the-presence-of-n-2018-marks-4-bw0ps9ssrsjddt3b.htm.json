@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "bw0Ps9SSRsjDDt3B",
+      "paperTitle": "JEE Main 2018 (Offline)",
+      "year": 2018,
+      "examDate": null,
+      "subject": "chemistry",
+      "chapter": "alcohols-phenols-and-ethers",
+      "chapterGroup": "organic-chemistry",
+      "topic": "properties-preparation-and-uses-of-phenols",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "phenol-reacts-with-methyl-chloroformate-in-the-presence-of-n-2018-marks-4-bw0ps9ssrsjddt3b.htm",
+      "content": "Phenol reacts with methyl chloroformate in the presence of NaOH to form product A. A reacts with Br<sub>2</sub> to\nform product B. A and B are respectively :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img class=\"question-image\" src=\"https://imagex.cdn.examgoal.net/wv2ftIqiTCd3w7tKk/9OZ2RSjmI1UQiFE6r9UMwltAOIWy9/afO2cXQS4qIFEpGfB46R3c/image.png\" loading=\"lazy\" alt=\"JEE Main 2018 (Offline) Chemistry - Alcohols, Phenols and Ethers Question 168 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img class=\"question-image\" src=\"https://imagex.cdn.examgoal.net/Ll7UbMOspCoZApnuU/jDcRSICiQkgYq55KnNfoBdZriPJ8N/dbRWgeYGmTWH81I4RGEkJM/image.png\" loading=\"lazy\" alt=\"JEE Main 2018 (Offline) Chemistry - Alcohols, Phenols and Ethers Question 168 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img class=\"question-image\" src=\"https://imagex.cdn.examgoal.net/wcBjcYmDJHcuaVlC2/w3roFIDWdlaCA8WJM8jr4buB1Qe8A/aQSiVDHYM1pyVqudGw13zC/image.png\" loading=\"lazy\" alt=\"JEE Main 2018 (Offline) Chemistry - Alcohols, Phenols and Ethers Question 168 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img class=\"question-image\" src=\"https://imagex.cdn.examgoal.net/JcOT5yEesjfSvfuHZ/bPOzGrk2UVlDYdhsIchqSvj6sutY1/zcWDzGDyEPqfGBX3Q4WfL3/image.png\" loading=\"lazy\" alt=\"JEE Main 2018 (Offline) Chemistry - Alcohols, Phenols and Ethers Question 168 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<img class=\"question-image\" src=\"https://imagex.cdn.examgoal.net/9XvLNhb4t0hWIgV3B/YKhvCHxXsB50qInDPia0dpULbMu09/73UT6q6rMeja4RQl5KsJtr/image.png\" loading=\"lazy\" alt=\"JEE Main 2018 (Offline) Chemistry - Alcohols, Phenols and Ethers Question 168 English Explanation 1\">\n<br><br>First in presence of OH<sup><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container></sup> ion phenol will donate H<sup>+</sup> ion and create phenoxide ion. Then this ion will react with methyl chloroformate and carbon joined with Cl and O will be slightly positive charge due to pulling of electron towards O and Cl atom. This positive charge C atom will join with negative charged  O ion in phenoxide  ion and create  product A. \n<br><br><img class=\"question-image\" src=\"https://imagex.cdn.examgoal.net/VJzZZftiLvO5PODua/XHTefJAv5vaeJYQcQqZCTLaPWEvkx/mJpT6RdOOfnXnJPTU0AOpX/image.png\" loading=\"lazy\" alt=\"JEE Main 2018 (Offline) Chemistry - Alcohols, Phenols and Ethers Question 168 English Explanation 2\">\n<br><br>Product A reacts with  Br<sub>2</sub> and perform electrofilic  aromatic substitution and at  para position Br will be added.  "
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "XWE0iO8fDLO3VWW534T2w",
+      "paperTitle": "JEE Main 2019 (Online) 8th April Evening Slot",
+      "year": 2019,
+      "examDate": "2019-04-08 14:30",
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "covalent-and-co-ordinate-bond",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-covalent-alkaline-earth-metal-halide-x-cl-br-i-is-jee-main-chemistry-some-basic-concepts-of-chemistry-yfqgrnmmwjujf1lb",
+      "content": "The covalent alkaline earth metal halide\n(X = Cl, Br, I) is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "CaX<sub>2</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "SrX<sub>2</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "MgX<sub>2</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "BeX<sub>2</sub>"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "According to Fajan’s rule, when the size of cation is less then the\ncovalent character would be more for the cation.\n<br><br>Since Be<sup>2+</sup> has minimum size\namong given cation, therefore, BeX<sub>2</sub> would be\nmost covalent among given alkaline with metal\nhalides"
+    }
+  ]
+}

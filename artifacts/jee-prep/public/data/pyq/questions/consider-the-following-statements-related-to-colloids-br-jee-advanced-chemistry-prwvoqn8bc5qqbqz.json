@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "liiqrrhs",
+      "paperTitle": "JEE Advanced 2023 Paper 2 Online",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "surface-chemistry",
+      "chapterGroup": "physical-chemistry",
+      "topic": "colloids",
+      "type": "mcq",
+      "marks": 3,
+      "negMarks": 1,
+      "permalink": "consider-the-following-statements-related-to-colloids-br-jee-advanced-chemistry-prwvoqn8bc5qqbqz",
+      "content": "Consider the following statements related to colloids.\n<br/><br/>(I) Lyophobic colloids are <b>not</b> formed by simple mixing of dispersed phase and dispersion medium.\n<br/><br/>(II) For emulsions, both the dispersed phase and the dispersion medium are liquid.\n<br/><br/>(III) Micelles are produced by dissolving a surfactant in any solvent at any temperature.\n<br/><br/>(IV) Tyndall effect can be observed from a colloidal solution with dispersed phase having the same refractive index as that of the dispersion medium.\n<br/><br/>The option with the correct set of statements is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(I) and (II)"
+        },
+        {
+          "identifier": "B",
+          "content": "(II) and (III)"
+        },
+        {
+          "identifier": "C",
+          "content": "(III) and (IV)"
+        },
+        {
+          "identifier": "D",
+          "content": "(II) and (IV)"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<p>Analyzing each statement in regard to colloids:</p>\n\n<p>(I) Lyophobic colloids are <strong>not</strong> formed by simple mixing of dispersed phase and dispersion medium. This statement is correct. Lyophobic colloids (hydrophobic when water is the dispersion medium) have molecules or particles that do not have an affinity towards the dispersion medium. They require special methods to be prepared because the dispersed phase does not naturally mix with the dispersion medium. For example, high-energy inputs like ultrasonication, high-speed stirring, or the addition of stabilizing agents are often needed to create and stabilize these colloids.</p>\n\n<p>(II) For emulsions, both the dispersed phase and the dispersion medium are liquid. This statement is also correct. Emulsions are a type of colloid where both the dispersed phase and the dispersion medium are liquids. These two liquids are immiscible or not capable of mixing together without the help of emulsifying agents (like surfactants) which stabilize the emulsion.</p>\n\n<p>(III) Micelles are produced by dissolving a surfactant in any solvent at any temperature. This statement is incorrect for two reasons. First, micelle formation specifically depends on a critical concentration known as the critical micelle concentration (CMC) above which micelles begin to form in solution. Second, temperature also affects the formation of micelles, as the critical micelle concentration can change with temperature. Not any solvent or any temperature condition will result in micelle formation.</p>\n\n<p>(IV) Tyndall effect can be observed from a colloidal solution with dispersed phase having the same refractive index as that of the dispersion medium. This statement is incorrect. The Tyndall effect is the scattering of light by particles in a colloid or another fine dispersion. For the Tyndall effect to be observed, there must be a significant difference in the refractive index between the dispersed particles and the dispersion medium. If the dispersed phase and the dispersion medium have the same refractive index, the light will not scatter, and the Tyndall effect will not be observed.</p>\n\n<p>Given these analyses, the correct set of statements is Option A: (I) and (II).</p>"
+    }
+  ]
+}

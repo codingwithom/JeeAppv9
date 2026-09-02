@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "gt7V2lmnkPohTlQ4MJ3rsa0w2w9jwvgdznz",
+      "paperTitle": "JEE Main 2019 (Online) 10th April Morning Slot",
+      "year": 2019,
+      "examDate": "2019-04-10 09:30",
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "crystal-field-theory-cft",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "three-complexes-brcoclnhsub3subsub5sub-su-jee-main-chemistry-coordination-compounds-4vul43o83ggvacei",
+      "content": "Three complexes,\n<br>[CoCl(NH<sub>3</sub>)<sub>5</sub>]\n<sup>2+</sup>(I),\n<br>[Co(NH<sub>3</sub>)<sub>5</sub>H<sub>2</sub>O]<sup>3+</sup> (II) and\n<br>[Co(NH<sub>3</sub>)<sub>6</sub>]\n<sup>3+</sup>(III)\n<br>absorb light in the visible region. The correct order of the wavelength of light absorbed by them is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(III) &gt; (I) &gt; (II)"
+        },
+        {
+          "identifier": "B",
+          "content": "(III) &gt; (II) &gt; (I)"
+        },
+        {
+          "identifier": "C",
+          "content": "(I) &gt; (II) &gt; (III)"
+        },
+        {
+          "identifier": "D",
+          "content": "(II) &gt; (I) &gt; (III)"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "As in a co-ordination compound, the strong field\nligand causes higher splitting of the d-orbitals\n<br><br>Also we know,\n<br><br>strength of ligand <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 778 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"221D\" xlink:href=\"#MJX-TEX-N-221D\"></use></g></g></g></svg></mjx-container> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -1.033ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"6.338ex\" height=\"2.99ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864.9 2801.4 1321.5\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mn\" transform=\"translate(1223.9,394) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(220,-345) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D706\" xlink:href=\"#MJX-TEX-I-1D706\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(616,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(529,0)\"><use data-c=\"1D44F\" xlink:href=\"#MJX-TEX-I-1D44F\"></use></g><g data-mml-node=\"mi\" transform=\"translate(958,0)\"><use data-c=\"1D460\" xlink:href=\"#MJX-TEX-I-1D460\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1427,0)\"><use data-c=\"1D45C\" xlink:href=\"#MJX-TEX-I-1D45C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1912,0)\"><use data-c=\"1D45F\" xlink:href=\"#MJX-TEX-I-1D45F\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2363,0)\"><use data-c=\"1D44F\" xlink:href=\"#MJX-TEX-I-1D44F\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2792,0)\"><use data-c=\"1D452\" xlink:href=\"#MJX-TEX-I-1D452\"></use></g><g data-mml-node=\"mi\" transform=\"translate(3258,0)\"><use data-c=\"1D451\" xlink:href=\"#MJX-TEX-I-1D451\"></use></g></g></g></g></g><rect width=\"2561.4\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container>\n<br><br>Order of strength of ligand\n<br><br>NH<sub>3</sub> &gt; H<sub>2</sub>O &gt; Cl<sup>-</sup>\n<br><br>Therefore decreasing order of wavelength\nabsorbed is (I) &gt; (II) &gt; (III)\n"
+    }
+  ]
+}

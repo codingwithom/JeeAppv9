@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "svPpDst4r3r0aDg5",
+      "paperTitle": "JEE Main 2015 (Offline)",
+      "year": 2015,
+      "examDate": null,
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "crystal-field-theory-cft",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-compounds-is-not-colored-yellow-2015-marks-4-svppdst4r3r0adg5.htm",
+      "content": "Which of the following compounds is not colored yellow?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "K<sub>3</sub>[Co(NO<sub>2</sub>)<sub>6</sub>]"
+        },
+        {
+          "identifier": "B",
+          "content": "(NH<sub>4</sub>)<sub>3</sub>[As(Mo<sub>3</sub>O<sub>10</sub>)<sub>4</sub>]"
+        },
+        {
+          "identifier": "C",
+          "content": "BaCrO<sub>4</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "Zn<sub>2</sub>[Fe(CN)<sub>6</sub>]"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Zn<sub>2</sub>[Fe(CN)<sub>6</sub>] is white in color as it does not have unpaired\nelectrons."
+    }
+  ]
+}

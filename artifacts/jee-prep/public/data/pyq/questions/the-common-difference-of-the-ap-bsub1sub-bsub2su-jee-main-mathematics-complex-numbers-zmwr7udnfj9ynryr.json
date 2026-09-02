@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "MHxZwe5tFw0FI9dtSrjgy2xukg0cxml1",
+      "paperTitle": "JEE Main 2020 (Online) 6th September Evening Slot",
+      "year": 2020,
+      "examDate": "2020-09-06 15:00",
+      "subject": "mathematics",
+      "chapter": "sequences-and-series",
+      "chapterGroup": "algebra",
+      "topic": "arithmetic-progression",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-common-difference-of-the-ap-bsub1sub-bsub2su-jee-main-mathematics-complex-numbers-zmwr7udnfj9ynryr",
+      "content": "The common difference of the A.P. <br>b<sub>1</sub>, b<sub>2</sub>, … , b<sub>m</sub>\n is 2 more than the common<br> difference of A.P. a<sub>1</sub>, a<sub>2</sub>, …, a<sub>n</sub>. If<br> a<sub>40 </sub> = –159, a<sub>100</sub> = –399 and\nb<sub>100</sub> = a<sub>70</sub>, then b<sub>1</sub>\n is equal to :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "127"
+        },
+        {
+          "identifier": "B",
+          "content": "81"
+        },
+        {
+          "identifier": "C",
+          "content": "–127"
+        },
+        {
+          "identifier": "D",
+          "content": "-81"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Let common difference of series\n<br>a<sub>1</sub>\n, a<sub>2</sub>\n, a<sub>3</sub>\n,..., a<sub>n</sub>\n be d.\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2235\" xlink:href=\"#MJX-TEX-N-2235\"></use></g></g></g></svg></mjx-container> a<sub>40</sub> = a<sub>1</sub> + 39d == –159 ...(i)\n<br><br>and a<sub>100</sub> = a<sub>1</sub> + 99d = –399 ...(ii)\n<br><br>From eqn. (ii) and (i)\n<br>d = –4 and a<sub>1</sub>\n = –3.\n<br><br>The common difference of the A.P. <br>b<sub>1</sub>, b<sub>2</sub>, … , b<sub>m</sub>\n is 2 more than the common<br> difference of A.P. a<sub>1</sub>, a<sub>2</sub>, …, a<sub>n</sub>.\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> Common difference of b<sub>1</sub>\n, b<sub>2</sub>\n, b<sub>3</sub>\n, ..., be (–2).\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2235\" xlink:href=\"#MJX-TEX-N-2235\"></use></g></g></g></svg></mjx-container> b<sub>100</sub> = a<sub>70</sub>\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> b<sub>1</sub>\n + 99(–2) = (–3) + 69(–4)\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> b<sub>1</sub>\n = 198 – 279\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> b<sub>1</sub>\n = – 81\n"
+    }
+  ]
+}

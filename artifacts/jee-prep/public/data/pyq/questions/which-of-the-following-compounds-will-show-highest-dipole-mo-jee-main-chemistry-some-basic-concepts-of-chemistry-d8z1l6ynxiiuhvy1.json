@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "CIbTkJeoFNcvZuYoX44uD",
+      "paperTitle": "JEE Main 2017 (Online) 9th April Morning Slot",
+      "year": 2017,
+      "examDate": "2017-04-09 09:30",
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "electron-displacement-effect",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-compounds-will-show-highest-dipole-mo-jee-main-chemistry-some-basic-concepts-of-chemistry-d8z1l6ynxiiuhvy1",
+      "content": "Which of the following compounds will show highest dipole moment ?\n<br><br><img src=\"https://imagex.cdn.examgoal.net/6QYmgL7CsXQ8SOoNI/YGb2QjmrFomn2Ma2B9MUrHOjkhwBv/KAoVswQntcsDIuQieOFXHS/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2017 (Online) 9th April Morning Slot Chemistry - Basics of Organic Chemistry Question 241 English\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(I)"
+        },
+        {
+          "identifier": "B",
+          "content": "(II)"
+        },
+        {
+          "identifier": "C",
+          "content": "(III)"
+        },
+        {
+          "identifier": "D",
+          "content": "(IV)"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<p>2-Cyclopropen-1-one cation is a cyclic <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.296ex\" height=\"1ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -431 573 442\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D70B\" xlink:href=\"#MJX-TEX-I-1D70B\"></use></g></g></g></svg></mjx-container>-system with two electrons. It has highest dipole moment which can be explained on the basis that the dipolar resonance structure contributes more to the resonance hybrid as it involves stable aromatic cyclopropenyl cation.</p>\n<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l3pdd8tb/8a1e6891-b1ce-482d-9201-567f1d188d70/235626f0-de3e-11ec-8d15-d70e976d6a92/file-1l3pdd8tc.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l3pdd8tb/8a1e6891-b1ce-482d-9201-567f1d188d70/235626f0-de3e-11ec-8d15-d70e976d6a92/file-1l3pdd8tc.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2017 (Online) 9th April Morning Slot Chemistry - Basics of Organic Chemistry Question 241 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l3pdd8tb/8a1e6891-b1ce-482d-9201-567f1d188d70/235626f0-de3e-11ec-8d15-d70e976d6a92/file-1l3pdd8tc.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l3pdd8tb/8a1e6891-b1ce-482d-9201-567f1d188d70/235626f0-de3e-11ec-8d15-d70e976d6a92/file-1l3pdd8tc.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l3pdd8tb/8a1e6891-b1ce-482d-9201-567f1d188d70/235626f0-de3e-11ec-8d15-d70e976d6a92/file-1l3pdd8tc.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l3pdd8tb/8a1e6891-b1ce-482d-9201-567f1d188d70/235626f0-de3e-11ec-8d15-d70e976d6a92/file-1l3pdd8tc.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l3pdd8tb/8a1e6891-b1ce-482d-9201-567f1d188d70/235626f0-de3e-11ec-8d15-d70e976d6a92/file-1l3pdd8tc.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l3pdd8tb/8a1e6891-b1ce-482d-9201-567f1d188d70/235626f0-de3e-11ec-8d15-d70e976d6a92/file-1l3pdd8tc.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">"
+    }
+  ]
+}

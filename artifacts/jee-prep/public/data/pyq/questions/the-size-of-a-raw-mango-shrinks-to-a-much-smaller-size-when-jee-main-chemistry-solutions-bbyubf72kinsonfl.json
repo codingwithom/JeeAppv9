@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "a74MKCDwo8d8xFT0j0jgy2xukeyapmgh",
+      "paperTitle": "JEE Main 2020 (Online) 2nd September Evening Slot",
+      "year": 2020,
+      "examDate": "2020-09-02 15:00",
+      "subject": "chemistry",
+      "chapter": "solutions",
+      "chapterGroup": "physical-chemistry",
+      "topic": "osmotic-pressure",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-size-of-a-raw-mango-shrinks-to-a-much-smaller-size-when-jee-main-chemistry-solutions-bbyubf72kinsonfl",
+      "content": "The size of a raw mango shrinks to a much\nsmaller size when kept in a concentrated salt\nsolution. Which one of the following processes\ncan explain this?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Osmosis"
+        },
+        {
+          "identifier": "B",
+          "content": "Reverse osmosis"
+        },
+        {
+          "identifier": "C",
+          "content": "Diffusion"
+        },
+        {
+          "identifier": "D",
+          "content": "Dialysis"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Raw mango shrink in salt solution due to net transfer of water molecules from mango to salt solution due to\nphenomenon of osmosis."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1krx8i6bf",
+      "paperTitle": "JEE Main 2021 (Online) 25th July Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "important-compounds-of-transition-elements",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-one-of-the-following-metals-forms-interstitial-hydride-jee-main-chemistry-some-basic-concepts-of-chemistry-103ppk71idfcjof3",
+      "content": "Which one of the following metals forms interstitial hydride easily?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Cr"
+        },
+        {
+          "identifier": "B",
+          "content": "Fe"
+        },
+        {
+          "identifier": "C",
+          "content": "Mn"
+        },
+        {
+          "identifier": "D",
+          "content": "Co"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Elements of group 7, 8, 9 do not form hydrides thus Cr will only form hydride among the given elements (Fe, Mn, Co)."
+    }
+  ]
+}

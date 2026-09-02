@@ -1,0 +1,42 @@
+{
+  "questions": [
+    {
+      "question_id": "1kugrqlj8",
+      "paperTitle": "JEE Advanced 2021 Paper 2 Online",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "p-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "group-15-elements-nitrogen-family",
+      "type": "mcqm",
+      "marks": 4,
+      "negMarks": 2,
+      "permalink": "the-correct-statements-related-to-oxoacids-of-phosphorous-jee-advanced-chemistry-some-basic-concepts-of-chemistry-cq6lpjpadintpfbi",
+      "content": "The correct statement(s) related to oxoacids of phosphorous is(are)",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Upon heating, H<sub>3</sub>PO<sub>3</sub> undergoes disproportionation reaction to produce H<sub>3</sub>PO<sub>4</sub> and PH<sub>3</sub>."
+        },
+        {
+          "identifier": "B",
+          "content": "While H<sub>3</sub>PO<sub>3</sub> can act as reducing agent, H<sub>3</sub>PO<sub>4</sub> cannot."
+        },
+        {
+          "identifier": "C",
+          "content": "H<sub>3</sub>PO<sub>3</sub> is a monobasic acid."
+        },
+        {
+          "identifier": "D",
+          "content": "The H atom of P-H bond in H<sub>3</sub>PO<sub>3</sub> is not ionizable in water."
+        }
+      ],
+      "correct_options": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "(a) H<sub>3</sub>PO<sub>3</sub> gives H<sub>3</sub>PO<sub>4</sub> and PH<sub>3</sub> on heating. This reaction is known as disproportionation reaction.<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.375ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"29.119ex\" height=\"3.355ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1317.3 12870.8 1482.8\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(500,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D43B\" xlink:href=\"#MJX-TEX-I-1D43B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(864,-150) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g><g data-mml-node=\"mi\" transform=\"translate(1767.6,0)\"><use data-c=\"1D443\" xlink:href=\"#MJX-TEX-I-1D443\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2518.6,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-150) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"REL\" transform=\"translate(3995.9,0)\"><g data-mml-node=\"mover\"><g data-mml-node=\"mo\"><use data-c=\"27F6\" xlink:href=\"#MJX-TEX-N-27F6\"></use></g><g data-mml-node=\"mi\" transform=\"translate(524.5,711) scale(0.707)\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g><g data-mml-node=\"mn\" transform=\"translate(5911.7,0)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(6411.7,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D43B\" xlink:href=\"#MJX-TEX-I-1D43B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(864,-150) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g><g data-mml-node=\"mi\" transform=\"translate(7679.2,0)\"><use data-c=\"1D443\" xlink:href=\"#MJX-TEX-I-1D443\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(8430.2,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-150) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(9852,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mi\" transform=\"translate(10852.2,0)\"><use data-c=\"1D443\" xlink:href=\"#MJX-TEX-I-1D443\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(11603.2,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D43B\" xlink:href=\"#MJX-TEX-I-1D43B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(864,-150) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g></g></g></svg></mjx-container><br><br>(b) P in H<sub>3</sub>PO<sub>4</sub> is in its highest oxidation state i.e. + 5 hence, it cannot act as reducing agent. But P in H<sub>3</sub>PO<sub>3</sub> is in oxidation state, + 3 hence, it can act as reducing agent.<br><br>(c) H<sub>3</sub>PO<sub>3</sub> contains two <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>OH groups, hence it is a dibasic acid.<br><br> <img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1kzspvb4f/37ab44e9-43dc-46a0-9ad9-4ed979709071/83aab9f0-90e4-11ec-b1de-75ae92f733a6/file-1kzspvb4g.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1kzspvb4f/37ab44e9-43dc-46a0-9ad9-4ed979709071/83aab9f0-90e4-11ec-b1de-75ae92f733a6/file-1kzspvb4g.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Advanced 2021 Paper 2 Online Chemistry - p-Block Elements Question 55 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1kzspvb4f/37ab44e9-43dc-46a0-9ad9-4ed979709071/83aab9f0-90e4-11ec-b1de-75ae92f733a6/file-1kzspvb4g.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1kzspvb4f/37ab44e9-43dc-46a0-9ad9-4ed979709071/83aab9f0-90e4-11ec-b1de-75ae92f733a6/file-1kzspvb4g.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1kzspvb4f/37ab44e9-43dc-46a0-9ad9-4ed979709071/83aab9f0-90e4-11ec-b1de-75ae92f733a6/file-1kzspvb4g.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1kzspvb4f/37ab44e9-43dc-46a0-9ad9-4ed979709071/83aab9f0-90e4-11ec-b1de-75ae92f733a6/file-1kzspvb4g.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1kzspvb4f/37ab44e9-43dc-46a0-9ad9-4ed979709071/83aab9f0-90e4-11ec-b1de-75ae92f733a6/file-1kzspvb4g.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1kzspvb4f/37ab44e9-43dc-46a0-9ad9-4ed979709071/83aab9f0-90e4-11ec-b1de-75ae92f733a6/file-1kzspvb4g.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"><br>(d) Hydrogen attached to P, does not ionise in water. Therefore, options (a), (b) and (d) are correct."
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "1ldolmvvn",
+      "paperTitle": "JEE Main 2023 (Online) 1st February Morning Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "redox-reactions",
+      "chapterGroup": "physical-chemistry",
+      "topic": "oxidation-number",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "psum-of-oxidation-states-of-bromine-in-bromic-acid-and-per-jee-main-chemistry-some-basic-concepts-of-chemistry-xowgorgvzcflzmxg",
+      "content": "<p>Sum of oxidation states of bromine in bromic acid and perbromic acid is ___________.</p>",
+      "options": [],
+      "correct_options": [],
+      "explanation": "<p>The sum of the oxidation states of bromine in bromic acid (HBrO<sub>3</sub>) and perbromic acid (HBrO<sub>4</sub>) is +12.</p>\n\n<p>In bromic acid, the oxidation state of bromine is +5, while in perbromic acid, it is +7. The sum of the oxidation states of bromine in both compounds is (+5) + (+7) = +12.</p>"
+    }
+  ]
+}

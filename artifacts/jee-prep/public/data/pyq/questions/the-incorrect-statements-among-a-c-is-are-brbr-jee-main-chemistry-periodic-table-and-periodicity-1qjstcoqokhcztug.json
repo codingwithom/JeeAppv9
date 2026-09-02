@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "IGNpQdkaQP2HUPSpUMjgy2xukfc7rdzf",
+      "paperTitle": "JEE Main 2020 (Online) 4th September Evening Slot",
+      "year": 2020,
+      "examDate": "2020-09-04 15:00",
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "properties-of-transition-elements",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-incorrect-statements-among-a-c-is-are-brbr-jee-main-chemistry-periodic-table-and-periodicity-1qjstcoqokhcztug",
+      "content": "The incorrect statement(s) among (a) - (c) is\n(are)\n<br><br>(a) W(VI) is more stable than Cr(VI).\n<br><br/>(b) In the presence of HCl, permanganate\ntitrations provide satisfactory results.\n<br><br/>(c) Some lanthanoid oxides can be used as\nphosphors.",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(a) and (b) only"
+        },
+        {
+          "identifier": "B",
+          "content": "(a) only"
+        },
+        {
+          "identifier": "C",
+          "content": "(b) only"
+        },
+        {
+          "identifier": "D",
+          "content": "(b) and (c) only"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "W(VI) is more stable than Cr(VI)\n <br><br>Permanganate titrations in presence of HCl\nare unsatisfactory as HCl is oxidised to Cl<sub>2</sub>\n <br><br>Lanthanoid oxides are used as phosphors."
+    }
+  ]
+}

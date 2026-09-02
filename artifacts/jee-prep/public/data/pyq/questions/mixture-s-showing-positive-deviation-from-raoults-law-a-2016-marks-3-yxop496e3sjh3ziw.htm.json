@@ -1,0 +1,42 @@
+{
+  "questions": [
+    {
+      "question_id": "YXoP496E3Sjh3ZIw",
+      "paperTitle": "JEE Advanced 2016 Paper 2 Offline",
+      "year": 2016,
+      "examDate": null,
+      "subject": "chemistry",
+      "chapter": "solutions",
+      "chapterGroup": "physical-chemistry",
+      "topic": "raoults-law",
+      "type": "mcqm",
+      "marks": 4,
+      "negMarks": 2,
+      "permalink": "mixture-s-showing-positive-deviation-from-raoults-law-a-2016-marks-3-yxop496e3sjh3ziw.htm",
+      "content": "Mixture (s) showing positive deviation from Raoult’s law at 35<sup>o</sup>C is (are)",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "carbon tetrachloride + methanol "
+        },
+        {
+          "identifier": "B",
+          "content": "carbon disulphide + acetone"
+        },
+        {
+          "identifier": "C",
+          "content": "benzene + toluene "
+        },
+        {
+          "identifier": "D",
+          "content": "phenol + aniline"
+        }
+      ],
+      "correct_options": [
+        "A",
+        "B"
+      ],
+      "explanation": "<p>When intermolecular attraction\nbetween two components A and B in the\nmixture is same as between A and A or B\nand B, hence it is a case of ideal solution.\nWhen intermolecular attraction between A\nand B in a mixture is smaller than that\nbetween A and A or B and B, then mixture\nis more vaporised, bp is lowered. It is a case\nof positive deviation from Raoult’s law.\nWhen intermolecular attraction between A\nand B is higher than that between A and A\nor B and B, then mixture is less vaporised,\nbp is increased. It is a case of negative\ndeviation.</p>\n<p>(a) Methanol molecules (CH)<sub>3</sub>OH are\nhydrogen bonded. In a mixture of\nCCl<sub>4</sub>\nand CH<sub>3</sub>OH, extent of\nH-bonding is decreased. Mixture is\nmore vaporised thus, positive\ndeviation from Raoult’s law.</p>\n<p>(b) Acetone molecules have higher\nintermolecular attraction due to\ndipole-dipole interaction. With CS<sub>2</sub>\n,\nthis interaction is decreased thus,\npositive deviation.</p>\n<p>(c) Mixture of benzene and toluene\nforms ideal solution.</p>\n<p>(d) Phenol and aniline have higher\ninteraction due to intermolecular\nH-bonding. Hence, negative\ndeviation.</p>"
+    }
+  ]
+}

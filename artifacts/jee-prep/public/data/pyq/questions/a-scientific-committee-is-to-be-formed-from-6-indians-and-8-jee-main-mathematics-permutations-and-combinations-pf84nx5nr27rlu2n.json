@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "kWZNAunq6lVQD0QwtP1klrg0wg0",
+      "paperTitle": "JEE Main 2021 (Online) 24th February Morning Shift",
+      "year": 2021,
+      "subject": "mathematics",
+      "chapter": "permutations-and-combinations",
+      "chapterGroup": "algebra",
+      "topic": "conditional-combinations",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "a-scientific-committee-is-to-be-formed-from-6-indians-and-8-jee-main-mathematics-permutations-and-combinations-pf84nx5nr27rlu2n",
+      "content": "A scientific committee is to be formed from 6 Indians and 8 foreigners, which includes at\nleast 2 Indians and double the number of foreigners as Indians. Then the number of ways,\nthe committee can be formed, is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "1050"
+        },
+        {
+          "identifier": "B",
+          "content": "575"
+        },
+        {
+          "identifier": "C",
+          "content": "560"
+        },
+        {
+          "identifier": "D",
+          "content": "1625"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Given,<br><br>Number of Indians = 6<br><br>Number of foreigners = 8<br><br>Committee of at least 2 Indians and double number of foreigners is to be formed. Hence, the required cases are<br><br>(2I, 4F) + (3I, 6F) + (4I, 8F)<br><br>= <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.375ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"35.387ex\" height=\"2.261ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -833.9 15640.9 999.5\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msup\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"></g><g data-mml-node=\"mn\" transform=\"translate(33,363) scale(0.707)\"><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\"></use></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(436.6,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mn\" transform=\"translate(748,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(1810.3,0)\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g><g data-mml-node=\"msup\" transform=\"translate(2810.6,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"></g><g data-mml-node=\"mn\" transform=\"translate(33,363) scale(0.707)\"><use data-c=\"38\" xlink:href=\"#MJX-TEX-N-38\"></use></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(3247.1,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mn\" transform=\"translate(748,-150) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(4620.9,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"msup\" transform=\"translate(5621.1,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"></g><g data-mml-node=\"mn\" transform=\"translate(33,363) scale(0.707)\"><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\"></use></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(6057.7,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mn\" transform=\"translate(748,-150) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(7431.4,0)\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g><g data-mml-node=\"msup\" transform=\"translate(8431.7,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"></g><g data-mml-node=\"mn\" transform=\"translate(33,363) scale(0.707)\"><use data-c=\"38\" xlink:href=\"#MJX-TEX-N-38\"></use></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(8868.2,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mn\" transform=\"translate(748,-150) scale(0.707)\"><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(10242,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"msup\" transform=\"translate(11242.2,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"></g><g data-mml-node=\"mn\" transform=\"translate(33,363) scale(0.707)\"><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\"></use></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(11678.8,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mn\" transform=\"translate(748,-150) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(13052.5,0)\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g><g data-mml-node=\"msup\" transform=\"translate(14052.8,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"></g><g data-mml-node=\"mn\" transform=\"translate(33,363) scale(0.707)\"><use data-c=\"38\" xlink:href=\"#MJX-TEX-N-38\"></use></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(14489.3,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mn\" transform=\"translate(748,-150) scale(0.707)\"><use data-c=\"38\" xlink:href=\"#MJX-TEX-N-38\"></use></g></g></g></g></g></svg></mjx-container><br><br>= (15 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 70) + (20 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 28) + (15 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 1)<br><br>= 1050 + 560 + 15 = 1625"
+    }
+  ]
+}

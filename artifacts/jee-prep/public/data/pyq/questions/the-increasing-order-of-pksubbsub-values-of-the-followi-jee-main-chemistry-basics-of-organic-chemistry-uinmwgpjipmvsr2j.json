@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "z23SrcXjtoeb27s5vQjgy2xukft5g2f3",
+      "paperTitle": "JEE Main 2020 (Online) 6th September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-06 09:00",
+      "subject": "chemistry",
+      "chapter": "compounds-containing-nitrogen",
+      "chapterGroup": "organic-chemistry",
+      "topic": "aliphatic-amines",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-increasing-order-of-pksubbsub-values-of-the-followi-jee-main-chemistry-basics-of-organic-chemistry-uinmwgpjipmvsr2j",
+      "content": "The increasing order of pK<sub>b</sub> values of the\nfollowing compounds is :\n<br><br><img src=\"https://imagex.cdn.examgoal.net/jgy2xukft5eh12/749992d3-15c5-4148-b7fe-f98bcfe0a4bf/edf66560-052c-11eb-8293-3b6cc591631c/file-jgy2xukft5eh13-320w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 6th September Morning Slot Chemistry - Compounds Containing Nitrogen Question 190 English\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "I &lt; II &lt; IV &lt; III"
+        },
+        {
+          "identifier": "B",
+          "content": "I &lt; II &lt; III &lt; IV"
+        },
+        {
+          "identifier": "C",
+          "content": "II &lt; I &lt; III &lt; IV"
+        },
+        {
+          "identifier": "D",
+          "content": "II &lt; IV &lt; III &lt; I"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Order of pK<sub>b</sub>\n<img src=\"https://imagex.cdn.examgoal.net/jgy2xukgt3kbzt/b1af60ef-1b4e-482f-b9a4-70bc9e19d85a/f60c7a90-18f1-11eb-8293-3b6cc591631c/file-jgy2xukgt3kbzu-320w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 6th September Morning Slot Chemistry - Compounds Containing Nitrogen Question 190 English Explanation\">"
+    }
+  ]
+}

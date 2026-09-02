@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "O2mqgIpwasZAg7L4e5sLG",
+      "paperTitle": "JEE Main 2018 (Online) 15th April Morning Slot",
+      "year": 2018,
+      "examDate": "2018-04-15 09:30",
+      "subject": "chemistry",
+      "chapter": "chemical-equilibrium",
+      "chapterGroup": "physical-chemistry",
+      "topic": "le-chateliers-principle-and-factors-affecting-chemical-equilibrium",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "in-which-of-the-following-reactions-an-increase-in-the-volu-jee-main-chemistry-some-basic-concepts-of-chemistry-dfnjzn6ewfuqjddj",
+      "content": "In which of the following reactions, an increase in the volume of the container will favour the formation of products? ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "2NO<sub>2</sub>(g) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.032ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.195ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -514 1000 528\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21CC\" xlink:href=\"#MJX-TEX-V-21CC\"></use></g></g></g></svg></mjx-container> 2NO(g) + O<sub>2</sub>(g)"
+        },
+        {
+          "identifier": "B",
+          "content": "H<sub>2</sub>(g) + I<sub>2</sub>(g) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.032ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.195ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -514 1000 528\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21CC\" xlink:href=\"#MJX-TEX-V-21CC\"></use></g></g></g></svg></mjx-container> 2HI(g)"
+        },
+        {
+          "identifier": "C",
+          "content": "4NH<sub>3</sub>(g) + 5O<sub>2</sub>(g) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.032ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.195ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -514 1000 528\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21CC\" xlink:href=\"#MJX-TEX-V-21CC\"></use></g></g></g></svg></mjx-container> 4NO(g) + 6H<sub>2</sub>O(1)"
+        },
+        {
+          "identifier": "D",
+          "content": "3O<sub>2</sub> (g) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.032ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.195ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -514 1000 528\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21CC\" xlink:href=\"#MJX-TEX-V-21CC\"></use></g></g></g></svg></mjx-container> 2O<sub>3</sub>(g)"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "From Boyle's law, we know when volume increase then pressure decreases, and to keep the pressure on original value the reaction should proceeds in the direction where the number of moles of gases increases. \n<br><br>In this reaction, only satisfy this. \n<br><br>2 NO<sub>2</sub>(g) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.032ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.195ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -514 1000 528\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21CC\" xlink:href=\"#MJX-TEX-V-21CC\"></use></g></g></g></svg></mjx-container> 2 NO(g) + O<sub>2</sub> (g) \n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.02ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 1335 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g><g data-mml-node=\"mspace\" transform=\"translate(667,0)\"></g><g data-mml-node=\"mspace\" transform=\"translate(834,0)\"></g><g data-mml-node=\"mspace\" transform=\"translate(1001,0)\"></g><g data-mml-node=\"mspace\" transform=\"translate(1168,0)\"></g></g></g></svg></mjx-container>  <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.885ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 833 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></svg></mjx-container>n<sub>g</sub> = (2 + 1) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container> 2 = 1"
+    }
+  ]
+}

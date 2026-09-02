@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "8ujCIhDzis1vgjc8Puefo",
+      "paperTitle": "JEE Main 2019 (Online) 8th April Evening Slot",
+      "year": 2019,
+      "examDate": "2019-04-08 14:30",
+      "subject": "physics",
+      "chapter": "atoms-and-nuclei",
+      "chapterGroup": "modern-physics",
+      "topic": "nucleus-and-radioactivity",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-ratio-of-mass-densities-of-nuclei-of-40ca-and-16o-is-clo-jee-main-physics-units-and-measurements-ggj8kfzbxg3zr3ez",
+      "content": "The ratio of mass densities of nuclei of <sup>40</sup>Ca\nand <sup>16</sup>O is close to :-",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "1"
+        },
+        {
+          "identifier": "B",
+          "content": "5"
+        },
+        {
+          "identifier": "C",
+          "content": "0.1"
+        },
+        {
+          "identifier": "D",
+          "content": "2"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Densities of nucleus happens to be constant,\nirrespective of mass number."
+    }
+  ]
+}

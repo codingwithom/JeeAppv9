@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "hI9jZChLQ9ZIKlSkxWjgy2xukg38e1e8",
+      "paperTitle": "JEE Main 2020 (Online) 6th September Evening Slot",
+      "year": 2020,
+      "examDate": "2020-09-06 15:00",
+      "subject": "mathematics",
+      "chapter": "limits-continuity-and-differentiability",
+      "chapterGroup": "calculus",
+      "topic": "differentiability",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "let-f--r--to--r-be-a-function-defined-by-fx--max--jee-main-mathematics-complex-numbers-hbrzoix1az6mo1rp",
+      "content": "Let f : R <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> R be a function defined by<br> f(x) = max {x, x<sup>2</sup>}. Let S denote the set of all points in R, where f is not differentiable.\nThen :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "{0, 1}"
+        },
+        {
+          "identifier": "B",
+          "content": "{0}"
+        },
+        {
+          "identifier": "C",
+          "content": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.464ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.348ex\" height=\"2.034ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 596 899\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D719\" xlink:href=\"#MJX-TEX-I-1D719\"></use></g></g></g></svg></mjx-container>(an empty set)"
+        },
+        {
+          "identifier": "D",
+          "content": "{1}"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukg9cb630/7979679c-19e2-4b62-94d8-8eeffb5124e1/7c5fccc0-0e14-11eb-8293-3b6cc591631c/file-jgy2xukg9cb631-320w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 6th September Evening Slot Mathematics - Limits, Continuity and Differentiability Question 180 English Explanation\">\n<br>From graph you can see, \n<br>(1) when x &lt; 0 then y = x<sup>2</sup> is greater than y = x. That is why for f(x) that curved part is chosen.\n<br>(2) when 0 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.312ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.751ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -636 778 774\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2264\" xlink:href=\"#MJX-TEX-N-2264\"></use></g></g></g></svg></mjx-container> x &lt; 1 then y = x is greater than y = x<sup>2</sup>. That is why for f(x) part of that straight line is chosen.\n<br>(3) when x <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.312ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.751ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -636 778 774\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2265\" xlink:href=\"#MJX-TEX-N-2265\"></use></g></g></g></svg></mjx-container> 1 then y = x<sup>2</sup> is greater than y = x. That is why for f(x) that curved part is chosen.\n\n<br><br>Here on the graph of f(x) there is two sharp corner at x = 0 and x = 1. As we know no function is differentiable at the sharp corner. So f(x) is not differentiable at those two sharp corner."
+    }
+  ]
+}

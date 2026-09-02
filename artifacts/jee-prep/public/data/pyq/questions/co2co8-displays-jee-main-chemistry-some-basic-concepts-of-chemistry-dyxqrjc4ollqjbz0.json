@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "Uv7Ejwn6P9fmRJY5iIDOv",
+      "paperTitle": "JEE Main 2017 (Online) 9th April Morning Slot",
+      "year": 2017,
+      "examDate": "2017-04-09 09:30",
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "coordination-number",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "co2co8-displays-jee-main-chemistry-some-basic-concepts-of-chemistry-dyxqrjc4ollqjbz0",
+      "content": "[Co<sub>2</sub>(CO)<sub>8</sub>] displays :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "one Co−Co bond, six terminal CO and two bridging CO"
+        },
+        {
+          "identifier": "B",
+          "content": "one Co−Co bond, four terminal CO and four bridging CO"
+        },
+        {
+          "identifier": "C",
+          "content": "no Co−Co bond, six terminal CO and two bridging CO"
+        },
+        {
+          "identifier": "D",
+          "content": "no Co−Co bond, four terminal CO and four bridging CO\n"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<p>The structure of [Co<sub>2</sub>(CO)<sub>8</sub>] is</p>\n<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l3o11y38/985a9119-d4a9-4c5d-b2a7-69f430657e13/32f3a230-dd81-11ec-aecc-85c667aff515/file-1l3o11y39.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l3o11y38/985a9119-d4a9-4c5d-b2a7-69f430657e13/32f3a230-dd81-11ec-aecc-85c667aff515/file-1l3o11y39.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2017 (Online) 9th April Morning Slot Chemistry - Coordination Compounds Question 308 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l3o11y38/985a9119-d4a9-4c5d-b2a7-69f430657e13/32f3a230-dd81-11ec-aecc-85c667aff515/file-1l3o11y39.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l3o11y38/985a9119-d4a9-4c5d-b2a7-69f430657e13/32f3a230-dd81-11ec-aecc-85c667aff515/file-1l3o11y39.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l3o11y38/985a9119-d4a9-4c5d-b2a7-69f430657e13/32f3a230-dd81-11ec-aecc-85c667aff515/file-1l3o11y39.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l3o11y38/985a9119-d4a9-4c5d-b2a7-69f430657e13/32f3a230-dd81-11ec-aecc-85c667aff515/file-1l3o11y39.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l3o11y38/985a9119-d4a9-4c5d-b2a7-69f430657e13/32f3a230-dd81-11ec-aecc-85c667aff515/file-1l3o11y39.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l3o11y38/985a9119-d4a9-4c5d-b2a7-69f430657e13/32f3a230-dd81-11ec-aecc-85c667aff515/file-1l3o11y39.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">\n<p> From the structure, we can see that there is one CO−CO bond, six terminals CO and two bridging CO.</p>"
+    }
+  ]
+}

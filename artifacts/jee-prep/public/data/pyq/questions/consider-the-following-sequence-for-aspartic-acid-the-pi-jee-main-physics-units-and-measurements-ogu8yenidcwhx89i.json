@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "VD5dmETMLWQ7voWYBgqZO",
+      "paperTitle": "JEE Main 2016 (Online) 9th April Morning Slot",
+      "year": 2016,
+      "examDate": "2016-04-09 09:30",
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "proteins-and-enzymes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "consider-the-following-sequence-for-aspartic-acid-the-pi-jee-main-physics-units-and-measurements-ogu8yenidcwhx89i",
+      "content": "Consider the following sequence for aspartic acid : \n<br><br><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l80zay2l/42afc256-9eba-4138-99c2-fc5ab5962114/68ebaad0-33d1-11ed-bcbd-5353ee2ab2b1/file-1l80zay2m.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l80zay2l/42afc256-9eba-4138-99c2-fc5ab5962114/68ebaad0-33d1-11ed-bcbd-5353ee2ab2b1/file-1l80zay2m.png\" loading=\"lazy\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;max-height: 60vh\" alt=\"JEE Main 2016 (Online) 9th April Morning Slot Chemistry - Biomolecules Question 171 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l80zay2l/42afc256-9eba-4138-99c2-fc5ab5962114/68ebaad0-33d1-11ed-bcbd-5353ee2ab2b1/file-1l80zay2m.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l80zay2l/42afc256-9eba-4138-99c2-fc5ab5962114/68ebaad0-33d1-11ed-bcbd-5353ee2ab2b1/file-1l80zay2m.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l80zay2l/42afc256-9eba-4138-99c2-fc5ab5962114/68ebaad0-33d1-11ed-bcbd-5353ee2ab2b1/file-1l80zay2m.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l80zay2l/42afc256-9eba-4138-99c2-fc5ab5962114/68ebaad0-33d1-11ed-bcbd-5353ee2ab2b1/file-1l80zay2m.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l80zay2l/42afc256-9eba-4138-99c2-fc5ab5962114/68ebaad0-33d1-11ed-bcbd-5353ee2ab2b1/file-1l80zay2m.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l80zay2l/42afc256-9eba-4138-99c2-fc5ab5962114/68ebaad0-33d1-11ed-bcbd-5353ee2ab2b1/file-1l80zay2m.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"><br>The <i>pI</i> (isoelectric point) of aspartic acid is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "1.88 "
+        },
+        {
+          "identifier": "B",
+          "content": "3.65"
+        },
+        {
+          "identifier": "C",
+          "content": "5.74"
+        },
+        {
+          "identifier": "D",
+          "content": "2.77"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "pI = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.781ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"41.269ex\" height=\"2.953ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -960.1 18241.1 1305.1\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(220,477.2) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D45D\" xlink:href=\"#MJX-TEX-I-1D45D\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(503,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D43E\" xlink:href=\"#MJX-TEX-I-1D43E\"></use></g><g data-mml-node=\"mn\" transform=\"translate(882,-150) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(1788.6,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2566.6,0)\"><use data-c=\"1D45D\" xlink:href=\"#MJX-TEX-I-1D45D\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(3069.6,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D43E\" xlink:href=\"#MJX-TEX-I-1D43E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(882,-150) scale(0.707)\"><use data-c=\"1D445\" xlink:href=\"#MJX-TEX-I-1D445\"></use></g></g></g></g><g data-mml-node=\"mn\" transform=\"translate(1647.7,-345) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><rect width=\"3409\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g><g data-mml-node=\"mo\" transform=\"translate(3926.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(4982.6,0)\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(220,398) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\" transform=\"translate(500,0)\"></use><use data-c=\"38\" xlink:href=\"#MJX-TEX-N-38\" transform=\"translate(778,0)\"></use><use data-c=\"38\" xlink:href=\"#MJX-TEX-N-38\" transform=\"translate(1278,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1778,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(2556,0)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\" transform=\"translate(500,0)\"></use><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\" transform=\"translate(778,0)\"></use><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\" transform=\"translate(1278,0)\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(1575.5,-345) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><rect width=\"3264.6\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g><g data-mml-node=\"mo\" transform=\"translate(8765,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(9820.7,0)\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(220,394) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\" transform=\"translate(500,0)\"></use><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\" transform=\"translate(778,0)\"></use><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\" transform=\"translate(1278,0)\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(671.8,-345) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><rect width=\"1457.2\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g><g data-mml-node=\"mo\" transform=\"translate(11795.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(12851.5,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\" transform=\"translate(500,0)\"></use><use data-c=\"37\" xlink:href=\"#MJX-TEX-N-37\" transform=\"translate(778,0)\"></use><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\" transform=\"translate(1278,0)\"></use><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\" transform=\"translate(1778,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(15407.3,0)\"><use data-c=\"2248\" xlink:href=\"#MJX-TEX-N-2248\"></use></g><g data-mml-node=\"mn\" transform=\"translate(16463.1,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\" transform=\"translate(500,0)\"></use><use data-c=\"37\" xlink:href=\"#MJX-TEX-N-37\" transform=\"translate(778,0)\"></use><use data-c=\"37\" xlink:href=\"#MJX-TEX-N-37\" transform=\"translate(1278,0)\"></use></g></g></g></svg></mjx-container>"
+    }
+  ]
+}

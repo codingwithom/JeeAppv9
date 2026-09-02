@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "eNLKKMO5cYrCM8Jz6S1kluge0sz",
+      "paperTitle": "JEE Main 2021 (Online) 26th February Morning Shift",
+      "year": 2021,
+      "subject": "mathematics",
+      "chapter": "permutations-and-combinations",
+      "chapterGroup": "algebra",
+      "topic": "conditional-combinations",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-number-of-seven-digit-integers-with-sum-of-the-digits-eq-jee-main-mathematics-trigonometric-functions-and-equations-9roq4vceifiopiwj",
+      "content": "The number of seven digit integers with sum of the digits equal to 10 and formed by using the digits 1, 2 and 3 only is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "35"
+        },
+        {
+          "identifier": "B",
+          "content": "42"
+        },
+        {
+          "identifier": "C",
+          "content": "82"
+        },
+        {
+          "identifier": "D",
+          "content": "77"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "(I) First possibility is 1, 1, 1, 1, 1, 2, 3<br><br>required number = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.819ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.24ex\" height=\"2.856ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -900.3 990.1 1262.1\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(220,394) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"37\" xlink:href=\"#MJX-TEX-N-37\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"21\" xlink:href=\"#MJX-TEX-N-21\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(220,-346.3) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"21\" xlink:href=\"#MJX-TEX-N-21\"></use></g></g><rect width=\"750.1\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container> = 7 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 6 = 42<br><br>(II) Second possibility is 1, 1, 1, 1, 2, 2, 2<br><br>required number = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.819ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"17.666ex\" height=\"2.856ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -900.3 7808.3 1262.1\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(495.1,394) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"37\" xlink:href=\"#MJX-TEX-N-37\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"21\" xlink:href=\"#MJX-TEX-N-21\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(220,-346.3) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"21\" xlink:href=\"#MJX-TEX-N-21\"></use></g><g data-mml-node=\"mn\" transform=\"translate(778,0)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1278,0)\"><use data-c=\"21\" xlink:href=\"#MJX-TEX-N-21\"></use></g></g><rect width=\"1300.3\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g><g data-mml-node=\"mo\" transform=\"translate(1818,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2873.8,0)\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(220,394) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"37\" xlink:href=\"#MJX-TEX-N-37\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1278,0)\"><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1778,0)\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g><g data-mml-node=\"mn\" transform=\"translate(2556,0)\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(1123.7,-345) scale(0.707)\"><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\"></use></g><rect width=\"2360.9\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g><g data-mml-node=\"mo\" transform=\"translate(5752.5,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(6808.3,0)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\" transform=\"translate(500,0)\"></use></g></g></g></svg></mjx-container><br><br>Total = 42 + 35 = 77"
+    }
+  ]
+}

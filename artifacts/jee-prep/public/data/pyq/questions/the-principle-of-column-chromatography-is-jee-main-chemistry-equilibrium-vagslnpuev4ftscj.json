@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "q5tdJRSJHrKWKmX9wX3rsa0w2w9jwve0kga",
+      "paperTitle": "JEE Main 2019 (Online) 10th April Morning Slot",
+      "year": 2019,
+      "examDate": "2019-04-10 09:30",
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "purification-of-organic-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-principle-of-column-chromatography-is-jee-main-chemistry-equilibrium-vagslnpuev4ftscj",
+      "content": "The principle of column chromatography is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Gravitational force."
+        },
+        {
+          "identifier": "B",
+          "content": "Capillary action."
+        },
+        {
+          "identifier": "C",
+          "content": "Differential adsorption of the substances on the solid phase."
+        },
+        {
+          "identifier": "D",
+          "content": "Differential absorption of the substances on the solid phase. "
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<p>The principle of column chromatography is based on the differential adsorption of substances on the solid phase. This means that different substances in a mixture will interact with the solid stationary phase to different extents. Some substances will adsorb more strongly to the solid phase and will therefore move more slowly through the column, while others will adsorb less strongly and will therefore move more quickly. This differential adsorption allows for the separation of the substances in the mixture.</p>\n<p>So, the correct answer is :</p>\n<p>Option C : Differential adsorption of the substances on the solid phase.</p>"
+    }
+  ]
+}

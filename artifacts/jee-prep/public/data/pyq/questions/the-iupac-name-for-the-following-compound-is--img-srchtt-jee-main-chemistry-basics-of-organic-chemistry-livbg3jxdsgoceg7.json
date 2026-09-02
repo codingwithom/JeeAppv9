@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "TpUyyaRxkDTdWFmbOX3rsa0w2w9jx8055fs",
+      "paperTitle": "JEE Main 2019 (Online) 12th April Evening Slot",
+      "year": 2019,
+      "examDate": "2019-04-12 14:30",
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "iupac-nomenclature",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-iupac-name-for-the-following-compound-is--img-srchtt-jee-main-chemistry-basics-of-organic-chemistry-livbg3jxdsgoceg7",
+      "content": "The IUPAC name for the following compound is :\n<img src=\"https://imagex.cdn.examgoal.net/3rsa0w2w9jxcbr4yb/3c431937-a5e4-44fb-970e-9539110f386c/8d113230-9790-11e9-86c1-73f7f991b766/file-3rsa0w2w9jxcbr4yc.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th April Evening Slot Chemistry - Basics of Organic Chemistry Question 219 English\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "3, 5-dimethyl-4-propylhept-1-en-6-yne"
+        },
+        {
+          "identifier": "B",
+          "content": "3-methyl-4-(3-methylprop-1-enyl)-1-heptyne"
+        },
+        {
+          "identifier": "C",
+          "content": "3-methyl-4-(1-methylprop-2-enyl)-1-heptene"
+        },
+        {
+          "identifier": "D",
+          "content": "3,5-dimethyl-4-propylhept-6-en-1-yne"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/3rsa0w2w9jxcbvoyr/740fabea-88cb-4ecc-a47a-9d40452c9d3b/0bc34730-9791-11e9-86c1-73f7f991b766/file-3rsa0w2w9jxcbvoys.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th April Evening Slot Chemistry - Basics of Organic Chemistry Question 219 English Explanation\">\nIUPAC Name -  3, 5-dimethyl-4-propylhept-1-en-6-yne"
+    }
+  ]
+}

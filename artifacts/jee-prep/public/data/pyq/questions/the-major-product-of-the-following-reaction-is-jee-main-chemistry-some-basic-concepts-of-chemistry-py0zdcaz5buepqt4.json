@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "s34klB2lh14xivWu3nnBO",
+      "paperTitle": "JEE Main 2019 (Online) 12th January Evening Slot",
+      "year": 2019,
+      "examDate": "2019-01-12 14:30",
+      "subject": "chemistry",
+      "chapter": "hydrocarbons",
+      "chapterGroup": "organic-chemistry",
+      "topic": "properties-and-preparation-of-alkenes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-major-product-of-the-following-reaction-is-jee-main-chemistry-some-basic-concepts-of-chemistry-py0zdcaz5buepqt4",
+      "content": "The major product of the following reaction is :\n<br><br><img src=\"https://imagex.cdn.examgoal.net/USaDQyHkmfeCkp4Bj/eNcFw5trQBKIaJNfnEaJ76NsSxuyZ/PSfOGhchARSDK4JvNvxR7p/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th January Evening Slot Chemistry - Hydrocarbons Question 138 English\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "CH<sub>3</sub>CH<sub>2</sub>C<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.081ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"0.968ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -464 778 428\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2261\" xlink:href=\"#MJX-TEX-N-2261\"></use></g></g></g></svg></mjx-container>CH "
+        },
+        {
+          "identifier": "B",
+          "content": "CH<sub>3</sub>CH=C=CH<sub>2</sub> "
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/zh3J45xVo5OYkcyL9/H22AfGnV4dbmk2NkNxQewxsep0Wuh/pi3piwWnxLwLYK2KLeZNvu/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th January Evening Slot Chemistry - Hydrocarbons Question 138 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "CH<sub>3</sub>CH=CHCH<sub>2</sub>NH<sub>2</sub>"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/P8jPiIMSO8jxKDUpD/Ekymj4vOdzzwLfIMHI9EVYCuX3Y6G/gpTervqnhFwfJCg4DqEDsz/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th January Evening Slot Chemistry - Hydrocarbons Question 138 English Explanation\">"
+    }
+  ]
+}

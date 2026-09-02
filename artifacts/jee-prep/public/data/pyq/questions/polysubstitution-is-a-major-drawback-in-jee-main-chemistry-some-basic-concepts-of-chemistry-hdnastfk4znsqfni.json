@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "utBkDDXbjbcMunnJIZVsx",
+      "paperTitle": "JEE Main 2019 (Online) 8th April Evening Slot",
+      "year": 2019,
+      "examDate": "2019-04-08 14:30",
+      "subject": "chemistry",
+      "chapter": "hydrocarbons",
+      "chapterGroup": "organic-chemistry",
+      "topic": "aromatic-hydrocarbons",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "polysubstitution-is-a-major-drawback-in-jee-main-chemistry-some-basic-concepts-of-chemistry-hdnastfk4znsqfni",
+      "content": "Polysubstitution is a major drawback in:",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Reimer Tiemann reaction "
+        },
+        {
+          "identifier": "B",
+          "content": "Friedel Craft's alkylation"
+        },
+        {
+          "identifier": "C",
+          "content": "Acetylation of aniline"
+        },
+        {
+          "identifier": "D",
+          "content": "Friedel Craft's acylation"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Polysubstitution is a major drawback of Friedal–Craft alkylation.\n<br><br> –CH<sub>3</sub> group in highly activating group\n due to +H effect, so after first time addition of -CH<sub>3</sub> group in benzene ring the reactivity of the benzene ring increases."
+    }
+  ]
+}

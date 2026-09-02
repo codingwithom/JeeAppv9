@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktbiwpdb",
+      "paperTitle": "JEE Main 2021 (Online) 26th August Morning Shift",
+      "year": 2021,
+      "subject": "mathematics",
+      "chapter": "permutations-and-combinations",
+      "chapterGroup": "algebra",
+      "topic": "conditional-permutations",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-number-of-three-digit-even-numbers-formed-by-the-digits-jee-main-mathematics-trigonometric-functions-and-equations-mtxu2mmeeomq1dvj",
+      "content": "The number of three-digit even numbers, formed by the digits 0, 1, 3, 4, 6, 7 if the repetition of digits is not allowed, is ______________.",
+      "options": [],
+      "correct_options": [],
+      "explanation": "(i) When '0' is at unit place<br><br><img src=\"https://imagex.cdn.examgoal.net/1ktcvji8i/0960b949-dbbc-46ad-8cdd-ebbe0e205c7e/db8ff810-1164-11ec-8e70-b744652da63b/file-1ktcvji8j.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 26th August Morning Shift Mathematics - Permutations and Combinations Question 139 English Explanation 1\"><br><br>Number of numbers = 20<br><br>(ii) When 4 or 6 are at unit place <br><br><img src=\"https://imagex.cdn.examgoal.net/1ktcvk37l/a021f687-9936-4fe5-9830-037e399861ae/ebc3eb10-1164-11ec-8e70-b744652da63b/file-1ktcvk37m.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 26th August Morning Shift Mathematics - Permutations and Combinations Question 139 English Explanation 2\"><br><br>Number of numbers = 32<br><br>Total three digit even number = 20 + 32 = 52"
+    }
+  ]
+}

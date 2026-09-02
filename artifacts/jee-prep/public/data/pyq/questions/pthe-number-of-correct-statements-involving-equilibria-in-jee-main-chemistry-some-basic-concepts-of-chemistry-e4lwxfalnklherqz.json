@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "1lgyhl1dn",
+      "paperTitle": "JEE Main 2023 (Online) 10th April Morning Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "chemical-equilibrium",
+      "chapterGroup": "physical-chemistry",
+      "topic": "le-chateliers-principle-and-factors-affecting-chemical-equilibrium",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pthe-number-of-correct-statements-involving-equilibria-in-jee-main-chemistry-some-basic-concepts-of-chemistry-e4lwxfalnklherqz",
+      "content": "<p>The number of correct statement/s involving equilibria in physical processes from the following is ________</p>\n<p>(A) Equilibrium is possible only in a closed system at a given temperature.</p>\n<p>(B) Both the opposing processes occur at the same rate.</p>\n<p>(C) When equilibrium is attained at a given temperature, the value of all its parameters became equal.</p>\n<p>(D) For dissolution of solids in liquids, the solubility is constant at a given temperature.</p>",
+      "options": [],
+      "correct_options": [],
+      "explanation": "<p><b>(A) Equilibrium is possible only in a closed system at a given temperature.</b></p>\n<ul>\n<li>This statement is true. In a closed system, there is no exchange of matter with the surroundings. This allows the reaction to reach equilibrium at a constant temperature.</li>\n</ul>\n<p><b>(B) Both the opposing processes occur at the same rate.</b></p>\n<ul>\n<li>This statement is true. At equilibrium, the forward and reverse reactions occur at the same rate, meaning the concentrations of reactants and products remain constant.</li>\n</ul>\n<p><b>(C) When equilibrium is attained at a given temperature, the value of all its parameters became equal.</b></p>\n<ul>\n<li>This statement is false. When a system reaches equilibrium, it doesn&#39;t mean that the values of all parameters (such as the concentrations of reactants and products) are equal. It means that these values are constant, i.e., they are not changing with time because the rates of the forward and reverse reactions are equal.</li>\n</ul>\n<p><b>(D) For dissolution of solids in liquids, the solubility is constant at a given temperature.</b></p>\n<ul>\n<li>This statement is true. The solubility of a solid in a liquid (in a saturated solution) is indeed constant at a given temperature and pressure.</li>\n</ul>\n<p>Therefore, there are 3 correct statements: (A), (B), and (D).</p>\n"
+    }
+  ]
+}

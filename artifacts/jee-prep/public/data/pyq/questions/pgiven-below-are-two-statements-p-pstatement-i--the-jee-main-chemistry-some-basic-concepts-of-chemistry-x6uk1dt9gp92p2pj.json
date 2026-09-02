@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l549nouv",
+      "paperTitle": "JEE Main 2022 (Online) 29th June Morning Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "aldehydes-ketones-and-carboxylic-acids",
+      "chapterGroup": "organic-chemistry",
+      "topic": "preparation-properties-and-uses-of-carboxylic-acids",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pgiven-below-are-two-statements-p-pstatement-i--the-jee-main-chemistry-some-basic-concepts-of-chemistry-x6uk1dt9gp92p2pj",
+      "content": "<p>Given below are two statements :</p>\n<p>Statement I : The esterification of carboxylic acid with an alcohol is a nucleophilic acyl substitution.</p>\n<p>Statement II : Electron withdrawing groups in the carboxylic acid will increase the rate of esterification reaction.</p>\n<p>Choose the most appropriate option :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Both Statement I and Statement II are correct."
+        },
+        {
+          "identifier": "B",
+          "content": "Both Statement I and Statement II are incorrect."
+        },
+        {
+          "identifier": "C",
+          "content": "Statement I is correct but Statement II is incorrect."
+        },
+        {
+          "identifier": "D",
+          "content": "Statement I is incorrect but Statement II is correct."
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Esterification of carboxylic acid with an alcohol is\nnucleophilic acyl substitution and presence of\nelectron withdrawing group in the carboxylic acid\nincreases the rate of esterification reaction."
+    }
+  ]
+}

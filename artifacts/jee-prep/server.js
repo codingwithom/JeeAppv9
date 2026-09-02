@@ -6,6 +6,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import fs from "fs";
 import { MsEdgeTTS, OUTPUT_FORMAT } from "msedge-tts";
+import * as pyqService from "./pyqService.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -2112,6 +2113,178 @@ app.post("/api/tts", async (req, res) => {
     if (!res.headersSent) {
       res.status(500).json({ error: err.message || "Failed to generate speech synthesis" });
     }
+  }
+});
+
+// ─── PYQ QUESTIONS API ────────────────────────────────────────────────────────
+app.get("/api/pyq/papers", async (req, res) => {
+  try {
+    const exam = req.query.exam === "jee-advanced" ? "jee-advanced" : "jee-main";
+    const data = await pyqService.getPapersList(exam);
+    res.json(data);
+  } catch (e) {
+    console.error("[PYQ Papers Error]:", e);
+    res.status(500).json({ error: e.message || "Failed to load papers" });
+  }
+});
+
+app.get("/api/pyq/paper-questions", async (req, res) => {
+  try {
+    const exam = req.query.exam === "jee-advanced" ? "jee-advanced" : "jee-main";
+    const paperKey = req.query.paperKey;
+    if (!paperKey) return res.status(400).json({ error: "Missing paperKey" });
+    const data = await pyqService.getPaperQuestions(exam, paperKey);
+    res.json(data);
+  } catch (e) {
+    console.error("[PYQ Paper Questions Error]:", e);
+    res.status(500).json({ error: e.message || "Failed to load paper questions" });
+  }
+});
+
+app.get("/api/pyq/paper-question", async (req, res) => {
+  try {
+    const exam = req.query.exam === "jee-advanced" ? "jee-advanced" : "jee-main";
+    const { paperKey, questionId } = req.query;
+    if (!paperKey || !questionId) return res.status(400).json({ error: "Missing paperKey or questionId" });
+    const data = await pyqService.getPaperSingleQuestion(exam, paperKey, questionId);
+    res.json(data);
+  } catch (e) {
+    console.error("[PYQ Paper Single Question Error]:", e);
+    res.status(500).json({ error: e.message || "Failed to load question" });
+  }
+});
+
+app.get("/api/pyq/chapters", async (req, res) => {
+  try {
+    const exam = req.query.exam === "jee-advanced" ? "jee-advanced" : "jee-main";
+    const subject = req.query.subject || "physics";
+    const data = await pyqService.getChaptersList(exam, subject);
+    res.json(data);
+  } catch (e) {
+    console.error("[PYQ Chapters Error]:", e);
+    res.status(500).json({ error: e.message || "Failed to load chapters" });
+  }
+});
+
+app.get("/api/pyq/chapter-questions", async (req, res) => {
+  try {
+    const exam = req.query.exam === "jee-advanced" ? "jee-advanced" : "jee-main";
+    const subject = req.query.subject || "physics";
+    const chapterKey = req.query.chapterKey;
+    if (!chapterKey) return res.status(400).json({ error: "Missing chapterKey" });
+    const data = await pyqService.getChapterQuestions(exam, subject, chapterKey);
+    res.json(data);
+  } catch (e) {
+    console.error("[PYQ Chapter Questions Error]:", e);
+    res.status(500).json({ error: e.message || "Failed to load chapter questions" });
+  }
+});
+
+let searchIndexMemory = null;
+function getSearchIndex() {
+  if (searchIndexMemory) return searchIndexMemory;
+  try {
+    const indexPath = path.join(__dirname, "public", "data", "pyq", "search_index.json");
+    if (fs.existsSync(indexPath)) {
+      searchIndexMemory = JSON.parse(fs.readFileSync(indexPath, "utf-8"));
+    }
+  } catch(e) {
+    console.error("[Search Index Load Error]:", e.message);
+  }
+  return searchIndexMemory || [];
+}
+
+function scoreMatch(query, item) {
+  const cleanQ = query.toLowerCase().replace(/[^a-z0-9\s]/g, " ").replace(/\s+/g, " ").trim();
+  const cleanTarget = (item.text + " " + item.paperTitle + " " + item.chapter).toLowerCase().replace(/[^a-z0-9\s]/g, " ").replace(/\s+/g, " ");
+
+  if (cleanTarget.includes(cleanQ)) return 1000;
+
+  const qWords = cleanQ.split(" ").filter(w => w.length > 1);
+  if (qWords.length === 0) return 0;
+
+  let nGramScore = 0;
+  for (let i = 0; i <= qWords.length - 3; i++) {
+    const chunk = qWords.slice(i, i + 3).join(" ");
+    if (cleanTarget.includes(chunk)) {
+      nGramScore += 15;
+    }
+  }
+
+  let tokenMatches = 0;
+  for (const w of qWords) {
+    if (cleanTarget.includes(w)) tokenMatches++;
+  }
+
+  const tokenRatio = tokenMatches / qWords.length;
+  if (tokenRatio < 0.25 && nGramScore === 0) return 0;
+
+  return (tokenRatio * 100) + nGramScore;
+}
+
+app.get("/api/pyq/search", (req, res) => {
+  try {
+    const { q, subject, category, exam, limit = 40, offset = 0 } = req.query;
+    const index = getSearchIndex();
+    const query = (q || "").trim();
+    const subjFilter = (subject || "").toLowerCase();
+    const catFilter = (category || "").toLowerCase();
+    const examFilter = (exam || "").toLowerCase();
+
+    const matches = [];
+
+    for (const item of index) {
+      if (subjFilter && subjFilter !== "all" && item.subject.toLowerCase() !== subjFilter) continue;
+      if (catFilter && catFilter !== "all" && item.category.toLowerCase() !== catFilter) continue;
+      if (examFilter && examFilter !== "all" && item.exam.toLowerCase() !== examFilter) continue;
+
+      if (!query) {
+        matches.push({ item, score: 1 });
+      } else {
+        const score = scoreMatch(query, item);
+        if (score > 0) {
+          matches.push({ item, score });
+        }
+      }
+    }
+
+    if (query) {
+      matches.sort((a, b) => b.score - a.score);
+    }
+
+    const start = parseInt(offset, 10) || 0;
+    const max = Math.min(parseInt(limit, 10) || 40, 100);
+    const results = matches.slice(start, start + max).map(m => m.item);
+
+    res.json({
+      total: matches.length,
+      limit: max,
+      offset: start,
+      results
+    });
+  } catch(e) {
+    console.error("[Search API Error]:", e);
+    res.status(500).json({ error: e.message || "Failed to execute search" });
+  }
+});
+
+app.get("/api/pyq/question", async (req, res) => {
+  try {
+    const permalink = req.query.permalink;
+    if (!permalink) return res.status(400).json({ error: "Missing permalink" });
+    const data = await pyqService.getQuestionByPermalink(permalink);
+
+    // Save to public/data/pyq/questions for 100% static build persistence
+    try {
+      const qDir = path.join(__dirname, "public", "data", "pyq", "questions");
+      if (!fs.existsSync(qDir)) fs.mkdirSync(qDir, { recursive: true });
+      fs.writeFileSync(path.join(qDir, `${encodeURIComponent(permalink)}.json`), JSON.stringify(data, null, 2));
+    } catch(err) {}
+
+    res.json(data);
+  } catch (e) {
+    console.error("[PYQ Permalink Question Error]:", e);
+    res.status(500).json({ error: e.message || "Failed to load question" });
   }
 });
 

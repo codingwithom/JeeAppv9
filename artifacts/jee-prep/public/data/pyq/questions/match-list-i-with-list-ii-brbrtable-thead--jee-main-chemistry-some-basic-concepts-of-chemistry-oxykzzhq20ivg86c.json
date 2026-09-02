@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktcopywk",
+      "paperTitle": "JEE Main 2021 (Online) 26th August Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "compounds-containing-nitrogen",
+      "chapterGroup": "organic-chemistry",
+      "topic": "diazonium-salts-and-other-nitrogen-containing-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "match-list-i-with-list-ii-brbrtable-thead--jee-main-chemistry-some-basic-concepts-of-chemistry-oxykzzhq20ivg86c",
+      "content": "Match List - I with List - II :<br><br><picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1ktenv42z/2dbed812-8320-4eb4-89fd-50e5cf5894ec/669ae3b0-1260-11ec-a4fb-5347f21481c0/file-1ktenv430-320w.jpeg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1ktenv42z/2dbed812-8320-4eb4-89fd-50e5cf5894ec/669ae3b0-1260-11ec-a4fb-5347f21481c0/file-1ktenv430-500w.jpeg\"><img src=\"https://imagex.cdn.examgoal.net/1ktenv42z/2dbed812-8320-4eb4-89fd-50e5cf5894ec/669ae3b0-1260-11ec-a4fb-5347f21481c0/file-1ktenv430.jpeg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 26th August Evening Shift Chemistry - Compounds Containing Nitrogen Question 148 English\"></picture><br>Choose the most appropriate match :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "a-ii, b-iv, c-iii, d-i"
+        },
+        {
+          "identifier": "B",
+          "content": "a-iv, b-ii, c-iii, d-i"
+        },
+        {
+          "identifier": "C",
+          "content": "a-ii, b-iii, c-iv, d-i"
+        },
+        {
+          "identifier": "D",
+          "content": "a-iii, b-ii, c-i, d-iv"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1ktmbbnwh/a892e6fd-e7f2-4853-80e2-025fd90e729b/a160b310-1695-11ec-817e-e7c07a6d007f/file-1ktmbbnwi-320w.jpeg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1ktmbbnwh/a892e6fd-e7f2-4853-80e2-025fd90e729b/a160b310-1695-11ec-817e-e7c07a6d007f/file-1ktmbbnwi-500w.jpeg\"><source media=\"(max-width: 680px)\" srcset=\"https://imagex.cdn.examgoal.net/1ktmbbnwh/a892e6fd-e7f2-4853-80e2-025fd90e729b/a160b310-1695-11ec-817e-e7c07a6d007f/file-1ktmbbnwi-680w.jpeg\"><img src=\"https://imagex.cdn.examgoal.net/1ktmbbnwh/a892e6fd-e7f2-4853-80e2-025fd90e729b/a160b310-1695-11ec-817e-e7c07a6d007f/file-1ktmbbnwi.jpeg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 26th August Evening Shift Chemistry - Compounds Containing Nitrogen Question 148 English Explanation\"></picture>"
+    }
+  ]
+}

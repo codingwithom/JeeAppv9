@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "rRfLD2FDqqZzzzktRYfds",
+      "paperTitle": "JEE Main 2019 (Online) 11th January Evening Slot",
+      "year": 2019,
+      "examDate": "2019-01-11 14:30",
+      "subject": "chemistry",
+      "chapter": "compounds-containing-nitrogen",
+      "chapterGroup": "organic-chemistry",
+      "topic": "aliphatic-amines",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "a-compound-x-on-treatment-with-br2naoh-provided-c3h9n-w-jee-main-chemistry-some-basic-concepts-of-chemistry-1iqyevx0zrymvysz",
+      "content": "A compound 'X' on treatment with Br<sub>2</sub>/NaOH, provided C<sub>3</sub>H<sub>9</sub>N, which gives positive carbylamine test. Compound 'X' is : ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>CONH<sub>2</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "CH<sub>3</sub>CON(CH<sub>3</sub>)<sub>2</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "CH<sub>3</sub>CH<sub>2</sub>COCH<sub>2</sub>NH"
+        },
+        {
+          "identifier": "D",
+          "content": "CH<sub>3</sub>COCH<sub>2</sub>NHCH<sub>3</sub>"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Br<sub>2</sub>/NaOH(Hoffman Hypobromide reagent) converts amide into primary amine having one carbon atom less, which gives\ncarbylamine test. In the Amide there should be<br> -CONH<sub>2</sub> group to produce primary amine."
+    }
+  ]
+}

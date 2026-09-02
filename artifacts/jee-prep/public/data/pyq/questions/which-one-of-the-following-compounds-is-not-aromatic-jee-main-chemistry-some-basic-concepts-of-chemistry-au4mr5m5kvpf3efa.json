@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktcrb38n",
+      "paperTitle": "JEE Main 2021 (Online) 26th August Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "aromaticity",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-one-of-the-following-compounds-is-not-aromatic-jee-main-chemistry-some-basic-concepts-of-chemistry-au4mr5m5kvpf3efa",
+      "content": "Which one of the following compounds is not aromatic?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1ktenl3kd/2fd2a738-f6b5-4f69-b4d0-97865d3767b4/501d3fd0-125f-11ec-a4fb-5347f21481c0/file-1ktenl3ke.jpeg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 26th August Evening Shift Chemistry - Basics of Organic Chemistry Question 177 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1ktenlc3w/def3f7cf-282c-4172-b579-4ea9d3e20da4/56b68cc0-125f-11ec-a4fb-5347f21481c0/file-1ktenlc3x.jpeg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 26th August Evening Shift Chemistry - Basics of Organic Chemistry Question 177 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1ktenlldw/4b757978-3097-443c-a6ee-c2eab69e1830/5de14440-125f-11ec-a4fb-5347f21481c0/file-1ktenlldx.jpeg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 26th August Evening Shift Chemistry - Basics of Organic Chemistry Question 177 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1ktenltd1/adedcdb4-e5d8-47f5-8e3f-95368a45d03c/640a9150-125f-11ec-a4fb-5347f21481c0/file-1ktenltd2.jpeg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 26th August Evening Shift Chemistry - Basics of Organic Chemistry Question 177 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1ktmek5fm/fe77c6db-9537-46b7-93ca-214a4f66e6a8/48c7f620-16a2-11ec-b9ea-d19e19d71419/file-1ktmek5fn-320w.jpeg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1ktmek5fm/fe77c6db-9537-46b7-93ca-214a4f66e6a8/48c7f620-16a2-11ec-b9ea-d19e19d71419/file-1ktmek5fn-500w.jpeg\"><source media=\"(max-width: 680px)\" srcset=\"https://imagex.cdn.examgoal.net/1ktmek5fm/fe77c6db-9537-46b7-93ca-214a4f66e6a8/48c7f620-16a2-11ec-b9ea-d19e19d71419/file-1ktmek5fn-680w.jpeg\"><source media=\"(max-width: 860px)\" srcset=\"https://imagex.cdn.examgoal.net/1ktmek5fm/fe77c6db-9537-46b7-93ca-214a4f66e6a8/48c7f620-16a2-11ec-b9ea-d19e19d71419/file-1ktmek5fn-860w.jpeg\"><img src=\"https://imagex.cdn.examgoal.net/1ktmek5fm/fe77c6db-9537-46b7-93ca-214a4f66e6a8/48c7f620-16a2-11ec-b9ea-d19e19d71419/file-1ktmek5fn.jpeg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 26th August Evening Shift Chemistry - Basics of Organic Chemistry Question 177 English Explanation\"></picture>"
+    }
+  ]
+}

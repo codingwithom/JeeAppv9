@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "OFwhY75bqYtioWQosutex",
+      "paperTitle": "JEE Main 2019 (Online) 10th January Morning Slot",
+      "year": 2019,
+      "examDate": "2019-01-10 09:30",
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "important-compounds-of-transition-elements",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "wilkinson-catalyst-is-et-c2h5-jee-main-chemistry-some-basic-concepts-of-chemistry-dzs8eiiivjotf3w9",
+      "content": "Wilkinson catalyst is : (Et = C<sub>2</sub>H<sub>5</sub>)",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "[(Ph<sub>3</sub>P)<sub>3</sub> RhCl]"
+        },
+        {
+          "identifier": "B",
+          "content": "[(Et<sub>3</sub>P)<sub>3</sub>RhCl] \n"
+        },
+        {
+          "identifier": "C",
+          "content": "[(Et<sub>3</sub>P)<sub>3</sub>IrCl] "
+        },
+        {
+          "identifier": "D",
+          "content": "[(Ph<sub>3</sub>P)<sub>3</sub>IrCl]"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Wilkinsion catalyst is [(Ph<sub>3</sub>P)<sub>3</sub>RhCl]"
+    }
+  ]
+}

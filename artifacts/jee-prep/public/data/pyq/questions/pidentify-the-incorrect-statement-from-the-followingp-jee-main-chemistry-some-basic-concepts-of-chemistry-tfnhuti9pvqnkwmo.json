@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l6mbuost",
+      "paperTitle": "JEE Main 2022 (Online) 28th July Morning Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "structure-of-atom",
+      "chapterGroup": "physical-chemistry",
+      "topic": "bohrs-model-for-hydrogen-atom",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pidentify-the-incorrect-statement-from-the-followingp-jee-main-chemistry-some-basic-concepts-of-chemistry-tfnhuti9pvqnkwmo",
+      "content": "<p>Identify the incorrect statement from the following.</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "A circular path around the nucleus in which an electron moves is proposed as Bohr's orbit."
+        },
+        {
+          "identifier": "B",
+          "content": "An orbital is the one electron wave function <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.566ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.233ex\" height=\"2.262ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 1429 1000\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"mi\" transform=\"translate(389,0)\"><use data-c=\"1D713\" xlink:href=\"#MJX-TEX-I-1D713\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1040,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g></g></svg></mjx-container> in an atom."
+        },
+        {
+          "identifier": "C",
+          "content": "The existence of Bohr's orbits is supported by hydrogen spectrum."
+        },
+        {
+          "identifier": "D",
+          "content": "Atomic orbital is characterised by the quantum numbers <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.258ex\" height=\"1ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 556 442\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"6E\" xlink:href=\"#MJX-TEX-N-6E\"></use></g></g></g></g></svg></mjx-container> and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"0.674ex\" height=\"1.595ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 298 705\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g></g></g></svg></mjx-container> only."
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Atomic orbital is characterised by the quantum numbers <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.439ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.938ex\" height=\"2.009ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 1298.7 888\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"6E\" xlink:href=\"#MJX-TEX-N-6E\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(556,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1000.7,0)\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g></g></g></svg></mjx-container> and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.885ex\" height=\"1ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 833 442\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"6D\" xlink:href=\"#MJX-TEX-N-6D\"></use></g></g></g></g></svg></mjx-container>.\n<br><br>\nHence option D is incorrect."
+    }
+  ]
+}

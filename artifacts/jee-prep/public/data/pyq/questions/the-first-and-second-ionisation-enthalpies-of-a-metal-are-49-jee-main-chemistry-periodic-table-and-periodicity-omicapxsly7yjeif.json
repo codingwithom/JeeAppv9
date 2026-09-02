@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "PNpMWKAgPnACxm6HWa7k9k2k5lfq2nr",
+      "paperTitle": "JEE Main 2020 (Online) 9th January Evening Slot",
+      "year": 2020,
+      "examDate": "2020-01-09 14:30",
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "ionization-energy",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-first-and-second-ionisation-enthalpies-of-a-metal-are-49-jee-main-chemistry-periodic-table-and-periodicity-omicapxsly7yjeif",
+      "content": "The first and second ionisation enthalpies of a\nmetal are 496 and 4560 kJ mol<sup>–1</sup>, respectively.\nHow many moles of HCl and H<sub>2</sub>SO<sub>4</sub>,\nrespectively, will be needed to react completely\nwith 1 mole of the metal hydroxide ?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "1 and 2"
+        },
+        {
+          "identifier": "B",
+          "content": "1 and 0.5"
+        },
+        {
+          "identifier": "C",
+          "content": "1 and 1"
+        },
+        {
+          "identifier": "D",
+          "content": "2 and 0.5"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "First ionization enthalpies = 496 kJ/mole\n<br><br>Second ionization enthalpies = 4560 kJ/mol\n<br><br>According to the given information, the difference between first and second ionization enthalpy is very high so Metal belong to 1st group i.e. Monovalent cation.\n<br><br>Metal hydroxide will be of type, MOH.\n<br><br>MOH + HCl <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> MCl + H<sub>2</sub>O\n<br><br>MOH + <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.781ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.795ex\" height=\"2.737ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864.9 793.6 1209.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mn\" transform=\"translate(220,394) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mn\" transform=\"translate(220,-345) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><rect width=\"553.6\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container>H<sub>2</sub>SO<sub>4</sub>\n<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container>\n<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.781ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.795ex\" height=\"2.737ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864.9 793.6 1209.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mn\" transform=\"translate(220,394) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mn\" transform=\"translate(220,-345) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><rect width=\"553.6\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container>M<sub>2</sub>SO<sub>4</sub> + H<sub>2</sub>O\n<br><br>So one mole of HCl required to react with one\nmole MOH.\n<br><br>And <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.781ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.795ex\" height=\"2.737ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864.9 793.6 1209.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mn\" transform=\"translate(220,394) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mn\" transform=\"translate(220,-345) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><rect width=\"553.6\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container> mole of H<sub>2</sub>SO<sub>4</sub> required to react with one\nmole MOH."
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "3FhyASumD2FvSr3ZT9WmB",
+      "paperTitle": "JEE Main 2019 (Online) 10th January Morning Slot",
+      "year": 2019,
+      "examDate": "2019-01-10 09:30",
+      "subject": "chemistry",
+      "chapter": "aldehydes-ketones-and-carboxylic-acids",
+      "chapterGroup": "organic-chemistry",
+      "topic": "preparation-properties-and-uses-of-carboxylic-acids",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-decreasing-order-of-ease-of-alkaline-hydrolysis-for-the-jee-main-chemistry-some-basic-concepts-of-chemistry-ktf5nh6jwt7iajo1",
+      "content": "The decreasing order of ease of alkaline hydrolysis for the following esters in\n<br><br><img src=\"https://imagex.cdn.examgoal.net/ApjCcLDgmYMQPSUkc/R6pHQcj2Nmqr1OqkiyyTnpvyQjYUb/3pF0YVZBS5Htn3jiFQ5sFl/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 10th January Morning Slot Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 241 English\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "III &gt; II &gt; IV &gt; I"
+        },
+        {
+          "identifier": "B",
+          "content": "IV &gt; II &gt; III &gt; I"
+        },
+        {
+          "identifier": "C",
+          "content": "III &gt; II &gt; I &gt; IV"
+        },
+        {
+          "identifier": "D",
+          "content": "II &gt; III &gt; I &gt; IV"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "More is the electrophilic character of carbonyl group of ester faster is the alkaline hydrolysis.\n<br><br> Since –I effect groups increase the electrophilic nature\nof carboxyl carbon whereas +I effect groups decrease the\nelectrophilic nature of carboxyl carbon. Therefore, the correct\ndecreasing order is III &gt; II &gt; I &gt; IV."
+    }
+  ]
+}

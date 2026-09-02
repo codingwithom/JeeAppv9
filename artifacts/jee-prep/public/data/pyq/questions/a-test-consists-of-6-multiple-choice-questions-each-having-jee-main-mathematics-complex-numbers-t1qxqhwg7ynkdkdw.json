@@ -1,0 +1,22 @@
+{
+  "questions": [
+    {
+      "question_id": "SLjj7ptO9uQcIkLlhTjgy2xukfakunkv",
+      "paperTitle": "JEE Main 2020 (Online) 4th September Evening Slot",
+      "year": 2020,
+      "examDate": "2020-09-04 15:00",
+      "subject": "mathematics",
+      "chapter": "permutations-and-combinations",
+      "chapterGroup": "algebra",
+      "topic": "number-of-combinations",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 0,
+      "permalink": "a-test-consists-of-6-multiple-choice-questions-each-having-jee-main-mathematics-complex-numbers-t1qxqhwg7ynkdkdw",
+      "content": "A test consists of 6 multiple choice questions, each having 4 alternative answers of which only one is correct. The number of ways, in which a candidate answers all six questions such that exactly four of the answers are correct, is __________.",
+      "options": [],
+      "correct_options": [],
+      "explanation": "Select any 4 questions in <sup>6</sup>C<sub>4</sub>\n ways which are\ncorrect.\n<br><br>Answering right option for each question is possible in 1 way.\n<br><br>So ways of choosing right option for 4 questions = 1.1.1.1 = (1)<sup>4</sup>\n<br><br>Number of ways of choosing wrong option for each question = 3\n<br><br>So ways of choosing wrong option for 2 questions = (3)<sup>2</sup>\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> Required number of ways = <sup>6</sup>C<sub>4</sub>.(1)<sup>4</sup>.(3)<sup>2</sup> = 135"
+    }
+  ]
+}

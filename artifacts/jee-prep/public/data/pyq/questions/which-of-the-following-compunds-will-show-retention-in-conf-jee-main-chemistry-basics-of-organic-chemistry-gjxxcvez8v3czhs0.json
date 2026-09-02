@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "8fKTg6RVb0rwZw68XOjgy2xukevk0kxk",
+      "paperTitle": "JEE Main 2020 (Online) 2nd September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-02 09:00",
+      "subject": "chemistry",
+      "chapter": "haloalkanes-and-haloarenes",
+      "chapterGroup": "organic-chemistry",
+      "topic": "haloalkanes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-compunds-will-show-retention-in-conf-jee-main-chemistry-basics-of-organic-chemistry-gjxxcvez8v3czhs0",
+      "content": "Which of the following compunds will show\nretention in configuration on nucleophilic\nsubstitution by OH<sup>–</sup> ion?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukevjzxe8/7595a8f6-ed53-42aa-bb0a-053a1f6084e7/5c531d00-f2b3-11ea-8293-3b6cc591631c/file-jgy2xukevjzxe9-250w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 2nd September Morning Slot Chemistry - Haloalkanes and Haloarenes Question 134 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukevjo725/ae845306-ab8b-49f1-94c9-0779c532b3cb/161496d0-f2b2-11ea-8293-3b6cc591631c/file-jgy2xukevjo726-275w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 2nd September Morning Slot Chemistry - Haloalkanes and Haloarenes Question 134 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukevjot1b/cb4072d7-8d49-4e18-8ce6-99298227de04/270e98f0-f2b2-11ea-8293-3b6cc591631c/file-jgy2xukevjot1c-319w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 2nd September Morning Slot Chemistry - Haloalkanes and Haloarenes Question 134 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukevjq3bv/a9091587-7ad5-4733-b969-99cc3a670abd/4ad142b0-f2b2-11ea-8293-3b6cc591631c/file-jgy2xukevjq3bw-255w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 2nd September Morning Slot Chemistry - Haloalkanes and Haloarenes Question 134 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukhd0ggbt/b6b22aea-3cf9-4cef-9c99-613058bc327a/7bc2a990-23e5-11eb-8293-3b6cc591631c/file-jgy2xukhd0ggbu-320w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 2nd September Morning Slot Chemistry - Haloalkanes and Haloarenes Question 134 English Explanation\">\n<br><br>Here attack of OH<sup>–</sup>\n is not on chiral carbon, it is adjacent to chiral carbon, so configuration of chiral carbon remains constant. This is a case of retention of\nconfiguration."
+    }
+  ]
+}

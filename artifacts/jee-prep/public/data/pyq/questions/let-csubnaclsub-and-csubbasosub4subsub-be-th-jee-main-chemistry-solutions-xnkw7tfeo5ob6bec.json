@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "HjakCQRwzFuKTw4SW3jgy2xukf2clg52",
+      "paperTitle": "JEE Main 2020 (Online) 3rd September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-03 09:00",
+      "subject": "chemistry",
+      "chapter": "electrochemistry",
+      "chapterGroup": "physical-chemistry",
+      "topic": "conductance-and-electrolysis",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "let-csubnaclsub-and-csubbasosub4subsub-be-th-jee-main-chemistry-solutions-xnkw7tfeo5ob6bec",
+      "content": "Let C<sub>NaCl</sub> \nand C<sub>BaSO<sub>4</sub></sub> be the conductances (in S) measured for saturated aqueous solutions of NaCl\nand BaSO<sub>4</sub>, respectively, at a temperature T.\nWhich of the following is false?\n",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Ionic mobilities of ions from both salts increase with T."
+        },
+        {
+          "identifier": "B",
+          "content": "C<sub>NaCl</sub>(T<sub>2</sub>) &gt;  C<sub>NaCl</sub>(T<sub>1</sub>) for T<sub>2</sub> &gt; T<sub>1</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "C<sub>BaSO<sub>4</sub></sub>(T<sub>2</sub>) &gt;  C<sub>BaSO<sub>4</sub></sub>(T<sub>1</sub>) for T<sub>2</sub> &gt; T<sub>1</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "C<sub>NaCl</sub> &gt;&gt; C<sub>BaSO<sub>4</sub></sub> at a given T"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "BaSO<sub>4</sub> is sparingly\nsoluble\nsalt but NaCl is completely soluble salt so it will produce more number of ions. That is why\n<br>Conductance (NaCl) &gt; Conductance (BaSO<sub>4</sub>)"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l54yqd21",
+      "paperTitle": "JEE Main 2022 (Online) 29th June Evening Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "compounds-containing-nitrogen",
+      "chapterGroup": "organic-chemistry",
+      "topic": "aromatic-amines",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pin-friedel-crafts-alkylation-of-aniline-one-getsp-jee-main-chemistry-some-basic-concepts-of-chemistry-80mcmgxmclstadjg",
+      "content": "<p>In Friedel-Crafts alkylation of aniline, one gets</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "alkylated product with ortho and para substitution."
+        },
+        {
+          "identifier": "B",
+          "content": "secondary amine after acidic treatment."
+        },
+        {
+          "identifier": "C",
+          "content": "an amide product."
+        },
+        {
+          "identifier": "D",
+          "content": "positively charged nitrogen at benzene ring."
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l97wyol2/2e94b5c5-d950-4539-9600-f07a3f11a1d1/f58c8960-4b6d-11ed-9399-cda4ba1d6994/file-1l97wyol3.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l97wyol2/2e94b5c5-d950-4539-9600-f07a3f11a1d1/f58c8960-4b6d-11ed-9399-cda4ba1d6994/file-1l97wyol3.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2022 (Online) 29th June Evening Shift Chemistry - Compounds Containing Nitrogen Question 136 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l97wyol2/2e94b5c5-d950-4539-9600-f07a3f11a1d1/f58c8960-4b6d-11ed-9399-cda4ba1d6994/file-1l97wyol3.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l97wyol2/2e94b5c5-d950-4539-9600-f07a3f11a1d1/f58c8960-4b6d-11ed-9399-cda4ba1d6994/file-1l97wyol3.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l97wyol2/2e94b5c5-d950-4539-9600-f07a3f11a1d1/f58c8960-4b6d-11ed-9399-cda4ba1d6994/file-1l97wyol3.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l97wyol2/2e94b5c5-d950-4539-9600-f07a3f11a1d1/f58c8960-4b6d-11ed-9399-cda4ba1d6994/file-1l97wyol3.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l97wyol2/2e94b5c5-d950-4539-9600-f07a3f11a1d1/f58c8960-4b6d-11ed-9399-cda4ba1d6994/file-1l97wyol3.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l97wyol2/2e94b5c5-d950-4539-9600-f07a3f11a1d1/f58c8960-4b6d-11ed-9399-cda4ba1d6994/file-1l97wyol3.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "WFXn6ZDj7Ne3LISNMWjgy2xukeyfkp6d",
+      "paperTitle": "JEE Main 2020 (Online) 2nd September Evening Slot",
+      "year": 2020,
+      "examDate": "2020-09-02 15:00",
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "hybridization-and-vsepr-theory",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-molecular-geometry-of-sfsub6sub-is-octahedral-what-jee-main-chemistry-chemical-kinetics-and-nuclear-chemistry-tu5uanavukunqvcr",
+      "content": "The molecular geometry of SF<sub>6</sub> is octahedral.\nWhat is the geometry of SF<sub>4</sub> (including lone\npair(s) of electrons, if any)?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Tetrahedral"
+        },
+        {
+          "identifier": "B",
+          "content": "Trigonal bipyramidal"
+        },
+        {
+          "identifier": "C",
+          "content": "Square planar"
+        },
+        {
+          "identifier": "D",
+          "content": "Pyramidal"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukhdbxbna/cbafe99a-11cb-4704-8087-648935f8922a/55522470-2412-11eb-8293-3b6cc591631c/file-jgy2xukhdbxbnb-166w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 2nd September Evening Slot Chemistry - Chemical Bonding &amp; Molecular Structure Question 192 English Explanation\">\n<br><br>Here 4<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.294ex\" height=\"1ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -431 572 442\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D70E\" xlink:href=\"#MJX-TEX-I-1D70E\"></use></g></g></g></svg></mjx-container> bonds +1 lone pair\n<br><br>Electronic geometry is Trigonal bipyramidal. Moleculer Geometry\nor \nMoleculer Shape is see-saw.\n<br><br><b>Note :</b> The difference between Electronic Geometry and Moleculer Geometry(Moleculer Shape) is that in Electronic Geometry we include lone pair but in Moleculer Geometry(Moleculer Shape) we do not include lone pair."
+    }
+  ]
+}

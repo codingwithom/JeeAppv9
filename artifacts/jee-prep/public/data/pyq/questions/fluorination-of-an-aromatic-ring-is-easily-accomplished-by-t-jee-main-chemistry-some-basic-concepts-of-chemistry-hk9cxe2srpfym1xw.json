@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "O9PF9AzPPibDyUmMwkS2V",
+      "paperTitle": "JEE Main 2016 (Online) 10th April Morning Slot",
+      "year": 2016,
+      "examDate": "2016-04-10 09:30",
+      "subject": "chemistry",
+      "chapter": "compounds-containing-nitrogen",
+      "chapterGroup": "organic-chemistry",
+      "topic": "diazonium-salts-and-other-nitrogen-containing-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "fluorination-of-an-aromatic-ring-is-easily-accomplished-by-t-jee-main-chemistry-some-basic-concepts-of-chemistry-hk9cxe2srpfym1xw",
+      "content": "Fluorination of an aromatic ring is easily accomplished by treating a diazonium salt with HBF<sub>4</sub>. Which of the following conditions is correct about this reaction ?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Only heat"
+        },
+        {
+          "identifier": "B",
+          "content": "NaNO<sub>2</sub>/Cu"
+        },
+        {
+          "identifier": "C",
+          "content": "Cu<sub>2</sub>O/H<sub>2</sub>O"
+        },
+        {
+          "identifier": "D",
+          "content": "NaF/Cu"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1qpqahkk8cd5irm/3259726a-a128-4b10-b6b2-fb99f2a2094d/675d0220-715c-11ea-aedc-f1c8d8e0194b/file-1qpqahkk8cd5irn-320w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2016 (Online) 10th April Morning Slot Chemistry - Compounds Containing Nitrogen Question 228 English Explanation\">"
+    }
+  ]
+}

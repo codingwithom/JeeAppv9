@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "Fkyt13wViFAxUzyK",
+      "paperTitle": "JEE Main 2015 (Offline)",
+      "year": 2015,
+      "examDate": null,
+      "subject": "chemistry",
+      "chapter": "p-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "group-16-elements-oxygen-family",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "assertion-nitrogen-and-oxygen-are-the-main-components-in-t-2015-marks-4-fkyt13wvifaxuzyk.htm",
+      "content": "<b>Assertion :</b> Nitrogen and Oxygen are the main components in the atmosphere but these do not react to\nform oxides of nitrogen.<br><br/>\n<b>Reason :</b> The reaction between nitrogen and oxygen requires high temperature. ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Both assertion and reason are correct, and the reason is the correct explanation for the assertion"
+        },
+        {
+          "identifier": "B",
+          "content": "Both assertion and reason are correct, but the reason is not the correct explanation for the assertion"
+        },
+        {
+          "identifier": "C",
+          "content": "The assertion is incorrect, but the reason is correct"
+        },
+        {
+          "identifier": "D",
+          "content": "Both the assertion and reason are incorrect"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Nitrogen and oxygen in air do not react to form oxides of nitrogen in atmosphere because the reaction between nitrogen and oxygen requires high  temperature."
+    }
+  ]
+}

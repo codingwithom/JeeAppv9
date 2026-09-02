@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "TmfI0PhNN6BR2jN6",
+      "paperTitle": "JEE Main 2017 (Offline)",
+      "year": 2017,
+      "examDate": null,
+      "subject": "chemistry",
+      "chapter": "haloalkanes-and-haloarenes",
+      "chapterGroup": "organic-chemistry",
+      "topic": "haloalkanes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-major-product-obtained-in-the-following-reaction-is-2017-marks-4-tmfi0phnn6br2jn6.htm",
+      "content": "The major product obtained in the following reaction is :<br><br>\n<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l7yne49v/4479bf5d-9b50-4c86-9871-629d8b4da438/424a5730-3289-11ed-8893-19b23ee4c66d/file-1l7yne49w.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l7yne49v/4479bf5d-9b50-4c86-9871-629d8b4da438/424a5730-3289-11ed-8893-19b23ee4c66d/file-1l7yne49w.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2017 (Offline) Chemistry - Haloalkanes and Haloarenes Question 168 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l7yne49v/4479bf5d-9b50-4c86-9871-629d8b4da438/424a5730-3289-11ed-8893-19b23ee4c66d/file-1l7yne49w.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l7yne49v/4479bf5d-9b50-4c86-9871-629d8b4da438/424a5730-3289-11ed-8893-19b23ee4c66d/file-1l7yne49w.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l7yne49v/4479bf5d-9b50-4c86-9871-629d8b4da438/424a5730-3289-11ed-8893-19b23ee4c66d/file-1l7yne49w.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l7yne49v/4479bf5d-9b50-4c86-9871-629d8b4da438/424a5730-3289-11ed-8893-19b23ee4c66d/file-1l7yne49w.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l7yne49v/4479bf5d-9b50-4c86-9871-629d8b4da438/424a5730-3289-11ed-8893-19b23ee4c66d/file-1l7yne49w.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l7yne49v/4479bf5d-9b50-4c86-9871-629d8b4da438/424a5730-3289-11ed-8893-19b23ee4c66d/file-1l7yne49w.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "C<sub>6</sub>H<sub>5</sub>CH = CHC<sub>6</sub>H<sub>5</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "(+) - C<sub>6</sub>H<sub>5</sub>CH(Ot-Bu)CH<sub>2</sub>C<sub>6</sub>H<sub>5</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "(-) - C<sub>6</sub>H<sub>5</sub>CH(Ot-Bu)CH<sub>2</sub>C<sub>6</sub>H<sub>5</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "(<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.507ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -666 778 666\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"B1\" xlink:href=\"#MJX-TEX-N-B1\"></use></g></g></g></svg></mjx-container>) - C<sub>6</sub>H<sub>5</sub>CH(Ot-Bu)CH<sub>2</sub>C<sub>6</sub>H<sub>5</sub>"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/7kejek2vxleyf/653f01d8-bc0d-4566-9a05-9399c9dc555f/f003a070-0555-11ea-a7bc-b7b08ce8d541/file-7kejek2vxleyg-320w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2017 (Offline) Chemistry - Haloalkanes and Haloarenes Question 168 English Explanation\">"
+    }
+  ]
+}

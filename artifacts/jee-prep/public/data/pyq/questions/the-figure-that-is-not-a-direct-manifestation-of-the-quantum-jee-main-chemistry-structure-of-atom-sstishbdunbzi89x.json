@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "sI7DoE0aS5ag5IKFOvjgy2xukevc89sh",
+      "paperTitle": "JEE Main 2020 (Online) 2nd September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-02 09:00",
+      "subject": "chemistry",
+      "chapter": "structure-of-atom",
+      "chapterGroup": "physical-chemistry",
+      "topic": "photoelectric-effect",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-figure-that-is-not-a-direct-manifestation-of-the-quantum-jee-main-chemistry-structure-of-atom-sstishbdunbzi89x",
+      "content": "The figure that is not a direct manifestation of\nthe quantum nature of atoms is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukevc28i1/322da799-647e-4eb6-9027-e52530a2f707/537d1790-f294-11ea-8293-3b6cc591631c/file-jgy2xukevc28i2-317w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 2nd September Morning Slot Chemistry - Structure of Atom Question 159 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukevc2iuq/875718c6-a09d-47fb-ba6d-a8e5f4282791/5b7c5d20-f294-11ea-8293-3b6cc591631c/file-jgy2xukevc2iur-279w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 2nd September Morning Slot Chemistry - Structure of Atom Question 159 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukevc2t01/6c8990d1-bdd3-4c73-98b9-64ef629d88d0/63530c10-f294-11ea-8293-3b6cc591631c/file-jgy2xukevc2t02-363w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 2nd September Morning Slot Chemistry - Structure of Atom Question 159 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukevc34oh/5a01a7cf-bc2c-49ff-a9d7-40c8fbf37dd0/6c589e10-f294-11ea-8293-3b6cc591631c/file-jgy2xukevc34oi-325w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 2nd September Morning Slot Chemistry - Structure of Atom Question 159 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Internal energy of ‘Ar’ or any gas, has nothing to do with Quantum nature of atom.\n<br><br>Photoelectric effect, atomic spectrum and Black body radiations may be\nexplained by quantum theory."
+    }
+  ]
+}

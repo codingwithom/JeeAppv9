@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "1l6ny7i46",
+      "paperTitle": "JEE Main 2022 (Online) 28th July Evening Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "thermodynamics",
+      "chapterGroup": "physical-chemistry",
+      "topic": "fundamentals-of-thermodynamics",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pamong-the-following-the-number-of-state-variables-is--jee-main-chemistry-some-basic-concepts-of-chemistry-5heqljfofqmc663u",
+      "content": "<p>Among the following the number of state variables is ______________.</p>\n<p>Internal energy (U)</p>\n<p>Volume (V)</p>\n<p>Heat (q)</p>\n<p>Enthalpy (H)</p>",
+      "options": [],
+      "correct_options": [],
+      "explanation": "State variables are internal energy (U), Volume (V)\nand Enthalpy (H)."
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "1krute03p",
+      "paperTitle": "JEE Main 2021 (Online) 25th July Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "hydrocarbons",
+      "chapterGroup": "organic-chemistry",
+      "topic": "properties-and-preparation-of-alkynes",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-number-of-sigma-bonds-in-brbrimagebrbris--jee-main-chemistry-some-basic-concepts-of-chemistry-1h1ex9jrljh1qpke",
+      "content": "The number of sigma bonds in <br><br><img src=\"https://imagex.cdn.examgoal.net/1krwha95h/c4529b8f-fee8-45fd-a239-e3fc5ba50725/58af9050-f494-11eb-9dc6-a7061d629865/file-1krwha95i.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 25th July Morning Shift Chemistry - Hydrocarbons Question 97 English\"><br>is _______________.",
+      "options": [],
+      "correct_options": [],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1krwhb9ef/b0a10aa1-4a8f-46b3-a20c-2f01393f2815/74afd670-f494-11eb-9dc6-a7061d629865/file-1krwhb9eg.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 25th July Morning Shift Chemistry - Hydrocarbons Question 97 English Explanation\"><br>Numbers of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.294ex\" height=\"1ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -431 572 442\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D70E\" xlink:href=\"#MJX-TEX-I-1D70E\"></use></g></g></g></svg></mjx-container> bonds = 10"
+    }
+  ]
+}

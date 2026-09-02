@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktjuy48c",
+      "paperTitle": "JEE Main 2021 (Online) 31st August Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "aldehydes-ketones-and-carboxylic-acids",
+      "chapterGroup": "organic-chemistry",
+      "topic": "chemical-reactions-for-aldehydes-and-ketones",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-structures-a-and-b-formed-in-the-following-reaction-are-jee-main-chemistry-some-basic-concepts-of-chemistry-csrexagkzvorbtvl",
+      "content": "The structures A and B formed in the following reaction are : [Ph = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>C<sub>6</sub>H<sub>5</sub>]<br><br><img src=\"https://imagex.cdn.examgoal.net/1kumpn62u/b4755037-e6d2-4cc3-83f5-002da32d1a15/d881c970-2a99-11ec-a0fd-a711e06710c5/file-1kumpn62v.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 31st August Evening Shift Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 156 English\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kumpnzrh/a955acf9-45c7-4d9a-a56c-b819c5f68793/ef6fd7d0-2a99-11ec-a0fd-a711e06710c5/file-1kumpnzri.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 31st August Evening Shift Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 156 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1kumpof2q/15d18bfb-ab17-4e81-b4b8-bd841f641ddf/fb43f320-2a99-11ec-a0fd-a711e06710c5/file-1kumpof2r-320w.jpg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1kumpof2q/15d18bfb-ab17-4e81-b4b8-bd841f641ddf/fb43f320-2a99-11ec-a0fd-a711e06710c5/file-1kumpof2r-500w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/1kumpof2q/15d18bfb-ab17-4e81-b4b8-bd841f641ddf/fb43f320-2a99-11ec-a0fd-a711e06710c5/file-1kumpof2r.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 31st August Evening Shift Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 156 English Option 2\"></picture>"
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kumpos32/614c1e0d-8882-49d0-8640-2a8a1d23c395/055094e0-2a9a-11ec-a0fd-a711e06710c5/file-1kumpos33.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 31st August Evening Shift Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 156 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1kumpqs0g/2018ca96-48ad-4900-a54b-55b2a8c7e077/3ce08500-2a9a-11ec-a827-e5b0200f8486/file-1kumpqs0h-320w.jpg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1kumpqs0g/2018ca96-48ad-4900-a54b-55b2a8c7e077/3ce08500-2a9a-11ec-a827-e5b0200f8486/file-1kumpqs0h-500w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/1kumpqs0g/2018ca96-48ad-4900-a54b-55b2a8c7e077/3ce08500-2a9a-11ec-a827-e5b0200f8486/file-1kumpqs0h.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 31st August Evening Shift Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 156 English Option 4\"></picture>"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1kumq29mg/ae14d403-dffa-4d50-92eb-68d8b31da31d/7c61bb80-2a9b-11ec-a827-e5b0200f8486/file-1kumq29mh.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 31st August Evening Shift Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 156 English Explanation\">"
+    }
+  ]
+}

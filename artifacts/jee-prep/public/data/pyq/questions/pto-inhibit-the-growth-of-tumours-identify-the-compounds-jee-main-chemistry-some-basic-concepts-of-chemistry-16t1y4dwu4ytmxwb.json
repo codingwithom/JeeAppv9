@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ldr3cela",
+      "paperTitle": "JEE Main 2023 (Online) 30th January Morning Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "application-of-coordination-compound-and-organometallic-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pto-inhibit-the-growth-of-tumours-identify-the-compounds-jee-main-chemistry-some-basic-concepts-of-chemistry-16t1y4dwu4ytmxwb",
+      "content": "<p>To inhibit the growth of tumours, identify the compounds used from the following :</p>\n<p>A. EDTA</p>\n<p>B. Coordination Compounds of Pt</p>\n<p>C. D - Penicillamine</p>\n<p>D. Cis - Platin</p>\n<p>Choose the correct answer from the option given below :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "A and B Only"
+        },
+        {
+          "identifier": "B",
+          "content": "C and D Only"
+        },
+        {
+          "identifier": "C",
+          "content": "B and D Only"
+        },
+        {
+          "identifier": "D",
+          "content": "A and C Only"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<p>Cis-platin is [Pt(NH<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.375ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"0.988ex\" height=\"1.099ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -320.2 436.6 485.8\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"></g><g data-mml-node=\"mn\" transform=\"translate(33,-150) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g></g></svg></mjx-container>)<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"0.988ex\" height=\"1.065ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -320.9 436.6 470.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"></g><g data-mml-node=\"mn\" transform=\"translate(33,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></svg></mjx-container>Cl<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"0.988ex\" height=\"1.065ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -320.9 436.6 470.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"></g><g data-mml-node=\"mn\" transform=\"translate(33,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></svg></mjx-container>]; cis platin and other complexes of pt are used to inhibit the growth of tumours.</p>"
+    }
+  ]
+}

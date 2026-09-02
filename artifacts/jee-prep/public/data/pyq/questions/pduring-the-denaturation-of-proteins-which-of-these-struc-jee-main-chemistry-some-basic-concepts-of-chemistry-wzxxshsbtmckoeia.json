@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l6e1qe0j",
+      "paperTitle": "JEE Main 2022 (Online) 25th July Morning Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "proteins-and-enzymes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pduring-the-denaturation-of-proteins-which-of-these-struc-jee-main-chemistry-some-basic-concepts-of-chemistry-wzxxshsbtmckoeia",
+      "content": "<p>During the denaturation of proteins, which of these structures will remain intact?</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Primary"
+        },
+        {
+          "identifier": "B",
+          "content": "Secondary"
+        },
+        {
+          "identifier": "C",
+          "content": "Tertiary"
+        },
+        {
+          "identifier": "D",
+          "content": "Quaternary"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "During the denaturation of proteins hydrogen bonds\nare disturbed. As a result, the secondary and\ntertiary structures are destroyed but the primary\nstructures remain intact. "
+    }
+  ]
+}

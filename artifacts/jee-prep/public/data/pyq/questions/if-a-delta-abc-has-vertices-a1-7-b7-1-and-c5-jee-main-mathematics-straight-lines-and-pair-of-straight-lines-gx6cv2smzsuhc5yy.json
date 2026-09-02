@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "9r0ym1rWgH3JCykDoIjgy2xukf4662pc",
+      "paperTitle": "JEE Main 2020 (Online) 3rd September Evening Slot",
+      "year": 2020,
+      "examDate": "2020-09-03 15:00",
+      "subject": "mathematics",
+      "chapter": "straight-lines-and-pair-of-straight-lines",
+      "chapterGroup": "coordinate-geometry",
+      "topic": "centers-of-triangle",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "if-a-delta-abc-has-vertices-a1-7-b7-1-and-c5-jee-main-mathematics-straight-lines-and-pair-of-straight-lines-gx6cv2smzsuhc5yy",
+      "content": "If a <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.885ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 833 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></svg></mjx-container>ABC has vertices A(–1, 7), B(–7, 1) and\nC(5, –5), then its orthocentre has coordinates :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(–3, 3)"
+        },
+        {
+          "identifier": "B",
+          "content": "(3, –3)"
+        },
+        {
+          "identifier": "C",
+          "content": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.816ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"8.429ex\" height=\"2.771ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864.2 3725.8 1224.8\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mrow\"><g data-mml-node=\"mo\" transform=\"translate(0 -0.5)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-SO-28\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(458,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mn\" transform=\"translate(220,394) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g><g data-mml-node=\"mn\" transform=\"translate(220,-345) scale(0.707)\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use></g><rect width=\"553.6\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g><g data-mml-node=\"mo\" transform=\"translate(793.6,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1238.2,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2016.2,0)\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mn\" transform=\"translate(220,394) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g><g data-mml-node=\"mn\" transform=\"translate(220,-345) scale(0.707)\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use></g><rect width=\"553.6\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g><g data-mml-node=\"mo\" transform=\"translate(3267.8,0) translate(0 -0.5)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-SO-29\"></use></g></g></g></g></svg></mjx-container>"
+        },
+        {
+          "identifier": "D",
+          "content": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.816ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"8.429ex\" height=\"2.771ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864.2 3725.8 1224.8\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mrow\"><g data-mml-node=\"mo\" transform=\"translate(0 -0.5)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-SO-28\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(458,0)\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(778,0)\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mn\" transform=\"translate(220,394) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g><g data-mml-node=\"mn\" transform=\"translate(220,-345) scale(0.707)\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use></g><rect width=\"553.6\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g><g data-mml-node=\"mo\" transform=\"translate(1571.6,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2016.2,0)\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mn\" transform=\"translate(220,394) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g><g data-mml-node=\"mn\" transform=\"translate(220,-345) scale(0.707)\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use></g><rect width=\"553.6\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g><g data-mml-node=\"mo\" transform=\"translate(3267.8,0) translate(0 -0.5)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-SO-29\"></use></g></g></g></g></svg></mjx-container>"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1kk3tml7a/9e64f969-9450-4dde-a5f6-f26ddde611e2/5ec4b760-5a3c-11eb-a672-75c5359c71c1/file-1kk3tml7b-320w.jpeg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1kk3tml7a/9e64f969-9450-4dde-a5f6-f26ddde611e2/5ec4b760-5a3c-11eb-a672-75c5359c71c1/file-1kk3tml7b-500w.jpeg\"><img src=\"https://imagex.cdn.examgoal.net/1kk3tml7a/9e64f969-9450-4dde-a5f6-f26ddde611e2/5ec4b760-5a3c-11eb-a672-75c5359c71c1/file-1kk3tml7b-680w.jpeg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 3rd September Evening Slot Mathematics - Straight Lines and Pair of Straight Lines Question 112 English Explanation\"></picture>\n<br><br>equation of CD\n<br> <br>y + 5 = -1 (x - 5)\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> x + y = 0 .....(1)\n<br><br> equation of AE\n\n<br><br>y - 7 = 2 (x + 1)\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> 2x - y = -9 ......(2)\n<br><br> from (1) &amp; (2)\n<br><br> x = -3, y = 3\n<br><br> Othocentre = (-3, 3)"
+    }
+  ]
+}

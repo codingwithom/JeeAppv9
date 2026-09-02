@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktn03hi6",
+      "paperTitle": "JEE Main 2021 (Online) 1st September Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "aldehydes-ketones-and-carboxylic-acids",
+      "chapterGroup": "organic-chemistry",
+      "topic": "chemical-reactions-for-aldehydes-and-ketones",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "experimentally-reducing-a-functional-group-cannot-be-done-by-jee-main-chemistry-some-basic-concepts-of-chemistry-mfuvybgihp8zedhq",
+      "content": "Experimentally reducing a functional group cannot be done by which one of the following reagents?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Pt-C/H<sub>2</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "Na/H<sub>2</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "Pd-C/H<sub>2</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "Zn/H<sub>2</sub>O"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Na in presence of H<sub>2</sub>, will not release electron\nwhich are required for reduction.\n<br><br>H<sub>2</sub> gas also not get adsorbed on Na. Hence\nNa/H<sub>2</sub> cannot be used as a reducing agent."
+    }
+  ]
+}

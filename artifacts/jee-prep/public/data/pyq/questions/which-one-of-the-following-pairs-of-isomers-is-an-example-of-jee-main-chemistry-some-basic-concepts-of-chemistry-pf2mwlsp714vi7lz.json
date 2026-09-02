@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1krrh6zso",
+      "paperTitle": "JEE Main 2021 (Online) 20th July Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "isomerism",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-one-of-the-following-pairs-of-isomers-is-an-example-of-jee-main-chemistry-some-basic-concepts-of-chemistry-pf2mwlsp714vi7lz",
+      "content": "Which one of the following pairs of isomers is an example of metamerism?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1krsa4tuu/70a9d03f-4982-46ad-b884-06b06e9c3de5/3f52ac60-f245-11eb-b943-03b9b3fb9629/file-1krsa4tuv.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 20th July Evening Shift Chemistry - Basics of Organic Chemistry Question 190 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1krsa5a7m/718b4ebc-a01d-4a54-9584-630cd776ae8f/4bf4ed20-f245-11eb-b943-03b9b3fb9629/file-1krsa5a7n.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 20th July Evening Shift Chemistry - Basics of Organic Chemistry Question 190 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1krsa5ktc/ad7a86a1-c534-4721-ad5b-900438f10195/5425ca00-f245-11eb-b943-03b9b3fb9629/file-1krsa5ktd.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 20th July Evening Shift Chemistry - Basics of Organic Chemistry Question 190 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1krsa5z91/df7291d6-7086-4c23-93a0-b7a95355e603/5f4c8e50-f245-11eb-b943-03b9b3fb9629/file-1krsa5z92.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 20th July Evening Shift Chemistry - Basics of Organic Chemistry Question 190 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<p>Metamers are compounds which have different alkyl groups\npresent along both side of polyvalent functional group.</p>\n<p>No polyvalent functional group in option (a).</p>\n<p>The two functional groups are different in option (b).</p>\n<p>Alcohol is not a polyvalent functional group.</p>\n<p>Alkyl groups are different along both sides of polyvalent\nfunctional group.</p>\n<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l09uwjfd/efe56874-6a5a-4ba1-8d43-247dc0d33bc0/86939490-9a51-11ec-b1c5-39b9b722e9af/file-1l09uwjfe.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l09uwjfd/efe56874-6a5a-4ba1-8d43-247dc0d33bc0/86939490-9a51-11ec-b1c5-39b9b722e9af/file-1l09uwjfe.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2021 (Online) 20th July Evening Shift Chemistry - Basics of Organic Chemistry Question 190 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l09uwjfd/efe56874-6a5a-4ba1-8d43-247dc0d33bc0/86939490-9a51-11ec-b1c5-39b9b722e9af/file-1l09uwjfe.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l09uwjfd/efe56874-6a5a-4ba1-8d43-247dc0d33bc0/86939490-9a51-11ec-b1c5-39b9b722e9af/file-1l09uwjfe.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l09uwjfd/efe56874-6a5a-4ba1-8d43-247dc0d33bc0/86939490-9a51-11ec-b1c5-39b9b722e9af/file-1l09uwjfe.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l09uwjfd/efe56874-6a5a-4ba1-8d43-247dc0d33bc0/86939490-9a51-11ec-b1c5-39b9b722e9af/file-1l09uwjfe.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l09uwjfd/efe56874-6a5a-4ba1-8d43-247dc0d33bc0/86939490-9a51-11ec-b1c5-39b9b722e9af/file-1l09uwjfe.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l09uwjfd/efe56874-6a5a-4ba1-8d43-247dc0d33bc0/86939490-9a51-11ec-b1c5-39b9b722e9af/file-1l09uwjfe.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">"
+    }
+  ]
+}

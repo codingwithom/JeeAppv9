@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "LDPbbXzZc1eg805aFM1kltcir9w",
+      "paperTitle": "JEE Main 2021 (Online) 25th February Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "structure-of-atom",
+      "chapterGroup": "physical-chemistry",
+      "topic": "photoelectric-effect",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "among-the-following-number-of-metals-which-can-be-used-as-jee-main-chemistry-some-basic-concepts-of-chemistry-mfsu6hsodzwlcvf2",
+      "content": "Among the following, number of metal/s which can be used as electrodes in the photoelectric cell is _________. (Integer answer)<br><br>(A) Li<br><br>(B) Na<br><br>(C) Rb<br><br>(D) Cs",
+      "options": [],
+      "correct_options": [],
+      "explanation": "Among the given alkali metals, only cesium (Cs)\nis used as electrode in the photoelectric cell\ndue to its lowest ionisation energy."
+    }
+  ]
+}

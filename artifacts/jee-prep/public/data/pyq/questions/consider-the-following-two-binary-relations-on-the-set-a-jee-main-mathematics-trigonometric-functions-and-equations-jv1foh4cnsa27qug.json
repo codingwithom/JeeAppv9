@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "CJSlXy9fvMO64kYVWmKoJ",
+      "paperTitle": "JEE Main 2018 (Online) 15th April Morning Slot",
+      "year": 2018,
+      "examDate": "2018-04-15 09:30",
+      "subject": "mathematics",
+      "chapter": "sets-and-relations",
+      "chapterGroup": "algebra",
+      "topic": "symmetric-transitive-and-reflexive-properties",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "consider-the-following-two-binary-relations-on-the-set-a-jee-main-mathematics-trigonometric-functions-and-equations-jv1foh4cnsa27qug",
+      "content": "Consider the following two binary relations on the set A = {a, b, c} : \n<br>R<sub>1</sub> = {(c, a), (b, b), (a, c), (c, c), (b, c), (a, a)} and \n<br>R<sub>2</sub> = {(a, b), (b, a), (c, c), (c, a), (a, a), (b, b), (a, c)}. \n<br>Then :\n",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "both R<sub>1</sub> and R<sub>2</sub> are not symmetric."
+        },
+        {
+          "identifier": "B",
+          "content": "R<sub>1</sub> is not symmetric but it is transitive."
+        },
+        {
+          "identifier": "C",
+          "content": "R<sub>2</sub> is symmetric but it is not transitive. "
+        },
+        {
+          "identifier": "D",
+          "content": "both R<sub>1</sub> and R<sub>2</sub> are transitive."
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Here both R<sub>1</sub> and R<sub>2</sub> are symmetric as for any (x, y) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.312ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 667 580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2208\" xlink:href=\"#MJX-TEX-N-2208\"></use></g></g></g></svg></mjx-container> R<sub>1</sub>, we have (y, x) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.312ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 667 580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2208\" xlink:href=\"#MJX-TEX-N-2208\"></use></g></g></g></svg></mjx-container> R<sub>1</sub> and similarly for any (x, y) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.312ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 667 580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2208\" xlink:href=\"#MJX-TEX-N-2208\"></use></g></g></g></svg></mjx-container> R<sub>2</sub>,  we have (y, x) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.312ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 667 580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2208\" xlink:href=\"#MJX-TEX-N-2208\"></use></g></g></g></svg></mjx-container> R<sub>2</sub><br><br>\nIn R<sub>1</sub>, (b, c) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.312ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 667 580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2208\" xlink:href=\"#MJX-TEX-N-2208\"></use></g></g></g></svg></mjx-container> R<sub>1</sub>, (c, a) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.312ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 667 580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2208\" xlink:href=\"#MJX-TEX-N-2208\"></use></g></g></g></svg></mjx-container> R<sub>1</sub> but (b,a) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.486ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"2.106ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 667 931\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2209\" xlink:href=\"#MJX-TEX-N-2209\"></use></g></g></g></svg></mjx-container> R<sub>1</sub><br><br>\nSimilarly in R<sub>2</sub>, (b, a) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.312ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 667 580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2208\" xlink:href=\"#MJX-TEX-N-2208\"></use></g></g></g></svg></mjx-container> R<sub>2</sub>, (a, c) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.312ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 667 580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2208\" xlink:href=\"#MJX-TEX-N-2208\"></use></g></g></g></svg></mjx-container> R<sub>2</sub> but (b, c) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.486ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"2.106ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 667 931\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2209\" xlink:href=\"#MJX-TEX-N-2209\"></use></g></g></g></svg></mjx-container> R<sub>2</sub><br><br>\n<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> R<sub>1</sub> and R<sub>2</sub> are not transitive."
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "questions": [
+    {
+      "question_id": "8PtlPBQDIo34cJhydv1kjca2kcd",
+      "paperTitle": "JEE Advanced 2019 Paper 1 Offline",
+      "year": 2019,
+      "subject": "chemistry",
+      "chapter": "chemical-kinetics-and-nuclear-chemistry",
+      "chapterGroup": "physical-chemistry",
+      "topic": "nuclear-chemistry",
+      "type": "mcqm",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "in-the-decay-sequencebrbr92238ubuildrel--jee-advanced-chemistry-some-basic-concepts-of-chemistry-t8rsdjywo4pqypck",
+      "content": "In the decay sequence.<br><br> <picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1ksryls9m/49644877-f436-4de6-94bd-0321f5217ec6/60adfba0-05e4-11ec-aff4-f93815541f69/file-1ksryls9n-320w.jpeg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1ksryls9m/49644877-f436-4de6-94bd-0321f5217ec6/60adfba0-05e4-11ec-aff4-f93815541f69/file-1ksryls9n-500w.jpeg\"><source media=\"(max-width: 680px)\" srcset=\"https://imagex.cdn.examgoal.net/1ksryls9m/49644877-f436-4de6-94bd-0321f5217ec6/60adfba0-05e4-11ec-aff4-f93815541f69/file-1ksryls9n-680w.jpeg\"><source media=\"(max-width: 860px)\" srcset=\"https://imagex.cdn.examgoal.net/1ksryls9m/49644877-f436-4de6-94bd-0321f5217ec6/60adfba0-05e4-11ec-aff4-f93815541f69/file-1ksryls9n-860w.jpeg\"><source media=\"(max-width: 1040px)\" srcset=\"https://imagex.cdn.examgoal.net/1ksryls9m/49644877-f436-4de6-94bd-0321f5217ec6/60adfba0-05e4-11ec-aff4-f93815541f69/file-1ksryls9n-1040w.jpeg\"><img src=\"https://imagex.cdn.examgoal.net/1ksryls9m/49644877-f436-4de6-94bd-0321f5217ec6/60adfba0-05e4-11ec-aff4-f93815541f69/file-1ksryls9n.jpeg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2019 Paper 1 Offline Chemistry - Chemical Kinetics and Nuclear Chemistry Question 26 English\"></picture> <br>x<sub>1</sub>, x<sub>2</sub>, x<sub>3</sub> and x<sub>4</sub> are particles/radiation emitted by the respective isotopes. The correct option(s) is(are)",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Z is an isotope of uranium"
+        },
+        {
+          "identifier": "B",
+          "content": "x<sub>2</sub> is <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.439ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.296ex\" height=\"2.034ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 573 899\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D6FD\" xlink:href=\"#MJX-TEX-I-1D6FD\"></use></g></g></g></svg></mjx-container><sup>-</sup>"
+        },
+        {
+          "identifier": "C",
+          "content": "x<sub>1</sub> will deflect towards negatively charged plate"
+        },
+        {
+          "identifier": "D",
+          "content": "x<sub>3</sub> is <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.489ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.229ex\" height=\"1.486ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -441 543 657\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D6FE\" xlink:href=\"#MJX-TEX-I-1D6FE\"></use></g></g></g></svg></mjx-container>-ray"
+        }
+      ],
+      "correct_options": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "In decay sequence,<br><br> <picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1ksryqomm/32964b47-18ec-4e47-8997-e929d9dd1f56/e8ea14e0-05e4-11ec-aff4-f93815541f69/file-1ksryqomn-320w.jpeg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1ksryqomm/32964b47-18ec-4e47-8997-e929d9dd1f56/e8ea14e0-05e4-11ec-aff4-f93815541f69/file-1ksryqomn-500w.jpeg\"><source media=\"(max-width: 680px)\" srcset=\"https://imagex.cdn.examgoal.net/1ksryqomm/32964b47-18ec-4e47-8997-e929d9dd1f56/e8ea14e0-05e4-11ec-aff4-f93815541f69/file-1ksryqomn-680w.jpeg\"><img src=\"https://imagex.cdn.examgoal.net/1ksryqomm/32964b47-18ec-4e47-8997-e929d9dd1f56/e8ea14e0-05e4-11ec-aff4-f93815541f69/file-1ksryqomn.jpeg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2019 Paper 1 Offline Chemistry - Chemical Kinetics and Nuclear Chemistry Question 26 English Explanation\"></picture> <br><br>X<sub>1</sub> particle will deflect towards negatively charged plate due to presence of positive charge on <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.448ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 640 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D6FC\" xlink:href=\"#MJX-TEX-I-1D6FC\"></use></g></g></g></svg></mjx-container>- particles.<br><br>Hence, options (a, b, c) are correct."
+    }
+  ]
+}

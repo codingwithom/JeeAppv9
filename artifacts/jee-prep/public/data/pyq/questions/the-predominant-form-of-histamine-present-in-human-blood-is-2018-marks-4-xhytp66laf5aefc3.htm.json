@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "xHytp66LAf5aEfC3",
+      "paperTitle": "JEE Main 2018 (Offline)",
+      "year": 2018,
+      "examDate": null,
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "proteins-and-enzymes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-predominant-form-of-histamine-present-in-human-blood-is-2018-marks-4-xhytp66laf5aefc3.htm",
+      "content": "The predominant form of histamine present in human blood is (pK<sub>a</sub>, Histidine = 6.0)",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img class=\"question-image\" src=\"https://imagex.cdn.examgoal.net/S4Oh1uLmNW9ZxNWWI/v31vqFD3MLJZaNe8laX14frpDtQfP/qKQCNljTTCbV5i819aC3Mc/image.png\" loading=\"lazy\" alt=\"JEE Main 2018 (Offline) Chemistry - Biomolecules Question 179 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img class=\"question-image\" src=\"https://imagex.cdn.examgoal.net/8hPyVZ0G5758jvfMo/Z8LsrSjNBjyCVGxUeJEC0gMlUvbrg/8yLKscePHSkwJgxcA8PNW0/image.png\" loading=\"lazy\" alt=\"JEE Main 2018 (Offline) Chemistry - Biomolecules Question 179 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img class=\"question-image\" src=\"https://imagex.cdn.examgoal.net/aNKeg8qJqWxarphbi/7nbtbluy24tNpqbXfdD5Y3iTTzCCO/lVb0vho6FCNCcT3sGPKDfF/image.png\" loading=\"lazy\" alt=\"JEE Main 2018 (Offline) Chemistry - Biomolecules Question 179 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img class=\"question-image\" src=\"https://imagex.cdn.examgoal.net/hK0ZgJLWDlm3Aagex/xRZb8WaLVNSN2fkYlUEqEWiSki9n4/E8rYtiieEgJzNQtmmIbZG9/image.png\" loading=\"lazy\" alt=\"JEE Main 2018 (Offline) Chemistry - Biomolecules Question 179 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Blood is slightly basic in nature as it's pH is around 7.4 .\n<br><br><img class=\"question-image\" src=\"https://imagex.cdn.examgoal.net/8b4C282Ts7BgeVonn/sYjl3gchixEJpcubLeN0TNsA2X2ro/3PBZdzZYVY2WUqdjoxHJjJ/image.png\" loading=\"lazy\" alt=\"JEE Main 2018 (Offline) Chemistry - Biomolecules Question 179 English Explanation 1\">\n<br><br>In Histamine there is two basic centers\n<br><br>(1) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.133ex\" height=\"0.036ex\" role=\"img\" focusable=\"false\" viewBox=\"0 0 501 16\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mspace\"></g><g data-mml-node=\"mspace\" transform=\"translate(167,0)\"></g><g data-mml-node=\"mspace\" transform=\"translate(334,0)\"></g></g></g></svg></mjx-container> Aliphatie amino group\n<br><br>(2) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.133ex\" height=\"0.036ex\" role=\"img\" focusable=\"false\" viewBox=\"0 0 501 16\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mspace\"></g><g data-mml-node=\"mspace\" transform=\"translate(167,0)\"></g><g data-mml-node=\"mspace\" transform=\"translate(334,0)\"></g></g></g></svg></mjx-container> Basic nitrogen of imidazole ring.\n<br><br>Where p<sup>Ka</sup> of Aliphatic amino group is 9.4 and p<sup>Ka</sup> of basic nitrogen of imidazole  ring is 5.8. \n<br><br>As more p<sup>Ka</sup> value means more basic,  So, aliphatic amino group is more basic. \n<br><br>As pH of blood is 7.4 so p<sup>Ka</sup> of blood is &lt; 7.4. So, <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>NH<sub>2</sub> group will act as more basic compare to blood. So, blood will act as acid and donate H<sup>+</sup> to <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>NH<sub>2</sub> group. \n<br><br>So, Histamine in blood will become this :\n<br><br><img class=\"question-image\" src=\"https://imagex.cdn.examgoal.net/bRzMMFXMTwRCLTXPq/tBXoc0oawakBcfMo9aw3pU0crYLdi/08Ii6T08XO5Z7KhDhHl7cJ/image.png\" loading=\"lazy\" alt=\"JEE Main 2018 (Offline) Chemistry - Biomolecules Question 179 English Explanation 2\"> "
+    }
+  ]
+}

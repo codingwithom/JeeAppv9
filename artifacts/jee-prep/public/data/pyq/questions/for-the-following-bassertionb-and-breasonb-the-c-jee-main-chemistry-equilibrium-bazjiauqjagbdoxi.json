@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "H2zZyPaYCYEshked6Gjgy2xukevfq7al",
+      "paperTitle": "JEE Main 2020 (Online) 2nd September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-02 09:00",
+      "subject": "chemistry",
+      "chapter": "ionic-equilibrium",
+      "chapterGroup": "physical-chemistry",
+      "topic": "solubility-product-and-common-ion-effect",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "for-the-following-bassertionb-and-breasonb-the-c-jee-main-chemistry-equilibrium-bazjiauqjagbdoxi",
+      "content": "For the following <b>Assertion</b> and <b>Reason</b>, the\ncorrect option is\n<br><br><b>Assertion (A):</b> When Cu (II) and sulphide ions\nare mixed, they react together\nextremely quickly to give a\nsolid.\n<br><br><b>Reason (R):</b> The equilibrium constant of\n<br>Cu<sup>2+</sup>(aq) + S<sup>2–</sup>(aq) ⇌ CuS(s) is\nhigh because the solubility\nproduct is low.",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(A) is false and (R) is true."
+        },
+        {
+          "identifier": "B",
+          "content": "Both (A) and (R) are true but (R) is not the\nexplanation for (A)."
+        },
+        {
+          "identifier": "C",
+          "content": "Both (A) and (R) are true and (R) is the\nexplanation for (A)."
+        },
+        {
+          "identifier": "D",
+          "content": "Both (A) and (R) are false."
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "K<sub>sp</sub> value of CuS is very low  10<sup>–36</sup> (3.6 × 10<sup>–36</sup>)\ndue to low K<sub>sp</sub> value Cu<sup>+2</sup> ion gets precipitated\nvery quickly even with very low concentration\nof S<sup>–2</sup> ion."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1krq6aop8",
+      "paperTitle": "JEE Main 2021 (Online) 20th July Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "aldehydes-ketones-and-carboxylic-acids",
+      "chapterGroup": "organic-chemistry",
+      "topic": "tests-for-aldehyde-and-ketones",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "i-imagebrbrii-imagebrbriii-imagebrbr-jee-main-chemistry-some-basic-concepts-of-chemistry-lnk47tnsxdqbeyi0",
+      "content": "<img src=\"https://imagex.cdn.examgoal.net/1krq7ybcu/ce4f042c-19f0-4fe9-a0ed-e522e085d25d/269ec1e0-f123-11eb-a221-f3b1f28d3393/file-1krq7ybcv.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 20th July Morning Shift Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 170 English\"><br>Which among the above compound/s does/do not form Silver mirror when treated with Tollen's reagent?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(I), (III) and (IV) only"
+        },
+        {
+          "identifier": "B",
+          "content": "Only (IV)"
+        },
+        {
+          "identifier": "C",
+          "content": "Only (II)"
+        },
+        {
+          "identifier": "D",
+          "content": "(III) and (IV) only"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<p> Only compound (II) which has ketonic group does not form silver mirror when treated with Tollen’s reagent.\n\nBecause Tollen’s reagent oxidises an aldehyde into the corresponding carboxylic acid. Ketones are not oxidised by Tollen’s reagent, so the treatment of a ketone with Tollen’s reagent in a glass test tube does not result in a silver mirror. Aldehydes give positive Tollen’s test (silver mirror test). </p>\n\n<p><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l2plga66/7f00628d-262d-4040-96f1-02f817649f0a/897779e0-ca91-11ec-ace3-f5b4d86f7970/file-1l2plga67.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l2plga66/7f00628d-262d-4040-96f1-02f817649f0a/897779e0-ca91-11ec-ace3-f5b4d86f7970/file-1l2plga67.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2021 (Online) 20th July Morning Shift Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 170 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l2plga66/7f00628d-262d-4040-96f1-02f817649f0a/897779e0-ca91-11ec-ace3-f5b4d86f7970/file-1l2plga67.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l2plga66/7f00628d-262d-4040-96f1-02f817649f0a/897779e0-ca91-11ec-ace3-f5b4d86f7970/file-1l2plga67.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l2plga66/7f00628d-262d-4040-96f1-02f817649f0a/897779e0-ca91-11ec-ace3-f5b4d86f7970/file-1l2plga67.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l2plga66/7f00628d-262d-4040-96f1-02f817649f0a/897779e0-ca91-11ec-ace3-f5b4d86f7970/file-1l2plga67.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l2plga66/7f00628d-262d-4040-96f1-02f817649f0a/897779e0-ca91-11ec-ace3-f5b4d86f7970/file-1l2plga67.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l2plga66/7f00628d-262d-4040-96f1-02f817649f0a/897779e0-ca91-11ec-ace3-f5b4d86f7970/file-1l2plga67.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"></p>"
+    }
+  ]
+}

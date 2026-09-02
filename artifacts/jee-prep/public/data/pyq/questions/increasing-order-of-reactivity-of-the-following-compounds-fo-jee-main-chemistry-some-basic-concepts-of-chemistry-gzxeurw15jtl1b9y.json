@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "itX4w5nABnhW9uESmXjTE",
+      "paperTitle": "JEE Main 2019 (Online) 9th April Evening Slot",
+      "year": 2019,
+      "examDate": "2019-04-09 14:30",
+      "subject": "chemistry",
+      "chapter": "hydrocarbons",
+      "chapterGroup": "organic-chemistry",
+      "topic": "reaction-of-alkenes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "increasing-order-of-reactivity-of-the-following-compounds-fo-jee-main-chemistry-some-basic-concepts-of-chemistry-gzxeurw15jtl1b9y",
+      "content": "Increasing order of reactivity of the following\ncompounds for S<sub>N</sub>1 substitution is:\n<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76htyjzrbj9ck/430b5223-9d71-4426-81a5-faea61fd24da/e27d1d40-c767-11e9-8a74-7f4f47aa0c85/file-jf76htyjzrbj9cl-320w.jpg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76htyjzrbj9ck/430b5223-9d71-4426-81a5-faea61fd24da/e27d1d40-c767-11e9-8a74-7f4f47aa0c85/file-jf76htyjzrbj9cl-500w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/jf76htyjzrbj9ck/430b5223-9d71-4426-81a5-faea61fd24da/e27d1d40-c767-11e9-8a74-7f4f47aa0c85/file-jf76htyjzrbj9cl-680w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 9th April Evening Slot Chemistry - Hydrocarbons Question 133 English\"></picture>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(A) &lt; (B) &lt; (D) &lt; (C)"
+        },
+        {
+          "identifier": "B",
+          "content": "(B) &lt; (C) &lt; (D) &lt; (A)"
+        },
+        {
+          "identifier": "C",
+          "content": "(B) &lt; (A) &lt; (D) &lt; (C)"
+        },
+        {
+          "identifier": "D",
+          "content": "(B) &lt; (C) &lt; (A) &lt; (D)"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "In S<sub>N</sub>1 substitution reaction, reactivity of compound depends on the stability of carbocation formed in the rate determination step. Reactivity of compound will be more when it's carbocation is more stable.\n<br><br><picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76htyjzrdhjhy/1a11d835-bce3-4a69-a0d9-d9b4058741aa/84f81960-c76f-11e9-8a74-7f4f47aa0c85/file-jf76htyjzrdhjhz-320w.jpg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76htyjzrdhjhy/1a11d835-bce3-4a69-a0d9-d9b4058741aa/84f81960-c76f-11e9-8a74-7f4f47aa0c85/file-jf76htyjzrdhjhz-500w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/jf76htyjzrdhjhy/1a11d835-bce3-4a69-a0d9-d9b4058741aa/84f81960-c76f-11e9-8a74-7f4f47aa0c85/file-jf76htyjzrdhjhz-680w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 9th April Evening Slot Chemistry - Hydrocarbons Question 133 English Explanation\"></picture>\n<br><br>So stability order of carbocation :\n<br><br>C &gt; D &gt; A &gt; B\n"
+    }
+  ]
+}

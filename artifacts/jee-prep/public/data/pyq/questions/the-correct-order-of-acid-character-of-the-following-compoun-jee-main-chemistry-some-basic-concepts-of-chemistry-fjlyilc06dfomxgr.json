@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "NEvGHXOhrcaQv6XIs51kltb6dy8",
+      "paperTitle": "JEE Main 2021 (Online) 25th February Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "acid-and-base-strength",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-correct-order-of-acid-character-of-the-following-compoun-jee-main-chemistry-some-basic-concepts-of-chemistry-fjlyilc06dfomxgr",
+      "content": "The correct order of acid character of the following compounds is :<br><br><img src=\"https://imagex.cdn.examgoal.net/1klte91j3/b109844e-4288-4168-bd6b-587c4859ec6a/d56138f0-7c18-11eb-b0eb-7d97e0807144/file-1klte91j4-320w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 25th February Evening Shift Chemistry - Basics of Organic Chemistry Question 201 English\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "IV &gt; III &gt; II &gt; I"
+        },
+        {
+          "identifier": "B",
+          "content": "III &gt; II &gt; I &gt; IV"
+        },
+        {
+          "identifier": "C",
+          "content": "II &gt; III &gt; IV &gt; I"
+        },
+        {
+          "identifier": "D",
+          "content": "I &gt; II &gt; III &gt; IV"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Acidic strength<br><br>\n<img src=\"https://imagex.cdn.examgoal.net/1km79m13k/1727c696-e861-46e1-93e2-35078aba233e/aa02f100-83b9-11eb-9a1c-d1697d563c9f/file-1km79m13l.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 25th February Evening Shift Chemistry - Basics of Organic Chemistry Question 201 English Explanation\"><br>\nSince carboxylic acids are more acidic than\nphenols.<br><br>\n–I and – R effect increase the acidic strength\nwhere as +I and +R effect decrease the acidic\nstrength of carboxylic acids.\n"
+    }
+  ]
+}

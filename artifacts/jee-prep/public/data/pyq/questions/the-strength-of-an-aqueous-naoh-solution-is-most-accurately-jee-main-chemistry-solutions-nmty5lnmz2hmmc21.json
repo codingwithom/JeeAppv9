@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "uG8oesPo5DsDJYyhEn7k9k2k5h5xstn",
+      "paperTitle": "JEE Main 2020 (Online) 8th January Morning Slot",
+      "year": 2020,
+      "examDate": "2020-01-08 09:30",
+      "subject": "chemistry",
+      "chapter": "ionic-equilibrium",
+      "chapterGroup": "physical-chemistry",
+      "topic": "ph-buffer-and-indicators",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-strength-of-an-aqueous-naoh-solution-is-most-accurately-jee-main-chemistry-solutions-nmty5lnmz2hmmc21",
+      "content": "The strength of an aqueous NaOH solution is most accurately determined by titrating : <br>(Note : consider that\nan appropriate indicator is used)",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Aq. NaOH in a pipette and aqueous oxalic acid in a burette"
+        },
+        {
+          "identifier": "B",
+          "content": "Aq. NaOH in a burette and aqueous oxalic acid in a conical flask"
+        },
+        {
+          "identifier": "C",
+          "content": "Aq. NaOH in a volumetric flask and concentrated H<sub>2</sub>SO<sub>4</sub> in a conical flask"
+        },
+        {
+          "identifier": "D",
+          "content": "Aq. NaOH in a burette and concentrated H<sub>2</sub>SO<sub>4</sub> in a conical flask"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Aq. NaOH in a burette and aqueous oxalic acid in a conical flask."
+    }
+  ]
+}

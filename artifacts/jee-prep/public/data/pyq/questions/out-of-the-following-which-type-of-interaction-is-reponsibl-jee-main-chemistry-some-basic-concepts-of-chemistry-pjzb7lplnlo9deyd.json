@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "JOH5zQORaQTWcrss1O1klrecuw2",
+      "paperTitle": "JEE Main 2021 (Online) 24th February Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "proteins-and-enzymes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "out-of-the-following-which-type-of-interaction-is-reponsibl-jee-main-chemistry-some-basic-concepts-of-chemistry-pjzb7lplnlo9deyd",
+      "content": "Out of the following, which type of interaction is reponsible for the stabilisation of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.448ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 640 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D6FC\" xlink:href=\"#MJX-TEX-I-1D6FC\"></use></g></g></g></svg></mjx-container>-helix structure of proteins ?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Covalent bonding"
+        },
+        {
+          "identifier": "B",
+          "content": "vander Waals forces"
+        },
+        {
+          "identifier": "C",
+          "content": "Ionic bonding"
+        },
+        {
+          "identifier": "D",
+          "content": "Hydrogen bonding"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.448ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 640 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D6FC\" xlink:href=\"#MJX-TEX-I-1D6FC\"></use></g></g></g></svg></mjx-container>-helix structure of proteins is stabilised by H-bonds between\nhydrogen of —NH and oxygen of - C = O group is amino acids.\n<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1kxheri7w/c7ebea64-16b9-4624-9940-495d0470663f/079713c0-6314-11ec-b1e6-f1aee4474c98/file-1kxheri7x.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1kxheri7w/c7ebea64-16b9-4624-9940-495d0470663f/079713c0-6314-11ec-b1e6-f1aee4474c98/file-1kxheri7x.png\" loading=\"lazy\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;max-height: 60vh\" alt=\"JEE Main 2021 (Online) 24th February Morning Shift Chemistry - Biomolecules Question 137 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1kxheri7w/c7ebea64-16b9-4624-9940-495d0470663f/079713c0-6314-11ec-b1e6-f1aee4474c98/file-1kxheri7x.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1kxheri7w/c7ebea64-16b9-4624-9940-495d0470663f/079713c0-6314-11ec-b1e6-f1aee4474c98/file-1kxheri7x.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1kxheri7w/c7ebea64-16b9-4624-9940-495d0470663f/079713c0-6314-11ec-b1e6-f1aee4474c98/file-1kxheri7x.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1kxheri7w/c7ebea64-16b9-4624-9940-495d0470663f/079713c0-6314-11ec-b1e6-f1aee4474c98/file-1kxheri7x.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1kxheri7w/c7ebea64-16b9-4624-9940-495d0470663f/079713c0-6314-11ec-b1e6-f1aee4474c98/file-1kxheri7x.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1kxheri7w/c7ebea64-16b9-4624-9940-495d0470663f/079713c0-6314-11ec-b1e6-f1aee4474c98/file-1kxheri7x.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">"
+    }
+  ]
+}

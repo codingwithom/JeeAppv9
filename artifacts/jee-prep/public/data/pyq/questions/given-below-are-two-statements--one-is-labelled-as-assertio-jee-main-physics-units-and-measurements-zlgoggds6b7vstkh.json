@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1krudvskt",
+      "paperTitle": "JEE Main 2021 (Online) 25th July Morning Shift",
+      "year": 2021,
+      "subject": "physics",
+      "chapter": "rotational-motion",
+      "chapterGroup": "mechanics",
+      "topic": "moment-of-inertia",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "given-below-are-two-statements--one-is-labelled-as-assertio-jee-main-physics-units-and-measurements-zlgoggds6b7vstkh",
+      "content": "Given below are two statements : one is labelled as Assertion A and the other is labelled as Reason R. <br><br>Assertion A : Moment of inertia of a circular disc of mass 'M' and radius 'R' about X, Y axes (passing through its plane) and Z-axis which is perpendicular to its plane were found to be I<sub>x</sub>, I<sub>y</sub> and I<sub>z</sub> respectively. The respectively radii of gyration about all the three axes will be the same.<br><br>Reason R : A rigid body making rotational motion has fixed mass and shape. In the light of the above statements, choose the most appropriate answer from the options given below :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Both A and R are correct but R is NOT the correct explanation of A."
+        },
+        {
+          "identifier": "B",
+          "content": "A is not correct but R is correct."
+        },
+        {
+          "identifier": "C",
+          "content": "A is correct but R is not correct."
+        },
+        {
+          "identifier": "D",
+          "content": "Both A and R are correct and R is the correct explanation of A."
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "I<sub>z</sub> = I<sub>x</sub> + I<sub>y</sub> (using perpendicular axis theorem) &amp; I = mk<sup>2</sup> (K : radius of gyration)<br><br>so, mK<sub>z</sub><sup>2</sup> = mK<sub>x</sub><sup>2</sup> + mK<sub>y</sub><sup>2</sup><br><br>K<sub>z</sub><sup>2</sup> = K<sub>x</sub><sup>2</sup> + K<sub>y</sub><sup>2</sup><br><br>so radius of gyration about axes x, y &amp; z won't be same hence assertion A is not correct reason R is correct statement (property of a rigid body)"
+    }
+  ]
+}

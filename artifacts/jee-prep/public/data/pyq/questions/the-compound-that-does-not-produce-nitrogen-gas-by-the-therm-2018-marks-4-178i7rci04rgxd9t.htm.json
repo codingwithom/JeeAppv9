@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "178I7rci04rGxd9T",
+      "paperTitle": "JEE Main 2018 (Offline)",
+      "year": 2018,
+      "examDate": null,
+      "subject": "chemistry",
+      "chapter": "p-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "group-15-elements-nitrogen-family",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-compound-that-does-not-produce-nitrogen-gas-by-the-therm-2018-marks-4-178i7rci04rgxd9t.htm",
+      "content": "The compound that does not produce nitrogen gas by the thermal decomposition is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(NH<sub>4</sub>)<sub>2</sub>SO<sub>4</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "Ba(N<sub>3</sub>)<sub>2</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "(NH<sub>4</sub>)<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "NH<sub>4</sub>NO<sub>2</sub>"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Thermal decomposition reaction of the given compounds are . . .\n<br><br>(NH<sub>4</sub>)<sub>2</sub>SO<sub>4</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.706ex\" height=\"3.005ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1317.3 1638 1328.3\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"REL\"><g data-mml-node=\"mover\"><g data-mml-node=\"mo\"><use data-c=\"27F6\" xlink:href=\"#MJX-TEX-N-27F6\"></use></g><g data-mml-node=\"mi\" transform=\"translate(524.5,711) scale(0.707)\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></g></g></svg></mjx-container> 2 NH<sub>3</sub>(g) + H<sub>2</sub>SO<sub>4</sub>\n<br><br>Ba (N<sub>3</sub>)<sub>2</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.706ex\" height=\"3.005ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1317.3 1638 1328.3\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"REL\"><g data-mml-node=\"mover\"><g data-mml-node=\"mo\"><use data-c=\"27F6\" xlink:href=\"#MJX-TEX-N-27F6\"></use></g><g data-mml-node=\"mi\" transform=\"translate(524.5,711) scale(0.707)\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></g></g></svg></mjx-container> Ba + 3N<sub>2</sub>(g)\n<br><br>NH<sub>4</sub>NO<sub>2</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.706ex\" height=\"3.005ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1317.3 1638 1328.3\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"REL\"><g data-mml-node=\"mover\"><g data-mml-node=\"mo\"><use data-c=\"27F6\" xlink:href=\"#MJX-TEX-N-27F6\"></use></g><g data-mml-node=\"mi\" transform=\"translate(524.5,711) scale(0.707)\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></g></g></svg></mjx-container> N<sub>2</sub>(g) + 2H<sub>2</sub>O\n<br><br>(NH<sub>4</sub>)<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.706ex\" height=\"3.005ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1317.3 1638 1328.3\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"REL\"><g data-mml-node=\"mover\"><g data-mml-node=\"mo\"><use data-c=\"27F6\" xlink:href=\"#MJX-TEX-N-27F6\"></use></g><g data-mml-node=\"mi\" transform=\"translate(524.5,711) scale(0.707)\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></g></g></svg></mjx-container> N<sub>2</sub>(g) + 4H<sub>2</sub>O + Cr<sub>2</sub>O<sub>3</sub> \n<br><br>So, here you can see only (NH<sub>4</sub>)<sub>2</sub>SO<sub>4</sub> does not give N<sub>2</sub> by thermal decomposition it gives NH<sub>3</sub> while other give N<sub>2</sub> gas "
+    }
+  ]
+}

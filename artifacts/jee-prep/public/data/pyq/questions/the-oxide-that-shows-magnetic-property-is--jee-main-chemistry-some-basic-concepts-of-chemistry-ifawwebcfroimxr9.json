@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "KYRVypzy7VyKvyLJhc1kmm0le8t",
+      "paperTitle": "JEE Main 2021 (Online) 18th March Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "important-compounds-of-transition-elements",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-oxide-that-shows-magnetic-property-is--jee-main-chemistry-some-basic-concepts-of-chemistry-ifawwebcfroimxr9",
+      "content": "The oxide that shows magnetic property is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "MgO"
+        },
+        {
+          "identifier": "B",
+          "content": "SiO<sub>2</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "Mn<sub>3</sub>O<sub>4</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "Na<sub>2</sub>O"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Mn<sub>3</sub>O<sub>4</sub> is paramagnetic due to presence of unpaired electrons. "
+    }
+  ]
+}

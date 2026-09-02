@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "tVlWLwS9cygf8yUxA83rsa0w2w9jx5d7bm9",
+      "paperTitle": "JEE Main 2019 (Online) 12th April Morning Slot",
+      "year": 2019,
+      "examDate": "2019-04-12 09:30",
+      "subject": "mathematics",
+      "chapter": "complex-numbers",
+      "chapterGroup": "algebra",
+      "topic": "applications-of-complex-numbers-in-coordinate-geometry",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-equation-z--i--z--1-i--sqrt--1--repre-jee-main-mathematics-complex-numbers-jlgld7cwgckeor8b",
+      "content": "The equation |z – i| = |z – 1|, i = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.318ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.821ex\" height=\"2.398ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -919.5 2131 1060\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msqrt\"><g data-mml-node=\"mo\" transform=\"translate(0,59.5)\"><use data-c=\"221A\" xlink:href=\"#MJX-TEX-N-221A\"></use></g><g transform=\"translate(853,0)\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(778,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g><rect width=\"1278\" height=\"60\" x=\"853\" y=\"799.5\"></rect></g></g></g></svg></mjx-container>, represents :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "a circle of radius 1"
+        },
+        {
+          "identifier": "B",
+          "content": "the line through the origin with slope – 1"
+        },
+        {
+          "identifier": "C",
+          "content": "a circle of radius <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.781ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.795ex\" height=\"2.737ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864.9 793.6 1209.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mn\" transform=\"translate(220,394) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mn\" transform=\"translate(220,-345) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><rect width=\"553.6\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container>"
+        },
+        {
+          "identifier": "D",
+          "content": "the line through the origin with slope 1\n"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Let the complex number z = x + iy<br><br>\nNow given | (x + iy) - 1 | = | (x+iy) - i |<br><br>\n<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> (x - 1)<sup>2</sup> + y<sup>2</sup> = x<sup>2</sup> + (y - 1)<sup>2</sup><br><br>\n<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> x = y<br><br>\n<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> the correct answer is option (D)"
+    }
+  ]
+}

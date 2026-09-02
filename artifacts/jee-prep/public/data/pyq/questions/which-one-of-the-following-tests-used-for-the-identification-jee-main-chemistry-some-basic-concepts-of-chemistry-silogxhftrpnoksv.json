@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktfskbwi",
+      "paperTitle": "JEE Main 2021 (Online) 27th August Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "practical-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "detection-of-extra-elements-and-functional-groups",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-one-of-the-following-tests-used-for-the-identification-jee-main-chemistry-some-basic-concepts-of-chemistry-silogxhftrpnoksv",
+      "content": "Which one of the following tests used for the identification of functional groups in organic compounds does not use copper reagent?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Barfoed's test"
+        },
+        {
+          "identifier": "B",
+          "content": "Seliwanoff's test"
+        },
+        {
+          "identifier": "C",
+          "content": "Benedict's test"
+        },
+        {
+          "identifier": "D",
+          "content": "Biuret test for peptide bond"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "In Seliwanoff's reagent, Cu is not present.<br><br>In Barfoed, Biuret and in Benediet reagent Cu is present."
+    }
+  ]
+}

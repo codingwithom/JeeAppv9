@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "mon03lcV7SBvYiyy",
+      "paperTitle": "JEE Main 2015 (Offline)",
+      "year": 2015,
+      "examDate": null,
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "atomic-and-ionic-radius",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-ionic-radii-in-of-n3-o2-and-f-are-respect-2015-marks-4-mon03lcv7sbvyiyy.htm",
+      "content": "The ionic radii (in Å) of N<sup>3–</sup>, O<sup>2–</sup> and F<sup>–</sup> are respectively:",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "1.36, 1.71 and 1.40"
+        },
+        {
+          "identifier": "B",
+          "content": "1.71, 1.40 and 1.36"
+        },
+        {
+          "identifier": "C",
+          "content": "1.71, 1.36 and 1.40"
+        },
+        {
+          "identifier": "D",
+          "content": "1.36, 1.40 and 1.71"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Here all of them are isoelectric and for isoelectric species size of anion increases as negative charge increases.\n<br><br>So, correct order is :\n<br><br>N<sup>3–</sup> &gt; O<sup>2–</sup> &gt; F<sup>–</sup>\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> Radius of N<sup>3–</sup> = 1.71 Å\n<br><br>and Radius of \nO<sup>2–</sup> = 1.40 Å\n<br><br>and Radius of \nF<sup>–</sup> = 1.36 Å"
+    }
+  ]
+}

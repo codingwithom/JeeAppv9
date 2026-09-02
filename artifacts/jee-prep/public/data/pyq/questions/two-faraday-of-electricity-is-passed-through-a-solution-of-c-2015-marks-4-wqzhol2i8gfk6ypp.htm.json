@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "wQZhoL2I8GFK6YPP",
+      "paperTitle": "JEE Main 2015 (Offline)",
+      "year": 2015,
+      "examDate": null,
+      "subject": "chemistry",
+      "chapter": "electrochemistry",
+      "chapterGroup": "physical-chemistry",
+      "topic": "conductance-and-electrolysis",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "two-faraday-of-electricity-is-passed-through-a-solution-of-c-2015-marks-4-wqzhol2i8gfk6ypp.htm",
+      "content": "Two Faraday of electricity is passed through a solution of CuSO<sub>4</sub>. The mass of copper deposited at the\ncathode is: (at. mass of Cu = 63.5 amu)",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "63.5 g"
+        },
+        {
+          "identifier": "B",
+          "content": "2 g"
+        },
+        {
+          "identifier": "C",
+          "content": "127 g"
+        },
+        {
+          "identifier": "D",
+          "content": "0 g"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"19.606ex\" height=\"2.072ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -833.9 8665.8 915.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(760,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"1D462\" xlink:href=\"#MJX-TEX-I-1D462\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(605,363) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g></g></g></g><g data-mml-node=\"mo\" transform=\"translate(2540.9,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(3541.1,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(4041.1,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"1D452\" xlink:href=\"#MJX-TEX-I-1D452\"></use></g><g data-mml-node=\"mo\" transform=\"translate(499,363) scale(0.707)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"REL\" transform=\"translate(5418,0)\"><g data-mml-node=\"mover\"><g data-mml-node=\"mo\"><use data-c=\"27F6\" xlink:href=\"#MJX-TEX-N-27F6\"></use></g><g data-mml-node=\"mstyle\" transform=\"translate(735.5,711)\"><g data-mml-node=\"mspace\"></g></g></g></g><g data-mml-node=\"mi\" transform=\"translate(7333.8,0)\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mi\" transform=\"translate(8093.8,0)\"><use data-c=\"1D462\" xlink:href=\"#MJX-TEX-I-1D462\"></use></g></g></g></svg></mjx-container>\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"19.08ex\" height=\"1.645ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 8433.4 727\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mi\" transform=\"translate(500,0)\"><use data-c=\"1D439\" xlink:href=\"#MJX-TEX-I-1D439\"></use></g><g data-mml-node=\"mspace\" transform=\"translate(1249,0)\"></g><g data-mml-node=\"mspace\" transform=\"translate(1416,0)\"></g><g data-mml-node=\"mi\" transform=\"translate(1583,0)\"><use data-c=\"1D456\" xlink:href=\"#MJX-TEX-I-1D456\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1928,0)\"><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2206,0)\"><use data-c=\"1D452\" xlink:href=\"#MJX-TEX-I-1D452\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2672,0)\"><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\"></use></g><g data-mml-node=\"mspace\" transform=\"translate(2950,0)\"></g><g data-mml-node=\"mspace\" transform=\"translate(3117,0)\"></g><g data-mml-node=\"mn\" transform=\"translate(3284,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mo\" transform=\"translate(4006.2,0)\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g><g data-mml-node=\"mn\" transform=\"translate(5006.4,0)\"><use data-c=\"39\" xlink:href=\"#MJX-TEX-N-39\"></use><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\" transform=\"translate(500,0)\"></use><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\" transform=\"translate(1000,0)\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(1500,0)\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(2000,0)\"></use></g><g data-mml-node=\"mspace\" transform=\"translate(7506.4,0)\"></g><g data-mml-node=\"mi\" transform=\"translate(7673.4,0)\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g></g></g></svg></mjx-container> deposit <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"7.162ex\" height=\"1.645ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 3165.6 727\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mi\" transform=\"translate(760,0)\"><use data-c=\"1D462\" xlink:href=\"#MJX-TEX-I-1D462\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1609.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(2665.6,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g></svg></mjx-container> mol <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"6.411ex\" height=\"1.557ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -666 2833.8 688\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1055.8,0)\"><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\"></use><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\" transform=\"translate(500,0)\"></use><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\" transform=\"translate(1000,0)\"></use><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\" transform=\"translate(1278,0)\"></use></g></g></g></svg></mjx-container> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.464ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.086ex\" height=\"1.464ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 480 647\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D454\" xlink:href=\"#MJX-TEX-I-1D454\"></use></g></g></g></svg></mjx-container> "
+    }
+  ]
+}

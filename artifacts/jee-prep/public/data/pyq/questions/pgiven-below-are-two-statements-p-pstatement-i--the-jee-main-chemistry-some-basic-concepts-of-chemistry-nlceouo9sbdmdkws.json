@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ldsc2o1m",
+      "paperTitle": "JEE Main 2023 (Online) 29th January Evening Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "ionization-energy",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pgiven-below-are-two-statements-p-pstatement-i--the-jee-main-chemistry-some-basic-concepts-of-chemistry-nlceouo9sbdmdkws",
+      "content": "<p>Given below are two statements :</p>\n<p>Statement I : The decrease in first ionization enthalpy from B to Al is much larger than that from Al to Ga.</p>\n<p>Statement II : The d orbitals in Ga are completely filled.</p>\n<p>In the light of the above statements, choose the most appropriate answer from the options given below</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Statement I is correct but statement II is incorrect"
+        },
+        {
+          "identifier": "B",
+          "content": "Statement I is incorrect but statement II is correct"
+        },
+        {
+          "identifier": "C",
+          "content": "Both the statements I and II are correct"
+        },
+        {
+          "identifier": "D",
+          "content": "Both the statements I and II are incorrect"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<p><b>Statement I</b> is correct as the decrease in first ionization enthalpy from B to Al is indeed much larger than from Al to Ga. This is due to the shielding effect of the electron in the outermost shell and the increased effective nuclear charge as one moves from B to Al and from Al to Ga.</p>\n<p><b>Statement II</b> is also correct, as the d orbitals in Ga are indeed completely filled. This results in the shielding effect being maximum for Ga and thus, the decrease in first ionization enthalpy from Al to Ga is smaller compared to that from B to Al.</p>"
+    }
+  ]
+}

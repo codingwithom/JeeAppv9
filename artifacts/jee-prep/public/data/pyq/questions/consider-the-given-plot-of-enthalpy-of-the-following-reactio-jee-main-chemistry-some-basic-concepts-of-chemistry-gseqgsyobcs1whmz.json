@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "BX0f3gu7YGoPxKiu1m8Kn",
+      "paperTitle": "JEE Main 2019 (Online) 9th April Evening Slot",
+      "year": 2019,
+      "examDate": "2019-04-09 14:30",
+      "subject": "chemistry",
+      "chapter": "chemical-kinetics-and-nuclear-chemistry",
+      "chapterGroup": "physical-chemistry",
+      "topic": "arrhenius-equation",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "consider-the-given-plot-of-enthalpy-of-the-following-reactio-jee-main-chemistry-some-basic-concepts-of-chemistry-gseqgsyobcs1whmz",
+      "content": "Consider the given plot of enthalpy of the\nfollowing reaction between A and B.<br>\nA+ B <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> C + D<br>\nIdentify the incorrect statement.\n<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76htyjzrg1tnw/11a265e9-e1cf-442c-a4c1-da88dd6d1c63/8b433ac0-c779-11e9-8a74-7f4f47aa0c85/file-jf76htyjzrg1tnx-320w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/jf76htyjzrg1tnw/11a265e9-e1cf-442c-a4c1-da88dd6d1c63/8b433ac0-c779-11e9-8a74-7f4f47aa0c85/file-jf76htyjzrg1tnx-500w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 9th April Evening Slot Chemistry - Chemical Kinetics and Nuclear Chemistry Question 166 English\"></picture>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Formation of A and B from C has highest\nenthalpy of activation."
+        },
+        {
+          "identifier": "B",
+          "content": "D is kinetically stable product."
+        },
+        {
+          "identifier": "C",
+          "content": "C is the thermodynamically stable product"
+        },
+        {
+          "identifier": "D",
+          "content": "Activation enthalpy to form C is 5kJ mol<sup>–1</sup>\nless than that to form D."
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76htyjzrg2h60/5346a66f-d6de-44fe-9ff8-f54e941dc3b9/9d6b0e80-c779-11e9-8a74-7f4f47aa0c85/file-jf76htyjzrg2h61-320w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/jf76htyjzrg2h60/5346a66f-d6de-44fe-9ff8-f54e941dc3b9/9d6b0e80-c779-11e9-8a74-7f4f47aa0c85/file-jf76htyjzrg2h61-500w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 9th April Evening Slot Chemistry - Chemical Kinetics and Nuclear Chemistry Question 166 English Explanation\"></picture>\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> E<sub><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.023ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.197ex\" height=\"1.02ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -441 529 451\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g></g></g></svg></mjx-container></sub> = (A + B) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> C = 15\n<br><br>E<sub><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.023ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.197ex\" height=\"1.02ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -441 529 451\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g></g></g></svg></mjx-container></sub> = (A + B) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> D = 10\n<br><br>So, Activation enthalpy to form C is 5 kJ mol<sup>-1</sup> more than\nthat to form D."
+    }
+  ]
+}

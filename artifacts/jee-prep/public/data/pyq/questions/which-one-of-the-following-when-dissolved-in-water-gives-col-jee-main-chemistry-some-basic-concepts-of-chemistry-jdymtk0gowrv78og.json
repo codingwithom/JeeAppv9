@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktb3tx4q",
+      "paperTitle": "JEE Main 2021 (Online) 26th August Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "properties-of-transition-elements",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-one-of-the-following-when-dissolved-in-water-gives-col-jee-main-chemistry-some-basic-concepts-of-chemistry-jdymtk0gowrv78og",
+      "content": "Which one of the following when dissolved in water gives coloured solution in nitrogen atmosphere?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "CuCl<sub>2</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "AgCl"
+        },
+        {
+          "identifier": "C",
+          "content": "ZnCl<sub>2</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "Cu<sub>2</sub>Cl<sub>2</sub>"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "(a) CuCl<sub>2</sub> + nH<sub>2</sub>O <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> Cu<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -1.207ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.459ex\" height=\"3.204ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -882.5 1529 1416\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msubsup\"><g data-mml-node=\"mi\"></g><g data-mml-node=\"TeXAtom\" transform=\"translate(33,411.6) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(778,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(33,-356.7) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"mi\" transform=\"translate(389,0)\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(918,0)\"><use data-c=\"1D45E\" xlink:href=\"#MJX-TEX-I-1D45E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1378,0)\"><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1656,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g></g></g></g></svg></mjx-container> (blue colour)<br><br>(b) AgCl + nH<sub>2</sub>O <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> Insoluble<br><br>(c) ZnCl<sub>2</sub> + nH<sub>2</sub>O <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> Zn<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -1.207ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.459ex\" height=\"3.204ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -882.5 1529 1416\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msubsup\"><g data-mml-node=\"mi\"></g><g data-mml-node=\"TeXAtom\" transform=\"translate(33,411.6) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(778,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(33,-356.7) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"mi\" transform=\"translate(389,0)\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(918,0)\"><use data-c=\"1D45E\" xlink:href=\"#MJX-TEX-I-1D45E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1378,0)\"><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1656,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g></g></g></g></svg></mjx-container> Colourless<br><br>(d) Cu<sub>2</sub>Cl<sub>2</sub> + nH<sub>2</sub>O <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> Insoluble"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "SeaEfsy2zg9A1eKiRe3rsa0w2w9jx55b0hl",
+      "paperTitle": "JEE Main 2019 (Online) 12th April Morning Slot",
+      "year": 2019,
+      "examDate": "2019-04-12 09:30",
+      "subject": "chemistry",
+      "chapter": "structure-of-atom",
+      "chapterGroup": "physical-chemistry",
+      "topic": "electronic-configuration-and-nodes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-group-number-number-of-valence-electrons-and-valency-o-jee-main-chemistry-structure-of-atom-zdjjq5daxsn0ycby",
+      "content": "The group number, number of valence electrons, and valency of an element with atomic number 15,\nrespectively, are:",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "16, 6 and 3\n"
+        },
+        {
+          "identifier": "B",
+          "content": "15, 6 and 12"
+        },
+        {
+          "identifier": "C",
+          "content": "16, 5 and 2"
+        },
+        {
+          "identifier": "D",
+          "content": "15, 5 and 3"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "P[15] = [Ne] 3s<sup>2</sup>3p<sup>3</sup>\n<br><br>Group number = 10 + valance shell electron = 10 + 5 = 15\n<br><br>number of valence electrons  = 5\n<br><br>Valency = 3"
+    }
+  ]
+}

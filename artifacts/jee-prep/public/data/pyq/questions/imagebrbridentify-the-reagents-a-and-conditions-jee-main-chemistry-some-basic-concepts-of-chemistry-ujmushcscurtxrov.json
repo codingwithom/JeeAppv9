@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "RE6l7z2cbCKAixju8T1kmiulz5l",
+      "paperTitle": "JEE Main 2021 (Online) 16th March Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "haloalkanes-and-haloarenes",
+      "chapterGroup": "organic-chemistry",
+      "topic": "haloalkanes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "imagebrbridentify-the-reagents-a-and-conditions-jee-main-chemistry-some-basic-concepts-of-chemistry-ujmushcscurtxrov",
+      "content": "<img src=\"https://imagex.cdn.examgoal.net/1kmiypc0p/843d7959-4286-41af-9083-0cd88b11ed23/693f4090-8a28-11eb-91cf-1f26b16dd4dd/file-1kmiypc0q.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 16th March Evening Shift Chemistry - Haloalkanes and Haloarenes Question 116 English\"><br>Identify the reagent(s) 'A' and condition(s) for the reaction",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "A = HCl, ZnCl<sub>2</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "A = HCl; Anhydrous AlCl<sub>3</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "A = Cl<sub>2</sub>; UV light"
+        },
+        {
+          "identifier": "D",
+          "content": "A = Cl<sub>2</sub>; dark, Anhydrous AlCl<sub>3</sub>"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1kn8gr0wy/0dd7a375-a39d-4629-95d1-f4a4dccb50c7/94d90420-982e-11eb-a02f-31d48fd393c0/file-1kn8gr0wz.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 16th March Evening Shift Chemistry - Haloalkanes and Haloarenes Question 116 English Explanation\">"
+    }
+  ]
+}

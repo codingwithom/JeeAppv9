@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "InQgxujNCfLRXCd2q91kmht4ltc",
+      "paperTitle": "JEE Main 2021 (Online) 16th March Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "inner-transition-elements-lanthanoids-and-actinoids",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "given-below-are-two-statements-brbrstatement-i--the-jee-main-chemistry-some-basic-concepts-of-chemistry-ltqoulj6u4ljkcna",
+      "content": "Given below are two statements :<br><br>Statement I : The E<sup>o</sup> value for Ce<sup>4+</sup> / Ce<sup>3+</sup> is + 1.74 V.<br><br>Statement II : Ce is more stable in Ce<sup>4+</sup> state than Ce<sup>3+</sup> state.<br><br>In the light of the above statements, choose the most appropriate answer from the options given below :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Statement I is incorrect but statement II is correct"
+        },
+        {
+          "identifier": "B",
+          "content": "Both statement I and statement II are correct"
+        },
+        {
+          "identifier": "C",
+          "content": "Both statement I and statement II are incorrect"
+        },
+        {
+          "identifier": "D",
+          "content": "Statement I is correct but statement II is incorrect"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Ce<sup>4+</sup> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.706ex\" height=\"3.1ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1359.2 1638 1370.2\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"REL\"><g data-mml-node=\"mover\"><g data-mml-node=\"mo\"><use data-c=\"27F6\" xlink:href=\"#MJX-TEX-N-27F6\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(430.4,711) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"1D452\" xlink:href=\"#MJX-TEX-I-1D452\"></use></g><g data-mml-node=\"mo\" transform=\"translate(499,363) scale(0.707)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></g></g></g></g></g></svg></mjx-container> Ce<sup>3+</sup>   E° = +1.74 V<br><br>\nPositive SRP and higher SRP means greater\noxidising power. So, Ce<sup>4+</sup> wants to reduce to Ce<sup>3+</sup>.\nIndicates Ce<sup>4+</sup> is less stable than Ce<sup>3+</sup>."
+    }
+  ]
+}

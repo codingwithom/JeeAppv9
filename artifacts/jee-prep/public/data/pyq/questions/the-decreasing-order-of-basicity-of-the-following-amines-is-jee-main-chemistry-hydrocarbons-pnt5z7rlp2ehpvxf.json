@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "J7XhJynYKhO6Kt8U3c7k9k2k5ll7yd1",
+      "paperTitle": "JEE Main 2020 (Online) 9th January Evening Slot",
+      "year": 2020,
+      "examDate": "2020-01-09 14:30",
+      "subject": "chemistry",
+      "chapter": "compounds-containing-nitrogen",
+      "chapterGroup": "organic-chemistry",
+      "topic": "aromatic-amines",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-decreasing-order-of-basicity-of-the-following-amines-is-jee-main-chemistry-hydrocarbons-pnt5z7rlp2ehpvxf",
+      "content": "The decreasing order of basicity of the\nfollowing amines is :\n<img src=\"https://imagex.cdn.examgoal.net/7k9k2k5ll5h4j/f0f813d8-5cbd-4b33-9ad3-d681e95f663d/16d65b40-3b0a-11ea-92dd-4b9c3519996f/file-7k9k2k5ll5h4k-222w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 9th January Evening Slot Chemistry - Compounds Containing Nitrogen Question 199 English 1\">\n<img src=\"https://imagex.cdn.examgoal.net/7k9k2k5ll5pel/51b40d18-0aac-4363-90b7-970c56d3562c/1d3b78d0-3b0a-11ea-92dd-4b9c3519996f/file-7k9k2k5ll5pem-204w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 9th January Evening Slot Chemistry - Compounds Containing Nitrogen Question 199 English 2\">\n<img src=\"https://imagex.cdn.examgoal.net/7k9k2k5ll5y4a/6374542a-3c1e-49ed-b4be-05c08960bb24/23f6a5a0-3b0a-11ea-92dd-4b9c3519996f/file-7k9k2k5ll5y4b-235w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 9th January Evening Slot Chemistry - Compounds Containing Nitrogen Question 199 English 3\">\n<img src=\"https://imagex.cdn.examgoal.net/7k9k2k5ll6aev/a6bb4f0a-5b28-4bed-adad-ef5bfb94289e/2d75d470-3b0a-11ea-92dd-4b9c3519996f/file-7k9k2k5ll6aew-211w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 9th January Evening Slot Chemistry - Compounds Containing Nitrogen Question 199 English 4\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(III) &gt; (II) &gt; (I) &gt; (IV)"
+        },
+        {
+          "identifier": "B",
+          "content": "(I) &gt; (III) &gt; (IV) &gt; (II)"
+        },
+        {
+          "identifier": "C",
+          "content": "(III) &gt; (I) &gt; (II) &gt; (IV)"
+        },
+        {
+          "identifier": "D",
+          "content": "(II) &gt; (III) &gt; (IV) &gt; (I)"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/7kd4dk5tv2i0d/b103ebe0-cb35-48d8-9384-0ba09b35f82d/249445d0-3f97-11ea-b62d-51ccc5d4afb6/file-7kd4dk5tv2i0e-452w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 9th January Evening Slot Chemistry - Compounds Containing Nitrogen Question 199 English Explanation\">\n<br><br>(III) Nitrogen lone pair not participate in resonance.\n<br><br>(II) Nitrogen lone pair not participate in resonance due to increase the stability of the compound.\n<br><br>(I) Nitrogen lone pair participate in resonance.\n<br><br>(IV)  Nitrogen lone pair participate in resonance and increase the stability of the compound due to aromicity."
+    }
+  ]
+}

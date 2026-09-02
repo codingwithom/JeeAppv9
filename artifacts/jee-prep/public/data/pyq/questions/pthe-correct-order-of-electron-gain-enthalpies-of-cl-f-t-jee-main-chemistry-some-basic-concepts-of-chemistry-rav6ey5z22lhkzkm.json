@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l59qpre3",
+      "paperTitle": "JEE Main 2022 (Online) 25th June Evening Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "electron-gain-enthalpy",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pthe-correct-order-of-electron-gain-enthalpies-of-cl-f-t-jee-main-chemistry-some-basic-concepts-of-chemistry-rav6ey5z22lhkzkm",
+      "content": "<p>The correct order of electron gain enthalpies of Cl, F, Te and Po is</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "F < Cl < Te < Po"
+        },
+        {
+          "identifier": "B",
+          "content": "Po < Te < F < Cl"
+        },
+        {
+          "identifier": "C",
+          "content": "Te < Po < Cl < F"
+        },
+        {
+          "identifier": "D",
+          "content": "Cl < F < Te < Po"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Te → –190 kJ mol<sup>–1</sup><br/><br/>\nPo → –174 kJ mol<sup>–1</sup><br/><br/>\nF → –333 kJ mol<sup>–1</sup><br/><br/>\nCl → –349 kJ mol<sup>–1</sup><br/><br/>\nHence, correct order is Cl > F > Te > Po"
+    }
+  ]
+}

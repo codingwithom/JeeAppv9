@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "ttW233XnNZepmqXNTrAx7",
+      "paperTitle": "JEE Main 2017 (Online) 9th April Morning Slot",
+      "year": 2017,
+      "examDate": "2017-04-09 09:30",
+      "subject": "chemistry",
+      "chapter": "alcohols-phenols-and-ethers",
+      "chapterGroup": "organic-chemistry",
+      "topic": "properties-preparation-and-uses-of-alcohols",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-increasing-order-of-the-boiling-points-for-the-following-jee-main-chemistry-some-basic-concepts-of-chemistry-abwnaesbxbqqrq9x",
+      "content": "The increasing order of the boiling points for the following compounds is :\n<br><br><img src=\"https://imagex.cdn.examgoal.net/wbaPdp51OdAWEH0Mr/WXDT64EA4dks2SCaHOqmlS6vAN9Td/Lq8pdtEpMVZzM3hpjvyBIS/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2017 (Online) 9th April Morning Slot Chemistry - Alcohols, Phenols and Ethers Question 156 English\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(III) &lt; (IV) &lt; (II) &lt; (I) "
+        },
+        {
+          "identifier": "B",
+          "content": "(IV) &lt; (III) &lt; (I) &lt; (II) "
+        },
+        {
+          "identifier": "C",
+          "content": "(II) &lt; (III) &lt; (IV) &lt; (I) "
+        },
+        {
+          "identifier": "D",
+          "content": "(III) &lt; (II) &lt; (I) &lt; (IV) "
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "B.P. <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 778 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"221D\" xlink:href=\"#MJX-TEX-N-221D\"></use></g></g></g></svg></mjx-container> dipole moment\n<br><br>(I) C<sub>2</sub>H<sub>5</sub>OH : Hydrogen bonding - Hydrogen bonding &gt; Dipole-Dipole\n<br><br>(II) C<sub>2</sub>H<sub>5</sub>Cl : Dipole-Dipole of C<sub>2</sub>H<sub>5</sub>Cl is more polar than C<sub>2</sub>H<sub>5</sub>OCH<sub>3</sub>\n <br>so,\nDipole-Dipole C<sub>2</sub>H<sub>5</sub>Cl &gt; Dipole-Dipole C<sub>2</sub>H<sub>5</sub>OCH<sub>3</sub>\n<br><br>(III) C<sub>2</sub>H<sub>5</sub>CH<sub>3</sub> : No hydrogen\nbonding and dipole-dipole interaction\n<br><br>(IV) C<sub>2</sub>H<sub>5</sub>OCH<sub>3</sub> : Dipole-Dipole\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> The increasing order of boiling points will be :\n<br><br>C<sub>2</sub>H<sub>5</sub>CH<sub>3</sub>\n &lt; C<sub>2</sub>H<sub>5</sub>OCH<sub>3</sub>\n &lt; C<sub>2</sub>H<sub>5</sub>Cl &lt; C<sub>2</sub>H<sub>5</sub>OH\n"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1lh329qjt",
+      "paperTitle": "JEE Main 2023 (Online) 6th April Evening Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "nomenclature-of-coordination-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pthe-iupac-name-of-mathrmk3leftmathrmcoleft-jee-main-chemistry-some-basic-concepts-of-chemistry-fa94ztcojlmmjh5o",
+      "content": "<p>The IUPAC name of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.681ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"15.264ex\" height=\"2.378ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 6746.9 1050.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"4B\" xlink:href=\"#MJX-TEX-N-4B\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(811,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g><g data-mml-node=\"mrow\" transform=\"translate(1381.2,0)\"><g data-mml-node=\"mo\"><use data-c=\"5B\" xlink:href=\"#MJX-TEX-N-5B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(278,0)\"><g data-mml-node=\"mi\"><use data-c=\"43\" xlink:href=\"#MJX-TEX-N-43\"></use><use data-c=\"6F\" xlink:href=\"#MJX-TEX-N-6F\" transform=\"translate(722,0)\"></use></g></g><g data-mml-node=\"msub\" transform=\"translate(1500,0)\"><g data-mml-node=\"mrow\"><g data-mml-node=\"mo\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"msub\" transform=\"translate(389,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"43\" xlink:href=\"#MJX-TEX-N-43\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(755,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"msub\" transform=\"translate(1547.6,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(811,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(2762.1,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(3184.1,-285.4) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(5087.7,0)\"><use data-c=\"5D\" xlink:href=\"#MJX-TEX-N-5D\"></use></g></g></g></g></svg></mjx-container> is:-</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Potassium tris(oxalato)cobalt(III)"
+        },
+        {
+          "identifier": "B",
+          "content": "Potassium tris(oxalato)cobaltate(III)"
+        },
+        {
+          "identifier": "C",
+          "content": "Potassium trioxalatocobaltate(III)"
+        },
+        {
+          "identifier": "D",
+          "content": "Potassium trioxalatocobalt(III)"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<p>To determine the IUPAC name of the compound K₃[Co(C₂O₄)₃], let's follow the nomenclature rules for coordination compounds:</p>\n\n<p><p><strong>Identify the Cation and Anion</strong>: The compound consists of potassium ions (K⁺) and a complex anion [Co(C₂O₄)₃]³⁻.</p></p>\n<p><p><strong>Name the Cation First</strong>: The cation is named first. So, we start with \"Potassium.\"</p></p>\n<p><p><strong>Determine the Ligand Name</strong>: The ligand C₂O₄²⁻ is called \"oxalato.\"</p></p>\n<p><p><strong>Count the Number of Ligands</strong>: There are three oxalato ligands. Since \"oxalato\" does not contain any numerical prefixes (like di-, tri-), we use the prefixes \"di-\", \"tri-\", etc., for simple ligands. So, we use \"trioxalato.\"</p></p>\n<p><p><strong>Name the Central Metal Atom</strong>: Since the complex ion is an anion, the metal name ends with the suffix \"-ate.\" Therefore, \"cobalt\" becomes \"cobaltate.\"</p></p>\n<p><p><strong>Specify the Oxidation State</strong>: The oxidation state of cobalt in this complex can be calculated:</p></p>\n\n\n<p><p>Let the oxidation state of Co be x.</p></p>\n<p><p>Each oxalato ligand has a charge of -2.</p></p>\n<p><p>The overall charge of the complex ion is -3.</p>\n<p>So, x + 3(-2) = -3 ⇒ x -6 = -3 ⇒ x = +3.</p>\n<p>Therefore, we indicate the oxidation state as (III).</p></p>\n\n<p>Combining all these, the IUPAC name is <strong>Potassium trioxalatocobaltate(III)</strong>.</p>\n<p><strong>Answer:</strong> Option C</p>\n<p>Potassium trioxalatocobaltate(III)</p>"
+    }
+  ]
+}

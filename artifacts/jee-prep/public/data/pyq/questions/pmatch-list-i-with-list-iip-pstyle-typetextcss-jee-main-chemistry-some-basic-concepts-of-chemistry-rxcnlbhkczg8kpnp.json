@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ldojeb80",
+      "paperTitle": "JEE Main 2023 (Online) 1st February Morning Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "carbohydrates",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pmatch-list-i-with-list-iip-pstyle-typetextcss-jee-main-chemistry-some-basic-concepts-of-chemistry-rxcnlbhkczg8kpnp",
+      "content": "<p>Match List I with List II</p>\n<p>\n<table class=\"tg\" style=\"undefined;table-layout: fixed; width: 596px\">\n<colgroup>\n<col style=\"width: 51px\">\n<col style=\"width: 226px\">\n<col style=\"width: 46px\">\n<col style=\"width: 273px\">\n</colgroup>\n<thead>\n  <tr>\n    <th class=\"tg-7btt\"></th>\n    <th class=\"tg-7btt\">List I</th>\n    <th class=\"tg-7btt\"></th>\n    <th class=\"tg-7btt\">List II</th>\n  </tr>\n</thead>\n<tbody>\n  <tr>\n    <td class=\"tg-amwm\"></td>\n    <td class=\"tg-amwm\">Test</td>\n    <td class=\"tg-amwm\"></td>\n    <td class=\"tg-amwm\">Functional group / Class of Compound</td>\n  </tr>\n  <tr>\n    <td class=\"tg-0pky\">A.</td>\n    <td class=\"tg-0pky\">Molisch's Test</td>\n    <td class=\"tg-0pky\">I.</td>\n    <td class=\"tg-0pky\">Peptide</td>\n  </tr>\n  <tr>\n    <td class=\"tg-0pky\">B.</td>\n    <td class=\"tg-0pky\">Biuret Test</td>\n    <td class=\"tg-0pky\">II.</td>\n    <td class=\"tg-0pky\">Carbohydrate</td>\n  </tr>\n  <tr>\n    <td class=\"tg-0pky\">C.</td>\n    <td class=\"tg-0pky\">Carbylamine Test</td>\n    <td class=\"tg-0pky\">III.</td>\n    <td class=\"tg-0pky\">Primary amine</td>\n  </tr>\n  <tr>\n    <td class=\"tg-0pky\">D.</td>\n    <td class=\"tg-0pky\">Schiff's Test</td>\n    <td class=\"tg-0pky\">IV.</td>\n    <td class=\"tg-0pky\">Aldehyde</td>\n  </tr>\n</tbody>\n</table></p>\n<p>Choose the correct answer from the options given below :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(A) - III, (B) - IV, (C) - II, (D) - I"
+        },
+        {
+          "identifier": "B",
+          "content": "(A) - II, (B) - I, (C) - III, (D) - IV"
+        },
+        {
+          "identifier": "C",
+          "content": "(A) - III, (B) - IV, (C) - I, (D) - II"
+        },
+        {
+          "identifier": "D",
+          "content": "(A) - I, (B) - II, (C) - III, (D) - IV"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "(A) Molisch test is for carbohydrates\n<br/><br/>(B) Biuret test is for proteins/peptide\n<br/><br/>(C) Carbylamine test is for primary amine\n<br/><br/>(D) Schiff’s test is for aldehyde"
+    }
+  ]
+}

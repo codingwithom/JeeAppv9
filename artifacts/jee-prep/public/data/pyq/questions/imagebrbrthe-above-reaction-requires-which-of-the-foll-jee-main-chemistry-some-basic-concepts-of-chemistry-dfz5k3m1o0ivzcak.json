@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "kEoWBrlhNKzQ3BMs6p1kmj79kkb",
+      "paperTitle": "JEE Main 2021 (Online) 17th March Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "haloalkanes-and-haloarenes",
+      "chapterGroup": "organic-chemistry",
+      "topic": "haloarenes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "imagebrbrthe-above-reaction-requires-which-of-the-foll-jee-main-chemistry-some-basic-concepts-of-chemistry-dfz5k3m1o0ivzcak",
+      "content": "<img src=\"https://imagex.cdn.examgoal.net/1kmk31dz9/f35da52f-2291-439f-9057-e3cd2108746a/25a30350-8ac6-11eb-a550-a93c57882a34/file-1kmk31dza.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 17th March Morning Shift Chemistry - Haloalkanes and Haloarenes Question 114 English\"><br>The above reaction requires which of the following reaction conditions?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "623 K, Cu, 300 atm"
+        },
+        {
+          "identifier": "B",
+          "content": "623 K, 300 atm"
+        },
+        {
+          "identifier": "C",
+          "content": "573 K, 300 atm"
+        },
+        {
+          "identifier": "D",
+          "content": "573 K, Cu, 300 atm"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Chlorobenzene is fused with NaOH at 623 K and\n300 atmospheric pressure to get sodium\nphenoxide.<br><br><img src=\"https://imagex.cdn.examgoal.net/1kn1y1quz/85d40d22-ec88-4c3a-818e-564e3a81b491/bda180b0-9498-11eb-a011-9b3eb6f542eb/file-1kn1y1qv0.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 17th March Morning Shift Chemistry - Haloalkanes and Haloarenes Question 114 English Explanation\">"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "YI1Q93xc7vo703P9rj1kk0sis8v",
+      "paperTitle": "JEE Advanced 2020 Paper 2 Offline",
+      "year": 2020,
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "ionization-energy",
+      "type": "integer",
+      "marks": 3,
+      "negMarks": 1,
+      "permalink": "the-1st-2nd-and-3rd-ionisation-enthalpies-isub1sub-i-jee-advanced-chemistry-some-basic-concepts-of-chemistry-2llr7iqk8ezuiaf1",
+      "content": "The 1st, 2nd and 3rd ionisation enthalpies, I<sub>1</sub>, I<sub>2</sub> and I<sub>3</sub>, of four atoms with atomic numbers n, n + 1, n + 2, and n + 3, where n &lt; 10, are tabulated below. What is the value of n?<br><br><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1lf44lr1c/8eeb9789-06ff-4cce-a14a-f8cd59a36589/00a22200-c022-11ed-b552-e7a88d45dbe9/file-1lf44lr1d.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1lf44lr1c/8eeb9789-06ff-4cce-a14a-f8cd59a36589/00a22200-c022-11ed-b552-e7a88d45dbe9/file-1lf44lr1d.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Advanced 2020 Paper 2 Offline Chemistry - Periodic Table &amp; Periodicity Question 2 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1lf44lr1c/8eeb9789-06ff-4cce-a14a-f8cd59a36589/00a22200-c022-11ed-b552-e7a88d45dbe9/file-1lf44lr1d.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1lf44lr1c/8eeb9789-06ff-4cce-a14a-f8cd59a36589/00a22200-c022-11ed-b552-e7a88d45dbe9/file-1lf44lr1d.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1lf44lr1c/8eeb9789-06ff-4cce-a14a-f8cd59a36589/00a22200-c022-11ed-b552-e7a88d45dbe9/file-1lf44lr1d.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1lf44lr1c/8eeb9789-06ff-4cce-a14a-f8cd59a36589/00a22200-c022-11ed-b552-e7a88d45dbe9/file-1lf44lr1d.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1lf44lr1c/8eeb9789-06ff-4cce-a14a-f8cd59a36589/00a22200-c022-11ed-b552-e7a88d45dbe9/file-1lf44lr1d.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1lf44lr1c/8eeb9789-06ff-4cce-a14a-f8cd59a36589/00a22200-c022-11ed-b552-e7a88d45dbe9/file-1lf44lr1d.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">",
+      "options": [],
+      "correct_options": [],
+      "explanation": "By observing the values of different ionisation energies, I<sub>1</sub>, I<sub>2</sub> and I<sub>3</sub> for <br>atomic number (n + 2), it is observed that there is very large difference between the second ionisation energy and first ionisation energy (I<sub>2</sub> &gt;&gt; I<sub>1</sub>).<br><br>This indicates that number of valence shell electrons is 1 and atomic number (n + 2) should be an alkali metal.<br><br>Also for atomic number (n + 3), I<sub>3</sub> &gt;&gt; I<sub>2</sub>. This indicates that it will be an alkaline earth metal which suggests that atomic number (n + 1) should be a noble gas and atomic number (n) should belong to halogen family. Since, n &lt; 10; hence, n = 9 (F atom)"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "lQ3SCNbx9Fdlsguz0u7k9k2k5ephcwc",
+      "paperTitle": "JEE Main 2020 (Online) 7th January Evening Slot",
+      "year": 2020,
+      "examDate": "2020-01-07 14:30",
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "isomerism-of-coordination-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-number-of-possible-optical-isomers-for-the-complexes-ma-jee-main-chemistry-analytical-chemistry-c7whuxsuunukbz1z",
+      "content": "The number of possible optical isomers for the complexes MA<sub>2</sub>B<sub>2</sub> with sp<sup>3</sup> and dsp<sup>2</sup> hydridized metal atom. respectively, is :<br>\nNote : A and B are unidentate netural and unidentate monoanionic ligands, respectively.",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "0 and 2\n"
+        },
+        {
+          "identifier": "B",
+          "content": "0 and 0"
+        },
+        {
+          "identifier": "C",
+          "content": "0 and 1"
+        },
+        {
+          "identifier": "D",
+          "content": "2 and 2"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "(a) If the complex MA<sub>2</sub>B<sub>2</sub> is sp<sup>3</sup> hybridised then\nthe shape of this complex is tetrahedral this\nstructure is opticaly inactive due to the presence\nof plane of symmetry.\n<img src=\"https://imagex.cdn.examgoal.net/7kd4dk6ema0a1/fe9d0912-ccca-4972-9f59-72bc96d17c07/38d49d90-4b01-11ea-b62d-51ccc5d4afb6/file-7kd4dk6ema0a2-163w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 7th January Evening Slot Chemistry - Coordination Compounds Question 274 English Explanation 1\">\n<br><br>(b) If the complex MA<sub>2</sub>B<sub>2</sub> is dsp<sup>2</sup> hybridised then\nthe shape of this complex is square planar.\n<img src=\"https://imagex.cdn.examgoal.net/7kd4dk6emdcg6/153a6079-8612-40a6-a539-862ada535ec4/95a8ce60-4b01-11ea-b62d-51ccc5d4afb6/file-7kd4dk6emdcg7-320w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 7th January Evening Slot Chemistry - Coordination Compounds Question 274 English Explanation 2\">\n<br>Both isomers are optically inactive due to the\npresence of plane of symmetry.\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> Total number of optical isomer is zero in both\nthe cases."
+    }
+  ]
+}

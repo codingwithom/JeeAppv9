@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "CIDo9xfVAgZpEMJJ3Ijgy2xukf2c6lux",
+      "paperTitle": "JEE Main 2020 (Online) 3rd September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-03 09:00",
+      "subject": "chemistry",
+      "chapter": "haloalkanes-and-haloarenes",
+      "chapterGroup": "organic-chemistry",
+      "topic": "haloalkanes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-mechanism-of-ssubnsub1-reaction-is-given-as--pict-jee-main-chemistry-basics-of-organic-chemistry-qtjv43gykuxzoap9",
+      "content": "The mechanism of S<sub>N</sub>1 reaction is given as :\n<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jgy2xukf2c26v4/52150467-7408-4060-bdda-9187b9213c61/cec55b10-f66d-11ea-8293-3b6cc591631c/file-jgy2xukf2c26v5-320w.png\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/jgy2xukf2c26v4/52150467-7408-4060-bdda-9187b9213c61/cec55b10-f66d-11ea-8293-3b6cc591631c/file-jgy2xukf2c26v5-500w.png\"><img src=\"https://imagex.cdn.examgoal.net/jgy2xukf2c26v4/52150467-7408-4060-bdda-9187b9213c61/cec55b10-f66d-11ea-8293-3b6cc591631c/file-jgy2xukf2c26v5-680w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 3rd September Morning Slot Chemistry - Haloalkanes and Haloarenes Question 131 English\"></picture>\n<br>A student writes general characteristics based\non the given mechanism as :\n<br>(a) The reaction is favoured by weak\nnucleophiles.\n<br>(b) R<sup>+</sup> would be easily formed if the\nsubstituents are bulky.\n<br>(c) The reaction is accompanied by\nracemization.\n<br>(d) The reaction is favoured by non-polar\nsolvents.",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(a) and (b)"
+        },
+        {
+          "identifier": "B",
+          "content": "(a), (b) and (c)"
+        },
+        {
+          "identifier": "C",
+          "content": "(a) and (c)"
+        },
+        {
+          "identifier": "D",
+          "content": "(b) and (d)"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "S<sub>N</sub>1 favours\n\n<br><br>(a) The reaction is favoured by weak nucleophiles\n<br><br>(b) R<sup>+</sup> would be easily formed if the substituents are bulky <br><br>(c) The reaction is accoumpained by racemization"
+    }
+  ]
+}

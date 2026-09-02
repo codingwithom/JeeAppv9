@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l5bda415",
+      "paperTitle": "JEE Main 2022 (Online) 24th June Evening Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "p-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "group-15-elements-nitrogen-family",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pclsub5sub-is-well-known-but-nclsub5sub-is-not-b-jee-main-chemistry-some-basic-concepts-of-chemistry-obxjoditcutpwskr",
+      "content": "PCl<sub>5</sub> is well known, but NCl<sub>5</sub> is not. because,",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "nitrogen is less reactive than phosphorus."
+        },
+        {
+          "identifier": "B",
+          "content": "nitrogen doesn't have d-orbitals in its valence shell."
+        },
+        {
+          "identifier": "C",
+          "content": "catenation tendency is weaker in nitrogen than phosphorus."
+        },
+        {
+          "identifier": "D",
+          "content": "size of phosphorus is larger than nitrogen."
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.375ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.791ex\" height=\"1.97ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 2117.6 870.6\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"50\" xlink:href=\"#MJX-TEX-N-50\"></use><use data-c=\"43\" xlink:href=\"#MJX-TEX-N-43\" transform=\"translate(681,0)\"></use><use data-c=\"6C\" xlink:href=\"#MJX-TEX-N-6C\" transform=\"translate(1403,0)\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1714,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use></g></g></g></g></g></svg></mjx-container> is well known but <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.375ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.947ex\" height=\"1.97ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 2186.6 870.6\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"4E\" xlink:href=\"#MJX-TEX-N-4E\"></use><use data-c=\"43\" xlink:href=\"#MJX-TEX-N-43\" transform=\"translate(750,0)\"></use><use data-c=\"6C\" xlink:href=\"#MJX-TEX-N-6C\" transform=\"translate(1472,0)\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1783,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use></g></g></g></g></g></svg></mjx-container> is not because nitrogen does not have vacant d-orbitals in its valence shell.<br><br> So, nitrogen cannot expand its octet. On the other hand, phosphorus has vacant <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.258ex\" height=\"1.595ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 556 705\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"64\" xlink:href=\"#MJX-TEX-N-64\"></use></g></g></g></g></svg></mjx-container>-orbitals in its valence shell which enables it to expand its octet."
+    }
+  ]
+}

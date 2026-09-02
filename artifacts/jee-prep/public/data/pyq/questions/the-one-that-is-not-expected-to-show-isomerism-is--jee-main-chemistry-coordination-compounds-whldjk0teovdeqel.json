@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "mfJx94Bp9k9spINXJMjgy2xukeyfafid",
+      "paperTitle": "JEE Main 2020 (Online) 2nd September Evening Slot",
+      "year": 2020,
+      "examDate": "2020-09-02 15:00",
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "isomerism-of-coordination-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-one-that-is-not-expected-to-show-isomerism-is--jee-main-chemistry-coordination-compounds-whldjk0teovdeqel",
+      "content": "The one that is not expected to show isomerism\nis :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "[Pt(NH<sub>3</sub>)<sub>2</sub>Cl<sub>2</sub>]"
+        },
+        {
+          "identifier": "B",
+          "content": "[Ni(NH<sub>3</sub>)<sub>4</sub>(H<sub>2</sub>O)<sub>2</sub>]<sup>2+</sup>\n"
+        },
+        {
+          "identifier": "C",
+          "content": "[Ni(en)<sub>3</sub>]<sup>2+</sup>"
+        },
+        {
+          "identifier": "D",
+          "content": "[Ni(NH<sub>3</sub>)<sub>2</sub>Cl<sub>2</sub>]"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "[Pt(NH<sub>3</sub>)<sub>2</sub>Cl<sub>2</sub>] is dsp<sup>2</sup> hybridisation and shows geometrical\nisomerism.\n<br><br>[Ni(NH<sub>3</sub>)<sub>4</sub>(H<sub>2</sub>O)<sub>2</sub>]<sup>2+</sup> is  Octahedral, show\ngeometrical isomerism.\n<br><br>[Ni(en)<sub>3</sub>]<sup>2+</sup> is Octahedral and shows optical\nisomerism.\n<br><br>[Ni(NH<sub>3</sub>)<sub>2</sub>Cl<sub>2</sub>] is sp<sup>3</sup> hybridisation and tetrahedral complex, therefore does not show geometrical and optical isomerism and structural isomerism.\n<br><br>"
+    }
+  ]
+}

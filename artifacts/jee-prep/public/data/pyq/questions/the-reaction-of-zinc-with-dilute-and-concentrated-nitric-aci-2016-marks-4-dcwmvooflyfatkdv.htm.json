@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "dcWMvOofLYfatKDV",
+      "paperTitle": "JEE Main 2016 (Offline)",
+      "year": 2016,
+      "examDate": null,
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "properties-of-transition-elements",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-reaction-of-zinc-with-dilute-and-concentrated-nitric-aci-2016-marks-4-dcwmvooflyfatkdv.htm",
+      "content": "The reaction of zinc with dilute and concentrated nitric acid, respectively, produces :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "NO<sub>2</sub> and NO"
+        },
+        {
+          "identifier": "B",
+          "content": "NO and N<sub>2</sub>O"
+        },
+        {
+          "identifier": "C",
+          "content": "NO<sub>2</sub> and N<sub>2</sub>O"
+        },
+        {
+          "identifier": "D",
+          "content": "N<sub>2</sub>O and NO<sub>2</sub>"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<img class=\"question-image\" src=\"https://imagex.cdn.examgoal.net/LUedS81yFzwvRdWT2/txa4ToPKzBQO0xn9ERoMvPleQhYb7/iXDu0q5Y97ra22MlhACIGK/image.png\" loading=\"lazy\" alt=\"JEE Main 2016 (Offline) Chemistry - d and f Block Elements Question 240 English Explanation\"> "
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1krrj1xj7",
+      "paperTitle": "JEE Main 2021 (Online) 20th July Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "salt-analysis",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "systematic-analysis-of-cations",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "cusup2sup-salt-reacts-with-potassium-iodide-to-give-jee-main-chemistry-some-basic-concepts-of-chemistry-owq1g4rc1vbf3xrl",
+      "content": "Cu<sup>2+</sup> salt reacts with potassium iodide to give",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Cu<sub>2</sub>I<sub>2</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "Cu<sub>2</sub>I<sub>3</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "Cul"
+        },
+        {
+          "identifier": "D",
+          "content": "Cu(I<sub>3</sub>)<sub>2</sub>"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<p>When a copper(II) salt (containing Cu²⁺) is treated with potassium iodide (KI), the cupric ions (Cu²⁺) are reduced to copper(I) (Cu⁺), and iodine (I₂) is released. The <strong>solid product</strong> formed in the reaction is <strong>copper(I) iodide</strong>, <strong>CuI</strong>.</p>\n<p>The simplified reaction is:</p>\n<p><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.532ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"32.267ex\" height=\"2.677ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -948 14261.9 1183.3\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msup\"><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\">2 Cu</text></g><g data-mml-node=\"TeXAtom\" transform=\"translate(2433,477.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(3608.9,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(4609.1,0)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g><g data-mml-node=\"msup\" transform=\"translate(5109.1,0)\"><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\">I</text></g><g data-mml-node=\"TeXAtom\" transform=\"translate(633,477.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g><g data-mml-node=\"mspace\" transform=\"translate(6342.3,0)\"></g><g data-mml-node=\"mo\" transform=\"translate(6898,0)\"><use data-c=\"27F6\" xlink:href=\"#MJX-TEX-N-27F6\"></use></g><g data-mml-node=\"mspace\" transform=\"translate(8536,0)\"></g><g data-mml-node=\"mn\" transform=\"translate(9091.8,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mspace\" transform=\"translate(9591.8,0)\"></g><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\" transform=\"translate(9758.8,0)\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\">CuI</text></g><g data-mml-node=\"mspace\" transform=\"translate(11558.8,0)\"></g><g data-mml-node=\"mo\" transform=\"translate(11669.6,0)\"><use data-c=\"2193\" xlink:href=\"#MJX-TEX-N-2193\"></use></g><g data-mml-node=\"mo\" transform=\"translate(12447.4,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"msub\" transform=\"translate(13225.4,0)\"><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\">I</text></g><g data-mml-node=\"TeXAtom\" transform=\"translate(633,-235.4) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></g></svg></mjx-container></p>\n<p>So, the correct answer is:</p>\n<p><strong>Option C: CuI</strong>.</p>"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "vdQzSMKy5Al82WwiLQ3rsa0w2w9jx926uap",
+      "paperTitle": "JEE Main 2019 (Online) 12th April Evening Slot",
+      "year": 2019,
+      "examDate": "2019-04-12 14:30",
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "ionization-energy",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "in-comparison-to-boron-berylium-has--jee-main-chemistry-periodic-table-and-periodicity-7ckmcpvotxxpg0sv",
+      "content": "In comparison to boron, berylium has :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "lesser nuclear charge and greater first ionisation enthalpy"
+        },
+        {
+          "identifier": "B",
+          "content": "greater nuclear charge and greater first ionisation enthalpy"
+        },
+        {
+          "identifier": "C",
+          "content": "greater nuclear charge and lesser first ionisation enthalpy"
+        },
+        {
+          "identifier": "D",
+          "content": "lesser nuclear charge and lesser first ionisation ethalpy"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Electronic configuration of Be(4) = 1s<sup>2</sup>2s<sup>2</sup>\n<br>Electronic configuration of B(5) = 1s<sup>2</sup>2s<sup>2</sup>2p<sup>1</sup>\n<br><br>Removing electron from outer most shell of Be is harder compare to B, as for Be 2s orbital is full filled so it is stable therefore required more ionization enthalpy to remove an electron.\n<br>We know in a period from left to righ effective nuclear charge increases, so B will have more nuclear charge."
+    }
+  ]
+}

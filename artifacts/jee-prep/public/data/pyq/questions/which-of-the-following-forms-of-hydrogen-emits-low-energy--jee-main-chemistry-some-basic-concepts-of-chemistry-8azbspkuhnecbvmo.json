@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "vDX7OsXHrWn9ljlgAM1klurwqgo",
+      "paperTitle": "JEE Main 2021 (Online) 26th February Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "structure-of-atom",
+      "chapterGroup": "physical-chemistry",
+      "topic": "bohrs-model-for-hydrogen-atom",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-forms-of-hydrogen-emits-low-energy--jee-main-chemistry-some-basic-concepts-of-chemistry-8azbspkuhnecbvmo",
+      "content": "Which of the following forms of hydrogen emits low energy <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.439ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.296ex\" height=\"2.034ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 573 899\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D6FD\" xlink:href=\"#MJX-TEX-I-1D6FD\"></use></g></g></g></svg></mjx-container><sup>-</sup> particles?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Tritium <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.673ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"0.988ex\" height=\"2.572ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -839.4 436.6 1136.7\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msubsup\"><g data-mml-node=\"mi\"></g><g data-mml-node=\"mn\" transform=\"translate(33,369.2) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g><g data-mml-node=\"mn\" transform=\"translate(33,-297.3) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g></g></svg></mjx-container>H"
+        },
+        {
+          "identifier": "B",
+          "content": "Proton H<sup>+</sup>"
+        },
+        {
+          "identifier": "C",
+          "content": "Protium <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.651ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"0.988ex\" height=\"2.538ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -833.9 436.6 1121.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msubsup\"><g data-mml-node=\"mi\"></g><g data-mml-node=\"mn\" transform=\"translate(33,363) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mn\" transform=\"translate(33,-287.9) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g></g></svg></mjx-container>H"
+        },
+        {
+          "identifier": "D",
+          "content": "Deuterium <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.651ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"0.988ex\" height=\"2.538ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -833.9 436.6 1121.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msubsup\"><g data-mml-node=\"mi\"></g><g data-mml-node=\"mn\" transform=\"translate(33,363) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mn\" transform=\"translate(33,-287.9) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g></g></svg></mjx-container>H"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Tritium isotope of hydrogen is radioactive and emits low energy <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.439ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.843ex\" height=\"2.193ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -775.2 1256.5 969.2\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"1D6FD\" xlink:href=\"#MJX-TEX-I-1D6FD\"></use></g><g data-mml-node=\"mo\" transform=\"translate(656.4,363) scale(0.707)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></g></svg></mjx-container> particles. It is because of high n/p ratio of tritium which makes nucleus unstable."
+    }
+  ]
+}

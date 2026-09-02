@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "qQs8g3YGZrpLu4Wo2eSO2",
+      "paperTitle": "JEE Main 2019 (Online) 9th January Evening Slot",
+      "year": 2019,
+      "examDate": "2019-01-09 14:30",
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "properties-of-transition-elements",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-transition-element-that-has-lowest-enthalpy-of-atomisati-jee-main-chemistry-some-basic-concepts-of-chemistry-84zcq5kipucdzibw",
+      "content": "The transition element that has lowest enthalpy of atomisation, is : ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Fe"
+        },
+        {
+          "identifier": "B",
+          "content": "Cu"
+        },
+        {
+          "identifier": "C",
+          "content": "V"
+        },
+        {
+          "identifier": "D",
+          "content": "Zn"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Since Zn is not a transition element so transition element having lowest atomisation energy out of Cu, V, Fe is Cu."
+    }
+  ]
+}

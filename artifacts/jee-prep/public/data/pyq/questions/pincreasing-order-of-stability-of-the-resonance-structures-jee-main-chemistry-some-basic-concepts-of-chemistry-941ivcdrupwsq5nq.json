@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ldyh2v2q",
+      "paperTitle": "JEE Main 2023 (Online) 24th January Morning Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "compounds-containing-nitrogen",
+      "chapterGroup": "organic-chemistry",
+      "topic": "aliphatic-amines",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pincreasing-order-of-stability-of-the-resonance-structures-jee-main-chemistry-some-basic-concepts-of-chemistry-941ivcdrupwsq5nq",
+      "content": "<p>Increasing order of stability of the resonance structures is :</p>\n<p><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1le04tsrj/acfdbcff-be0b-4e5c-a108-e3ef46fa9503/8676e6f0-aa23-11ed-941f-c1fe7282a96c/file-1le04tsrk.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1le04tsrj/acfdbcff-be0b-4e5c-a108-e3ef46fa9503/8676e6f0-aa23-11ed-941f-c1fe7282a96c/file-1le04tsrk.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2023 (Online) 24th January Morning Shift Chemistry - Compounds Containing Nitrogen Question 93 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1le04tsrj/acfdbcff-be0b-4e5c-a108-e3ef46fa9503/8676e6f0-aa23-11ed-941f-c1fe7282a96c/file-1le04tsrk.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1le04tsrj/acfdbcff-be0b-4e5c-a108-e3ef46fa9503/8676e6f0-aa23-11ed-941f-c1fe7282a96c/file-1le04tsrk.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1le04tsrj/acfdbcff-be0b-4e5c-a108-e3ef46fa9503/8676e6f0-aa23-11ed-941f-c1fe7282a96c/file-1le04tsrk.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1le04tsrj/acfdbcff-be0b-4e5c-a108-e3ef46fa9503/8676e6f0-aa23-11ed-941f-c1fe7282a96c/file-1le04tsrk.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1le04tsrj/acfdbcff-be0b-4e5c-a108-e3ef46fa9503/8676e6f0-aa23-11ed-941f-c1fe7282a96c/file-1le04tsrk.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1le04tsrj/acfdbcff-be0b-4e5c-a108-e3ef46fa9503/8676e6f0-aa23-11ed-941f-c1fe7282a96c/file-1le04tsrk.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"></p>\n<p>Choose the correct answer from the options given below :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "D, C, B, A"
+        },
+        {
+          "identifier": "B",
+          "content": "C, D, B, A"
+        },
+        {
+          "identifier": "C",
+          "content": "C, A, B, D "
+        },
+        {
+          "identifier": "D",
+          "content": "D, C, A, B"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Correct stabilising order is <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"16.058ex\" height=\"1.71ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 7097.7 756\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1037.8,0)\"><use data-c=\"3C\" xlink:href=\"#MJX-TEX-N-3C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2093.6,0)\"><use data-c=\"1D434\" xlink:href=\"#MJX-TEX-I-1D434\"></use></g><g data-mml-node=\"mo\" transform=\"translate(3121.3,0)\"><use data-c=\"3C\" xlink:href=\"#MJX-TEX-N-3C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(4177.1,0)\"><use data-c=\"1D435\" xlink:href=\"#MJX-TEX-I-1D435\"></use></g><g data-mml-node=\"mo\" transform=\"translate(5213.9,0)\"><use data-c=\"3C\" xlink:href=\"#MJX-TEX-N-3C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(6269.7,0)\"><use data-c=\"1D437\" xlink:href=\"#MJX-TEX-I-1D437\"></use></g></g></g></svg></mjx-container>"
+    }
+  ]
+}

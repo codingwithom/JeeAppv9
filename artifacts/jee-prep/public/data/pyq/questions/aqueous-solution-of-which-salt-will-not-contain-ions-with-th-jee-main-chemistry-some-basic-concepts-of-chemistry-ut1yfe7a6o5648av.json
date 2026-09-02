@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "pmp5nPrrzoRq1nDAYsV10",
+      "paperTitle": "JEE Main 2016 (Online) 10th April Morning Slot",
+      "year": 2016,
+      "examDate": "2016-04-10 09:30",
+      "subject": "chemistry",
+      "chapter": "p-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "group-17-elements-halogen-family",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "aqueous-solution-of-which-salt-will-not-contain-ions-with-th-jee-main-chemistry-some-basic-concepts-of-chemistry-ut1yfe7a6o5648av",
+      "content": "Aqueous solution of which salt will not contain ions with the electronic\nconfiguration 1s<sup>2</sup>2s<sup>2</sup>2p<sup>6</sup>3s<sup>2</sup>3p<sup>6</sup> ?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "NaF"
+        },
+        {
+          "identifier": "B",
+          "content": "NaCl"
+        },
+        {
+          "identifier": "C",
+          "content": "KBr"
+        },
+        {
+          "identifier": "D",
+          "content": "CaI<sub>2</sub>"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "NaF is composed of Na<sup>+</sup>\n and F<sup>–</sup>.\n<br><br>Na<sup>+</sup> : 1s<sup>2</sup>2s<sup>2</sup>2p<sup>6</sup>\n<br><br>F<sup>-</sup> : 1s<sup>2</sup>2s<sup>2</sup>2p<sup>6</sup>\n<br><br>Hence do not match with the configuration given in the question."
+    }
+  ]
+}

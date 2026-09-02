@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "28SJsWQzIl0segT6FGpWu",
+      "paperTitle": "JEE Main 2019 (Online) 11th January Morning Slot",
+      "year": 2019,
+      "examDate": "2019-01-11 09:30",
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "application-of-coordination-compound-and-organometallic-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "match-the-metals-column-i-with-the-coordination-compounds-jee-main-chemistry-some-basic-concepts-of-chemistry-onslkuayfjz7vhs2",
+      "content": "Match the metals (column I) with the coordination compound(s)/enzyme(s) (column II) \n<br><br>\n<table class=\"tg\">\n  <tbody><tr>\n    <th class=\"tg-nhda\" colspan=\"2\">(Column I) Metals<br></th>\n    <th class=\"tg-9d8n\" colspan=\"2\">(Column II) Coordination <br>compounds(s) enzyme(s)<br></th>\n  </tr>\n  <tr>\n    <td class=\"tg-c4o0\">(A)</td>\n    <td class=\"tg-nhda\">Co</td>\n    <td class=\"tg-x1hj\">(i)</td>\n    <td class=\"tg-9d8n\">Wilkinson catalyst</td>\n  </tr>\n  <tr>\n    <td class=\"tg-c4o0\">(B)</td>\n    <td class=\"tg-nhda\">Zn</td>\n    <td class=\"tg-x1hj\">(ii)</td>\n    <td class=\"tg-9d8n\">Chlorophyl</td>\n  </tr>\n  <tr>\n    <td class=\"tg-c4o0\">(C)</td>\n    <td class=\"tg-nhda\">Rh</td>\n    <td class=\"tg-x1hj\">(iii)</td>\n    <td class=\"tg-9d8n\">Vitamin B<sub>12</sub></td>\n  </tr>\n  <tr>\n    <td class=\"tg-x1hj\">(D)</td>\n    <td class=\"tg-9d8n\">Mg</td>\n    <td class=\"tg-x1hj\">(iv)</td>\n    <td class=\"tg-9d8n\">Carbonic anhydrase</td>\n  </tr>\n</tbody></table>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(A)-(iii); (B)-(iv); (C)-(i); (D)-(ii)"
+        },
+        {
+          "identifier": "B",
+          "content": "(A)-(iv); (B)-(iii); (C)-(i); (D)-(ii)"
+        },
+        {
+          "identifier": "C",
+          "content": "(A)-(i); (B)-(ii); (C)-(iii); (D)-(iv)"
+        },
+        {
+          "identifier": "D",
+          "content": "(A)-(ii); (B)-(i); (C)-(iv); (D)-(iii)"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Co <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> Vitamin B<sub>12</sub>\n<br><br>Zn <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> Carbonic anhydrase\n<br><br>Rh <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> Wilkinson catalyst\n<br><br>Mg <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> Chlorophyll"
+    }
+  ]
+}

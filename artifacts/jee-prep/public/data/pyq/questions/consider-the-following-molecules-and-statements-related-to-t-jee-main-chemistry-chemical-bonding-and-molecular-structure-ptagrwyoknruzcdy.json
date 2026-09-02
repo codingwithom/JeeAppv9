@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "1tjsmRFrVbgRxq6Y4vjgy2xukf3moxsa",
+      "paperTitle": "JEE Main 2020 (Online) 3rd September Evening Slot",
+      "year": 2020,
+      "examDate": "2020-09-03 15:00",
+      "subject": "chemistry",
+      "chapter": "aldehydes-ketones-and-carboxylic-acids",
+      "chapterGroup": "organic-chemistry",
+      "topic": "preparation-properties-and-uses-of-carboxylic-acids",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "consider-the-following-molecules-and-statements-related-to-t-jee-main-chemistry-chemical-bonding-and-molecular-structure-ptagrwyoknruzcdy",
+      "content": "Consider the following molecules and\nstatements related to them :\n<img src=\"https://imagex.cdn.examgoal.net/jgy2xukf3m3f19/6f941cf5-b8ce-4686-affd-b688dfebba86/d4d4f8d0-f721-11ea-8293-3b6cc591631c/file-jgy2xukf3m3f1a-260w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 3rd September Evening Slot Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 204 English\">\n<br>(a) (B) is more likely to be crystalline than (A)\n<br>(b) (B) has higher boiling point than (A)\n<br>(c) (B) dissolves more readily than (A) in water\n<br><br>Identify the correct option from below :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "only (a) is true"
+        },
+        {
+          "identifier": "B",
+          "content": "(a), (b) and (c) are true"
+        },
+        {
+          "identifier": "C",
+          "content": "(b) and (c) are true"
+        },
+        {
+          "identifier": "D",
+          "content": "(a) and (b) are true"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukhh8x1u5/d77e5ccd-5844-4933-b688-c86624432315/b4f3f3d0-2639-11eb-8293-3b6cc591631c/file-jgy2xukhh8x1u6-320w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 3rd September Evening Slot Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 204 English Explanation\">\n<br><br>(a) B will be more crystalline due to more inter molecular interactions hence more efficient packing.\n<br><br>(b) B will have higher boiling point due to higher intermolecular interactions.\n<br><br>(c) B will be more soluble in water than A as B will have more extent of H-bonding in water.\n"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l0eqv9ei",
+      "paperTitle": "JEE Advanced 2016 Paper 2 Offline",
+      "year": 2016,
+      "subject": "chemistry",
+      "chapter": "aldehydes-ketones-and-carboxylic-acids",
+      "chapterGroup": "organic-chemistry",
+      "topic": "preparation-properties-and-uses-of-carboxylic-acids",
+      "type": "mcq",
+      "marks": 3,
+      "negMarks": 1,
+      "permalink": "pthe-correct-order-of-acidity-for-the-following-compounds-jee-advanced-chemistry-some-basic-concepts-of-chemistry-5idzaz2rijdue93o",
+      "content": "<p>The correct order of acidity for the following compounds is</p>\n<p><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l0iko5od/5aef3e0a-ca26-4840-97f3-a1257e363204/9008f6d0-9f1c-11ec-b824-11481766c67e/file-1l0iko5oe.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l0iko5od/5aef3e0a-ca26-4840-97f3-a1257e363204/9008f6d0-9f1c-11ec-b824-11481766c67e/file-1l0iko5oe.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Advanced 2016 Paper 2 Offline Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 57 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l0iko5od/5aef3e0a-ca26-4840-97f3-a1257e363204/9008f6d0-9f1c-11ec-b824-11481766c67e/file-1l0iko5oe.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l0iko5od/5aef3e0a-ca26-4840-97f3-a1257e363204/9008f6d0-9f1c-11ec-b824-11481766c67e/file-1l0iko5oe.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l0iko5od/5aef3e0a-ca26-4840-97f3-a1257e363204/9008f6d0-9f1c-11ec-b824-11481766c67e/file-1l0iko5oe.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l0iko5od/5aef3e0a-ca26-4840-97f3-a1257e363204/9008f6d0-9f1c-11ec-b824-11481766c67e/file-1l0iko5oe.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l0iko5od/5aef3e0a-ca26-4840-97f3-a1257e363204/9008f6d0-9f1c-11ec-b824-11481766c67e/file-1l0iko5oe.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l0iko5od/5aef3e0a-ca26-4840-97f3-a1257e363204/9008f6d0-9f1c-11ec-b824-11481766c67e/file-1l0iko5oe.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"></p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "I > II > III > IV"
+        },
+        {
+          "identifier": "B",
+          "content": "III > I > II > IV"
+        },
+        {
+          "identifier": "C",
+          "content": "III > IV > II > I"
+        },
+        {
+          "identifier": "D",
+          "content": "I > III > IV > II"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<p>Due to ortho-effect, (I) and (II) are stronger acid than (III) and (IV). Due to two ortho hydroxyl groups in (I), it is stronger acid than (II). (III) is a stronger acid than (IV) because at m-position, <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>OH group cannot exert its +R effect but can only exert its <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>I effect while at p-position, <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>OH group exerts its strong +R effect. Thus, the correct order of acidity is :</p>\n<p>(I) &gt; (II) &gt; (III) &gt; (IV)</p>"
+    }
+  ]
+}

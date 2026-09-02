@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "1l0w0mnro",
+      "paperTitle": "JEE Advanced 2015 Paper 2 Offline",
+      "year": 2015,
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "properties-of-transition-elements",
+      "type": "mcqm",
+      "marks": 4,
+      "negMarks": 2,
+      "permalink": "pthe-pairs-of-ions-where-both-the-ions-are-precipitated-up-jee-advanced-chemistry-some-basic-concepts-of-chemistry-fkopfhty1rtlbss1",
+      "content": "<p>The pairs of ions where BOTH the ions are precipitated upon passing H<sub>2</sub>S gas in presence of dilute HCl, is(are)</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Ba<sup>2+</sup>, Zn<sup>2+</sup>"
+        },
+        {
+          "identifier": "B",
+          "content": "Bi<sup>3+</sup>, Fe<sup>3+</sup>"
+        },
+        {
+          "identifier": "C",
+          "content": "Cu<sup>2+</sup>, Pb<sup>2+</sup>"
+        },
+        {
+          "identifier": "D",
+          "content": "Hg<sup>2+</sup>, Bi<sup>3+</sup>"
+        }
+      ],
+      "correct_options": [
+        "C",
+        "D"
+      ],
+      "explanation": "<p>The pairs Cu<sup>2+</sup>, Pb<sup>2+</sup> and Hg<sup>2+</sup>, Bi<sup>3+</sup> are precipitated as sulphides upon passing H<sub>2</sub>S in acidic medium.</p>"
+    }
+  ]
+}

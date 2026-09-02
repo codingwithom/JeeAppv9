@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "hOl2t8B3SoAXL6Ei9Y1kk144tqr",
+      "paperTitle": "JEE Advanced 2020 Paper 2 Offline",
+      "year": 2020,
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "acid-and-base-strength",
+      "type": "mcqm",
+      "marks": 4,
+      "negMarks": 2,
+      "permalink": "consider-the-following-four-compounds-i-ii-iii-and-ivb-jee-advanced-chemistry-some-basic-concepts-of-chemistry-vamttlhrna88t4co",
+      "content": "Consider the following four compounds, I, II, III, and IV.<br><br> <picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1kscbc1w5/17702e0c-4b0c-45f3-ba38-66d5afb6544f/9e4fec50-fd49-11eb-a49a-dd8610fcf07f/file-1kscbc1w6-320w.jpeg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1kscbc1w5/17702e0c-4b0c-45f3-ba38-66d5afb6544f/9e4fec50-fd49-11eb-a49a-dd8610fcf07f/file-1kscbc1w6-500w.jpeg\"><source media=\"(max-width: 680px)\" srcset=\"https://imagex.cdn.examgoal.net/1kscbc1w5/17702e0c-4b0c-45f3-ba38-66d5afb6544f/9e4fec50-fd49-11eb-a49a-dd8610fcf07f/file-1kscbc1w6-680w.jpeg\"><img src=\"https://imagex.cdn.examgoal.net/1kscbc1w5/17702e0c-4b0c-45f3-ba38-66d5afb6544f/9e4fec50-fd49-11eb-a49a-dd8610fcf07f/file-1kscbc1w6.jpeg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2020 Paper 2 Offline Chemistry - Basics of Organic Chemistry Question 35 English 1\"></picture> <picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1kscbcm3n/a523ec2f-94f9-4312-a8e7-fe27e758ad5f/adec0c20-fd49-11eb-9c9f-cb40e30fb586/file-1kscbcm3o-320w.jpeg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1kscbcm3n/a523ec2f-94f9-4312-a8e7-fe27e758ad5f/adec0c20-fd49-11eb-9c9f-cb40e30fb586/file-1kscbcm3o-500w.jpeg\"><source media=\"(max-width: 680px)\" srcset=\"https://imagex.cdn.examgoal.net/1kscbcm3n/a523ec2f-94f9-4312-a8e7-fe27e758ad5f/adec0c20-fd49-11eb-9c9f-cb40e30fb586/file-1kscbcm3o-680w.jpeg\"><source media=\"(max-width: 860px)\" srcset=\"https://imagex.cdn.examgoal.net/1kscbcm3n/a523ec2f-94f9-4312-a8e7-fe27e758ad5f/adec0c20-fd49-11eb-9c9f-cb40e30fb586/file-1kscbcm3o-860w.jpeg\"><img src=\"https://imagex.cdn.examgoal.net/1kscbcm3n/a523ec2f-94f9-4312-a8e7-fe27e758ad5f/adec0c20-fd49-11eb-9c9f-cb40e30fb586/file-1kscbcm3o.jpeg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2020 Paper 2 Offline Chemistry - Basics of Organic Chemistry Question 35 English 2\"></picture> <br><br>Choose the correct statement(s)",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "The order of basicity is II &gt; I &gt; III &gt; IV."
+        },
+        {
+          "identifier": "B",
+          "content": "The magnitude of pK<sub>b</sub> difference between I and II is more than that between III and IV."
+        },
+        {
+          "identifier": "C",
+          "content": "Resonance effect is more in III than in IV."
+        },
+        {
+          "identifier": "D",
+          "content": "Steric effect makes compound IV more basic than III."
+        }
+      ],
+      "correct_options": [
+        "C",
+        "D"
+      ],
+      "explanation": "The correct basic strength order is<br><br>(IV) &gt; (II) &gt; (I) &gt; (III);<br><br>(IV) is strongest base due to steric inhibition to resonance effect.<br><br>(III) is weakest base due to <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>M group of three nitro groups present at ortho and para positions.<br><br>(II) is stronger than (I) since (III) is tertiary and (I) primary aromatic amine.<br><br>So, option (a) is incorrect.<br><br>(b) pK<sub>b</sub> different between I and II is 0.53 and that of III and IV is 4.6. So, option (b) is incorrect.<br><br>(c) and (d) In 2, 4, 6-trinitro aniline (III) due to strong <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>R effect of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>NO<sub>2</sub> groups, the lone pair of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>NH<sub>2</sub> is more involved with benzene ring hence it has least basic strength. Whereas (IV) N, N-dimethyl 2, 4, 6-trinitro aniline, due to steric inhibition to resonance (SIR) effect; the lone pair of nitrogen is not in the plane of benzene, hence makes it lone pair more free to protonate."
+    }
+  ]
+}

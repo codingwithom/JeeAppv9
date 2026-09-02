@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "xTN9Z6PmV9viFCY4Vf974",
+      "paperTitle": "JEE Main 2018 (Online) 16th April Morning Slot",
+      "year": 2018,
+      "examDate": "2018-04-16 09:30",
+      "subject": "chemistry",
+      "chapter": "practical-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "chemistry-involved-in-titrimetric-experiments",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "for-standardizing-naoh-solution-which-of-the-following-is-u-jee-main-chemistry-some-basic-concepts-of-chemistry-3l54m6uudsubrvmr",
+      "content": "For standardizing NaOH solution, which of the following is used as a primary standard ? ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Ferrous Ammonium Sulfate"
+        },
+        {
+          "identifier": "B",
+          "content": "dil. HCl"
+        },
+        {
+          "identifier": "C",
+          "content": "Oxalic acid "
+        },
+        {
+          "identifier": "D",
+          "content": "Sodium tetraborate "
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<p>The solution that can be prepared directly by dissolving an accurately weighed amount of the substance in water and making up the volume to a known amount by water is known as primary standard solution. Oxalic acid is an example of primary standard while NaOH is a secondary standard solution. Hence, strength of NaOH solution can be determined by titrating against oxalic acid. This process is known as standardisation.</p>"
+    }
+  ]
+}

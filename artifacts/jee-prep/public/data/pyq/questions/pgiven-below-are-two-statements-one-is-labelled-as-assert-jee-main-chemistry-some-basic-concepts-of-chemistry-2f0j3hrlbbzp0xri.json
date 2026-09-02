@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l54y9cxc",
+      "paperTitle": "JEE Main 2022 (Online) 29th June Evening Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "ionization-energy",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pgiven-below-are-two-statements-one-is-labelled-as-assert-jee-main-chemistry-some-basic-concepts-of-chemistry-2f0j3hrlbbzp0xri",
+      "content": "<p>Given below are two statements. One is labelled as Assertion A and the other is labelled as Reason R.</p>\n<p>Assertion A : The first ionization enthalpy for oxygen is lower than that of nitrogen.</p>\n<p>Reason R : The four electrons in 2p orbitals of oxygen experience more electron-electron repulsion.</p>\n<p>In the light of the above statements, choose the correct answer from the options given below.</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Both A and R are are correct and R is the correct explanation of A."
+        },
+        {
+          "identifier": "B",
+          "content": "Both A and R are are correct but R is NOT the correct explanation of A."
+        },
+        {
+          "identifier": "C",
+          "content": "A is correct but R is not correct."
+        },
+        {
+          "identifier": "D",
+          "content": "A is not correct but R is correct."
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Nitrogen has half-filled p-orbitals which is stable.\nDue to this, its 1<sup>st</sup> ionization energy is more than\noxygen."
+    }
+  ]
+}

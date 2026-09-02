@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "9bR7LLngJCY9Bc53BOjgy2xukf7tmox9",
+      "paperTitle": "JEE Main 2020 (Online) 4th September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-04 09:00",
+      "subject": "chemistry",
+      "chapter": "aldehydes-ketones-and-carboxylic-acids",
+      "chapterGroup": "organic-chemistry",
+      "topic": "tests-for-aldehyde-and-ketones",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "an-organic-compound-a-molecular-formula-csub6subhsu-jee-main-chemistry-aldehydes-ketones-and-carboxylic-acids-h9v26z0xgvlmm3co",
+      "content": "An organic compound (A) (molecular formula\nC<sub>6</sub>H<sub>12</sub>O<sub>2</sub>) was hydrolysed with dil. H<sub>2</sub>SO<sub>4</sub> to give\na carboxylic acid (B) and an alcohol (C). ‘C’\ngives white turbidity immediately when treated\nwith anhydrous ZnCl<sub>2</sub> and conc. HCl. The\norganic compound (A) is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukf7tk88g/f5f88875-1b51-4079-b269-c7342f3bfe4e/2ad60b00-f972-11ea-8293-3b6cc591631c/file-jgy2xukf7tk88h-315w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 4th September Morning Slot Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 203 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukf7tkkgz/7f7c1313-b2ed-4d90-8a90-6ff3b937e475/3449ef30-f972-11ea-8293-3b6cc591631c/file-jgy2xukf7tkkh0-347w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 4th September Morning Slot Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 203 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukf7tkx7p/8074fd86-c61a-4d85-8977-1cada4f43852/3e21c550-f972-11ea-8293-3b6cc591631c/file-jgy2xukf7tkx7q-318w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 4th September Morning Slot Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 203 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukf7tl8j4/97660976-4048-4f1b-86ab-ecbfed56a502/46dfc700-f972-11ea-8293-3b6cc591631c/file-jgy2xukf7tl8j5-279w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 4th September Morning Slot Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 203 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1khp45iku/655e53f3-0402-4398-8cae-f45337dec545/57e876e0-2a8d-11eb-857f-3de41af3fb3a/file-1khp45ikv-475w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 4th September Morning Slot Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 203 English Explanation\">"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "pTx77IPXCWk30MCL097k9k2k5dztcnq",
+      "paperTitle": "JEE Main 2020 (Online) 7th January Morning Slot",
+      "year": 2020,
+      "examDate": "2020-01-07 09:30",
+      "subject": "chemistry",
+      "chapter": "electrochemistry",
+      "chapterGroup": "physical-chemistry",
+      "topic": "electrochemical-series-cell-and-their-emf",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "given-that-the-standard-potentials-esuposup-of-cusup-jee-main-chemistry-analytical-chemistry-q5hh6flfarmld7vh",
+      "content": "Given that the standard potentials (E<sup>o</sup>) of Cu<sup>2+</sup>/Cu and Cu<sup>+</sup>/Cu are 0.34 V and 0.522 V respectively, the E<sup>o</sup> of Cu<sup>2+</sup>/Cu<sup>+</sup> :\n",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "- 0.182 V"
+        },
+        {
+          "identifier": "B",
+          "content": "- 0.158 V"
+        },
+        {
+          "identifier": "C",
+          "content": "0.182 V"
+        },
+        {
+          "identifier": "D",
+          "content": "+0.158 V"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Cu<sup>+2</sup> + 2e<sup>–</sup> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> Cu    E<sup>o</sup> = 0.34 V ....(1)\n<br><br>Cu<sup>+</sup> + e<sup>–</sup> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container>Cu    E<sup>o</sup> = 0.522 V\n<br><br>Cu <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> Cu<sup>+</sup> + e<sup>–</sup>     E<sup>o</sup> = -0.522 V ...(2)\n<br><br>By adding (1) and (2) we get,\n<br><br>Cu<sup>+2</sup> + e<sup>–</sup> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> Cu<sup>+</sup> \n<br><br>E<sup>o</sup><sub>cell</sub> = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.781ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"15.307ex\" height=\"3.15ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1047.1 6765.8 1392.1\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(220,516.8) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\" transform=\"translate(500,0)\"></use><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\" transform=\"translate(778,0)\"></use><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\" transform=\"translate(1278,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1778,0)\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g><g data-mml-node=\"mn\" transform=\"translate(2556,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mo\" transform=\"translate(3056,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(3834,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mo\" transform=\"translate(4334,0)\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g><g data-mml-node=\"mrow\" transform=\"translate(5112,0)\"><g data-mml-node=\"mo\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(389,0)\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(778,0)\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\" transform=\"translate(500,0)\"></use><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\" transform=\"translate(778,0)\"></use><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\" transform=\"translate(1278,0)\"></use><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\" transform=\"translate(1778,0)\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(3445,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g></g><g data-mml-node=\"mn\" transform=\"translate(3206.1,-345) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><rect width=\"6525.8\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container> = 0.158 V"
+    }
+  ]
+}

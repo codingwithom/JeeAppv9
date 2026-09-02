@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "2LbXX7whEM9Ql7uD281kmj86o5j",
+      "paperTitle": "JEE Main 2021 (Online) 17th March Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "proteins-and-enzymes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-is-correct-structure-of-tyrosine-jee-main-chemistry-some-basic-concepts-of-chemistry-davcyjgro8net6ut",
+      "content": "Which of the following is correct structure of tyrosine?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kmk3f5cq/096e0ca9-2559-41b8-a527-15113020d998/a44d33a0-8ac7-11eb-a550-a93c57882a34/file-1kmk3f5cr.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 17th March Morning Shift Chemistry - Biomolecules Question 129 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kmk3ey9w/04fb4a39-0488-4373-bd63-b47e721f624d/9ed55c40-8ac7-11eb-a550-a93c57882a34/file-1kmk3ey9x.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 17th March Morning Shift Chemistry - Biomolecules Question 129 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kmk3eprd/157ebe15-8bef-4770-ab9b-2220161e2708/98418d90-8ac7-11eb-a550-a93c57882a34/file-1kmk3epre.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 17th March Morning Shift Chemistry - Biomolecules Question 129 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kmk3ehd3/7fdd642c-c049-4095-92b4-950812482ad3/91c51770-8ac7-11eb-a550-a93c57882a34/file-1kmk3ehd4.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 17th March Morning Shift Chemistry - Biomolecules Question 129 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Tyrosine is p-hydroxyphenylalanine. Its structure is<br><br><img src=\"https://imagex.cdn.examgoal.net/1kmk3ehd3/7fdd642c-c049-4095-92b4-950812482ad3/91c51770-8ac7-11eb-a550-a93c57882a34/file-1kmk3ehd4.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 17th March Morning Shift Chemistry - Biomolecules Question 129 English Explanation\">"
+    }
+  ]
+}

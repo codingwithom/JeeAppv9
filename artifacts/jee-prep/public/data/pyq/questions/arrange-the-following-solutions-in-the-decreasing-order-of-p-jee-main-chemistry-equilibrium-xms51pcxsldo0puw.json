@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "wEIHpXzK3AHH7ZEofjjgy2xukft77oy5",
+      "paperTitle": "JEE Main 2020 (Online) 6th September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-06 09:00",
+      "subject": "chemistry",
+      "chapter": "ionic-equilibrium",
+      "chapterGroup": "physical-chemistry",
+      "topic": "ph-buffer-and-indicators",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "arrange-the-following-solutions-in-the-decreasing-order-of-p-jee-main-chemistry-equilibrium-xms51pcxsldo0puw",
+      "content": "Arrange the following solutions in the\ndecreasing order of pOH :\n<br><br>(A) 0.01 M HCl\n<br>(B) 0.01 M NaOH\n<br>(C) 0.01 M CH<sub>3</sub>COONa\n<br>(D) 0.01 M NaCl\n",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(B) &gt; (C) &gt; (D) &gt; (A)"
+        },
+        {
+          "identifier": "B",
+          "content": "(A) &gt; (D) &gt; (C) &gt; (B)"
+        },
+        {
+          "identifier": "C",
+          "content": "(A) &gt; (C) &gt; (D) &gt; (B)"
+        },
+        {
+          "identifier": "D",
+          "content": "(B) &gt; (D) &gt; (C) &gt; (A)"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "(A) 10<sup>–2</sup> M HCl <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> [H<sup>+</sup>] = 10<sup>–2</sup> M <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> pH = 2 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> pOH = 14 - 2 = 12\n<br>(B) 10<sup>–2</sup> M NaOH <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> [OH<sup>–</sup>] = 10<sup>–2</sup> M <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> pOH = 2\n<br>(C) 10<sup>–2</sup> M CH3COO<sup>–</sup>Na<sup>+</sup> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> [OH<sup>+</sup>] &gt; 10<sup>–7</sup> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> pOH &lt; 7\n<br>(D) 10<sup>–2</sup> M NaCl <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> Neutral pOH = 7\n<br><br>Order of pOH value A &gt; D &gt; C &gt; B"
+    }
+  ]
+}

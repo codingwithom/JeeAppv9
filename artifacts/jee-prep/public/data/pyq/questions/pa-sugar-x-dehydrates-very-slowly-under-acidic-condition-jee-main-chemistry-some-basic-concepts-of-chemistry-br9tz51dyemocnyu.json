@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l6jm1e8m",
+      "paperTitle": "JEE Main 2022 (Online) 27th July Morning Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "carbohydrates",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pa-sugar-x-dehydrates-very-slowly-under-acidic-condition-jee-main-chemistry-some-basic-concepts-of-chemistry-br9tz51dyemocnyu",
+      "content": "<p>A sugar 'X' dehydrates very slowly under acidic condition to give furfural which on further reaction with resorcinol gives the coloured product after sometime. Sugar 'X' is</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Aldopentose"
+        },
+        {
+          "identifier": "B",
+          "content": "Aldotetrose"
+        },
+        {
+          "identifier": "C",
+          "content": "Oxalic acid"
+        },
+        {
+          "identifier": "D",
+          "content": "Ketotetrose"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l7nrvffj/14e573e5-d5d3-42e3-857a-f5c91fe88952/2909a6f0-2c8e-11ed-a521-1f85f535c206/file-1l7nrvffk.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l7nrvffj/14e573e5-d5d3-42e3-857a-f5c91fe88952/2909a6f0-2c8e-11ed-a521-1f85f535c206/file-1l7nrvffk.png\" loading=\"lazy\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;max-height: 60vh\" alt=\"JEE Main 2022 (Online) 27th July Morning Shift Chemistry - Biomolecules Question 91 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l7nrvffj/14e573e5-d5d3-42e3-857a-f5c91fe88952/2909a6f0-2c8e-11ed-a521-1f85f535c206/file-1l7nrvffk.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l7nrvffj/14e573e5-d5d3-42e3-857a-f5c91fe88952/2909a6f0-2c8e-11ed-a521-1f85f535c206/file-1l7nrvffk.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l7nrvffj/14e573e5-d5d3-42e3-857a-f5c91fe88952/2909a6f0-2c8e-11ed-a521-1f85f535c206/file-1l7nrvffk.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l7nrvffj/14e573e5-d5d3-42e3-857a-f5c91fe88952/2909a6f0-2c8e-11ed-a521-1f85f535c206/file-1l7nrvffk.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l7nrvffj/14e573e5-d5d3-42e3-857a-f5c91fe88952/2909a6f0-2c8e-11ed-a521-1f85f535c206/file-1l7nrvffk.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l7nrvffj/14e573e5-d5d3-42e3-857a-f5c91fe88952/2909a6f0-2c8e-11ed-a521-1f85f535c206/file-1l7nrvffk.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">"
+    }
+  ]
+}

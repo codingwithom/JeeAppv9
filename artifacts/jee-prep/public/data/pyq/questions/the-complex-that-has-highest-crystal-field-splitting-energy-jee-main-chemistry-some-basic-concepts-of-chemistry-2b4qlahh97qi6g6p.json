@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "9qyYXzzDtwoGSFhpGFCFg",
+      "paperTitle": "JEE Main 2019 (Online) 9th January Evening Slot",
+      "year": 2019,
+      "examDate": "2019-01-09 14:30",
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "crystal-field-theory-cft",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-complex-that-has-highest-crystal-field-splitting-energy-jee-main-chemistry-some-basic-concepts-of-chemistry-2b4qlahh97qi6g6p",
+      "content": "The complex that has highest crystal field splitting energy (<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.885ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 833 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></svg></mjx-container>), is : ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "[Co(NH<sub>3</sub>)<sub>5</sub>(H<sub>2</sub>O)]Cl<sub>3</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "K<sub>2</sub>[CoCl<sub>4</sub>]"
+        },
+        {
+          "identifier": "C",
+          "content": "[Co(NH<sub>3</sub>)<sub>5</sub>Cl]Cl<sub>2</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "K<sub>3</sub>[Co(CN)<sub>6</sub>]"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "As complex K<sub>3</sub>[Co(CN)<sub>6</sub>] have CN<sup><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container></sup> ligand which is strongfield ligand amongst the given ligands in other complexes. "
+    }
+  ]
+}

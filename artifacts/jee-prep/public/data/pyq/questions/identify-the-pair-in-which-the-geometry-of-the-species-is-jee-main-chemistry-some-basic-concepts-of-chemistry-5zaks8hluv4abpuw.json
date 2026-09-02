@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "mH7bhHWLOeDctdqbPfpd6",
+      "paperTitle": "JEE Main 2018 (Online) 15th April Morning Slot",
+      "year": 2018,
+      "examDate": "2018-04-15 09:30",
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "hybridization-and-vsepr-theory",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "identify-the-pair-in-which-the-geometry-of-the-species-is-jee-main-chemistry-some-basic-concepts-of-chemistry-5zaks8hluv4abpuw",
+      "content": "Identify the pair in which the geometry of the species is <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.622ex\" height=\"1.532ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -677 717 677\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D447\" xlink:href=\"#MJX-TEX-I-1D447\"></use></g></g></g></svg></mjx-container>-shape and square - pyramidal, respectively : ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "ClF<sub>3</sub> and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.287ex\" height=\"2.247ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -843.3 2336.7 993.3\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D43C\" xlink:href=\"#MJX-TEX-I-1D43C\"></use></g><g data-mml-node=\"msup\" transform=\"translate(504,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-150) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(1232.6,431.1) scale(0.707)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></g></svg></mjx-container> "
+        },
+        {
+          "identifier": "B",
+          "content": "ICl<sub>2</sub><sup>-</sup> and ICl<sub>5</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "XeOF<sub>2</sub> and XeOF<sub>4</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "IO<sub>3</sub><sup>-</sup> and IO<sub>2</sub>F<sub>2</sub><sup>-</sup>"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/FcWFUx8hP4mcTtPyc/K1ZqwzOMTl5d0svNnrBOawuLvcvYS/vIePsq8LN6oEXzNHMIWRby/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2018 (Online) 15th April Morning Slot Chemistry - Chemical Bonding &amp; Molecular Structure Question 227 English Explanation 1\">\n<br><img src=\"https://imagex.cdn.examgoal.net/gG8isVhnVp5MWTE3F/oo5ItuQK1H10oyZcTXIeqRzZP9dy4/IGmi2FdWIM60X5oSLrRINW/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2018 (Online) 15th April Morning Slot Chemistry - Chemical Bonding &amp; Molecular Structure Question 227 English Explanation 2\">\n<br><img src=\"https://imagex.cdn.examgoal.net/nGg0NrIwFYpjemRiu/JuU1HxHnAGbwQnf6qULGvS6SsRy5z/9xBtXq97DcufmVu0T5NhKz/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2018 (Online) 15th April Morning Slot Chemistry - Chemical Bonding &amp; Molecular Structure Question 227 English Explanation 3\">\n<br><img src=\"https://imagex.cdn.examgoal.net/8aUC1HHVUlbAPrLeL/1CXmppyJcwKIeFEKIso9JDI9jizMY/KpEfHQU7OeHOQttwgiLYkJ/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2018 (Online) 15th April Morning Slot Chemistry - Chemical Bonding &amp; Molecular Structure Question 227 English Explanation 4\">"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktcnhwv1",
+      "paperTitle": "JEE Main 2021 (Online) 26th August Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "alcohols-phenols-and-ethers",
+      "chapterGroup": "organic-chemistry",
+      "topic": "properties-preparation-and-uses-of-phenols",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-one-of-the-following-phenols-does-not-give-colour-when-jee-main-chemistry-some-basic-concepts-of-chemistry-22dchfgmw4ecg41r",
+      "content": "Which one of the following phenols does not give colour when condensed with phthalic anhydride in presence of conc. H<sub>2</sub>SO<sub>4</sub> ?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1ktenhr0h/9bcececc-f82c-4685-b2bf-de83824a7d7e/f2fd8710-125e-11ec-a4fb-5347f21481c0/file-1ktenhr0i.jpeg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 26th August Evening Shift Chemistry - Alcohols, Phenols and Ethers Question 107 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1ktenigwm/ce6a5eca-9943-409c-bcb7-f311b386cffa/06fdeb60-125f-11ec-a4fb-5347f21481c0/file-1ktenigwn.jpeg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 26th August Evening Shift Chemistry - Alcohols, Phenols and Ethers Question 107 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1ktenj6vv/e0fa33fb-ab8b-4e62-926a-9142a032ec71/1b0f66b0-125f-11ec-a4fb-5347f21481c0/file-1ktenj6vw.jpeg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 26th August Evening Shift Chemistry - Alcohols, Phenols and Ethers Question 107 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1ktenjfys/755b98ca-4103-4948-ac6a-aa8b6bfdcd65/22133540-125f-11ec-a4fb-5347f21481c0/file-1ktenjfyt.jpeg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 26th August Evening Shift Chemistry - Alcohols, Phenols and Ethers Question 107 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Only p-methyl, phenol does not give any colour with phthalic anhydroxide with cons. H<sub>2</sub>SO<sub>4</sub>."
+    }
+  ]
+}

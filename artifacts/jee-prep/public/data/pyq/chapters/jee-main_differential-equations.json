@@ -1,0 +1,2672 @@
+{
+  "exam": "jee-main",
+  "subject": "mathematics",
+  "chapterKey": "differential-equations",
+  "title": "Differential Equations | Mathematics | JEE Main Previous Year Questions",
+  "chapter": {
+    "metaId": "ff83a8e4-3e8e-5802-8394-31c373279b1e",
+    "country": "in",
+    "exam": "jee-main",
+    "examGroup": "jee",
+    "key": "differential-equations",
+    "subject": "mathematics",
+    "chapterGroup": "calculus",
+    "createdAt": "2020-10-29T06:35:37.692Z",
+    "description": null,
+    "order": 31,
+    "subjectGroup": null,
+    "title": "Differential Equations",
+    "topics": [],
+    "updatedAt": "2023-07-29T22:26:02.418Z",
+    "keyValuePairs": {},
+    "type": "chapter",
+    "pyq_stats": [
+      {
+        "year": 2026,
+        "total": 21,
+        "avg": 1.11,
+        "weightage": 4.42
+      },
+      {
+        "year": 2025,
+        "total": 21,
+        "avg": 1.11,
+        "weightage": 4.42
+      },
+      {
+        "year": 2024,
+        "total": 37,
+        "avg": 1.85,
+        "weightage": 6.17
+      },
+      {
+        "year": 2023,
+        "total": 25,
+        "avg": 1.04,
+        "weightage": 3.47
+      },
+      {
+        "year": 2022,
+        "total": 39,
+        "avg": 1.7,
+        "weightage": 5.65
+      },
+      {
+        "year": 2021,
+        "total": 42,
+        "avg": 1.62,
+        "weightage": 5.38
+      },
+      {
+        "year": 2020,
+        "total": 16,
+        "avg": 1,
+        "weightage": 4
+      },
+      {
+        "year": 2019,
+        "total": 16,
+        "avg": 1,
+        "weightage": 3.33
+      },
+      {
+        "year": 2018,
+        "total": 4,
+        "avg": 1,
+        "weightage": 3.33
+      },
+      {
+        "year": 2017,
+        "total": 3,
+        "avg": 1,
+        "weightage": 3.33
+      },
+      {
+        "year": 2016,
+        "total": 3,
+        "avg": 1,
+        "weightage": 3.33
+      },
+      {
+        "year": 2015,
+        "total": 1,
+        "avg": 1,
+        "weightage": 3.33
+      },
+      {
+        "year": 2014,
+        "total": 1,
+        "avg": 1,
+        "weightage": 3.45
+      },
+      {
+        "year": 2013,
+        "total": 1,
+        "avg": 1,
+        "weightage": 3.33
+      },
+      {
+        "year": 2012,
+        "total": 1,
+        "avg": 1,
+        "weightage": 3.45
+      },
+      {
+        "year": 2011,
+        "total": 2,
+        "avg": 2,
+        "weightage": 6.25
+      },
+      {
+        "year": 2010,
+        "total": 1,
+        "avg": 1,
+        "weightage": 3.33
+      },
+      {
+        "year": 2009,
+        "total": 1,
+        "avg": 1,
+        "weightage": 3.33
+      },
+      {
+        "year": 2008,
+        "total": 1,
+        "avg": 1,
+        "weightage": 2.94
+      },
+      {
+        "year": 2007,
+        "total": 1,
+        "avg": 1,
+        "weightage": 2.63
+      },
+      {
+        "year": 2006,
+        "total": 1,
+        "avg": 1,
+        "weightage": 2.78
+      },
+      {
+        "year": 2005,
+        "total": 2,
+        "avg": 2,
+        "weightage": 2.74
+      },
+      {
+        "year": 2004,
+        "total": 2,
+        "avg": 2,
+        "weightage": 2.94
+      },
+      {
+        "year": 2003,
+        "total": 2,
+        "avg": 2,
+        "weightage": 2.99
+      },
+      {
+        "year": 2002,
+        "total": 2,
+        "avg": 2,
+        "weightage": 2.78
+      }
+    ],
+    "image": null,
+    "pyq": {
+      "isTopicWise": true,
+      "count": {
+        "out_of_syllabus": 17,
+        "total": 246,
+        "private": 2,
+        "public": 246,
+        "bucket": 49
+      }
+    },
+    "hideFromClassify": false,
+    "groups": [
+      {
+        "title": "Numerical",
+        "key": "integer"
+      },
+      {
+        "title": "MCQ (Single Correct Answer)",
+        "key": "mcq"
+      }
+    ]
+  },
+  "questions": [
+    {
+      "title": "MCQ (Single Correct Answer)",
+      "key": "mcq",
+      "questions": [
+        {
+          "examGroup": "jee",
+          "permalink": "plet-yyx-be-the-solution-of-the-differential-equation-jee-main-mathematics-trigonometric-functions-and-equations-syxxqiwboxzcjos8",
+          "paperTitle": "JEE Main 2026 (Online) 8th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $y=y(x)$ be the solution of the differential equation $x \\sqrt{1-x^2} d y+\\left(y \\sqrt{1-x^2}-x \\cos ^{-1} x\\right) d x=0, x \\in(0,1), \\lim _{x \\rightarrow 1^{-}} y(x)=1$. Then $y\\left(\\frac{1}{2}\\right)$ equals :</p>\n"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-f-mathbfr-rightarrow-mathbfr-be-such-that--jee-main-mathematics-trigonometric-functions-and-equations-jtgqqpykdu8lijwg",
+          "paperTitle": "JEE Main 2026 (Online) 6th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $f: \\mathbf{R} \\rightarrow \\mathbf{R}$ be such that $f(x y)=f(x) f(y)$, for all $x, y \\in \\mathbf{R}$ and $f(0) \\neq 0$. Let $g:[1, \\infty) \\rightarrow \\mathbf{R}$ be a differentiable function such that</p>\n<p>$$ x^2 g(x)=\\int_1^x\\left(\\mathrm{t}^2 f(\\mathrm{t})-\\operatorname{tg}(\\mathrm{t})\\right) d t $$</p>\n<p>Then $g(2)$ is equal to :</p>\n"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-f1-infty-rightarrow-mathbfr-be-a-different-jee-main-mathematics-trigonometric-functions-and-equations-p41evxtro13v0y2y",
+          "paperTitle": "JEE Main 2026 (Online) 5th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $f:[1, \\infty) \\rightarrow \\mathbf{R}$ be a differentiable function defined as $f(x)=\\int_1^x f(\\mathrm{t}) \\mathrm{dt}+(1-x)\\left(\\log _{\\mathrm{e}} x-1\\right)+\\mathrm{e}$.</p>\n<p>Then the value of $f(f(1))$ is :</p>\n"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-yyx-be-the-solution-of-the-differential-equation-jee-main-mathematics-trigonometric-functions-and-equations-dfbb11nxihwti0lo",
+          "paperTitle": "JEE Main 2026 (Online) 4th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $y=y(x)$ be the solution of the differential equation :</p>\n<p>$$ \\frac{d y}{d x}+\\left(\\frac{6 x^2+\\left(3 x^2+2 x^3+4\\right) e^{-2 x}}{\\left(x^3+2\\right)\\left(2+e^{-2 x}\\right)}\\right) y=2+e^{-2 x} $$</p>\n<p>$x \\in(-1,2)$, satisfying $y(0)=\\frac{3}{2}$. If $y(1)=\\alpha\\left(2+e^{-2}\\right)$, then $\\alpha$ is equal to :</p>\n"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-yyx-be-the-solution-of-the-differential-equation-jee-main-mathematics-trigonometric-functions-and-equations-ncv5xrsxukfn255b",
+          "paperTitle": "JEE Main 2026 (Online) 4th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $y=y(x)$ be the solution of the differential equation $\\frac{d y}{d x}=\\left(1+x+x^2\\right)\\left(1-y+y^2\\right), y(0)=\\frac{1}{2}$. Then $(2 y(1)-1)$ is equal to</p>\n"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-x--xy-be-the-solution-of-the-differential-equati-jee-main-mathematics-htocynpqot3ipqec",
+          "paperTitle": "JEE Main 2026 (Online) 2nd April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $x = x(y)$ be the solution of the differential equation $2y^2 \\frac{dx}{dy} - 2xy + x^2 = 0$, $y > 1$, $x(e) = e$.</p><p>Then $x(e^2)$ is equal to:</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-the-curve-y--fx-passes-through-the-point-1-e-jee-main-mathematics-pkepytylo6xu1gws",
+          "paperTitle": "JEE Main 2026 (Online) 2nd April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>If the curve $y = f(x)$ passes through the point $(1, e)$ and satisfies the differential equation $dy = y(2 + \\\\log_e x) dx$, $x > 0$, then $f(e)$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-y--yx-be-the-solution-curve-of-the-differential-jee-main-mathematics-niaufaqlvk8sb8ro",
+          "paperTitle": "JEE Main 2026 (Online) 2nd April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $y = y(x)$ be the solution curve of the differential equation</p> <p>$(1 + \t\\sin x)\\dfrac{dy}{dx} + (y + 1)\\cos x = 0,\\ y(0) = 0.$ If the curve $y = y(x)$ passes through the point $\\left( \\alpha , \\dfrac{-1}{2} \\right)$,</p> <p>then a value of $\\alpha$ is:</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-y--yx-be-the-solution-of-the-differential-equati-jee-main-mathematics-xui3fkyq0uxfb4sz",
+          "paperTitle": "JEE Main 2026 (Online) 28th January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $y = y(x)$ be the solution of the differential equation $x \\frac{dy}{dx} - y = x^2 \\cot x$, $x \\in (0, \\pi)$. If $y\\left(\\frac{\\pi}{2}\\right) = \\frac{\\pi}{2}$, then</p><p>$6y\\left(\\frac{\\pi}{6}\\right) - 8y\\left(\\frac{\\pi}{4}\\right)$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pq-17-let-yyx-be-the-solution-of-the-differential-eq-jee-main-mathematics-trigonometric-functions-and-equations-hmftywhu7a2wvhyo",
+          "paperTitle": "JEE Main 2026 (Online) 28th January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $y=y(x)$ be the solution of the differential equation</p>\n<p>$$ x \\frac{d y}{d x}-\\sin 2 y=x^3\\left(2-x^3\\right) \\cos ^2 y, x \\neq 0 . $$</p>\n<p>If $y(2)=0$, then $\\tan (y(1))$ is equal to</p>\n"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-yyx-be-the-solution-of-the-differential-equation-jee-main-mathematics-trigonometric-functions-and-equations-1qmcmsw7wujod3hy",
+          "paperTitle": "JEE Main 2026 (Online) 23rd January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $y=y(x)$ be the solution of the differential equation $x^4 \\mathrm{~d} y+\\left(4 x^3 y+2 \\sin x\\right) \\mathrm{d} x=0, x>0, y\\left(\\frac{\\pi}{2}\\right)=0$.</p>\n<p>Then $\\pi^4 y\\left(\\frac{\\pi}{3}\\right)$ is equal to :</p>\n"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-yyx-satisfies-the-differential-equation-16sqrt-jee-main-mathematics-trigonometric-functions-and-equations-lzbcpyeeyyierbq2",
+          "paperTitle": "JEE Main 2026 (Online) 22nd January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>If $y=y(x)$ satisfies the differential equation $16(\\sqrt{x+9 \\sqrt{x}})(4+\\sqrt{9+\\sqrt{x}}) \\cos y \\mathrm{~d} y=(1+2 \\sin y) \\mathrm{d} x, x>0$ and $y(256)=\\frac{\\pi}{2}, y(49)=\\alpha$, then $2 \\sin \\alpha$ is equal to :</p>\n"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-the-solution-curve-of-the-differential-equation-x-d-jee-main-mathematics-trigonometric-functions-and-equations-1oxolwfkg6jatbui",
+          "paperTitle": "JEE Main 2026 (Online) 22nd January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let the solution curve of the differential equation $x d y-y d x=\\sqrt{x^2+y^2} d x, x>0$, $y(1)=0$, be $y=y(x)$. Then $y(3)$ is equal to</p>\n"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-y--yx-be-the-solution-of-the-differential-equati-jee-main-mathematics-p02pilqnus8csh9z",
+          "paperTitle": "JEE Main 2026 (Online) 21st January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $y = y(x)$ be the solution of the differential equation $\\sec x \\dfrac{dy}{dx} - 2y = 2 + 3 \\sin x$, $x \\in \\left(-\\dfrac{\\pi}{2}, \\dfrac{\\pi}{2}\\right)$,</p><p>$y(0) = -\\dfrac{7}{4}$. Then $y\\left(\\dfrac{\\pi}{6}\\right)$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-yyx-be-the-solution-curve-of-the-differential-eq-jee-main-mathematics-trigonometric-functions-and-equations-xg3pdhwipz5dfhob",
+          "paperTitle": "JEE Main 2026 (Online) 21st January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $y=y(x)$ be the solution curve of the differential equation $\\left(1+x^2\\right) \\mathrm{d} y+\\left(y-\\tan ^{-1} x\\right) d x=0, y(0)=1$. Then the value of $y(1)$ is :</p>\n"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-fx--x-1-and-gx--ex-for-x-in-mathbbr-jee-main-mathematics-wghgthxfklt9cbkm",
+          "paperTitle": "JEE Main 2025 (Online) 8th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $f(x) = x - 1$ and $g(x) = e^x$ for $x \\in \\mathbb{R}$. If $\\frac{dy}{dx} = \\left( e^{-2\\sqrt{x}} g\\left(f(f(x))\\right) - \\frac{y}{\\sqrt{x}} \\right)$, $y(0) = 0$, then $y(1)$ is</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-y--yx-be-the-solution-of-the-differential-equation-jee-main-mathematics-klojvcivxq1qagb9",
+          "paperTitle": "JEE Main 2025 (Online) 7th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let y = y(x) be the solution of the differential equation $(x^2 + 1)y' - 2xy = (x^4 + 2x^2 + 1)\\cos x$,</p>\n<p>$y(0) = 1$. Then $ \\int\\limits_{-3}^{3} y(x) \\, dx $ is :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-yyx-be-the-solution-curve-of-the-differential-eq-jee-main-mathematics-trigonometric-functions-and-equations-yygaixqpsqkxsvp6",
+          "paperTitle": "JEE Main 2025 (Online) 7th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $y=y(x)$ be the solution curve of the differential equation \n<br/><br/>$x\\left(x^2+e^x\\right) d y+\\left(\\mathrm{e}^x(x-2) y-x^3\\right) \\mathrm{d} x=0, x>0$, passing through the point $(1,0)$. Then $y(2)$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-a-curve-yyx-passes-through-the-point-left1-f-jee-main-mathematics-trigonometric-functions-and-equations-trjhfjhmks4euwks",
+          "paperTitle": "JEE Main 2025 (Online) 4th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>If a curve $y=y(x)$ passes through the point $\\left(1, \\frac{\\pi}{2}\\right)$ and satisfies the differential equation $\\left(7 x^4 \\cot y-\\mathrm{e}^x \\operatorname{cosec} y\\right) \\frac{\\mathrm{d} x}{\\mathrm{~d} y}=x^5, x \\geq 1$, then at $x=2$, the value of $\\cos y$ is :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-yyx-be-the-solution-of-the-differential-equation-jee-main-mathematics-trigonometric-ratio-and-identites-eato0n4hlxplhrlh",
+          "paperTitle": "JEE Main 2025 (Online) 3rd April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $y=y(x)$ be the solution of the differential equation <br/><br/>$\\frac{d y}{d x}+3\\left(\\tan ^2 x\\right) y+3 y=\\sec ^2 x, y(0)=\\frac{1}{3}+e^3$. Then $y\\left(\\frac{\\pi}{4}\\right)$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-g-be-a-differentiable-function-such-that-int0x-gt-jee-main-mathematics-trigonometric-ratio-and-identites-ylmshpst2iuz3ryj",
+          "paperTitle": "JEE Main 2025 (Online) 3rd April Morning Shift",
+          "question": {
+            "en": {
+              "content": "Let $g$ be a differentiable function such that $\\int_0^x g(t) d t=x-\\int_0^x \\operatorname{tg}(t) d t, x \\geq 0$ and let $y=y(x)$ satisfy the differential equation $\\frac{d y}{d x}-y \\tan x=2(x+1) \\sec x g(x), x \\in\\left[0, \\frac{\\pi}{2}\\right)$. If $y(0)=0$, then $y\\left(\\frac{\\pi}{3}\\right)$ is equal to\n"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-for-the-solution-curve-yfx-of-the-differential-eq-jee-main-mathematics-wnbxzxzhx2imd3s3",
+          "paperTitle": "JEE Main 2025 (Online) 29th January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>If for the solution curve $y=f(x)$ of the differential equation $\\frac{d y}{d x}+(\\tan x) y=\\frac{2+\\sec x}{(1+2 \\sec x)^2}$, $x \\in\\left(\\frac{-\\pi}{2}, \\frac{\\pi}{2}\\right), f\\left(\\frac{\\pi}{3}\\right)=\\frac{\\sqrt{3}}{10}$, then $f\\left(\\frac{\\pi}{4}\\right)$ is equal to:</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-iy--yxi-be-the-solution-of-the-differential-e-jee-main-mathematics-mruwxjzfttzuzh6b",
+          "paperTitle": "JEE Main 2025 (Online) 29th January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let <i>y = y(x)</i> be the solution of the differential equation :</p>\n<p>$\\cos x\\left(\\log _e(\\cos x)\\right)^2 d y+\\left(\\sin x-3 y \\sin x \\log _e(\\cos x)\\right) d x=0$, x ∈ (0, $\\frac{\\pi}{2}$ ). If $ y(\\frac{\\pi}{4}) $ = $-\\frac{1}{\\log_{e}2}$, then $ y(\\frac{\\pi}{6}) $ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-for-some-function-mathrmyfx-int0x-t-ft-d-jee-main-mathematics-trigonometric-functions-and-equations-crhqnp6n5qriv9rn",
+          "paperTitle": "JEE Main 2025 (Online) 28th January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let for some function $\\mathrm{y}=f(x), \\int_0^x t f(t) d t=x^2 f(x), x>0$ and $f(2)=3$. Then $f(6)$ is equal to</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-mathrmymathrmymathrmx-be-the-solution-o-jee-main-mathematics-trigonometric-functions-and-equations-cxbqzkjctvvvgtt1",
+          "paperTitle": "JEE Main 2025 (Online) 24th January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $\\mathrm{y}=\\mathrm{y}(\\mathrm{x})$ be the solution of the differential equation $\\left(x y-5 x^2 \\sqrt{1+x^2}\\right) d x+\\left(1+x^2\\right) d y=0, y(0)=0$. Then $y(\\sqrt{3})$ is equal to</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-xxy-be-the-solution-of-the-differential-equation-jee-main-mathematics-trigonometric-functions-and-equations-veyc3rh93wp1equu",
+          "paperTitle": "JEE Main 2025 (Online) 23rd January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $x=x(y)$ be the solution of the differential equation $y=\\left(x-y \\frac{\\mathrm{~d} x}{\\mathrm{~d} y}\\right) \\sin \\left(\\frac{x}{y}\\right), y>0$ and $x(1)=\\frac{\\pi}{2}$. Then $\\cos (x(2))$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-a-curve-yfx-pass-through-the-points-05-and-jee-main-mathematics-trigonometric-functions-and-equations-uujopgxn1lxuk573",
+          "paperTitle": "JEE Main 2025 (Online) 23rd January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let a curve $y=f(x)$ pass through the points $(0,5)$ and $\\left(\\log _e 2, k\\right)$. If the curve satisfies the differential equation $2(3+y) e^{2 x} d x-\\left(7+e^{2 x}\\right) d y=0$, then $k$ is equal to</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-xfy-is-the-solution-of-the-differential-equation-jee-main-mathematics-trigonometric-functions-and-equations-nlti8h3c0zghd3lw",
+          "paperTitle": "JEE Main 2025 (Online) 22nd January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>If $x=f(y)$ is the solution of the differential equation $\\left(1+y^2\\right)+\\left(x-2 \\mathrm{e}^{\\tan ^{-1} y}\\right) \\frac{\\mathrm{d} y}{\\mathrm{~d} x}=0, y \\in\\left(-\\frac{\\pi}{2}, \\frac{\\pi}{2}\\right)$ with $f(0)=1$, then $f\\left(\\frac{1}{\\sqrt{3}}\\right)$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-xxy-be-the-solution-of-the-differential-equation-jee-main-mathematics-trigonometric-functions-and-equations-snirvp5dsekz1ste",
+          "paperTitle": "JEE Main 2025 (Online) 22nd January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $x=x(y)$ be the solution of the differential equation $y^2 \\mathrm{~d} x+\\left(x-\\frac{1}{y}\\right) \\mathrm{d} y=0$. If $x(1)=1$, then $x\\left(\\frac{1}{2}\\right)$ is :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-fx-be-a-real-differentiable-function-such-that-f-jee-main-mathematics-trigonometric-functions-and-equations-nxwbgunrrbqktqxk",
+          "paperTitle": "JEE Main 2025 (Online) 22nd January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $f(x)$ be a real differentiable function such that $f(0)=1$ and $f(x+y)=f(x) f^{\\prime}(y)+f^{\\prime}(x) f(y)$ for all $x, y \\in \\mathbf{R}$. Then $\\sum_\\limits{n=1}^{100} \\log _e f(n)$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-f-mathbfr-rightarrow-mathbfr-be-a-twice-dif-jee-main-mathematics-trigonometric-functions-and-equations-0k5bxu49ijk9kcmr",
+          "paperTitle": "JEE Main 2025 (Online) 22nd January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $f: \\mathbf{R} \\rightarrow \\mathbf{R}$ be a twice differentiable function such that $f(x+y)=f(x) f(y)$ for all $x, y \\in \\mathbf{R}$. If $f^{\\prime}(0)=4 \\mathrm{a}$ and $f$ satisfies $f^{\\prime \\prime}(x)-3 \\mathrm{a} f^{\\prime}(x)-f(x)=0, \\mathrm{a}>0$, then the area of the region $\\mathrm{R}=\\{(x, y) \\mid 0 \\leq y \\leq f(a x), 0 \\leq x \\leq 2\\}$ is :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-intlimits0x-sqrt1-leftyprimetright-jee-main-mathematics-trigonometric-functions-and-equations-mqz1o4ybicgvfoue",
+          "paperTitle": "JEE Main 2024 (Online) 9th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$\\int_\\limits0^x \\sqrt{1-\\left(y^{\\prime}(t)\\right)^2} d t=\\int_0^x y(t) d t, 0 \\leq x \\leq 3, y \\geq 0, y(0)=0$$. Then at $$x=2, y^{\\prime \\prime}+y+1$$ is equal to</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-solution-of-the-differential-equation-x2y2-ma-jee-main-mathematics-trigonometric-functions-and-equations-3vvevgh0v2dqz4rb",
+          "paperTitle": "JEE Main 2024 (Online) 9th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>The solution of the differential equation $$(x^2+y^2) \\mathrm{d} x-5 x y \\mathrm{~d} y=0, y(1)=0$$, is :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-solution-curve-of-the-differential-equation-2-y-f-jee-main-mathematics-trigonometric-functions-and-equations-rqy8hhvodaartdmx",
+          "paperTitle": "JEE Main 2024 (Online) 9th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>The solution curve, of the differential equation $$2 y \\frac{\\mathrm{d} y}{\\mathrm{~d} x}+3=5 \\frac{\\mathrm{d} y}{\\mathrm{~d} x}$$, passing through the point $$(0,1)$$ is a conic, whose vertex lies on the line :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-yyx-be-the-solution-curve-of-the-differential-jee-main-mathematics-trigonometric-functions-and-equations-qwxgig2osymiupjo",
+          "paperTitle": "JEE Main 2024 (Online) 8th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$y=y(x)$$ be the solution curve of the differential equation $$\\sec y \\frac{\\mathrm{d} y}{\\mathrm{~d} x}+2 x \\sin y=x^3 \\cos y, y(1)=0$$. Then $$y(\\sqrt{3})$$ is equal to:</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-fx-be-a-positive-function-such-that-the-area-bo-jee-main-mathematics-trigonometric-functions-and-equations-xxdtpujyuewlkats",
+          "paperTitle": "JEE Main 2024 (Online) 8th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$f(x)$$ be a positive function such that the area bounded by $$y=f(x), y=0$$ from $$x=0$$ to $$x=a>0$$ is $$e^{-a}+4 a^2+a-1$$. Then the differential equation, whose general solution is $$y=c_1 f(x)+c_2$$, where $$c_1$$ and $$c_2$$ are arbitrary constants, is</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-yyx-be-the-solution-of-the-differential-equati-jee-main-mathematics-trigonometric-functions-and-equations-ysg0jnqvaaveuged",
+          "paperTitle": "JEE Main 2024 (Online) 8th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$y=y(x)$$ be the solution of the differential equation $$(1+y^2) e^{\\tan x} d x+\\cos ^2 x(1+e^{2 \\tan x}) d y=0, y(0)=1$$. Then $$y\\left(\\frac{\\pi}{4}\\right)$$ is equal to</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "psuppose-the-solution-of-the-differential-equation-frac-jee-main-mathematics-trigonometric-functions-and-equations-pneg5hhzcngksjfa",
+          "paperTitle": "JEE Main 2024 (Online) 6th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Suppose the solution of the differential equation $$\\frac{d y}{d x}=\\frac{(2+\\alpha) x-\\beta y+2}{\\beta x-2 \\alpha y-(\\beta \\gamma-4 \\alpha)}$$ represents a circle passing through origin. Then the radius of this circle is :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-yyx-be-the-solution-of-the-differential-equati-jee-main-mathematics-trigonometric-functions-and-equations-kpe9to9phivycpit",
+          "paperTitle": "JEE Main 2024 (Online) 6th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$y=y(x)$$ be the solution of the differential equation $$\\left(2 x \\log _e x\\right) \\frac{d y}{d x}+2 y=\\frac{3}{x} \\log _e x, x>0$$ and $$y\\left(e^{-1}\\right)=0$$. Then, $$y(e)$$ is equal to </p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-yyx-be-the-solution-of-the-differential-equati-jee-main-mathematics-trigonometric-functions-and-equations-ltcxremzgt9frowr",
+          "paperTitle": "JEE Main 2024 (Online) 6th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$y=y(x)$$ be the solution of the differential equation $$\\left(1+x^2\\right) \\frac{d y}{d x}+y=e^{\\tan ^{-1} x}$$, $$y(1)=0$$. Then $$y(0)$$ is</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-differential-equation-of-the-family-of-circles-passin-jee-main-mathematics-trigonometric-functions-and-equations-ysxp1pi1i1uog4lh",
+          "paperTitle": "JEE Main 2024 (Online) 5th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>The differential equation of the family of circles passing through the origin and having centre at the line $$y=x$$ is :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-yyx-is-the-solution-of-the-differential-equatio-jee-main-mathematics-trigonometric-functions-and-equations-cg0o69ksz1uloju2",
+          "paperTitle": "JEE Main 2024 (Online) 5th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>If $$y=y(x)$$ is the solution of the differential equation $$\\frac{\\mathrm{d} y}{\\mathrm{~d} x}+2 y=\\sin (2 x), y(0)=\\frac{3}{4}$$, then $$y\\left(\\frac{\\pi}{8}\\right)$$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-yyx-be-the-solution-of-the-differential-equati-jee-main-mathematics-trigonometric-functions-and-equations-5ilaifvxlcsbzh6r",
+          "paperTitle": "JEE Main 2024 (Online) 4th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$y=y(x)$$ be the solution of the differential equation $$(x^2+4)^2 d y+(2 x^3 y+8 x y-2) d x=0$$. If $$y(0)=0$$, then $$y(2)$$ is equal to</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-the-solution-yyx-of-the-differential-equation--jee-main-mathematics-trigonometric-functions-and-equations-qyrp1uzdurpczani",
+          "paperTitle": "JEE Main 2024 (Online) 4th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>If the solution $$y=y(x)$$ of the differential equation $$(x^4+2 x^3+3 x^2+2 x+2) \\mathrm{d} y-(2 x^2+2 x+3) \\mathrm{d} x=0$$ satisfies $$y(-1)=-\\frac{\\pi}{4}$$, then $$y(0)$$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-alpha-be-a-non-zero-real-number-suppose-f-mathbf-jee-main-mathematics-4qqqwz4yjilq4abz",
+          "paperTitle": "JEE Main 2024 (Online) 1st February Evening Shift",
+          "question": {
+            "en": {
+              "content": "Let $\\alpha$ be a non-zero real number. Suppose $f: \\mathbf{R} \\rightarrow \\mathbf{R}$ is a differentiable function such that $f(0)=2$ and $\\lim\\limits_{x \\rightarrow-\\infty} f(x)=1$. If $f^{\\prime}(x)=\\alpha f(x)+3$, for all $x \\in \\mathbf{R}$, then $f\\left(-\\log _{\\mathrm{e}} 2\\right)$ is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-yyx-be-the-solution-of-the-differential-equation--jee-main-mathematics-jpuyd53rvsgrwmro",
+          "paperTitle": "JEE Main 2024 (Online) 1st February Morning Shift",
+          "question": {
+            "en": {
+              "content": "Let $y=y(x)$ be the solution of the differential equation \n<br/><br/>$\\frac{\\mathrm{d} y}{\\mathrm{~d} x}=2 x(x+y)^3-x(x+y)-1, y(0)=1$.\n<br/><br/>Then, $\\left(\\frac{1}{\\sqrt{2}}+y\\left(\\frac{1}{\\sqrt{2}}\\right)\\right)^2$ equals :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-temperature-tt-of-a-body-at-time-t0-is-1-jee-main-mathematics-trigonometric-functions-and-equations-2gaznqvw72x6pzo6",
+          "paperTitle": "JEE Main 2024 (Online) 31st January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>The temperature $$T(t)$$ of a body at time $$t=0$$ is $$160^{\\circ} \\mathrm{F}$$ and it decreases continuously as per the differential equation $$\\frac{d T}{d t}=-K(T-80)$$, where $$K$$ is a positive constant. If $$T(15)=120^{\\circ} \\mathrm{F}$$, then $$T(45)$$ is equal to</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-yyx-be-the-solution-of-the-differential-equati-jee-main-mathematics-trigonometric-functions-and-equations-edgbonxxt0ishajl",
+          "paperTitle": "JEE Main 2024 (Online) 31st January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$y=y(x)$$ be the solution of the differential equation $$\\frac{d y}{d x}=\\frac{(\\tan x)+y}{\\sin x(\\sec x-\\sin x \\tan x)}, x \\in\\left(0, \\frac{\\pi}{2}\\right)$$ satisfying the condition $$y\\left(\\frac{\\pi}{4}\\right)=2$$. Then, $$y\\left(\\frac{\\pi}{3}\\right)$$ is</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-solution-curve-of-the-differential-equation-y-fra-jee-main-mathematics-trigonometric-functions-and-equations-vfewk20zgicbm5vi",
+          "paperTitle": "JEE Main 2024 (Online) 31st January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>The solution curve of the differential equation \n$$y \\frac{d x}{d y}=x\\left(\\log _e x-\\log _e y+1\\right), x>0, y>0$$ passing through the point $$(e, 1)$$ is</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-yyx-be-the-solution-of-the-differential-equati-jee-main-mathematics-trigonometric-functions-and-equations-4utl30swjdynpkq2",
+          "paperTitle": "JEE Main 2024 (Online) 30th January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$y=y(x)$$ be the solution of the differential equation $$\\sec x \\mathrm{~d} y+\\{2(1-x) \\tan x+x(2-x)\\} \\mathrm{d} x=0$$ such that $$y(0)=2$$. Then $$y(2)$$ is equal to:</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-sin-leftfracyxrightlog-exfracalph-jee-main-mathematics-trigonometric-functions-and-equations-pe0kqgw5ebpb1gf8",
+          "paperTitle": "JEE Main 2024 (Online) 29th January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>If $$\\sin \\left(\\frac{y}{x}\\right)=\\log _e|x|+\\frac{\\alpha}{2}$$ is the solution of the differential equation $$x \\cos \\left(\\frac{y}{x}\\right) \\frac{d y}{d x}=y \\cos \\left(\\frac{y}{x}\\right)+x$$ and $$y(1)=\\frac{\\pi}{3}$$, then $$\\alpha^2$$ is equal to</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pa-function-yfx-satisfies-fx-sin-2-xsin-x-l-jee-main-mathematics-trigonometric-functions-and-equations-hfwbp9fk8ips0qww",
+          "paperTitle": "JEE Main 2024 (Online) 29th January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>A function $$y=f(x)$$ satisfies $$f(x) \\sin 2 x+\\sin x-\\left(1+\\cos ^2 x\\right) f^{\\prime}(x)=0$$ with condition $$f(0)=0$$. Then, $$f\\left(\\frac{\\pi}{2}\\right)$$ is equal to</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-yyx-is-the-solution-curve-of-the-differential-e-jee-main-mathematics-trigonometric-functions-and-equations-cc5lgri8hoffmx9h",
+          "paperTitle": "JEE Main 2024 (Online) 27th January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>If $$y=y(x)$$ is the solution curve of the differential equation $$\\left(x^2-4\\right) \\mathrm{d} y-\\left(y^2-3 y\\right) \\mathrm{d} x=0, x>2, y(4)=\\frac{3}{2}$$ and the slope of the curve is never zero, then the value of $$y(10)$$ equals :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-xxmathrmt-and-yymathrmt-be-solutions-of-jee-main-mathematics-a37u1brv3qlx0ziz",
+          "paperTitle": "JEE Main 2024 (Online) 27th January Morning Shift",
+          "question": {
+            "en": {
+              "content": "Let $x=x(\\mathrm{t})$ and $y=y(\\mathrm{t})$ be solutions of the differential equations $\\frac{\\mathrm{d} x}{\\mathrm{dt}}+\\mathrm{a} x=0$ and $\\frac{\\mathrm{d} y}{\\mathrm{dt}}+\\mathrm{by}=0$ respectively, $\\mathrm{a}, \\mathrm{b} \\in \\mathbf{R}$. Given that $x(0)=2 ; y(0)=1$ and $3 y(1)=2 x(1)$, the value of $\\mathrm{t}$, for which $x(\\mathrm{t})=y(\\mathrm{t})$, is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-xxy-be-the-solution-of-the-differential-equation--jee-main-mathematics-wfhkcvqklpbgnhkb",
+          "paperTitle": "JEE Main 2023 (Online) 15th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "Let $x=x(y)$ be the solution of the differential equation\n\n<br/><br/>$2(y+2) \\log _{e}(y+2) d x+\\left(x+4-2 \\log _{e}(y+2)\\right) d y=0, y>-1$\n\n<br/><br/>with $x\\left(e^{4}-2\\right)=1$. Then $x\\left(e^{9}-2\\right)$ is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-yy1x-and-yy2x-be-the-solution-cur-jee-main-mathematics-trigonometric-functions-and-equations-uqffd67df8idzig8",
+          "paperTitle": "JEE Main 2023 (Online) 13th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$y=y_{1}(x)$$ and $$y=y_{2}(x)$$ be the solution curves of the differential equation $$\\frac{d y}{d x}=y+7$$ with initial conditions $$y_{1}(0)=0$$ and $$y_{2}(0)=1$$ respectively. Then the curves $$y=y_{1}(x)$$ and $$y=y_{2}(x)$$ intersect at</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-yyx-y--0-be-a-solution-curve-of-the-differe-jee-main-mathematics-trigonometric-functions-and-equations-kkb6jamqcimdaxly",
+          "paperTitle": "JEE Main 2023 (Online) 12th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$y=y(x), y > 0$$, be a solution curve of the differential equation $$\\left(1+x^{2}\\right) \\mathrm{d} y=y(x-y) \\mathrm{d} x$$. If $$y(0)=1$$ and $$y(2 \\sqrt{2})=\\beta$$, then</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-yyx-be-the-solution-of-the-differential-equati-jee-main-mathematics-trigonometric-functions-and-equations-losyhozrxpjw6tws",
+          "paperTitle": "JEE Main 2023 (Online) 11th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$y=y(x)$$ be the solution of the differential equation $$\\frac{d y}{d x}+\\frac{5}{x\\left(x^{5}+1\\right)} y=\\frac{\\left(x^{5}+1\\right)^{2}}{x^{7}}, x > 0$$. If $$y(1)=2$$, then $$y(2)$$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-yyx-be-a-solution-curve-of-the-differential-eq-jee-main-mathematics-trigonometric-functions-and-equations-meggqhnn2hggasrz",
+          "paperTitle": "JEE Main 2023 (Online) 11th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$y=y(x)$$ be a solution curve of the differential equation.</p>\n<p>$$\\left(1-x^{2} y^{2}\\right) d x=y d x+x d y$$.</p>\n<p>If the line $$x=1$$ intersects the curve $$y=y(x)$$ at $$y=2$$ and the line $$x=2$$ intersects the curve $$y=y(x)$$ at $$y=\\alpha$$, then a value of $$\\alpha$$ is :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-f-be-a-differentiable-function-such-that-x2f-jee-main-mathematics-trigonometric-functions-and-equations-lo4ytgdpzgdl62i8",
+          "paperTitle": "JEE Main 2023 (Online) 10th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$f$$ be a differentiable function such that $${x^2}f(x) - x = 4\\int\\limits_0^x {tf(t)dt} $$, $$f(1) = {2 \\over 3}$$. Then $$18f(3)$$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-the-solution-curve-fx-y0-of-the-differential-e-jee-main-mathematics-trigonometric-functions-and-equations-uewfvapwq3smne47",
+          "paperTitle": "JEE Main 2023 (Online) 6th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>If the solution curve $$f(x, y)=0$$ of the differential equation \n<br/><br/>$$\\left(1+\\log _{e} x\\right) \\frac{d x}{d y}-x \\log _{e} x=e^{y}, x > 0$$, \n<br/><br/>passes through the points $$(1,0)$$ and $$(\\alpha, 2)$$, then $$\\alpha^{\\alpha}$$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-alpha-xexp-leftxbeta-yprimeright-b-jee-main-mathematics-trigonometric-functions-and-equations-uhmdyihqbsq8niv0",
+          "paperTitle": "JEE Main 2023 (Online) 1st February Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$\\alpha x=\\exp \\left(x^{\\beta} y^{\\gamma}\\right)$$ be the solution of the differential equation $$2 x^{2} y \\mathrm{~d} y-\\left(1-x y^{2}\\right) \\mathrm{d} x=0, x > 0,y(2)=\\sqrt{\\log _{e} 2}$$. Then $$\\alpha+\\beta-\\gamma$$ equals :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-area-enclosed-by-the-closed-curve-mathrmc-give-jee-main-mathematics-trigonometric-functions-and-equations-tfr6irwaguul4ske",
+          "paperTitle": "JEE Main 2023 (Online) 1st February Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>The area enclosed by the closed curve $$\\mathrm{C}$$ given by the differential equation <br/><br/>$$\\frac{d y}{d x}+\\frac{x+a}{y-2}=0, y(1)=0$$ is $$4 \\pi$$.</p>\n<p>Let $$P$$ and $$Q$$ be the points of intersection of the curve $$\\mathrm{C}$$ and the $$y$$-axis. If normals at $$P$$ and $$Q$$ on the curve $$\\mathrm{C}$$ intersect $$x$$-axis at points $$R$$ and $$S$$ respectively, then the length of the line segment $$R S$$ is :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-yyx-is-the-solution-curve-of-the-differential-e-jee-main-mathematics-trigonometric-functions-and-equations-98ongq3cjjolvxvg",
+          "paperTitle": "JEE Main 2023 (Online) 1st February Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>If $$y=y(x)$$ is the solution curve of the differential equation <br/><br/>$$\\frac{d y}{d x}+y \\tan x=x \\sec x, 0 \\leq x \\leq \\frac{\\pi}{3}, y(0)=1$$, then $$y\\left(\\frac{\\pi}{6}\\right)$$ is equal to</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-yyx-be-the-solution-of-the-differential-equation--jee-main-mathematics-gdyccqqeprpj3kwg",
+          "paperTitle": "JEE Main 2023 (Online) 31st January Evening Shift",
+          "question": {
+            "en": {
+              "content": "Let $y=y(x)$ be the solution of the differential equation \n<br/><br/>$\\left(3 y^{2}-5 x^{2}\\right) y \\mathrm{~d} x+2 x\\left(x^{2}-y^{2}\\right) \\mathrm{d} y=0$ \n<br/><br/>such that $y(1)=1$. Then $\\left|(y(2))^{3}-12 y(2)\\right|$ is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "p-let-a-differentiable-function-f-satisfy-fxint-jee-main-mathematics-trigonometric-functions-and-equations-bx619icchxcxbjch",
+          "paperTitle": "JEE Main 2023 (Online) 31st January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p> Let a differentiable function $$f$$ satisfy $$f(x)+\\int_\\limits{3}^{x} \\frac{f(t)}{t} d t=\\sqrt{x+1}, x \\geq 3$$. Then $$12 f(8)$$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-solution-of-the-differential-equation-brbrfracd-jee-main-mathematics-tpaw7tvpamfwoyg9",
+          "paperTitle": "JEE Main 2023 (Online) 30th January Evening Shift",
+          "question": {
+            "en": {
+              "content": "The solution of the differential equation\n<br/><br/>$\\frac{d y}{d x}=-\\left(\\frac{x^2+3 y^2}{3 x^2+y^2}\\right), y(1)=0$ is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-the-solution-curve-yyx-of-the-differential-equ-jee-main-mathematics-trigonometric-functions-and-equations-4wik2iwulxr2gf3s",
+          "paperTitle": "JEE Main 2023 (Online) 30th January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let the solution curve $$y=y(x)$$ of the differential equation <br/><br/>$$\n\\frac{\\mathrm{d} y}{\\mathrm{~d} x}-\\frac{3 x^{5} \\tan ^{-1}\\left(x^{3}\\right)}{\\left(1+x^{6}\\right)^{3 / 2}} y=2 x \\exp \\left\\{\\frac{x^{3}-\\tan ^{-1} x^{3}}{\\sqrt{\\left(1+x^{6}\\right)}}\\right\\} \\text { pass through the origin. Then } y(1) \\text { is equal to : }\n$$</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-yyx-be-the-solution-of-the-differential-equati-jee-main-mathematics-trigonometric-functions-and-equations-ojbyftsxyfuvflux",
+          "paperTitle": "JEE Main 2023 (Online) 29th January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$y=y(x)$$ be the solution of the differential equation $$x{\\log _e}x{{dy} \\over {dx}} + y = {x^2}{\\log _e}x,(x > 1)$$. If $$y(2) = 2$$, then $$y(e)$$ is equal to</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-yfx-be-the-solution-of-the-differential-equati-jee-main-mathematics-trigonometric-functions-and-equations-5bx9r4ip6exnfvlx",
+          "paperTitle": "JEE Main 2023 (Online) 29th January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$y=f(x)$$ be the solution of the differential equation $$y(x+1)dx-x^2dy=0,y(1)=e$$. Then $$\\mathop {\\lim }\\limits_{x \\to {0^ + }} f(x)$$ is equal to</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-yyt-be-a-solution-of-the-differential-equation-jee-main-mathematics-trigonometric-functions-and-equations-zb0dj0rzim1ndejb",
+          "paperTitle": "JEE Main 2023 (Online) 25th January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$y=y(t)$$ be a solution of the differential equation $${{dy} \\over {dt}} + \\alpha y = \\gamma {e^{ - \\beta t}}$$ where, $$\\alpha  > 0,\\beta  > 0$$ and $$\\gamma  > 0$$. Then $$\\mathop {\\lim }\\limits_{t \\to \\infty } y(t)$$</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-y--yx-be-the-solution-curve-of-the-differentia-jee-main-mathematics-trigonometric-functions-and-equations-a1asbgrpm3imus3k",
+          "paperTitle": "JEE Main 2023 (Online) 25th January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$y = y(x)$$ be the solution curve of the differential equation $${{dy} \\over {dx}} = {y \\over x}\\left( {1 + x{y^2}(1 + {{\\log }_e}x)} \\right),x > 0,y(1) = 3$$. Then $${{{y^2}(x)} \\over 9}$$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-yyx-be-the-solution-of-the-differential-equati-jee-main-mathematics-trigonometric-functions-and-equations-lqdnclt1h8lesblm",
+          "paperTitle": "JEE Main 2023 (Online) 24th January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$y=y(x)$$ be the solution of the differential equation $$(x^2-3y^2)dx+3xy~dy=0,y(1)=1$$. Then $$6y^2(e)$$ is equal to</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-y--yx-be-the-solution-of-the-differential-equa-jee-main-mathematics-trigonometric-functions-and-equations-jqg6jrwt2bje3xww",
+          "paperTitle": "JEE Main 2023 (Online) 24th January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$y = y(x)$$ be the solution of the differential equation $${x^3}dy + (xy - 1)dx = 0,x > 0,y\\left( {{1 \\over 2}} \\right) = 3 - \\mathrm{e}$$. Then y (1) is equal to</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-the-solution-curve-of-the-differential-equation-fra-jee-main-mathematics-trigonometric-functions-and-equations-bz5ekjpwganouww1",
+          "paperTitle": "JEE Main 2022 (Online) 29th July Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>If the solution curve of the differential equation $$\\frac{d y}{d x}=\\frac{x+y-2}{x-y}$$ passes through the points $$(2,1)$$ and $$(\\mathrm{k}+1,2), \\mathrm{k}>0$$, then</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-yyx-be-the-solution-curve-of-the-differential-jee-main-mathematics-trigonometric-functions-and-equations-ob4jcorhvwdzdwle",
+          "paperTitle": "JEE Main 2022 (Online) 29th July Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$y=y(x)$$ be the solution curve of the differential equation $$ \\frac{d y}{d x}+\\left(\\frac{2 x^{2}+11 x+13}{x^{3}+6 x^{2}+11 x+6}\\right) y=\\frac{(x+3)}{x+1}, x>-1$$, which passes through the point $$(0,1)$$. Then $$y(1)$$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-the-solution-curve-yyx-of-the-differential-equ-jee-main-mathematics-trigonometric-functions-and-equations-vj3g1nfcm2qregay",
+          "paperTitle": "JEE Main 2022 (Online) 29th July Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let the solution curve $$y=y(x)$$ of the differential equation $$\\left(1+\\mathrm{e}^{2 x}\\right)\\left(\\frac{\\mathrm{d} y}{\\mathrm{~d} x}+y\\right)=1$$ pass through the point $$\\left(0, \\frac{\\pi}{2}\\right)$$. Then, $$\\lim\\limits_{x \\rightarrow \\infty} \\mathrm{e}^{x} y(x)$$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-yyx-be-the-solution-curve-of-the-differential-jee-main-mathematics-trigonometric-functions-and-equations-e2eiwczwfkvayczy",
+          "paperTitle": "JEE Main 2022 (Online) 28th July Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$y=y(x)$$ be the solution curve of the differential equation $$\n\\frac{d y}{d x}+\\frac{1}{x^{2}-1} y=\\left(\\frac{x-1}{x+1}\\right)^{1 / 2}$$, $$x >1$$  passing through the point $$\\left(2, \\sqrt{\\frac{1}{3}}\\right)$$. Then $$\\sqrt{7}\\, y(8)$$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-differential-equation-of-the-family-of-circles-passin-jee-main-mathematics-trigonometric-functions-and-equations-ltvx92suy128zdjg",
+          "paperTitle": "JEE Main 2022 (Online) 28th July Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>The differential equation of the family of circles passing through the points $$(0,2)$$ and $$(0,-2)$$ is :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-the-solution-curve-of-the-differential-equation-x--jee-main-mathematics-trigonometric-functions-and-equations-tt7xlnymksaxdqjl",
+          "paperTitle": "JEE Main 2022 (Online) 28th July Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let the solution curve of the differential equation $$x \\mathrm{~d} y=\\left(\\sqrt{x^{2}+y^{2}}+y\\right) \\mathrm{d} x, x>0$$, intersect the line $$x=1$$ at $$y=0$$ and the line $$x=2$$ at $$y=\\alpha$$. Then the value of $$\\alpha$$ is :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-yyx-x-in0-pi--2-be-the-solution-curve-of-jee-main-mathematics-trigonometric-functions-and-equations-cxp6qqeaon3zyswf",
+          "paperTitle": "JEE Main 2022 (Online) 28th July Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>If $$y=y(x), x \\in(0, \\pi / 2)$$ be the solution curve of the differential equation <br/><br/>$$\\left(\\sin ^{2} 2 x\\right) \\frac{d y}{d x}+\\left(8 \\sin ^{2} 2 x+2 \\sin 4 x\\right) y=2 \\mathrm{e}^{-4 x}(2 \\sin 2 x+\\cos 2 x)$$, <br/><br/>with $$y(\\pi / 4)=\\mathrm{e}^{-\\pi}$$, then $$y(\\pi / 6)$$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-yy1x-and-yy2x-be-two-distinct-sol-jee-main-mathematics-trigonometric-functions-and-equations-bxd48gw83l2bcih8",
+          "paperTitle": "JEE Main 2022 (Online) 27th July Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$y=y_{1}(x)$$ and $$y=y_{2}(x)$$ be two distinct solutions of the differential equation $$\\frac{d y}{d x}=x+y$$, with $$y_{1}(0)=0$$ and $$y_{2}(0)=1$$ respectively. Then, the number of points of intersection of $$y=y_{1}(x)$$ and $$y=y_{2}(x)$$ is</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-the-solution-curve-yfx-of-the-differential-equ-jee-main-mathematics-trigonometric-functions-and-equations-3fbfgykp6bpfmput",
+          "paperTitle": "JEE Main 2022 (Online) 26th July Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let the solution curve $$y=f(x)$$ of the differential equation $$\n\\frac{d y}{d x}+\\frac{x y}{x^{2}-1}=\\frac{x^{4}+2 x}{\\sqrt{1-x^{2}}}$$, $$x\\in(-1,1)$$  pass through the origin. Then $$\\int\\limits_{-\\frac{\\sqrt{3}}{2}}^{\\frac{\\sqrt{3}}{2}} f(x) d x \n$$ is equal to</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-dy-over-dx--2ytan-x--sin-x0--x--pi-jee-main-mathematics-trigonometric-functions-and-equations-xkzehvuhyouo0wvt",
+          "paperTitle": "JEE Main 2022 (Online) 26th July Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>If $${{dy} \\over {dx}} + 2y\\tan x = \\sin x,\\,0 < x < {\\pi  \\over 2}$$ and $$y\\left( {{\\pi  \\over 3}} \\right) = 0$$, then the maximum value of $$y(x)$$ is :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-a-smooth-curve-yfx-be-such-that-the-slope-of-t-jee-main-mathematics-trigonometric-functions-and-equations-rj5hr1bynptsyrui",
+          "paperTitle": "JEE Main 2022 (Online) 25th July Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let a smooth curve $$y=f(x)$$ be such that the slope of the tangent at any point $$(x, y)$$ on it is directly proportional to $$\\left(\\frac{-y}{x}\\right)$$. If the curve passes through the points $$(1,2)$$ and $$(8,1)$$, then $$\\left|y\\left(\\frac{1}{8}\\right)\\right|$$ is equal to</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-slope-of-the-tangent-to-a-curve-c-yyx-at-any-jee-main-mathematics-trigonometric-functions-and-equations-snbkrpnjqt4h4yu1",
+          "paperTitle": "JEE Main 2022 (Online) 25th July Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>The slope of the tangent to a curve $$C: y=y(x)$$ at any point $$(x, y)$$ on it is $$\\frac{2 \\mathrm{e}^{2 x}-6 \\mathrm{e}^{-x}+9}{2+9 \\mathrm{e}^{-2 x}}$$.\n\nIf $$C$$ passes through the points $$\\left(0, \\frac{1}{2}+\\frac{\\pi}{2 \\sqrt{2}}\\right)$$ and $$\\left(\\alpha, \\frac{1}{2} \\mathrm{e}^{2 \\alpha}\\right)$$, then $$\\mathrm{e}^{\\alpha}$$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-general-solution-of-the-differential-equation-left-jee-main-mathematics-trigonometric-functions-and-equations-q9ytdjvasrbaxfdv",
+          "paperTitle": "JEE Main 2022 (Online) 25th July Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>The general solution of the differential equation $$\\left(x-y^{2}\\right) \\mathrm{d} x+y\\left(5 x+y^{2}\\right) \\mathrm{d} y=0$$ is :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-dy-over-dx--ax-by--a-over-bx--cy--jee-main-mathematics-trigonometric-functions-and-equations-ggx3kpb61ognlmze",
+          "paperTitle": "JEE Main 2022 (Online) 30th June Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $${{dy} \\over {dx}} = {{ax - by + a} \\over {bx + cy + a}},\\,a,b,c \\in R$$, represents a circle with center ($$\\alpha$$, $$\\beta$$). Then, $$\\alpha$$ + 2$$\\beta$$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-y--yx-is-the-solution-of-the-differential-equation-jee-main-mathematics-trigonometric-functions-and-equations-6xfz5dmaufjiddhv",
+          "paperTitle": "JEE Main 2022 (Online) 29th June Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>If y = y(x) is the solution of the differential equation $$\\left( {1 + {e^{2x}}} \\right){{dy} \\over {dx}} + 2\\left( {1 + {y^2}} \\right){e^x} = 0$$ and y (0) = 0, then $$6\\left( {y'(0) + {{\\left( {y\\left( {{{\\log }_e}\\sqrt 3 } \\right)} \\right)}^2}} \\right)$$ is equal to</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-the-solution-curve-of-the-differential-equationp--jee-main-mathematics-trigonometric-functions-and-equations-kvcgmqjrj4vhyit5",
+          "paperTitle": "JEE Main 2022 (Online) 29th June Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let the solution curve of the differential equation</p>\n<p>$$x{{dy} \\over {dx}} - y = \\sqrt {{y^2} + 16{x^2}} $$, $$y(1) = 3$$ be $$y = y(x)$$. Then y(2) is equal to:</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-x--xy-be-the-solution-of-the-differential-equation-jee-main-mathematics-trigonometric-functions-and-equations-iqv6giu43qnybvki",
+          "paperTitle": "JEE Main 2022 (Online) 28th June Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let x = x(y) be the solution of the differential equation <br/><br/>$$2y\\,{e^{x/{y^2}}}dx + \\left( {{y^2} - 4x{e^{x/{y^2}}}} \\right)dy = 0$$ such that x(1) = 0. Then, x(e) is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-the-slope-of-the-tangent-to-a-curve-y--fx-at-x-y-jee-main-mathematics-trigonometric-functions-and-equations-eqsno0tpnis29dx7",
+          "paperTitle": "JEE Main 2022 (Online) 28th June Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let the slope of the tangent to a curve y = f(x) at (x, y) be given by 2 $$\\tan x(\\cos x - y)$$. If the curve passes through the point $$\\left( {{\\pi  \\over 4},0} \\right)$$, then the value of $$\\int\\limits_0^{\\pi /2} {y\\,dx} $$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-the-solution-curve-y--yx-of-the-differential-e-jee-main-mathematics-trigonometric-functions-and-equations-xg2w4bfvzlqlgpnb",
+          "paperTitle": "JEE Main 2022 (Online) 28th June Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let the solution curve $$y = y(x)$$ of the differential equation</p>\n<p>$$\\left[ {{x \\over {\\sqrt {{x^2} - {y^2}} }} + {e^{{y \\over x}}}} \\right]x{{dy} \\over {dx}} = x + \\left[ {{x \\over {\\sqrt {{x^2} - {y^2}} }} + {e^{{y \\over x}}}} \\right]y$$</p>\n<p>pass through the points (1, 0) and (2$$\\alpha$$, $$\\alpha$$), $$\\alpha$$ > 0. Then $$\\alpha$$ is equal to</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-y--yx-be-the-solution-of-the-differential-equation-jee-main-mathematics-trigonometric-functions-and-equations-pn9rxnmffcnlaud4",
+          "paperTitle": "JEE Main 2022 (Online) 28th June Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let y = y(x) be the solution of the differential equation $$x(1 - {x^2}){{dy} \\over {dx}} + (3{x^2}y - y - 4{x^3}) = 0$$, $$x > 1$$, with $$y(2) =  - 2$$. Then y(3) is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-the-solution-curve-of-the-differential-equation--jee-main-mathematics-trigonometric-functions-and-equations-yqqrlgq9fwnimttb",
+          "paperTitle": "JEE Main 2022 (Online) 27th June Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>If the solution curve of the differential equation <br/><br/>$$(({\\tan ^{ - 1}}y) - x)dy = (1 + {y^2})dx$$ passes through the point (1, 0), then the abscissa of the point on the curve whose ordinate is tan(1), is</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-dy-over-dx--ax-by--a-over-bx--cy--jee-main-mathematics-trigonometric-functions-and-equations-txuybncjbgfdtfbt",
+          "paperTitle": "JEE Main 2022 (Online) 27th June Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $${{dy} \\over {dx}} = {{ax - by + a} \\over {bx + cy + a}}$$, where a, b, c are constants, represent a circle passing through the point (2, 5). Then the shortest distance of the point (11, 6) from this circle is :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-dy-over-dx--2x-y2y-1-over-jee-main-mathematics-trigonometric-functions-and-equations-oxdevtazv6yivdcu",
+          "paperTitle": "JEE Main 2022 (Online) 27th June Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>If $${{dy} \\over {dx}} + {{{2^{x - y}}({2^y} - 1)} \\over {{2^x} - 1}} = 0$$, x, y > 0, y(1) = 1, then y(2) is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-y--yx-is-the-solution-of-the-differential-equat-jee-main-mathematics-trigonometric-functions-and-equations-fh51ot23hbgrp6fq",
+          "paperTitle": "JEE Main 2022 (Online) 26th June Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>If $$y = y(x)$$ is the solution of the differential equation <br/><br/>$$x{{dy} \\over {dx}} + 2y = x\\,{e^x}$$, $$y(1) = 0$$ then the local maximum value <br/><br/>of the function $$z(x) = {x^2}y(x) - {e^x},\\,x \\in R$$ is :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-the-solution-of-the-differential-equation-dy-ove-jee-main-mathematics-trigonometric-functions-and-equations-ndneh2vyeibcwzyj",
+          "paperTitle": "JEE Main 2022 (Online) 26th June Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>If the solution of the differential equation <br/><br/>$${{dy} \\over {dx}} + {e^x}\\left( {{x^2} - 2} \\right)y = \\left( {{x^2} - 2x} \\right)\\left( {{x^2} - 2} \\right){e^{2x}}$$ satisfies $$y(0) = 0$$, then the value of y(2) is _______________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-y--yx-is-the-solution-of-the-differential-equat-jee-main-mathematics-trigonometric-functions-and-equations-n7kog4qhqqodftt9",
+          "paperTitle": "JEE Main 2022 (Online) 25th June Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>If $$y = y(x)$$ is the solution of the differential equation <br/><br/>$$2{x^2}{{dy} \\over {dx}} - 2xy + 3{y^2} = 0$$ such that $$y(e) = {e \\over 3}$$, then y(1) is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-g0infty--to-r-be-a-differentiable-function-jee-main-mathematics-trigonometric-functions-and-equations-rapmg6dkykp6uqlv",
+          "paperTitle": "JEE Main 2022 (Online) 25th June Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$g:(0,\\infty ) \\to R$$ be a differentiable function such that <br/><br/>$$\\int {\\left( {{{x(\\cos x - \\sin x)} \\over {{e^x} + 1}} + {{g(x)\\left( {{e^x} + 1 - x{e^x}} \\right)} \\over {{{({e^x} + 1)}^2}}}} \\right)dx = {{x\\,g(x)} \\over {{e^x} + 1}} + c} $$, for all x > 0, where c is an arbitrary constant. Then :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-y--yx-be-the-solution-of-the-differential-equa-jee-main-mathematics-trigonometric-functions-and-equations-haboqoyduuzpsk6c",
+          "paperTitle": "JEE Main 2022 (Online) 25th June Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$y = y(x)$$ be the solution of the differential equation $$(x + 1)y' - y = {e^{3x}}{(x + 1)^2}$$, with $$y(0) = {1 \\over 3}$$. Then, the point $$x =  - {4 \\over 3}$$ for the curve $$y = y(x)$$ is :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-the-solution-curve-y--yx-of-the-differential-eq-jee-main-mathematics-trigonometric-functions-and-equations-byd9gvnvl0d57kj7",
+          "paperTitle": "JEE Main 2022 (Online) 25th June Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>If the solution curve $$y = y(x)$$ of the differential equation $${y^2}dx + ({x^2} - xy + {y^2})dy = 0$$, which passes through the point (1, 1) and intersects the line $$y = \\sqrt 3 x$$ at the point $$(\\alpha ,\\sqrt 3 \\alpha )$$, then value of $${\\log _e}(\\sqrt 3 \\alpha )$$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-x--xy-is-the-solution-of-the-differential-equation-jee-main-mathematics-trigonometric-functions-and-equations-krqqsutwth2ywq5x",
+          "paperTitle": "JEE Main 2022 (Online) 24th June Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>If x = x(y) is the solution of the differential equation <br/><br/>$$y{{dx} \\over {dy}} = 2x + {y^3}(y + 1){e^y},\\,x(1) = 0$$; then x(e) is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-y--yx-is-the-solution-curve-of-the-differential-equati-jee-main-mathematics-trigonometric-functions-and-equations-yhhskckv18kv5kko",
+          "paperTitle": "JEE Main 2021 (Online) 1st September Evening Shift",
+          "question": {
+            "en": {
+              "content": "If y = y(x) is the solution curve of the differential equation $${x^2}dy + \\left( {y - {1 \\over x}} \\right)dx = 0$$ ; x &gt; 0 and y(1) = 1, then $$y\\left( {{1 \\over 2}} \\right)$$ is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-dy-over-dx--2xy--2y2x-over-2-jee-main-mathematics-trigonometric-functions-and-equations-fagufm9j58crqorc",
+          "paperTitle": "JEE Main 2021 (Online) 31st August Evening Shift",
+          "question": {
+            "en": {
+              "content": "If $${{dy} \\over {dx}} = {{{2^x}y + {2^y}{{.2}^x}} \\over {{2^x} + {2^{x + y}}{{\\log }_e}2}}$$, y(0) = 0, then for y = 1, the value of x lies in the interval :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-ydy-over-dx--xleft-y2-over-x2--jee-main-mathematics-trigonometric-functions-and-equations-17boddgcezeoskml",
+          "paperTitle": "JEE Main 2021 (Online) 31st August Evening Shift",
+          "question": {
+            "en": {
+              "content": "If $$y{{dy} \\over {dx}} = x\\left[ {{{{y^2}} \\over {{x^2}}} + {{\\phi \\left( {{{{y^2}} \\over {{x^2}}}} \\right)} \\over {\\phi '\\left( {{{{y^2}} \\over {{x^2}}}} \\right)}}} \\right]$$, x &gt; 0, $$\\phi$$ &gt; 0, and y(1) = $$-$$1, then $$\\phi \\left( {{{{y^2}} \\over 4}} \\right)$$ is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-dy-over-dx--2x--y-2x-over-2y-jee-main-mathematics-trigonometric-functions-and-equations-hxw44c2w5dfbybwz",
+          "paperTitle": "JEE Main 2021 (Online) 31st August Morning Shift",
+          "question": {
+            "en": {
+              "content": "If $${{dy} \\over {dx}} = {{{2^{x + y}} - {2^x}} \\over {{2^y}}}$$, y(0) = 1, then y(1) is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "a-differential-equation-representing-the-family-of-parabolas-jee-main-mathematics-trigonometric-functions-and-equations-mfvbo8ncd3b5fuom",
+          "paperTitle": "JEE Main 2021 (Online) 27th August Evening Shift",
+          "question": {
+            "en": {
+              "content": "A differential equation representing the family of parabolas with axis parallel to y-axis and whose length of latus rectum is the distance of the point (2, $$-$$3) from the line 3x + 4y = 5, is given by :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-the-solution-curve-of-the-differential-equation-2x---jee-main-mathematics-trigonometric-functions-and-equations-wnqwtr5wgxmdrb8s",
+          "paperTitle": "JEE Main 2021 (Online) 27th August Evening Shift",
+          "question": {
+            "en": {
+              "content": "If the solution curve of the differential equation (2x $$-$$ 10y<sup>3</sup>)dy + ydx = 0, passes through the points (0, 1) and (2, $$\\beta$$), then $$\\beta$$ is a root of the equation :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-y--yx-be-the-solution-of-the-differential-equation--jee-main-mathematics-trigonometric-functions-and-equations-ki5nbf8onxefpeld",
+          "paperTitle": "JEE Main 2021 (Online) 27th August Morning Shift",
+          "question": {
+            "en": {
+              "content": "Let y = y(x) be the solution of the differential equation<br><br> $${{dy} \\over {dx}} = 2(y + 2\\sin x - 5)x - 2\\cos x$$ such that y(0) = 7. Then y($$\\pi$$) is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-us-consider-a-curve-y--fx-passing-through-the-point-jee-main-mathematics-trigonometric-functions-and-equations-mnek1dgceqk02bkz",
+          "paperTitle": "JEE Main 2021 (Online) 27th August Morning Shift",
+          "question": {
+            "en": {
+              "content": "Let us consider a curve, y = f(x) passing through the point ($$-$$2, 2) and the slope of the tangent to the curve at any point (x, f(x)) is given by f(x) + xf'(x) = x<sup>2</sup>. Then :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-yx-be-the-solution-of-the-differential-equation-2xsup-jee-main-mathematics-trigonometric-functions-and-equations-pnjx9shb2ukry7ed",
+          "paperTitle": "JEE Main 2021 (Online) 26th August Evening Shift",
+          "question": {
+            "en": {
+              "content": "Let y(x) be the solution of the differential equation <br/><br/>2x<sup>2</sup> dy + (e<sup>y</sup> $$-$$ 2x)dx = 0, x &gt; 0. If y(e) = 1, then y(1) is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-y--yx-be-a-solution-curve-of-the-differential-equatio-jee-main-mathematics-trigonometric-functions-and-equations-uckwdpu1zlx4okta",
+          "paperTitle": "JEE Main 2021 (Online) 26th August Morning Shift",
+          "question": {
+            "en": {
+              "content": "Let y = y(x) be a solution curve of the differential equation $$(y + 1){\\tan ^2}x\\,dx + \\tan x\\,dy + y\\,dx = 0$$, $$x \\in \\left( {0,{\\pi  \\over 2}} \\right)$$. If $$\\mathop {\\lim }\\limits_{x \\to 0 + } xy(x) = 1$$, then the value of $$y\\left( {{\\pi  \\over 4}} \\right)$$ is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-y--yx-be-the-solution-of-the-differential-equation-x-jee-main-mathematics-trigonometric-functions-and-equations-oudpuyrxxr8edkp0",
+          "paperTitle": "JEE Main 2021 (Online) 27th July Evening Shift",
+          "question": {
+            "en": {
+              "content": "Let y = y(x) be the solution of the differential <br><br>equation (x $$-$$ x<sup>3</sup>)dy = (y + yx<sup>2</sup> $$-$$ 3x<sup>4</sup>)dx, x &gt; 2. If y(3) = 3, then y(4) is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-y--yx-be-solution-of-the-differential-equation-lo-jee-main-mathematics-trigonometric-functions-and-equations-g4skzimgkc7xwepi",
+          "paperTitle": "JEE Main 2021 (Online) 27th July Morning Shift",
+          "question": {
+            "en": {
+              "content": "Let y = y(x) be solution of the differential equation <br><br>$${\\log _{}}\\left( {{{dy} \\over {dx}}} \\right) = 3x + 4y$$, with y(0) = 0.<br><br>If $$y\\left( { - {2 \\over 3}{{\\log }_e}2} \\right) = \\alpha {\\log _e}2$$, then the value of $$\\alpha$$ is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-y--yx-be-the-solution-of-the-differential-equation-xd-jee-main-mathematics-trigonometric-functions-and-equations-nzpvsdpobfsd6bjk",
+          "paperTitle": "JEE Main 2021 (Online) 25th July Evening Shift",
+          "question": {
+            "en": {
+              "content": "Let y = y(x) be the solution of the differential <br><br/>equation xdy = (y + x<sup>3</sup> cosx)dx with y($$\\pi$$) = 0, then $$y\\left( {{\\pi  \\over 2}} \\right)$$ is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-y--yx-be-the-solution-of-the-differential-equation--jee-main-mathematics-trigonometric-functions-and-equations-11i12500jljjud76",
+          "paperTitle": "JEE Main 2021 (Online) 25th July Morning Shift",
+          "question": {
+            "en": {
+              "content": "Let y = y(x) be the solution of the differential equation $${{dy} \\over {dx}} = 1 + x{e^{y - x}}, - \\sqrt 2  &lt; x &lt; \\sqrt 2 ,y(0) = 0$$<br><br>then, the minimum value of $$y(x),x \\in \\left( { - \\sqrt 2 ,\\sqrt 2 } \\right)$$ is equal to : "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-y--yx-be-the-solution-of-the-differential-equation--jee-main-mathematics-trigonometric-functions-and-equations-ssyn0k6eimqqnw6l",
+          "paperTitle": "JEE Main 2021 (Online) 22th July Evening Shift",
+          "question": {
+            "en": {
+              "content": "Let y = y(x) be the solution of the differential equation $$\\cos e{c^2}xdy + 2dx = (1 + y\\cos 2x)\\cos e{c^2}xdx$$, with $$y\\left( {{\\pi  \\over 4}} \\right) = 0$$. Then, the value of $${(y(0) + 1)^2}$$ is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-y--yx-satisfies-the-equation-dy-over-dx-a-jee-main-mathematics-trigonometric-functions-and-equations-fc1d9fwdc9vbiwmw",
+          "paperTitle": "JEE Main 2021 (Online) 20th July Evening Shift",
+          "question": {
+            "en": {
+              "content": "Let y = y(x) satisfies the equation $${{dy} \\over {dx}} - |A| = 0$$, for all x &gt; 0, where $$A = \\left[ {\\matrix{\n   y &amp; {\\sin x} &amp; 1  \\cr \n   0 &amp; { - 1} &amp; 1  \\cr \n   2 &amp; 0 &amp; {{1 \\over x}}  \\cr \n\n } } \\right]$$. If $$y(\\pi ) = \\pi  + 2$$, then the value of $$y\\left( {{\\pi  \\over 2}} \\right)$$ is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-y--yx-be-the-solution-of-the-differential-equation--jee-main-mathematics-trigonometric-functions-and-equations-dowfzslunglkrnap",
+          "paperTitle": "JEE Main 2021 (Online) 20th July Morning Shift",
+          "question": {
+            "en": {
+              "content": "Let y = y(x) be the solution of the differential equation $$x\\tan \\left( {{y \\over x}} \\right)dy = \\left( {y\\tan \\left( {{y \\over x}} \\right) - x} \\right)dx$$, $$ - 1 \\le x \\le 1$$, $$y\\left( {{1 \\over 2}} \\right) = {\\pi  \\over 6}$$. Then the area of the region bounded by the curves x = 0, $$x = {1 \\over {\\sqrt 2 }}$$ and y = y(x) in the upper half plane is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-y--yx-be-the-solution-of-the-differential-equation--jee-main-mathematics-trigonometric-functions-and-equations-9fcapgfj9tpbjspk",
+          "paperTitle": "JEE Main 2021 (Online) 20th July Morning Shift",
+          "question": {
+            "en": {
+              "content": "Let y = y(x) be the solution of the differential equation $${e^x}\\sqrt {1 - {y^2}} dx + \\left( {{y \\over x}} \\right)dy = 0$$, y(1) = $$-$$1. Then the value of (y(3))<sup>2</sup> is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-y--yx-be-the-solution-of-the-differential-equation--jee-main-mathematics-trigonometric-functions-and-equations-bv38zfz7jftos8yn",
+          "paperTitle": "JEE Main 2021 (Online) 18th March Evening Shift",
+          "question": {
+            "en": {
+              "content": "Let y = y(x) be the solution of the differential equation <br><br>$${{dy} \\over {dx}} = (y + 1)\\left( {(y + 1){e^{{x^2}/2}} - x} \\right)$$, 0 &lt; x &lt; 2.1, with y(2) = 0. Then the value of $${{dy} \\over {dx}}$$ at x = 1 is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-differential-equation-satisfied-by-the-system-of-parabol-jee-main-mathematics-trigonometric-functions-and-equations-x34akebopfdrjbhr",
+          "paperTitle": "JEE Main 2021 (Online) 18th March Morning Shift",
+          "question": {
+            "en": {
+              "content": "The differential equation satisfied by the system of parabolas <br><br>y<sup>2</sup> = 4a(x + a) is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-the-curve-y--yx-is-the-solution-of-the-differential-eq-jee-main-mathematics-trigonometric-functions-and-equations-y7kqmf6fwuwqtuna",
+          "paperTitle": "JEE Main 2021 (Online) 17th March Evening Shift",
+          "question": {
+            "en": {
+              "content": "If the curve y = y(x) is the solution of the differential equation<br><br> $$2({x^2} + {x^{5/4}})dy - y(x + {x^{1/4}})dx = {2x^{9/4}}dx$$, x &gt; 0 which <br><br>passes through the point $$\\left( {1,1 - {4 \\over 3}{{\\log }_e}2} \\right)$$, then the value of y(16) is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-y--yx-be-the-solution-of-the-differential-equation--jee-main-mathematics-trigonometric-functions-and-equations-rp10krmhtwymydql",
+          "paperTitle": "JEE Main 2021 (Online) 17th March Evening Shift",
+          "question": {
+            "en": {
+              "content": "Let y = y(x) be the solution of the differential equation <br><br>$$\\cos x(3\\sin x + \\cos x + 3)dy = (1 + y\\sin x(3\\sin x + \\cos x + 3))dx,0 \\le x \\le {\\pi  \\over 2},y(0) = 0$$. Then, $$y\\left( {{\\pi  \\over 3}} \\right)$$ is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "which-of-the-following-is-true-for-yx-that-satisfies-the-d-jee-main-mathematics-trigonometric-functions-and-equations-vnsh4lrhl4b6pwax",
+          "paperTitle": "JEE Main 2021 (Online) 17th March Morning Shift",
+          "question": {
+            "en": {
+              "content": "Which of the following is true for y(x) that satisfies the differential equation <br><br>$${{dy} \\over {dx}}$$ = xy $$-$$ 1 + x $$-$$ y; y(0) = 0 :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-y--yx-is-the-solution-of-the-differential-equation--jee-main-mathematics-trigonometric-functions-and-equations-evsff6eygaqqvwtn",
+          "paperTitle": "JEE Main 2021 (Online) 16th March Evening Shift",
+          "question": {
+            "en": {
+              "content": "If y = y(x) is the solution of the differential equation <br><br>$${{dy} \\over {dx}}$$ + (tan x) y = sin x, $$0 \\le x \\le {\\pi  \\over 3}$$, with y(0) = 0, then $$y\\left( {{\\pi  \\over 4}} \\right)$$ equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-csub1sub-be-the-curve-obtained-by-the-solution-of-d-jee-main-mathematics-trigonometric-functions-and-equations-zi46sjwrpo99hvs7",
+          "paperTitle": "JEE Main 2021 (Online) 16th March Evening Shift",
+          "question": {
+            "en": {
+              "content": "Let C<sub>1</sub> be the curve obtained by the solution of differential equation <br><br/>$$2xy{{dy} \\over {dx}} = {y^2} - {x^2},x &gt; 0$$. Let the curve C<sub>2</sub> be the <br><br/>solution of $${{2xy} \\over {{x^2} - {y^2}}} = {{dy} \\over {dx}}$$. If both the curves pass through (1, 1), then the area enclosed by the curves C<sub>1</sub> and C<sub>2</sub> is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-y--yx-is-the-solution-of-the-differential-equation--jee-main-mathematics-trigonometric-functions-and-equations-osy20ynheelb4pbq",
+          "paperTitle": "JEE Main 2021 (Online) 16th March Morning Shift",
+          "question": {
+            "en": {
+              "content": "If y = y(x) is the solution of the differential equation, <br><br>$${{dy} \\over {dx}} + 2y\\tan x = \\sin x,y\\left( {{\\pi  \\over 3}} \\right) = 0$$, then the maximum value of the function y(x) over R is equal to:"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-rate-of-growth-of-bacteria-in-a-culture-is-proportional-jee-main-mathematics-trigonometric-functions-and-equations-vhmg6rp0e4wrf7pz",
+          "paperTitle": "JEE Main 2021 (Online) 26th February Morning Shift",
+          "question": {
+            "en": {
+              "content": "The rate of growth of bacteria in a culture is proportional to the number of bacteria present and the bacteria count is 1000 at initial time t = 0. The number of bacteria is increased by 20% in 2 hours. If the population of bacteria is 2000 after $${k \\over {{{\\log }_e}\\left( {{6 \\over 5}} \\right)}}$$ hours, then $${\\left( {{k \\over {{{\\log }_e}2}}} \\right)^2}$$ is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-a-curve-passes-through-the-origin-and-the-slope-of-the-ta-jee-main-mathematics-trigonometric-functions-and-equations-qokkrdjgprp6g4aj",
+          "paperTitle": "JEE Main 2021 (Online) 25th February Morning Shift",
+          "question": {
+            "en": {
+              "content": "If a curve passes through the origin and the slope of the tangent to it at any point (x, y) is $${{{x^2} - 4x + y + 8} \\over {x - 2}}$$, then this curve also passes through the point :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-a-curve-y--fx-passes-through-the-point-1-2-and-sati-jee-main-mathematics-trigonometric-functions-and-equations-bwlwmgui3kyvx8g2",
+          "paperTitle": "JEE Main 2021 (Online) 24th February Evening Shift",
+          "question": {
+            "en": {
+              "content": "If a curve y = f(x) passes through the point (1, 2) and satisfies $$x {{dy} \\over {dx}} + y = b{x^4}$$, then for what value of b, $$\\int\\limits_1^2 {f(x)dx = {{62} \\over 5}} $$?"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-population-p--pt-at-time-t-of-a-certain-species-fol-jee-main-mathematics-differential-equations-ndvvj6ij3gw4rdni",
+          "paperTitle": "JEE Main 2021 (Online) 24th February Morning Shift",
+          "question": {
+            "en": {
+              "content": "The population P = P(t) at time 't' of a certain species follows the differential equation\n<br><br/>$${{dP} \\over {dt}}$$\n= 0.5P – 450. If P(0) = 850, then the time at which population becomes zero is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-y--left-2-over-pi-x-1-right-cosecx-is-jee-main-mathematics-complex-numbers-oogxoffm3d6lsiap",
+          "paperTitle": "JEE Main 2020 (Online) 6th September Evening Slot",
+          "question": {
+            "en": {
+              "content": "If $$y = \\left( {{2 \\over \\pi }x - 1} \\right) cosec\\,x$$  is the solution of the\ndifferential equation, <br><br/>$${{dy} \\over {dx}} + p\\left( x \\right)y = {2 \\over \\pi } cosec\\,x$$,<br><br>\n$$0 &lt; x &lt; {\\pi  \\over 2}$$,  then the function p(x) is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-general-solution-of-the-differential-equation-brsq-jee-main-mathematics-differential-equations-nbepb263sietvzvz",
+          "paperTitle": "JEE Main 2020 (Online) 6th September Morning Slot",
+          "question": {
+            "en": {
+              "content": "The general solution of the differential equation\n<br><br/>$$\\sqrt {1 + {x^2} + {y^2} + {x^2}{y^2}} $$ + xy$${{dy} \\over {dx}}$$ = 0 is :\n<br><br>(where C is a constant of integration)\n"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-y--yx-be-the-solution-of-the-differential-equation-b-jee-main-mathematics-differential-equations-thkh1aliqugrxnfp",
+          "paperTitle": "JEE Main 2020 (Online) 5th September Evening Slot",
+          "question": {
+            "en": {
+              "content": "Let y = y(x) be the solution of the differential\nequation\n<br><br/>cosx$${{dy} \\over {dx}}$$ + 2ysinx = sin2x, x $$ \\in $$ $$\\left( {0,{\\pi  \\over 2}} \\right)$$.\n<br><br/>If\ny$$\\left( {{\\pi  \\over 3}} \\right)$$ = 0, then y$$\\left( {{\\pi  \\over 4}} \\right)$$ is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-yyx-is-the-solution-of-the-differential-equation-5-jee-main-mathematics-complex-numbers-err9qn9yxwcin0zu",
+          "paperTitle": "JEE Main 2020 (Online) 5th September Morning Slot",
+          "question": {
+            "en": {
+              "content": "If y = y(x) is the solution of the differential <br><br/>equation $${{5 + {e^x}} \\over {2 + y}}.{{dy} \\over {dx}} + {e^x} = 0$$  satisfying\ny(0) = 1, then a value of y(log<sub>e</sub>13) is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-solution-of-the-differential-equation-brbr-dy-jee-main-mathematics-complex-numbers-8m2zunlhxjob3ewg",
+          "paperTitle": "JEE Main 2020 (Online) 4th September Evening Slot",
+          "question": {
+            "en": {
+              "content": "The solution of the differential equation <br><br>\n$${{dy} \\over {dx}} - {{y + 3x} \\over {{{\\log }_e}\\left( {y + 3x} \\right)}} + 3 = 0$$ is:<br><br>\n(where c is a constant of integration)\n"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-yyx-be-the-solution-of-the-differential-equation-xy-jee-main-mathematics-complex-numbers-1dkv2tdf63ocyyjx",
+          "paperTitle": "JEE Main 2020 (Online) 4th September Morning Slot",
+          "question": {
+            "en": {
+              "content": "Let y = y(x) be the solution of the differential equation, <br>xy'- y = x<sup>2</sup>(xcosx + sinx), x &gt; 0. if y ($$\\pi $$) = $$\\pi $$ then <br>$$y''\\left( {{\\pi  \\over 2}} \\right) + y\\left( {{\\pi  \\over 2}} \\right)$$ is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-xsup3supdy--xy-dx--xsup2supdy--2y-dx-y2--jee-main-mathematics-definite-integrals-and-applications-of-integrals-fikqpxm9vamhnyjf",
+          "paperTitle": "JEE Main 2020 (Online) 3rd September Evening Slot",
+          "question": {
+            "en": {
+              "content": "If x<sup>3</sup>dy + xy dx = x<sup>2</sup>dy + 2y dx; y(2) = e and\n<br>x &gt; 1, then y(4) is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-solution-curve-of-the-differential-equation-brbr-jee-main-mathematics-differential-equations-u5ef986fgrv7o3ow",
+          "paperTitle": "JEE Main 2020 (Online) 3rd September Morning Slot",
+          "question": {
+            "en": {
+              "content": "The solution curve of the differential equation,\n<br><br>(1 + e<sup>-x</sup>)(1 + y<sup>2</sup>)$${{dy} \\over {dx}}$$ = y<sup>2</sup>,\n<br><br>which passes through\nthe point (0, 1), is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-a-curve-y--fx-passing-through-the-point-1-2-is-th-jee-main-mathematics-differential-equations-cthgwxt5r1lvgagr",
+          "paperTitle": "JEE Main 2020 (Online) 2nd September Evening Slot",
+          "question": {
+            "en": {
+              "content": "If a curve y = f(x), passing through the point\n(1, 2), is the solution of the differential equation,\n<br>2x<sup>2</sup>dy= (2xy + y<sup>2</sup>)dx, then $$f\\left( {{1 \\over 2}} \\right)$$ is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-y--yx-be-the-solution-of-the-differential-equation--jee-main-mathematics-definite-integrals-and-applications-of-integrals-qrsowvesm3sqjc0u",
+          "paperTitle": "JEE Main 2020 (Online) 2nd September Morning Slot",
+          "question": {
+            "en": {
+              "content": "Let y = y(x) be the solution of the differential\nequation,\n<br>$${{2 + \\sin x} \\over {y + 1}}.{{dy} \\over {dx}} =  - \\cos x$$, y &gt; 0,y(0) = 1.<br> If y($$\\pi $$) = a and $${{dy} \\over {dx}}$$ at x =\n$$\\pi $$ is b, then the ordered pair\n(a, b) is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-dy-over-dx--xy-over-x2--y2-y1-jee-main-mathematics-complex-numbers-pcqw9ooayesrh2hw",
+          "paperTitle": "JEE Main 2020 (Online) 9th January Evening Slot",
+          "question": {
+            "en": {
+              "content": "If $${{dy} \\over {dx}} = {{xy} \\over {{x^2} + {y^2}}}$$; y(1) = 1; then a value of x\nsatisfying y(x) = e is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-differential-equation-of-the-family-of-curves-xsup2-jee-main-mathematics-complex-numbers-f77ltjyydnhkcsk4",
+          "paperTitle": "JEE Main 2020 (Online) 8th January Evening Slot",
+          "question": {
+            "en": {
+              "content": "The differential equation of the family of\ncurves, x<sup>2</sup> = 4b(y + b), b $$ \\in $$ R, is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-y--yx-be-a-solution-of-the-differential-equation-br-jee-main-mathematics-differential-equations-ztyzfwddesonn5o9",
+          "paperTitle": "JEE Main 2020 (Online) 8th January Morning Slot",
+          "question": {
+            "en": {
+              "content": "Let y = y(x) be a solution of the differential\nequation,\n<br><br/>$$\\sqrt {1 - {x^2}} {{dy} \\over {dx}} + \\sqrt {1 - {y^2}}  = 0$$, |x| &lt; 1.\n<br><br/>If $$y\\left( {{1 \\over 2}} \\right) = {{\\sqrt 3 } \\over 2}$$, then $$y\\left( { - {1 \\over {\\sqrt 2 }}} \\right)$$ is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-y--yx-be-the-solution-curve-of-the-differential-equat-jee-main-mathematics-differential-equations-pfvkzvqiakkxltpm",
+          "paperTitle": "JEE Main 2020 (Online) 7th January Evening Slot",
+          "question": {
+            "en": {
+              "content": "Let y = y(x) be the solution curve of the differential equation,\n<br><br/>$$\\left( {{y^2} - x} \\right){{dy} \\over {dx}} = 1$$, satisfying y(0) =\n1. This curve intersects the x-axis at a point whose abscissa is :\n"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-y--yx-is-the-solution-of-the-differential-equation--jee-main-mathematics-complex-numbers-14pzz4wdte5v13fz",
+          "paperTitle": "JEE Main 2020 (Online) 7th January Morning Slot",
+          "question": {
+            "en": {
+              "content": "If y = y(x) is the solution of the differential equation, $${e^y}\\left( {{{dy} \\over {dx}} - 1} \\right) = {e^x}$$ such that y(0) = 0, then\ny(1) is equal to:\n"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-general-solution-of-the-differential-equation-ysup2-jee-main-mathematics-differential-equations-sav8mar83hhawyrf",
+          "paperTitle": "JEE Main 2019 (Online) 12th April Evening Slot",
+          "question": {
+            "en": {
+              "content": "The general solution of the differential equation (y<sup>2</sup>\n– x<sup>3</sup>)dx – xydy = 0 (x $$ \\ne $$ 0) is :\n(where c is a constant of integration)"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "consider-the-differential-equation-y2dx--left-x-jee-main-mathematics-differential-equations-eitnxyghqxdxyk59",
+          "paperTitle": "JEE Main 2019 (Online) 12th April Morning Slot",
+          "question": {
+            "en": {
+              "content": "Consider the differential equation, $${y^2}dx + \\left( {x - {1 \\over y}} \\right)dy = 0$$, If value of y is 1 when x = 1, then the value of x\nfor which y = 2, is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-y--yx-be-the-solution-of-the-differential-equation--jee-main-mathematics-differential-equations-gulq6knio74twodb",
+          "paperTitle": "JEE Main 2019 (Online) 10th April Evening Slot",
+          "question": {
+            "en": {
+              "content": "Let y = y(x) be the solution of the differential equation,\n<br>$${{dy} \\over {dx}} + y\\tan x = 2x + {x^2}\\tan x$$, $$x \\in \\left( { - {\\pi  \\over 2},{\\pi  \\over 2}} \\right)$$,  such that\ny(0) = 1. Then : "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-y--yx-is-the-solution-of-the-differential-equation-b-jee-main-mathematics-differential-equations-rbobnnmazv2fryln",
+          "paperTitle": "JEE Main 2019 (Online) 10th April Morning Slot",
+          "question": {
+            "en": {
+              "content": "If y = y(x) is the solution of the differential equation \n<br>$${{dy} \\over {dx}} = \\left( {\\tan x - y} \\right){\\sec ^2}x$$, $$x \\in \\left( { - {\\pi  \\over 2},{\\pi  \\over 2}} \\right)$$,\n<br>such that y (0) = 0, then $$y\\left( { - {\\pi  \\over 4}} \\right)$$ is equal to : "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-cos-xdy-over-dx-ysin-x--6x0--x--p-jee-main-mathematics-trigonometric-functions-and-equations-b2d9qlzf0dtj0zta",
+          "paperTitle": "JEE Main 2019 (Online) 9th April Evening Slot",
+          "question": {
+            "en": {
+              "content": "If $$\\cos x{{dy} \\over {dx}} - y\\sin x = 6x$$, (0 &lt; x &lt; $${\\pi  \\over 2}$$)<br>\nand $$y\\left( {{\\pi  \\over 3}} \\right)$$ = 0 then $$y\\left( {{\\pi  \\over 6}} \\right)$$ is equal to :-"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-solution-of-the-differential-equation-xdy-over-dx-jee-main-mathematics-trigonometric-functions-and-equations-hxs7ps7qdpzopjbs",
+          "paperTitle": "JEE Main 2019 (Online) 9th April Morning Slot",
+          "question": {
+            "en": {
+              "content": "The solution of the differential equation\n<br/><br/>$$x{{dy} \\over {dx}} + 2y$$ = x<sup>2</sup> (x $$ \\ne $$ 0) with y(1) = 1, is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-y-yx-be-the-solution-of-the-differential-equation-jee-main-mathematics-trigonometric-functions-and-equations-zef9sf4elbeqtiew",
+          "paperTitle": "JEE Main 2019 (Online) 8th April Morning Slot",
+          "question": {
+            "en": {
+              "content": "Let y = y(x) be the solution of the differential equation,<br><br> $${({x^2} + 1)^2}{{dy} \\over {dx}} + 2x({x^2} + 1)y = 1$$ <br><br>such\nthat y(0) = 0. If $$\\sqrt ay(1)$$ = $$\\pi \\over 32$$ , then the value of\n'a' is :\n"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-a-curve-passes-through-the-point-1-2-and-has-slope-jee-main-mathematics-trigonometric-functions-and-equations-nydjwxixzpu5ki84",
+          "paperTitle": "JEE Main 2019 (Online) 12th January Evening Slot",
+          "question": {
+            "en": {
+              "content": "If a curve passes through the point (1, –2) and has slope of the tangent at any point (x, y) on it as $${{{x^2} - 2y} \\over x}$$, then the curve also passes through the point :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-y-yx-be-the-solution-of-the-differential-equation-x-jee-main-mathematics-trigonometric-functions-and-equations-2cxpzpgk94djpbc7",
+          "paperTitle": "JEE Main 2019 (Online) 12th January Morning Slot",
+          "question": {
+            "en": {
+              "content": "Let y = y(x) be the solution of the differential equation, x$${{dy} \\over {dx}}$$ + y = x log<sub>e</sub> x,  (x &gt; 1).  If 2y(2) = log<sub>e</sub> 4 $$-$$ 1, then y(e) is equal to : "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-solution-of-the-differential-equation-dy-over-d-jee-main-mathematics-trigonometric-functions-and-equations-p0tqzvvac0qjcyew",
+          "paperTitle": "JEE Main 2019 (Online) 11th January Evening Slot",
+          "question": {
+            "en": {
+              "content": "The solution of the differential equation, \n<br><br>$${{dy} \\over {dx}}$$ = (x – y)<sup>2</sup>, when y(1) = 1, is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-yx-is-the-solution-of-the-differential-equationnbsp-jee-main-mathematics-trigonometric-functions-and-equations-uipq7wz5l67lkytz",
+          "paperTitle": "JEE Main 2019 (Online) 11th January Morning Slot",
+          "question": {
+            "en": {
+              "content": "If y(x) is the solution of the differential equation&nbsp;$${{dy} \\over {dx}} + \\left( {{{2x + 1} \\over x}} \\right)y = {e^{ - 2x}},\\,\\,x &gt; 0,\\,$$ where $$y\\left( 1 \\right) = {1 \\over 2}{e^{ - 2}},$$ then "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-f-be-a-differentiable-function-such-that-f-x-7-jee-main-mathematics-trigonometric-functions-and-equations-5urasu0unkm3rzxu",
+          "paperTitle": "JEE Main 2019 (Online) 10th January Evening Slot",
+          "question": {
+            "en": {
+              "content": "Let f be a differentiable function such that f '(x) = 7 - $${3 \\over 4}{{f\\left( x \\right)} \\over x},$$ (x &gt; 0) and f(1) $$ \\ne $$ 4. Then $$\\mathop {\\lim }\\limits_{x \\to 0'} \\,$$ xf$$\\left( {{1 \\over x}} \\right)$$ :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-curve-amongst-the-family-of-curves-represented-by-the-di-jee-main-mathematics-trigonometric-functions-and-equations-vkmf6xqtak8sgd9j",
+          "paperTitle": "JEE Main 2019 (Online) 10th January Evening Slot",
+          "question": {
+            "en": {
+              "content": "The curve amongst the family of curves represented by the differential equation, (x<sup>2</sup> – y<sup>2</sup>)dx + 2xy dy = 0 which passes through (1, 1) is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-nbspdy-over-dx-3-over-cos-2xy-jee-main-mathematics-trigonometric-functions-and-equations-scksn6cnsan1lhhq",
+          "paperTitle": "JEE Main 2019 (Online) 10th January Morning Slot",
+          "question": {
+            "en": {
+              "content": "If &nbsp;$${{dy} \\over {dx}} + {3 \\over {{{\\cos }^2}x}}y = {1 \\over {{{\\cos }^2}x}},\\,\\,x \\in \\left( {{{ - \\pi } \\over 3},{\\pi  \\over 3}} \\right)$$&nbsp;&nbsp;and&nbsp;&nbsp;$$y\\left( {{\\pi  \\over 4}} \\right) = {4 \\over 3},$$&nbsp;&nbsp;then&nbsp;&nbsp;$$y\\left( { - {\\pi  \\over 4}} \\right)$$&nbsp;&nbsp; equals -"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-f-01-to-nbspr-be-such-that-fxy-fxfy-jee-main-mathematics-trigonometric-functions-and-equations-3gr3ebxuzrmf4v2t",
+          "paperTitle": "JEE Main 2019 (Online) 9th January Evening Slot",
+          "question": {
+            "en": {
+              "content": "Let f : [0,1] $$ \\to $$&nbsp;<b>R</b> be such that f(xy) = f(x).f(y),  for all x, y $$ \\in $$ [0, 1], and f(0) $$ \\ne $$ 0. If y = y(x) satiesfies the differential equation, $${{dy} \\over {dx}}$$ = f(x) with y(0) = 1, then y$$\\left( {{1 \\over 4}} \\right)$$ + y$$\\left( {{3 \\over 4}} \\right)$$ is equal to : "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-yx-is-solution-of-xdy-over-dx-2y-x2-y1-1-jee-main-mathematics-differential-equations-qavpkol6cyoiotvd",
+          "paperTitle": "JEE Main 2019 (Online) 9th January Morning Slot",
+          "question": {
+            "en": {
+              "content": "If y = y(x) is the solution of the differential equation, \n<br><br>x$$dy \\over dx$$ + 2y = x<sup>2</sup>, satisfying y(1) = 1, then y($$1\\over2$$) is equal\nto :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-differential-equation-representing-the-familyof-ellipses-jee-main-mathematics-trigonometric-functions-and-equations-9pt4pxjvgrmqqkfc",
+          "paperTitle": "JEE Main 2018 (Online) 16th April Morning Slot",
+          "question": {
+            "en": {
+              "content": "The differential equation representing the family of ellipse having foci eith on the x-axis or on the $$y$$-axis, center at the origin and passing through the point (0, 3) is : "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-y-yx-be-the-solution-of-the-differential-equation-2018-marks-4-ptrihbv8fwzpwkpl.htm",
+          "paperTitle": "JEE Main 2018 (Offline)",
+          "question": {
+            "en": {
+              "content": "Let y = y(x) be the solution of the differential equation\n<br><br>$$\\sin x{{dy} \\over {dx}} + y\\cos x = 4x$$, $$x \\in \\left( {0,\\pi } \\right)$$.\n<br><br>If $$y\\left( {{\\pi  \\over 2}} \\right) = 0$$, then $$y\\left( {{\\pi  \\over 6}} \\right)$$ is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "thecurve-satifying-the-differeial-equation-x2-y2-dx-jee-main-mathematics-trigonometric-functions-and-equations-atywe6pk6be2swt8",
+          "paperTitle": "JEE Main 2018 (Online) 15th April Evening Slot",
+          "question": {
+            "en": {
+              "content": "The curve satifying the differeial equation, (x<sup>2</sup> $$-$$ y<sup>2</sup>) dx + 2xydy = 0 and passing through the point (1, 1) is : "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-y-yx-be-the-solution-of-the-differential-equation-jee-main-mathematics-trigonometric-functions-and-equations-2rtg1dmxcyezzq92",
+          "paperTitle": "JEE Main 2018 (Online) 15th April Morning Slot",
+          "question": {
+            "en": {
+              "content": "Let y = y(x) be the solution of the differential equation $${{dy} \\over {dx}} + 2y = f\\left( x \\right),$$ <br><br>where $$f\\left( x \\right) = \\left\\{ {\\matrix{\n   {1,} &amp; {x \\in \\left[ {0,1} \\right]}  \\cr \n   {0,} &amp; {otherwise}  \\cr \n\n } } \\right.$$\n<br><br>If y(0) = 0, then $$y\\left( {{3 \\over 2}} \\right)$$ is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-2x-y1-over-5-y-1-over-5-and-jee-main-mathematics-trigonometric-functions-and-equations-vo8ifz0xzrp5b5hu",
+          "paperTitle": "JEE Main 2017 (Online) 9th April Morning Slot",
+          "question": {
+            "en": {
+              "content": "If 2x = y$${^{{1 \\over 5}}}$$ + y$${^{ - {1 \\over 5}}}$$ and \n<br><br>(x<sup>2</sup> $$-$$ 1) $${{{d^2}y} \\over {d{x^2}}}$$ + $$\\lambda $$x $${{dy} \\over {dx}}$$ + ky = 0, \n<br><br>then $$\\lambda $$ + k is equal to : "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-curve-satisfying-the-differential-equation-ydx-x-jee-main-mathematics-trigonometric-functions-and-equations-zczbqypyq9dvxn2w",
+          "paperTitle": "JEE Main 2017 (Online) 8th April Morning Slot",
+          "question": {
+            "en": {
+              "content": "The curve satisfying the differential equation,  ydx $$-$$(x + 3y<sup>2</sup>)dy = 0 and passing through the point (1, 1), also passes through the point : "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-left-2-sin-x-rightdy-over-dx-left-2017-marks-4-3dimccnbbdbvldmu.htm",
+          "paperTitle": "JEE Main 2017 (Offline)",
+          "question": {
+            "en": {
+              "content": "If $$\\left( {2 + \\sin x} \\right){{dy} \\over {dx}} + \\left( {y + 1} \\right)\\cos x = 0$$ and y(0) = 1,\n<br><br>then $$y\\left( {{\\pi  \\over 2}} \\right)$$ is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-solution-of-the-differential-equation-dy-over-dx-jee-main-mathematics-trigonometric-functions-and-equations-v2epo9lawhvdshqz",
+          "paperTitle": "JEE Main 2016 (Online) 10th April Morning Slot",
+          "question": {
+            "en": {
+              "content": "The solution of the differential equation\n<br><br>$${{dy} \\over {dx}}\\, + \\,{y \\over 2}\\,\\sec x = {{\\tan x} \\over {2y}},\\,\\,$$  \n<br><br>where 0 $$ \\le $$ x &lt; $${\\pi  \\over 2}$$, and y (0) = 1, is given  by : "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "ifnbspnbsp-fx-is-a-differentiable-function-in-the-int-jee-main-mathematics-trigonometric-functions-and-equations-b0xa1xy53uvg2g00",
+          "paperTitle": "JEE Main 2016 (Online) 9th April Morning Slot",
+          "question": {
+            "en": {
+              "content": "If&nbsp;&nbsp;  f(x) is a differentiable function in the interval (0, $$\\infty $$) such that f (1) = 1 and  \n<br><br>$$\\mathop {\\lim }\\limits_{t \\to x} $$ &nbsp; $${{{t^2}f\\left( x \\right) - {x^2}f\\left( t \\right)} \\over {t - x}} = 1,$$ for each x &gt; 0, then $$f\\left( {{\\raise0.5ex\\hbox{$\\scriptstyle 3$}\n\\kern-0.1em/\\kern-0.15em\n\\lower0.25ex\\hbox{$\\scriptstyle 2$}}} \\right)$$ equal to : "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-a-curve-yfx-passes-through-the-point-1-1-and-satisfies-th-jee-main-2016-marks-4-pbkc9ctwhfjqbquk.htm",
+          "paperTitle": "JEE Main 2016 (Offline)",
+          "question": {
+            "en": {
+              "content": "If a curve $$y=f(x)$$ passes through the point $$(1,-1)$$ and satisfies the differential equation, $$y(1+xy) dx=x$$ $$dy$$,  then $$f\\left( { - {1 \\over 2}} \\right)$$ is equal to : "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-yx-be-the-solution-of-the-differential-equation-left-xlo-jee-main-2015-marks-4-3ixylrimubrq20y2.htm",
+          "paperTitle": "JEE Main 2015 (Offline)",
+          "question": {
+            "en": {
+              "content": "Let $$y(x)$$ be the solution of the differential equation \n<br><br/>$$\\left( {x\\,\\log x} \\right){{dy} \\over {dx}} + y = 2x\\,\\log x,\\left( {x \\ge 1} \\right).$$ Then $$y(e)$$ is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-the-population-of-rabbits-surviving-at-time-t-be-governe-jee-main-2014-marks-4-fcsyrkqno2ber6iq.htm",
+          "paperTitle": "JEE Main 2014 (Offline)",
+          "question": {
+            "en": {
+              "content": "Let the population of rabbits surviving at time $$t$$ be governed  by the differential equation $${{dp\\left( t \\right)} \\over {dt}} = {1 \\over 2}p\\left( t \\right) - 200.$$ If $$p(0)=100,$$ then $$p(t)$$ equals:"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "at-present-a-firm-is-manufacturing-2000-items-it-is-estimate-jee-main-2013-marks-4-dbbeuvxqz32hcdyr.htm",
+          "paperTitle": "JEE Main 2013 (Offline)",
+          "question": {
+            "en": {
+              "content": "At present, a firm is manufacturing $$2000$$ items. It is estimated that the rate of change of production P  w.r.t.  additional number of workers $$x$$ is given by $${{dp} \\over {dx}} = 100 - 12\\sqrt x .$$ If the firm employs $$25$$ more workers, then the new level of production of items is "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-population-p-t-at-time-t-of-a-certain-mouse-species-sati-jee-main-2012-marks-4-8gknz0sczc0mtk67.htm",
+          "paperTitle": "AIEEE 2012",
+          "question": {
+            "en": {
+              "content": "The population $$p$$ $$(t)$$ at time $$t$$ of a certain mouse species satisfies the differential equation $${{dp\\left( t \\right)} \\over {dt}} = 0.5\\,p\\left( t \\right) - 450.\\,\\,$$ If $$p(0)=850,$$ then the time at which the population becomes zero is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-i-be-the-purchase-value-of-an-equipment-and-vt-be-the-va-jee-main-2011-marks-4-2qp8dfoegmelvv1x.htm",
+          "paperTitle": "AIEEE 2011",
+          "question": {
+            "en": {
+              "content": "Let $$I$$ be the purchase value of an equipment and $$V(t)$$ be the value after it has been used for $$t$$ years. The value $$V(t)$$ depreciates at a rate given by differential equation $${{dv\\left( t \\right)} \\over {dt}} =  - k\\left( {T - t} \\right),$$  where $$k&gt;0$$ is a constant and $$T$$ is the total life in years of the equipment. Then the scrap value $$V(T)$$ of the equipment is "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-dy-over-dx-y-3-0-and-y02-then-yleft-ln-2-right-is-equal-t-jee-main-2011-marks-4-mrsmducqiit55v0x.htm",
+          "paperTitle": "AIEEE 2011",
+          "question": {
+            "en": {
+              "content": "If $${{dy} \\over {dx}} = y + 3 &gt; 0\\,\\,$$ and $$y(0)=2,$$ then $$y\\left( {\\ln 2} \\right)$$ is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "solution-of-the-differential-equation-cos-xdy-yleft-sin-x-y-jee-main-2010-marks-4-d1aby8kr3f4ppiww.htm",
+          "paperTitle": "AIEEE 2010",
+          "question": {
+            "en": {
+              "content": "Solution of the differential equation \n<br><br/>$$\\cos x\\,dy = y\\left( {\\sin x - y} \\right)dx,\\,\\,0 &lt; x <{\\pi  \\over 2}$$ is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-differential-equation-which-represents-the-family-of-cur-jee-main-2009-marks-4-ymdjdeljwpq7xlxd.htm",
+          "paperTitle": "AIEEE 2009",
+          "question": {
+            "en": {
+              "content": "The differential equation which represents the family of curves $$y = {c_1}{e^{{c_2}x}},$$ where $${c_1}$$ , and $${c_2}$$ are arbitrary constants, is "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-solution-of-the-differential-equation-dy-over-dx-x-y-ove-jee-main-2008-marks-4-66nkd6pi4hlzitbu.htm",
+          "paperTitle": "AIEEE 2008",
+          "question": {
+            "en": {
+              "content": "The solution of the differential equation \n<br><br/>$${{dy} \\over {dx}} = {{x + y} \\over x}$$ satisfying the condition $$y(1)=1$$ is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-differential-equation-of-all-circles-passing-through-the-jee-main-2007-marks-4-po1lw9jbswomuyzs.htm",
+          "paperTitle": "AIEEE 2007",
+          "question": {
+            "en": {
+              "content": "The differential equation of all circles passing through the origin and having their centres on the $$x$$-axis is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-differential-equation-whose-solution-is-ax2-by2-1-where-jee-main-2006-marks-4-pvddrayxcshwkkyj.htm",
+          "paperTitle": "AIEEE 2006",
+          "question": {
+            "en": {
+              "content": "The differential equation whose solution is $$A{x^2} + B{y^2} = 1$$ \n<br>where $$A$$ and $$B$$ are arbitrary constants is of "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-differential-equation-representing-the-family-of-curves-jee-main-2005-marks-4-9wllhtpefi6qcarx.htm",
+          "paperTitle": "AIEEE 2005",
+          "question": {
+            "en": {
+              "content": "The differential equation representing the family of curves $${y^2} = 2c\\left( {x + \\sqrt c } \\right),$$ where $$c&gt;0,$$ is a parameter, is of order and degree as follows: "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-xdy-over-dx-yleft-log-y-log-x-1-right-then-the-solution-o-jee-main-2005-marks-4-hraarjompwqseth4.htm",
+          "paperTitle": "AIEEE 2005",
+          "question": {
+            "en": {
+              "content": "If $$x{{dy} \\over {dx}} = y\\left( {\\log y - \\log x + 1} \\right),$$ then the solution of the equation is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-differential-equation-for-the-family-of-circle-x2-y2-2ay-jee-main-2004-marks-4-frldyjchgpcbyscr.htm",
+          "paperTitle": "AIEEE 2004",
+          "question": {
+            "en": {
+              "content": "The differential equation for the family of circle $${x^2} + {y^2} - 2ay = 0,$$ where a is an arbitrary constant is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "solution-of-the-differential-equation-ydx-left-x-x2y-rightdy-jee-main-2004-marks-4-16rf0frylxzouj23.htm",
+          "paperTitle": "AIEEE 2004",
+          "question": {
+            "en": {
+              "content": "Solution of the differential equation $$ydx + \\left( {x + {x^2}y} \\right)dy = 0$$ is "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-degree-and-order-of-the-differential-equation-of-the-fam-jee-main-2003-marks-4-74wvdlmkoojydyjv.htm",
+          "paperTitle": "AIEEE 2003",
+          "question": {
+            "en": {
+              "content": "The degree and order of the differential equation of the family of all parabolas whose axis is $$x$$-axis, are respectively."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-solution-of-the-differential-equation-left-1-y2-right-le-jee-main-2003-marks-4-40mgpqbhsq7ttaf7.htm",
+          "paperTitle": "AIEEE 2003",
+          "question": {
+            "en": {
+              "content": "The solution of the differential equation \n<br><br>$$\\left( {1 + {y^2}} \\right) + \\left( {x - {e^{{{\\tan }^{ - 1}}y}}} \\right){{dy} \\over {dx}} = 0,$$ is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-order-and-degree-of-the-differential-equation-left-1-3dy-jee-main-2002-marks-4-v1c52tluog2jpj03.htm",
+          "paperTitle": "AIEEE 2002",
+          "question": {
+            "en": {
+              "content": "The order and degree of the differential equation \n<br>$$\\,{\\left( {1 + 3{{dy} \\over {dx}}} \\right)^{2/3}} = 4{{{d^3}y} \\over {d{x^3}}}$$ are "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-solution-of-the-equation-d2y-over-dx2-e-2x-jee-main-2002-marks-4-lkfclsdoleymmuct.htm",
+          "paperTitle": "AIEEE 2002",
+          "question": {
+            "en": {
+              "content": "The solution of the equation $$\\,{{{d^2}y} \\over {d{x^2}}} = {e^{ - 2x}}$$ "
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Numerical",
+      "key": "integer",
+      "questions": [
+        {
+          "examGroup": "jee",
+          "permalink": "plet-yyx-be-the-solution-of-the-differential-equation-jee-main-mathematics-trigonometric-functions-and-equations-wj7cnqk0tjp22g80",
+          "paperTitle": "JEE Main 2026 (Online) 6th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $y=y(x)$ be the solution of the differential equation $\\left(x^2-x \\sqrt{x^2-1}\\right) d y+\\left(y\\left(x-\\sqrt{x^2-1}\\right)-x\\right) d x=0, x \\geq 1$. If $y(1)=1$, then the greatest integer less than $y(\\sqrt{5})$ is $\\_\\_\\_\\_$ .</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-yyx-be-the-solution-of-the-differential-equation-jee-main-mathematics-trigonometric-functions-and-equations-crmdnvmrre9ewzjt",
+          "paperTitle": "JEE Main 2026 (Online) 5th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $y=y(x)$ be the solution of the differential equation $(\\tan x)^{1 / 2} \\mathrm{~d} y=\\left(\\sec ^3 x-(\\tan x)^{3 / 2} y\\right) \\mathrm{d} x, 0 < x <\\frac{\\pi}{2}, y\\left(\\frac{\\pi}{4}\\right)=\\frac{6 \\sqrt{2}}{5}$. If $y\\left(\\frac{\\pi}{3}\\right)=\\frac{4}{5} \\alpha$, then $\\alpha^4$ equals</p>\n<p>$\\_\\_\\_\\_$ .</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-yyx-be-the-solution-of-the-differential-equation-jee-main-mathematics-trigonometric-functions-and-equations-76xrueahqozpmmay",
+          "paperTitle": "JEE Main 2026 (Online) 5th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $y=y(x)$ be the solution of the differential equation $x \\sin \\left(\\frac{y}{x}\\right) d y=\\left(y \\sin \\left(\\frac{y}{x}\\right)-x\\right) d x, y(1)=\\frac{\\pi}{2}$ and let $\\alpha=\\cos \\left(\\frac{y\\left(e^{12}\\right)}{e^{12}}\\right)$. Then the number of integral value of $p$, for which the equation $x^2+y^2-2 p x+2 p y+\\alpha+2=0$ represents a circle of radius $r \\leq 6$, is $\\_\\_\\_\\_$ .</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-f-be-a-twice-differentiable-function-such-thatp-jee-main-mathematics-trigonometric-functions-and-equations-l9sd5pphro6c0ef4",
+          "paperTitle": "JEE Main 2026 (Online) 4th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $f$ be a twice differentiable function such that</p>\n<p>$$ f(x)=\\int_0^x \\tan (t-x) d t-\\int_0^x f(t) \\tan t d t, x \\in\\left(-\\frac{\\pi}{2}, \\frac{\\pi}{2}\\right) $$</p>\n<p>Then $f^{\\prime \\prime}\\left(\\frac{\\pi}{6}\\right)+12 f^{\\prime}\\left(-\\frac{\\pi}{6}\\right)+f\\left(\\frac{\\pi}{6}\\right)$ is equal to _______.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-the-solution-curve-yfx-of-the-differential-equati-jee-main-mathematics-trigonometric-functions-and-equations-49fisbhttystdkbc",
+          "paperTitle": "JEE Main 2026 (Online) 23rd January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>If the solution curve $y=f(x)$ of the differential equation</p>\n<p>$$ \\left(x^2-4\\right) y^{\\prime}-2 x y+2 x\\left(4-x^2\\right)^2=0, x>2, $$</p>\n<p>passes through the point $(3,15)$, then the local maximum value of $f$ is $\\_\\_\\_\\_$</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-f-be-a-twice-differentiable-non-negative-function-s-jee-main-mathematics-trigonometric-functions-and-equations-mbvspeey4xu1jglq",
+          "paperTitle": "JEE Main 2026 (Online) 23rd January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $f$ be a twice differentiable non-negative function such that $(f(x))^2=25+\\int_0^x\\left((f(\\mathrm{t}))^2+\\left(f^{\\prime}(\\mathrm{t})\\right)^2\\right) \\mathrm{dt}$. Then the mean of $f\\left(\\log _{\\mathrm{e}}(1)\\right), f\\left(\\log _{\\mathrm{e}}(2)\\right), \\ldots . ., f\\left(\\log _{\\mathrm{e}}(625)\\right)$ is equal to $\\_\\_\\_\\_$ .</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-yyx-be-the-solution-of-the-differential-equation--jee-main-mathematics-trigonometric-functions-and-equations-7pm2iliuy8i0xzxw",
+          "paperTitle": "JEE Main 2025 (Online) 2nd April Evening Shift",
+          "question": {
+            "en": {
+              "content": "Let $y=y(x)$ be the solution of the differential equation $\\frac{\\mathrm{d} y}{\\mathrm{~d} x}+2 y \\sec ^2 x=2 \\sec ^2 x+3 \\tan x \\cdot \\sec ^2 x$ such that $y(0)=\\frac{5}{4}$. Then $12\\left(y\\left(\\frac{\\pi}{4}\\right)-\\mathrm{e}^{-2}\\right)$ is equal to_____________________"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-yyx-is-the-solution-of-the-differential-equation-jee-main-mathematics-iri78qkfpbzcjsvx",
+          "paperTitle": "JEE Main 2025 (Online) 28th January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>If $y=y(x)$ is the solution of the differential equation,\n$\\sqrt{4-x^2} \\frac{\\mathrm{~d} y}{\\mathrm{~d} x}=\\left(\\left(\\sin ^{-1}\\left(\\frac{x}{2}\\right)\\right)^2-y\\right) \\sin ^{-1}\\left(\\frac{x}{2}\\right),-2 \\leq x \\leq 2, y(2)=\\frac{\\pi^2-8}{4}$, then $y^2(0)$ is equal to ___________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-yyx-be-the-solution-of-the-differential-equation-jee-main-mathematics-trigonometric-functions-and-equations-c7v7bt149enz9jhh",
+          "paperTitle": "JEE Main 2025 (Online) 24th January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $y=y(x)$ be the solution of the differential equation <br/><br/>$2 \\cos x \\frac{\\mathrm{~d} y}{\\mathrm{~d} x}=\\sin 2 x-4 y \\sin x, x \\in\\left(0, \\frac{\\pi}{2}\\right)$. If $y\\left(\\frac{\\pi}{3}\\right)=0$, then $y^{\\prime}\\left(\\frac{\\pi}{4}\\right)+y\\left(\\frac{\\pi}{4}\\right)$ is equal to _________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-f-be-a-differentiable-function-such-that-2x22-jee-main-mathematics-trigonometric-functions-and-equations-jl5ph2msp0k7j2ky",
+          "paperTitle": "JEE Main 2025 (Online) 24th January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $f$ be a differentiable function such that $2(x+2)^2 f(x)-3(x+2)^2=10 \\int_0^x(t+2) f(t) d t, x \\geq 0$. Then $f(2)$ is equal to ________ .</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-yfx-be-the-solution-of-the-differential-equation-jee-main-mathematics-trigonometric-functions-and-equations-w7xos6px1b6iojhy",
+          "paperTitle": "JEE Main 2025 (Online) 22nd January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $y=f(x)$ be the solution of the differential equation $\\frac{\\mathrm{d} y}{\\mathrm{~d} x}+\\frac{x y}{x^2-1}=\\frac{x^6+4 x}{\\sqrt{1-x^2}},-1< x<1$ such that $f(0)=0$. If $6 \\int_{-1 / 2}^{1 / 2} f(x) \\mathrm{d} x=2 \\pi-\\alpha$ then $\\alpha^2$ is equal to _________ .</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pfor-a-differentiable-function-f-mathbbr-rightarrow-jee-main-mathematics-trigonometric-functions-and-equations-xro3dos12crncdsy",
+          "paperTitle": "JEE Main 2024 (Online) 9th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>For a differentiable function $$f: \\mathbb{R} \\rightarrow \\mathbb{R}$$, suppose $$f^{\\prime}(x)=3 f(x)+\\alpha$$, where $$\\alpha \\in \\mathbb{R}, f(0)=1$$ and $$\\lim _\\limits{x \\rightarrow-\\infty} f(x)=7$$. Then $$9 f\\left(-\\log _e 3\\right)$$ is equal to _________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-alphaxy-mathrmex-y-beta-alpha-beta-jee-main-mathematics-trigonometric-functions-and-equations-e4x7irjzn14883vj",
+          "paperTitle": "JEE Main 2024 (Online) 8th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$\\alpha|x|=|y| \\mathrm{e}^{x y-\\beta}, \\alpha, \\beta \\in \\mathbf{N}$$ be the solution of the differential equation $$x \\mathrm{~d} y-y \\mathrm{~d} x+x y(x \\mathrm{~d} y+y \\mathrm{~d} x)=0,y(1)=2$$. Then $$\\alpha+\\beta$$ is equal to ________</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-the-solution-yx-of-the-given-differential-equati-jee-main-mathematics-trigonometric-functions-and-equations-lkgqxbcmoppigq09",
+          "paperTitle": "JEE Main 2024 (Online) 6th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>If the solution $$y(x)$$ of the given differential equation $$\\left(e^y+1\\right) \\cos x \\mathrm{~d} x+\\mathrm{e}^y \\sin x \\mathrm{~d} y=0$$ passes through the point $$\\left(\\frac{\\pi}{2}, 0\\right)$$, then the value of $$e^{y\\left(\\frac{\\pi}{6}\\right)}$$ is equal to _________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-yyx-be-the-solution-of-the-differential-equati-jee-main-mathematics-trigonometric-functions-and-equations-yawq6nyclv7ciye5",
+          "paperTitle": "JEE Main 2024 (Online) 5th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$y=y(x)$$ be the solution of the differential equation</p>\n<p>$$\\frac{\\mathrm{d} y}{\\mathrm{~d} x}+\\frac{2 x}{\\left(1+x^2\\right)^2} y=x \\mathrm{e}^{\\frac{1}{\\left(1+x^2\\right)}} ; y(0)=0.$$</p>\n<p>Then the area enclosed by the curve $$f(x)=y(x) \\mathrm{e}^{-\\frac{1}{\\left(1+x^2\\right)}}$$ and the line $$y-x=4$$ is ________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-yyx-be-the-solution-of-the-differential-equati-jee-main-mathematics-trigonometric-functions-and-equations-xgvpokrbz7xgxyde",
+          "paperTitle": "JEE Main 2024 (Online) 4th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$y=y(x)$$ be the solution of the differential equation $$(x+y+2)^2 d x=d y, y(0)=-2$$. Let the maximum and minimum values of the function $$y=y(x)$$ in $$\\left[0, \\frac{\\pi}{3}\\right]$$ be $$\\alpha$$ and $$\\beta$$, respectively. If $$(3 \\alpha+\\pi)^2+\\beta^2=\\gamma+\\delta \\sqrt{3}, \\gamma, \\delta \\in \\mathbb{Z}$$, then $$\\gamma+\\delta$$ equals _________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-the-solution-yyx-of-the-differential-equation-jee-main-mathematics-trigonometric-functions-and-equations-5xhln2zlsvixnowj",
+          "paperTitle": "JEE Main 2024 (Online) 4th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let the solution $$y=y(x)$$ of the differential equation $$\\frac{\\mathrm{d} y}{\\mathrm{~d} x}-y=1+4 \\sin x$$ satisfy $$y(\\pi)=1$$. Then $$y\\left(\\frac{\\pi}{2}\\right)+10$$ is equal to __________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-fracmathrmd-xmathrmd-yfrac1x-y2y-x-jee-main-mathematics-eoi0j9nrytthgvny",
+          "paperTitle": "JEE Main 2024 (Online) 1st February Evening Shift",
+          "question": {
+            "en": {
+              "content": "If $\\frac{\\mathrm{d} x}{\\mathrm{~d} y}=\\frac{1+x-y^2}{y}, x(1)=1$, then $5 x(2)$ is equal to __________."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-xxt-is-the-solution-of-the-differential-equation-t-jee-main-mathematics-dru7f36v2ae3tgck",
+          "paperTitle": "JEE Main 2024 (Online) 1st February Morning Shift",
+          "question": {
+            "en": {
+              "content": "If $x=x(t)$ is the solution of the differential equation $(t+1) \\mathrm{d} x=\\left(2 x+(t+1)^4\\right) \\mathrm{dt}, x(0)=2$, then, $x(1)$ equals _________."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-yyx-be-the-solution-of-the-differential-equati-jee-main-mathematics-trigonometric-functions-and-equations-swjibeuno77gkiqv",
+          "paperTitle": "JEE Main 2024 (Online) 31st January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$y=y(x)$$ be the solution of the differential equation \n<br/><br/>$$\\sec ^2 x d x+\\left(e^{2 y} \\tan ^2 x+\\tan x\\right) d y=0,0< x<\\frac{\\pi}{2}, y(\\pi / 4)=0$$. \n<br/><br/>If $$y(\\pi / 6)=\\alpha$$, then $$e^{8 \\alpha}$$ is equal to ____________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-yyx-be-a-curve-lying-in-the-first-quadrant-suc-jee-main-mathematics-trigonometric-functions-and-equations-lpfkd22duurvukpm",
+          "paperTitle": "JEE Main 2024 (Online) 30th January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$Y=Y(X)$$ be a curve lying in the first quadrant such that the area enclosed by the line $$Y-y=Y^{\\prime}(x)(X-x)$$ and the co-ordinate axes, where $$(x, y)$$ is any point on the curve, is always $$\\frac{-y^2}{2 Y^{\\prime}(x)}+1, Y^{\\prime}(x) \\neq 0$$. If $$Y(1)=1$$, then $$12 Y(2)$$ equals __________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-yyx-be-the-solution-of-the-differential-equati-jee-main-mathematics-trigonometric-functions-and-equations-1bx1a892lbj0vir0",
+          "paperTitle": "JEE Main 2024 (Online) 30th January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$y=y(x)$$ be the solution of the differential equation $$\\left(1-x^2\\right) \\mathrm{d} y=\\left[x y+\\left(x^3+2\\right) \\sqrt{3\\left(1-x^2\\right)}\\right] \\mathrm{d} x, -1< x<1, y(0)=0$$. If $$y\\left(\\frac{1}{2}\\right)=\\frac{\\mathrm{m}}{\\mathrm{n}}, \\mathrm{m}$$ and $$\\mathrm{n}$$ are co-prime numbers, then $$\\mathrm{m}+\\mathrm{n}$$ is equal to __________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-the-solution-curve-yyx-of-the-differential-equa-jee-main-mathematics-trigonometric-functions-and-equations-fdhanvnttfe1df3j",
+          "paperTitle": "JEE Main 2024 (Online) 29th January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>If the solution curve $$y=y(x)$$ of the differential equation $$\\left(1+y^2\\right)\\left(1+\\log _{\\mathrm{e}} x\\right) d x+x d y=0, x > 0$$ passes through the point $$(1,1)$$ and $$y(e)=\\frac{\\alpha-\\tan \\left(\\frac{3}{2}\\right)}{\\beta+\\tan \\left(\\frac{3}{2}\\right)}$$, then $$\\alpha+2 \\beta$$ is _________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-the-solution-curve-of-the-differential-equation-fr-jee-main-mathematics-trigonometric-functions-and-equations-qskmhufs869r3dak",
+          "paperTitle": "JEE Main 2024 (Online) 27th January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>If the solution curve, of the differential equation $$\\frac{\\mathrm{d} y}{\\mathrm{~d} x}=\\frac{x+y-2}{x-y}$$ passing through the point $$(2,1)$$ is $$\\tan ^{-1}\\left(\\frac{y-1}{x-1}\\right)-\\frac{1}{\\beta} \\log _{\\mathrm{e}}\\left(\\alpha+\\left(\\frac{y-1}{x-1}\\right)^2\\right)=\\log _{\\mathrm{e}}|x-1|$$, then $$5 \\beta+\\alpha$$ is equal to __________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-the-solution-of-the-differential-equation-brbr2-x-jee-main-mathematics-etyldoapegxdsmdl",
+          "paperTitle": "JEE Main 2024 (Online) 27th January Morning Shift",
+          "question": {
+            "en": {
+              "content": "If the solution of the differential equation <br/><br/>$(2 x+3 y-2) \\mathrm{d} x+(4 x+6 y-7) \\mathrm{d} y=0, y(0)=3$, is \n<br/><br/>$\\alpha x+\\beta y+3 \\log _e|2 x+3 y-\\gamma|=6$, then $\\alpha+2 \\beta+3 \\gamma$ is equal to ____________."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-yyx-is-the-solution-of-the-differential-equatio-jee-main-mathematics-trigonometric-functions-and-equations-lnz8saofaesbsb8a",
+          "paperTitle": "JEE Main 2023 (Online) 13th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>If $$y=y(x)$$ is the solution of the differential equation <br/><br/>$$\\frac{d y}{d x}+\\frac{4 x}{\\left(x^{2}-1\\right)} y=\\frac{x+2}{\\left(x^{2}-1\\right)^{\\frac{5}{2}}}, x > 1$$ such that <br/><br/>$$y(2)=\\frac{2}{9} \\log _{e}(2+\\sqrt{3}) \\text { and } y(\\sqrt{2})=\\alpha \\log _{e}(\\sqrt{\\alpha}+\\beta)+\\beta-\\sqrt{\\gamma}, \\alpha, \\beta, \\gamma \\in \\mathbb{N} \\text {, then } \\alpha \\beta \\gamma \\text { is equal to }$$ :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-the-tangent-at-any-point-p-on-a-curve-passing-through-jee-main-mathematics-trigonometric-functions-and-equations-0i0nwgoypm2tpojz",
+          "paperTitle": "JEE Main 2023 (Online) 10th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let the tangent at any point P on a curve passing through the points (1, 1) and $$\\left(\\frac{1}{10}, 100\\right)$$, intersect positive $$x$$-axis and $$y$$-axis at the points A and B respectively. If $$\\mathrm{PA}: \\mathrm{PB}=1: k$$ and $$y=y(x)$$ is the solution of the differential equation $$e^{\\frac{d y}{d x}}=k x+\\frac{k}{2}, y(0)=k$$, then $$4 y(1)-6 \\log _{\\mathrm{e}} 3$$ is equal to ____________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-the-solution-curve-xxy-0--y--fracpi2-jee-main-mathematics-trigonometric-functions-and-equations-qxj3lgfvga8ptdg6",
+          "paperTitle": "JEE Main 2023 (Online) 8th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let the solution curve $$x=x(y), 0 < y < \\frac{\\pi}{2}$$, of the differential equation $$\\left(\\log _{e}(\\cos y)\\right)^{2} \\cos y \\mathrm{~d} x-\\left(1+3 x \\log _{e}(\\cos y)\\right) \\sin \\mathrm{y} d y=0$$ satisfy $$x\\left(\\frac{\\pi}{3}\\right)=\\frac{1}{2 \\log _{e} 2}$$. If $$x\\left(\\frac{\\pi}{6}\\right)=\\frac{1}{\\log _{e} m-\\log _{e} n}$$, where $$m$$ and $$n$$ are coprime, then $$m n$$ is equal to __________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-the-solution-curve-of-the-differential-equation-lef-jee-main-mathematics-trigonometric-functions-and-equations-dnryamatf9bmj4w6",
+          "paperTitle": "JEE Main 2023 (Online) 8th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>If the solution curve of the differential equation $$\\left(y-2 \\log _{e} x\\right) d x+\\left(x \\log _{e} x^{2}\\right) d y=0, x > 1$$ passes through the points $$\\left(e, \\frac{4}{3}\\right)$$ and $$\\left(e^{4}, \\alpha\\right)$$, then $$\\alpha$$ is equal to ____________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-yyx-be-a-solution-of-the-differential-equation-jee-main-mathematics-trigonometric-functions-and-equations-2wypmpgoa0ibm7h7",
+          "paperTitle": "JEE Main 2023 (Online) 6th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$y=y(x)$$ be a solution of the differential equation $$(x \\cos x) d y+(x y \\sin x+y \\cos x-1) d x=0,0 < x < \\frac{\\pi}{2}$$. If $$\\frac{\\pi}{3} y\\left(\\frac{\\pi}{3}\\right)=\\sqrt{3}$$, then $$\\left|\\frac{\\pi}{6} y^{\\prime \\prime}\\left(\\frac{\\pi}{6}\\right)+2 y^{\\prime}\\left(\\frac{\\pi}{6}\\right)\\right|$$ is equal to ____________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-yyx-be-the-solution-curve-of-the-differential-jee-main-mathematics-trigonometric-functions-and-equations-4ieqvqijcerqyfy1",
+          "paperTitle": "JEE Main 2022 (Online) 27th July Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$y=y(x)$$ be the solution curve of the differential equation</p>\n<p>$$\\sin \\left( {2{x^2}} \\right){\\log _e}\\left( {\\tan {x^2}} \\right)dy + \\left( {4xy - 4\\sqrt 2 x\\sin \\left( {{x^2} - {\\pi  \\over 4}} \\right)} \\right)dx = 0$$, $$0 < x < \\sqrt {{\\pi  \\over 2}} $$, which passes through the point $$\\left(\\sqrt{\\frac{\\pi}{6}}, 1\\right)$$. Then $$\\left|y\\left(\\sqrt{\\frac{\\pi}{3}}\\right)\\right|$$ is equal to ______________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "psuppose-yyx-be-the-solution-curve-to-the-different-jee-main-mathematics-trigonometric-functions-and-equations-jtareybq2s7wdzc8",
+          "paperTitle": "JEE Main 2022 (Online) 26th July Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Suppose $$y=y(x)$$ be the solution curve to the differential equation $$\\frac{d y}{d x}-y=2-e^{-x}$$ such that $$\\lim\\limits_{x \\rightarrow \\infty} y(x)$$ is finite. If $$a$$ and $$b$$ are respectively the $$x$$ - and $$y$$-intercepts of  the tangent to the curve at $$x=0$$, then the value of $$a-4 b$$ is equal to _____________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-a-curve-yyx-pass-through-the-point-33-a-jee-main-mathematics-trigonometric-functions-and-equations-mciiagydfz1ktb0u",
+          "paperTitle": "JEE Main 2022 (Online) 26th July Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let a curve $$y=y(x)$$ pass through the point $$(3,3)$$ and the area of the region under this curve, above the $$x$$-axis and between the abscissae 3 and $$x(>3)$$ be $$\\left(\\frac{y}{x}\\right)^{3}$$. If this curve also passes through the point $$(\\alpha, 6 \\sqrt{10})$$ in the first quadrant, then $$\\alpha$$ is equal to ___________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-yyx-be-the-solution-of-the-differential-equati-jee-main-mathematics-trigonometric-functions-and-equations-ejzt6b8qhcgrdux1",
+          "paperTitle": "JEE Main 2022 (Online) 25th July Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$y=y(x)$$ be the solution of the differential equation</p>\n<p>$$\\frac{d y}{d x}=\\frac{4 y^{3}+2 y x^{2}}{3 x y^{2}+x^{3}}, y(1)=1$$.</p>\n<p>If for some $$n \\in \\mathbb{N}, y(2) \\in[n-1, n)$$, then $$n$$ is equal to _____________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-y--yx-x--1-be-the-solution-of-the-differential-jee-main-mathematics-trigonometric-functions-and-equations-gjojyxzkqtndchaj",
+          "paperTitle": "JEE Main 2022 (Online) 29th June Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let y = y(x), x > 1, be the solution of the differential equation $$(x - 1){{dy} \\over {dx}} + 2xy = {1 \\over {x - 1}}$$, with $$y(2) = {{1 + {e^4}} \\over {2{e^4}}}$$. If $$y(3) = {{{e^\\alpha } + 1} \\over {\\beta {e^\\alpha }}}$$, then the value of $$\\alpha  + \\beta $$ is equal to _________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-y--yx-be-the-solution-of-the-differential-equation-jee-main-mathematics-trigonometric-functions-and-equations-kwkzrbjcnt8ek8qw",
+          "paperTitle": "JEE Main 2022 (Online) 29th June Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let y = y(x) be the solution of the differential equation $${{dy} \\over {dx}} + {{\\sqrt 2 y} \\over {2{{\\cos }^4}x - {{\\cos }^2}x}} = x{e^{{{\\tan }^{ - 1}}(\\sqrt 2 \\cot 2x)}},\\,0 < x < {\\pi  \\over 2}$$ with $$y\\left( {{\\pi  \\over 4}} \\right) = {{{\\pi ^2}} \\over {32}}$$. If $$y\\left( {{\\pi  \\over 3}} \\right) = {{{\\pi ^2}} \\over {18}}{e^{ - {{\\tan }^{ - 1}}(\\alpha )}}$$, then the value of 3$$\\alpha$$<sup>2</sup> is equal to ___________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-y--yx-be-the-solution-of-the-differential-equa-jee-main-mathematics-trigonometric-functions-and-equations-9mk13mbr1fq8xbgn",
+          "paperTitle": "JEE Main 2022 (Online) 27th June Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$y = y(x)$$ be the solution of the differential equation $$(1 - {x^2})dy = \\left( {xy + ({x^3} + 2)\\sqrt {1 - {x^2}} } \\right)dx, - 1 < x < 1$$, and $$y(0) = 0$$. If $$\\int_{{{ - 1} \\over 2}}^{{1 \\over 2}} {\\sqrt {1 - {x^2}} y(x)dx = k} $$, then k<sup>$$-$$1</sup> is equal to _____________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-the-solution-curve-y--yx-of-the-differential-equat-jee-main-mathematics-trigonometric-functions-and-equations-9ju4nqt6bc8dsqhu",
+          "paperTitle": "JEE Main 2022 (Online) 26th June Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let the solution curve y = y(x) of the differential equation <br/><br/>$$(4 + {x^2})dy - 2x({x^2} + 3y + 4)dx = 0$$ pass through the origin. Then y(2) is equal to _____________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-s--02pi--left-pi-over-23pi--o-jee-main-mathematics-trigonometric-functions-and-equations-j4gcxo0fhbes1tnt",
+          "paperTitle": "JEE Main 2022 (Online) 26th June Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$S = (0,2\\pi ) - \\left\\{ {{\\pi  \\over 2},{{3\\pi } \\over 4},{{3\\pi } \\over 2},{{7\\pi } \\over 4}} \\right\\}$$. Let $$y = y(x)$$, x $$\\in$$ S, be the solution curve of the differential equation $${{dy} \\over {dx}} = {1 \\over {1 + \\sin 2x}},\\,y\\left( {{\\pi  \\over 4}} \\right) = {1 \\over 2}$$. If the sum of abscissas of all the points of intersection of the curve y = y(x) with the curve $$y = \\sqrt 2 \\sin x$$ is $${{k\\pi } \\over {12}}$$, then k is equal to _____________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-y14--y-14--2x-and-x2-1d-jee-main-mathematics-trigonometric-functions-and-equations-mlg7meiyfbx6acaq",
+          "paperTitle": "JEE Main 2021 (Online) 27th August Morning Shift",
+          "question": {
+            "en": {
+              "content": "If $${y^{1/4}} + {y^{ - 1/4}} = 2x$$, and <br><br>$$({x^2} - 1){{{d^2}y} \\over {d{x^2}}} + \\alpha x{{dy} \\over {dx}} + \\beta y = 0$$, then | $$\\alpha$$ $$-$$ $$\\beta$$ | is equal to __________."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-y--yx-be-the-solution-of-the-differential-equation-dy-jee-main-mathematics-trigonometric-functions-and-equations-sv0p18chixi65p8b",
+          "paperTitle": "JEE Main 2021 (Online) 27th July Evening Shift",
+          "question": {
+            "en": {
+              "content": "Let y = y(x) be the solution of the differential equation dy = e<sup>$$\\alpha$$x + y</sup> dx; $$\\alpha$$ $$\\in$$ N. If y(log<sub>e</sub>2) = log<sub>e</sub>2 and y(0) = log<sub>e</sub>$$\\left( {{1 \\over 2}} \\right)$$, then the value of $$\\alpha$$ is equal to _____________."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-y--yxy-in-left-0pi-over-2-right-is-t-jee-main-mathematics-trigonometric-functions-and-equations-8izembjtaery7uus",
+          "paperTitle": "JEE Main 2021 (Online) 27th July Morning Shift",
+          "question": {
+            "en": {
+              "content": "If $$y = y(x),y \\in \\left[ {0,{\\pi  \\over 2}} \\right)$$ is the solution of the differential equation $$\\sec y{{dy} \\over {dx}} - \\sin (x + y) - \\sin (x - y) = 0$$, with y(0) = 0, then $$5y'\\left( {{\\pi  \\over 2}} \\right)$$ is equal to ______________."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-a-curve-y--fx-pass-through-the-point-2-logsube-jee-main-mathematics-trigonometric-functions-and-equations-vi3pdz74fsxnqkbf",
+          "paperTitle": "JEE Main 2021 (Online) 25th July Evening Shift",
+          "question": {
+            "en": {
+              "content": "Let a curve y = f(x) pass through the point (2, (log<sub>e</sub>2)<sup>2</sup>) and have slope $${{2y} \\over {x{{\\log }_e}x}}$$ for all positive real value of x. Then the value of f(e) is equal to ______________."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-y--yx-be-solution-of-the-following-differential-equat-jee-main-mathematics-trigonometric-functions-and-equations-kl332ozesxuccydc",
+          "paperTitle": "JEE Main 2021 (Online) 25th July Morning Shift",
+          "question": {
+            "en": {
+              "content": "Let y = y(x) be solution of the following differential equation $${e^y}{{dy} \\over {dx}} - 2{e^y}\\sin x + \\sin x{\\cos ^2}x = 0,y\\left( {{\\pi  \\over 2}} \\right) = 0$$ If $$y(0) = {\\log _e}(\\alpha  + \\beta {e^{ - 2}})$$, then $$4(\\alpha  + \\beta )$$ is equal to ______________."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-y--yx-be-the-solution-of-the-differential-equation--jee-main-mathematics-trigonometric-functions-and-equations-se3814l8jjozwebb",
+          "paperTitle": "JEE Main 2021 (Online) 22th July Evening Shift",
+          "question": {
+            "en": {
+              "content": "Let y = y(x) be the solution of the differential equation $$\\left( {(x + 2){e^{\\left( {{{y + 1} \\over {x + 2}}} \\right)}} + (y + 1)} \\right)dx = (x + 2)dy$$, y(1) = 1. If the domain of y = y(x) is an open interval ($$\\alpha$$, $$\\beta$$), then | $$\\alpha$$ + $$\\beta$$| is equal to ______________."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-a-curve-y--yx-be-given-by-the-solution-of-the-differe-jee-main-mathematics-trigonometric-functions-and-equations-paugqonolfye6xg5",
+          "paperTitle": "JEE Main 2021 (Online) 20th July Evening Shift",
+          "question": {
+            "en": {
+              "content": "Let a curve y = y(x) be given by the solution of the differential equation $$\\cos \\left( {{1 \\over 2}{{\\cos }^{ - 1}}({e^{ - x}})} \\right)dx = \\sqrt {{e^{2x}} - 1} dy$$. If it intersects y-axis at y = $$-$$1, and the intersection point of the curve with x-axis is ($$\\alpha$$, 0), then e<sup>$$\\alpha$$</sup> is equal to __________________."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-y--yx-be-the-solution-of-the-differential-equation-xd-jee-main-mathematics-trigonometric-functions-and-equations-fqmhy3tp67ksb4wy",
+          "paperTitle": "JEE Main 2021 (Online) 18th March Evening Shift",
+          "question": {
+            "en": {
+              "content": "Let y = y(x) be the solution of the differential equation <br><br>xdy $$-$$ ydx = $$\\sqrt {({x^2} - {y^2})} dx$$, x $$ \\ge $$ 1, with y(1) = 0. If the area bounded by the line x = 1, x = e<sup>$$\\pi$$</sup>, y = 0 and y = y(x) is $$\\alpha$$e<sup>2$$\\pi$$</sup> + $$\\beta$$, then the value of 10($$\\alpha$$ + $$\\beta$$) is equal to __________."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-the-curve-y--yx-be-the-solution-of-the-differential-e-jee-main-mathematics-trigonometric-functions-and-equations-fm5y0yle1ynzwcrn",
+          "paperTitle": "JEE Main 2021 (Online) 16th March Morning Shift",
+          "question": {
+            "en": {
+              "content": "Let the curve y = y(x) be the solution of the differential equation, $${{dy} \\over {dx}}$$ = 2(x + 1). If the numerical value of area bounded by the curve y = y(x) and x-axis is $${{4\\sqrt 8 } \\over 3}$$, then the value of y(1) is equal to _________."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-difference-between-degree-and-order-of-a-differential-eq-jee-main-mathematics-trigonometric-functions-and-equations-52nbkqqruahxco70",
+          "paperTitle": "JEE Main 2021 (Online) 26th February Morning Shift",
+          "question": {
+            "en": {
+              "content": "The difference between degree and order of a differential equation that represents the family of curves given by $${y^2} = a\\left( {x + {{\\sqrt a } \\over 2}} \\right)$$, a &gt; 0 is _________."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-y--yx-is-the-solution-of-the-equation-esin-yc-jee-main-mathematics-trigonometric-functions-and-equations-qy3ghgiun9igqsnq",
+          "paperTitle": "JEE Main 2021 (Online) 26th February Morning Shift",
+          "question": {
+            "en": {
+              "content": "If y = y(x) is the solution of the equation <br><br/>$${e^{\\sin y}}\\cos y{{dy} \\over {dx}} + {e^{\\sin y}}\\cos x = \\cos x$$, y(0) = 0; then <br><br/>$$1 + y\\left( {{\\pi  \\over 6}} \\right) + {{\\sqrt 3 } \\over 2}y\\left( {{\\pi  \\over 3}} \\right) + {1 \\over {\\sqrt 2 }}y\\left( {{\\pi  \\over 4}} \\right)$$ is equal to ____________."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-the-curve-y--yx-represented-by-the-solution-of-the-di-jee-main-mathematics-trigonometric-functions-and-equations-zapuci5xnmexywbq",
+          "paperTitle": "JEE Main 2021 (Online) 25th February Evening Shift",
+          "question": {
+            "en": {
+              "content": "If the curve, y = y(x) represented by the solution of the differential equation (2xy<sup>2</sup> $$-$$ y)dx + xdy = 0, passes through the intersection of the lines, 2x $$-$$ 3y = 1 and 3x + 2y = 8, then |y(1)| is equal to _________."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-for-x--ge--0-y--yx-is-the-solution-of-the-differ-jee-main-mathematics-differential-equations-jwheyyw4whehylcl",
+          "paperTitle": "JEE Main 2020 (Online) 9th January Morning Slot",
+          "question": {
+            "en": {
+              "content": "If for x $$ \\ge $$ 0, y = y(x) is the solution of the\ndifferential equation<br>\n(x + 1)dy = ((x + 1)<sup>2</sup> + y – 3)dx, y(2) = 0,\nthen y(3) is equal to _______."
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

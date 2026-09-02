@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "456Rz39rS88wBtpTAHjgy2xukf266vkg",
+      "paperTitle": "JEE Main 2020 (Online) 3rd September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-03 09:00",
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "acid-and-base-strength",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-one-of-the-following-compounds-possesses-the-most-acid-jee-main-chemistry-basics-of-organic-chemistry-mch4t8wcippccd5l",
+      "content": "Which one of the following compounds possesses the most acidic hydrogen?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "H<sub>3</sub>C - C <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.081ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"0.968ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -464 778 428\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2261\" xlink:href=\"#MJX-TEX-N-2261\"></use></g></g></g></svg></mjx-container> C - H"
+        },
+        {
+          "identifier": "B",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukf2637s2/62ebff73-7f8a-46c5-bcb2-7a13b5db666e/7482f020-f656-11ea-8293-3b6cc591631c/file-jgy2xukf2637s3-217w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 3rd September Morning Slot Chemistry - Basics of Organic Chemistry Question 210 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukf263pw9/08e44467-4143-4d2d-bb35-649e73eea675/82818c90-f656-11ea-8293-3b6cc591631c/file-jgy2xukf263pwa-246w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 3rd September Morning Slot Chemistry - Basics of Organic Chemistry Question 210 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukf2647i9/2370767e-7c12-4608-a393-6ddd3eff68c4/901c3710-f656-11ea-8293-3b6cc591631c/file-jgy2xukf2647ia-310w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 3rd September Morning Slot Chemistry - Basics of Organic Chemistry Question 210 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1khoikz8n/da0b89ef-0995-424d-85c8-ee76d058fbf2/fd130770-2a38-11eb-aad6-852b16a4ea58/file-1khoikz8o-460w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 3rd September Morning Slot Chemistry - Basics of Organic Chemistry Question 210 English Explanation\">"
+    }
+  ]
+}

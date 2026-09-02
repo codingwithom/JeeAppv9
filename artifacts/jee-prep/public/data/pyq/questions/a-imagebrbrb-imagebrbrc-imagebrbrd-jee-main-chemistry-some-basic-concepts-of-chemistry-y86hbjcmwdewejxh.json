@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1krq5uw39",
+      "paperTitle": "JEE Main 2021 (Online) 20th July Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "stability-of-intermediate",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "a-imagebrbrb-imagebrbrc-imagebrbrd-jee-main-chemistry-some-basic-concepts-of-chemistry-y86hbjcmwdewejxh",
+      "content": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1krq7wg1s/535c6017-2e72-4bef-9972-f452d33334f2/f2a08400-f122-11eb-a221-f3b1f28d3393/file-1krq7wg1t-320w.jpg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1krq7wg1s/535c6017-2e72-4bef-9972-f452d33334f2/f2a08400-f122-11eb-a221-f3b1f28d3393/file-1krq7wg1t-500w.jpg\"><source media=\"(max-width: 680px)\" srcset=\"https://imagex.cdn.examgoal.net/1krq7wg1s/535c6017-2e72-4bef-9972-f452d33334f2/f2a08400-f122-11eb-a221-f3b1f28d3393/file-1krq7wg1t-680w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/1krq7wg1s/535c6017-2e72-4bef-9972-f452d33334f2/f2a08400-f122-11eb-a221-f3b1f28d3393/file-1krq7wg1t.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 20th July Morning Shift Chemistry - Basics of Organic Chemistry Question 192 English\"></picture><br>Among the given species the Resonance stabilised carbocations are :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(C) and (D) only"
+        },
+        {
+          "identifier": "B",
+          "content": "(A), (B) and (D) only"
+        },
+        {
+          "identifier": "C",
+          "content": "(A) and (B) only"
+        },
+        {
+          "identifier": "D",
+          "content": "(A), (B) and (C) only"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l2ppljtc/05b6a760-1bb2-4ab6-8ad1-5b3cdba93626/c07a7900-caa1-11ec-9875-97c40a5b0f9a/file-1l2ppljtd.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l2ppljtc/05b6a760-1bb2-4ab6-8ad1-5b3cdba93626/c07a7900-caa1-11ec-9875-97c40a5b0f9a/file-1l2ppljtd.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2021 (Online) 20th July Morning Shift Chemistry - Basics of Organic Chemistry Question 192 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l2ppljtc/05b6a760-1bb2-4ab6-8ad1-5b3cdba93626/c07a7900-caa1-11ec-9875-97c40a5b0f9a/file-1l2ppljtd.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l2ppljtc/05b6a760-1bb2-4ab6-8ad1-5b3cdba93626/c07a7900-caa1-11ec-9875-97c40a5b0f9a/file-1l2ppljtd.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l2ppljtc/05b6a760-1bb2-4ab6-8ad1-5b3cdba93626/c07a7900-caa1-11ec-9875-97c40a5b0f9a/file-1l2ppljtd.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l2ppljtc/05b6a760-1bb2-4ab6-8ad1-5b3cdba93626/c07a7900-caa1-11ec-9875-97c40a5b0f9a/file-1l2ppljtd.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l2ppljtc/05b6a760-1bb2-4ab6-8ad1-5b3cdba93626/c07a7900-caa1-11ec-9875-97c40a5b0f9a/file-1l2ppljtd.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l2ppljtc/05b6a760-1bb2-4ab6-8ad1-5b3cdba93626/c07a7900-caa1-11ec-9875-97c40a5b0f9a/file-1l2ppljtd.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">\n\n<p>For resonance positive charged carbon atom ( Name it carbon 1) should be connected with the carbon atom( Name it carbon 2) using only sigma bond. Then carbon 2 should attach with another carbon with double bond. Here you can see (A) and (B) satisfies this situation but (C) and (D) don’t satisfy the situation.</p>"
+    }
+  ]
+}

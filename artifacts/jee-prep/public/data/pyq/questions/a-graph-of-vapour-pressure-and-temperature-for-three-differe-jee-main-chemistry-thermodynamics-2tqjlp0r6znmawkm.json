@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "e75DUB2jBZE6rrFwjx7k9k2k5h15kp6",
+      "paperTitle": "JEE Main 2020 (Online) 8th January Morning Slot",
+      "year": 2020,
+      "examDate": "2020-01-08 09:30",
+      "subject": "chemistry",
+      "chapter": "solutions",
+      "chapterGroup": "physical-chemistry",
+      "topic": "henrys-law",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "a-graph-of-vapour-pressure-and-temperature-for-three-differe-jee-main-chemistry-thermodynamics-2tqjlp0r6znmawkm",
+      "content": "A graph of vapour pressure and temperature for three different liquids X, Y, and Z is shown below :\n<img src=\"https://imagex.cdn.examgoal.net/7k9k2k5h1371i/cc67ea86-3980-4646-81f2-5781c5ffc10b/7e3f8060-3888-11ea-92dd-4b9c3519996f/file-7k9k2k5h1371j-320w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 8th January Morning Slot Chemistry - Solutions Question 141 English\">\nThe following inferences are made :\n<br>(A) X has higher intermolecular interactions compared to Y.\n<br>(B) X has lower intermolecular interactions compared to Y.\n<br>(C) Z has lower intermolecular interactions compared to Y.\n<br>The correct inference (s) is / are :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(B)"
+        },
+        {
+          "identifier": "B",
+          "content": "(A)"
+        },
+        {
+          "identifier": "C",
+          "content": "(C)"
+        },
+        {
+          "identifier": "D",
+          "content": "(A) and (C)"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Vapour pressure of a liquid at a given\ntemperature is inversely proportional to\nintermolecular force of attraction. At the same\ntemperature, vapour pressure of X is higher\nthan that of Y.\n<br><br>Therefore (X) has lower intermolecular\ninteractions compared to Y. Statement (B) is\ncorrect."
+    }
+  ]
+}

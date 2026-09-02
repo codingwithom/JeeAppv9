@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "jrIpSPZ42eyUlUxyKk1klud2nda",
+      "paperTitle": "JEE Main 2021 (Online) 26th February Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "hydrogen-bonding",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "given-below-are-two-statements--one-is-labelled-as-assertio-jee-main-chemistry-some-basic-concepts-of-chemistry-apqsnjrrqorxteus",
+      "content": "Given below are two statements : one is labelled as Assertion A and the other is labelled as Reason R.<br><br>Assertion A : Dipole-dipole interactions are the only non-covalent interactions, resulting in hydrogen bond formation.<br><br>Reason R : Fluorine is the most electronegative element and hydrogen bonds in HF are symmetrical.<br><br>In the light of the above statements, choose the most appropriate answer from the options given below :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Both A and R are true and R is the correct explanation of A"
+        },
+        {
+          "identifier": "B",
+          "content": "A is true but R is false"
+        },
+        {
+          "identifier": "C",
+          "content": "A is false but R is true"
+        },
+        {
+          "identifier": "D",
+          "content": "Both A and R are true but R is NOT the correct explanation of A"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Dipole - Dipole are not only the interaction\nresponsible for hydrogen bond formation.\nIon-dipole can also be responsible for\nhydrogen bond formation.\n<br><br> F is most electronegative element and\nanhydrous HF in solid phase has\nsymmetrical hydrogen bonding."
+    }
+  ]
+}

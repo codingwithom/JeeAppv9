@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "eso2oclGrXSeMCidWb1LU",
+      "paperTitle": "JEE Main 2019 (Online) 8th April Morning Slot",
+      "year": 2019,
+      "examDate": "2019-04-08 09:30",
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "effective-nuclear-charge",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-size-of-the-iso-electronic-species-cl-ar-and-ca2-is-jee-main-chemistry-some-basic-concepts-of-chemistry-an0mbwfgr13pc1d3",
+      "content": "The size of the iso-electronic species Cl<sup>–</sup>, &nbsp;Ar and Ca<sup>2+</sup> is affected by :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "electron-electron interaction in the outer orbitals"
+        },
+        {
+          "identifier": "B",
+          "content": "Principal quantum number of valence shell"
+        },
+        {
+          "identifier": "C",
+          "content": "nuclear charge"
+        },
+        {
+          "identifier": "D",
+          "content": "azimuthal quantum number of valence shell"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<table class=\"tg\">\n  <tbody><tr>\n    <th class=\"tg-nrix\"></th>\n    <th class=\"tg-nrix\">Cl<sup>-</sup></th>\n    <th class=\"tg-nrix\">Ar</th>\n    <th class=\"tg-nrix\">Ca<sup>+2</sup></th>\n  </tr>\n  <tr>\n    <td class=\"tg-nrix\">Protons</td>\n    <td class=\"tg-nrix\">17</td>\n    <td class=\"tg-nrix\">18</td>\n    <td class=\"tg-nrix\">20</td>\n  </tr>\n  <tr>\n    <td class=\"tg-baqh\">Electrons</td>\n    <td class=\"tg-baqh\">18</td>\n    <td class=\"tg-baqh\">18</td>\n    <td class=\"tg-baqh\">18</td>\n  </tr>\n</tbody></table>\n<br>Nuclear charge means number of protons present in the nucleus. Here maximum number of protons present in the Ca<sup>+2</sup> ion, so the attraction towards those 18 electrons wll be most by the nucleus of the Ca<sup>+2</sup> ion. That is why size of the Ca<sup>+2</sup> ion wll be least because of highest nuclear charge."
+    }
+  ]
+}

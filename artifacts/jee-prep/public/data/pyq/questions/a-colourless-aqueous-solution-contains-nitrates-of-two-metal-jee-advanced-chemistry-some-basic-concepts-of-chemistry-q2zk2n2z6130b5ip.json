@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "kuFxjQ89lckhplZ9mU1kk29lajm",
+      "paperTitle": "JEE Advanced 2020 Paper 1 Offline",
+      "year": 2020,
+      "subject": "chemistry",
+      "chapter": "p-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "group-17-elements-halogen-family",
+      "type": "mcq",
+      "marks": 3,
+      "negMarks": 1,
+      "permalink": "a-colourless-aqueous-solution-contains-nitrates-of-two-metal-jee-advanced-chemistry-some-basic-concepts-of-chemistry-q2zk2n2z6130b5ip",
+      "content": "A colourless aqueous solution contains nitrates of two metals, X and Y. When it was added to an aqueous solution of NaCl, a white precipitate was formed. This precipitate was found to be partly soluble in hot water to give a residue P and a solution Q. The residue P was soluble in aqueous NH<sub>3</sub> and also in excess sodium thiosulphate. The hot solution Q gave a yellow precipitate with KI. The metals X and Y, respectively, are",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Ag and Pb"
+        },
+        {
+          "identifier": "B",
+          "content": "Ag and Cd"
+        },
+        {
+          "identifier": "C",
+          "content": "Cd and Pb"
+        },
+        {
+          "identifier": "D",
+          "content": "Cd and Zn"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "X : Ag Y : Pb P : AgCl Q : PbCl<sub>2</sub><br><br> <picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1ks54wtpc/4a9516de-e0b9-4d98-804a-ba9e53142461/03871ef0-f957-11eb-8922-e7d786967bb4/file-1ks54wtpd-320w.jpeg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1ks54wtpc/4a9516de-e0b9-4d98-804a-ba9e53142461/03871ef0-f957-11eb-8922-e7d786967bb4/file-1ks54wtpd-500w.jpeg\"><source media=\"(max-width: 680px)\" srcset=\"https://imagex.cdn.examgoal.net/1ks54wtpc/4a9516de-e0b9-4d98-804a-ba9e53142461/03871ef0-f957-11eb-8922-e7d786967bb4/file-1ks54wtpd-680w.jpeg\"><source media=\"(max-width: 860px)\" srcset=\"https://imagex.cdn.examgoal.net/1ks54wtpc/4a9516de-e0b9-4d98-804a-ba9e53142461/03871ef0-f957-11eb-8922-e7d786967bb4/file-1ks54wtpd-860w.jpeg\"><source media=\"(max-width: 1040px)\" srcset=\"https://imagex.cdn.examgoal.net/1ks54wtpc/4a9516de-e0b9-4d98-804a-ba9e53142461/03871ef0-f957-11eb-8922-e7d786967bb4/file-1ks54wtpd-1040w.jpeg\"><img src=\"https://imagex.cdn.examgoal.net/1ks54wtpc/4a9516de-e0b9-4d98-804a-ba9e53142461/03871ef0-f957-11eb-8922-e7d786967bb4/file-1ks54wtpd.jpeg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2020 Paper 1 Offline Chemistry - p-Block Elements Question 58 English Explanation\"></picture> <br><br>Hence, the correct option is (a)."
+    }
+  ]
+}

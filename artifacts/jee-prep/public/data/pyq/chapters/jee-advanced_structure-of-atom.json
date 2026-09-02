@@ -1,0 +1,1446 @@
+{
+  "exam": "jee-advanced",
+  "subject": "chemistry",
+  "chapterKey": "structure-of-atom",
+  "title": "Structure of Atom | Chemistry | JEE Advanced Previous Year Questions",
+  "chapter": {
+    "metaId": "e2d45c71-c11e-559d-93b6-2735929e167e",
+    "country": "in",
+    "exam": "jee-advanced",
+    "examGroup": "jee",
+    "key": "structure-of-atom",
+    "subject": "chemistry",
+    "chapterGroup": "physical-chemistry",
+    "createdAt": "2020-12-28T13:44:37.381Z",
+    "description": null,
+    "keyValuePairs": {},
+    "order": 1,
+    "subjectGroup": null,
+    "title": "Structure of Atom",
+    "updatedAt": "2024-04-19T17:27:57.312Z",
+    "type": "chapter",
+    "pyq_stats": [
+      {
+        "year": 2026,
+        "total": 2,
+        "avg": 1,
+        "weightage": 5.88
+      },
+      {
+        "year": 2025,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2024,
+        "total": 2,
+        "avg": 1,
+        "weightage": 5.88
+      },
+      {
+        "year": 2023,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.94
+      },
+      {
+        "year": 2022,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.78
+      },
+      {
+        "year": 2021,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.63
+      },
+      {
+        "year": 2020,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.78
+      },
+      {
+        "year": 2019,
+        "total": 3,
+        "avg": 1.5,
+        "weightage": 8.33
+      },
+      {
+        "year": 2018,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2017,
+        "total": 3,
+        "avg": 1.5,
+        "weightage": 8.33
+      },
+      {
+        "year": 2016,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.78
+      },
+      {
+        "year": 2015,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.5
+      },
+      {
+        "year": 2014,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.5
+      },
+      {
+        "year": 2013,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.5
+      },
+      {
+        "year": 2012,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.5
+      },
+      {
+        "year": 2011,
+        "total": 2,
+        "avg": 1,
+        "weightage": 4.65
+      },
+      {
+        "year": 2010,
+        "total": 3,
+        "avg": 1.5,
+        "weightage": 6.38
+      },
+      {
+        "year": 2009,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2008,
+        "total": 2,
+        "avg": 1,
+        "weightage": 4.44
+      },
+      {
+        "year": 2007,
+        "total": 1,
+        "avg": 0.33,
+        "weightage": 2.13
+      },
+      {
+        "year": 2006,
+        "total": 1,
+        "avg": 1,
+        "weightage": 2.5
+      },
+      {
+        "year": 2005,
+        "total": 3,
+        "avg": 1,
+        "weightage": 12.5
+      },
+      {
+        "year": 2004,
+        "total": 3,
+        "avg": 1.5,
+        "weightage": 25
+      },
+      {
+        "year": 2003,
+        "total": 2,
+        "avg": 1,
+        "weightage": 25
+      },
+      {
+        "year": 2002,
+        "total": 2,
+        "avg": 2,
+        "weightage": 28.57
+      },
+      {
+        "year": 2001,
+        "total": 2,
+        "avg": 1,
+        "weightage": 18.18
+      },
+      {
+        "year": 2000,
+        "total": 3,
+        "avg": 1.5,
+        "weightage": 20
+      },
+      {
+        "year": 1999,
+        "total": 2,
+        "avg": 2,
+        "weightage": 13.33
+      },
+      {
+        "year": 1998,
+        "total": 5,
+        "avg": 5,
+        "weightage": 31.25
+      },
+      {
+        "year": 1997,
+        "total": 1,
+        "avg": 1,
+        "weightage": 8.33
+      },
+      {
+        "year": 1996,
+        "total": 3,
+        "avg": 3,
+        "weightage": 21.43
+      },
+      {
+        "year": 1995,
+        "total": 2,
+        "avg": 1,
+        "weightage": 25
+      },
+      {
+        "year": 1994,
+        "total": 2,
+        "avg": 2,
+        "weightage": 13.33
+      },
+      {
+        "year": 1993,
+        "total": 6,
+        "avg": 6,
+        "weightage": 30
+      },
+      {
+        "year": 1992,
+        "total": 2,
+        "avg": 2,
+        "weightage": 11.76
+      },
+      {
+        "year": 1991,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1990,
+        "total": 1,
+        "avg": 1,
+        "weightage": 8.33
+      },
+      {
+        "year": 1989,
+        "total": 2,
+        "avg": 2,
+        "weightage": 13.33
+      },
+      {
+        "year": 1988,
+        "total": 4,
+        "avg": 4,
+        "weightage": 28.57
+      },
+      {
+        "year": 1987,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1986,
+        "total": 5,
+        "avg": 5,
+        "weightage": 20.83
+      },
+      {
+        "year": 1985,
+        "total": 5,
+        "avg": 5,
+        "weightage": 21.74
+      },
+      {
+        "year": 1984,
+        "total": 7,
+        "avg": 7,
+        "weightage": 46.67
+      },
+      {
+        "year": 1983,
+        "total": 6,
+        "avg": 6,
+        "weightage": 28.57
+      },
+      {
+        "year": 1982,
+        "total": 6,
+        "avg": 6,
+        "weightage": 31.58
+      },
+      {
+        "year": 1981,
+        "total": 2,
+        "avg": 2,
+        "weightage": 13.33
+      },
+      {
+        "year": 1980,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1979,
+        "total": 1,
+        "avg": 1,
+        "weightage": 7.14
+      },
+      {
+        "year": 1978,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      }
+    ],
+    "pyq": {
+      "count": {
+        "out_of_syllabus": 0,
+        "total": 105,
+        "private": 0,
+        "public": 105,
+        "bucket": 0
+      },
+      "isTopicWise": true
+    },
+    "image": null,
+    "isOutOfSyllabus": false,
+    "hideFromClassify": false,
+    "groups": [
+      {
+        "title": "Fill in the Blanks",
+        "key": "fill-blanks"
+      },
+      {
+        "title": "Numerical",
+        "key": "integer"
+      },
+      {
+        "title": "MCQ (Single Correct Answer)",
+        "key": "mcq"
+      },
+      {
+        "title": "MCQ (Multiple Correct Answer)",
+        "key": "mcqm"
+      },
+      {
+        "title": "Subjective",
+        "key": "subjective"
+      },
+      {
+        "title": "True of False",
+        "key": "tf"
+      }
+    ]
+  },
+  "questions": [
+    {
+      "title": "Numerical",
+      "key": "integer",
+      "questions": [
+        {
+          "examGroup": "jee",
+          "permalink": "mathbfxboldsymbola-and-mathbfyboldsymbol-jee-advanced-chemistry-mn09wmhjv4nbck0d",
+          "paperTitle": "JEE Advanced 2026 Paper 2 Online",
+          "question": {
+            "en": {
+              "content": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.411ex\" height=\"1.754ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -775.2 1949.7 775.2\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msup\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D417\" xlink:href=\"#MJX-TEX-B-1D417\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(902,363) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D482\" xlink:href=\"#MJX-TEX-BI-1D482\"></use></g><g data-mml-node=\"mo\" transform=\"translate(633,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g></g></g></g></g></svg></mjx-container> and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.232ex\" height=\"1.932ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -853.7 1870.5 853.7\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msup\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D418\" xlink:href=\"#MJX-TEX-B-1D418\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(902,363) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D483\" xlink:href=\"#MJX-TEX-BI-1D483\"></use></g><g data-mml-node=\"mo\" transform=\"translate(521,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g></g></g></g></g></svg></mjx-container> are hydrogen-like species. The wavelength of light absorbed during the transition between the states with principal quantum numbers <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.506ex\" height=\"1.532ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -666 2433.6 677\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mo\" transform=\"translate(877.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1933.6,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g></svg></mjx-container> and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.506ex\" height=\"1.532ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -666 2433.6 677\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mo\" transform=\"translate(877.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1933.6,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></svg></mjx-container> of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.411ex\" height=\"1.754ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -775.2 1949.7 775.2\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msup\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D417\" xlink:href=\"#MJX-TEX-B-1D417\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(902,363) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D482\" xlink:href=\"#MJX-TEX-BI-1D482\"></use></g><g data-mml-node=\"mo\" transform=\"translate(633,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g></g></g></g></g></svg></mjx-container> is <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.027ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.319ex\" height=\"1.597ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 583 706\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D706\" xlink:href=\"#MJX-TEX-I-1D706\"></use></g></g></g></svg></mjx-container>. The wavelength of light absorbed during the transition between the states with principal quantum numbers <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.506ex\" height=\"1.532ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -666 2433.6 677\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mo\" transform=\"translate(877.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1933.6,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></svg></mjx-container> and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.506ex\" height=\"1.557ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -677 2433.6 688\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mo\" transform=\"translate(877.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1933.6,0)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g></svg></mjx-container> of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.232ex\" height=\"1.932ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -853.7 1870.5 853.7\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msup\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D418\" xlink:href=\"#MJX-TEX-B-1D418\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(902,363) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D483\" xlink:href=\"#MJX-TEX-BI-1D483\"></use></g><g data-mml-node=\"mo\" transform=\"translate(521,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g></g></g></g></g></svg></mjx-container> is <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.45ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 1083 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"39\" xlink:href=\"#MJX-TEX-N-39\"></use></g><g data-mml-node=\"mi\" transform=\"translate(500,0)\"><use data-c=\"1D706\" xlink:href=\"#MJX-TEX-I-1D706\"></use></g></g></g></svg></mjx-container>. The lowest possible value of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.566ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"7.137ex\" height=\"2.262ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 3154.4 1000\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"mi\" transform=\"translate(389,0)\"><use data-c=\"1D482\" xlink:href=\"#MJX-TEX-BI-1D482\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1244.2,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2244.4,0)\"><use data-c=\"1D483\" xlink:href=\"#MJX-TEX-BI-1D483\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2765.4,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g></g></svg></mjx-container> is <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.14ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.525ex\" height=\"0.084ex\" role=\"img\" focusable=\"false\" viewBox=\"0 25 2000 37\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"5F\" xlink:href=\"#MJX-TEX-N-5F\"></use></g><g data-mml-node=\"mi\" transform=\"translate(500,0)\"><use data-c=\"5F\" xlink:href=\"#MJX-TEX-N-5F\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1000,0)\"><use data-c=\"5F\" xlink:href=\"#MJX-TEX-N-5F\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1500,0)\"><use data-c=\"5F\" xlink:href=\"#MJX-TEX-N-5F\"></use></g></g></g></svg></mjx-container> ."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "for-mathrmhe-a-transition-takes-place-from-the-orb-jee-advanced-chemistry-zenqec5qxnpa8ji0",
+          "paperTitle": "JEE Advanced 2023 Paper 2 Online",
+          "question": {
+            "en": {
+              "content": "For <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.134ex\" height=\"1.885ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -822.3 1827.1 833.3\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msup\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"48\" xlink:href=\"#MJX-TEX-N-48\"></use><use data-c=\"65\" xlink:href=\"#MJX-TEX-N-65\" transform=\"translate(750,0)\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1227,410.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g></g></g></g></g></svg></mjx-container>, a transition takes place from the orbit of radius <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.439ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"8.296ex\" height=\"1.946ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -666 3667 860\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\" transform=\"translate(1000,0)\"></use><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\" transform=\"translate(1500,0)\"></use><use data-c=\"38\" xlink:href=\"#MJX-TEX-N-38\" transform=\"translate(1778,0)\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2278,0)\"><g data-mml-node=\"mi\"><use data-c=\"70\" xlink:href=\"#MJX-TEX-N-70\"></use><use data-c=\"6D\" xlink:href=\"#MJX-TEX-N-6D\" transform=\"translate(556,0)\"></use></g></g></g></g></svg></mjx-container> to the orbit of radius <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.439ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"8.296ex\" height=\"1.971ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -677 3667 871\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\" transform=\"translate(500,0)\"></use><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\" transform=\"translate(1000,0)\"></use><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\" transform=\"translate(1278,0)\"></use><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\" transform=\"translate(1778,0)\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2278,0)\"><g data-mml-node=\"mi\"><use data-c=\"70\" xlink:href=\"#MJX-TEX-N-70\"></use><use data-c=\"6D\" xlink:href=\"#MJX-TEX-N-6D\" transform=\"translate(556,0)\"></use></g></g></g></g></svg></mjx-container>. The wavelength (in nm) of the emitted photon during the transition is _______.\n<br><br>[<b>Use :</b>\n<br><br>Bohr radius, <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.439ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"11.313ex\" height=\"1.946ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -666 5000.6 860\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"61\" xlink:href=\"#MJX-TEX-N-61\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(777.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1833.6,0)\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\" transform=\"translate(500,0)\"></use><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\" transform=\"translate(1000,0)\"></use><use data-c=\"39\" xlink:href=\"#MJX-TEX-N-39\" transform=\"translate(1278,0)\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(3611.6,0)\"><g data-mml-node=\"mi\"><use data-c=\"70\" xlink:href=\"#MJX-TEX-N-70\"></use><use data-c=\"6D\" xlink:href=\"#MJX-TEX-N-6D\" transform=\"translate(556,0)\"></use></g></g></g></g></svg></mjx-container>\n<br><br>Rydberg constant, <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.452ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"19.594ex\" height=\"2.407ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864 8660.6 1064\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D445\" xlink:href=\"#MJX-TEX-I-1D445\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(792,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"48\" xlink:href=\"#MJX-TEX-N-48\"></use></g></g></g></g><g data-mml-node=\"mo\" transform=\"translate(1650.1,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(2705.9,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\" transform=\"translate(500,0)\"></use><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\" transform=\"translate(778,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(4206.1,0)\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g><g data-mml-node=\"msup\" transform=\"translate(5206.3,0)\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1033,393.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(778,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"38\" xlink:href=\"#MJX-TEX-N-38\" transform=\"translate(500,0)\"></use></g></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(7546.6,0)\"><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\"> </text></g><g data-mml-node=\"mi\" transform=\"translate(600,0)\"><use data-c=\"4A\" xlink:href=\"#MJX-TEX-N-4A\"></use></g></g></g></g></svg></mjx-container>\n<br><br>Planck's constant, <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.452ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"19.996ex\" height=\"2.425ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -871.8 8838.2 1071.8\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"68\" xlink:href=\"#MJX-TEX-N-68\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(833.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1889.6,0)\"><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\"></use><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\" transform=\"translate(500,0)\"></use><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\" transform=\"translate(778,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(3389.8,0)\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g><g data-mml-node=\"msup\" transform=\"translate(4390,0)\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1033,393.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(778,0)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\" transform=\"translate(500,0)\"></use></g></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(6730.2,0)\"><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\"> </text></g><g data-mml-node=\"mi\" transform=\"translate(600,0)\"><use data-c=\"4A\" xlink:href=\"#MJX-TEX-N-4A\"></use></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(7844.2,0)\"><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\"> </text></g><g data-mml-node=\"mi\" transform=\"translate(600,0)\"><use data-c=\"73\" xlink:href=\"#MJX-TEX-N-73\"></use></g></g></g></g></svg></mjx-container>\n<br><br>Speed of light, <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.452ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"18.892ex\" height=\"2.597ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -948 8350.2 1148\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"63\" xlink:href=\"#MJX-TEX-N-63\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(721.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1777.6,0)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2499.8,0)\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g><g data-mml-node=\"msup\" transform=\"translate(3500,0)\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1033,393.1) scale(0.707)\"><use data-c=\"38\" xlink:href=\"#MJX-TEX-N-38\"></use></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(4936.6,0)\"><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\"> </text></g><g data-mml-node=\"mi\" transform=\"translate(600,0)\"><use data-c=\"6D\" xlink:href=\"#MJX-TEX-N-6D\"></use></g></g><g data-mml-node=\"msup\" transform=\"translate(6369.6,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\"> </text></g><g data-mml-node=\"mi\" transform=\"translate(600,0)\"><use data-c=\"73\" xlink:href=\"#MJX-TEX-N-73\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1027,477.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(778,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g></g></g></svg></mjx-container> ]"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "consider-a-helium-he-atom-that-absorbs-a-photon-of-wavelen-jee-advanced-chemistry-some-basic-concepts-of-chemistry-60l6j4vrbkkivt6t",
+          "paperTitle": "JEE Advanced 2021 Paper 2 Online",
+          "question": {
+            "en": {
+              "content": "Consider a helium (He) atom that absorbs a photon of wavelength 330 nm. The change in the velocity (in cm s<sup><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>1</sup>) of He atom after the photon absorption is __________.<br><br>(Assume : Momentum is conserved when photon is absorbed.<br><br>Use : Planck constant = 6.6 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 10<sup><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>34</sup> J s, Avogadro number = 6 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 10<sup>23</sup> mol<sup><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>1</sup>, Molar mass of He = 4 g mol<sup><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>1</sup>)"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-figure-below-is-the-plot-of-potential-energy-versus-inte-jee-advanced-chemistry-some-basic-concepts-of-chemistry-6xfizfpkvivchi0o",
+          "paperTitle": "JEE Advanced 2020 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "The figure below is the plot of potential energy versus internuclear distance (d) of H<sub>2</sub> molecule in the electronic ground state. What is the value of the net potential energy E<sub>0</sub> (as indicated in the figure) in kJ mol<sup>-1</sup>, for d = d<sub>0</sub> at which the electron-electron repulsion and the nucleus-nucleus repulsion energies are absent? As reference, the potential energy of H atom is taken as zero when its electron and the nucleus are infinitely far apart. <br>Use Avogadro constant as 6.023 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 10<sup>23</sup> mol<sup>-1</sup>.<br><br>\n<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1kx9uefqg/39dbec7b-55c6-4d3e-88be-35383f22fbc7/e905ea80-5eea-11ec-b929-8518f088d7e0/file-1kx9uefqh.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1kx9uefqg/39dbec7b-55c6-4d3e-88be-35383f22fbc7/e905ea80-5eea-11ec-b929-8518f088d7e0/file-1kx9uefqh.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Advanced 2020 Paper 2 Offline Chemistry - Structure of Atom Question 10 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1kx9uefqg/39dbec7b-55c6-4d3e-88be-35383f22fbc7/e905ea80-5eea-11ec-b929-8518f088d7e0/file-1kx9uefqh.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1kx9uefqg/39dbec7b-55c6-4d3e-88be-35383f22fbc7/e905ea80-5eea-11ec-b929-8518f088d7e0/file-1kx9uefqh.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1kx9uefqg/39dbec7b-55c6-4d3e-88be-35383f22fbc7/e905ea80-5eea-11ec-b929-8518f088d7e0/file-1kx9uefqh.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1kx9uefqg/39dbec7b-55c6-4d3e-88be-35383f22fbc7/e905ea80-5eea-11ec-b929-8518f088d7e0/file-1kx9uefqh.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1kx9uefqg/39dbec7b-55c6-4d3e-88be-35383f22fbc7/e905ea80-5eea-11ec-b929-8518f088d7e0/file-1kx9uefqh.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1kx9uefqg/39dbec7b-55c6-4d3e-88be-35383f22fbc7/e905ea80-5eea-11ec-b929-8518f088d7e0/file-1kx9uefqh.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "not-considering-the-electronic-spin-the-degeneracy-of-the-s-2015-marks-4-mmp2l3fptfqu2mir.htm",
+          "paperTitle": "JEE Advanced 2015 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "Not considering the electronic spin, the degeneracy of the second excited state( n = 3) of H atom is 9, while\nthe degeneracy of the second excited state of H<sup>–</sup> is ___________."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "in-an-atom-the-total-number-of-electrons-having-quantum-num-2014-marks-4-zndv5bhb7ojnf2x4.htm",
+          "paperTitle": "JEE Advanced 2014 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "In an atom, the total number of electrons having quantum numbers n = 4, |m<sub>l</sub>| = 1 and m<sub>s</sub> = –1/2 is"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-atomic-masses-of-he-and-ne-are-4-and-20-amu-respecti-2013-marks-4-u1axb4g55zmhvxeu.htm",
+          "paperTitle": "JEE Advanced 2013 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "The atomic masses of He and Ne are 4 and 20 a.m.u., respectively. The value of the de Broglie wavelength\nof He gas at –73<sup>o</sup>C is “M” times that of the de Broglie wavelength of Ne at 727<sup>o</sup>C. M is"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-maximum-number-of-electrons-that-can-have-principal-quan-2011-marks-2-efo027qculpdiand.htm",
+          "paperTitle": "IIT-JEE 2011 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "The maximum number of electrons that can have principal quantum number, n = 3, and spin quantum number, m<sub>s</sub> = − 1/2 , is"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-work-function-of-some-metals-is-listed-below-the-2011-marks-4-jcsgxtpxainfkzh0.htm",
+          "paperTitle": "IIT-JEE 2011 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "The work function\n( φ )\nof some metals is listed below. The number of metals which will show\nphotoelectric effect when light of 300 nm wavelength falls on the metal is\n<div style=\"overflow-x:auto;width:100%\">\n\n<table class=\"tg\">\n  <tbody><tr>\n    <th class=\"tg-s6z2\"><span style=\"font-weight:bold;color:rgb(50, 203, 0)\">Metal</span></th>\n    <th class=\"tg-baqh\"><span style=\"font-weight:bold;color:rgb(50, 203, 0)\">Li</span></th>\n    <th class=\"tg-baqh\"><span style=\"font-weight:bold;color:rgb(50, 203, 0)\">Na</span></th>\n    <th class=\"tg-baqh\"><span style=\"font-weight:bold;color:rgb(50, 203, 0)\">K</span></th>\n    <th class=\"tg-baqh\"><span style=\"font-weight:bold;color:rgb(50, 203, 0)\">Mg</span></th>\n    <th class=\"tg-baqh\"><span style=\"font-weight:bold;color:rgb(50, 203, 0)\">Cu</span></th>\n    <th class=\"tg-baqh\"><span style=\"font-weight:bold;color:rgb(50, 203, 0)\">Ag</span></th>\n    <th class=\"tg-baqh\"><span style=\"font-weight:bold;color:rgb(50, 203, 0)\">Fe</span></th>\n    <th class=\"tg-baqh\"><span style=\"font-weight:bold;color:rgb(50, 203, 0)\">Pt</span></th>\n    <th class=\"tg-baqh\"><span style=\"font-weight:bold;color:rgb(50, 203, 0)\">W</span></th>\n  </tr>\n  <tr>\n    <td class=\"tg-baqh\">Ф (eV)</td>\n    <td class=\"tg-yw4l\">2.4</td>\n    <td class=\"tg-yw4l\">2.3</td>\n    <td class=\"tg-yw4l\">2.2</td>\n    <td class=\"tg-yw4l\">3.7</td>\n    <td class=\"tg-yw4l\">4.8</td>\n    <td class=\"tg-yw4l\">4.3</td>\n    <td class=\"tg-yw4l\">4.7</td>\n    <td class=\"tg-yw4l\">6.3</td>\n    <td class=\"tg-yw4l\">4.75</td>\n  </tr>\n</tbody></table>\n</div>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "find-out-the-number-of-waves-made-by-a-bohr-electron-in-once-1994-marks-3-azrd5lkg2aqpwhvx.htm",
+          "paperTitle": "IIT-JEE 1994",
+          "question": {
+            "en": {
+              "content": "Find out the number of waves made by a Bohr electron in once complete revolution in its 3rd orbit?"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "what-is-the-maximum-number-of-electrons-that-may-be-present-1985-marks-2-amahoxtvodefdqmt.htm",
+          "paperTitle": "IIT-JEE 1985",
+          "question": {
+            "en": {
+              "content": "What is the maximum number of electrons that may be present in all atomic orbitals with principal quantum number 3 and azimuthal quantum number 2?"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "MCQ (More than One Correct Answer)",
+      "key": "mcqm",
+      "questions": [
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-2s-and-the-2p-orbital-energies-of-hydrogen-atom-are--jee-advanced-chemistry-b5hyifugsjocbwlx",
+          "paperTitle": "JEE Advanced 2026 Paper 1 Online",
+          "question": {
+            "en": {
+              "content": "<p>The 2s and the 2p orbital energies of hydrogen atom are <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.566ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"7.177ex\" height=\"2.262ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 3172.2 1000\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D438\" xlink:href=\"#MJX-TEX-I-1D438\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(771,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mi\" transform=\"translate(500,0)\"><use data-c=\"1D460\" xlink:href=\"#MJX-TEX-I-1D460\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(1506.2,0)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1895.2,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D43B\" xlink:href=\"#MJX-TEX-I-1D43B\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(2783.2,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g></g></svg></mjx-container> and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.65ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"7.231ex\" height=\"2.347ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 3196.2 1037.2\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D438\" xlink:href=\"#MJX-TEX-I-1D438\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(771,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mi\" transform=\"translate(500,0)\"><use data-c=\"1D45D\" xlink:href=\"#MJX-TEX-I-1D45D\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(1530.2,0)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1919.2,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D43B\" xlink:href=\"#MJX-TEX-I-1D43B\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(2807.2,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g></g></svg></mjx-container>, respectively. The 2s and the 2p orbital energies of lithium atom are <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.566ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"7.489ex\" height=\"2.262ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 3310.2 1000\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D438\" xlink:href=\"#MJX-TEX-I-1D438\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(771,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mi\" transform=\"translate(500,0)\"><use data-c=\"1D460\" xlink:href=\"#MJX-TEX-I-1D460\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(1506.2,0)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1895.2,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D43F\" xlink:href=\"#MJX-TEX-I-1D43F\"></use></g><g data-mml-node=\"mi\" transform=\"translate(681,0)\"><use data-c=\"1D456\" xlink:href=\"#MJX-TEX-I-1D456\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(2921.2,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g></g></svg></mjx-container> and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.65ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"7.544ex\" height=\"2.347ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 3334.2 1037.2\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D438\" xlink:href=\"#MJX-TEX-I-1D438\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(771,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mi\" transform=\"translate(500,0)\"><use data-c=\"1D45D\" xlink:href=\"#MJX-TEX-I-1D45D\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(1530.2,0)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1919.2,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D43F\" xlink:href=\"#MJX-TEX-I-1D43F\"></use></g><g data-mml-node=\"mi\" transform=\"translate(681,0)\"><use data-c=\"1D456\" xlink:href=\"#MJX-TEX-I-1D456\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(2945.2,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g></g></svg></mjx-container>, respectively. The correct option(s) about the orbital energies is(are)</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pamong-the-following-the-correct-statements-for-electro-jee-advanced-chemistry-bvsufmy5cbszqkks",
+          "paperTitle": "JEE Advanced 2024 Paper 1 Online",
+          "question": {
+            "en": {
+              "content": "<p>Among the following, the correct statement(s) for electrons in an atom is(are)</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "for-diatomic-molecules-the-correct-statements-about-the-m-jee-advanced-chemistry-some-basic-concepts-of-chemistry-7rq6qqmb0r0wlx4n",
+          "paperTitle": "JEE Advanced 2022 Paper 1 Online",
+          "question": {
+            "en": {
+              "content": "For diatomic molecules, the correct statement(s) about the molecular orbitals formed by the overlap of two <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.439ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.206ex\" height=\"1.946ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -666 1416.9 860\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"msub\" transform=\"translate(500,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D45D\" xlink:href=\"#MJX-TEX-I-1D45D\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(536,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D467\" xlink:href=\"#MJX-TEX-I-1D467\"></use></g></g></g></g></g></svg></mjx-container> orbitals is(are)"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-ground-state-energy-of-hydrogen-atom-is--136-ev-co-jee-advanced-chemistry-some-basic-concepts-of-chemistry-gqeu7lphybsyta7b",
+          "paperTitle": "JEE Advanced 2019 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "The ground state energy of hydrogen atom is <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>13.6 eV. Consider an electronic state <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.464ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.473ex\" height=\"2.034ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 651 899\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D713\" xlink:href=\"#MJX-TEX-I-1D713\"></use></g></g></g></svg></mjx-container> of He<sup>+</sup> whose energy, azimuthal quantum number and magnetic quantum number are <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>3.4 eV, 2 and 0, respectively.<br><br>Which of the following statement(s) is(are) true for the state <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.464ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.473ex\" height=\"2.034ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 651 899\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D713\" xlink:href=\"#MJX-TEX-I-1D713\"></use></g></g></g></svg></mjx-container>?"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "ground-state-electronic-configuration-of-nitrogen-atom-can-b-jee-advanced-1999-marks-3-yzvffnijwzzzsvlj.htm",
+          "paperTitle": "IIT-JEE 1999",
+          "question": {
+            "en": {
+              "content": "Ground state electronic configuration of nitrogen atom can be represented by"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "decrease-in-atomic-number-is-observed-during-jee-advanced-1998-marks-2-57kevlm9kwkh6d5k.htm",
+          "paperTitle": "IIT-JEE 1998",
+          "question": {
+            "en": {
+              "content": "Decrease in atomic number is observed during"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-energy-of-an-electron-in-the-first-bohr-orbit-of-h-atom-jee-advanced-1998-marks-2-xdpwqv4brvvdlslz.htm",
+          "paperTitle": "IIT-JEE 1998",
+          "question": {
+            "en": {
+              "content": "The energy of an electron in the first Bohr orbit of H atom is -13.6 eV. The possible energy value(s) of the excited state(s) for electrons in Bohr orbits of hydrogen is (are)"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "which-of-the-following-statements-is-are-correct-jee-advanced-1998-marks-2-ckpdixjnltym8cfu.htm",
+          "paperTitle": "IIT-JEE 1998",
+          "question": {
+            "en": {
+              "content": "Which of the following statement(s) is (are) correct?"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "many-elements-have-non-integral-atomic-masses-because-jee-advanced-1984-marks-1-xutxbnn4tzhtwgme.htm",
+          "paperTitle": "IIT-JEE 1984",
+          "question": {
+            "en": {
+              "content": "Many elements have non-integral atomic masses because:"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "when-alpha-particles-are-sent-through-a-thin-metal-foil-most-jee-advanced-1984-marks-1-8vxepuq59oi8aw6u.htm",
+          "paperTitle": "IIT-JEE 1984",
+          "question": {
+            "en": {
+              "content": "When alpha particles are sent through a thin metal foil, most of them go straight through the foil because"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "an-isotone-of-3276ge-is-jee-advanced-1984-marks-1-bjccyixlu1sfrwjt.htm",
+          "paperTitle": "IIT-JEE 1984",
+          "question": {
+            "en": {
+              "content": "An isotone of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.708ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.62ex\" height=\"2.625ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -847.2 2042.1 1160\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msubsup\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"></g><g data-mml-node=\"TeXAtom\" transform=\"translate(33,369.2) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"37\" xlink:href=\"#MJX-TEX-N-37\"></use><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\" transform=\"translate(500,0)\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(33,-297.3) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\" transform=\"translate(500,0)\"></use></g></g></g><g data-mml-node=\"mi\" transform=\"translate(790.1,0)\"><use data-c=\"1D43A\" xlink:href=\"#MJX-TEX-I-1D43A\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1576.1,0)\"><use data-c=\"1D452\" xlink:href=\"#MJX-TEX-I-1D452\"></use></g></g></g></svg></mjx-container> is"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "MCQ (Single Correct Answer)",
+      "key": "mcq",
+      "questions": [
+        {
+          "examGroup": "jee",
+          "permalink": "according-to-bohrs-model-the-highest-kinetic-energy-is-ass-jee-advanced-chemistry-ynvtpqhyh85a0znr",
+          "paperTitle": "JEE Advanced 2024 Paper 2 Online",
+          "question": {
+            "en": {
+              "content": "According to Bohr's model, the highest kinetic energy is associated with the electron in the"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "consider-the-bohrs-model-of-a-one-electron-atom-where-the-e-jee-advanced-chemistry-some-basic-concepts-of-chemistry-mrjpsrtb2e8hptcg",
+          "paperTitle": "JEE Advanced 2019 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "Consider the Bohr's model of a one-electron atom where the electron moves around the nucleus. In the following List-I contains some quantities for the nth orbit of the atom and List-II contains options showing how they depend on n.<br><br><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1kwupu9z3/204b2363-0e00-4a33-b1f6-03b8d08810a4/522208f0-5699-11ec-a1d9-951c1dc8ebef/file-1kwupu9z4.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1kwupu9z3/204b2363-0e00-4a33-b1f6-03b8d08810a4/522208f0-5699-11ec-a1d9-951c1dc8ebef/file-1kwupu9z4.png\" loading=\"lazy\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;max-height: 60vh\" alt=\"JEE Advanced 2019 Paper 2 Offline Chemistry - Structure of Atom Question 11 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1kwupu9z3/204b2363-0e00-4a33-b1f6-03b8d08810a4/522208f0-5699-11ec-a1d9-951c1dc8ebef/file-1kwupu9z4.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1kwupu9z3/204b2363-0e00-4a33-b1f6-03b8d08810a4/522208f0-5699-11ec-a1d9-951c1dc8ebef/file-1kwupu9z4.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1kwupu9z3/204b2363-0e00-4a33-b1f6-03b8d08810a4/522208f0-5699-11ec-a1d9-951c1dc8ebef/file-1kwupu9z4.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1kwupu9z3/204b2363-0e00-4a33-b1f6-03b8d08810a4/522208f0-5699-11ec-a1d9-951c1dc8ebef/file-1kwupu9z4.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1kwupu9z3/204b2363-0e00-4a33-b1f6-03b8d08810a4/522208f0-5699-11ec-a1d9-951c1dc8ebef/file-1kwupu9z4.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1kwupu9z3/204b2363-0e00-4a33-b1f6-03b8d08810a4/522208f0-5699-11ec-a1d9-951c1dc8ebef/file-1kwupu9z4.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"><br>Which of the following options has the correct combination considering List-I and List-II?"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "consider-the-bohrs-model-of-a-one-electron-atom-where-the-e-jee-advanced-chemistry-some-basic-concepts-of-chemistry-onaziqkc6v4yqrjn",
+          "paperTitle": "JEE Advanced 2019 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "Consider the Bohr's model of a one-electron atom where the electron moves around the nucleus. In the following List-I contains some quantities for the nth orbit of the atom and List-II contains options showing how they depend on n.<br><br><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1kwtj0nsw/82ab097a-6164-431e-8574-bfbc4051200f/db1db800-55f1-11ec-8201-09ef4d4fb1d6/file-1kwtj0nsx.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1kwtj0nsw/82ab097a-6164-431e-8574-bfbc4051200f/db1db800-55f1-11ec-8201-09ef4d4fb1d6/file-1kwtj0nsx.png\" loading=\"lazy\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;max-height: 60vh\" alt=\"JEE Advanced 2019 Paper 2 Offline Chemistry - Structure of Atom Question 12 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1kwtj0nsw/82ab097a-6164-431e-8574-bfbc4051200f/db1db800-55f1-11ec-8201-09ef4d4fb1d6/file-1kwtj0nsx.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1kwtj0nsw/82ab097a-6164-431e-8574-bfbc4051200f/db1db800-55f1-11ec-8201-09ef4d4fb1d6/file-1kwtj0nsx.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1kwtj0nsw/82ab097a-6164-431e-8574-bfbc4051200f/db1db800-55f1-11ec-8201-09ef4d4fb1d6/file-1kwtj0nsx.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1kwtj0nsw/82ab097a-6164-431e-8574-bfbc4051200f/db1db800-55f1-11ec-8201-09ef4d4fb1d6/file-1kwtj0nsx.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1kwtj0nsw/82ab097a-6164-431e-8574-bfbc4051200f/db1db800-55f1-11ec-8201-09ef4d4fb1d6/file-1kwtj0nsx.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1kwtj0nsw/82ab097a-6164-431e-8574-bfbc4051200f/db1db800-55f1-11ec-8201-09ef4d4fb1d6/file-1kwtj0nsx.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"><br>Which of the following options has the correct combination considering List-I and List-II?"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-wave-function-psi-n1m1-is-a-mathematical-2018-marks-3-cye5ksi7na6nmio5.htm",
+          "paperTitle": "JEE Advanced 2017 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "For the given orbital in Column 1, the only <b>CORRECT</b> combination for any hydrogen-like species is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-wave-function-psi-n1m1-is-a-mathematical-2018-marks-3-viyjemmbntax2v3n.htm",
+          "paperTitle": "JEE Advanced 2017 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "For hydrogen atom, the only CORRECT combination is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-wave-function-psi-n1m1-is-a-mathematical-2018-marks-3-mxobqq77hxsbiy6d.htm",
+          "paperTitle": "JEE Advanced 2017 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "For <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.496ex\" height=\"1.779ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -775.2 1987.1 786.2\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D43B\" xlink:href=\"#MJX-TEX-I-1D43B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(888,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"1D452\" xlink:href=\"#MJX-TEX-I-1D452\"></use></g><g data-mml-node=\"mo\" transform=\"translate(499,363) scale(0.707)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g></g></g></g></g></svg></mjx-container> ion, the only INCORRECT combination is "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "p-is-the-probability-of-finding-the-1s-electron-of-hydrogen-jee-advanced-2016-marks-1-86e7rymhwc7yvabe.htm",
+          "paperTitle": "JEE Advanced 2016 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "P is the probability of finding the 1s electron of hydrogen atom in a spherical shell of infinitesimal thickness, dr, at a distance r from the nucleus. The volume of this shell is <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"6.639ex\" height=\"1.912ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -833.9 2934.6 844.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g><g data-mml-node=\"mi\" transform=\"translate(500,0)\"><use data-c=\"1D70B\" xlink:href=\"#MJX-TEX-I-1D70B\"></use></g><g data-mml-node=\"msup\" transform=\"translate(1073,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D45F\" xlink:href=\"#MJX-TEX-I-1D45F\"></use></g><g data-mml-node=\"mn\" transform=\"translate(484,363) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g><g data-mml-node=\"mi\" transform=\"translate(1960.6,0)\"><use data-c=\"1D451\" xlink:href=\"#MJX-TEX-I-1D451\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2483.6,0)\"><use data-c=\"1D45F\" xlink:href=\"#MJX-TEX-I-1D45F\"></use></g></g></g></svg></mjx-container>. The quantitative ketch of the dependence of P on r is"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-kinetic-energy-of-an-electron-in-the-second-bohr-orbit-o-jee-advanced-2012-marks-4-ozvu1ik4x264e036.htm",
+          "paperTitle": "IIT-JEE 2012 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "The kinetic energy of an electron in the second Bohr orbit of a hydrogen atom is [<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.375ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.436ex\" height=\"1.375ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 1076.6 607.6\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D6FC\" xlink:href=\"#MJX-TEX-I-1D6FC\"></use></g><g data-mml-node=\"mn\" transform=\"translate(673,-150) scale(0.707)\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g></g></g></g></svg></mjx-container>  is Bohr radius]"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-hydrogen-like-species-li2-is-in-a-spherically-symmetric-2010-marks-2-nlq1batdvaaqiuqa.htm",
+          "paperTitle": "IIT-JEE 2010 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "The hydrogen like species Li<sup>2+</sup> is in a spherically symmetric state S<sub>1</sub> with one radial node. Upon absorbing light the ion undergoes transition to a state S<sub>2</sub>. The state S<sub>2</sub> has one radial node and its energy is equal to the ground state energy of the hydrogen atom.<br>\n<br>\nThe orbital angular momentum quantum number of the state S<sub>2</sub> is"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-hydrogen-like-species-li2-is-in-a-spherically-symmetric-2010-marks-2-8dup0gbbp34utxh0.htm",
+          "paperTitle": "IIT-JEE 2010 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "The hydrogen like species Li<sup>2+</sup> is in a spherically symmetric state S<sub>1</sub> with one radial node. Upon absorbing light the ion undergoes transition to a state S<sub>2</sub>. The state S<sub>2</sub> has one radial node and its energy is equal to the ground state energy of the hydrogen atom.<br>\n<br>\nEnergy of the state S<sub>1</sub> in units of the hydrogen atom ground state energy is:"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-hydrogen-like-species-li2-is-in-a-spherically-symmetric-2010-marks-2-8aek7n7fjbdh7jht.htm",
+          "paperTitle": "IIT-JEE 2010 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "The hydrogen like species Li<sup>2+</sup> is in a spherically symmetric state S<sub>1</sub> with one radial node. Upon absorbing light the ion undergoes transition to a state S<sub>2</sub>. The state S<sub>2</sub> has one radial node and its energy is equal to the ground state energy of the hydrogen atom.<br>\n<br>\nThe state S<sub>1</sub> is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "match-the-entries-with-column-i-with-with-the-correctly-rel-2008-marks-6-nbpzktfjcsm95gsd.htm",
+          "paperTitle": "IIT-JEE 2008 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "<p>Match the entries in Column I with the correctly related quantum number(s) in Column II. Indicate your answer by darkening the appropriate bubbles of the 4 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 4 matrix given in the ORS.</p>\n<p>\n<table class=\"tg\" style=\"undefined;table-layout: fixed; width: 477px\">\n<colgroup>\n<col style=\"width: 48px\">\n<col style=\"width: 197px\">\n<col style=\"width: 53px\">\n<col style=\"width: 179px\">\n</colgroup>\n<thead>\n  <tr>\n    <th class=\"tg-7btt\"></th>\n    <th class=\"tg-7btt\">Column I</th>\n    <th class=\"tg-7btt\"></th>\n    <th class=\"tg-7btt\">Column II</th>\n  </tr>\n</thead>\n<tbody>\n  <tr>\n    <td class=\"tg-c3ow\">(A)</td>\n    <td class=\"tg-0pky\">Orbital angular momentum of the electron in a hydrogen-like atomic orbital.</td>\n    <td class=\"tg-c3ow\">(P)</td>\n    <td class=\"tg-0pky\">Principal quantum number</td>\n  </tr>\n  <tr>\n    <td class=\"tg-c3ow\">(B)</td>\n    <td class=\"tg-0pky\">A hydrogen-like one-electron wave function obeying Pauli's principle.</td>\n    <td class=\"tg-c3ow\">(Q)</td>\n    <td class=\"tg-0pky\">Azimuthal quantum number</td>\n  </tr>\n  <tr>\n    <td class=\"tg-c3ow\">(C)</td>\n    <td class=\"tg-0pky\">Shape, size and orientation of hydrogen like atomic orbitals.</td>\n    <td class=\"tg-c3ow\">(R)</td>\n    <td class=\"tg-0pky\">Magnetic quantum number</td>\n  </tr>\n  <tr>\n    <td class=\"tg-c3ow\">(D)</td>\n    <td class=\"tg-0pky\">Probability density of electron at the nucleus in hydrogen-like atom.</td>\n    <td class=\"tg-c3ow\">(S)</td>\n    <td class=\"tg-0pky\">Electron spin quantum number</td>\n  </tr>\n</tbody>\n</table></p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "statement-1-the-plot-of-atomic-number-y-axis-versus-nu-2008-marks-2-hdvi9haba4htbuua.htm",
+          "paperTitle": "IIT-JEE 2008 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "<b>STATEMENT - 1 :</b> The plot of atomic number (y-axis) versus number of neutrons (x-axis) for stable nuclei shows a curvature towards x-axis from the line of 45<sup>o</sup> slope as the atomic number is increased.<br>\n<br/><br/><b>STATEMENT - 2 :</b> Proton-proton electrostatic repulsions begin to overcome attractive forces involving protons and neutrons in heavier nuclides"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pa-positron-is-emitted-from-1123na-the-ratio-of-jee-advanced-chemistry-some-basic-concepts-of-chemistry-ksrjoirefw44vmoc",
+          "paperTitle": "IIT-JEE 2007 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "<p>A positron is emitted from <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.673ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.788ex\" height=\"2.573ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -840.1 790.1 1137.4\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msubsup\"><g data-mml-node=\"mi\"></g><g data-mml-node=\"TeXAtom\" transform=\"translate(33,369.2) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\" transform=\"translate(500,0)\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(33,-297.3) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\" transform=\"translate(500,0)\"></use></g></g></g></g></g></svg></mjx-container>Na The ratio of the atomic mass and atomic number of the resulting nuclide is :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "according-to-bohrs-theory-en-total-energy-kn-kinetic-e-2006-marks-6-rurujl8cjca3ptlo.htm",
+          "paperTitle": "IIT-JEE 2006",
+          "question": {
+            "en": {
+              "content": "According to Bohr's theory<br>\nE<sub>n</sub> = Total energy, K<sub>n</sub> = Kinetic Energy, V<sub>n</sub> =  Potential Energy, r<sub>n</sub> =  Radius of n<sup>th</sup> orbit<br>\nMatch the following<br><table border=\"1\" style=\"border-collapse: collapse; font-size: 20px; text-align: center;\">\n  <tr>\n    <th>Column I</th>\n    <th></th>\n    <th>Column II</th>\n    <th></th>\n  </tr>\n  <tr>\n    <td>(A)</td>\n    <td><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -1.033ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"6.622ex\" height=\"3.147ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -934.5 2926.8 1391.1\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"msub\" transform=\"translate(314,451.6) scale(0.707)\"><g data-mml-node=\"mi\"><use data-c=\"1D449\" xlink:href=\"#MJX-TEX-I-1D449\"></use></g><g data-mml-node=\"mi\" transform=\"translate(616,-150) scale(0.707)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g></g><g data-mml-node=\"msub\" transform=\"translate(220,-345) scale(0.707)\"><g data-mml-node=\"mi\"><use data-c=\"1D43E\" xlink:href=\"#MJX-TEX-I-1D43E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(882,-150) scale(0.707)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g></g><rect width=\"1159\" height=\"60\" x=\"120\" y=\"220\"></rect></g><g data-mml-node=\"mo\" transform=\"translate(1676.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2454.8,0)\"><use data-c=\"3F\" xlink:href=\"#MJX-TEX-N-3F\"></use></g></g></g></svg></mjx-container></td>\n    <td>(P)</td>\n    <td>0</td>\n  </tr>\n  <tr>\n    <td>(B)</td>\n    <td>If radius of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.465ex\" height=\"2.046ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -893.3 1531.5 904.3\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(633,363) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\">th</text></g></g></g></g></g></svg></mjx-container> orbit <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.576ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.336ex\" height=\"2.115ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -680 2358.5 934.8\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"221D\" xlink:href=\"#MJX-TEX-N-221D\"></use></g><g data-mml-node=\"msubsup\" transform=\"translate(1055.8,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D438\" xlink:href=\"#MJX-TEX-I-1D438\"></use></g><g data-mml-node=\"mi\" transform=\"translate(848.3,363) scale(0.707)\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g><g data-mml-node=\"mi\" transform=\"translate(771,-247) scale(0.707)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g></g></g></g></svg></mjx-container>, <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.751ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 2099.8 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g><g data-mml-node=\"mo\" transform=\"translate(849.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1627.8,0)\"><use data-c=\"3F\" xlink:href=\"#MJX-TEX-N-3F\"></use></g></g></g></svg></mjx-container></td>\n    <td>(Q)</td>\n    <td>−1</td>\n  </tr>\n  <tr>\n    <td>(C)</td>\n    <td>Angular momentum in lowest orbital</td>\n    <td>(R)</td>\n    <td>−2</td>\n  </tr>\n  <tr>\n    <td>(D)</td>\n    <td><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -1.033ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"11.737ex\" height=\"2.99ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864.9 5187.7 1321.5\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mn\" transform=\"translate(382,394) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"msub\" transform=\"translate(220,-345) scale(0.707)\"><g data-mml-node=\"mi\"><use data-c=\"1D45F\" xlink:href=\"#MJX-TEX-I-1D45F\"></use></g><g data-mml-node=\"mi\" transform=\"translate(484,-150) scale(0.707)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g></g><rect width=\"877.6\" height=\"60\" x=\"120\" y=\"220\"></rect></g><g data-mml-node=\"mo\" transform=\"translate(1395.4,0)\"><use data-c=\"221D\" xlink:href=\"#MJX-TEX-N-221D\"></use></g><g data-mml-node=\"msup\" transform=\"translate(2451.2,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D44D\" xlink:href=\"#MJX-TEX-I-1D44D\"></use></g><g data-mml-node=\"mi\" transform=\"translate(808,363) scale(0.707)\"><use data-c=\"1D466\" xlink:href=\"#MJX-TEX-I-1D466\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(3937.7,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mo\" transform=\"translate(4715.7,0)\"><use data-c=\"3F\" xlink:href=\"#MJX-TEX-N-3F\"></use></g></g></g></svg></mjx-container></td>\n    <td>(S)</td>\n    <td>1</td>\n  </tr>\n</table>\n"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-number-of-radial-nodes-of-3s-and-2p-orbitals-are-respect-jee-advanced-2005-screening-marks-1-hqci8syrtyxedsl8.htm",
+          "paperTitle": "IIT-JEE 2005 Screening",
+          "question": {
+            "en": {
+              "content": "The number of radial nodes of 3s and 2p orbitals are respectively"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-radius-of-which-of-the-following-orbit-is-same-as-that-o-jee-advanced-2004-screening-marks-1-vcgskemeueegxg46.htm",
+          "paperTitle": "IIT-JEE 2004 Screening",
+          "question": {
+            "en": {
+              "content": "The radius of which of the following orbit is same as that of the first Bohr's orbit of hydrogen atom?"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "which-of-the-following-are-isoelectronic-and-isostructural-2003-screening-marks-2-vvx6zd7ohvhayukr.htm",
+          "paperTitle": "IIT-JEE 2003 Screening",
+          "question": {
+            "en": {
+              "content": "Which of the following pairs are isoelectronic and isostructural?<br>\n<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.706ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.168ex\" height=\"2.57ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -823.8 2284.1 1136\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D441\" xlink:href=\"#MJX-TEX-I-1D441\"></use></g><g data-mml-node=\"msubsup\" transform=\"translate(888,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mo\" transform=\"translate(796,411.6) scale(0.707)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-296.6) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g></g></svg></mjx-container>, <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.706ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.678ex\" height=\"2.703ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -882.5 2509.7 1194.7\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"msubsup\" transform=\"translate(760,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(796,411.6) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(796,-296.6) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g></g></svg></mjx-container>,  <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.706ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.552ex\" height=\"2.57ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -823.8 2454.1 1136\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mi\" transform=\"translate(760,0)\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g><g data-mml-node=\"msubsup\" transform=\"translate(1058,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mo\" transform=\"translate(796,411.6) scale(0.707)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-296.6) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g></g></svg></mjx-container>, SO<sub>3</sub> "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-the-nitrogen-atom-has-electronic-configuration-1s7-it-wou-jee-advanced-2002-screening-marks-2-43gg6ukkmqpgvjfy.htm",
+          "paperTitle": "IIT-JEE 2002 Screening",
+          "question": {
+            "en": {
+              "content": "If the nitrogen atom has electronic configuration 1s<sup>7</sup>, it would have energy lower than that of the normal ground state configuration 1s<sup>2</sup>2s<sup>2</sup>2p<sup>3</sup>, because the electrons would be closer to the nucleus. Yet 1s<sup>7</sup> is not observed because it violates"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "rutherfords-experiment-which-established-the-nuclear-model-o-jee-advanced-2002-screening-marks-1-pilnzx9yvttyepsw.htm",
+          "paperTitle": "IIT-JEE 2002 Screening",
+          "question": {
+            "en": {
+              "content": "Rutherford's experiment, which established the nuclear model of the atom, used a beam of"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-quantum-numbers-12-and-12-for-the-electron-spin-represen-jee-advanced-2001-screening-marks-1-gzyutkxvwplib6ej.htm",
+          "paperTitle": "IIT-JEE 2001 Screening",
+          "question": {
+            "en": {
+              "content": "The quantum numbers +1/2 and -1/2 for the electron spin represent "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-wavelength-associated-with-a-golf-ball-weighing-200-g-an-jee-advanced-2001-screening-marks-1-h1yztpdo1cksnqjk.htm",
+          "paperTitle": "IIT-JEE 2001 Screening",
+          "question": {
+            "en": {
+              "content": "The wavelength associated with a golf ball weighing 200 g and moving at speed of 5 m/h is of the order"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-electronic-configuration-of-an-element-is-1s2-2s2-2p6-3s-jee-advanced-2000-screening-marks-1-21u8tvofvuv7wjj4.htm",
+          "paperTitle": "IIT-JEE 2000 Screening",
+          "question": {
+            "en": {
+              "content": "The electronic configuration of an element is 1s<sup>2</sup>, 2s<sup>2</sup> 2p<sup>6</sup>, 3s<sup>2</sup> 3p<sup>6</sup> 3d<sup>5</sup>,  4s<sup>1</sup> This represents its"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-number-of-nodal-planes-in-a-px-orbital-is-jee-advanced-2000-screening-marks-1-jogocq5wt9espiih.htm",
+          "paperTitle": "IIT-JEE 2000 Screening",
+          "question": {
+            "en": {
+              "content": "The number of nodal planes in a p<sub>x</sub> orbital is"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-electrons-identified-by-quantum-numbers-n-and-l-i-n-4-l-jee-advanced-1999-marks-2-m1ehpttgjxv5zrx3.htm",
+          "paperTitle": "IIT-JEE 1999",
+          "question": {
+            "en": {
+              "content": "The electrons, identified by quantum numbers n and l, (i) n = 4, l = 1, (ii) n = 4, l = 0, (iii) n = 3, l = 2 and (iv) n = 3, l = 1 can be placed in order of increasing energy, from the lowest to highest, as"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "assertion-nuclide-1330al-is-less-stable-than-1998-marks-2-kl5v4ktbjwrlqb32.htm",
+          "paperTitle": "IIT-JEE 1998",
+          "question": {
+            "en": {
+              "content": "<b>ASSERTION:</b><br>\nNuclide <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.708ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.159ex\" height=\"2.609ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -840.1 1838.1 1153\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msubsup\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"></g><g data-mml-node=\"TeXAtom\" transform=\"translate(33,369.2) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(33,-297.3) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\" transform=\"translate(500,0)\"></use></g></g></g><g data-mml-node=\"mi\" transform=\"translate(790.1,0)\"><use data-c=\"1D434\" xlink:href=\"#MJX-TEX-I-1D434\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1540.1,0)\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g></g></g></svg></mjx-container> is less stable than <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.708ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.704ex\" height=\"2.626ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -847.9 2079.1 1160.8\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msubsup\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"></g><g data-mml-node=\"TeXAtom\" transform=\"translate(33,369.2) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(33,-297.3) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use></g></g></g><g data-mml-node=\"mi\" transform=\"translate(790.1,0)\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1550.1,0)\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g></g></g></svg></mjx-container><br><br>\n<b>REASON:</b><br>\nNuclides having odd number of protons and neutrons are generally unstable."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-orbital-diagram-in-which-the-aufbau-principle-is-violate-jee-advanced-1998-marks-1-3y0cnvjby6uogugi.htm",
+          "paperTitle": "IIT-JEE 1998",
+          "question": {
+            "en": {
+              "content": "The orbital diagram in which the Aufbau principle is violated is"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "for-a-d-electron-the-orbital-angular-momentum-is-jee-advanced-1997-marks-1-lf9keqgnhhhbrsz5.htm",
+          "paperTitle": "IIT-JEE 1997",
+          "question": {
+            "en": {
+              "content": "For a d-electron the orbital angular momentum is"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-orbital-angular-momentum-of-an-electron-in-2s-orbital-is-jee-advanced-1996-marks-1-ka28qfnph5ot4b4t.htm",
+          "paperTitle": "IIT-JEE 1996",
+          "question": {
+            "en": {
+              "content": "The orbital angular momentum of an electron in 2s orbital is"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "a-3p-orbital-has-jee-advanced-1995-screening-marks-1-g4kevyg0edi7ajj7.htm",
+          "paperTitle": "IIT-JEE 1995 Screening",
+          "question": {
+            "en": {
+              "content": "A 3p orbital has"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "which-of-the-following-relates-to-photons-both-as-wave-motio-jee-advanced-1992-marks-1-uo9bcslklba4pqnc.htm",
+          "paperTitle": "IIT-JEE 1992",
+          "question": {
+            "en": {
+              "content": "Which of the following relates to photons both as wave motion and as a stream of particles?"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "which-of-the-following-does-not-characterise-x-rays-jee-advanced-1992-marks-1-wh2au7gupilccvel.htm",
+          "paperTitle": "IIT-JEE 1992",
+          "question": {
+            "en": {
+              "content": "Which of the following does not characterise X-rays?"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-correct-ground-state-electronic-configuration-of-chromiu-jee-advanced-1989-marks-1-zdzjzjnmz27s5ztz.htm",
+          "paperTitle": "IIT-JEE 1989",
+          "question": {
+            "en": {
+              "content": "The correct ground state electronic configuration of chromium atom is"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-correct-set-of-quantum-numbers-for-the-unpaired-electron-jee-advanced-1989-marks-1-99tqfreojlepbyri.htm",
+          "paperTitle": "IIT-JEE 1989",
+          "question": {
+            "en": {
+              "content": "The correct set of quantum numbers for the unpaired electron of chlorine atom is"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-triad-of-nuclei-that-is-isotonic-is-jee-advanced-1988-marks-1-j0c3bxfuxmijnlll.htm",
+          "paperTitle": "IIT-JEE 1988",
+          "question": {
+            "en": {
+              "content": "The triad of nuclei that is isotonic is"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-outermost-electronic-configuration-of-the-most-electrone-jee-advanced-1988-marks-1-4kxujyv8zobjyamk.htm",
+          "paperTitle": "IIT-JEE 1988",
+          "question": {
+            "en": {
+              "content": "The outermost electronic configuration of the most electronegative element is"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-wavelength-of-a-spectral-line-for-an-electronic-transiti-jee-advanced-1988-marks-1-ckltv4y8tqbxbbop.htm",
+          "paperTitle": "IIT-JEE 1988",
+          "question": {
+            "en": {
+              "content": "The wavelength of a spectral line for an electronic transition is inversely related to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-sum-of-the-number-of-neutrons-and-proton-in-the-isotope-jee-advanced-1986-marks-1-ihvqcgeglvxgm89v.htm",
+          "paperTitle": "IIT-JEE 1986",
+          "question": {
+            "en": {
+              "content": "The sum of the number of neutrons and proton in the isotope of hydrogen is"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "which-one-of-the-following-sets-of-quantum-numbers-represent-jee-advanced-1986-marks-1-5e30remycjn9obne.htm",
+          "paperTitle": "IIT-JEE 1986",
+          "question": {
+            "en": {
+              "content": "Which one of the following sets of quantum numbers represents an impossible arrangement?"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "rutherfords-alpha-particle-scattering-experiment-eventually-jee-advanced-1986-marks-1-8zpt7mh5hekdwx8g.htm",
+          "paperTitle": "IIT-JEE 1986",
+          "question": {
+            "en": {
+              "content": "Rutherford's alpha particle scattering experiment eventually led to the conclusion that:"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-ratio-of-the-energy-of-a-photon-of-2000-wavelength-to-th-jee-advanced-1986-marks-1-9vgguctxanb1gvv5.htm",
+          "paperTitle": "IIT-JEE 1986",
+          "question": {
+            "en": {
+              "content": "The ratio of the energy of a photon of 2000Å wavelength to that 4000Å radiation is"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "electromangnetic-radiation-with-maximum-wavelength-is-jee-advanced-1985-marks-1-88wz0vb3jwuweeva.htm",
+          "paperTitle": "IIT-JEE 1985",
+          "question": {
+            "en": {
+              "content": "Electromangnetic radiation with maximum wavelength is:"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "bohr-model-can-explain-jee-advanced-1985-marks-1-33ktalshkoopwwso.htm",
+          "paperTitle": "IIT-JEE 1985",
+          "question": {
+            "en": {
+              "content": "Bohr Model can explain "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-radius-of-an-atomic-nucleus-is-of-the-order-of-jee-advanced-1985-marks-1-vcefvzfqrhtpe7t2.htm",
+          "paperTitle": "IIT-JEE 1985",
+          "question": {
+            "en": {
+              "content": "The radius of an atomic nucleus is of the order of"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "which-electronic-level-would-allow-the-hydrogen-atom-to-abso-jee-advanced-1984-marks-1-7ruo1wkbrkffoatv.htm",
+          "paperTitle": "IIT-JEE 1984",
+          "question": {
+            "en": {
+              "content": "Which electronic level would allow the hydrogen atom to absorb a photon but not to emit a photon?"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-increasing-order-lowest-first-for-the-values-of-em-charg-jee-advanced-1984-marks-1-7g2jk8gpgbjbyq8j.htm",
+          "paperTitle": "IIT-JEE 1984",
+          "question": {
+            "en": {
+              "content": "The increasing  order (lowest first) for the values of e/m (charges/mass) for electron (e), proton (p), neutron (n) and alpha particle (<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.448ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 640 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D6FC\" xlink:href=\"#MJX-TEX-I-1D6FC\"></use></g></g></g></svg></mjx-container>) is:"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "correct-set-of-four-quantum-numbers-for-the-valence-outermos-jee-advanced-1984-marks-1-icdiq3btkmrcobjv.htm",
+          "paperTitle": "IIT-JEE 1984",
+          "question": {
+            "en": {
+              "content": "Correct set of four quantum numbers for the valence (outermost) electron of rubidium (Z = 37) is"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "rutherfords-scattering-experiment-is-related-to-the-size-of-jee-advanced-1983-marks-1-jcgo7bmtadzjihbb.htm",
+          "paperTitle": "IIT-JEE 1983",
+          "question": {
+            "en": {
+              "content": "Rutherford's scattering experiment is related to the size of the "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "any-p-orbital-can-accommodate-upto-jee-advanced-1983-marks-1-m9qqijzlmy1f78xt.htm",
+          "paperTitle": "IIT-JEE 1983",
+          "question": {
+            "en": {
+              "content": "Any p-orbital can accommodate upto"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-principal-quantum-number-of-an-atom-is-related-to-the-jee-advanced-1983-marks-1-3dmrqurlnwkk1kef.htm",
+          "paperTitle": "IIT-JEE 1983",
+          "question": {
+            "en": {
+              "content": "The principal quantum number of an atom is related to the"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-ion-that-is-isoelectronic-with-co-is-1982-marks-1-fwd8m3nfgotsiftv.htm",
+          "paperTitle": "IIT-JEE 1982",
+          "question": {
+            "en": {
+              "content": "The ion that is isoelectronic with CO is"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "rutherfords-experiment-on-scattering-of-alpha-particles-show-jee-advanced-1981-marks-1-c2svac1k0jrvjrx7.htm",
+          "paperTitle": "IIT-JEE 1981",
+          "question": {
+            "en": {
+              "content": "Rutherford's experiment on scattering of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.439ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"12.935ex\" height=\"2.009ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 5717.4 888\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D6FC\" xlink:href=\"#MJX-TEX-I-1D6FC\"></use></g><g data-mml-node=\"mo\" transform=\"translate(862.2,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1862.4,0)\"><use data-c=\"1D45D\" xlink:href=\"#MJX-TEX-I-1D45D\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2365.4,0)\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2894.4,0)\"><use data-c=\"1D45F\" xlink:href=\"#MJX-TEX-I-1D45F\"></use></g><g data-mml-node=\"mi\" transform=\"translate(3345.4,0)\"><use data-c=\"1D461\" xlink:href=\"#MJX-TEX-I-1D461\"></use></g><g data-mml-node=\"mi\" transform=\"translate(3706.4,0)\"><use data-c=\"1D456\" xlink:href=\"#MJX-TEX-I-1D456\"></use></g><g data-mml-node=\"mi\" transform=\"translate(4051.4,0)\"><use data-c=\"1D450\" xlink:href=\"#MJX-TEX-I-1D450\"></use></g><g data-mml-node=\"mi\" transform=\"translate(4484.4,0)\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g><g data-mml-node=\"mi\" transform=\"translate(4782.4,0)\"><use data-c=\"1D452\" xlink:href=\"#MJX-TEX-I-1D452\"></use></g><g data-mml-node=\"mi\" transform=\"translate(5248.4,0)\"><use data-c=\"1D460\" xlink:href=\"#MJX-TEX-I-1D460\"></use></g></g></g></svg></mjx-container> showed for the first time that the atom has"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-number-of-neutrons-in-dipositive-zinc-ion-with-mass-numb-jee-advanced-1979-marks-1-8vuo7ueisiimkne9.htm",
+          "paperTitle": "IIT-JEE 1979",
+          "question": {
+            "en": {
+              "content": "The number of neutrons in dipositive zinc ion with mass number 70 is"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Subjective",
+      "key": "subjective",
+      "questions": [
+        {
+          "examGroup": "jee",
+          "permalink": "find-the-velocity-ms-1-of-electron-in-first-bohrs-orbit-2005-marks-2-ofngnb94vybwklsj.htm",
+          "paperTitle": "IIT-JEE 2005",
+          "question": {
+            "en": {
+              "content": "Find the velocity (ms<sup>-1</sup>) of electron in first Bohr's  orbit of radius a<sub>0</sub>. Also find the de Broglie's wavelength (in m). Find the orbital angular momentum of 2p orbital of hydrogen atom in units of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.566ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.862ex\" height=\"2.262ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 2149 1000\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"210E\" xlink:href=\"#MJX-TEX-I-210E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(576,0)\"><use data-c=\"2F\" xlink:href=\"#MJX-TEX-N-2F\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1076,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1576,0)\"><use data-c=\"1D70B\" xlink:href=\"#MJX-TEX-I-1D70B\"></use></g></g></g></svg></mjx-container>."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pa-calculate-velocity-of-electron-in-the-first-orbit-of-jee-advanced-chemistry-some-basic-concepts-of-chemistry-jondkagwkbewtcu8",
+          "paperTitle": "IIT-JEE 2005 Mains",
+          "question": {
+            "en": {
+              "content": "<p>(A) Calculate velocity of electron in the first orbit of hydrogen atom (Given : <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.375ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"14.393ex\" height=\"1.881ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -666 6361.7 831.6\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D45F\" xlink:href=\"#MJX-TEX-I-1D45F\"></use></g><g data-mml-node=\"mo\" transform=\"translate(728.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"msub\" transform=\"translate(1784.6,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"mn\" transform=\"translate(562,-150) scale(0.707)\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(3027.9,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(4083.7,0)\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\" transform=\"translate(500,0)\"></use><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\" transform=\"translate(778,0)\"></use><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\" transform=\"translate(1278,0)\"></use><use data-c=\"39\" xlink:href=\"#MJX-TEX-N-39\" transform=\"translate(1778,0)\"></use></g></g></g></svg></mjx-container> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.697ex\" height=\"3.004ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1327.8 750 1327.8\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mover\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"OP\"><g data-mml-node=\"mi\"><use data-c=\"1D434\" xlink:href=\"#MJX-TEX-I-1D434\"></use></g></g><g data-mml-node=\"mi\" transform=\"translate(203.5,916) scale(0.707)\"><use data-c=\"1D45C\" xlink:href=\"#MJX-TEX-I-1D45C\"></use></g></g></g></g></svg></mjx-container>).</p>\n<p>(B) Calculate the de Broglie's wavelength of the electron in first Bohr orbit.</p>\n<p>(C) Calculate the orbital angular momentum of 2p orbital in terms of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.566ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.862ex\" height=\"2.262ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 2149 1000\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"210E\" xlink:href=\"#MJX-TEX-I-210E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(576,0)\"><use data-c=\"2F\" xlink:href=\"#MJX-TEX-N-2F\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1076,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1576,0)\"><use data-c=\"1D70B\" xlink:href=\"#MJX-TEX-I-1D70B\"></use></g></g></g></svg></mjx-container> units.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "a-ball-of-mass-100-g-is-moving-with-100-ms-1-find-its-wave-2004-marks-1-ynlhlgkddoudtldb.htm",
+          "paperTitle": "IIT-JEE 2004",
+          "question": {
+            "en": {
+              "content": "A ball of mass 100 g is moving with 100 ms<sup>-1</sup>. Find it's wavelength."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-schrodinger-wave-equation-for-hydrogen-atom-is-psi-2004-marks-2-w22db2gpl4jf1ir9.htm",
+          "paperTitle": "IIT-JEE 2004",
+          "question": {
+            "en": {
+              "content": "(a) The Schrodinger wave equation for hydrogen atom is<br><br>\n<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\" display=\"true\"><svg style=\"vertical-align: -2.308ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"37.484ex\" height=\"6.169ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1706.9 16568.1 2726.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D713\" xlink:href=\"#MJX-TEX-I-1D713\"></use></g><g data-mml-node=\"mo\" transform=\"translate(928.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1984.6,0)\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mn\" transform=\"translate(1183,676)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(220,-915)\"><g data-mml-node=\"mn\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g><g data-mml-node=\"msqrt\" transform=\"translate(500,0)\"><g data-mml-node=\"mo\" transform=\"translate(0,95)\"><use data-c=\"221A\" xlink:href=\"#MJX-TEX-N-221A\"></use></g><g transform=\"translate(853,0)\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mi\" transform=\"translate(500,0)\"><use data-c=\"1D70B\" xlink:href=\"#MJX-TEX-I-1D70B\"></use></g></g><rect width=\"1073\" height=\"60\" x=\"853\" y=\"835\"></rect></g></g><rect width=\"2626\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(4850.6,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"mrow\"><g data-mml-node=\"mo\" transform=\"translate(0 -0.5)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-S3-28\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(736,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mn\" transform=\"translate(452.8,676)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(220,-686)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"mn\" transform=\"translate(562,-150) scale(0.707)\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g></g></g></g><rect width=\"1165.6\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g><g data-mml-node=\"mo\" transform=\"translate(2141.6,0) translate(0 -0.5)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-S3-29\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(2910.6,1176.6) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"2F\" xlink:href=\"#MJX-TEX-N-2F\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1000,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g><g data-mml-node=\"mrow\" transform=\"translate(9038.4,0)\"><g data-mml-node=\"mo\" transform=\"translate(0 -0.5)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-S3-28\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(736,0)\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mo\" transform=\"translate(722.2,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1722.4,0)\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(259,676)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D45F\" xlink:href=\"#MJX-TEX-I-1D45F\"></use></g><g data-mml-node=\"mn\" transform=\"translate(484,-150) scale(0.707)\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g></g></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(220,-686)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"mn\" transform=\"translate(562,-150) scale(0.707)\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g></g></g></g><rect width=\"1165.6\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g><g data-mml-node=\"mo\" transform=\"translate(3864,0) translate(0 -0.5)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-S3-29\"></use></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(13805.1,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"1D452\" xlink:href=\"#MJX-TEX-I-1D452\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(499,413) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(778,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D45F\" xlink:href=\"#MJX-TEX-I-1D45F\"></use></g><g data-mml-node=\"mn\" transform=\"translate(484,-150) scale(0.707)\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(1665.6,0)\"><use data-c=\"2F\" xlink:href=\"#MJX-TEX-N-2F\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2165.6,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"mn\" transform=\"translate(562,-150) scale(0.707)\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g></g></g></g></g></g></g></g></svg></mjx-container><br>\nWhere a<sub>0</sub> is Bohr's radius. If the radial node in 2s be at r<sub>0</sub>, then find r<sub>0</sub> in terms of a<sub>0</sub>.\n<br><br>(b) A baseball having mass 100 g moves with velocity 100 m/s. Determine the value of wavelength of baseball."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "wavelength-of-high-energy-transition-of-h-atoms-is-912-nm-2003-marks-2-guxwrdxsondbn0sk.htm",
+          "paperTitle": "IIT-JEE 2003",
+          "question": {
+            "en": {
+              "content": "Wavelength of high energy transition of H-atoms is 91.2 nm. Calculate the corresponding wavelength of He atoms."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "calculate-the-energy-required-to-excite-one-litre-of-hydroge-2000-marks-4-iop27dhic1te72fj.htm",
+          "paperTitle": "IIT-JEE 2000",
+          "question": {
+            "en": {
+              "content": "Calculate the energy required to excite one litre of hydrogen gas at 1 atm and 298 K to the first excited state of atomic hydrogen. The energy for the dissociation of H-H bond 436 kJ mol<sup>-1</sup>."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "calculate-the-wave-number-for-the-shortest-wavelength-transi-1996-marks-1-bbt8gd9x5xm2v8qo.htm",
+          "paperTitle": "IIT-JEE 1996",
+          "question": {
+            "en": {
+              "content": "Calculate the wave number for the shortest wavelength transition in the Balmer series of atomic hydrogen."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "consider-the-hydrogen-atom-to-be-a-proton-embedded-in-a-cavi-1996-marks-2-ag9fjrqhhykek4de.htm",
+          "paperTitle": "IIT-JEE 1996",
+          "question": {
+            "en": {
+              "content": "Consider the hydrogen atom to be a proton embedded in a cavity of radius a<sub>0</sub> (Bohr radius) whose charge is neutralised by the addition of an electron to the cavity in vacuum, infinitely slowly. Estimate the average total energy of an electron in it's ground state in a hydrogen atom as the work done in the above neutralisation process. Also, if the magnitude of the average kinetic energy is half the magnitude of the average potential energy, find the average potential energy."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "iodine-molecule-dissociates-into-atoms-after-absorbing-light-1995-marks-2-dx0d7lah1qc7bldm.htm",
+          "paperTitle": "IIT-JEE 1995",
+          "question": {
+            "en": {
+              "content": "Iodine molecule dissociates into atoms after absorbing light of 4500 Å. If one quantum of radiation is absorbed by each molecule, calculate the kinetic energy of iodine atoms. (Bond energy of I<sub>2</sub> = 240 kJ mol<sup>-1</sup>)"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "estimate-the-difference-in-energy-between-1st-and-2nd-bohr-o-1993-marks-5-br1qyumqsu03xc5f.htm",
+          "paperTitle": "IIT-JEE 1993",
+          "question": {
+            "en": {
+              "content": "Estimate the difference in energy between 1st and 2nd Bohr orbit for a hydrogen atom. At what minimum atomic number, a transition from n = 2 to n = 1 energy level would result in the emission of X-rays with <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"14.488ex\" height=\"2.005ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864 6403.7 886\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D706\" xlink:href=\"#MJX-TEX-I-1D706\"></use></g><g data-mml-node=\"mo\" transform=\"translate(860.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1916.6,0)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\" transform=\"translate(500,0)\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(778,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(3416.8,0)\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(4417,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1033,393.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(778,0)\"><use data-c=\"38\" xlink:href=\"#MJX-TEX-N-38\"></use></g></g></g></g></g></g></svg></mjx-container>? Which hydrogen atom like species does this atomic number correspond to?"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "what-transition-in-the-hydrogen-spectrum-would-have-the-same-1993-marks-3-wfy4zeahxn6pblxp.htm",
+          "paperTitle": "IIT-JEE 1993",
+          "question": {
+            "en": {
+              "content": "What transition in the hydrogen spectrum would have the same wavelength as the Balmer transition n = 4 to n = 2 of He<sup>+</sup> spectrum?"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "according-to-bohrs-theory-the-electronic-energy-of-hydroge-1990-marks-3-dwxpqsuggjp8m07g.htm",
+          "paperTitle": "IIT-JEE 1990",
+          "question": {
+            "en": {
+              "content": "According to Bohr's theory, the electronic energy of hydrogen atom in the n<sup>th</sup> Bohr's orbit is given by <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.871ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"17.34ex\" height=\"3.154ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1008.9 7664.1 1394\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D438\" xlink:href=\"#MJX-TEX-I-1D438\"></use></g><g data-mml-node=\"mi\" transform=\"translate(771,-150) scale(0.707)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(1523,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2578.8,0)\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(220,398) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(778,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\" transform=\"translate(500,0)\"></use><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\" transform=\"translate(1000,0)\"></use><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\" transform=\"translate(1278,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2556,0)\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(3334,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1033,393.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(778,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"39\" xlink:href=\"#MJX-TEX-N-39\" transform=\"translate(500,0)\"></use></g></g></g></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1859.7,-377.4) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(633,289) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g><rect width=\"4212.3\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g><g data-mml-node=\"mi\" transform=\"translate(7031.1,0)\"><use data-c=\"1D43D\" xlink:href=\"#MJX-TEX-I-1D43D\"></use></g></g></g></svg></mjx-container>. Calculate the longest wavelength of light (in Å) that will be needed to remove an electron from the third Bohr orbit of the He<sup>+</sup> ion."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "give-reasons-why-the-ground-state-outermost-electronic-confi-jee-advanced-1985-marks-2-fge31djqx7cmgcnc.htm",
+          "paperTitle": "IIT-JEE 1985",
+          "question": {
+            "en": {
+              "content": "Give reasons why the ground state outermost electronic configuration of silicon is:\n<img class=\"question-image\" src=\"https://imagex.cdn.examgoal.net/qX3oQ8f4lpxsJPcUT/tXvq0rcshh2IBWMsGSh1srr9HINgy/hU8jC5rsOi4L7Vzjo43ljg/image.svg\" loading=\"lazy\" alt=\"IIT-JEE 1985 Chemistry - Structure of Atom Question 53 English\">"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-electron-energy-in-hydrogen-atom-is-given-by-e-217-1984-marks-3-a1ucbaykmlmytclb.htm",
+          "paperTitle": "IIT-JEE 1984",
+          "question": {
+            "en": {
+              "content": "The electron energy in hydrogen atom is given by E = (-21.7 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 10<sup>-12</sup>)/n<sup>2</sup> ergs. Calculate the energy required to remove an electron completely from the n = 2 orbit. What is the longest wavelength (in cm) of light that can be used to cause this transition?"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "calculate-the-wavelength-in-angstrom-of-the-photon-that-is-e-1982-marks-4-knhgh0ij64oobqlp.htm",
+          "paperTitle": "IIT-JEE 1982",
+          "question": {
+            "en": {
+              "content": "Calculate the wavelength in Angstrom of the photon that is emitted when an electron in the Bohr orbit, n = 2 returns to the orbit, n = 1 in the hydrogen atom. The ionization potential of the ground state hydrogen atom is 2.17 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 10<sup>-11</sup> erg per atom."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-energy-of-the-electron-in-the-second-and-the-third-bohr-1981-marks-3-9nkrdqcq9lxbiofb.htm",
+          "paperTitle": "IIT-JEE 1981",
+          "question": {
+            "en": {
+              "content": "The energy of the electron in the second and the third Bohr's orbits of the hydrogen atom is -5.42 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 10<sup>-12</sup> erg and -2.41 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 10<sup>-12</sup> erg respectively. Calculate the wavelength (in Å) of the emitted radiation when the electron drops from the third to second orbit."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Fill in the Blanks",
+      "key": "fill-blanks",
+      "questions": [
+        {
+          "examGroup": "jee",
+          "permalink": "the-outermost-electronic-configuration-of-cr-is-jee-advanced-1994-marks-1-ym3f42pdxhckwxa2.htm",
+          "paperTitle": "IIT-JEE 1994",
+          "question": {
+            "en": {
+              "content": "The outermost electronic configuration of Cr is _______."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-2px-2py-and-2pz-orbitals-of-atom-have-identical-shapes-b-jee-advanced-1993-marks-1-idrudikaauqfwi6z.htm",
+          "paperTitle": "IIT-JEE 1993",
+          "question": {
+            "en": {
+              "content": "The 2p<sub>x</sub>, 2p<sub>y</sub> and 2p<sub>z</sub> orbitals of atom have identical shapes but differ in their _____."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "wave-functions-of-electrons-in-atoms-and-molecules-are-calle-jee-advanced-1993-marks-1-vekjykxmkntedkt2.htm",
+          "paperTitle": "IIT-JEE 1993",
+          "question": {
+            "en": {
+              "content": "Wave functions of electrons in atoms and molecules are called ______."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-light-radiations-with-discrete-quantities-of-energy-are-jee-advanced-1993-marks-1-ttc0lf4dz0ajtr5d.htm",
+          "paperTitle": "IIT-JEE 1993",
+          "question": {
+            "en": {
+              "content": "The light radiations with discrete quantities of energy are called ______."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-uncertainty-principle-and-the-concept-of-wave-nature-of-jee-advanced-1988-marks-1-ypa0b6r643kjolk3.htm",
+          "paperTitle": "IIT-JEE 1988",
+          "question": {
+            "en": {
+              "content": "The uncertainty principle and the concept of wave nature of matter were proposed by ______ and ______ respectively. (Heisenberg Schrodinger, Maxwell, de Broglie)"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "elements-of-the-same-mass-number-but-of-different-atomic-num-jee-advanced-1983-marks-1-xal8iz0wb3sydfuq.htm",
+          "paperTitle": "IIT-JEE 1983",
+          "question": {
+            "en": {
+              "content": "Elements of the same mass number but of different atomic numbers are known as ____."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "isotopes-of-an-element-differ-in-the-number-of-in-their-nucl-jee-advanced-1982-marks-1-7p6p1uxppcj5rwde.htm",
+          "paperTitle": "IIT-JEE 1982",
+          "question": {
+            "en": {
+              "content": "Isotopes of an element differ in the number of ______ in their nuclei."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "when-there-are-two-electrons-in-the-same-orbital-they-have-s-jee-advanced-1982-marks-1-1sftctbuzx8ujclk.htm",
+          "paperTitle": "IIT-JEE 1982",
+          "question": {
+            "en": {
+              "content": "When there are two electrons in the same orbital, they have _____ spins."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-mass-of-a-hydrogen-atom-is-kg-jee-advanced-1982-marks-1-7jx7adbp8h95sln8.htm",
+          "paperTitle": "IIT-JEE 1982",
+          "question": {
+            "en": {
+              "content": "The mass of a hydrogen atom is ______ kg."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "True or False",
+      "key": "tf",
+      "questions": [
+        {
+          "examGroup": "jee",
+          "permalink": "in-a-given-electric-field-beta-particles-are-deflected-more-jee-advanced-1993-marks-1-oadigr5njwoogiog.htm",
+          "paperTitle": "IIT-JEE 1993",
+          "question": {
+            "en": {
+              "content": "In a given electric field, <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.439ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"12.784ex\" height=\"2.034ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 5650.4 899\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D6FD\" xlink:href=\"#MJX-TEX-I-1D6FD\"></use></g><g data-mml-node=\"mo\" transform=\"translate(795.2,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1795.4,0)\"><use data-c=\"1D45D\" xlink:href=\"#MJX-TEX-I-1D45D\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2298.4,0)\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2827.4,0)\"><use data-c=\"1D45F\" xlink:href=\"#MJX-TEX-I-1D45F\"></use></g><g data-mml-node=\"mi\" transform=\"translate(3278.4,0)\"><use data-c=\"1D461\" xlink:href=\"#MJX-TEX-I-1D461\"></use></g><g data-mml-node=\"mi\" transform=\"translate(3639.4,0)\"><use data-c=\"1D456\" xlink:href=\"#MJX-TEX-I-1D456\"></use></g><g data-mml-node=\"mi\" transform=\"translate(3984.4,0)\"><use data-c=\"1D450\" xlink:href=\"#MJX-TEX-I-1D450\"></use></g><g data-mml-node=\"mi\" transform=\"translate(4417.4,0)\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g><g data-mml-node=\"mi\" transform=\"translate(4715.4,0)\"><use data-c=\"1D452\" xlink:href=\"#MJX-TEX-I-1D452\"></use></g><g data-mml-node=\"mi\" transform=\"translate(5181.4,0)\"><use data-c=\"1D460\" xlink:href=\"#MJX-TEX-I-1D460\"></use></g></g></g></svg></mjx-container> are deflected more than <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.439ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"12.935ex\" height=\"2.009ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 5717.4 888\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D6FC\" xlink:href=\"#MJX-TEX-I-1D6FC\"></use></g><g data-mml-node=\"mo\" transform=\"translate(862.2,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1862.4,0)\"><use data-c=\"1D45D\" xlink:href=\"#MJX-TEX-I-1D45D\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2365.4,0)\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2894.4,0)\"><use data-c=\"1D45F\" xlink:href=\"#MJX-TEX-I-1D45F\"></use></g><g data-mml-node=\"mi\" transform=\"translate(3345.4,0)\"><use data-c=\"1D461\" xlink:href=\"#MJX-TEX-I-1D461\"></use></g><g data-mml-node=\"mi\" transform=\"translate(3706.4,0)\"><use data-c=\"1D456\" xlink:href=\"#MJX-TEX-I-1D456\"></use></g><g data-mml-node=\"mi\" transform=\"translate(4051.4,0)\"><use data-c=\"1D450\" xlink:href=\"#MJX-TEX-I-1D450\"></use></g><g data-mml-node=\"mi\" transform=\"translate(4484.4,0)\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g><g data-mml-node=\"mi\" transform=\"translate(4782.4,0)\"><use data-c=\"1D452\" xlink:href=\"#MJX-TEX-I-1D452\"></use></g><g data-mml-node=\"mi\" transform=\"translate(5248.4,0)\"><use data-c=\"1D460\" xlink:href=\"#MJX-TEX-I-1D460\"></use></g></g></g></svg></mjx-container> in spite of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.439ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"12.935ex\" height=\"2.009ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 5717.4 888\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D6FC\" xlink:href=\"#MJX-TEX-I-1D6FC\"></use></g><g data-mml-node=\"mo\" transform=\"translate(862.2,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1862.4,0)\"><use data-c=\"1D45D\" xlink:href=\"#MJX-TEX-I-1D45D\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2365.4,0)\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2894.4,0)\"><use data-c=\"1D45F\" xlink:href=\"#MJX-TEX-I-1D45F\"></use></g><g data-mml-node=\"mi\" transform=\"translate(3345.4,0)\"><use data-c=\"1D461\" xlink:href=\"#MJX-TEX-I-1D461\"></use></g><g data-mml-node=\"mi\" transform=\"translate(3706.4,0)\"><use data-c=\"1D456\" xlink:href=\"#MJX-TEX-I-1D456\"></use></g><g data-mml-node=\"mi\" transform=\"translate(4051.4,0)\"><use data-c=\"1D450\" xlink:href=\"#MJX-TEX-I-1D450\"></use></g><g data-mml-node=\"mi\" transform=\"translate(4484.4,0)\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g><g data-mml-node=\"mi\" transform=\"translate(4782.4,0)\"><use data-c=\"1D452\" xlink:href=\"#MJX-TEX-I-1D452\"></use></g><g data-mml-node=\"mi\" transform=\"translate(5248.4,0)\"><use data-c=\"1D460\" xlink:href=\"#MJX-TEX-I-1D460\"></use></g></g></g></svg></mjx-container> having larger charge."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-electron-density-in-the-xy-plane-in-3dx2-y2-orbital-is-z-jee-advanced-1986-marks-1-oeyck7ro1sasbo3v.htm",
+          "paperTitle": "IIT-JEE 1986",
+          "question": {
+            "en": {
+              "content": "The electron density in the XY plane in 3d<sub>x<sup>2</sup> - y<sup>2</sup></sub> orbital is zero"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "gamma-rays-are-electromagnetic-radiations-of-wavelengths-of-jee-advanced-1983-marks-1-st1fg5kw2gouiu5p.htm",
+          "paperTitle": "IIT-JEE 1983",
+          "question": {
+            "en": {
+              "content": "Gamma rays are electromagnetic radiations of wavelengths of 10<sup>-6</sup> to 10<sup>-5</sup> cm"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-energy-of-the-electron-in-the-3d-orbital-is-less-than-th-jee-advanced-1983-marks-1-22sp404xrsmu5rih.htm",
+          "paperTitle": "IIT-JEE 1983",
+          "question": {
+            "en": {
+              "content": "The energy of the electron in the 3d-orbital is less than that in the 4s-orbital in the hydrogen atom."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-outer-electronic-configuration-of-the-ground-state-chrom-jee-advanced-1982-marks-1-ut4eobyl0j0tmqxr.htm",
+          "paperTitle": "IIT-JEE 1982",
+          "question": {
+            "en": {
+              "content": "The outer electronic configuration of the ground state chromium atom is 3d<sup>4</sup> 4s<sup>2</sup>"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

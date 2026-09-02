@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "1lh29uyl4",
+      "paperTitle": "JEE Main 2023 (Online) 6th April Morning Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "redox-reactions",
+      "chapterGroup": "physical-chemistry",
+      "topic": "oxidation-number",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pin-ammonium-phosphomolybdate-the-oxidation-state-of-mo-jee-main-chemistry-some-basic-concepts-of-chemistry-ayhxmsxpollhawqd",
+      "content": "<p>In ammonium - phosphomolybdate, the oxidation state of Mo is + ___________</p>",
+      "options": [],
+      "correct_options": [],
+      "explanation": "In ammonium phosphomolybdate, the compound typically found in the reagent used for the quantitative determination of phosphorus, the molybdenum (Mo) atom is in the +6 oxidation state.\n"
+    }
+  ]
+}

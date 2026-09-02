@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "4TMnOwzbkQ7gEh4a6c1kk2ckzgq",
+      "paperTitle": "JEE Advanced 2020 Paper 1 Offline",
+      "year": 2020,
+      "subject": "chemistry",
+      "chapter": "aldehydes-ketones-and-carboxylic-acids",
+      "chapterGroup": "organic-chemistry",
+      "topic": "chemical-reactions-for-aldehydes-and-ketones",
+      "type": "mcqm",
+      "marks": 4,
+      "negMarks": 2,
+      "permalink": "in-the-reaction-scheme-shown-below-q-r-and-s-are-the-major-jee-advanced-chemistry-some-basic-concepts-of-chemistry-agfr2arnttfbnlgj",
+      "content": "In the reaction scheme shown below Q, R and S are the major products.<br><br><picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1ks4zc3l4/fa486749-a174-432d-a5a6-d8b6466e1217/35865a80-f941-11eb-a8dc-cdc59b2ba65f/file-1ks4zc3l5-320w.png\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1ks4zc3l4/fa486749-a174-432d-a5a6-d8b6466e1217/35865a80-f941-11eb-a8dc-cdc59b2ba65f/file-1ks4zc3l5-500w.png\"><img src=\"https://imagex.cdn.examgoal.net/1ks4zc3l4/fa486749-a174-432d-a5a6-d8b6466e1217/35865a80-f941-11eb-a8dc-cdc59b2ba65f/file-1ks4zc3l5.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2020 Paper 1 Offline Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 65 English\"></picture><br><br>The correct structure of ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "S is <br><br><img src=\"https://imagex.cdn.examgoal.net/1ks4zctnu/3f1d0465-0d3a-4111-905e-702d4c209fa1/49aae8a0-f941-11eb-a8dc-cdc59b2ba65f/file-1ks4zctnv.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2020 Paper 1 Offline Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 65 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "Q is <br><br><img src=\"https://imagex.cdn.examgoal.net/1ks4zdnco/e780f61f-6259-4df2-a708-66e22f14ec57/609a2f80-f941-11eb-a8dc-cdc59b2ba65f/file-1ks4zdncp.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2020 Paper 1 Offline Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 65 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "R is <br><br><img src=\"https://imagex.cdn.examgoal.net/1ks4ze8ez/32225503-e0fd-4d59-8b70-d8694d2622e6/70dfaeb0-f941-11eb-a8dc-cdc59b2ba65f/file-1ks4ze8f0.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2020 Paper 1 Offline Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 65 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "S is <br><br><img src=\"https://imagex.cdn.examgoal.net/1ks4zevyc/ef44b4b1-2c2c-4e4e-9aa6-04b09a72a8d9/830e6040-f941-11eb-a8dc-cdc59b2ba65f/file-1ks4zevyd.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2020 Paper 1 Offline Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 65 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "B",
+        "D"
+      ],
+      "explanation": "Compound (P) undergoes Friedel-Craft acylation reaction in presence of succinic anhydride and AlCl<sub>3</sub> to gives an acid (Q).<br><br>Compound (Q) on treatment with Zn-Hg/HCl undergoes Clemmensen reduction, where ketone group change into alkane and on further reaction with dehydrating agent H<sub>3</sub>PO<sub>4</sub> gives compound (R).<br><br>Compound (R) on reaction with Grignard reagent and heated in presence of acid gives dehydrating product (S).\n<br><br><picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1ks50kysx/1d434446-6576-4ef3-8d51-965b0032fb4b/153dca10-f946-11eb-b4d0-39c3fc57eb98/file-1ks50kysy-320w.png\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1ks50kysx/1d434446-6576-4ef3-8d51-965b0032fb4b/153dca10-f946-11eb-b4d0-39c3fc57eb98/file-1ks50kysy-500w.png\"><img src=\"https://imagex.cdn.examgoal.net/1ks50kysx/1d434446-6576-4ef3-8d51-965b0032fb4b/153dca10-f946-11eb-b4d0-39c3fc57eb98/file-1ks50kysy.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2020 Paper 1 Offline Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 65 English Explanation\"></picture>\n<br><br>Thus, the option (b) and (d) are correct."
+    }
+  ]
+}

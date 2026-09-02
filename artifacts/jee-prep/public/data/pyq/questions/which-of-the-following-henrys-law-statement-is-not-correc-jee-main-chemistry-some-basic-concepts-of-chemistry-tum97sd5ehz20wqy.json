@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "Gajxr8SuOb34y0PbIcYsL",
+      "paperTitle": "JEE Main 2019 (Online) 9th January Morning Slot",
+      "year": 2019,
+      "examDate": "2019-01-09 09:30",
+      "subject": "chemistry",
+      "chapter": "solutions",
+      "chapterGroup": "physical-chemistry",
+      "topic": "henrys-law",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-henrys-law-statement-is-not-correc-jee-main-chemistry-some-basic-concepts-of-chemistry-tum97sd5ehz20wqy",
+      "content": "Which one of the following statements regarding  Henry's law is not correct ? ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Higher the value of K<sub>H</sub> at a given pressure, higher is the solubility of the gas in the liquids"
+        },
+        {
+          "identifier": "B",
+          "content": "Different gases have different K<sub>H</sub> (Henry's law constant) values at the same temperature."
+        },
+        {
+          "identifier": "C",
+          "content": "The partial pressure of the gas in vapour phase is proportional to the mole fraction of the gas in the solution. "
+        },
+        {
+          "identifier": "D",
+          "content": "The value of K<sub>H</sub> increases with increase of temperature and K<sub>H</sub> is function of the nature of the gas "
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "From Henry's law we know, \n<br><br>P<sub>gas</sub> = K<sub>H</sub> x<sub>g</sub>\n<br><br>Where, Pgas = Pressure of undissolved gas \n<br><br>x<sub>g</sub> = Mole fraction of gas dissolved into  the liquid. \n<br><br>K<sub>H</sub> = Henry's Carnot. \n<br><br>When pressure is constant then,\n<br><br>x<sub>g</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 778 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"221D\" xlink:href=\"#MJX-TEX-N-221D\"></use></g></g></g></svg></mjx-container> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -1.021ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.555ex\" height=\"2.977ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864.9 1571.3 1316\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mn\" transform=\"translate(608.9,394) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(220,-345) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D43E\" xlink:href=\"#MJX-TEX-I-1D43E\"></use></g><g data-mml-node=\"msub\" transform=\"translate(889,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"></g><g data-mml-node=\"mi\" transform=\"translate(33,-150) scale(0.707)\"><use data-c=\"1D43B\" xlink:href=\"#MJX-TEX-I-1D43B\"></use></g></g></g><rect width=\"1331.3\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container>\n<br><br>So. when K<sub>H</sub> is high then x<sub>g</sub> or solubility of gas is lower in the liquid.\n<br><br>So, option (A) is wrong."
+    }
+  ]
+}

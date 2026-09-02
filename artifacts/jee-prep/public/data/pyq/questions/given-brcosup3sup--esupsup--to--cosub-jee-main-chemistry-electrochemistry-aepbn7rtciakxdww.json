@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "zkv2z6czzaddipFUSZ3rsa0w2w9jx578xfo",
+      "paperTitle": "JEE Main 2019 (Online) 12th April Morning Slot",
+      "year": 2019,
+      "examDate": "2019-04-12 09:30",
+      "subject": "chemistry",
+      "chapter": "electrochemistry",
+      "chapterGroup": "physical-chemistry",
+      "topic": "electrochemical-series-cell-and-their-emf",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "given-brcosup3sup--esupsup--to--cosub-jee-main-chemistry-electrochemistry-aepbn7rtciakxdww",
+      "content": "Given\n<br><br>CO<sup>3+</sup> + e<sup>–</sup> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> CO<sub>2</sub><sup>+</sup> ; E<sup>o</sup> = + 1.81 V\n<br><br>Pb<sup>4+</sup>\n + 2e<sup>–</sup> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> Pb<sub>2</sub><sup>+</sup> ; E<sup>o</sup> = + 1.67 V\n<br><br>Ce<sup>4+</sup>\n + e<sup>–</sup> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> Ce<sup>3+</sup>\n ; E<sup>o</sup> = + 1.61 V\n<br><br>Bi<sup>3+</sup> + 3e<sup>–</sup> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> Bi ; E<sup>o</sup> = + 0.20 V\n<br><br>Oxidizing power of the species will increase in the order :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Co<sup>3+</sup> &lt; Ce<sup>4+</sup>\n &lt; Bi<sup>3+</sup> &lt; Pb<sup>4+</sup>"
+        },
+        {
+          "identifier": "B",
+          "content": "Co<sup>3+</sup> &lt; Pb<sup>4+</sup> &lt; Ce<sup>4+</sup>\n &lt; Bi<sup>3+</sup>"
+        },
+        {
+          "identifier": "C",
+          "content": "Ce<sup>4+</sup>\n &lt; Pb<sup>4+</sup> &lt; Bi<sup>3+</sup> &lt; Co<sup>3+</sup>"
+        },
+        {
+          "identifier": "D",
+          "content": "Bi<sup>3+</sup> &lt; Ce<sup>4+</sup>\n &lt; Pb<sup>4+</sup> &lt; Co<sup>3+</sup>"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Higher the value of Standard reduction potential of metal ion electrode, the more strong oxidizing agent is that metal ion electrode and have greater oxidising power.\n<br><br>So, Bi<sup>3+</sup> &lt; Ce<sup>4+</sup>\n &lt; Pb<sup>4+</sup> &lt; Co<sup>3+</sup>"
+    }
+  ]
+}

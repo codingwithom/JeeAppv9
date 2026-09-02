@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktn1hzsy",
+      "paperTitle": "JEE Main 2021 (Online) 1st September Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "application-of-coordination-compound-and-organometallic-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-potassium-ferrocyanide-solution-gives-a-prussian-blue-co-jee-main-chemistry-some-basic-concepts-of-chemistry-obomzdbfpcew8afa",
+      "content": "The potassium ferrocyanide solution gives a Prussian blue colour, when added to :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "CoCl<sub>3</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "FeCl<sub>2</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "CoCl<sub>2</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "FeCl<sub>3</sub>"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "FeCl<sub>3</sub> + K<sub>4</sub>[Fe(CN)<sub>6</sub>] <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> Fe<sub>4</sub>[Fe(CN)<sub>6</sub>]<sub>3</sub> (Prussian blue)"
+    }
+  ]
+}

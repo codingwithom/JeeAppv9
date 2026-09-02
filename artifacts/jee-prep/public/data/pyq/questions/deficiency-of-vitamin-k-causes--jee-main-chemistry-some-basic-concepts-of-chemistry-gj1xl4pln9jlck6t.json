@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "rrI6YXMGjiI2fxj2Qc1kmm0d75c",
+      "paperTitle": "JEE Main 2021 (Online) 18th March Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "vitamins-and-nucleic-acids",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "deficiency-of-vitamin-k-causes--jee-main-chemistry-some-basic-concepts-of-chemistry-gj1xl4pln9jlck6t",
+      "content": "Deficiency of vitamin K causes :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Cheilosis"
+        },
+        {
+          "identifier": "B",
+          "content": "Decrease in blood clotting time"
+        },
+        {
+          "identifier": "C",
+          "content": "Increase in blood clotting time"
+        },
+        {
+          "identifier": "D",
+          "content": "Increase in fragility of RBC's"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Deficiency of vitamin K causes increase in blood clotting time."
+    }
+  ]
+}

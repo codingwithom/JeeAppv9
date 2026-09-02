@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l548kqa9",
+      "paperTitle": "JEE Main 2022 (Online) 29th June Morning Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "ionic-equilibrium",
+      "chapterGroup": "physical-chemistry",
+      "topic": "solubility-product-and-common-ion-effect",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pthe-solubility-of-agcl-will-be-maximum-in-which-of-the-fo-jee-main-chemistry-some-basic-concepts-of-chemistry-sxuprzxyw4jtwyux",
+      "content": "<p>The solubility of AgCl will be maximum in which of the following?</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "0.01 M KCl"
+        },
+        {
+          "identifier": "B",
+          "content": "0.01 M HCl"
+        },
+        {
+          "identifier": "C",
+          "content": "0.01 M AgNO<sub>3</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "Deionised water"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<p>The solubility of AgCl will be maximum in deionized water.</p>\n<p>Silver chloride (AgCl) is a sparingly soluble salt. Its solubility in water can be represented by the equilibrium:</p>\n<p><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.566ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"33.435ex\" height=\"2.578ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -889.3 14778.3 1139.3\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\">AgCl (s)</text></g><g data-mml-node=\"mo\" transform=\"translate(5077.8,0)\"><use data-c=\"21CC\" xlink:href=\"#MJX-TEX-V-21CC\"></use></g><g data-mml-node=\"msup\" transform=\"translate(6355.6,0)\"><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\">Ag</text></g><g data-mml-node=\"mo\" transform=\"translate(1233,477.1) scale(0.707)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(8188.7,0)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"mi\" transform=\"translate(8577.7,0)\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(9106.7,0)\"><use data-c=\"1D45E\" xlink:href=\"#MJX-TEX-I-1D45E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(9566.7,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g><g data-mml-node=\"mo\" transform=\"translate(10177.9,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"msup\" transform=\"translate(11178.1,0)\"><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\">Cl</text></g><g data-mml-node=\"mo\" transform=\"translate(1233,477.1) scale(0.707)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(13011.3,0)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"mi\" transform=\"translate(13400.3,0)\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(13929.3,0)\"><use data-c=\"1D45E\" xlink:href=\"#MJX-TEX-I-1D45E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(14389.3,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g></g></svg></mjx-container></p>\n<p>In the presence of a common ion, the solubility of AgCl decreases due to the common ion effect, which is explained by Le Chatelier's Principle. Here's an analysis of each option:</p>\n\n<p><p><strong>Option A: 0.01 M KCl</strong>  </p>\n<p>The presence of additional chloride ions (<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.452ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.147ex\" height=\"2.464ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -889.3 1833.1 1089.3\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msup\"><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\">Cl</text></g><g data-mml-node=\"mo\" transform=\"translate(1233,477.1) scale(0.707)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></g></svg></mjx-container>) from KCl will shift the equilibrium to the left, reducing the solubility of AgCl.</p></p>\n<p><p><strong>Option B: 0.01 M HCl</strong>  </p>\n<p>Similar to KCl, HCl also provides more chloride ions, which will decrease the solubility of AgCl due to the common ion effect.</p></p>\n<p><p><strong>Option C: 0.01 M AgNO<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.375ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"0.988ex\" height=\"1.099ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -320.2 436.6 485.8\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"></g><g data-mml-node=\"mn\" transform=\"translate(33,-150) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g></g></svg></mjx-container></strong>  </p>\n<p>AgNO<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.375ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"0.988ex\" height=\"1.099ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -320.2 436.6 485.8\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"></g><g data-mml-node=\"mn\" transform=\"translate(33,-150) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g></g></svg></mjx-container> introduces additional silver ions (<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.452ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.147ex\" height=\"2.464ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -889.3 1833.1 1089.3\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msup\"><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\">Ag</text></g><g data-mml-node=\"mo\" transform=\"translate(1233,477.1) scale(0.707)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g></g></g></g></svg></mjx-container>) into the solution, also shifting the equilibrium to the left, hence decreasing the solubility of AgCl.</p></p>\n<p><p><strong>Option D: Deionized water</strong>  </p>\n<p>This option does not introduce additional ions that impact the equilibrium, so there are no additional silver or chloride ions to shift the equilibrium. As a result, the solubility of AgCl will be highest in deionized water, as there is no common ion effect.</p></p>\n\n<p>Therefore, the solubility of AgCl is highest in deionized water.</p>"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1krz1bm1o",
+      "paperTitle": "JEE Main 2021 (Online) 27th July Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "vitamins-and-nucleic-acids",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "imagebrbrthe-compound-a-is-a-complementary-base-of--jee-main-chemistry-some-basic-concepts-of-chemistry-pdjezxglzvyl4gcp",
+      "content": "<img src=\"https://imagex.cdn.examgoal.net/1ks19v2eq/4ace3bab-ea88-4ee0-8068-61252d9118d1/3daecd20-f737-11eb-b432-97feaf768666/file-1ks19v2er.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 27th July Morning Shift Chemistry - Biomolecules Question 118 English\"><br>The compound 'A' is a complementary base of _______________ in DNA stands.",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Uracil"
+        },
+        {
+          "identifier": "B",
+          "content": "Guanine"
+        },
+        {
+          "identifier": "C",
+          "content": "Adenine"
+        },
+        {
+          "identifier": "D",
+          "content": "Cytosine"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<p>Given structure of compound A is thymine, so its complementary\nbase will be adenine.</p>\n<p>Adenine form hydrogen bonds with thymine and cytosine will form\nhydrogen bond with guanine.\n</p>\n<p><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1lfuy1m0u/326ae13e-0b69-405b-bc70-d745a2b17b79/83562de0-cee1-11ed-b57d-252f40f16b4e/file-1lfuy1m0v.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1lfuy1m0u/326ae13e-0b69-405b-bc70-d745a2b17b79/83562de0-cee1-11ed-b57d-252f40f16b4e/file-1lfuy1m0v.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2021 (Online) 27th July Morning Shift Chemistry - Biomolecules Question 118 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1lfuy1m0u/326ae13e-0b69-405b-bc70-d745a2b17b79/83562de0-cee1-11ed-b57d-252f40f16b4e/file-1lfuy1m0v.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1lfuy1m0u/326ae13e-0b69-405b-bc70-d745a2b17b79/83562de0-cee1-11ed-b57d-252f40f16b4e/file-1lfuy1m0v.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1lfuy1m0u/326ae13e-0b69-405b-bc70-d745a2b17b79/83562de0-cee1-11ed-b57d-252f40f16b4e/file-1lfuy1m0v.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1lfuy1m0u/326ae13e-0b69-405b-bc70-d745a2b17b79/83562de0-cee1-11ed-b57d-252f40f16b4e/file-1lfuy1m0v.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1lfuy1m0u/326ae13e-0b69-405b-bc70-d745a2b17b79/83562de0-cee1-11ed-b57d-252f40f16b4e/file-1lfuy1m0v.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1lfuy1m0u/326ae13e-0b69-405b-bc70-d745a2b17b79/83562de0-cee1-11ed-b57d-252f40f16b4e/file-1lfuy1m0v.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"></p>"
+    }
+  ]
+}

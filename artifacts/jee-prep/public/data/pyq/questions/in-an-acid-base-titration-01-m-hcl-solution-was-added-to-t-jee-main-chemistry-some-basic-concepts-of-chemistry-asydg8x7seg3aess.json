@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "yp8ArAAr9kEsRc578kbmR",
+      "paperTitle": "JEE Main 2019 (Online) 9th April Evening Slot",
+      "year": 2019,
+      "examDate": "2019-04-09 14:30",
+      "subject": "chemistry",
+      "chapter": "ionic-equilibrium",
+      "chapterGroup": "physical-chemistry",
+      "topic": "ph-buffer-and-indicators",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "in-an-acid-base-titration-01-m-hcl-solution-was-added-to-t-jee-main-chemistry-some-basic-concepts-of-chemistry-asydg8x7seg3aess",
+      "content": "In an acid-base titration, 0.1 M HCl solution\nwas added to the NaOH solution of unknown\nstrength. Which of the following correctly\nshows the change of pH of the titraction\nmixture in this experiment?<br><br>\n<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76htyjzrnde9s/24085252-338f-4039-b451-bd53669ff411/2cfc8800-c796-11e9-8a74-7f4f47aa0c85/file-jf76htyjzrnde9t-320w.jpg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76htyjzrnde9s/24085252-338f-4039-b451-bd53669ff411/2cfc8800-c796-11e9-8a74-7f4f47aa0c85/file-jf76htyjzrnde9t-500w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/jf76htyjzrnde9s/24085252-338f-4039-b451-bd53669ff411/2cfc8800-c796-11e9-8a74-7f4f47aa0c85/file-jf76htyjzrnde9t-680w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 9th April Evening Slot Chemistry - Ionic Equilibrium Question 105 English\"></picture>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(C)"
+        },
+        {
+          "identifier": "B",
+          "content": "(A)"
+        },
+        {
+          "identifier": "C",
+          "content": "(B)"
+        },
+        {
+          "identifier": "D",
+          "content": "(D)"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76htyjzrnn775/53de2aa0-64a3-403a-82fe-c01586763769/3d9d2a10-c797-11e9-8a74-7f4f47aa0c85/file-jf76htyjzrnn776-320w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/jf76htyjzrnn775/53de2aa0-64a3-403a-82fe-c01586763769/3d9d2a10-c797-11e9-8a74-7f4f47aa0c85/file-jf76htyjzrnn776-500w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 9th April Evening Slot Chemistry - Ionic Equilibrium Question 105 English Explanation\"></picture>\n<br><br>When strong acid is added to the strong base there will be sharp in the pH. So (A) is the correct answer."
+    }
+  ]
+}

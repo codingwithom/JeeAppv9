@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "0R4b2NlAgBuAi8shPnjgy2xukf25phlh",
+      "paperTitle": "JEE Main 2020 (Online) 3rd September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-03 09:00",
+      "subject": "chemistry",
+      "chapter": "compounds-containing-nitrogen",
+      "chapterGroup": "organic-chemistry",
+      "topic": "aromatic-amines",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-kjeldahl-method-of-nitrogen-estimation-fails-for-which-o-jee-main-chemistry-compounds-containing-nitrogen-gdrq4kmowcam0a5o",
+      "content": "The Kjeldahl method of Nitrogen estimation fails for which of the following reaction products?\n<img src=\"https://imagex.cdn.examgoal.net/jgy2xukf25mbzg/35ee0445-688c-4416-b557-a09ad38cbb06/9f014dd0-f654-11ea-8293-3b6cc591631c/file-jgy2xukf25mbzh-320w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 3rd September Morning Slot Chemistry - Compounds Containing Nitrogen Question 197 English\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(a), (c) and (d)"
+        },
+        {
+          "identifier": "B",
+          "content": "(b) and (c)"
+        },
+        {
+          "identifier": "C",
+          "content": "(c) and (d)"
+        },
+        {
+          "identifier": "D",
+          "content": "(a) and (d)"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1khnjrkfp/38ec988a-6242-4258-bfef-49ffc216d7f1/d4c84650-29b0-11eb-b842-1127d1b3c309/file-1khnjrkfq-320w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 3rd September Morning Slot Chemistry - Compounds Containing Nitrogen Question 197 English Explanation\">\n<br><br>Nitro and diazo compounds do not give\nKjeldahl estimation of Nitrogen."
+    }
+  ]
+}

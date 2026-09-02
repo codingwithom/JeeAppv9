@@ -1,0 +1,353 @@
+{
+  "exam": "jee-advanced",
+  "subject": "physics",
+  "chapterKey": "motion-in-a-plane",
+  "title": "Motion in a Plane | Physics | JEE Advanced Previous Year Questions",
+  "chapter": {
+    "country": "in",
+    "exam": "jee-advanced",
+    "examGroup": "jee",
+    "key": "motion-in-a-plane",
+    "subject": "physics",
+    "type": "chapter",
+    "chapterGroup": "mechanics",
+    "createdAt": "2022-11-10T14:30:16.315Z",
+    "description": null,
+    "image": null,
+    "keyValuePairs": {},
+    "metaId": "2e20acee-9422-5188-8c96-8c6676ad1db6",
+    "order": 18,
+    "title": "Motion in a Plane",
+    "updatedAt": "2022-11-10T14:30:16.314Z",
+    "pyq_stats": [
+      {
+        "year": 2026,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.94
+      },
+      {
+        "year": 2025,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2024,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2023,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2022,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2021,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2020,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2019,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2018,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2017,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2016,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2015,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2014,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2013,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2012,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2011,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2010,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2009,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2008,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2007,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2006,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2005,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2004,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2003,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2002,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2001,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2000,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1999,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1998,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1997,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1996,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1995,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1994,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1993,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1992,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1991,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1990,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1989,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1988,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1987,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1986,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1985,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1984,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1983,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1982,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1981,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1980,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1979,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1978,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      }
+    ],
+    "pyq": {
+      "count": {
+        "out_of_syllabus": 0,
+        "total": 1,
+        "private": 0,
+        "public": 1,
+        "bucket": 0
+      }
+    },
+    "hideFromClassify": false,
+    "groups": [
+      {
+        "title": "MCQ (Multiple Correct Answer)",
+        "key": "mcqm"
+      }
+    ]
+  },
+  "questions": [
+    {
+      "title": "MCQ (More than One Correct Answer)",
+      "key": "mcqm",
+      "questions": [
+        {
+          "examGroup": "jee",
+          "permalink": "pa-particle-is-thrown-with-a-speed-ivi-from-a-point--jee-advanced-physics-kknajjkns4vovb9o",
+          "paperTitle": "JEE Advanced 2026 Paper 1 Online",
+          "question": {
+            "en": {
+              "content": "<p>A particle is thrown with a speed <i>v</i> from a point <i>O</i> at an angle <i>θ</i> with the horizontal plane such that it passes through the point <i>P</i> at a height of <b>1 m</b> and horizontal distance of <b>5 m</b> from <i>O</i>, as shown in the figure. If acceleration due to gravity is <i>g <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.452ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.947ex\" height=\"2.597ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -948 2186.7 1148\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msup\"><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\">ms</text></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1233,477.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(778,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></g></svg></mjx-container></i>, then the correct statement(s) is/are:</p>\n<img alt=\"JEE Advanced 2026 Paper 1 Online Physics - Motion in a Plane Question 1 English\" src=\"https://app-content.cdn.examgoal.net/fly/1000/image/6y3zli1mp9vj7dv/6850d3b6-581e-40f1-a52f-72fb73be0404/2eff8730-51fd-11f1-af7d-734b282814df/file-6y3zli1mp9vj7dw.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/6y3zli1mp9vj7dv/6850d3b6-581e-40f1-a52f-72fb73be0404/2eff8730-51fd-11f1-af7d-734b282814df/file-6y3zli1mp9vj7dw.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0 auto;max-height:40vh;vertical-align:baseline\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/6y3zli1mp9vj7dv/6850d3b6-581e-40f1-a52f-72fb73be0404/2eff8730-51fd-11f1-af7d-734b282814df/file-6y3zli1mp9vj7dw.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/6y3zli1mp9vj7dv/6850d3b6-581e-40f1-a52f-72fb73be0404/2eff8730-51fd-11f1-af7d-734b282814df/file-6y3zli1mp9vj7dw.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/6y3zli1mp9vj7dv/6850d3b6-581e-40f1-a52f-72fb73be0404/2eff8730-51fd-11f1-af7d-734b282814df/file-6y3zli1mp9vj7dw.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/6y3zli1mp9vj7dv/6850d3b6-581e-40f1-a52f-72fb73be0404/2eff8730-51fd-11f1-af7d-734b282814df/file-6y3zli1mp9vj7dw.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/6y3zli1mp9vj7dv/6850d3b6-581e-40f1-a52f-72fb73be0404/2eff8730-51fd-11f1-af7d-734b282814df/file-6y3zli1mp9vj7dw.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/6y3zli1mp9vj7dv/6850d3b6-581e-40f1-a52f-72fb73be0404/2eff8730-51fd-11f1-af7d-734b282814df/file-6y3zli1mp9vj7dw.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

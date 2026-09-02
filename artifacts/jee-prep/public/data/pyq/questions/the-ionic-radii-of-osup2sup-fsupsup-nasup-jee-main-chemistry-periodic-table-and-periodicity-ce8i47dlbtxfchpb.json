@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "LcSov41YJlz8ZZIt3Hjgy2xukf93pib6",
+      "paperTitle": "JEE Main 2020 (Online) 4th September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-04 09:00",
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "atomic-and-ionic-radius",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-ionic-radii-of-osup2sup-fsupsup-nasup-jee-main-chemistry-periodic-table-and-periodicity-ce8i47dlbtxfchpb",
+      "content": "The ionic radii of O<sup>2–</sup>, F<sup>–</sup>, Na<sup>+</sup> and Mg<sup>2+</sup> are in\nthe order :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "F<sup>–</sup> &gt; O<sup>2–</sup> &gt; Na<sup>+</sup> &gt; Mg<sup>2+</sup>"
+        },
+        {
+          "identifier": "B",
+          "content": "Mg<sup>2+</sup> &gt; Na<sup>+</sup> &gt; F<sup>–</sup> &gt; O<sup>2–</sup>"
+        },
+        {
+          "identifier": "C",
+          "content": "O<sup>2–</sup> &gt; F<sup>–</sup> &gt; Mg<sup>2+</sup> &gt; Na<sup>+</sup>\n"
+        },
+        {
+          "identifier": "D",
+          "content": "O<sup>2–</sup> &gt; F<sup>–</sup> &gt; Na<sup>+</sup> &gt; Mg<sup>2+</sup>"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Among isoelectronic species, greater the Z<sub>eff</sub>\n smaller will be the radius.\n<br><br>Order of Z<sub>eff</sub> : Mg<sup>2+</sup> &gt; Na<sup>+</sup> &gt; F<sup>–</sup> &gt; O<sup>2–</sup>\n<br><br>Order of Ionic Radii : O<sup>2–</sup> &gt; F<sup>–</sup> &gt; Na<sup>+</sup> &gt; Mg<sup>2+</sup>"
+    }
+  ]
+}

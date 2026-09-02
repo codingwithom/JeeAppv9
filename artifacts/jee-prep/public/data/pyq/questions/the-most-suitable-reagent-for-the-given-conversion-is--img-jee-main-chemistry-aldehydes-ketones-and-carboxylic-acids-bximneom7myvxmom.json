@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "Hrx14vBCggOUNvEhOc7k9k2k5h32w8z",
+      "paperTitle": "JEE Main 2020 (Online) 8th January Morning Slot",
+      "year": 2020,
+      "examDate": "2020-01-08 09:30",
+      "subject": "chemistry",
+      "chapter": "aldehydes-ketones-and-carboxylic-acids",
+      "chapterGroup": "organic-chemistry",
+      "topic": "preparation-properties-and-uses-of-carboxylic-acids",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-most-suitable-reagent-for-the-given-conversion-is--img-jee-main-chemistry-aldehydes-ketones-and-carboxylic-acids-bximneom7myvxmom",
+      "content": "The most suitable reagent for the given conversion is :\n<img src=\"https://imagex.cdn.examgoal.net/7k9k2k5h2z35x/8068e0e5-36f9-4c4e-ad71-e92911efb07c/de464f50-388f-11ea-92dd-4b9c3519996f/file-7k9k2k5h2z35y-327w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 8th January Morning Slot Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 216 English\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "LiAlH<sub>4</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "B<sub>2</sub>H<sub>6</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "NaBH<sub>4</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "H<sub>2</sub>/Pd"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Diborane (B<sub>2</sub>H<sub>6</sub>) is used to reduced carboxylic acid to alcohol."
+    }
+  ]
+}

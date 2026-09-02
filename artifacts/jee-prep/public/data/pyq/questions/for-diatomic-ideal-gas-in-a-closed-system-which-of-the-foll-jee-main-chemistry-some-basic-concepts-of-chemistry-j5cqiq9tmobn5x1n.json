@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "zhdEqLEqSaZ3Mq4lqjot1",
+      "paperTitle": "JEE Main 2019 (Online) 12th January Morning Slot",
+      "year": 2019,
+      "examDate": "2019-01-12 09:30",
+      "subject": "chemistry",
+      "chapter": "thermodynamics",
+      "chapterGroup": "physical-chemistry",
+      "topic": "fundamentals-of-thermodynamics",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "for-diatomic-ideal-gas-in-a-closed-system-which-of-the-foll-jee-main-chemistry-some-basic-concepts-of-chemistry-j5cqiq9tmobn5x1n",
+      "content": "For diatomic ideal gas in a closed system, which of the following plots does not correctly describe the relation between various thermodynamic quantities?\n",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/hrI6GXAbzHOwcO289/o9eFNCUjrnahjpaO5IEeDvopwuYuB/f3HwBti0eyhUFH6iOT4eVZ/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th January Morning Slot Chemistry - Thermodynamics Question 173 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1da9i2ynkd16lr1d/d29f837c-f3af-403c-9ee2-5867dad475ea/408ba910-ce33-11ea-b796-4745b429ed6f/file-1da9i2ynkd16lr1e-462w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th January Morning Slot Chemistry - Thermodynamics Question 173 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/JNC2oC7CY0chRhH8C/7F8qSPmtzbA1fXFfMMOypLYLBT9D3/A3Ekli46WWr5qE2hBJ2gxZ/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th January Morning Slot Chemistry - Thermodynamics Question 173 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/AVu1ZtW0vGfFedOku/NaN6w5I0wZ8o9CctHLuEYivr43C7l/qfnRgijW1Mm9Q9l9z1hUeT/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th January Morning Slot Chemistry - Thermodynamics Question 173 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "C<sub>P</sub> does not changes with change in pressure."
+    }
+  ]
+}

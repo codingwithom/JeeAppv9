@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "fbTtGOhzwsOJq36I",
+      "paperTitle": "JEE Main 2018 (Offline)",
+      "year": 2018,
+      "examDate": null,
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "carbohydrates",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "glucose-on-prolonged-heating-with-hi-gives-2018-marks-4-fbttgohzwsojq36i.htm",
+      "content": "Glucose on prolonged heating with HI gives",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "6-iodohexanal"
+        },
+        {
+          "identifier": "B",
+          "content": "n-Hexane"
+        },
+        {
+          "identifier": "C",
+          "content": "1-Hexene"
+        },
+        {
+          "identifier": "D",
+          "content": "Hexanoic acid"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "As HI is  a strong reducing agent, it reduces all the aldehydes and ketones to acohol and alcohols are further reduce to alkanes. \n<br><br><img class=\"question-image\" src=\"https://imagex.cdn.examgoal.net/VEHAQcrvfvwcpZqFL/blFqKbgbFwx6LuTXJA64xx1Z3aWMf/wb3pEBPxDTQrfbY0UNdg78/image.png\" loading=\"lazy\" alt=\"JEE Main 2018 (Offline) Chemistry - Biomolecules Question 180 English Explanation\">"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l56xkq8c",
+      "paperTitle": "JEE Main 2022 (Online) 27th June Evening Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "electrochemistry",
+      "chapterGroup": "physical-chemistry",
+      "topic": "electrochemical-series-cell-and-their-emf",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pin-3d-series-the-metal-having-the-highest-msup2sup-jee-main-chemistry-some-basic-concepts-of-chemistry-nqjhklyielnc9qm8",
+      "content": "<p>In 3d series, the metal having the highest M<sup>2+</sup>/M standard electrode potential is :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Cr"
+        },
+        {
+          "identifier": "B",
+          "content": "Fe"
+        },
+        {
+          "identifier": "C",
+          "content": "Cu"
+        },
+        {
+          "identifier": "D",
+          "content": "Zn"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Cr<sup>+2</sup>/Cr <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> –0.90 V<br><br>\nFe<sup>+2</sup>/Fe <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> –0.44 V<br><br>\nCu<sup>+2</sup>/Cu <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> +0.34 V<br><br>\nZn<sup>+2</sup>/Zn <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> -0.76 V<br><br>\n So Ans. is Cu<sup>+2</sup>/Cu"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1krusgxp0",
+      "paperTitle": "JEE Main 2021 (Online) 25th July Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "compounds-containing-nitrogen",
+      "chapterGroup": "organic-chemistry",
+      "topic": "aliphatic-amines",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-one-of-the-products-of-the-following-reactions-does-no-jee-main-chemistry-some-basic-concepts-of-chemistry-gtwqrrjdebe44iy6",
+      "content": "Which one of the products of the following reactions does not react with Hinsberg reagent to form sulphonamide?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1krwgsyy7/ffab78f0-9b29-42e8-9efa-66a022dee034/780ca7f0-f492-11eb-9dc6-a7061d629865/file-1krwgsyy8.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 25th July Morning Shift Chemistry - Compounds Containing Nitrogen Question 160 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1krwgrykt/0443e80e-e6d8-4be5-aa29-577a6d570ec0/5bf3f7d0-f492-11eb-9dc6-a7061d629865/file-1krwgryku.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 25th July Morning Shift Chemistry - Compounds Containing Nitrogen Question 160 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1krwgsfyt/7d49b5f3-2246-40a1-b3c9-66f1ee2fc617/6962b050-f492-11eb-9dc6-a7061d629865/file-1krwgsfyu.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 25th July Morning Shift Chemistry - Compounds Containing Nitrogen Question 160 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1krwgsoq6/60b78951-5364-4b88-93de-24a809eebf78/702704e0-f492-11eb-9dc6-a7061d629865/file-1krwgsoq7.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 25th July Morning Shift Chemistry - Compounds Containing Nitrogen Question 160 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1krwgtm42/e22b7408-dc4f-478f-9165-b848024e7cb2/89f13120-f492-11eb-9dc6-a7061d629865/file-1krwgtm43.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 25th July Morning Shift Chemistry - Compounds Containing Nitrogen Question 160 English Explanation\">"
+    }
+  ]
+}

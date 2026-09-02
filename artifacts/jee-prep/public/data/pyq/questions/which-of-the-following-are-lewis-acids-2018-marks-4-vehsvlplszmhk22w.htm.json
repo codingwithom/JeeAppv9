@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "vEHsVLPLszmhK22W",
+      "paperTitle": "JEE Main 2018 (Offline)",
+      "year": 2018,
+      "examDate": null,
+      "subject": "chemistry",
+      "chapter": "ionic-equilibrium",
+      "chapterGroup": "physical-chemistry",
+      "topic": "ostwalds-dilution-law-and-concept-of-acid-and-base",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-are-lewis-acids-2018-marks-4-vehsvlplszmhk22w.htm",
+      "content": "Which of the following are Lewis acids?\n",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "BCl<sub>3</sub> and AlCl<sub>3</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "PH<sub>3</sub> and BCl<sub>3</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "AlCl<sub>3</sub> and SiCl<sub>4</sub> "
+        },
+        {
+          "identifier": "D",
+          "content": "PH<sub>3</sub> and SiCl<sub>4</sub>\n"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "The compound which have the ability to accepted at least are lone pair electron. \n<br><br>Structure of BCl<sub>3</sub> is \n<br><br><img class=\"question-image\" src=\"https://imagex.cdn.examgoal.net/raE4osQRcZPoKC6ue/2NFO7gy1SBew1Y78sw0E9ifpp4sGo/IhGOLt85jWISBdG0qiDtM7/image.png\" loading=\"lazy\" alt=\"JEE Main 2018 (Offline) Chemistry - Ionic Equilibrium Question 119 English Explanation 1\">\n<br><br>Here B is electron deficient atom, so it can accepted lone pair. So it is a lewis acid. \n<br><br>Structure of AlCl<sub>3</sub> \n<br><br><img class=\"question-image\" src=\"https://imagex.cdn.examgoal.net/I9GrSw7cKV5v2Blsy/CjzAAPzcR9DpublfaNPQNmFgoRBGS/2AfMNxCkxn4YBCVg7y4g4n/image.png\" loading=\"lazy\" alt=\"JEE Main 2018 (Offline) Chemistry - Ionic Equilibrium Question 119 English Explanation 2\">\n<br><br>Here, Al also a electron deficient atom so it has vacant orbital and in that vacant orbital it can take lone pair.  So it is also lewis acid. \n<br><br><img class=\"question-image\" src=\"https://imagex.cdn.examgoal.net/YftFTc2h6RyLQZLnL/8Nlp92YBlcF2sXNwWHZmRPGMh6MF2/JyYwR6k8p8G39rx4YDMPAs/image.png\" loading=\"lazy\" alt=\"JEE Main 2018 (Offline) Chemistry - Ionic Equilibrium Question 119 English Explanation 3\">\n<br><br>Here in PH<sub>3</sub> there is vacant 3d orbital but it Can't take. Lone pair in 3d orbital because  P is more electro-negative than H so around P atom negative charge density is created and tendency of accepting electron decreases. So PH<sub>3</sub> is not lewis acid. \n<br><br><img class=\"question-image\" src=\"https://imagex.cdn.examgoal.net/xWiWefADHErMsSDVL/4429oloEd46Qrny72qvZBFEKd1Aya/dy3EZaBfMG9huQWqQ8L7bu/image.png\" loading=\"lazy\" alt=\"JEE Main 2018 (Offline) Chemistry - Ionic Equilibrium Question 119 English Explanation 4\">\n<br><br>Here octet of Si full ut in has a tendency of accepting lone pair in vacant 3d orbital. \n<br><br>This can be shown by following reaction. \n<br><br><img class=\"question-image\" src=\"https://imagex.cdn.examgoal.net/VlZjBKIEqDrjmz9vf/oJ8gxtvIbXpVWASUzlUcZTRRqCUjB/oqkJJCNQjshTMaOYNKHAzM/image.png\" loading=\"lazy\" alt=\"JEE Main 2018 (Offline) Chemistry - Ionic Equilibrium Question 119 English Explanation 5\">\n<br><br>So, here option (A) and (C) both are correct. But as SiCl<sub>4</sub> is not as strong lewis acid as BCl<sub>3</sub> and AlCl<sub>3</sub>, So  we can say option (A) is more correct."
+    }
+  ]
+}

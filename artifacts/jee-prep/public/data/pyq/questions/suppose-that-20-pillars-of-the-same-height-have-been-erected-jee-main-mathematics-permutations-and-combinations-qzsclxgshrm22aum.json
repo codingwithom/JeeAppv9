@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "eOF6fmsz4KXubATcSH3rsa0w2w9jx2ay4se",
+      "paperTitle": "JEE Main 2019 (Online) 10th April Evening Slot",
+      "year": 2019,
+      "examDate": "2019-04-10 14:30",
+      "subject": "mathematics",
+      "chapter": "permutations-and-combinations",
+      "chapterGroup": "algebra",
+      "topic": "application-of-permutations-and-combination-in-geometry",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "suppose-that-20-pillars-of-the-same-height-have-been-erected-jee-main-mathematics-permutations-and-combinations-qzsclxgshrm22aum",
+      "content": "Suppose that 20 pillars of the same height have been erected along the boundary of a circular stadium. If the\ntop of each pillar has been connected by beams with the top of all its non-adjacent pillars, then the total\nnumber of beams is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "180"
+        },
+        {
+          "identifier": "B",
+          "content": "210"
+        },
+        {
+          "identifier": "C",
+          "content": "170"
+        },
+        {
+          "identifier": "D",
+          "content": "190"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/jf762wkjxz9azw4/7b793fb2-990b-43d9-9bfd-be5563db68ea/00e3bf40-a42d-11e9-902e-23ffedc9804e/file-jf762wkjxz9azw5.jpg\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 10th April Evening Slot Mathematics - Permutations and Combinations Question 177 English Explanation\">\nAny two non-adjacent pillers are joined by beams<br><br>\n<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> number of beams = number of diagonals = <sup>20</sup>C<sub>2</sub> - 20 = 170"
+    }
+  ]
+}

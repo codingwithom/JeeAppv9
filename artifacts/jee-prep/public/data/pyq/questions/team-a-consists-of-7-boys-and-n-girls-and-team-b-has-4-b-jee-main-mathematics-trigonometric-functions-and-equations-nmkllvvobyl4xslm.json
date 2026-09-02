@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "FlAz2HmdDhqlvaBRdA1kmjbf0bo",
+      "paperTitle": "JEE Main 2021 (Online) 17th March Morning Shift",
+      "year": 2021,
+      "subject": "mathematics",
+      "chapter": "permutations-and-combinations",
+      "chapterGroup": "algebra",
+      "topic": "number-of-combinations",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "team-a-consists-of-7-boys-and-n-girls-and-team-b-has-4-b-jee-main-mathematics-trigonometric-functions-and-equations-nmkllvvobyl4xslm",
+      "content": "Team 'A' consists of 7 boys and n girls and Team 'B' has 4 boys and 6 girls. If a total of 52 single matches can be arranged between these two teams when a boy plays against a boy and a girl plays against a girl, then n is equal to :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "5"
+        },
+        {
+          "identifier": "B",
+          "content": "2"
+        },
+        {
+          "identifier": "C",
+          "content": "4"
+        },
+        {
+          "identifier": "D",
+          "content": "6"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Total matches between boys of both team = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"15.231ex\" height=\"2.244ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -841.7 6732.2 991.7\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msup\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"></g><g data-mml-node=\"mn\" transform=\"translate(33,363) scale(0.707)\"><use data-c=\"37\" xlink:href=\"#MJX-TEX-N-37\"></use></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(436.6,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mn\" transform=\"translate(748,-150) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(1810.3,0)\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g><g data-mml-node=\"msup\" transform=\"translate(2810.6,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"></g><g data-mml-node=\"mn\" transform=\"translate(33,363) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(3247.1,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mn\" transform=\"translate(748,-150) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(4676.4,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(5732.2,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use><use data-c=\"38\" xlink:href=\"#MJX-TEX-N-38\" transform=\"translate(500,0)\"></use></g></g></g></svg></mjx-container><br><br>Total matches between girls of both team = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"13.23ex\" height=\"2.226ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -833.9 5847.5 983.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msup\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"></g><g data-mml-node=\"mi\" transform=\"translate(33,363) scale(0.707)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(507.3,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mn\" transform=\"translate(748,-150) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g><g data-mml-node=\"mspace\" transform=\"translate(1658.8,0)\"></g><g data-mml-node=\"msup\" transform=\"translate(1825.8,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"></g><g data-mml-node=\"mn\" transform=\"translate(33,363) scale(0.707)\"><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\"></use></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2262.4,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mn\" transform=\"translate(748,-150) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(3691.7,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(4747.5,0)\"><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\"></use></g><g data-mml-node=\"mi\" transform=\"translate(5247.5,0)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g></g></g></svg></mjx-container><br><br>Now, 28 + 6n = 52<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> n = 4"
+    }
+  ]
+}

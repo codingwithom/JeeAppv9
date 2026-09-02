@@ -1,0 +1,22 @@
+{
+  "questions": [
+    {
+      "question_id": "7oDdEILc7npnNHTQRBjgy2xukf3noxwr",
+      "paperTitle": "JEE Main 2020 (Online) 3rd September Evening Slot",
+      "year": 2020,
+      "examDate": "2020-09-03 15:00",
+      "subject": "chemistry",
+      "chapter": "some-basic-concepts-of-chemistry",
+      "chapterGroup": "physical-chemistry",
+      "topic": "mole-concept",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 0,
+      "permalink": "the-volume-in-ml-of-01-n-naoh-required-to-neutralise-10-m-jee-main-chemistry-some-basic-concepts-of-chemistry-wnjg4a4a02kyq5af",
+      "content": "The volume (in mL) of 0.1 N NaOH required to neutralise 10 mL of 0.1 N phosphinic acid is ___________.",
+      "options": [],
+      "correct_options": [],
+      "explanation": "H<sub>3</sub>PO<sub>2</sub> + NaOH <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> NaH<sub>2</sub>PO<sub>2</sub> + H<sub>2</sub>O\n<br><br>Using Stoichiometry\n<br><br><span style=\"display: inline-block;vertical-align: middle;\">\n     <div style=\"text-align: center;border-bottom: 1px solid black;\">Moles of H<sub>3</sub>PO<sub>2</sub> reacted</div>\n     <div style=\"text-align: center;\">1</div>\n</span> = <span style=\"display: inline-block;vertical-align: middle;\">\n     <div style=\"text-align: center;border-bottom: 1px solid black;\">Moles of NaOH reacted</div>\n     <div style=\"text-align: center;\">1</div></span>\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.781ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.884ex\" height=\"2.737ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864.9 2600.9 1209.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(220,394) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\" transform=\"translate(500,0)\"></use><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\" transform=\"translate(778,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1278,0)\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g><g data-mml-node=\"mn\" transform=\"translate(2056,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(1123.7,-345) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><rect width=\"2360.9\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container> = 0.1 × V<sub>NaOH</sub>\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> V<sub>NaOH</sub> = 10 ml\n\n"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "1l0escsyw",
+      "paperTitle": "JEE Advanced 2016 Paper 2 Offline",
+      "year": 2016,
+      "subject": "chemistry",
+      "chapter": "aldehydes-ketones-and-carboxylic-acids",
+      "chapterGroup": "organic-chemistry",
+      "topic": "preparation-properties-and-uses-of-carboxylic-acids",
+      "type": "mcqm",
+      "marks": 4,
+      "negMarks": 2,
+      "permalink": "preagents-which-can-be-used-to-bring-about-the-following-jee-advanced-chemistry-some-basic-concepts-of-chemistry-ifftpqw7hwb8dpm5",
+      "content": "<p>Reagent(s) which can be used to bring about the following transformation is(are)</p>\n<p><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l0im0xaf/ba79feaa-4bab-4dfb-9ed7-dec4e34df42d/dc343970-9f21-11ec-b824-11481766c67e/file-1l0im0xag.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l0im0xaf/ba79feaa-4bab-4dfb-9ed7-dec4e34df42d/dc343970-9f21-11ec-b824-11481766c67e/file-1l0im0xag.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Advanced 2016 Paper 2 Offline Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 58 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l0im0xaf/ba79feaa-4bab-4dfb-9ed7-dec4e34df42d/dc343970-9f21-11ec-b824-11481766c67e/file-1l0im0xag.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l0im0xaf/ba79feaa-4bab-4dfb-9ed7-dec4e34df42d/dc343970-9f21-11ec-b824-11481766c67e/file-1l0im0xag.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l0im0xaf/ba79feaa-4bab-4dfb-9ed7-dec4e34df42d/dc343970-9f21-11ec-b824-11481766c67e/file-1l0im0xag.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l0im0xaf/ba79feaa-4bab-4dfb-9ed7-dec4e34df42d/dc343970-9f21-11ec-b824-11481766c67e/file-1l0im0xag.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l0im0xaf/ba79feaa-4bab-4dfb-9ed7-dec4e34df42d/dc343970-9f21-11ec-b824-11481766c67e/file-1l0im0xag.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l0im0xaf/ba79feaa-4bab-4dfb-9ed7-dec4e34df42d/dc343970-9f21-11ec-b824-11481766c67e/file-1l0im0xag.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"></p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "LiAlH<sub>4</sub> in (C<sub>2</sub>H<sub>5</sub>)<sub>2</sub>O"
+        },
+        {
+          "identifier": "B",
+          "content": "BH<sub>3</sub> in THF"
+        },
+        {
+          "identifier": "C",
+          "content": "NaBH<sub>4</sub> in C<sub>2</sub>H<sub>5</sub>OH"
+        },
+        {
+          "identifier": "D",
+          "content": "Raney Ni/H<sub>2</sub> in THF"
+        }
+      ],
+      "correct_options": [
+        "C",
+        "D"
+      ],
+      "explanation": "<p>Option (A) : LiAlH<sub>4</sub> in (C<sub>2</sub>H<sub>5</sub>)<sub>2</sub> reduces ester (<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>COOR), carboxylic acid (<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>COOH) epoxide, aldehydes and ketones.</p>\n<p>Option (B) : BH<sub>3</sub> in THF reduces <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>COOH and aldehydes into alcohols. However, it does not reduces esters and epoxides.</p>\n<p>Option (C) : NABH<sub>4</sub> in C<sub>2</sub>H<sub>5</sub>OH reduces only aldehydes and ketones into alcohols, but it does not reduce to others.</p>\n<p>Option (D) : Raney Ni/H<sub>2</sub> in THF does not reduce to <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>COOH, <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>COOR and epoxide but it can reduce aldehyde into alcohols.</p>\n<p>Hence, options (C) and (D) are correct.</p>"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1krt34xum",
+      "paperTitle": "JEE Main 2021 (Online) 22th July Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "periodic-table-and-its-features",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-one-of-the-following-statements-for-di-mendeleeff-i-jee-main-chemistry-some-basic-concepts-of-chemistry-saaqhmy4farxrkyq",
+      "content": "Which one of the following statements for D.I. Mendeleeff, is incorrect?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "He authored the textbook - Principles of Chemistry"
+        },
+        {
+          "identifier": "B",
+          "content": "At the time, he proposed Periodic Table of elements structure of atom was known."
+        },
+        {
+          "identifier": "C",
+          "content": "Element with atomic number 101 is named after him."
+        },
+        {
+          "identifier": "D",
+          "content": "He invented accurate barometer."
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "In 1869, the Russian chemist Dmitri Mendeleev came to prominence with his tabular diagram of known elements, but basic atomic structure the idea that everything is made of atoms was pioneered by John Dalton (1766-1844) in a book he published in 1808."
+    }
+  ]
+}

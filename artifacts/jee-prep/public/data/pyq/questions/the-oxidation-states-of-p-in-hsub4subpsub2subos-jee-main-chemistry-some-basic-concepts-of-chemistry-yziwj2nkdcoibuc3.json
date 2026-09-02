@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1krz034xm",
+      "paperTitle": "JEE Main 2021 (Online) 27th July Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "redox-reactions",
+      "chapterGroup": "physical-chemistry",
+      "topic": "oxidation-number",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-oxidation-states-of-p-in-hsub4subpsub2subos-jee-main-chemistry-some-basic-concepts-of-chemistry-yziwj2nkdcoibuc3",
+      "content": "The oxidation states of 'P' in H<sub>4</sub>P<sub>2</sub>O<sub>7</sub>, H<sub>4</sub>P<sub>2</sub>O<sub>5</sub> and H<sub>4</sub>P<sub>2</sub>O<sub>6</sub>, respectively, are :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "7, 5 and 6"
+        },
+        {
+          "identifier": "B",
+          "content": "5, 4 and 3"
+        },
+        {
+          "identifier": "C",
+          "content": "5, 3 and 4"
+        },
+        {
+          "identifier": "D",
+          "content": "6, 4 and 5"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Oxidation state of P in H<sub>4</sub>P<sub>2</sub>O<sub>7</sub>, H<sub>4</sub>P<sub>2</sub>O<sub>5</sub> and H<sub>4</sub>P<sub>2</sub>O<sub>6</sub> is 5, 3 &amp; 4 respectively<br><br>H<sub>4</sub>P<sub>2</sub>O<sub>7</sub><br><br>2x + 4(+ 1) + 7 (<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>2) = 0<br><br>x = + 5<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -1.057ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"8.022ex\" height=\"2.649ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -704 3545.7 1171\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D43B\" xlink:href=\"#MJX-TEX-I-1D43B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(864,-150) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g><g data-mml-node=\"munder\" transform=\"translate(1267.6,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D443\" xlink:href=\"#MJX-TEX-I-1D443\"></use></g><g data-mml-node=\"mn\" transform=\"translate(675,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(0,-615)\"><svg width=\"1078.6\" height=\"177\" x=\"0\" y=\"178\" viewBox=\"269.6 178 1078.6 177\"><use data-c=\"2013\" xlink:href=\"#MJX-TEX-N-2013\" transform=\"scale(3.236,1)\"></use></svg></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2346.1,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-150) scale(0.707)\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use></g></g></g></g></g></svg></mjx-container><br><br>2x + 4(+ 1) + 5 (<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>2) = 0<br><br>x = + 3<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -1.057ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"8.022ex\" height=\"2.649ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -704 3545.7 1171\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D43B\" xlink:href=\"#MJX-TEX-I-1D43B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(864,-150) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g><g data-mml-node=\"munder\" transform=\"translate(1267.6,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D443\" xlink:href=\"#MJX-TEX-I-1D443\"></use></g><g data-mml-node=\"mn\" transform=\"translate(675,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(0,-615)\"><svg width=\"1078.6\" height=\"177\" x=\"0\" y=\"178\" viewBox=\"269.6 178 1078.6 177\"><use data-c=\"2013\" xlink:href=\"#MJX-TEX-N-2013\" transform=\"scale(3.236,1)\"></use></svg></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2346.1,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-150) scale(0.707)\"><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\"></use></g></g></g></g></g></svg></mjx-container><br><br>2x + 4 (+ 1) + 6(<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>2) = 0<br><br>x = +4"
+    }
+  ]
+}

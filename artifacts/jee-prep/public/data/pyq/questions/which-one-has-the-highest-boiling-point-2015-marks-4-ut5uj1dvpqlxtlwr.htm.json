@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "Ut5uj1dVpqLXtlWr",
+      "paperTitle": "JEE Main 2015 (Offline)",
+      "year": 2015,
+      "examDate": null,
+      "subject": "chemistry",
+      "chapter": "p-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "group-18-elements-inert-or-noble-gases",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-one-has-the-highest-boiling-point-2015-marks-4-ut5uj1dvpqlxtlwr.htm",
+      "content": "Which one has the highest boiling point?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Ne"
+        },
+        {
+          "identifier": "B",
+          "content": "Kr"
+        },
+        {
+          "identifier": "C",
+          "content": "Xe"
+        },
+        {
+          "identifier": "D",
+          "content": "He"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.611ex\" height=\"1.57ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -683 1596 694\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D44B\" xlink:href=\"#MJX-TEX-I-1D44B\"></use></g><g data-mml-node=\"mi\" transform=\"translate(852,0)\"><use data-c=\"1D452\" xlink:href=\"#MJX-TEX-I-1D452\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1318,0)\"><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\"></use></g></g></g></svg></mjx-container> As we move down the group, the melting and boiling    points show a regular increase due to corresponding increase in the magnitude of their van der waal forces of attraction as the size of the atom increases. "
+    }
+  ]
+}

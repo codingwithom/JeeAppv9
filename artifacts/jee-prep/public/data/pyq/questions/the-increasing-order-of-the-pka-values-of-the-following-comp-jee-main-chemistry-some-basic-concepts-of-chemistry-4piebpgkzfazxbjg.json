@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "dshIvweuPEhdW6OEa7M6P",
+      "paperTitle": "JEE Main 2019 (Online) 10th January Morning Slot",
+      "year": 2019,
+      "examDate": "2019-01-10 09:30",
+      "subject": "chemistry",
+      "chapter": "alcohols-phenols-and-ethers",
+      "chapterGroup": "organic-chemistry",
+      "topic": "properties-preparation-and-uses-of-phenols",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-increasing-order-of-the-pka-values-of-the-following-comp-jee-main-chemistry-some-basic-concepts-of-chemistry-4piebpgkzfazxbjg",
+      "content": "The increasing order of the pKa values of the following compounds is : \n<br><br><img src=\"https://imagex.cdn.examgoal.net/MICSrK6D3MFV6PhOu/J2PoPlUrqnaiIvPKeXXAn0ISvmrxi/Snl1p894x8zsbvFWwLeCO2/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 10th January Morning Slot Chemistry - Alcohols, Phenols and Ethers Question 153 English\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "B &lt; C &lt; D &lt; A"
+        },
+        {
+          "identifier": "B",
+          "content": "B &lt; C &lt; A &lt; D"
+        },
+        {
+          "identifier": "C",
+          "content": "D &lt; A &lt; C &lt; B "
+        },
+        {
+          "identifier": "D",
+          "content": "C &lt; B &lt; A &lt; D"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/62h8masC7jqlYEVz9/0H8t4bQedvvjsbO9LYOdaqidQSpwf/jgQ359O1jF6pDZfkSmEUk7/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 10th January Morning Slot Chemistry - Alcohols, Phenols and Ethers Question 153 English Explanation\">"
+    }
+  ]
+}

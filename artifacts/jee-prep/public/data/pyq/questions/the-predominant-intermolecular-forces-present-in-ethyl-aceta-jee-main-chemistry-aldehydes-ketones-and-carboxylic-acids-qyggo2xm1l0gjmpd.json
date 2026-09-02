@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "qGR0YViDBf55nYiAIp7k9k2k5h38lx6",
+      "paperTitle": "JEE Main 2020 (Online) 8th January Morning Slot",
+      "year": 2020,
+      "examDate": "2020-01-08 09:30",
+      "subject": "chemistry",
+      "chapter": "aldehydes-ketones-and-carboxylic-acids",
+      "chapterGroup": "organic-chemistry",
+      "topic": "preparation-methods-for-both-aldehydes-and-ketones",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-predominant-intermolecular-forces-present-in-ethyl-aceta-jee-main-chemistry-aldehydes-ketones-and-carboxylic-acids-qyggo2xm1l0gjmpd",
+      "content": "The predominant intermolecular forces present in ethyl acetate, a liquid, are:",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Dipole-dipole and hydrogen bonding"
+        },
+        {
+          "identifier": "B",
+          "content": "hydrogen bonding and London dispersion"
+        },
+        {
+          "identifier": "C",
+          "content": "London dispersion, dipole-dipole and hydrogen bonding"
+        },
+        {
+          "identifier": "D",
+          "content": "London dispersion and dipole-dipole"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<p>Ethyl acetate (CH<sub>3</sub>COOCH<sub>2</sub>CH<sub>3</sub>) is an organic compound with a molecular structure that does not include any hydrogen atoms bonded directly to highly electronegative atoms like nitrogen, oxygen, or fluorine. Because of this, it cannot form hydrogen bonds. However, ethyl acetate does possess a polar carbonyl group (C=O), which contributes to dipole-dipole interactions, and like all molecules, it can experience London dispersion forces. Therefore, the predominant intermolecular forces present in ethyl acetate are dipole-dipole interactions and London dispersion forces.</p>\n\n<p>Hence, the correct option is :</p>\n\n<p><strong>Option D: London dispersion and dipole-dipole</strong></p>"
+    }
+  ]
+}

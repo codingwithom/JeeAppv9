@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "q5oG6rGSA4bQHkIhuSjgy2xukf2b70jx",
+      "paperTitle": "JEE Main 2020 (Online) 3rd September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-03 09:00",
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "purification-of-organic-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "glycerol-is-separated-in-soap-industries-by--jee-main-chemistry-chemistry-in-everyday-life-otxsbhfcbcpkwyxs",
+      "content": "Glycerol is separated in soap industries by :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Fractional distillation"
+        },
+        {
+          "identifier": "B",
+          "content": "Distillation under reduced pressure"
+        },
+        {
+          "identifier": "C",
+          "content": "Differential extraction"
+        },
+        {
+          "identifier": "D",
+          "content": "Steam distillation"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Glycerol is separated in soap industries by distillation under reduced pressure."
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "qyoOw2xejgRXvsZR",
+      "paperTitle": "JEE Main 2016 (Offline)",
+      "year": 2016,
+      "examDate": null,
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "properties-of-transition-elements",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-compounds-is-metallic-and-ferromagnet-2016-marks-4-qyoow2xejgrxvszr.htm",
+      "content": "Which of the following compounds is metallic and ferromagnetic ?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "CrO<sub>2</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "VO<sub>2</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "MnO<sub>2</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "TiO<sub>2</sub>"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Out of all the four given metallic oxides <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.454ex\" height=\"1.934ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 2410.6 855\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mi\" transform=\"translate(760,0)\"><use data-c=\"1D45F\" xlink:href=\"#MJX-TEX-I-1D45F\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1211,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></g></svg></mjx-container> is attracted by magnetic field very strongly. The effect persists even when the magnetic field is removed. Thus <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.454ex\" height=\"1.934ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 2410.6 855\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mi\" transform=\"translate(760,0)\"><use data-c=\"1D45F\" xlink:href=\"#MJX-TEX-I-1D45F\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1211,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></g></svg></mjx-container> is metallic and ferromagnetic in nature. "
+    }
+  ]
+}

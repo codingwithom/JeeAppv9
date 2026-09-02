@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "o9xcMFaHXOBYV1WoL3hoH",
+      "paperTitle": "JEE Main 2019 (Online) 12th January Evening Slot",
+      "year": 2019,
+      "examDate": "2019-01-12 14:30",
+      "subject": "chemistry",
+      "chapter": "structure-of-atom",
+      "chapterGroup": "physical-chemistry",
+      "topic": "photoelectric-effect",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-upper-stratosphere-consisting-of-the-ozone-layer-protect-jee-main-chemistry-some-basic-concepts-of-chemistry-rad9qoz61o94vnk3",
+      "content": "The upper stratosphere consisting of the ozone layer protects us from sun's radiation that falls in the wavelength region of - ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "200-315 nm "
+        },
+        {
+          "identifier": "B",
+          "content": "400-550 nm "
+        },
+        {
+          "identifier": "C",
+          "content": "0.8-1.5 nm"
+        },
+        {
+          "identifier": "D",
+          "content": "600-750 nm"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Sun emits UV-radiations, which have the wavelength range from 1 nm to 400 nm."
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "59BJhaBiyFUZMKkVX83rsa0w2w9jx0tyhjc",
+      "paperTitle": "JEE Main 2019 (Online) 10th April Evening Slot",
+      "year": 2019,
+      "examDate": "2019-04-10 14:30",
+      "subject": "chemistry",
+      "chapter": "compounds-containing-nitrogen",
+      "chapterGroup": "organic-chemistry",
+      "topic": "aliphatic-amines",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-is-not-a-correct-method-of-the-prepar-jee-main-chemistry-alcohols-phenols-and-ethers-eamahq61hsa3wbes",
+      "content": "Which of the following is not a correct method of the preparation of benzylamine from cyanobenzene ?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(i) SnCl<sub>2</sub> + HCl(gas) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(ii) NaBH<sub>4</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "H<sub>2</sub>/Ni\n"
+        },
+        {
+          "identifier": "C",
+          "content": "(i) LiAlH<sub>4</sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(ii) H<sub>3</sub>O<sup>+</sup>"
+        },
+        {
+          "identifier": "D",
+          "content": "(i) HCl/H<sub>2</sub>O &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(ii) NaBH<sub>4</sub>"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jf7697gjyopcca1/c360eaa4-5952-4d8c-a5f1-f743d3654079/5091a190-b22b-11e9-a277-6507805b1ccf/file-jf7697gjyopcca2-320w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/jf7697gjyopcca1/c360eaa4-5952-4d8c-a5f1-f743d3654079/5091a190-b22b-11e9-a277-6507805b1ccf/file-jf7697gjyopcca2-500w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 10th April Evening Slot Chemistry - Compounds Containing Nitrogen Question 206 English Explanation\"></picture>"
+    }
+  ]
+}

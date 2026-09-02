@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "ihvurbjT88kHKA416Jjgy2xukey69y6l",
+      "paperTitle": "JEE Main 2020 (Online) 2nd September Evening Slot",
+      "year": 2020,
+      "examDate": "2020-09-02 15:00",
+      "subject": "chemistry",
+      "chapter": "haloalkanes-and-haloarenes",
+      "chapterGroup": "organic-chemistry",
+      "topic": "haloalkanes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "consider-the-reaction-sequence-given-below-picturesource-jee-main-chemistry-basics-of-organic-chemistry-5p9c4xnxaaffomxl",
+      "content": "Consider the reaction sequence given below:\n<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jgy2xukey64syb/64ea7b9f-d745-46e4-8b38-868245fd3e1d/7e143e30-f423-11ea-8293-3b6cc591631c/file-jgy2xukey64syc-320w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/jgy2xukey64syb/64ea7b9f-d745-46e4-8b38-868245fd3e1d/7e143e30-f423-11ea-8293-3b6cc591631c/file-jgy2xukey64syc-500w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 2nd September Evening Slot Chemistry - Haloalkanes and Haloarenes Question 133 English\"></picture>\n<br>Which of the following statements is true?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Changing the concentration of base will\nhave no effect on reaction (1)"
+        },
+        {
+          "identifier": "B",
+          "content": "Changing the concentration of base will\nhave no effect on reaction (2)"
+        },
+        {
+          "identifier": "C",
+          "content": "Changing the base from OH<sup>-</sup> to <sup>-</sup>OR will\nhave no effect on reaction (2)"
+        },
+        {
+          "identifier": "D",
+          "content": "Doubling the concentration of base will\ndouble the rate of both the reactions"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "For reaction 1,\n<br>rate = K [t-BuBr] ....(1)\n<br><br>for reaction 2,\n<br>rate = K[t-BuBr][OH<sup>–</sup>] ...(2)\n<br><br>Reaction 1 is independent of concentration of\nOH<sup>–</sup> where as reaction 2 is dependent on\nconcentration of OH<sup>–</sup>\n<br><br>Hence changing the concentration of base will\nhave no effect on reaction 1."
+    }
+  ]
+}

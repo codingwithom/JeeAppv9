@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "LD4JFANZA4KqWGKO8g7k9k2k5h0mokz",
+      "paperTitle": "JEE Main 2020 (Online) 8th January Morning Slot",
+      "year": 2020,
+      "examDate": "2020-01-08 09:30",
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "isomerism-of-coordination-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-complex-that-can-show-fac-and-mer-isomers-is--jee-main-chemistry-coordination-compounds-aoi3clvds8dujv5h",
+      "content": "The complex that can show fac- and mer-isomers is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "[CoCl<sub>2</sub>(en)<sub>2</sub>]"
+        },
+        {
+          "identifier": "B",
+          "content": "[Pt(NH<sub>3</sub>)<sub>2</sub>Cl<sub>2</sub>]"
+        },
+        {
+          "identifier": "C",
+          "content": "[Co(NH<sub>3</sub>)<sub>3</sub>(NO<sub>2</sub>)<sub>3</sub>]"
+        },
+        {
+          "identifier": "D",
+          "content": "[Co(NH<sub>3</sub>)<sub>4</sub>Cl<sub>2</sub>]<sup>+</sup>"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "[Ma<sub>3</sub>b<sub>3</sub>] type complex shows fac and mer\nisomerism.\n<br><br>So [Co(NH<sub>3</sub>)<sub>3</sub>(NO<sub>2</sub>)<sub>3</sub>] is correct answer."
+    }
+  ]
+}

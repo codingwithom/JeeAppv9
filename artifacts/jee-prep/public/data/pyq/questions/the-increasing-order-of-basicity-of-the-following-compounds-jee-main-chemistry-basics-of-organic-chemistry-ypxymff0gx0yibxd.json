@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "KfpWZam4pbxLkBtIVXjgy2xukfjbr0ts",
+      "paperTitle": "JEE Main 2020 (Online) 5th September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-05 09:00",
+      "subject": "chemistry",
+      "chapter": "compounds-containing-nitrogen",
+      "chapterGroup": "organic-chemistry",
+      "topic": "aromatic-amines",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-increasing-order-of-basicity-of-the-following-compounds-jee-main-chemistry-basics-of-organic-chemistry-ypxymff0gx0yibxd",
+      "content": "The increasing order of basicity of the following\ncompounds is :\n<img src=\"https://imagex.cdn.examgoal.net/jgy2xukfjbgqic/85b39e4d-6262-4a0e-ba46-b46ad9d7752b/cd2f3f40-ffc4-11ea-8293-3b6cc591631c/file-jgy2xukfjbgqid-472w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 5th September Morning Slot Chemistry - Compounds Containing Nitrogen Question 192 English\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(A) &lt; (B) &lt; (C) &lt; (D)"
+        },
+        {
+          "identifier": "B",
+          "content": "(B) &lt; (A) &lt; (C) &lt; (D)"
+        },
+        {
+          "identifier": "C",
+          "content": "(D) &lt; (A) &lt; (B) &lt; (C)"
+        },
+        {
+          "identifier": "D",
+          "content": "(B) &lt; (A) &lt; (D) &lt; (C)"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "The compound which can donate lone pair more easily is more basic.\n<br><br>(A) N is sp<sup>2</sup> hybridized and lone pair is localised means not perticipating in resonance.\n<br><br>(B) Here lone pair perticipates in resonance and involved in aromaticity. So this is weakest base.\n<br><br>(C) N is sp<sup>3</sup> hybridized and lone pair is localised means not perticipating in resonance. As here N atom is sp<sup>3</sup> hybridized so it is more basic than A and D.\n<br><br>(D) Here lone pair of 1<sup>st</sup> N atom perticipates in resonance but  2<sup>nd</sup> N is sp<sup>2</sup> hybridized and lone pair is localised means not perticipating in resonance. So basisity will depend on 2<sup>nd</sup> N atom. Due to perticipatation in resonance of 1<sup>st</sup> N atom some negative charge is genareted on 2<sup>nd</sup> N atom which makes it more basic than compound A."
+    }
+  ]
+}

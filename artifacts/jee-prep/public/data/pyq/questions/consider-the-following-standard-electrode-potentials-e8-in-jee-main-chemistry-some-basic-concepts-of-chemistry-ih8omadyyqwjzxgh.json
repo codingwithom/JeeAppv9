@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "c5du9JDLuSgRuPLqXGgPG",
+      "paperTitle": "JEE Main 2017 (Online) 8th April Morning Slot",
+      "year": 2017,
+      "examDate": "2017-04-08 09:30",
+      "subject": "chemistry",
+      "chapter": "electrochemistry",
+      "chapterGroup": "physical-chemistry",
+      "topic": "electrochemical-series-cell-and-their-emf",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "consider-the-following-standard-electrode-potentials-e8-in-jee-main-chemistry-some-basic-concepts-of-chemistry-ih8omadyyqwjzxgh",
+      "content": "Consider the following standard electrode potentials (E<sup>o</sup> in volts) in aqueous solution :\n<br><br>\n<table class=\"tg\">\n  <tbody><tr>\n    <th class=\"tg-de48\">Element</th>\n    <th class=\"tg-de48\">M<sup>3+</sup> /M</th>\n    <th class=\"tg-de48\">M<sup>+</sup> /M</th>\n  </tr>\n  <tr>\n    <td class=\"tg-wv9z\">A1</td>\n    <td class=\"tg-wv9z\">-1.66</td>\n    <td class=\"tg-wv9z\">+ 0.55</td>\n  </tr>\n  <tr>\n    <td class=\"tg-wv9z\">T1</td>\n    <td class=\"tg-wv9z\">+1.26</td>\n    <td class=\"tg-wv9z\">- 0.34</td>\n  </tr>\n</tbody></table>\n<br><br>Based on these data, which of the following statements is <b>correct</b> ?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "T1<sup>+</sup> is more stable than A1<sup>3+</sup>"
+        },
+        {
+          "identifier": "B",
+          "content": "A1<sup>+</sup> is more stable than A1<sup>3+</sup> "
+        },
+        {
+          "identifier": "C",
+          "content": "T1 <sup>+</sup> is more stable than A1<sup>+</sup>"
+        },
+        {
+          "identifier": "D",
+          "content": "T1<sup>3+</sup> is more stable than A1<sup>3+</sup>"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<p>The standard electrode potential E<sup>0</sup> for M<sup>+</sup>/M become negative for Tl which indicates that Tl<sup>+</sup> is more stable than Al<sup>+</sup>.</p>\n<p>This can also be be explained by inert pair effect. The atoms of this group have an outer electronic configuration of s<sup>2</sup>p<sup>1</sup>. The two s electrons of Tl do not participate in bonding due to poor shielding of d electrons.</p>"
+    }
+  ]
+}

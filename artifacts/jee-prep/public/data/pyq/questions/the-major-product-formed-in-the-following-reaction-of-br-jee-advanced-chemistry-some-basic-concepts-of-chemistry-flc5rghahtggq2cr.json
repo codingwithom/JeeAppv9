@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1kufk8gkb",
+      "paperTitle": "JEE Advanced 2021 Paper 1 Online",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "hydrocarbons",
+      "chapterGroup": "organic-chemistry",
+      "topic": "reaction-of-alkynes",
+      "type": "mcq",
+      "marks": 3,
+      "negMarks": 1,
+      "permalink": "the-major-product-formed-in-the-following-reaction-of-br-jee-advanced-chemistry-some-basic-concepts-of-chemistry-flc5rghahtggq2cr",
+      "content": "The major product formed in the following reaction of <br><br><img src=\"https://imagex.cdn.examgoal.net/1kufya297/0dc6321f-f7e8-4d77-89a8-cbf90b1c3422/21a664a0-26e2-11ec-9914-4ff10876a439/file-1kufya298.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2021 Paper 1 Online Chemistry - Hydrocarbons Question 26 English\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kufyftp6/e824db6e-db84-4a3b-9e48-e63747d12e62/c1e557a0-26e2-11ec-9914-4ff10876a439/file-1kufyftp7.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2021 Paper 1 Online Chemistry - Hydrocarbons Question 26 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kufyg3bn/1be33928-9780-401d-a699-61b7dca1da57/c9549230-26e2-11ec-b8cf-7d24acea0673/file-1kufyg3bo.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2021 Paper 1 Online Chemistry - Hydrocarbons Question 26 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kufygdv6/b36a7723-a648-49d6-9ba5-1723ed8cba82/d1796120-26e2-11ec-b8cf-7d24acea0673/file-1kufygdv7.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2021 Paper 1 Online Chemistry - Hydrocarbons Question 26 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kufygmqh/6c97e907-d4fa-422a-83f0-26fef438b232/d8536090-26e2-11ec-b8cf-7d24acea0673/file-1kufygmqi.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2021 Paper 1 Online Chemistry - Hydrocarbons Question 26 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "It is a case of Birch reduction. Alkynes on reaction with alkali metal in liq. NH<sub>3</sub> gives trans-alkene. But terminal\nalkynes do not get reduced.\n<br><br><picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1kufzitrz/caa7de72-19fd-4b27-8cc6-61fbf7333a78/fe833cf0-26e6-11ec-8f50-79560aebf318/file-1kufzits0-320w.png\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1kufzitrz/caa7de72-19fd-4b27-8cc6-61fbf7333a78/fe833cf0-26e6-11ec-8f50-79560aebf318/file-1kufzits0-500w.png\"><img src=\"https://imagex.cdn.examgoal.net/1kufzitrz/caa7de72-19fd-4b27-8cc6-61fbf7333a78/fe833cf0-26e6-11ec-8f50-79560aebf318/file-1kufzits0.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2021 Paper 1 Online Chemistry - Hydrocarbons Question 26 English Explanation\"></picture>"
+    }
+  ]
+}

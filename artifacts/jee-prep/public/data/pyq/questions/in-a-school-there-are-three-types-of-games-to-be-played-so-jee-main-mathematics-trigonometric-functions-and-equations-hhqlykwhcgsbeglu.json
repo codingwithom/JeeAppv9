@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "XyHNmjyUgZXbsPIFQb1kmjb97ia",
+      "paperTitle": "JEE Main 2021 (Online) 17th March Morning Shift",
+      "year": 2021,
+      "subject": "mathematics",
+      "chapter": "sets-and-relations",
+      "chapterGroup": "algebra",
+      "topic": "venn-diagram",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "in-a-school-there-are-three-types-of-games-to-be-played-so-jee-main-mathematics-trigonometric-functions-and-equations-hhqlykwhcgsbeglu",
+      "content": "In a school, there are three types of games to be played. Some of the students play two types of games, but none play all the three games. Which Venn diagrams can justify the above statement?<br><br><img src=\"https://imagex.cdn.examgoal.net/1kmk3jff2/ba92ec6c-7a0a-45d0-bead-2e141e995b5e/1b501ee0-8ac8-11eb-a550-a93c57882a34/file-1kmk3jff3.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 17th March Morning Shift Mathematics - Sets and Relations Question 96 English\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Q and R"
+        },
+        {
+          "identifier": "B",
+          "content": "None of these"
+        },
+        {
+          "identifier": "C",
+          "content": "P and R"
+        },
+        {
+          "identifier": "D",
+          "content": "P and Q"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "As none play all three games the intersection of all\nthree circles must be zero.\n<br><br>Hence none of P, Q, R justify the given statement"
+    }
+  ]
+}

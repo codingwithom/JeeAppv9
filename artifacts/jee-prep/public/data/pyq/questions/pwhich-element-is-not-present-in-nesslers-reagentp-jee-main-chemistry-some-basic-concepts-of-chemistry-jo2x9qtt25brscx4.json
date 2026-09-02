@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ldo21hi2",
+      "paperTitle": "JEE Main 2023 (Online) 1st February Evening Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "important-compounds-of-transition-elements",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pwhich-element-is-not-present-in-nesslers-reagentp-jee-main-chemistry-some-basic-concepts-of-chemistry-jo2x9qtt25brscx4",
+      "content": "<p>Which element is not present in Nessler's reagent?</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Mercury"
+        },
+        {
+          "identifier": "B",
+          "content": "Iodine"
+        },
+        {
+          "identifier": "C",
+          "content": "Potassium"
+        },
+        {
+          "identifier": "D",
+          "content": "Oxygen"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<p>Nessler’s reagent is K<sub>2</sub>[HgI<sub>4</sub>]\n</p>\n<p>Therefore, among the options given, oxygen is the only element that is not present in Nessler's reagent.</p>"
+    }
+  ]
+}

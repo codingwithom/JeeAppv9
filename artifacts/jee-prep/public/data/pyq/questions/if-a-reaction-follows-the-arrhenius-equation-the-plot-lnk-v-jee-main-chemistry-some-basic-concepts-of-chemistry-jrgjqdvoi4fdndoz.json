@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "3q0krlWokhcZPlqUCoIQV",
+      "paperTitle": "JEE Main 2019 (Online) 11th January Morning Slot",
+      "year": 2019,
+      "examDate": "2019-01-11 09:30",
+      "subject": "chemistry",
+      "chapter": "chemical-kinetics-and-nuclear-chemistry",
+      "chapterGroup": "physical-chemistry",
+      "topic": "arrhenius-equation",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "if-a-reaction-follows-the-arrhenius-equation-the-plot-lnk-v-jee-main-chemistry-some-basic-concepts-of-chemistry-jrgjqdvoi4fdndoz",
+      "content": "If a reaction follows the Arrhenius equation, the plot ln k vs <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -1.238ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.601ex\" height=\"3.195ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864.9 2033.8 1412\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mn\" transform=\"translate(840.1,394) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(220,-370.3) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mrow\"><g data-mml-node=\"mo\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(389,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D445\" xlink:href=\"#MJX-TEX-I-1D445\"></use></g><g data-mml-node=\"mi\" transform=\"translate(759,0)\"><use data-c=\"1D447\" xlink:href=\"#MJX-TEX-I-1D447\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(1865,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g></g><rect width=\"1793.8\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container> gives straight line with a gradient (<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container> y) unit. \n<br><br>The energy required to active the reactant is : ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "y unit"
+        },
+        {
+          "identifier": "B",
+          "content": "y/R unit"
+        },
+        {
+          "identifier": "C",
+          "content": "yR unit"
+        },
+        {
+          "identifier": "D",
+          "content": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>y unit"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "According to Arrhenius equation,\n<br>k = A<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.86ex\" height=\"2.345ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1025.4 2148.3 1036.4\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"1D452\" xlink:href=\"#MJX-TEX-I-1D452\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(499,365) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(778,0)\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(264.5,453.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D438\" xlink:href=\"#MJX-TEX-I-1D438\"></use></g><g data-mml-node=\"mi\" transform=\"translate(771,-150)\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g></g></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(220,-345) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D445\" xlink:href=\"#MJX-TEX-I-1D445\"></use></g><g data-mml-node=\"mi\" transform=\"translate(759,0)\"><use data-c=\"1D447\" xlink:href=\"#MJX-TEX-I-1D447\"></use></g></g><rect width=\"1243.7\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></g></g></g></svg></mjx-container>\n<br><br>or ln k = ln A - <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.814ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.357ex\" height=\"2.923ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -931.9 1483.7 1291.7\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(319.3,451.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D438\" xlink:href=\"#MJX-TEX-I-1D438\"></use></g><g data-mml-node=\"mi\" transform=\"translate(771,-150) scale(0.707)\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g></g></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(220,-345) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D445\" xlink:href=\"#MJX-TEX-I-1D445\"></use></g><g data-mml-node=\"mi\" transform=\"translate(759,0)\"><use data-c=\"1D447\" xlink:href=\"#MJX-TEX-I-1D447\"></use></g></g><rect width=\"1243.7\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></g></svg></mjx-container>\n<br><br>Comparing the above equation\nwith straight line equation,\n<br><br>y = mx + c,\n<br><br>we get, slope or gradient (m) = –E<sub>a</sub>\n<br>and Intercept (c) = ln A\n<br><br>Also given that slope or gradient (m) = -y\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> -y = –E<sub>a</sub>\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> E<sub>a</sub> = y\n<br><br>So the activation energy of the reactant, E<sub>a</sub> = y unit"
+    }
+  ]
+}

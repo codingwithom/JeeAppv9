@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1lgrkkssk",
+      "paperTitle": "JEE Main 2023 (Online) 12th April Morning Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "inner-transition-elements-lanthanoids-and-actinoids",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pgiven-below-are-two-statement-one-is-labelled-as-asserti-jee-main-chemistry-some-basic-concepts-of-chemistry-ubhlb9qmwkbv566b",
+      "content": "<p>Given below are two statement: one is labelled as Assertion <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.966ex\" height=\"1.579ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -698 869 698\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D400\" xlink:href=\"#MJX-TEX-B-1D400\"></use></g></g></g></g></svg></mjx-container> and the other is labelled as Reason <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.95ex\" height=\"1.577ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -686 862 697\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D411\" xlink:href=\"#MJX-TEX-B-1D411\"></use></g></g></g></g></svg></mjx-container></p>\n<p>Assertion A: <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.973ex\" height=\"1.645ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 872 727\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(500,0)\"><g data-mml-node=\"mi\"><use data-c=\"66\" xlink:href=\"#MJX-TEX-N-66\"></use></g></g></g></g></svg></mjx-container> electrons can participate in bonding to a far greater extent than <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.973ex\" height=\"1.595ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 872 705\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(500,0)\"><g data-mml-node=\"mi\"><use data-c=\"66\" xlink:href=\"#MJX-TEX-N-66\"></use></g></g></g></g></svg></mjx-container> electrons</p>\n<p>Reason R: <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.973ex\" height=\"1.645ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 872 727\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(500,0)\"><g data-mml-node=\"mi\"><use data-c=\"66\" xlink:href=\"#MJX-TEX-N-66\"></use></g></g></g></g></svg></mjx-container> orbitals are not as buried as <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.973ex\" height=\"1.595ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 872 705\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(500,0)\"><g data-mml-node=\"mi\"><use data-c=\"66\" xlink:href=\"#MJX-TEX-N-66\"></use></g></g></g></g></svg></mjx-container> orbitals</p>\n<p>In the light of the above statements, choose the correct answer from the options given below</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Both A and R are true and R is the correct explanation of A"
+        },
+        {
+          "identifier": "B",
+          "content": "Both A and R are true but R is NOT the correct explanation of A"
+        },
+        {
+          "identifier": "C",
+          "content": "A is true but R is false"
+        },
+        {
+          "identifier": "D",
+          "content": "A is false but R is true"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<p><b>Assertion A</b>: 5f electrons can participate in bonding to a far greater extent than 4f electrons</p>\n<p>This is correct. In actinides (elements in which 5f orbitals are being filled), the 5f electrons can participate in bonding. This contrasts with lanthanides (elements in which 4f orbitals are being filled), where the 4f electrons largely do not participate in bonding.</p>\n<p><b>Reason R</b>: 5f orbitals are not as buried as 4f orbitals</p>\n<p>This is also correct. The term &quot;buried&quot; refers to the degree to which an orbital is shielded from the outside environment by other electrons. The 5f orbitals are less shielded, or less &quot;buried,&quot; than the 4f orbitals. This means they are more exposed to the outside environment and can more readily interact with other atoms to form bonds. This is the reason why 5f electrons can participate in bonding to a greater extent than 4f electrons.</p>\n<p>Therefore, both A and R are true, and R is the correct explanation of A.</p>\n"
+    }
+  ]
+}

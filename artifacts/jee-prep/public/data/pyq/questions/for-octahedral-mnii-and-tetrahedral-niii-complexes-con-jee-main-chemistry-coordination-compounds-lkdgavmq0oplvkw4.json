@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "zOQUVaJo6QRX1LvRXWjgy2xukevh5zy7",
+      "paperTitle": "JEE Main 2020 (Online) 2nd September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-02 09:00",
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "warners-theory-and-valence-bond-theory",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "for-octahedral-mnii-and-tetrahedral-niii-complexes-con-jee-main-chemistry-coordination-compounds-lkdgavmq0oplvkw4",
+      "content": "For octahedral Mn(II) and tetrahedral Ni(II)\ncomplexes, consider the following statements:\n<br><br>(I) both the complexes can be high spin.\n<br>(II) Ni(II) complex can very rarely be low spin.\n<br>(III) with strong field ligands, Mn(II) complexes\ncan be low spin.\n<br>(IV)aqueous solution of Mn(II) ions is yellow in\ncolour.\n<br><br>The <b>correct</b> statements are :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(I), (III) and (IV) only"
+        },
+        {
+          "identifier": "B",
+          "content": "(I) and (II) only"
+        },
+        {
+          "identifier": "C",
+          "content": "(II), (III) and (IV) only"
+        },
+        {
+          "identifier": "D",
+          "content": "(I), (II) and (III) only"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "(I) Under weak field ligand, octahedral Mn(II) and tetrahedral Ni(II) both the complexes are high spin\ncomplex.\n<br><br>(II) Tetrahedral Ni(II) complex can very rarely be low spin because square planar (under strong ligand)\ncomplexes of Ni(II) are low spin complexes.\n<br><br>(III)With strong field ligands Mn (II) complexes can be low spin because they have less number of unpaired\nelectron (unpaired electron = 1) While with weak field ligands Mn(II) complexes can be high spin\nbecause they have more number of unpaired electron (unpaired electron = 5)\n<br><br>(IV) Aqueous solution of Mn(II) ions is pink in colour."
+    }
+  ]
+}

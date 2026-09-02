@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "VF0l4Bnb6dMOXU2M6l1CM",
+      "paperTitle": "JEE Main 2019 (Online) 9th January Morning Slot",
+      "year": 2019,
+      "examDate": "2019-01-09 09:30",
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "periodic-table-and-its-features",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "aluminium-shows-3-oxidation-state-but-thallium-shows-1-and-jee-main-chemistry-some-basic-concepts-of-chemistry-5zcjybg7vbmbns7s",
+      "content": "Aluminium is usually found in +3 oxidation state. In contrast, thallium exists in + 1 and + 3 oxidation states. This is due to : ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "inert pair effect "
+        },
+        {
+          "identifier": "B",
+          "content": "diagonal relationship "
+        },
+        {
+          "identifier": "C",
+          "content": "lattice structure"
+        },
+        {
+          "identifier": "D",
+          "content": "lanthanoid contraction"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Electronic configuration of Thallium (Tl) is \n<br>= [Xe]4f<sup>14</sup> 5d<sup>10</sup> 6s<sup>2</sup> 6p<sup>1</sup>\n<br><br>Here because of poor sheilding of 4f and 5d orbital on 6s orbital, electrons of 6s orbital is more tightly held by the nucleus and perticipate less in bond formation. This is called as innert pair effect. And that is why Tl become stable in +1 oxidation state. "
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "3ag9pN67AkMkjaOTqOykP",
+      "paperTitle": "JEE Main 2018 (Online) 15th April Morning Slot",
+      "year": 2018,
+      "examDate": "2018-04-15 09:30",
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "atomic-and-ionic-radius",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "for-na-mg2-f-and-o2-the-correct-order-of-increasing-i-jee-main-chemistry-some-basic-concepts-of-chemistry-2bxqlldqupd8ykfl",
+      "content": "For Na<sup>+</sup>, Mg<sup>2+</sup>, F<sup>-</sup> and O<sup>2-</sup>; the correct order of increasing ionic radii is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "O<sup>2-</sup> &lt; F<sup>-</sup> &lt; Na<sup>+</sup> &lt; Mg<sup>2+</sup>"
+        },
+        {
+          "identifier": "B",
+          "content": "Na<sup>+</sup> &lt; Mg<sup>2+</sup> &lt; F<sup>-</sup> &lt; O<sup>2-</sup>"
+        },
+        {
+          "identifier": "C",
+          "content": "Mg<sup>2+</sup> &lt; Na<sup>+</sup> &lt; F<sup>-</sup> &lt; O<sup>2-</sup>"
+        },
+        {
+          "identifier": "D",
+          "content": "Mg<sup>2+</sup> &lt; O<sup>2-</sup> &lt; Na<sup>+</sup> &lt; F<sup>-</sup>"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Here all of them are isoelectric. For isoelectric anion size is more than cation. \nAmong two anions which anion has more negative charge will have more radius and among two cation which cation has less positive charge will have more radius."
+    }
+  ]
+}

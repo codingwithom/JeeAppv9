@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "tNYwnhBB08JlR4v5kX3rsa0w2w9jwvfk50q",
+      "paperTitle": "JEE Main 2019 (Online) 10th April Morning Slot",
+      "year": 2019,
+      "examDate": "2019-04-10 09:30",
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "isomerism-of-coordination-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-species-that-can-have-a-trans-isomer-is--bren--eha-jee-main-chemistry-basics-of-organic-chemistry-su1jdkektqfdplhf",
+      "content": "The species that can have a trans-isomer is :\n<br>(en = ehane-1, 2-diamine, ox = oxalate)",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "[Cr(en)<sup>2</sup>(ox)]<sup>+</sup>"
+        },
+        {
+          "identifier": "B",
+          "content": "[Pt(en)Cl<sub>2</sub>]"
+        },
+        {
+          "identifier": "C",
+          "content": "[Pt(en)<sub>2</sub>Cl<sub>2</sub>]<sup>2+</sup>"
+        },
+        {
+          "identifier": "D",
+          "content": "[Zn(en)Cl<sub>2</sub>]"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76eb0jza3ai8y/247423dd-b940-49b3-8003-9106d28afa5c/53020c20-bdee-11e9-8742-95b483bbae2a/file-jf76eb0jza3ai8z-320w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/jf76eb0jza3ai8y/247423dd-b940-49b3-8003-9106d28afa5c/53020c20-bdee-11e9-8742-95b483bbae2a/file-jf76eb0jza3ai8z-500w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 10th April Morning Slot Chemistry - Coordination Compounds Question 283 English Explanation\"></picture>"
+    }
+  ]
+}

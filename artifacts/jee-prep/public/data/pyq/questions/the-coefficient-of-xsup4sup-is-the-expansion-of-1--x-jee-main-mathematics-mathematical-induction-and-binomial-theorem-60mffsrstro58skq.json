@@ -1,0 +1,22 @@
+{
+  "questions": [
+    {
+      "question_id": "n2K8x8uBYrxmQfciha7k9k2k5itwjym",
+      "paperTitle": "JEE Main 2020 (Online) 9th January Morning Slot",
+      "year": 2020,
+      "examDate": "2020-01-09 09:30",
+      "subject": "mathematics",
+      "chapter": "binomial-theorem",
+      "chapterGroup": "algebra",
+      "topic": "general-term",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 0,
+      "permalink": "the-coefficient-of-xsup4sup-is-the-expansion-of-1--x-jee-main-mathematics-mathematical-induction-and-binomial-theorem-60mffsrstro58skq",
+      "content": "The coefficient of x<sup>4</sup> is the expansion of\n(1 + x + x<sup>2</sup>)<sup>10</sup> is _____.",
+      "options": [],
+      "correct_options": [],
+      "explanation": "(1 + x + x<sup>2</sup>)<sup>10</sup>\n<br><br>= <sup>10</sup>C<sub>0</sub>(1 + x)<sup>10</sup> + <sup>10</sup>C<sub>1</sub>(1 + x)<sup>9</sup>.x<sup>2</sup> + <sup>10</sup>C<sub>2</sub>(1 + x)<sup>8</sup>.x<sup>4</sup>+ .....\n<br><br>Coefficient of x<sup>4</sup>\n<br><br>= <sup>10</sup>C<sub>0</sub>.<sup>10</sup>C<sub>4</sub> + <sup>10</sup>C<sub>1</sub>.<sup>9</sup>C<sub>2</sub> + <sup>10</sup>C<sub>2</sub>.<sup>8</sup>C<sub>0</sub>\n<br><br>= 210 + 360 + 45\n<br><br>= 615"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1krt4w7z2",
+      "paperTitle": "JEE Main 2021 (Online) 22th July Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "p-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "group-15-elements-nitrogen-family",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-one-of-the-following-group-15-hydride-is-the-strongest-jee-main-chemistry-some-basic-concepts-of-chemistry-ajwg2zv1lt340ika",
+      "content": "Which one of the following group-15 hydride is the strongest reducing agent?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "AsH<sub>3</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "BiH<sub>3</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "PH<sub>3</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "SbH<sub>3</sub>"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Among 15<sup>th</sup> group hydrides, BiH<sub>3</sub> is strongest reducing agent."
+    }
+  ]
+}

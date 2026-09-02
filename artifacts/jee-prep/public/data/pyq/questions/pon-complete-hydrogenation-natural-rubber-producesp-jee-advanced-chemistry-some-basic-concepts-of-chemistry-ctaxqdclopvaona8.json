@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l0bvdcf5",
+      "paperTitle": "JEE Advanced 2016 Paper 1 Offline",
+      "year": 2016,
+      "subject": "chemistry",
+      "chapter": "polymers",
+      "chapterGroup": "organic-chemistry",
+      "topic": "classification-preparations-and-properties-of-polymers",
+      "type": "mcq",
+      "marks": 3,
+      "negMarks": 1,
+      "permalink": "pon-complete-hydrogenation-natural-rubber-producesp-jee-advanced-chemistry-some-basic-concepts-of-chemistry-ctaxqdclopvaona8",
+      "content": "<p>On complete hydrogenation, natural rubber produces</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "ethylene-propylene copolymer."
+        },
+        {
+          "identifier": "B",
+          "content": "vulcanized rubber."
+        },
+        {
+          "identifier": "C",
+          "content": "polypropylene."
+        },
+        {
+          "identifier": "D",
+          "content": "polybutylene."
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<p>Hydrogenation of natural rubber leads to formation of ethylene-propylene copolymer.</p>\n<p><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l0ihodid/3e18baa4-d805-4ad0-9e88-b1192924b3e1/dab2d950-9f10-11ec-897e-63b8cb8552c1/file-1l0ihodie.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l0ihodid/3e18baa4-d805-4ad0-9e88-b1192924b3e1/dab2d950-9f10-11ec-897e-63b8cb8552c1/file-1l0ihodie.png\" loading=\"lazy\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;max-height: 60vh\" alt=\"JEE Advanced 2016 Paper 1 Offline Chemistry - Polymers Question 9 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l0ihodid/3e18baa4-d805-4ad0-9e88-b1192924b3e1/dab2d950-9f10-11ec-897e-63b8cb8552c1/file-1l0ihodie.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l0ihodid/3e18baa4-d805-4ad0-9e88-b1192924b3e1/dab2d950-9f10-11ec-897e-63b8cb8552c1/file-1l0ihodie.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l0ihodid/3e18baa4-d805-4ad0-9e88-b1192924b3e1/dab2d950-9f10-11ec-897e-63b8cb8552c1/file-1l0ihodie.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l0ihodid/3e18baa4-d805-4ad0-9e88-b1192924b3e1/dab2d950-9f10-11ec-897e-63b8cb8552c1/file-1l0ihodie.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l0ihodid/3e18baa4-d805-4ad0-9e88-b1192924b3e1/dab2d950-9f10-11ec-897e-63b8cb8552c1/file-1l0ihodie.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l0ihodid/3e18baa4-d805-4ad0-9e88-b1192924b3e1/dab2d950-9f10-11ec-897e-63b8cb8552c1/file-1l0ihodie.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"></p>"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "gF6Zz0zRliURejj7un5gP",
+      "paperTitle": "JEE Main 2016 (Online) 9th April Morning Slot",
+      "year": 2016,
+      "examDate": "2016-04-09 09:30",
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "crystal-field-theory-cft",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "identify-the-correct-trend-given-below-atomic-noti-22-jee-main-physics-units-and-measurements-38ptb5enrxpdnfa7",
+      "content": "Identify the correct trend given below : (Atomic No.=Ti : 22, Cr : 24 and Mo : 42)\n",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.885ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 833 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></svg></mjx-container><sup>o</sup> of [Cr(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> &gt;\n<br><br>[Mo(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> and\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.885ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 833 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></svg></mjx-container><sup>o</sup> of [Ti(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> &gt; [Ti(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup>"
+        },
+        {
+          "identifier": "B",
+          "content": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.885ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 833 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></svg></mjx-container><sup>o</sup> of [Cr(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> &gt;\n<br><br>[Mo(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> and\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.885ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 833 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></svg></mjx-container><sup>o</sup> of [Ti(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> &lt; [Ti(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup>"
+        },
+        {
+          "identifier": "C",
+          "content": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.885ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 833 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></svg></mjx-container><sup>o</sup> of [Cr(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> \n<br><br>&lt; [Mo(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> and\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.885ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 833 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></svg></mjx-container><sup>o</sup> of [Ti(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> &gt; [Ti(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup>"
+        },
+        {
+          "identifier": "D",
+          "content": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.885ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 833 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></svg></mjx-container><sup>o</sup> of [Cr(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> \n<br><br>&lt; [Mo(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> and\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.885ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 833 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></svg></mjx-container><sup>o</sup> of [Ti(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> &lt; [Ti(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup>"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<p><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.885ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 833 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></svg></mjx-container><sub>0</sub> of complex [Mo(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> is greater than that of [Cr(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup>. It is due to the fact that Mo<sup>2+</sup> belongs to second row transition element while Cr<sup>2+</sup> is first row transition element.</p>\n<p>Magnitude of crystal field splitting energy (<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.885ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 833 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></svg></mjx-container><sub>0</sub>) depends on the charge on the metal ion. Greater the charge, greater is the crystal field splitting energy. Therefore, [Ti(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> &gt; [Ti(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup>.</p>"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "7P1TduXRH2wlYGxgqA1klsbh33h",
+      "paperTitle": "JEE Main 2021 (Online) 25th February Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "properties-of-transition-elements",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "in-which-of-the-following-pairs-the-outer-most-electronic-c-jee-main-chemistry-some-basic-concepts-of-chemistry-uizhgwrrljua7amw",
+      "content": "In which of the following pairs, the outer most electronic configuration will be the same?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Cr<sup>+</sup> and Mn<sup>2+</sup>"
+        },
+        {
+          "identifier": "B",
+          "content": "Ni<sup>2+</sup> and Cu<sup>+</sup>"
+        },
+        {
+          "identifier": "C",
+          "content": "V<sup>2+</sup> and Cr<sup>+</sup>"
+        },
+        {
+          "identifier": "D",
+          "content": "Fe<sup>2+</sup> and Co<sup>+</sup>"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Cr<sup>+</sup> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> [Ar]3d<sup>5</sup>\n<br><br>Mn<sup>2+</sup> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> [Ar]3d<sup>5</sup>"
+    }
+  ]
+}

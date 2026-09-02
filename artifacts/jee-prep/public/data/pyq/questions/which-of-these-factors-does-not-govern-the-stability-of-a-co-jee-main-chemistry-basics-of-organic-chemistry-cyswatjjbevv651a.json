@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "wpRnpNfDL5pMDeE5Av3rsa0w2w9jx0xrtwu",
+      "paperTitle": "JEE Main 2019 (Online) 10th April Evening Slot",
+      "year": 2019,
+      "examDate": "2019-04-10 14:30",
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "isomerism",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-these-factors-does-not-govern-the-stability-of-a-co-jee-main-chemistry-basics-of-organic-chemistry-cyswatjjbevv651a",
+      "content": "Which of these factors does not govern the stability of a conformation in acyclic compounds?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Angle strain"
+        },
+        {
+          "identifier": "B",
+          "content": "Torsional strain"
+        },
+        {
+          "identifier": "C",
+          "content": "Electrostatic forces of interaction"
+        },
+        {
+          "identifier": "D",
+          "content": "Steric interactions"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Angle strain is not present in acyclic\ncompounds."
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "sIztGaiqvF5GydHqwh7k9k2k5hl6qft",
+      "paperTitle": "JEE Main 2020 (Online) 8th January Evening Slot",
+      "year": 2020,
+      "examDate": "2020-01-08 14:30",
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "atomic-and-ionic-radius",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-increasing-order-of-the-atomic-radii-of-the-following-el-jee-main-chemistry-analytical-chemistry-in73vyhher7w59zy",
+      "content": "The increasing order of the atomic radii of the\nfollowing elements is :-<br>\n(a) C (b) O<br> (c) F (d) Cl<br>\n(e) Br",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(a) &lt; (b) &lt; (c) &lt; (d) &lt; (e)"
+        },
+        {
+          "identifier": "B",
+          "content": "(c) &lt; (b) &lt; (a) &lt; (d) &lt; (e)"
+        },
+        {
+          "identifier": "C",
+          "content": "(b) &lt; (c) &lt; (d) &lt; (a) &lt; (e)"
+        },
+        {
+          "identifier": "D",
+          "content": "(d) &lt; (c) &lt; (b) &lt; (a) &lt; (e)"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Generally in a period Left to Right Atomic radius decrease.\n<br><br>In a Group Top to Bottom Atomic radius increase.\n<br><br>Atomic radius order : Br &gt; Cl &gt; C &gt; O &gt; F"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktb7f54j",
+      "paperTitle": "JEE Main 2021 (Online) 26th August Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "proteins-and-enzymes",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-total-number-of-negative-charge-in-the-tetrapeptide-gly-jee-main-chemistry-some-basic-concepts-of-chemistry-di749ra3cykn9q3c",
+      "content": "The total number of negative charge in the tetrapeptide, Gly-Glu-Asp-Tyr, at pH 12.5 will be ______________. (Integer answer)",
+      "options": [],
+      "correct_options": [],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1ktcpjzqr/d8a84620-14ef-4591-9890-d7ec081293d4/724fd030-114d-11ec-a14f-27601c78632f/file-1ktcpjzqs.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 26th August Morning Shift Chemistry - Biomolecules Question 116 English Explanation\"><br><br>Total negative charge produced = 4."
+    }
+  ]
+}

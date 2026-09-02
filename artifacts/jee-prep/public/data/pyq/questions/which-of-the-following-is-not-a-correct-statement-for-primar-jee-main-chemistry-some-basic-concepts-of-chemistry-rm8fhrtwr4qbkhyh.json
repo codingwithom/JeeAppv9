@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktebukq3",
+      "paperTitle": "JEE Main 2021 (Online) 27th August Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "compounds-containing-nitrogen",
+      "chapterGroup": "organic-chemistry",
+      "topic": "aliphatic-amines",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-is-not-a-correct-statement-for-primar-jee-main-chemistry-some-basic-concepts-of-chemistry-rm8fhrtwr4qbkhyh",
+      "content": "Which of the following is not a correct statement for primary aliphatic amines?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "The intermolecular association in primary amines is less than the intermolecular association in secondary amines."
+        },
+        {
+          "identifier": "B",
+          "content": "Primary amines on treating with nitrous acid solution from corresponding alcohols except mythyl amine."
+        },
+        {
+          "identifier": "C",
+          "content": "Primary amines are less basic than the secondary amines."
+        },
+        {
+          "identifier": "D",
+          "content": "Primary amines can be prepared by the Gabriel phthalimide synthesis."
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "The intermolecular association is more prominent in case of primary amines as compared to secondary, due to the availability of two hydrogen atom."
+    }
+  ]
+}

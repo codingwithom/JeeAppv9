@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l6rjlgq1",
+      "paperTitle": "JEE Main 2022 (Online) 29th July Evening Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "p-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "group-14-elements-carbon-family",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pin-liquation-process-used-for-tin-sn-the-metalp-jee-main-chemistry-some-basic-concepts-of-chemistry-tdmhkzvjqksamnij",
+      "content": "<p>In liquation process used for tin (Sn), the metal :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "is reacted with acid."
+        },
+        {
+          "identifier": "B",
+          "content": "is dissolved in water."
+        },
+        {
+          "identifier": "C",
+          "content": "is brought to molten form which is made to flow on a slope."
+        },
+        {
+          "identifier": "D",
+          "content": "is fused with NaOH"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<b>Liquation</b><br/><br/>\nIn this method a low melting metal like tin can be made to flow on a sloping surface. In this way it is\nseparated from higher melting impurities"
+    }
+  ]
+}

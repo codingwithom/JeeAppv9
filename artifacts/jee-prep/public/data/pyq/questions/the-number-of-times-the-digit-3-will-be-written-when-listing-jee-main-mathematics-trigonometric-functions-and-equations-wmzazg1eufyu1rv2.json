@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "vTTgxkoqnfAoseQRCc1kmlj9jej",
+      "paperTitle": "JEE Main 2021 (Online) 18th March Morning Shift",
+      "year": 2021,
+      "subject": "mathematics",
+      "chapter": "permutations-and-combinations",
+      "chapterGroup": "algebra",
+      "topic": "conditional-permutations",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-number-of-times-the-digit-3-will-be-written-when-listing-jee-main-mathematics-trigonometric-functions-and-equations-wmzazg1eufyu1rv2",
+      "content": "The number of times the digit 3 will be written when listing the integers from 1 to 1000 is :",
+      "options": [],
+      "correct_options": [],
+      "explanation": "In single digit numbers = 1\n<br><br>In double digit numbers = 10 + 9 = 19\n<br><br>In triple digit numbers = 100 + 90 + 90 = 280\n<br><br>Total = 300 times"
+    }
+  ]
+}

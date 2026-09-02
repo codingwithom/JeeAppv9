@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "FjVOSwH0AukwFQJUAN1kjxs7el7",
+      "paperTitle": "JEE Advanced 2017 Paper 1 Offline",
+      "year": 2017,
+      "subject": "mathematics",
+      "chapter": "parabola",
+      "chapterGroup": "coordinate-geometry",
+      "topic": "tangent-to-parabola",
+      "type": "mcq",
+      "marks": 3,
+      "negMarks": 1,
+      "permalink": "if-a-tangent-to-a-suitable-conic-column-1-is-found-to-be-y-jee-advanced-mathematics-trigonometric-functions-and-equations-yn0oauebhqdes2gi",
+      "content": "If a tangent to a suitable conic (Column 1) is found to be y = x + 8 and its point of contact is (8, 16), then which of the following options is the only CORRECT combination?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(III) (i) (P)"
+        },
+        {
+          "identifier": "B",
+          "content": "(I) (ii) (Q)"
+        },
+        {
+          "identifier": "C",
+          "content": "(II) (iv) (R)"
+        },
+        {
+          "identifier": "D",
+          "content": "(III) (ii) (Q)"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<p>The tangent is y = x + 8.</p>\n<p>Satisfying (8, 16) in y<sup>2</sup> = 4ax, we have</p>\n<p>16<sup>2</sup> = 4a . 8. <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> a = 8</p>\n<p>On comparing y = mx + <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.798ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.4ex\" height=\"2.395ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705.8 1060.8 1058.6\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mi\" transform=\"translate(343.4,394) scale(0.707)\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(220,-345) scale(0.707)\"><use data-c=\"1D45A\" xlink:href=\"#MJX-TEX-I-1D45A\"></use></g><rect width=\"820.8\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container>, we have m = 1</p>\n<p>The point of contact is <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.871ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"17.996ex\" height=\"2.828ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864.9 7954 1250.1\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mrow\"><g data-mml-node=\"mo\" transform=\"translate(0 -0.5)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-SO-28\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(458,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mi\" transform=\"translate(497.7,394) scale(0.707)\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(220,-377.4) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"1D45A\" xlink:href=\"#MJX-TEX-I-1D45A\"></use></g><g data-mml-node=\"mn\" transform=\"translate(911,289) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g><rect width=\"1129.5\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g><g data-mml-node=\"mo\" transform=\"translate(1369.5,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1814.2,0)\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(220,394) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mi\" transform=\"translate(500,0)\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g></g><g data-mml-node=\"mi\" transform=\"translate(273.4,-345) scale(0.707)\"><use data-c=\"1D45A\" xlink:href=\"#MJX-TEX-I-1D45A\"></use></g><rect width=\"927.6\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g><g data-mml-node=\"mo\" transform=\"translate(3439.8,0) translate(0 -0.5)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-SO-29\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(4175.6,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mo\" transform=\"translate(5231.4,0)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"mn\" transform=\"translate(5620.4,0)\"><use data-c=\"38\" xlink:href=\"#MJX-TEX-N-38\"></use></g><g data-mml-node=\"mo\" transform=\"translate(6120.4,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mn\" transform=\"translate(6565,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(7565,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g></g></svg></mjx-container></p>\n<p>So its verified.</p>"
+    }
+  ]
+}

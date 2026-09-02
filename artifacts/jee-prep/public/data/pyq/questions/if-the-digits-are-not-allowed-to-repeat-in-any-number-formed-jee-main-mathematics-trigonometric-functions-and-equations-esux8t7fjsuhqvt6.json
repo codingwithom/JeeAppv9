@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "1kruajm92",
+      "paperTitle": "JEE Main 2021 (Online) 22th July Evening Shift",
+      "year": 2021,
+      "subject": "mathematics",
+      "chapter": "permutations-and-combinations",
+      "chapterGroup": "algebra",
+      "topic": "conditional-permutations",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "if-the-digits-are-not-allowed-to-repeat-in-any-number-formed-jee-main-mathematics-trigonometric-functions-and-equations-esux8t7fjsuhqvt6",
+      "content": "If the digits are not allowed to repeat in any number formed by using the digits 0, 2, 4, 6, 8, then the number of all numbers greater than 10,000 is equal to _____________.",
+      "options": [],
+      "correct_options": [],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1kruuwxxs/0cdfc0c2-3025-4a29-802d-1c6956ab8f81/1503b410-f3b0-11eb-a605-b34dacb82f1b/file-1kruuwxxt.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 22th July Evening Shift Mathematics - Permutations and Combinations Question 143 English Explanation\"><br>= 4 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 4 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 3 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 2 = 96"
+    }
+  ]
+}

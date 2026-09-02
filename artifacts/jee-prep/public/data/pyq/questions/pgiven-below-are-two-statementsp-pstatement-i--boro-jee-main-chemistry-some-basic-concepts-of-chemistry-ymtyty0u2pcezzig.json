@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1lgrk11j3",
+      "paperTitle": "JEE Main 2023 (Online) 12th April Morning Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "p-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "group-13-elements-boron-family",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pgiven-below-are-two-statementsp-pstatement-i--boro-jee-main-chemistry-some-basic-concepts-of-chemistry-ymtyty0u2pcezzig",
+      "content": "<p>Given below are two statements :</p>\n<p>Statement I : Boron is extremely hard indicating its high lattice energy.</p>\n<p>Statement II : Boron has highest melting and boiling point compared to its other group members.</p>\n<p>In the light of the above statements, choose the most appropriate answer from the options given below :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Both Statement I and Statement II are incorrect"
+        },
+        {
+          "identifier": "B",
+          "content": "Statement I is incorrect but Statement II is correct"
+        },
+        {
+          "identifier": "C",
+          "content": "Statement I is correct but Statement II is incorrect"
+        },
+        {
+          "identifier": "D",
+          "content": "Both statement I and Statement II are correct"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<p>Boron is indeed a very hard substance, which does indicate high lattice energy. This is because the lattice energy is a measure of the strength of the forces between the ions in an ionic solid; the greater the lattice energy, the stronger the forces and the harder and more stable the compound. This makes Statement I correct.</p>\n<p>Statement II is also correct. Boron, as the first member of group 13 elements, does indeed have the highest melting and boiling points among its group members (Al, Ga, In, Tl). This can be attributed to the strong covalent bonding in boron due to its small size, which requires a high amount of energy to break.</p>\n<p>Therefore, <strong>Both statement I and Statement II are correct</strong> is the correct answer.</p>\n"
+    }
+  ]
+}

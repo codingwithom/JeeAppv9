@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "Rv0T6OUeTQDAA8hp8m3rsa0w2w9jx7zp2mj",
+      "paperTitle": "JEE Main 2019 (Online) 12th April Evening Slot",
+      "year": 2019,
+      "examDate": "2019-04-12 14:30",
+      "subject": "chemistry",
+      "chapter": "haloalkanes-and-haloarenes",
+      "chapterGroup": "organic-chemistry",
+      "topic": "haloalkanes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "an-assertion-and-a-reason-are-given-below-choose-the-co-jee-main-chemistry-haloalkanes-and-haloarenes-r2gbxmtkvselxgoh",
+      "content": "An 'Assertion' and a 'Reason' are given below. Choose the correct answer from the following options :\n<br><b>Assertion (A) :</b> Vinyl halides do not undergo nucleophilic substitution easily.\n<br><b>Reason (R) :</b> Even though the intermediate carbocation is stabilized by loosely held p-electrons, the cleavage\nis difficult because of strong bonding.",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Both (A) and (R) are correct statements but (R) is not the correct explanation of (A)"
+        },
+        {
+          "identifier": "B",
+          "content": "Both (A) and (R) are correct statements and (R) is the correct explanation of (A)"
+        },
+        {
+          "identifier": "C",
+          "content": "(A) is correct statement but (R) is a wrong statement"
+        },
+        {
+          "identifier": "D",
+          "content": "Both (A) and (R) are wrong statements."
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/3rsa0w2w9jxd7l6vk/ea38d2df-2480-402e-a6a4-e5a4cf8a845d/0bd4c100-980d-11e9-86c1-73f7f991b766/file-3rsa0w2w9jxd7l6vl.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th April Evening Slot Chemistry - Haloalkanes and Haloarenes Question 143 English Explanation\">\n<br>Due to resonance C - Cl bond strength increses, that is why C - Cl bond do not break easily and don't show nucleophilic substitution reaction easily."
+    }
+  ]
+}

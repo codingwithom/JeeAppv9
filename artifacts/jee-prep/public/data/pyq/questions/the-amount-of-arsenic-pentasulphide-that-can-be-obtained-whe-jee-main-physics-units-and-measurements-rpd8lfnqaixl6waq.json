@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "ywVAkLfCch5kY2EFQiWDH",
+      "paperTitle": "JEE Main 2016 (Online) 9th April Morning Slot",
+      "year": 2016,
+      "examDate": "2016-04-09 09:30",
+      "subject": "chemistry",
+      "chapter": "some-basic-concepts-of-chemistry",
+      "chapterGroup": "physical-chemistry",
+      "topic": "mole-concept",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-amount-of-arsenic-pentasulphide-that-can-be-obtained-whe-jee-main-physics-units-and-measurements-rpd8lfnqaixl6waq",
+      "content": "The amount of arsenic pentasulphide that can be obtained when 35.5 g arsenic acid istreated with excess H<sub>2</sub>S in the presence of conc. HCl ( assuming 100% conversion) is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "0.50 mol "
+        },
+        {
+          "identifier": "B",
+          "content": "0.25 mol"
+        },
+        {
+          "identifier": "C",
+          "content": "0.125 mol"
+        },
+        {
+          "identifier": "D",
+          "content": "0.333 mol"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "2H<sub>3</sub> As O<sub>4</sub> + 5H<sub>2</sub>S  <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -1.792ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.706ex\" height=\"4.334ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1123.5 1638 1915.6\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"REL\"><g data-mml-node=\"munderover\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"OP\"><g data-mml-node=\"mspace\"></g><g data-mml-node=\"mo\"><use data-c=\"27F6\" xlink:href=\"#MJX-TEX-N-27F6\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(131,-676.5) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D43B\" xlink:href=\"#MJX-TEX-I-1D43B\"></use></g><g data-mml-node=\"mi\" transform=\"translate(888,0)\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1648,0)\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(129.2,711) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D450\" xlink:href=\"#MJX-TEX-I-1D450\"></use></g><g data-mml-node=\"mi\" transform=\"translate(433,0)\"><use data-c=\"1D45C\" xlink:href=\"#MJX-TEX-I-1D45C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(918,0)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1518,0)\"><use data-c=\"1D450\" xlink:href=\"#MJX-TEX-I-1D450\"></use></g></g></g></g></g></g></svg></mjx-container>   As<sub>2</sub>S<sub>5</sub> + 8H<sub>2</sub>O\n<br><br>35.5 g of H<sub>3</sub>AsO<sub>4</sub> = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.781ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.84ex\" height=\"2.737ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864.9 1697.2 1209.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(220,394) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\" transform=\"translate(500,0)\"></use><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\" transform=\"translate(1000,0)\"></use><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\" transform=\"translate(1278,0)\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(318.3,-345) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\" transform=\"translate(500,0)\"></use><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\" transform=\"translate(1000,0)\"></use></g></g><rect width=\"1457.2\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container> = 0.25 moles\n<br><br>Let, As<sub>2</sub>S<sub>5</sub> produced = n moles.\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.643ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 1168 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g><g data-mml-node=\"mspace\" transform=\"translate(667,0)\"></g><g data-mml-node=\"mspace\" transform=\"translate(834,0)\"></g><g data-mml-node=\"mspace\" transform=\"translate(1001,0)\"></g></g></g></svg></mjx-container> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.781ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"8.812ex\" height=\"2.737ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864.9 3895.1 1209.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(220,394) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\" transform=\"translate(500,0)\"></use><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\" transform=\"translate(778,0)\"></use><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\" transform=\"translate(1278,0)\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(671.8,-345) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><rect width=\"1457.2\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g><g data-mml-node=\"mo\" transform=\"translate(1975,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(3030.8,0)\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mi\" transform=\"translate(220,394) scale(0.707)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(255.4,-345) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><rect width=\"624.3\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container>\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.133ex\" height=\"0.036ex\" role=\"img\" focusable=\"false\" viewBox=\"0 0 501 16\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mspace\"></g><g data-mml-node=\"mspace\" transform=\"translate(167,0)\"></g><g data-mml-node=\"mspace\" transform=\"translate(334,0)\"></g></g></g></svg></mjx-container> n = 0.125 mol. "
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1lgq4hhq5",
+      "paperTitle": "JEE Main 2023 (Online) 13th April Morning Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "inner-transition-elements-lanthanoids-and-actinoids",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pthe-pair-of-lanthanides-in-which-both-elements-have-high-jee-main-chemistry-some-basic-concepts-of-chemistry-bgabu0u7dyuc6xyv",
+      "content": "<p>The pair of lanthanides in which both elements have high third - ionization energy is :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Dy, Gd"
+        },
+        {
+          "identifier": "B",
+          "content": "Lu, Yb"
+        },
+        {
+          "identifier": "C",
+          "content": "Eu, Yb"
+        },
+        {
+          "identifier": "D",
+          "content": "Eu, Gd"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "1. Eu²⁺: [Xe] 4f⁷<br/><br/>\n2. Yb²⁺: [Xe] 4f¹⁴\n<br/><br/>\nEu²⁺ has a half-filled 4f orbital, while Yb²⁺ has a fully-filled 4f orbital. Both of these configurations lead to increased stability due to the symmetrical distribution of electrons in the 4f subshell, resulting in higher ionization energies for both Europium (Eu) and Ytterbium (Yb).\n<br/><br/>\nThus, the correct answer is Eu (Europium) and Yb (Ytterbium), as both elements have high third ionization energies due to their half-filled and fully-filled 4f subshell configurations in their divalent cation forms."
+    }
+  ]
+}

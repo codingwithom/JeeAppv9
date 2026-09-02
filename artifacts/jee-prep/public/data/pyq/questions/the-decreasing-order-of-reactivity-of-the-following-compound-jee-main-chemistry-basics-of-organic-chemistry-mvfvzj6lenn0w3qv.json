@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "YavpVgSpNnsmmtiC9pjgy2xukf3l9z5w",
+      "paperTitle": "JEE Main 2020 (Online) 3rd September Evening Slot",
+      "year": 2020,
+      "examDate": "2020-09-03 15:00",
+      "subject": "chemistry",
+      "chapter": "haloalkanes-and-haloarenes",
+      "chapterGroup": "organic-chemistry",
+      "topic": "haloarenes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-decreasing-order-of-reactivity-of-the-following-compound-jee-main-chemistry-basics-of-organic-chemistry-mvfvzj6lenn0w3qv",
+      "content": "The decreasing order of reactivity of the\nfollowing compounds towards nucleophilic\nsubstitution (S<sub>N</sub>2) is :\n<img src=\"https://imagex.cdn.examgoal.net/jgy2xukf3l42zt/b2b79c8d-3f35-4f03-b8f1-23f247d7e4f3/fe361190-f71d-11ea-8293-3b6cc591631c/file-jgy2xukf3l42zu-426w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 3rd September Evening Slot Chemistry - Haloalkanes and Haloarenes Question 130 English\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(IV) &gt; (II) &gt; (III) &gt; (I)"
+        },
+        {
+          "identifier": "B",
+          "content": "(II) &gt; (III) &gt; (IV) &gt; (I)"
+        },
+        {
+          "identifier": "C",
+          "content": "(II) &gt; (III) &gt; (I) &gt; (IV)"
+        },
+        {
+          "identifier": "D",
+          "content": "(III) &gt; (II) &gt; (IV) &gt; (I)"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukhf1pgug/92de0819-96c7-42dc-9fd0-d959929c9dbc/f0dee080-2503-11eb-8293-3b6cc591631c/file-jgy2xukhf1pguh-320w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 3rd September Evening Slot Chemistry - Haloalkanes and Haloarenes Question 130 English Explanation\">\n<br><br>–NO<sub>2</sub> group present at ortho and para position\ndeactivate the benzene ring and making the\ncarbon attached to ring (–CH<sub>2</sub>Cl) group more\nelectrophilic for the incoming nucleophile to\ngive S<sub>N</sub>2 reaction but rate of S<sub>N</sub>2 reaction\ndecreases as hindrence increases around the\nelectrophilic carbon."
+    }
+  ]
+}

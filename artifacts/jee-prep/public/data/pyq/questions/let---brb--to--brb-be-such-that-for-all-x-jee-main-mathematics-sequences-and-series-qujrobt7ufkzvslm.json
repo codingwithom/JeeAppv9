@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "MeExSco81dydzJRFtt7k9k2k5gpayn9",
+      "paperTitle": "JEE Main 2020 (Online) 8th January Morning Slot",
+      "year": 2020,
+      "examDate": "2020-01-08 09:30",
+      "subject": "mathematics",
+      "chapter": "sequences-and-series",
+      "chapterGroup": "algebra",
+      "topic": "arithmetic-progression",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "let---brb--to--brb-be-such-that-for-all-x-jee-main-mathematics-sequences-and-series-qujrobt7ufkzvslm",
+      "content": "Let ƒ : <b>R</b> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> <b>R</b> be such that for all \nx <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.312ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 667 580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2208\" xlink:href=\"#MJX-TEX-N-2208\"></use></g></g></g></svg></mjx-container> R <br>(2<sup>1+x</sup> + 2<sup>1–x</sup>), ƒ(x) and (3<sup>x</sup> + 3<sup>–x</sup>) are in\nA.P., <br>then the minimum value of ƒ(x) is",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "2"
+        },
+        {
+          "identifier": "B",
+          "content": "0"
+        },
+        {
+          "identifier": "C",
+          "content": "3"
+        },
+        {
+          "identifier": "D",
+          "content": "4"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "f(x) = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.781ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"20.246ex\" height=\"3.19ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1065 8948.7 1410\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(220,516.8) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mrow\" transform=\"translate(500,0)\"><g data-mml-node=\"mo\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(389,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msup\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mi\" transform=\"translate(533,363) scale(0.707)\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(987.5,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1765.5,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(533,363) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mi\" transform=\"translate(778,0)\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g></g></g></g></g><g data-mml-node=\"mo\" transform=\"translate(3692.1,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(4581.1,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mrow\" transform=\"translate(5359.1,0)\"><g data-mml-node=\"mo\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(389,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msup\"><g data-mml-node=\"mn\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g><g data-mml-node=\"mi\" transform=\"translate(533,363) scale(0.707)\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(987.5,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1765.5,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"mn\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(533,363) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mi\" transform=\"translate(778,0)\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g></g></g></g></g><g data-mml-node=\"mo\" transform=\"translate(3692.1,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g></g><g data-mml-node=\"mn\" transform=\"translate(3380.8,-345) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><rect width=\"6875.2\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g><g data-mml-node=\"mo\" transform=\"translate(7392.9,0)\"><use data-c=\"2265\" xlink:href=\"#MJX-TEX-N-2265\"></use></g><g data-mml-node=\"mn\" transform=\"translate(8448.7,0)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g></svg></mjx-container>\n<br><br>As we know, A.M &gt; G.M"
+    }
+  ]
+}

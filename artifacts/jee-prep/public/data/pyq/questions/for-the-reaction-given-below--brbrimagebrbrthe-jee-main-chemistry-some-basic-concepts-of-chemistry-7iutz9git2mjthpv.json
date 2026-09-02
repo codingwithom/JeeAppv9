@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktjviluh",
+      "paperTitle": "JEE Main 2021 (Online) 31st August Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "aldehydes-ketones-and-carboxylic-acids",
+      "chapterGroup": "organic-chemistry",
+      "topic": "chemical-reactions-for-aldehydes-and-ketones",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "for-the-reaction-given-below--brbrimagebrbrthe-jee-main-chemistry-some-basic-concepts-of-chemistry-7iutz9git2mjthpv",
+      "content": "For the reaction given below :-<br><br><img src=\"https://imagex.cdn.examgoal.net/1kumonm6y/61dae54c-b150-4e65-adf3-99f480e54fe2/fbd337a0-2a95-11ec-a0fd-a711e06710c5/file-1kumonm6z.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 31st August Evening Shift Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 153 English\"><br><br>The compound which is not formed as a product in the reaction is a :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "compound with both alcohol and acid functional groups"
+        },
+        {
+          "identifier": "B",
+          "content": "monocarboxylic acid"
+        },
+        {
+          "identifier": "C",
+          "content": "dicarboxylic acid"
+        },
+        {
+          "identifier": "D",
+          "content": "diol"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1kump1esh/c47601bd-5be5-4aea-9f4b-1f2bc0fd9b1c/7b6f6910-2a97-11ec-a827-e5b0200f8486/file-1kump1esi.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 31st August Evening Shift Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 153 English Explanation\">"
+    }
+  ]
+}

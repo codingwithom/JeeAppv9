@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "70QwNRAJ2CVkUM7kIp1kmki498y",
+      "paperTitle": "JEE Main 2021 (Online) 17th March Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "hydrocarbons",
+      "chapterGroup": "organic-chemistry",
+      "topic": "reaction-of-alkenes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "choose-the-correct-statement-regarding-the-formation-of-carb-jee-main-chemistry-some-basic-concepts-of-chemistry-osbbt5ixxtnc5wxe",
+      "content": "Choose the correct statement regarding the formation of carbocations A and B given.<br><br><picture><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1kmliwsyy/655d654f-4890-4c23-8eeb-ef6f3fcb4661/00e330a0-8b91-11eb-8bc4-81bde7104d98/file-1kmliwsyz-500w.jpg\"><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1kmliwsyy/655d654f-4890-4c23-8eeb-ef6f3fcb4661/00e330a0-8b91-11eb-8bc4-81bde7104d98/file-1kmliwsyz-320w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/1kmliwsyy/655d654f-4890-4c23-8eeb-ef6f3fcb4661/00e330a0-8b91-11eb-8bc4-81bde7104d98/file-1kmliwsyz.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 17th March Evening Shift Chemistry - Hydrocarbons Question 104 English\"></picture>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Carbocation A is more stable and formed relatively at faster rate"
+        },
+        {
+          "identifier": "B",
+          "content": "Carbocation B is more stable and formed relatively at slow rate"
+        },
+        {
+          "identifier": "C",
+          "content": "Carbocation B is more stable and formed relatively at faster rate"
+        },
+        {
+          "identifier": "D",
+          "content": "Carbocation A is more stable and formed relatively at slow rate"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Carbocation B is more stable as it is secondary\ncarbocation having more number of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.448ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 640 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D6FC\" xlink:href=\"#MJX-TEX-I-1D6FC\"></use></g></g></g></svg></mjx-container>-hydrogens\nand having a greater +I effect.<br><br>\n<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> Carbocation B formed at a faster rate than\ncarbocation A."
+    }
+  ]
+}

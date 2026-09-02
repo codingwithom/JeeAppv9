@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "Q1FlgwO0fiKugPkd7zZYg",
+      "paperTitle": "JEE Main 2018 (Online) 16th April Morning Slot",
+      "year": 2018,
+      "examDate": "2018-04-16 09:30",
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "hybridization-and-vsepr-theory",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-incorrect-geometry-is-represented-by-jee-main-chemistry-some-basic-concepts-of-chemistry-oqzxotj8nzfobtgj",
+      "content": "The <b>incorrect</b> geometry is represented by : ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "BF<sub>3</sub> - trigonal planar"
+        },
+        {
+          "identifier": "B",
+          "content": "H<sub>2</sub>O - bent"
+        },
+        {
+          "identifier": "C",
+          "content": "NF<sub>3</sub> - trigonal planar "
+        },
+        {
+          "identifier": "D",
+          "content": "AsF<sub>5</sub> - trigonal bipyramidal "
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/fH44YlpFK6mz6vUHT/x0KBDc57exWf8wpXk7vk2DFwALGmE/bYNfnPSJPGPcGDq1FkOgBu/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2018 (Online) 16th April Morning Slot Chemistry - Chemical Bonding &amp; Molecular Structure Question 223 English Explanation\">\n<br><br>NF3 has trigonal pyramidal geometry. Here central atom nitrogen has sp<sup>3</sup> hybridization and one lone pair of electron. Because of lone pair there exist repulsion force between lone pair and bond pair of electrons, that is why bond angles are  lower than tetrahedral bond angle. "
+    }
+  ]
+}

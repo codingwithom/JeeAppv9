@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1krq637r5",
+      "paperTitle": "JEE Main 2021 (Online) 20th July Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "compounds-containing-nitrogen",
+      "chapterGroup": "organic-chemistry",
+      "topic": "aliphatic-amines",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "compound-a-is-converted-to-b-on-reaction-with-chclsub3su-jee-main-chemistry-some-basic-concepts-of-chemistry-ypjt4toqdzll30bv",
+      "content": "Compound A is converted to B on reaction with CHCl<sub>3</sub> and KOH. The compound B is toxic and can be decomposed by C. A, B and C respectively are :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "primary amine, nitrile compound, conc. HCl"
+        },
+        {
+          "identifier": "B",
+          "content": "secondary amine, isonitrile compound, conc. NaOH"
+        },
+        {
+          "identifier": "C",
+          "content": "primary amine, isonitrile compound, conc. HCl"
+        },
+        {
+          "identifier": "D",
+          "content": "secondary amine, nitrile compound, conc. NaOH"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<p> Primary amine reacts in presence of chloroform gives isonitrile which is toxic in nature which further reacts in presence of HCl/H<sub>3</sub>O<sup>+</sup> to give primary amine and acid.</p>\n<p><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l2pjg0y6/53c9b964-73e1-4bf1-b1e1-e7d266d7b6de/b0159ee0-ca89-11ec-ab2b-7960e659c3b6/file-1l2pjg0y7.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l2pjg0y6/53c9b964-73e1-4bf1-b1e1-e7d266d7b6de/b0159ee0-ca89-11ec-ab2b-7960e659c3b6/file-1l2pjg0y7.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2021 (Online) 20th July Morning Shift Chemistry - Compounds Containing Nitrogen Question 166 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l2pjg0y6/53c9b964-73e1-4bf1-b1e1-e7d266d7b6de/b0159ee0-ca89-11ec-ab2b-7960e659c3b6/file-1l2pjg0y7.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l2pjg0y6/53c9b964-73e1-4bf1-b1e1-e7d266d7b6de/b0159ee0-ca89-11ec-ab2b-7960e659c3b6/file-1l2pjg0y7.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l2pjg0y6/53c9b964-73e1-4bf1-b1e1-e7d266d7b6de/b0159ee0-ca89-11ec-ab2b-7960e659c3b6/file-1l2pjg0y7.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l2pjg0y6/53c9b964-73e1-4bf1-b1e1-e7d266d7b6de/b0159ee0-ca89-11ec-ab2b-7960e659c3b6/file-1l2pjg0y7.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l2pjg0y6/53c9b964-73e1-4bf1-b1e1-e7d266d7b6de/b0159ee0-ca89-11ec-ab2b-7960e659c3b6/file-1l2pjg0y7.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l2pjg0y6/53c9b964-73e1-4bf1-b1e1-e7d266d7b6de/b0159ee0-ca89-11ec-ab2b-7960e659c3b6/file-1l2pjg0y7.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"></p>\n<p>Hence, A-primary amine, B-isonitrile compound and C-conc. HCl.</p>"
+    }
+  ]
+}

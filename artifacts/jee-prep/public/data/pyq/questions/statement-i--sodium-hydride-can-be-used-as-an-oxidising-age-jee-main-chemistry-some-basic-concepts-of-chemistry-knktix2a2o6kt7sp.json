@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "91lPBnmet4BGfbFKjY1kmiunroc",
+      "paperTitle": "JEE Main 2021 (Online) 16th March Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "redox-reactions",
+      "chapterGroup": "physical-chemistry",
+      "topic": "oxidation-and-reduction-reactions",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "statement-i--sodium-hydride-can-be-used-as-an-oxidising-age-jee-main-chemistry-some-basic-concepts-of-chemistry-knktix2a2o6kt7sp",
+      "content": "Statement I : Sodium hydride can be used as an oxidising agent.<br><br>Statement II : The lone pair of electrons on nitrogen in pyridine makes it basic.<br><br>Choose the CORRECT answer from the options given below :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Statement I is false but statement II is true"
+        },
+        {
+          "identifier": "B",
+          "content": "Both statement I and statement II are true"
+        },
+        {
+          "identifier": "C",
+          "content": "Statement I is true but statement II is false"
+        },
+        {
+          "identifier": "D",
+          "content": "Both statement I and statement II are false"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "NaH is a strong H<sup>–</sup> (hydride) donor. Hence\ncannot be used as an oxidising agent.<br><br>\n<img src=\"https://imagex.cdn.examgoal.net/1kn8hma4e/441f04ce-0194-47d4-a2d9-378a9ea623b8/fa0b0de0-9831-11eb-a02f-31d48fd393c0/file-1kn8hma4f.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 16th March Evening Shift Chemistry - Redox Reactions Question 53 English Explanation\">\n<br>\nIn Pyridine, the lone pair of ‘N’ is localised, makes it\nbasic."
+    }
+  ]
+}

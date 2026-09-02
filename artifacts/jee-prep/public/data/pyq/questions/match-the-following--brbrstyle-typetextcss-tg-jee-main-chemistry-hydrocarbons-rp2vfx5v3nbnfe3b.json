@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "Vs7hwvcmskHCHu42F9jgy2xukg4m6vst",
+      "paperTitle": "JEE Main 2020 (Online) 6th September Evening Slot",
+      "year": 2020,
+      "examDate": "2020-09-06 15:00",
+      "subject": "chemistry",
+      "chapter": "salt-analysis",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "chemical-principles",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "match-the-following--brbrstyle-typetextcss-tg-jee-main-chemistry-hydrocarbons-rp2vfx5v3nbnfe3b",
+      "content": "Match the following :\n<br><br>\n<table class=\"tg\">\n<thead>\n  <tr>\n    <th class=\"tg-baqh\"><b>Test/Method</b></th>\n    <th class=\"tg-baqh\"><b>Reagent</b></th>\n  </tr>\n</thead>\n<tbody>\n  <tr>\n    <td class=\"tg-baqh\">(i) Lucas Test</td>\n    <td class=\"tg-baqh\">(a) C<sub>6</sub>H<sub>5</sub>SO<sub>2</sub>Cl/\naq. KOH</td>\n  </tr>\n  <tr>\n    <td class=\"tg-baqh\">(ii) Dumas method</td>\n    <td class=\"tg-baqh\">(b) HNO<sub>3</sub>/\nAgNO<sub>3</sub></td>\n  </tr>\n  <tr>\n    <td class=\"tg-baqh\">(iii) Kjeldahl’s method</td>\n    <td class=\"tg-baqh\">(c) CuO/CO<sub>2</sub></td>\n  </tr>\n  <tr>\n    <td class=\"tg-baqh\">(iv) Hinsberg test</td>\n    <td class=\"tg-baqh\">(d) Conc. HCl\nand ZnCl<sub>2</sub></td>\n  </tr>\n  <tr>\n    <td class=\"tg-baqh\" 11<=\"\" td=\"\">\n    </td><td class=\"tg-baqh\">(e) H<sub>2</sub>SO<sub>4</sub></td>\n  </tr>\n</tbody>\n</table>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(i)-(b), (ii)-(d), (iii)-(e), (iv)-(a)"
+        },
+        {
+          "identifier": "B",
+          "content": "(i)-(d), (ii)-(c), (iii)-(e), (iv)-(a)"
+        },
+        {
+          "identifier": "C",
+          "content": "(i)-(b), (ii)-(a), (iii)-(c), (iv)-(d)"
+        },
+        {
+          "identifier": "D",
+          "content": "(i)-(d), (ii)-(c), (iii)-(b), (iv)-(e)"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Lucas reagent – Conc. HCl/ZnCl<sub>2</sub>\n<br><br>Dumas method – CuO/CO<sub>2</sub>\n<br><br>Kjeldahl’s method – H<sub>2</sub>SO<sub>4</sub>\n<br><br>Hinsberg test – C<sub>6</sub>H<sub>5</sub>SO<sub>2</sub>Cl/aq. KOH"
+    }
+  ]
+}

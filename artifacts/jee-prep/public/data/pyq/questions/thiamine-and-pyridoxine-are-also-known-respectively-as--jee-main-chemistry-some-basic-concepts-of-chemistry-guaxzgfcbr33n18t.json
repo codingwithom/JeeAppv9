@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1krt57bdl",
+      "paperTitle": "JEE Main 2021 (Online) 22th July Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "vitamins-and-nucleic-acids",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "thiamine-and-pyridoxine-are-also-known-respectively-as--jee-main-chemistry-some-basic-concepts-of-chemistry-guaxzgfcbr33n18t",
+      "content": "Thiamine and pyridoxine are also known respectively as :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Vitamin B<sub>2</sub> and Vitamin E"
+        },
+        {
+          "identifier": "B",
+          "content": "Vitamin E and Vitamin B<sub>2</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "Vitamin B<sub>6</sub> and Vitamin B<sub>2</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "Vitamin B<sub>1</sub> and Vitamin B<sub>6</sub>"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Vitamine-B<sub>1</sub> is also known as Thiamine while Vitamin B-6 is known as Pyridoxine."
+    }
+  ]
+}

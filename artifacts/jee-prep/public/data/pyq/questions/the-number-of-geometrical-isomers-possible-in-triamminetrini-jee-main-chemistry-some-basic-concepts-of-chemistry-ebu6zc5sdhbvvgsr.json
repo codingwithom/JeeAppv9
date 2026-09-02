@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "1krz2ooiz",
+      "paperTitle": "JEE Main 2021 (Online) 27th July Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "isomerism-of-coordination-compounds",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-number-of-geometrical-isomers-possible-in-triamminetrini-jee-main-chemistry-some-basic-concepts-of-chemistry-ebu6zc5sdhbvvgsr",
+      "content": "The number of geometrical isomers possible in triamminetrinitrocobalt (III) is X and in trioxalatochromate (III) is Y. Then the value of X + Y is _______________.",
+      "options": [],
+      "correct_options": [],
+      "explanation": "Triamminetrinitrocobalt (III) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> [Co(NO<sub>2</sub>)<sub>3</sub>(NH<sub>3</sub>)<sub>3</sub>]<br><br>trioxalatochromate (III) ion <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> [Cr(C<sub>2</sub>O<sub>4</sub>)<sub>3</sub>]<sup>3<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container></sup>[Co(NO<sub>2</sub>)<sub>3</sub>(NH<sub>3</sub>)<sub>3</sub>]<br><br><img src=\"https://imagex.cdn.examgoal.net/1ks1zvkle/3a3b9729-9e12-479e-806a-c3a6e7f6e513/f916c530-f79c-11eb-92c1-6d24961c245f/file-1ks1zvklf.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 27th July Morning Shift Chemistry - Coordination Compounds Question 220 English Explanation\"><br><br>X + Y = 2 + 0 = 2.0"
+    }
+  ]
+}

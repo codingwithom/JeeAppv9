@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "pXwqIEIZisW3YuevRoBHt",
+      "paperTitle": "JEE Main 2016 (Online) 9th April Morning Slot",
+      "year": 2016,
+      "examDate": "2016-04-09 09:30",
+      "subject": "chemistry",
+      "chapter": "p-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "group-17-elements-halogen-family",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "adsorption-increases-with-increase-in-temperature-jee-main-physics-units-and-measurements-ebdasld9epyympcr",
+      "content": "The non-metal that does <b>not</b> exhibit positive oxidation state is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Oxygen"
+        },
+        {
+          "identifier": "B",
+          "content": "Iodine"
+        },
+        {
+          "identifier": "C",
+          "content": "Chlorine"
+        },
+        {
+          "identifier": "D",
+          "content": "Fluorine"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Fluorine is the most electronegative element and it\nshows only –1 oxidation state."
+    }
+  ]
+}

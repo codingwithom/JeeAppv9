@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "s80pl0WGObJd1ccV8h1kjbpb9tu",
+      "paperTitle": "JEE Advanced 2019 Paper 1 Offline",
+      "year": 2019,
+      "subject": "chemistry",
+      "chapter": "electrochemistry",
+      "chapterGroup": "physical-chemistry",
+      "topic": "conductance-and-electrolysis",
+      "type": "mcq",
+      "marks": 3,
+      "negMarks": 1,
+      "permalink": "molar-conductivity-lambda-submsub-of-aqueous-sol-jee-advanced-chemistry-some-basic-concepts-of-chemistry-aqzr3iqtrolmtea7",
+      "content": "Molar conductivity (<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.57ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 694 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"39B\" xlink:href=\"#MJX-TEX-N-39B\"></use></g></g></g></svg></mjx-container><sub>m</sub>) of aqueous solution of sodium stearate, which behaves as a strong electrolyte, is recorded at varying concentrations (C) of sodium stearate. Which one of the following plots provides the correct representation of micelle formation in the solution?<br><br>(critical micelle concentration (CMC) is marked with an arrow in the figures)",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1ksry9z2o/3cf6e7a8-bad1-4bbb-96bf-25e053f37407/183a6d00-05e3-11ec-aff4-f93815541f69/file-1ksry9z2p.jpeg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2019 Paper 1 Offline Chemistry - Electrochemistry Question 26 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1ksryaa2e/5009672f-b8d1-49c7-9f14-058edf9ea6a4/20b83160-05e3-11ec-aff4-f93815541f69/file-1ksryaa2f.jpeg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2019 Paper 1 Offline Chemistry - Electrochemistry Question 26 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1ksryap25/10d9e8e5-cc47-42ce-b7e2-b5310589a664/2c4d20d0-05e3-11ec-aff4-f93815541f69/file-1ksryap26.jpeg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2019 Paper 1 Offline Chemistry - Electrochemistry Question 26 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1ksryb3i7/ec57d2a1-13c3-491d-94db-e0d68df6eb1a/3775e0f0-05e3-11ec-aff4-f93815541f69/file-1ksryb3i8.jpeg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2019 Paper 1 Offline Chemistry - Electrochemistry Question 26 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "At normal or low concentration, sodium stearate (CH<sub>3</sub>(CH<sub>2</sub>)<sub>16</sub>COO<sup>-</sup>Na<sup>+</sup>] behaves as strong electrolyte and for strong electrolyte, molar conductance (<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.57ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 694 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"39B\" xlink:href=\"#MJX-TEX-N-39B\"></use></g></g></g></svg></mjx-container><sub>m</sub>) decreases with increase in concentration. Above particular concentration, sodium stearate forms aggregates known as micelles. The concentration is called as CMC. Since, number of ions decreases and hence <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.57ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 694 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"39B\" xlink:href=\"#MJX-TEX-N-39B\"></use></g></g></g></svg></mjx-container><sub>m</sub> also decreases.<br><br>Hence, option (c) is correct."
+    }
+  ]
+}

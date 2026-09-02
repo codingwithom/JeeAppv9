@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "4R8sj0h5Qd1wYZP3QAxlC",
+      "paperTitle": "JEE Main 2019 (Online) 11th January Morning Slot",
+      "year": 2019,
+      "examDate": "2019-01-11 09:30",
+      "subject": "chemistry",
+      "chapter": "some-basic-concepts-of-chemistry",
+      "chapterGroup": "physical-chemistry",
+      "topic": "mole-concept",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "an-organic-compound-is-estimated-through-dumas-method-and-w-jee-main-chemistry-some-basic-concepts-of-chemistry-erngnjpylltjmwma",
+      "content": "An organic compound is estimated through Duma's method and was found to evolve 6 moles of CO<sub>2</sub>. 4 moles of H<sub>2</sub>O and 1 mole of nitrogen gas. The formula of the compound is : ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "C<sub>6</sub>H<sub>8</sub>N"
+        },
+        {
+          "identifier": "B",
+          "content": "C<sub>6</sub>H<sub>8</sub>N<sub>2</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "C<sub>12</sub>H<sub>8</sub>N"
+        },
+        {
+          "identifier": "D",
+          "content": "C<sub>12</sub>H<sub>8</sub>N<sub>2</sub>"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Molar ratio of C : H : N : : 6 : 8 : 2 i.e., 3 : 4 : 1\n<br><br>Thus, the correct formula is C<sub>6</sub>H<sub>8</sub>N<sub>2</sub>.\n."
+    }
+  ]
+}

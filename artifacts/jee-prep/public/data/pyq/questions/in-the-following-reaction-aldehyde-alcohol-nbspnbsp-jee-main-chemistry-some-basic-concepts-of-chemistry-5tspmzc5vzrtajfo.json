@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "Y4rUeNIEPtXtMeYCjysPe",
+      "paperTitle": "JEE Main 2019 (Online) 12th January Morning Slot",
+      "year": 2019,
+      "examDate": "2019-01-12 09:30",
+      "subject": "chemistry",
+      "chapter": "aldehydes-ketones-and-carboxylic-acids",
+      "chapterGroup": "organic-chemistry",
+      "topic": "chemical-reactions-for-aldehydes-and-ketones",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "in-the-following-reaction-aldehyde-alcohol-nbspnbsp-jee-main-chemistry-some-basic-concepts-of-chemistry-5tspmzc5vzrtajfo",
+      "content": "In the following reaction : \n<br><br> Aldehyde + Alcohol   <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.706ex\" height=\"2.988ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1309.5 1638 1320.5\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"REL\"><g data-mml-node=\"mover\"><g data-mml-node=\"mo\"><use data-c=\"27F6\" xlink:href=\"#MJX-TEX-N-27F6\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(131,711) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D43B\" xlink:href=\"#MJX-TEX-I-1D43B\"></use></g><g data-mml-node=\"mi\" transform=\"translate(888,0)\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1648,0)\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g></g></g></g></g></g></svg></mjx-container>  Acetal \n<br><br>\n<table class=\"tg\">\n  <tbody><tr>\n    <th class=\"tg-pjk9\"><b>Aldehyde</b></th>\n    <th class=\"tg-cyim\">          </th>\n    <th class=\"tg-pjk9\">       </th>\n    <th class=\"tg-pjk9\"><b>Alcohol</b></th>\n  </tr>\n  <tr>\n    <td class=\"tg-pjk9\">HCHO</td>\n    <td class=\"tg-cyim\"></td>\n    <td class=\"tg-pjk9\"></td>\n    <td class=\"tg-pjk9\">t<sub>BuOH</sub></td>\n  </tr>\n  <tr>\n    <td class=\"tg-pjk9\">CH<sub>3</sub>CHO</td>\n    <td class=\"tg-cyim\"></td>\n    <td class=\"tg-pjk9\"></td>\n    <td class=\"tg-pjk9\">MeOH</td>\n  </tr>\n</tbody></table>\n<br>The best combination is ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "CH<sub>3</sub>CHO and MeOH"
+        },
+        {
+          "identifier": "B",
+          "content": "HCHO and MeOH"
+        },
+        {
+          "identifier": "C",
+          "content": "CH<sub>3</sub>CHO and tBuOH"
+        },
+        {
+          "identifier": "D",
+          "content": "HCHO and tBuOH "
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "In Formaldehyde (HCHO) both side of the C atom H presents but in Acetaldehyde (CH<sub>3</sub>CHO) one side of C atom -CH<sub>3</sub> group and other side H atom presents. So Formaldehyde is less crowded then it is more reactive.\n<br><br>CH<sub>3</sub>OH is 1<sup>o</sup> alcohol and t<sub>BuOH</sub> is 3<sup>o</sup> alcohol. As we know on 3<sup>o</sup> alcohol steric hindrance is very high compare to 1<sup>o</sup> alcohol and due to steric hindrance reactivity of 3<sup>o</sup> alcohol is less compare to 1<sup>o</sup> alcohol."
+    }
+  ]
+}

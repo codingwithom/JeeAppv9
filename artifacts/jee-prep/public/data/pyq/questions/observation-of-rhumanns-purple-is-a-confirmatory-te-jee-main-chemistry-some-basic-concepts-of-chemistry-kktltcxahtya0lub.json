@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "Ync0jVKYZTR6amAnjUMGZ",
+      "paperTitle": "JEE Main 2016 (Online) 10th April Morning Slot",
+      "year": 2016,
+      "examDate": "2016-04-10 09:30",
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "proteins-and-enzymes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "observation-of-rhumanns-purple-is-a-confirmatory-te-jee-main-chemistry-some-basic-concepts-of-chemistry-kktltcxahtya0lub",
+      "content": "Observation of “Rhumann’s purple” is a confirmatory test for the presence of :\n",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Reducing sugar"
+        },
+        {
+          "identifier": "B",
+          "content": "Cupric ion"
+        },
+        {
+          "identifier": "C",
+          "content": "Protein"
+        },
+        {
+          "identifier": "D",
+          "content": "Starch"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Ruhemann’s purple is ninhydrin.\n<br><img src=\"https://imagex.cdn.examgoal.net/1qpqahkk8bihrde/dee7aa3f-9ec7-4dd7-965d-61c19c8d67e8/80b76b20-70e4-11ea-aedc-f1c8d8e0194b/file-1qpqahkk8bihrdf-320w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2016 (Online) 10th April Morning Slot Chemistry - Biomolecules Question 170 English Explanation\">"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "smoZSqPnEuRLubvtFV7k9k2k5k6n942",
+      "paperTitle": "JEE Main 2020 (Online) 9th January Evening Slot",
+      "year": 2020,
+      "examDate": "2020-01-09 14:30",
+      "subject": "mathematics",
+      "chapter": "matrices-and-determinants",
+      "chapterGroup": "algebra",
+      "topic": "solutions-of-system-of-linear-equations-in-two-or-three-variables-using-determinants-and-matrices",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-following-system-of-linear-equationsbr-7x--6y--2z--jee-main-mathematics-complex-numbers-2k0yxwnezyawjt1s",
+      "content": "The following system of linear equations<br>\n7x + 6y – 2z = 0<br>\n3x + 4y + 2z = 0<br>\nx – 2y – 6z = 0, has",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "no solution"
+        },
+        {
+          "identifier": "B",
+          "content": "infinitely many solutions, (x, y, z) satisfying\ny = 2z"
+        },
+        {
+          "identifier": "C",
+          "content": "infinitely many solutions, (x, y, z) satisfying\nx = 2z"
+        },
+        {
+          "identifier": "D",
+          "content": "only the trivial solution"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Given\n<br>7x + 6y – 2z = 0 .......(1)<br>\n3x + 4y + 2z = 0 ......(2)<br>\nx – 2y – 6z = 0 .......(3)\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.885ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 833 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></svg></mjx-container> = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -4.016ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"13.851ex\" height=\"9.163ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -2275 6122 4050\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mrow\"><g data-mml-node=\"mo\"><svg width=\"333\" height=\"4050\" y=\"-1775\" x=\"0\" viewBox=\"0 870.6 333 4050\"><use data-c=\"2223\" xlink:href=\"#MJX-TEX-SO-2223\" transform=\"scale(1,9.463)\"></use></svg></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(333,0)\"><g data-mml-node=\"mtable\" data-frame-styles=\"\"><g data-mml-node=\"mtr\" transform=\"translate(0,1400)\"><g data-mml-node=\"mtd\" transform=\"translate(200,0)\"><g data-mml-node=\"mn\"><use data-c=\"37\" xlink:href=\"#MJX-TEX-N-37\"></use></g></g><g data-mml-node=\"mtd\" transform=\"translate(2089,0)\"><g data-mml-node=\"mn\"><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\"></use></g></g><g data-mml-node=\"mtd\" transform=\"translate(3978,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(778,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g><g data-mml-node=\"mtr\"><g data-mml-node=\"mtd\" transform=\"translate(200,0)\"><g data-mml-node=\"mn\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g><g data-mml-node=\"mtd\" transform=\"translate(2089,0)\"><g data-mml-node=\"mn\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g><g data-mml-node=\"mtd\" transform=\"translate(4367,0)\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"mtr\" transform=\"translate(0,-1400)\"><g data-mml-node=\"mtd\" transform=\"translate(200,0)\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g><g data-mml-node=\"mtd\" transform=\"translate(1700,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(778,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"mtd\" transform=\"translate(3978,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(778,0)\"><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\"></use></g></g></g></g></g></g><g data-mml-node=\"mo\" transform=\"translate(5789,0)\"><svg width=\"333\" height=\"4050\" y=\"-1775\" x=\"0\" viewBox=\"0 870.6 333 4050\"><use data-c=\"2223\" xlink:href=\"#MJX-TEX-SO-2223\" transform=\"scale(1,9.463)\"></use></svg></g></g></g></g></svg></mjx-container>\n<br><br>=  7(–24 + 4) – 6(–18 – 2) – 2(–6 – 4) = 0\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.885ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 833 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></svg></mjx-container> = 0\n<br><br>The system of equation has infinite non-trival solution.\n<br><br>Also adding equation (1) and 3<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container>(3), we get\n<br><br>10x = 20z\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> x = 2z"
+    }
+  ]
+}

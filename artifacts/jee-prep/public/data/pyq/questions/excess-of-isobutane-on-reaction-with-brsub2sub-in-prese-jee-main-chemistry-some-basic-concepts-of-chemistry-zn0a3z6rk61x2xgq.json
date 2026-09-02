@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktb5o8x3",
+      "paperTitle": "JEE Main 2021 (Online) 26th August Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "haloalkanes-and-haloarenes",
+      "chapterGroup": "organic-chemistry",
+      "topic": "haloalkanes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "excess-of-isobutane-on-reaction-with-brsub2sub-in-prese-jee-main-chemistry-some-basic-concepts-of-chemistry-zn0a3z6rk61x2xgq",
+      "content": "Excess of isobutane on reaction with Br<sub>2</sub> in presence of light at 125<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"0.988ex\" height=\"1.532ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -677 436.6 677\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"></g><g data-mml-node=\"mo\" transform=\"translate(33,363) scale(0.707)\"><use data-c=\"2218\" xlink:href=\"#MJX-TEX-N-2218\"></use></g></g></g></g></svg></mjx-container>C gives which one of the following, as the major product?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1ktclvs42/62a67413-fa5b-4f47-9e15-358542f1441e/159c4f20-113f-11ec-872f-5fd5e1adec85/file-1ktclvs43.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 26th August Morning Shift Chemistry - Haloalkanes and Haloarenes Question 105 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1ktclw1l6/c5c25004-89a8-48de-bc1c-d00032ca177b/1cedef90-113f-11ec-9385-ab2040916e22/file-1ktclw1l7.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 26th August Morning Shift Chemistry - Haloalkanes and Haloarenes Question 105 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1ktclwasl/1e22b0a5-d795-462d-a4be-2fc077cdc162/240a9d50-113f-11ec-9385-ab2040916e22/file-1ktclwasm.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 26th August Morning Shift Chemistry - Haloalkanes and Haloarenes Question 105 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1ktclwjxz/393e062a-8a9a-496d-b3f5-4d75534433ce/2b1c0070-113f-11ec-9385-ab2040916e22/file-1ktclwjy0.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 26th August Morning Shift Chemistry - Haloalkanes and Haloarenes Question 105 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1ktcm0noz/f594d690-05c7-442b-9c0c-e82a53ae9ae3/9d3e2430-113f-11ec-872f-5fd5e1adec85/file-1ktcm0np0-320w.png\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1ktcm0noz/f594d690-05c7-442b-9c0c-e82a53ae9ae3/9d3e2430-113f-11ec-872f-5fd5e1adec85/file-1ktcm0np0-500w.png\"><img src=\"https://imagex.cdn.examgoal.net/1ktcm0noz/f594d690-05c7-442b-9c0c-e82a53ae9ae3/9d3e2430-113f-11ec-872f-5fd5e1adec85/file-1ktcm0np0.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 26th August Morning Shift Chemistry - Haloalkanes and Haloarenes Question 105 English Explanation\"></picture>\n<br>Bromination is highly selective, reactivity order –\n<br><br>3° &gt;&gt; 2° &gt; 1"
+    }
+  ]
+}

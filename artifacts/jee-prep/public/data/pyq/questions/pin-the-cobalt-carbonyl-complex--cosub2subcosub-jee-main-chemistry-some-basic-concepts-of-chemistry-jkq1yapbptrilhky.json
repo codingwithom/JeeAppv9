@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "1l5c7afn9",
+      "paperTitle": "JEE Main 2022 (Online) 24th June Morning Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "coordination-number",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pin-the-cobalt-carbonyl-complex--cosub2subcosub-jee-main-chemistry-some-basic-concepts-of-chemistry-jkq1yapbptrilhky",
+      "content": "<p>In the cobalt-carbonyl complex : [Co<sub>2</sub>(CO)<sub>8</sub>], number of Co-Co bonds is \"X\" and terminal CO ligands is \"Y\". X + Y = ___________.</p>",
+      "options": [],
+      "correct_options": [],
+      "explanation": "<p><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l5dwtcea/79af4663-8645-4e79-a451-4d7931945317/37780e20-ff89-11ec-9933-ef22a1309b30/file-1l5dwtceb.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l5dwtcea/79af4663-8645-4e79-a451-4d7931945317/37780e20-ff89-11ec-9933-ef22a1309b30/file-1l5dwtceb.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2022 (Online) 24th June Morning Shift Chemistry - Coordination Compounds Question 191 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l5dwtcea/79af4663-8645-4e79-a451-4d7931945317/37780e20-ff89-11ec-9933-ef22a1309b30/file-1l5dwtceb.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l5dwtcea/79af4663-8645-4e79-a451-4d7931945317/37780e20-ff89-11ec-9933-ef22a1309b30/file-1l5dwtceb.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l5dwtcea/79af4663-8645-4e79-a451-4d7931945317/37780e20-ff89-11ec-9933-ef22a1309b30/file-1l5dwtceb.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l5dwtcea/79af4663-8645-4e79-a451-4d7931945317/37780e20-ff89-11ec-9933-ef22a1309b30/file-1l5dwtceb.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l5dwtcea/79af4663-8645-4e79-a451-4d7931945317/37780e20-ff89-11ec-9933-ef22a1309b30/file-1l5dwtceb.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l5dwtcea/79af4663-8645-4e79-a451-4d7931945317/37780e20-ff89-11ec-9933-ef22a1309b30/file-1l5dwtceb.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"></p>\n<p>x = 1</p>\n<p>y = 6</p>\n<p><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> x + y = 7</p>"
+    }
+  ]
+}

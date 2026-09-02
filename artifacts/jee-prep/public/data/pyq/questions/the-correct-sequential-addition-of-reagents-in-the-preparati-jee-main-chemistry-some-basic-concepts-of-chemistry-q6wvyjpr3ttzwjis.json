@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktb5fie5",
+      "paperTitle": "JEE Main 2021 (Online) 26th August Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "aldehydes-ketones-and-carboxylic-acids",
+      "chapterGroup": "organic-chemistry",
+      "topic": "preparation-properties-and-uses-of-carboxylic-acids",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-correct-sequential-addition-of-reagents-in-the-preparati-jee-main-chemistry-some-basic-concepts-of-chemistry-q6wvyjpr3ttzwjis",
+      "content": "The correct sequential addition of reagents in the preparation of 3-nitrobenzoic acid from benzene is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Br<sub>2</sub>/AlBr<sub>3</sub>, HNO<sub>3</sub>/H<sub>2</sub>SO<sub>4</sub>, Mg/ether, CO<sub>2</sub>, H<sub>3</sub>O<sup>+</sup>"
+        },
+        {
+          "identifier": "B",
+          "content": "Br<sub>2</sub>/AlBr<sup>3</sup>, NaCN, H<sub>3</sub>O<sup>+</sup>, HNO<sub>3</sub>/H<sub>2</sub>SO<sub>4</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "Br<sub>2</sub>/AlBr<sub>3</sub>, HNO<sub>3</sub>/H<sub>2</sub>SO<sub>4</sub>, NaCN, H<sub>3</sub>O<sup>+</sup>"
+        },
+        {
+          "identifier": "D",
+          "content": "HNO<sub>3</sub>/H<sub>2</sub>SO<sub>4</sub>, Br<sub>2</sub>/AlBr<sub>3</sub>, Mg/ether, CO<sub>2</sub>, H<sub>3</sub>O<sup>+</sup>"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1ktchu1jc/70082952-c67a-4740-9189-18c0270edf7c/40c17c80-112f-11ec-a8f2-7da4f0f15eab/file-1ktchu1jd.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 26th August Morning Shift Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 162 English Explanation\">"
+    }
+  ]
+}

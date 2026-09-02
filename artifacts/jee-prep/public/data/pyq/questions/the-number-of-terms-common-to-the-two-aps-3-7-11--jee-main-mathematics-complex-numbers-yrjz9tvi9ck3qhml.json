@@ -1,0 +1,22 @@
+{
+  "questions": [
+    {
+      "question_id": "WbC8tVOvR5LmL8klSE7k9k2k5khzuf1",
+      "paperTitle": "JEE Main 2020 (Online) 9th January Evening Slot",
+      "year": 2020,
+      "examDate": "2020-01-09 14:30",
+      "subject": "mathematics",
+      "chapter": "sequences-and-series",
+      "chapterGroup": "algebra",
+      "topic": "arithmetic-progression",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 0,
+      "permalink": "the-number-of-terms-common-to-the-two-aps-3-7-11--jee-main-mathematics-complex-numbers-yrjz9tvi9ck3qhml",
+      "content": "The number of terms common to the two A.P.'s\n3, 7, 11, ....., 407 and 2, 9, 16, ....., 709 is ______.",
+      "options": [],
+      "correct_options": [],
+      "explanation": "First A.P. is 3, 7, 11, 15, 19, 23, ..... 407\n<br><br>d<sub>1</sub> = 4\n<br><br>Second A.P. is 2, 9, 16, 23, ..... 709\n<br><br>d<sub>2</sub> = 7\n<br><br>First common term = 23\n<br><br>Common difference of new A.P using the common terms of the two given A.P's is d = L.C.M. (4, 7) = 28\n<br><br>Last term <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.312ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.751ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -636 778 774\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2264\" xlink:href=\"#MJX-TEX-N-2264\"></use></g></g></g></svg></mjx-container> 407\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container>  23 + (n – 1) (28) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.312ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.751ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -636 778 774\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2264\" xlink:href=\"#MJX-TEX-N-2264\"></use></g></g></g></svg></mjx-container> 407\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> n <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.312ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.751ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -636 778 774\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2264\" xlink:href=\"#MJX-TEX-N-2264\"></use></g></g></g></svg></mjx-container> 14.7\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> n = 14"
+    }
+  ]
+}

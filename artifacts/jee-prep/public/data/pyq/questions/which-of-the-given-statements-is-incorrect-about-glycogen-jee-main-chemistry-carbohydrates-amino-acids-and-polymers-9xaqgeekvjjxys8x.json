@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "iJqmxfLizA998lW0mZ3rsa0w2w9jx8566pb",
+      "paperTitle": "JEE Main 2019 (Online) 12th April Evening Slot",
+      "year": 2019,
+      "examDate": "2019-04-12 14:30",
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "carbohydrates",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-given-statements-is-incorrect-about-glycogen-jee-main-chemistry-carbohydrates-amino-acids-and-polymers-9xaqgeekvjjxys8x",
+      "content": "Which of the given statements is <b>INCORRECT</b> about glycogen? ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "It is a straight chain polymer similar to amylose"
+        },
+        {
+          "identifier": "B",
+          "content": "It is present in animal cells"
+        },
+        {
+          "identifier": "C",
+          "content": "It is present in some yeast and fungi"
+        },
+        {
+          "identifier": "D",
+          "content": "Only <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.448ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 640 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D6FC\" xlink:href=\"#MJX-TEX-I-1D6FC\"></use></g></g></g></svg></mjx-container>-linkages are present in the molecule"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Glycogen is   branch chain polymer."
+    }
+  ]
+}

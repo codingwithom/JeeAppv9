@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "czWAhovnDSC6EQ8yCEOxI",
+      "paperTitle": "JEE Main 2019 (Online) 9th April Evening Slot",
+      "year": 2019,
+      "examDate": "2019-04-09 14:30",
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "coordination-number",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-maximum-possible-denticities-of-a-ligand-given-below-tow-jee-main-chemistry-some-basic-concepts-of-chemistry-ap1jslipam97xk6w",
+      "content": "The maximum possible denticities of a ligand\ngiven below towards a common transition and\ninner-transition metal ion, respectively, are :\n<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jf769xsjzhdgfn2/f2752697-adde-484d-867c-6dc02164a6c3/8faf84e0-c1ef-11e9-bec9-eb7a83e2b7e4/file-jf769xsjzhdgfn3-320w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/jf769xsjzhdgfn2/f2752697-adde-484d-867c-6dc02164a6c3/8faf84e0-c1ef-11e9-bec9-eb7a83e2b7e4/file-jf769xsjzhdgfn3-500w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 9th April Evening Slot Chemistry - Coordination Compounds Question 285 English\"></picture>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "8 and 6"
+        },
+        {
+          "identifier": "B",
+          "content": "8 and 8"
+        },
+        {
+          "identifier": "C",
+          "content": "6 and 8"
+        },
+        {
+          "identifier": "D",
+          "content": "6 and 6"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "The maximum possible denticities of the given\nligand towards transition metal ion is 6.\n<br><br>The maximum possible denticities of the given\nligand\ntowards inner transition metal ion is 8."
+    }
+  ]
+}

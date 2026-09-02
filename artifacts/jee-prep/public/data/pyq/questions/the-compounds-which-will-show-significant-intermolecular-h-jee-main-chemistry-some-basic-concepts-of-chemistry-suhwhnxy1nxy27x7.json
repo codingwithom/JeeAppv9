@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktfrw0hi",
+      "paperTitle": "JEE Main 2021 (Online) 27th August Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "electron-displacement-effect",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-compounds-which-will-show-significant-intermolecular-h-jee-main-chemistry-some-basic-concepts-of-chemistry-suhwhnxy1nxy27x7",
+      "content": "The compound/s which will show significant intermolecular H-bonding is/are :<br><br><picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1ktsbz5ku/809813fb-501e-4f99-80a9-8f15d5ad2976/e28a11e0-19e4-11ec-8cd3-e32b94d20e48/file-1ktsbz5kv-320w.jpeg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1ktsbz5ku/809813fb-501e-4f99-80a9-8f15d5ad2976/e28a11e0-19e4-11ec-8cd3-e32b94d20e48/file-1ktsbz5kv-500w.jpeg\"><img src=\"https://imagex.cdn.examgoal.net/1ktsbz5ku/809813fb-501e-4f99-80a9-8f15d5ad2976/e28a11e0-19e4-11ec-8cd3-e32b94d20e48/file-1ktsbz5kv.jpeg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 27th August Evening Shift Chemistry - Basics of Organic Chemistry Question 176 English\"></picture>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(b) only"
+        },
+        {
+          "identifier": "B",
+          "content": "(c) only"
+        },
+        {
+          "identifier": "C",
+          "content": "(a) and (b) only"
+        },
+        {
+          "identifier": "D",
+          "content": "(a), (b) and (c)"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "(a) Shows intra molecular H-bonding<br><br>(b) Shows significant intermolecular H-bonding<br><br>(c) It do not show intermolecular H-bonding due to steric hindrance."
+    }
+  ]
+}

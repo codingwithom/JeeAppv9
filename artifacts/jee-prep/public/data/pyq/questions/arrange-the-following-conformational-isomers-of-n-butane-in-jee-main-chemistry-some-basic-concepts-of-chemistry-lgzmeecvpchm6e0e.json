@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktjuua24",
+      "paperTitle": "JEE Main 2021 (Online) 31st August Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "isomerism",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "arrange-the-following-conformational-isomers-of-n-butane-in-jee-main-chemistry-some-basic-concepts-of-chemistry-lgzmeecvpchm6e0e",
+      "content": "Arrange the following conformational isomers of n-butane in order of their increasing potential energy :<br><br><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1kwm6jn7t/fd69ea47-cb20-44c6-aba6-42babf9e180d/97d00390-51e7-11ec-aa06-896b010d97dd/file-1kwm6jn7u.jpeg?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1kwm6jn7t/fd69ea47-cb20-44c6-aba6-42babf9e180d/97d00390-51e7-11ec-aa06-896b010d97dd/file-1kwm6jn7u.jpeg\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2021 (Online) 31st August Evening Shift Chemistry - Basics of Organic Chemistry Question 172 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1kwm6jn7t/fd69ea47-cb20-44c6-aba6-42babf9e180d/97d00390-51e7-11ec-aa06-896b010d97dd/file-1kwm6jn7u.jpeg?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1kwm6jn7t/fd69ea47-cb20-44c6-aba6-42babf9e180d/97d00390-51e7-11ec-aa06-896b010d97dd/file-1kwm6jn7u.jpeg?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1kwm6jn7t/fd69ea47-cb20-44c6-aba6-42babf9e180d/97d00390-51e7-11ec-aa06-896b010d97dd/file-1kwm6jn7u.jpeg?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1kwm6jn7t/fd69ea47-cb20-44c6-aba6-42babf9e180d/97d00390-51e7-11ec-aa06-896b010d97dd/file-1kwm6jn7u.jpeg?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1kwm6jn7t/fd69ea47-cb20-44c6-aba6-42babf9e180d/97d00390-51e7-11ec-aa06-896b010d97dd/file-1kwm6jn7u.jpeg?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1kwm6jn7t/fd69ea47-cb20-44c6-aba6-42babf9e180d/97d00390-51e7-11ec-aa06-896b010d97dd/file-1kwm6jn7u.jpeg?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "II &lt; III &lt; IV &lt; I"
+        },
+        {
+          "identifier": "B",
+          "content": "I &lt; IV &lt; III &lt; II"
+        },
+        {
+          "identifier": "C",
+          "content": "II &lt; IV &lt; III &lt; I"
+        },
+        {
+          "identifier": "D",
+          "content": "I &lt; III &lt; IV &lt; II"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "More stable less potential energy.<br><br>Stability order : I &gt; III &gt; IV &gt; II<br><br>So<br><br>Potential energy : II &gt; IV &gt; III &gt; I"
+    }
+  ]
+}

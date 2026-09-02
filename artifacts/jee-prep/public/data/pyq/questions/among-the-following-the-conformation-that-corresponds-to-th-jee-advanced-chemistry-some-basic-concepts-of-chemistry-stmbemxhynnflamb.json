@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1kufk9qbw",
+      "paperTitle": "JEE Advanced 2021 Paper 1 Online",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "isomerism",
+      "type": "mcq",
+      "marks": 3,
+      "negMarks": 1,
+      "permalink": "among-the-following-the-conformation-that-corresponds-to-th-jee-advanced-chemistry-some-basic-concepts-of-chemistry-stmbemxhynnflamb",
+      "content": "Among the following, the conformation that corresponds to the most stable conformation of meso-butane-2,3-diol is ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kufzlkui/1cdcdfb8-bb58-426d-9fd3-cbf841f37884/4b0ac2a0-26e7-11ec-8f50-79560aebf318/file-1kufzlkuj.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2021 Paper 1 Online Chemistry - Basics of Organic Chemistry Question 30 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kufzlu5i/70e79ef9-4e45-47db-ae7d-c4a2fbe41160/523ad150-26e7-11ec-976d-ad3b8bef3889/file-1kufzlu5j.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2021 Paper 1 Online Chemistry - Basics of Organic Chemistry Question 30 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kufzm2t5/4c98692a-c4d0-43f1-bbed-8ad14dadcc09/58eada90-26e7-11ec-976d-ad3b8bef3889/file-1kufzm2t6.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2021 Paper 1 Online Chemistry - Basics of Organic Chemistry Question 30 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kufzmbac/ba251343-410e-42f3-8f72-a4658379d0b5/5f775640-26e7-11ec-976d-ad3b8bef3889/file-1kufzmbad.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2021 Paper 1 Online Chemistry - Basics of Organic Chemistry Question 30 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<p>Due to the intramolecular H-bonding, the gauche conformation of butane-2,3-diol is most stable one.</p>\n<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l742g3z7/1a06da1c-aae0-4149-89ec-5ba7bd1390e4/d67c3730-21b7-11ed-8ecf-fb22c6b3ab98/file-1l742g3z8.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l742g3z7/1a06da1c-aae0-4149-89ec-5ba7bd1390e4/d67c3730-21b7-11ed-8ecf-fb22c6b3ab98/file-1l742g3z8.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Advanced 2021 Paper 1 Online Chemistry - Basics of Organic Chemistry Question 30 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l742g3z7/1a06da1c-aae0-4149-89ec-5ba7bd1390e4/d67c3730-21b7-11ed-8ecf-fb22c6b3ab98/file-1l742g3z8.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l742g3z7/1a06da1c-aae0-4149-89ec-5ba7bd1390e4/d67c3730-21b7-11ed-8ecf-fb22c6b3ab98/file-1l742g3z8.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l742g3z7/1a06da1c-aae0-4149-89ec-5ba7bd1390e4/d67c3730-21b7-11ed-8ecf-fb22c6b3ab98/file-1l742g3z8.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l742g3z7/1a06da1c-aae0-4149-89ec-5ba7bd1390e4/d67c3730-21b7-11ed-8ecf-fb22c6b3ab98/file-1l742g3z8.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l742g3z7/1a06da1c-aae0-4149-89ec-5ba7bd1390e4/d67c3730-21b7-11ed-8ecf-fb22c6b3ab98/file-1l742g3z8.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l742g3z7/1a06da1c-aae0-4149-89ec-5ba7bd1390e4/d67c3730-21b7-11ed-8ecf-fb22c6b3ab98/file-1l742g3z8.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "NtOU10wGVAjgXloUC67k9k2k5dzwz5z",
+      "paperTitle": "JEE Main 2020 (Online) 7th January Morning Slot",
+      "year": 2020,
+      "examDate": "2020-01-07 09:30",
+      "subject": "chemistry",
+      "chapter": "compounds-containing-nitrogen",
+      "chapterGroup": "organic-chemistry",
+      "topic": "aromatic-amines",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "consider-the-following-reaction-brbr-img-srchttps-jee-main-chemistry-analytical-chemistry-zwa7ordtmpvzpooz",
+      "content": "Consider the following reaction :<br><br>\n<img src=\"https://imagex.cdn.examgoal.net/7k9k2k5dzvjus/bab33115-0877-4b85-9220-0de4f75e6b1d/66987040-36dd-11ea-92dd-4b9c3519996f/file-7k9k2k5dzvjut-458w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 7th January Morning Slot Chemistry - Compounds Containing Nitrogen Question 204 English\"><br>\nThe product 'X' is used :\n",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "as food grade colourant\n"
+        },
+        {
+          "identifier": "B",
+          "content": "in acid base titration as an indicatior."
+        },
+        {
+          "identifier": "C",
+          "content": "in laboratory test for phenols"
+        },
+        {
+          "identifier": "D",
+          "content": "in protein estimation as an alternative to ninhydrin."
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/7kd4dk6d4t4ac/a063ebbb-6766-4f48-b39a-783a3514d04e/1f539b40-4a30-11ea-b62d-51ccc5d4afb6/file-7kd4dk6d4t4ad-320w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 7th January Morning Slot Chemistry - Compounds Containing Nitrogen Question 204 English Explanation\">\n<br>Formed product is methyl orange and it is used\nas an indicator in acid base titrations."
+    }
+  ]
+}

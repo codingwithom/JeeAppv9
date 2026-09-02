@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktb5pthc",
+      "paperTitle": "JEE Main 2021 (Online) 26th August Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "hybridization-and-vsepr-theory",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "absub3sub-is-an-interhalogen-t-shaped-molecule-the-num-jee-main-chemistry-some-basic-concepts-of-chemistry-iolhhjpfp6cgu5hj",
+      "content": "AB<sub>3</sub> is an interhalogen T-shaped molecule. The number of lone pairs of electrons on A is __________. (Integer answer)",
+      "options": [],
+      "correct_options": [],
+      "explanation": "T-shaped molecule means 3 sigma bond and 2 lone pairs of electron on central atom.<br><br><img src=\"https://imagex.cdn.examgoal.net/1ktci2xts/0e172b5b-7ab4-49a9-a8b3-64a5e672ffbf/382c1c00-1130-11ec-a8f2-7da4f0f15eab/file-1ktci2xtt.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 26th August Morning Shift Chemistry - Chemical Bonding &amp; Molecular Structure Question 163 English Explanation\">"
+    }
+  ]
+}

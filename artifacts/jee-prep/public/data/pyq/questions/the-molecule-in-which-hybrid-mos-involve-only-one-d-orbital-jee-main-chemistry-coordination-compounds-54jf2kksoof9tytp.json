@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "L0VS4HVimhCxFQFW0sjgy2xukfcf82dc",
+      "paperTitle": "JEE Main 2020 (Online) 4th September Evening Slot",
+      "year": 2020,
+      "examDate": "2020-09-04 15:00",
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "warners-theory-and-valence-bond-theory",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-molecule-in-which-hybrid-mos-involve-only-one-d-orbital-jee-main-chemistry-coordination-compounds-54jf2kksoof9tytp",
+      "content": "The molecule in which hybrid MOs involve only\none d-orbital of the central atom is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "XeF<sub>4</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "[Ni(CN)<sub>4</sub>]<sup>2–</sup>"
+        },
+        {
+          "identifier": "C",
+          "content": "[CrF<sub>6</sub>]<sup>3–</sup>"
+        },
+        {
+          "identifier": "D",
+          "content": "BrF<sub>5</sub>"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "XeF<sub>4</sub> = sp<sup>3</sup>d<sup>2</sup>\n<br><br>[Ni(CN)<sub>4</sub>]<sup>2–</sup> = dsp<sup>2</sup>\n<br><br>[CrF<sub>6</sub>]<sup>3–</sup> = d<sup>2</sup>sp<sup>2</sup>\n<br><br>BrF<sub>5</sub> = sp<sup>3</sup>d<sup>2</sup>"
+    }
+  ]
+}

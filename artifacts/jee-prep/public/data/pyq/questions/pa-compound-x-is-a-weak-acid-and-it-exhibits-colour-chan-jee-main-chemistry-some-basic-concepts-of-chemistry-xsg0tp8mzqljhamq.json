@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l6rl5zgs",
+      "paperTitle": "JEE Main 2022 (Online) 29th July Evening Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "redox-reactions",
+      "chapterGroup": "physical-chemistry",
+      "topic": "redox-titration",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pa-compound-x-is-a-weak-acid-and-it-exhibits-colour-chan-jee-main-chemistry-some-basic-concepts-of-chemistry-xsg0tp8mzqljhamq",
+      "content": "<p>A compound 'X' is a weak acid and it exhibits colour change at pH close to the equivalence point during neutralization of NaOH with <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.375ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"11.169ex\" height=\"1.97ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 4936.6 870.6\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"43\" xlink:href=\"#MJX-TEX-N-43\"></use><use data-c=\"48\" xlink:href=\"#MJX-TEX-N-48\" transform=\"translate(722,0)\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1505,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1908.6,0)\"><g data-mml-node=\"mi\"><use data-c=\"43\" xlink:href=\"#MJX-TEX-N-43\"></use><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\" transform=\"translate(722,0)\"></use><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\" transform=\"translate(1500,0)\"></use><use data-c=\"48\" xlink:href=\"#MJX-TEX-N-48\" transform=\"translate(2278,0)\"></use></g></g></g></g></svg></mjx-container>. Compound 'X' exists in ionized form in basic medium. The compound 'X' is</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "methyl orange"
+        },
+        {
+          "identifier": "B",
+          "content": "methyl red"
+        },
+        {
+          "identifier": "C",
+          "content": "phenolphthalein"
+        },
+        {
+          "identifier": "D",
+          "content": "erichrome Black T"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Phenolphthalein is weak acid give colour in basic\nmedium."
+    }
+  ]
+}

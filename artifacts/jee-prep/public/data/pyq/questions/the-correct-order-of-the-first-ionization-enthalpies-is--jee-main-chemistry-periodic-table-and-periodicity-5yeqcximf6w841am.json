@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "UnC644xgIaYoAbpIMK3rsa0w2w9jx0wy2s5",
+      "paperTitle": "JEE Main 2019 (Online) 10th April Evening Slot",
+      "year": 2019,
+      "examDate": "2019-04-10 14:30",
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "properties-of-transition-elements",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-correct-order-of-the-first-ionization-enthalpies-is--jee-main-chemistry-periodic-table-and-periodicity-5yeqcximf6w841am",
+      "content": "The correct order of the first ionization enthalpies is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Ti &lt; Mn &lt; Zn &lt; Ni"
+        },
+        {
+          "identifier": "B",
+          "content": "Zn &lt; Ni &lt; Mn &lt; Ti"
+        },
+        {
+          "identifier": "C",
+          "content": "Mn &lt; Ti &lt; Zn &lt; Ni"
+        },
+        {
+          "identifier": "D",
+          "content": "Ti &lt; Mn &lt; Ni &lt; Zn"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "In a period, from left to right ionization enthalpy increses.\n<br><br>So in period 4, correct order for those 4 elements is\n<br><br>Ti &lt; Mn &lt; Ni &lt; Zn\n<br><br>Exceptions in period 4 are\n<br><br>(1) V(Vanadium) &lt; Ti(Titanium)\n<br><br>(2) Ni(Titanium) &lt; Co(Cobalt)\n<br><br>(3) Ga(Gallium) &lt; Zn(Zinc)\n<br><br>(4) Se(Selenium) &lt; As(Arsenic)"
+    }
+  ]
+}

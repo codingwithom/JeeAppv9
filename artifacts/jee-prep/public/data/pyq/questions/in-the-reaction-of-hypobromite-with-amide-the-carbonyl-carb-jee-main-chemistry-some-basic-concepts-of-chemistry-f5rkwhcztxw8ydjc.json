@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "vLAfMdDZwU0wZaX6gq1kmm0yfvt",
+      "paperTitle": "JEE Main 2021 (Online) 18th March Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "compounds-containing-nitrogen",
+      "chapterGroup": "organic-chemistry",
+      "topic": "aliphatic-amines",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "in-the-reaction-of-hypobromite-with-amide-the-carbonyl-carb-jee-main-chemistry-some-basic-concepts-of-chemistry-f5rkwhcztxw8ydjc",
+      "content": "In the reaction of hypobromite with amide, the carbonyl carbon is lost as :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "CO<sub>2</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "CO"
+        },
+        {
+          "identifier": "C",
+          "content": "HCO<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.706ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.432ex\" height=\"2.57ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -823.8 633.1 1136\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msubsup\"><g data-mml-node=\"mi\"></g><g data-mml-node=\"mo\" transform=\"translate(33,411.6) scale(0.707)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(33,-296.6) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g></g></svg></mjx-container>"
+        },
+        {
+          "identifier": "D",
+          "content": "CO<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.706ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.232ex\" height=\"2.703ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -882.5 986.7 1194.7\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msubsup\"><g data-mml-node=\"mi\"></g><g data-mml-node=\"TeXAtom\" transform=\"translate(33,411.6) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(33,-296.6) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g></g></svg></mjx-container>"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<picture><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1kmtkwxmi/c8abe6a2-7a21-4990-a8bc-598a7eb464e3/1befb9a0-8fff-11eb-ab3d-b520898c3b37/file-1kmtkwxmj-500w.jpg\"><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1kmtkwxmi/c8abe6a2-7a21-4990-a8bc-598a7eb464e3/1befb9a0-8fff-11eb-ab3d-b520898c3b37/file-1kmtkwxmj-320w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/1kmtkwxmi/c8abe6a2-7a21-4990-a8bc-598a7eb464e3/1befb9a0-8fff-11eb-ab3d-b520898c3b37/file-1kmtkwxmj.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 18th March Evening Shift Chemistry - Compounds Containing Nitrogen Question 170 English Explanation\"></picture><br>\nCarbonyl carbon is lost as <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.706ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.678ex\" height=\"2.703ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -882.5 2509.7 1194.7\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"msubsup\" transform=\"translate(760,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(796,411.6) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(796,-296.6) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g></g></svg></mjx-container>.\n"
+    }
+  ]
+}

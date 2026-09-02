@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l56xoaew",
+      "paperTitle": "JEE Main 2022 (Online) 27th June Evening Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "warners-theory-and-valence-bond-theory",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "parrange-the-following-coordination-compounds-in-the-incre-jee-main-chemistry-some-basic-concepts-of-chemistry-o1ezvtkohd8ap2w2",
+      "content": "<p>Arrange the following coordination compounds in the increasing order of magnetic moments. (Atomic numbers : Mn = 25; Fe = 26)</p>\n<p>A. [FeF<sub>6</sub>]<sup>3<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container></sup></p>\n<p>B. [Fe(CN)<sub>6</sub>]<sup>3<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container></sup></p>\n<p>C. [MnCl<sub>6</sub>]<sup>3<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container></sup> (high spin)</p>\n<p>D. [Mn(CN)<sub>6</sub>]<sup>3<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container></sup></p>\n<p>Choose the correct answer from the options given below :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "A < B < D < C"
+        },
+        {
+          "identifier": "B",
+          "content": "B < D < C < A"
+        },
+        {
+          "identifier": "C",
+          "content": "A < C < D < B"
+        },
+        {
+          "identifier": "D",
+          "content": "B < D < A < C"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "\n<table class=\"tg\">\n<thead>\n  <tr>\n    <th>Coordination Compound</th>\n    <th>Number of unpaired e<sup>–</sup> (n)</th>\n    <th>Magnetic moment (µ) (B.M)</th>\n  </tr>\n</thead>\n<tbody>\n  <tr>\n    <td>A. [FeF<sub>6</sub>]<sup>3<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container></sup> - d<sup>5</sup></td>\n    <td>5</td>\n    <td>5.91</td>\n  </tr>\n  <tr>\n    <td>B. [Fe(CN)<sub>6</sub>]<sup>3<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container></sup> - d<sup>5</sup></td>\n    <td>1</td>\n    <td>1.73</td>\n  </tr>\n  <tr>\n    <td>C. [MnCl<sub>6</sub>]<sup>3<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container></sup> - d<sup>4</sup></td>\n    <td>4</td>\n    <td>4.89</td>\n  </tr>\n  <tr>\n    <td>D. [Mn(CN)<sub>6</sub>]<sup>3<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container></sup> - d<sup>4</sup></td>\n    <td>2</td>\n    <td>2.82</td>\n  </tr>\n</tbody>\n</table><br>\nHence, correct order of magnetic moment is <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"13.576ex\" height=\"1.622ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -677 6000.7 717\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mo\" transform=\"translate(777.8,0)\"><use data-c=\"3C\" xlink:href=\"#MJX-TEX-N-3C\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1833.6,0)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2611.3,0)\"><use data-c=\"3C\" xlink:href=\"#MJX-TEX-N-3C\"></use></g><g data-mml-node=\"mn\" transform=\"translate(3667.1,0)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g><g data-mml-node=\"mo\" transform=\"translate(4444.9,0)\"><use data-c=\"3C\" xlink:href=\"#MJX-TEX-N-3C\"></use></g><g data-mml-node=\"mn\" transform=\"translate(5500.7,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g></svg></mjx-container>"
+    }
+  ]
+}

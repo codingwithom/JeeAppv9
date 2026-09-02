@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1krusl2pj",
+      "paperTitle": "JEE Main 2021 (Online) 25th July Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "atomic-and-ionic-radius",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-ionic-radii-of-ksupsup-nasupsup-alsup3-jee-main-chemistry-some-basic-concepts-of-chemistry-cymoh4iiiuu05ywk",
+      "content": "The ionic radii of K<sup>+</sup>, Na<sup>+</sup>, Al<sup>3+</sup> and Mg<sup>2+</sup> are in the order:",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Na<sup>+</sup> &lt; K<sup>+</sup> &lt; Mg<sup>2+</sup> &lt; Al<sup>3+</sup>"
+        },
+        {
+          "identifier": "B",
+          "content": "Al<sup>3+</sup> &lt; Mg<sup>2+</sup> &lt; K<sup>+</sup> &lt; Na<sup>+</sup>"
+        },
+        {
+          "identifier": "C",
+          "content": "Al<sup>3+</sup> &lt; Mg<sup>2+</sup> &lt; Na<sup>+</sup> &lt; K<sup>+</sup>"
+        },
+        {
+          "identifier": "D",
+          "content": "K<sup>+</sup> &lt; Al<sup>3+</sup> &lt; Mg<sup>2+</sup> &lt; Na<sup>+</sup>"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Al<sup>3+</sup>, Mg<sup>2+</sup> and Na<sup>+</sup> are isoelectronic ionic species. For monoatomic ionic isoelectronic species as positive charge increases ionic size decreases.<br><br>The order of size of Na<sup>+</sup> &amp; K<sup>+</sup> is Na<sup>+</sup> &lt; K<sup>+</sup><br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> Order of ionic radii is : Al<sup>3+</sup> &lt; Mg<sup>2+</sup> &lt; Na<sup>+</sup> &lt; K<sup>+</sup>"
+    }
+  ]
+}

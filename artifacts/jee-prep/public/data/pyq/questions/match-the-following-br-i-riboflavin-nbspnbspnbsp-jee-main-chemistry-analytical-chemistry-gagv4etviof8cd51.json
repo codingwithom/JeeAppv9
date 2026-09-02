@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "5mmfxVtbZtr0qF7NUE7k9k2k5dz920k",
+      "paperTitle": "JEE Main 2020 (Online) 7th January Morning Slot",
+      "year": 2020,
+      "examDate": "2020-01-07 09:30",
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "vitamins-and-nucleic-acids",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "match-the-following-br-i-riboflavin-nbspnbspnbsp-jee-main-chemistry-analytical-chemistry-gagv4etviof8cd51",
+      "content": "Match the following :<br>\n(i) Riboflavin &nbsp;&nbsp;&nbsp;(a) Beriberi<br>\n(ii) Thiamine&nbsp;&nbsp;&nbsp; (b) Scurvy<br>\n(iii) Pyridoxine &nbsp;&nbsp;(c) Cheliosis<br>\n(iv) Ascorbic acid &nbsp;&nbsp;&nbsp;(d) Convulsions<br>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(i)-(c), (ii)-(d), (iii)-(a), (iv)-(b)"
+        },
+        {
+          "identifier": "B",
+          "content": "(i)-(d), (ii)-(b), (iii)-(a), (iv)-(c)"
+        },
+        {
+          "identifier": "C",
+          "content": "(i)-c, (ii)-(a), (iii)-(d), (iv)-(b)"
+        },
+        {
+          "identifier": "D",
+          "content": "(i)-(a), (ii)-(d), (iii)-(c), (iv)-(b)\n"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Thiamine (vitamin B<sub>1</sub>) : Beriberi\n<br><br>Riboflavin (vitamin B<sub>2</sub>) : Cheilosis\n<br><br>Pyridoxine (vitamin B<sub>6</sub>) : Convulsions\n<br><br>Ascorbic acid (vitamin C) : Scurvy"
+    }
+  ]
+}

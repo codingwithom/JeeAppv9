@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "1krutgjlq",
+      "paperTitle": "JEE Main 2021 (Online) 25th July Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "coordination-number",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "three-moles-of-agcl-get-precipitated-when-one-mole-of-an-oct-jee-main-chemistry-some-basic-concepts-of-chemistry-hsuvsntbulpaven6",
+      "content": "Three moles of AgCl get precipitated when one mole of an octahedral co-ordination compound with empirical formula CrCl<sub>3</sub>.3NH<sub>3</sub>.3H<sub>2</sub>O reacts with excess of silver nitrate. The number of chloride ions satisfying the secondary valency of the metal ion is ______________.",
+      "options": [],
+      "correct_options": [],
+      "explanation": "Mole of AgCl precipitated is equal to mole of Cl<sup>-</sup> present in ionization sphere.<br><br> <picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1krwj77fw/caea6c71-9f05-4a1d-b11d-dbab574109cf/d631fac0-f49b-11eb-9dc6-a7061d629865/file-1krwj77fx-320w.jpeg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1krwj77fw/caea6c71-9f05-4a1d-b11d-dbab574109cf/d631fac0-f49b-11eb-9dc6-a7061d629865/file-1krwj77fx-500w.jpeg\"><source media=\"(max-width: 680px)\" srcset=\"https://imagex.cdn.examgoal.net/1krwj77fw/caea6c71-9f05-4a1d-b11d-dbab574109cf/d631fac0-f49b-11eb-9dc6-a7061d629865/file-1krwj77fx-680w.jpeg\"><source media=\"(max-width: 860px)\" srcset=\"https://imagex.cdn.examgoal.net/1krwj77fw/caea6c71-9f05-4a1d-b11d-dbab574109cf/d631fac0-f49b-11eb-9dc6-a7061d629865/file-1krwj77fx-860w.jpeg\"><img src=\"https://imagex.cdn.examgoal.net/1krwj77fw/caea6c71-9f05-4a1d-b11d-dbab574109cf/d631fac0-f49b-11eb-9dc6-a7061d629865/file-1krwj77fx.jpeg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 25th July Morning Shift Chemistry - Coordination Compounds Question 224 English Explanation\"></picture> <br><br>Since none of Cl<sup>-</sup> is present in the co-ordination sphere. Therefore answer is zero."
+    }
+  ]
+}

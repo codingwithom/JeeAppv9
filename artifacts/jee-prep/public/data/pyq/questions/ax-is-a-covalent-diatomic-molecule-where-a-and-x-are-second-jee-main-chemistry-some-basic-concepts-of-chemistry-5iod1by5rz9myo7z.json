@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "9ZObK2CT7396w4lhw01kmlnkmj6",
+      "paperTitle": "JEE Main 2021 (Online) 18th March Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "molecular-orbital-theory",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "ax-is-a-covalent-diatomic-molecule-where-a-and-x-are-second-jee-main-chemistry-some-basic-concepts-of-chemistry-5iod1by5rz9myo7z",
+      "content": "AX is a covalent diatomic molecule where A and X are second row elements of periodic table. Based on Molecular orbital theory, the bond order of AX is 2.5. The total number of electrons in AX is __________. (Round off to the Nearest Integer).",
+      "options": [],
+      "correct_options": [],
+      "explanation": "The compound AX is NO its bond order is 2.5 and it has total 15 electrons.\n<br><br><b>Note :</b> Total number of electrons equal to 13 will\nalso have the 2.5 bond order. But in this case\nneutral diatomic molecule will not be possible."
+    }
+  ]
+}

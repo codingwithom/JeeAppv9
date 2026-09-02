@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l58jk4d5",
+      "paperTitle": "JEE Main 2022 (Online) 26th June Evening Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "inner-transition-elements-lanthanoids-and-actinoids",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pthe-most-common-oxidation-state-of-lanthanoid-elements-is-jee-main-chemistry-some-basic-concepts-of-chemistry-mfabcoqpz2knfkcm",
+      "content": "<p>The most common oxidation state of Lanthanoid elements is +3. Which of the following is likely to deviate easily from +3 oxidation state?</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Ce (At. No. 58)"
+        },
+        {
+          "identifier": "B",
+          "content": "La (At. No. 57)"
+        },
+        {
+          "identifier": "C",
+          "content": "Lu (At. No. 71)"
+        },
+        {
+          "identifier": "D",
+          "content": "Gd (At. No. 64)"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Ce → [Xe]4f<sup>1</sup> 5d<sup>1</sup> 6s<sup>2</sup><br/><br/>\nCe<sup>+4</sup> → [xe] 4f° 5d° 6s°<br/><br/>\nCerium in +4 oxidation state acquires inert gas\nconfiguration."
+    }
+  ]
+}

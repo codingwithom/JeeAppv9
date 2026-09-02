@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ldwwxq9r",
+      "paperTitle": "JEE Main 2023 (Online) 24th January Evening Shift",
+      "year": 2023,
+      "subject": "mathematics",
+      "chapter": "permutations-and-combinations",
+      "chapterGroup": "algebra",
+      "topic": "conditional-combinations",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pthe-number-of-square-matrices-of-order-5-with-entries-fro-jee-main-mathematics-trigonometric-functions-and-equations-xcm4va7gwipe4kt5",
+      "content": "<p>The number of square matrices of order 5 with entries from the set {0, 1}, such that the sum of all the elements in each row is 1 and the sum of all the elements in each column is also 1, is :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "125"
+        },
+        {
+          "identifier": "B",
+          "content": "150"
+        },
+        {
+          "identifier": "C",
+          "content": "225"
+        },
+        {
+          "identifier": "D",
+          "content": "120"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<p><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1le5h0vkb/6ab5456d-64a1-4237-89f3-e400627057ab/241652a0-ad13-11ed-8a8c-4d67f5492755/file-1le5h0vkc.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1le5h0vkb/6ab5456d-64a1-4237-89f3-e400627057ab/241652a0-ad13-11ed-8a8c-4d67f5492755/file-1le5h0vkc.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2023 (Online) 24th January Evening Shift Mathematics - Permutations and Combinations Question 88 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1le5h0vkb/6ab5456d-64a1-4237-89f3-e400627057ab/241652a0-ad13-11ed-8a8c-4d67f5492755/file-1le5h0vkc.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1le5h0vkb/6ab5456d-64a1-4237-89f3-e400627057ab/241652a0-ad13-11ed-8a8c-4d67f5492755/file-1le5h0vkc.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1le5h0vkb/6ab5456d-64a1-4237-89f3-e400627057ab/241652a0-ad13-11ed-8a8c-4d67f5492755/file-1le5h0vkc.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1le5h0vkb/6ab5456d-64a1-4237-89f3-e400627057ab/241652a0-ad13-11ed-8a8c-4d67f5492755/file-1le5h0vkc.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1le5h0vkb/6ab5456d-64a1-4237-89f3-e400627057ab/241652a0-ad13-11ed-8a8c-4d67f5492755/file-1le5h0vkc.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1le5h0vkb/6ab5456d-64a1-4237-89f3-e400627057ab/241652a0-ad13-11ed-8a8c-4d67f5492755/file-1le5h0vkc.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"></p>\n<p><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2235\" xlink:href=\"#MJX-TEX-N-2235\"></use></g></g></g></svg></mjx-container> In every row and every column there would be exactly one 1 and four zeroes.\n<br><br>\nNumber of matrices <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"29.28ex\" height=\"2.244ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -841.7 12941.9 991.7\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"msup\" transform=\"translate(1055.8,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"></g><g data-mml-node=\"TeXAtom\" transform=\"translate(33,363) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use></g></g></g><g data-mml-node=\"msub\" transform=\"translate(1492.3,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(748,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(2866.1,0)\"><use data-c=\"22C5\" xlink:href=\"#MJX-TEX-N-22C5\"></use></g><g data-mml-node=\"msup\" transform=\"translate(3366.3,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"></g><g data-mml-node=\"TeXAtom\" transform=\"translate(33,363) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g><g data-mml-node=\"msub\" transform=\"translate(3802.9,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(748,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(5176.7,0)\"><use data-c=\"22C5\" xlink:href=\"#MJX-TEX-N-22C5\"></use></g><g data-mml-node=\"msup\" transform=\"translate(5676.9,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"></g><g data-mml-node=\"TeXAtom\" transform=\"translate(33,363) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g><g data-mml-node=\"msub\" transform=\"translate(6113.4,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(748,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(7487.2,0)\"><use data-c=\"22C5\" xlink:href=\"#MJX-TEX-N-22C5\"></use></g><g data-mml-node=\"msup\" transform=\"translate(7987.4,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"></g><g data-mml-node=\"TeXAtom\" transform=\"translate(33,363) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"msub\" transform=\"translate(8424,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(748,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(9797.8,0)\"><use data-c=\"22C5\" xlink:href=\"#MJX-TEX-N-22C5\"></use></g><g data-mml-node=\"msup\" transform=\"translate(10298,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"></g><g data-mml-node=\"TeXAtom\" transform=\"translate(33,363) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g><g data-mml-node=\"msub\" transform=\"translate(10734.5,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(748,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(12163.9,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g></g></g></svg></mjx-container> 120</p>"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1lguwarzq",
+      "paperTitle": "JEE Main 2023 (Online) 11th April Morning Shift",
+      "year": 2023,
+      "subject": "mathematics",
+      "chapter": "sets-and-relations",
+      "chapterGroup": "algebra",
+      "topic": "venn-diagram",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pan-organization-awarded-48-medals-in-event-a-25-in-eve-jee-main-mathematics-trigonometric-functions-and-equations-lcxmkeayuwzfnhcg",
+      "content": "<p>An organization awarded 48 medals in event 'A', 25 in event 'B' and 18 in event 'C'. If these medals went to total 60 men and only five men got medals in all the three events, then, how many received medals in exactly two of three events?</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "10"
+        },
+        {
+          "identifier": "B",
+          "content": "15"
+        },
+        {
+          "identifier": "C",
+          "content": "21"
+        },
+        {
+          "identifier": "D",
+          "content": "9"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<ol>\n<li><p>We are given the number of medals for events A, B, and C which are 48, 25, and 18 respectively. We are also given that the total number of unique medal recipients across all events is 60 and that 5 people received a medal in all three events.</p>\n</li>\n<br><li><p>Using the Principle of Inclusion and Exclusion (PIE), we know that the total number of unique medal recipients can be calculated by adding the number of medal recipients in each event, subtracting the number of people who received a medal in any two events (to correct for double counting), and then adding back the number of people who received a medal in all three events (since we subtracted these people too much). </p>\n<br><p>Mathematically, this can be represented as :</p>\n<br><p>|A ∪ B ∪ C| = |A| + |B| + |C| - |A ∩ B| - |B ∩ C| - |C ∩ A| + |A ∩ B ∩ C|</p>\n<br><p>However, we want to find the total number of people who received a medal in any two events (which is represented by |A ∩ B| + |B ∩ C| + |C ∩ A| in the equation).</p>\n<br><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/6y3zli1ljaginws/88d6b048-49b9-4f92-be73-c0b995c4c9c3/29c085b0-12ce-11ee-9fec-35dc3a4c73b2/file-6y3zli1ljaginwt.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/6y3zli1ljaginws/88d6b048-49b9-4f92-be73-c0b995c4c9c3/29c085b0-12ce-11ee-9fec-35dc3a4c73b2/file-6y3zli1ljaginwt.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh;vertical-align:baseline\" alt=\"JEE Main 2023 (Online) 11th April Morning Shift Mathematics - Sets and Relations Question 62 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/6y3zli1ljaginws/88d6b048-49b9-4f92-be73-c0b995c4c9c3/29c085b0-12ce-11ee-9fec-35dc3a4c73b2/file-6y3zli1ljaginwt.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/6y3zli1ljaginws/88d6b048-49b9-4f92-be73-c0b995c4c9c3/29c085b0-12ce-11ee-9fec-35dc3a4c73b2/file-6y3zli1ljaginwt.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/6y3zli1ljaginws/88d6b048-49b9-4f92-be73-c0b995c4c9c3/29c085b0-12ce-11ee-9fec-35dc3a4c73b2/file-6y3zli1ljaginwt.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/6y3zli1ljaginws/88d6b048-49b9-4f92-be73-c0b995c4c9c3/29c085b0-12ce-11ee-9fec-35dc3a4c73b2/file-6y3zli1ljaginwt.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/6y3zli1ljaginws/88d6b048-49b9-4f92-be73-c0b995c4c9c3/29c085b0-12ce-11ee-9fec-35dc3a4c73b2/file-6y3zli1ljaginwt.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/6y3zli1ljaginws/88d6b048-49b9-4f92-be73-c0b995c4c9c3/29c085b0-12ce-11ee-9fec-35dc3a4c73b2/file-6y3zli1ljaginwt.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">\n</li>\n<br><li><p>To find this, we rearrange the PIE formula to solve for |A ∩ B| + |B ∩ C| + |C ∩ A| :</p>\n<br><p>|A ∩ B| + |B ∩ C| + |C ∩ A| = |A| + |B| + |C| + |A ∩ B ∩ C| - |A ∪ B ∪ C|</p>\n<br><p>Substituting the given values, we find that the total number of people who received a medal in any two events is 48 + 25 + 18 + 5 - 60 = 36.</p>\n</li>\n<br><li><p>However, this includes people who received a medal in all three events, and we want to find the number of people who received a medal in exactly two events. Therefore, we need to subtract the people who received a medal in all three events from our calculated value. </p>\n<br><p>Since each person who received a medal in all three events is counted three times in |A ∩ B| + |B ∩ C| + |C ∩ A| (once for each pair of events), we subtract three times the number of people who received a medal in all three events from our calculated value:</p>\n<br><p>Number of people who received a medal in exactly two events = |A ∩ B| + |B ∩ C| + |C ∩ A| - 3 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> |A ∩ B ∩ C|</p>\n<br><p>Substituting the values we know, we find that the number of people who received a medal in exactly two events is 36 - 3 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 5 = 21.</p>\n</li>\n</ol>\n<p>Therefore, 21 people received a medal in exactly two of the three events.</p>\n"
+    }
+  ]
+}

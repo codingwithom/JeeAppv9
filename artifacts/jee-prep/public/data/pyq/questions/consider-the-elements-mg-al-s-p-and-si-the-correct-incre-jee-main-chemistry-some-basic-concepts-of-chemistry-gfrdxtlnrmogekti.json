@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "s1BB1rArLsvSgZvLU51klre8bvz",
+      "paperTitle": "JEE Main 2021 (Online) 24th February Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "ionization-energy",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "consider-the-elements-mg-al-s-p-and-si-the-correct-incre-jee-main-chemistry-some-basic-concepts-of-chemistry-gfrdxtlnrmogekti",
+      "content": "Consider the elements Mg, Al, S, P and Si, the correct increasing order of their first ionization\nenthalpy is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Al &lt; Mg &lt; Si &lt; S &lt; P"
+        },
+        {
+          "identifier": "B",
+          "content": "Al &lt; Mg &lt; S &lt; Si &lt; P"
+        },
+        {
+          "identifier": "C",
+          "content": "Mg &lt; Al &lt; Si &lt; S &lt; P"
+        },
+        {
+          "identifier": "D",
+          "content": "Mg &lt; Al &lt; Si &lt; P &lt; S"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<p>On moving left to right in a period of the periodic table,\nIonisation energy (I.E.) increases due to increase in effective nuclear\ncharge i.e. Z<sub>eff</sub>.</p>\n<p>But due to extra stability of fully filled and half-filled electronic\nconfiguration of Mg and P required ionisation enthalpy is more from\nneighbouring elements.</p>\n<p>i.e. First ionisation enthalpy order is Al < Mg < Si < S < P.</p>\n"
+    }
+  ]
+}

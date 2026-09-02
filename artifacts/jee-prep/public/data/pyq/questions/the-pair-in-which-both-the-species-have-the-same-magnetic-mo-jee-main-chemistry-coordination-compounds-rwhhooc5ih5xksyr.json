@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "ZasO1dmCZvKvS5eZ86jgy2xukf9juj6x",
+      "paperTitle": "JEE Main 2020 (Online) 4th September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-04 09:00",
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "warners-theory-and-valence-bond-theory",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-pair-in-which-both-the-species-have-the-same-magnetic-mo-jee-main-chemistry-coordination-compounds-rwhhooc5ih5xksyr",
+      "content": "The pair in which both the species have the\nsame magnetic moment (spin only) is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "[Cr(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> and [CoCl<sub>4</sub>]<sup>2–</sup>"
+        },
+        {
+          "identifier": "B",
+          "content": "[Co(OH)<sub>4</sub>]<sup>2–</sup> and [Fe(NH<sub>3</sub>)<sub>6</sub>]<sup>2+</sup>"
+        },
+        {
+          "identifier": "C",
+          "content": "[Mn(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> and [Cr(H<sub>2</sub>O)]<sup>2+</sup>"
+        },
+        {
+          "identifier": "D",
+          "content": "[Cr(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> and [Fe(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup>"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Species with same number of unpaired\nelectrons have equal magnetic moment.\n<br><br>\n<table class=\"tg\">\n<thead>\n  <tr>\n    <th class=\"tg-amwm\">Complex</th>\n    <th class=\"tg-amwm\">Ligand</th>\n    <th class=\"tg-amwm\">Ligand Type</th>\n    <th class=\"tg-amwm\">Number of unpaired electrons</th>\n  </tr>\n</thead>\n<tbody>\n  <tr>\n    <td class=\"tg-baqh\">[Mn(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup></td>\n    <td class=\"tg-baqh\">H<sub>2</sub>O</td>\n    <td class=\"tg-baqh\">Weak Field Ligand</td>\n    <td class=\"tg-baqh\">5</td>\n  </tr>\n  <tr>\n    <td class=\"tg-baqh\">[Cr(H<sub>2</sub>O)]<sup>2+</sup></td>\n    <td class=\"tg-baqh\">H<sub>2</sub>O</td>\n    <td class=\"tg-baqh\">Weak Field Ligand</td>\n    <td class=\"tg-baqh\">4</td>\n  </tr>\n  <tr>\n    <td class=\"tg-baqh\">[CoCl<sub>4</sub>]<sup>2–</sup></td>\n    <td class=\"tg-baqh\">Cl</td>\n    <td class=\"tg-baqh\">Weak Field Ligand</td>\n    <td class=\"tg-baqh\">3</td>\n  </tr>\n  <tr>\n    <td class=\"tg-baqh\">[Fe(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup></td>\n    <td class=\"tg-baqh\">H<sub>2</sub>O</td>\n    <td class=\"tg-baqh\">Weak Field Ligand</td>\n    <td class=\"tg-baqh\">4</td>\n  </tr>\n  <tr>\n    <td class=\"tg-baqh\">[Co(OH)<sub>4</sub>]<sup>2–</sup></td>\n    <td class=\"tg-baqh\">OH</td>\n    <td class=\"tg-baqh\">Weak Field Ligand</td>\n    <td class=\"tg-baqh\">3</td>\n  </tr>\n  <tr>\n    <td class=\"tg-baqh\">[Fe(NH<sub>3</sub>)<sub>6</sub>]<sup>2+</sup></td>\n    <td class=\"tg-baqh\">NH<sub>3</sub></td>\n    <td class=\"tg-baqh\">Weak Field Ligand</td>\n    <td class=\"tg-baqh\">4</td>\n  </tr>\n</tbody>\n</table>"
+    }
+  ]
+}

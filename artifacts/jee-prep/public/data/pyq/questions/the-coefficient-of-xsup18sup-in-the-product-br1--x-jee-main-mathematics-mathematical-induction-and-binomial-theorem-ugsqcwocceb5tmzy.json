@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "PTfHNLUxmzZnbpCIRr3rsa0w2w9jx5ztehd",
+      "paperTitle": "JEE Main 2019 (Online) 12th April Morning Slot",
+      "year": 2019,
+      "examDate": "2019-04-12 09:30",
+      "subject": "mathematics",
+      "chapter": "binomial-theorem",
+      "chapterGroup": "algebra",
+      "topic": "general-term",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-coefficient-of-xsup18sup-in-the-product-br1--x-jee-main-mathematics-mathematical-induction-and-binomial-theorem-ugsqcwocceb5tmzy",
+      "content": "The coefficient of x<sup>18</sup> in the product\n<br>(1 + x) (1 – x)<sup>10</sup> (1 + x + x<sup>2</sup>)<sup>9</sup>\n is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "126"
+        },
+        {
+          "identifier": "B",
+          "content": "- 84"
+        },
+        {
+          "identifier": "C",
+          "content": "- 126"
+        },
+        {
+          "identifier": "D",
+          "content": "84"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Coefficient of x<sup>18</sup> in (1 + x) (1 - x)<sup>10</sup> (1 + x +  x<sup>2</sup>)<sup>9</sup><br><br>\n<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> Coefficient of x<sup>18</sup> in {(1 - x) (1 - x<sup>2</sup>) (1 + x +  x<sup>2</sup>)}<sup>9</sup><br><br>\n<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> Coefficient of x<sup>18</sup> in (1 - x<sup>2</sup>) (1 - x<sup>3</sup>)<sup>9</sup><br><br>\n<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> <sup>9</sup>C<sub>6</sub> - 0 = 84"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l58bbgj4",
+      "paperTitle": "JEE Main 2022 (Online) 26th June Morning Shift",
+      "year": 2022,
+      "subject": "physics",
+      "chapter": "laws-of-motion",
+      "chapterGroup": "mechanics",
+      "topic": "newtons-laws-of-motion",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pa-person-is-standing-in-an-elevator-in-which-situation-jee-main-physics-motion-eblcyvbvzehjd9sd",
+      "content": "<p>A person is standing in an elevator. In which situation, he experiences weight loss?</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "When the elevator moves upward with constant acceleration"
+        },
+        {
+          "identifier": "B",
+          "content": "When the elevator moves downward with constant acceleration"
+        },
+        {
+          "identifier": "C",
+          "content": "When the elevator moves upward with uniform velocity"
+        },
+        {
+          "identifier": "D",
+          "content": "When the elevator moves downward with uniform velocity"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<p><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l5jhk4i8/1078b4ea-843e-4fbd-ab7c-95acb1ffb190/420cfd00-029a-11ed-a9b8-43edceee002f/file-1l5jhk4i9.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l5jhk4i8/1078b4ea-843e-4fbd-ab7c-95acb1ffb190/420cfd00-029a-11ed-a9b8-43edceee002f/file-1l5jhk4i9.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2022 (Online) 26th June Morning Shift Physics - Laws of Motion Question 77 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l5jhk4i8/1078b4ea-843e-4fbd-ab7c-95acb1ffb190/420cfd00-029a-11ed-a9b8-43edceee002f/file-1l5jhk4i9.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l5jhk4i8/1078b4ea-843e-4fbd-ab7c-95acb1ffb190/420cfd00-029a-11ed-a9b8-43edceee002f/file-1l5jhk4i9.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l5jhk4i8/1078b4ea-843e-4fbd-ab7c-95acb1ffb190/420cfd00-029a-11ed-a9b8-43edceee002f/file-1l5jhk4i9.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l5jhk4i8/1078b4ea-843e-4fbd-ab7c-95acb1ffb190/420cfd00-029a-11ed-a9b8-43edceee002f/file-1l5jhk4i9.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l5jhk4i8/1078b4ea-843e-4fbd-ab7c-95acb1ffb190/420cfd00-029a-11ed-a9b8-43edceee002f/file-1l5jhk4i9.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l5jhk4i8/1078b4ea-843e-4fbd-ab7c-95acb1ffb190/420cfd00-029a-11ed-a9b8-43edceee002f/file-1l5jhk4i9.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"></p>\n<p>N<sub>1</sub> = mg</p>\n<p>N<sub>2</sub> = mg + ma</p>\n<p>N<sub>3</sub> = mg <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container> ma</p>\n<p>N<sub>4</sub> = mg</p>\n<p>N<sub>5</sub> = mg</p>"
+    }
+  ]
+}

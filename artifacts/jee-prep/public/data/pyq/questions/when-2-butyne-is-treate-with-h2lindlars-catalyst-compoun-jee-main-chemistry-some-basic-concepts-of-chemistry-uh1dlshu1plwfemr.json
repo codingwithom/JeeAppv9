@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "y6j26Xr7oVlfOzKVQX7YF",
+      "paperTitle": "JEE Main 2018 (Online) 15th April Evening Slot",
+      "year": 2018,
+      "examDate": "2018-04-15 14:30",
+      "subject": "chemistry",
+      "chapter": "hydrocarbons",
+      "chapterGroup": "organic-chemistry",
+      "topic": "properties-and-preparation-of-alkenes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "when-2-butyne-is-treate-with-h2lindlars-catalyst-compoun-jee-main-chemistry-some-basic-concepts-of-chemistry-uh1dlshu1plwfemr",
+      "content": "When 2-butyne is treate with H<sub>2</sub>/Lindlar's catalyst,  compound X is produced as the major product and when treated with Na/liq. NH<sub>3</sub> it produces Y as the major product Which of the following statements is correct ? ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "X will have higher dipole moment and higher boiling point than Y. "
+        },
+        {
+          "identifier": "B",
+          "content": "Y will have higher dipole moment and higher boiling point than X. "
+        },
+        {
+          "identifier": "C",
+          "content": "X will have lower dipole moment and lower boiling point than Y. "
+        },
+        {
+          "identifier": "D",
+          "content": "Y will have higher dipole momet and lower boiling point than X. "
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/dcCfTGVrfUPG6HlDw/xxG0KzBbdH8en3SGD2tKgPjVckYaj/5TbgFGzWZ72jNMbACSDUhb/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2018 (Online) 15th April Evening Slot Chemistry - Hydrocarbons Question 150 English Explanation\">\n<br><br>Here dipole moment of Y = 0\n<br><br>cis-isomer(X) will have higher dipole moment and higher boiling point than trans (Y). "
+    }
+  ]
+}

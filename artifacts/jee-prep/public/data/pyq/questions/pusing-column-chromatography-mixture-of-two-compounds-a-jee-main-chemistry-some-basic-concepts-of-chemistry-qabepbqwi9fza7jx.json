@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1lgygjxi9",
+      "paperTitle": "JEE Main 2023 (Online) 10th April Morning Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "purification-of-organic-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pusing-column-chromatography-mixture-of-two-compounds-a-jee-main-chemistry-some-basic-concepts-of-chemistry-qabepbqwi9fza7jx",
+      "content": "<p>Using column chromatography, mixture of two compounds 'A' and 'B' was separated. 'A' eluted first, this indicates 'B' has</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "high R<sub>f</sub>, weaker adsorption"
+        },
+        {
+          "identifier": "B",
+          "content": "high R<sub>f</sub>, stronger adsorption"
+        },
+        {
+          "identifier": "C",
+          "content": "low R<sub>f</sub>, weaker adsorption"
+        },
+        {
+          "identifier": "D",
+          "content": "low R<sub>f</sub>, stronger adsorption"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<p>In column chromatography, the compound that elutes first is the one that is less strongly adsorbed to the stationary phase. Hence, &#39;A&#39; has weaker adsorption than &#39;B&#39;. Therefore, &#39;B&#39; has stronger adsorption.</p>\n<p>The retention factor (R<sub>f</sub>) is a measure of how much a compound moves up the column; a higher Rf means the compound travels further and is less strongly adsorbed to the stationary phase. Since &#39;A&#39; elutes first, &#39;A&#39; has a higher R<sub>f</sub> than &#39;B&#39;. Hence, &#39;B&#39; has a lower R<sub>f</sub>.</p>\n<p>So, the correct answer is &#39;<b>Option D</b>: low R<sub>f</sub>, stronger adsorption&#39;.</p>\n"
+    }
+  ]
+}

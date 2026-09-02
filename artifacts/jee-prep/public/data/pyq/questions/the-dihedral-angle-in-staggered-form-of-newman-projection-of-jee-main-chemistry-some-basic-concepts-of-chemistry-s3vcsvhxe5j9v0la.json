@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "1ks1k2edi",
+      "paperTitle": "JEE Main 2021 (Online) 27th July Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "isomerism",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-dihedral-angle-in-staggered-form-of-newman-projection-of-jee-main-chemistry-some-basic-concepts-of-chemistry-s3vcsvhxe5j9v0la",
+      "content": "The dihedral angle in staggered form of Newman projection of 1, 1, 1-Trichloro ethane is ___________ degree. (Round off to the nearest integer)",
+      "options": [],
+      "correct_options": [],
+      "explanation": "1, 1, 1-Trichloro ethane [CCl<sub>3</sub>-CH<sub>3</sub>]<br><br><picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1ks4w0viz/459c81fa-833f-4ad2-9dc9-5d1ac8ddfa02/4202d6b0-f934-11eb-92fa-7f097580380c/file-1ks4w0vj0-320w.png\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1ks4w0viz/459c81fa-833f-4ad2-9dc9-5d1ac8ddfa02/4202d6b0-f934-11eb-92fa-7f097580380c/file-1ks4w0vj0-500w.png\"><img src=\"https://imagex.cdn.examgoal.net/1ks4w0viz/459c81fa-833f-4ad2-9dc9-5d1ac8ddfa02/4202d6b0-f934-11eb-92fa-7f097580380c/file-1ks4w0vj0.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 27th July Evening Shift Chemistry - Basics of Organic Chemistry Question 180 English Explanation\"></picture>"
+    }
+  ]
+}

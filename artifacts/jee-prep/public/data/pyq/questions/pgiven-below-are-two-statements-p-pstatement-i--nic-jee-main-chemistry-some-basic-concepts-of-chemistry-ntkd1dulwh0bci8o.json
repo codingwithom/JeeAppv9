@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ldsc4z1h",
+      "paperTitle": "JEE Main 2023 (Online) 29th January Evening Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "properties-of-transition-elements",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pgiven-below-are-two-statements-p-pstatement-i--nic-jee-main-chemistry-some-basic-concepts-of-chemistry-ntkd1dulwh0bci8o",
+      "content": "<p>Given below are two statements :</p>\n<p>Statement I : Nickel is being used as the catalyst for producing syn gas and edible fats.</p>\n<p>Statement II : Silicon forms both electron rich and electron deficient hydrides.</p>\n<p>In the light of the above statements, choose the most appropriate answer from the options given below :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Statement I is correct but statement II is incorrect"
+        },
+        {
+          "identifier": "B",
+          "content": "Both the statements I and II are correct"
+        },
+        {
+          "identifier": "C",
+          "content": "Both the statements I and II are incorrect"
+        },
+        {
+          "identifier": "D",
+          "content": "Statement I is incorrect but statement II is correct"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<p>Statement I is correct, Statement II is incorrect as Si forms electron precise hydride.</p>"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "fft7VUommHheSwG2EAjgy2xukf260nxu",
+      "paperTitle": "JEE Main 2020 (Online) 3rd September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-03 09:00",
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "isomerism-of-coordination-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-complex-that-can-show-optical-activity-is--jee-main-chemistry-coordination-compounds-yorgwbnhw374y51q",
+      "content": "The complex that can show optical activity is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "cis-[Fe(NH<sub>3</sub>)<sub>2</sub>(CN)<sub>4</sub>]<sup>–</sup>"
+        },
+        {
+          "identifier": "B",
+          "content": "trans-[Cr(Cl<sub>2</sub>)(ox)<sub>2</sub>]<sup>3–</sup>"
+        },
+        {
+          "identifier": "C",
+          "content": "trans-[Fe(NH<sub>3</sub>)<sub>2</sub>(CN)<sub>4</sub>]<sup>–</sup>"
+        },
+        {
+          "identifier": "D",
+          "content": "cis-[CrCl<sub>2</sub>(ox)<sub>2</sub>]<sup>3–</sup> (ox = oxalate)"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1khok6k4a/25b5a145-4ec9-49af-a778-5a693f82f7a7/3e5312b0-2a3f-11eb-b68f-7fa597c6318b/file-1khok6k4b-455w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 3rd September Morning Slot Chemistry - Coordination Compounds Question 259 English Explanation\">\n<br><br>It does not have symmetry, so, optically active."
+    }
+  ]
+}

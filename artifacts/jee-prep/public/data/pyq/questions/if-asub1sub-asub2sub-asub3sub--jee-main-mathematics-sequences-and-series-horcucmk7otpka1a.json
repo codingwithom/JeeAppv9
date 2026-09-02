@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "d4VJ7d65BnAyLfgZ7j3rsa0w2w9jwy1gult",
+      "paperTitle": "JEE Main 2019 (Online) 10th April Morning Slot",
+      "year": 2019,
+      "examDate": "2019-04-10 09:30",
+      "subject": "mathematics",
+      "chapter": "sequences-and-series",
+      "chapterGroup": "algebra",
+      "topic": "arithmetic-progression",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "if-asub1sub-asub2sub-asub3sub--jee-main-mathematics-sequences-and-series-horcucmk7otpka1a",
+      "content": "If a<sub>1</sub>, a<sub>2</sub>, a<sub>3</sub>, ............... a<sub>n</sub> are in A.P. and a<sub>1</sub> + a<sub>4</sub> + a<sub>7</sub> + ........... + a<sub>16</sub> = 114, then a<sub>1</sub> + a<sub>6</sub> + a<sub>11</sub> + a<sub>16</sub> is equal to : ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "38"
+        },
+        {
+          "identifier": "B",
+          "content": "98"
+        },
+        {
+          "identifier": "C",
+          "content": "76"
+        },
+        {
+          "identifier": "D",
+          "content": "64"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "3(a<sub>1</sub> + a<sub>16</sub>) = 114<br><br>\n<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.375ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"13.214ex\" height=\"1.881ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -666 5840.7 831.6\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"mn\" transform=\"translate(562,-150) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(1187.8,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2188,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(562,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\" transform=\"translate(500,0)\"></use></g></g></g></g><g data-mml-node=\"mo\" transform=\"translate(3784.9,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(4840.7,0)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use><use data-c=\"38\" xlink:href=\"#MJX-TEX-N-38\" transform=\"translate(500,0)\"></use></g></g></g></svg></mjx-container><br><br>\nNow a<sub>1</sub> + a<sub>6</sub> + a<sub>11</sub> + a<sub>16</sub> = 2(a<sub>1</sub> + a<sub>16</sub>)<br><br>\n= 2 × 38 = 76"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "JoPrT1963OSJyrUgDdjgy2xukfcfo0h1",
+      "paperTitle": "JEE Main 2020 (Online) 4th September Evening Slot",
+      "year": 2020,
+      "examDate": "2020-09-04 15:00",
+      "subject": "chemistry",
+      "chapter": "haloalkanes-and-haloarenes",
+      "chapterGroup": "organic-chemistry",
+      "topic": "haloalkanes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-compounds-will-form-the-precipitate-w-jee-main-chemistry-haloalkanes-and-haloarenes-vjqykrzunfnzvdwt",
+      "content": "Which of the following compounds will form the\nprecipitate with aq. AgNO<sub>3</sub> solution most\nreadily?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukfcfe09q/65ea9dc2-da78-4145-a3ad-3339d6974db2/a9448fe0-fbfa-11ea-8293-3b6cc591631c/file-jgy2xukfcfe09r-213w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 4th September Evening Slot Chemistry - Haloalkanes and Haloarenes Question 126 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukfcfekft/bd1ed322-ee95-4b4f-aa9c-3ea98ae98c29/b8d90e90-fbfa-11ea-8293-3b6cc591631c/file-jgy2xukfcfekfu-160w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 4th September Evening Slot Chemistry - Haloalkanes and Haloarenes Question 126 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukfcff35y/29ed7c64-c109-44c8-a534-26ea6474e6fd/c7503660-fbfa-11ea-8293-3b6cc591631c/file-jgy2xukfcff35z-213w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 4th September Evening Slot Chemistry - Haloalkanes and Haloarenes Question 126 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukfcffrjl/f0e647df-52dc-462a-8026-8343073b3380/da253a10-fbfa-11ea-8293-3b6cc591631c/file-jgy2xukfcffrjm-240w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 4th September Evening Slot Chemistry - Haloalkanes and Haloarenes Question 126 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Rate of reaction <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 778 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"221D\" xlink:href=\"#MJX-TEX-N-221D\"></use></g></g></g></svg></mjx-container> stability of carbocation.\n<img src=\"https://imagex.cdn.examgoal.net/1khrxdjnh/02316334-fd5f-4c92-8435-41b8f6e69242/314126d0-2c19-11eb-911c-c97e77823e36/file-1khrxdjni-397w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 4th September Evening Slot Chemistry - Haloalkanes and Haloarenes Question 126 English Explanation\">\n<br><br>Most stable carbocation due to +R effect of N.\n"
+    }
+  ]
+}

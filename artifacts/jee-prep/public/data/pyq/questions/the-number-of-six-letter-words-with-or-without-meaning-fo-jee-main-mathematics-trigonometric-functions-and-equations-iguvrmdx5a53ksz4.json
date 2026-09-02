@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktisnbyi",
+      "paperTitle": "JEE Main 2021 (Online) 31st August Morning Shift",
+      "year": 2021,
+      "subject": "mathematics",
+      "chapter": "permutations-and-combinations",
+      "chapterGroup": "algebra",
+      "topic": "conditional-permutations",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-number-of-six-letter-words-with-or-without-meaning-fo-jee-main-mathematics-trigonometric-functions-and-equations-iguvrmdx5a53ksz4",
+      "content": "The number of six letter words (with or without meaning), formed using all the letters of the word 'VOWELS', so that all the consonants never come together, is ___________.",
+      "options": [],
+      "correct_options": [],
+      "explanation": "Total possible words = 6! = 720\n<br><br>When 4 consonants are together (V, W, L, S)\n<br>such cases = 3! ⋅ 4! = 144\n<br><br>All consonants should not be together<br><br>= Total <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container> All consonants together,<br><br>= 6! <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container> 3! 4! = 576"
+    }
+  ]
+}

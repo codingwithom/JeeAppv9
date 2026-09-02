@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "be9mFEh0uaOIM9Asfgjgy2xukf92vfgc",
+      "paperTitle": "JEE Main 2020 (Online) 4th September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-04 09:00",
+      "subject": "chemistry",
+      "chapter": "chemical-equilibrium",
+      "chapterGroup": "physical-chemistry",
+      "topic": "chemical-equilibrium-law-of-mass-action-and-equilibrium-constant",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "for-the-equilibrium-a-8652-b--the-variation-of-the-rate-jee-main-chemistry-equilibrium-hsb1kxonlzl8m0lj",
+      "content": "For the equilibrium A ⇌ B  , the variation of the\nrate of the forward (a) and reverse (b) reaction\nwith time is given by :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukf92swbx/b26e8837-dd0c-4951-a4c2-7edc400c64d7/16bc25d0-fa23-11ea-8293-3b6cc591631c/file-jgy2xukf92swby-320w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 4th September Morning Slot Chemistry - Chemical Equilibrium Question 85 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukf92tboh/f0c68019-5b3f-4fca-8136-a1aa2cc23b4c/22976d10-fa23-11ea-8293-3b6cc591631c/file-jgy2xukf92tboi-320w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 4th September Morning Slot Chemistry - Chemical Equilibrium Question 85 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukf92tn81/9b8944ba-a4d5-4a40-8c6a-abe10d4dc68d/2b822410-fa23-11ea-8293-3b6cc591631c/file-jgy2xukf92tn82-320w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 4th September Morning Slot Chemistry - Chemical Equilibrium Question 85 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukf92txwt/f55e78d0-36d3-490a-ae6a-4cd4cf4720ec/33c3c9d0-fa23-11ea-8293-3b6cc591631c/file-jgy2xukf92txwu-320w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 4th September Morning Slot Chemistry - Chemical Equilibrium Question 85 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "At equilibrium,\n<br><br>rate of forward reaction = Rate of backward\nreaction"
+    }
+  ]
+}

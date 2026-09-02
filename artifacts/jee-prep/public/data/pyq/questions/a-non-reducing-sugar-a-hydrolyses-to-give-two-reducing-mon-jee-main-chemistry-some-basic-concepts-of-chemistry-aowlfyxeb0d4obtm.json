@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "8HAgYyyXLFIMJAalcd1kmlmg8x6",
+      "paperTitle": "JEE Main 2021 (Online) 18th March Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "carbohydrates",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "a-non-reducing-sugar-a-hydrolyses-to-give-two-reducing-mon-jee-main-chemistry-some-basic-concepts-of-chemistry-aowlfyxeb0d4obtm",
+      "content": "A non-reducing sugar \"A\" hydrolyses to give two reducing mono saccharides. Sugar A is ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Fructose"
+        },
+        {
+          "identifier": "B",
+          "content": "Galactose"
+        },
+        {
+          "identifier": "C",
+          "content": "Glucose"
+        },
+        {
+          "identifier": "D",
+          "content": "Sucrose"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Sucrose <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"8.065ex\" height=\"3.097ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1357.7 3564.5 1368.7\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"REL\"><g data-mml-node=\"mover\"><g data-mml-node=\"mo\" transform=\"translate(963.3,0)\"><use data-c=\"27F6\" xlink:href=\"#MJX-TEX-N-27F6\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(0,767) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D43B\" xlink:href=\"#MJX-TEX-I-1D43B\"></use></g><g data-mml-node=\"mi\" transform=\"translate(888,0)\"><use data-c=\"1D466\" xlink:href=\"#MJX-TEX-I-1D466\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1384,0)\"><use data-c=\"1D451\" xlink:href=\"#MJX-TEX-I-1D451\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1907,0)\"><use data-c=\"1D45F\" xlink:href=\"#MJX-TEX-I-1D45F\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2358,0)\"><use data-c=\"1D45C\" xlink:href=\"#MJX-TEX-I-1D45C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2843,0)\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g><g data-mml-node=\"mi\" transform=\"translate(3141,0)\"><use data-c=\"1D466\" xlink:href=\"#MJX-TEX-I-1D466\"></use></g><g data-mml-node=\"mi\" transform=\"translate(3637,0)\"><use data-c=\"1D460\" xlink:href=\"#MJX-TEX-I-1D460\"></use></g><g data-mml-node=\"mi\" transform=\"translate(4106,0)\"><use data-c=\"1D452\" xlink:href=\"#MJX-TEX-I-1D452\"></use></g><g data-mml-node=\"mi\" transform=\"translate(4572,0)\"><use data-c=\"1D460\" xlink:href=\"#MJX-TEX-I-1D460\"></use></g></g></g></g></g></g></svg></mjx-container> glucose + fructose<br><br>\nGlucose and fructose both are monosaccharides.\nSucrose is non-reducing sugar."
+    }
+  ]
+}

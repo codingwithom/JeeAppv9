@@ -1,0 +1,42 @@
+{
+  "questions": [
+    {
+      "question_id": "7qJ55EnbM8Py35vm1L1kjlhd6qy",
+      "paperTitle": "JEE Advanced 2019 Paper 2 Offline",
+      "year": 2019,
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "important-compounds-of-transition-elements",
+      "type": "mcqm",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "with-reference-to-aqua-regia-choose-the-correct-options-jee-advanced-chemistry-some-basic-concepts-of-chemistry-km1n7apiiaiplz1l",
+      "content": "With reference to aqua-regia, choose the correct option(s).",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Aqua-regia is prepared by mixing conc. HCl and conc. HNO<sub>3</sub> in 3 : 1 (v / v) ratio"
+        },
+        {
+          "identifier": "B",
+          "content": "The yellow colour of aqua-regia is due to the presence of NOCl and Cl<sub>2</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "Reaction of gold with aqua-regia produces an anion having Au in +3 oxidation state"
+        },
+        {
+          "identifier": "D",
+          "content": "Reaction of gold with aqua regia produces NO<sub>2</sub> in the absence of air"
+        }
+      ],
+      "correct_options": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "The explanation of given statements are as follows :<br><br>(a) Aqua-regia is prepared by mixing conc. HCl and conc. HNO<sub>3</sub> in 3 : 1 (v/v) ratio and is used in oxidation of gold and platinum. Hence, option (a) is correct.<br><br>(b) Yellow colour of aqua-regia is due to its decomposition into NOCl (orange yellow) and Cl<sub>2</sub> (greenish yellow). Hence, option (b) is correct.<br><br>(c) When gold reacts with aqua-regia then it produces <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.69ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"6.817ex\" height=\"2.554ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -823.8 3013.1 1128.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D434\" xlink:href=\"#MJX-TEX-I-1D434\"></use></g><g data-mml-node=\"mi\" transform=\"translate(750,0)\"><use data-c=\"1D462\" xlink:href=\"#MJX-TEX-I-1D462\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1322,0)\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"msubsup\" transform=\"translate(2082,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g><g data-mml-node=\"mo\" transform=\"translate(331,411.6) scale(0.707)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(331,-305.1) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g></g></svg></mjx-container> anion complex in which Au has +3 oxidation state.<br><br> <picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1kt7uyk8z/62c72267-7deb-472b-a5d7-ac9c3c4f60e5/a9e10530-0ea2-11ec-a094-893340f9a6ca/file-1kt7uyk90-320w.jpeg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1kt7uyk8z/62c72267-7deb-472b-a5d7-ac9c3c4f60e5/a9e10530-0ea2-11ec-a094-893340f9a6ca/file-1kt7uyk90-500w.jpeg\"><source media=\"(max-width: 680px)\" srcset=\"https://imagex.cdn.examgoal.net/1kt7uyk8z/62c72267-7deb-472b-a5d7-ac9c3c4f60e5/a9e10530-0ea2-11ec-a094-893340f9a6ca/file-1kt7uyk90-680w.jpeg\"><source media=\"(max-width: 860px)\" srcset=\"https://imagex.cdn.examgoal.net/1kt7uyk8z/62c72267-7deb-472b-a5d7-ac9c3c4f60e5/a9e10530-0ea2-11ec-a094-893340f9a6ca/file-1kt7uyk90-860w.jpeg\"><source media=\"(max-width: 1040px)\" srcset=\"https://imagex.cdn.examgoal.net/1kt7uyk8z/62c72267-7deb-472b-a5d7-ac9c3c4f60e5/a9e10530-0ea2-11ec-a094-893340f9a6ca/file-1kt7uyk90-1040w.jpeg\"><img src=\"https://imagex.cdn.examgoal.net/1kt7uyk8z/62c72267-7deb-472b-a5d7-ac9c3c4f60e5/a9e10530-0ea2-11ec-a094-893340f9a6ca/file-1kt7uyk90.jpeg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2019 Paper 2 Offline Chemistry - d and f Block Elements Question 19 English Explanation\"></picture> <br><br>Hence, option (c) is correct.<br><br>(d) Reaction of gold with aqua-regia produces NO gas in absence of air. Hence, option (d) is incorrect."
+    }
+  ]
+}

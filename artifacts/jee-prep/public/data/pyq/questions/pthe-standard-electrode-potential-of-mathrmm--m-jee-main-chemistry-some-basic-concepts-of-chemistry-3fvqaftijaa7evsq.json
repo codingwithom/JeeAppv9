@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1lh27hyo5",
+      "paperTitle": "JEE Main 2023 (Online) 6th April Morning Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "electrochemistry",
+      "chapterGroup": "physical-chemistry",
+      "topic": "electrochemical-series-cell-and-their-emf",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pthe-standard-electrode-potential-of-mathrmm--m-jee-main-chemistry-some-basic-concepts-of-chemistry-3fvqaftijaa7evsq",
+      "content": "<p>The standard electrode potential of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.566ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"6.713ex\" height=\"2.32ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -775.2 2967.1 1025.2\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msup\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"4D\" xlink:href=\"#MJX-TEX-N-4D\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(950,363) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(1550.1,0)\"><use data-c=\"2F\" xlink:href=\"#MJX-TEX-N-2F\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2050.1,0)\"><g data-mml-node=\"mi\"><use data-c=\"4D\" xlink:href=\"#MJX-TEX-N-4D\"></use></g></g></g></g></svg></mjx-container> in aqueous solution does not depend on</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Ionisation of a gaseous metal atom"
+        },
+        {
+          "identifier": "B",
+          "content": " Sublimation of a solid metal"
+        },
+        {
+          "identifier": "C",
+          "content": "Ionisation of a solid metal atom"
+        },
+        {
+          "identifier": "D",
+          "content": "Hydration of a gaseous metal ion"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<p>The standard electrode potential (E°) of a metal ion M<sup>+</sup>/M in aqueous solution is calculated under standard conditions and relates to the tendency of the M<sup>+</sup> ion to gain an electron to form the neutral metal atom, M. </p>\n<p>This is indeed a redox (reduction-oxidation) process, and the standard electrode potential is defined for the reduction half-reaction. E° values are based on the energies involved in the processes of ionization and hydration. </p>\n<p>However, the standard electrode potential does not depend on the state (solid, liquid, gas) of the atom being ionized. Ionization of a solid metal atom (Option C) would not directly impact the electrode potential as it is not inherently part of the process of reduction at the electrode that the E° values are measuring.</p>\n<p>The correct answer should be Option C : Ionisation of a solid metal atom.</p>"
+    }
+  ]
+}

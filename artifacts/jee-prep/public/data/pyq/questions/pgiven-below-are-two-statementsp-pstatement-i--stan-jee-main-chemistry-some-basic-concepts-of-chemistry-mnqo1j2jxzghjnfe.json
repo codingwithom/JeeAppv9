@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l6rjnx5s",
+      "paperTitle": "JEE Main 2022 (Online) 29th July Evening Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "p-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "group-14-elements-carbon-family",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pgiven-below-are-two-statementsp-pstatement-i--stan-jee-main-chemistry-some-basic-concepts-of-chemistry-mnqo1j2jxzghjnfe",
+      "content": "<p>Given below are two statements.</p>\n<p>Statement I : Stannane is an example of a molecular hydride.</p>\n<p>Statement II : Stannane is a planar molecule.</p>\n<p>In the light of the above statement, choose the most appropriate answer from the options given below.</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Both Statement I and Statement II are true."
+        },
+        {
+          "identifier": "B",
+          "content": "Both Statement I and Statement II are false."
+        },
+        {
+          "identifier": "C",
+          "content": "Statement I is true but Statement II is false."
+        },
+        {
+          "identifier": "D",
+          "content": "Statement I is false but Statement II is true."
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Stannane or tin hydride is an inorganic compound with formula <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.2ex\" height=\"1.934ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 2298.6 855\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"53\" xlink:href=\"#MJX-TEX-N-53\"></use><use data-c=\"6E\" xlink:href=\"#MJX-TEX-N-6E\" transform=\"translate(556,0)\"></use><use data-c=\"48\" xlink:href=\"#MJX-TEX-N-48\" transform=\"translate(1112,0)\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1895,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g></g></g></svg></mjx-container>\n<br><br><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l7nq3ot2/881d0bac-2306-4603-8c41-b01b569b993a/3c7ee670-2c87-11ed-a521-1f85f535c206/file-1l7nq3ot3.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l7nq3ot2/881d0bac-2306-4603-8c41-b01b569b993a/3c7ee670-2c87-11ed-a521-1f85f535c206/file-1l7nq3ot3.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2022 (Online) 29th July Evening Shift Chemistry - p-Block Elements Question 96 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l7nq3ot2/881d0bac-2306-4603-8c41-b01b569b993a/3c7ee670-2c87-11ed-a521-1f85f535c206/file-1l7nq3ot3.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l7nq3ot2/881d0bac-2306-4603-8c41-b01b569b993a/3c7ee670-2c87-11ed-a521-1f85f535c206/file-1l7nq3ot3.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l7nq3ot2/881d0bac-2306-4603-8c41-b01b569b993a/3c7ee670-2c87-11ed-a521-1f85f535c206/file-1l7nq3ot3.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l7nq3ot2/881d0bac-2306-4603-8c41-b01b569b993a/3c7ee670-2c87-11ed-a521-1f85f535c206/file-1l7nq3ot3.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l7nq3ot2/881d0bac-2306-4603-8c41-b01b569b993a/3c7ee670-2c87-11ed-a521-1f85f535c206/file-1l7nq3ot3.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l7nq3ot2/881d0bac-2306-4603-8c41-b01b569b993a/3c7ee670-2c87-11ed-a521-1f85f535c206/file-1l7nq3ot3.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> It is a non-planar molecule."
+    }
+  ]
+}

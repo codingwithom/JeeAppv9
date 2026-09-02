@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l58jz7v2",
+      "paperTitle": "JEE Main 2022 (Online) 26th June Evening Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "vitamins-and-nucleic-acids",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pwhich-one-of-the-following-is-a-water-soluble-vitamin-th-jee-main-chemistry-some-basic-concepts-of-chemistry-kvmzyoh5fxds7fi2",
+      "content": "<p>Which one of the following is a water soluble vitamin, that is not excreted easily?</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Vitamin B<sub>2</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "Vitamin B<sub>1</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "Vitamin B<sub>6</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "Vitamin B<sub>12</sub>"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Vitamin B<sub>12</sub> is water soluble and not excreted easily."
+    }
+  ]
+}

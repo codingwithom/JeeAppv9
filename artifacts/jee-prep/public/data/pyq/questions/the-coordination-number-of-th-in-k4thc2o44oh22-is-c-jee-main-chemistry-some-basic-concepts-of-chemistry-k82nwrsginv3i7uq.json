@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "guuG6KZsCG56DlUZZcrEJ",
+      "paperTitle": "JEE Main 2019 (Online) 11th January Evening Slot",
+      "year": 2019,
+      "examDate": "2019-01-11 14:30",
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "coordination-number",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-coordination-number-of-th-in-k4thc2o44oh22-is-c-jee-main-chemistry-some-basic-concepts-of-chemistry-k82nwrsginv3i7uq",
+      "content": "The coordination number of Th in K<sub>4</sub>[Th(C<sub>2</sub>O<sub>4</sub>)<sub>4</sub>(OH<sub>2</sub>)<sub>2</sub>] is :\n<br>(C<sub>2</sub>O<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.69ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.232ex\" height=\"2.687ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -882.5 986.7 1187.6\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msubsup\"><g data-mml-node=\"mi\"></g><g data-mml-node=\"TeXAtom\" transform=\"translate(33,411.6) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(33,-305.1) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g></g></g></svg></mjx-container> = Oxalato)",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "14"
+        },
+        {
+          "identifier": "B",
+          "content": "10"
+        },
+        {
+          "identifier": "C",
+          "content": "8"
+        },
+        {
+          "identifier": "D",
+          "content": "6"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Oxalato (C<sub>2</sub>O<sub>4</sub><sup>2–</sup>) is a bidentate and H<sub>2</sub>O is unidentate\nligand.\n<br><br>4C<sub>2</sub>O<sub>4</sub><sup>2–</sup> creates 8 covalent bonds.\n<br><br>2H<sub>2</sub>O creates 2 covalent bonds.\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> Around Th 10 coordinate covalent bonds will be present."
+    }
+  ]
+}

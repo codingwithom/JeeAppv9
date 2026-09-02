@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "tdjhEQYgwwe1qxvNtV9Ih",
+      "paperTitle": "JEE Main 2016 (Online) 9th April Morning Slot",
+      "year": 2016,
+      "examDate": "2016-04-09 09:30",
+      "subject": "chemistry",
+      "chapter": "alcohols-phenols-and-ethers",
+      "chapterGroup": "organic-chemistry",
+      "topic": "properties-preparation-and-uses-of-alcohols",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-gas-evolved-on-heating-ch3mgbr-inmethanol-is-jee-main-physics-units-and-measurements-akjf9zer6osgqdlg",
+      "content": "The gas evolved on heating CH<sub>3</sub>MgBr in methanol is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "HBr"
+        },
+        {
+          "identifier": "B",
+          "content": "Methane"
+        },
+        {
+          "identifier": "C",
+          "content": "Ethane"
+        },
+        {
+          "identifier": "D",
+          "content": "Propane"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/17P6HmPp9MD2BwrSF/9tjXcJLOqnqGrqS3dit0gtZsWliOz/5BNf0eJyGwPpU9WlsPKJkh/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2016 (Online) 9th April Morning Slot Chemistry - Alcohols, Phenols and Ethers Question 155 English Explanation\">"
+    }
+  ]
+}

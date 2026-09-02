@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l58iwm7j",
+      "paperTitle": "JEE Main 2022 (Online) 26th June Evening Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "p-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "group-16-elements-oxygen-family",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pwhich-of-the-following-elements-is-considered-as-a-metall-jee-main-chemistry-some-basic-concepts-of-chemistry-3rnvgzdcu3kyz2yr",
+      "content": "<p>Which of the following elements is considered as a metalloid?</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Sc"
+        },
+        {
+          "identifier": "B",
+          "content": "Pb"
+        },
+        {
+          "identifier": "C",
+          "content": "Bi"
+        },
+        {
+          "identifier": "D",
+          "content": "Te"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Sc, Pb, Bi are metals<br/><br/>\nTe is a metalloid"
+    }
+  ]
+}

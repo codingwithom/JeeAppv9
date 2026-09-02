@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "bkKIzgyVNxE2Xdmcgn7k9k2k5h3fkgm",
+      "paperTitle": "JEE Main 2020 (Online) 8th January Morning Slot",
+      "year": 2020,
+      "examDate": "2020-01-08 09:30",
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "purification-of-organic-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "a-flask-contains-a-mixture-of-isohexane-and-3-methylpentane-jee-main-chemistry-practical-organic-chemistry-j16calaupgl2lvrd",
+      "content": "A flask contains a mixture of isohexane and 3-methylpentane. One of the liquids boils at 63<sup>o</sup>C while the\nother boils at 60<sup>o</sup>C What is the best way to separate the two liquids and which one will be distilled out first ?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "fractional distillation, 3-methylpentane"
+        },
+        {
+          "identifier": "B",
+          "content": "simple distillation, 3-methylpentane"
+        },
+        {
+          "identifier": "C",
+          "content": "fractional distillation, isohexane"
+        },
+        {
+          "identifier": "D",
+          "content": "simple distillation, isohexane"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Isohexane and 3 Methylpentane Having same molecular formula.\n<br><br>Isohexane boil at 60<sup>o</sup>C and 3-Methyl pentane boil at 63<sup>o</sup>C. Both Having low Boiling point difference so\nFractional distillation is useful for separation and Isohexane Having low Boiling point So comes out first."
+    }
+  ]
+}

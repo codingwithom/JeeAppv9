@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "d9rYjwxlxiAXsKNTjN8AV",
+      "paperTitle": "JEE Main 2019 (Online) 12th January Morning Slot",
+      "year": 2019,
+      "examDate": "2019-01-12 09:30",
+      "subject": "mathematics",
+      "chapter": "permutations-and-combinations",
+      "chapterGroup": "algebra",
+      "topic": "number-of-combinations",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "consider-three-boxes-each-containing-10-balls-labelled-1-jee-main-mathematics-trigonometric-functions-and-equations-1m5q3kpbslv2potz",
+      "content": "Consider three boxes, each containing, 10 balls labelled 1, 2, … , 10. Suppose one ball is randomly drawn from each of the boxes. Denote by n<sub>i</sub>, the label of the ball drawn from the i<sup>th</sup> box, (i = 1, 2, 3). Then, the number of ways in which the balls can be chosen such that n<sub>1</sub> &lt; n<sub>2</sub> &lt; n<sub>3</sub> is : ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "164"
+        },
+        {
+          "identifier": "B",
+          "content": "240"
+        },
+        {
+          "identifier": "C",
+          "content": "82"
+        },
+        {
+          "identifier": "D",
+          "content": "120"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Number of ways = <sup>10</sup>C<sub>3</sub> = 120"
+    }
+  ]
+}

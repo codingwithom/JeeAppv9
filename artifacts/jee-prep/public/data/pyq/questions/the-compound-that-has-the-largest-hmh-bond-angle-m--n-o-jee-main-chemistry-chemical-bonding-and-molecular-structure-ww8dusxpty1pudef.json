@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "qq20iRhwJH3Mt3t8PXjgy2xukfoup9d3",
+      "paperTitle": "JEE Main 2020 (Online) 5th September Evening Slot",
+      "year": 2020,
+      "examDate": "2020-09-05 15:00",
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "hybridization-and-vsepr-theory",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-compound-that-has-the-largest-hmh-bond-angle-m--n-o-jee-main-chemistry-chemical-bonding-and-molecular-structure-ww8dusxpty1pudef",
+      "content": "The compound that has the largest H–M–H bond angle (M = N, O, S, C) is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "CH<sub>4</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "H<sub>2</sub>S"
+        },
+        {
+          "identifier": "C",
+          "content": "NH<sub>3</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "H<sub>2</sub>O"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "CH<sub>4</sub> - Bond angle = 109<sup>o</sup>28'\n<br><br>H<sub>2</sub>S - Bond angle = 92<sup>o</sup>\n<br><br>NH<sub>3</sub> - Bond angle = 107<sup>o</sup>\n<br><br>H<sub>2</sub>O - Bond angle = 104<sup>o</sup>5'"
+    }
+  ]
+}

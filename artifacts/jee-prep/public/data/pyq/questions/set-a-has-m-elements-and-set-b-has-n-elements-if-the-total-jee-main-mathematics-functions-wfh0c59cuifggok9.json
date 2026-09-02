@@ -1,0 +1,22 @@
+{
+  "questions": [
+    {
+      "question_id": "3iz5nbJtSww5lL4Sg9jgy2xukfxgtuou",
+      "paperTitle": "JEE Main 2020 (Online) 6th September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-06 09:00",
+      "subject": "mathematics",
+      "chapter": "sets-and-relations",
+      "chapterGroup": "algebra",
+      "topic": "number-of-sets-and-relations",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 0,
+      "permalink": "set-a-has-m-elements-and-set-b-has-n-elements-if-the-total-jee-main-mathematics-functions-wfh0c59cuifggok9",
+      "content": "Set A has m elements and set B has n elements. If the total number of subsets of A is 112 more\nthan the total number of subsets of B, then the value of m.n is ______.",
+      "options": [],
+      "correct_options": [],
+      "explanation": "Number of subsets of A = 2<sup>m</sup>\n<br><br>Number of subsets of B = 2<sup>n</sup>\n<br><br>Given = 2<sup>m</sup> – 2<sup>n</sup>\n = 112\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> m = 7, n = 4 (2<sup>7</sup> – 2<sup>4</sup>\n = 112)\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> m <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> n = 7 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 4 = 28"
+    }
+  ]
+}

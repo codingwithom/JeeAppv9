@@ -1,0 +1,231 @@
+{
+  "exam": "jee-main",
+  "subject": "mathematics",
+  "chapterKey": "mathematical-induction",
+  "title": "Mathematical Induction | Mathematics | JEE Main Previous Year Questions",
+  "chapter": {
+    "country": "in",
+    "exam": "jee-main",
+    "examGroup": "jee",
+    "key": "mathematical-induction",
+    "subject": "mathematics",
+    "type": "chapter",
+    "chapterGroup": "algebra",
+    "createdAt": "2023-07-05T02:59:32.873Z",
+    "description": null,
+    "image": null,
+    "keyValuePairs": {},
+    "metaId": "1474f65f-3532-55bc-83ab-85d33a75498d",
+    "pyq": {
+      "isTopicWise": true,
+      "count": {
+        "out_of_syllabus": 3,
+        "total": 3,
+        "private": 0,
+        "public": 3,
+        "bucket": 0
+      }
+    },
+    "title": "Mathematical Induction",
+    "updatedAt": "2023-11-04T05:47:52.516Z",
+    "order": 4,
+    "pyq_stats": [
+      {
+        "year": 2026,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2025,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2024,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2023,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2022,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2021,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2020,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2019,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2018,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2017,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2016,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2015,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2014,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2013,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2012,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2011,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2010,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2009,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2008,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2007,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2006,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2005,
+        "total": 1,
+        "avg": 1,
+        "weightage": 1.37
+      },
+      {
+        "year": 2004,
+        "total": 1,
+        "avg": 1,
+        "weightage": 1.47
+      },
+      {
+        "year": 2003,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2002,
+        "total": 1,
+        "avg": 1,
+        "weightage": 1.39
+      }
+    ],
+    "isOutOfSyllabus": true,
+    "hideFromClassify": false,
+    "groups": [
+      {
+        "title": "MCQ (Single Correct Answer)",
+        "key": "mcq"
+      }
+    ]
+  },
+  "questions": [
+    {
+      "title": "MCQ (Single Correct Answer)",
+      "key": "mcq",
+      "questions": [
+        {
+          "examGroup": "jee",
+          "permalink": "if-a-left-matrix-1-0-cr-1-1-cr-right-and-i-left-matrix-1-0-c-jee-main-2005-marks-4-9wbuqxiilcoonreg.htm",
+          "paperTitle": "AIEEE 2005",
+          "question": {
+            "en": {
+              "content": "If <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -2.432ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"12.533ex\" height=\"5.995ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1575 5539.6 2650\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D434\" xlink:href=\"#MJX-TEX-I-1D434\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1027.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mrow\" transform=\"translate(2083.6,0)\"><g data-mml-node=\"mo\" transform=\"translate(0 -0.5)\"><use data-c=\"5B\" xlink:href=\"#MJX-TEX-S3-5B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(528,0)\"><g data-mml-node=\"mtable\" data-frame-styles=\"\"><g data-mml-node=\"mtr\" transform=\"translate(0,700)\"><g data-mml-node=\"mtd\" transform=\"translate(200,0)\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g><g data-mml-node=\"mtd\" transform=\"translate(1700,0)\"><g data-mml-node=\"mn\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g></g></g><g data-mml-node=\"mtr\" transform=\"translate(0,-700)\"><g data-mml-node=\"mtd\" transform=\"translate(200,0)\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g><g data-mml-node=\"mtd\" transform=\"translate(1700,0)\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g></g></g><g data-mml-node=\"mo\" transform=\"translate(2928,0) translate(0 -0.5)\"><use data-c=\"5D\" xlink:href=\"#MJX-TEX-S3-5D\"></use></g></g></g></g></svg></mjx-container> and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -2.432ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"12.982ex\" height=\"5.995ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1575 5738.2 2650\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D43C\" xlink:href=\"#MJX-TEX-I-1D43C\"></use></g><g data-mml-node=\"mo\" transform=\"translate(781.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mrow\" transform=\"translate(1837.6,0)\"><g data-mml-node=\"mo\" transform=\"translate(0 -0.5)\"><use data-c=\"5B\" xlink:href=\"#MJX-TEX-S3-5B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(528,0)\"><g data-mml-node=\"mtable\" data-frame-styles=\"\"><g data-mml-node=\"mtr\" transform=\"translate(0,700)\"><g data-mml-node=\"mtd\" transform=\"translate(200,0)\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g><g data-mml-node=\"mtd\" transform=\"translate(1700,0)\"><g data-mml-node=\"mn\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g></g></g><g data-mml-node=\"mtr\" transform=\"translate(0,-700)\"><g data-mml-node=\"mtd\" transform=\"translate(200,0)\"><g data-mml-node=\"mn\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g></g><g data-mml-node=\"mtd\" transform=\"translate(1700,0)\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g></g></g><g data-mml-node=\"mo\" transform=\"translate(2928,0) translate(0 -0.5)\"><use data-c=\"5D\" xlink:href=\"#MJX-TEX-S3-5D\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(5460.2,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g></g></g></svg></mjx-container> then which one of the following holds for all <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.439ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"6.135ex\" height=\"1.946ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -666 2711.6 860\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mo\" transform=\"translate(877.8,0)\"><use data-c=\"2265\" xlink:href=\"#MJX-TEX-N-2265\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1933.6,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2433.6,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g></g></g></svg></mjx-container> by the principle of mathematical induction? "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-sk-1-3-5-left-2k-1-right-3-k2-then-which-of-the-followin-jee-main-2004-marks-4-hj54pq327gnyxr3n.htm",
+          "paperTitle": "AIEEE 2004",
+          "question": {
+            "en": {
+              "content": "Let <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.566ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.231ex\" height=\"2.262ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 2312 1000\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D446\" xlink:href=\"#MJX-TEX-I-1D446\"></use></g><g data-mml-node=\"mo\" transform=\"translate(645,0)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1034,0)\"><use data-c=\"1D43E\" xlink:href=\"#MJX-TEX-I-1D43E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1923,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g></g></svg></mjx-container> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.566ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"35.426ex\" height=\"2.452ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -833.9 15658.1 1083.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1055.8,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1778,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(2778.2,0)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g><g data-mml-node=\"mo\" transform=\"translate(3500.4,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(4500.7,0)\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(5278.7,0)\"><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(5556.7,0)\"><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(6056.9,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mrow\" transform=\"translate(7057.1,0)\"><g data-mml-node=\"mo\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(389,0)\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mi\" transform=\"translate(500,0)\"><use data-c=\"1D43E\" xlink:href=\"#MJX-TEX-I-1D43E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1611.2,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(2611.4,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(3500.4,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(11224.3,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(12280.1,0)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g><g data-mml-node=\"mo\" transform=\"translate(13002.3,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(14002.6,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"1D43E\" xlink:href=\"#MJX-TEX-I-1D43E\"></use></g><g data-mml-node=\"mn\" transform=\"translate(974,363) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(15380.1,0)\"><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\"></use></g></g></g></svg></mjx-container>  Then which of the following is true "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-an-sqrt-7-sqrt-7-sqrt-7-having-n-radical-signs-then-by-me-jee-main-2002-marks-4-3yljdlefsjhni2wc.htm",
+          "paperTitle": "AIEEE 2002",
+          "question": {
+            "en": {
+              "content": "If <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.77ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"28ex\" height=\"4.208ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1519.5 12376.2 1860\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(562,-150) scale(0.707)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(1314,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"msqrt\" transform=\"translate(2369.8,0)\"><g data-mml-node=\"mo\" transform=\"translate(0,309.5)\"><use data-c=\"221A\" xlink:href=\"#MJX-TEX-LO-221A\"></use></g><g transform=\"translate(1020,0)\"><g data-mml-node=\"mn\"><use data-c=\"37\" xlink:href=\"#MJX-TEX-N-37\"></use></g><g data-mml-node=\"mo\" transform=\"translate(722.2,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"msqrt\" transform=\"translate(1722.4,0)\"><g data-mml-node=\"mo\" transform=\"translate(0,212)\"><use data-c=\"221A\" xlink:href=\"#MJX-TEX-SO-221A\"></use></g><g transform=\"translate(1020,0)\"><g data-mml-node=\"mn\"><use data-c=\"37\" xlink:href=\"#MJX-TEX-N-37\"></use></g><g data-mml-node=\"mo\" transform=\"translate(722.2,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"msqrt\" transform=\"translate(1722.4,0)\"><g data-mml-node=\"mo\" transform=\"translate(0,64.5)\"><use data-c=\"221A\" xlink:href=\"#MJX-TEX-N-221A\"></use></g><g transform=\"translate(853,0)\"><g data-mml-node=\"mn\"><use data-c=\"37\" xlink:href=\"#MJX-TEX-N-37\"></use></g><g data-mml-node=\"mo\" transform=\"translate(722.2,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1722.4,0)\"><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2000.4,0)\"><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2278.4,0)\"><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2556.4,0)\"><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2834.4,0)\"><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(3112.4,0)\"><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(3390.4,0)\"><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\"></use></g></g><rect width=\"3668.4\" height=\"60\" x=\"853\" y=\"804.5\"></rect></g></g><rect width=\"6243.9\" height=\"60\" x=\"1020\" y=\"1002\"></rect></g></g><rect width=\"8986.3\" height=\"60\" x=\"1020\" y=\"1399.5\"></rect></g></g></g></svg></mjx-container>  having <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.357ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 600 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g></g></g></svg></mjx-container> radical signs then by methods of mathematical induction which is true "
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

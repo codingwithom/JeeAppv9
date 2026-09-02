@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "uOActAkQoaumecjQJo7k9k2k5epwqeu",
+      "paperTitle": "JEE Main 2020 (Online) 7th January Evening Slot",
+      "year": 2020,
+      "examDate": "2020-01-07 14:30",
+      "subject": "chemistry",
+      "chapter": "redox-reactions",
+      "chapterGroup": "physical-chemistry",
+      "topic": "oxidation-and-reduction-reactions",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-redox-reaction-among-the-following-is--jee-main-chemistry-analytical-chemistry-abxhwic1uitms3wg",
+      "content": "The redox reaction among the following is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "reaction of H<sub>2</sub>SO<sub>4</sub> with NaOH."
+        },
+        {
+          "identifier": "B",
+          "content": "formation of ozone form atmosphere oxygen in the presence of sunlight."
+        },
+        {
+          "identifier": "C",
+          "content": "combination of dinitrogen with dioxygen at 2000 K"
+        },
+        {
+          "identifier": "D",
+          "content": "reaction of [Co(H<sub>2</sub>O)<sub>6</sub>]Cl<sub>3</sub> With AgNO<sub>3</sub>"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "N<sub>2</sub> + O<sub>2</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> 2NO\n<br><br>during the reaction, oxidation of nitrogen take place\nfrom 0 to 2 and reduction of oxygen take place\nfrom 0 to –2. It means this reaction is redox\nreaction.\n<br><br>3O<sub>2</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> 2O<sub>3</sub> (Non - redox reaction)\n<br><br>2NaOH + H<sub>2</sub>SO<sub>4</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> Na<sub>2</sub>SO<sub>4</sub> + 2H<sub>2</sub>O (neutralization reaction)\n<br><br>[Co(H<sub>2</sub>O)<sub>6</sub>]Cl<sub>3</sub> + 3AgNO<sub>3</sub>\n<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> 3AgCl <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.439ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.131ex\" height=\"2.009ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 500 888\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2193\" xlink:href=\"#MJX-TEX-N-2193\"></use></g></g></g></svg></mjx-container> + [Co(H<sub>2</sub>O)<sub>6</sub>](NO<sub>3</sub>)<sub>3</sub>\n<br><br>Reaction of [CO(H<sub>2</sub>O)<sub>6</sub>]Cl<sub>3</sub> with AgNO<sub>3</sub> is not\nredox reaction. It is a precipitation reaction.\n"
+    }
+  ]
+}

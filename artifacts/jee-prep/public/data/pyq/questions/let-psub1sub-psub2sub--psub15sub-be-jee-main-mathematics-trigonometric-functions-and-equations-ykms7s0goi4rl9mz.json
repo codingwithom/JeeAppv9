@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1kto82i38",
+      "paperTitle": "JEE Main 2021 (Online) 1st September Evening Shift",
+      "year": 2021,
+      "subject": "mathematics",
+      "chapter": "permutations-and-combinations",
+      "chapterGroup": "algebra",
+      "topic": "application-of-permutations-and-combination-in-geometry",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "let-psub1sub-psub2sub--psub15sub-be-jee-main-mathematics-trigonometric-functions-and-equations-ykms7s0goi4rl9mz",
+      "content": "Let P<sub>1</sub>, P<sub>2</sub>, ......, P<sub>15</sub> be 15 points on a circle. The number of distinct triangles formed by points P<sub>i</sub>, P<sub>j</sub>, P<sub>k</sub> such that i +j + k <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.486ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"2.106ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 778 931\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2260\" xlink:href=\"#MJX-TEX-N-2260\"></use></g></g></g></svg></mjx-container> 15, is : ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "12"
+        },
+        {
+          "identifier": "B",
+          "content": "419"
+        },
+        {
+          "identifier": "C",
+          "content": "443"
+        },
+        {
+          "identifier": "D",
+          "content": "455"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Total number of triangles = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.375ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.393ex\" height=\"2.261ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -833.9 1941.7 999.5\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msup\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"></g><g data-mml-node=\"TeXAtom\" transform=\"translate(33,363) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\" transform=\"translate(500,0)\"></use></g></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(790.1,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mn\" transform=\"translate(748,-150) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g></g></g></svg></mjx-container><br><br>i + j + k = 15 (Given)<br><br><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1kwoq1bj3/a1cd0f3a-86a8-4d72-98ac-6d132a8be6f4/621a22f0-534d-11ec-9cbb-695a838b20fb/file-1kwoq1bj4.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1kwoq1bj3/a1cd0f3a-86a8-4d72-98ac-6d132a8be6f4/621a22f0-534d-11ec-9cbb-695a838b20fb/file-1kwoq1bj4.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2021 (Online) 1st September Evening Shift Mathematics - Permutations and Combinations Question 133 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1kwoq1bj3/a1cd0f3a-86a8-4d72-98ac-6d132a8be6f4/621a22f0-534d-11ec-9cbb-695a838b20fb/file-1kwoq1bj4.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1kwoq1bj3/a1cd0f3a-86a8-4d72-98ac-6d132a8be6f4/621a22f0-534d-11ec-9cbb-695a838b20fb/file-1kwoq1bj4.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1kwoq1bj3/a1cd0f3a-86a8-4d72-98ac-6d132a8be6f4/621a22f0-534d-11ec-9cbb-695a838b20fb/file-1kwoq1bj4.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1kwoq1bj3/a1cd0f3a-86a8-4d72-98ac-6d132a8be6f4/621a22f0-534d-11ec-9cbb-695a838b20fb/file-1kwoq1bj4.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1kwoq1bj3/a1cd0f3a-86a8-4d72-98ac-6d132a8be6f4/621a22f0-534d-11ec-9cbb-695a838b20fb/file-1kwoq1bj4.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1kwoq1bj3/a1cd0f3a-86a8-4d72-98ac-6d132a8be6f4/621a22f0-534d-11ec-9cbb-695a838b20fb/file-1kwoq1bj4.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"><br>Number of possible triangles using the vertices P<sub>i</sub>, P<sub>j</sub>, P<sub>k</sub> such that i + j + k <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.486ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"2.106ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 778 931\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2260\" xlink:href=\"#MJX-TEX-N-2260\"></use></g></g></g></svg></mjx-container> 15 is equal to <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.375ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.393ex\" height=\"2.261ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -833.9 1941.7 999.5\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msup\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"></g><g data-mml-node=\"TeXAtom\" transform=\"translate(33,363) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\" transform=\"translate(500,0)\"></use></g></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(790.1,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mn\" transform=\"translate(748,-150) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g></g></g></svg></mjx-container> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container> 12 = 443<br><br>Option (c)"
+    }
+  ]
+}

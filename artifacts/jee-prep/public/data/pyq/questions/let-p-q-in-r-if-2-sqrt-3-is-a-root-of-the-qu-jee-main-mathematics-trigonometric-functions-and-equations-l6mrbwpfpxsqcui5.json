@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "ASH34YkiuFpNO2zeGRoYa",
+      "paperTitle": "JEE Main 2019 (Online) 9th April Morning Slot",
+      "year": 2019,
+      "examDate": "2019-04-09 09:30",
+      "subject": "mathematics",
+      "chapter": "quadratic-equation-and-inequalities",
+      "chapterGroup": "algebra",
+      "topic": "relation-between-roots-and-coefficients",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "let-p-q-in-r-if-2-sqrt-3-is-a-root-of-the-qu-jee-main-mathematics-trigonometric-functions-and-equations-l6mrbwpfpxsqcui5",
+      "content": "Let p, q <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.312ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 667 580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2208\" xlink:href=\"#MJX-TEX-N-2208\"></use></g></g></g></svg></mjx-container> R. If 2 - <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.251ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.061ex\" height=\"2.398ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -949 1353 1060\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msqrt\"><g data-mml-node=\"mo\" transform=\"translate(0,89)\"><use data-c=\"221A\" xlink:href=\"#MJX-TEX-N-221A\"></use></g><g transform=\"translate(853,0)\"><g data-mml-node=\"mn\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g><rect width=\"500\" height=\"60\" x=\"853\" y=\"829\"></rect></g></g></g></svg></mjx-container> is a root of the quadratic\nequation, x<sup>2</sup> + px + q = 0, then :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "p<sup>2</sup> – 4q – 12 = 0"
+        },
+        {
+          "identifier": "B",
+          "content": "q<sup>2</sup> – 4p – 16 = 0"
+        },
+        {
+          "identifier": "C",
+          "content": "q<sup>2</sup> + 4p + 14 = 0"
+        },
+        {
+          "identifier": "D",
+          "content": "p<sup>2</sup> – 4q + 12 = 0"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "If a quadratic equation with rational coefficient has one irrational root then other root will be the conjugate of the irrational root.\n<br><br>Here x<sup>2</sup> + px + q = 0 has one root 2 - <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.251ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.061ex\" height=\"2.398ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -949 1353 1060\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msqrt\"><g data-mml-node=\"mo\" transform=\"translate(0,89)\"><use data-c=\"221A\" xlink:href=\"#MJX-TEX-N-221A\"></use></g><g transform=\"translate(853,0)\"><g data-mml-node=\"mn\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g><rect width=\"500\" height=\"60\" x=\"853\" y=\"829\"></rect></g></g></g></svg></mjx-container>.\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> Other root will be 2 + <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.251ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.061ex\" height=\"2.398ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -949 1353 1060\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msqrt\"><g data-mml-node=\"mo\" transform=\"translate(0,89)\"><use data-c=\"221A\" xlink:href=\"#MJX-TEX-N-221A\"></use></g><g transform=\"translate(853,0)\"><g data-mml-node=\"mn\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g><rect width=\"500\" height=\"60\" x=\"853\" y=\"829\"></rect></g></g></g></svg></mjx-container>.\n<br><br>Sum of the roots = -p = 4\n<br><br>and product of the roots = q = 1\n<br><br>You can see p<sup>2</sup> – 4q – 12 = 0 satisfy value of p = -4 and q = 1."
+    }
+  ]
+}

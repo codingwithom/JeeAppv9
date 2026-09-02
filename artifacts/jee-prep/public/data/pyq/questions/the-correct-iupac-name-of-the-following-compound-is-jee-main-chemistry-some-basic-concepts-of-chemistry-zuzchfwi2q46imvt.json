@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "DcVAYxuPVcUrgcnZ3H3ib",
+      "paperTitle": "JEE Main 2019 (Online) 9th April Morning Slot",
+      "year": 2019,
+      "examDate": "2019-04-09 09:30",
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "iupac-nomenclature",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-correct-iupac-name-of-the-following-compound-is-jee-main-chemistry-some-basic-concepts-of-chemistry-zuzchfwi2q46imvt",
+      "content": "The correct IUPAC name of the following\ncompound is :\n<img src=\"https://imagex.cdn.examgoal.net/18hoxe66ijwi3vhwf/ef290ce0-6029-4aad-9cf5-07e516a5c339/39ca2ef0-86f2-11e9-8081-1d558b7f1d26/file-18hoxe66ijwi3vhwg.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 9th April Morning Slot Chemistry - Basics of Organic Chemistry Question 227 English\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "2-methyl-5-nitro-1-chlorobenzene"
+        },
+        {
+          "identifier": "B",
+          "content": "2-chloro-1-methyl-4-nitrobenzene"
+        },
+        {
+          "identifier": "C",
+          "content": "3-chloro-4-methyl-1-nitrobenzene"
+        },
+        {
+          "identifier": "D",
+          "content": "5-chloro-4-methyl-1-nitrobenzene"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/7km5fk04e8imm/9ae9ecae-2f71-40f9-a917-49fb79d1d2d2/a39606e0-ce98-11e9-acf6-6d09a288f7f2/file-7km5fk04e8imn-320w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/7km5fk04e8imm/9ae9ecae-2f71-40f9-a917-49fb79d1d2d2/a39606e0-ce98-11e9-acf6-6d09a288f7f2/file-7km5fk04e8imn-500w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 9th April Morning Slot Chemistry - Basics of Organic Chemistry Question 227 English Explanation\"></picture>\n<br><br><b>Note :</b>\n<br><br>(1) For numbering the carbon of main ring, follow the lowest sum rule for the functional group.\n<br><br>(2) Write the name of functional group in alphabetical order. First chloro then methyl then nitro group."
+    }
+  ]
+}

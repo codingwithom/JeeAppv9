@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "mz8gDBlcWpPlmGluwhjgy2xukfc7gvw4",
+      "paperTitle": "JEE Main 2020 (Online) 4th September Evening Slot",
+      "year": 2020,
+      "examDate": "2020-09-04 15:00",
+      "subject": "chemistry",
+      "chapter": "haloalkanes-and-haloarenes",
+      "chapterGroup": "organic-chemistry",
+      "topic": "haloalkanes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "among-the-following-compounds-which-one-has-the-shortest-c-jee-main-chemistry-basics-of-organic-chemistry-adi6pvsygsild5jn",
+      "content": "Among the following compounds, which one\nhas the shortest C – Cl bond?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "H<sub>3</sub>C - Cl"
+        },
+        {
+          "identifier": "B",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukfc7dz1l/7bdd2eb7-2d4d-45ff-a75e-6f2e43a7d1b4/5f499990-fbdb-11ea-8293-3b6cc591631c/file-jgy2xukfc7dz1m-234w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 4th September Evening Slot Chemistry - Haloalkanes and Haloarenes Question 127 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukfc7elgx/cb09b5ef-b79b-4465-88df-86c5c2458d01/709c6a10-fbdb-11ea-8293-3b6cc591631c/file-jgy2xukfc7elgy-215w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 4th September Evening Slot Chemistry - Haloalkanes and Haloarenes Question 127 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukfc7f3i6/10ce7670-904f-433e-9e57-9a4ba00abf5d/7e8ad9e0-fbdb-11ea-8293-3b6cc591631c/file-jgy2xukfc7f3i7-154w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 4th September Evening Slot Chemistry - Haloalkanes and Haloarenes Question 127 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1khrxorrz/750f14ac-472f-4a13-a528-ff8a4230546d/696e72f0-2c1a-11eb-911c-c97e77823e36/file-1khrxors0-449w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 4th September Evening Slot Chemistry - Haloalkanes and Haloarenes Question 127 English Explanation\">\n<br><br>Here due to resonance of lone pair of –Cl, C – Cl bond\nacquires partial double bond character and has\nshortest bond length among given species."
+    }
+  ]
+}

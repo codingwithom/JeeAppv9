@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "2mJTEi4mPP0MNw9M6htvh",
+      "paperTitle": "JEE Main 2019 (Online) 8th April Morning Slot",
+      "year": 2019,
+      "examDate": "2019-04-08 09:30",
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "coordination-number",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-following-ligand-is-jee-main-chemistry-some-basic-concepts-of-chemistry-lmbp0mklgvqmmgwj",
+      "content": "The following ligand is :\n<img src=\"https://imagex.cdn.examgoal.net/GatEaxLrxwVN9AURA/AN6yeccinqgvdjeTpcGAXXiW7LMYV/EzOGIEVmnuSP91fPIzHskF/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 8th April Morning Slot Chemistry - Coordination Compounds Question 291 English\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "hexadentate"
+        },
+        {
+          "identifier": "B",
+          "content": "bidentate"
+        },
+        {
+          "identifier": "C",
+          "content": "tetradentate"
+        },
+        {
+          "identifier": "D",
+          "content": "tridentate"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Here two O<sup>-</sup> + two N = 4 donar atoms present which can donate total 4 lone pair of electrons.\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> It is tetradentate ligand."
+    }
+  ]
+}

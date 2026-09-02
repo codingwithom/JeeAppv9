@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l0bvbudf",
+      "paperTitle": "JEE Advanced 2016 Paper 1 Offline",
+      "year": 2016,
+      "subject": "chemistry",
+      "chapter": "p-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "group-13-elements-boron-family",
+      "type": "mcq",
+      "marks": 3,
+      "negMarks": 1,
+      "permalink": "pthe-increasing-order-of-atomic-radii-of-the-following-gro-jee-advanced-chemistry-some-basic-concepts-of-chemistry-hy7k5uhrce6mf0mg",
+      "content": "<p>The increasing order of atomic radii of the following group 13 elements is</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Al < Ga < In < Tl"
+        },
+        {
+          "identifier": "B",
+          "content": "Ga < Al < In < Tl"
+        },
+        {
+          "identifier": "C",
+          "content": "Al < In < Ga < Tl"
+        },
+        {
+          "identifier": "D",
+          "content": "Al < Ga < Tl < In"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<p>The increasing order of atomic radii is as follows:</p>\n<p>Ga < Al < In < Tl</p>\nThe atomic radius generally increases on moving down a group in the periodic table. As an anomaly, the atomic radius of Ga is less than that of aluminium because of poor shielding of nuclear charge by 10 number of 3d electrons. As a result, the outershell electrons are held more firmly by the nucleus and contraction of radius is observed. This contraction is also called d-block contraction. The size of Tl is similarly affected by 14 number of 4f electrons (lanthanoid contraction) and the atomic radius of Tl is almost similar in size to In."
+    }
+  ]
+}

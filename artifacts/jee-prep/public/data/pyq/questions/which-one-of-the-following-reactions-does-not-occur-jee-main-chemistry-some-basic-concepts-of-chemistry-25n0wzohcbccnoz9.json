@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1krt61bm5",
+      "paperTitle": "JEE Main 2021 (Online) 22th July Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "compounds-containing-nitrogen",
+      "chapterGroup": "organic-chemistry",
+      "topic": "aromatic-amines",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-one-of-the-following-reactions-does-not-occur-jee-main-chemistry-some-basic-concepts-of-chemistry-25n0wzohcbccnoz9",
+      "content": "Which one of the following reactions does not occur?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1krtqqdqn/ace5e002-bd3b-4a88-8c23-cd04e66c8b8f/f163e9f0-f312-11eb-851b-2d86cfe252d7/file-1krtqqdqo.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 22th July Evening Shift Chemistry - Compounds Containing Nitrogen Question 162 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1krtqqm92/c1b7d9ba-97b9-49b8-9a5e-a1baecc8fd80/f7f71c60-f312-11eb-9528-253c7892a47f/file-1krtqqm93.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 22th July Evening Shift Chemistry - Compounds Containing Nitrogen Question 162 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1krtqqx4v/fd7a05d9-9ca1-43e2-9fdf-88b789978ca3/005f8400-f313-11eb-9528-253c7892a47f/file-1krtqqx4w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 22th July Evening Shift Chemistry - Compounds Containing Nitrogen Question 162 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1krtqr6ie/afa89489-db0d-4f5b-b581-83fdf8ea24b3/079d7560-f313-11eb-9528-253c7892a47f/file-1krtqr6if.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 22th July Evening Shift Chemistry - Compounds Containing Nitrogen Question 162 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1krtqru1c/bd94ec4d-dee8-40b6-8dfd-e185264e4b69/19c9dd00-f313-11eb-9528-253c7892a47f/file-1krtqru1d.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 22th July Evening Shift Chemistry - Compounds Containing Nitrogen Question 162 English Explanation\"><br>(1) Aniline is lewis base acid bae reaction with AlCl<sub>3</sub> and form Anilinium ion.<br><br>(2) Anilinium ion has strongest deactivated ring so further Friedel craft Alkylation not occurs."
+    }
+  ]
+}

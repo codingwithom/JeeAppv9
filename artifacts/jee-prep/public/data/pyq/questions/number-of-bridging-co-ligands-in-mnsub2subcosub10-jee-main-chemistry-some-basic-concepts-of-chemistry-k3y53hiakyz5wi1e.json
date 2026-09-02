@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "XkOY8m1EYiVdx4XoY61klue9flp",
+      "paperTitle": "JEE Main 2021 (Online) 26th February Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "coordination-number",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "number-of-bridging-co-ligands-in-mnsub2subcosub10-jee-main-chemistry-some-basic-concepts-of-chemistry-k3y53hiakyz5wi1e",
+      "content": "Number of bridging CO ligands in [Mn<sub>2</sub>(CO)<sub>10</sub>] is __________.",
+      "options": [],
+      "correct_options": [],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1kqvpoaw0/17807645-746e-442d-b644-ce18ad398b69/285c6910-e05c-11eb-9207-0b6b03e8f3cf/file-1kqvpoaw1.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 26th February Morning Shift Chemistry - Coordination Compounds Question 240 English Explanation\">\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> Number of bridging CO ligands = 0."
+    }
+  ]
+}

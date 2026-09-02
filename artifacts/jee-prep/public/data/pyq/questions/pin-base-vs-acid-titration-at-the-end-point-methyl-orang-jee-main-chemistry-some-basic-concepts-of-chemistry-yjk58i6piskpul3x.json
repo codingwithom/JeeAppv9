@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l6f7i5x6",
+      "paperTitle": "JEE Main 2022 (Online) 25th July Evening Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "practical-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "chemistry-involved-in-titrimetric-experiments",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pin-base-vs-acid-titration-at-the-end-point-methyl-orang-jee-main-chemistry-some-basic-concepts-of-chemistry-yjk58i6piskpul3x",
+      "content": "<p>In base vs. acid titration, at the end point methyl orange is present as</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "quinonoid form"
+        },
+        {
+          "identifier": "B",
+          "content": "heterocyclic form"
+        },
+        {
+          "identifier": "C",
+          "content": "phenolic form"
+        },
+        {
+          "identifier": "D",
+          "content": "benzenoid form"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<p><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1lc8kl19k/b0d01404-424e-4520-a371-1ad47687a661/fb40b280-872e-11ed-93b3-c381a41bf82e/file-1lc8kl19l.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1lc8kl19k/b0d01404-424e-4520-a371-1ad47687a661/fb40b280-872e-11ed-93b3-c381a41bf82e/file-1lc8kl19l.png\" loading=\"lazy\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;max-height: 50vh\" alt=\"JEE Main 2022 (Online) 25th July Evening Shift Chemistry - Practical Organic Chemistry Question 65 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1lc8kl19k/b0d01404-424e-4520-a371-1ad47687a661/fb40b280-872e-11ed-93b3-c381a41bf82e/file-1lc8kl19l.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1lc8kl19k/b0d01404-424e-4520-a371-1ad47687a661/fb40b280-872e-11ed-93b3-c381a41bf82e/file-1lc8kl19l.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1lc8kl19k/b0d01404-424e-4520-a371-1ad47687a661/fb40b280-872e-11ed-93b3-c381a41bf82e/file-1lc8kl19l.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1lc8kl19k/b0d01404-424e-4520-a371-1ad47687a661/fb40b280-872e-11ed-93b3-c381a41bf82e/file-1lc8kl19l.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1lc8kl19k/b0d01404-424e-4520-a371-1ad47687a661/fb40b280-872e-11ed-93b3-c381a41bf82e/file-1lc8kl19l.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1lc8kl19k/b0d01404-424e-4520-a371-1ad47687a661/fb40b280-872e-11ed-93b3-c381a41bf82e/file-1lc8kl19l.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"></p>\n<p>Hence at the end point methyl orange is present as\nquinonoid form. </p>"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "1MZzz4wqtDUcxVNzr5Ztk",
+      "paperTitle": "JEE Main 2019 (Online) 12th January Evening Slot",
+      "year": 2019,
+      "examDate": "2019-01-12 14:30",
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "inner-transition-elements-lanthanoids-and-actinoids",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-correct-order-of-atomic-radii-is-jee-main-chemistry-some-basic-concepts-of-chemistry-eoruohgl10zwnuhh",
+      "content": "The correct order of atomic radii is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Ho &gt; N &gt; Eu &gt; Ce "
+        },
+        {
+          "identifier": "B",
+          "content": "Ce &gt; Eu &gt; Ho &gt; N "
+        },
+        {
+          "identifier": "C",
+          "content": "N &gt; Ce &gt; Eu &gt; Ho"
+        },
+        {
+          "identifier": "D",
+          "content": "Eu &gt; Ce &gt; Ho &gt; N "
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "In lanthanide series from left to right atomic radius decreases but the exception is Europiun (Eu) and Ytterbium (Yb).\n<br><br>So the correct order is : Eu &gt; Ce &gt; Ho &gt; N"
+    }
+  ]
+}

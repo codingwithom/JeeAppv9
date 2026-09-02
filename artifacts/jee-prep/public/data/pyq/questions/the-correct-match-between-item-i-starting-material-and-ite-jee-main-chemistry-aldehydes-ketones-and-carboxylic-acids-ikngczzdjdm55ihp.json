@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "9zA5MqQEK36Q5vtUAfjgy2xukg3ed3ul",
+      "paperTitle": "JEE Main 2020 (Online) 6th September Evening Slot",
+      "year": 2020,
+      "examDate": "2020-09-06 15:00",
+      "subject": "chemistry",
+      "chapter": "aldehydes-ketones-and-carboxylic-acids",
+      "chapterGroup": "organic-chemistry",
+      "topic": "method-of-preparation-for-aldehydes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-correct-match-between-item-i-starting-material-and-ite-jee-main-chemistry-aldehydes-ketones-and-carboxylic-acids-ikngczzdjdm55ihp",
+      "content": "The correct match between Item-I (starting\nmaterial) and Item-II (reagent) for the\npreparation of benzaldehyde is :\n<br><br>\n<table class=\"tg\">\n<thead>\n  <tr>\n    <th class=\"tg-baqh\"><b>Item-I</b></th>\n    <th class=\"tg-baqh\"><b>Item-II</b></th>\n  </tr>\n</thead>\n<tbody>\n  <tr>\n    <td class=\"tg-baqh\">(I) Benzene</td>\n    <td class=\"tg-baqh\">(P) HCl and SnCl<sub>2</sub>,\nH<sub>3</sub>O<sup>+</sup></td>\n  </tr>\n  <tr>\n    <td class=\"tg-baqh\">(II) Benzonitrile</td>\n    <td class=\"tg-baqh\">(Q) H<sub>2</sub>, Pd-BaSO<sub>4</sub>, S\nand quinoline</td>\n  </tr>\n  <tr>\n    <td class=\"tg-baqh\">(III) Benzoyl Chloride</td>\n    <td class=\"tg-baqh\">(R) CO, HCl and AlCl<sub>3</sub></td>\n  </tr>\n</tbody>\n</table>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(I) - (R), (II) - (P) and (III) - (Q)"
+        },
+        {
+          "identifier": "B",
+          "content": "(I) - (P), (II) - (Q) and (III) - (R)"
+        },
+        {
+          "identifier": "C",
+          "content": "(I) - (Q), (II) - (R) and (III) - (P)"
+        },
+        {
+          "identifier": "D",
+          "content": "(I) - (R), (II) - (Q) and (III) - (P)"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jgy2xukgevz32e/f58ac05f-36b4-4f9f-849d-077301edc99c/4e2a2570-1121-11eb-8293-3b6cc591631c/file-jgy2xukgevz32f-320w.jpg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/jgy2xukgevz32e/f58ac05f-36b4-4f9f-849d-077301edc99c/4e2a2570-1121-11eb-8293-3b6cc591631c/file-jgy2xukgevz32f-500w.jpg\"><source media=\"(max-width: 680px)\" srcset=\"https://imagex.cdn.examgoal.net/jgy2xukgevz32e/f58ac05f-36b4-4f9f-849d-077301edc99c/4e2a2570-1121-11eb-8293-3b6cc591631c/file-jgy2xukgevz32f-680w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/jgy2xukgevz32e/f58ac05f-36b4-4f9f-849d-077301edc99c/4e2a2570-1121-11eb-8293-3b6cc591631c/file-jgy2xukgevz32f-860w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 6th September Evening Slot Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 195 English Explanation\"></picture>"
+    }
+  ]
+}

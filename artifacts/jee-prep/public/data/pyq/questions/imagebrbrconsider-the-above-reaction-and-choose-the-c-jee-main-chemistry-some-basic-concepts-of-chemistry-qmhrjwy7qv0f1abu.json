@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ks1i6qcq",
+      "paperTitle": "JEE Main 2021 (Online) 27th July Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "alcohols-phenols-and-ethers",
+      "chapterGroup": "organic-chemistry",
+      "topic": "properties-preparation-and-uses-of-alcohols",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "imagebrbrconsider-the-above-reaction-and-choose-the-c-jee-main-chemistry-some-basic-concepts-of-chemistry-qmhrjwy7qv0f1abu",
+      "content": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1ks4sfpk9/2ee9bf7e-8425-4be1-b962-e3243e358b0a/3a063190-f926-11eb-8bd5-774a92ef8a12/file-1ks4sfpka-320w.jpg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1ks4sfpk9/2ee9bf7e-8425-4be1-b962-e3243e358b0a/3a063190-f926-11eb-8bd5-774a92ef8a12/file-1ks4sfpka-500w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/1ks4sfpk9/2ee9bf7e-8425-4be1-b962-e3243e358b0a/3a063190-f926-11eb-8bd5-774a92ef8a12/file-1ks4sfpka.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 27th July Evening Shift Chemistry - Alcohols, Phenols and Ethers Question 109 English\"></picture><br>Consider the above reaction, and choose the correct statement :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "The reaction is not possible in acidic medium"
+        },
+        {
+          "identifier": "B",
+          "content": "Both compounds A and B are formed equally"
+        },
+        {
+          "identifier": "C",
+          "content": "Compound A will be the major product"
+        },
+        {
+          "identifier": "D",
+          "content": "Compound B will be the major product"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1ks4sgvz5/43c3331c-5b6d-4339-a950-05b2d2edfc0b/5ac9cc20-f926-11eb-8bd5-774a92ef8a12/file-1ks4sgvz6.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 27th July Evening Shift Chemistry - Alcohols, Phenols and Ethers Question 109 English Explanation\">"
+    }
+  ]
+}

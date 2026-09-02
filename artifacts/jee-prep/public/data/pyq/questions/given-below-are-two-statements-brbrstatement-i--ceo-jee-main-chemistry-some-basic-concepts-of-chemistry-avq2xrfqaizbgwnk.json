@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "kn7Boe9n5zzM1GWloO1kls8ub6s",
+      "paperTitle": "JEE Main 2021 (Online) 25th February Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "inner-transition-elements-lanthanoids-and-actinoids",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "given-below-are-two-statements-brbrstatement-i--ceo-jee-main-chemistry-some-basic-concepts-of-chemistry-avq2xrfqaizbgwnk",
+      "content": "Given below are two statements :<br><br>Statement I : CeO<sub>2</sub> can be used for oxidation of aldehydes and ketones.<br><br>Statement II : Aqueous solution of EuSO<sub>4</sub> is a strong reducing agent.<br><br>In the light of the above statements, choose the correct answer from the options given below :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Statement I is true but Statement II is false."
+        },
+        {
+          "identifier": "B",
+          "content": "Statement I is false but Statement II is true"
+        },
+        {
+          "identifier": "C",
+          "content": "Both Statement I and Statement II are false"
+        },
+        {
+          "identifier": "D",
+          "content": "Both Statement I and Statement II are true"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "The +3 oxidation state of lanthanide is most\nstable and therefore lanthanide in +4 oxidation\nstate has strong tendence to gain e<sup>–</sup>\n and\nconverted into +3 and therefore act as strong\noxidizing agent.\neg Ce<sup>+4</sup>\n<br>And therefore CeO<sub>2</sub>\n is used to oxidized alcohol\naldehyde and ketones.\n<br><br>Lanthanide in +2 oxidation state has strong\ntendency to loss e<sup>–</sup>\n and converted into +3\noxidation state therefore act as strong reducing\nagent.\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> EuSO<sub>4</sub> act as a strong reducing agent."
+    }
+  ]
+}

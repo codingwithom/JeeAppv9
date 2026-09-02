@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "kwJYsjrMpmHiDMjZf83rsa0w2w9jx80b28u",
+      "paperTitle": "JEE Main 2019 (Online) 12th April Evening Slot",
+      "year": 2019,
+      "examDate": "2019-04-12 14:30",
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "effective-nuclear-charge",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "among-the-following-the-energy-of-2s-orbital-is-lowest-in--jee-main-chemistry-structure-of-atom-tdjjge0qfhytzuxp",
+      "content": "Among the following, the energy of 2s orbital is lowest in :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Li"
+        },
+        {
+          "identifier": "B",
+          "content": "H"
+        },
+        {
+          "identifier": "C",
+          "content": "Na"
+        },
+        {
+          "identifier": "D",
+          "content": "K"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Here Z of K = 15, Na = 11, H = 1, Li = 3.\n<br><br>In K, because of more number of protons (high atomic\nnumber) the 2s electron experiences a higher effective nuclear\ncharge and is closer to nucleus, thus having less energy"
+    }
+  ]
+}

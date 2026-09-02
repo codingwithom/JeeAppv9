@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "joRhdIH2URIaz1zoFYDP4",
+      "paperTitle": "JEE Main 2019 (Online) 10th January Evening Slot",
+      "year": 2019,
+      "examDate": "2019-01-10 14:30",
+      "subject": "chemistry",
+      "chapter": "compounds-containing-nitrogen",
+      "chapterGroup": "organic-chemistry",
+      "topic": "aliphatic-amines",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-major-product-of-the-following-reaction-is-jee-main-chemistry-some-basic-concepts-of-chemistry-0qkrpt0okf8frdme",
+      "content": "The major product of the following reaction is :\n<br><br><img src=\"https://imagex.cdn.examgoal.net/gRh78nrmpRa4162iM/EaIKOfX0Doh4PQ0VNgejWAN7qRhLn/8JnUPnVmp3uUIXJHNzAwPI/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 10th January Evening Slot Chemistry - Compounds Containing Nitrogen Question 221 English\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/MOmr6GRceYe8XB7TT/2FvbVH7StMVslppaOyYnWLoYQZPh5/qCM8XzaKu3eEhGhOPdiKVc/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 10th January Evening Slot Chemistry - Compounds Containing Nitrogen Question 221 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/vgINShJZwhoFAkDPI/JcDE2JhG8rXl8m8mgStF2I764JhBH/zj5X9wL4jgsDZtlVYLwNs6/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 10th January Evening Slot Chemistry - Compounds Containing Nitrogen Question 221 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/Vhl4gNYarUiZ6fuWj/adpPdHOc1DVFjjKv875pkGq4F1Hfs/gf5ZjuWJeacwMIsDFROTN8/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 10th January Evening Slot Chemistry - Compounds Containing Nitrogen Question 221 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/v9Rr1rZzWHTsadKXZ/Frb8sEW2CBIlD3DYJnPiHtUPimd3Z/CmNIWmJ21Kdn07hCYMLp2Z/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 10th January Evening Slot Chemistry - Compounds Containing Nitrogen Question 221 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1da9i2ynkdpf6ubd/b90706e1-6709-48c0-8c50-672e36d6ed4f/a3b04e90-db87-11ea-b796-4745b429ed6f/file-1da9i2ynkdpf6ube-320w.jpg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1da9i2ynkdpf6ubd/b90706e1-6709-48c0-8c50-672e36d6ed4f/a3b04e90-db87-11ea-b796-4745b429ed6f/file-1da9i2ynkdpf6ube-500w.jpg\"><source media=\"(max-width: 680px)\" srcset=\"https://imagex.cdn.examgoal.net/1da9i2ynkdpf6ubd/b90706e1-6709-48c0-8c50-672e36d6ed4f/a3b04e90-db87-11ea-b796-4745b429ed6f/file-1da9i2ynkdpf6ube-680w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/1da9i2ynkdpf6ubd/b90706e1-6709-48c0-8c50-672e36d6ed4f/a3b04e90-db87-11ea-b796-4745b429ed6f/file-1da9i2ynkdpf6ube-860w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 10th January Evening Slot Chemistry - Compounds Containing Nitrogen Question 221 English Explanation\"></picture>\n<br><br>NaBH<sub>4</sub> reduces both ketone into alcohol and imine into 2<sup>o</sup> amine but it can't reduce alkene as the reacting species of NaBH<sub>4</sub> is H<sup>-</sup> which can't attack as a nucleophile to alkene as alkene itself is a nucleophile."
+    }
+  ]
+}

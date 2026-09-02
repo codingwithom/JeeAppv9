@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1krrhtybh",
+      "paperTitle": "JEE Main 2021 (Online) 20th July Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "hydrocarbons",
+      "chapterGroup": "organic-chemistry",
+      "topic": "reaction-of-alkynes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "metallic-sodium-does-not-react-normally-with--jee-main-chemistry-some-basic-concepts-of-chemistry-imttars6rkj5xadw",
+      "content": "Metallic sodium does not react normally with :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "gaseous ammonia"
+        },
+        {
+          "identifier": "B",
+          "content": "But-2-yne"
+        },
+        {
+          "identifier": "C",
+          "content": "Ethyne"
+        },
+        {
+          "identifier": "D",
+          "content": "tert-butyl alcohol"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Metallic sodium does not react with 2-butyne because 2-butyne does not have acidic hydrogen."
+    }
+  ]
+}

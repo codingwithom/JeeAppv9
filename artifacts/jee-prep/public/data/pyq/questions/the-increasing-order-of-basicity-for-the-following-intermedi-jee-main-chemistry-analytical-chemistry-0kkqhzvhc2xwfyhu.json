@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "l56UrG6sTX4eCFKKji7k9k2k5icr6zr",
+      "paperTitle": "JEE Main 2020 (Online) 9th January Morning Slot",
+      "year": 2020,
+      "examDate": "2020-01-09 09:30",
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "acid-and-base-strength",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-increasing-order-of-basicity-for-the-following-intermedi-jee-main-chemistry-analytical-chemistry-0kkqhzvhc2xwfyhu",
+      "content": "The increasing order of basicity for the\nfollowing intermediates is (from weak to\nstrong)<br><img src=\"https://imagex.cdn.examgoal.net/7k9k2k5icnfe1/9a026510-47ea-4baa-a1c0-2a4353883611/7df31990-3942-11ea-92dd-4b9c3519996f/file-7k9k2k5icnfe2-188w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 9th January Morning Slot Chemistry - Basics of Organic Chemistry Question 214 English 1\">\n<img src=\"https://imagex.cdn.examgoal.net/7k9k2k5icnsfp/c84f513f-9f45-430f-86a6-ed4cddafef07/88070e50-3942-11ea-92dd-4b9c3519996f/file-7k9k2k5icnsfq-201w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 9th January Morning Slot Chemistry - Basics of Organic Chemistry Question 214 English 2\">\n<img src=\"https://imagex.cdn.examgoal.net/7k9k2k5ico1tb/def7663f-5f75-455e-9340-ddf96958b041/8f459bf0-3942-11ea-92dd-4b9c3519996f/file-7k9k2k5ico1tc-117w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 9th January Morning Slot Chemistry - Basics of Organic Chemistry Question 214 English 3\">\n<img src=\"https://imagex.cdn.examgoal.net/7k9k2k5icoahs/1a99403e-2572-469f-b664-3007682e0846/95fa1200-3942-11ea-92dd-4b9c3519996f/file-7k9k2k5icoaht-113w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 9th January Morning Slot Chemistry - Basics of Organic Chemistry Question 214 English 4\">\n<img src=\"https://imagex.cdn.examgoal.net/7k9k2k5icosvi/3dd1505e-0125-47bb-a0b1-1fb79eb659bf/a42d04e0-3942-11ea-92dd-4b9c3519996f/file-7k9k2k5icosvj-109w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 9th January Morning Slot Chemistry - Basics of Organic Chemistry Question 214 English 5\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(iii) &lt; (i) &lt; (ii) &lt; (iv) &lt; (v)"
+        },
+        {
+          "identifier": "B",
+          "content": "(iii) &lt; (iv) &lt; (ii) &lt; (i) &lt; (v)"
+        },
+        {
+          "identifier": "C",
+          "content": "(v) &lt; (i) &lt; (iv) &lt; (ii) &lt; (iii)"
+        },
+        {
+          "identifier": "D",
+          "content": "(v) &lt; (iii) &lt; (ii) &lt; (iv) &lt; (i)"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Basicity is inversly proportional to electronegativity.\n<img src=\"https://imagex.cdn.examgoal.net/7kd4dk601r1fc/6652ea14-38fb-495c-81c7-954c8f54e0c9/f9ab1780-42fd-11ea-b62d-51ccc5d4afb6/file-7kd4dk601r1fd-320w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 9th January Morning Slot Chemistry - Basics of Organic Chemistry Question 214 English Explanation\">"
+    }
+  ]
+}

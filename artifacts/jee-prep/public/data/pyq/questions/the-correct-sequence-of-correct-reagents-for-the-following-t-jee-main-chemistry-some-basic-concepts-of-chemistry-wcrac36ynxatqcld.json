@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ks1ionyw",
+      "paperTitle": "JEE Main 2021 (Online) 27th July Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "hydrocarbons",
+      "chapterGroup": "organic-chemistry",
+      "topic": "aromatic-hydrocarbons",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-correct-sequence-of-correct-reagents-for-the-following-t-jee-main-chemistry-some-basic-concepts-of-chemistry-wcrac36ynxatqcld",
+      "content": "The correct sequence of correct reagents for the following transformation is :<br><br><img src=\"https://imagex.cdn.examgoal.net/1ks4sibx4/4c1ae812-f290-41de-ae6e-3c0014809f25/82e9b580-f926-11eb-bffb-59f2d981f531/file-1ks4sibx5.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 27th July Evening Shift Chemistry - Hydrocarbons Question 94 English\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(i) Fe, HCl<br><br>(ii) Cl<sub>2</sub>, HCl<br><br>(iii) NaNO<sub>2</sub>, HCl, 0<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"0.988ex\" height=\"1.532ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -677 436.6 677\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"></g><g data-mml-node=\"mo\" transform=\"translate(33,363) scale(0.707)\"><use data-c=\"2218\" xlink:href=\"#MJX-TEX-N-2218\"></use></g></g></g></g></svg></mjx-container>C<br><br>(iv) H<sub>2</sub>O/H<sup>+</sup>"
+        },
+        {
+          "identifier": "B",
+          "content": "(i) Fe, HCl<br><br>(ii) NaNO<sub>2</sub>, HCl, 0<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"0.988ex\" height=\"1.532ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -677 436.6 677\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"></g><g data-mml-node=\"mo\" transform=\"translate(33,363) scale(0.707)\"><use data-c=\"2218\" xlink:href=\"#MJX-TEX-N-2218\"></use></g></g></g></g></svg></mjx-container>C<br><br>(iii) H<sub>2</sub>O/H<sup>+</sup><br><br>(iv) Cl<sub>2</sub>, FeCl<sub>3</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "(i) Cl<sub>2</sub>, FeCl<sub>3</sub><br><br>(ii) Fe, HCl<br><br>(iii) NaNO<sub>2</sub>, HCl, 0<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"0.988ex\" height=\"1.532ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -677 436.6 677\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"></g><g data-mml-node=\"mo\" transform=\"translate(33,363) scale(0.707)\"><use data-c=\"2218\" xlink:href=\"#MJX-TEX-N-2218\"></use></g></g></g></g></svg></mjx-container>C<br><br>(iv) H<sub>2</sub>O/H<sup>+</sup>"
+        },
+        {
+          "identifier": "D",
+          "content": "(i)  Cl<sub>2</sub>, FeCl<sub>3</sub><br><br>(ii) NaNO<sub>2</sub>, HCl, 0<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"0.988ex\" height=\"1.532ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -677 436.6 677\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"></g><g data-mml-node=\"mo\" transform=\"translate(33,363) scale(0.707)\"><use data-c=\"2218\" xlink:href=\"#MJX-TEX-N-2218\"></use></g></g></g></g></svg></mjx-container>C<br><br>(iii) Fe, HCl<br><br>(iv) H<sub>2</sub>O/H<sup>+</sup>"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1ks4sl0uk/f37da83a-f3f5-43af-a62e-76366fcfab46/cdc9ccc0-f926-11eb-bffb-59f2d981f531/file-1ks4sl0ul.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 27th July Evening Shift Chemistry - Hydrocarbons Question 94 English Explanation\">"
+    }
+  ]
+}

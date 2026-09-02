@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "BmfR8TNQ4WXroQOVbo3rsa0w2w9jwuoung4",
+      "paperTitle": "JEE Main 2019 (Online) 10th April Morning Slot",
+      "year": 2019,
+      "examDate": "2019-04-10 09:30",
+      "subject": "chemistry",
+      "chapter": "compounds-containing-nitrogen",
+      "chapterGroup": "organic-chemistry",
+      "topic": "aliphatic-amines",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "ethylamine-csub2subhsub5subnhsub2sub-can-be-jee-main-chemistry-compounds-containing-nitrogen-qawg1mzcphd2dolu",
+      "content": "Ethylamine (C<sub>2</sub>H<sub>5</sub>NH<sub>2</sub>) can be obtained from N-ethylphatalimide on treatment with :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "CaH<sub>2</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "H<sub>2</sub>O"
+        },
+        {
+          "identifier": "C",
+          "content": "NaBH<sub>4</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "NH<sub>2</sub>NH<sub>2</sub>"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "N-ethyl phthalimide on treatment with\nNH<sub>2</sub>—NH<sub>2</sub> gives ethylamine.\n<br><br>It is the final step of Galbriel phatalimide synthesis reaction."
+    }
+  ]
+}

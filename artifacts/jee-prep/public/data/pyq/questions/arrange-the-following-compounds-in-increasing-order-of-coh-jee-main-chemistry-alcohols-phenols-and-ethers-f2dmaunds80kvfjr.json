@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "3G6dabpylT237sDCoJ7k9k2k5h0ozpj",
+      "paperTitle": "JEE Main 2020 (Online) 8th January Morning Slot",
+      "year": 2020,
+      "examDate": "2020-01-08 09:30",
+      "subject": "chemistry",
+      "chapter": "alcohols-phenols-and-ethers",
+      "chapterGroup": "organic-chemistry",
+      "topic": "properties-preparation-and-uses-of-phenols",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "arrange-the-following-compounds-in-increasing-order-of-coh-jee-main-chemistry-alcohols-phenols-and-ethers-f2dmaunds80kvfjr",
+      "content": "Arrange the following compounds in increasing order of C–OH bond length : <br>methanol, phenol,\np-ethoxyphenol",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "phenol &lt; methanol &lt; p-ethoxyphenol"
+        },
+        {
+          "identifier": "B",
+          "content": "methanol &lt; p-ethoxyphenol &lt; phenol"
+        },
+        {
+          "identifier": "C",
+          "content": "methanol &lt; phenol &lt; p-ethoxyphenol"
+        },
+        {
+          "identifier": "D",
+          "content": "phenol &lt; p-ethoxyphenol &lt; methanol"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "C-OH bond length in Among methanol, phenol and\np-ethoxyphenol, C-OH bond length is least in phenol due to\nresonance and maximum in methanol due to\nlack of resonance whereas it will have some\nintermediate value in p-ethoxyphenol.\n<br><br>phenol &lt; p-ethoxyphenol &lt; methanol"
+    }
+  ]
+}

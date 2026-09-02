@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "1kugrznv6",
+      "paperTitle": "JEE Advanced 2021 Paper 2 Online",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "compounds-containing-nitrogen",
+      "chapterGroup": "organic-chemistry",
+      "topic": "aromatic-amines",
+      "type": "integer",
+      "marks": 2,
+      "negMarks": 0,
+      "permalink": "reaction-of-x-g-of-sn-with-hcl-quantitatively-produced-a-sal-jee-advanced-chemistry-some-basic-concepts-of-chemistry-yk4zakuyyyts4e9m",
+      "content": "Reaction of x g of Sn with HCl quantitatively produced a salt. Entire amount of the salt reacted with y g of nitrobenzene in the presence of required amount of HCl to produce 1.29 g of an organic salt (quantitatively).<br><br>(Use Molar masses (in g mol<sup><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>1</sup>) of H, C, N, O, Cl and Sn as 1, 12, 14, 16, 35 and 119, respectively).<br><br>The value of y is _________.",
+      "options": [],
+      "correct_options": [],
+      "explanation": "<p>1 mole of organic salt is produced by 1 mole of nitrobenzene 0.01 mole of organic salt is produced by 0.01 mole nitrobenzene.</p>\n<p>Molar mass of nitrobenzene\n\n<br/><br/>= 12 × 6 + 1 × 5 + 14 × 1 + 16 × 2\n\n<br/><br/>= 72 + 5 + 14 + 32= 123 g mol<sup>−1</sup></p>\n<p> Mass of nitrobenzene required,<br/><br/> y = moles of nitrobenzene × molar mass</p>\n<p> =\n\n0.01\n\n×\n\n123 =\n\n1.23\n\ng</p>"
+    }
+  ]
+}

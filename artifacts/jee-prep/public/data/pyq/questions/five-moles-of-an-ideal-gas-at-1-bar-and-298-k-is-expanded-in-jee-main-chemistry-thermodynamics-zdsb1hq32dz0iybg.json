@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "agnOphGtqdEAlBmEV0jgy2xukfcepdd9",
+      "paperTitle": "JEE Main 2020 (Online) 4th September Evening Slot",
+      "year": 2020,
+      "examDate": "2020-09-04 15:00",
+      "subject": "chemistry",
+      "chapter": "thermodynamics",
+      "chapterGroup": "physical-chemistry",
+      "topic": "first-law-of-thermodynamics",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "five-moles-of-an-ideal-gas-at-1-bar-and-298-k-is-expanded-in-jee-main-chemistry-thermodynamics-zdsb1hq32dz0iybg",
+      "content": "Five moles of an ideal gas at 1 bar and 298 K\nis expanded into vacuum to double the volume.\nThe work done is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Zero"
+        },
+        {
+          "identifier": "B",
+          "content": "-RT <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -1.021ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.89ex\" height=\"3.122ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -929 2161.6 1380.1\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"6C\" xlink:href=\"#MJX-TEX-N-6C\"></use><use data-c=\"6E\" xlink:href=\"#MJX-TEX-N-6E\" transform=\"translate(278,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(834,0)\"><use data-c=\"2061\" xlink:href=\"#MJX-TEX-N-2061\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1000.7,0)\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(220,446.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D449\" xlink:href=\"#MJX-TEX-I-1D449\"></use></g><g data-mml-node=\"mn\" transform=\"translate(616,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(220,-345) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D449\" xlink:href=\"#MJX-TEX-I-1D449\"></use></g><g data-mml-node=\"mn\" transform=\"translate(616,-150) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g></g><rect width=\"920.9\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container>"
+        },
+        {
+          "identifier": "C",
+          "content": "C<sub>V</sub> (T<sub>2</sub> – T<sub>1</sub>)"
+        },
+        {
+          "identifier": "D",
+          "content": "– RT (V<sub>2</sub> – V<sub>1</sub>)"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "As the expansion is done in vacuum that is in absence <br>of p<sub>ext</sub> so\np<sub>ext</sub> = 0\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> W = - p<sub>ext</sub><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.885ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 833 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></svg></mjx-container>V\n<br><br>= 0"
+    }
+  ]
+}

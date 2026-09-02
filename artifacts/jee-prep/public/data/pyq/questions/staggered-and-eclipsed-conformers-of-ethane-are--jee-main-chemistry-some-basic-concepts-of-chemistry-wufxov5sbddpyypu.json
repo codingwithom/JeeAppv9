@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1krz1egjv",
+      "paperTitle": "JEE Main 2021 (Online) 27th July Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "isomerism",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "staggered-and-eclipsed-conformers-of-ethane-are--jee-main-chemistry-some-basic-concepts-of-chemistry-wufxov5sbddpyypu",
+      "content": "Staggered and eclipsed conformers of ethane are :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Polymers"
+        },
+        {
+          "identifier": "B",
+          "content": "Rotamers"
+        },
+        {
+          "identifier": "C",
+          "content": "Enantiomers"
+        },
+        {
+          "identifier": "D",
+          "content": "Mirror images"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Staggered and eclipsed conformers of ethane also known as rotamers."
+    }
+  ]
+}

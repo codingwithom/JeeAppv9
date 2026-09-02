@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "yBPNpPyxvGVIBhxQOc1kmln10wa",
+      "paperTitle": "JEE Main 2021 (Online) 18th March Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "isomerism-of-coordination-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-correct-structures-of-trans-nibrsub2subpphsub3-jee-main-chemistry-some-basic-concepts-of-chemistry-579g9mqjlnzv6uex",
+      "content": "The correct structures of trans-[NiBr<sub>2</sub>(PPh<sub>3</sub>)<sub>2</sub>] and meridonial-[Co(NH<sub>3</sub>)<sub>3</sub>(NO<sub>2</sub>)<sub>3</sub>], respectively, are",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kmnk5lpa/938b4343-bb50-4769-a1ed-f7a7b62db7aa/6ffba3e0-8caf-11eb-bb7d-75e16383db04/file-1kmnk5lpb.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 18th March Morning Shift Chemistry - Coordination Compounds Question 233 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kmnk642q/ef29858e-3e41-4f8d-a28b-56591cc2b98a/7e2d1020-8caf-11eb-bb7d-75e16383db04/file-1kmnk642r.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 18th March Morning Shift Chemistry - Coordination Compounds Question 233 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kmnk6it1/129fb7d1-5df2-41bd-8c4a-62c9413d252e/898e1e50-8caf-11eb-bb7d-75e16383db04/file-1kmnk6it2.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 18th March Morning Shift Chemistry - Coordination Compounds Question 233 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kmnk6xtz/9735cd11-d57c-470b-98bb-93a06d26b5f4/95299d70-8caf-11eb-bb7d-75e16383db04/file-1kmnk6xu0.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 18th March Morning Shift Chemistry - Coordination Compounds Question 233 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1kmuyn25k/dc61bee6-b7e9-4b89-9905-db463a8aebe3/91cd2280-90c1-11eb-819c-e5060a72f12b/file-1kmuyn25l.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 18th March Morning Shift Chemistry - Coordination Compounds Question 233 English Explanation\">"
+    }
+  ]
+}

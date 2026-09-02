@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1krt3vhyb",
+      "paperTitle": "JEE Main 2021 (Online) 22th July Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "compounds-containing-nitrogen",
+      "chapterGroup": "organic-chemistry",
+      "topic": "diazonium-salts-and-other-nitrogen-containing-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "imagebrbrin-the-chemical-reactions-given-above-a-and-b-jee-main-chemistry-some-basic-concepts-of-chemistry-bqbzxivqi3prjipo",
+      "content": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1kruu8px2/89566080-bfc9-4df9-9389-1ad568cfec6a/73662d60-f3ad-11eb-a605-b34dacb82f1b/file-1kruu8px3-320w.png\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1kruu8px2/89566080-bfc9-4df9-9389-1ad568cfec6a/73662d60-f3ad-11eb-a605-b34dacb82f1b/file-1kruu8px3-500w.png\"><img src=\"https://imagex.cdn.examgoal.net/1kruu8px2/89566080-bfc9-4df9-9389-1ad568cfec6a/73662d60-f3ad-11eb-a605-b34dacb82f1b/file-1kruu8px3.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 22th July Evening Shift Chemistry - Compounds Containing Nitrogen Question 161 English\"></picture><br>In the chemical reactions given above A and B respectively are :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "H<sub>3</sub>PO<sub>2</sub> and CH<sub>3</sub>CH<sub>2</sub>Cl"
+        },
+        {
+          "identifier": "B",
+          "content": "CH<sub>3</sub>CH<sub>2</sub>OH and H<sub>3</sub>PO<sub>2</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "H<sub>3</sub>PO<sub>2</sub> and CH<sub>3</sub>CH<sub>2</sub>OH"
+        },
+        {
+          "identifier": "D",
+          "content": "CH<sub>3</sub>CH<sub>2</sub>Cl and H<sub>3</sub>PO<sub>2</sub>"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1kruujabd/571078dc-3340-45f4-afe6-8dbb9a757e31/993f3e90-f3ae-11eb-a605-b34dacb82f1b/file-1kruujabe-320w.jpeg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1kruujabd/571078dc-3340-45f4-afe6-8dbb9a757e31/993f3e90-f3ae-11eb-a605-b34dacb82f1b/file-1kruujabe-500w.jpeg\"><source media=\"(max-width: 680px)\" srcset=\"https://imagex.cdn.examgoal.net/1kruujabd/571078dc-3340-45f4-afe6-8dbb9a757e31/993f3e90-f3ae-11eb-a605-b34dacb82f1b/file-1kruujabe-680w.jpeg\"><img src=\"https://imagex.cdn.examgoal.net/1kruujabd/571078dc-3340-45f4-afe6-8dbb9a757e31/993f3e90-f3ae-11eb-a605-b34dacb82f1b/file-1kruujabe.jpeg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 22th July Evening Shift Chemistry - Compounds Containing Nitrogen Question 161 English Explanation\"></picture>"
+    }
+  ]
+}

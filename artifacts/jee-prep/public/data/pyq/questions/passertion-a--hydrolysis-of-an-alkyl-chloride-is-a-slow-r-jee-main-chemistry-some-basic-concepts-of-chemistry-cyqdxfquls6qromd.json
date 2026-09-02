@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ldyfs5ir",
+      "paperTitle": "JEE Main 2023 (Online) 24th January Morning Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "haloalkanes-and-haloarenes",
+      "chapterGroup": "organic-chemistry",
+      "topic": "haloalkanes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "passertion-a--hydrolysis-of-an-alkyl-chloride-is-a-slow-r-jee-main-chemistry-some-basic-concepts-of-chemistry-cyqdxfquls6qromd",
+      "content": "<p>Assertion A : Hydrolysis of an alkyl chloride is a slow reaction but in the presence of NaI, the rate of the hydrolysis increases.</p>\n<p>Reason R : I<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.432ex\" height=\"1.754ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -775.2 633.1 775.2\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"></g><g data-mml-node=\"TeXAtom\" transform=\"translate(33,363) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></g></g></svg></mjx-container> is a good nucleophile as well as a good leaving group.</p>\n<p>In the light of the above statements, choose the correct answer from the options given below</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "A is true but R is false"
+        },
+        {
+          "identifier": "B",
+          "content": "A is false but R is true"
+        },
+        {
+          "identifier": "C",
+          "content": "Both A and R are true and R is the correct explanation of A"
+        },
+        {
+          "identifier": "D",
+          "content": "Both A and R are true but R is NOT the correct explanation of A"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "The rate of hydrolysis of alkyl chloride improves because of better Nucleophilicity of I<sup>–</sup>."
+    }
+  ]
+}

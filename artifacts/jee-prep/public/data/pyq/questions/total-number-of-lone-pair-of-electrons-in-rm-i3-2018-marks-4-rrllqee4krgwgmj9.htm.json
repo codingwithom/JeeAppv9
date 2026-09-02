@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "RrllQEe4krGwgmj9",
+      "paperTitle": "JEE Main 2018 (Offline)",
+      "year": 2018,
+      "examDate": null,
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "hybridization-and-vsepr-theory",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "total-number-of-lone-pair-of-electrons-in-rm-i3-2018-marks-4-rrllqee4krgwgmj9.htm",
+      "content": "Total number of lone pair of electrons in <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.706ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.249ex\" height=\"2.57ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -823.8 994.1 1136\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msubsup\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"49\" xlink:href=\"#MJX-TEX-N-49\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(394,411.6) scale(0.707)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(394,-296.6) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g></g></svg></mjx-container> ion is ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "3"
+        },
+        {
+          "identifier": "B",
+          "content": "9"
+        },
+        {
+          "identifier": "C",
+          "content": "6"
+        },
+        {
+          "identifier": "D",
+          "content": "12"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/cXM3BbX1ScGricq8u/wN4tbqsnTbHZpiTnrcxf9uZxG7mQn/MD0u2i432KrzvoCOSEASzh/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2018 (Offline) Chemistry - Chemical Bonding &amp; Molecular Structure Question 230 English Explanation\">\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.643ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 1168 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g><g data-mml-node=\"mspace\" transform=\"translate(667,0)\"></g><g data-mml-node=\"mspace\" transform=\"translate(834,0)\"></g><g data-mml-node=\"mspace\" transform=\"translate(1001,0)\"></g></g></g></svg></mjx-container> Total number of lone pair = 9"
+    }
+  ]
+}

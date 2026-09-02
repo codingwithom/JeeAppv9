@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l56wr85r",
+      "paperTitle": "JEE Main 2022 (Online) 27th June Evening Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "hybridization-and-vsepr-theory",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pidentify-the-incorrect-statement-for-pclsub5sub-from-jee-main-chemistry-some-basic-concepts-of-chemistry-q8y9pjk7faar4qo2",
+      "content": "<p>Identify the incorrect statement for PCl<sub>5</sub> from the following.</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "In this molecule, orbitals of phosphorous are assumed to undergo sp<sup>3</sup>d hybridization."
+        },
+        {
+          "identifier": "B",
+          "content": "The geometry of PCl<sub>5</sub> is trigonal bipyramidal."
+        },
+        {
+          "identifier": "C",
+          "content": "PCl<sub>5</sub> has two axial bonds stronger than three equatorial bonds."
+        },
+        {
+          "identifier": "D",
+          "content": "The three equatorial bonds of PCl<sub>5</sub> lie in a plane."
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<b>PCl<sub>5</sub></b><br><br>\n<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l5jkmy8x/8796e7cd-77d0-4f27-bcbb-1f9449bc2e5a/4c07f510-02a6-11ed-b0f0-b1d5b36f6c01/file-1l5jkmy8y.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l5jkmy8x/8796e7cd-77d0-4f27-bcbb-1f9449bc2e5a/4c07f510-02a6-11ed-b0f0-b1d5b36f6c01/file-1l5jkmy8y.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2022 (Online) 27th June Evening Shift Chemistry - Chemical Bonding &amp; Molecular Structure Question 149 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l5jkmy8x/8796e7cd-77d0-4f27-bcbb-1f9449bc2e5a/4c07f510-02a6-11ed-b0f0-b1d5b36f6c01/file-1l5jkmy8y.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l5jkmy8x/8796e7cd-77d0-4f27-bcbb-1f9449bc2e5a/4c07f510-02a6-11ed-b0f0-b1d5b36f6c01/file-1l5jkmy8y.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l5jkmy8x/8796e7cd-77d0-4f27-bcbb-1f9449bc2e5a/4c07f510-02a6-11ed-b0f0-b1d5b36f6c01/file-1l5jkmy8y.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l5jkmy8x/8796e7cd-77d0-4f27-bcbb-1f9449bc2e5a/4c07f510-02a6-11ed-b0f0-b1d5b36f6c01/file-1l5jkmy8y.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l5jkmy8x/8796e7cd-77d0-4f27-bcbb-1f9449bc2e5a/4c07f510-02a6-11ed-b0f0-b1d5b36f6c01/file-1l5jkmy8y.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l5jkmy8x/8796e7cd-77d0-4f27-bcbb-1f9449bc2e5a/4c07f510-02a6-11ed-b0f0-b1d5b36f6c01/file-1l5jkmy8y.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"><br>\nAll three equatorial bonds in a plane<br><br>\nsp<sup>3</sup>d hybridization<br><br>\nTrigonal bipyramidal<br><br>\nAxial bonds are weaker than equatorial bonds."
+    }
+  ]
+}

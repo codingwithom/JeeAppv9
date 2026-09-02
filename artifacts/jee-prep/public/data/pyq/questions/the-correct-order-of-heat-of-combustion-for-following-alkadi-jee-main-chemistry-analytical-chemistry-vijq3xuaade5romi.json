@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "BvFrkxm8xP3oA7HspD7k9k2k5ic12hr",
+      "paperTitle": "JEE Main 2020 (Online) 9th January Morning Slot",
+      "year": 2020,
+      "examDate": "2020-01-09 09:30",
+      "subject": "chemistry",
+      "chapter": "hydrocarbons",
+      "chapterGroup": "organic-chemistry",
+      "topic": "properties-and-preparation-of-alkenes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-correct-order-of-heat-of-combustion-for-following-alkadi-jee-main-chemistry-analytical-chemistry-vijq3xuaade5romi",
+      "content": "The correct order of heat of combustion for\nfollowing alkadienes is :<br>\n<img src=\"https://imagex.cdn.examgoal.net/7k9k2k5ibz2k8/aa581ccc-4722-44e7-afc6-78ef28e7daa5/d89ef380-393f-11ea-92dd-4b9c3519996f/file-7k9k2k5ibz2k9-214w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 9th January Morning Slot Chemistry - Hydrocarbons Question 122 English 1\">\n<img src=\"https://imagex.cdn.examgoal.net/7k9k2k5ibzau4/c9373bba-e54f-4cb8-aee5-6f96e54d26a3/df034dc0-393f-11ea-92dd-4b9c3519996f/file-7k9k2k5ibzau5-222w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 9th January Morning Slot Chemistry - Hydrocarbons Question 122 English 2\">\n<img src=\"https://imagex.cdn.examgoal.net/7k9k2k5ibzjsk/82867c37-8962-40bb-bd59-04c4f4ad00eb/e5eeb250-393f-11ea-92dd-4b9c3519996f/file-7k9k2k5ibzjsl-248w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 9th January Morning Slot Chemistry - Hydrocarbons Question 122 English 3\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(b) &lt; (c) &lt; (a)"
+        },
+        {
+          "identifier": "B",
+          "content": "(a) &lt; (c) &lt; (b)"
+        },
+        {
+          "identifier": "C",
+          "content": "(a) &lt; (b) &lt; (c)"
+        },
+        {
+          "identifier": "D",
+          "content": "(c) &lt; (b) &lt; (a)"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/7kd4dk5zptec8/1b6edc48-28ee-47ee-868d-c844e1d0216d/4db65580-42cf-11ea-b62d-51ccc5d4afb6/file-7kd4dk5zptec9-320w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 9th January Morning Slot Chemistry - Hydrocarbons Question 122 English Explanation\">\n<br><br>In lsomers of Hydrocarbon heat of combustion depend upon their stability. Generally trans is more stable then cis form. Stability increase heat of\ncombustion decrease.\n<br><br>Stability a &gt; b &gt; c\n<br><br>Heat of combustion c &gt; b &gt; a"
+    }
+  ]
+}

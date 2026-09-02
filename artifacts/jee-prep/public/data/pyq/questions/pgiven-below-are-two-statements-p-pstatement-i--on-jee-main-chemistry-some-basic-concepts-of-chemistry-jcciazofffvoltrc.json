@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l6e1u9l1",
+      "paperTitle": "JEE Main 2022 (Online) 25th July Morning Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "alcohols-phenols-and-ethers",
+      "chapterGroup": "organic-chemistry",
+      "topic": "properties-preparation-and-uses-of-alcohols",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pgiven-below-are-two-statements-p-pstatement-i--on-jee-main-chemistry-some-basic-concepts-of-chemistry-jcciazofffvoltrc",
+      "content": "<p>Given below are two statements :</p>\n<p>Statement I : On heating with <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"7.463ex\" height=\"1.934ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 3298.6 855\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"4B\" xlink:href=\"#MJX-TEX-N-4B\"></use><use data-c=\"48\" xlink:href=\"#MJX-TEX-N-48\" transform=\"translate(778,0)\"></use><use data-c=\"53\" xlink:href=\"#MJX-TEX-N-53\" transform=\"translate(1528,0)\"></use><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\" transform=\"translate(2084,0)\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(2895,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g></g></g></svg></mjx-container>, glycerol is dehydrated and acrolein is formed.</p>\n<p>Statement II : Acrolein has fruity odour and can be used to test glycerol's presence.</p>\n<p>Choose the correct option.</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Both Statement I and Statement II are correct."
+        },
+        {
+          "identifier": "B",
+          "content": "Both Statement I and Statement II are incorrect."
+        },
+        {
+          "identifier": "C",
+          "content": "Statement I is correct but Statement II is incorrect."
+        },
+        {
+          "identifier": "D",
+          "content": "Statement I is incorrect but Statement II is correct."
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<p>Glycerol, on heating with KHSO<sub>4</sub>, undergoes\ndehydration to give unsaturated aldehyde called\nacrolein. So, the statement I is correct. </p>\n<p><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1lc5nub91/885a5719-f117-4ded-bc2b-fa2b9690e0d5/5eb03160-8595-11ed-a4e1-239777dab634/file-1lc5nub92.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1lc5nub91/885a5719-f117-4ded-bc2b-fa2b9690e0d5/5eb03160-8595-11ed-a4e1-239777dab634/file-1lc5nub92.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2022 (Online) 25th July Morning Shift Chemistry - Alcohols, Phenols and Ethers Question 87 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1lc5nub91/885a5719-f117-4ded-bc2b-fa2b9690e0d5/5eb03160-8595-11ed-a4e1-239777dab634/file-1lc5nub92.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1lc5nub91/885a5719-f117-4ded-bc2b-fa2b9690e0d5/5eb03160-8595-11ed-a4e1-239777dab634/file-1lc5nub92.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1lc5nub91/885a5719-f117-4ded-bc2b-fa2b9690e0d5/5eb03160-8595-11ed-a4e1-239777dab634/file-1lc5nub92.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1lc5nub91/885a5719-f117-4ded-bc2b-fa2b9690e0d5/5eb03160-8595-11ed-a4e1-239777dab634/file-1lc5nub92.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1lc5nub91/885a5719-f117-4ded-bc2b-fa2b9690e0d5/5eb03160-8595-11ed-a4e1-239777dab634/file-1lc5nub92.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1lc5nub91/885a5719-f117-4ded-bc2b-fa2b9690e0d5/5eb03160-8595-11ed-a4e1-239777dab634/file-1lc5nub92.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"></p>\n<p>Acrolein has a piercing unpleasant smell. So,\nstatement II is incorrect. </p>"
+    }
+  ]
+}

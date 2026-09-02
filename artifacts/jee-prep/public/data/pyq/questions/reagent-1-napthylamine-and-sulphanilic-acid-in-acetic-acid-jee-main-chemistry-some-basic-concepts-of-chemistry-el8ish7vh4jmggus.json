@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "u5GKPkAaQknjdjCcLb1kmlmfej6",
+      "paperTitle": "JEE Main 2021 (Online) 18th March Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "practical-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "detection-of-extra-elements-and-functional-groups",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "reagent-1-napthylamine-and-sulphanilic-acid-in-acetic-acid-jee-main-chemistry-some-basic-concepts-of-chemistry-el8ish7vh4jmggus",
+      "content": "Reagent, 1-napthylamine and sulphanilic acid in acetic acid is used for the detection of ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "N<sub>2</sub>O"
+        },
+        {
+          "identifier": "B",
+          "content": "NO<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.706ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.432ex\" height=\"2.57ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -823.8 633.1 1136\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msubsup\"><g data-mml-node=\"mi\"></g><g data-mml-node=\"mo\" transform=\"translate(33,411.6) scale(0.707)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(33,-296.6) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g></g></svg></mjx-container>"
+        },
+        {
+          "identifier": "C",
+          "content": "NO"
+        },
+        {
+          "identifier": "D",
+          "content": "NO<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.673ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.432ex\" height=\"2.537ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -823.8 633.1 1121.2\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msubsup\"><g data-mml-node=\"mi\"></g><g data-mml-node=\"mo\" transform=\"translate(33,411.6) scale(0.707)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(33,-297.3) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></svg></mjx-container>"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "1-naphthyl amine and sulphanilic acid in acetic acid\nis used for the detection of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.673ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.168ex\" height=\"2.537ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -823.8 2284.1 1121.2\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D441\" xlink:href=\"#MJX-TEX-I-1D441\"></use></g><g data-mml-node=\"msubsup\" transform=\"translate(888,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mo\" transform=\"translate(796,411.6) scale(0.707)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-297.3) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></svg></mjx-container>.<br><br><img src=\"https://imagex.cdn.examgoal.net/1kmuzcfda/21fe67b8-bf81-4917-912d-c8756c4dae07/533cdee0-90c4-11eb-819c-e5060a72f12b/file-1kmuzcfdb.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 18th March Morning Shift Chemistry - Practical Organic Chemistry Question 88 English Explanation\">\n"
+    }
+  ]
+}

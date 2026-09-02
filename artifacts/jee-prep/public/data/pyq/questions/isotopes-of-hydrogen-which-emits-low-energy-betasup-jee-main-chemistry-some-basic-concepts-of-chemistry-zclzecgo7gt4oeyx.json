@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1krt3yw5x",
+      "paperTitle": "JEE Main 2021 (Online) 22th July Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "chemical-kinetics-and-nuclear-chemistry",
+      "chapterGroup": "physical-chemistry",
+      "topic": "nuclear-chemistry",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "isotopes-of-hydrogen-which-emits-low-energy-betasup-jee-main-chemistry-some-basic-concepts-of-chemistry-zclzecgo7gt4oeyx",
+      "content": "Isotope(s) of hydrogen which emits low energy <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.439ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.296ex\" height=\"2.034ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 573 899\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D6FD\" xlink:href=\"#MJX-TEX-I-1D6FD\"></use></g></g></g></svg></mjx-container><sup><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container></sup> particles with t<sub>1/2</sub> value &gt; 12 years is/are",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Protium"
+        },
+        {
+          "identifier": "B",
+          "content": "Tritium"
+        },
+        {
+          "identifier": "C",
+          "content": "Deuterium"
+        },
+        {
+          "identifier": "D",
+          "content": "Deuterium and Tritium"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.651ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"0.988ex\" height=\"2.538ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -833.9 436.6 1121.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msubsup\"><g data-mml-node=\"mi\"></g><g data-mml-node=\"mn\" transform=\"translate(33,363) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mn\" transform=\"translate(33,-287.9) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g></g></svg></mjx-container>H and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.651ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"0.988ex\" height=\"2.538ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -833.9 436.6 1121.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msubsup\"><g data-mml-node=\"mi\"></g><g data-mml-node=\"mn\" transform=\"translate(33,363) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mn\" transform=\"translate(33,-287.9) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g></g></svg></mjx-container>H are stable while <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.673ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"0.988ex\" height=\"2.572ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -839.4 436.6 1136.7\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msubsup\"><g data-mml-node=\"mi\"></g><g data-mml-node=\"mn\" transform=\"translate(33,369.2) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g><g data-mml-node=\"mn\" transform=\"translate(33,-297.3) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g></g></svg></mjx-container>H is radioactive."
+    }
+  ]
+}

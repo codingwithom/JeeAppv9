@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l6ggcf4g",
+      "paperTitle": "JEE Main 2022 (Online) 26th July Morning Shift",
+      "year": 2022,
+      "subject": "mathematics",
+      "chapter": "limits-continuity-and-differentiability",
+      "chapterGroup": "calculus",
+      "topic": "continuity",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "plet-f--r-to-r-be-a-continuous-function-such-that--jee-main-mathematics-trigonometric-functions-and-equations-nhnohuulhdvxhpzb",
+      "content": "<p>Let f : R <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> R be a continuous function such that <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.566ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"16.805ex\" height=\"2.262ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 7428 1000\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D453\" xlink:href=\"#MJX-TEX-I-1D453\"></use></g><g data-mml-node=\"mo\" transform=\"translate(550,0)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"mn\" transform=\"translate(939,0)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1439,0)\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2011,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2622.2,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mi\" transform=\"translate(3622.4,0)\"><use data-c=\"1D453\" xlink:href=\"#MJX-TEX-I-1D453\"></use></g><g data-mml-node=\"mo\" transform=\"translate(4172.4,0)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"mi\" transform=\"translate(4561.4,0)\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g><g data-mml-node=\"mo\" transform=\"translate(5133.4,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g><g data-mml-node=\"mo\" transform=\"translate(5800.2,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mi\" transform=\"translate(6856,0)\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g></g></g></svg></mjx-container>. If <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.566ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"8.284ex\" height=\"2.262ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 3661.6 1000\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D453\" xlink:href=\"#MJX-TEX-I-1D453\"></use></g><g data-mml-node=\"mo\" transform=\"translate(550,0)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"mn\" transform=\"translate(939,0)\"><use data-c=\"38\" xlink:href=\"#MJX-TEX-N-38\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1439,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2105.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(3161.6,0)\"><use data-c=\"37\" xlink:href=\"#MJX-TEX-N-37\"></use></g></g></g></svg></mjx-container>, then <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.566ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.267ex\" height=\"2.262ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 2328 1000\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D453\" xlink:href=\"#MJX-TEX-I-1D453\"></use></g><g data-mml-node=\"mo\" transform=\"translate(550,0)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"mn\" transform=\"translate(939,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1939,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g></g></svg></mjx-container> is equal to :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "4"
+        },
+        {
+          "identifier": "B",
+          "content": "10"
+        },
+        {
+          "identifier": "C",
+          "content": "11"
+        },
+        {
+          "identifier": "D",
+          "content": "16"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<p>$$f(3x) - f(x) = x$$ ...... (1)</p>\n<p>$$x \\to {x \\over 3}$$</p>\n<p>$$f(x) - f\\left( {{x \\over 3}} \\right) = {x \\over 3}$$ ....... (2)</p>\n<p>Again $$x \\to {x \\over 3}$$</p>\n<p>$$f\\left( {{x \\over 3}} \\right) - f\\left( {{x \\over 9}} \\right) = {x \\over {{3^2}}}$$ ...... (3)</p>\n<p>Similarly</p>\n<p>$$f\\left( {{x \\over {{3^{n - 2}}}}} \\right) - f\\left( {{x \\over {{3^{n - 1}}}}} \\right) = {x \\over {{3^{n - 1}}}}\\,.....\\,(n)$$</p->\n<p>Adding all these and applying $$n \\to \\infty $$</p>\n<p>$$\\mathop {\\lim }\\limits_{n \\to \\infty } \\left( {f(3x) - f\\left( {{x \\over {{3^{n - 1}}}}} \\right)} \\right) = x\\left( {1 + {1 \\over 3} + {1 \\over {{3^2}}}\\, + \\,....} \\right)$$</p>\n<p>$$f(3x) - f(0) = {{3x} \\over 2}$$</p>\n<p>Putting $$x = {8 \\over 3}$$</p>\n<p>$$f(8) - f(0) = 4$$</p>\n<p>$$ \\Rightarrow f(0) = 3$$</p>\n<p>Putting $$x = {{14} \\over 3}$$</p>\n<p>$$f(14) - 3 = 7 \\Rightarrow f(14) = 10$$</p>"
+    }
+  ]
+}

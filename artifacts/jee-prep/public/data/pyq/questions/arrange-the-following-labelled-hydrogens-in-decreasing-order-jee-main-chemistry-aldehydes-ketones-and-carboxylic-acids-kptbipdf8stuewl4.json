@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "oMEVHm4zTSUkox8rJHjgy2xukey6xx5y",
+      "paperTitle": "JEE Main 2020 (Online) 2nd September Evening Slot",
+      "year": 2020,
+      "examDate": "2020-09-02 15:00",
+      "subject": "chemistry",
+      "chapter": "aldehydes-ketones-and-carboxylic-acids",
+      "chapterGroup": "organic-chemistry",
+      "topic": "preparation-properties-and-uses-of-carboxylic-acids",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "arrange-the-following-labelled-hydrogens-in-decreasing-order-jee-main-chemistry-aldehydes-ketones-and-carboxylic-acids-kptbipdf8stuewl4",
+      "content": "Arrange the following labelled hydrogens in\ndecreasing order of acidity :\n<img src=\"https://imagex.cdn.examgoal.net/jgy2xukey6w6b1/02c157a6-6b6a-4478-ad77-bf4dc2e2d904/773db9d0-f426-11ea-8293-3b6cc591631c/file-jgy2xukey6w6b2-320w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 2nd September Evening Slot Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 209 English\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "b &gt; c &gt; d &gt; a"
+        },
+        {
+          "identifier": "B",
+          "content": "b &gt; a &gt; c &gt; d"
+        },
+        {
+          "identifier": "C",
+          "content": "c &gt; b &gt; d &gt; a"
+        },
+        {
+          "identifier": "D",
+          "content": "c &gt; b &gt; a &gt; d"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Order of acidic strength\n<br><br><img src=\"https://imagex.cdn.examgoal.net/jgy2xukhdanp15/9897bd67-8f57-4e4f-9569-469c877a6fe3/60707690-240d-11eb-8293-3b6cc591631c/file-jgy2xukhdanp16-320w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 2nd September Evening Slot Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 209 English Explanation\">"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "Y7sh8sIWQvmgtb36nDjgy2xukf2b3cdd",
+      "paperTitle": "JEE Main 2020 (Online) 3rd September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-03 09:00",
+      "subject": "chemistry",
+      "chapter": "hydrocarbons",
+      "chapterGroup": "organic-chemistry",
+      "topic": "reaction-of-alkenes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-compounds-produces-an-optically-inact-jee-main-chemistry-hydrocarbons-e8cbbvjpmeij5w5j",
+      "content": "Which of the following compounds produces an optically inactive compound on hydrogenation?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukf26pfux/b43e4f92-4ff5-4741-a378-b1e98fc8222a/de8dc790-f658-11ea-8293-3b6cc591631c/file-jgy2xukf26pfuy-480w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 3rd September Morning Slot Chemistry - Hydrocarbons Question 119 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukf26pz4e/5b6b6bbe-e1a9-4121-a681-6f1bfc182765/ed6f22e0-f658-11ea-8293-3b6cc591631c/file-jgy2xukf26pz4f-447w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 3rd September Morning Slot Chemistry - Hydrocarbons Question 119 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukf26qolp/b61df12d-158b-4901-8854-88e8e7a1faac/011e0bd0-f659-11ea-8293-3b6cc591631c/file-jgy2xukf26qolq-407w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 3rd September Morning Slot Chemistry - Hydrocarbons Question 119 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukf2b2fs3/d11dc720-456e-424d-b737-68a1dab0f513/ec874b30-f669-11ea-8293-3b6cc591631c/file-jgy2xukf2b2fs4-286w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 3rd September Morning Slot Chemistry - Hydrocarbons Question 119 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1khlk0fjc/7664ec2d-7ba5-4d5e-9862-92c81bd63991/39fb4280-2898-11eb-a487-b9a33ba94575/file-1khlk0fjd-320w.jpeg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1khlk0fjc/7664ec2d-7ba5-4d5e-9862-92c81bd63991/39fb4280-2898-11eb-a487-b9a33ba94575/file-1khlk0fjd-500w.jpeg\"><source media=\"(max-width: 680px)\" srcset=\"https://imagex.cdn.examgoal.net/1khlk0fjc/7664ec2d-7ba5-4d5e-9862-92c81bd63991/39fb4280-2898-11eb-a487-b9a33ba94575/file-1khlk0fjd-680w.jpeg\"><img src=\"https://imagex.cdn.examgoal.net/1khlk0fjc/7664ec2d-7ba5-4d5e-9862-92c81bd63991/39fb4280-2898-11eb-a487-b9a33ba94575/file-1khlk0fjd-860w.jpeg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 3rd September Morning Slot Chemistry - Hydrocarbons Question 119 English Explanation\"></picture>"
+    }
+  ]
+}

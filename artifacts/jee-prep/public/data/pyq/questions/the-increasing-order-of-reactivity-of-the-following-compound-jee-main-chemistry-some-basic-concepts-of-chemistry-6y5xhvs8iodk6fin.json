@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "73PmFf1SvCQa1RSCMot9m",
+      "paperTitle": "JEE Main 2019 (Online) 12th January Morning Slot",
+      "year": 2019,
+      "examDate": "2019-01-12 09:30",
+      "subject": "chemistry",
+      "chapter": "compounds-containing-nitrogen",
+      "chapterGroup": "organic-chemistry",
+      "topic": "aromatic-amines",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-increasing-order-of-reactivity-of-the-following-compound-jee-main-chemistry-some-basic-concepts-of-chemistry-6y5xhvs8iodk6fin",
+      "content": "The increasing order of reactivity of the following compounds towards reaction with alkyl halides directly is \n<img src=\"https://imagex.cdn.examgoal.net/hp8LPFswHloTQ2jur/EdGyjr3WG0RQUimdvtm32MoU103JW/24m7gC4fejoKaFg8s8oHaY/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th January Morning Slot Chemistry - Compounds Containing Nitrogen Question 218 English 1\">\n<h2 style=\"text-align: center\">(A)</h2>\n<img src=\"https://imagex.cdn.examgoal.net/cgqcIAySpucFCDUyJ/P2VJdGJgSjynZe0XapICsnUUsI6YW/jUGGUVAfMtawkIZRNCwiSi/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th January Morning Slot Chemistry - Compounds Containing Nitrogen Question 218 English 2\">\n<h2 style=\"text-align: center\">(B)</h2>\n<img src=\"https://imagex.cdn.examgoal.net/ZTW1N1CNLcAG1bGp7/OZYvDyLC5c6xkm1TPsnkACUfSJJ1h/wrhFqR8lhLwqLNsxJZd7PO/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th January Morning Slot Chemistry - Compounds Containing Nitrogen Question 218 English 3\">\n<h2 style=\"text-align: center\">(C)</h2>\n<img src=\"https://imagex.cdn.examgoal.net/azOK8ctozFzI7StAi/zwbKilYwleJvHQP9L7CMvbT38rBVu/3ZrfwHBcroT8raYLZTFrDZ/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th January Morning Slot Chemistry - Compounds Containing Nitrogen Question 218 English 4\">\n<h2 style=\"text-align: center\">(D)</h2>\n",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "A &lt; B &lt; C &lt; D"
+        },
+        {
+          "identifier": "B",
+          "content": "B &lt; A &lt; C &lt; D"
+        },
+        {
+          "identifier": "C",
+          "content": "B &lt; A &lt; D &lt; C"
+        },
+        {
+          "identifier": "D",
+          "content": "A &lt; C &lt; D &lt; B"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Lone pair over nitrogen will act as the reacting centre and more free nitrogen atom will be more reactive towards alkyl halide.\n<br><br>For compound (A), lone pair of N atom is in resonance with <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.296ex\" height=\"1ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -431 573 442\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D70B\" xlink:href=\"#MJX-TEX-I-1D70B\"></use></g></g></g></svg></mjx-container> bond of C = O. So lone pair of N atom gets delocalised.\n<br><br>For compound (B), lone pair of N atom is in resonance with <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.296ex\" height=\"1ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -431 573 442\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D70B\" xlink:href=\"#MJX-TEX-I-1D70B\"></use></g></g></g></svg></mjx-container> bond of  two C = O. So here lone pair of N atom gets more delocalised than compound (A). So reactivity towards alkyl halide is very less for this compound.\n<br><br>For compound (C), lone pair of N atom is in resonance with <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.296ex\" height=\"1ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -431 573 442\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D70B\" xlink:href=\"#MJX-TEX-I-1D70B\"></use></g></g></g></svg></mjx-container> bond of  benzene ring and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.296ex\" height=\"1ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -431 573 442\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D70B\" xlink:href=\"#MJX-TEX-I-1D70B\"></use></g></g></g></svg></mjx-container> bond of C <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.081ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"0.968ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -464 778 428\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2261\" xlink:href=\"#MJX-TEX-N-2261\"></use></g></g></g></svg></mjx-container> N. So delocalisation of lone pair of N atom is relatively high.\n<br><br>For compound (D), lone pair of N atom is in resonance with <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.296ex\" height=\"1ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -431 573 442\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D70B\" xlink:href=\"#MJX-TEX-I-1D70B\"></use></g></g></g></svg></mjx-container> bond of  benzene ring only. So delocalisation of lone pair of N atom is relatively low.\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> Reactivity order is B &lt; A &lt; C &lt; D."
+    }
+  ]
+}

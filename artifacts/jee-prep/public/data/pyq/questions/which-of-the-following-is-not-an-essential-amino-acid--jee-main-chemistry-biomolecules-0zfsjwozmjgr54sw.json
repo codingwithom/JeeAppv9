@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "iuqCHmH9eRV9JKc3g6jgy2xukfi6r5kv",
+      "paperTitle": "JEE Main 2020 (Online) 5th September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-05 09:00",
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "proteins-and-enzymes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-is-not-an-essential-amino-acid--jee-main-chemistry-biomolecules-0zfsjwozmjgr54sw",
+      "content": "Which of the following is not an essential\namino acid :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Valine"
+        },
+        {
+          "identifier": "B",
+          "content": "Leucine"
+        },
+        {
+          "identifier": "C",
+          "content": "Lysine"
+        },
+        {
+          "identifier": "D",
+          "content": "Tyrosine"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Tyrosine is not an essential amino acid."
+    }
+  ]
+}

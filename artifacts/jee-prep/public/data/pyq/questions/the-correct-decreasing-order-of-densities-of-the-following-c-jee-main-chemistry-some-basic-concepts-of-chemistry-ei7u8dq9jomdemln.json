@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1krx5neu9",
+      "paperTitle": "JEE Main 2021 (Online) 25th July Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "isomerism",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-correct-decreasing-order-of-densities-of-the-following-c-jee-main-chemistry-some-basic-concepts-of-chemistry-ei7u8dq9jomdemln",
+      "content": "The correct decreasing order of densities of the following compounds is :<br><br><picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1kryzrvvv/97a4443d-e394-4e3c-a098-351f04c81ebb/38a01fb0-f5f6-11eb-92d9-470658ec3090/file-1kryzrvvw-320w.jpg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1kryzrvvv/97a4443d-e394-4e3c-a098-351f04c81ebb/38a01fb0-f5f6-11eb-92d9-470658ec3090/file-1kryzrvvw-500w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/1kryzrvvv/97a4443d-e394-4e3c-a098-351f04c81ebb/38a01fb0-f5f6-11eb-92d9-470658ec3090/file-1kryzrvvw.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 25th July Evening Shift Chemistry - Basics of Organic Chemistry Question 183 English\"></picture>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(D) &gt; (C) &gt; (B) &gt; (A)"
+        },
+        {
+          "identifier": "B",
+          "content": "(C) &gt; (D) &gt; (A) &gt; (B)"
+        },
+        {
+          "identifier": "C",
+          "content": "(C) &gt; (B) &gt; (A) &gt; (D) "
+        },
+        {
+          "identifier": "D",
+          "content": "(A) &gt; (B) &gt; (C) &gt; (D)"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "The density order<br><br><img src=\"https://imagex.cdn.examgoal.net/1kryzt10m/d26743af-6846-4e2c-8f8d-1959809f0606/58662060-f5f6-11eb-92d9-470658ec3090/file-1kryzt10n.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 25th July Evening Shift Chemistry - Basics of Organic Chemistry Question 183 English Explanation\">"
+    }
+  ]
+}

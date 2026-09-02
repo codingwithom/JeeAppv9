@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1kugsqx84",
+      "paperTitle": "JEE Advanced 2021 Paper 2 Online",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "salt-analysis",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "systematic-analysis-of-cations",
+      "type": "mcq",
+      "marks": 3,
+      "negMarks": 1,
+      "permalink": "precipitate-x-is-jee-advanced-chemistry-some-basic-concepts-of-chemistry-rh5k7kcrgf2jiai7",
+      "content": "Precipitate X is ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Fe<sub>4</sub>[Fe(CN)<sub>6</sub>]<sub>3</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "Fe[Fe(CN)<sub>6</sub>]"
+        },
+        {
+          "identifier": "C",
+          "content": "K<sub>2</sub>Fe[Fe(CN)<sub>6</sub>]"
+        },
+        {
+          "identifier": "D",
+          "content": "KFe[Fe(CN)<sub>6</sub>]"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<p>Precipitate X is K<sub>2</sub>Fe[Fe(CN)<sub>6</sub>]</p>\n<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l08aif2z/291bd5e9-b850-484c-a940-9f8c1de6b88b/fea90ab0-9974-11ec-bc1e-ff46d5f5fdb6/file-1l08aif30.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l08aif2z/291bd5e9-b850-484c-a940-9f8c1de6b88b/fea90ab0-9974-11ec-bc1e-ff46d5f5fdb6/file-1l08aif30.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Advanced 2021 Paper 2 Online Chemistry - Salt Analysis Question 25 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l08aif2z/291bd5e9-b850-484c-a940-9f8c1de6b88b/fea90ab0-9974-11ec-bc1e-ff46d5f5fdb6/file-1l08aif30.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l08aif2z/291bd5e9-b850-484c-a940-9f8c1de6b88b/fea90ab0-9974-11ec-bc1e-ff46d5f5fdb6/file-1l08aif30.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l08aif2z/291bd5e9-b850-484c-a940-9f8c1de6b88b/fea90ab0-9974-11ec-bc1e-ff46d5f5fdb6/file-1l08aif30.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l08aif2z/291bd5e9-b850-484c-a940-9f8c1de6b88b/fea90ab0-9974-11ec-bc1e-ff46d5f5fdb6/file-1l08aif30.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l08aif2z/291bd5e9-b850-484c-a940-9f8c1de6b88b/fea90ab0-9974-11ec-bc1e-ff46d5f5fdb6/file-1l08aif30.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l08aif2z/291bd5e9-b850-484c-a940-9f8c1de6b88b/fea90ab0-9974-11ec-bc1e-ff46d5f5fdb6/file-1l08aif30.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">"
+    }
+  ]
+}

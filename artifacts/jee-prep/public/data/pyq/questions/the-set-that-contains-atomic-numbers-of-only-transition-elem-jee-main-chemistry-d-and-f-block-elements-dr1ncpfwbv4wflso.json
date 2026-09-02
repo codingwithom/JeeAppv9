@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "rf72m9NwGZF3e0at8kjgy2xukfupzwsz",
+      "paperTitle": "JEE Main 2020 (Online) 6th September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-06 09:00",
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "properties-of-transition-elements",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-set-that-contains-atomic-numbers-of-only-transition-elem-jee-main-chemistry-d-and-f-block-elements-dr1ncpfwbv4wflso",
+      "content": "The set that contains atomic numbers of only\ntransition elements, is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "21, 32, 53, 64"
+        },
+        {
+          "identifier": "B",
+          "content": "9, 17, 34, 38"
+        },
+        {
+          "identifier": "C",
+          "content": "37, 42, 50, 64"
+        },
+        {
+          "identifier": "D",
+          "content": "21, 25, 42, 72"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Elements with atomic number 21, 25, 42 and 72\nbelongs to transition metals.\n<br><br>Tranition elements \n<br>= 21 to 30\n<br>37 to 48\n<br>57 &amp; 72 to 80"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "questions": [
+    {
+      "question_id": "jhlgKYa1yYUuKD14",
+      "paperTitle": "JEE Advanced 2017 Paper 2 Offline",
+      "year": 2017,
+      "examDate": null,
+      "subject": "chemistry",
+      "chapter": "surface-chemistry",
+      "chapterGroup": "physical-chemistry",
+      "topic": "adsorption",
+      "type": "mcqm",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-correct-statements-about-surface-properties-is-are-2017-marks-4-jhlgkya1yyuukd14.htm",
+      "content": "The correct statement(s) about surface properties is (are)",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Adsorption is accompanied by decrease in ethalpy and decrease in entropy of the system "
+        },
+        {
+          "identifier": "B",
+          "content": "The critical temperatures of ethane and nitrogen are <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.394ex\" height=\"1.557ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -666 1500 688\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\" transform=\"translate(500,0)\"></use><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\" transform=\"translate(1000,0)\"></use></g></g></g></svg></mjx-container> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.011ex\" height=\"1.545ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -683 889 683\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D43E\" xlink:href=\"#MJX-TEX-I-1D43E\"></use></g></g></g></svg></mjx-container> and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.394ex\" height=\"1.557ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -666 1500 688\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\" transform=\"translate(500,0)\"></use><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\" transform=\"translate(1000,0)\"></use></g></g></g></svg></mjx-container> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.439ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.64ex\" height=\"1.984ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -683 1167 877\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D43E\" xlink:href=\"#MJX-TEX-I-1D43E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(889,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g></g></g></svg></mjx-container> respectively. The adsorption of ethane will be more than that of nitrogen on same amount of activated charcoal at a given temperature"
+        },
+        {
+          "identifier": "C",
+          "content": "Cloud is an emulsion type of colloid in which liquid is dispersed phase and gas is dispersion medium  "
+        },
+        {
+          "identifier": "D",
+          "content": "Brownian motion of colloidal particles does not depend on the size of the particles but depends on viscosity of the solution"
+        }
+      ],
+      "correct_options": [
+        "A",
+        "B"
+      ],
+      "explanation": "<p>Option (A) : Correct. Adsorption is a surface phenomenon in which the concentration of the adsorbate increases only on the surface. It is always accompanied by a decrease in the entropy (<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.885ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 833 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></svg></mjx-container>S). Since adsorption is an exothermic process, the enthalpy change (<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.885ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 833 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></svg></mjx-container>H) of the system is also negative.</p>\n<p>Option (B) : Correct. Easily liquefiable gases, that is, gases with high critical temperatures, are more readily adsorbed because van der Waals forces are stronger near the critical temperature. Thus, the adsorption of ethane will be more than that of nitrogen.</p>\n<p>Option (C) : Cloud is an aerosol in which liquid is dispersed phase and gas is dispersion medium. Whereas, emulsion is liquid in liquid colloidal system.</p>\n<p>Option (D) : Incorrect. Brownian movement varies with the size of the particles and viscosity of the solution. Smaller particles with lower viscosity show faster movement.</p>"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "jWXNcS8ZXq2PQZOzrd1kmj75r2r",
+      "paperTitle": "JEE Main 2021 (Online) 17th March Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "compounds-containing-nitrogen",
+      "chapterGroup": "organic-chemistry",
+      "topic": "aromatic-amines",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "hoffmann-bromomide-degradation-of-benzamide-gives-product-a-jee-main-chemistry-some-basic-concepts-of-chemistry-ixsmbr1w9wjfggxp",
+      "content": "Hoffmann bromomide degradation of benzamide gives product A, which upon heating with CHCl<sub>3</sub> and NaOH gives product B.<br><br>The structures of A and B are :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kmk2ziyo/b0f94f32-dd08-42be-b9bc-721f9352d362/f1de4c00-8ac5-11eb-a550-a93c57882a34/file-1kmk2ziyp.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 17th March Morning Shift Chemistry - Compounds Containing Nitrogen Question 174 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kmk2z80t/e7072ff3-5358-408d-ae1b-3962a5c45198/e96ac0d0-8ac5-11eb-a550-a93c57882a34/file-1kmk2z80u.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 17th March Morning Shift Chemistry - Compounds Containing Nitrogen Question 174 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kmk2yyfh/e958314c-ef0b-427f-9c3c-3f7b6ae9c80a/e201c7d0-8ac5-11eb-a550-a93c57882a34/file-1kmk2yyfi.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 17th March Morning Shift Chemistry - Compounds Containing Nitrogen Question 174 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kmk2ypwp/302114a0-667d-4ed5-b867-dcd18e5fd414/db6c9990-8ac5-11eb-a550-a93c57882a34/file-1kmk2ypwq.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 17th March Morning Shift Chemistry - Compounds Containing Nitrogen Question 174 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1kn1xzw4s/50ae3cf5-8324-4ed8-85de-8d3587b08da7/8a1601d0-9498-11eb-a011-9b3eb6f542eb/file-1kn1xzw4t.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 17th March Morning Shift Chemistry - Compounds Containing Nitrogen Question 174 English Explanation\">"
+    }
+  ]
+}

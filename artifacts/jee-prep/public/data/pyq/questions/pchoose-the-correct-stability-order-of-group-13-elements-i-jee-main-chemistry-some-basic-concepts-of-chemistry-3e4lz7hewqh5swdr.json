@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l58dn3qk",
+      "paperTitle": "JEE Main 2022 (Online) 26th June Morning Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "p-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "group-13-elements-boron-family",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pchoose-the-correct-stability-order-of-group-13-elements-i-jee-main-chemistry-some-basic-concepts-of-chemistry-3e4lz7hewqh5swdr",
+      "content": "<p>Choose the correct stability order of group 13 elements in their + 1 oxidation state :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Al < Ga < In < Tl"
+        },
+        {
+          "identifier": "B",
+          "content": "Tl < In < Ga < Al"
+        },
+        {
+          "identifier": "C",
+          "content": "Al < Ga < Tl < In"
+        },
+        {
+          "identifier": "D",
+          "content": "Al < Tl < Ga < In"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Due to inert pair effect, stability of +3 oxidation state\ndecreases and that of +1 oxidation state increases\nfor (down the group) group 13 elements.<br/><br/>\nSo, the correct order of stability of group 13\nelements in their +1 oxidation state is Al < Ga < In\n< Tl."
+    }
+  ]
+}

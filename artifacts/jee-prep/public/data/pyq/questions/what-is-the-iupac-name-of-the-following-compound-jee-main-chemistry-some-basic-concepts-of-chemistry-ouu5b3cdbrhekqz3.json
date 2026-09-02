@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "eRlxFTazjx6ocFjUqo5AZ",
+      "paperTitle": "JEE Main 2019 (Online) 10th January Evening Slot",
+      "year": 2019,
+      "examDate": "2019-01-10 14:30",
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "iupac-nomenclature",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "what-is-the-iupac-name-of-the-following-compound-jee-main-chemistry-some-basic-concepts-of-chemistry-ouu5b3cdbrhekqz3",
+      "content": "What is the IUPAC name of the following compound ? \n<br><br><img src=\"https://imagex.cdn.examgoal.net/dNQnoWEBn9RKjZ8rj/4IfJejPVOvEjpOVqKjTyk36aR18pr/eM4F9qQU2D6Ap49QUo1F47/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 10th January Evening Slot Chemistry - Basics of Organic Chemistry Question 234 English\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "4–Bromo-3-methylpent-2-ene "
+        },
+        {
+          "identifier": "B",
+          "content": "3–Bromo 1, 2-dimethylbut-1-ene"
+        },
+        {
+          "identifier": "C",
+          "content": "3–Bromo-3-methyl-1, 2-dimethylprop-1-ene"
+        },
+        {
+          "identifier": "D",
+          "content": "2-Bromo-3-methylpent-3-ene"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1da9i2ynkdldus5w/10e19130-b507-4435-a63f-3e0694636ea3/48972450-d94f-11ea-b796-4745b429ed6f/file-1da9i2ynkdldus5x-320w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 10th January Evening Slot Chemistry - Basics of Organic Chemistry Question 234 English Explanation\">\n<br><br><b>Note :</b> While numbering, double bond should get least possible number on the longest path."
+    }
+  ]
+}

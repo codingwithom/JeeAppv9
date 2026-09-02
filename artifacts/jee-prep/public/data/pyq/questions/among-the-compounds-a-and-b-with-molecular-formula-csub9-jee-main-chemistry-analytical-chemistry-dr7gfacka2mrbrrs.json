@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "Ql8hoht3jdmCkzmjUj7k9k2k5hkvdf5",
+      "paperTitle": "JEE Main 2020 (Online) 8th January Evening Slot",
+      "year": 2020,
+      "examDate": "2020-01-08 14:30",
+      "subject": "chemistry",
+      "chapter": "alcohols-phenols-and-ethers",
+      "chapterGroup": "organic-chemistry",
+      "topic": "properties-preparation-and-uses-of-ethers",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "among-the-compounds-a-and-b-with-molecular-formula-csub9-jee-main-chemistry-analytical-chemistry-dr7gfacka2mrbrrs",
+      "content": "Among the compounds A and B with\nmolecular formula C<sub>9</sub>H<sub>18</sub>O<sub>3</sub> , A is having higher\nboiling point the B. The possible structures of\nA and B are :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/7k9k2k5hkr3p4/09c759d5-5614-465d-aa8d-d28584bc203a/6489bf80-38d5-11ea-92dd-4b9c3519996f/file-7k9k2k5hkr3p5-300w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 8th January Evening Slot Chemistry - Alcohols, Phenols and Ethers Question 135 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/7k9k2k5hkqhf3/8a2daed3-4bbc-40e8-9174-1515e5d07d8a/535413f0-38d5-11ea-92dd-4b9c3519996f/file-7k9k2k5hkqhf4-304w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 8th January Evening Slot Chemistry - Alcohols, Phenols and Ethers Question 135 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/7k9k2k5hkq880/44a8a6b3-f0a3-4ebf-841a-5276bbd6315f/4c396200-38d5-11ea-92dd-4b9c3519996f/file-7k9k2k5hkq881-326w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 8th January Evening Slot Chemistry - Alcohols, Phenols and Ethers Question 135 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/7k9k2k5hkpv4d/b7687c69-5a93-44fb-9c92-5beb39324807/421a97d0-38d5-11ea-92dd-4b9c3519996f/file-7k9k2k5hkpv4e-304w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 8th January Evening Slot Chemistry - Alcohols, Phenols and Ethers Question 135 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Alcohol has more boiling point than ether\n(due to hydrogen bonding).\n<br><br>So A should have -OH group and B should have -OCH<sub>3</sub> group."
+    }
+  ]
+}

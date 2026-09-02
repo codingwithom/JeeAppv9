@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "QNm9gElfLK0sQuob",
+      "paperTitle": "JEE Main 2017 (Offline)",
+      "year": 2017,
+      "examDate": null,
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "properties-of-transition-elements",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "in-the-following-reactions-zno-is-respectively-acting-as-a-2017-marks-4-qnm9gelflk0squob.htm",
+      "content": "In the following reactions, ZnO is respectively acting as a/an :<br><br>\n(a) ZnO + Na<sub>2</sub>O <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> Na<sub>2</sub>ZnO<sub>2</sub><br><br>\n(b) ZnO + CO<sub>2</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> ZnCO<sub>3</sub>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "base and base "
+        },
+        {
+          "identifier": "B",
+          "content": "acid and acid "
+        },
+        {
+          "identifier": "C",
+          "content": "acid and base"
+        },
+        {
+          "identifier": "D",
+          "content": "base and acid"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Zinc oxide (ZnO) when react with Na<sub>2</sub>O it act as acid while with CO<sub>2</sub> it act as base. Therefore, it is an amphoteric oxide.\n<br><br>(a) ZnO + Na<sub>2</sub>O <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> Na<sub>2</sub>ZnO<sub>2</sub>\n<br>     Acid      Base          Salt<br><br>\n(b) ZnO + CO<sub>2</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> ZnCO<sub>3</sub>\n<br>     Base      Acid       Salt"
+    }
+  ]
+}

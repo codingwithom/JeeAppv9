@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "JwF7qXS0mwqWGfITfQaAz",
+      "paperTitle": "JEE Main 2016 (Online) 10th April Morning Slot",
+      "year": 2016,
+      "examDate": "2016-04-10 09:30",
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "bond-parameters",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-bond-angle-h-x-h-is-the-greatest-in-the-compound-jee-main-chemistry-some-basic-concepts-of-chemistry-3gegn6anybmumszq",
+      "content": "The bond angle H - X - H is the greatest in the compound :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "CH<sub>4</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "NH<sub>3</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "H<sub>2</sub>O"
+        },
+        {
+          "identifier": "D",
+          "content": "PH<sub>3</sub>"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "CH<sub>4</sub> - sp<sup>3</sup> hybridisation - Bond angle (109<sup>o</sup>28')\n<br><br>NH<sub>3</sub> - sp<sup>3</sup> hybridisation - Bond angle ( 107.8<sup>o</sup>)\n<br><br>H<sub>2</sub>O - sp<sup>3</sup> hybridisation - Bond angle ( 104.5<sup>o</sup>)\n<br><br>PH<sub>3</sub> - No hybridisation - Bond angle ( 90<sup>o</sup>)\n<br><br><b>Note :</b> According to DRAGO RULE, lone pair of electrons are in pure s- orbital of the atom P. That is why PH<sub>3</sub> has no hybridisation."
+    }
+  ]
+}

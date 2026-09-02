@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "0IQPUcEHHtrDPMRxkn1klukbyq6",
+      "paperTitle": "JEE Main 2021 (Online) 26th February Evening Shift",
+      "year": 2021,
+      "subject": "physics",
+      "chapter": "electronic-devices",
+      "chapterGroup": "modern-physics",
+      "topic": "digital-circuits",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "draw-the-output-signal-y-in-the-given-combination-of-gates-jee-main-physics-units-and-measurements-le9fprezntoh3ayv",
+      "content": "Draw the output signal Y in the given combination of gates.<br><br><img src=\"https://imagex.cdn.examgoal.net/1kluwb2k0/11e8db0d-5a47-453c-8ebc-524dad11097e/3ac3ab00-7cec-11eb-8f7b-79760a5d8011/file-1kluwb2k1-320w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 26th February Evening Shift Physics - Semiconductor Question 149 English\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kluwdq0n/d978344b-5716-4768-8ca4-86d25743d890/8481d780-7cec-11eb-8f7b-79760a5d8011/file-1kluwdq0o-229w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 26th February Evening Shift Physics - Semiconductor Question 149 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kluwdyfk/8b766d7f-3d96-4b6d-b6d1-4095ce837937/8b01a900-7cec-11eb-8f7b-79760a5d8011/file-1kluwdyfl-228w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 26th February Evening Shift Physics - Semiconductor Question 149 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kluwe81o/14032535-95d5-4709-ac53-4272c553daa2/926ee7c0-7cec-11eb-8f7b-79760a5d8011/file-1kluwe81p-228w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 26th February Evening Shift Physics - Semiconductor Question 149 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kluwejca/6949f5ca-1ea7-461b-86f8-428027308e8c/9b287ca0-7cec-11eb-8f7b-79760a5d8011/file-1kluwejcb-227w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 26th February Evening Shift Physics - Semiconductor Question 149 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Y = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"6.18ex\" height=\"3.24ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1350 2731.4 1432\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mover\"><g data-mml-node=\"mrow\"><g data-mml-node=\"mover\"><g data-mml-node=\"mi\"><use data-c=\"1D434\" xlink:href=\"#MJX-TEX-I-1D434\"></use></g><g data-mml-node=\"mo\" transform=\"translate(0,648)\"><svg width=\"750\" height=\"177\" x=\"0\" y=\"178\" viewBox=\"187.5 178 750 177\"><use data-c=\"2013\" xlink:href=\"#MJX-TEX-N-2013\" transform=\"scale(2.25,1)\"></use></svg></g></g><g data-mml-node=\"mo\" transform=\"translate(972.2,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1972.4,0)\"><use data-c=\"1D435\" xlink:href=\"#MJX-TEX-I-1D435\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(0,965)\"><svg width=\"2731.4\" height=\"177\" x=\"0\" y=\"178\" viewBox=\"682.9 178 2731.4 177\"><use data-c=\"2013\" xlink:href=\"#MJX-TEX-N-2013\" transform=\"scale(8.194,1)\"></use></svg></g></g></g></g></svg></mjx-container> = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.043ex\" height=\"2.262ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1000 1787 1000\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D434\" xlink:href=\"#MJX-TEX-I-1D434\"></use></g><g data-mml-node=\"mo\" transform=\"translate(750,0)\"><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\"></use></g><g data-mml-node=\"mover\" transform=\"translate(1028,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D435\" xlink:href=\"#MJX-TEX-I-1D435\"></use></g><g data-mml-node=\"mo\" transform=\"translate(0,615)\"><svg width=\"759\" height=\"177\" x=\"0\" y=\"178\" viewBox=\"189.8 178 759 177\"><use data-c=\"2013\" xlink:href=\"#MJX-TEX-N-2013\" transform=\"scale(2.277,1)\"></use></svg></g></g></g></g></svg></mjx-container>\n<br><br>A = 0 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> Y = 0 for B = 0 or B = 1\n<br><br>A = 1 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> Y = 0 for B = 1\n<br><br>A = 1 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> Y = 1 for B = 0\n<br><br>Hence output is 1 only when input A = 1 and B = 0.\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> A is the correct output."
+    }
+  ]
+}

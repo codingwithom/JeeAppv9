@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l55naceb",
+      "paperTitle": "JEE Main 2022 (Online) 28th June Evening Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "nature-of-oxide",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pamong-the-following-basic-oxide-is-p-jee-main-chemistry-some-basic-concepts-of-chemistry-ds8qkgvfi7h6shkk",
+      "content": "<p>Among the following, basic oxide is :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "SO<sub>3</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "SiO<sub>2</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "CaO"
+        },
+        {
+          "identifier": "D",
+          "content": "Al<sub>2</sub>O<sub>3</sub>"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Since, oxides of metals are basic in nature. Hence\nCaO is a basic oxide.<br/><br/>\nSO<sub>3</sub> and SiO<sub>2</sub> are acidic oxides and Al<sub>2</sub>O<sub>3</sub> is a amphoteric oxide."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "tdOVFaxSAvnn60WEfP1kmiu0ncj",
+      "paperTitle": "JEE Main 2021 (Online) 16th March Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "aldehydes-ketones-and-carboxylic-acids",
+      "chapterGroup": "organic-chemistry",
+      "topic": "preparation-properties-and-uses-of-carboxylic-acids",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "imagebrbrin-the-above-reaction-the-reagent-a-is--jee-main-chemistry-some-basic-concepts-of-chemistry-hyntkuxsvyxvxdqt",
+      "content": "<img src=\"https://imagex.cdn.examgoal.net/1kmiynuv9/a5c1966a-0b3b-4cb7-a99c-c7ddf8a18dca/40306350-8a28-11eb-91cf-1f26b16dd4dd/file-1kmiynuva.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 16th March Evening Shift Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 179 English\"><br>In the above reaction, the reagent ''A'' is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "LiAlH<sub>4</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "NaBH<sub>4</sub>, H<sub>3</sub>O<sup>+</sup>"
+        },
+        {
+          "identifier": "C",
+          "content": "HCl, Zn <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container> Hg"
+        },
+        {
+          "identifier": "D",
+          "content": "Alkaline KMnO<sub>4</sub>, H<sup>+</sup>"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1kn8gs13g/18298acc-7ea1-4f08-b59e-a2b192a9ab62/b0cbdcc0-982e-11eb-a02f-31d48fd393c0/file-1kn8gs13h.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 16th March Evening Shift Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 179 English Explanation\">"
+    }
+  ]
+}

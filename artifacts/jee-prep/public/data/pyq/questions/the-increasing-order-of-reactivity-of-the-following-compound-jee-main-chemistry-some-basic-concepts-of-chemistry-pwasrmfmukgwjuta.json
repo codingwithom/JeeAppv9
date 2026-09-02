@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "lEUbfhXSYaSXJlL8pieTu",
+      "paperTitle": "JEE Main 2019 (Online) 9th April Morning Slot",
+      "year": 2019,
+      "examDate": "2019-04-09 09:30",
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "electron-displacement-effect",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-increasing-order-of-reactivity-of-the-following-compound-jee-main-chemistry-some-basic-concepts-of-chemistry-pwasrmfmukgwjuta",
+      "content": "The increasing order of reactivity of the\nfollowing compounds towards aromatic\nelectrophilic substitution reaction is :\n<img src=\"https://imagex.cdn.examgoal.net/18hoxe66ijwhwlkvy/bc201ab9-e499-4f3d-893d-4d80b3653e49/c61a01e0-86d5-11e9-8081-1d558b7f1d26/file-18hoxe66ijwhwlkvz.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 9th April Morning Slot Chemistry - Basics of Organic Chemistry Question 226 English\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "A &lt; B &lt; C &lt; D"
+        },
+        {
+          "identifier": "B",
+          "content": "D &lt; A &lt; C &lt; B"
+        },
+        {
+          "identifier": "C",
+          "content": "D &lt; B &lt; A &lt; C"
+        },
+        {
+          "identifier": "D",
+          "content": "B &lt; C &lt; A &lt; D"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "In aromatic\nelectrophilic substitution reaction, electrofile attacks to the ring whose electron density is more.\n<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/7km5fk03kxkg3/38783c01-719e-4b3b-b721-3a1e89651665/0a585130-ce26-11e9-acf6-6d09a288f7f2/file-7km5fk03kxkg4-320w.jpg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/7km5fk03kxkg3/38783c01-719e-4b3b-b721-3a1e89651665/0a585130-ce26-11e9-acf6-6d09a288f7f2/file-7km5fk03kxkg4-500w.jpg\"><source media=\"(max-width: 680px)\" srcset=\"https://imagex.cdn.examgoal.net/7km5fk03kxkg3/38783c01-719e-4b3b-b721-3a1e89651665/0a585130-ce26-11e9-acf6-6d09a288f7f2/file-7km5fk03kxkg4-680w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/7km5fk03kxkg3/38783c01-719e-4b3b-b721-3a1e89651665/0a585130-ce26-11e9-acf6-6d09a288f7f2/file-7km5fk03kxkg4-860w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 9th April Morning Slot Chemistry - Basics of Organic Chemistry Question 226 English Explanation\"></picture>\n<br><br><b>Note :</b> -M effect is more powerful than  -I effect, that is why electron density will be less in the ring for  -M effect."
+    }
+  ]
+}

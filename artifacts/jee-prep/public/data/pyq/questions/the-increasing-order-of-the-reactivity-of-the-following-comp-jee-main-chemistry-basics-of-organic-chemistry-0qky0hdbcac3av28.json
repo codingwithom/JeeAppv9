@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "lsX4IZ4iB7q7fZTtio3rsa0w2w9jwwep6a4",
+      "paperTitle": "JEE Main 2019 (Online) 10th April Morning Slot",
+      "year": 2019,
+      "examDate": "2019-04-10 09:30",
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "electron-displacement-effect",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-increasing-order-of-the-reactivity-of-the-following-comp-jee-main-chemistry-basics-of-organic-chemistry-0qky0hdbcac3av28",
+      "content": "The increasing order of the reactivity of the following compounds towards electrophilic aromatic substitution reactions is :\n<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76eb0jza43z8n/f0adefa9-7027-492b-8e78-f8bd9cc75ef6/86994370-bdf1-11e9-8742-95b483bbae2a/file-jf76eb0jza43z8o-320w.jpg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76eb0jza43z8n/f0adefa9-7027-492b-8e78-f8bd9cc75ef6/86994370-bdf1-11e9-8742-95b483bbae2a/file-jf76eb0jza43z8o-500w.jpg\"><source media=\"(max-width: 680px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76eb0jza43z8n/f0adefa9-7027-492b-8e78-f8bd9cc75ef6/86994370-bdf1-11e9-8742-95b483bbae2a/file-jf76eb0jza43z8o-680w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/jf76eb0jza43z8n/f0adefa9-7027-492b-8e78-f8bd9cc75ef6/86994370-bdf1-11e9-8742-95b483bbae2a/file-jf76eb0jza43z8o-860w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 10th April Morning Slot Chemistry - Basics of Organic Chemistry Question 224 English\"></picture>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "III &lt; II &lt; I"
+        },
+        {
+          "identifier": "B",
+          "content": "III &lt; I &lt; II"
+        },
+        {
+          "identifier": "C",
+          "content": "II &lt; I &lt; III"
+        },
+        {
+          "identifier": "D",
+          "content": "I &lt; III &lt; II"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "CH<sub>3</sub> group increases\nthe electron density of benzene by +I effect and hyper\nconjugation effects and hence makes the\ncompound more reactive towards electrophilic aromatic substitution reaction.\n<br><br>Cl\ngroup decreases the electron density of\nbenzene by –I effect.\n<br><br>COCH<sub>3</sub> group\nstrongly decreases the electron density of\nbenzene by –I and –R effects.\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> Correct increasing order is\n<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76eb0jza4j8dq/a2cd3e44-47e1-4276-91e1-a3e244af1403/2ecc14e0-bdf3-11e9-8742-95b483bbae2a/file-jf76eb0jza4j8dr-320w.jpg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76eb0jza4j8dq/a2cd3e44-47e1-4276-91e1-a3e244af1403/2ecc14e0-bdf3-11e9-8742-95b483bbae2a/file-jf76eb0jza4j8dr-500w.jpg\"><source media=\"(max-width: 680px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76eb0jza4j8dq/a2cd3e44-47e1-4276-91e1-a3e244af1403/2ecc14e0-bdf3-11e9-8742-95b483bbae2a/file-jf76eb0jza4j8dr-680w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/jf76eb0jza4j8dq/a2cd3e44-47e1-4276-91e1-a3e244af1403/2ecc14e0-bdf3-11e9-8742-95b483bbae2a/file-jf76eb0jza4j8dr-860w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 10th April Morning Slot Chemistry - Basics of Organic Chemistry Question 224 English Explanation\"></picture>"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "questions": [
+    {
+      "question_id": "IN4NQ5VLOi58nyG0p5jgy2xukf2cs80s",
+      "paperTitle": "JEE Main 2020 (Online) 3rd September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-03 09:00",
+      "subject": "chemistry",
+      "chapter": "some-basic-concepts-of-chemistry",
+      "chapterGroup": "physical-chemistry",
+      "topic": "concentration-terms",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 0,
+      "permalink": "the-volume-strength-of-89-m-hsub2subosub2sub-sol-jee-main-chemistry-some-basic-concepts-of-chemistry-gn4ayqraf75odlvz",
+      "content": "The volume strength of 8.9 M H<sub>2</sub>O<sub>2</sub>\n solution calculated at 273 K and 1 atm is ______. (R = 0.0821 L\natm K<sup>-1</sup> mol<sup>-1</sup>) (rounded off ot the nearest integer)",
+      "options": [],
+      "correct_options": [],
+      "explanation": "Volume strength of H<sub>2</sub>O<sub>2</sub> at 1 atm\n273 kelvin <br>= M × 11.2 = 8.9 × 11.2 = 99.68 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.081ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"0.968ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -464 778 428\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2243\" xlink:href=\"#MJX-TEX-N-2243\"></use></g></g></g></svg></mjx-container> 100"
+    }
+  ]
+}

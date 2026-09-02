@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "rSpvxqnXjBtwo9bfkI1klsd0e3n",
+      "paperTitle": "JEE Main 2021 (Online) 25th February Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "hydrolysis",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "among-the-following-the-number-of-halides-which-isare-in-jee-main-chemistry-some-basic-concepts-of-chemistry-ai8sfr5zkjie8rul",
+      "content": "Among the following, the number of halide(s) which is/are inert to hydrolysis is _________.<br><br>(A) BF<sub>3</sub><br><br>(B) SiCl<sub>4</sub><br><br>(C) PCl<sub>5</sub><br><br>(D) SF<sub>6</sub>",
+      "options": [],
+      "correct_options": [],
+      "explanation": "BF<sub>3</sub> – Shows Partial hydrolysis\n<br><br>SiCl<sub>4</sub> – Undergoes hydrolysis readily\n<br><br>PCl<sub>5</sub> – Undergoes hydrolysis by addition–\nelimination mechanism.\n<br><br>SF<sub>6</sub> – Due to crowding Inert towards hydrolysis."
+    }
+  ]
+}

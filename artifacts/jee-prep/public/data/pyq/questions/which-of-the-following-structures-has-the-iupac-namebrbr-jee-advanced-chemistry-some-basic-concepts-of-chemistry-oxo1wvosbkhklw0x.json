@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "Pn9joRrRkeBdXxaVxV1kk29rz4p",
+      "paperTitle": "JEE Advanced 2020 Paper 1 Offline",
+      "year": 2020,
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "iupac-nomenclature",
+      "type": "mcq",
+      "marks": 3,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-structures-has-the-iupac-namebrbr-jee-advanced-chemistry-some-basic-concepts-of-chemistry-oxo1wvosbkhklw0x",
+      "content": "Which of the following structures has the IUPAC name<br><br>3-ethynyl-2-hydroxy-4-methylhex-3-en-5-ynoic acid?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1ks4yjnel/adc94e26-3caa-430c-b29c-b2d72969c2a3/1e5e57c0-f93e-11eb-9779-e12803bb4ff4/file-1ks4yjnem.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2020 Paper 1 Offline Chemistry - Basics of Organic Chemistry Question 33 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1ks4ykox2/9eef82ed-c272-49db-b362-db8930329f48/3b58dc60-f93e-11eb-a8dc-cdc59b2ba65f/file-1ks4ykox3.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2020 Paper 1 Offline Chemistry - Basics of Organic Chemistry Question 33 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1ks4yl9z7/bbe0c5c6-06ef-4e78-bec8-526a21f5d0fd/4b9d7130-f93e-11eb-a8dc-cdc59b2ba65f/file-1ks4yl9z8.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2020 Paper 1 Offline Chemistry - Basics of Organic Chemistry Question 33 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1ks4ylqxm/a58a9d91-725d-4ccd-9891-a8d31d9a62eb/58b68fa0-f93e-11eb-a8dc-cdc59b2ba65f/file-1ks4ylqxn.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2020 Paper 1 Offline Chemistry - Basics of Organic Chemistry Question 33 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "According to the IUPAC rules, first of all select the longest carbon chain (6-carbon atoms) then numbering should be start from most prior functional group, which is carboxylic acid in the given compound, thus<br><br><img src=\"https://imagex.cdn.examgoal.net/1ks4ymj4v/b2300275-cd1c-43e3-8821-6a36d8e72ceb/6e7fa600-f93e-11eb-a8dc-cdc59b2ba65f/file-1ks4ymj4w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2020 Paper 1 Offline Chemistry - Basics of Organic Chemistry Question 33 English Explanation\"><br><br>3-ethynyl-2hydroxy-4-methylhex-3-en-5-ynoic acid"
+    }
+  ]
+}

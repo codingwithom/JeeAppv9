@@ -59,7 +59,6 @@ export default defineConfig(async () => {
     plugins: [
       react(),
       tailwindcss(),
-      gcPlugin(),
       ...extraPlugins,
     ],
     resolve: {
@@ -76,8 +75,11 @@ export default defineConfig(async () => {
     build: {
       outDir: "dist",
       emptyOutDir: true,
+      copyPublicDir: false,
+      minify: false,
       reportCompressedSize: false,
       sourcemap: false,
+      chunkSizeWarningLimit: 2000,
       rollupOptions: {
         maxParallelFileOps: 1,
         cache: false

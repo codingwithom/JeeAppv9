@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "xjMQu00yxLn9KW8Vshjgy2xukg4molw1",
+      "paperTitle": "JEE Main 2020 (Online) 6th September Evening Slot",
+      "year": 2020,
+      "examDate": "2020-09-06 15:00",
+      "subject": "chemistry",
+      "chapter": "haloalkanes-and-haloarenes",
+      "chapterGroup": "organic-chemistry",
+      "topic": "haloalkanes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-increasing-order-of-the-boiling-points-of-the-major-prod-jee-main-chemistry-haloalkanes-and-haloarenes-6llbjnfm2qcvegjz",
+      "content": "The increasing order of the boiling points of\nthe major products A, B and C of the following\nreactions will be :\n<img src=\"https://imagex.cdn.examgoal.net/jgy2xukg4mm39g/ff6284b3-db2d-49c2-8c2b-2f6c477499ac/dc23dc40-0b7c-11eb-8293-3b6cc591631c/file-jgy2xukg4mm39h-320w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 6th September Evening Slot Chemistry - Haloalkanes and Haloarenes Question 124 English\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "A &lt; C &lt; B"
+        },
+        {
+          "identifier": "B",
+          "content": "C &lt; A &lt; B"
+        },
+        {
+          "identifier": "C",
+          "content": "B &lt; C &lt; A"
+        },
+        {
+          "identifier": "D",
+          "content": "A &lt; B &lt; C"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukghhfjxv/f649a286-d743-4ad0-a5d1-bbb95b913250/c9280030-128e-11eb-8293-3b6cc591631c/file-jgy2xukghhfjxw-498w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 6th September Evening Slot Chemistry - Haloalkanes and Haloarenes Question 124 English Explanation\">\n<br><br>Boiling point decreases with branching.\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> B &lt; C &lt; A (order of Boiling Points)"
+    }
+  ]
+}

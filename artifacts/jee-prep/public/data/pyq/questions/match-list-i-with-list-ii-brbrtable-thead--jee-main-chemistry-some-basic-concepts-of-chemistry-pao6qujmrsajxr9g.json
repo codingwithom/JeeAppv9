@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "6WdStJs5fRbJn8o16t1kmirt2bc",
+      "paperTitle": "JEE Main 2021 (Online) 16th March Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "practical-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "chemistry-involved-in-the-preparation-of-organic-and-inorganic-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "match-list-i-with-list-ii-brbrtable-thead--jee-main-chemistry-some-basic-concepts-of-chemistry-pao6qujmrsajxr9g",
+      "content": "Match List - I with List - II :<br><br><table>\n<thead>\n  <tr>\n    <th></th>\n    <th>List - I <br>Test/Reagents/Observation(s)</th>\n    <th></th>\n    <th>List - II <br>Species detected</th>\n  </tr>\n</thead>\n<tbody>\n  <tr>\n    <td>(a)</td>\n    <td>Lassaigne's Test</td>\n    <td>(i)</td>\n    <td>Carbon</td>\n  </tr>\n  <tr>\n    <td>(b)</td>\n    <td>Cu(II) oxide</td>\n    <td>(ii)</td>\n    <td>Sulphur</td>\n  </tr>\n  <tr>\n    <td>(c)</td>\n    <td>Silver nitrate</td>\n    <td>(iii)</td>\n    <td>N, S, P, and halogen</td>\n  </tr>\n  <tr>\n    <td>(d)</td>\n    <td>The sodium fusion extract<br> gives black precipitate with<br> acetic acid and lead acetate</td>\n    <td>(iv)</td>\n    <td>Halogen Specifically</td>\n  </tr>\n</tbody>\n</table><br><br>The correct match is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(a)-(iii), (b)-(i), (c)-(ii), (d)-(iv)"
+        },
+        {
+          "identifier": "B",
+          "content": "(a)-(i), (b)-(iv), (c)-(iii), (d)-(ii)"
+        },
+        {
+          "identifier": "C",
+          "content": "(a)-(iii), (b)-(i), (c)-(iv), (d)-(ii)"
+        },
+        {
+          "identifier": "D",
+          "content": "(a)-(i), (b)-(ii), (c)-(iv), (d)-(iii)"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "(i) Lassaigne test is used to detect N, S, P, X element<br><br>\n(ii) Carbon and hydrogen are detected by heating the compound with copper (ii) oxide.<br><br>\n(iii) Halides are detected by silver nitrate<br><br>\n(iv) Sodium fusion extract gives black ppt. with acetic acid and lead acetate to confirm the presence of\nsulphur. "
+    }
+  ]
+}

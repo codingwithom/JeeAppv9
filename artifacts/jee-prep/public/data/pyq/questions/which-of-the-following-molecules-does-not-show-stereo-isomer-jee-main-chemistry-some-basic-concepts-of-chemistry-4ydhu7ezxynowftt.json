@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1krt4qro4",
+      "paperTitle": "JEE Main 2021 (Online) 22th July Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "isomerism",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-molecules-does-not-show-stereo-isomer-jee-main-chemistry-some-basic-concepts-of-chemistry-4ydhu7ezxynowftt",
+      "content": "Which of the following molecules does not show stereo isomerism?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "3, 4-Dimethylhex-3-ene"
+        },
+        {
+          "identifier": "B",
+          "content": "3-Methylhex-1-ene"
+        },
+        {
+          "identifier": "C",
+          "content": "3-Ethylhex-3-ene"
+        },
+        {
+          "identifier": "D",
+          "content": "4-Methylhex-1-ene"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1kruulnvn/d77deef5-9072-4e67-b7e1-9b329bdb74cc/db57b730-f3ae-11eb-a605-b34dacb82f1b/file-1kruulnvo-320w.jpeg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1kruulnvn/d77deef5-9072-4e67-b7e1-9b329bdb74cc/db57b730-f3ae-11eb-a605-b34dacb82f1b/file-1kruulnvo-500w.jpeg\"><source media=\"(max-width: 680px)\" srcset=\"https://imagex.cdn.examgoal.net/1kruulnvn/d77deef5-9072-4e67-b7e1-9b329bdb74cc/db57b730-f3ae-11eb-a605-b34dacb82f1b/file-1kruulnvo-680w.jpeg\"><source media=\"(max-width: 860px)\" srcset=\"https://imagex.cdn.examgoal.net/1kruulnvn/d77deef5-9072-4e67-b7e1-9b329bdb74cc/db57b730-f3ae-11eb-a605-b34dacb82f1b/file-1kruulnvo-860w.jpeg\"><img src=\"https://imagex.cdn.examgoal.net/1kruulnvn/d77deef5-9072-4e67-b7e1-9b329bdb74cc/db57b730-f3ae-11eb-a605-b34dacb82f1b/file-1kruulnvo.jpeg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 22th July Evening Shift Chemistry - Basics of Organic Chemistry Question 187 English Explanation\"></picture>"
+    }
+  ]
+}

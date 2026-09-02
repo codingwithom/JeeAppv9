@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l59r7vgr",
+      "paperTitle": "JEE Main 2022 (Online) 25th June Evening Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "salt-analysis",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "systematic-analysis-of-anions",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pduring-halogen-test-sodium-fusion-extract-is-boiled-with-jee-main-chemistry-some-basic-concepts-of-chemistry-ieqfyz8epxtra4rc",
+      "content": "<p>During halogen test, sodium fusion extract is boiled with concentrated HNO<sub>3</sub> to</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "remove unreacted sodium"
+        },
+        {
+          "identifier": "B",
+          "content": "decompose cyanide or sulphide of sodium"
+        },
+        {
+          "identifier": "C",
+          "content": "extract halogen from organic compound"
+        },
+        {
+          "identifier": "D",
+          "content": "maintain the pH of extract."
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "During test for halogen, if nitrogen or sulphur is also\npresent in the compound, then sodium fusion\nextract is first boiled with concentrated nitric acid to\ndecompose cyanide or sulphide of sodium formed\nduring Lassaigne's test."
+    }
+  ]
+}

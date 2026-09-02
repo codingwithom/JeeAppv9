@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "gaA0LD1rUUEOITt1JGxwE",
+      "paperTitle": "JEE Main 2017 (Online) 9th April Morning Slot",
+      "year": 2017,
+      "examDate": "2017-04-09 09:30",
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "properties-of-transition-elements",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-ions-does-not-liberate-hydrogen-gas-o-jee-main-chemistry-some-basic-concepts-of-chemistry-m7gygmomf6r9nbjr",
+      "content": "Which of the following ions does not liberate hydrogen gas on reaction with dilute acids ?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Ti<sup>2+</sup> "
+        },
+        {
+          "identifier": "B",
+          "content": "V<sup>2+</sup> "
+        },
+        {
+          "identifier": "C",
+          "content": "Cr<sup>2+</sup> "
+        },
+        {
+          "identifier": "D",
+          "content": "Mn<sup>2+</sup> "
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "The third ionisation energy of Mn is too high due to\nstable half filled 3d-orbital. Hence, it cannot further get oxidised\nto liberate hydrogen."
+    }
+  ]
+}

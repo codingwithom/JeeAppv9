@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ldo20ob0",
+      "paperTitle": "JEE Main 2023 (Online) 1st February Evening Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "practical-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "detection-of-extra-elements-and-functional-groups",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pgiven-below-are-two-statements-p-pstatement-i--sul-jee-main-chemistry-some-basic-concepts-of-chemistry-gieah3vfijg64us5",
+      "content": "<p>Given below are two statements :</p>\n<p>Statement I : Sulphanilic acid gives esterification test for carboxyl group.</p>\n<p>Statement II : Sulphanilic acid gives red colour in Lassigne's test for extra element detection.</p>\n<p>In the light of the above statements, choose the most appropriate answer from the options given below :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Both Statement I and Statement II are correct"
+        },
+        {
+          "identifier": "B",
+          "content": "Statement I is correct but Statement II is incorrect"
+        },
+        {
+          "identifier": "C",
+          "content": "Both Statement I and Statement II are incorrect"
+        },
+        {
+          "identifier": "D",
+          "content": "Statement I is incorrect but Statement II is correct"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<p>Sulphanilic acid is p-amino benzene sulphonic acid</p>\n<p><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1ldx5w5q1/1fa17808-0871-415e-8446-b37b91c38a20/57460e90-a881-11ed-99b3-79cb23978059/file-1ldx5w5q2.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1ldx5w5q1/1fa17808-0871-415e-8446-b37b91c38a20/57460e90-a881-11ed-99b3-79cb23978059/file-1ldx5w5q2.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2023 (Online) 1st February Evening Shift Chemistry - Practical Organic Chemistry Question 61 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1ldx5w5q1/1fa17808-0871-415e-8446-b37b91c38a20/57460e90-a881-11ed-99b3-79cb23978059/file-1ldx5w5q2.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1ldx5w5q1/1fa17808-0871-415e-8446-b37b91c38a20/57460e90-a881-11ed-99b3-79cb23978059/file-1ldx5w5q2.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1ldx5w5q1/1fa17808-0871-415e-8446-b37b91c38a20/57460e90-a881-11ed-99b3-79cb23978059/file-1ldx5w5q2.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1ldx5w5q1/1fa17808-0871-415e-8446-b37b91c38a20/57460e90-a881-11ed-99b3-79cb23978059/file-1ldx5w5q2.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1ldx5w5q1/1fa17808-0871-415e-8446-b37b91c38a20/57460e90-a881-11ed-99b3-79cb23978059/file-1ldx5w5q2.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1ldx5w5q1/1fa17808-0871-415e-8446-b37b91c38a20/57460e90-a881-11ed-99b3-79cb23978059/file-1ldx5w5q2.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"></p>\n<p>Since it contain both N and S so it give red colour in Lassaigne's test.</p>"
+    }
+  ]
+}

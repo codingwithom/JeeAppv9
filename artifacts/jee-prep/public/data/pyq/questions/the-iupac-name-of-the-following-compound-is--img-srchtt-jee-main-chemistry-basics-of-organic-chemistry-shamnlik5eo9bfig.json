@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "bdCPur6v1dKOnfrSZmjgy2xukf91oyar",
+      "paperTitle": "JEE Main 2020 (Online) 4th September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-04 09:00",
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "iupac-nomenclature",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-iupac-name-of-the-following-compound-is--img-srchtt-jee-main-chemistry-basics-of-organic-chemistry-shamnlik5eo9bfig",
+      "content": "The IUPAC name of the following compound is :\n<img src=\"https://imagex.cdn.examgoal.net/jgy2xukf91nqvd/b60ec2e2-85c6-455d-8b57-aa47d4b354b9/9e57ab90-fa1e-11ea-8293-3b6cc591631c/file-jgy2xukf91nqve-345w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 4th September Morning Slot Chemistry - Basics of Organic Chemistry Question 208 English\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "3-Bromo-5-methylcyclopentane carboxylic\nacid"
+        },
+        {
+          "identifier": "B",
+          "content": "3-Bromo-5-methylcyclopentanoic acid"
+        },
+        {
+          "identifier": "C",
+          "content": "4-Bromo-2-methylcyclopentane carboxylic\nacid"
+        },
+        {
+          "identifier": "D",
+          "content": "5-Bromo-3-methylcyclopentanoic acid"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1khp1ugzm/698dcc72-89ea-4772-8c69-f3c29f7044ab/52857620-2a84-11eb-857f-3de41af3fb3a/file-1khp1ugzn-211w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 4th September Morning Slot Chemistry - Basics of Organic Chemistry Question 208 English Explanation\">\n<br>&nbsp;&nbsp;&nbsp;&nbsp;4-bromo-2-methyl cyclopentane carboxylic acid."
+    }
+  ]
+}

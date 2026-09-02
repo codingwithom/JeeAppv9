@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "ixUmVK4IM0Aajyr8bq7k9k2k5f7n16m",
+      "paperTitle": "JEE Main 2020 (Online) 7th January Evening Slot",
+      "year": 2020,
+      "examDate": "2020-01-07 14:30",
+      "subject": "physics",
+      "chapter": "wave-optics",
+      "chapterGroup": "optics",
+      "topic": "huygens-principle-and-interference-of-light",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "in-a-youngs-double-slit-experiment-the-separation-between-jee-main-physics-ray-and-wave-optics-gdknb3udjt4zh8gt",
+      "content": "In a Young's double slit experiment, the separation between the slits is 0.15 mm. in the experiment,\na source of light of wavelengh 589 nm is used and the interference pattern is observed on a\nscreen kept 1.5 m away. The separation between the successive bright fringes on the screen is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "4.9 mm"
+        },
+        {
+          "identifier": "B",
+          "content": "5.9 mm"
+        },
+        {
+          "identifier": "C",
+          "content": "6.9 mm"
+        },
+        {
+          "identifier": "D",
+          "content": "3.9 mm"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -1.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"21.691ex\" height=\"3.328ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1004.9 9587.2 1470.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D6FD\" xlink:href=\"#MJX-TEX-I-1D6FD\"></use></g><g data-mml-node=\"mo\" transform=\"translate(850.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1906.6,0)\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(220,394) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D706\" xlink:href=\"#MJX-TEX-I-1D706\"></use></g><g data-mml-node=\"mi\" transform=\"translate(583,0)\"><use data-c=\"1D437\" xlink:href=\"#MJX-TEX-I-1D437\"></use></g></g><g data-mml-node=\"mi\" transform=\"translate(534,-345) scale(0.707)\"><use data-c=\"1D451\" xlink:href=\"#MJX-TEX-I-1D451\"></use></g><rect width=\"1197.7\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g><g data-mml-node=\"mo\" transform=\"translate(3622.1,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(4677.8,0)\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(220,394) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use><use data-c=\"38\" xlink:href=\"#MJX-TEX-N-38\" transform=\"translate(500,0)\"></use><use data-c=\"39\" xlink:href=\"#MJX-TEX-N-39\" transform=\"translate(1000,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1500,0)\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2278,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1033,393.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(778,0)\"><use data-c=\"39\" xlink:href=\"#MJX-TEX-N-39\"></use></g></g></g></g><g data-mml-node=\"mo\" transform=\"translate(4264.7,0)\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g><g data-mml-node=\"mn\" transform=\"translate(5042.7,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\" transform=\"translate(500,0)\"></use><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\" transform=\"translate(778,0)\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(848.6,-450.4) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\" transform=\"translate(500,0)\"></use><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\" transform=\"translate(778,0)\"></use><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\" transform=\"translate(1278,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1778,0)\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2556,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1033,393.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(778,0)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g></g></g><rect width=\"4669.4\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container> = 5.9 mm"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "YPcyEMpOikMymQMZSC1klurumfk",
+      "paperTitle": "JEE Main 2021 (Online) 26th February Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "p-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "group-13-elements-boron-family",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "given-below-are-two-statements--one-is-labelled-as-assertio-jee-main-chemistry-some-basic-concepts-of-chemistry-mrrn2fnvwsaygrwj",
+      "content": "Given below are two statements : one is labelled as Assertion A and the other is labelled as Reason R.<br><br>Assertion A : In TlI<sub>3</sub>, isomorphous to CsI<sub>3</sub>, the metal is present in +1 oxidation state.<br><br>Reason R : Tl metal has fourteen f electrons in its electronic configuration.<br><br>In the light of the above statements, choose the most appropriate answer from the options given below :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "A is correct but R is not correct"
+        },
+        {
+          "identifier": "B",
+          "content": "A is not correct but R is correct"
+        },
+        {
+          "identifier": "C",
+          "content": "Both A and R are correct but R is NOT the correct explanation of A"
+        },
+        {
+          "identifier": "D",
+          "content": "Both A and R are correct and R is the correct explanation of A"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "A : Due to inert pair effect, Tl is more stable in\n+1 oxidation state<br>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hence TlI<sub>3</sub> and CSI<sub>3</sub> are isomorphous<br><br>\nR : Electronic configuration of Tl (81) =\n[Xe] 4f<sup>14</sup> 5d<sup>10</sup> 6s<sup>2</sup> 6p<sup>1</sup><br><br>\nBoth A and R are correct but R is not the\ncorrect explanation of A."
+    }
+  ]
+}

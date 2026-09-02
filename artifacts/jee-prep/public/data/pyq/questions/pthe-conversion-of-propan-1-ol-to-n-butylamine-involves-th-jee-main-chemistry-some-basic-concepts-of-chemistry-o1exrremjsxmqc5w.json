@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l5bdlh0b",
+      "paperTitle": "JEE Main 2022 (Online) 24th June Evening Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "compounds-containing-nitrogen",
+      "chapterGroup": "organic-chemistry",
+      "topic": "aliphatic-amines",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pthe-conversion-of-propan-1-ol-to-n-butylamine-involves-th-jee-main-chemistry-some-basic-concepts-of-chemistry-o1exrremjsxmqc5w",
+      "content": "<p>The conversion of propan-1-ol to n-butylamine involves the sequential addition of reagents. The correct sequential order of reagents is</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(i) SOCl<sub>2</sub> (ii) KCN (iii) H<sub>2</sub>/Ni, Na(Hg)/C<sub>2</sub>H<sub>5</sub>OH"
+        },
+        {
+          "identifier": "B",
+          "content": "(i) HCl (ii) H<sub>2</sub>/Ni, Na(Hg)/C<sub>2</sub>H<sub>5</sub>OH"
+        },
+        {
+          "identifier": "C",
+          "content": "(i) SOCl<sub>2</sub> (ii) KCN (iii) CH<sub>3</sub>NH<sub>2</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "(i) HCl (ii) CH<sub>3</sub>NH<sub>2</sub>"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l8meqr23/40d04d8b-5591-4583-ba9e-4ed12fb434b7/3f0614b0-3f9a-11ed-8593-f506a41bac9c/file-1l8meqr24.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l8meqr23/40d04d8b-5591-4583-ba9e-4ed12fb434b7/3f0614b0-3f9a-11ed-8593-f506a41bac9c/file-1l8meqr24.png\" loading=\"lazy\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;max-height: 60vh\" alt=\"JEE Main 2022 (Online) 24th June Evening Shift Chemistry - Compounds Containing Nitrogen Question 124 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l8meqr23/40d04d8b-5591-4583-ba9e-4ed12fb434b7/3f0614b0-3f9a-11ed-8593-f506a41bac9c/file-1l8meqr24.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l8meqr23/40d04d8b-5591-4583-ba9e-4ed12fb434b7/3f0614b0-3f9a-11ed-8593-f506a41bac9c/file-1l8meqr24.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l8meqr23/40d04d8b-5591-4583-ba9e-4ed12fb434b7/3f0614b0-3f9a-11ed-8593-f506a41bac9c/file-1l8meqr24.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l8meqr23/40d04d8b-5591-4583-ba9e-4ed12fb434b7/3f0614b0-3f9a-11ed-8593-f506a41bac9c/file-1l8meqr24.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l8meqr23/40d04d8b-5591-4583-ba9e-4ed12fb434b7/3f0614b0-3f9a-11ed-8593-f506a41bac9c/file-1l8meqr24.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l8meqr23/40d04d8b-5591-4583-ba9e-4ed12fb434b7/3f0614b0-3f9a-11ed-8593-f506a41bac9c/file-1l8meqr24.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">"
+    }
+  ]
+}

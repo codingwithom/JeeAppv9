@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "q1CV8nEPaS9ridZCobb3R",
+      "paperTitle": "JEE Main 2019 (Online) 12th January Morning Slot",
+      "year": 2019,
+      "examDate": "2019-01-12 09:30",
+      "subject": "chemistry",
+      "chapter": "chemical-kinetics-and-nuclear-chemistry",
+      "chapterGroup": "physical-chemistry",
+      "topic": "integrated-rate-law-equations",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "decomposition-of-x-exhibits-a-rate-constant-of-005-mu-jee-main-chemistry-some-basic-concepts-of-chemistry-uhozlpiuydkapjrq",
+      "content": "Decomposition of X exhibits a rate constant of 0.05 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.489ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.364ex\" height=\"1.489ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 603 658\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D707\" xlink:href=\"#MJX-TEX-I-1D707\"></use></g></g></g></svg></mjx-container>g/year. How many year are required for the decomposition of 5<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.489ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.364ex\" height=\"1.489ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 603 658\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D707\" xlink:href=\"#MJX-TEX-I-1D707\"></use></g></g></g></svg></mjx-container>g of X into 2.5 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.489ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.364ex\" height=\"1.489ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 603 658\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D707\" xlink:href=\"#MJX-TEX-I-1D707\"></use></g></g></g></svg></mjx-container>g? \n",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "50"
+        },
+        {
+          "identifier": "B",
+          "content": "20"
+        },
+        {
+          "identifier": "C",
+          "content": "25"
+        },
+        {
+          "identifier": "D",
+          "content": "40"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "According to unit of rate constant it is a zero order\nreaction, then half life of zero order reaction.\n<br><br>t<sub>1/2</sub> = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.816ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"11.53ex\" height=\"2.773ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864.9 5096.4 1225.5\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(239.6,457.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"mn\" transform=\"translate(562,-150) scale(0.707)\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g></g></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(220,-345) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mi\" transform=\"translate(500,0)\"><use data-c=\"1D458\" xlink:href=\"#MJX-TEX-I-1D458\"></use></g></g><rect width=\"922\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g><g data-mml-node=\"mo\" transform=\"translate(1439.7,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2495.5,0)\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mn\" transform=\"translate(1123.7,394) scale(0.707)\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(220,-345) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1278,0)\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\" transform=\"translate(500,0)\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(778,0)\"></use><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\" transform=\"translate(1278,0)\"></use></g></g><rect width=\"2360.9\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container> = 50 years"
+    }
+  ]
+}

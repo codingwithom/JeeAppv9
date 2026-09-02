@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1lgvtwly7",
+      "paperTitle": "JEE Main 2023 (Online) 10th April Evening Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "stability-of-intermediate",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pthe-decreasing-order-of-hydride-affinity-for-following-ca-jee-main-chemistry-some-basic-concepts-of-chemistry-p87goxpb64hdhngv",
+      "content": "<p>The decreasing order of hydride affinity for following carbocations is:</p>\n<p><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1lgx3czoe/ad8faab5-2135-4ccc-9d0f-716d95736ca7/161bbbe0-e3dc-11ed-baaf-253646c1f54e/file-1lgx3czof.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1lgx3czoe/ad8faab5-2135-4ccc-9d0f-716d95736ca7/161bbbe0-e3dc-11ed-baaf-253646c1f54e/file-1lgx3czof.png\" loading=\"lazy\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;max-height: 60vh\" alt=\"JEE Main 2023 (Online) 10th April Evening Shift Chemistry - Basics of Organic Chemistry Question 126 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1lgx3czoe/ad8faab5-2135-4ccc-9d0f-716d95736ca7/161bbbe0-e3dc-11ed-baaf-253646c1f54e/file-1lgx3czof.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1lgx3czoe/ad8faab5-2135-4ccc-9d0f-716d95736ca7/161bbbe0-e3dc-11ed-baaf-253646c1f54e/file-1lgx3czof.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1lgx3czoe/ad8faab5-2135-4ccc-9d0f-716d95736ca7/161bbbe0-e3dc-11ed-baaf-253646c1f54e/file-1lgx3czof.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1lgx3czoe/ad8faab5-2135-4ccc-9d0f-716d95736ca7/161bbbe0-e3dc-11ed-baaf-253646c1f54e/file-1lgx3czof.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1lgx3czoe/ad8faab5-2135-4ccc-9d0f-716d95736ca7/161bbbe0-e3dc-11ed-baaf-253646c1f54e/file-1lgx3czof.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1lgx3czoe/ad8faab5-2135-4ccc-9d0f-716d95736ca7/161bbbe0-e3dc-11ed-baaf-253646c1f54e/file-1lgx3czof.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"></p>\n<p>Choose the correct answer from the options given below:</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "A, C, D, B"
+        },
+        {
+          "identifier": "B",
+          "content": " C, A, B, D"
+        },
+        {
+          "identifier": "C",
+          "content": "A, C, B, D"
+        },
+        {
+          "identifier": "D",
+          "content": "C, A, D, B"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Least stable carbocation will have highest hydride affinity.<br><br>\nStability of carbocation:<br><br>\n<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"16.058ex\" height=\"1.71ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 7097.7 756\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D437\" xlink:href=\"#MJX-TEX-I-1D437\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1105.8,0)\"><use data-c=\"3E\" xlink:href=\"#MJX-TEX-N-3E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2161.6,0)\"><use data-c=\"1D435\" xlink:href=\"#MJX-TEX-I-1D435\"></use></g><g data-mml-node=\"mo\" transform=\"translate(3198.3,0)\"><use data-c=\"3E\" xlink:href=\"#MJX-TEX-N-3E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(4254.1,0)\"><use data-c=\"1D434\" xlink:href=\"#MJX-TEX-I-1D434\"></use></g><g data-mml-node=\"mo\" transform=\"translate(5281.9,0)\"><use data-c=\"3E\" xlink:href=\"#MJX-TEX-N-3E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(6337.7,0)\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g></g></g></svg></mjx-container><br><br>\nHydride affinity order:<br><br>\n<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"16.058ex\" height=\"1.71ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 7097.7 756\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1037.8,0)\"><use data-c=\"3E\" xlink:href=\"#MJX-TEX-N-3E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2093.6,0)\"><use data-c=\"1D434\" xlink:href=\"#MJX-TEX-I-1D434\"></use></g><g data-mml-node=\"mo\" transform=\"translate(3121.3,0)\"><use data-c=\"3E\" xlink:href=\"#MJX-TEX-N-3E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(4177.1,0)\"><use data-c=\"1D435\" xlink:href=\"#MJX-TEX-I-1D435\"></use></g><g data-mml-node=\"mo\" transform=\"translate(5213.9,0)\"><use data-c=\"3E\" xlink:href=\"#MJX-TEX-N-3E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(6269.7,0)\"><use data-c=\"1D437\" xlink:href=\"#MJX-TEX-I-1D437\"></use></g></g></g></svg></mjx-container>"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1kryzr707",
+      "paperTitle": "JEE Main 2021 (Online) 27th July Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "aldehydes-ketones-and-carboxylic-acids",
+      "chapterGroup": "organic-chemistry",
+      "topic": "tests-for-aldehyde-and-ketones",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-one-of-the-following-compounds-will-give-orange-precip-jee-main-chemistry-some-basic-concepts-of-chemistry-j5e1o57hnmyolz78",
+      "content": "Which one of the following compounds will give orange precipitate when treated with 2, 4-dinitrophenyl hydrazine?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1ks19ws0v/c2f29062-aa24-4532-8771-492d290dae5e/6d4766f0-f737-11eb-b432-97feaf768666/file-1ks19ws0w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 27th July Morning Shift Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 163 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1ks19x4mf/9f6e4046-d28d-4231-9492-d384fd78b959/7702db70-f737-11eb-b432-97feaf768666/file-1ks19x4mg.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 27th July Morning Shift Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 163 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1ks19xfmr/2c313571-8ea1-4b21-97d4-fc9dd64711ad/7f83fb30-f737-11eb-b432-97feaf768666/file-1ks19xfms.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 27th July Morning Shift Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 163 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1ks19xni1/33e246ba-30a5-41ea-8a63-1bda1c61dca9/85981290-f737-11eb-b432-97feaf768666/file-1ks19xni2.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 27th July Morning Shift Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 163 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1ks19yhqt/c801d818-9613-4511-8d20-98943974991e/9cf4e850-f737-11eb-b432-97feaf768666/file-1ks19yhqu.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 27th July Morning Shift Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 163 English Explanation\"><br>Explanation <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> 2-4-D.N.P. test is used for carbonyl compound (aldehyde &amp; ketone)"
+    }
+  ]
+}

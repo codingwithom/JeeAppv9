@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "yEdUCUZPSH3TjZAnJAjgy2xukevgnseq",
+      "paperTitle": "JEE Main 2020 (Online) 2nd September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-02 09:00",
+      "subject": "chemistry",
+      "chapter": "chemical-equilibrium",
+      "chapterGroup": "physical-chemistry",
+      "topic": "chemical-equilibrium-law-of-mass-action-and-equilibrium-constant",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "an-open-beaker-of-water-in-equilibrium-with-water-vapour-is-jee-main-chemistry-equilibrium-oubji9kt76dmm1y7",
+      "content": "An open beaker of water in equilibrium with\nwater vapour is in a sealed container. When a\nfew grams of glucose are added to the beaker\nof water, the rate at which water molecules :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "leaves the solution increases"
+        },
+        {
+          "identifier": "B",
+          "content": "leaves the vapour increases"
+        },
+        {
+          "identifier": "C",
+          "content": "leaves the vapour decreases"
+        },
+        {
+          "identifier": "D",
+          "content": "leaves the solution decreases"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "With addition of solute in solvent, surface area for vapourisation decreases causes lowering in vapour\npressure."
+    }
+  ]
+}

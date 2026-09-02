@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "u6IfqVf6tbK40x16DG7k9k2k5icsuaf",
+      "paperTitle": "JEE Main 2020 (Online) 9th January Morning Slot",
+      "year": 2020,
+      "examDate": "2020-01-09 09:30",
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "ionization-energy",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "b-has-a-smaller-first-ionization-enthalpy-than-be-consider-jee-main-chemistry-analytical-chemistry-eubxpyl2jjzqszmf",
+      "content": "B has a smaller first ionization enthalpy than\nBe. Consider the following statements :<br><br>\n(I) It is easier to remove 2p electron than 2s\nelectron<br><br>\n(II) 2p electron of B is more shielded from the\nnucleus by the inner core of electrons than\nthe 2s electrons of Be.<br><br>\n(III) 2s electron has more penetration power\nthan 2p electron.<br><br>\n(IV) atomic radius of B is more than Be\n(Atomic number B = 5, Be = 4)<br><br>\nThe correct statements are :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(I), (III) and (IV)"
+        },
+        {
+          "identifier": "B",
+          "content": "(II), (III) and (IV)"
+        },
+        {
+          "identifier": "C",
+          "content": "(I), (II) and (IV)"
+        },
+        {
+          "identifier": "D",
+          "content": "(I), (II) and (III)"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "1st I.E. of Be &gt; B\n<br><br>In case of Be, electron is removed from 2s\norbital which has more penetration power,\nwhile in case of B electron is removed from 2p\norbital which has less penetration power.\n<br><br>2p electron of B is more shielded from nucleus\nby the inner electrons than 2s electrons of Be\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> It is easier to remove 2p electron than 2s\nelectron."
+    }
+  ]
+}

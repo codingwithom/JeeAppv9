@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "a4s1MRUaAsAzEitw5Tjgy2xukfp2zk7a",
+      "paperTitle": "JEE Main 2020 (Online) 5th September Evening Slot",
+      "year": 2020,
+      "examDate": "2020-09-05 15:00",
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "atomic-and-ionic-radius",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-correct-order-of-the-ionic-radii-ofbr-osup2sup-jee-main-chemistry-periodic-table-and-periodicity-riucoelhdvvjk8xq",
+      "content": "The correct order of the ionic radii of<br> O<sup>2–</sup>, N<sup>3–</sup>, F<sup>–</sup>\n, Mg<sup>2+</sup>, Na<sup>+</sup> and Al<sup>3+</sup> is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "N<sup>3–</sup> &lt; O<sup>2–</sup> &lt; F<sup>–</sup>\n &lt; Na<sup>+</sup> &lt; Mg<sup>2+</sup> &lt; Al<sup>3+</sup>"
+        },
+        {
+          "identifier": "B",
+          "content": "N<sup>3–</sup> &lt; F<sup>–</sup>\n &lt; O<sup>2–</sup> &lt; Mg<sup>2+</sup> &lt; Na<sup>+</sup> &lt; Al<sup>3+</sup>"
+        },
+        {
+          "identifier": "C",
+          "content": "Al<sup>3+</sup> &lt; Na<sup>+</sup> &lt; Mg<sup>2+</sup> &lt; O<sup>2–</sup> &lt; F<sup>–</sup>\n &lt; N<sup>3–</sup>"
+        },
+        {
+          "identifier": "D",
+          "content": "Al<sup>3+</sup> &lt; Mg<sup>2+</sup> &lt; Na<sup>+</sup> &lt; F<sup>–</sup>\n &lt; O<sup>2–</sup> &lt; N<sup>3–</sup>"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "For isoelectronic species, as the no. of protons\nincreases, size of ions decreases.\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> Correct order of size for isoelectronic species\n<br><br>Al<sup>3+</sup> &lt; Mg<sup>2+</sup> &lt; Na<sup>+</sup> &lt; F<sup>–</sup>\n &lt; O<sup>2–</sup> &lt; N<sup>3–</sup>"
+    }
+  ]
+}

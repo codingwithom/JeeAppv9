@@ -15,15 +15,17 @@ import { VideoMiniPlayer } from "@/components/VideoMiniPlayer";
 import NotFound from "@/pages/not-found";
 import LoginPage from "@/pages/LoginPage";
 import { Sidebar } from "@/components/Sidebar";
-import HomePage from "@/pages/HomePage";
-import CalendarPage from "@/pages/CalendarPage";
-import MusicPage from "@/pages/MusicPage";
-import PDFPage from "@/pages/PDFPage";
-import AdminPage from "@/pages/AdminPage";
-import VideoPage from "@/pages/VideoPage";
-import SavesPage from "@/pages/SavesPage";
-import QuizPage from "@/pages/QuizPage";
-import { AmbientMixer } from "@/components/AmbientMixer";
+
+const HomePage = React.lazy(() => import("@/pages/HomePage"));
+const CalendarPage = React.lazy(() => import("@/pages/CalendarPage"));
+const MusicPage = React.lazy(() => import("@/pages/MusicPage"));
+const PDFPage = React.lazy(() => import("@/pages/PDFPage"));
+const AdminPage = React.lazy(() => import("@/pages/AdminPage"));
+const VideoPage = React.lazy(() => import("@/pages/VideoPage"));
+const SavesPage = React.lazy(() => import("@/pages/SavesPage"));
+const QuizPage = React.lazy(() => import("@/pages/QuizPage"));
+const QuestionsPage = React.lazy(() => import("@/pages/QuestionsPage"));
+const AmbientMixer = React.lazy(() => import("@/components/AmbientMixer").then(m => ({ default: m.AmbientMixer })));
 import { MiniPlayer } from "@/components/MiniPlayer";
 import { AnimatePresence, motion } from "framer-motion";
 import { GoalSelection } from "@/components/GoalSelection";
@@ -42,7 +44,8 @@ import {
   Headphones,
   Trees,
   PenTool,
-  BrainCircuit
+  BrainCircuit,
+  HelpCircle
 } from "lucide-react";
 import { idbGetAllKeys, idbGet, idbSet } from "@/lib/idb";
 
@@ -50,6 +53,7 @@ const queryClient = new QueryClient();
 
 const PAGE_LABELS: Record<string, string> = {
   "/": "Dashboard",
+  "/questions": "Questions",
   "/calendar": "Calendar & Tags",
   "/music": "Focus Music",
   "/pdf": "PDF Viewer",
@@ -81,6 +85,7 @@ function CommandPalette() {
 
   const items = [
     { name: "Dashboard", path: "/", icon: LayoutDashboard },
+    { name: "Questions", path: "/questions", icon: HelpCircle },
     { name: "Calendar & Tags", path: "/calendar", icon: CalendarDays },
     { name: "Focus Music", path: "/music", icon: Music },
     { name: "PDF Viewer", path: "/pdf", icon: FileText },
@@ -292,7 +297,8 @@ function TimeTracker() {
     if (sessionState !== "running") return;
 
     let sectionName = "Dashboard";
-    if (location.startsWith("/pdf")) sectionName = "PDF Viewer";
+    if (location.startsWith("/questions")) sectionName = "Questions";
+    else if (location.startsWith("/pdf")) sectionName = "PDF Viewer";
     else if (location.startsWith("/music")) sectionName = "Music";
     else if (location.startsWith("/video")) sectionName = "Videos";
     else if (location.startsWith("/saves")) sectionName = "Saves";
@@ -346,18 +352,25 @@ function ProtectedLayout({ children }: { children: React.ReactNode }) {
 function Router() {
   return (
     <ProtectedLayout>
-      <Switch>
-        <Route path="/" component={HomePage} />
-        <Route path="/calendar" component={CalendarPage} />
-        <Route path="/music" component={MusicPage} />
-        <Route path="/pdf" component={PDFPage} />
-        <Route path="/video" component={VideoPage} />
-        <Route path="/admin" component={AdminPage} />
-        <Route path="/saves" component={SavesPage} />
-        <Route path="/quiz" component={QuizPage} />
-        <Route path="/ambient" component={AmbientMixer} />
-        <Route component={NotFound} />
-      </Switch>
+      <React.Suspense fallback={
+        <div className="flex h-full w-full items-center justify-center p-8 min-h-[300px]">
+          <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin" />
+        </div>
+      }>
+        <Switch>
+          <Route path="/" component={HomePage} />
+          <Route path="/questions" component={QuestionsPage} />
+          <Route path="/calendar" component={CalendarPage} />
+          <Route path="/music" component={MusicPage} />
+          <Route path="/pdf" component={PDFPage} />
+          <Route path="/video" component={VideoPage} />
+          <Route path="/admin" component={AdminPage} />
+          <Route path="/saves" component={SavesPage} />
+          <Route path="/quiz" component={QuizPage} />
+          <Route path="/ambient" component={AmbientMixer} />
+          <Route component={NotFound} />
+        </Switch>
+      </React.Suspense>
     </ProtectedLayout>
   );
 }

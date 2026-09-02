@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "EWBol1WNgzzZ5s6rgu7k9k2k5h10ay2",
+      "paperTitle": "JEE Main 2020 (Online) 8th January Morning Slot",
+      "year": 2020,
+      "examDate": "2020-01-08 09:30",
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "ionization-energy",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-third-ionization-enthalpy-is-minimum-for--jee-main-chemistry-periodic-table-and-periodicity-cjxvhumquzqw7fri",
+      "content": "The third ionization enthalpy is minimum for :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Ni"
+        },
+        {
+          "identifier": "B",
+          "content": "Co"
+        },
+        {
+          "identifier": "C",
+          "content": "Mn"
+        },
+        {
+          "identifier": "D",
+          "content": "Fe"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Electronic configuration of\n<br><br><sub>25</sub>Mn = [Ar]3d<sup>5</sup>4s<sup>2</sup>\n<br><br><sub>25</sub>Mn<sup>2+</sup> = [Ar]3d<sup>5</sup>4s<sup>0</sup>\n<br><br><sub>26</sub>Fe = [Ar]3d<sup>6</sup>4s<sup>2</sup>\n<br><br><sub>26</sub>Fe<sup>2+</sup> = [Ar]3d<sup>6</sup>4s<sup>0</sup>\n<br><br><sub>27</sub>Co = [Ar]3d<sup>7</sup>4s<sup>2</sup>\n<br><br><sub>27</sub>Co<sup>2+</sup> = [Ar]3d<sup>7</sup>4s<sup>0</sup>\n<br><br><sub>28</sub>Ni = [Ar]3d<sup>8</sup>4s<sup>2</sup>\n<br><br><sub>28</sub>Ni<sup>2+</sup> = [Ar]3d<sup>8</sup>4s<sup>0</sup>\n<br><br>So third ionisation energy is minimum for Fe."
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "Tnkau2QUd25jR5XAj2ntT",
+      "paperTitle": "JEE Main 2019 (Online) 10th January Morning Slot",
+      "year": 2019,
+      "examDate": "2019-01-10 09:30",
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "purification-of-organic-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "if-dichloromethane-dcm-and-water-h2o-are-used-for-differ-jee-main-chemistry-some-basic-concepts-of-chemistry-xgaaulmlz9y3n1at",
+      "content": "If dichloromethane (DCM) and water (H<sub>2</sub>O) are used for differential extraction, which one of the following statements is correct ?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "DCM and H<sub>2</sub>O would stay as upper and lower layer respectively in the separating funnel (S.F.)"
+        },
+        {
+          "identifier": "B",
+          "content": "DCM and H<sub>2</sub>O will make turbid/colloidal mixture"
+        },
+        {
+          "identifier": "C",
+          "content": "DCM and H<sub>2</sub>O would stay as lower and upper layer respectively in the separating funnel(S.F)."
+        },
+        {
+          "identifier": "D",
+          "content": "DCM and H<sub>2</sub>O will be miscible clearly "
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Density of DCM = 1.39 and density of H<sub>2</sub>O = 1.0.\n<p>Dichloromethane (DCM) is a denser solvent than water. Therefore, when a mixture of DCM and water is allowed to settle in a separating funnel, the DCM forms the lower layer due to its higher density, while the water forms the upper layer. The two solvents are immiscible, meaning they do not mix and form two distinct layers.</p>\n<p>So, the correct answer is :</p>\n<p>Option C : DCM and H<sub>2</sub>O would stay as lower and upper layer respectively in the separating funnel(S.F).</p>"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "GXBsGf7nXWdtJ5R3Fp7k9k2k5llk6yl",
+      "paperTitle": "JEE Main 2020 (Online) 9th January Evening Slot",
+      "year": 2020,
+      "examDate": "2020-01-09 14:30",
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "isomerism-of-coordination-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-isomers-of-conhsub3subsub4subclsub2su-jee-main-chemistry-hydrocarbons-husfiiaokj588zly",
+      "content": "The isomer(s) of [Co(NH<sub>3</sub>)<sub>4</sub>Cl<sub>2</sub>] that has/have\na Cl–Co–Cl angle of 90°, is/are :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "cis only"
+        },
+        {
+          "identifier": "B",
+          "content": "cis and trans"
+        },
+        {
+          "identifier": "C",
+          "content": "meridional and trans"
+        },
+        {
+          "identifier": "D",
+          "content": "trans only"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "[Co(NH<sub>3</sub>)<sub>4</sub>Cl<sub>2</sub>] has 2 geometrical isomers.\n<img src=\"https://imagex.cdn.examgoal.net/7kd4dk5ty8d85/7a69d000-ed98-4bbe-9771-f7cd7372b502/83204250-3fa3-11ea-b62d-51ccc5d4afb6/file-7kd4dk5ty8d86-478w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 9th January Evening Slot Chemistry - Coordination Compounds Question 265 English Explanation\">\n<br>Among cis and trans isomers, cis isomer has Cl–Co–Cl angle of 90<sup>o</sup>."
+    }
+  ]
+}

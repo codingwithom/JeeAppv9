@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "OXleJcmajnlCRgGiZwAFa",
+      "paperTitle": "JEE Main 2019 (Online) 9th January Evening Slot",
+      "year": 2019,
+      "examDate": "2019-01-09 14:30",
+      "subject": "chemistry",
+      "chapter": "chemical-equilibrium",
+      "chapterGroup": "physical-chemistry",
+      "topic": "chemical-equilibrium-law-of-mass-action-and-equilibrium-constant",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "consider-the-following-reversible-chemical-reactions-the-jee-main-chemistry-some-basic-concepts-of-chemistry-wuzdmljm46wr8yac",
+      "content": "Consider the following reversible chemical reactions : \n<br><br><img src=\"https://imagex.cdn.examgoal.net/i7Y8jZv4G9H6r1Rdm/WKk3XxDvzW17X5rRF6GsUGCPhhf0y/m4Sw4tdBQCcDEaKHHjr4Ok/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 9th January Evening Slot Chemistry - Chemical Equilibrium Question 97 English\">\n<br><br>The relation between K<sub>1</sub> and K<sub>2</sub> is : ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "K<sub>1</sub>K<sub>2</sub> = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.816ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.795ex\" height=\"2.773ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864.9 793.6 1225.5\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mn\" transform=\"translate(220,394) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mn\" transform=\"translate(220,-345) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g><rect width=\"553.6\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container>"
+        },
+        {
+          "identifier": "B",
+          "content": "K<sub>2</sub> = K<sub>1</sub><sup>3</sup>"
+        },
+        {
+          "identifier": "C",
+          "content": "K<sub>2</sub> = K<sub>1</sub><sup><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>3</sup>"
+        },
+        {
+          "identifier": "D",
+          "content": "K<sub>1</sub>K<sub>2</sub> = 3"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/LWtd67D05AfZp66TR/14PJwzFgJzjySK0fc1Y3bhNTeABi8/kuCANcnsISbhLcohJKPb5Q/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 9th January Evening Slot Chemistry - Chemical Equilibrium Question 97 English Explanation\">"
+    }
+  ]
+}

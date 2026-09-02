@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ldwvc0r5",
+      "paperTitle": "JEE Main 2023 (Online) 24th January Evening Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "compounds-containing-nitrogen",
+      "chapterGroup": "organic-chemistry",
+      "topic": "aromatic-amines",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pgiven-below-are-two-statementsp-pstatement-i--pure-jee-main-chemistry-some-basic-concepts-of-chemistry-f96f1dtijjn52vex",
+      "content": "<p>Given below are two statements:</p>\n<p>Statement I : Pure Aniline and other arylamines are usually colourless.</p>\n<p>Statement II : Arylamines get coloured on storage due to atmospheric reduction.</p>\n<p>In the light of the above statements, choose the most appropriate answer from the options given below :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Both Statement I and Statement II are correct"
+        },
+        {
+          "identifier": "B",
+          "content": "Statement I is correct but Statement II is incorrect"
+        },
+        {
+          "identifier": "C",
+          "content": "Both Statement I and Statement II are incorrect"
+        },
+        {
+          "identifier": "D",
+          "content": "Statement I is incorrect but Statement I is correct"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "The most appropriate answer is Statement-I is correct but <b>Statement-II</b> is incorrect.\n<br/><br/>\nPure Aniline and other arylamines are usually colorless, which is in agreement with <b>Statement-I</b>. However, <b>Statement-II</b> is incorrect as arylamines do not get colored on storage due to atmospheric reduction. Instead, get\ncoloured on storage due to atmospheric <b>oxidation</b> and become darker in color upon exposure to air."
+    }
+  ]
+}

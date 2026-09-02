@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "9N8KZ1rvROd8fj8T0Z7k9k2k5epzfsj",
+      "paperTitle": "JEE Main 2020 (Online) 7th January Evening Slot",
+      "year": 2020,
+      "examDate": "2020-01-07 14:30",
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "carbohydrates",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-statements-is-correct--jee-main-chemistry-analytical-chemistry-oh3b4uzsiowsbvxi",
+      "content": "Which of the following statements is correct ?\n",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Gluconic acid can from cyclic (acteal/hemiacetal) structure"
+        },
+        {
+          "identifier": "B",
+          "content": "Gluconic acid is a partial oxidation product of glucose"
+        },
+        {
+          "identifier": "C",
+          "content": "Gluconic acid is obtained by oxidation of glucose with (HNO<sub>3</sub>)"
+        },
+        {
+          "identifier": "D",
+          "content": "Gluconic acid is a dicarboxylic acid."
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/7kd4dk6et9klv/15565797-31b4-4ec1-8410-af2a3d89be99/8ca0fe30-4b1c-11ea-b62d-51ccc5d4afb6/file-7kd4dk6et9klw-320w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 7th January Evening Slot Chemistry - Biomolecules Question 150 English Explanation\">"
+    }
+  ]
+}

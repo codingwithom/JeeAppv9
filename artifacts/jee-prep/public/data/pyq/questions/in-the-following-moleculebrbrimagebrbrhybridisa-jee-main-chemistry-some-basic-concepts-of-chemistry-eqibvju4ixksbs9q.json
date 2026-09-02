@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "4eS45LeYq97PerZ3Lp1kmm0ekr1",
+      "paperTitle": "JEE Main 2021 (Online) 18th March Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "iupac-nomenclature",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "in-the-following-moleculebrbrimagebrbrhybridisa-jee-main-chemistry-some-basic-concepts-of-chemistry-eqibvju4ixksbs9q",
+      "content": "In the following molecule,<br><br><img src=\"https://imagex.cdn.examgoal.net/1kmnnyzum/925a3d8e-4deb-44b8-b09c-4f07fbb8cd0f/5cc3c1e0-8cbe-11eb-bb7d-75e16383db04/file-1kmnnyzun.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 18th March Evening Shift Chemistry - Basics of Organic Chemistry Question 193 English\"><br>Hybridisation of Carbon a, b, and c respectively are :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "sp<sup>3</sup>, sp<sup>2</sup>, sp<sup>2</sup>"
+        },
+        {
+          "identifier": "B",
+          "content": "sp<sup>3</sup>, sp, sp<sup>2</sup>"
+        },
+        {
+          "identifier": "C",
+          "content": "sp<sup>3</sup>, sp<sup>2</sup>, sp"
+        },
+        {
+          "identifier": "D",
+          "content": "sp<sup>3</sup>, sp, sp"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1kmtkvb75/bfeecfb6-78d7-4229-95bc-6376486a9657/eecd9e10-8ffe-11eb-ab3d-b520898c3b37/file-1kmtkvb76.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 18th March Evening Shift Chemistry - Basics of Organic Chemistry Question 193 English Explanation\">"
+    }
+  ]
+}

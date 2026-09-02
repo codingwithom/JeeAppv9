@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l55ilnlq",
+      "paperTitle": "JEE Main 2022 (Online) 28th June Evening Shift",
+      "year": 2022,
+      "subject": "mathematics",
+      "chapter": "parabola",
+      "chapterGroup": "coordinate-geometry",
+      "topic": "question-based-on-basic-definition-and-parametric-representation",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pif-vertex-of-a-parabola-is-2--1-and-the-equation-o-jee-main-mathematics-trigonometric-functions-and-equations-2xladlgy3jt9sdm7",
+      "content": "<p>If vertex of a parabola is (2, <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>1) and the equation of its directrix is 4x <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container> 3y = 21, then the length of its latus rectum is :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "2"
+        },
+        {
+          "identifier": "B",
+          "content": "8"
+        },
+        {
+          "identifier": "C",
+          "content": "12"
+        },
+        {
+          "identifier": "D",
+          "content": "16"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<p>Vertex of Parabola : (2, <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>1)</p>\n<p>and directrix : 4x <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container> 3y = 21</p>\n<p>Distance of vertex from the directrix</p>\n<p><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -1.334ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"16.553ex\" height=\"3.799ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1089.5 7316.6 1679.1\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(806.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mrow\" transform=\"translate(1862.6,0)\"><g data-mml-node=\"mo\"><svg width=\"333\" height=\"1679.1\" y=\"-589.5\" x=\"0\" viewBox=\"0 360.9 333 1679.1\"><use data-c=\"2223\" xlink:href=\"#MJX-TEX-SO-2223\" transform=\"scale(1,3.923)\"></use></svg></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(333,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(220,398) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"38\" xlink:href=\"#MJX-TEX-N-38\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1278,0)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1778,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(2556,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\" transform=\"translate(500,0)\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(822.1,-511.4) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msqrt\"><g data-mml-node=\"mo\" transform=\"translate(0,71.9)\"><use data-c=\"221A\" xlink:href=\"#MJX-TEX-N-221A\"></use></g><g transform=\"translate(853,0)\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\" transform=\"translate(500,0)\"></use></g></g><rect width=\"1000\" height=\"42.4\" x=\"853\" y=\"829.5\"></rect></g></g><rect width=\"2714.5\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g><g data-mml-node=\"mo\" transform=\"translate(3287.5,0)\"><svg width=\"333\" height=\"1679.1\" y=\"-589.5\" x=\"0\" viewBox=\"0 360.9 333 1679.1\"><use data-c=\"2223\" xlink:href=\"#MJX-TEX-SO-2223\" transform=\"scale(1,3.923)\"></use></svg></g></g><g data-mml-node=\"mo\" transform=\"translate(5760.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(6816.6,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></svg></mjx-container></p>\n<p><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> length of latus rectum = 4a = 8</p>"
+    }
+  ]
+}

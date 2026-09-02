@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "1y8wmTsiXqZGmJIS",
+      "paperTitle": "JEE Main 2017 (Offline)",
+      "year": 2017,
+      "examDate": null,
+      "subject": "chemistry",
+      "chapter": "structure-of-atom",
+      "chapterGroup": "physical-chemistry",
+      "topic": "electronic-configuration-and-nodes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-group-having-isoelectronic-species-is-2017-marks-4-1y8wmtsixqzgmjis.htm",
+      "content": "The group having isoelectronic species is:",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "O<sup>2-</sup> , F<sup>-</sup> , Na<sup>+</sup>, Mg<sup>2+</sup>"
+        },
+        {
+          "identifier": "B",
+          "content": "O<sup>2-</sup> , F<sup>-</sup> , Na, Mg<sup>2+</sup>"
+        },
+        {
+          "identifier": "C",
+          "content": "O<sup>-</sup> , F<sup>-</sup> , Na<sup>+</sup>, Mg<sup>2+</sup>"
+        },
+        {
+          "identifier": "D",
+          "content": "O<sup>-</sup> , F<sup>-</sup> , Na, Mg<sup>+</sup>"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "O<sup>2-</sup> , F<sup>-</sup> , Na<sup>+</sup> and Mg<sup>2+</sup>, all have 10 electrons each."
+    }
+  ]
+}

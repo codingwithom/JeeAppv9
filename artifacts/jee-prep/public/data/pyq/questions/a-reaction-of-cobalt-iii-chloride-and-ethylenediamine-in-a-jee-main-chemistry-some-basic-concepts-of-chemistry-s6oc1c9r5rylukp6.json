@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "EWk3FD5LCpoxqEbnu8M7C",
+      "paperTitle": "JEE Main 2019 (Online) 10th January Evening Slot",
+      "year": 2019,
+      "examDate": "2019-01-10 14:30",
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "isomerism-of-coordination-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "a-reaction-of-cobalt-iii-chloride-and-ethylenediamine-in-a-jee-main-chemistry-some-basic-concepts-of-chemistry-s6oc1c9r5rylukp6",
+      "content": "A reaction of cobalt (III) chloride and ethylenediamine in a 1 : 2 mole ratio generates two isomeric products A (violet coloured) and B (green coloured). A can show optical activity, but B is optically inactive. What\ntype of isomers does A and B represcent? ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Ionisation isomers"
+        },
+        {
+          "identifier": "B",
+          "content": "Linkage isomers "
+        },
+        {
+          "identifier": "C",
+          "content": "Coordination isomers "
+        },
+        {
+          "identifier": "D",
+          "content": "Geometrical isomers "
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "CoCl<sub>3</sub>\n + en <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> [Co(en)<sub>2</sub>Cl<sub>2</sub>]Cl\n<br>   1      :   2\n<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1da9i2ynkdjvh78z/635a2622-ac37-4e55-bd4f-d47ebd4a7815/a1f10b40-d87a-11ea-b796-4745b429ed6f/file-1da9i2ynkdjvh790-320w.png\"><img src=\"https://imagex.cdn.examgoal.net/1da9i2ynkdjvh78z/635a2622-ac37-4e55-bd4f-d47ebd4a7815/a1f10b40-d87a-11ea-b796-4745b429ed6f/file-1da9i2ynkdjvh790-500w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 10th January Evening Slot Chemistry - Coordination Compounds Question 300 English Explanation\"></picture>\n<br><br>A and B are Geometrical isomers."
+    }
+  ]
+}

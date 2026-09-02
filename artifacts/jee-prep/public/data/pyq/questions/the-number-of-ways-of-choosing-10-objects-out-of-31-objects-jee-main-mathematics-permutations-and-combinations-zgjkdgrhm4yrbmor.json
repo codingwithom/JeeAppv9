@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "IiAhsoFZAqNRGsldWG3rsa0w2w9jx5e78h8",
+      "paperTitle": "JEE Main 2019 (Online) 12th April Morning Slot",
+      "year": 2019,
+      "examDate": "2019-04-12 09:30",
+      "subject": "mathematics",
+      "chapter": "permutations-and-combinations",
+      "chapterGroup": "algebra",
+      "topic": "number-of-combinations",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-number-of-ways-of-choosing-10-objects-out-of-31-objects-jee-main-mathematics-permutations-and-combinations-zgjkdgrhm4yrbmor",
+      "content": "The number of ways of choosing 10 objects out of 31 objects of which 10 are identical and the remaining 21\nare distinct, is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "2<sup>20</sup> - 1"
+        },
+        {
+          "identifier": "B",
+          "content": "2<sup>20</sup>"
+        },
+        {
+          "identifier": "C",
+          "content": "2<sup>20</sup> + 1"
+        },
+        {
+          "identifier": "D",
+          "content": "2<sup>21</sup> "
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<sup>21</sup>C<sub>0</sub> + <sup>21</sup>C<sub>1</sub> + <sup>21</sup>C<sub>2</sub> + ....... + <sup>21</sup>C<sub>10</sub> = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.781ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"8.995ex\" height=\"3.006ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -983.7 3975.9 1328.7\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(220,394) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msup\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(533,363) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\" transform=\"translate(500,0)\"></use></g></g></g></g></g><g data-mml-node=\"mn\" transform=\"translate(499.3,-345) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><rect width=\"1112.2\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g><g data-mml-node=\"mo\" transform=\"translate(1630,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2685.8,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(533,363) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use></g></g></g></g></g></g></svg></mjx-container>"
+    }
+  ]
+}

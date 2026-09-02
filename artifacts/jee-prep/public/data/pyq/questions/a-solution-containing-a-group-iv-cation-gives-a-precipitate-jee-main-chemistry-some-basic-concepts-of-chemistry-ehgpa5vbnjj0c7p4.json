@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "C3RKGJ2L0noPtzFd66Pjd",
+      "paperTitle": "JEE Main 2017 (Online) 8th April Morning Slot",
+      "year": 2017,
+      "examDate": "2017-04-08 09:30",
+      "subject": "chemistry",
+      "chapter": "salt-analysis",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "systematic-analysis-of-cations",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "a-solution-containing-a-group-iv-cation-gives-a-precipitate-jee-main-chemistry-some-basic-concepts-of-chemistry-ehgpa5vbnjj0c7p4",
+      "content": "A solution containing a group-IV cation gives a precipitate on passing H<sub>2</sub>S. A solution of this precipitate in dil.HCl produces a white precipitate with NaOH solution and bluish-white precipitate with basic potassium ferrocyanide. The cation is :\n ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Co<sup>2+</sup>"
+        },
+        {
+          "identifier": "B",
+          "content": "Ni<sup>2+</sup>"
+        },
+        {
+          "identifier": "C",
+          "content": "Mn<sup>2+</sup> "
+        },
+        {
+          "identifier": "D",
+          "content": "Zn<sup>2+</sup>"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<p>Solution containing Zn<sup>2+</sup> ions forms white precipitate on reaction with H<sub>2</sub>S gas.</p>\n<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l3zxlles/4a58ef58-6e7f-4c0b-86cd-f80449522d60/189e0640-e40d-11ec-9cee-2ba40f085bf5/file-1l3zxllet.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l3zxlles/4a58ef58-6e7f-4c0b-86cd-f80449522d60/189e0640-e40d-11ec-9cee-2ba40f085bf5/file-1l3zxllet.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2017 (Online) 8th April Morning Slot Chemistry - Salt Analysis Question 43 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l3zxlles/4a58ef58-6e7f-4c0b-86cd-f80449522d60/189e0640-e40d-11ec-9cee-2ba40f085bf5/file-1l3zxllet.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l3zxlles/4a58ef58-6e7f-4c0b-86cd-f80449522d60/189e0640-e40d-11ec-9cee-2ba40f085bf5/file-1l3zxllet.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l3zxlles/4a58ef58-6e7f-4c0b-86cd-f80449522d60/189e0640-e40d-11ec-9cee-2ba40f085bf5/file-1l3zxllet.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l3zxlles/4a58ef58-6e7f-4c0b-86cd-f80449522d60/189e0640-e40d-11ec-9cee-2ba40f085bf5/file-1l3zxllet.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l3zxlles/4a58ef58-6e7f-4c0b-86cd-f80449522d60/189e0640-e40d-11ec-9cee-2ba40f085bf5/file-1l3zxllet.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l3zxlles/4a58ef58-6e7f-4c0b-86cd-f80449522d60/189e0640-e40d-11ec-9cee-2ba40f085bf5/file-1l3zxllet.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">"
+    }
+  ]
+}

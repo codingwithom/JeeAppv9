@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "rmrncMG2Dp7UIpDFNT1kmj7xugt",
+      "paperTitle": "JEE Main 2021 (Online) 17th March Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "aromaticity",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-is-an-aromatic-compound-jee-main-chemistry-some-basic-concepts-of-chemistry-xyeu2yrpac3tjhbf",
+      "content": "Which of the following is an aromatic compound?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kmk3cuxw/2a887d0a-ca69-4b6a-9535-96ad6cfe7be8/64a40d50-8ac7-11eb-a550-a93c57882a34/file-1kmk3cuxx.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 17th March Morning Shift Chemistry - Basics of Organic Chemistry Question 196 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kmk3clla/c94403b7-72f8-470a-8323-71fb581d098f/5d6ad6e0-8ac7-11eb-a550-a93c57882a34/file-1kmk3cllb.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 17th March Morning Shift Chemistry - Basics of Organic Chemistry Question 196 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kmk3cen9/db05c8c9-e85a-48ee-b232-07c166d40fd4/580d6550-8ac7-11eb-a550-a93c57882a34/file-1kmk3cena.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 17th March Morning Shift Chemistry - Basics of Organic Chemistry Question 196 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kmk3c5n0/e1605545-62e1-4075-b720-74a7576633bf/51183cc0-8ac7-11eb-a550-a93c57882a34/file-1kmk3c5n1.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 17th March Morning Shift Chemistry - Basics of Organic Chemistry Question 196 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "A compound which has (4n + 2)<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.296ex\" height=\"1ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -431 573 442\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D70B\" xlink:href=\"#MJX-TEX-I-1D70B\"></use></g></g></g></svg></mjx-container> electrons\ncompletely delocalised over the cyclic ring is\naromatic.\n<br><img src=\"https://imagex.cdn.examgoal.net/1kmk3cuxw/2a887d0a-ca69-4b6a-9535-96ad6cfe7be8/64a40d50-8ac7-11eb-a550-a93c57882a34/file-1kmk3cuxx.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 17th March Morning Shift Chemistry - Basics of Organic Chemistry Question 196 English Explanation\">\n<br><br>Here 6 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.296ex\" height=\"1ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -431 573 442\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D70B\" xlink:href=\"#MJX-TEX-I-1D70B\"></use></g></g></g></svg></mjx-container> electrons are present which follow the rule."
+    }
+  ]
+}

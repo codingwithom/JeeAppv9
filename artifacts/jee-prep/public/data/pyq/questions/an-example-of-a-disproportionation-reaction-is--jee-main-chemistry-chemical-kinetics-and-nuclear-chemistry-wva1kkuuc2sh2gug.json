@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "BsaVZ1wbbWcIJLZwfg3rsa0w2w9jx56tijx",
+      "paperTitle": "JEE Main 2019 (Online) 12th April Morning Slot",
+      "year": 2019,
+      "examDate": "2019-04-12 09:30",
+      "subject": "chemistry",
+      "chapter": "redox-reactions",
+      "chapterGroup": "physical-chemistry",
+      "topic": "types-of-redox-reactions",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "an-example-of-a-disproportionation-reaction-is--jee-main-chemistry-chemical-kinetics-and-nuclear-chemistry-wva1kkuuc2sh2gug",
+      "content": "An example of a disproportionation reaction is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "2NaBr + Cl<sub>2</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> 2NaCl + Br<sub>2</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "2KMnO<sub>4</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> 2KMnO<sub>4</sub> + MnO<sub>2</sub> + O<sub>2</sub>\n(3)  (4)\n"
+        },
+        {
+          "identifier": "C",
+          "content": "2CuBr <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> CuBr<sub>2</sub> + Cu"
+        },
+        {
+          "identifier": "D",
+          "content": "2MnO<sub>4</sub>\n + 10I<sup>–</sup>\n + 16H<sup>+</sup> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> 2Mn<sub>2</sub><sup>+</sup> + 5I<sub>2</sub> + 8H<sub>2</sub>O"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "In disproportionation reaction one element undergoes both oxidation and reduction.\n<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jf7697gjyf76vc8/3c2673bf-138d-45f2-919c-d0addeb38589/4644ca80-acf1-11e9-a277-6507805b1ccf/file-jf7697gjyf76vc9-320w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/jf7697gjyf76vc8/3c2673bf-138d-45f2-919c-d0addeb38589/4644ca80-acf1-11e9-a277-6507805b1ccf/file-jf7697gjyf76vc9-500w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th April Morning Slot Chemistry - Redox Reactions Question 63 English Explanation 1\"></picture>\n<br><br>Here disproportionation reaction is :\n<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jf7697gjyf7d2s6/0853417e-2056-4ec5-8965-a297d7718fca/f2df7f60-acf1-11e9-a277-6507805b1ccf/file-jf7697gjyf7d2s7-320w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/jf7697gjyf7d2s6/0853417e-2056-4ec5-8965-a297d7718fca/f2df7f60-acf1-11e9-a277-6507805b1ccf/file-jf7697gjyf7d2s7-500w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th April Morning Slot Chemistry - Redox Reactions Question 63 English Explanation 2\"></picture>"
+    }
+  ]
+}

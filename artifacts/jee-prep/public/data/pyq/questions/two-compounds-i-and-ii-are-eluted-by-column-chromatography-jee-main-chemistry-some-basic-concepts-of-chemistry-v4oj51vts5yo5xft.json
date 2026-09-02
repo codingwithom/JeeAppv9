@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "sGb013VC8ZxZJ8QY5nLpC",
+      "paperTitle": "JEE Main 2018 (Online) 15th April Evening Slot",
+      "year": 2018,
+      "examDate": "2018-04-15 14:30",
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "purification-of-organic-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "two-compounds-i-and-ii-are-eluted-by-column-chromatography-jee-main-chemistry-some-basic-concepts-of-chemistry-v4oj51vts5yo5xft",
+      "content": "Two compounds I and II are eluted by column chromatography (adsorption of I &gt; II). Which one of following is a correct statement ? ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "I moves faster and has higher R<sub>f</sub> value than II"
+        },
+        {
+          "identifier": "B",
+          "content": "II movesfaster and has higher&nbsp; R<sub>f</sub>&nbsp; value than I"
+        },
+        {
+          "identifier": "C",
+          "content": "I moves slower and has higher&nbsp; R<sub>f</sub>&nbsp; value than II"
+        },
+        {
+          "identifier": "D",
+          "content": "II moves slower and has higher&nbsp; R<sub>f</sub> &nbsp;value than I"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "According to question, \n<br><br>Absorption of I &gt; II, it means I is firmly attached to column. Hence it will move slowly and move little distance. As  II is loosely attached to column.\n<br><br>So, it will move faster and will move larger distance."
+    }
+  ]
+}

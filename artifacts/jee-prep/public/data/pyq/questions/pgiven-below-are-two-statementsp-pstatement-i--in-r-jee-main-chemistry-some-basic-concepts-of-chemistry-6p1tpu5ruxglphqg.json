@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1lgys8ty2",
+      "paperTitle": "JEE Main 2023 (Online) 8th April Evening Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "redox-reactions",
+      "chapterGroup": "physical-chemistry",
+      "topic": "redox-titration",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pgiven-below-are-two-statementsp-pstatement-i--in-r-jee-main-chemistry-some-basic-concepts-of-chemistry-6p1tpu5ruxglphqg",
+      "content": "<p>Given below are two statements:</p>\n<p>Statement I : In redox titration, the indicators used are sensitive to change in <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.439ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.955ex\" height=\"1.984ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -683 1306 877\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"70\" xlink:href=\"#MJX-TEX-N-70\"></use><use data-c=\"48\" xlink:href=\"#MJX-TEX-N-48\" transform=\"translate(556,0)\"></use></g></g></g></g></svg></mjx-container> of the solution.</p>\n<p>Statement II : In acid-base titration, the indicators used are sensitive to change in oxidation potential.</p>\n<p>In the light of the above statements, choose the most appropriate answer from the options given below</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Both Statement I and Statement II are incorrect"
+        },
+        {
+          "identifier": "B",
+          "content": "Statement I is correct but Statement II is incorrect"
+        },
+        {
+          "identifier": "C",
+          "content": "Statement I is incorrect but Statement II is correct"
+        },
+        {
+          "identifier": "D",
+          "content": "Both Statement I and Statement II are correct"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<p>The correct answer is Option A: Both Statement I and Statement II are incorrect.</p>\n<p>Explanation : </p>\n<p>In redox titrations, the indicators used are sensitive to a change in oxidation potential, not pH. A redox titration (also called an oxidation-reduction titration) can accurately determine the concentration of an unknown analyte by measuring the amount of an oxidizing or reducing agent that it consumes. These indicators work by undergoing a definite color change at a particular electrode potential. </p>\n<p>In contrast, in acid-base titrations, the indicators used are sensitive to a change in pH, not oxidation potential. Acid-base titrations are based on the neutralization reaction between the acid and the base. The point at which all the acid or base has reacted with the other component is called the equivalence point, and it often results in a sudden change in pH. This sudden change in pH can be detected using a pH-sensitive indicator.</p>"
+    }
+  ]
+}

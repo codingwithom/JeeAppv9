@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "ZKx2nRw6gDyMaNAe8vJou",
+      "paperTitle": "JEE Main 2017 (Online) 9th April Morning Slot",
+      "year": 2017,
+      "examDate": "2017-04-09 09:30",
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "ionization-energy",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-electronic-configuration-with-the-highest-ionization-ent-jee-main-chemistry-some-basic-concepts-of-chemistry-vn87j9t5s0bfghtu",
+      "content": "The electronic configuration with the highest ionization enthalpy is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "[Ne] 3s<sup>2</sup> 3p<sup>1</sup>"
+        },
+        {
+          "identifier": "B",
+          "content": "[Ne] 3s<sup>2</sup> 3p<sup>2</sup> "
+        },
+        {
+          "identifier": "C",
+          "content": "[Ne] 3s<sup>2</sup> 3p<sup>3</sup>"
+        },
+        {
+          "identifier": "D",
+          "content": "[Ar] 3d<sup>10</sup> 4s<sup>2</sup> 4p<sup>3</sup>"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "In option (D) electron is removed from 4p subshell for 1<sup>st</sup> ionization enthalpy, but in all other options electron is removed from 3p subshell. As 3p subshell is closer to nucleus than 4p, then attraction to the electrons in 3p subshell is more compared to the electrons in 4p subhell. That is why removal of electrons from 4p subshell is easy compared to 3p subshell. So among all the options, option (D) will have least ionization enthalpy.\n<br><br>Among (A), (B), (C) options, (C) has half filled 3p subshell so it is more stable compare to the others and you have to provide more energy to remove electrons from stable 3p subshell. That is why electron configuration [Ne] 3s<sup>2</sup> 3p<sup>3</sup> has highest ionization enthalpy."
+    }
+  ]
+}

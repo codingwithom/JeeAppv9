@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "GCy75AHnQ2I3vh5l357k9k2k5epxn0x",
+      "paperTitle": "JEE Main 2020 (Online) 7th January Evening Slot",
+      "year": 2020,
+      "examDate": "2020-01-07 14:30",
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "purification-of-organic-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "a-chromatography-column-packed-with-silica-gel-as-stationar-jee-main-chemistry-analytical-chemistry-r2vq2yfzmpegw61n",
+      "content": "A chromatography column, packed with silica gel as stationary phase, was used to separate a\nmixture of compounds consisting of (A) benzanilide (B) aniline and (C) acetophenone. When the\ncolumn is eluted with a mixture of solvents, hexane : ethylacelate (20:80), the sequence of\nobtained compounds is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(A), (B) and (C)"
+        },
+        {
+          "identifier": "B",
+          "content": "(B), (A) and (C)"
+        },
+        {
+          "identifier": "C",
+          "content": "(C), (A) and (B)\n"
+        },
+        {
+          "identifier": "D",
+          "content": "(B), (C) and (A) "
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<p>In column chromatography, we separate different parts of a mixture by washing it with solvents. The part of the mixture that gets most strongly attached to the moving solvent (or mobile phase) moves down the column quicker and comes out first. This is marked by a high Rf value. Other parts of the mixture follow in the order of decreasing Rf values.</p>\n<p>In this particular separation, we're using a very polar solvent because most of it is ethyl acetate (80%). This means that the most polar part of the mixture (the one with the highest dipole moment) will have the highest Rf value and will be the first to come out. We measure the dipole moments of the mixture's components to determine this order.</p>\n<br><br><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/6y3zli1lki6ieh4/ccf5dfb5-8ded-4aa1-8189-8d64f2642fe5/83bf0d70-2ad9-11ee-86f3-9daeabecfcf3/file-6y3zli1lki6ieh5.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/6y3zli1lki6ieh4/ccf5dfb5-8ded-4aa1-8189-8d64f2642fe5/83bf0d70-2ad9-11ee-86f3-9daeabecfcf3/file-6y3zli1lki6ieh5.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh;vertical-align:baseline\" alt=\"JEE Main 2020 (Online) 7th January Evening Slot Chemistry - Basics of Organic Chemistry Question 217 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/6y3zli1lki6ieh4/ccf5dfb5-8ded-4aa1-8189-8d64f2642fe5/83bf0d70-2ad9-11ee-86f3-9daeabecfcf3/file-6y3zli1lki6ieh5.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/6y3zli1lki6ieh4/ccf5dfb5-8ded-4aa1-8189-8d64f2642fe5/83bf0d70-2ad9-11ee-86f3-9daeabecfcf3/file-6y3zli1lki6ieh5.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/6y3zli1lki6ieh4/ccf5dfb5-8ded-4aa1-8189-8d64f2642fe5/83bf0d70-2ad9-11ee-86f3-9daeabecfcf3/file-6y3zli1lki6ieh5.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/6y3zli1lki6ieh4/ccf5dfb5-8ded-4aa1-8189-8d64f2642fe5/83bf0d70-2ad9-11ee-86f3-9daeabecfcf3/file-6y3zli1lki6ieh5.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/6y3zli1lki6ieh4/ccf5dfb5-8ded-4aa1-8189-8d64f2642fe5/83bf0d70-2ad9-11ee-86f3-9daeabecfcf3/file-6y3zli1lki6ieh5.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/6y3zli1lki6ieh4/ccf5dfb5-8ded-4aa1-8189-8d64f2642fe5/83bf0d70-2ad9-11ee-86f3-9daeabecfcf3/file-6y3zli1lki6ieh5.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">\n<br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> The sequence of obtained compounds is\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.566ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"16.448ex\" height=\"2.262ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 7270.1 1000\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"mi\" transform=\"translate(389,0)\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1149,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1815.8,0)\"><use data-c=\"3E\" xlink:href=\"#MJX-TEX-N-3E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2871.6,0)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"mi\" transform=\"translate(3260.6,0)\"><use data-c=\"1D434\" xlink:href=\"#MJX-TEX-I-1D434\"></use></g><g data-mml-node=\"mo\" transform=\"translate(4010.6,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g><g data-mml-node=\"mo\" transform=\"translate(4677.3,0)\"><use data-c=\"3E\" xlink:href=\"#MJX-TEX-N-3E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(5733.1,0)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"mi\" transform=\"translate(6122.1,0)\"><use data-c=\"1D435\" xlink:href=\"#MJX-TEX-I-1D435\"></use></g><g data-mml-node=\"mo\" transform=\"translate(6881.1,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g></g></svg></mjx-container>"
+    }
+  ]
+}

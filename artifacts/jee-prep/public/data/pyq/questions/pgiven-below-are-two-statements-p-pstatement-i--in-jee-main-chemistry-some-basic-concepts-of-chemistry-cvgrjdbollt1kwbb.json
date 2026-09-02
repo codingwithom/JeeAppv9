@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l57selme",
+      "paperTitle": "JEE Main 2022 (Online) 27th June Morning Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "compounds-containing-nitrogen",
+      "chapterGroup": "organic-chemistry",
+      "topic": "aliphatic-amines",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pgiven-below-are-two-statements-p-pstatement-i--in-jee-main-chemistry-some-basic-concepts-of-chemistry-cvgrjdbollt1kwbb",
+      "content": "<p>Given below are two statements :</p>\n<p>Statement I : In Hofmann degradation reaction, the migration of only an alkyl group takes place from carbonyl carbon of the amide to the nitrogen atom.</p>\n<p>Statement II : The group is migrated in Hofmann degradation reaction to electron deficient atom.</p>\n<p>In the light of the above statements, choose the most appropriate answer from the options given below :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Both Statement I and Statement II are correct."
+        },
+        {
+          "identifier": "B",
+          "content": "Both Statement I and Statement II are incorrect."
+        },
+        {
+          "identifier": "C",
+          "content": "Statement I is correct but Statement II is incorrect."
+        },
+        {
+          "identifier": "D",
+          "content": "Statement I is incorrect but Statement II is correct."
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Hofmann bromamide degradation\n<br/><br/>\nIn this degradation, the migration of the alkyl/aryl group occurs to the electron-deficient nitrogen (nitrene).\n<br/><br/>\nStatement (I) is not absolutely correct as it mentions only the alkyl group, whereas migration of aryl groups may also occur depending on migratory aptitude.\n<br/><br/>\nStatement (II) is correct as the migration occurs to the electron-deficient atom."
+    }
+  ]
+}

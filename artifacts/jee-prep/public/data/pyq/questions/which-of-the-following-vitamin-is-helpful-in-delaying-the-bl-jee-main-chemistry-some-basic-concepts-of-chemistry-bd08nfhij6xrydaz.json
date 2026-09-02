@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "KOHl5FYW6dAS5l09NH1kludzqls",
+      "paperTitle": "JEE Main 2021 (Online) 26th February Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "vitamins-and-nucleic-acids",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-vitamin-is-helpful-in-delaying-the-bl-jee-main-chemistry-some-basic-concepts-of-chemistry-bd08nfhij6xrydaz",
+      "content": "Which of the following vitamin is helpful in delaying the blood clotting?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Vitamin K"
+        },
+        {
+          "identifier": "B",
+          "content": "Vitamin C"
+        },
+        {
+          "identifier": "C",
+          "content": "Vitamin E"
+        },
+        {
+          "identifier": "D",
+          "content": "Vitamin B"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Vitamin K is helpful in delaying the blood\nclotting."
+    }
+  ]
+}

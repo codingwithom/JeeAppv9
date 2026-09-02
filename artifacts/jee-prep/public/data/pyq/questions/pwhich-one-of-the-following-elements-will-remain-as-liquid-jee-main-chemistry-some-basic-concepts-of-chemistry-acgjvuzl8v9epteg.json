@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1lh322ick",
+      "paperTitle": "JEE Main 2023 (Online) 6th April Evening Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "periodic-table-and-its-features",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pwhich-one-of-the-following-elements-will-remain-as-liquid-jee-main-chemistry-some-basic-concepts-of-chemistry-acgjvuzl8v9epteg",
+      "content": "<p>Which one of the following elements will remain as liquid inside pure boiling water?</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Li"
+        },
+        {
+          "identifier": "B",
+          "content": "Br"
+        },
+        {
+          "identifier": "C",
+          "content": "Cs"
+        },
+        {
+          "identifier": "D",
+          "content": "Ga"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<p>The melting point of gallium is very low (about 29.76°C or 85.57°F). Therefore, gallium can melt just from the heat of one&#39;s hand. The boiling point of gallium, on the other hand, is quite high (2400°C or 4352°F).</p>\n<p>On the contrary, water boils at 100°C (212°F) under normal atmospheric pressure. Therefore, inside boiling water, gallium would melt into a liquid but would not boil or evaporate, unlike the other elements listed. Lithium (Li), Bromine (Br), and Cesium (Cs) have boiling points below 100°C, so they would turn into a gas in boiling water.</p>\n"
+    }
+  ]
+}

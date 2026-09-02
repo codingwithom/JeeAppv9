@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ldu0xek7",
+      "paperTitle": "JEE Main 2023 (Online) 25th January Evening Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "dipole-moment",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pstatement-i--dipole-moment-is-a-vector-quantity-and-by-c-jee-main-chemistry-some-basic-concepts-of-chemistry-s53h21fjawvl9maj",
+      "content": "<p>Statement I : Dipole moment is a vector quantity and by convention it is depicted by a small arrow with tail on the negative centre and head pointing towards the positive centre.</p>\n<p>Statement II : The crossed arrow of the dipole moment symbolizes the direction of the shift of charges in the molecules.</p>\n<p>In the light of the above statements, choose the most appropriate answer from the options given below :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Statement I is correct but Statement II is incorrect"
+        },
+        {
+          "identifier": "B",
+          "content": "Statement I is incorrect but Statement II is correct"
+        },
+        {
+          "identifier": "C",
+          "content": "Both Statement I and Statement II are correct"
+        },
+        {
+          "identifier": "D",
+          "content": "Both Statement I and Statement II are incorrect"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "The dipole moment is a vector quantity and is\ndepicted by an arrow with tail on the positive centre\nand head pointing towards the negative centre. So,\nStatement-I is incorrect.<br><br> The crossed arrow of the\ndipole moment symbolizes the direction of the shift\nof charges in the molecules. So, Statement-II is\ncorrect.\n<br><br>For example,\n<br><br><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1lfhir5ak/bef2a348-5bc6-4420-b1b9-83b80f289fc8/86f105b0-c77f-11ed-ad62-0de788836124/file-1lfhir5al.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1lfhir5ak/bef2a348-5bc6-4420-b1b9-83b80f289fc8/86f105b0-c77f-11ed-ad62-0de788836124/file-1lfhir5al.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2023 (Online) 25th January Evening Shift Chemistry - Chemical Bonding &amp; Molecular Structure Question 115 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1lfhir5ak/bef2a348-5bc6-4420-b1b9-83b80f289fc8/86f105b0-c77f-11ed-ad62-0de788836124/file-1lfhir5al.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1lfhir5ak/bef2a348-5bc6-4420-b1b9-83b80f289fc8/86f105b0-c77f-11ed-ad62-0de788836124/file-1lfhir5al.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1lfhir5ak/bef2a348-5bc6-4420-b1b9-83b80f289fc8/86f105b0-c77f-11ed-ad62-0de788836124/file-1lfhir5al.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1lfhir5ak/bef2a348-5bc6-4420-b1b9-83b80f289fc8/86f105b0-c77f-11ed-ad62-0de788836124/file-1lfhir5al.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1lfhir5ak/bef2a348-5bc6-4420-b1b9-83b80f289fc8/86f105b0-c77f-11ed-ad62-0de788836124/file-1lfhir5al.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1lfhir5ak/bef2a348-5bc6-4420-b1b9-83b80f289fc8/86f105b0-c77f-11ed-ad62-0de788836124/file-1lfhir5al.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1krz1mghc",
+      "paperTitle": "JEE Main 2021 (Online) 27th July Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "stability-of-intermediate",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "a-imagebrbrb-imagebrbrc-imagebrbrd-imageb-jee-main-chemistry-some-basic-concepts-of-chemistry-k9aeadqfkmgkiour",
+      "content": "<img src=\"https://imagex.cdn.examgoal.net/1ks19msf8/761254fb-4d67-46d4-a653-6fac6ad2e790/577ebb30-f736-11eb-b432-97feaf768666/file-1ks19msf9.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 27th July Morning Shift Chemistry - Basics of Organic Chemistry Question 181 English\"><br>The correct order of stability of given carbocation is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "A &gt; C &gt; B &gt; D"
+        },
+        {
+          "identifier": "B",
+          "content": "D &gt; B &gt; C &gt; A"
+        },
+        {
+          "identifier": "C",
+          "content": "D &gt; B &gt; A &gt; C"
+        },
+        {
+          "identifier": "D",
+          "content": "C &gt; A &gt; D &gt; B"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1ks19nxem/8730b6bc-ab98-4ba2-9ac4-de3c2e219ca8/77276fe0-f736-11eb-b432-97feaf768666/file-1ks19nxen.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 27th July Morning Shift Chemistry - Basics of Organic Chemistry Question 181 English Explanation\">"
+    }
+  ]
+}

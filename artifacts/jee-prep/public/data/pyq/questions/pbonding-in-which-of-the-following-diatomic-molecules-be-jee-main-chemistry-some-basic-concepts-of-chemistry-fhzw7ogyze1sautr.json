@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l5alkri6",
+      "paperTitle": "JEE Main 2022 (Online) 25th June Morning Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "molecular-orbital-theory",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pbonding-in-which-of-the-following-diatomic-molecules-be-jee-main-chemistry-some-basic-concepts-of-chemistry-fhzw7ogyze1sautr",
+      "content": "<p>Bonding in which of the following diatomic molecule(s) become(s) stronger, on the basis of MO Theory, by removal of an electron?</p>\n<p>(A) NO</p>\n<p>(B) N<sub>2</sub></p>\n<p>(C) O<sub>2</sub></p>\n<p>(D) C<sub>2</sub></p>\n<p>(E) B<sub>2</sub></p>\n<p>Choose the most appropriate answer from the options given below :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(A), (B), (C) only"
+        },
+        {
+          "identifier": "B",
+          "content": "(B), (C), (E) only"
+        },
+        {
+          "identifier": "C",
+          "content": "(A), (C) only"
+        },
+        {
+          "identifier": "D",
+          "content": "(D) only"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "If an electron is removed from the anti-bonding\norbital, then it will tend to increase the bond order.\nThe HOMO in NO and O<sub>2</sub> is antibonding molecular\norbital .<br/><br/>\nHence, in NO and O<sub>2</sub> bond order will increase on\nloss of electron."
+    }
+  ]
+}

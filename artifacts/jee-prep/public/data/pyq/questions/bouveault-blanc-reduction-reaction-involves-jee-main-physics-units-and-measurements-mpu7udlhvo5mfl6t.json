@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "0xVdcFmwK7EJXT4nkWYJI",
+      "paperTitle": "JEE Main 2016 (Online) 9th April Morning Slot",
+      "year": 2016,
+      "examDate": "2016-04-09 09:30",
+      "subject": "chemistry",
+      "chapter": "alcohols-phenols-and-ethers",
+      "chapterGroup": "organic-chemistry",
+      "topic": "properties-preparation-and-uses-of-alcohols",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "bouveault-blanc-reduction-reaction-involves-jee-main-physics-units-and-measurements-mpu7udlhvo5mfl6t",
+      "content": "Bouveault-Blanc reduction reaction involves :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Reduction of an acyl halide with  H<sub>2</sub>/Pd."
+        },
+        {
+          "identifier": "B",
+          "content": "Reduction of an ester with Na/C<sub>2</sub>H<sub>5</sub>OH."
+        },
+        {
+          "identifier": "C",
+          "content": "Reduction of a carbonyl compound with Na/Hg and HCl."
+        },
+        {
+          "identifier": "D",
+          "content": "Reduction of an anhydride with LiAlH<sub>4</sub>."
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<p> Bourveault–Blanc reduction involves the reduction of esters to primary alcohols in the presence of sodium and alcohol. </p>\n<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l3xad31c/f962100d-4a3d-4c18-ac0b-37d885a38f35/a8ae8a00-e298-11ec-8ea3-fd6d660fc854/file-1l3xad31d.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l3xad31c/f962100d-4a3d-4c18-ac0b-37d885a38f35/a8ae8a00-e298-11ec-8ea3-fd6d660fc854/file-1l3xad31d.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2016 (Online) 9th April Morning Slot Chemistry - Alcohols, Phenols and Ethers Question 154 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l3xad31c/f962100d-4a3d-4c18-ac0b-37d885a38f35/a8ae8a00-e298-11ec-8ea3-fd6d660fc854/file-1l3xad31d.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l3xad31c/f962100d-4a3d-4c18-ac0b-37d885a38f35/a8ae8a00-e298-11ec-8ea3-fd6d660fc854/file-1l3xad31d.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l3xad31c/f962100d-4a3d-4c18-ac0b-37d885a38f35/a8ae8a00-e298-11ec-8ea3-fd6d660fc854/file-1l3xad31d.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l3xad31c/f962100d-4a3d-4c18-ac0b-37d885a38f35/a8ae8a00-e298-11ec-8ea3-fd6d660fc854/file-1l3xad31d.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l3xad31c/f962100d-4a3d-4c18-ac0b-37d885a38f35/a8ae8a00-e298-11ec-8ea3-fd6d660fc854/file-1l3xad31d.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l3xad31c/f962100d-4a3d-4c18-ac0b-37d885a38f35/a8ae8a00-e298-11ec-8ea3-fd6d660fc854/file-1l3xad31d.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">"
+    }
+  ]
+}

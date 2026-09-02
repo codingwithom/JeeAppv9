@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "UXHgHEDPLWdzlEEwzB1kluy1yat",
+      "paperTitle": "JEE Main 2021 (Online) 26th February Evening Shift",
+      "year": 2021,
+      "subject": "mathematics",
+      "chapter": "sequences-and-series",
+      "chapterGroup": "algebra",
+      "topic": "arithmetic-progression",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-total-number-of-4-digit-numbers-whose-greatest-common-di-jee-main-mathematics-trigonometric-functions-and-equations-gmeerzcs9xcto9ko",
+      "content": "The total number of 4-digit numbers whose greatest common divisor with 18 is 3, is _________.",
+      "options": [],
+      "correct_options": [],
+      "explanation": "Let N be the four digit number<br><br>gcd(N, 18) = 3<br><br>Hence N is an odd integer which is divisible by 3 but not by 9.<br><br>4 digit odd multiples of 3<br><br>1005, 1011, ..........., 9999 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> 1500<br><br>4 digit odd multiples of 9<br><br>1017, 1035, ..........., 9999 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> 500<br><br>Hence number of such N = 1000"
+    }
+  ]
+}

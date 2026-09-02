@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "Yu1A602TF5La6xsWfD1kludssqn",
+      "paperTitle": "JEE Main 2021 (Online) 26th February Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "compounds-containing-nitrogen",
+      "chapterGroup": "organic-chemistry",
+      "topic": "aliphatic-amines",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "an-amine-on-reaction-with-benzensulphonyl-chloride-produces-jee-main-chemistry-some-basic-concepts-of-chemistry-qtm53datrypzzlwo",
+      "content": "An amine on reaction with benzensulphonyl chloride produces a compound insoluble in alkaline solution. This amine can be prepared by ammonolysis of ethyl chloride. The correct structure of amine is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "CH<sub>3</sub>CH<sub>2</sub>NH<sub>2</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>NHCH<sub>3</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.009ex\" height=\"3.317ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1466 888 1466\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mover\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"OP\"><g data-mml-node=\"mi\"><use data-c=\"1D441\" xlink:href=\"#MJX-TEX-I-1D441\"></use></g></g><g data-mml-node=\"mi\" transform=\"translate(193.8,883) scale(0.707)\"><use data-c=\"1D43B\" xlink:href=\"#MJX-TEX-I-1D43B\"></use></g></g></g></g></svg></mjx-container>-CH<sub>2</sub>CH<sub>3</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kluvix4m/7b43521c-7b7b-4862-b465-1a9a133e3e55/2bea6d60-7ce9-11eb-8f7b-79760a5d8011/file-1kluvix4n-228w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 26th February Morning Shift Chemistry - Compounds Containing Nitrogen Question 180 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1kqv87wve/8b0d9b86-7bca-406a-9d07-5e03e941dc2f/e56408a0-e017-11eb-8de8-59af26dc1e90/file-1kqv87wvf.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 26th February Morning Shift Chemistry - Compounds Containing Nitrogen Question 180 English Explanation\">\n<br><br>Given amine on reaction with PhSO<sub>2</sub>Cl\nproduces a compound insoluble in alkaline\nsolution it means it is a 2º amine.\n<br><br>Also It is prepared by ammonolysis of C<sub>2</sub>H<sub>5</sub>Cl, it\nmust contain an ethyl group.\n<br><br>CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.009ex\" height=\"3.317ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1466 888 1466\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mover\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"OP\"><g data-mml-node=\"mi\"><use data-c=\"1D441\" xlink:href=\"#MJX-TEX-I-1D441\"></use></g></g><g data-mml-node=\"mi\" transform=\"translate(193.8,883) scale(0.707)\"><use data-c=\"1D43B\" xlink:href=\"#MJX-TEX-I-1D43B\"></use></g></g></g></g></svg></mjx-container>-CH<sub>2</sub>CH<sub>3</sub> is a 2° amine as well\nas it contain ethyl group."
+    }
+  ]
+}

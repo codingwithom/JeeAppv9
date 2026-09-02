@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1CGYQBs9UHwaoHcHUt1kmlmbn0i",
+      "paperTitle": "JEE Main 2021 (Online) 18th March Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "haloalkanes-and-haloarenes",
+      "chapterGroup": "organic-chemistry",
+      "topic": "haloalkanes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "reaction-of-grignard-reagent-csub2subhsub5submgbr-jee-main-chemistry-some-basic-concepts-of-chemistry-zti5q6vedhambou9",
+      "content": "Reaction of Grignard reagent, C<sub>2</sub>H<sub>5</sub>MgBr with C<sub>8</sub>H<sub>8</sub>O followed by hydrolysis gives compound \"A\" which reacts instantly with Lucas reagent to give compound B, C<sub>10</sub>H<sub>13</sub>Cl. The Compound B is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kmnjzkt0/66441d12-3cf4-451b-9edc-0e2bf3019b33/c86f7d40-8cae-11eb-bb7d-75e16383db04/file-1kmnjzkt1.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 18th March Morning Shift Chemistry - Haloalkanes and Haloarenes Question 111 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kmnk03c0/62903e17-5453-4d54-afee-aeceee17c374/d6bf6e00-8cae-11eb-bb7d-75e16383db04/file-1kmnk03c1.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 18th March Morning Shift Chemistry - Haloalkanes and Haloarenes Question 111 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kmnk0rkj/ef280cae-3eda-4cf0-908b-b907bb204fee/e9785e30-8cae-11eb-bb7d-75e16383db04/file-1kmnk0rkk.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 18th March Morning Shift Chemistry - Haloalkanes and Haloarenes Question 111 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kmnk19n2/fb66f4c6-48c1-44bb-8a7b-37c2934a5aed/f76dd2e0-8cae-11eb-bb7d-75e16383db04/file-1kmnk19n3.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 18th March Morning Shift Chemistry - Haloalkanes and Haloarenes Question 111 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Reaction occur through formation of carbocation.<br><br>\n<img src=\"https://imagex.cdn.examgoal.net/1kmuyvv4b/4fa71236-2bb1-47c3-94ca-a1d0aa156f1a/86a641b0-90c2-11eb-819c-e5060a72f12b/file-1kmuyvv4c.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 18th March Morning Shift Chemistry - Haloalkanes and Haloarenes Question 111 English Explanation\">"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "GHQulOrsKHJzMcocrh7k9k2k5h5o46m",
+      "paperTitle": "JEE Main 2020 (Online) 8th January Morning Slot",
+      "year": 2020,
+      "examDate": "2020-01-08 09:30",
+      "subject": "chemistry",
+      "chapter": "ionic-equilibrium",
+      "chapterGroup": "physical-chemistry",
+      "topic": "solubility-product-and-common-ion-effect",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-stoichiometry-and-solubility-product-of-a-salt-with-the-jee-main-chemistry-equilibrium-zky8smczgpaagoux",
+      "content": "The stoichiometry and solubility product of a salt with the solubility curve given below is, respectively :\n<img src=\"https://imagex.cdn.examgoal.net/7k9k2k5h51vu3/d39a72f3-eab6-45eb-b307-b1d83e8a94c2/fe4c93b0-3897-11ea-92dd-4b9c3519996f/file-7k9k2k5h51vu4-292w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 8th January Morning Slot Chemistry - Ionic Equilibrium Question 97 English\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "XY, 2 × 10<sup>–6</sup> M<sup>3</sup>"
+        },
+        {
+          "identifier": "B",
+          "content": "XY<sub>2</sub>, 1 × 10<sup>–9</sup> M<sup>3</sup>"
+        },
+        {
+          "identifier": "C",
+          "content": "XY<sub>2</sub>, 4 × 10<sup>–9</sup> M<sup>3</sup>"
+        },
+        {
+          "identifier": "D",
+          "content": "X<sub>2</sub>Y, 2 × 10<sup>–9</sup> M<sup>3</sup>"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "From the given curve,\n<br><br>if [X] = 1 mM then [Y] = 2 mM\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> Salt is XY<sub>2</sub>\n<br><br>XY<sub>2</sub>(s) ⇌  X<sup>2+</sup>(aq.) + 2Y<sup>-</sup>(aq.)\n<br><br>k<sub>sp</sub> = [X<sup>2+</sup>][Y<sup>–</sup>]<sup>2</sup>\n<br><br>= (10<sup>–3</sup>) (2 × 10<sup>–3</sup>)<sup>2</sup>\n<br><br>= 4 × 10<sup>–9</sup> M<sup>3</sup>"
+    }
+  ]
+}

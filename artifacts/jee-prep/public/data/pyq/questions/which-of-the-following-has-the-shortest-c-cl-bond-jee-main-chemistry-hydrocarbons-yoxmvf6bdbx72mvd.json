@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "OO0ptTctkbylzLMdE87k9k2k5ll2evo",
+      "paperTitle": "JEE Main 2020 (Online) 9th January Evening Slot",
+      "year": 2020,
+      "examDate": "2020-01-09 14:30",
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "electron-displacement-effect",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-has-the-shortest-c-cl-bond-jee-main-chemistry-hydrocarbons-yoxmvf6bdbx72mvd",
+      "content": "Which of the following has the shortest C-Cl\nbond?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Cl–CH=CH–CH<sub>3</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "Cl–CH=CH–NO<sub>2</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "Cl–CH=CH–OCH<sub>3</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "Cl–CH=CH<sub>2</sub>"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/7kd4dk5tqzscs/83bea448-533a-4c03-8ff8-34f20a3b5db2/34a058c0-3f87-11ea-b62d-51ccc5d4afb6/file-7kd4dk5tqzsct-218w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 9th January Evening Slot Chemistry - Basics of Organic Chemistry Question 213 English Explanation\">\ndue to strong – R effect of – NO<sub>2</sub> group and M effect of Cl, partial\ndouble bond character between C and Cl\nincreases. So\nshortest bond length."
+    }
+  ]
+}

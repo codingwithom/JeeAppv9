@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "k91xz6Jve9MlE14YZAjgy2xukfp2qqku",
+      "paperTitle": "JEE Main 2020 (Online) 5th September Evening Slot",
+      "year": 2020,
+      "examDate": "2020-09-05 15:00",
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "isomerism-of-coordination-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "consider-the-complex-ions-brtrans-coensub2subcl-jee-main-chemistry-coordination-compounds-m4bkfyrnp3ijfzii",
+      "content": "Consider the complex ions,\n<br>trans-[Co(en)<sub>2</sub>Cl<sub>2</sub>]<sup>+</sup> (A) and<br> cis-[Co(en)<sub>2</sub>Cl<sub>2</sub>]<sup>+</sup> (B).\n<br>The correct statement regarding them is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "both (A) and (B) can be optically active."
+        },
+        {
+          "identifier": "B",
+          "content": "both (A) and (B) can not be optically active."
+        },
+        {
+          "identifier": "C",
+          "content": "(A) can not be optically active, but (B) can\nbe optically active."
+        },
+        {
+          "identifier": "D",
+          "content": "(A) can be optically active, but (B) can not\nbe optically active."
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "trans-[Co(en)<sub>2</sub>Cl<sub>2</sub>]<sup>+</sup> contain a plane of\nsymmetry. It cannot be optically active.\n<br><br>cis-[Co(en)<sub>2</sub>Cl<sub>2</sub>]<sup>+</sup> does not contain\nany plane of symmetry. Hence the compound (B) is\noptically active."
+    }
+  ]
+}

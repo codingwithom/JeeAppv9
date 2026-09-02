@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "VEULT3pt2mjzlKW0bi1kk29nrv0",
+      "paperTitle": "JEE Advanced 2020 Paper 1 Offline",
+      "year": 2020,
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "isomerism",
+      "type": "mcq",
+      "marks": 3,
+      "negMarks": 1,
+      "permalink": "newman-projections-p-q-r-and-s-are-shown-below-brbr-jee-advanced-chemistry-some-basic-concepts-of-chemistry-dijpdocce2fizcyu",
+      "content": "Newman projections P, Q, R and S are shown below :<br><br><img src=\"https://imagex.cdn.examgoal.net/1ks4ype79/7c9d655b-f3ca-47ee-83cb-b1fa14b72d7c/be1d4550-f93e-11eb-9779-e12803bb4ff4/file-1ks4ype7a.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2020 Paper 1 Offline Chemistry - Basics of Organic Chemistry Question 34 English\"><br><br>Which one of the following options represents identical molecules?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "P and Q"
+        },
+        {
+          "identifier": "B",
+          "content": "Q and S"
+        },
+        {
+          "identifier": "C",
+          "content": "Q and R"
+        },
+        {
+          "identifier": "D",
+          "content": "R and S"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "IUPAC name of P, Q, R and S are : <br><br><img src=\"https://imagex.cdn.examgoal.net/1ks4yrxnk/74f96c8c-e3a5-4bc8-9234-5638e7805f8d/04c27200-f93f-11eb-9779-e12803bb4ff4/file-1ks4yrxnl.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2020 Paper 1 Offline Chemistry - Basics of Organic Chemistry Question 34 English Explanation\"><br><br>IUPAC name of compounds Q and R are same, thus the correct option is (c)."
+    }
+  ]
+}

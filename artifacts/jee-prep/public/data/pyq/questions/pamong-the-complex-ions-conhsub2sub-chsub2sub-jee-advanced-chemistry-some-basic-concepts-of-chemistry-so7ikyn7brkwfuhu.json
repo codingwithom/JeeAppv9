@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "1l0w0776x",
+      "paperTitle": "JEE Advanced 2015 Paper 2 Offline",
+      "year": 2015,
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "isomerism-in-coordination-compounds",
+      "type": "integer",
+      "marks": 3,
+      "negMarks": 1,
+      "permalink": "pamong-the-complex-ions-conhsub2sub-chsub2sub-jee-advanced-chemistry-some-basic-concepts-of-chemistry-so7ikyn7brkwfuhu",
+      "content": "<p>Among the complex ions, [Co(NH<sub>2</sub>-CH<sub>2</sub>-CH<sub>2</sub>-NH<sub>2</sub>)<sub>2</sub>Cl<sub>2</sub>]<sup>+</sup>, [CrCl<sub>2</sub>(C<sub>2</sub>O<sub>4</sub>)<sub>2</sub>]<sup>3<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container></sup>, [Fe(H<sub>2</sub>O)<sub>4</sub>)OH)<sub>2</sub>]<sup>+</sup>, [Fe(NH<sub>3</sub>)<sub>2</sub>(CN)<sub>4</sub>]<sup><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container></sup>, [Co(NH<sub>2</sub>-CH<sub>2</sub>-CH<sub>2</sub>-NH<sub>2</sub>)<sub>2</sub>(NH<sub>3</sub>)Cl]<sup>2+</sup> and [Co(NH<sub>3</sub>)<sub>4</sub>(H<sub>2</sub>O)Cl]<sup>2+</sup>, the number of complex ions that shows cis-trans isomerism is ______________.</p>",
+      "options": [],
+      "correct_options": [],
+      "explanation": "<p>The complex is with MA<sub>2</sub>B<sub>4</sub> or MA<sub>4</sub>B<sub>2</sub> or M(AA)<sub>2</sub>B<sub>2</sub> or M(AA)<sub>2</sub>BC structure can exhibit cis-trans isomerism. Therefore, number of given complex ions showing cis-trans isomerism is 6.</p>"
+    }
+  ]
+}

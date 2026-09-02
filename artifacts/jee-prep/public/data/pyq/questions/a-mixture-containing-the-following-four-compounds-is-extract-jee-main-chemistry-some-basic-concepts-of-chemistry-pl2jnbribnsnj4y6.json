@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "DfwqReCSQ8mEHOKlwITam",
+      "paperTitle": "JEE Main 2017 (Online) 8th April Morning Slot",
+      "year": 2017,
+      "examDate": "2017-04-08 09:30",
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "acid-and-base-strength",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "a-mixture-containing-the-following-four-compounds-is-extract-jee-main-chemistry-some-basic-concepts-of-chemistry-pl2jnbribnsnj4y6",
+      "content": "A mixture containing the following four compounds is extracted with <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.509ex\" height=\"1.545ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -683 1551 683\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mi\" transform=\"translate(500,0)\"><use data-c=\"1D440\" xlink:href=\"#MJX-TEX-I-1D440\"></use></g></g></g></svg></mjx-container> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.032ex\" height=\"1.645ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 2224 727\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D43B\" xlink:href=\"#MJX-TEX-I-1D43B\"></use></g><g data-mml-node=\"mi\" transform=\"translate(888,0)\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1648,0)\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1946,0)\"><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\"></use></g></g></g></svg></mjx-container> The compound that goes to aqueous layer is :\n<br><br><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l83mrti0/1d8a9229-2bdf-461f-96c0-72d58c66c0f6/c169c270-3546-11ed-8c5c-f3f0850e6b94/file-1l83mrti1.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l83mrti0/1d8a9229-2bdf-461f-96c0-72d58c66c0f6/c169c270-3546-11ed-8c5c-f3f0850e6b94/file-1l83mrti1.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2017 (Online) 8th April Morning Slot Chemistry - Basics of Organic Chemistry Question 245 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l83mrti0/1d8a9229-2bdf-461f-96c0-72d58c66c0f6/c169c270-3546-11ed-8c5c-f3f0850e6b94/file-1l83mrti1.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l83mrti0/1d8a9229-2bdf-461f-96c0-72d58c66c0f6/c169c270-3546-11ed-8c5c-f3f0850e6b94/file-1l83mrti1.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l83mrti0/1d8a9229-2bdf-461f-96c0-72d58c66c0f6/c169c270-3546-11ed-8c5c-f3f0850e6b94/file-1l83mrti1.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l83mrti0/1d8a9229-2bdf-461f-96c0-72d58c66c0f6/c169c270-3546-11ed-8c5c-f3f0850e6b94/file-1l83mrti1.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l83mrti0/1d8a9229-2bdf-461f-96c0-72d58c66c0f6/c169c270-3546-11ed-8c5c-f3f0850e6b94/file-1l83mrti1.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l83mrti0/1d8a9229-2bdf-461f-96c0-72d58c66c0f6/c169c270-3546-11ed-8c5c-f3f0850e6b94/file-1l83mrti1.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(I) "
+        },
+        {
+          "identifier": "B",
+          "content": "(II)"
+        },
+        {
+          "identifier": "C",
+          "content": "(III)"
+        },
+        {
+          "identifier": "D",
+          "content": "(IV)"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<p>A water insoluble organic base (amine) can be protonated by reaction with an acidic solution (HCl) and it can thus move from the organic layer into the aqueous layer.</p>\n<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l3zxsira/ba4185a7-0572-47cd-9ba4-00a98497d61e/d93b6960-e40d-11ec-9cee-2ba40f085bf5/file-1l3zxsirb.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l3zxsira/ba4185a7-0572-47cd-9ba4-00a98497d61e/d93b6960-e40d-11ec-9cee-2ba40f085bf5/file-1l3zxsirb.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2017 (Online) 8th April Morning Slot Chemistry - Basics of Organic Chemistry Question 245 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l3zxsira/ba4185a7-0572-47cd-9ba4-00a98497d61e/d93b6960-e40d-11ec-9cee-2ba40f085bf5/file-1l3zxsirb.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l3zxsira/ba4185a7-0572-47cd-9ba4-00a98497d61e/d93b6960-e40d-11ec-9cee-2ba40f085bf5/file-1l3zxsirb.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l3zxsira/ba4185a7-0572-47cd-9ba4-00a98497d61e/d93b6960-e40d-11ec-9cee-2ba40f085bf5/file-1l3zxsirb.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l3zxsira/ba4185a7-0572-47cd-9ba4-00a98497d61e/d93b6960-e40d-11ec-9cee-2ba40f085bf5/file-1l3zxsirb.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l3zxsira/ba4185a7-0572-47cd-9ba4-00a98497d61e/d93b6960-e40d-11ec-9cee-2ba40f085bf5/file-1l3zxsirb.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l3zxsira/ba4185a7-0572-47cd-9ba4-00a98497d61e/d93b6960-e40d-11ec-9cee-2ba40f085bf5/file-1l3zxsirb.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "ns57EPy8zTNahAFWQjjgy2xukeygwnbj",
+      "paperTitle": "JEE Main 2020 (Online) 2nd September Evening Slot",
+      "year": 2020,
+      "examDate": "2020-09-02 15:00",
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "carbohydrates",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-correct-observation-in-the-following-reactions-is--pic-jee-main-chemistry-aldehydes-ketones-and-carboxylic-acids-jfaureq0ydy1qgsx",
+      "content": "The correct observation in the following\nreactions is :\n<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jgy2xukeygtexj/5348eb3d-b46e-4b55-81ed-2318da8391ed/45c48e70-f44d-11ea-8293-3b6cc591631c/file-jgy2xukeygtexk-320w.png\"><img src=\"https://imagex.cdn.examgoal.net/jgy2xukeygtexj/5348eb3d-b46e-4b55-81ed-2318da8391ed/45c48e70-f44d-11ea-8293-3b6cc591631c/file-jgy2xukeygtexk-500w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 2nd September Evening Slot Chemistry - Biomolecules Question 146 English\"></picture>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Formation of blue colour"
+        },
+        {
+          "identifier": "B",
+          "content": "Formation of violet colour"
+        },
+        {
+          "identifier": "C",
+          "content": "Formation of red colour"
+        },
+        {
+          "identifier": "D",
+          "content": "Gives no colour"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Seliwanoff's test is used to distinguish between aldose and ketone sugars; when added to a solution\ncontaining ketose, red colour is formed rapidly.\n<br><img src=\"https://imagex.cdn.examgoal.net/jgy2xukhdc6c94/fb4197d7-0fb9-40db-90f7-a0b9decfc98f/50123080-2413-11eb-8293-3b6cc591631c/file-jgy2xukhdc6c95-460w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 2nd September Evening Slot Chemistry - Biomolecules Question 146 English Explanation\">"
+    }
+  ]
+}

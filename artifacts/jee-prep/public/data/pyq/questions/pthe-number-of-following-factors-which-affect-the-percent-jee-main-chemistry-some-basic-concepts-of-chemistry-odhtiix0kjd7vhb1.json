@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "1lh04mf3g",
+      "paperTitle": "JEE Main 2023 (Online) 8th April Morning Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "ionic-bond",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pthe-number-of-following-factors-which-affect-the-percent-jee-main-chemistry-some-basic-concepts-of-chemistry-odhtiix0kjd7vhb1",
+      "content": "<p>The number of following factors which affect the percent covalent character of the ionic bond is _________</p>\n<p>(A) Polarising power of cation</p>\n<p>(B) Extent of distortion of anion</p>\n<p>(C) Polarisability of the anion</p>\n<p>(D) Polarising power of anion</p>",
+      "options": [],
+      "correct_options": [],
+      "explanation": "<p>The covalent character of an ionic bond is largely determined by the polarization of the ions involved in the bond. Polarization refers to the distortion of the electron cloud of an anion by a cation. This distortion leads to a shift in electron density towards the cation, thereby increasing the covalent character of the bond.</p>\n<p>Here&#39;s a breakdown of the options:</p>\n<p>(A) Polarising power of cation: The greater the polarising power of a cation, the greater the distortion of the anion, and therefore, the greater the covalent character of the bond. Thus, this statement is correct.</p>\n<p>(B) Extent of distortion of anion: The more an anion is distorted, the more the electron density is shifted towards the cation, and the greater the covalent character of the bond. This statement is also correct.</p>\n<p>(C) Polarisability of the anion: The greater the polarisability of an anion, the more it can be distorted, and therefore, the greater the covalent character of the bond. Thus, this statement is also correct.</p>\n<p>(D) Polarising power of anion: This statement is incorrect. It is not the polarising power of the anion, but the polarisability of the anion and the polarising power of the cation that influence the covalent character of the bond.</p>\n<p>Therefore, three of the factors listed (A, B, C) affect the percent covalent character of the ionic bond.</p>\n"
+    }
+  ]
+}

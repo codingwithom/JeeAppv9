@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "YraQEL0Ofcu85dbCjs3rsa0w2w9jx4y5gk5",
+      "paperTitle": "JEE Main 2019 (Online) 12th April Morning Slot",
+      "year": 2019,
+      "examDate": "2019-04-12 09:30",
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "carbohydrates",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "glucose-and-galactose-are-having-identical-configuration-in-jee-main-chemistry-carbohydrates-amino-acids-and-polymers-3ugkldrqnywzbzij",
+      "content": "Glucose and Galactose are having identical configuration in all the positions except position",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "C–5"
+        },
+        {
+          "identifier": "B",
+          "content": "C–3"
+        },
+        {
+          "identifier": "C",
+          "content": "C–2"
+        },
+        {
+          "identifier": "D",
+          "content": "C–4"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Glucose and galactose differs in configuration on C<sub>4</sub>."
+    }
+  ]
+}

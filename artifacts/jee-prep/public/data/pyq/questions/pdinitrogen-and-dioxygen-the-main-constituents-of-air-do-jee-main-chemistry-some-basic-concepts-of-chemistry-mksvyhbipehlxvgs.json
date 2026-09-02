@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l6nwpyh4",
+      "paperTitle": "JEE Main 2022 (Online) 28th July Evening Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "p-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "group-15-elements-nitrogen-family",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pdinitrogen-and-dioxygen-the-main-constituents-of-air-do-jee-main-chemistry-some-basic-concepts-of-chemistry-mksvyhbipehlxvgs",
+      "content": "<p>Dinitrogen and dioxygen, the main constituents of air do not react with each other  in atmosphere to form oxides of nitrogen because :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.685ex\" height=\"1.885ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -683 1186.6 833\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"4E\" xlink:href=\"#MJX-TEX-N-4E\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(783,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></g></svg></mjx-container> is unreactive in the condition of atmosphere."
+        },
+        {
+          "identifier": "B",
+          "content": "Oxides of nitrogen are unstable."
+        },
+        {
+          "identifier": "C",
+          "content": "Reaction between them can occur in the presence of a catalyst."
+        },
+        {
+          "identifier": "D",
+          "content": "The reaction is endothermic and require very high temperature."
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.685ex\" height=\"1.885ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -683 1186.6 833\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"4E\" xlink:href=\"#MJX-TEX-N-4E\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(783,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></g></svg></mjx-container> is unreactive, its reaction with oxides is endothermic and require very high temperature.<br><br>\n<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"25.136ex\" height=\"3.579ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1432.1 11110.2 1582.1\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"4E\" xlink:href=\"#MJX-TEX-N-4E\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(783,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(1408.8,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"msub\" transform=\"translate(2409,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(811,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g><g data-mml-node=\"mover\" transform=\"translate(3901.3,0)\"><g data-mml-node=\"mo\" transform=\"translate(1951.5,0)\"><use data-c=\"21CB\" xlink:href=\"#MJX-TEX-N-21CB\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(0,801.8) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"mn\" transform=\"translate(389,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\" transform=\"translate(500,0)\"></use><use data-c=\"38\" xlink:href=\"#MJX-TEX-N-38\" transform=\"translate(1000,0)\"></use><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\" transform=\"translate(1500,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2389,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(3167,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(1000,0)\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(1500,0)\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(5167,0)\"><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\"> </text></g><g data-mml-node=\"mi\" transform=\"translate(600,0)\"><use data-c=\"4B\" xlink:href=\"#MJX-TEX-N-4B\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(6545,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g></g><g data-mml-node=\"mn\" transform=\"translate(9082.2,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(9582.2,0)\"><g data-mml-node=\"mi\"><use data-c=\"4E\" xlink:href=\"#MJX-TEX-N-4E\"></use><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\" transform=\"translate(750,0)\"></use></g></g></g></g></svg></mjx-container><br><br>\n(Endothermic and feasible at high temperature)"
+    }
+  ]
+}

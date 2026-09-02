@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "O8ENJyXKVDcOCmuJPqjgy2xukey8w164",
+      "paperTitle": "JEE Main 2020 (Online) 2nd September Evening Slot",
+      "year": 2020,
+      "examDate": "2020-09-02 15:00",
+      "subject": "chemistry",
+      "chapter": "practical-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "chemistry-involved-in-the-preparation-of-organic-and-inorganic-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "if-you-spill-a-chemical-toilet-cleaning-liquid-on-your-hand-jee-main-chemistry-chemistry-in-everyday-life-xxqsxtudppfgluyn",
+      "content": "If you spill a chemical toilet cleaning liquid on\nyour hand, your first aid would be",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "aqueous NaOH"
+        },
+        {
+          "identifier": "B",
+          "content": "aqueous NaHCO<sub>3</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "aqueous NH<sub>3</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "vinegar"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Toilet cleaning liquid has about 10.5% w/v HCl ; to neutralise its affect aqueous NaHCO<sub>3</sub> is used while\nNaOH is avoided for this purpose because of its highly corosive in nature and can burn body.\n"
+    }
+  ]
+}

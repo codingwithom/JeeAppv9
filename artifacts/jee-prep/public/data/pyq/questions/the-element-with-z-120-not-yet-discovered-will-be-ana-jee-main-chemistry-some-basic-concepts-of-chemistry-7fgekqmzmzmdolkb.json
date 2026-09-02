@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "IjGNobifF4qvC7wUtigt0",
+      "paperTitle": "JEE Main 2019 (Online) 12th January Morning Slot",
+      "year": 2019,
+      "examDate": "2019-01-12 09:30",
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "periodic-table-and-its-features",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-element-with-z-120-not-yet-discovered-will-be-ana-jee-main-chemistry-some-basic-concepts-of-chemistry-7fgekqmzmzmdolkb",
+      "content": "The element with Z = 120 (not yet discovered) will be an/a - ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Alkaline earth metal"
+        },
+        {
+          "identifier": "B",
+          "content": "Alkali metal "
+        },
+        {
+          "identifier": "C",
+          "content": "Transition metal "
+        },
+        {
+          "identifier": "D",
+          "content": "Inner transition metal "
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Electronic configuration of element Og (118) is\n<br>[Rn] 5f<sup>14</sup>6d\n<sup>10</sup>7s\n<sup>2</sup>7p<sup>6</sup>,\nwhere Og is oganesson.\n<br><br>[Og<sub>118</sub>] 8s<sup>2</sup>\nis configuration for Z = 120,\n<br><br>As per the configuration it is in II<sup>nd</sup> group. Thus,\nelement with Z = 120 will be an alkaline earth metal.\n"
+    }
+  ]
+}

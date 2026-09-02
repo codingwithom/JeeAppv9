@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktiheu9z",
+      "paperTitle": "JEE Main 2021 (Online) 31st August Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "structure-of-atom",
+      "chapterGroup": "physical-chemistry",
+      "topic": "quantum-numbers-and-orbitals",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "gez--32-in-its-ground-state-electronic-configuration-has-jee-main-chemistry-some-basic-concepts-of-chemistry-gards9sdjtubzilx",
+      "content": "Ge(Z = 32) in its ground state electronic configuration has x completely filled orbitals with m<sub>l</sub> = 0. The value of x is ___________.",
+      "options": [],
+      "correct_options": [],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1kub71tfc/2ebbad5b-dda6-41ed-ad2a-81e189d9e9f0/83458470-2444-11ec-9981-d3d9e18703d1/file-1kub71tfd.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 31st August Morning Shift Chemistry - Structure of Atom Question 127 English Explanation\"><br><br>Completely filled orbital with m<sub>l</sub> = 0 are <br><br>= 1 +  1 + 1 + 1 + 1 + 1 + 1<br><br>= 7<br><br>So, answer is 7."
+    }
+  ]
+}

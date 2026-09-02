@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1krudowyj",
+      "paperTitle": "JEE Main 2021 (Online) 25th July Morning Shift",
+      "year": 2021,
+      "subject": "physics",
+      "chapter": "heat-and-thermodynamics",
+      "chapterGroup": "mechanics",
+      "topic": "kinetic-theory-of-gases-and-gas-laws",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "for-a-gas-csubpsub---csubvsub--r-in-a-state-p-jee-main-physics-units-and-measurements-es6rbyw8pjx7tedg",
+      "content": "For a gas C<sub>P</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container> C<sub>V</sub> = R in a state P and C<sub>P</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container> C<sub>V</sub> = 1.10 R in a state Q, T<sub>P</sub> and T<sub>Q</sub> are the temperatures in two different states P and Q respectively. Then",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "T<sub>P</sub> = T<sub>Q</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "T<sub>P</sub> &lt; T<sub>Q</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "T<sub>P</sub> = 0.9 T<sub>Q</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "T<sub>P</sub> &gt; T<sub>Q</sub>"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "C<sub>P</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container> C<sub>V</sub> = R for ideal gas and gas behaves as ideal gas at high temperature, so T<sub>P</sub> &gt; T<sub>Q</sub>"
+    }
+  ]
+}

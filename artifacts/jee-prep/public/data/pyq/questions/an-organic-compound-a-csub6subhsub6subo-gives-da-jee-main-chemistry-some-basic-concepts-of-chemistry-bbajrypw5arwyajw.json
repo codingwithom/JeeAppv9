@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1krt5z3vb",
+      "paperTitle": "JEE Main 2021 (Online) 22th July Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "alcohols-phenols-and-ethers",
+      "chapterGroup": "organic-chemistry",
+      "topic": "properties-preparation-and-uses-of-phenols",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "an-organic-compound-a-csub6subhsub6subo-gives-da-jee-main-chemistry-some-basic-concepts-of-chemistry-bbajrypw5arwyajw",
+      "content": "An organic compound A (C<sub>6</sub>H<sub>6</sub>O) gives dark green colouration with ferric chloride. On treatment with CHCl<sub>3</sub> and KOH, followed by acidification gives compound B. Compound B can also be obtained from compound C on reaction with pyridinium chlorochromate (PCC). Identify A, B and C.",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1krtqu76r/40efbf07-0de0-486d-b5b4-0a4a2994c02c/5b90b330-f313-11eb-9528-253c7892a47f/file-1krtqu76s-320w.jpg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1krtqu76r/40efbf07-0de0-486d-b5b4-0a4a2994c02c/5b90b330-f313-11eb-9528-253c7892a47f/file-1krtqu76s-500w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/1krtqu76r/40efbf07-0de0-486d-b5b4-0a4a2994c02c/5b90b330-f313-11eb-9528-253c7892a47f/file-1krtqu76s.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 22th July Evening Shift Chemistry - Alcohols, Phenols and Ethers Question 114 English Option 1\"></picture>"
+        },
+        {
+          "identifier": "B",
+          "content": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1krtqvzyv/7744f781-d7ff-4c5a-9cdb-c7b99913057d/8d9b5e70-f313-11eb-9528-253c7892a47f/file-1krtqvzyw-320w.jpg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1krtqvzyv/7744f781-d7ff-4c5a-9cdb-c7b99913057d/8d9b5e70-f313-11eb-9528-253c7892a47f/file-1krtqvzyw-500w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/1krtqvzyv/7744f781-d7ff-4c5a-9cdb-c7b99913057d/8d9b5e70-f313-11eb-9528-253c7892a47f/file-1krtqvzyw.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 22th July Evening Shift Chemistry - Alcohols, Phenols and Ethers Question 114 English Option 2\"></picture>"
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1krtqv0rk/67dccdbe-b587-43aa-a786-52ea6dfde442/726a0110-f313-11eb-9528-253c7892a47f/file-1krtqv0rl.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 22th July Evening Shift Chemistry - Alcohols, Phenols and Ethers Question 114 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1krtqvmjc/42783bb4-494e-4436-92fe-c3226241f479/833b4580-f313-11eb-9528-253c7892a47f/file-1krtqvmjd.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 22th July Evening Shift Chemistry - Alcohols, Phenols and Ethers Question 114 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1kruv2xvt/13a05f35-2ba8-4d55-a24d-9cb0a5b249fb/bbd3b6a0-f3b0-11eb-a605-b34dacb82f1b/file-1kruv2xvu-320w.jpeg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1kruv2xvt/13a05f35-2ba8-4d55-a24d-9cb0a5b249fb/bbd3b6a0-f3b0-11eb-a605-b34dacb82f1b/file-1kruv2xvu-500w.jpeg\"><source media=\"(max-width: 680px)\" srcset=\"https://imagex.cdn.examgoal.net/1kruv2xvt/13a05f35-2ba8-4d55-a24d-9cb0a5b249fb/bbd3b6a0-f3b0-11eb-a605-b34dacb82f1b/file-1kruv2xvu-680w.jpeg\"><img src=\"https://imagex.cdn.examgoal.net/1kruv2xvt/13a05f35-2ba8-4d55-a24d-9cb0a5b249fb/bbd3b6a0-f3b0-11eb-a605-b34dacb82f1b/file-1kruv2xvu.jpeg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 22th July Evening Shift Chemistry - Alcohols, Phenols and Ethers Question 114 English Explanation\"></picture>"
+    }
+  ]
+}

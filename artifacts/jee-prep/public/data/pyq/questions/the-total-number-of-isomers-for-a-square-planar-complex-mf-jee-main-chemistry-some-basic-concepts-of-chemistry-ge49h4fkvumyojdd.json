@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "gr67zpMmJ2f4WyiBKU4Zo",
+      "paperTitle": "JEE Main 2019 (Online) 10th January Morning Slot",
+      "year": 2019,
+      "examDate": "2019-01-10 09:30",
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "isomerism-of-coordination-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-total-number-of-isomers-for-a-square-planar-complex-mf-jee-main-chemistry-some-basic-concepts-of-chemistry-ge49h4fkvumyojdd",
+      "content": "The total number of isomers for a square planar complex<br> [M(F)(Cl)(SCN)(NO<sub>2</sub>)] is",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "16"
+        },
+        {
+          "identifier": "B",
+          "content": "8"
+        },
+        {
+          "identifier": "C",
+          "content": "12"
+        },
+        {
+          "identifier": "D",
+          "content": "4"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1da9i2ynkdhi0i81/6f861bdd-874a-48bf-a1b1-70104e959f52/69af4b10-d72c-11ea-b796-4745b429ed6f/file-1da9i2ynkdhi0i82-320w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 10th January Morning Slot Chemistry - Coordination Compounds Question 301 English Explanation 1\">\n<img src=\"https://imagex.cdn.examgoal.net/1da9i2ynkdhi0s0m/1e3e289c-77e8-41c2-a9a9-a1b762230694/71401760-d72c-11ea-b796-4745b429ed6f/file-1da9i2ynkdhi0s0n-320w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 10th January Morning Slot Chemistry - Coordination Compounds Question 301 English Explanation 2\">\n<br><br>So, The total number of isomers for a square planar complex [M(F)(Cl)(SCN)(NO<sub>2</sub>\n)] is 12"
+    }
+  ]
+}

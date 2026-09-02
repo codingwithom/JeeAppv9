@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "wrvo2JTJ5c8kR6aM7R1kludnpno",
+      "paperTitle": "JEE Main 2021 (Online) 26th February Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "electrochemistry",
+      "chapterGroup": "physical-chemistry",
+      "topic": "batteries-fuel-cells-and-corrosion",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "compound-a-used-as-a-strong-oxidizing-agent-is-amphoteric-in-jee-main-chemistry-some-basic-concepts-of-chemistry-fgagllzhock8nspe",
+      "content": "Compound A used as a strong oxidizing agent is amphoteric in nature. It is the part of lead storage batteries. Compound A is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "PbO"
+        },
+        {
+          "identifier": "B",
+          "content": "PbO<sub>2</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "PbSO<sub>4</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "Pb<sub>3</sub>O<sub>4</sub>"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "PbO<sub>2</sub> is strong oxidizing agent because Pb<sup>+4</sup> is\nnot stable and can be easily reduced to Pb<sup>+2</sup>.<br><br>\nPbO<sub>2</sub> is used in lead storage batteries. It is\nalso amphoteric in nature."
+    }
+  ]
+}

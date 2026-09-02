@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "sUGLsiqlV2h6S2Ps2z7k9k2k5dyph0k",
+      "paperTitle": "JEE Main 2020 (Online) 7th January Morning Slot",
+      "year": 2020,
+      "examDate": "2020-01-07 09:30",
+      "subject": "chemistry",
+      "chapter": "redox-reactions",
+      "chapterGroup": "physical-chemistry",
+      "topic": "oxidation-number",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "oxidation-number-of-potassium-in-ksub2subo-ksub2su-jee-main-chemistry-analytical-chemistry-xbm9k2rglnqna2bb",
+      "content": "Oxidation number of potassium in K<sub>2</sub>O. K<sub>2</sub>O<sub>2</sub> and KO<sub>2</sub> respectively is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "+1, +2 and + 4"
+        },
+        {
+          "identifier": "B",
+          "content": "+1, +1 and + 1"
+        },
+        {
+          "identifier": "C",
+          "content": "+2, +1 and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.781ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.556ex\" height=\"2.737ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864.9 1571.6 1209.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(778,0)\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mn\" transform=\"translate(220,394) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mn\" transform=\"translate(220,-345) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><rect width=\"553.6\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container>"
+        },
+        {
+          "identifier": "D",
+          "content": "+1, +4, and +2"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Potasisum has an oxidation of +1 (only) in\ncombined state."
+    }
+  ]
+}

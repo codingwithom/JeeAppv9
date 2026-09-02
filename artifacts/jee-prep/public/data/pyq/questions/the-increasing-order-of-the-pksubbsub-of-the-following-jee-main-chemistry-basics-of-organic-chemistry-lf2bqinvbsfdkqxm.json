@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "J5fxxIJbdu4CbAb66H3rsa0w2w9jx56146g",
+      "paperTitle": "JEE Main 2019 (Online) 12th April Morning Slot",
+      "year": 2019,
+      "examDate": "2019-04-12 09:30",
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "acid-and-base-strength",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-increasing-order-of-the-pksubbsub-of-the-following-jee-main-chemistry-basics-of-organic-chemistry-lf2bqinvbsfdkqxm",
+      "content": "The increasing order of the pK<sub>b</sub> of the following compound is :\n<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jf7697gjyee1dlq/c6e0c06f-b212-441a-8f96-bf6602d4483b/44c6e3e0-ac7f-11e9-a277-6507805b1ccf/file-jf7697gjyee1dlr-320w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/jf7697gjyee1dlq/c6e0c06f-b212-441a-8f96-bf6602d4483b/44c6e3e0-ac7f-11e9-a277-6507805b1ccf/file-jf7697gjyee1dlr-500w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th April Morning Slot Chemistry - Basics of Organic Chemistry Question 220 English\"></picture>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(C) &lt; (A) &lt; (D) &lt; (B)"
+        },
+        {
+          "identifier": "B",
+          "content": "(B) &lt; (D) &lt; (C) &lt; (A)"
+        },
+        {
+          "identifier": "C",
+          "content": "(B) &lt; (D) &lt; (A) &lt; (C)"
+        },
+        {
+          "identifier": "D",
+          "content": "(A) &lt; (C) &lt; (D) &lt; (B)"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Electron Withdrawing Group attached to benzene ring will reduce the\nbasic strength and increase pK<sub>b</sub> while Electron Donating Group\ndecreases pK<sub>b</sub>.\n<br><br>Correct order of pK<sub>b</sub>\n<br><br>(B) &lt; (D) &lt; (A) &lt; (C)"
+    }
+  ]
+}

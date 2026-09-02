@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1lh327e1j",
+      "paperTitle": "JEE Main 2023 (Online) 6th April Evening Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "properties-of-transition-elements",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pduring-the-reaction-of-permanganate-with-thiosulphate-th-jee-main-chemistry-some-basic-concepts-of-chemistry-irjiwmrxc42klxfy",
+      "content": "<p>During the reaction of permanganate with thiosulphate, the change in oxidation of manganese occurs by value of 3. Identify which of the below medium will favour the reaction.</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "aqueous neutral"
+        },
+        {
+          "identifier": "B",
+          "content": "both aqueous acidic and faintly alkaline"
+        },
+        {
+          "identifier": "C",
+          "content": "both aqueous acidic and neutral"
+        },
+        {
+          "identifier": "D",
+          "content": "aqueous acidic"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<p>In a neutral or weakly alkaline solution, permanganate ions are reduced to MnO₂, with a change in oxidation state from +7 to +4, which is a change of 3 units. </p>\n<p>The balanced redox reaction is :</p>\n<p>3MnO₄⁻ + 5S₂O₃²⁻ + 2H₂O → 3MnO₂ + 5SO₄²⁻ + 10OH⁻</p>"
+    }
+  ]
+}

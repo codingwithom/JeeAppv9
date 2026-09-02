@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "tjhpo7wTWUUy8ri0CGjgy2xukf7tp6os",
+      "paperTitle": "JEE Main 2020 (Online) 4th September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-04 09:00",
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "inner-transition-elements-lanthanoids-and-actinoids",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-elements-with-atomic-numbers-101-and-104-belong-to-resp-jee-main-chemistry-periodic-table-and-periodicity-ifviy9uumftmofiv",
+      "content": "The elements with atomic numbers 101 and 104\nbelong to, respectively :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Group 6 and Actinoids"
+        },
+        {
+          "identifier": "B",
+          "content": "Actinoids and Group 4"
+        },
+        {
+          "identifier": "C",
+          "content": "Group 11 and Group 4"
+        },
+        {
+          "identifier": "D",
+          "content": "Actinoids and Group 6"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Actinoids contains 14 elements with atomic\nnumber 90 to 103. Hence element with atomic\nnumber 101 is Actinoids.\n<br><br>Element with atomic number 104 is a d-block\nelement of group 4."
+    }
+  ]
+}

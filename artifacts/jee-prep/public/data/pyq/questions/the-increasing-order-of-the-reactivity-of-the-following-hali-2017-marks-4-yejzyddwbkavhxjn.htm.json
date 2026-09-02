@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "yejzyddwbKAvhXjn",
+      "paperTitle": "JEE Main 2017 (Offline)",
+      "year": 2017,
+      "examDate": null,
+      "subject": "chemistry",
+      "chapter": "haloalkanes-and-haloarenes",
+      "chapterGroup": "organic-chemistry",
+      "topic": "haloalkanes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-increasing-order-of-the-reactivity-of-the-following-hali-2017-marks-4-yejzyddwbkavhxjn.htm",
+      "content": "The increasing order of the reactivity of the following halides for the S<sub>N</sub>1 reaction is :<br><br>\n<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l7yn9eb0/00fcde9b-e5e4-4493-8e86-5e314ce5e807/befe6ec0-3288-11ed-8893-19b23ee4c66d/file-1l7yn9eb1.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l7yn9eb0/00fcde9b-e5e4-4493-8e86-5e314ce5e807/befe6ec0-3288-11ed-8893-19b23ee4c66d/file-1l7yn9eb1.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2017 (Offline) Chemistry - Haloalkanes and Haloarenes Question 169 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l7yn9eb0/00fcde9b-e5e4-4493-8e86-5e314ce5e807/befe6ec0-3288-11ed-8893-19b23ee4c66d/file-1l7yn9eb1.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l7yn9eb0/00fcde9b-e5e4-4493-8e86-5e314ce5e807/befe6ec0-3288-11ed-8893-19b23ee4c66d/file-1l7yn9eb1.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l7yn9eb0/00fcde9b-e5e4-4493-8e86-5e314ce5e807/befe6ec0-3288-11ed-8893-19b23ee4c66d/file-1l7yn9eb1.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l7yn9eb0/00fcde9b-e5e4-4493-8e86-5e314ce5e807/befe6ec0-3288-11ed-8893-19b23ee4c66d/file-1l7yn9eb1.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l7yn9eb0/00fcde9b-e5e4-4493-8e86-5e314ce5e807/befe6ec0-3288-11ed-8893-19b23ee4c66d/file-1l7yn9eb1.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l7yn9eb0/00fcde9b-e5e4-4493-8e86-5e314ce5e807/befe6ec0-3288-11ed-8893-19b23ee4c66d/file-1l7yn9eb1.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(II) &lt; (I) &lt; (III)"
+        },
+        {
+          "identifier": "B",
+          "content": "(I) &lt; (III) &lt; (II)"
+        },
+        {
+          "identifier": "C",
+          "content": "(II) &lt; (III) &lt; (I)"
+        },
+        {
+          "identifier": "D",
+          "content": "(III) &lt; (II) &lt; (I)"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Since S<sub>N</sub>1 reactions involve the formation of carbocation as intermediate in the rate\ndetermining step, more is the stability of carbocation higher will be the reactivity of alkyl\nhalides towards S<sub>N</sub>1 reaction.\n<br><br><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l7yna60d/f82e44e8-b31e-47d4-a188-d7140d1d8795/d46519d0-3288-11ed-8893-19b23ee4c66d/file-1l7yna60e.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l7yna60d/f82e44e8-b31e-47d4-a188-d7140d1d8795/d46519d0-3288-11ed-8893-19b23ee4c66d/file-1l7yna60e.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2017 (Offline) Chemistry - Haloalkanes and Haloarenes Question 169 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l7yna60d/f82e44e8-b31e-47d4-a188-d7140d1d8795/d46519d0-3288-11ed-8893-19b23ee4c66d/file-1l7yna60e.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l7yna60d/f82e44e8-b31e-47d4-a188-d7140d1d8795/d46519d0-3288-11ed-8893-19b23ee4c66d/file-1l7yna60e.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l7yna60d/f82e44e8-b31e-47d4-a188-d7140d1d8795/d46519d0-3288-11ed-8893-19b23ee4c66d/file-1l7yna60e.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l7yna60d/f82e44e8-b31e-47d4-a188-d7140d1d8795/d46519d0-3288-11ed-8893-19b23ee4c66d/file-1l7yna60e.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l7yna60d/f82e44e8-b31e-47d4-a188-d7140d1d8795/d46519d0-3288-11ed-8893-19b23ee4c66d/file-1l7yna60e.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l7yna60d/f82e44e8-b31e-47d4-a188-d7140d1d8795/d46519d0-3288-11ed-8893-19b23ee4c66d/file-1l7yna60e.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"><br>Hence correct order is II &lt; I &lt; III."
+    }
+  ]
+}

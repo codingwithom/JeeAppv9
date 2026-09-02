@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "hWos1QbD2o6pGJCQcMXfX",
+      "paperTitle": "JEE Main 2017 (Online) 9th April Morning Slot",
+      "year": 2017,
+      "examDate": "2017-04-09 09:30",
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "nature-of-oxide",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-one-of-the-following-is-an-oxide-jee-main-chemistry-some-basic-concepts-of-chemistry-ug1dq4wanetrckot",
+      "content": "Which one of the following is an oxide?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "KO<sub>2</sub>  "
+        },
+        {
+          "identifier": "B",
+          "content": "BaO<sub>2</sub> "
+        },
+        {
+          "identifier": "C",
+          "content": "SiO<sub>2</sub> "
+        },
+        {
+          "identifier": "D",
+          "content": "CsO<sub>2</sub>"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Na, H,  Ba and Sr produce Peroxide.\n<br><br>K, Rb and Cs produces Superoxide.\n<br><br>So, SiO<sub>2</sub> will be oxide. "
+    }
+  ]
+}

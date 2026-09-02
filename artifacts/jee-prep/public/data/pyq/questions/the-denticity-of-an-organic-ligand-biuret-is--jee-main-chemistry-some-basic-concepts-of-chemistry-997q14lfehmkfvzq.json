@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1kticxdxx",
+      "paperTitle": "JEE Main 2021 (Online) 31st August Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "coordination-number",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-denticity-of-an-organic-ligand-biuret-is--jee-main-chemistry-some-basic-concepts-of-chemistry-997q14lfehmkfvzq",
+      "content": "The denticity of an organic ligand, biuret is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "2"
+        },
+        {
+          "identifier": "B",
+          "content": "4"
+        },
+        {
+          "identifier": "C",
+          "content": "3"
+        },
+        {
+          "identifier": "D",
+          "content": "6"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Biuret ligand is\n<br><img src=\"https://imagex.cdn.examgoal.net/1ku9usdcb/268c4e6d-fabb-48e8-8715-b2be8eddf044/c65db5b0-2387-11ec-9fca-4723c24abe5d/file-1ku9usdcc.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 31st August Morning Shift Chemistry - Coordination Compounds Question 210 English Explanation 1\">\n<br>It forms complexes like\n<br><br><img src=\"https://imagex.cdn.examgoal.net/1ku9uxp1v/8ace6f77-046b-4c67-873e-13c1b4b53c56/5a751630-2388-11ec-a065-733b5a9b3c22/file-1ku9uxp1w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 31st August Morning Shift Chemistry - Coordination Compounds Question 210 English Explanation 2\">\n<br><br>The denticity of organic ligand is 2."
+    }
+  ]
+}

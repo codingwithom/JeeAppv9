@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ldo2crr0",
+      "paperTitle": "JEE Main 2023 (Online) 1st February Evening Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "properties-of-transition-elements",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pgiven-below-are-two-statements--one-is-labelled-as-asser-jee-main-chemistry-some-basic-concepts-of-chemistry-3o0mtp7lp1aanzmv",
+      "content": "<p>Given below are two statements : one is labelled as Assertion (A) and the other is labelled as Reason (R).</p>\n<p>Assertion (A) : <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.048ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.124ex\" height=\"2.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -903 2264.7 924\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"43\" xlink:href=\"#MJX-TEX-N-43\"></use><use data-c=\"75\" xlink:href=\"#MJX-TEX-N-75\" transform=\"translate(722,0)\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1311,432.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g></g></g></g></g></g></svg></mjx-container> in water is more stable than <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.048ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.324ex\" height=\"1.958ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -844.3 1911.1 865.3\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"43\" xlink:href=\"#MJX-TEX-N-43\"></use><use data-c=\"75\" xlink:href=\"#MJX-TEX-N-75\" transform=\"translate(722,0)\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1311,432.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g></g></g></g></g></g></svg></mjx-container>.</p>\n<p>Reason (R) : Enthalpy of hydration for <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.048ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.124ex\" height=\"2.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -903 2264.7 924\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"43\" xlink:href=\"#MJX-TEX-N-43\"></use><use data-c=\"75\" xlink:href=\"#MJX-TEX-N-75\" transform=\"translate(722,0)\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1311,432.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g></g></g></g></g></g></svg></mjx-container> is much less than that of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.048ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.324ex\" height=\"1.958ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -844.3 1911.1 865.3\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"43\" xlink:href=\"#MJX-TEX-N-43\"></use><use data-c=\"75\" xlink:href=\"#MJX-TEX-N-75\" transform=\"translate(722,0)\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1311,432.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g></g></g></g></g></g></svg></mjx-container>.</p>\n<p>In the light of the above statements, choose the correct answer from the options given below :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(A) is correct but (R) is not correct"
+        },
+        {
+          "identifier": "B",
+          "content": "Both (A) and (R) are correct but (R) is not the correct explanation of (A)"
+        },
+        {
+          "identifier": "C",
+          "content": "(A) is not correct but (R) is correct"
+        },
+        {
+          "identifier": "D",
+          "content": "Both (A) and (R) are correct and (R) is the correct explanation of (A)"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Cu<sup>2+</sup> ion is more stable than Cu<sup>+</sup> ion due to high  charge density on Cu<sup>2+</sup> ion, it has higher hydration energy  when it bonds to water molecules thus it forms stronger bonds.\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> (A) is correct but (R) is not correct."
+    }
+  ]
+}

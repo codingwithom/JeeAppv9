@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "vdThL7JlHHqnoSGzCvXUe",
+      "paperTitle": "JEE Main 2018 (Online) 15th April Evening Slot",
+      "year": 2018,
+      "examDate": "2018-04-15 14:30",
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "molecular-orbital-theory",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-best-describes-the-diagram-below-of-a-jee-main-chemistry-some-basic-concepts-of-chemistry-f1508q1tbbvuamos",
+      "content": "Which of the following best describes the diagram below of a molecular orbital ? \n<br><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l7wzx5ej/659ecdba-8aa0-4c5e-8476-98cdf55e276f/afc9cdc0-31a0-11ed-b3ea-45214d807530/file-1l7wzx5ek.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l7wzx5ej/659ecdba-8aa0-4c5e-8476-98cdf55e276f/afc9cdc0-31a0-11ed-b3ea-45214d807530/file-1l7wzx5ek.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2018 (Online) 15th April Evening Slot Chemistry - Chemical Bonding &amp; Molecular Structure Question 224 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l7wzx5ej/659ecdba-8aa0-4c5e-8476-98cdf55e276f/afc9cdc0-31a0-11ed-b3ea-45214d807530/file-1l7wzx5ek.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l7wzx5ej/659ecdba-8aa0-4c5e-8476-98cdf55e276f/afc9cdc0-31a0-11ed-b3ea-45214d807530/file-1l7wzx5ek.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l7wzx5ej/659ecdba-8aa0-4c5e-8476-98cdf55e276f/afc9cdc0-31a0-11ed-b3ea-45214d807530/file-1l7wzx5ek.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l7wzx5ej/659ecdba-8aa0-4c5e-8476-98cdf55e276f/afc9cdc0-31a0-11ed-b3ea-45214d807530/file-1l7wzx5ek.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l7wzx5ej/659ecdba-8aa0-4c5e-8476-98cdf55e276f/afc9cdc0-31a0-11ed-b3ea-45214d807530/file-1l7wzx5ek.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l7wzx5ej/659ecdba-8aa0-4c5e-8476-98cdf55e276f/afc9cdc0-31a0-11ed-b3ea-45214d807530/file-1l7wzx5ek.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "A non-bonding orbital "
+        },
+        {
+          "identifier": "B",
+          "content": "An antibonding <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.294ex\" height=\"1ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -431 572 442\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D70E\" xlink:href=\"#MJX-TEX-I-1D70E\"></use></g></g></g></svg></mjx-container> orbital"
+        },
+        {
+          "identifier": "C",
+          "content": "A bonding <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.296ex\" height=\"1ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -431 573 442\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D70B\" xlink:href=\"#MJX-TEX-I-1D70B\"></use></g></g></g></svg></mjx-container> orbital"
+        },
+        {
+          "identifier": "D",
+          "content": "An antibonding <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.296ex\" height=\"1ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -431 573 442\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D70B\" xlink:href=\"#MJX-TEX-I-1D70B\"></use></g></g></g></svg></mjx-container> orbital"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "This diagram describes antibonding <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.296ex\" height=\"1ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -431 573 442\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D70B\" xlink:href=\"#MJX-TEX-I-1D70B\"></use></g></g></g></svg></mjx-container> orbital. Here to orbitals laterally overlap to from pi bond. \n<br><br>Here two p orbitals have out of phase combination. "
+    }
+  ]
+}

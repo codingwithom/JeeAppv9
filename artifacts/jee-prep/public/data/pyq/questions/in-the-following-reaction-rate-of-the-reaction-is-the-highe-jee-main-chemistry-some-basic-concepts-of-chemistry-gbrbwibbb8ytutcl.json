@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "nloFDKC2WEfANEZUek76g",
+      "paperTitle": "JEE Main 2019 (Online) 9th April Evening Slot",
+      "year": 2019,
+      "examDate": "2019-04-09 14:30",
+      "subject": "chemistry",
+      "chapter": "aldehydes-ketones-and-carboxylic-acids",
+      "chapterGroup": "organic-chemistry",
+      "topic": "chemical-reactions-for-aldehydes-and-ketones",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "in-the-following-reaction-rate-of-the-reaction-is-the-highe-jee-main-chemistry-some-basic-concepts-of-chemistry-gbrbwibbb8ytutcl",
+      "content": "In the following reaction\n<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76htyjzmtvqy0/6f581f49-b613-4fac-81c1-7bb493507c93/b6de4a80-c4ef-11e9-8a74-7f4f47aa0c85/file-jf76htyjzmtvqy1-320w.jpg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76htyjzmtvqy0/6f581f49-b613-4fac-81c1-7bb493507c93/b6de4a80-c4ef-11e9-8a74-7f4f47aa0c85/file-jf76htyjzmtvqy1-500w.jpg\"><source media=\"(max-width: 680px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76htyjzmtvqy0/6f581f49-b613-4fac-81c1-7bb493507c93/b6de4a80-c4ef-11e9-8a74-7f4f47aa0c85/file-jf76htyjzmtvqy1-680w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/jf76htyjzmtvqy0/6f581f49-b613-4fac-81c1-7bb493507c93/b6de4a80-c4ef-11e9-8a74-7f4f47aa0c85/file-jf76htyjzmtvqy1-860w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 9th April Evening Slot Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 225 English\"></picture>\nRate of the reaction is the highest for :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Propanal as substrate and methanol in\nstoichiometric amount."
+        },
+        {
+          "identifier": "B",
+          "content": "Acetone as substrate and methanol in\nstoichiometric amount"
+        },
+        {
+          "identifier": "C",
+          "content": "Propanal as substrate and methanol in\nexcess"
+        },
+        {
+          "identifier": "D",
+          "content": "Acetone as substrate and methanol in excess"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Steric hindrance of aldehydes is less compares to the ketone that is why aldehydes are more reactive than\nketones in nucleophilic addition reactions.\n<br><br>So among propanal and acetone, propanal is suitable as substance.\n<br><br>And to form acetal, excess amount of alcohol is required so here methanol in excess is required."
+    }
+  ]
+}

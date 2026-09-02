@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "X30jgEuwFky5NkuYFTGnb",
+      "paperTitle": "JEE Main 2016 (Online) 9th April Morning Slot",
+      "year": 2016,
+      "examDate": "2016-04-09 09:30",
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "iupac-nomenclature",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-hydrocarbon-with-seven-carbon-atoms-containing-a-neopent-jee-main-physics-units-and-measurements-kojkbjwpn9igwbwr",
+      "content": "The hydrocarbon with seven carbon atoms containing a neopentyl and a vinyl group\nis :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "2, 2-dimethyl-4-pentene "
+        },
+        {
+          "identifier": "B",
+          "content": "Isopropyl-2-butene"
+        },
+        {
+          "identifier": "C",
+          "content": "4, 4-dimethylpentene"
+        },
+        {
+          "identifier": "D",
+          "content": "2, 2-dimethyl-3-pentene"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/V0OF1vqXUkydpxGBX/I9K2J4JnLcs0j4djCMN551rssvYvH/Z5xwYZtiTm1vwrJRxKB3FD/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2016 (Online) 9th April Morning Slot Chemistry - Basics of Organic Chemistry Question 240 English Explanation\">"
+    }
+  ]
+}

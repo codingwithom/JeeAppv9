@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "hJceUi53qvfwOqjCcuZnk",
+      "paperTitle": "JEE Main 2019 (Online) 10th January Morning Slot",
+      "year": 2019,
+      "examDate": "2019-01-10 09:30",
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "inner-transition-elements-lanthanoids-and-actinoids",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-effect-of-lanthanoid-contraction-in-the-lanthanoid-serie-jee-main-chemistry-some-basic-concepts-of-chemistry-xosfhu9qzc77p2w6",
+      "content": "The effect of lanthanoid contraction in the lanthanoid series of elements by and large means : ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "increase in atomic radii and decrease in ionic radii \n"
+        },
+        {
+          "identifier": "B",
+          "content": "increase in both atomic and ionic radii\n"
+        },
+        {
+          "identifier": "C",
+          "content": "decrease in both atomic and ionic radii "
+        },
+        {
+          "identifier": "D",
+          "content": "decrease in atomic radii and increase in ionic radii"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Due to Lanthanoid contraction both atomic radii and ionic radii decreases gradually in the lanthanoid series. "
+    }
+  ]
+}

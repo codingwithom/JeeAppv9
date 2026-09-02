@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "C8wM97uJad4kiBxUSAxvh",
+      "paperTitle": "JEE Main 2019 (Online) 9th April Evening Slot",
+      "year": 2019,
+      "examDate": "2019-04-09 14:30",
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "hydrogen-bonding",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "hf-has-highest-boiling-point-among-hydrogen-halides-because-jee-main-chemistry-some-basic-concepts-of-chemistry-bllsfq86ovkqf9ut",
+      "content": "HF has highest boiling point among hydrogen\nhalides, because it has :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "lowest dissociation enthalpy"
+        },
+        {
+          "identifier": "B",
+          "content": "strongest hydrogen bonding"
+        },
+        {
+          "identifier": "C",
+          "content": "lowest ionic character"
+        },
+        {
+          "identifier": "D",
+          "content": "strongest van der Waals' interactions"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Due to strong H-bonding\nbetween HF molecules, HF has highest boiling point among the\nhydrogen halides."
+    }
+  ]
+}

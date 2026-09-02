@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "1ldsduqv0",
+      "paperTitle": "JEE Main 2023 (Online) 29th January Evening Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "alcohols-phenols-and-ethers",
+      "chapterGroup": "organic-chemistry",
+      "topic": "properties-preparation-and-uses-of-alcohols",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pthe-denticity-of-the-ligand-present-in-the-fehlings-reag-jee-main-chemistry-some-basic-concepts-of-chemistry-vd5uzdpvdsgeinaz",
+      "content": "<p>The denticity of the ligand present in the Fehling's reagent is ___________.</p>",
+      "options": [],
+      "correct_options": [],
+      "explanation": "The ligand present in Fehling's reagent is tartrate, specifically potassium sodium tartrate (KNaC<sub>4</sub>H<sub>4</sub>O<sub>6</sub>•4H<sub>2</sub>O), which acts as a chelating agent. The denticity of tartrate is four, meaning that it can bond to a metal ion through four different atoms, in this case, two oxygen atoms from each of the two carboxylate groups and two oxygen atoms from the two hydroxyl groups. This chelation allows the copper ions in Fehling's A to remain in solution, preventing them from precipitating out as insoluble copper hydroxides. The chelation also helps to stabilize the intermediate copper complexes formed during the redox reaction with reducing sugars, allowing for the formation of the brick-red precipitate of copper(I) oxide (Cu<sub>2</sub>O)."
+    }
+  ]
+}

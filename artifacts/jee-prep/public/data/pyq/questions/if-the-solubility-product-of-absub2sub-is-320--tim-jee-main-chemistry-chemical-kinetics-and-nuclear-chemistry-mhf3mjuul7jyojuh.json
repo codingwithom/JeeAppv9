@@ -1,0 +1,22 @@
+{
+  "questions": [
+    {
+      "question_id": "LZvQFJXke06eYwWeEajgy2xukg4nse7j",
+      "paperTitle": "JEE Main 2020 (Online) 6th September Evening Slot",
+      "year": 2020,
+      "examDate": "2020-09-06 15:00",
+      "subject": "chemistry",
+      "chapter": "ionic-equilibrium",
+      "chapterGroup": "physical-chemistry",
+      "topic": "solubility-product-and-common-ion-effect",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 0,
+      "permalink": "if-the-solubility-product-of-absub2sub-is-320--tim-jee-main-chemistry-chemical-kinetics-and-nuclear-chemistry-mhf3mjuul7jyojuh",
+      "content": "If the solubility product of AB<sub>2</sub> is 3.20 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 10<sup>–11</sup> M<sup>3</sup>,\nthen the solubility of AB<sub>2</sub> in pure water is\n_____ <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 10<sup>–4</sup> mol L<sup>–1</sup>. \n<br>[Assuming that neither kind\nof ion reacts with water]",
+      "options": [],
+      "correct_options": [],
+      "explanation": "<table class=\"tg\">\n<thead>\n  <tr>\n    <th class=\"tg-baqh\">AB<sub>2</sub></th>\n    <th class=\"tg-baqh\">⇌</th>\n    <th class=\"tg-baqh\">A<sup>2+</sup>(aq)</th>\n    <th class=\"tg-baqh\">+</th>\n    <th class=\"tg-baqh\">2B<sup>-</sup>(aq)</th>\n  </tr>\n</thead>\n<tbody>\n  <tr>\n    <td class=\"tg-baqh\"></td>\n    <td class=\"tg-baqh\"></td>\n    <td class=\"tg-baqh\">s</td>\n    <td class=\"tg-baqh\"></td>\n    <td class=\"tg-baqh\">2s</td>\n  </tr>\n</tbody>\n</table>\n<br><br>K<sub>sp</sub> = 4s<sup>3</sup> = 3.2 × 10<sup>–11</sup>\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> s<sup>3</sup> = 8 × 10<sup>–12</sup>\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> s = 2 × 10<sup>–4</sup>"
+    }
+  ]
+}

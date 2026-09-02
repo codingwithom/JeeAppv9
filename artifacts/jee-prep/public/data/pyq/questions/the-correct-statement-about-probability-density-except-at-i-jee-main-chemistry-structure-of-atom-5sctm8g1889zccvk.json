@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "qsZP0WPT9wfLCKwnyxjgy2xukfouqx0h",
+      "paperTitle": "JEE Main 2020 (Online) 5th September Evening Slot",
+      "year": 2020,
+      "examDate": "2020-09-05 15:00",
+      "subject": "chemistry",
+      "chapter": "structure-of-atom",
+      "chapterGroup": "physical-chemistry",
+      "topic": "quantum-mechanical-model-of-atom",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-correct-statement-about-probability-density-except-at-i-jee-main-chemistry-structure-of-atom-5sctm8g1889zccvk",
+      "content": "The correct statement about probability density (except at infinite distance from nucleus) is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "It can be zero for 1s orbital"
+        },
+        {
+          "identifier": "B",
+          "content": "It can be zero for 3p orbital"
+        },
+        {
+          "identifier": "C",
+          "content": "It can never be zero for 2s orbital"
+        },
+        {
+          "identifier": "D",
+          "content": "It can negative for 2p orbital"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.464ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.348ex\" height=\"2.034ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 596 899\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D719\" xlink:href=\"#MJX-TEX-I-1D719\"></use></g></g></g></svg></mjx-container><sup>2</sup> (probability density) can be zero for 3p\norbital other than infinite distance. It has one\nradial node."
+    }
+  ]
+}

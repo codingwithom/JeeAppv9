@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "sJQVcGyUpRnzIMQFkU1kk0u2atp",
+      "paperTitle": "JEE Advanced 2020 Paper 2 Offline",
+      "year": 2020,
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "important-compounds-of-transition-elements",
+      "type": "integer",
+      "marks": 3,
+      "negMarks": 1,
+      "permalink": "an-acidified-solution-of-potassium-chromate-was-layered-with-jee-advanced-chemistry-some-basic-concepts-of-chemistry-vfq8dnmvtjaegpfl",
+      "content": "An acidified solution of potassium chromate was layered with an equal volume of amyl alcohol. When it was shaken after the addition of 1 mL of 3% H<sub>2</sub>O<sub>2</sub>, a blue alcohol layer was obtained. The blue colour is due to the formation of a chromium (VI) compound 'X'. What is the number of oxygen atoms bonded to chromium through only single bond in a molecule of X?",
+      "options": [],
+      "correct_options": [],
+      "explanation": "When a solution of K<sub>2</sub>CrO<sub>4</sub> is treated with amyl alcohol and acidified H<sub>2</sub>O<sub>2</sub>, the layer of amyl alcohol turns blue because acidified H<sub>2</sub>O<sub>2</sub> converts K<sub>2</sub>CrO<sub>4</sub> to CrO<sub>5</sub> to given the blue colouration,<br><br><img src=\"https://imagex.cdn.examgoal.net/1ksatjelo/f5827a90-1c30-4e38-b443-178e7c11b5de/3dd1cec0-fc77-11eb-8344-bb0a6e74ee21/file-1ksatjelp.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2020 Paper 2 Offline Chemistry - d and f Block Elements Question 17 English Explanation 1\">\n<br><br><b>The structure of CrO<sub>5</sub> is :</b>\n<br><img src=\"https://imagex.cdn.examgoal.net/1ksatn4zk/2b0e7828-c253-42f1-9438-dab92fa99419/a5a14710-fc77-11eb-8344-bb0a6e74ee21/file-1ksatn4zl.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2020 Paper 2 Offline Chemistry - d and f Block Elements Question 17 English Explanation 2\">\n<br><br>Number of oxygen atom bonded with chromium with single bond is = 4."
+    }
+  ]
+}

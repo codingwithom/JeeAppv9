@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "yTKueDaZTjGERgKmFP1klucw2q7",
+      "paperTitle": "JEE Main 2021 (Online) 26th February Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "purification-of-organic-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "given-below-are-two-statements-brbrstatement-i--a-mi-jee-main-chemistry-some-basic-concepts-of-chemistry-o1tdv1olbtfxhaen",
+      "content": "Given below are two statements :<br><br>Statement I : A mixture of chloroform and aniline can be separated by simple distillation.<br><br>Statement II : When separating aniline from a mixture of aniline and water by steam distillation aniline boils below its boiling point.<br><br>In the light of the above statements, choose the most appropriate answer from the options given below :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Both Statement I and Statement II are true"
+        },
+        {
+          "identifier": "B",
+          "content": "Both Statement I and Statement II are false"
+        },
+        {
+          "identifier": "C",
+          "content": "Statement I is true but Statement II is false"
+        },
+        {
+          "identifier": "D",
+          "content": "Statement I is false but Statement II is true"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Mixture of chloroform and aniline can be\nseparated by simple distillation as these\ntwo liquids have sufficient difference in\nboiling point.\nChloroform (b.p. 334 K), aniline (b.p. 457 K)\n<br><br> In steam distillation, if one of the\nsubstances is water and the other, a water\ninsoluble substance (like aniline) then the\nmixture will boil close to but below 373 K."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "uBw8ql4QsONZPxHM2K1kmki9q4m",
+      "paperTitle": "JEE Main 2021 (Online) 17th March Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "haloalkanes-and-haloarenes",
+      "chapterGroup": "organic-chemistry",
+      "topic": "haloalkanes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-correct-pairs-of-the-ambident-nucleophiles-isarebr-jee-main-chemistry-some-basic-concepts-of-chemistry-kj2tun3x6mlvmror",
+      "content": "The correct pair(s) of the ambident nucleophiles is(are)<br><br>(A) AgCN/KCN<br><br>(B) RCOOAg/RCOOK<br><br>(C) AgNO<sub>2</sub>/KNO<sub>2</sub><br><br>(D) AgI/KI",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(B) and (C) only"
+        },
+        {
+          "identifier": "B",
+          "content": "(B) only"
+        },
+        {
+          "identifier": "C",
+          "content": "(A) and (C) only"
+        },
+        {
+          "identifier": "D",
+          "content": "(A) only"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Ambident ligands are those which have two donor sites but at once it has the ability to donate either site.<br>\nHence in AgCN/KCN, AgNO<sub>2</sub>/KNO<sub>2</sub>, CN<sup>-</sup>, NO<sub>2</sub><sup>-</sup> have two donar sites act as ambident Nu<sup>-</sup>."
+    }
+  ]
+}

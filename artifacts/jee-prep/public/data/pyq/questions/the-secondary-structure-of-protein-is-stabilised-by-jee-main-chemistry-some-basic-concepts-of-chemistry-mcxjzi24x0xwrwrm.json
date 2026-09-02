@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "dLhOspn1sdHgGaLu5z1kmitr5g6",
+      "paperTitle": "JEE Main 2021 (Online) 16th March Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "proteins-and-enzymes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-secondary-structure-of-protein-is-stabilised-by-jee-main-chemistry-some-basic-concepts-of-chemistry-mcxjzi24x0xwrwrm",
+      "content": "The secondary structure of protein is stabilised by:",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Hydrogen bonding"
+        },
+        {
+          "identifier": "B",
+          "content": "glycosidic bond"
+        },
+        {
+          "identifier": "C",
+          "content": "Peptide bond"
+        },
+        {
+          "identifier": "D",
+          "content": "van der Waals forces"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "The secondary structure of a protein is stabilised by\nhydrogen bonding."
+    }
+  ]
+}

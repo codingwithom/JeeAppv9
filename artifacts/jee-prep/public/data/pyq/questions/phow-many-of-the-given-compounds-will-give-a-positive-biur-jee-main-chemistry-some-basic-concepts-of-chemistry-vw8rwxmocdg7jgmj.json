@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "1l59rqg69",
+      "paperTitle": "JEE Main 2022 (Online) 25th June Evening Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "proteins-and-enzymes",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "phow-many-of-the-given-compounds-will-give-a-positive-biur-jee-main-chemistry-some-basic-concepts-of-chemistry-vw8rwxmocdg7jgmj",
+      "content": "<p>How many of the given compounds will give a positive Biuret test ____________ ?</p>\n<p>Glycine, Glycylalanine, Tripeptide, Biuret</p>",
+      "options": [],
+      "correct_options": [],
+      "explanation": "Since dipeptides and free amino acids do not give\nbiuret test. Hence glycine and glycylalanine do not\ngive this test."
+    }
+  ]
+}

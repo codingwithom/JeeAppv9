@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "poQKH4U75Dh7P0AnRk4xT",
+      "paperTitle": "JEE Main 2018 (Online) 15th April Evening Slot",
+      "year": 2018,
+      "examDate": "2018-04-15 14:30",
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "isomerism-of-coordination-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-total-number-of-possible-isomers-for-square-planar-ptc-jee-main-chemistry-some-basic-concepts-of-chemistry-41bdxqqekmg30xd9",
+      "content": "The total number of possible isomers for square-planar [Pt(Cl)(NO<sub>2</sub>)(NO<sub>3</sub>)(SCN)]<sup>2-</sup> is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "8"
+        },
+        {
+          "identifier": "B",
+          "content": "12"
+        },
+        {
+          "identifier": "C",
+          "content": "16"
+        },
+        {
+          "identifier": "D",
+          "content": "24"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<p>The complexes with formula [Mabcd]<sup>n±</sup> can have three geometrical isomers. As NO<sup>2−</sup> and SCN<sup>−</sup> are ambidentate ligands, therefore 4 × 3 = 12 geometrical isomers will be possible.</p>"
+    }
+  ]
+}

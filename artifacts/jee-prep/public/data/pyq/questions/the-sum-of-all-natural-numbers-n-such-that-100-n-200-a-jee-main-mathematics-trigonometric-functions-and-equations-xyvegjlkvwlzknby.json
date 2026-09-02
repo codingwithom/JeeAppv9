@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "r4WC0aKydDZkqNCmrD5bM",
+      "paperTitle": "JEE Main 2019 (Online) 8th April Morning Slot",
+      "year": 2019,
+      "examDate": "2019-04-08 09:30",
+      "subject": "mathematics",
+      "chapter": "sequences-and-series",
+      "chapterGroup": "algebra",
+      "topic": "arithmetic-progression",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-sum-of-all-natural-numbers-n-such-that-100-n-200-a-jee-main-mathematics-trigonometric-functions-and-equations-xyvegjlkvwlzknby",
+      "content": "The sum of all natural numbers 'n' such that\n100 &lt; n &lt; 200 and H.C.F. (91, n) &gt; 1 is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "3221"
+        },
+        {
+          "identifier": "B",
+          "content": "3121"
+        },
+        {
+          "identifier": "C",
+          "content": "3203"
+        },
+        {
+          "identifier": "D",
+          "content": "3303"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2235\" xlink:href=\"#MJX-TEX-N-2235\"></use></g></g></g></svg></mjx-container> 91 = 13 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 7\n<br><br>So the required numbers are either divisible by\n7 or 13.\n<br><br>S<sub>A</sub>\n= sum of numbers between 100 and 200 which are divisible by 7.\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> S<sub>A</sub> = 105 + 112 + ..... + 196\n<br><br>S<sub>A</sub> = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.781ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"13.783ex\" height=\"2.755ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -872.7 6092.2 1217.7\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(220,394) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\" transform=\"translate(500,0)\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(396.8,-345) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><rect width=\"907.1\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g><g data-mml-node=\"mrow\" transform=\"translate(1313.8,0)\"><g data-mml-node=\"mo\"><use data-c=\"5B\" xlink:href=\"#MJX-TEX-N-5B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(278,0)\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\" transform=\"translate(1000,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1722.2,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(2722.4,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"39\" xlink:href=\"#MJX-TEX-N-39\" transform=\"translate(500,0)\"></use><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\" transform=\"translate(1000,0)\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(4500.4,0)\"><use data-c=\"5D\" xlink:href=\"#MJX-TEX-N-5D\"></use></g></g></g></g></svg></mjx-container> = 2107\n<br><br>S<sub>B</sub>\n= Sum of numbers between 100 and 200 which are divisible by 13.\n<br><br>S<sub>B</sub> = 104 + 117 + ....... + 195\n<br><br>S<sub>B</sub> = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.781ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"12.983ex\" height=\"2.737ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864.9 5738.7 1209.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mn\" transform=\"translate(220,394) scale(0.707)\"><use data-c=\"38\" xlink:href=\"#MJX-TEX-N-38\"></use></g><g data-mml-node=\"mn\" transform=\"translate(220,-345) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><rect width=\"553.6\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g><g data-mml-node=\"mrow\" transform=\"translate(960.2,0)\"><g data-mml-node=\"mo\"><use data-c=\"5B\" xlink:href=\"#MJX-TEX-N-5B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(278,0)\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\" transform=\"translate(1000,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1722.2,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(2722.4,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"39\" xlink:href=\"#MJX-TEX-N-39\" transform=\"translate(500,0)\"></use><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\" transform=\"translate(1000,0)\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(4500.4,0)\"><use data-c=\"5D\" xlink:href=\"#MJX-TEX-N-5D\"></use></g></g></g></g></svg></mjx-container> = 1196\n<br><br>S<sub>C</sub> = Sum of numbers between 100 and 200 which are divisible by 7 and 13.\n<br><br>S<sub>C</sub> = 182\n<br><br>Sum of numbers divisible by\n7 or 13 = Sum of no. divisible by\n7 + sum of the no. divisible by 13 – Sum of the\nnumbers divisible by 7 and 13\n<br><br> = 2107 + 1196 - 182\n<br><br>= 3121"
+    }
+  ]
+}

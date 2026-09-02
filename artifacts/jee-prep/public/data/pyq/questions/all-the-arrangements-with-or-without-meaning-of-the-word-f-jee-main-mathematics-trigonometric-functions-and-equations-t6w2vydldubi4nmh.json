@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktobhmqv",
+      "paperTitle": "JEE Main 2021 (Online) 1st September Evening Shift",
+      "year": 2021,
+      "subject": "mathematics",
+      "chapter": "permutations-and-combinations",
+      "chapterGroup": "algebra",
+      "topic": "conditional-permutations",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "all-the-arrangements-with-or-without-meaning-of-the-word-f-jee-main-mathematics-trigonometric-functions-and-equations-t6w2vydldubi4nmh",
+      "content": "All the arrangements, with or without meaning, of the word FARMER are written excluding any word that has two R appearing together. The arrangements are listed serially in the alphabetic order as in the English dictionary. Then the serial number of the word FARMER in this list is ___________.",
+      "options": [],
+      "correct_options": [],
+      "explanation": "First find all possible words and then subtract words\nfrom each case that have both R together.\n<br><br>FARMER (6)<br><br>A, E, F, M, R, R<br><br>\n<table class=\"tg\">\n<thead>\n  <tr>\n    <th class=\"tg-0lax\">A</th>\n    <th class=\"tg-0lax\"></th>\n    <th class=\"tg-0lax\"></th>\n    <th class=\"tg-0lax\"></th>\n    <th class=\"tg-0lax\"></th>\n    <th class=\"tg-0lax\"></th>\n  </tr>\n</thead>\n<tbody>\n  <tr>\n    <td class=\"tg-0lax\">E</td>\n    <td class=\"tg-0lax\"></td>\n    <td class=\"tg-0lax\"></td>\n    <td class=\"tg-0lax\"></td>\n    <td class=\"tg-0lax\"></td>\n    <td class=\"tg-0lax\"></td>\n  </tr>\n  <tr>\n    <td class=\"tg-0lax\">F</td>\n    <td class=\"tg-0lax\">A</td>\n    <td class=\"tg-0lax\">E</td>\n    <td class=\"tg-0lax\"></td>\n    <td class=\"tg-0lax\"></td>\n    <td class=\"tg-0lax\"></td>\n  </tr>\n  <tr>\n    <td class=\"tg-0lax\">F</td>\n    <td class=\"tg-0lax\">A</td>\n    <td class=\"tg-0lax\">M</td>\n    <td class=\"tg-0lax\"></td>\n    <td class=\"tg-0lax\"></td>\n    <td class=\"tg-0lax\"></td>\n  </tr>\n  <tr>\n    <td class=\"tg-0lax\">F</td>\n    <td class=\"tg-0lax\">A</td>\n    <td class=\"tg-0lax\">R</td>\n    <td class=\"tg-0lax\">E</td>\n    <td class=\"tg-0lax\"></td>\n    <td class=\"tg-0lax\"></td>\n  </tr>\n  <tr>\n    <td class=\"tg-0lax\">F</td>\n    <td class=\"tg-0lax\">A</td>\n    <td class=\"tg-0lax\">R</td>\n    <td class=\"tg-0lax\">M</td>\n    <td class=\"tg-0lax\">E</td>\n    <td class=\"tg-0lax\">R</td>\n  </tr>\n</tbody>\n</table><br><br><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1kwoqbke8/bc58d634-a369-4a42-b528-57c54b3ada02/7f0aa000-534e-11ec-9cbb-695a838b20fb/file-1kwoqbke9.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1kwoqbke8/bc58d634-a369-4a42-b528-57c54b3ada02/7f0aa000-534e-11ec-9cbb-695a838b20fb/file-1kwoqbke9.png\" loading=\"lazy\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;max-height: 50vh\" alt=\"JEE Main 2021 (Online) 1st September Evening Shift Mathematics - Permutations and Combinations Question 134 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1kwoqbke8/bc58d634-a369-4a42-b528-57c54b3ada02/7f0aa000-534e-11ec-9cbb-695a838b20fb/file-1kwoqbke9.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1kwoqbke8/bc58d634-a369-4a42-b528-57c54b3ada02/7f0aa000-534e-11ec-9cbb-695a838b20fb/file-1kwoqbke9.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1kwoqbke8/bc58d634-a369-4a42-b528-57c54b3ada02/7f0aa000-534e-11ec-9cbb-695a838b20fb/file-1kwoqbke9.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1kwoqbke8/bc58d634-a369-4a42-b528-57c54b3ada02/7f0aa000-534e-11ec-9cbb-695a838b20fb/file-1kwoqbke9.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1kwoqbke8/bc58d634-a369-4a42-b528-57c54b3ada02/7f0aa000-534e-11ec-9cbb-695a838b20fb/file-1kwoqbke9.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1kwoqbke8/bc58d634-a369-4a42-b528-57c54b3ada02/7f0aa000-534e-11ec-9cbb-695a838b20fb/file-1kwoqbke9.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">"
+    }
+  ]
+}

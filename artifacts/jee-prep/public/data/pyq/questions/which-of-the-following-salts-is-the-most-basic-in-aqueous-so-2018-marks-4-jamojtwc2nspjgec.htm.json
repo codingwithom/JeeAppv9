@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "jAMoJTWC2nSpjGEc",
+      "paperTitle": "JEE Main 2018 (Offline)",
+      "year": 2018,
+      "examDate": null,
+      "subject": "chemistry",
+      "chapter": "ionic-equilibrium",
+      "chapterGroup": "physical-chemistry",
+      "topic": "salt-hydrolysis",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-salts-is-the-most-basic-in-aqueous-so-2018-marks-4-jamojtwc2nspjgec.htm",
+      "content": "Which of the following salts is the most basic in aqueous solution?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Pb(CH<sub>3</sub>COO)<sub>2</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "Al(CN)<sub>3</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "CH<sub>3</sub>COOK"
+        },
+        {
+          "identifier": "D",
+          "content": "FeCl<sub>3</sub>"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<b><u>Note</u> :</b>\n<br>When a salt is made with strong base and weak acid then that salt will be basic nature in aqueous solution. \n<br><br>(a)&nbsp;&nbsp; Pb(CH<sub>3</sub>COO)<sub>2</sub> &nbsp;is a salt of weak base Pb(OH)<sub>2</sub> and weak acid CH<sub>3</sub>COOH.\n<br><br>(b)&nbsp;&nbsp; Al(CN)<sub>3</sub> &nbsp;is a salt of weak base Al(OH)<sub>3</sub> and weak acid HCN.\n<br><br>(c)&nbsp;&nbsp; CH<sub>3</sub>COOK is a salt of weak acid CH<sub>3</sub>COOH and strong base KOH.\n<br><br>(d)&nbsp;&nbsp; FeCl<sub>3</sub> is a salt of weak base Fe(OH)<sub>3</sub> and strong acid HCl."
+    }
+  ]
+}

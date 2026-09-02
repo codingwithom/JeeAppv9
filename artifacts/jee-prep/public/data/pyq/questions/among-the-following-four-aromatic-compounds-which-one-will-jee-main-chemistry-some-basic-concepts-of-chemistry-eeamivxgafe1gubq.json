@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "rftHUIZx1l5km3fFzMjAX",
+      "paperTitle": "JEE Main 2019 (Online) 12th January Morning Slot",
+      "year": 2019,
+      "examDate": "2019-01-12 09:30",
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "aromaticity",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "among-the-following-four-aromatic-compounds-which-one-will-jee-main-chemistry-some-basic-concepts-of-chemistry-eeamivxgafe1gubq",
+      "content": "Among the following four aromatic compounds, which one will have the lowest melting point ? ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/JVlcDqrnL1T1oLZvm/5oX1liyhO4HiVSopLIaovVtNG11PN/tY4ag5RzFoeYbfsrlxGQ1z/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th January Morning Slot Chemistry - Basics of Organic Chemistry Question 231 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/sMfx07blPQlJ4okZf/vrXa0Fju3HQEZI8XQG6a5z74CWuHj/TRF9KUg07A8ztJr3swhLVA/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th January Morning Slot Chemistry - Basics of Organic Chemistry Question 231 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/Aet3G21NdhMkIYMBM/Czehdr1oyEVha1fmMhbjG04Vo5FKX/xD1IGDVHkgZAaj5AZZhqtB/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th January Morning Slot Chemistry - Basics of Organic Chemistry Question 231 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/w2A20DBImgb2mCMZM/mV06uWgqWrQ2aCRBfxTcH25piCJws/yUAbKpeMapDv760qdInbYa/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th January Morning Slot Chemistry - Basics of Organic Chemistry Question 231 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "More the intermolecular interaction more will be the\nmelting point. Among the given, naphthalene has least\nintermolecular interaction and hence it has lowest melting point.\n<br><br>M.P. of Napthalene = 80°C"
+    }
+  ]
+}

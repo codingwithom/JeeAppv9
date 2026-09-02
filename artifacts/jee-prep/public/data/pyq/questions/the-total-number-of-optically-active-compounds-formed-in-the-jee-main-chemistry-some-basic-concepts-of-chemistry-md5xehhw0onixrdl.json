@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "c4MAYWLebM3oCPFwVKzpd",
+      "paperTitle": "JEE Main 2018 (Online) 15th April Evening Slot",
+      "year": 2018,
+      "examDate": "2018-04-15 14:30",
+      "subject": "chemistry",
+      "chapter": "alcohols-phenols-and-ethers",
+      "chapterGroup": "organic-chemistry",
+      "topic": "properties-preparation-and-uses-of-ethers",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-total-number-of-optically-active-compounds-formed-in-the-jee-main-chemistry-some-basic-concepts-of-chemistry-md5xehhw0onixrdl",
+      "content": "The total number of optically active compounds formed in the following reactio is : \n<br><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l7x0kti2/47a9d7ac-76b4-4eba-a352-92eeea5c4eb7/42035ba0-31a3-11ed-b3ea-45214d807530/file-1l7x0kti3.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l7x0kti2/47a9d7ac-76b4-4eba-a352-92eeea5c4eb7/42035ba0-31a3-11ed-b3ea-45214d807530/file-1l7x0kti3.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2018 (Online) 15th April Evening Slot Chemistry - Alcohols, Phenols and Ethers Question 158 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l7x0kti2/47a9d7ac-76b4-4eba-a352-92eeea5c4eb7/42035ba0-31a3-11ed-b3ea-45214d807530/file-1l7x0kti3.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l7x0kti2/47a9d7ac-76b4-4eba-a352-92eeea5c4eb7/42035ba0-31a3-11ed-b3ea-45214d807530/file-1l7x0kti3.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l7x0kti2/47a9d7ac-76b4-4eba-a352-92eeea5c4eb7/42035ba0-31a3-11ed-b3ea-45214d807530/file-1l7x0kti3.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l7x0kti2/47a9d7ac-76b4-4eba-a352-92eeea5c4eb7/42035ba0-31a3-11ed-b3ea-45214d807530/file-1l7x0kti3.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l7x0kti2/47a9d7ac-76b4-4eba-a352-92eeea5c4eb7/42035ba0-31a3-11ed-b3ea-45214d807530/file-1l7x0kti3.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l7x0kti2/47a9d7ac-76b4-4eba-a352-92eeea5c4eb7/42035ba0-31a3-11ed-b3ea-45214d807530/file-1l7x0kti3.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Two"
+        },
+        {
+          "identifier": "B",
+          "content": "Four"
+        },
+        {
+          "identifier": "C",
+          "content": "Six"
+        },
+        {
+          "identifier": "D",
+          "content": "Zero"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "The product has two chiral carbon atoms. <br/><br/>So, it has = 2<sup>n</sup> = 2<sup>2</sup> = 4 stereoisomers."
+    }
+  ]
+}

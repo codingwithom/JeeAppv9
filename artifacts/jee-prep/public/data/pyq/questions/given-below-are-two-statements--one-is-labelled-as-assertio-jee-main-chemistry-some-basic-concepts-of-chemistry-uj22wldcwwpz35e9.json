@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktcoupty",
+      "paperTitle": "JEE Main 2021 (Online) 26th August Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "atomic-and-ionic-radius",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "given-below-are-two-statements--one-is-labelled-as-assertio-jee-main-chemistry-some-basic-concepts-of-chemistry-uj22wldcwwpz35e9",
+      "content": "Given below are two statements : one is labelled as Assertion (A) and the other is labelled as Reason (R).<br><br>Assertion (A) : Barium carbonate is insoluble in water and is highly stable.<br><br>Reason (R) : The thermal stability of the carbonates increases with increasing cationic size.",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Both (A) and (R) are true and (R) is the true explanation of (A)"
+        },
+        {
+          "identifier": "B",
+          "content": "(A) is true but (R) is false"
+        },
+        {
+          "identifier": "C",
+          "content": "Both (A) and (R) are true but (R) is not the true explanation of (A)"
+        },
+        {
+          "identifier": "D",
+          "content": "(A) is false but (R) is true."
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "In IIA group on moving down the group size of cation increases and show thermal stability of carbonate increases."
+    }
+  ]
+}

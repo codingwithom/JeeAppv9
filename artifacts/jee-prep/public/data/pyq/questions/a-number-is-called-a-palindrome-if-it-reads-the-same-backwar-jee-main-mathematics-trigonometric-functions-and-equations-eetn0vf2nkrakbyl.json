@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "1kteplg92",
+      "paperTitle": "JEE Main 2021 (Online) 27th August Morning Shift",
+      "year": 2021,
+      "subject": "mathematics",
+      "chapter": "permutations-and-combinations",
+      "chapterGroup": "algebra",
+      "topic": "conditional-permutations",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "a-number-is-called-a-palindrome-if-it-reads-the-same-backwar-jee-main-mathematics-trigonometric-functions-and-equations-eetn0vf2nkrakbyl",
+      "content": "A number is called a palindrome if it reads the same backward as well as forward. For example 285582 is a six digit palindrome. The number of six digit palindromes, which are divisible by 55, is ____________.",
+      "options": [],
+      "correct_options": [],
+      "explanation": "<table class=\"tg\">\n<thead>\n  <tr>\n    <td class=\"tg-baqh\">5</td>\n    <td class=\"tg-baqh\">a</td>\n    <td class=\"tg-baqh\">b</td>\n    <td class=\"tg-baqh\">b</td>\n    <td class=\"tg-baqh\">a</td>\n    <td class=\"tg-baqh\">5</td>\n  </tr>\n</thead>\n</table>\n<br><br>For divisible by 55 it shall be divisible by 11 and 5\nboth, for divisibility by 5 unit digit shall be 0 or 5 but\nas the number is six digit palindrome unit digit is 5.\n\n<br><br>A number is divisible by 11 if the difference between sum of the digits in the odd places and the sum of the digits in the even places is a multiple of 11 or zero.\n<br><br>Sum of the digits in the even place = a + b + 5\n<br><br>Sum of the digits in the odd places = a + b + 5\n<br><br>Difference between the two sums = (a + b + 5 ) - (a + b + 5) = 0\n<br><br>0 is divisible by 11.\n<br><br>Hence, 5abba5 is divisible by 11.\n<br><br>So, required number = 10 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 10 = 100"
+    }
+  ]
+}

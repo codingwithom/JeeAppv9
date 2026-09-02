@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1lgp2tgig",
+      "paperTitle": "JEE Main 2023 (Online) 13th April Evening Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "bond-parameters",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pgiven-below-are-two-statements-p-pstatement-i---jee-main-chemistry-some-basic-concepts-of-chemistry-aqogzkk9kr5cebyo",
+      "content": "<p>Given below are two statements :</p>\n<p>Statement I : <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.006ex\" height=\"1.934ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 1770.6 855\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"53\" xlink:href=\"#MJX-TEX-N-53\"></use><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\" transform=\"translate(556,0)\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1367,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></g></svg></mjx-container> and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.445ex\" height=\"1.934ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 1964.6 855\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"48\" xlink:href=\"#MJX-TEX-N-48\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(783,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1186.6,0)\"><g data-mml-node=\"mi\"><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\"></use></g></g></g></g></svg></mjx-container> both possess V-shaped structure.</p>\n<p>Statement II : The bond angle of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.006ex\" height=\"1.934ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 1770.6 855\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"53\" xlink:href=\"#MJX-TEX-N-53\"></use><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\" transform=\"translate(556,0)\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1367,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></g></svg></mjx-container> is less than that of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.445ex\" height=\"1.934ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 1964.6 855\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"48\" xlink:href=\"#MJX-TEX-N-48\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(783,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1186.6,0)\"><g data-mml-node=\"mi\"><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\"></use></g></g></g></g></svg></mjx-container>.</p>\n<p>In the light of the above statements, choose the most appropriate answer from the options given below:</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Both Statement I and Statement II are incorrect"
+        },
+        {
+          "identifier": "B",
+          "content": "Both Statement I and Statement II are correct"
+        },
+        {
+          "identifier": "C",
+          "content": "Statement I is correct but Statement II is incorrect"
+        },
+        {
+          "identifier": "D",
+          "content": "Statement I is incorrect but Statement II is correct"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1lgsm006a/ddbebe6c-5a07-4b21-b13c-30c1e7d3bc39/0f2e1c20-e165-11ed-95df-fb857d00bffe/file-1lgsm006b.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1lgsm006a/ddbebe6c-5a07-4b21-b13c-30c1e7d3bc39/0f2e1c20-e165-11ed-95df-fb857d00bffe/file-1lgsm006b.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2023 (Online) 13th April Evening Shift Chemistry - Chemical Bonding &amp; Molecular Structure Question 108 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1lgsm006a/ddbebe6c-5a07-4b21-b13c-30c1e7d3bc39/0f2e1c20-e165-11ed-95df-fb857d00bffe/file-1lgsm006b.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1lgsm006a/ddbebe6c-5a07-4b21-b13c-30c1e7d3bc39/0f2e1c20-e165-11ed-95df-fb857d00bffe/file-1lgsm006b.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1lgsm006a/ddbebe6c-5a07-4b21-b13c-30c1e7d3bc39/0f2e1c20-e165-11ed-95df-fb857d00bffe/file-1lgsm006b.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1lgsm006a/ddbebe6c-5a07-4b21-b13c-30c1e7d3bc39/0f2e1c20-e165-11ed-95df-fb857d00bffe/file-1lgsm006b.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1lgsm006a/ddbebe6c-5a07-4b21-b13c-30c1e7d3bc39/0f2e1c20-e165-11ed-95df-fb857d00bffe/file-1lgsm006b.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1lgsm006a/ddbebe6c-5a07-4b21-b13c-30c1e7d3bc39/0f2e1c20-e165-11ed-95df-fb857d00bffe/file-1lgsm006b.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"><br><b>Statement I:</b> Both SO₂ and H₂O have a V-shaped (or bent) molecular structure. SO₂ has a central sulfur atom with two oxygen atoms and one lone pair, while H₂O has a central oxygen atom with two hydrogen atoms and two lone pairs. In both cases, the repulsion between the lone pairs and the bonded electron pairs leads to a V-shaped structure.\n<br><br>\n<b>Statement II:</b> The bond angle in H₂O is approximately 104.5° due to the tetrahedral arrangement of electron pairs (including the lone pairs) around the central oxygen atom. In SO₂, the bond angle is approximately 119°. The presence of a lone pair and the double bonds in SO₂ results in a different electron distribution, leading to a larger bond angle compared to H₂O."
+    }
+  ]
+}

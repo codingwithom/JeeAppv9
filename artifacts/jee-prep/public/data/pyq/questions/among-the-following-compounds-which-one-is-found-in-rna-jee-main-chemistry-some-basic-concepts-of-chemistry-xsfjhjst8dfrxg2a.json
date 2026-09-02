@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "nsiapcJCNSjRpqOcdmCtz",
+      "paperTitle": "JEE Main 2019 (Online) 11th January Morning Slot",
+      "year": 2019,
+      "examDate": "2019-01-11 09:30",
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "vitamins-and-nucleic-acids",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "among-the-following-compounds-which-one-is-found-in-rna-jee-main-chemistry-some-basic-concepts-of-chemistry-xsfjhjst8dfrxg2a",
+      "content": "Among the following compounds, which one is found in RNA ? ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1rcTkYhxm70JMs7ru/KuBwtEkAI2vFxN9aRbrZ7q8SGcXLa/mBD56e7NHk5NdGqNG3SZb1/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 11th January Morning Slot Chemistry - Biomolecules Question 165 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/jej3EBPXTDcXAynjR/XHBOVdMC4zctQkOQZAOruzjsiXLo1/jLpwqiBdXz3IBkwNkcL5wv/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 11th January Morning Slot Chemistry - Biomolecules Question 165 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/3rrkHl9B8YtAfcFim/Uu5mD11rXHctKIJAWrla9s6s6CR1d/OA4w9WlCpuDrMqMBcIyaEo/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 11th January Morning Slot Chemistry - Biomolecules Question 165 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/9bb9CMZHPzjMbUTN7/VS0U2qzylBaG6PZ6qItgyn3mHCyhg/3BuEvCGqZ6Ut2RY2rNZAu5/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 11th January Morning Slot Chemistry - Biomolecules Question 165 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "‘uracil’ is found in RNA.\n<br><img src=\"https://imagex.cdn.examgoal.net/3rrkHl9B8YtAfcFim/Uu5mD11rXHctKIJAWrla9s6s6CR1d/OA4w9WlCpuDrMqMBcIyaEo/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 11th January Morning Slot Chemistry - Biomolecules Question 165 English Explanation\">"
+    }
+  ]
+}

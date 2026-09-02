@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "kmM8LnBf6Z55XpJT4ljgy2xukf7t0ok8",
+      "paperTitle": "JEE Main 2020 (Online) 4th September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-04 09:00",
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "carbohydrates",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "what-are-the-functional-groups-present-in-the-structure-of-m-jee-main-chemistry-biomolecules-ydpmovnvqfp6vmvy",
+      "content": "What are the functional groups present in the\nstructure of maltose?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "One acetal and one ketal"
+        },
+        {
+          "identifier": "B",
+          "content": "One ketal and one hemiketal"
+        },
+        {
+          "identifier": "C",
+          "content": "Two acetals"
+        },
+        {
+          "identifier": "D",
+          "content": "One acetal and one hemiacetal"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1khpyu8oy/d5f63318-84d1-4299-8e24-00b8bc0659da/59600d30-2b05-11eb-8776-af51a12b9c94/file-1khpyu8oz-320w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 4th September Morning Slot Chemistry - Biomolecules Question 143 English Explanation\">\n<br><br>Maltose contains one acetal and one\nhemiacetal."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktbcom3g",
+      "paperTitle": "JEE Main 2021 (Online) 26th August Morning Shift",
+      "year": 2021,
+      "subject": "mathematics",
+      "chapter": "sets-and-relations",
+      "chapterGroup": "algebra",
+      "topic": "venn-diagram",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "out-of-all-patients-in-a-hospital-89-are-found-to-be-suffer-jee-main-mathematics-trigonometric-functions-and-equations-0t2erazpdwja0waa",
+      "content": "Out of all the patients in a hospital 89% are found to be suffering from heart ailment and 98% are suffering from lungs infection. If K% of them are suffering from both ailments, then K can not belong to the set :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "{80, 83, 86, 89}"
+        },
+        {
+          "identifier": "B",
+          "content": "{84, 86, 88, 90}"
+        },
+        {
+          "identifier": "C",
+          "content": "{79, 81, 83, 85}"
+        },
+        {
+          "identifier": "D",
+          "content": "{84, 87, 90, 93}"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<p>This solution begins by applying the principle of inclusion and exclusion, which in the context of this problem, is represented by the formula : </p>\n<p>n(A ∪ B) ≥ n(A) + n(B) - n(A ∩ B)</p>\n<p>Here, n(A ∪ B) represents the total number of patients in the hospital, which is 100%. n(A) represents the proportion of patients with a heart ailment (89%), and n(B) represents the proportion of patients with a lung infection (98%). </p>\n<p>By rearranging this formula, the solution establishes an inequality for n(A ∩ B), the proportion of patients suffering from both ailments :</p>\n<p>100% ≥ 89% + 98% - n(A ∩ B)</p>\n<p>Therefore, </p>\n<p>n(A ∩ B) ≥ 87%</p>\n<p>Next, the solution notes that n(A ∩ B) cannot be greater than the smaller of n(A) and n(B), since it cannot be larger than the smallest group. Thus, we have another inequality :</p>\n<p>n(A ∩ B) ≤ 89%</p>\n<p>Combining these two inequalities gives :</p>\n<p>87% ≤ n(A ∩ B) ≤ 89%</p>\n<p>Hence, the proportion of patients suffering from both ailments must be a value between 87% and 89% inclusive. So, the set of values {79,81,83,85} which are all less than 87% are values that n(A ∩ B) cannot belong to. Therefore, option C is the correct answer.</p>\n"
+    }
+  ]
+}

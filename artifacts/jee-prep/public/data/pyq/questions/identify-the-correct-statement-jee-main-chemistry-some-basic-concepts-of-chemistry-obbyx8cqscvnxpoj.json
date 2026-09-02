@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "BDZrcHtJ0K9DBMLjx0tQD",
+      "paperTitle": "JEE Main 2016 (Online) 10th April Morning Slot",
+      "year": 2016,
+      "examDate": "2016-04-10 09:30",
+      "subject": "chemistry",
+      "chapter": "electrochemistry",
+      "chapterGroup": "physical-chemistry",
+      "topic": "batteries-fuel-cells-and-corrosion",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "identify-the-correct-statement-jee-main-chemistry-some-basic-concepts-of-chemistry-obbyx8cqscvnxpoj",
+      "content": "Identify the correct statement :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Iron corrodes in oxygen-free water."
+        },
+        {
+          "identifier": "B",
+          "content": "Iron corrodes more rapidly in salt water because its electrochemical\npotential is higher."
+        },
+        {
+          "identifier": "C",
+          "content": "Corrosion of iron can be minimized by forming a contact with another\nmetal with a higher reduction potential."
+        },
+        {
+          "identifier": "D",
+          "content": "Corrosion of iron can be minimized by forming an impermeable barrier\nat its surface."
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<p>The two conditions necessary for the corrosion of iron to take place are presence of moisture and oxygen. Factors that catalyse the process of rusting are the presence of carbon dioxide, acids and impurities. It can be minimised by introducing of a barrier film between surface of iron and atmosphere. This can be done by</p>\n\n<p>(i) painting the surface.</p>\n\n<p>(ii) coating the surface with oil or grease.</p>\n\n<p>(iii) electroplating iron with non-corrosive metals such as nickel or chromium.</p>\n\n<p>(iv) covering the surface of iron with layer of more active metal with higher oxidation potential like zinc.</p>"
+    }
+  ]
+}

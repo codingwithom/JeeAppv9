@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "9fIRZYzuHw4D3nSNnBjgy2xukfjadluh",
+      "paperTitle": "JEE Main 2020 (Online) 5th September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-05 09:00",
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "hybridization-and-vsepr-theory",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-structure-of-pclsub5sub-in-the-solid-state-is--jee-main-chemistry-chemical-bonding-and-molecular-structure-gw0xvaitija7bcga",
+      "content": "The structure of PCl<sub>5</sub>\n in the solid state is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "square pyramidal"
+        },
+        {
+          "identifier": "B",
+          "content": "tetrahedral [PCl<sub>4</sub>]<sup>+</sup> and octahedral [PCl<sub>6</sub>]<sup>–</sup>"
+        },
+        {
+          "identifier": "C",
+          "content": "square planar [PCl<sub>4</sub>]<sup>+</sup> and octahedral [PCl<sub>6</sub>]<sup>–</sup>"
+        },
+        {
+          "identifier": "D",
+          "content": "trigonal bipyramidal"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "In solid state PCl<sub>5</sub>\n exist in Ionpair i.e. [PCl<sub>4</sub>]\n<sup>+</sup> and [PCl<sub>6</sub>]\n<sup>–</sup>\n<br><br>[PCl<sub>4</sub>]<sup>+</sup> is tetrahedral.\n<br>[PCl<sub>6</sub>]<sup>–</sup> is octahedral."
+    }
+  ]
+}

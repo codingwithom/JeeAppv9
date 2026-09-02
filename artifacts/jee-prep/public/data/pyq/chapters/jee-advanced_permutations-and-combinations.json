@@ -1,0 +1,956 @@
+{
+  "exam": "jee-advanced",
+  "subject": "mathematics",
+  "chapterKey": "permutations-and-combinations",
+  "title": "Permutations and Combinations | Mathematics | JEE Advanced Previous Year Questions",
+  "chapter": {
+    "metaId": "96df2389-7641-5fc4-9a5f-d3b87032909a",
+    "country": "in",
+    "exam": "jee-advanced",
+    "examGroup": "jee",
+    "key": "permutations-and-combinations",
+    "subject": "mathematics",
+    "chapterGroup": "algebra",
+    "createdAt": "2020-12-28T13:57:57.593Z",
+    "description": null,
+    "keyValuePairs": {},
+    "order": 4,
+    "subjectGroup": null,
+    "title": "Permutations and Combinations",
+    "updatedAt": "2024-07-10T09:56:53.778Z",
+    "type": "chapter",
+    "pyq_stats": [
+      {
+        "year": 2026,
+        "total": 2,
+        "avg": 1,
+        "weightage": 5.88
+      },
+      {
+        "year": 2025,
+        "total": 2,
+        "avg": 1,
+        "weightage": 6.25
+      },
+      {
+        "year": 2024,
+        "total": 3,
+        "avg": 1.5,
+        "weightage": 8.82
+      },
+      {
+        "year": 2023,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2022,
+        "total": 2,
+        "avg": 1,
+        "weightage": 5.56
+      },
+      {
+        "year": 2021,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.63
+      },
+      {
+        "year": 2020,
+        "total": 2,
+        "avg": 1,
+        "weightage": 5.56
+      },
+      {
+        "year": 2019,
+        "total": 2,
+        "avg": 1,
+        "weightage": 5.56
+      },
+      {
+        "year": 2018,
+        "total": 2,
+        "avg": 1,
+        "weightage": 5.56
+      },
+      {
+        "year": 2017,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.78
+      },
+      {
+        "year": 2016,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.78
+      },
+      {
+        "year": 2015,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.5
+      },
+      {
+        "year": 2014,
+        "total": 3,
+        "avg": 1.5,
+        "weightage": 7.5
+      },
+      {
+        "year": 2013,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.5
+      },
+      {
+        "year": 2012,
+        "total": 3,
+        "avg": 1.5,
+        "weightage": 7.5
+      },
+      {
+        "year": 2011,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2010,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2009,
+        "total": 2,
+        "avg": 1,
+        "weightage": 5.13
+      },
+      {
+        "year": 2008,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.22
+      },
+      {
+        "year": 2007,
+        "total": 2,
+        "avg": 0.67,
+        "weightage": 2.5
+      },
+      {
+        "year": 2006,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2005,
+        "total": 3,
+        "avg": 1,
+        "weightage": 5.17
+      },
+      {
+        "year": 2004,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.5
+      },
+      {
+        "year": 2003,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2002,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.5
+      },
+      {
+        "year": 2001,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.44
+      },
+      {
+        "year": 2000,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.13
+      },
+      {
+        "year": 1999,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1998,
+        "total": 1,
+        "avg": 1,
+        "weightage": 2
+      },
+      {
+        "year": 1997,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1996,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1995,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1994,
+        "total": 1,
+        "avg": 1,
+        "weightage": 2.13
+      },
+      {
+        "year": 1993,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1992,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1991,
+        "total": 1,
+        "avg": 1,
+        "weightage": 3.85
+      },
+      {
+        "year": 1990,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1989,
+        "total": 1,
+        "avg": 1,
+        "weightage": 3.45
+      },
+      {
+        "year": 1988,
+        "total": 2,
+        "avg": 2,
+        "weightage": 6.25
+      },
+      {
+        "year": 1987,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1986,
+        "total": 1,
+        "avg": 1,
+        "weightage": 3.33
+      },
+      {
+        "year": 1985,
+        "total": 2,
+        "avg": 2,
+        "weightage": 5.41
+      },
+      {
+        "year": 1984,
+        "total": 1,
+        "avg": 1,
+        "weightage": 2.78
+      },
+      {
+        "year": 1983,
+        "total": 1,
+        "avg": 1,
+        "weightage": 1.79
+      },
+      {
+        "year": 1982,
+        "total": 4,
+        "avg": 4,
+        "weightage": 10.26
+      },
+      {
+        "year": 1981,
+        "total": 1,
+        "avg": 1,
+        "weightage": 3.33
+      },
+      {
+        "year": 1980,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1979,
+        "total": 1,
+        "avg": 1,
+        "weightage": 4.35
+      },
+      {
+        "year": 1978,
+        "total": 1,
+        "avg": 1,
+        "weightage": 5
+      }
+    ],
+    "pyq": {
+      "count": {
+        "out_of_syllabus": 0,
+        "total": 56,
+        "private": 0,
+        "public": 56,
+        "bucket": 0
+      },
+      "isTopicWise": true
+    },
+    "image": null,
+    "isOutOfSyllabus": false,
+    "hideFromClassify": false,
+    "groups": [
+      {
+        "title": "Fill in the Blanks",
+        "key": "fill-blanks"
+      },
+      {
+        "title": "Numerical",
+        "key": "integer"
+      },
+      {
+        "title": "MCQ (Single Correct Answer)",
+        "key": "mcq"
+      },
+      {
+        "title": "MCQ (Multiple Correct Answer)",
+        "key": "mcqm"
+      },
+      {
+        "title": "Subjective",
+        "key": "subjective"
+      },
+      {
+        "title": "True of False",
+        "key": "tf"
+      }
+    ]
+  },
+  "questions": [
+    {
+      "title": "MCQ (Single Correct Answer)",
+      "key": "mcq",
+      "questions": [
+        {
+          "examGroup": "jee",
+          "permalink": "the-letters-of-the-word-cochin-are-permuted-and-all-the-perm-jee-advanced-2007-marks-3-eydibfbbijlqp52p.htm",
+          "paperTitle": "IIT-JEE 2007",
+          "question": {
+            "en": {
+              "content": "The letters of the word COCHIN are permuted and all the permutations are arranged in an alphabetical order as in an English dictionary. The number of words that appear before the word COCHIN is"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "consider-4-boxes-where-each-box-contains-3-red-balls-and-2-jee-advanced-mathematics-permutations-and-combinations-xjrzjotyjjfd35za",
+          "paperTitle": "JEE Advanced 2022 Paper 2 Online",
+          "question": {
+            "en": {
+              "content": "Consider 4 boxes, where each box contains 3 red balls and 2 blue balls. Assume that all 20 balls are distinct. In how many different ways can 10 balls be chosen from these 4 boxes so that from each box at least one red ball and one blue ball are chosen ?"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "in-a-high-school-a-committee-has-to-be-formed-from-a-group-jee-advanced-mathematics-trigonometric-functions-and-equations-ikej1kkvnyjzrbma",
+          "paperTitle": "JEE Advanced 2018 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "In a high school, a committee has to be formed from a group of 6 boys M<sub>1</sub>, M<sub>2</sub>, M<sub>3</sub>, M<sub>4</sub>, M<sub>5</sub>, M<sub>6</sub> and 5 girls G<sub>1</sub>, G<sub>2</sub>, G<sub>3</sub>, G<sub>4</sub>, G<sub>5</sub>.<br><br>(i) Let <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.448ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 640 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D6FC\" xlink:href=\"#MJX-TEX-I-1D6FC\"></use></g></g></g></svg></mjx-container><sub>1</sub> be the total number of ways in which the committee can be formed such that the committee has 5 members, having exactly 3 boys and 2 girls.<br><br>(ii) Let <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.448ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 640 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D6FC\" xlink:href=\"#MJX-TEX-I-1D6FC\"></use></g></g></g></svg></mjx-container><sub>2</sub> be the total number of ways in which the committee can be formed such that the committee has at least 2 members, and having an equal number of boys and girls.<br><br>i) Let <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.448ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 640 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D6FC\" xlink:href=\"#MJX-TEX-I-1D6FC\"></use></g></g></g></svg></mjx-container><sub>3</sub> be the total number of ways in which the committee can be formed such that the committee has 5 members, at least 2 of them being girls.<br><br>(iv) Let <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.448ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 640 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D6FC\" xlink:href=\"#MJX-TEX-I-1D6FC\"></use></g></g></g></svg></mjx-container><sub>4</sub> be the total number of ways in which the committee can be formed such that the committee has 4 members, having at least 2 girls such that both M<sub>1</sub> and G<sub>1</sub> are NOT in the committee together.<br>\n\n<table>\n    <tr>\n        <th>LIST-I</th>\n        <th>LIST-II</th>\n    </tr>\n    <tr>\n        <td>P. The value of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.436ex\" height=\"1.339ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 1076.6 592\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D6FC\" xlink:href=\"#MJX-TEX-I-1D6FC\"></use></g><g data-mml-node=\"mn\" transform=\"translate(673,-150) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g></g></svg></mjx-container> is</td>\n        <td>1. 136</td>\n    </tr>\n    <tr>\n        <td>Q. The value of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.436ex\" height=\"1.339ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 1076.6 592\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D6FC\" xlink:href=\"#MJX-TEX-I-1D6FC\"></use></g><g data-mml-node=\"mn\" transform=\"translate(673,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></svg></mjx-container> is</td>\n        <td>2. 189</td>\n    </tr>\n    <tr>\n        <td>R. The value of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.375ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.436ex\" height=\"1.375ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 1076.6 607.6\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D6FC\" xlink:href=\"#MJX-TEX-I-1D6FC\"></use></g><g data-mml-node=\"mn\" transform=\"translate(673,-150) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g></g></svg></mjx-container> is</td>\n        <td>3. 192</td>\n    </tr>\n    <tr>\n        <td>S. The value of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.436ex\" height=\"1.339ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 1076.6 592\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D6FC\" xlink:href=\"#MJX-TEX-I-1D6FC\"></use></g><g data-mml-node=\"mn\" transform=\"translate(673,-150) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g></g></svg></mjx-container> is</td>\n        <td>4. 200</td>\n    </tr>\n    <tr>\n        <td></td>\n        <td>5. 381</td>\n    </tr>\n    <tr>\n        <td></td>\n        <td>6. 461</td>\n    </tr>\n</table>\nThe correct option is "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "a-debate-club-consists-of-6-girls-and-4-boys-a-team-of-4-mem-jee-advanced-2016-marks-4-68el7mevjejepjxp.htm",
+          "paperTitle": "JEE Advanced 2016 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "A debate club consists of 6 girls and 4 boys. A team of 4 members is to be select from this club including the selection of a captain (from among these 4 members ) for the team. If the team has to include at most one boy, then the number of ways of selecting the team is "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "six-cards-and-six-envelopes-are-numbered-1-2-3-4-5-6-and-car-jee-advanced-2014-marks-4-fp4e3sykvofgujx9.htm",
+          "paperTitle": "JEE Advanced 2014 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "Six cards and six envelopes are numbered 1, 2, 3, 4, 5, 6 and cards are to be placed in envelopes so that each envelope contains exactly one card and no card is placed in the envelope bearing the same number and moreover the card numbered 1 is always placed in envelope numbered 2. Then the number of ways it can be done is "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-an-denote-the-number-of-all-n-digit-positive-integers-fo-jee-advanced-2012-marks-4-yudapgswo6uezx9e.htm",
+          "paperTitle": "IIT-JEE 2012 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "Let <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.357ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.344ex\" height=\"1.355ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -441 1036.3 598.8\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(562,-150) scale(0.707)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g></g></g></g></g></g></svg></mjx-container> denote the number of all n-digit positive integers formed  by the digits 0, 1 or both such that no consecutive digits in them are 0.Let <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.357ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.118ex\" height=\"1.927ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 936.3 851.8\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D44F\" xlink:href=\"#MJX-TEX-I-1D44F\"></use></g><g data-mml-node=\"mi\" transform=\"translate(462,-150) scale(0.707)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g></g></g></g></g></g></svg></mjx-container> = the number of such n-digit integers ending with digit 1 and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.357ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.127ex\" height=\"1.357ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 940.3 599.8\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D450\" xlink:href=\"#MJX-TEX-I-1D450\"></use></g><g data-mml-node=\"mi\" transform=\"translate(466,-150) scale(0.707)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g></g></g></g></g></g></svg></mjx-container> =the number of such n-digit integers ending with digit 0. \n<p> Which of the following is correct? </p> "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-an-denote-the-number-of-all-n-digit-positive-integers-fo-jee-advanced-2012-marks-4-gvynjs3yupvrcymy.htm",
+          "paperTitle": "IIT-JEE 2012 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "Let <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.357ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.344ex\" height=\"1.355ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -441 1036.3 598.8\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(562,-150) scale(0.707)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g></g></g></g></g></g></svg></mjx-container> denote the number of all n-digit positive integers formed  by the digits 0, 1 or both such that no consecutive digits in them are 0.Let <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.357ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.118ex\" height=\"1.927ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 936.3 851.8\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D44F\" xlink:href=\"#MJX-TEX-I-1D44F\"></use></g><g data-mml-node=\"mi\" transform=\"translate(462,-150) scale(0.707)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g></g></g></g></g></g></svg></mjx-container> = the number of such n-digit integers ending with digit 1 and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.357ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.127ex\" height=\"1.357ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 940.3 599.8\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D450\" xlink:href=\"#MJX-TEX-I-1D450\"></use></g><g data-mml-node=\"mi\" transform=\"translate(466,-150) scale(0.707)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g></g></g></g></g></g></svg></mjx-container> =the number of such n-digit integers ending with digit 0.\n<p> The value of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.375ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.958ex\" height=\"1.945ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 865.6 859.6\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D44F\" xlink:href=\"#MJX-TEX-I-1D44F\"></use></g><g data-mml-node=\"mn\" transform=\"translate(462,-150) scale(0.707)\"><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\"></use></g></g></g></g></g></g></svg></mjx-container> is </p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-total-number-of-ways-in-which-5-balls-of-different-colou-jee-advanced-2012-marks-4-w0pqdzs8hhib6aw4.htm",
+          "paperTitle": "IIT-JEE 2012 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "The total number of ways in which 5 balls of different colours can be distributed among 3 persons so that each person gets at least one ball is "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-number-of-seven-digit-integers-with-sum-of-the-digits-eq-jee-advanced-2009-marks-4-i8cdihxndutjjxjy.htm",
+          "paperTitle": "IIT-JEE 2009 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "The number of seven digit integers, with sum of the digits equal to 10 and formed by using the digits 1, 2 and 3 only, is "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "consider-all-possible-permutations-of-the-letters-of-the-wor-jee-advanced-2008-marks-4-3o3q5zoudicw3uyi.htm",
+          "paperTitle": "IIT-JEE 2008 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "<p>Consider all possible permutations of the letters of the word ENDEANOEL. Match the Statements/Expressions in Column I with the Statements/Expressions in Column II.</p>\n<p>\n<table class=\"tg\" style=\"undefined;table-layout: fixed; width: 477px\">\n<colgroup>\n<col style=\"width: 48px\">\n<col style=\"width: 197px\">\n<col style=\"width: 53px\">\n<col style=\"width: 179px\">\n</colgroup>\n<thead>\n  <tr>\n    <th class=\"tg-7btt\"></th>\n    <th class=\"tg-7btt\">Column I</th>\n    <th class=\"tg-7btt\"></th>\n    <th class=\"tg-7btt\">Column II</th>\n  </tr>\n</thead>\n<tbody>\n  <tr>\n    <td class=\"tg-c3ow\">(A)</td>\n    <td class=\"tg-0pky\">The number of permutations containing the word ENDEA is</td>\n    <td class=\"tg-c3ow\">(P)</td>\n    <td class=\"tg-0pky\">5!</td>\n  </tr>\n  <tr>\n    <td class=\"tg-c3ow\">(B)</td>\n    <td class=\"tg-0pky\">The number of permutations in which the letter E occurs in the first and the last position is</td>\n    <td class=\"tg-c3ow\">(Q)</td>\n    <td class=\"tg-0pky\">2 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 5!</td>\n  </tr>\n  <tr>\n    <td class=\"tg-c3ow\">(C)</td>\n    <td class=\"tg-0pky\">The number of permutations in which none of the letters D, L, N occurs in the last five positions is</td>\n    <td class=\"tg-c3ow\">(R)</td>\n    <td class=\"tg-0pky\">7 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 5!</td>\n  </tr>\n  <tr>\n    <td class=\"tg-c3ow\">(D)</td>\n    <td class=\"tg-0pky\">The number of permutations in which the letters A, E, O occur only in odd positions is</td>\n    <td class=\"tg-c3ow\">(S)</td>\n    <td class=\"tg-0pky\">21 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 5!</td>\n  </tr>\n</tbody>\n</table></p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-letters-of-the-word-cochin-are-permuted-and-all-the-p-jee-advanced-mathematics-complex-numbers-xkn5sugmvmeifkv9",
+          "paperTitle": "IIT-JEE 2007 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "<p>The letters of the word COCHIN are permuted and all the permutations are arranged in an alphabetical order as in an English dictionary. The number of words that appear before the word COCHIN is :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-the-lcm-of-p-q-is-r2r4s2-where-r-s-t-are-prime-numbers-an-jee-advanced-2005-screening-marks-2-srefofajbywuskfg.htm",
+          "paperTitle": "IIT-JEE 2005 Screening",
+          "question": {
+            "en": {
+              "content": "If the LCM of p, q is <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"6.82ex\" height=\"1.929ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -841.7 3014.7 852.7\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"1D45F\" xlink:href=\"#MJX-TEX-I-1D45F\"></use></g><g data-mml-node=\"mn\" transform=\"translate(484,363) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"mspace\" transform=\"translate(887.6,0)\"></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1054.6,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"1D45F\" xlink:href=\"#MJX-TEX-I-1D45F\"></use></g><g data-mml-node=\"mn\" transform=\"translate(484,363) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g><g data-mml-node=\"mspace\" transform=\"translate(1942.1,0)\"></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2109.1,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"1D460\" xlink:href=\"#MJX-TEX-I-1D460\"></use></g><g data-mml-node=\"mn\" transform=\"translate(502,363) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></g></svg></mjx-container>, where r, s, t are prime numbers and p, q are the positive integers then number of ordered pair (p, q) is "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "a-rectangle-with-sides-of-lenght-2m-1-and-2n-1-units-is-divi-jee-advanced-2005-screening-marks-2-kamyd3kwrnmlccpt.htm",
+          "paperTitle": "IIT-JEE 2005 Screening",
+          "question": {
+            "en": {
+              "content": "A rectangle with sides of lenght (2m - 1) and (2n - 1) units is divided into squares of unit lenght by drawing parallel lines as shown in the diagram, then the  number of rectangles possible  with odd side lengths is \n<img class=\"question-image\" src=\"https://imagex.cdn.examgoal.net/EQp7tYyWxuTwGnKs7/Mq2by69NbPTs4skhFTWlFriPmDeTk/xP8wVUgXRtKDo6wxEkjUXz/uploadfile.jpg\" loading=\"lazy\" alt=\"IIT-JEE 2005 Screening Mathematics - Permutations and Combinations Question 40 English\"> "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-number-of-arrangements-of-the-letters-of-the-word-banana-jee-advanced-2002-screening-marks-2-r0mmknsdp8jw5bqb.htm",
+          "paperTitle": "IIT-JEE 2002 Screening",
+          "question": {
+            "en": {
+              "content": "The number of arrangements of the letters of the word BANANA in which the two N's do not appear adjacently is "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-tn-denote-the-number-of-triangles-which-can-be-formed-us-jee-advanced-2001-screening-marks-2-fbxusgufn81iyh3k.htm",
+          "paperTitle": "IIT-JEE 2001 Screening",
+          "question": {
+            "en": {
+              "content": "Let <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.357ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.469ex\" height=\"1.889ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -677 1091.3 834.8\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D447\" xlink:href=\"#MJX-TEX-I-1D447\"></use></g><g data-mml-node=\"mi\" transform=\"translate(617,-150) scale(0.707)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g></g></g></g></g></svg></mjx-container> denote the number of triangles which can be formed using the vertices of a regular polygon of n sides. If <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.471ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"15.028ex\" height=\"2.002ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -677 6642.2 885\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D447\" xlink:href=\"#MJX-TEX-I-1D447\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(617,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mo\" transform=\"translate(600,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1378,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g></g><g data-mml-node=\"mo\" transform=\"translate(2217.2,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(3217.4,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D447\" xlink:href=\"#MJX-TEX-I-1D447\"></use></g><g data-mml-node=\"mi\" transform=\"translate(617,-150) scale(0.707)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(4586.4,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(5642.2,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\" transform=\"translate(500,0)\"></use></g></g></g></svg></mjx-container>, then n equals"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "how-many-different-nine-digit-numbers-can-be-formed-from-the-jee-advanced-2000-screening-marks-2-srvnzh7fi3qaslax.htm",
+          "paperTitle": "IIT-JEE 2000 Screening",
+          "question": {
+            "en": {
+              "content": "How many different nine digit numbers can be formed from the number 223355888 by rearranging its digits so that the odd digits occupy even positions?"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "a-five-digit-numbers-divisible-by-3-is-to-be-formed-using-th-jee-advanced-1989-marks-2-qs3wguponlvkiiou.htm",
+          "paperTitle": "IIT-JEE 1989",
+          "question": {
+            "en": {
+              "content": "A five-digit numbers divisible by 3 is to be formed using the numerals 0, 1, 2, 3, 4 and 5, without repetition. The total number of ways this can be done is "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "eight-chairs-are-numbered-1-to-8-two-women-and-three-men-wis-jee-advanced-1982-marks-2-zsyfcs1gq5rajprw.htm",
+          "paperTitle": "IIT-JEE 1982",
+          "question": {
+            "en": {
+              "content": "Eight chairs are numbered 1 to 8. Two women and three men wish to occupy one chair each. First the women choose the chairs from amongst the chairs marked 1 to 4; and then the men select the chairs from amongst the remaining. The number of possible arrangements is "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "ten-different-letters-of-an-alphabet-are-given-words-with-fi-jee-advanced-1982-marks-2-ayyrk748c3uozd3w.htm",
+          "paperTitle": "IIT-JEE 1982",
+          "question": {
+            "en": {
+              "content": "Ten different letters of an alphabet are given. Words with five letters are formed from these given letters. Then the numbers of words which have at least one letter repeated are "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-value-of-the-expression-47c4-sumlimitsj-15-52-jc3-is-equ-jee-advanced-1982-marks-2-nmhkxbhlgang5c5k.htm",
+          "paperTitle": "IIT-JEE 1982",
+          "question": {
+            "en": {
+              "content": "The value of the expression <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -2.561ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"17.292ex\" height=\"6.003ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1520.9 7642.9 2653.1\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mspace\"></g><g data-mml-node=\"msup\" transform=\"translate(167,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"></g><g data-mml-node=\"TeXAtom\" transform=\"translate(33,363) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use><use data-c=\"37\" xlink:href=\"#MJX-TEX-N-37\" transform=\"translate(500,0)\"></use></g></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(957.1,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mn\" transform=\"translate(748,-150) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(2330.9,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"munderover\" transform=\"translate(3331.1,0)\"><g data-mml-node=\"mo\" transform=\"translate(69.5,0)\"><use data-c=\"2211\" xlink:href=\"#MJX-TEX-SO-2211\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(0,-887.9) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D457\" xlink:href=\"#MJX-TEX-I-1D457\"></use></g><g data-mml-node=\"mo\" transform=\"translate(412,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1190,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(420.7,950) scale(0.707)\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(4692.8,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"></g><g data-mml-node=\"TeXAtom\" transform=\"translate(33,363) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1000,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1778,0)\"><use data-c=\"1D457\" xlink:href=\"#MJX-TEX-I-1D457\"></use></g></g></g><g data-mml-node=\"mspace\" transform=\"translate(1631.6,0)\"></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1798.6,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mn\" transform=\"translate(748,-150) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g></g></g></g></svg></mjx-container> is equal to "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "ncr-1-36ncr-84andncr-1-126-then-r-is-jee-advanced-1979-marks-2-81xmckybn0udkign.htm",
+          "paperTitle": "IIT-JEE 1979",
+          "question": {
+            "en": {
+              "content": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.471ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"38.338ex\" height=\"2.066ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 16945.2 913\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msup\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"></g><g data-mml-node=\"mi\" transform=\"translate(33,363) scale(0.707)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(507.3,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(748,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D45F\" xlink:href=\"#MJX-TEX-I-1D45F\"></use></g><g data-mml-node=\"mo\" transform=\"translate(451,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1229,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g></g><g data-mml-node=\"mo\" transform=\"translate(2805.6,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(3861.4,0)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(4861.4,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"msup\" transform=\"translate(5306.1,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"></g><g data-mml-node=\"mi\" transform=\"translate(33,363) scale(0.707)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(5813.3,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mi\" transform=\"translate(748,-150) scale(0.707)\"><use data-c=\"1D45F\" xlink:href=\"#MJX-TEX-I-1D45F\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(7208,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(8263.8,0)\"><use data-c=\"38\" xlink:href=\"#MJX-TEX-N-38\"></use><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"mspace\" transform=\"translate(9263.8,0)\"></g><g data-mml-node=\"mspace\" transform=\"translate(9430.8,0)\"></g><g data-mml-node=\"mi\" transform=\"translate(9597.8,0)\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(10126.8,0)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mi\" transform=\"translate(10726.8,0)\"><use data-c=\"1D451\" xlink:href=\"#MJX-TEX-I-1D451\"></use></g><g data-mml-node=\"mspace\" transform=\"translate(11249.8,0)\"></g><g data-mml-node=\"mspace\" transform=\"translate(11416.8,0)\"></g><g data-mml-node=\"msup\" transform=\"translate(11583.8,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"></g><g data-mml-node=\"mi\" transform=\"translate(33,363) scale(0.707)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(12091.1,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(748,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D45F\" xlink:href=\"#MJX-TEX-I-1D45F\"></use></g><g data-mml-node=\"mo\" transform=\"translate(451,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1229,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g></g><g data-mml-node=\"mo\" transform=\"translate(14389.4,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(15445.2,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\" transform=\"translate(500,0)\"></use><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\" transform=\"translate(1000,0)\"></use></g></g></g></svg></mjx-container>, then r is :"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Numerical",
+      "key": "integer",
+      "questions": [
+        {
+          "examGroup": "jee",
+          "permalink": "plet-s--1-2-3-ldots-10-consider-the-setp--jee-advanced-mathematics-sohzms1s1nbs43jy",
+          "paperTitle": "JEE Advanced 2026 Paper 1 Online",
+          "question": {
+            "en": {
+              "content": "<p>Let <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.566ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"19.448ex\" height=\"2.262ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 8595.9 1000\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D446\" xlink:href=\"#MJX-TEX-I-1D446\"></use></g><g data-mml-node=\"mo\" transform=\"translate(922.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1978.6,0)\"><use data-c=\"7B\" xlink:href=\"#MJX-TEX-N-7B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(2478.6,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2978.6,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mn\" transform=\"translate(3423.2,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mo\" transform=\"translate(3923.2,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mn\" transform=\"translate(4367.9,0)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g><g data-mml-node=\"mo\" transform=\"translate(4867.9,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mo\" transform=\"translate(5312.6,0)\"><use data-c=\"2026\" xlink:href=\"#MJX-TEX-N-2026\"></use></g><g data-mml-node=\"mo\" transform=\"translate(6651.2,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mn\" transform=\"translate(7095.9,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(8095.9,0)\"><use data-c=\"7D\" xlink:href=\"#MJX-TEX-N-7D\"></use></g></g></g></svg></mjx-container>. Consider the set</p> <p><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.566ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"116.156ex\" height=\"2.262ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 51341.1 1000\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D44B\" xlink:href=\"#MJX-TEX-I-1D44B\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1129.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2185.6,0)\"><use data-c=\"7B\" xlink:href=\"#MJX-TEX-N-7B\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2685.6,0)\"><use data-c=\"1D445\" xlink:href=\"#MJX-TEX-I-1D445\"></use></g><g data-mml-node=\"mo\" transform=\"translate(3722.3,0)\"><use data-c=\"3A\" xlink:href=\"#MJX-TEX-N-3A\"></use></g><g data-mml-node=\"mi\" transform=\"translate(4278.1,0)\"><use data-c=\"1D445\" xlink:href=\"#MJX-TEX-I-1D445\"></use></g><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\" transform=\"translate(5037.1,0)\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\"> is an equivalence relation on the set </text></g><g data-mml-node=\"mi\" transform=\"translate(28437.1,0)\"><use data-c=\"1D446\" xlink:href=\"#MJX-TEX-I-1D446\"></use></g><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\" transform=\"translate(29082.1,0)\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\"> such that </text></g><g data-mml-node=\"mi\" transform=\"translate(35682.1,0)\"><use data-c=\"1D445\" xlink:href=\"#MJX-TEX-I-1D445\"></use></g><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\" transform=\"translate(36441.1,0)\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\"> has exactly 42 elements</text></g><g data-mml-node=\"mo\" transform=\"translate(50841.1,0)\"><use data-c=\"7D\" xlink:href=\"#MJX-TEX-N-7D\"></use></g></g></g></svg></mjx-container>.</p> <p>Then the number of elements in <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.928ex\" height=\"1.545ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -683 852 683\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D44B\" xlink:href=\"#MJX-TEX-I-1D44B\"></use></g></g></g></svg></mjx-container> is ____________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-number-of-ways-to-distribute-b10b-identical-red-jee-advanced-mathematics-wzughzfkez518zbb",
+          "paperTitle": "JEE Advanced 2026 Paper 1 Online",
+          "question": {
+            "en": {
+              "content": "<p>The number of ways to distribute <b>10</b> identical red pens and <b>14</b> identical blue pens among four persons such that each person gets <b>6</b> pens, is ______________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-the-set-of-all-relations-r-on-the-set-a-b-c-d-jee-advanced-mathematics-z9tu8ou6jmcgvs1d",
+          "paperTitle": "JEE Advanced 2025 Paper 1 Online",
+          "question": {
+            "en": {
+              "content": "<p>Let the set of all relations <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.048ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.717ex\" height=\"1.593ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -683 759 704\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D445\" xlink:href=\"#MJX-TEX-I-1D445\"></use></g></g></g></svg></mjx-container> on the set <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.566ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"13.922ex\" height=\"2.262ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 6153.3 1000\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"7B\" xlink:href=\"#MJX-TEX-N-7B\"></use></g><g data-mml-node=\"mi\" transform=\"translate(500,0)\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1029,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1473.7,0)\"><use data-c=\"1D44F\" xlink:href=\"#MJX-TEX-I-1D44F\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1902.7,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2347.3,0)\"><use data-c=\"1D450\" xlink:href=\"#MJX-TEX-I-1D450\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2780.3,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(3225,0)\"><use data-c=\"1D451\" xlink:href=\"#MJX-TEX-I-1D451\"></use></g><g data-mml-node=\"mo\" transform=\"translate(3748,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(4192.7,0)\"><use data-c=\"1D452\" xlink:href=\"#MJX-TEX-I-1D452\"></use></g><g data-mml-node=\"mo\" transform=\"translate(4658.7,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(5103.3,0)\"><use data-c=\"1D453\" xlink:href=\"#MJX-TEX-I-1D453\"></use></g><g data-mml-node=\"mo\" transform=\"translate(5653.3,0)\"><use data-c=\"7D\" xlink:href=\"#MJX-TEX-N-7D\"></use></g></g></g></svg></mjx-container>, such that <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.048ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.717ex\" height=\"1.593ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -683 759 704\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D445\" xlink:href=\"#MJX-TEX-I-1D445\"></use></g></g></g></svg></mjx-container> is reflexive and symmetric, and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.048ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.717ex\" height=\"1.593ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -683 759 704\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D445\" xlink:href=\"#MJX-TEX-I-1D445\"></use></g></g></g></svg></mjx-container> contains exactly <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.557ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -666 1000 688\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use></g></g></g></svg></mjx-container> elements, be denoted by <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.452ex\" height=\"1.645ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 642 727\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"53\" xlink:href=\"#MJX-TEX-C-53\"></use></g></g></g></g></svg></mjx-container>.</p><p>Then the number of elements in <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.452ex\" height=\"1.645ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 642 727\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"53\" xlink:href=\"#MJX-TEX-C-53\"></use></g></g></g></g></svg></mjx-container> is ________________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-s-be-the-set-of-all-seven-digit-numbers-that-can-be-jee-advanced-mathematics-z81ein55wkau4ofh",
+          "paperTitle": "JEE Advanced 2025 Paper 1 Online",
+          "question": {
+            "en": {
+              "content": "<p>Let <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.459ex\" height=\"1.645ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 645 727\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D446\" xlink:href=\"#MJX-TEX-I-1D446\"></use></g></g></g></svg></mjx-container> be the set of all seven-digit numbers that can be formed using the digits <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.439ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.268ex\" height=\"1.946ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -666 1444.7 860\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mn\" transform=\"translate(944.7,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g></svg></mjx-container> and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.131ex\" height=\"1.507ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -666 500 666\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></svg></mjx-container>. For example, <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"7.919ex\" height=\"1.557ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -666 3500 688\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\" transform=\"translate(500,0)\"></use><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\" transform=\"translate(1000,0)\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(1500,0)\"></use><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\" transform=\"translate(2000,0)\"></use><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\" transform=\"translate(2500,0)\"></use><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\" transform=\"translate(3000,0)\"></use></g></g></g></svg></mjx-container> is in <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.459ex\" height=\"1.645ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 645 727\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D446\" xlink:href=\"#MJX-TEX-I-1D446\"></use></g></g></g></svg></mjx-container>, but <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"7.919ex\" height=\"1.557ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -666 3500 688\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\" transform=\"translate(500,0)\"></use><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\" transform=\"translate(1000,0)\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(1500,0)\"></use><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\" transform=\"translate(2000,0)\"></use><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\" transform=\"translate(2500,0)\"></use><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\" transform=\"translate(3000,0)\"></use></g></g></g></svg></mjx-container> is <b>NOT</b> in <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.459ex\" height=\"1.645ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 645 727\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D446\" xlink:href=\"#MJX-TEX-I-1D446\"></use></g></g></g></svg></mjx-container>.</p><p>Then the number of elements <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.294ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 572 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g></g></g></svg></mjx-container> in <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.459ex\" height=\"1.645ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 645 727\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D446\" xlink:href=\"#MJX-TEX-I-1D446\"></use></g></g></g></svg></mjx-container> such that at least one of the digits <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.131ex\" height=\"1.557ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -666 500 688\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g></g></g></svg></mjx-container> and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.131ex\" height=\"1.507ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -666 500 666\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g></svg></mjx-container> appears exactly twice in <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.294ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 572 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g></g></g></svg></mjx-container>, is equal to ____________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-nx-m-c6-then-the-value-of-m-is--jee-advanced-mathematics-7scke03bpttrjlod",
+          "paperTitle": "JEE Advanced 2024 Paper 2 Online",
+          "question": {
+            "en": {
+              "content": "If <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.566ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"12.26ex\" height=\"2.262ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 5418.9 1000\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mo\" transform=\"translate(600,0)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"mi\" transform=\"translate(989,0)\"><use data-c=\"1D44B\" xlink:href=\"#MJX-TEX-I-1D44B\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1841,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2507.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"msup\" transform=\"translate(3563.6,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"></g><g data-mml-node=\"mi\" transform=\"translate(33,363) scale(0.707)\"><use data-c=\"1D45A\" xlink:href=\"#MJX-TEX-I-1D45A\"></use></g></g><g data-mml-node=\"msub\" transform=\"translate(4267.4,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mn\" transform=\"translate(748,-150) scale(0.707)\"><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\"></use></g></g></g></g></svg></mjx-container>, then the value of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.986ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 878 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D45A\" xlink:href=\"#MJX-TEX-I-1D45A\"></use></g></g></g></svg></mjx-container> is _____"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-the-value-of-nynz-is-k2-then-k-is--jee-advanced-mathematics-rnspgjaczbfro7uk",
+          "paperTitle": "JEE Advanced 2024 Paper 2 Online",
+          "question": {
+            "en": {
+              "content": "If the value of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.566ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"12.363ex\" height=\"2.262ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 5464.4 1000\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mo\" transform=\"translate(600,0)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"mi\" transform=\"translate(989,0)\"><use data-c=\"1D44C\" xlink:href=\"#MJX-TEX-I-1D44C\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1752,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2363.2,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mi\" transform=\"translate(3363.4,0)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mo\" transform=\"translate(3963.4,0)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"mi\" transform=\"translate(4352.4,0)\"><use data-c=\"1D44D\" xlink:href=\"#MJX-TEX-I-1D44D\"></use></g><g data-mml-node=\"mo\" transform=\"translate(5075.4,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g></g></svg></mjx-container> is <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.166ex\" height=\"1.912ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -833.9 957.6 844.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"1D458\" xlink:href=\"#MJX-TEX-I-1D458\"></use></g><g data-mml-node=\"mn\" transform=\"translate(554,363) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></svg></mjx-container>, then <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.564ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.437ex\" height=\"2.26ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -749.5 1077 999\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\" transform=\"translate(0 -0.5)\"><use data-c=\"7C\" xlink:href=\"#MJX-TEX-N-7C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(278,0)\"><use data-c=\"1D458\" xlink:href=\"#MJX-TEX-I-1D458\"></use></g><g data-mml-node=\"mo\" transform=\"translate(799,0) translate(0 -0.5)\"><use data-c=\"7C\" xlink:href=\"#MJX-TEX-N-7C\"></use></g></g></g></svg></mjx-container> is _________."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pa-group-of-9-students-s1-s2-ldots-s9-is-to-be-jee-advanced-mathematics-zcb5qhb5theau8qf",
+          "paperTitle": "JEE Advanced 2024 Paper 1 Online",
+          "question": {
+            "en": {
+              "content": "<p>A group of 9 students, <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.439ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"12.193ex\" height=\"1.439ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 5389.3 636\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D460\" xlink:href=\"#MJX-TEX-I-1D460\"></use></g><g data-mml-node=\"mn\" transform=\"translate(502,-150) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(905.6,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"msub\" transform=\"translate(1350.2,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D460\" xlink:href=\"#MJX-TEX-I-1D460\"></use></g><g data-mml-node=\"mn\" transform=\"translate(502,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(2255.8,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2700.4,0)\"><use data-c=\"2026\" xlink:href=\"#MJX-TEX-N-2026\"></use></g><g data-mml-node=\"mo\" transform=\"translate(4039.1,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"msub\" transform=\"translate(4483.8,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D460\" xlink:href=\"#MJX-TEX-I-1D460\"></use></g><g data-mml-node=\"mn\" transform=\"translate(502,-150) scale(0.707)\"><use data-c=\"39\" xlink:href=\"#MJX-TEX-N-39\"></use></g></g></g></g></svg></mjx-container>, is to be divided to form three teams <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.439ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.66ex\" height=\"1.984ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -683 2059.7 877\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D44B\" xlink:href=\"#MJX-TEX-I-1D44B\"></use></g><g data-mml-node=\"mo\" transform=\"translate(852,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1296.7,0)\"><use data-c=\"1D44C\" xlink:href=\"#MJX-TEX-I-1D44C\"></use></g></g></g></svg></mjx-container>, and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.636ex\" height=\"1.545ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -683 723 683\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D44D\" xlink:href=\"#MJX-TEX-I-1D44D\"></use></g></g></g></svg></mjx-container> of sizes 2,3 , and 4 , respectively. Suppose that <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.049ex\" height=\"1.339ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 905.6 592\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D460\" xlink:href=\"#MJX-TEX-I-1D460\"></use></g><g data-mml-node=\"mn\" transform=\"translate(502,-150) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g></g></svg></mjx-container> cannot be selected for the team <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.928ex\" height=\"1.545ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -683 852 683\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D44B\" xlink:href=\"#MJX-TEX-I-1D44B\"></use></g></g></g></svg></mjx-container>, and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.049ex\" height=\"1.339ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 905.6 592\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D460\" xlink:href=\"#MJX-TEX-I-1D460\"></use></g><g data-mml-node=\"mn\" transform=\"translate(502,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></svg></mjx-container> cannot be selected for the team <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.002ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.726ex\" height=\"1.543ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -683 763 682\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D44C\" xlink:href=\"#MJX-TEX-I-1D44C\"></use></g></g></g></svg></mjx-container>. Then the number of ways to form such teams, is ____________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-number-of-4-digit-integers-in-the-closed-interval-2022-jee-advanced-mathematics-complex-numbers-s5uwb5mfreczlvoc",
+          "paperTitle": "JEE Advanced 2022 Paper 1 Online",
+          "question": {
+            "en": {
+              "content": "The number of 4-digit integers in the closed interval [2022, 4482] formed by using the digits <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.439ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"11.817ex\" height=\"1.971ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -677 5223.3 871\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mn\" transform=\"translate(944.7,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1444.7,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1889.3,0)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2389.3,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mn\" transform=\"translate(2834,0)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g><g data-mml-node=\"mo\" transform=\"translate(3334,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mn\" transform=\"translate(3778.7,0)\"><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\"></use></g><g data-mml-node=\"mo\" transform=\"translate(4278.7,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mn\" transform=\"translate(4723.3,0)\"><use data-c=\"37\" xlink:href=\"#MJX-TEX-N-37\"></use></g></g></g></svg></mjx-container> is _________."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "an-engineer-is-required-to-visit-a-factory-for-exactly-four-jee-advanced-mathematics-trigonometric-functions-and-equations-k8hqjbplwonzikft",
+          "paperTitle": "JEE Advanced 2020 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "An engineer is required to visit a factory for exactly four days during the first 15 days of every month and it is mandatory that no two visits take place on consecutive days. Then the number of all possible ways in which such visits to the factory can be made by the engineer during 1-15 June 2021 is ..........."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "in-a-hotel-four-rooms-are-available-six-persons-are-to-be-jee-advanced-mathematics-trigonometric-functions-and-equations-v1cdfouhwnq0e5xo",
+          "paperTitle": "JEE Advanced 2020 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "In a hotel, four rooms are available. Six persons are to be accommodated in these four rooms in such a way that each of these rooms contains at least one person and at most two persons. Then the number of all possible ways in which this can be done is .........."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-x-denote-the-number-of-elements-in-a-set-x-let-s--1-jee-advanced-mathematics-trigonometric-functions-and-equations-bic0tluxucalnzsd",
+          "paperTitle": "JEE Advanced 2019 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "Let |X| denote the number of elements in a set X. Let S = {1, 2, 3, 4, 5, 6} be a sample space, where each element is equally likely to occur. If A and B are independent events associated with S, then the number of ordered pairs (A, B) such that 1 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.312ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.751ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -636 778 774\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2264\" xlink:href=\"#MJX-TEX-N-2264\"></use></g></g></g></svg></mjx-container> |B| &lt; |A|, equals ............."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "five-persons-a-b-c-d-and-e-are-seated-in-a-circular-arran-jee-advanced-mathematics-trigonometric-functions-and-equations-3nfz6dvmszvwk4bd",
+          "paperTitle": "JEE Advanced 2019 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "Five persons A, B, C, D and E are seated in a circular arrangement. If each of them is given a hat of one of the three colours red, blue and green, then the number of ways of distributing the hats such that the persons seated in adjacent seats get different coloured hats is ............"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-number-of-5-digit-numbers-which-are-divisible-by-4-with-jee-advanced-mathematics-trigonometric-functions-and-equations-fzl0yzxtsi7q6jd7",
+          "paperTitle": "JEE Advanced 2018 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "The number of 5 digit numbers which are divisible by 4, with digits from the set {1, 2, 3, 4, 5} and the repetition of digits is allowed, is ................."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "words-of-length-10-are-formed-using-the-letters-a-b-c-d-jee-advanced-mathematics-trigonometric-functions-and-equations-bmd9be689ptbmslg",
+          "paperTitle": "JEE Advanced 2017 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "Words of length 10 are formed using the letters A, B, C, D, E, F, G, H, I, J. Let x be the number of such words where no letter is repeated; and let y be the number of such words where exactly one letter is repeated twice and no other letter is repeated. Then, <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.816ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.71ex\" height=\"2.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -797.5 1198 1158.1\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mi\" transform=\"translate(423.6,485) scale(0.707)\"><use data-c=\"1D466\" xlink:href=\"#MJX-TEX-I-1D466\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(220,-345) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"39\" xlink:href=\"#MJX-TEX-N-39\"></use></g><g data-mml-node=\"mi\" transform=\"translate(500,0)\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g></g><rect width=\"958\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container> = ?"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-n-be-the-number-of-ways-in-which-5-boys-and-5-girls-can-jee-advanced-2015-marks-4-ul7pv7jnnxvelzy3.htm",
+          "paperTitle": "JEE Advanced 2015 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "Let n be the number of ways in which 5 boys and 5 girls can stand in a queue in such a way that all the girls stand consecutively in the queue. Let m be the number of ways in which 5 boys and 5 girls can stand in a queue in such a way that exactly four girls stand consecutively in the queue. Then the value of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.798ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.4ex\" height=\"2.397ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -706.5 1060.8 1059.3\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mi\" transform=\"translate(220,394) scale(0.707)\"><use data-c=\"1D45A\" xlink:href=\"#MJX-TEX-I-1D45A\"></use></g><g data-mml-node=\"mi\" transform=\"translate(318.3,-345) scale(0.707)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><rect width=\"820.8\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container> is"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-n-ge-2-be-an-integer-take-n-distinct-points-on-a-circle-jee-advanced-2014-marks-4-1btjqz4mri4l18xj.htm",
+          "paperTitle": "JEE Advanced 2014 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "Let <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.312ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.506ex\" height=\"1.819ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -666 2433.6 804\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mo\" transform=\"translate(877.8,0)\"><use data-c=\"2265\" xlink:href=\"#MJX-TEX-N-2265\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1933.6,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></svg></mjx-container> be an integer. Take n distinct points on a circle and join each pair of points by a line segment. Colour the line segment joining every pair of adjacent points by blue and the rest by red. If the number of red and blue line segments are equal, then the value of n is"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-n1-n2-n3-n4-n5-be-positive-integers-such-that-n1-n2-n3-n-jee-advanced-2014-marks-4-s6s6fyf1lczojnfg.htm",
+          "paperTitle": "JEE Advanced 2014 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "Let <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.375ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"26.061ex\" height=\"1.596ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 11519 705.6\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(633,-150) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g><g data-mml-node=\"mspace\" transform=\"translate(1036.6,0)\"></g><g data-mml-node=\"mo\" transform=\"translate(1481.3,0)\"><use data-c=\"3C\" xlink:href=\"#MJX-TEX-N-3C\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2537.1,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(633,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"mspace\" transform=\"translate(3573.7,0)\"></g><g data-mml-node=\"mo\" transform=\"translate(4018.4,0)\"><use data-c=\"3C\" xlink:href=\"#MJX-TEX-N-3C\"></use></g><g data-mml-node=\"mspace\" transform=\"translate(4796.4,0)\"></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(5241.2,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(633,-150) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g><g data-mml-node=\"mspace\" transform=\"translate(6277.8,0)\"></g><g data-mml-node=\"mo\" transform=\"translate(6722.5,0)\"><use data-c=\"3C\" xlink:href=\"#MJX-TEX-N-3C\"></use></g><g data-mml-node=\"mspace\" transform=\"translate(7500.5,0)\"></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(7945.3,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(633,-150) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g><g data-mml-node=\"mspace\" transform=\"translate(8981.9,0)\"></g><g data-mml-node=\"mo\" transform=\"translate(9426.7,0)\"><use data-c=\"3C\" xlink:href=\"#MJX-TEX-N-3C\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(10482.4,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(633,-150) scale(0.707)\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use></g></g></g></g></g></svg></mjx-container> be positive integers such that <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.375ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"25.056ex\" height=\"1.694ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 11074.5 748.6\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(633,-150) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g><g data-mml-node=\"mspace\" transform=\"translate(1036.6,0)\"></g><g data-mml-node=\"mo\" transform=\"translate(1425.8,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2426,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(633,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"mspace\" transform=\"translate(3462.6,0)\"></g><g data-mml-node=\"mo\" transform=\"translate(3851.8,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mspace\" transform=\"translate(4629.8,0)\"></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(5019,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(633,-150) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g><g data-mml-node=\"mspace\" transform=\"translate(6055.5,0)\"></g><g data-mml-node=\"mo\" transform=\"translate(6444.8,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mspace\" transform=\"translate(7222.8,0)\"></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(7612,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(633,-150) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g><g data-mml-node=\"mspace\" transform=\"translate(8648.5,0)\"></g><g data-mml-node=\"mo\" transform=\"translate(9037.8,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(10038,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(633,-150) scale(0.707)\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use></g></g></g></g></g></svg></mjx-container> = 20. Then the number of such destinct arrangements <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.566ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"20.533ex\" height=\"2.262ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 9075.4 1000\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mspace\"></g><g data-mml-node=\"mo\" transform=\"translate(167,0)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(556,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(633,-150) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g><g data-mml-node=\"mspace\" transform=\"translate(1592.6,0)\"></g><g data-mml-node=\"mo\" transform=\"translate(1759.6,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mspace\" transform=\"translate(2037.6,0)\"></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2371.2,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(633,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(3407.8,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mspace\" transform=\"translate(3685.8,0)\"></g><g data-mml-node=\"mspace\" transform=\"translate(3852.8,0)\"></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(4186.4,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(633,-150) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(5223,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mspace\" transform=\"translate(5501,0)\"></g><g data-mml-node=\"mspace\" transform=\"translate(5668,0)\"></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(6001.7,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(633,-150) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g><g data-mml-node=\"mspace\" transform=\"translate(7038.2,0)\"></g><g data-mml-node=\"mo\" transform=\"translate(7205.2,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(7649.9,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(633,-150) scale(0.707)\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(8686.4,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g></g></svg></mjx-container> is"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "consider-the-set-of-eight-vectors-v-left-ahat-i-bhat-j-chat-jee-advanced-2013-marks-4-itcoatoffgsszr8x.htm",
+          "paperTitle": "JEE Advanced 2013 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "Consider the set of eight vectors <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -1.469ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"38.714ex\" height=\"4.07ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1149.5 17111.6 1799\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D449\" xlink:href=\"#MJX-TEX-I-1D449\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1046.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mrow\" transform=\"translate(2102.6,0)\"><g data-mml-node=\"mo\" transform=\"translate(0 -0.5)\"><use data-c=\"7B\" xlink:href=\"#MJX-TEX-LO-7B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(667,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"mspace\" transform=\"translate(529,0)\"></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(696,0)\"><g data-mml-node=\"mover\"><g data-mml-node=\"mi\"><use data-c=\"1D456\" xlink:href=\"#MJX-TEX-I-1D456\"></use></g><g data-mml-node=\"mo\" transform=\"translate(246.5,235) translate(-250 0)\"><use data-c=\"2C6\" xlink:href=\"#MJX-TEX-N-2C6\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(1263.2,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2263.4,0)\"><use data-c=\"1D44F\" xlink:href=\"#MJX-TEX-I-1D44F\"></use></g><g data-mml-node=\"mspace\" transform=\"translate(2692.4,0)\"></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2859.4,0)\"><g data-mml-node=\"mover\"><g data-mml-node=\"mi\"><use data-c=\"1D457\" xlink:href=\"#MJX-TEX-I-1D457\"></use></g><g data-mml-node=\"mo\" transform=\"translate(359,235) translate(-250 0)\"><use data-c=\"2C6\" xlink:href=\"#MJX-TEX-N-2C6\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(3493.7,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mi\" transform=\"translate(4493.9,0)\"><use data-c=\"1D450\" xlink:href=\"#MJX-TEX-I-1D450\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(4926.9,0)\"><g data-mml-node=\"mover\"><g data-mml-node=\"mi\"><use data-c=\"1D458\" xlink:href=\"#MJX-TEX-I-1D458\"></use></g><g data-mml-node=\"mo\" transform=\"translate(212.5,268) translate(-250 0)\"><use data-c=\"2C6\" xlink:href=\"#MJX-TEX-N-2C6\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(5725.7,0)\"><use data-c=\"3A\" xlink:href=\"#MJX-TEX-N-3A\"></use></g><g data-mml-node=\"mi\" transform=\"translate(6281.4,0)\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(6810.4,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mspace\" transform=\"translate(7088.4,0)\"></g><g data-mml-node=\"mi\" transform=\"translate(7422.1,0)\"><use data-c=\"1D44F\" xlink:href=\"#MJX-TEX-I-1D44F\"></use></g><g data-mml-node=\"mo\" transform=\"translate(7851.1,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mspace\" transform=\"translate(8129.1,0)\"></g><g data-mml-node=\"mi\" transform=\"translate(8462.8,0)\"><use data-c=\"1D450\" xlink:href=\"#MJX-TEX-I-1D450\"></use></g><g data-mml-node=\"mspace\" transform=\"translate(8895.8,0)\"></g><g data-mml-node=\"mo\" transform=\"translate(9340.6,0)\"><use data-c=\"2208\" xlink:href=\"#MJX-TEX-N-2208\"></use></g><g data-mml-node=\"mrow\" transform=\"translate(10285.3,0)\"><g data-mml-node=\"mo\"><use data-c=\"7B\" xlink:href=\"#MJX-TEX-N-7B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(500,0)\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(778,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1278,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mspace\" transform=\"translate(1556,0)\"></g><g data-mml-node=\"mn\" transform=\"translate(1889.7,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(2889.7,0)\"><use data-c=\"7D\" xlink:href=\"#MJX-TEX-N-7D\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(14342,0) translate(0 -0.5)\"><use data-c=\"7D\" xlink:href=\"#MJX-TEX-LO-7D\"></use></g></g></g></g></svg></mjx-container>. Three non-coplanar vectors can be chosen from v in <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.124ex\" height=\"1.528ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -675.5 938.7 675.5\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msup\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mi\" transform=\"translate(533,363) scale(0.707)\"><use data-c=\"1D45D\" xlink:href=\"#MJX-TEX-I-1D45D\"></use></g></g></g></g></g></svg></mjx-container> ways. Then p is "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-left-xyz-right-be-points-with-integer-coordinates-satisf-jee-advanced-2009-marks-2-pis85epyrn5fv60s.htm",
+          "paperTitle": "IIT-JEE 2009 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "Let <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.566ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"8.003ex\" height=\"2.262ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 3537.3 1000\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mrow\"><g data-mml-node=\"mo\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(389,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g><g data-mml-node=\"mo\" transform=\"translate(572,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mspace\" transform=\"translate(850,0)\"></g><g data-mml-node=\"mi\" transform=\"translate(1183.7,0)\"><use data-c=\"1D466\" xlink:href=\"#MJX-TEX-I-1D466\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1679.7,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mspace\" transform=\"translate(1957.7,0)\"></g><g data-mml-node=\"mi\" transform=\"translate(2291.3,0)\"><use data-c=\"1D467\" xlink:href=\"#MJX-TEX-I-1D467\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(3148.3,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g></g></g></svg></mjx-container> be points with integer coordinates satisfying the system of homogeneous equation: \n<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\" display=\"true\"><svg style=\"vertical-align: -4.016ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"18.082ex\" height=\"9.163ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -2275 7992.4 4050\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mtable\" data-frame-styles=\"\"><g data-mml-node=\"mtr\" transform=\"translate(0,1400)\"><g data-mml-node=\"mtd\" transform=\"translate(839,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g><g data-mml-node=\"mi\" transform=\"translate(500,0)\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1294.2,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2294.4,0)\"><use data-c=\"1D466\" xlink:href=\"#MJX-TEX-I-1D466\"></use></g><g data-mml-node=\"mo\" transform=\"translate(3012.7,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mi\" transform=\"translate(4012.9,0)\"><use data-c=\"1D467\" xlink:href=\"#MJX-TEX-I-1D467\"></use></g><g data-mml-node=\"mo\" transform=\"translate(4758.7,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(5814.4,0)\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g></g></g></g><g data-mml-node=\"mtr\"><g data-mml-node=\"mtd\" transform=\"translate(1309.2,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(778,0)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1278,0)\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2072.2,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mi\" transform=\"translate(3072.4,0)\"><use data-c=\"1D467\" xlink:href=\"#MJX-TEX-I-1D467\"></use></g><g data-mml-node=\"mo\" transform=\"translate(3818.2,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(4874,0)\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g></g></g></g><g data-mml-node=\"mtr\" transform=\"translate(0,-1400)\"><g data-mml-node=\"mtd\" transform=\"translate(200,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(778,0)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1278,0)\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2072.2,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(3072.4,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mi\" transform=\"translate(3572.4,0)\"><use data-c=\"1D466\" xlink:href=\"#MJX-TEX-I-1D466\"></use></g><g data-mml-node=\"mo\" transform=\"translate(4290.7,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mi\" transform=\"translate(5290.9,0)\"><use data-c=\"1D467\" xlink:href=\"#MJX-TEX-I-1D467\"></use></g><g data-mml-node=\"mo\" transform=\"translate(6036.7,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(7092.4,0)\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g></g></g></g></g></g></g></svg></mjx-container>\n<p>Then the number of such points for which <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.464ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"18.608ex\" height=\"2.351ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -833.9 8224.6 1038.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g><g data-mml-node=\"mn\" transform=\"translate(605,363) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(1230.8,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2231,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"1D466\" xlink:href=\"#MJX-TEX-I-1D466\"></use></g><g data-mml-node=\"mn\" transform=\"translate(579.3,363) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(3436.1,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(4436.3,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"1D467\" xlink:href=\"#MJX-TEX-I-1D467\"></use></g><g data-mml-node=\"mn\" transform=\"translate(551.1,363) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(5668.8,0)\"><use data-c=\"2264\" xlink:href=\"#MJX-TEX-N-2264\"></use></g><g data-mml-node=\"mn\" transform=\"translate(6724.6,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(1000,0)\"></use></g></g></g></svg></mjx-container> is</p>"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "MCQ (More than One Correct Answer)",
+      "key": "mcqm",
+      "questions": [
+        {
+          "examGroup": "jee",
+          "permalink": "let-brbrs1--left-ijkijk-in--12-jee-advanced-mathematics-trigonometric-functions-and-equations-qc6lkzsa2imbxjm1",
+          "paperTitle": "JEE Advanced 2021 Paper 2 Online",
+          "question": {
+            "en": {
+              "content": "Let <br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.566ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"36.194ex\" height=\"2.262ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 15997.9 1000\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D446\" xlink:href=\"#MJX-TEX-I-1D446\"></use></g><g data-mml-node=\"mn\" transform=\"translate(646,-150) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(1327.3,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mrow\" transform=\"translate(2383.1,0)\"><g data-mml-node=\"mo\"><use data-c=\"7B\" xlink:href=\"#MJX-TEX-N-7B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(500,0)\"><g data-mml-node=\"mo\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"mi\" transform=\"translate(389,0)\"><use data-c=\"1D456\" xlink:href=\"#MJX-TEX-I-1D456\"></use></g><g data-mml-node=\"mo\" transform=\"translate(734,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1178.7,0)\"><use data-c=\"1D457\" xlink:href=\"#MJX-TEX-I-1D457\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1590.7,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2035.3,0)\"><use data-c=\"1D458\" xlink:href=\"#MJX-TEX-I-1D458\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2556.3,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g><g data-mml-node=\"mo\" transform=\"translate(3223.1,0)\"><use data-c=\"3A\" xlink:href=\"#MJX-TEX-N-3A\"></use></g><g data-mml-node=\"mi\" transform=\"translate(3778.9,0)\"><use data-c=\"1D456\" xlink:href=\"#MJX-TEX-I-1D456\"></use></g><g data-mml-node=\"mo\" transform=\"translate(4123.9,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(4568.6,0)\"><use data-c=\"1D457\" xlink:href=\"#MJX-TEX-I-1D457\"></use></g><g data-mml-node=\"mo\" transform=\"translate(4980.6,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(5425.2,0)\"><use data-c=\"1D458\" xlink:href=\"#MJX-TEX-I-1D458\"></use></g><g data-mml-node=\"mo\" transform=\"translate(6224,0)\"><use data-c=\"2208\" xlink:href=\"#MJX-TEX-N-2208\"></use></g><g data-mml-node=\"mo\" transform=\"translate(7168.8,0)\"><use data-c=\"7B\" xlink:href=\"#MJX-TEX-N-7B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(7668.8,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mo\" transform=\"translate(8168.8,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mn\" transform=\"translate(8613.4,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mo\" transform=\"translate(9113.4,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mo\" transform=\"translate(9558.1,0)\"><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(9836.1,0)\"><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(10114.1,0)\"><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(10392.1,0)\"><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(10670.1,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mn\" transform=\"translate(11114.8,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(12114.8,0)\"><use data-c=\"7D\" xlink:href=\"#MJX-TEX-N-7D\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(13114.8,0)\"><use data-c=\"7D\" xlink:href=\"#MJX-TEX-N-7D\"></use></g></g></g></g></svg></mjx-container>,<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.566ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"50.256ex\" height=\"2.262ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 22213.3 1000\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D446\" xlink:href=\"#MJX-TEX-I-1D446\"></use></g><g data-mml-node=\"mn\" transform=\"translate(646,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(1327.3,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mrow\" transform=\"translate(2383.1,0)\"><g data-mml-node=\"mo\"><use data-c=\"7B\" xlink:href=\"#MJX-TEX-N-7B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(500,0)\"><g data-mml-node=\"mo\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"mi\" transform=\"translate(389,0)\"><use data-c=\"1D456\" xlink:href=\"#MJX-TEX-I-1D456\"></use></g><g data-mml-node=\"mo\" transform=\"translate(734,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1178.7,0)\"><use data-c=\"1D457\" xlink:href=\"#MJX-TEX-I-1D457\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1590.7,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2257.4,0)\"><use data-c=\"3A\" xlink:href=\"#MJX-TEX-N-3A\"></use></g><g data-mml-node=\"mn\" transform=\"translate(2813.2,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mo\" transform=\"translate(3591,0)\"><use data-c=\"2264\" xlink:href=\"#MJX-TEX-N-2264\"></use></g><g data-mml-node=\"mi\" transform=\"translate(4646.8,0)\"><use data-c=\"1D456\" xlink:href=\"#MJX-TEX-I-1D456\"></use></g><g data-mml-node=\"mo\" transform=\"translate(5269.6,0)\"><use data-c=\"3C\" xlink:href=\"#MJX-TEX-N-3C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(6325.3,0)\"><use data-c=\"1D457\" xlink:href=\"#MJX-TEX-I-1D457\"></use></g><g data-mml-node=\"mo\" transform=\"translate(6959.6,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(7959.8,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mo\" transform=\"translate(8737.6,0)\"><use data-c=\"2264\" xlink:href=\"#MJX-TEX-N-2264\"></use></g><g data-mml-node=\"mn\" transform=\"translate(9793.3,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(10793.3,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(11238,0)\"><use data-c=\"1D456\" xlink:href=\"#MJX-TEX-I-1D456\"></use></g><g data-mml-node=\"mo\" transform=\"translate(11583,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(12027.7,0)\"><use data-c=\"1D457\" xlink:href=\"#MJX-TEX-I-1D457\"></use></g><g data-mml-node=\"mo\" transform=\"translate(12717.4,0)\"><use data-c=\"2208\" xlink:href=\"#MJX-TEX-N-2208\"></use></g><g data-mml-node=\"mo\" transform=\"translate(13662.2,0)\"><use data-c=\"7B\" xlink:href=\"#MJX-TEX-N-7B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(14162.2,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mo\" transform=\"translate(14662.2,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mn\" transform=\"translate(15106.9,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mo\" transform=\"translate(15606.9,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mo\" transform=\"translate(16051.6,0)\"><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(16329.6,0)\"><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(16607.6,0)\"><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(16885.6,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mn\" transform=\"translate(17330.2,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(18330.2,0)\"><use data-c=\"7D\" xlink:href=\"#MJX-TEX-N-7D\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(19330.2,0)\"><use data-c=\"7D\" xlink:href=\"#MJX-TEX-N-7D\"></use></g></g></g></g></svg></mjx-container>,<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.566ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"56.697ex\" height=\"2.262ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 25060.1 1000\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D446\" xlink:href=\"#MJX-TEX-I-1D446\"></use></g><g data-mml-node=\"mn\" transform=\"translate(646,-150) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(1327.3,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mrow\" transform=\"translate(2383.1,0)\"><g data-mml-node=\"mo\"><use data-c=\"7B\" xlink:href=\"#MJX-TEX-N-7B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(500,0)\"><g data-mml-node=\"mo\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"mi\" transform=\"translate(389,0)\"><use data-c=\"1D456\" xlink:href=\"#MJX-TEX-I-1D456\"></use></g><g data-mml-node=\"mo\" transform=\"translate(734,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1178.7,0)\"><use data-c=\"1D457\" xlink:href=\"#MJX-TEX-I-1D457\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1590.7,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2035.3,0)\"><use data-c=\"1D458\" xlink:href=\"#MJX-TEX-I-1D458\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2556.3,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(3001,0)\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g><g data-mml-node=\"mo\" transform=\"translate(3299,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g><g data-mml-node=\"mo\" transform=\"translate(3965.8,0)\"><use data-c=\"3A\" xlink:href=\"#MJX-TEX-N-3A\"></use></g><g data-mml-node=\"mn\" transform=\"translate(4521.6,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mo\" transform=\"translate(5299.3,0)\"><use data-c=\"2264\" xlink:href=\"#MJX-TEX-N-2264\"></use></g><g data-mml-node=\"mi\" transform=\"translate(6355.1,0)\"><use data-c=\"1D456\" xlink:href=\"#MJX-TEX-I-1D456\"></use></g><g data-mml-node=\"mo\" transform=\"translate(6977.9,0)\"><use data-c=\"3C\" xlink:href=\"#MJX-TEX-N-3C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(8033.7,0)\"><use data-c=\"1D457\" xlink:href=\"#MJX-TEX-I-1D457\"></use></g><g data-mml-node=\"mo\" transform=\"translate(8723.4,0)\"><use data-c=\"3C\" xlink:href=\"#MJX-TEX-N-3C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(9779.2,0)\"><use data-c=\"1D458\" xlink:href=\"#MJX-TEX-I-1D458\"></use></g><g data-mml-node=\"mo\" transform=\"translate(10578,0)\"><use data-c=\"3C\" xlink:href=\"#MJX-TEX-N-3C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(11633.8,0)\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g><g data-mml-node=\"mo\" transform=\"translate(11931.8,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(12376.4,0)\"><use data-c=\"1D456\" xlink:href=\"#MJX-TEX-I-1D456\"></use></g><g data-mml-node=\"mo\" transform=\"translate(12721.4,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(13166.1,0)\"><use data-c=\"1D457\" xlink:href=\"#MJX-TEX-I-1D457\"></use></g><g data-mml-node=\"mo\" transform=\"translate(13578.1,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(14022.8,0)\"><use data-c=\"1D458\" xlink:href=\"#MJX-TEX-I-1D458\"></use></g><g data-mml-node=\"mo\" transform=\"translate(14543.8,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(14988.4,0)\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g><g data-mml-node=\"mo\" transform=\"translate(15564.2,0)\"><use data-c=\"2208\" xlink:href=\"#MJX-TEX-N-2208\"></use></g><g data-mml-node=\"mo\" transform=\"translate(16509,0)\"><use data-c=\"7B\" xlink:href=\"#MJX-TEX-N-7B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(17009,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mo\" transform=\"translate(17509,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mn\" transform=\"translate(17953.7,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mo\" transform=\"translate(18453.7,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mo\" transform=\"translate(18898.3,0)\"><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(19176.3,0)\"><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(19454.3,0)\"><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(19732.3,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mn\" transform=\"translate(20177,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(21177,0)\"><use data-c=\"7D\" xlink:href=\"#MJX-TEX-N-7D\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(22177,0)\"><use data-c=\"7D\" xlink:href=\"#MJX-TEX-N-7D\"></use></g></g></g></g></svg></mjx-container> and <br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.566ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"21.656ex\" height=\"2.262ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 9572 1000\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D446\" xlink:href=\"#MJX-TEX-I-1D446\"></use></g><g data-mml-node=\"mn\" transform=\"translate(646,-150) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(1327.3,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2383.1,0)\"><use data-c=\"7B\" xlink:href=\"#MJX-TEX-N-7B\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2883.1,0)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"mi\" transform=\"translate(3272.1,0)\"><use data-c=\"1D456\" xlink:href=\"#MJX-TEX-I-1D456\"></use></g><g data-mml-node=\"mo\" transform=\"translate(3617.1,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(4061.8,0)\"><use data-c=\"1D457\" xlink:href=\"#MJX-TEX-I-1D457\"></use></g><g data-mml-node=\"mo\" transform=\"translate(4473.8,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(4918.4,0)\"><use data-c=\"1D458\" xlink:href=\"#MJX-TEX-I-1D458\"></use></g><g data-mml-node=\"mo\" transform=\"translate(5439.4,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(5884.1,0)\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g><g data-mml-node=\"mo\" transform=\"translate(6182.1,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g><g data-mml-node=\"mo\" transform=\"translate(6848.9,0)\"><use data-c=\"3A\" xlink:href=\"#MJX-TEX-N-3A\"></use></g><g data-mml-node=\"mi\" transform=\"translate(7404.7,0)\"><use data-c=\"1D456\" xlink:href=\"#MJX-TEX-I-1D456\"></use></g><g data-mml-node=\"mo\" transform=\"translate(7749.7,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(8194.3,0)\"><use data-c=\"1D457\" xlink:href=\"#MJX-TEX-I-1D457\"></use></g><g data-mml-node=\"mo\" transform=\"translate(8606.3,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(9051,0)\"><use data-c=\"1D458\" xlink:href=\"#MJX-TEX-I-1D458\"></use></g></g></g></svg></mjx-container> and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"0.674ex\" height=\"1.595ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 298 705\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g></g></g></svg></mjx-container> are distinct elements in {1, 2, ...., 10}.<br><br>If the total number of elements in the set S<sub>r</sub> is n<sub>r</sub>, r = 1, 2, 3, 4, then which of the following statements is(are) TRUE?"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "an-n-digit-number-is-a-positive-number-with-exactly-digits-n-jee-advanced-1998-marks-2-kgxelfigteppgjh0.htm",
+          "paperTitle": "IIT-JEE 1998",
+          "question": {
+            "en": {
+              "content": "An n-digit number is a positive number with exactly digits. Nine hundred distinct n-digit numbers are to be formed using only the three digits 2, 5 and 7. The smallest value of n for which this is possible is "
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Subjective",
+      "key": "subjective",
+      "questions": [
+        {
+          "examGroup": "jee",
+          "permalink": "if-total-number-of-runs-scored-in-n-matches-is-left-n-1-over-jee-advanced-2005-marks-2-j6g0h20incgdcu6c.htm",
+          "paperTitle": "IIT-JEE 2005",
+          "question": {
+            "en": {
+              "content": "If total number of runs scored in n matches is <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.791ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"21.687ex\" height=\"2.757ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -868.9 9585.4 1218.4\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mrow\"><g data-mml-node=\"mo\" transform=\"translate(0 -0.5)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-SO-28\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(458,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(220,398) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mo\" transform=\"translate(600,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1378,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(707.2,-345) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g><rect width=\"1527.9\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g><g data-mml-node=\"mo\" transform=\"translate(2225.9,0) translate(0 -0.5)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-SO-29\"></use></g></g><g data-mml-node=\"mspace\" transform=\"translate(2683.9,0)\"></g><g data-mml-node=\"mspace\" transform=\"translate(2850.9,0)\"></g><g data-mml-node=\"mo\" transform=\"translate(3184.6,0)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(3573.6,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(533,363) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mo\" transform=\"translate(600,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1378,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g></g><g data-mml-node=\"mo\" transform=\"translate(5706.8,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mi\" transform=\"translate(6707,0)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mo\" transform=\"translate(7529.2,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(8529.4,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mo\" transform=\"translate(9029.4,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g><g data-mml-node=\"mspace\" transform=\"translate(9418.4,0)\"></g></g></g></svg></mjx-container> where <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.506ex\" height=\"1.597ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -666 2433.6 706\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mo\" transform=\"translate(877.8,0)\"><use data-c=\"3E\" xlink:href=\"#MJX-TEX-N-3E\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1933.6,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g></svg></mjx-container>, and the runs scored in the <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.866ex\" height=\"1.956ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -853.7 1266.6 864.7\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"1D458\" xlink:href=\"#MJX-TEX-I-1D458\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(554,363) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D461\" xlink:href=\"#MJX-TEX-I-1D461\"></use></g><g data-mml-node=\"mi\" transform=\"translate(361,0)\"><use data-c=\"210E\" xlink:href=\"#MJX-TEX-I-210E\"></use></g></g></g></g></g></g></svg></mjx-container> match are given by k. <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"6.779ex\" height=\"1.932ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -853.7 2996.5 853.7\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mspace\"></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(167,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(533,363) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mo\" transform=\"translate(600,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1378,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1878,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2656,0)\"><use data-c=\"1D458\" xlink:href=\"#MJX-TEX-I-1D458\"></use></g></g></g></g></g></g></svg></mjx-container>, where <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.312ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"9.702ex\" height=\"1.882ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 4288.1 832\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mo\" transform=\"translate(777.8,0)\"><use data-c=\"2264\" xlink:href=\"#MJX-TEX-N-2264\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1833.6,0)\"><use data-c=\"1D458\" xlink:href=\"#MJX-TEX-I-1D458\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2632.3,0)\"><use data-c=\"2264\" xlink:href=\"#MJX-TEX-N-2264\"></use></g><g data-mml-node=\"mi\" transform=\"translate(3688.1,0)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g></g></g></svg></mjx-container>. Find n."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "prove-by-permulation-or-otherwise-n2-over-nn-is-an-integer-n-jee-advanced-2004-marks-2-zv7ayzbmcbfsj759.htm",
+          "paperTitle": "IIT-JEE 2004",
+          "question": {
+            "en": {
+              "content": "Prove by permulation or otherwise <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -1.301ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.456ex\" height=\"3.804ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1106.5 1969.7 1681.6\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(245,516.8) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(389,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(633,363) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(1425.6,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1814.6,0)\"><use data-c=\"21\" xlink:href=\"#MJX-TEX-N-21\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(220,-398.3) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msup\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"mi\" transform=\"translate(389,0)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mo\" transform=\"translate(989,0)\"><use data-c=\"21\" xlink:href=\"#MJX-TEX-N-21\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1267,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g><g data-mml-node=\"mi\" transform=\"translate(1689,477.1) scale(0.707)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g></g></g></g><rect width=\"1729.7\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container> is an integer <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.566ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"8.447ex\" height=\"2.32ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -775.2 3733.7 1025.2\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"mi\" transform=\"translate(389,0)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1266.8,0)\"><use data-c=\"2208\" xlink:href=\"#MJX-TEX-N-2208\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2211.6,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mo\" transform=\"translate(533,363) scale(0.707)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(3344.7,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g></g></svg></mjx-container>."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "a-committee-of-12-is-to-be-formed-from-9-women-and-8-men-in-jee-advanced-1994-marks-4-etswshgxemp8jluz.htm",
+          "paperTitle": "IIT-JEE 1994",
+          "question": {
+            "en": {
+              "content": "A committee of 12 is to be formed from 9 women and 8 men. In how many ways this can be done if at least five women have to included in a committee? In how many of these committees? In how may  of these committees \n<br> (a) The women are in majority?\n<br> (b) The men are in majority?"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "eighteen-guests-have-to-be-seated-half-on-each-side-of-a-lon-jee-advanced-1991-marks-4-jtqiydhdvkmmzryx.htm",
+          "paperTitle": "IIT-JEE 1991",
+          "question": {
+            "en": {
+              "content": "Eighteen guests have to be seated, half on each side of a long table. Four particular guests desire to sit on one particular side and three others on the other side. Determine the number of ways in which the sitting arrangements can be made."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "a-box-contains-two-white-balls-three-black-balls-and-four-re-jee-advanced-1986-marks-2-u94ccufpuawey7bp.htm",
+          "paperTitle": "IIT-JEE 1986",
+          "question": {
+            "en": {
+              "content": "A box contains two white balls, three black balls and four red balls. In how many ways can three balls be drawn from the box if at least one black ball is to be included in the draw?"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "7-relatives-of-a-man-comprises-4-ladies-and-3-gentlemen-his-jee-advanced-1985-marks-5-yevrles52ctbb7eu.htm",
+          "paperTitle": "IIT-JEE 1985",
+          "question": {
+            "en": {
+              "content": "7 relatives of a man comprises 4 ladies and 3 gentlemen ; his wife has also 7 relatives ; 3 of them are ladies and 4 gentlemen. In how many ways can they invite a dinner party of 3 ladies and 3 gentlemen so that there are 3 of man's relatives and 3 of the wife's relatives? "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "m-men-and-n-women-are-to-be-seated-in-a-row-so-that-no-two-w-jee-advanced-1983-marks-2-q8q40wxgx3cs60nz.htm",
+          "paperTitle": "IIT-JEE 1983",
+          "question": {
+            "en": {
+              "content": "m men and n women are to be seated in a row so that no two women sit together. If <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"6.361ex\" height=\"1.312ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 2811.6 580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D45A\" xlink:href=\"#MJX-TEX-I-1D45A\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1155.8,0)\"><use data-c=\"3E\" xlink:href=\"#MJX-TEX-N-3E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2211.6,0)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g></g></g></svg></mjx-container>, then show that the number of ways in which they can be seated is <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -1.238ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"8.716ex\" height=\"3.607ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1047.1 3852.6 1594.2\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mspace\"></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(167,0)\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(298.5,516.8) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D45A\" xlink:href=\"#MJX-TEX-I-1D45A\"></use></g><g data-mml-node=\"mo\" transform=\"translate(878,0)\"><use data-c=\"21\" xlink:href=\"#MJX-TEX-N-21\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1156,0)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1545,0)\"><use data-c=\"1D45A\" xlink:href=\"#MJX-TEX-I-1D45A\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2423,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(3201,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mo\" transform=\"translate(3701,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g><g data-mml-node=\"mo\" transform=\"translate(4090,0)\"><use data-c=\"21\" xlink:href=\"#MJX-TEX-N-21\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(220,-370.3) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"mi\" transform=\"translate(389,0)\"><use data-c=\"1D45A\" xlink:href=\"#MJX-TEX-I-1D45A\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1267,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2045,0)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2645,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(3423,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mo\" transform=\"translate(3923,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g><g data-mml-node=\"mo\" transform=\"translate(4312,0)\"><use data-c=\"21\" xlink:href=\"#MJX-TEX-N-21\"></use></g></g><rect width=\"3445.6\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container> "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "five-balls-of-different-colours-are-to-be-placed-in-there-bo-jee-advanced-1981-marks-4-bad9x8jkvwjqljgp.htm",
+          "paperTitle": "IIT-JEE 1981",
+          "question": {
+            "en": {
+              "content": "Five balls of different colours are to be placed in there boxes of different size. Each box can hold all five. In how many different ways can be place the balls so that no box remains emply?"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "six-x-s-have-to-be-placed-in-the-squares-of-figure-below-in-jee-advanced-1978-marks-4-5mtgdumtlothno7s.htm",
+          "paperTitle": "IIT-JEE 1978",
+          "question": {
+            "en": {
+              "content": "Six X' s have to be placed in the squares of figure below in such a way that each row contains at least one X. In how many different ways can this be done. \n<img class=\"question-image\" src=\"https://gateclass.cdn.examgoal.net/w3oh63V9W5mFdJufE/7VrZnhqeH4nJzinLB9YfHQHZFh0IH/H9VUx8pt5yiPvu8r8hpdAs/image.svg\" loading=\"lazy\" alt=\"IIT-JEE 1978 Mathematics - Permutations and Combinations Question 34 English\">"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Fill in the Blanks",
+      "key": "fill-blanks",
+      "questions": [
+        {
+          "examGroup": "jee",
+          "permalink": "total-number-of-ways-in-which-six-and-four-signs-can-be-arra-jee-advanced-1988-marks-2-cnuf3j0e36sgtjeo.htm",
+          "paperTitle": "IIT-JEE 1988",
+          "question": {
+            "en": {
+              "content": "Total number of ways in which six ' + ' and four ' - ' signs can be arranged in a line such that no two ' - ' signs occur together is....................................."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "there-are-four-balls-of-different-colours-and-four-boxes-of-jee-advanced-1988-marks-2-cmhrbkimkpgosfqp.htm",
+          "paperTitle": "IIT-JEE 1988",
+          "question": {
+            "en": {
+              "content": "There are four balls of different colours and four boxes of colours, same as those of the balls. The number of ways in which the balls, one each in a box, could be placed such that a ball does not go to a box of its own colour is....................... "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-side-ab-bc-and-ca-of-a-triangle-abc-have-3-4-and-5-inter-jee-advanced-1984-marks-2-qtthm3tk0gr6e2sn.htm",
+          "paperTitle": "IIT-JEE 1984",
+          "question": {
+            "en": {
+              "content": "The side AB, BC and CA of a triangle ABC have 3, 4 and 5 interior points respectively on them. The number of triangles that can be constructed using these interior points as vertices is ......................."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "in-a-certain-test-ai-students-gave-wrong-answers-to-atleast-jee-advanced-1982-marks-2-cajwozsw9zowi1hv.htm",
+          "paperTitle": "IIT-JEE 1982",
+          "question": {
+            "en": {
+              "content": "In a certain test, <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.357ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.937ex\" height=\"1.355ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -441 856 598.8\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(562,-150) scale(0.707)\"><use data-c=\"1D456\" xlink:href=\"#MJX-TEX-I-1D456\"></use></g></g></g></g></g></svg></mjx-container> students gave wrong answers to atleast i questions, where i = 1, 2,..., k. No student gave more  than k wrong answers. The total number of wrong answers given is....................................."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "True or False",
+      "key": "tf",
+      "questions": [
+        {
+          "examGroup": "jee",
+          "permalink": "the-product-of-any-r-consecutive-natural-numbers-is-always-d-jee-advanced-1985-marks-1-jadxbv0lfz65vkem.htm",
+          "paperTitle": "IIT-JEE 1985",
+          "question": {
+            "en": {
+              "content": "The product of any r consecutive natural numbers is always divisible by r!"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

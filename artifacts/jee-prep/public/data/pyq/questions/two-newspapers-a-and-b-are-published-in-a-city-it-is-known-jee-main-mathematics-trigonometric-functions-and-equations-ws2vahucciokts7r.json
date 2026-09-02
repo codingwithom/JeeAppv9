@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "bm95iHHu7AMPxaoEUQ18hoxe66ijvwvu5os",
+      "paperTitle": "JEE Main 2019 (Online) 9th April Evening Slot",
+      "year": 2019,
+      "examDate": "2019-04-09 14:30",
+      "subject": "mathematics",
+      "chapter": "sets-and-relations",
+      "chapterGroup": "algebra",
+      "topic": "venn-diagram",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "two-newspapers-a-and-b-are-published-in-a-city-it-is-known-jee-main-mathematics-trigonometric-functions-and-equations-ws2vahucciokts7r",
+      "content": "Two newspapers A and B are published in a city.\nIt is known that 25% of the city populations reads\nA and 20% reads B while 8% reads both A and\nB. Further, 30% of those who read A but not B\nlook into advertisements and 40% of those who\nread B but not A also look into advertisements,\nwhile 50% of those who read both A and B look\ninto advertisements. Then the percentage of the\npopulation who look into advertisement is :-",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "13.5"
+        },
+        {
+          "identifier": "B",
+          "content": "13"
+        },
+        {
+          "identifier": "C",
+          "content": "12.8"
+        },
+        {
+          "identifier": "D",
+          "content": "13.9"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/7kejek200l2t2/99668cdb-9d62-43f6-b06e-9da8468650c4/8d3c7870-f3c8-11e9-a7bc-b7b08ce8d541/file-7kejek200l2t3-320w.jpg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/7kejek200l2t2/99668cdb-9d62-43f6-b06e-9da8468650c4/8d3c7870-f3c8-11e9-a7bc-b7b08ce8d541/file-7kejek200l2t3-500w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/7kejek200l2t2/99668cdb-9d62-43f6-b06e-9da8468650c4/8d3c7870-f3c8-11e9-a7bc-b7b08ce8d541/file-7kejek200l2t3-680w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 9th April Evening Slot Mathematics - Sets and Relations Question 112 English Explanation\"></picture>\n<p>The total population to be 100 (for simplicity's sake) and the percentages can be treated as actual numbers of people in this context.</p>\n<p>The percentage of people who read newspaper A is given as 25. However, among these, there are people who read both newspapers A and B, given as 8. To find the number of people who read only newspaper A, we subtract the number of people who read both from the total number of people who read A. That is,</p>\n<p>n(A only) = 25 – 8 = 17</p>\n<p>Similarly, the number of people who read only newspaper B is calculated as :</p>\n<p>n(B only) = 20 – 8 = 12</p>\n<p>Now, we are given the percentage of each of these groups that look into the advertisements:</p>\n<ul>\n<li>30% of those who read A but not B,</li>\n<li>40% of those who read B but not A,</li>\n<li>50% of those who read both A and B.</li>\n</ul>\n<p>To find the total percentage of the population that looks into advertisements, we add up the contributions from each of these groups. We calculate each group's contribution by multiplying the size of the group by the percentage of that group that looks at advertisements :</p>\n<p>= <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.816ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"8.423ex\" height=\"2.773ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864.9 3723.1 1225.5\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(396.8,394) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(220,-345) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(1000,0)\"></use></g></g><rect width=\"1260.7\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g><g data-mml-node=\"mo\" transform=\"translate(1722.9,0)\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g><g data-mml-node=\"mn\" transform=\"translate(2723.1,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"37\" xlink:href=\"#MJX-TEX-N-37\" transform=\"translate(500,0)\"></use></g></g></g></svg></mjx-container> (from A only) + <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.816ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"8.423ex\" height=\"2.79ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -872.7 3723.1 1233.3\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(396.8,394) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(220,-345) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(1000,0)\"></use></g></g><rect width=\"1260.7\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g><g data-mml-node=\"mo\" transform=\"translate(1722.9,0)\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g><g data-mml-node=\"mn\" transform=\"translate(2723.1,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\" transform=\"translate(500,0)\"></use></g></g></g></svg></mjx-container>(from B only) + <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.816ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"7.292ex\" height=\"2.773ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864.9 3223.1 1225.5\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(396.8,394) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(220,-345) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(1000,0)\"></use></g></g><rect width=\"1260.7\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g><g data-mml-node=\"mo\" transform=\"translate(1722.9,0)\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g><g data-mml-node=\"mn\" transform=\"translate(2723.1,0)\"><use data-c=\"38\" xlink:href=\"#MJX-TEX-N-38\"></use></g></g></g></svg></mjx-container>(from both A and B)</p>\n<p>= 5.1 (from A only) + 4.8 (from B only) + 4 (from both A and B)</p>\n<p>Adding these up, we get</p>\n<p>= 13.9</p>\n<p>This means that 13.9% of the total population looks into the advertisements.</p>\n<p>So, the correct answer is :</p>\n<p>Option D : 13.9.</p>\n"
+    }
+  ]
+}

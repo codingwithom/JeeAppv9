@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "vLMXNDzSRUPPkXYgDM3rsa0w2w9jwwe7xj7",
+      "paperTitle": "JEE Main 2019 (Online) 10th April Morning Slot",
+      "year": 2019,
+      "examDate": "2019-04-10 09:30",
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "hybridization-and-vsepr-theory",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-oxoacid-of-sulphur-that-does-not-contain-bond-between-su-jee-main-chemistry-chemical-bonding-and-molecular-structure-cv87kzuzgpttzpnx",
+      "content": "The oxoacid of sulphur that does not contain bond between sulphur atoms is ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "H<sub>2</sub>S<sub>2</sub>O<sub>7</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "H<sub>2</sub>S<sub>2</sub>O<sub>3</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "H<sub>2</sub>S<sub>4</sub>O<sub>6</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "H<sub>2</sub>S<sub>2</sub>O<sub>4</sub>"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76dm0jz436or0/495182f8-9db9-4aed-a566-e798273a0fec/34e5b0c0-baa1-11e9-98a9-d9fba6ebbc7e/file-jf76dm0jz436or1-320w.jpg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76dm0jz436or0/495182f8-9db9-4aed-a566-e798273a0fec/34e5b0c0-baa1-11e9-98a9-d9fba6ebbc7e/file-jf76dm0jz436or1-500w.jpg\"><source media=\"(max-width: 680px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76dm0jz436or0/495182f8-9db9-4aed-a566-e798273a0fec/34e5b0c0-baa1-11e9-98a9-d9fba6ebbc7e/file-jf76dm0jz436or1-680w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/jf76dm0jz436or0/495182f8-9db9-4aed-a566-e798273a0fec/34e5b0c0-baa1-11e9-98a9-d9fba6ebbc7e/file-jf76dm0jz436or1-860w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 10th April Morning Slot Chemistry - Chemical Bonding &amp; Molecular Structure Question 203 English Explanation\"></picture>\n<br><br>Here you can see, H<sub>2</sub>S<sub>2</sub>O<sub>7</sub> does not have S – S linkage."
+    }
+  ]
+}

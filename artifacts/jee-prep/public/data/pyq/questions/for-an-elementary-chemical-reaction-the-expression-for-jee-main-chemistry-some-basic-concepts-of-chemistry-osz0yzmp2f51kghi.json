@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "2oyYR7RevMwTeExOD2uNM",
+      "paperTitle": "JEE Main 2019 (Online) 10th January Evening Slot",
+      "year": 2019,
+      "examDate": "2019-01-10 14:30",
+      "subject": "chemistry",
+      "chapter": "chemical-kinetics-and-nuclear-chemistry",
+      "chapterGroup": "physical-chemistry",
+      "topic": "rate-of-reaction",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "for-an-elementary-chemical-reaction-the-expression-for-jee-main-chemistry-some-basic-concepts-of-chemistry-osz0yzmp2f51kghi",
+      "content": "For an elementary chemical reaction, \n<br><br><img src=\"https://imagex.cdn.examgoal.net/tH2tjuimOofGzh0pk/U9BAMgDq9wHZkI4Xo2zHNsDsNbj2n/7ag9RWzyMdV5UYCBtHFUJI/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 10th January Evening Slot Chemistry - Chemical Kinetics and Nuclear Chemistry Question 174 English\">\n<br><br>the expression for <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.798ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.921ex\" height=\"3.167ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1047.1 1733.3 1399.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(220,516.8) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D451\" xlink:href=\"#MJX-TEX-I-1D451\"></use></g><g data-mml-node=\"mrow\" transform=\"translate(523,0)\"><g data-mml-node=\"mo\"><use data-c=\"5B\" xlink:href=\"#MJX-TEX-N-5B\"></use></g><g data-mml-node=\"mi\" transform=\"translate(278,0)\"><use data-c=\"1D434\" xlink:href=\"#MJX-TEX-I-1D434\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1028,0)\"><use data-c=\"5D\" xlink:href=\"#MJX-TEX-N-5D\"></use></g></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(554.1,-345) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D451\" xlink:href=\"#MJX-TEX-I-1D451\"></use></g><g data-mml-node=\"mi\" transform=\"translate(523,0)\"><use data-c=\"1D461\" xlink:href=\"#MJX-TEX-I-1D461\"></use></g></g><rect width=\"1493.3\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container> is ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "2K<sub>1</sub>[A<sub>2</sub>] – K <sub>–1</sub> [A]<sup>2</sup>"
+        },
+        {
+          "identifier": "B",
+          "content": "K<sub>1</sub>[A<sub>2</sub>] – K <sub>–1</sub> [A]<sup>2</sup>"
+        },
+        {
+          "identifier": "C",
+          "content": "K<sub>1</sub>[A<sub>2</sub>] + K <sub>–1</sub> [A]<sup>2</sup>\n"
+        },
+        {
+          "identifier": "D",
+          "content": "2K<sub>1</sub>[A<sub>2</sub>] – 2K <sub>–1</sub> [A]<sup>2</sup>"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/tKDFGOzDgePQWRGcY/wYRXRmEsh8SBP7KFcbs9ySu6NiLMf/4vB4UdA9QY2djSgsNGYcfn/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 10th January Evening Slot Chemistry - Chemical Kinetics and Nuclear Chemistry Question 174 English Explanation\">"
+    }
+  ]
+}

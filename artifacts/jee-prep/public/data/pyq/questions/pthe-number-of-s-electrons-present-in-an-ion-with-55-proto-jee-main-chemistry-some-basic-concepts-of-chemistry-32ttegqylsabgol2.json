@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ldwschva",
+      "paperTitle": "JEE Main 2023 (Online) 24th January Evening Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "structure-of-atom",
+      "chapterGroup": "physical-chemistry",
+      "topic": "electronic-configuration-and-nodes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pthe-number-of-s-electrons-present-in-an-ion-with-55-proto-jee-main-chemistry-some-basic-concepts-of-chemistry-32ttegqylsabgol2",
+      "content": "<p>The number of s-electrons present in an ion with 55 protons in its unipositive state is</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "10"
+        },
+        {
+          "identifier": "B",
+          "content": "9"
+        },
+        {
+          "identifier": "C",
+          "content": "12"
+        },
+        {
+          "identifier": "D",
+          "content": "8"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "The number of protons in an element determines its atomic number, which is the number of electrons in a neutral atom of the element. The unipositive state of an ion indicates that it has lost one electron. Therefore, the number of electrons in a unipositive ion is one less than the atomic number.<br/><br/>\nThe element with 55 protons is cesium (Cs), which is in group 1 of the periodic table. Group 1 elements have one valence electron in the s sublevel of their outermost energy level.\n<br/><br/>\nIn a neutral atom of cesium, there are 55 electrons, with the electron configuration [Xe] 6s<sup>1</sup>. When cesium loses one electron to form a unipositive ion (Cs<sup>+</sup>), the resulting ion has 54 electrons.<br/><br/>\nOut of this 54 electrons s subshell has 10 electrons in 1s<sup>2</sup>, 2s<sup>2</sup>, 3s<sup>2</sup>, 4s<sup>2</sup>, 5s<sup>2</sup>."
+    }
+  ]
+}

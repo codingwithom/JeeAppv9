@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1krz0y1js",
+      "paperTitle": "JEE Main 2021 (Online) 27th July Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "hydrocarbons",
+      "chapterGroup": "organic-chemistry",
+      "topic": "reaction-of-alkanes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "presence-of-which-reagent-will-affect-the-reversibility-of-t-jee-main-chemistry-some-basic-concepts-of-chemistry-xup421gjf5chsvod",
+      "content": "Presence of which reagent will affect the reversibility of the following reaction, and change it to a irreversible reaction :<br><br>CH<sub>4</sub> + I<sub>2</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -1.781ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"7.341ex\" height=\"4.733ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1304.7 3244.9 2092\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"REL\"><g data-mml-node=\"munderover\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"OP\" transform=\"translate(1122.5,0)\"><g data-mml-node=\"mspace\"></g><g data-mml-node=\"mo\"><use data-c=\"21CC\" xlink:href=\"#MJX-TEX-V-21CC\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(0,-671.7) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"52\" xlink:href=\"#MJX-TEX-N-52\"></use><use data-c=\"65\" xlink:href=\"#MJX-TEX-N-65\" transform=\"translate(736,0)\"></use></g></g><g data-mml-node=\"mi\" transform=\"translate(1180,0)\"><use data-c=\"1D463\" xlink:href=\"#MJX-TEX-I-1D463\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1665,0)\"><use data-c=\"1D452\" xlink:href=\"#MJX-TEX-I-1D452\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2131,0)\"><use data-c=\"1D45F\" xlink:href=\"#MJX-TEX-I-1D45F\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2582,0)\"><use data-c=\"1D460\" xlink:href=\"#MJX-TEX-I-1D460\"></use></g><g data-mml-node=\"mi\" transform=\"translate(3051,0)\"><use data-c=\"1D456\" xlink:href=\"#MJX-TEX-I-1D456\"></use></g><g data-mml-node=\"mi\" transform=\"translate(3396,0)\"><use data-c=\"1D44F\" xlink:href=\"#MJX-TEX-I-1D44F\"></use></g><g data-mml-node=\"mi\" transform=\"translate(3825,0)\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g><g data-mml-node=\"mi\" transform=\"translate(4123,0)\"><use data-c=\"1D452\" xlink:href=\"#MJX-TEX-I-1D452\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1247.3,714) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"210E\" xlink:href=\"#MJX-TEX-I-210E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(576,0)\"><use data-c=\"1D463\" xlink:href=\"#MJX-TEX-I-1D463\"></use></g></g></g></g></g></g></svg></mjx-container> CH<sub>3</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container> I + HI",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "HOCl"
+        },
+        {
+          "identifier": "B",
+          "content": "dilute HNO<sub>2</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "Liquid NH<sub>3</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "Concentrated HIO<sub>3</sub>"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Iodination of alkane is reversible reaction. It can be irreversible in the presence of strong oxidising agent like conc. HNO<sub>3</sub> or conc. HIO<sub>3</sub>."
+    }
+  ]
+}

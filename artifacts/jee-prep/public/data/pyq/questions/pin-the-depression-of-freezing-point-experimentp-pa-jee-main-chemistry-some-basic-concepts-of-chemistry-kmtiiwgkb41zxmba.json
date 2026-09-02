@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ldyg764k",
+      "paperTitle": "JEE Main 2023 (Online) 24th January Morning Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "solutions",
+      "chapterGroup": "physical-chemistry",
+      "topic": "depression-in-freezing-point",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pin-the-depression-of-freezing-point-experimentp-pa-jee-main-chemistry-some-basic-concepts-of-chemistry-kmtiiwgkb41zxmba",
+      "content": "<p>In the depression of freezing point experiment</p>\n<p>A. Vapour pressure of the solution is less than that of pure solvent</p>\n<p>B. Vapour pressure of the solution is more than that of pure solvent</p>\n<p>C. Only solute molecules solidify at the freezing point</p>\n<p>D. Only solvent molecules solidify at the freezing point</p>\n<p>Choose the most appropriate answer from the options given below :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "A and C only"
+        },
+        {
+          "identifier": "B",
+          "content": "A only"
+        },
+        {
+          "identifier": "C",
+          "content": "A and D only"
+        },
+        {
+          "identifier": "D",
+          "content": "B and C only"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "In the depression of freezing point experiment\nonly solvent molecules solidify and vapour pressure of\nsolution decreases as some of the surface area is occupied\nby solute molecules, so less number of molecules will go in\nvapour form."
+    }
+  ]
+}

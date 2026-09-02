@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktjyhq0v",
+      "paperTitle": "JEE Main 2021 (Online) 31st August Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "properties-of-transition-elements",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-value-of-magnetic-quantum-number-of-the-outermost-electr-jee-main-chemistry-some-basic-concepts-of-chemistry-2bportqqi6k8jjji",
+      "content": "The value of magnetic quantum number of the outermost electron of Zn<sup>+</sup> ion is ______________.",
+      "options": [],
+      "correct_options": [],
+      "explanation": "Zn<sup>+</sup> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> 1s<sup>2</sup>2s<sup>2</sup>2p<sup>6</sup>3s<sup>2</sup>3p<sup>6</sup>3d<sup>10</sup>4s<sup>1</sup><br><br>Outermost electron is in 4s subshell<br><br>m = 0"
+    }
+  ]
+}

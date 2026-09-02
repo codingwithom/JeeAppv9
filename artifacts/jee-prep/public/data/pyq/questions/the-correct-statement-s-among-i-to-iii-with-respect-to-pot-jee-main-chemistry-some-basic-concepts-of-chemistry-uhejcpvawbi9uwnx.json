@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "HW1ukj6b1j368xnL1Hg2d",
+      "paperTitle": "JEE Main 2019 (Online) 12th January Evening Slot",
+      "year": 2019,
+      "examDate": "2019-01-12 14:30",
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "proteins-and-enzymes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-correct-statement-s-among-i-to-iii-with-respect-to-pot-jee-main-chemistry-some-basic-concepts-of-chemistry-uhejcpvawbi9uwnx",
+      "content": "The correct statement (s) among I to III with respect to potassium ions that are abundant within the cell fluid\nis /are \n<br>I. They activate many enzymes \n<br>II. They participate in the oxidation of glucose to produce ATP \n<br>III. Along with sodium ions they are responsible for the transmission of nerve signals",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "III only "
+        },
+        {
+          "identifier": "B",
+          "content": "I and II only "
+        },
+        {
+          "identifier": "C",
+          "content": "I and III only "
+        },
+        {
+          "identifier": "D",
+          "content": "I, II and III only "
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<p>All the statements are correct. K+ being metallic unipositive ions work as enzyme activators. These also participate in many reactions of glycolysis and Kreb’s cycle to produce ATP from glucose.</p>\n<p>Being unipositive these are also equally responsible for nerve signal transmission along with Na<sup>+</sup>.</p>"
+    }
+  ]
+}

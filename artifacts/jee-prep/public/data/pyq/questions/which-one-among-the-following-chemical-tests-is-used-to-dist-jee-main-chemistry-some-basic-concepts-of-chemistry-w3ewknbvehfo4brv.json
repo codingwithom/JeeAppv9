@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1krz0znag",
+      "paperTitle": "JEE Main 2021 (Online) 27th July Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "carbohydrates",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-one-among-the-following-chemical-tests-is-used-to-dist-jee-main-chemistry-some-basic-concepts-of-chemistry-w3ewknbvehfo4brv",
+      "content": "Which one among the following chemical tests is used to distinguish monosaccharide from disaccharide?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Seliwanoff's test"
+        },
+        {
+          "identifier": "B",
+          "content": "Iodine test"
+        },
+        {
+          "identifier": "C",
+          "content": "Barfoed test"
+        },
+        {
+          "identifier": "D",
+          "content": "Tollen's test"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Barford test is used for distinguish monosaccharide from disaccharide."
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "y2CyZOWPSVjWetQZ",
+      "paperTitle": "JEE Main 2018 (Offline)",
+      "year": 2018,
+      "examDate": null,
+      "subject": "chemistry",
+      "chapter": "haloalkanes-and-haloarenes",
+      "chapterGroup": "organic-chemistry",
+      "topic": "haloalkanes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-major-product-of-the-following-reaction-is-2018-marks-4-y2cyzowpsvjwetqz.htm",
+      "content": "The major product of the following reaction is:\n<img class=\"question-image\" src=\"https://imagex.cdn.examgoal.net/vYNPCIvaC3KBTmRWN/X3rEjz2pT6NeLQ76QvdTixacycYNY/nyCttUm9kAc4eUJkJ6e3Yq/image.png\" loading=\"lazy\" alt=\"JEE Main 2018 (Offline) Chemistry - Haloalkanes and Haloarenes Question 171 English\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img class=\"question-image\" src=\"https://imagex.cdn.examgoal.net/UQWby5wd0Ia711vJK/RWuPGQgqe7Ezkc3aJxEmBoncca9kc/VOM2cSw2XNWrkPb0B9vAhg/image.png\" loading=\"lazy\" alt=\"JEE Main 2018 (Offline) Chemistry - Haloalkanes and Haloarenes Question 171 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img class=\"question-image\" src=\"https://imagex.cdn.examgoal.net/wANYyQ20rezAOwlaP/Zd4RQJWCJziN8nPHQKyGPeorLTf5S/BAuacgdeQiyUquUU0eElaT/image.png\" loading=\"lazy\" alt=\"JEE Main 2018 (Offline) Chemistry - Haloalkanes and Haloarenes Question 171 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img class=\"question-image\" src=\"https://imagex.cdn.examgoal.net/74bLPnj21IHbMCJOe/viHyIybrLekt4G4VkvTd9ktbfFfNE/fUw9gVoOJudxXI06JLA23Y/image.png\" loading=\"lazy\" alt=\"JEE Main 2018 (Offline) Chemistry - Haloalkanes and Haloarenes Question 171 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img class=\"question-image\" src=\"https://imagex.cdn.examgoal.net/uGxYy9Bh2Hzk41POD/E1Zy5pzA4rY5uaUost3q6REtOiphI/vHSkwdxA8u55bTzssnOgQO/image.png\" loading=\"lazy\" alt=\"JEE Main 2018 (Offline) Chemistry - Haloalkanes and Haloarenes Question 171 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<img class=\"question-image\" src=\"https://imagex.cdn.examgoal.net/cG5iRIghcyyBDePwm/xyPBQO6JfQtOwTTwHrVdvImTHx0GE/KFZ0brrMEHp8gSNpTF163D/image.png\" loading=\"lazy\" alt=\"JEE Main 2018 (Offline) Chemistry - Haloalkanes and Haloarenes Question 171 English Explanation\">\n<br><br>OMe<sup><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container></sup> is a strong base and because of this E<sub>2</sub> elimination will happen. \n<br><br>OMe<sup><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container></sup> will attack on H and make MeOH and leaving group Br will make NaBr then an ankene will be formed. "
+    }
+  ]
+}

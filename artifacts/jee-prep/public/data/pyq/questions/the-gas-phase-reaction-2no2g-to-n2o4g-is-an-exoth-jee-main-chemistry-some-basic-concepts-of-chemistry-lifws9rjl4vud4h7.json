@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "ujFoukI0ZKA9R7QeWXVur",
+      "paperTitle": "JEE Main 2018 (Online) 16th April Morning Slot",
+      "year": 2018,
+      "examDate": "2018-04-16 09:30",
+      "subject": "chemistry",
+      "chapter": "chemical-equilibrium",
+      "chapterGroup": "physical-chemistry",
+      "topic": "le-chateliers-principle-and-factors-affecting-chemical-equilibrium",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-gas-phase-reaction-2no2g-to-n2o4g-is-an-exoth-jee-main-chemistry-some-basic-concepts-of-chemistry-lifws9rjl4vud4h7",
+      "content": "The gas phase reaction 2NO<sub>2</sub>(g) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> N<sub>2</sub>O<sub>4</sub>(g) is an exothermic reaction.  The decomposition of N<sub>2</sub>O<sub>4</sub>,  in equilibrium mixture of NO<sub>2</sub>(g) and N<sub>2</sub>O<sub>4</sub>(g),  can be increased by : ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "lowering the temperature."
+        },
+        {
+          "identifier": "B",
+          "content": "increasing the pressure."
+        },
+        {
+          "identifier": "C",
+          "content": "addition of an inert gas at constant volume. "
+        },
+        {
+          "identifier": "D",
+          "content": "addition of an inert gas at constant pressure. "
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "2NO<sub>2</sub> (g) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.706ex\" height=\"1.86ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -811 1638 822\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"REL\"><g data-mml-node=\"mover\"><g data-mml-node=\"mo\"><use data-c=\"27F6\" xlink:href=\"#MJX-TEX-N-27F6\"></use></g><g data-mml-node=\"mstyle\" transform=\"translate(735.5,711)\"><g data-mml-node=\"mspace\"></g></g></g></g></g></g></svg></mjx-container> N<sub>2</sub>O<sub>4</sub> (g);  <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.885ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 833 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></svg></mjx-container>H = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container> ve \n<br><br>At equilibrium, N<sub>2</sub>O<sub>4</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.032ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.195ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -514 1000 528\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21CC\" xlink:href=\"#MJX-TEX-V-21CC\"></use></g></g></g></svg></mjx-container> 2NO<sub>2</sub> ; <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.885ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 833 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></svg></mjx-container>H = + ve\n<br><br> On adding the inert gas at constant pressure, the number of moles per unit volume of various reactants and products will decrease. Hence, the equilibrium will shift towards the direction in which there is increase in number of moles of gases. Therefore, in above case, reaction will move towards forward direction which will lead to the decomposition of dinitrogen tetraoxide (N<sub>2</sub>O<sub>4</sub>)."
+    }
+  ]
+}

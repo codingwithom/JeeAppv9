@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "zt41lVfktVcLf4z4SxX2r",
+      "paperTitle": "JEE Main 2019 (Online) 9th January Morning Slot",
+      "year": 2019,
+      "examDate": "2019-01-09 09:30",
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "electronegativity",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "going-down-the-group-which-properties-decrease-and-increase-jee-main-chemistry-some-basic-concepts-of-chemistry-rfwgveovscgscohm",
+      "content": "In general, the properties that decrease and increase down a group in the periodic table, respectively, are : ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Atomic Radius and Electronegativity"
+        },
+        {
+          "identifier": "B",
+          "content": "Electron Gain Enthalpy and Electronegativity. "
+        },
+        {
+          "identifier": "C",
+          "content": "Electronegativity and Atomic Radius."
+        },
+        {
+          "identifier": "D",
+          "content": "Electronegativity and Electron Gain Enthalpy."
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Electronegativity decreases down the group because the increased number of energy levels puts the outer electrons very far away from the pull of nucleus. \n<br><br>Atomic radius increases down the group because the number of energy levels increases when you move down the group. Each subsequent energy level is further  from the molecules than the last. That is why atomic radius increases down the group. "
+    }
+  ]
+}

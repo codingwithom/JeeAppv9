@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "xn9nIBoi2hl0RxspRb7k9k2k5h6f056",
+      "paperTitle": "JEE Main 2020 (Online) 8th January Morning Slot",
+      "year": 2020,
+      "examDate": "2020-01-08 09:30",
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "carbohydrates",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-statement-is-not-true-for-glucose-jee-main-chemistry-carbohydrates-amino-acids-and-polymers-gdg56t1wrwk0yk1s",
+      "content": "Which of the following statement is not true for glucose?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Glucose gives Schiff's test for aldehyde"
+        },
+        {
+          "identifier": "B",
+          "content": "Glucosse reacts with hydroxylamine to form oxime"
+        },
+        {
+          "identifier": "C",
+          "content": "The pentaacetate of glucose does not react with hydroxylamine to give oxime"
+        },
+        {
+          "identifier": "D",
+          "content": "Glucose exists in two crystalline forms <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.448ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 640 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D6FC\" xlink:href=\"#MJX-TEX-I-1D6FC\"></use></g></g></g></svg></mjx-container> and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.439ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.296ex\" height=\"2.034ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 573 899\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D6FD\" xlink:href=\"#MJX-TEX-I-1D6FD\"></use></g></g></g></svg></mjx-container>"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Glucose gives negative test with Schiff reagent."
+    }
+  ]
+}

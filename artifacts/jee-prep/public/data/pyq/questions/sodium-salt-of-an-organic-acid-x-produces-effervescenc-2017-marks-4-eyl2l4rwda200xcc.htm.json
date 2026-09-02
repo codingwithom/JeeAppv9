@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "EyL2l4rWDa200xcC",
+      "paperTitle": "JEE Main 2017 (Offline)",
+      "year": 2017,
+      "examDate": null,
+      "subject": "chemistry",
+      "chapter": "practical-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "qualitative-salt-analysis",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "sodium-salt-of-an-organic-acid-x-produces-effervescenc-2017-marks-4-eyl2l4rwda200xcc.htm",
+      "content": "Sodium salt of an organic acid ‘X’ produces effervescence with conc. H<sub>2</sub>SO<sub>4</sub>. ‘X’ reacts with the acidified\naqueous CaCl<sub>2</sub> solution to give a white precipitate which decolourises acidic solution of KMnO<sub>4</sub>. ‘X’ is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "CH<sub>3</sub>COONa"
+        },
+        {
+          "identifier": "B",
+          "content": "Na<sub>2</sub>C<sub>2</sub>O<sub>4</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "C<sub>6</sub>H<sub>5</sub>COONa"
+        },
+        {
+          "identifier": "D",
+          "content": "HCOONa"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/7kejek2vxsdr7/a5a45917-8c1c-4850-a90d-d5ad7da7ed55/b1c02f30-0556-11ea-a7bc-b7b08ce8d541/file-7kejek2vxsdr8-320w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2017 (Offline) Chemistry - Practical Organic Chemistry Question 110 English Explanation\">"
+    }
+  ]
+}

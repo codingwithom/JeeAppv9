@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "zgBfbn87LAqAVVrkjFhdE",
+      "paperTitle": "JEE Main 2018 (Online) 16th April Morning Slot",
+      "year": 2018,
+      "examDate": "2018-04-16 09:30",
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "properties-of-transition-elements",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "when-xo2-is-fused-with-an-alkali-metal-hydroxide-in-presence-jee-main-chemistry-some-basic-concepts-of-chemistry-qhklplllh56352dp",
+      "content": "When XO<sub>2</sub> is fused with an alkali metal hydroxide in presence of an oxidizing agent such as KNO<sub>3</sub> ;  a dark green product is formed which disproportioates in acidic solution  to afforda dark purple solution. X is : ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Ti"
+        },
+        {
+          "identifier": "B",
+          "content": "V"
+        },
+        {
+          "identifier": "C",
+          "content": "Cr"
+        },
+        {
+          "identifier": "D",
+          "content": "Mn"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "X is Mn.\n<br><br>MnO<sub>2</sub>  +  2KOH  +  KNO<sub>3</sub>  <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container>  K<sub>2</sub>MnO<sub>4</sub>  +  KNO<sub>2</sub>  +  H<sub>2</sub>O\n<br><br>Here   K<sub>2</sub>MnO<sub>4</sub>  is dark green.\n<br><br>3MnO<sub>4</sub><sup><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>2</sup>  +  4H<sup>+</sup>  <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container>  2MnO<sub>4</sub><sup><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container></sup>  +  MnO<sub>2</sub>  +  2H<sub>2</sub>O\n<br><br>In acidic solution, K<sub>2</sub>MnO<sub>4</sub> changes to dark purple solution of KMnO<sub>4</sub>."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktid64jm",
+      "paperTitle": "JEE Main 2021 (Online) 31st August Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "isomerism",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "choose-the-correct-name-for-compound-given-below-brbr-jee-main-chemistry-some-basic-concepts-of-chemistry-jexbu2lnwevhd1m1",
+      "content": "Choose the correct name for compound given below :<br><br><img src=\"https://imagex.cdn.examgoal.net/1ku58bqn7/54d323da-79a3-44ac-af95-f77500c49120/cc728f30-20fc-11ec-9451-2b8d70691f0f/file-1ku58bqn8.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 31st August Morning Shift Chemistry - Basics of Organic Chemistry Question 175 English\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(4E)-5-Bromo-hex-4-en-2-yne"
+        },
+        {
+          "identifier": "B",
+          "content": "(2E)-2-Bromo-hex-4-yn-2-ene"
+        },
+        {
+          "identifier": "C",
+          "content": "(2E)-2-Bromo-hex-2-en-4-yne"
+        },
+        {
+          "identifier": "D",
+          "content": "(4E)-5-Bromo-hex-2-en-4-yne"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1ku58ikwp/68210c99-c897-441a-9bd5-670b7cf2f69d/8aae3490-20fd-11ec-a4cd-47f5ff385ffe/file-1ku58ikwq.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 31st August Morning Shift Chemistry - Basics of Organic Chemistry Question 175 English Explanation\"><br><br>First prioritise the groups according to CIP rule\n<br><br>It is (2E)-2-Bromo-hex-2-en-4-yne"
+    }
+  ]
+}

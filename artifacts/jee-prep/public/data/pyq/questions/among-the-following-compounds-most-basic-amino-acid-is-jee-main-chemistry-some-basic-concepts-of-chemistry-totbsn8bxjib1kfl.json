@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "v7XRrlKIMGrlUbverYrnU",
+      "paperTitle": "JEE Main 2019 (Online) 12th January Morning Slot",
+      "year": 2019,
+      "examDate": "2019-01-12 09:30",
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "proteins-and-enzymes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "among-the-following-compounds-most-basic-amino-acid-is-jee-main-chemistry-some-basic-concepts-of-chemistry-totbsn8bxjib1kfl",
+      "content": "Among the following compounds most basic amino acid is - ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Lysine"
+        },
+        {
+          "identifier": "B",
+          "content": "Asparagine "
+        },
+        {
+          "identifier": "C",
+          "content": "Histidine "
+        },
+        {
+          "identifier": "D",
+          "content": "Serine"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<b>Compound</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Pl value</b>\n<br>Histidine &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.6\n<br>Serine &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.7\n<br>Lysine &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9.8\n<br>Asparagine &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.4"
+    }
+  ]
+}

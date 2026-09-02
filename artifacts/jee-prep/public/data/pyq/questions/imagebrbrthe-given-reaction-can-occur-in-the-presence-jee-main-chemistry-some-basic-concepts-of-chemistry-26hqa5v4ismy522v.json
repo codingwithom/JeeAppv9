@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1krus5stv",
+      "paperTitle": "JEE Main 2021 (Online) 25th July Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "haloalkanes-and-haloarenes",
+      "chapterGroup": "organic-chemistry",
+      "topic": "haloarenes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "imagebrbrthe-given-reaction-can-occur-in-the-presence-jee-main-chemistry-some-basic-concepts-of-chemistry-26hqa5v4ismy522v",
+      "content": "<img src=\"https://imagex.cdn.examgoal.net/1krwh5zc8/0003a497-b477-4e6c-b402-acc0d38fc70d/e1de8a80-f493-11eb-9dc6-a7061d629865/file-1krwh5zc9.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 25th July Morning Shift Chemistry - Haloalkanes and Haloarenes Question 108 English\"><br>The given reaction can occur in the presence of :<br><br>(a) Bromine water<br><br>(b) Br<sub>2</sub> in CS<sub>2</sub>, 273 K<br><br>(c) Br<sub>2</sub>/FeBr<sub>3</sub><br><br>(d) Br<sub>2</sub> in CHCl<sub>3</sub>, 273 K<br><br>Choose the correct answer from the options gien below :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(b) and (d) only"
+        },
+        {
+          "identifier": "B",
+          "content": "(a) and (c) only"
+        },
+        {
+          "identifier": "C",
+          "content": "(b), (c) and (d) only"
+        },
+        {
+          "identifier": "D",
+          "content": "(a), (b) and (d) only"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Bromine water gives tribromo products, other gives monobromo products in which para is major product."
+    }
+  ]
+}

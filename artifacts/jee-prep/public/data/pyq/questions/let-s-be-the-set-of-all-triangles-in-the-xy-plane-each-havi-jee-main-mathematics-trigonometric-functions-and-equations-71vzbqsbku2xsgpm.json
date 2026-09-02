@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "UbyEKAsad53b322QnPdNK",
+      "paperTitle": "JEE Main 2019 (Online) 9th January Evening Slot",
+      "year": 2019,
+      "examDate": "2019-01-09 14:30",
+      "subject": "mathematics",
+      "chapter": "permutations-and-combinations",
+      "chapterGroup": "algebra",
+      "topic": "application-of-permutations-and-combination-in-geometry",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "let-s-be-the-set-of-all-triangles-in-the-xy-plane-each-havi-jee-main-mathematics-trigonometric-functions-and-equations-71vzbqsbku2xsgpm",
+      "content": "Let S be the set of all triangles in the xy-plane, each having one vertex at the origin and the other two vertices lie on coordinate axes with integral coordinates. If each triangle in S has area 50 sq. units, then the number of elements in the set S is : ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "9"
+        },
+        {
+          "identifier": "B",
+          "content": "18"
+        },
+        {
+          "identifier": "C",
+          "content": "36"
+        },
+        {
+          "identifier": "D",
+          "content": "32"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/t4cC5tNJI145bNMHB/FqPaXH7Qf6pbKpL84T24dmmPrn2c8/R0kdHlSEgPNFTyw1S0497e/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 9th January Evening Slot Mathematics - Permutations and Combinations Question 186 English Explanation\">\n<br><br>Area = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.781ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.795ex\" height=\"2.737ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864.9 793.6 1209.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mn\" transform=\"translate(220,394) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mn\" transform=\"translate(220,-345) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><rect width=\"553.6\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container> h. k = 50\n<br><br>h. k = 100\n<br><br>h. k = 2<sup>2</sup>  .  5<sup>2</sup>\n<br><br>Total divisors \n<br><br>= (2 + 1) (2 + 1) = 9\n<br><br>if   h &gt; 0, k &gt; 0\n<br><br>But   <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -4.016ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"14.575ex\" height=\"9.163ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -2275 6442.1 4050\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mtable\" data-frame-styles=\"\"><g data-mml-node=\"mtr\" transform=\"translate(0,1400)\"><g data-mml-node=\"mtd\" transform=\"translate(200,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"210E\" xlink:href=\"#MJX-TEX-I-210E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(853.8,0)\"><use data-c=\"3E\" xlink:href=\"#MJX-TEX-N-3E\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1909.6,0)\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2409.6,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g></g></g><g data-mml-node=\"mtd\" transform=\"translate(3887.6,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D458\" xlink:href=\"#MJX-TEX-I-1D458\"></use></g><g data-mml-node=\"mo\" transform=\"translate(798.8,0)\"><use data-c=\"3C\" xlink:href=\"#MJX-TEX-N-3C\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1854.6,0)\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g></g></g></g><g data-mml-node=\"mtr\"><g data-mml-node=\"mtd\" transform=\"translate(200,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"210E\" xlink:href=\"#MJX-TEX-I-210E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(853.8,0)\"><use data-c=\"3C\" xlink:href=\"#MJX-TEX-N-3C\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1909.6,0)\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2409.6,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g></g></g><g data-mml-node=\"mtd\" transform=\"translate(3887.6,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D458\" xlink:href=\"#MJX-TEX-I-1D458\"></use></g><g data-mml-node=\"mo\" transform=\"translate(798.8,0)\"><use data-c=\"3E\" xlink:href=\"#MJX-TEX-N-3E\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1854.6,0)\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g></g></g></g><g data-mml-node=\"mtr\" transform=\"translate(0,-1400)\"><g data-mml-node=\"mtd\" transform=\"translate(200,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"210E\" xlink:href=\"#MJX-TEX-I-210E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(853.8,0)\"><use data-c=\"3C\" xlink:href=\"#MJX-TEX-N-3C\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1909.6,0)\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2409.6,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g></g></g><g data-mml-node=\"mtd\" transform=\"translate(3887.6,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D458\" xlink:href=\"#MJX-TEX-I-1D458\"></use></g><g data-mml-node=\"mo\" transform=\"translate(798.8,0)\"><use data-c=\"3C\" xlink:href=\"#MJX-TEX-N-3C\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1854.6,0)\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g></g></g></g></g></g></g></g></svg></mjx-container>\n<br><br>all are possible so that total no. of positive case \n<br><br>9 + 9 + 9 + 9 = 36"
+    }
+  ]
+}

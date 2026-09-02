@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l6kr4j7b",
+      "paperTitle": "JEE Main 2022 (Online) 27th July Evening Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "purification-of-organic-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pmatch-list-i-with-list-iip-pstyle-typetextc-jee-main-chemistry-some-basic-concepts-of-chemistry-jl8nr2xvpt8uzmpk",
+      "content": "<p>Match List - I with List - II.</p>\n<p>\n<table class=\"tg\" style=\"undefined;table-layout: fixed; width: 497px\">\n<colgroup>\n<col style=\"width: 53px\">\n<col style=\"width: 208px\">\n<col style=\"width: 40px\">\n<col style=\"width: 196px\">\n</colgroup>\n<thead>\n  <tr>\n    <th class=\"tg-1wig\"></th>\n    <th class=\"tg-1wig\">List - I<br>(Mixture)</th>\n    <th class=\"tg-1wig\"></th>\n    <th class=\"tg-1wig\">List - II<br>(Purification Process)</th>\n  </tr>\n</thead>\n<tbody>\n  <tr>\n    <td class=\"tg-0lax\">(A)</td>\n    <td class=\"tg-0lax\">Chloroform &amp; Aniline</td>\n    <td class=\"tg-0lax\">(I)</td>\n    <td class=\"tg-0lax\">Steam distillation</td>\n  </tr>\n  <tr>\n    <td class=\"tg-0lax\">(B)</td>\n    <td class=\"tg-0lax\">Benzoic acid &amp; Napthalene</td>\n    <td class=\"tg-0lax\">(II)</td>\n    <td class=\"tg-0lax\">Sublimation</td>\n  </tr>\n  <tr>\n    <td class=\"tg-0lax\">(C)</td>\n    <td class=\"tg-0lax\">Water &amp; Aniline</td>\n    <td class=\"tg-0lax\">(III)</td>\n    <td class=\"tg-0lax\">Distillation</td>\n  </tr>\n  <tr>\n    <td class=\"tg-0lax\">(D)</td>\n    <td class=\"tg-0lax\">Napthalene &amp; Sodium chloride</td>\n    <td class=\"tg-0lax\">(IV)</td>\n    <td class=\"tg-0lax\">Crystallisation</td>\n  </tr>\n</tbody>\n</table></p>\n<p>Choose the correct answer from the options given below :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(A) - (IV), (B) - (III), (C) - (I), (D) - (II)"
+        },
+        {
+          "identifier": "B",
+          "content": "(A) - (III), (B) - (I), (C) - (IV), (D) - (II)"
+        },
+        {
+          "identifier": "C",
+          "content": "(A) - (III), (B) - (IV), (C) - (II), (D) - (I)"
+        },
+        {
+          "identifier": "D",
+          "content": "(A) - (III), (B) - (IV), (C) - (I), (D) - (II)"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "(A) Chloroform + Aniline <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> (III) Distillation<br><br>\n(B) Benzoic acid + Napthalene <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> (IV) Crystallisation<br><br>\n(C) Water + Aniline <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> (I) Steam distillation<br><br>\n(D) Napthalene + Sodium chloride <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> (II) Sublimation"
+    }
+  ]
+}

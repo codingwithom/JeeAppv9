@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "NKOpVAGoGWm7IuwX5F1kludvp91",
+      "paperTitle": "JEE Main 2021 (Online) 26th February Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "alcohols-phenols-and-ethers",
+      "chapterGroup": "organic-chemistry",
+      "topic": "properties-preparation-and-uses-of-phenols",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "given-below-are-two-statements--brbrstatement-i--o-n-jee-main-chemistry-some-basic-concepts-of-chemistry-5rfscwjfgvgjah3n",
+      "content": "Given below are two statements : <br><br>Statement I : o-Nitrophenol is steam volatile due to intramolecular hydrogen bonding.<br><br>Statement II : o-Nitrophenol has high melting due to hydrogen bonding.<br><br>In the light of the above statements, choose the most appropriate answer from the options given below :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Both Statement I and Statement II are true"
+        },
+        {
+          "identifier": "B",
+          "content": "Statement I is true but Statement II is false"
+        },
+        {
+          "identifier": "C",
+          "content": "Statement I is false but Statement II is true"
+        },
+        {
+          "identifier": "D",
+          "content": "Both Statement I and Statement II are false"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1kqv8syis/7552b3e6-dd3d-4bdb-89c5-7e01005a989c/2ea83840-e01a-11eb-8de8-59af26dc1e90/file-1kqv8syit.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 26th February Morning Shift Chemistry - Alcohols, Phenols and Ethers Question 120 English Explanation\">\n<br><br>So it is more volatile due to intramolecular\nH-bonding.\n<br><br>Melting point depends on packing efficiency\nnot on H-bonding thus statement II is false."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "GX3vCjablV4iSUWTmP1kls919p2",
+      "paperTitle": "JEE Main 2021 (Online) 25th February Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "carbohydrates",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-glycosidic-linkage-between-galactose-and-glucos-jee-main-chemistry-some-basic-concepts-of-chemistry-vfq3k7og9ynppqcf",
+      "content": "Which of the glycosidic linkage between galactose and glucose is present in lactose?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "C-1 of galactose and C-6 of glucose"
+        },
+        {
+          "identifier": "B",
+          "content": "C-1 of glucose and C-6 of galactose"
+        },
+        {
+          "identifier": "C",
+          "content": "C-1 of galactose and C-4 of glucose"
+        },
+        {
+          "identifier": "D",
+          "content": "C-1 of glucose and C-4 of galactose"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<p>Glycosidic linkage is a type of covalent bond that joins\ncarbohydrate molecules to another group.</p>\n<p><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1ldu08py6/dcba78d4-1e58-4ef2-a44f-a397bdd23983/e3e267e0-a6c4-11ed-8d92-0101c7cb78f8/file-1ldu08py7.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1ldu08py6/dcba78d4-1e58-4ef2-a44f-a397bdd23983/e3e267e0-a6c4-11ed-8d92-0101c7cb78f8/file-1ldu08py7.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2021 (Online) 25th February Morning Shift Chemistry - Biomolecules Question 135 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1ldu08py6/dcba78d4-1e58-4ef2-a44f-a397bdd23983/e3e267e0-a6c4-11ed-8d92-0101c7cb78f8/file-1ldu08py7.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1ldu08py6/dcba78d4-1e58-4ef2-a44f-a397bdd23983/e3e267e0-a6c4-11ed-8d92-0101c7cb78f8/file-1ldu08py7.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1ldu08py6/dcba78d4-1e58-4ef2-a44f-a397bdd23983/e3e267e0-a6c4-11ed-8d92-0101c7cb78f8/file-1ldu08py7.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1ldu08py6/dcba78d4-1e58-4ef2-a44f-a397bdd23983/e3e267e0-a6c4-11ed-8d92-0101c7cb78f8/file-1ldu08py7.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1ldu08py6/dcba78d4-1e58-4ef2-a44f-a397bdd23983/e3e267e0-a6c4-11ed-8d92-0101c7cb78f8/file-1ldu08py7.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1ldu08py6/dcba78d4-1e58-4ef2-a44f-a397bdd23983/e3e267e0-a6c4-11ed-8d92-0101c7cb78f8/file-1ldu08py7.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"></p>\n<p>In lactose, the glycosidic linkage is formed between C-1 of galactose\nand C-4, glycosidic of glucose.</p>"
+    }
+  ]
+}

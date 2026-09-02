@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l56b1o5f",
+      "paperTitle": "JEE Main 2022 (Online) 28th June Morning Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "aromaticity",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pwhich-of-the-following-structure-are-aromatic-in-nature-jee-main-chemistry-some-basic-concepts-of-chemistry-ted8qgbv3zh6zelr",
+      "content": "<p>Which of the following structure are aromatic in nature?</p>\n<p><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l576yatt/b9eac1da-2754-439c-914d-0fdf595858b8/600c6c10-fbd7-11ec-a656-a1c0c7b2ee13/file-1l576yatu.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l576yatt/b9eac1da-2754-439c-914d-0fdf595858b8/600c6c10-fbd7-11ec-a656-a1c0c7b2ee13/file-1l576yatu.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2022 (Online) 28th June Morning Shift Chemistry - Basics of Organic Chemistry Question 167 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l576yatt/b9eac1da-2754-439c-914d-0fdf595858b8/600c6c10-fbd7-11ec-a656-a1c0c7b2ee13/file-1l576yatu.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l576yatt/b9eac1da-2754-439c-914d-0fdf595858b8/600c6c10-fbd7-11ec-a656-a1c0c7b2ee13/file-1l576yatu.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l576yatt/b9eac1da-2754-439c-914d-0fdf595858b8/600c6c10-fbd7-11ec-a656-a1c0c7b2ee13/file-1l576yatu.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l576yatt/b9eac1da-2754-439c-914d-0fdf595858b8/600c6c10-fbd7-11ec-a656-a1c0c7b2ee13/file-1l576yatu.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l576yatt/b9eac1da-2754-439c-914d-0fdf595858b8/600c6c10-fbd7-11ec-a656-a1c0c7b2ee13/file-1l576yatu.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l576yatt/b9eac1da-2754-439c-914d-0fdf595858b8/600c6c10-fbd7-11ec-a656-a1c0c7b2ee13/file-1l576yatu.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"></p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "A, B, C, and D"
+        },
+        {
+          "identifier": "B",
+          "content": "Only A and B"
+        },
+        {
+          "identifier": "C",
+          "content": "Only A and C"
+        },
+        {
+          "identifier": "D",
+          "content": "Only B, C and D"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<b>A</b> and <b>B</b> are aromatic as they are cyclic, planar and has <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.566ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"17.435ex\" height=\"2.32ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -775.2 7706.1 1025.2\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g><g data-mml-node=\"mi\" transform=\"translate(500,0)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1322.2,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(2322.4,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2822.4,0)\"><use data-c=\"1D70B\" xlink:href=\"#MJX-TEX-I-1D70B\"></use></g><g data-mml-node=\"msup\" transform=\"translate(3395.4,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D452\" xlink:href=\"#MJX-TEX-I-1D452\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(499,363) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(4494.6,0)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"mi\" transform=\"translate(4883.6,0)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mo\" transform=\"translate(5761.4,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(6817.1,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mo\" transform=\"translate(7317.1,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g></g></svg></mjx-container>"
+    }
+  ]
+}

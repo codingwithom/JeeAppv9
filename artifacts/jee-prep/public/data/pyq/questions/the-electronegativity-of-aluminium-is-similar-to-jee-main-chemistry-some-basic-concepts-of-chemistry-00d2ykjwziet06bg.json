@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "SYfp09gAHw5vszkNGPdPk",
+      "paperTitle": "JEE Main 2019 (Online) 10th January Morning Slot",
+      "year": 2019,
+      "examDate": "2019-01-10 09:30",
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "electronegativity",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-electronegativity-of-aluminium-is-similar-to-jee-main-chemistry-some-basic-concepts-of-chemistry-00d2ykjwziet06bg",
+      "content": "The electronegativity of aluminium is similar to : ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Beryllium"
+        },
+        {
+          "identifier": "B",
+          "content": "Carbon"
+        },
+        {
+          "identifier": "C",
+          "content": "Boron"
+        },
+        {
+          "identifier": "D",
+          "content": "Lithium"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "E.N.  of  Al = (1.5)  <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.283ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -589 1000 567\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2245\" xlink:href=\"#MJX-TEX-N-2245\"></use></g></g></g></svg></mjx-container> Be (1.5)"
+    }
+  ]
+}

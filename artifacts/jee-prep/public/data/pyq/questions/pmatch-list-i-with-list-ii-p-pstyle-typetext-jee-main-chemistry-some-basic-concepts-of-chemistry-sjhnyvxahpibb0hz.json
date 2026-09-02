@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l55n6t8x",
+      "paperTitle": "JEE Main 2022 (Online) 28th June Evening Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "nature-of-oxide",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pmatch-list-i-with-list-ii-p-pstyle-typetext-jee-main-chemistry-some-basic-concepts-of-chemistry-sjhnyvxahpibb0hz",
+      "content": "<p>Match List - I with List - II :</p>\n<p>\n<table class=\"tg\" style=\"undefined;table-layout: fixed; width: 478px\">\n<colgroup>\n<col style=\"width: 43px\">\n<col style=\"width: 178px\">\n<col style=\"width: 52px\">\n<col style=\"width: 205px\">\n</colgroup>\n<thead>\n  <tr>\n    <th class=\"tg-0pky\"></th>\n    <th class=\"tg-c3ow\">List-I (Oxide)</th>\n    <th class=\"tg-0pky\"></th>\n    <th class=\"tg-c3ow\">List-II (Nature)</th>\n  </tr>\n</thead>\n<tbody>\n  <tr>\n    <td class=\"tg-0pky\">(A)</td>\n    <td class=\"tg-0pky\"><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.375ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"6.095ex\" height=\"1.97ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 2694.1 870.6\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(760,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g><g data-mml-node=\"mn\" transform=\"translate(331,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1494.6,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-150) scale(0.707)\"><use data-c=\"37\" xlink:href=\"#MJX-TEX-N-37\"></use></g></g></g></g></g></svg></mjx-container></td>\n    <td class=\"tg-0pky\">(I)</td>\n    <td class=\"tg-0pky\">Amphoteric</td>\n  </tr>\n  <tr>\n    <td class=\"tg-0pky\">(B)</td>\n    <td class=\"tg-0pky\"><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.92ex\" height=\"1.932ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -704 2616.6 854\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D441\" xlink:href=\"#MJX-TEX-I-1D441\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(888,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"mn\" transform=\"translate(562,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"mi\" transform=\"translate(1853.6,0)\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g></g></g></svg></mjx-container></td>\n    <td class=\"tg-0pky\">(II)</td>\n    <td class=\"tg-0pky\">Basic</td>\n  </tr>\n  <tr>\n    <td class=\"tg-0pky\">(C)</td>\n    <td class=\"tg-0pky\"><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.375ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"6.073ex\" height=\"1.994ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 2684.1 881.6\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D434\" xlink:href=\"#MJX-TEX-I-1D434\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(750,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g><g data-mml-node=\"mn\" transform=\"translate(331,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1484.6,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-150) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g></g></g></svg></mjx-container></td>\n    <td class=\"tg-0pky\">(III)</td>\n    <td class=\"tg-0pky\">Neutral</td>\n  </tr>\n  <tr>\n    <td class=\"tg-0pky\">(D)</td>\n    <td class=\"tg-0pky\"><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.531ex\" height=\"1.932ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -704 2002.6 854\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D441\" xlink:href=\"#MJX-TEX-I-1D441\"></use></g><g data-mml-node=\"mn\" transform=\"translate(836,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"mi\" transform=\"translate(1239.6,0)\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g></g></g></svg></mjx-container></td>\n    <td class=\"tg-0pky\">(IV)</td>\n    <td class=\"tg-0pky\">Acidic</td>\n  </tr>\n</tbody>\n</table></p>\n<p>Choose the correct answer from the options given below :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(A) - (IV), (B) - (III), (C) - (I), (D) - (II)"
+        },
+        {
+          "identifier": "B",
+          "content": "(A) - (IV), (B) - (II), (C) - (I), (D) - (III)"
+        },
+        {
+          "identifier": "C",
+          "content": "(A) - (II), (B) - (IV), (C) - (III), (D) - (I)"
+        },
+        {
+          "identifier": "D",
+          "content": "(A) - (I), (B) - (II), (C) - (III), (D) - (IV)"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "(A) Cl<sub>2</sub>O<sub>7</sub> → Acidic<br/><br/>\n(B) Na<sub>2</sub>O → Basic<br/><br/>\n(C) Al<sub>2</sub>O<sub>3</sub> → Amphoteric<br/><br/>\n(D) N<sub>2</sub>O → Neutral<br/><br/>\nOxides of metals are basic in nature whereas oxides of non-metals are acidic in nature. N<sub>2</sub>O is a neutral oxide."
+    }
+  ]
+}

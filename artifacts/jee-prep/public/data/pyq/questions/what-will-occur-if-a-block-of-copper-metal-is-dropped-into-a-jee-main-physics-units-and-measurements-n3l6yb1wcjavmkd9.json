@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "6FwE436nRDqSrw7iaxjfz",
+      "paperTitle": "JEE Main 2016 (Online) 9th April Morning Slot",
+      "year": 2016,
+      "examDate": "2016-04-09 09:30",
+      "subject": "chemistry",
+      "chapter": "electrochemistry",
+      "chapterGroup": "physical-chemistry",
+      "topic": "electrochemical-series-cell-and-their-emf",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "what-will-occur-if-a-block-of-copper-metal-is-dropped-into-a-jee-main-physics-units-and-measurements-n3l6yb1wcjavmkd9",
+      "content": "What will occur if a block of copper metal is dropped into a beaker containing a\nsolution of 1M ZnSO<sub>4</sub>?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "The copper metal will dissolve and zinc metal will be deposited."
+        },
+        {
+          "identifier": "B",
+          "content": "The copper metal will dissolve with evolution of hydrogen gas."
+        },
+        {
+          "identifier": "C",
+          "content": "The copper metal will dissolve with evolution of oxygen gas."
+        },
+        {
+          "identifier": "D",
+          "content": "No reaction will occur."
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "In the reaction of copper with zinc ions, zinc is more active (easily oxidised) than copper; thus, no reaction will take place."
+    }
+  ]
+}

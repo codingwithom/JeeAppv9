@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "BH6tULGqrH8TBtOf",
+      "paperTitle": "JEE Main 2016 (Offline)",
+      "year": 2016,
+      "examDate": null,
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "proteins-and-enzymes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "thiol-group-is-present-in-2016-marks-4-bh6tulgqrh8tbtof.htm",
+      "content": "Thiol group is present in :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Cytosine"
+        },
+        {
+          "identifier": "B",
+          "content": "Cystine"
+        },
+        {
+          "identifier": "C",
+          "content": "Cysteine "
+        },
+        {
+          "identifier": "D",
+          "content": "Methionine"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Among <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.557ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -666 1000 688\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use></g></g></g></svg></mjx-container> naturally occuring amino acids ''Cysteine'' has' <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.216ex\" height=\"1.767ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -759 1863.3 781\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D446\" xlink:href=\"#MJX-TEX-I-1D446\"></use></g><g data-mml-node=\"msup\" transform=\"translate(645,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D43B\" xlink:href=\"#MJX-TEX-I-1D43B\"></use></g><g data-mml-node=\"mo\" transform=\"translate(973.9,363) scale(0.707)\"><use data-c=\"2032\" xlink:href=\"#MJX-TEX-V-2032\"></use></g></g></g></g></svg></mjx-container> or thiol functional group.\n<br><br><img class=\"question-image\" src=\"https://imagex.cdn.examgoal.net/zAwNDsQUQ4Umv6fmY/EAYr29yhFSISgbpnWSPtS4crvQUBW/ova9njmLurmCpvehWAdcgg/image.png\" loading=\"lazy\" alt=\"JEE Main 2016 (Offline) Chemistry - Biomolecules Question 198 English Explanation\">  "
+    }
+  ]
+}

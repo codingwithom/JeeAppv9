@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "UAvdtqeDjcJ5hPYW",
+      "paperTitle": "JEE Main 2016 (Offline)",
+      "year": 2016,
+      "examDate": null,
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "purification-of-organic-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-distillation-technique-most-suited-for-separating-glycer-2016-marks-4-uavdtqedjcj5hpyw.htm",
+      "content": "The distillation technique most suited for separating glycerol from spent-lye in the soap industry is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Simple distillation"
+        },
+        {
+          "identifier": "B",
+          "content": "Fractional distillation"
+        },
+        {
+          "identifier": "C",
+          "content": "Steam distillation"
+        },
+        {
+          "identifier": "D",
+          "content": "Distillation under reduced pressure"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<p>The best technique for separating glycerol from spent-lye in the soap industry is Distillation under Reduced Pressure, also known as Vacuum Distillation (Option D).</p>\n<p>The reason for this is that glycerol has a high boiling point (~<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.381ex\" height=\"1.649ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -707 1936.6 729\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msup\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use><use data-c=\"39\" xlink:href=\"#MJX-TEX-N-39\" transform=\"translate(500,0)\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(1000,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1533,393.1) scale(0.707)\"><use data-c=\"2218\" xlink:href=\"#MJX-TEX-N-2218\"></use></g></g></g></g></g></svg></mjx-container><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.719ex\" height=\"1.645ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 760 727\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g></g></g></svg></mjx-container>). If we were to use simple or fractional distillation, which involves boiling at standard atmospheric pressure, the high temperature could degrade or decompose the glycerol. </p>\n<p>In contrast, vacuum distillation allows the separation to occur at a much lower temperature ( around <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"6.101ex\" height=\"1.649ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -707 2696.6 729\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msup\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"38\" xlink:href=\"#MJX-TEX-N-38\" transform=\"translate(500,0)\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(1000,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1533,393.1) scale(0.707)\"><use data-c=\"2218\" xlink:href=\"#MJX-TEX-N-2218\"></use></g></g></g><g data-mml-node=\"mi\" transform=\"translate(1936.6,0)\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g></g></g></svg></mjx-container>) by reducing the pressure. This helps to prevent degradation of the glycerol, making it a better method for this particular separation. Steam distillation isn't suitable here, as it's typically used for temperature-sensitive, volatile substances, which isn't the case for glycerol.</p>"
+    }
+  ]
+}

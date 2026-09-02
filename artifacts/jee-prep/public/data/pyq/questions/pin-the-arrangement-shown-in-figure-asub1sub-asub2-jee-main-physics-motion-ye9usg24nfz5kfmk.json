@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l58hctw3",
+      "paperTitle": "JEE Main 2022 (Online) 26th June Evening Shift",
+      "year": 2022,
+      "subject": "physics",
+      "chapter": "laws-of-motion",
+      "chapterGroup": "mechanics",
+      "topic": "motion-of-connected-bodies",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pin-the-arrangement-shown-in-figure-asub1sub-asub2-jee-main-physics-motion-ye9usg24nfz5kfmk",
+      "content": "<p>In the arrangement shown in figure a<sub>1</sub>, a<sub>2</sub>, a<sub>3</sub> and a<sub>4</sub> are the accelerations of masses m<sub>1</sub>, m<sub>2</sub>, m<sub>3</sub> and m<sub>4</sub> respectively. Which of the following relation is true for this arrangement?</p>\n<p><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l5ah1ydy/4960bf07-d070-4696-a462-2d0eddf45242/3aea2f60-fda5-11ec-9375-7dc6a3ea1387/file-1l5ah1ydz.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l5ah1ydy/4960bf07-d070-4696-a462-2d0eddf45242/3aea2f60-fda5-11ec-9375-7dc6a3ea1387/file-1l5ah1ydz.png\" loading=\"lazy\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;max-height: 60vh\" alt=\"JEE Main 2022 (Online) 26th June Evening Shift Physics - Laws of Motion Question 78 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l5ah1ydy/4960bf07-d070-4696-a462-2d0eddf45242/3aea2f60-fda5-11ec-9375-7dc6a3ea1387/file-1l5ah1ydz.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l5ah1ydy/4960bf07-d070-4696-a462-2d0eddf45242/3aea2f60-fda5-11ec-9375-7dc6a3ea1387/file-1l5ah1ydz.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l5ah1ydy/4960bf07-d070-4696-a462-2d0eddf45242/3aea2f60-fda5-11ec-9375-7dc6a3ea1387/file-1l5ah1ydz.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l5ah1ydy/4960bf07-d070-4696-a462-2d0eddf45242/3aea2f60-fda5-11ec-9375-7dc6a3ea1387/file-1l5ah1ydz.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l5ah1ydy/4960bf07-d070-4696-a462-2d0eddf45242/3aea2f60-fda5-11ec-9375-7dc6a3ea1387/file-1l5ah1ydz.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l5ah1ydy/4960bf07-d070-4696-a462-2d0eddf45242/3aea2f60-fda5-11ec-9375-7dc6a3ea1387/file-1l5ah1ydz.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"></p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "4a<sub>1</sub> + 2a<sub>2</sub> + a<sub>3</sub> + a<sub>4</sub> = 0"
+        },
+        {
+          "identifier": "B",
+          "content": "a<sub>1</sub> + 4a<sub>2</sub> + 3a<sub>3</sub> + a<sub>4</sub> = 0"
+        },
+        {
+          "identifier": "C",
+          "content": "a<sub>1</sub> + 4a<sub>2</sub> + 3a<sub>3</sub> + 2a<sub>4</sub> = 0"
+        },
+        {
+          "identifier": "D",
+          "content": "2a<sub>1</sub> + 2a<sub>2</sub> + 3a<sub>3</sub> + a<sub>4</sub> = 0"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<p>From virtual work done method,</p>\n<p>4T <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> a<sub>1</sub> + 2T <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> a<sub>2</sub> + T <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> a<sub>3</sub> + T <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> a<sub>4</sub> = 0</p>\n<p><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> 4a<sub>1</sub> + 2a<sub>2</sub> + a<sub>3</sub> + a<sub>4</sub> = 0</p>"
+    }
+  ]
+}

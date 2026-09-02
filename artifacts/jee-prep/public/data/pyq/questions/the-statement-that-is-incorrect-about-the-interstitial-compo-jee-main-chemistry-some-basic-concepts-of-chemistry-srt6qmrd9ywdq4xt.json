@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "zrVLr8ceUTyQreQyErrNL",
+      "paperTitle": "JEE Main 2019 (Online) 8th April Evening Slot",
+      "year": 2019,
+      "examDate": "2019-04-08 14:30",
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "properties-of-transition-elements",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-statement-that-is-incorrect-about-the-interstitial-compo-jee-main-chemistry-some-basic-concepts-of-chemistry-srt6qmrd9ywdq4xt",
+      "content": "The statement that is INCORRECT about the\ninterstitial compounds is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "They are chemically reactive"
+        },
+        {
+          "identifier": "B",
+          "content": "They have metallic conductivity"
+        },
+        {
+          "identifier": "C",
+          "content": "They have high melting points"
+        },
+        {
+          "identifier": "D",
+          "content": "They are very hard"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Interstitial compound are –\n<br><br>(i) very hard\n <br><br>(ii) chemically inert\n <br><br>(iv) high melting point.\n<br><br>As interstitial compounds are chamically inert."
+    }
+  ]
+}

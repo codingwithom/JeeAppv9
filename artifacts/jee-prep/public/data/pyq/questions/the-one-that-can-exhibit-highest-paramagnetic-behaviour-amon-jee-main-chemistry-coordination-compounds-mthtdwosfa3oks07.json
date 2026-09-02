@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "lZ4p6Vl2UkoCLifoXfjgy2xukfc87raa",
+      "paperTitle": "JEE Main 2020 (Online) 4th September Evening Slot",
+      "year": 2020,
+      "examDate": "2020-09-04 15:00",
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "crystal-field-theory-cft",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-one-that-can-exhibit-highest-paramagnetic-behaviour-amon-jee-main-chemistry-coordination-compounds-mthtdwosfa3oks07",
+      "content": "The one that can exhibit highest paramagnetic\nbehaviour among the following is :\n<br><br>gly = glycinato; bpy = 2, 2'-bipyridine",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "[Fe(en)(bpy)(NH<sub>3</sub>)<sub>2</sub>]<sup>2+</sup>"
+        },
+        {
+          "identifier": "B",
+          "content": "[Pd(gly)<sub>2</sub>]"
+        },
+        {
+          "identifier": "C",
+          "content": "[Co(OX)<sub>2</sub>(OH)<sub>2</sub>]<sup>–</sup> (<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.885ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 833 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></svg></mjx-container><sub>0</sub> &gt; P)"
+        },
+        {
+          "identifier": "D",
+          "content": "[Ti(NH<sub>3</sub>)<sub>6</sub>]<sup>3+</sup>"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "[Co(OX)<sub>2</sub>(OH)<sub>2</sub>]<sup>–</sup> \n<br><br>(As here <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.885ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 833 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></svg></mjx-container><sub>0</sub> &gt; P so those ligands act as strong field ligand and pairing happens.)\n<br><br><sub>27</sub>Co<sup>+5</sup> = [<sub>18</sub>Ar] 3d<sup>4</sup> 4s<sup>0</sup>( <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -1.001ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"8.586ex\" height=\"3.176ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -961.7 3795.2 1404\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msubsup\"><g data-mml-node=\"mi\"><use data-c=\"1D461\" xlink:href=\"#MJX-TEX-I-1D461\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(394,490.8) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mn\" transform=\"translate(778,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1278,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1556,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(394,-297.3) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mi\" transform=\"translate(500,0)\"><use data-c=\"1D454\" xlink:href=\"#MJX-TEX-I-1D454\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(1897.8,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"msubsup\" transform=\"translate(2342.5,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D452\" xlink:href=\"#MJX-TEX-I-1D452\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(499,490.8) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mn\" transform=\"translate(778,0)\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g></g><g data-mml-node=\"mi\" transform=\"translate(499,-138.9) scale(0.707)\"><use data-c=\"1D454\" xlink:href=\"#MJX-TEX-I-1D454\"></use></g></g></g></g></svg></mjx-container> )\n<br><br>It has highest number of unpaired e<sup>–</sup> s. so it is most paramagnetic."
+    }
+  ]
+}

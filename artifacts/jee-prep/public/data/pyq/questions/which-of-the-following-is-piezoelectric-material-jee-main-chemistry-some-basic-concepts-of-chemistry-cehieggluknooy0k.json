@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "58XuRNVqrRQYyuaWlJMiT",
+      "paperTitle": "JEE Main 2019 (Online) 9th January Morning Slot",
+      "year": 2019,
+      "examDate": "2019-01-09 09:30",
+      "subject": "chemistry",
+      "chapter": "p-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "group-14-elements-carbon-family",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-is-piezoelectric-material-jee-main-chemistry-some-basic-concepts-of-chemistry-cehieggluknooy0k",
+      "content": "The one that is extensively used as a piezoelectric material is : ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "tridymite"
+        },
+        {
+          "identifier": "B",
+          "content": "amorphous silica"
+        },
+        {
+          "identifier": "C",
+          "content": "quartz"
+        },
+        {
+          "identifier": "D",
+          "content": "mica"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Those materials which produce electricity under mechanical stress are called piezoelectric material.\n<br><br>Quartz is an example of piezoelectric material."
+    }
+  ]
+}

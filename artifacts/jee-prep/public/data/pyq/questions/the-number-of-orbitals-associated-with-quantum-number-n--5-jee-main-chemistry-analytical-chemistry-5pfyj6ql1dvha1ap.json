@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "fNVB1JjmQVWjETZenV7k9k2k5dzy7mo",
+      "paperTitle": "JEE Main 2020 (Online) 7th January Morning Slot",
+      "year": 2020,
+      "examDate": "2020-01-07 09:30",
+      "subject": "chemistry",
+      "chapter": "structure-of-atom",
+      "chapterGroup": "physical-chemistry",
+      "topic": "quantum-numbers-and-orbitals",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-number-of-orbitals-associated-with-quantum-number-n--5-jee-main-chemistry-analytical-chemistry-5pfyj6ql1dvha1ap",
+      "content": "The number of orbitals associated with quantum number n = 5, m<sub>s</sub> = +<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.781ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.795ex\" height=\"2.737ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864.9 793.6 1209.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mn\" transform=\"translate(220,394) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mn\" transform=\"translate(220,-345) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><rect width=\"553.6\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container> is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "11"
+        },
+        {
+          "identifier": "B",
+          "content": "25"
+        },
+        {
+          "identifier": "C",
+          "content": "15"
+        },
+        {
+          "identifier": "D",
+          "content": "50"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Total number of orbitals<br>\n= n<sup>2</sup> = (5)<sup>2</sup> = 25\n"
+    }
+  ]
+}

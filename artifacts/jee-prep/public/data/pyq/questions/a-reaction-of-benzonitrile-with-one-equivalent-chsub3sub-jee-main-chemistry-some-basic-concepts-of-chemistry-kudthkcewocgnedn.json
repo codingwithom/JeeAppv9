@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1krx604we",
+      "paperTitle": "JEE Main 2021 (Online) 25th July Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "compounds-containing-nitrogen",
+      "chapterGroup": "organic-chemistry",
+      "topic": "diazonium-salts-and-other-nitrogen-containing-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "a-reaction-of-benzonitrile-with-one-equivalent-chsub3sub-jee-main-chemistry-some-basic-concepts-of-chemistry-kudthkcewocgnedn",
+      "content": "A reaction of benzonitrile with one equivalent CH<sub>3</sub>MgBr followed by hydrolysis produces a yellow liquid \"P\". The compound \"P\" will give positive _________.",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Iodoform test"
+        },
+        {
+          "identifier": "B",
+          "content": "Schiff's test"
+        },
+        {
+          "identifier": "C",
+          "content": "Ninhydrin's test"
+        },
+        {
+          "identifier": "D",
+          "content": "Tollen's test"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1krz0wkk2/6e269017-ce2d-417d-9419-896bec923733/a40cbf20-f5fa-11eb-92d9-470658ec3090/file-1krz0wkk3-320w.png\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1krz0wkk2/6e269017-ce2d-417d-9419-896bec923733/a40cbf20-f5fa-11eb-92d9-470658ec3090/file-1krz0wkk3-500w.png\"><img src=\"https://imagex.cdn.examgoal.net/1krz0wkk2/6e269017-ce2d-417d-9419-896bec923733/a40cbf20-f5fa-11eb-92d9-470658ec3090/file-1krz0wkk3.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 25th July Evening Shift Chemistry - Compounds Containing Nitrogen Question 156 English Explanation\"></picture>"
+    }
+  ]
+}

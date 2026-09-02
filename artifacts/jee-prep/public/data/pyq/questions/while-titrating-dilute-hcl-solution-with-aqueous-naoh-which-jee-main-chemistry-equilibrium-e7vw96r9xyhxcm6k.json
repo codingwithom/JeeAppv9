@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "fJgmdZRvqRLiiFd7mUjgy2xukevksjwi",
+      "paperTitle": "JEE Main 2020 (Online) 2nd September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-02 09:00",
+      "subject": "chemistry",
+      "chapter": "redox-reactions",
+      "chapterGroup": "physical-chemistry",
+      "topic": "redox-titration",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "while-titrating-dilute-hcl-solution-with-aqueous-naoh-which-jee-main-chemistry-equilibrium-e7vw96r9xyhxcm6k",
+      "content": "While titrating dilute HCl solution with aqueous\nNaOH, which of the following will not be\nrequired?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Pipette and distilled water\n"
+        },
+        {
+          "identifier": "B",
+          "content": "Clamp and phenolphthalein"
+        },
+        {
+          "identifier": "C",
+          "content": "Burette and porcelain tile"
+        },
+        {
+          "identifier": "D",
+          "content": "Bunsen burner and measuring cylinder"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Bunsen Burner and measuring cylinder is not\nrequired for titration."
+    }
+  ]
+}

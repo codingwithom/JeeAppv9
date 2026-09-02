@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktiado5m",
+      "paperTitle": "JEE Main 2021 (Online) 31st August Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "inner-transition-elements-lanthanoids-and-actinoids",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-one-of-the-following-lanthanides-exhibits-2-oxidation-jee-main-chemistry-some-basic-concepts-of-chemistry-zmuf9vnbsk9lwpcj",
+      "content": "Which one of the following lanthanides exhibits +2 oxidation state with diamagnetic nature? (Given Z for Nd = 60, Yb = 70, La = 57, Ce = 58)",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Nd"
+        },
+        {
+          "identifier": "B",
+          "content": "Yb"
+        },
+        {
+          "identifier": "C",
+          "content": "La"
+        },
+        {
+          "identifier": "D",
+          "content": "Ce"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Yb (70) = 4f<sup>14</sup> 6s<sup>2</sup>\n<br><br>Yb<sup>+2</sup> = 4f<sup>14</sup> 6s<sup>0</sup>\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2235\" xlink:href=\"#MJX-TEX-N-2235\"></use></g></g></g></svg></mjx-container> All the electrons are paired hence Yb<sup>+2</sup> is\ndiamagnetic."
+    }
+  ]
+}

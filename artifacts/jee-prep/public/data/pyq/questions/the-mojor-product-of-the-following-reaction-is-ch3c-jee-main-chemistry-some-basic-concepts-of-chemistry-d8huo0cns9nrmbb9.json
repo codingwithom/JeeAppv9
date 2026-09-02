@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "qtLXWIkmrkVi33znUIqhG",
+      "paperTitle": "JEE Main 2019 (Online) 9th April Morning Slot",
+      "year": 2019,
+      "examDate": "2019-04-09 09:30",
+      "subject": "chemistry",
+      "chapter": "hydrocarbons",
+      "chapterGroup": "organic-chemistry",
+      "topic": "reaction-of-alkynes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-mojor-product-of-the-following-reaction-is-ch3c-jee-main-chemistry-some-basic-concepts-of-chemistry-d8huo0cns9nrmbb9",
+      "content": "The major product of the following reaction is :<br>\n<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/7km5fk00dyajo/1a1a5d69-a6a2-4c61-a07a-f78886ca5ef9/64a76a40-cc64-11e9-acf6-6d09a288f7f2/file-7km5fk00dyajp-320w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/7km5fk00dyajo/1a1a5d69-a6a2-4c61-a07a-f78886ca5ef9/64a76a40-cc64-11e9-acf6-6d09a288f7f2/file-7km5fk00dyajp-500w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 9th April Morning Slot Chemistry - Hydrocarbons Question 134 English\"></picture>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "CH<sub>3</sub>CD<sub>2</sub>CH(Cl)(I)"
+        },
+        {
+          "identifier": "B",
+          "content": "CH<sub>3</sub>CD(Cl)CHD(I)"
+        },
+        {
+          "identifier": "C",
+          "content": "CH<sub>3</sub>C(I)(Cl)CHD<sub>2</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "CH<sub>3</sub>CD(I)CHD(Cl)"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/6y3zli1lkk4ttbn/e0b06723-6d2a-4a3d-99ab-8efef20e7586/80283920-2bec-11ee-a8eb-4b6d21074d15/file-6y3zli1lkk4ttbo.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/6y3zli1lkk4ttbn/e0b06723-6d2a-4a3d-99ab-8efef20e7586/80283920-2bec-11ee-a8eb-4b6d21074d15/file-6y3zli1lkk4ttbo.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh;vertical-align:baseline\" alt=\"JEE Main 2019 (Online) 9th April Morning Slot Chemistry - Hydrocarbons Question 134 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/6y3zli1lkk4ttbn/e0b06723-6d2a-4a3d-99ab-8efef20e7586/80283920-2bec-11ee-a8eb-4b6d21074d15/file-6y3zli1lkk4ttbo.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/6y3zli1lkk4ttbn/e0b06723-6d2a-4a3d-99ab-8efef20e7586/80283920-2bec-11ee-a8eb-4b6d21074d15/file-6y3zli1lkk4ttbo.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/6y3zli1lkk4ttbn/e0b06723-6d2a-4a3d-99ab-8efef20e7586/80283920-2bec-11ee-a8eb-4b6d21074d15/file-6y3zli1lkk4ttbo.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/6y3zli1lkk4ttbn/e0b06723-6d2a-4a3d-99ab-8efef20e7586/80283920-2bec-11ee-a8eb-4b6d21074d15/file-6y3zli1lkk4ttbo.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/6y3zli1lkk4ttbn/e0b06723-6d2a-4a3d-99ab-8efef20e7586/80283920-2bec-11ee-a8eb-4b6d21074d15/file-6y3zli1lkk4ttbo.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/6y3zli1lkk4ttbn/e0b06723-6d2a-4a3d-99ab-8efef20e7586/80283920-2bec-11ee-a8eb-4b6d21074d15/file-6y3zli1lkk4ttbo.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">"
+    }
+  ]
+}

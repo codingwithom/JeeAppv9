@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "gU9Ji3pAYwt6nyngcc14k",
+      "paperTitle": "JEE Main 2019 (Online) 12th January Morning Slot",
+      "year": 2019,
+      "examDate": "2019-01-12 09:30",
+      "subject": "chemistry",
+      "chapter": "alcohols-phenols-and-ethers",
+      "chapterGroup": "organic-chemistry",
+      "topic": "properties-preparation-and-uses-of-alcohols",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "-can-not-be-prepared-by-jee-main-chemistry-some-basic-concepts-of-chemistry-d3obqiujaer1ntkd",
+      "content": "<img src=\"https://imagex.cdn.examgoal.net/l1qMZ9iZ8nZPRV0js/dnPIhDd4zZgyNhbeOigsx2UIBHOhz/GjsWThd0wqzuxTOZ86GyGK/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th January Morning Slot Chemistry - Alcohols, Phenols and Ethers Question 146 English\">\n<br>can not be prepared by - ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "CH<sub>3</sub>CH<sub>2</sub>COCH<sub>3</sub> + PhMgX"
+        },
+        {
+          "identifier": "B",
+          "content": "PhCOCH<sub>3</sub> + CH<sub>3</sub>CH<sub>2</sub>MgX "
+        },
+        {
+          "identifier": "C",
+          "content": "PhCOCH<sub>2</sub>CH<sub>3</sub> + CH<sub>3</sub>MgX"
+        },
+        {
+          "identifier": "D",
+          "content": "HCHO + PhCH(CH<sub>3</sub>)CH<sub>2</sub>MgX"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "The reaction in option (D) will yield 1<sup>o</sup>\n-alcohol.\n<br><br><img src=\"https://imagex.cdn.examgoal.net/jgy2xukeikb8mp/059be150-2588-46b4-8b83-43858fd08215/66763e10-eb8e-11ea-8293-3b6cc591631c/file-jgy2xukeikb8mq-460w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th January Morning Slot Chemistry - Alcohols, Phenols and Ethers Question 146 English Explanation\">"
+    }
+  ]
+}

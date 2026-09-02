@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ldtxe5ew",
+      "paperTitle": "JEE Main 2023 (Online) 25th January Evening Shift",
+      "year": 2023,
+      "subject": "physics",
+      "chapter": "geometrical-optics",
+      "chapterGroup": "optics",
+      "topic": "reflection-of-light",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pthe-light-rays-from-an-object-have-been-reflected-towards-jee-main-physics-motion-xjwc2fpyxgtyivah",
+      "content": "<p>The light rays from an object have been reflected towards an observer from a standard flat mirror, the image observed by the observer are :-</p>\n<p>A. Real</p>\n<p>B. Erect</p>\n<p>C. Smaller in size then object</p>\n<p>D. Laterally inverted</p>\n<p>Choose the most appropriate answer from the options given below :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "B and D only"
+        },
+        {
+          "identifier": "B",
+          "content": "A, C, and D only"
+        },
+        {
+          "identifier": "C",
+          "content": "A and D only"
+        },
+        {
+          "identifier": "D",
+          "content": "B and C only"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Plane mirror forms erect, same sized, laterally\ninverted and virtual image of real object."
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "zzLYX99HzUqacuDxIm3rsa0w2w9jxaykypb",
+      "paperTitle": "JEE Main 2019 (Online) 12th April Evening Slot",
+      "year": 2019,
+      "examDate": "2019-04-12 14:30",
+      "subject": "mathematics",
+      "chapter": "circle",
+      "chapterGroup": "coordinate-geometry",
+      "topic": "intercepts-of-a-circle",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "a-circle-touching-the-x-axis-at-3-0-and-making-an-interce-jee-main-mathematics-circle-riqb5ihxsvwsiygx",
+      "content": "A circle touching the x-axis at (3, 0) and making an intercept of length 8 on the y-axis passes through the\npoint :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(1, 5)"
+        },
+        {
+          "identifier": "B",
+          "content": "( 2, 3)"
+        },
+        {
+          "identifier": "C",
+          "content": "(3, 5)"
+        },
+        {
+          "identifier": "D",
+          "content": "(3, 10)"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/3rsa0w4kejxt72ggy/7819eb3b-2a83-4c34-8896-32780a7da991/8d425c20-a0d7-11e9-a4ff-cd603c22e5ad/file-3rsa0w4kejxt72ggz.jpg\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th April Evening Slot Mathematics - Circle Question 127 English Explanation\"><br><br>\nFrom the above figure equation of circle is (x - 3)<sup>2</sup> + (y - 5)<sup>5</sup> = 5<sup>2</sup><br><br>\nSo (3, 10) will satisfy the equation."
+    }
+  ]
+}

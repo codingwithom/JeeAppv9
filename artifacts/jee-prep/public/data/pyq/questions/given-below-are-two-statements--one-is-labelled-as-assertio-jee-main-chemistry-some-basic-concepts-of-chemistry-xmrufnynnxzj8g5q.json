@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktid2aao",
+      "paperTitle": "JEE Main 2021 (Online) 31st August Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "electron-gain-enthalpy",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "given-below-are-two-statements--one-is-labelled-as-assertio-jee-main-chemistry-some-basic-concepts-of-chemistry-xmrufnynnxzj8g5q",
+      "content": "Given below are two statements : one is labelled as Assertion (A) and the other is labelled as Reason (R).<br><br>Assertion (A) : Metallic character decreases and non-metallic character increases on moving from left to right in a period.<br><br>Reason (R) : It is due to increase in ionisation enthalpy and decrease in electron gain enthalpy, when one moves from left to right in a period.<br><br>In the light of the above statements, choose the most appropriate answer from the options given below :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(A) is false but (R) is true."
+        },
+        {
+          "identifier": "B",
+          "content": "(A) is true but (R) is false"
+        },
+        {
+          "identifier": "C",
+          "content": "Both (A) and (R) are correct and (R) is the correct explanation of (A)"
+        },
+        {
+          "identifier": "D",
+          "content": "Both (A) and (R) are correct but (R) is not the correct explanation of (A)"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "From left to right in periodic table :-<br><br>Metallic character decreases<br><br>Non-metallic character increases<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> It is due to increase in ionization enthalpy and increase in electron gain enthalpy."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l6kp7j97",
+      "paperTitle": "JEE Main 2022 (Online) 27th July Evening Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "electrochemistry",
+      "chapterGroup": "physical-chemistry",
+      "topic": "conductance-and-electrolysis",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pgiven-below-are-two-statements-p-pstatement-i--for-jee-main-chemistry-some-basic-concepts-of-chemistry-d0r0ynmrfuch9cax",
+      "content": "<p>Given below are two statements :</p>\n<p>Statement I : For KI, molar conductivity increases steeply with dilution</p>\n<p>Statement II : For carbonic acid, molar conductivity increases slowly with dilution</p>\n<p>In the light of the above statements, choose the correct answer from the options given below :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Both Statement I and Statement II are true"
+        },
+        {
+          "identifier": "B",
+          "content": "Both Statement I and Statement II are false"
+        },
+        {
+          "identifier": "C",
+          "content": "Statement I is true but Statement II is false"
+        },
+        {
+          "identifier": "D",
+          "content": "Statement I is false but Statement II is true"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<b>Statement I is false :</b> KI is a strong electrolyte\nwhich gets completely dissociate on dissolution.\nOn dilution, the molar conductivity almost\nremain constant.\n<br><br><b>Statement II is false :</b> carbonic acid is a weak\nelectrolyte which do not gets completely\ndissociate on dissolution. On dilution the molar\nconductivity of weak electrolyte increases\nsharply.<br><br>\n<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l7oid6ka/8bb7bbea-eda2-4c6f-9399-9a524b8ee42a/c41c44b0-2cf5-11ed-a627-29822045a51b/file-1l7oid6kb.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l7oid6ka/8bb7bbea-eda2-4c6f-9399-9a524b8ee42a/c41c44b0-2cf5-11ed-a627-29822045a51b/file-1l7oid6kb.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2022 (Online) 27th July Evening Shift Chemistry - Electrochemistry Question 106 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l7oid6ka/8bb7bbea-eda2-4c6f-9399-9a524b8ee42a/c41c44b0-2cf5-11ed-a627-29822045a51b/file-1l7oid6kb.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l7oid6ka/8bb7bbea-eda2-4c6f-9399-9a524b8ee42a/c41c44b0-2cf5-11ed-a627-29822045a51b/file-1l7oid6kb.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l7oid6ka/8bb7bbea-eda2-4c6f-9399-9a524b8ee42a/c41c44b0-2cf5-11ed-a627-29822045a51b/file-1l7oid6kb.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l7oid6ka/8bb7bbea-eda2-4c6f-9399-9a524b8ee42a/c41c44b0-2cf5-11ed-a627-29822045a51b/file-1l7oid6kb.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l7oid6ka/8bb7bbea-eda2-4c6f-9399-9a524b8ee42a/c41c44b0-2cf5-11ed-a627-29822045a51b/file-1l7oid6kb.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l7oid6ka/8bb7bbea-eda2-4c6f-9399-9a524b8ee42a/c41c44b0-2cf5-11ed-a627-29822045a51b/file-1l7oid6kb.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"><br><br>\n<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> Both Statements are false."
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "lIWVGnyLpdmSmh30Pa7k9k2k5dyq67i",
+      "paperTitle": "JEE Main 2020 (Online) 7th January Morning Slot",
+      "year": 2020,
+      "examDate": "2020-01-07 09:30",
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "inner-transition-elements-lanthanoids-and-actinoids",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-atomic-radius-of-ag-is-closed-to--jee-main-chemistry-analytical-chemistry-okt0fiwwb9bodqa7",
+      "content": "The atomic radius of Ag is closed to :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Au"
+        },
+        {
+          "identifier": "B",
+          "content": "Cu"
+        },
+        {
+          "identifier": "C",
+          "content": "Hg"
+        },
+        {
+          "identifier": "D",
+          "content": "Ni"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Atomic radius of Ag and Au is nearly same due\nto lanthanide contraction.\n<br><br>In periodic table in group 1, 2, 3 from top to bottom radius increases but from group 4 to 12 size increases for 3d to 4d series elements but size of 4d and 5d series elements are approximately same."
+    }
+  ]
+}

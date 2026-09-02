@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "JJoW2cnTl8civviy8n3rsa0w2w9jwuo7608",
+      "paperTitle": "JEE Main 2019 (Online) 10th April Morning Slot",
+      "year": 2019,
+      "examDate": "2019-04-10 09:30",
+      "subject": "chemistry",
+      "chapter": "haloalkanes-and-haloarenes",
+      "chapterGroup": "organic-chemistry",
+      "topic": "haloarenes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "increasing-rate-of-ssubnsub1-reaction-in-the-following-jee-main-chemistry-basics-of-organic-chemistry-4ypcojc0ashtwuvz",
+      "content": "Increasing rate of S<sub>N</sub>1 reaction in the following compounds is :\n<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76eb0jza9txr1/cdeaaf0a-fed7-41b0-b450-b859882b3d6f/e621bcd0-be07-11e9-8742-95b483bbae2a/file-jf76eb0jza9txr2-320w.jpg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76eb0jza9txr1/cdeaaf0a-fed7-41b0-b450-b859882b3d6f/e621bcd0-be07-11e9-8742-95b483bbae2a/file-jf76eb0jza9txr2-500w.jpg\"><source media=\"(max-width: 680px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76eb0jza9txr1/cdeaaf0a-fed7-41b0-b450-b859882b3d6f/e621bcd0-be07-11e9-8742-95b483bbae2a/file-jf76eb0jza9txr2-680w.jpg\"><source media=\"(max-width: 860px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76eb0jza9txr1/cdeaaf0a-fed7-41b0-b450-b859882b3d6f/e621bcd0-be07-11e9-8742-95b483bbae2a/file-jf76eb0jza9txr2-860w.jpg\"><source media=\"(max-width: 1040px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76eb0jza9txr1/cdeaaf0a-fed7-41b0-b450-b859882b3d6f/e621bcd0-be07-11e9-8742-95b483bbae2a/file-jf76eb0jza9txr2-1040w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/jf76eb0jza9txr1/cdeaaf0a-fed7-41b0-b450-b859882b3d6f/e621bcd0-be07-11e9-8742-95b483bbae2a/file-jf76eb0jza9txr2-1220w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 10th April Morning Slot Chemistry - Haloalkanes and Haloarenes Question 147 English\"></picture>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(B) &lt; (A) &lt; (D) &lt; (C)"
+        },
+        {
+          "identifier": "B",
+          "content": "(A) &lt; (B) &lt; (C) &lt; (D)"
+        },
+        {
+          "identifier": "C",
+          "content": "(A) &lt; (B) &lt; (D) &lt; (C)"
+        },
+        {
+          "identifier": "D",
+          "content": "(B) &lt; (A) &lt; (C) &lt; (D)"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "The rate of S<sub>N</sub>1 is decided by the stability of\ncarbocation which is formed when leaving group I(Iodine) leave from the compound.\n<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76eb0jzaadw8e/8e55b9c2-72bf-4879-aad8-5d96a6ceab54/112468e0-be0a-11e9-8742-95b483bbae2a/file-jf76eb0jzaadw8f-320w.jpg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76eb0jzaadw8e/8e55b9c2-72bf-4879-aad8-5d96a6ceab54/112468e0-be0a-11e9-8742-95b483bbae2a/file-jf76eb0jzaadw8f-500w.jpg\"><source media=\"(max-width: 680px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76eb0jzaadw8e/8e55b9c2-72bf-4879-aad8-5d96a6ceab54/112468e0-be0a-11e9-8742-95b483bbae2a/file-jf76eb0jzaadw8f-680w.jpg\"><source media=\"(max-width: 860px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76eb0jzaadw8e/8e55b9c2-72bf-4879-aad8-5d96a6ceab54/112468e0-be0a-11e9-8742-95b483bbae2a/file-jf76eb0jzaadw8f-860w.jpg\"><source media=\"(max-width: 1040px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76eb0jzaadw8e/8e55b9c2-72bf-4879-aad8-5d96a6ceab54/112468e0-be0a-11e9-8742-95b483bbae2a/file-jf76eb0jzaadw8f-1040w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/jf76eb0jzaadw8e/8e55b9c2-72bf-4879-aad8-5d96a6ceab54/112468e0-be0a-11e9-8742-95b483bbae2a/file-jf76eb0jzaadw8f-1220w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 10th April Morning Slot Chemistry - Haloalkanes and Haloarenes Question 147 English Explanation\"></picture>\n<br><br>Carbocation (D) is most stable due to +R effect\nof CH<sub>3</sub>O group.\n<br><br>Carbocation (C) is stabilised by +I and +H\neffect of CH<sub>3</sub> group.\n<br><br>Carbocation (B) is least stable due to\n–I effect of MeO group."
+    }
+  ]
+}

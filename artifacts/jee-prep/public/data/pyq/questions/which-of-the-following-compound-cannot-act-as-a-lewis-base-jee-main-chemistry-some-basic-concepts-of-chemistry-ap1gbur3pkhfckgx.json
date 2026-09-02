@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "xTuVm5bTakukx8E7331kmj7glkn",
+      "paperTitle": "JEE Main 2021 (Online) 17th March Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "ionic-equilibrium",
+      "chapterGroup": "physical-chemistry",
+      "topic": "ostwalds-dilution-law-and-concept-of-acid-and-base",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-compound-cannot-act-as-a-lewis-base-jee-main-chemistry-some-basic-concepts-of-chemistry-ap1gbur3pkhfckgx",
+      "content": "Which of the following compound CANNOT act as a Lewis base?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "SF<sub>4</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "NF<sub>3</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "ClF<sub>3</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "PCl<sub>5</sub>"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "NF<sub>3</sub> has no vacant orbital neither in nitrogen nor in fluorine so it cannot\naccept the electron &amp; hence cannot acts as lewis acid and but for PCl<sub>5</sub> P has\nno L.P &amp; hence it cannot acts as base but ClF3 (3 B.P + 2 L.P) &amp; SF<sub>4</sub> (4 B.P +\n1 L.P)"
+    }
+  ]
+}

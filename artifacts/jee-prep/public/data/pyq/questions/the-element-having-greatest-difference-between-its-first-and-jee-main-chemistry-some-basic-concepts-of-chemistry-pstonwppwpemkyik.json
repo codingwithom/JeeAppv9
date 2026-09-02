@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "aWEoBg2Pl5wdFEL7xEISy",
+      "paperTitle": "JEE Main 2019 (Online) 9th April Morning Slot",
+      "year": 2019,
+      "examDate": "2019-04-09 09:30",
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "ionization-energy",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-element-having-greatest-difference-between-its-first-and-jee-main-chemistry-some-basic-concepts-of-chemistry-pstonwppwpemkyik",
+      "content": "The element having greatest difference between\nits first and second ionization energies, is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Ba"
+        },
+        {
+          "identifier": "B",
+          "content": "Ca"
+        },
+        {
+          "identifier": "C",
+          "content": "Sc"
+        },
+        {
+          "identifier": "D",
+          "content": "K"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Electronic configuration of Potassium (K) :\n<br><br>1s<sup>2</sup>2s<sup>2</sup>2p<sup>6</sup>3s<sup>2</sup>3p<sup>6</sup>4s<sup>1</sup>\n<br><br>After first ionisation enthalpy its configuration becomes :\n<br><br>1s<sup>2</sup>2s<sup>2</sup>2p<sup>6</sup>3s<sup>2</sup>3p<sup>6</sup>\n<br><br>which is a inert gas configuration. To remove an electron from inert gas configuration requires very high energy.\n<br><br>So Potassium (K) have high difference in the first\nionisation and the second ionisation energy as\nit achieve stable noble gas configuration\nafter first ionisation."
+    }
+  ]
+}

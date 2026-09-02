@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "UT37Bhz2pdWpjRRFSB7k9k2k5hlihae",
+      "paperTitle": "JEE Main 2020 (Online) 8th January Evening Slot",
+      "year": 2020,
+      "examDate": "2020-01-08 14:30",
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "bond-parameters",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "arrange-the-following-bonds-according-to-their-average-bond-jee-main-chemistry-analytical-chemistry-7kjtdtqov2zip8tb",
+      "content": "Arrange the following bonds according to their\naverage bond energies in descending order :<br>\nC–Cl, C–Br, C–F, C–I",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "C–Br &gt; C–I &gt; C–Cl &gt; C–F"
+        },
+        {
+          "identifier": "B",
+          "content": "C–Cl &gt; C–Br &gt; C–I &gt; C–F"
+        },
+        {
+          "identifier": "C",
+          "content": "C–I &gt; C–Br &gt; C–Cl &gt; C–F"
+        },
+        {
+          "identifier": "D",
+          "content": "C–F &gt; C–Cl &gt; C–Br &gt; C–I"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Bond length order in carbon halogen bonds are\n<br><br>in the order of C – F <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.312ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 778 580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"3C\" xlink:href=\"#MJX-TEX-N-3C\"></use></g></g></g></svg></mjx-container> C – Cl <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.312ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 778 580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"3C\" xlink:href=\"#MJX-TEX-N-3C\"></use></g></g></g></svg></mjx-container> C – Br <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.312ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 778 580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"3C\" xlink:href=\"#MJX-TEX-N-3C\"></use></g></g></g></svg></mjx-container> C – I\n<br><br>Hence, Bond energy order\n<br><br>C – F <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.312ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 778 580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"3E\" xlink:href=\"#MJX-TEX-N-3E\"></use></g></g></g></svg></mjx-container> C – Cl <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.312ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 778 580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"3E\" xlink:href=\"#MJX-TEX-N-3E\"></use></g></g></g></svg></mjx-container> C – Br <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.312ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 778 580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"3E\" xlink:href=\"#MJX-TEX-N-3E\"></use></g></g></g></svg></mjx-container> C – I"
+    }
+  ]
+}

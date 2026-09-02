@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktfsikza",
+      "paperTitle": "JEE Main 2021 (Online) 27th August Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "important-compounds-of-transition-elements",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "potassium-permanganate-on-heating-at-513-k-gives-a-product-w-jee-main-chemistry-some-basic-concepts-of-chemistry-t1hqbhb2ralmzlar",
+      "content": "Potassium permanganate on heating at 513 K gives a product which is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "paramagnetic and colourless"
+        },
+        {
+          "identifier": "B",
+          "content": "diamagnetic and green"
+        },
+        {
+          "identifier": "C",
+          "content": "diamagnetic and colourless"
+        },
+        {
+          "identifier": "D",
+          "content": "paramagnetic and green"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -2.106ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"38.335ex\" height=\"5.087ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1317.3 16944.1 2248.4\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mi\" transform=\"translate(500,0)\"><use data-c=\"1D43E\" xlink:href=\"#MJX-TEX-I-1D43E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1389,0)\"><use data-c=\"1D440\" xlink:href=\"#MJX-TEX-I-1D440\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2440,0)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(3040,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-150) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"REL\" transform=\"translate(4517.3,0)\"><g data-mml-node=\"munderover\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"OP\" transform=\"translate(134.4,0)\"><g data-mml-node=\"mspace\"></g><g data-mml-node=\"mo\"><use data-c=\"27F6\" xlink:href=\"#MJX-TEX-N-27F6\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(0,-677.9) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msup\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(1000,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1533,393.1) scale(0.707)\"><use data-c=\"2218\" xlink:href=\"#MJX-TEX-N-2218\"></use></g></g><g data-mml-node=\"mi\" transform=\"translate(1936.6,0)\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g></g><g data-mml-node=\"mi\" transform=\"translate(658.9,711) scale(0.707)\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g><g data-mml-node=\"munder\" transform=\"translate(6701.9,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"OP\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D43E\" xlink:href=\"#MJX-TEX-I-1D43E\"></use></g><g data-mml-node=\"mn\" transform=\"translate(882,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"mi\" transform=\"translate(1285.6,0)\"><use data-c=\"1D440\" xlink:href=\"#MJX-TEX-I-1D440\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2336.6,0)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2936.6,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-150) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1089.1,-815.5) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D43A\" xlink:href=\"#MJX-TEX-I-1D43A\"></use></g><g data-mml-node=\"mi\" transform=\"translate(786,0)\"><use data-c=\"1D45F\" xlink:href=\"#MJX-TEX-I-1D45F\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1237,0)\"><use data-c=\"1D452\" xlink:href=\"#MJX-TEX-I-1D452\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1703,0)\"><use data-c=\"1D452\" xlink:href=\"#MJX-TEX-I-1D452\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2169,0)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(11004.6,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"munder\" transform=\"translate(11949.3,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"OP\"><g data-mml-node=\"mi\"><use data-c=\"1D440\" xlink:href=\"#MJX-TEX-I-1D440\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1051,0)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1651,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(527.3,-807.7) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D435\" xlink:href=\"#MJX-TEX-I-1D435\"></use></g><g data-mml-node=\"mi\" transform=\"translate(759,0)\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1057,0)\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1586,0)\"><use data-c=\"1D450\" xlink:href=\"#MJX-TEX-I-1D450\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2019,0)\"><use data-c=\"1D458\" xlink:href=\"#MJX-TEX-I-1D458\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(14966.5,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(15744.5,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></g></svg></mjx-container><br><br>In K<sub>2</sub>MnO<sub>4</sub>, manganese oxidation state is +6 and hence it has one unpaired e<sup><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container></sup>."
+    }
+  ]
+}

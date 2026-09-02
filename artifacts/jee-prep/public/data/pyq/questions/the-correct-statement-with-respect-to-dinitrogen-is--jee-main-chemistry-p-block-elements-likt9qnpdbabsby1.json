@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "6VwjX0BZ6jok6Cp1MWjgy2xukfte5gjk",
+      "paperTitle": "JEE Main 2020 (Online) 6th September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-06 09:00",
+      "subject": "chemistry",
+      "chapter": "p-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "group-15-elements-nitrogen-family",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-correct-statement-with-respect-to-dinitrogen-is--jee-main-chemistry-p-block-elements-likt9qnpdbabsby1",
+      "content": "The correct statement with respect to\ndinitrogen is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "N<sub>2</sub> is paramagnetic in nature"
+        },
+        {
+          "identifier": "B",
+          "content": "it can be used as an inert diluent for\nreactive chemicals"
+        },
+        {
+          "identifier": "C",
+          "content": "it can combine with dioxygen at 25<sup>o</sup>C"
+        },
+        {
+          "identifier": "D",
+          "content": "liquid dinitrogen is not used in cryosurgery"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "(1) N<sub>2</sub>\n is diamagnetic, with no unpaired elctrons.\n<br><br>(2) In iron and chemical Industry because of its inertness it is used where an\ninert atmosphere is required.\n<br><br>(3) N<sub>2</sub>\n does not combine with oxygen, hydrogen or most other elements. Nitrogen will combine with\noxygen, however in the presence of lightining or a spark.\n<br><br>(4) Liquid nitrogen is used as a refrigerant to preserve biological material food items and in cryosurgery.\n"
+    }
+  ]
+}

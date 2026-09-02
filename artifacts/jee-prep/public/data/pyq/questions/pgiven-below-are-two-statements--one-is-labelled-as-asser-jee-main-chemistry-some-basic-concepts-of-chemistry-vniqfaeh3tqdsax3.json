@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ldr3hbj4",
+      "paperTitle": "JEE Main 2023 (Online) 30th January Morning Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "carbohydrates",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pgiven-below-are-two-statements--one-is-labelled-as-asser-jee-main-chemistry-some-basic-concepts-of-chemistry-vniqfaeh3tqdsax3",
+      "content": "<p>Given below are two statements : one is labelled as Assertion (A) and the other is labelled as Reason (R).</p>\n<p>Assertion (A) : Ketoses give Seliwanoff's test faster than Aldoses.</p>\n<p>Reason (R) : Ketoses undergo <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.439ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.296ex\" height=\"2.034ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 573 899\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D6FD\" xlink:href=\"#MJX-TEX-I-1D6FD\"></use></g></g></g></svg></mjx-container>-elimination followed by formation of furfural.</p>\n<p>In the light of the above statements, choose the correct answer from the options given below :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(A) is false but (R) is true"
+        },
+        {
+          "identifier": "B",
+          "content": "Both (A) and (R) are true but (R) is not the correct explanation of (A)"
+        },
+        {
+          "identifier": "C",
+          "content": "(A) is true but (R) is false"
+        },
+        {
+          "identifier": "D",
+          "content": "Both (A) and (R) are true and (R) is the correct explanation of (A)"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Seliwanoff 's test is a differentiating test for Ketose\nand aldose. This test relies on the principle that the\nketo hexose are more rapidly dehydrated to form\n5-hydroxy methyl furfural when heated in acidic\nmedium which on condensation with resorcinol,\nCherry red or brown red coloured complex is\nformed rapidly indicating a positive test."
+    }
+  ]
+}

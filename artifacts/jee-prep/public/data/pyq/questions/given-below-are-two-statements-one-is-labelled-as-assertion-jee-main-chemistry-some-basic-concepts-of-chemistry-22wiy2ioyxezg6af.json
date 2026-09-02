@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1krus9sp2",
+      "paperTitle": "JEE Main 2021 (Online) 25th July Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "compounds-containing-nitrogen",
+      "chapterGroup": "organic-chemistry",
+      "topic": "aromatic-amines",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "given-below-are-two-statements-one-is-labelled-as-assertion-jee-main-chemistry-some-basic-concepts-of-chemistry-22wiy2ioyxezg6af",
+      "content": "Given below are two statements, one is labelled as Assertion (A) and other is labelled as Reason (R). <br><br>Assertion (A) : Gabriel phthalimide synthesis cannot be used to prepare aromatic primary amines.<br><br>Reason (R) : Aryl halides do not undergo nucleophilic substitution reaction.<br><br>In the light of the above statements, choose the correct answer from the options given below :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Both (A) and (R) true but (R) is not the correct explanation of (A)"
+        },
+        {
+          "identifier": "B",
+          "content": "(A) is false but (R) is true."
+        },
+        {
+          "identifier": "C",
+          "content": "Both (A) and (R) true and (R) is correct explanation of (A)."
+        },
+        {
+          "identifier": "D",
+          "content": "(A) is true but (R) is false."
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Gabriel phthalimide synthesis <br><br> <picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1krwht2bf/a68b59db-9d69-4099-8bf4-4d6330343535/63c79cb0-f496-11eb-9dc6-a7061d629865/file-1krwht2bg-320w.jpeg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1krwht2bf/a68b59db-9d69-4099-8bf4-4d6330343535/63c79cb0-f496-11eb-9dc6-a7061d629865/file-1krwht2bg-500w.jpeg\"><source media=\"(max-width: 680px)\" srcset=\"https://imagex.cdn.examgoal.net/1krwht2bf/a68b59db-9d69-4099-8bf4-4d6330343535/63c79cb0-f496-11eb-9dc6-a7061d629865/file-1krwht2bg-680w.jpeg\"><img src=\"https://imagex.cdn.examgoal.net/1krwht2bf/a68b59db-9d69-4099-8bf4-4d6330343535/63c79cb0-f496-11eb-9dc6-a7061d629865/file-1krwht2bg.jpeg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 25th July Morning Shift Chemistry - Compounds Containing Nitrogen Question 159 English Explanation\"></picture>"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "D2PrxSbbi6MwpADcmujgy2xukf8zgpnm",
+      "paperTitle": "JEE Main 2020 (Online) 4th September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-04 09:00",
+      "subject": "mathematics",
+      "chapter": "sets-and-relations",
+      "chapterGroup": "algebra",
+      "topic": "venn-diagram",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "a-survey-shows-that-63-of-the-people-in-a-city-read-newspap-jee-main-mathematics-complex-numbers-gxyhmiutfhmpuknc",
+      "content": "A survey shows that 63% of the people in a city read newspaper A whereas 76% read\nnewspaper B. If x% of the people read both the newspapers, then a possible value of x can be:",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "37"
+        },
+        {
+          "identifier": "B",
+          "content": "65"
+        },
+        {
+          "identifier": "C",
+          "content": "29"
+        },
+        {
+          "identifier": "D",
+          "content": "55"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1kk8xv7vi/127b95eb-ed54-46c6-9bcf-1548497416a1/de84fbe0-5d0c-11eb-af5a-adef84365b3f/file-1kk8xv7vj-320w.jpeg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1kk8xv7vi/127b95eb-ed54-46c6-9bcf-1548497416a1/de84fbe0-5d0c-11eb-af5a-adef84365b3f/file-1kk8xv7vj-500w.jpeg\"><img src=\"https://imagex.cdn.examgoal.net/1kk8xv7vi/127b95eb-ed54-46c6-9bcf-1548497416a1/de84fbe0-5d0c-11eb-af5a-adef84365b3f/file-1kk8xv7vj-680w.jpeg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 4th September Morning Slot Mathematics - Sets and Relations Question 104 English Explanation\"></picture>\n<br><br>A <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.403ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -598 667 620\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"222A\" xlink:href=\"#MJX-TEX-N-222A\"></use></g></g></g></svg></mjx-container> B = 63 - x + x + 76 - x = 139 - x\n<br><br>As 139 - x <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.312ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.751ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -636 778 774\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2264\" xlink:href=\"#MJX-TEX-N-2264\"></use></g></g></g></svg></mjx-container> 100\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> x <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.312ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.751ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -636 778 774\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2265\" xlink:href=\"#MJX-TEX-N-2265\"></use></g></g></g></svg></mjx-container> 39\n<br><br>From venn diagram, you can see x should be less than 76 and 63 otherwise only A newspaper or only B newspaper reader will be negative number.\n<br><br>Intersection of x <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.312ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.751ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -636 778 774\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2264\" xlink:href=\"#MJX-TEX-N-2264\"></use></g></g></g></svg></mjx-container> 63 and x <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.312ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.751ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -636 778 774\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2264\" xlink:href=\"#MJX-TEX-N-2264\"></use></g></g></g></svg></mjx-container>76 is = x <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.312ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.751ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -636 778 774\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2264\" xlink:href=\"#MJX-TEX-N-2264\"></use></g></g></g></svg></mjx-container> 63.\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> 39 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.312ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.751ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -636 778 774\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2264\" xlink:href=\"#MJX-TEX-N-2264\"></use></g></g></g></svg></mjx-container> x <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.312ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.751ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -636 778 774\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2264\" xlink:href=\"#MJX-TEX-N-2264\"></use></g></g></g></svg></mjx-container> 63\n<br><br>From options possible value of x = 55."
+    }
+  ]
+}

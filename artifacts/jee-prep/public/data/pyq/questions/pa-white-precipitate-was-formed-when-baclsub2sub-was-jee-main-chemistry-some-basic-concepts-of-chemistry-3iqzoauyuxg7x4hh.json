@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l54yynco",
+      "paperTitle": "JEE Main 2022 (Online) 29th June Evening Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "salt-analysis",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "systematic-analysis-of-anions",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pa-white-precipitate-was-formed-when-baclsub2sub-was-jee-main-chemistry-some-basic-concepts-of-chemistry-3iqzoauyuxg7x4hh",
+      "content": "<p>A white precipitate was formed when BaCl<sub>2</sub> was added to water extract of an inorganic salt. Further, a gas 'X' with characteristic odour was released when the formed white precipitate was dissolved in dilute HCl. The anion present in the inorganic salt is</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "I<sup><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container></sup>"
+        },
+        {
+          "identifier": "B",
+          "content": "SO<sub>3</sub><sup>2<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container></sup>"
+        },
+        {
+          "identifier": "C",
+          "content": "S<sup>2<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container></sup>"
+        },
+        {
+          "identifier": "D",
+          "content": "NO<sub>2</sub><sup><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container></sup>"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Anion is <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.66ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.25ex\" height=\"2.703ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -903 2320.7 1194.7\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msubsup\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"53\" xlink:href=\"#MJX-TEX-N-53\"></use><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\" transform=\"translate(556,0)\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1367,432.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(778,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1367,-276.2) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g></g></g></svg></mjx-container>\n<br><br>\n<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -2.641ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"22.554ex\" height=\"5.794ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1393.8 9968.8 2560.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"42\" xlink:href=\"#MJX-TEX-N-42\"></use><use data-c=\"61\" xlink:href=\"#MJX-TEX-N-61\" transform=\"translate(708,0)\"></use><use data-c=\"53\" xlink:href=\"#MJX-TEX-N-53\" transform=\"translate(1208,0)\"></use><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\" transform=\"translate(1764,0)\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(2575,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"REL\" transform=\"translate(3256.3,0)\"><g data-mml-node=\"mover\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"OP\" transform=\"translate(860.4,0)\"><g data-mml-node=\"mo\"><use data-c=\"27F6\" xlink:href=\"#MJX-TEX-N-27F6\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(0,763.4) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\"> dil </text></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(3000,0)\"><g data-mml-node=\"mi\"><use data-c=\"48\" xlink:href=\"#MJX-TEX-N-48\"></use><use data-c=\"43\" xlink:href=\"#MJX-TEX-N-43\" transform=\"translate(750,0)\"></use><use data-c=\"6C\" xlink:href=\"#MJX-TEX-N-6C\" transform=\"translate(1472,0)\"></use></g></g></g></g></g><g data-mml-node=\"munder\" transform=\"translate(6892.9,0)\"><g data-mml-node=\"mrow\" transform=\"translate(263.8,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"53\" xlink:href=\"#MJX-TEX-N-53\"></use><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\" transform=\"translate(556,0)\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1367,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(2048.3,0)\"><use data-c=\"2191\" xlink:href=\"#MJX-TEX-N-2191\"></use></g></g><g data-mml-node=\"mrow\" transform=\"translate(0,-890.3) scale(0.707)\"><g data-mml-node=\"mi\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g><g data-mml-node=\"mo\" transform=\"translate(572,0)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\" transform=\"translate(961,0)\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\"> gas </text></g><g data-mml-node=\"mo\" transform=\"translate(3961,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g></g></g></g></svg></mjx-container>\n<br><br>\nGas is released with smell of burning sulphur."
+    }
+  ]
+}

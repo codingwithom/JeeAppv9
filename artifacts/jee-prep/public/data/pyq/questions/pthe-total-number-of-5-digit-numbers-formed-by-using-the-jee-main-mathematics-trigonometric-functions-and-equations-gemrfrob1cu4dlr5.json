@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l5668ose",
+      "paperTitle": "JEE Main 2022 (Online) 28th June Morning Shift",
+      "year": 2022,
+      "subject": "mathematics",
+      "chapter": "permutations-and-combinations",
+      "chapterGroup": "algebra",
+      "topic": "conditional-permutations",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pthe-total-number-of-5-digit-numbers-formed-by-using-the-jee-main-mathematics-trigonometric-functions-and-equations-gemrfrob1cu4dlr5",
+      "content": "<p>The total number of 5-digit numbers, formed by using the digits 1, 2, 3, 5, 6, 7 without repetition, which are multiple of 6, is :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "36"
+        },
+        {
+          "identifier": "B",
+          "content": "48"
+        },
+        {
+          "identifier": "C",
+          "content": "60"
+        },
+        {
+          "identifier": "D",
+          "content": "72"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "To make a no. divisible by 3 we can use the digits\n1,2,5,6,7 or 1,2,3,5,7.<br/><br/>\n Using 1,2,5,6,7, number of even numbers is\n = 4 × 3 × 2 × 1 × 2 = 48<br/><br/>\n Using 1,2,3,5,7, number of even numbers is\n = 4 × 3 × 2 × 1 × 1 = 24<br/><br/>\n Required answer is 72."
+    }
+  ]
+}

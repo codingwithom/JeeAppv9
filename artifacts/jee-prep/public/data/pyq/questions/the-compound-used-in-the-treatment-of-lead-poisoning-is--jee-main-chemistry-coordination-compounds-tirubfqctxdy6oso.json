@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "7VzLGcI1yYO0ZI2Hus3rsa0w2w9jx960wt4",
+      "paperTitle": "JEE Main 2019 (Online) 12th April Evening Slot",
+      "year": 2019,
+      "examDate": "2019-04-12 14:30",
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "application-of-coordination-compound-and-organometallic-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-compound-used-in-the-treatment-of-lead-poisoning-is--jee-main-chemistry-coordination-compounds-tirubfqctxdy6oso",
+      "content": "The compound used in the treatment of lead poisoning is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "desferrioxime B"
+        },
+        {
+          "identifier": "B",
+          "content": "Cis-platin"
+        },
+        {
+          "identifier": "C",
+          "content": "D-penicillamine"
+        },
+        {
+          "identifier": "D",
+          "content": "EDTA"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "EDTA is used in treatment of lead poisoning."
+    }
+  ]
+}

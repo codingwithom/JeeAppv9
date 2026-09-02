@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "TmgEqBkT5dQNbcARJZ4nf",
+      "paperTitle": "JEE Main 2018 (Online) 15th April Evening Slot",
+      "year": 2018,
+      "examDate": "2018-04-15 14:30",
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "electron-gain-enthalpy",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-correct-order-of-electron-affinity-is-jee-main-chemistry-some-basic-concepts-of-chemistry-pu68xiajkpjdqqkx",
+      "content": "The correct order of electron affinity is : ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "F &gt; Cl &gt; O"
+        },
+        {
+          "identifier": "B",
+          "content": "F &gt; O &gt; Cl"
+        },
+        {
+          "identifier": "C",
+          "content": "Cl &gt; F &gt; O"
+        },
+        {
+          "identifier": "D",
+          "content": "O &gt; F &gt; Cl"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Electron affinity means tendency of gaining an electron by an atom.\n<br><br>In a period from left ot right the electron affinity increases and in a group it decreases from top to bottom.\n<br><br>So according to this theory Fluorine(F) should have most electron affinity. But when an electron is added to the F atom, electron comes to the 2p orbital and for Cl atom electron is added in 3p orbital. As 2p orbital is closer to the nucleus than 3p orbital as 3p orbital is larger in size, so  when a new electron comes to 2p orbital  then it will face a strong repulsion force by the nucleus than if electron comes to 3p orbital.\n<br><br>So, F have lesser tendency of gaining electron than Cl.\n\n<br><br><b>Note :</b> In entire periodic table Cl have highest electron affinity."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "eYgdeMnpmJqMuzfVFA1kmm0j0rh",
+      "paperTitle": "JEE Main 2021 (Online) 18th March Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "haloalkanes-and-haloarenes",
+      "chapterGroup": "organic-chemistry",
+      "topic": "haloarenes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "given-below-are-two-statements-brbrstatement-i--csu-jee-main-chemistry-some-basic-concepts-of-chemistry-e0b2yu9eka6mf9qo",
+      "content": "Given below are two statements :<br><br>Statement I : C<sub>2</sub>H<sub>5</sub>OH and AgCN both can generate nucleophile.<br><br>Statement II : KCN and AgCN both will generate nitrile nucleophile with all reaction conditions.<br><br>Choose the most appropriate option :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Statement I is false but statement II is true."
+        },
+        {
+          "identifier": "B",
+          "content": "Both statement I and statement II are true."
+        },
+        {
+          "identifier": "C",
+          "content": "Both statement I and statement II are false."
+        },
+        {
+          "identifier": "D",
+          "content": "Statement I is true but statement II is false."
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Both C<sub>2</sub>H<sub>5</sub>OH and AgCN can generate nucleophile.<br><br>\nKCN generates nitriles on substitution reactions\nwith haloalkanes where AgCN generates isonitriles\non substitution reactions with haloalkanes. Because\nKCN is ionic and has ‘C’ nucleophilic centre\nwhereas AgCN is covalent and has ‘N’ nucleophilic\ncentre."
+    }
+  ]
+}

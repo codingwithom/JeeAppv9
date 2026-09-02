@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "QNJhOxqVGyg3czDJWfoj1",
+      "paperTitle": "JEE Main 2017 (Online) 8th April Morning Slot",
+      "year": 2017,
+      "examDate": "2017-04-08 09:30",
+      "subject": "chemistry",
+      "chapter": "p-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "group-15-elements-nitrogen-family",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "a-metal-m-reacts-with-nitrogen-gas-to-afford-m3n-jee-main-chemistry-some-basic-concepts-of-chemistry-tw6hxt7725avjb18",
+      "content": "A metal ‘M’ reacts with nitrogen gas to afford ‘M<sub>3</sub>N’. ‘M<sub>3</sub>N’ on heating at high temperature gives back ‘M’ and on\nreaction with water produces a gas ‘B’. Gas ‘B’ reacts with aqueous \n solution of CuSO<sub>4</sub> to form a deep blue compound. ‘M’ and\n‘B’ respectively are :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Li and NH<sub>3</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "Ba and N<sub>2</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "Na and NH<sub>3</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "Al and N<sub>2</sub>"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/3xmhtm2xjkbktb772/6d32d9de-895e-453b-bfc9-00685c8a7bcb/82adcbf0-b166-11ea-9207-bfdf7589d371/file-3xmhtm2xjkbktb773-320w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/3xmhtm2xjkbktb772/6d32d9de-895e-453b-bfc9-00685c8a7bcb/82adcbf0-b166-11ea-9207-bfdf7589d371/file-3xmhtm2xjkbktb773-500w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2017 (Online) 8th April Morning Slot Chemistry - p-Block Elements Question 223 English Explanation\"></picture>"
+    }
+  ]
+}

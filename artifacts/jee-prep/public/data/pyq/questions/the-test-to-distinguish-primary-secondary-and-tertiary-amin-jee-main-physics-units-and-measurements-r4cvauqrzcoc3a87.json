@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "2GYzQ9iPnqF8sJJmBAeQ4",
+      "paperTitle": "JEE Main 2016 (Online) 9th April Morning Slot",
+      "year": 2016,
+      "examDate": "2016-04-09 09:30",
+      "subject": "chemistry",
+      "chapter": "compounds-containing-nitrogen",
+      "chapterGroup": "organic-chemistry",
+      "topic": "aliphatic-amines",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-test-to-distinguish-primary-secondary-and-tertiary-amin-jee-main-physics-units-and-measurements-r4cvauqrzcoc3a87",
+      "content": "The test to distinguish primary, secondary and tertiary amines is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Carbylamine reaction"
+        },
+        {
+          "identifier": "B",
+          "content": "C<sub>6</sub>H<sub>5</sub>SO<sub>2</sub>Cl"
+        },
+        {
+          "identifier": "C",
+          "content": "Sandmeyer’s reaction"
+        },
+        {
+          "identifier": "D",
+          "content": "Mustard oil test"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Hinsberg’s reagent (C<sub>6</sub>H<sub>5</sub>SO<sub>2</sub>Cl) forms monoalkyl\nsulphonamide with 1<sup>o</sup> amines which is soluble in KOH. With 2<sup>o</sup>\namines it gives dialkyl sulphonamide which is insoluble in KOH\nand with 3<sup>o</sup> amines there is no reaction.\n<br><br>In mustard oil test, 1<sup>o</sup> amines on action of CS<sub>2</sub>\n and HgCl<sub>2</sub>\n give\nalkyl isothiocyanate having mustard oil smell. 2<sup>o</sup> amines react\nwith CS<sub>2</sub>\n but not with HgCl<sub>2</sub>\n while 3<sup>o</sup> amines give no reaction.\nHowever, this test is not able to distinguish 2<sup>o</sup> and 3<sup>o</sup> amines.\n"
+    }
+  ]
+}

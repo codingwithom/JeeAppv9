@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "Pf3572QMbuiI5itClajgy2xukf2e5jkx",
+      "paperTitle": "JEE Main 2020 (Online) 3rd September Evening Slot",
+      "year": 2020,
+      "examDate": "2020-09-03 15:00",
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "ionization-energy",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "among-the-statements-i--iv-the-correct-ones-are-bri-jee-main-chemistry-periodic-table-and-periodicity-ww5mv4o65naer2wm",
+      "content": "Among the statements (I – IV), the correct ones\nare:\n<br>(I) Be has smaller atomic radius compared to\nMg.\n<br>(II) Be has higher ionization enthalpy than Al.\n<br>(III) Charge/radius ratio of Be is greater than\nthat of Al.\n<br>(IV) Both Be and Al form mainly covalent\ncompounds.",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(I), (II) and (IV)"
+        },
+        {
+          "identifier": "B",
+          "content": "(II), (III) and (IV)"
+        },
+        {
+          "identifier": "C",
+          "content": "(I), (III) and (IV)"
+        },
+        {
+          "identifier": "D",
+          "content": "(I), (II) and (III)"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Be &lt; Mg (atomic radius)\n<br><br>Be &gt; Al (I.E<sub>1</sub> greater than Al because of fully filled valence shell of Be)\n<br><br> Charge/radius ratio of Be is less than that of Al.\n<br><br>Both Be and Al form mainly covalent\ncompound."
+    }
+  ]
+}

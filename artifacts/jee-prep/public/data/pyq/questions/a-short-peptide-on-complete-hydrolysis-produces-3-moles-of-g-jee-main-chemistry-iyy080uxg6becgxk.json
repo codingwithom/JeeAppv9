@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "ldqxz2fs",
+      "paperTitle": "JEE Main 2023 (Online) 30th January Evening Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "proteins-and-enzymes",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "a-short-peptide-on-complete-hydrolysis-produces-3-moles-of-g-jee-main-chemistry-iyy080uxg6becgxk",
+      "content": "A short peptide on complete hydrolysis produces 3 moles of glycine (G), two moles of leucine (L) and two moles of valine (V) per mole of peptide. The number of peptide linkages in it are ________.",
+      "options": [],
+      "correct_options": [],
+      "explanation": "<p>The peptide has seven amino acid units therefore it has six peptide bonds.</p>"
+    }
+  ]
+}

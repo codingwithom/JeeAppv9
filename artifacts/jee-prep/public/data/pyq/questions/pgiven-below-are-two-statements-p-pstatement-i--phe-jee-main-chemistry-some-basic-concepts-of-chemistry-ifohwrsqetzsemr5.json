@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l549ulcc",
+      "paperTitle": "JEE Main 2022 (Online) 29th June Morning Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "alcohols-phenols-and-ethers",
+      "chapterGroup": "organic-chemistry",
+      "topic": "properties-preparation-and-uses-of-phenols",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pgiven-below-are-two-statements-p-pstatement-i--phe-jee-main-chemistry-some-basic-concepts-of-chemistry-ifohwrsqetzsemr5",
+      "content": "<p>Given below are two statements :</p>\n<p>Statement I : Phenols are weakly acidic.</p>\n<p>Statement II : Therefore they are freely soluble in NaOH solution and are weaker acids than alcohols and water.</p>\n<p>Choose the most appropriate option :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Both Statement I and Statement II are correct."
+        },
+        {
+          "identifier": "B",
+          "content": "Both Statement I and Statement II are incorrect."
+        },
+        {
+          "identifier": "C",
+          "content": "Statement I is correct but Statement II is incorrect."
+        },
+        {
+          "identifier": "D",
+          "content": "Statement I is incorrect but Statement II is correct."
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Phenol are weakly acidic. Phenol is more acidic\nthan alcohol & H<sub>2</sub>O statement (I) is correct. (II) is\nincorrect."
+    }
+  ]
+}

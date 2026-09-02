@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l54yhq39",
+      "paperTitle": "JEE Main 2022 (Online) 29th June Evening Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "hybridization-and-vsepr-theory",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pnumber-of-lone-pairs-of-electrons-on-central-atom-and-t-jee-main-chemistry-some-basic-concepts-of-chemistry-ogmd43ar6dm9000s",
+      "content": "<p>Number of lone pair(s) of electrons on central atom and the shape BrF<sub>3</sub> molecule respectively, are</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "0, triangular planar."
+        },
+        {
+          "identifier": "B",
+          "content": "1, pyramidal."
+        },
+        {
+          "identifier": "C",
+          "content": "2, bent T-shape."
+        },
+        {
+          "identifier": "D",
+          "content": "1, bent T-shape."
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l97ws3jc/98f3d205-4622-417e-955d-87e8c23b4f55/3e6f6680-4b6d-11ed-9399-cda4ba1d6994/file-1l97ws3jd.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l97ws3jc/98f3d205-4622-417e-955d-87e8c23b4f55/3e6f6680-4b6d-11ed-9399-cda4ba1d6994/file-1l97ws3jd.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2022 (Online) 29th June Evening Shift Chemistry - Chemical Bonding &amp; Molecular Structure Question 154 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l97ws3jc/98f3d205-4622-417e-955d-87e8c23b4f55/3e6f6680-4b6d-11ed-9399-cda4ba1d6994/file-1l97ws3jd.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l97ws3jc/98f3d205-4622-417e-955d-87e8c23b4f55/3e6f6680-4b6d-11ed-9399-cda4ba1d6994/file-1l97ws3jd.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l97ws3jc/98f3d205-4622-417e-955d-87e8c23b4f55/3e6f6680-4b6d-11ed-9399-cda4ba1d6994/file-1l97ws3jd.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l97ws3jc/98f3d205-4622-417e-955d-87e8c23b4f55/3e6f6680-4b6d-11ed-9399-cda4ba1d6994/file-1l97ws3jd.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l97ws3jc/98f3d205-4622-417e-955d-87e8c23b4f55/3e6f6680-4b6d-11ed-9399-cda4ba1d6994/file-1l97ws3jd.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l97ws3jc/98f3d205-4622-417e-955d-87e8c23b4f55/3e6f6680-4b6d-11ed-9399-cda4ba1d6994/file-1l97ws3jd.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"><br>\nSteric no. = 5 (sp<sup>3</sup>d), lone pair = 2 <br><br>\nBent T shape. "
+    }
+  ]
+}

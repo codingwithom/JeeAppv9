@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "1lgyhok29",
+      "paperTitle": "JEE Main 2023 (Online) 10th April Morning Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "structure-of-atom",
+      "chapterGroup": "physical-chemistry",
+      "topic": "photoelectric-effect",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pthe-number-of-incorrect-statements-about-the-black-body-jee-main-chemistry-some-basic-concepts-of-chemistry-ccndl7i1lgqofifv",
+      "content": "<p>The number of incorrect statement/s about the black body from the following is __________</p>\n<p>(A) Emit or absorb energy in the form of electromagnetic radiation.</p>\n<p>(B) Frequency distribution of the emitted radiation depends on temperature.</p>\n<p>(C) At a given temperature, intensity vs frequency curve passes through a maximum value.</p>\n<p>(D) The maximum of the intensity vs frequency curve is at a higher frequency at higher temperature compared to that at lower temperature.</p>",
+      "options": [],
+      "correct_options": [],
+      "explanation": "<p>All the statements (A, B, C, D) provided about black bodies are correct. </p>\n<p>(A) A black body is an idealized physical body that absorbs all incident electromagnetic radiation, regardless of frequency or angle of incidence. It also emits energy in the form of electromagnetic radiation.</p>\n<p>(B) The frequency distribution of the emitted radiation by a black body indeed depends on its temperature. This phenomenon is described by Planck&#39;s law.</p>\n<p>(C) The intensity vs frequency curve for a black body, also known as the Planck&#39;s curve, does indeed pass through a maximum value for a given temperature.</p>\n<p>(D) The frequency at which the maximum intensity occurs increases with the temperature of the black body. This is stated in Wien&#39;s displacement law.</p>\n<p>So, the number of incorrect statements about the black body from the above is 0.</p>\n"
+    }
+  ]
+}

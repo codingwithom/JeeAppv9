@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "xsynSPB8peLQHp5nqg1kludyyt8",
+      "paperTitle": "JEE Main 2021 (Online) 26th February Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "alcohols-phenols-and-ethers",
+      "chapterGroup": "organic-chemistry",
+      "topic": "properties-preparation-and-uses-of-alcohols",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "mathop-alimitsc4h8cl2-mathrelmathopke-jee-main-chemistry-some-basic-concepts-of-chemistry-maagrvnfpgkbyeik",
+      "content": "<img src=\"https://imagex.cdn.examgoal.net/1kluvndpd/6ce0ec5d-4ddb-4fef-bcf0-968c449e6f23/a7f50910-7ce9-11eb-8f7b-79760a5d8011/file-1kluvndpe-295w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 26th February Morning Shift Chemistry - Alcohols, Phenols and Ethers Question 121 English\"><br>B reacts with Hydroxyl amine but does not give Tollen's test. Identify A and B.",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "1, 1-Dichlorobutane and Butanal"
+        },
+        {
+          "identifier": "B",
+          "content": "2, 2-Dichlorobutane and Butan-2-one"
+        },
+        {
+          "identifier": "C",
+          "content": "1, 1-Dichlorobutane and 2-Butanone"
+        },
+        {
+          "identifier": "D",
+          "content": "2, 2-Dichlorobutane and Butanal"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1kqv8y30b/d50ba5dc-f84c-4853-8fdc-dd4383fd249f/bd2b38b0-e01a-11eb-8de8-59af26dc1e90/file-1kqv8y30c.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 26th February Morning Shift Chemistry - Alcohols, Phenols and Ethers Question 121 English Explanation\">\n<br><br>Compound 'B' does not gives Tollen's test due to presence of kenotic group but react with\nhydroxyl amine."
+    }
+  ]
+}

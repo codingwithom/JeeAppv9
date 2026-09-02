@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "lXvIP5B6Bi74TQTaHgjgy2xukf3ihinn",
+      "paperTitle": "JEE Main 2020 (Online) 3rd September Evening Slot",
+      "year": 2020,
+      "examDate": "2020-09-03 15:00",
+      "subject": "chemistry",
+      "chapter": "ionic-equilibrium",
+      "chapterGroup": "physical-chemistry",
+      "topic": "ph-buffer-and-indicators",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "100-ml-of-01-m-hcl-is-taken-in-a-beaker-and-to-it-100-ml-of-jee-main-chemistry-equilibrium-j7z7jmvcvqilphdv",
+      "content": "100 mL of 0.1 M HCl is taken in a beaker and\nto it 100 mL of 0.1 M NaOH is added in steps\nof 2 mL and the pH is continuously measured.\nWhich of the following graphs correctly depicts\nthe change in pH?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukf3i2cjp/2945baa8-751c-4949-9cf3-69f633fdf77b/1295a350-f712-11ea-8293-3b6cc591631c/file-jgy2xukf3i2cjq-236w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 3rd September Evening Slot Chemistry - Ionic Equilibrium Question 90 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukf3i30ew/548c7955-1285-4131-8965-8918718c3e56/25055580-f712-11ea-8293-3b6cc591631c/file-jgy2xukf3i30ex-252w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 3rd September Evening Slot Chemistry - Ionic Equilibrium Question 90 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukf3i3kia/fc14052b-cf2d-4305-953c-bf38eacc6c50/348b0720-f712-11ea-8293-3b6cc591631c/file-jgy2xukf3i3kib-272w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 3rd September Evening Slot Chemistry - Ionic Equilibrium Question 90 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukf3i428i/80c18d23-3781-4776-a883-7a492318773c/423ce320-f712-11ea-8293-3b6cc591631c/file-jgy2xukf3i428j-230w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 3rd September Evening Slot Chemistry - Ionic Equilibrium Question 90 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Steep rise in pH around the equivalence point for titration of strong acid with strong base."
+    }
+  ]
+}

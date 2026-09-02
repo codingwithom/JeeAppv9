@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "QYRCfnRzkCW7qARawIlXU",
+      "paperTitle": "JEE Main 2019 (Online) 12th January Morning Slot",
+      "year": 2019,
+      "examDate": "2019-01-12 09:30",
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "application-of-coordination-compound-and-organometallic-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "mn2co10-is-an-organometallic-compound-due-to-the-presence-jee-main-chemistry-some-basic-concepts-of-chemistry-obsshe1nv3oitrg7",
+      "content": "Mn<sub>2</sub>(CO)<sub>10</sub> is an organometallic compound due to the presence of - ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "C–O bond"
+        },
+        {
+          "identifier": "B",
+          "content": "Mn – Mn bond "
+        },
+        {
+          "identifier": "C",
+          "content": "Mn – O bond"
+        },
+        {
+          "identifier": "D",
+          "content": "Mn – C bond "
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Compounds that contain at least one carbon-metal\nbond are called organometallic compounds."
+    }
+  ]
+}

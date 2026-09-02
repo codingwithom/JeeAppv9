@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1lguza9op",
+      "paperTitle": "JEE Main 2023 (Online) 11th April Morning Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "structure-of-atom",
+      "chapterGroup": "physical-chemistry",
+      "topic": "photoelectric-effect",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pgiven-below-are-two-statements--one-is-labelled-as-asser-jee-main-chemistry-some-basic-concepts-of-chemistry-cnioqg21doeq1est",
+      "content": "<p>Given below are two statements : one is labelled as Assertion A and the other is labelled as Reason R :</p>\n<p>Assertion A : In the photoelectric effect, the electrons are ejected from the metal surface as soon as the beam of light of frequency greater than threshold frequency strikes the surface.</p>\n<p>Reason R : When the photon of any energy strikes an electron in the atom, transfer of energy from the photon to the electron takes place.</p>\n<p>In the light of the above statements, choose the most appropriate answer from the options given below :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Both A and R are correct and R is the  correct explanation of A"
+        },
+        {
+          "identifier": "B",
+          "content": "A is not correct but R is correct"
+        },
+        {
+          "identifier": "C",
+          "content": "A is correct but R is not correct"
+        },
+        {
+          "identifier": "D",
+          "content": "Both A and R are correct but R is NOT the correct explanation of A"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<p>Given are two statements :</p>\n<ul>\n<li>Assertion A : \"In the photoelectric effect, the electrons are ejected from the metal surface as soon as the beam of light of frequency greater than threshold frequency strikes the surface.\"</li>\n<li>Reason R : \"When the photon of any energy strikes an electron in the atom, transfer of energy from the photon to the electron takes place.\"</li>\n</ul>\n<p>From the understanding of the photoelectric effect, we know that the light beam must have a frequency <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.097ex\" height=\"1.027ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -443 485 454\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D463\" xlink:href=\"#MJX-TEX-I-1D463\"></use></g></g></g></svg></mjx-container> that is greater than the threshold frequency <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.375ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.085ex\" height=\"1.377ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -443 921.6 608.6\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D463\" xlink:href=\"#MJX-TEX-I-1D463\"></use></g><g data-mml-node=\"mn\" transform=\"translate(518,-150) scale(0.707)\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g></g></g></g></svg></mjx-container> for electrons to be ejected from the metal surface. Therefore, Assertion A is correct.</p>\n<p>However, Reason R is somewhat misleading in the context of the photoelectric effect. It's true that a photon transfers its energy to an electron when it strikes the electron. However, for the electron to be ejected (i.e., the photoelectric effect to occur), the energy of the photon, given by <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.65ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"13.725ex\" height=\"2.22ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 6066.4 981.2\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D438\" xlink:href=\"#MJX-TEX-I-1D438\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(771,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D45D\" xlink:href=\"#MJX-TEX-I-1D45D\"></use></g><g data-mml-node=\"mi\" transform=\"translate(503,0)\"><use data-c=\"210E\" xlink:href=\"#MJX-TEX-I-210E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1079,0)\"><use data-c=\"1D45C\" xlink:href=\"#MJX-TEX-I-1D45C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1564,0)\"><use data-c=\"1D461\" xlink:href=\"#MJX-TEX-I-1D461\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1925,0)\"><use data-c=\"1D45C\" xlink:href=\"#MJX-TEX-I-1D45C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2410,0)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(3227.2,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mi\" transform=\"translate(4282.9,0)\"><use data-c=\"210E\" xlink:href=\"#MJX-TEX-I-210E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(5081.2,0)\"><use data-c=\"22C5\" xlink:href=\"#MJX-TEX-N-22C5\"></use></g><g data-mml-node=\"mi\" transform=\"translate(5581.4,0)\"><use data-c=\"1D463\" xlink:href=\"#MJX-TEX-I-1D463\"></use></g></g></g></svg></mjx-container>, where <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.303ex\" height=\"1.595ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 576 705\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"210E\" xlink:href=\"#MJX-TEX-I-210E\"></use></g></g></g></svg></mjx-container> is Planck's constant and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.097ex\" height=\"1.027ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -443 485 454\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D463\" xlink:href=\"#MJX-TEX-I-1D463\"></use></g></g></g></svg></mjx-container> is the frequency of the light, must be greater than the work function <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.464ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.348ex\" height=\"2.034ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 596 899\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D719\" xlink:href=\"#MJX-TEX-I-1D719\"></use></g></g></g></svg></mjx-container> (the minimum energy needed to eject an electron) of the metal. This condition is not captured in Reason R.</p>\n<p>Therefore, the correct answer is :</p>\n<p>Option C : Assertion A is correct, but Reason R is not correct.</p>\n"
+    }
+  ]
+}

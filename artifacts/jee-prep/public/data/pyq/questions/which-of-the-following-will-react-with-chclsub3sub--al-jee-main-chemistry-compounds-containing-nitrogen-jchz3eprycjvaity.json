@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "gV2GC1RoAGl8RiZOWyjgy2xukf7swod4",
+      "paperTitle": "JEE Main 2020 (Online) 4th September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-04 09:00",
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "vitamins-and-nucleic-acids",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-will-react-with-chclsub3sub--al-jee-main-chemistry-compounds-containing-nitrogen-jchz3eprycjvaity",
+      "content": "Which of the following will react with CHCl<sub>3</sub> +\nalc. KOH?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Adenine and thymine"
+        },
+        {
+          "identifier": "B",
+          "content": "Thymine and proline"
+        },
+        {
+          "identifier": "C",
+          "content": "Adenine and lysine"
+        },
+        {
+          "identifier": "D",
+          "content": "Adenine and proline"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Adenine and lysine both have primary anline react with CHCl<sub>3</sub> + alc. KOH.\n<img src=\"https://imagex.cdn.examgoal.net/1khp41xoj/0e09d122-4bbb-4c79-9767-4be3a1dd31ce/f4568130-2a8c-11eb-857f-3de41af3fb3a/file-1khp41xok-320w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 4th September Morning Slot Chemistry - Biomolecules Question 144 English Explanation\">"
+    }
+  ]
+}

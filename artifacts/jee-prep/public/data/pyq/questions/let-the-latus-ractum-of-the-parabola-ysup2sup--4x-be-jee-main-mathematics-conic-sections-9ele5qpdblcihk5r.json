@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "YdDyAxUKkRDsCFMrbHjgy2xukf3yz3ju",
+      "paperTitle": "JEE Main 2020 (Online) 3rd September Evening Slot",
+      "year": 2020,
+      "examDate": "2020-09-03 15:00",
+      "subject": "mathematics",
+      "chapter": "parabola",
+      "chapterGroup": "coordinate-geometry",
+      "topic": "chord-of-parabola",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "let-the-latus-ractum-of-the-parabola-ysup2sup--4x-be-jee-main-mathematics-conic-sections-9ele5qpdblcihk5r",
+      "content": "Let the latus ractum of the parabola y<sup>2</sup>\n = 4x be\nthe common chord to the circles C<sub>1</sub>\n and C<sub>2</sub>\neach of them having radius 2<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.25ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.061ex\" height=\"2.398ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -949.5 1353 1060\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msqrt\"><g data-mml-node=\"mo\" transform=\"translate(0,89.5)\"><use data-c=\"221A\" xlink:href=\"#MJX-TEX-N-221A\"></use></g><g transform=\"translate(853,0)\"><g data-mml-node=\"mn\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use></g></g><rect width=\"500\" height=\"60\" x=\"853\" y=\"829.5\"></rect></g></g></g></svg></mjx-container>. Then, the\ndistance between the centres of the circles C<sub>1</sub>\nand C<sub>2</sub>\n is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "8"
+        },
+        {
+          "identifier": "B",
+          "content": "12"
+        },
+        {
+          "identifier": "C",
+          "content": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.25ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.192ex\" height=\"2.398ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -949.5 1853 1060\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"38\" xlink:href=\"#MJX-TEX-N-38\"></use></g><g data-mml-node=\"msqrt\" transform=\"translate(500,0)\"><g data-mml-node=\"mo\" transform=\"translate(0,89.5)\"><use data-c=\"221A\" xlink:href=\"#MJX-TEX-N-221A\"></use></g><g transform=\"translate(853,0)\"><g data-mml-node=\"mn\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use></g></g><rect width=\"500\" height=\"60\" x=\"853\" y=\"829.5\"></rect></g></g></g></svg></mjx-container>"
+        },
+        {
+          "identifier": "D",
+          "content": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.25ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.192ex\" height=\"2.398ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -949.5 1853 1060\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g><g data-mml-node=\"msqrt\" transform=\"translate(500,0)\"><g data-mml-node=\"mo\" transform=\"translate(0,89.5)\"><use data-c=\"221A\" xlink:href=\"#MJX-TEX-N-221A\"></use></g><g transform=\"translate(853,0)\"><g data-mml-node=\"mn\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use></g></g><rect width=\"500\" height=\"60\" x=\"853\" y=\"829.5\"></rect></g></g></g></svg></mjx-container>"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1kk1fbood/3f466215-59dc-4a78-9df3-95c7d323eef4/de71e5d0-58ea-11eb-ba23-f72763da8ff4/file-1kk1fbooe-447w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 3rd September Evening Slot Mathematics - Parabola Question 108 English Explanation\">\n<br>For parabola y<sup>2</sup> = 4x, \n<br><br>Length of latus rectum = 4a = 4<br><br>C<sub>1</sub>C<sub>2</sub> = 2(C<sub>1</sub>A)<br><br>C<sub>1</sub>A = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.868ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"18.281ex\" height=\"4.208ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1476.2 8080.1 1860\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msqrt\"><g data-mml-node=\"mo\" transform=\"translate(0,266.2)\"><use data-c=\"221A\" xlink:href=\"#MJX-TEX-LO-221A\"></use></g><g transform=\"translate(1020,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msup\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"mn\" transform=\"translate(389,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"msqrt\" transform=\"translate(889,0)\"><g data-mml-node=\"mo\" transform=\"translate(0,89.5)\"><use data-c=\"221A\" xlink:href=\"#MJX-TEX-N-221A\"></use></g><g transform=\"translate(853,0)\"><g data-mml-node=\"mn\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use></g></g><rect width=\"500\" height=\"60\" x=\"853\" y=\"829.5\"></rect></g><g data-mml-node=\"mo\" transform=\"translate(2242,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(2664,676.6) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(3289.8,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(4290,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mn\" transform=\"translate(533,289) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g><rect width=\"5226.6\" height=\"60\" x=\"1020\" y=\"1356.2\"></rect></g><g data-mml-node=\"mo\" transform=\"translate(6524.3,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(7580.1,0)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g></svg></mjx-container><br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> C<sub>1</sub>C<sub>2</sub> = 2(4) = 8"
+    }
+  ]
+}

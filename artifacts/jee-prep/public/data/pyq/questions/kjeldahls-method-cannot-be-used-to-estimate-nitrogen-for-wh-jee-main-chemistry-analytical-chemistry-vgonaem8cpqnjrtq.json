@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "BRVJh4m9wYYt5bKNK97k9k2k5hl9t26",
+      "paperTitle": "JEE Main 2020 (Online) 8th January Evening Slot",
+      "year": 2020,
+      "examDate": "2020-01-08 14:30",
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "purification-of-organic-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "kjeldahls-method-cannot-be-used-to-estimate-nitrogen-for-wh-jee-main-chemistry-analytical-chemistry-vgonaem8cpqnjrtq",
+      "content": "Kjeldahl's method cannot be used to estimate\nnitrogen for which of the following\ncompounds?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "C<sub>6</sub>H<sub>5</sub>NH<sub>2</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"15.385ex\" height=\"5.374ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -2225.4 6800.2 2375.4\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"4E\" xlink:href=\"#MJX-TEX-N-4E\"></use></g></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(750,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"48\" xlink:href=\"#MJX-TEX-N-48\"></use></g></g></g><g data-mml-node=\"mn\" transform=\"translate(783,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(2158.8,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mover\" transform=\"translate(3159,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"OP\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(223,1011.9) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mover\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"OP\" transform=\"translate(19.8,0)\"><g data-mml-node=\"mo\"><use data-c=\"2225\" xlink:href=\"#MJX-TEX-N-2225\"></use></g></g><g data-mml-node=\"mi\" transform=\"translate(0,977) scale(0.707)\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g></g></g></g><g data-mml-node=\"mo\" transform=\"translate(4085.7,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(4863.7,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"4E\" xlink:href=\"#MJX-TEX-N-4E\"></use></g></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(5613.7,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"48\" xlink:href=\"#MJX-TEX-N-48\"></use></g></g></g><g data-mml-node=\"mn\" transform=\"translate(783,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></g></svg></mjx-container>"
+        },
+        {
+          "identifier": "C",
+          "content": "C<sub>6</sub>H<sub>5</sub>NO<sub>2</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "CH<sub>3</sub>CH<sub>2</sub>-C <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.081ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"0.968ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -464 778 428\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2261\" xlink:href=\"#MJX-TEX-N-2261\"></use></g></g></g></svg></mjx-container> N"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Kjeldahl’s method is not applicable to\ncompounds containing nitrogen in nitro, azo\ngroups and nitrogen present in ring (pyridine)."
+    }
+  ]
+}

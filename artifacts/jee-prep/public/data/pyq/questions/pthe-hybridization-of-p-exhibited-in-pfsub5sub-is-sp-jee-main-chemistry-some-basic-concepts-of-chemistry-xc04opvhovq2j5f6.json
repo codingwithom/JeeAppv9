@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "1l56bfg52",
+      "paperTitle": "JEE Main 2022 (Online) 28th June Morning Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "hybridization-and-vsepr-theory",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pthe-hybridization-of-p-exhibited-in-pfsub5sub-is-sp-jee-main-chemistry-some-basic-concepts-of-chemistry-xc04opvhovq2j5f6",
+      "content": "<p>The hybridization of P exhibited in PF<sub>5</sub> is sp<sup>x</sup>d<sup>y</sup>. The value of y is __________.</p>",
+      "options": [],
+      "correct_options": [],
+      "explanation": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.452ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"13.278ex\" height=\"2.338ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -833.2 5868.7 1033.2\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"50\" xlink:href=\"#MJX-TEX-N-50\"></use><use data-c=\"46\" xlink:href=\"#MJX-TEX-N-46\" transform=\"translate(681,0)\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(1367,-150) scale(0.707)\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(2048.3,0)\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g><g data-mml-node=\"msup\" transform=\"translate(3326.1,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"73\" xlink:href=\"#MJX-TEX-N-73\"></use><use data-c=\"70\" xlink:href=\"#MJX-TEX-N-70\" transform=\"translate(394,0)\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(983,363) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(4712.7,0)\"><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\"> </text></g><g data-mml-node=\"mi\" transform=\"translate(600,0)\"><use data-c=\"64\" xlink:href=\"#MJX-TEX-N-64\"></use></g></g></g></g></svg></mjx-container> hybridisation\n<br><br>(5 sigma bonds, zero lone pair on central atom)\n<br><br>Value of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.464ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.27ex\" height=\"1.971ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -666 2329.6 871\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D466\" xlink:href=\"#MJX-TEX-I-1D466\"></use></g><g data-mml-node=\"mo\" transform=\"translate(773.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1829.6,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g></svg></mjx-container>"
+    }
+  ]
+}

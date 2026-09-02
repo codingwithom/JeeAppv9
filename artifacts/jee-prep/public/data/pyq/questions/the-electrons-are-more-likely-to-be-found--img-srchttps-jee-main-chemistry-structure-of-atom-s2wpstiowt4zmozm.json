@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "GI3CiWL2J90ORSC1LB3rsa0w2w9jx4zbx3y",
+      "paperTitle": "JEE Main 2019 (Online) 12th April Morning Slot",
+      "year": 2019,
+      "examDate": "2019-04-12 09:30",
+      "subject": "chemistry",
+      "chapter": "structure-of-atom",
+      "chapterGroup": "physical-chemistry",
+      "topic": "quantum-mechanical-model-of-atom",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-electrons-are-more-likely-to-be-found--img-srchttps-jee-main-chemistry-structure-of-atom-s2wpstiowt4zmozm",
+      "content": "The electrons are more likely to be found :\n<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jf7697gjy8mltmd/5d49ecf1-600f-4f0c-93b4-4a6b41f07c25/12784650-a954-11e9-a277-6507805b1ccf/file-jf7697gjy8mltme-320w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/jf7697gjy8mltmd/5d49ecf1-600f-4f0c-93b4-4a6b41f07c25/12784650-a954-11e9-a277-6507805b1ccf/file-jf7697gjy8mltme-500w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th April Morning Slot Chemistry - Structure of Atom Question 166 English\"></picture>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "only in the region a"
+        },
+        {
+          "identifier": "B",
+          "content": "in the region a arid c"
+        },
+        {
+          "identifier": "C",
+          "content": "only in the region c"
+        },
+        {
+          "identifier": "D",
+          "content": "in the region a and b"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Probability of finding an electron is given by\n4<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.296ex\" height=\"1ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -431 573 442\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D70B\" xlink:href=\"#MJX-TEX-I-1D70B\"></use></g></g></g></svg></mjx-container>r<sup>2</sup>dr <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.464ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.461ex\" height=\"2.351ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -833.9 1087.6 1038.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"1D713\" xlink:href=\"#MJX-TEX-I-1D713\"></use></g><g data-mml-node=\"mn\" transform=\"translate(684,363) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></g></svg></mjx-container> and at\nboth 'a' and 'c' it will have maximum value.\n<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jf7697gjy8n8bn6/e2526c5d-7314-4119-b13c-8429f32ffcbf/84318430-a956-11e9-a277-6507805b1ccf/file-jf7697gjy8n8bn7-320w.jpg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/jf7697gjy8n8bn6/e2526c5d-7314-4119-b13c-8429f32ffcbf/84318430-a956-11e9-a277-6507805b1ccf/file-jf7697gjy8n8bn7-500w.jpg\"><source media=\"(max-width: 680px)\" srcset=\"https://imagex.cdn.examgoal.net/jf7697gjy8n8bn6/e2526c5d-7314-4119-b13c-8429f32ffcbf/84318430-a956-11e9-a277-6507805b1ccf/file-jf7697gjy8n8bn7-680w.jpg\"><source media=\"(max-width: 860px)\" srcset=\"https://imagex.cdn.examgoal.net/jf7697gjy8n8bn6/e2526c5d-7314-4119-b13c-8429f32ffcbf/84318430-a956-11e9-a277-6507805b1ccf/file-jf7697gjy8n8bn7-860w.jpg\"><source media=\"(max-width: 1040px)\" srcset=\"https://imagex.cdn.examgoal.net/jf7697gjy8n8bn6/e2526c5d-7314-4119-b13c-8429f32ffcbf/84318430-a956-11e9-a277-6507805b1ccf/file-jf7697gjy8n8bn7-1040w.jpg\"><source media=\"(max-width: 1220px)\" srcset=\"https://imagex.cdn.examgoal.net/jf7697gjy8n8bn6/e2526c5d-7314-4119-b13c-8429f32ffcbf/84318430-a956-11e9-a277-6507805b1ccf/file-jf7697gjy8n8bn7-1220w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/jf7697gjy8n8bn6/e2526c5d-7314-4119-b13c-8429f32ffcbf/84318430-a956-11e9-a277-6507805b1ccf/file-jf7697gjy8n8bn7-1400w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th April Morning Slot Chemistry - Structure of Atom Question 166 English Explanation\"></picture>"
+    }
+  ]
+}

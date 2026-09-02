@@ -1,0 +1,656 @@
+{
+  "exam": "jee-advanced",
+  "subject": "physics",
+  "chapterKey": "dual-nature-of-radiation",
+  "title": "Dual Nature of Radiation | Physics | JEE Advanced Previous Year Questions",
+  "chapter": {
+    "metaId": "1e3ebdb5-4ac0-5f8c-af29-d857f74d79bb",
+    "country": "in",
+    "exam": "jee-advanced",
+    "examGroup": "jee",
+    "key": "dual-nature-of-radiation",
+    "subject": "physics",
+    "chapterGroup": "modern-physics",
+    "createdAt": "2020-12-28T13:41:12.056Z",
+    "description": null,
+    "keyValuePairs": {},
+    "order": 24,
+    "subjectGroup": null,
+    "title": "Dual Nature of Radiation",
+    "updatedAt": "2024-06-01T20:07:13.755Z",
+    "type": "chapter",
+    "pyq_stats": [
+      {
+        "year": 2026,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2025,
+        "total": 2,
+        "avg": 1,
+        "weightage": 6.25
+      },
+      {
+        "year": 2024,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.94
+      },
+      {
+        "year": 2023,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.94
+      },
+      {
+        "year": 2022,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.78
+      },
+      {
+        "year": 2021,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.63
+      },
+      {
+        "year": 2020,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2019,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.78
+      },
+      {
+        "year": 2018,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.78
+      },
+      {
+        "year": 2017,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.78
+      },
+      {
+        "year": 2016,
+        "total": 2,
+        "avg": 1,
+        "weightage": 5.56
+      },
+      {
+        "year": 2015,
+        "total": 2,
+        "avg": 1,
+        "weightage": 5
+      },
+      {
+        "year": 2014,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.5
+      },
+      {
+        "year": 2013,
+        "total": 2,
+        "avg": 1,
+        "weightage": 5
+      },
+      {
+        "year": 2012,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.5
+      },
+      {
+        "year": 2011,
+        "total": 2,
+        "avg": 1,
+        "weightage": 4.65
+      },
+      {
+        "year": 2010,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.13
+      },
+      {
+        "year": 2009,
+        "total": 3,
+        "avg": 1.5,
+        "weightage": 7.69
+      },
+      {
+        "year": 2008,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.22
+      },
+      {
+        "year": 2007,
+        "total": 3,
+        "avg": 1,
+        "weightage": 6.67
+      },
+      {
+        "year": 2006,
+        "total": 1,
+        "avg": 1,
+        "weightage": 2.5
+      },
+      {
+        "year": 2005,
+        "total": 1,
+        "avg": 0.33,
+        "weightage": 4.76
+      },
+      {
+        "year": 2004,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2003,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2002,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2001,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2000,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1999,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1998,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1997,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1996,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1995,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1994,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1993,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1992,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1991,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1990,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1989,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1988,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1987,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1986,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1985,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1984,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1983,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1982,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1981,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1980,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1979,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1978,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      }
+    ],
+    "pyq": {
+      "count": {
+        "out_of_syllabus": 0,
+        "total": 29,
+        "private": 0,
+        "public": 29,
+        "bucket": 0
+      },
+      "isTopicWise": true
+    },
+    "image": null,
+    "isOutOfSyllabus": false,
+    "hideFromClassify": false,
+    "groups": [
+      {
+        "title": "Numerical",
+        "key": "integer"
+      },
+      {
+        "title": "MCQ (Single Correct Answer)",
+        "key": "mcq"
+      },
+      {
+        "title": "MCQ (Multiple Correct Answer)",
+        "key": "mcqm"
+      }
+    ]
+  },
+  "questions": [
+    {
+      "title": "Numerical",
+      "key": "integer",
+      "questions": [
+        {
+          "examGroup": "jee",
+          "permalink": "a-hydrogen-atom-initially-at-rest-in-its-ground-state-abso-jee-advanced-physics-hrui1jg2z1zxcfuj",
+          "paperTitle": "JEE Advanced 2025 Paper 2 Online",
+          "question": {
+            "en": {
+              "content": "A hydrogen atom, initially at rest in its ground state, absorbs a photon of frequency <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.085ex\" height=\"1.342ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -443 921.6 593\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D463\" xlink:href=\"#MJX-TEX-I-1D463\"></use></g><g data-mml-node=\"mn\" transform=\"translate(518,-150) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g></g></svg></mjx-container> and ejects the electron with a kinetic energy of 10 eV . The electron then combines with a positron at rest to form a positronium atom in its ground state and simultaneously emits a photon of frequency <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.085ex\" height=\"1.342ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -443 921.6 593\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D463\" xlink:href=\"#MJX-TEX-I-1D463\"></use></g><g data-mml-node=\"mn\" transform=\"translate(518,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></svg></mjx-container>. The center of mass of the resulting positronium atom moves with a kinetic energy of 5 eV . It is given that positron has the same mass as that of electron and the positronium atom can be considered as a Bohr atom, in which the electron and the positron orbit around their center of mass. Considering no other energy loss during the whole process, the difference between the two photon energies (in eV) is ____________."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "consider-an-electron-in-the-n3-orbit-of-a-hydrogen-like-a-jee-advanced-physics-ojtitzdbqxrk5pnv",
+          "paperTitle": "JEE Advanced 2025 Paper 1 Online",
+          "question": {
+            "en": {
+              "content": "Consider an electron in the <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.506ex\" height=\"1.554ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -665 2433.6 687\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mo\" transform=\"translate(877.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1933.6,0)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g></svg></mjx-container> orbit of a hydrogen-like atom with atomic number <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.636ex\" height=\"1.545ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -683 723 683\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D44D\" xlink:href=\"#MJX-TEX-I-1D44D\"></use></g></g></g></svg></mjx-container>. At absolute temperature <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.622ex\" height=\"1.532ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -677 717 677\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D447\" xlink:href=\"#MJX-TEX-I-1D447\"></use></g></g></g></svg></mjx-container>, a neutron having thermal energy <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.121ex\" height=\"1.91ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 1821.6 844\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D458\" xlink:href=\"#MJX-TEX-I-1D458\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(554,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"42\" xlink:href=\"#MJX-TEX-N-42\"></use></g></g></g></g><g data-mml-node=\"mi\" transform=\"translate(1104.6,0)\"><use data-c=\"1D447\" xlink:href=\"#MJX-TEX-I-1D447\"></use></g></g></g></svg></mjx-container> has the same de Broglie wavelength as that of this electron. If this temperature is given by <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -1.458ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"14.052ex\" height=\"3.683ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -983.7 6210.8 1628\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D447\" xlink:href=\"#MJX-TEX-I-1D447\"></use></g><g data-mml-node=\"mo\" transform=\"translate(994.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mfrac\" transform=\"translate(2050.6,0)\"><g data-mml-node=\"mrow\" transform=\"translate(1293.8,394) scale(0.707)\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"1D44D\" xlink:href=\"#MJX-TEX-I-1D44D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(808,363) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g><g data-mml-node=\"msup\" transform=\"translate(1211.6,0)\"><g data-mml-node=\"mi\"><use data-c=\"210E\" xlink:href=\"#MJX-TEX-I-210E\"></use></g><g data-mml-node=\"mn\" transform=\"translate(609,363) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"mrow\" transform=\"translate(220,-423) scale(0.707)\"><g data-mml-node=\"mi\"><use data-c=\"1D6FC\" xlink:href=\"#MJX-TEX-I-1D6FC\"></use></g><g data-mml-node=\"msup\" transform=\"translate(640,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D70B\" xlink:href=\"#MJX-TEX-I-1D70B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(656.1,289) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g><g data-mml-node=\"msubsup\" transform=\"translate(1699.7,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"mn\" transform=\"translate(562,353.6) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mn\" transform=\"translate(562,-297.3) scale(0.707)\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g></g><g data-mml-node=\"msub\" transform=\"translate(2665.3,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D45A\" xlink:href=\"#MJX-TEX-I-1D45A\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(911,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"4E\" xlink:href=\"#MJX-TEX-N-4E\"></use></g></g></g></g><g data-mml-node=\"msub\" transform=\"translate(4156.6,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D458\" xlink:href=\"#MJX-TEX-I-1D458\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(554,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"42\" xlink:href=\"#MJX-TEX-N-42\"></use></g></g></g></g></g><rect width=\"3920.2\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></svg></mjx-container>, (where <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.303ex\" height=\"1.595ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 576 705\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"210E\" xlink:href=\"#MJX-TEX-I-210E\"></use></g></g></g></svg></mjx-container> is the Planck's constant, <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.581ex\" height=\"1.91ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 1140.7 844\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D458\" xlink:href=\"#MJX-TEX-I-1D458\"></use></g><g data-mml-node=\"mi\" transform=\"translate(554,-150) scale(0.707)\"><use data-c=\"1D435\" xlink:href=\"#MJX-TEX-I-1D435\"></use></g></g></g></g></svg></mjx-container> is the Boltzmann constant, <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.374ex\" height=\"1.339ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 1491.3 592\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D45A\" xlink:href=\"#MJX-TEX-I-1D45A\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(911,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"4E\" xlink:href=\"#MJX-TEX-N-4E\"></use></g></g></g></g></g></g></svg></mjx-container> is the mass of the neutron and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.375ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.185ex\" height=\"1.372ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -441 965.6 606.6\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"mn\" transform=\"translate(562,-150) scale(0.707)\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g></g></g></g></svg></mjx-container> is the first Bohr radius of hydrogen atom) then the value of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.448ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 640 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D6FC\" xlink:href=\"#MJX-TEX-I-1D6FC\"></use></g></g></g></svg></mjx-container> is ______."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "a-hydrogen-like-atom-has-atomic-number-z-photons-emitted-jee-advanced-physics-23jfzmhqgytgb3p7",
+          "paperTitle": "JEE Advanced 2023 Paper 1 Online",
+          "question": {
+            "en": {
+              "content": "A Hydrogen-like atom has atomic number <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.636ex\" height=\"1.545ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -683 723 683\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D44D\" xlink:href=\"#MJX-TEX-I-1D44D\"></use></g></g></g></svg></mjx-container>. Photons emitted in the electronic transitions from level <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.506ex\" height=\"1.557ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -677 2433.6 688\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mo\" transform=\"translate(877.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1933.6,0)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g></svg></mjx-container> to level <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.506ex\" height=\"1.554ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -665 2433.6 687\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mo\" transform=\"translate(877.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1933.6,0)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g></svg></mjx-container> in these atoms are used to perform photoelectric effect experiment on a target metal. The maximum kinetic energy of the photoelectrons generated is <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"6.724ex\" height=\"1.595ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -683 2972 705\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\" transform=\"translate(500,0)\"></use><use data-c=\"39\" xlink:href=\"#MJX-TEX-N-39\" transform=\"translate(778,0)\"></use><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\" transform=\"translate(1278,0)\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1778,0)\"><g data-mml-node=\"mi\"><use data-c=\"65\" xlink:href=\"#MJX-TEX-N-65\"></use><use data-c=\"56\" xlink:href=\"#MJX-TEX-N-56\" transform=\"translate(444,0)\"></use></g></g></g></g></svg></mjx-container>. If the photoelectric threshold wavelength for the target metal is <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.452ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"7.894ex\" height=\"2.149ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 3489 950\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\" transform=\"translate(500,0)\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(1000,0)\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1500,0)\"><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\"> </text></g><g data-mml-node=\"mi\" transform=\"translate(600,0)\"><use data-c=\"6E\" xlink:href=\"#MJX-TEX-N-6E\"></use><use data-c=\"6D\" xlink:href=\"#MJX-TEX-N-6D\" transform=\"translate(556,0)\"></use></g></g></g></g></svg></mjx-container>, the value of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.636ex\" height=\"1.545ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -683 723 683\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D44D\" xlink:href=\"#MJX-TEX-I-1D44D\"></use></g></g></g></svg></mjx-container> is _________.<br><br>\n[Given: <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"18.434ex\" height=\"1.756ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 8148 776\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"210E\" xlink:href=\"#MJX-TEX-I-210E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(576,0)\"><use data-c=\"1D450\" xlink:href=\"#MJX-TEX-I-1D450\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1286.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(2342.6,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\" transform=\"translate(500,0)\"></use><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\" transform=\"translate(1000,0)\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(1500,0)\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(4342.6,0)\"><g data-mml-node=\"mi\"><use data-c=\"65\" xlink:href=\"#MJX-TEX-N-65\"></use><use data-c=\"56\" xlink:href=\"#MJX-TEX-N-56\" transform=\"translate(444,0)\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(5758.8,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(6759,0)\"><g data-mml-node=\"mi\"><use data-c=\"6E\" xlink:href=\"#MJX-TEX-N-6E\"></use><use data-c=\"6D\" xlink:href=\"#MJX-TEX-N-6D\" transform=\"translate(556,0)\"></use></g></g></g></g></svg></mjx-container> and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"13.741ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 6073.6 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D445\" xlink:href=\"#MJX-TEX-I-1D445\"></use></g><g data-mml-node=\"mi\" transform=\"translate(759,0)\"><use data-c=\"210E\" xlink:href=\"#MJX-TEX-I-210E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1335,0)\"><use data-c=\"1D450\" xlink:href=\"#MJX-TEX-I-1D450\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2045.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(3101.6,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\" transform=\"translate(500,0)\"></use><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\" transform=\"translate(1000,0)\"></use><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\" transform=\"translate(1278,0)\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(4879.6,0)\"><g data-mml-node=\"mi\"><use data-c=\"65\" xlink:href=\"#MJX-TEX-N-65\"></use><use data-c=\"56\" xlink:href=\"#MJX-TEX-N-56\" transform=\"translate(444,0)\"></use></g></g></g></g></svg></mjx-container>, where <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.048ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.717ex\" height=\"1.593ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -683 759 704\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D445\" xlink:href=\"#MJX-TEX-I-1D445\"></use></g></g></g></svg></mjx-container> is the Rydberg constant, <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.303ex\" height=\"1.595ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 576 705\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"210E\" xlink:href=\"#MJX-TEX-I-210E\"></use></g></g></g></svg></mjx-container> is the Planck's constant and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"0.98ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 433 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D450\" xlink:href=\"#MJX-TEX-I-1D450\"></use></g></g></g></svg></mjx-container> is the speed of light in vacuum]"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "in-a-photoemission-experiment-the-maximum-kinetic-energies-jee-advanced-physics-units-and-measurements-ihhpot16hkilzr5n",
+          "paperTitle": "JEE Advanced 2021 Paper 2 Online",
+          "question": {
+            "en": {
+              "content": "In a photoemission experiment, the maximum kinetic energies of photoelectrons from metals P, Q and R are E<sub>P</sub>, E<sub>Q</sub> and E<sub>R</sub>, respectively, and they are related by E<sub>P</sub> = 2E<sub>Q</sub> = 2E<sub>R</sub>. In this experiment, the same source of monochromatic light is used for metals P and Q while a different source of monochromatic light is used for the metal R. The work functions for metals P, Q and R are 4.0 eV, 4.5 eV and 5.5 eV, respectively. The energy of the incident photon used for metal R, in eV, is ___________."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "a-perfectly-reflecting-mirror-of-mass-m-mounted-on-a-spring-jee-advanced-physics-units-and-measurements-ll5hat15axwut08j",
+          "paperTitle": "JEE Advanced 2019 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "A perfectly reflecting mirror of mass M mounted on a spring constitutes a spring-mass system of angular frequency <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.633ex\" height=\"1.593ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -704 722 704\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"3A9\" xlink:href=\"#MJX-TEX-N-3A9\"></use></g></g></g></svg></mjx-container> such that <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.798ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"16.834ex\" height=\"2.816ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -891.8 7440.8 1244.6\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(220,394) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g><g data-mml-node=\"mi\" transform=\"translate(500,0)\"><use data-c=\"1D70B\" xlink:href=\"#MJX-TEX-I-1D70B\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1073,0)\"><use data-c=\"1D440\" xlink:href=\"#MJX-TEX-I-1D440\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2124,0)\"><use data-c=\"3A9\" xlink:href=\"#MJX-TEX-N-3A9\"></use></g></g><g data-mml-node=\"mi\" transform=\"translate(1022.6,-345) scale(0.707)\"><use data-c=\"210E\" xlink:href=\"#MJX-TEX-I-210E\"></use></g><rect width=\"2212.4\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g><g data-mml-node=\"mo\" transform=\"translate(2730.2,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(3786,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1033,393.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\" transform=\"translate(500,0)\"></use></g></g></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(5576.1,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"1D45A\" xlink:href=\"#MJX-TEX-I-1D45A\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(911,363) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(778,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></g></g></svg></mjx-container> with h as Planck's constant. N photons of wavelength <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.027ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.319ex\" height=\"1.597ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 583 706\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D706\" xlink:href=\"#MJX-TEX-I-1D706\"></use></g></g></g></svg></mjx-container> = 8<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.296ex\" height=\"1ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -431 573 442\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D70B\" xlink:href=\"#MJX-TEX-I-1D70B\"></use></g></g></g></svg></mjx-container> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 10<sup><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>6</sup> m strike the mirror simultaneously at normal incidence such that the mirror gets displaced by 1 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.489ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.364ex\" height=\"1.489ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 603 658\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D707\" xlink:href=\"#MJX-TEX-I-1D707\"></use></g></g></g></svg></mjx-container>m. If the value of N is x <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 10<sup>12</sup>, then the value of x is ................ [Consider the spring as massless]<br><br> <img src=\"https://imagex.cdn.examgoal.net/1kt128jll/37b8c55b-a393-4e78-8c31-688d7d3e6be2/a2d3a290-0ae5-11ec-ad2d-cff39a9e6a15/file-1kt128jlm.jpeg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2019 Paper 2 Offline Physics - Dual Nature of Radiation Question 26 English\">"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "in-a-photoelectric-experiment-a-parallel-beam-of-monochromat-2018-marks-3-doffahblazdyugbb.htm",
+          "paperTitle": "JEE Advanced 2018 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "In a photoelectric experiment a parallel beam of monochromatic light with power of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.394ex\" height=\"1.557ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -666 1500 688\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(1000,0)\"></use></g></g></g></svg></mjx-container> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.371ex\" height=\"1.595ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -683 1048 705\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D44A\" xlink:href=\"#MJX-TEX-I-1D44A\"></use></g></g></g></svg></mjx-container> is incident on a perfectly absorbing cathode of work function <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.023ex\" height=\"1.557ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -666 1778 688\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\"></use><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\" transform=\"translate(500,0)\"></use><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\" transform=\"translate(778,0)\"></use><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\" transform=\"translate(1278,0)\"></use></g></g></g></svg></mjx-container> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.781ex\" height=\"1.027ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -443 1229 454\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D452\" xlink:href=\"#MJX-TEX-I-1D452\"></use></g><g data-mml-node=\"mi\" transform=\"translate(466,0)\"><use data-c=\"1D463\" xlink:href=\"#MJX-TEX-I-1D463\"></use></g><g data-mml-node=\"mo\" transform=\"translate(951,0)\"><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\"></use></g></g></g></svg></mjx-container> The frequency of light is just above the threshold frequency so that the photoelectrons are emitted with negligible kinetic energy. Assume that the photoelectron  emission efficiency  is <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.127ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.278ex\" height=\"1.824ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 2333 806\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(1000,0)\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1500,0)\"><use data-c=\"25\" xlink:href=\"#MJX-TEX-N-25\"></use></g></g></g></svg></mjx-container>. A potential difference of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.394ex\" height=\"1.557ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -666 1500 688\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(1000,0)\"></use></g></g></g></svg></mjx-container> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.74ex\" height=\"1.595ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -683 769 705\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D449\" xlink:href=\"#MJX-TEX-I-1D449\"></use></g></g></g></svg></mjx-container>  is applied between the cathode and the anode. All the emitted electrons are  incident normally on the anode and are absorbed.  The anode experiences a force <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"13.33ex\" height=\"2.022ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -871.8 5891.7 893.8\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D439\" xlink:href=\"#MJX-TEX-I-1D439\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1026.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2082.6,0)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2904.8,0)\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(3905,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1033,393.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(778,0)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g></g></g></g></svg></mjx-container> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.009ex\" height=\"1.545ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -683 888 683\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D441\" xlink:href=\"#MJX-TEX-I-1D441\"></use></g></g></g></svg></mjx-container> due to the impact of the electrons. The value of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.357ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 600 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g></g></g></svg></mjx-container>  is ______________. Mass of the electron <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.464ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"17.979ex\" height=\"2.419ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864 7946.7 1069\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D440\" xlink:href=\"#MJX-TEX-I-1D440\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1003,-150) scale(0.707)\"><use data-c=\"1D452\" xlink:href=\"#MJX-TEX-I-1D452\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(1660.3,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(2716.1,0)\"><use data-c=\"39\" xlink:href=\"#MJX-TEX-N-39\"></use></g><g data-mml-node=\"mo\" transform=\"translate(3438.3,0)\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(4438.5,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1033,393.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(778,0)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\" transform=\"translate(500,0)\"></use></g></g></g></g><g data-mml-node=\"mspace\" transform=\"translate(6778.7,0)\"></g><g data-mml-node=\"mi\" transform=\"translate(6945.7,0)\"><use data-c=\"1D458\" xlink:href=\"#MJX-TEX-I-1D458\"></use></g><g data-mml-node=\"mi\" transform=\"translate(7466.7,0)\"><use data-c=\"1D454\" xlink:href=\"#MJX-TEX-I-1D454\"></use></g></g></g></svg></mjx-container>  and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"22.093ex\" height=\"2.005ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864 9765.2 886\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\" transform=\"translate(500,0)\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(778,0)\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1278,0)\"><use data-c=\"1D452\" xlink:href=\"#MJX-TEX-I-1D452\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1744,0)\"><use data-c=\"1D449\" xlink:href=\"#MJX-TEX-I-1D449\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2790.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(3846.6,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\" transform=\"translate(500,0)\"></use><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\" transform=\"translate(778,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(5346.8,0)\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(6347,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1033,393.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(778,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"39\" xlink:href=\"#MJX-TEX-N-39\" transform=\"translate(500,0)\"></use></g></g></g></g><g data-mml-node=\"mspace\" transform=\"translate(8687.2,0)\"></g><g data-mml-node=\"mi\" transform=\"translate(8854.2,0)\"><use data-c=\"1D43D\" xlink:href=\"#MJX-TEX-I-1D43D\"></use></g><g data-mml-node=\"mo\" transform=\"translate(9487.2,0)\"><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\"></use></g></g></g></svg></mjx-container> "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "an-electron-in-an-excited-state-of-lisup2sup-ion-has-a-jee-advanced-physics-units-and-measurements-ystcyju8jexmtzf2",
+          "paperTitle": "JEE Advanced 2015 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "An electron in an excited state of Li<sup>2+</sup> ion has angular momentum <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.798ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.717ex\" height=\"2.8ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -884.7 1200.8 1237.5\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(220,394) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g><g data-mml-node=\"mi\" transform=\"translate(500,0)\"><use data-c=\"210E\" xlink:href=\"#MJX-TEX-I-210E\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(221.1,-345) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mi\" transform=\"translate(500,0)\"><use data-c=\"1D70B\" xlink:href=\"#MJX-TEX-I-1D70B\"></use></g></g><rect width=\"960.8\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container>. The de Broglie wavelength of the electron in this state is p<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.296ex\" height=\"1ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -431 573 442\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D70B\" xlink:href=\"#MJX-TEX-I-1D70B\"></use></g></g></g></svg></mjx-container>a<sub>0</sub> (where a<sub>0</sub> is the Bohr radius). The value of p is"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-work-functions-of-silver-and-sodium-are-46-and-23-e-jee-advanced-physics-units-and-measurements-vslatooywip3ziyu",
+          "paperTitle": "JEE Advanced 2013 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "<p>The work functions of silver and sodium are 4.6 and 2.3 eV, respectively. The ratio of the slope of the stopping potential versus frequency plot for silver to that of sodium is ___________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pa-proton-is-fired-from-very-far-away-towards-a-nucleus-wi-jee-advanced-physics-units-and-measurements-qhmldcyvj8qtxouv",
+          "paperTitle": "IIT-JEE 2012 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "<p>A proton is fired from very far away towards a nucleus with charge Q = 120e, where e is the electronic charge. It makes a closest approach of 10 fm to the nucleus. The de Broglie wavelength (in units of fm) of the proton at its start is ____________. (Take the proton mass, <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.65ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"20.845ex\" height=\"2.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -871.1 9213.4 1158.2\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D45A\" xlink:href=\"#MJX-TEX-I-1D45A\"></use></g><g data-mml-node=\"mi\" transform=\"translate(911,-150) scale(0.707)\"><use data-c=\"1D45D\" xlink:href=\"#MJX-TEX-I-1D45D\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(1594.5,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2650.2,0)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"mn\" transform=\"translate(3039.2,0)\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use></g><g data-mml-node=\"mo\" transform=\"translate(3761.5,0)\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g><g data-mml-node=\"mn\" transform=\"translate(4761.7,0)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g><g data-mml-node=\"mo\" transform=\"translate(5261.7,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g><g data-mml-node=\"mo\" transform=\"translate(5872.9,0)\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(6873.1,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1033,393.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(778,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use><use data-c=\"37\" xlink:href=\"#MJX-TEX-N-37\" transform=\"translate(500,0)\"></use></g></g></g></g></g></g></svg></mjx-container> kg; <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.566ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"17.458ex\" height=\"2.52ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864 7716.2 1114\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"210E\" xlink:href=\"#MJX-TEX-I-210E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(576,0)\"><use data-c=\"2F\" xlink:href=\"#MJX-TEX-N-2F\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1076,0)\"><use data-c=\"1D452\" xlink:href=\"#MJX-TEX-I-1D452\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1819.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(2875.6,0)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\" transform=\"translate(500,0)\"></use><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\" transform=\"translate(778,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(4375.8,0)\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(5376,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1033,393.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(778,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\" transform=\"translate(500,0)\"></use></g></g></g></g></g></g></svg></mjx-container> J.s/C; <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -1.045ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"14.32ex\" height=\"3.002ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864.9 6329.5 1327\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mn\" transform=\"translate(741.7,394) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(220,-345) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g><g data-mml-node=\"mi\" transform=\"translate(500,0)\"><use data-c=\"1D70B\" xlink:href=\"#MJX-TEX-I-1D70B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1073,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D700\" xlink:href=\"#MJX-TEX-I-1D700\"></use></g><g data-mml-node=\"mn\" transform=\"translate(499,-150) scale(0.707)\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g></g></g></g><rect width=\"1596.9\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g><g data-mml-node=\"mo\" transform=\"translate(2114.7,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(3170.5,0)\"><use data-c=\"39\" xlink:href=\"#MJX-TEX-N-39\"></use></g><g data-mml-node=\"mo\" transform=\"translate(3892.7,0)\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(4892.9,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1033,393.1) scale(0.707)\"><use data-c=\"39\" xlink:href=\"#MJX-TEX-N-39\"></use></g></g></g></g></g></svg></mjx-container> m/F; 1 fm = 10<sup>15</sup> m.)</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pa-silver-sphere-of-radius-1-cm-and-work-function-47-ev-i-jee-advanced-physics-units-and-measurements-flqeqrqygitdihfd",
+          "paperTitle": "IIT-JEE 2011 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "<p>A silver sphere of radius 1 cm and work function 4.7 eV is suspended from an insulating thread in free-space. It is under continuous illumination of 200 nm wavelength light. As photoelectrons are emitted, the sphere gets charged and acquires a potential. The maximum number of photoelectrons emitted from the spheres is A <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 10<sup>Z</sup> (where 1 &lt; A &lt; 10). The value of Z is _____________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-activity-of-a-freshly-prepared-radioactive-sample-is-jee-advanced-physics-units-and-measurements-hxstxa8chjgaypj0",
+          "paperTitle": "IIT-JEE 2011 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "<p>The activity of a freshly prepared radioactive sample is 10<sup>10</sup> disintegrations per second, whose mean life is 10<sup>9</sup> s. The mass of an atom of this radioisotope is 10<sup><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>25</sup> kg. The mass (in mg) of the radioactive sample is _________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pan-alpha-particle-and-a-proton-are-accelerated-from-jee-advanced-physics-dual-nature-of-radiation-aviuvcelw6vyzgy3",
+          "paperTitle": "IIT-JEE 2010 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "<p>An <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.448ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 640 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D6FC\" xlink:href=\"#MJX-TEX-I-1D6FC\"></use></g></g></g></svg></mjx-container>-particle and a proton are accelerated from the rest by a potential difference of 100 V. After this, their de Broglie wavelengths are <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.027ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.319ex\" height=\"1.597ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 583 706\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D706\" xlink:href=\"#MJX-TEX-I-1D706\"></use></g></g></g></svg></mjx-container><sub><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.448ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 640 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D6FC\" xlink:href=\"#MJX-TEX-I-1D6FC\"></use></g></g></g></svg></mjx-container></sub> and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.027ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.319ex\" height=\"1.597ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 583 706\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D706\" xlink:href=\"#MJX-TEX-I-1D706\"></use></g></g></g></svg></mjx-container><sub>p</sub>, respectively. The ratio <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -1.033ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.785ex\" height=\"3.372ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1033.8 1230.9 1490.4\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(254.2,543.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D706\" xlink:href=\"#MJX-TEX-I-1D706\"></use></g><g data-mml-node=\"mi\" transform=\"translate(616,-150) scale(0.707)\"><use data-c=\"1D45D\" xlink:href=\"#MJX-TEX-I-1D45D\"></use></g></g></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(220,-345) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D706\" xlink:href=\"#MJX-TEX-I-1D706\"></use></g><g data-mml-node=\"mi\" transform=\"translate(616,-150) scale(0.707)\"><use data-c=\"1D6FC\" xlink:href=\"#MJX-TEX-I-1D6FC\"></use></g></g></g></g><rect width=\"990.9\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container>, to the nearest integer, is _____________.</p>"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "MCQ (Single Correct Answer)",
+      "key": "mcq",
+      "questions": [
+        {
+          "examGroup": "jee",
+          "permalink": "a-metal-target-with-atomic-number-z46-is-bombarded-with-a-jee-advanced-physics-conu4ymibh6nencx",
+          "paperTitle": "JEE Advanced 2024 Paper 2 Online",
+          "question": {
+            "en": {
+              "content": "A metal target with atomic number <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"6.915ex\" height=\"1.595ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -683 3056.6 705\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D44D\" xlink:href=\"#MJX-TEX-I-1D44D\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1000.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(2056.6,0)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\" transform=\"translate(500,0)\"></use></g></g></g></svg></mjx-container> is bombarded with a high energy electron beam. The emission of X-rays from the target is analyzed. The ratio <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.02ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 451 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D45F\" xlink:href=\"#MJX-TEX-I-1D45F\"></use></g></g></g></svg></mjx-container> of the wavelengths of the <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.357ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.132ex\" height=\"1.902ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -683 1384.5 840.8\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D43E\" xlink:href=\"#MJX-TEX-I-1D43E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(882,-150) scale(0.707)\"><use data-c=\"1D6FC\" xlink:href=\"#MJX-TEX-I-1D6FC\"></use></g></g></g></g></svg></mjx-container>-line and the cut-off is found to be <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.169ex\" height=\"1.532ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -666 2284.6 677\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D45F\" xlink:href=\"#MJX-TEX-I-1D45F\"></use></g><g data-mml-node=\"mo\" transform=\"translate(728.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1784.6,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></svg></mjx-container>. If the same electron beam bombards another metal target with <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"6.915ex\" height=\"1.545ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -683 3056.6 683\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D44D\" xlink:href=\"#MJX-TEX-I-1D44D\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1000.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(2056.6,0)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\" transform=\"translate(500,0)\"></use></g></g></g></svg></mjx-container>, the value of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.02ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 451 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D45F\" xlink:href=\"#MJX-TEX-I-1D45F\"></use></g></g></g></svg></mjx-container> will be"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pwhen-light-of-a-given-wavelength-is-incident-on-a-metalli-jee-advanced-physics-units-and-measurements-iyyyhllxswzqxybt",
+          "paperTitle": "JEE Advanced 2022 Paper 2 Online",
+          "question": {
+            "en": {
+              "content": "<p>When light of a given wavelength is incident on a metallic surface, the minimum potential needed to stop the emitted photoelectrons is <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.452ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.946ex\" height=\"2.149ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 2628 950\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\"></use><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\" transform=\"translate(500,0)\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(778,0)\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1278,0)\"><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\"> </text></g><g data-mml-node=\"mi\" transform=\"translate(600,0)\"><use data-c=\"56\" xlink:href=\"#MJX-TEX-N-56\"></use></g></g></g></g></svg></mjx-container>. This potential drops to <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.452ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.946ex\" height=\"2.149ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 2628 950\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\" transform=\"translate(500,0)\"></use><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\" transform=\"translate(778,0)\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1278,0)\"><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\"> </text></g><g data-mml-node=\"mi\" transform=\"translate(600,0)\"><use data-c=\"56\" xlink:href=\"#MJX-TEX-N-56\"></use></g></g></g></g></svg></mjx-container> if another source with wavelength four times that of the first one and intensity half of the first one is used. What are the wavelength of the first source and the work function of the metal, respectively? [Take <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.798ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"11.41ex\" height=\"2.8ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -884.7 5043 1237.5\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mrow\" transform=\"translate(220,394) scale(0.707)\"><g data-mml-node=\"mi\"><use data-c=\"210E\" xlink:href=\"#MJX-TEX-I-210E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(576,0)\"><use data-c=\"1D450\" xlink:href=\"#MJX-TEX-I-1D450\"></use></g></g><g data-mml-node=\"mi\" transform=\"translate(412,-345) scale(0.707)\"><use data-c=\"1D452\" xlink:href=\"#MJX-TEX-I-1D452\"></use></g><rect width=\"913.5\" height=\"60\" x=\"120\" y=\"220\"></rect></g><g data-mml-node=\"mo\" transform=\"translate(1431.2,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(2487,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\" transform=\"translate(500,0)\"></use><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\" transform=\"translate(778,0)\"></use><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\" transform=\"translate(1278,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(4265,0)\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"11.408ex\" height=\"2.093ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -903 5042.4 925\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msup\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1033,393.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(778,0)\"><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\"></use></g></g></g><g data-mml-node=\"msup\" transform=\"translate(1986.7,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"4A\" xlink:href=\"#MJX-TEX-N-4A\"></use><use data-c=\"6D\" xlink:href=\"#MJX-TEX-N-6D\" transform=\"translate(514,0)\"></use><use data-c=\"43\" xlink:href=\"#MJX-TEX-N-43\" transform=\"translate(1347,0)\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(2102,432.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(778,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g></g></g></svg></mjx-container>.]</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "a-photoelectric-material-having-work-function-phi-0-2017-marks-3-rsnpxfo9xbdn6l38.htm",
+          "paperTitle": "JEE Advanced 2017 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "A photoelectric material having work-function <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.464ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.336ex\" height=\"2.034ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 1032.6 899\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D719\" xlink:href=\"#MJX-TEX-I-1D719\"></use></g><g data-mml-node=\"mn\" transform=\"translate(629,-150) scale(0.707)\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g></g></g></g></g></svg></mjx-container> is illuminated with light of wavelength <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -1.469ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"12.402ex\" height=\"4.07ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1149.5 5481.7 1799\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D706\" xlink:href=\"#MJX-TEX-I-1D706\"></use></g><g data-mml-node=\"mrow\" transform=\"translate(749.7,0)\"><g data-mml-node=\"mo\" transform=\"translate(0 -0.5)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-LO-28\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(597,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D706\" xlink:href=\"#MJX-TEX-I-1D706\"></use></g><g data-mml-node=\"mo\" transform=\"translate(860.8,0)\"><use data-c=\"3C\" xlink:href=\"#MJX-TEX-N-3C\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1916.6,0)\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(220,394) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"210E\" xlink:href=\"#MJX-TEX-I-210E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(576,0)\"><use data-c=\"1D452\" xlink:href=\"#MJX-TEX-I-1D452\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(223.3,-345) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D719\" xlink:href=\"#MJX-TEX-I-1D719\"></use></g><g data-mml-node=\"mn\" transform=\"translate(629,-150) scale(0.707)\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g></g></g></g><rect width=\"936.8\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g><g data-mml-node=\"mo\" transform=\"translate(3690.4,0) translate(0 -0.5)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-LO-29\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(5203.7,0)\"><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\"></use></g></g></g></svg></mjx-container> The fastest photoelectron has a de-Broglic wavelength <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.355ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.972ex\" height=\"1.926ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 1313.8 851.1\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D706\" xlink:href=\"#MJX-TEX-I-1D706\"></use></g><g data-mml-node=\"mi\" transform=\"translate(616,-150) scale(0.707)\"><use data-c=\"1D451\" xlink:href=\"#MJX-TEX-I-1D451\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(1035.8,0)\"><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\"></use></g></g></g></svg></mjx-container> A change in wavelength of the incident light by <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.027ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.204ex\" height=\"1.647ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 1416 728\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g><g data-mml-node=\"mi\" transform=\"translate(833,0)\"><use data-c=\"1D706\" xlink:href=\"#MJX-TEX-I-1D706\"></use></g></g></g></svg></mjx-container> result in a change <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.355ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.228ex\" height=\"1.975ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 1868.8 873.1\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(833,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D706\" xlink:href=\"#MJX-TEX-I-1D706\"></use></g><g data-mml-node=\"mi\" transform=\"translate(616,-150) scale(0.707)\"><use data-c=\"1D451\" xlink:href=\"#MJX-TEX-I-1D451\"></use></g></g></g></g></g></svg></mjx-container> in <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.355ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.972ex\" height=\"1.926ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 1313.8 851.1\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D706\" xlink:href=\"#MJX-TEX-I-1D706\"></use></g><g data-mml-node=\"mi\" transform=\"translate(616,-150) scale(0.707)\"><use data-c=\"1D451\" xlink:href=\"#MJX-TEX-I-1D451\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(1035.8,0)\"><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\"></use></g></g></g></svg></mjx-container> Then the ratio <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.566ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"8.563ex\" height=\"2.262ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 3784.8 1000\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(833,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D706\" xlink:href=\"#MJX-TEX-I-1D706\"></use></g><g data-mml-node=\"mi\" transform=\"translate(616,-150) scale(0.707)\"><use data-c=\"1D451\" xlink:href=\"#MJX-TEX-I-1D451\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(1868.8,0)\"><use data-c=\"2F\" xlink:href=\"#MJX-TEX-N-2F\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2368.8,0)\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g><g data-mml-node=\"mi\" transform=\"translate(3201.8,0)\"><use data-c=\"1D706\" xlink:href=\"#MJX-TEX-I-1D706\"></use></g></g></g></svg></mjx-container> is proportional to "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "in-a-historical-experiment-to-determine-plancks-constant-jee-advanced-physics-dual-nature-of-radiation-s8six9xf2edloh3l",
+          "paperTitle": "JEE Advanced 2016 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "In a historical experiment to determine  Planck's constant, a metal surface was  irradiated with light of different  wavelengths. The emitted  photoelectron energies were measured  by applying a stopping potential. The  relevant data for the wavelength (<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.027ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.319ex\" height=\"1.597ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 583 706\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D706\" xlink:href=\"#MJX-TEX-I-1D706\"></use></g></g></g></svg></mjx-container>) of  incident light and the corresponding  stopping potential (V<sub>0</sub>) are given  below:\n<br><br>\n<table class=\"tg\">\n<thead>\n  <tr>\n    <th class=\"tg-baqh\"><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.566ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"6.807ex\" height=\"2.262ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 3008.7 1000\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D706\" xlink:href=\"#MJX-TEX-I-1D706\"></use></g><g data-mml-node=\"mrow\" transform=\"translate(749.7,0)\"><g data-mml-node=\"mo\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(389,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D707\" xlink:href=\"#MJX-TEX-I-1D707\"></use></g><g data-mml-node=\"mi\" transform=\"translate(603,0)\"><use data-c=\"1D45A\" xlink:href=\"#MJX-TEX-I-1D45A\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(1870,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g></g></g></svg></mjx-container></th>\n    <th class=\"tg-baqh\">V<sub>0</sub>(Volt)</th>\n  </tr>\n</thead>\n<tbody>\n  <tr>\n    <td class=\"tg-baqh\">0.3</td>\n    <td class=\"tg-baqh\">2.0</td>\n  </tr>\n  <tr>\n    <td class=\"tg-baqh\">0.4</td>\n    <td class=\"tg-baqh\">1.0</td>\n  </tr>\n  <tr>\n    <td class=\"tg-baqh\">0.5</td>\n    <td class=\"tg-baqh\">0.4</td>\n  </tr>\n</tbody>\n</table>\n<br><br>Given that c = 3 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 10<sup>8</sup>  ms<sup>-1</sup> and  e = 1.6 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 10<sup>-19</sup> C, Planck's constant (in  units of J-s) found from such an  experiment is) :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pa-metal-surface-is-illuminated-by-light-of-two-different-jee-advanced-physics-units-and-measurements-avf85fnqmikhj3vo",
+          "paperTitle": "JEE Advanced 2014 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "<p>A metal surface is illuminated by light of two different wavelengths 248 nm and 310 nm. The maximum speeds of the photoelectrons corresponding to these wavelengths are u<sub>1</sub> and u<sub>2</sub>, respectively. If the ratio u<sub>1</sub> : u<sub>2</sub> = 2 : 1 and hc = 1240 eV nm, the work function of the metal is nearly</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pphotoelectric-effect-experiments-are-performed-using-thre-jee-advanced-physics-motion-u1zsenr3eyrcyzfw",
+          "paperTitle": "IIT-JEE 2009 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "<p>Photoelectric effect experiments are performed using three different metal plates p, q and r having work functions <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.65ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"12.308ex\" height=\"2.347ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 5440.2 1037.2\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D719\" xlink:href=\"#MJX-TEX-I-1D719\"></use></g><g data-mml-node=\"mi\" transform=\"translate(629,-150) scale(0.707)\"><use data-c=\"1D45D\" xlink:href=\"#MJX-TEX-I-1D45D\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(1312.5,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(2368.2,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\" transform=\"translate(500,0)\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(778,0)\"></use></g><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\" transform=\"translate(3646.2,0)\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\"> </text></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(4246.2,0)\"><g data-mml-node=\"mi\"><use data-c=\"65\" xlink:href=\"#MJX-TEX-N-65\"></use><use data-c=\"56\" xlink:href=\"#MJX-TEX-N-56\" transform=\"translate(444,0)\"></use></g></g></g></g></svg></mjx-container>, <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.65ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"12.239ex\" height=\"2.347ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 5409.8 1037.2\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D719\" xlink:href=\"#MJX-TEX-I-1D719\"></use></g><g data-mml-node=\"mi\" transform=\"translate(629,-150) scale(0.707)\"><use data-c=\"1D45E\" xlink:href=\"#MJX-TEX-I-1D45E\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(1282,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(2337.8,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\" transform=\"translate(500,0)\"></use><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\" transform=\"translate(778,0)\"></use></g><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\" transform=\"translate(3615.8,0)\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\"> </text></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(4215.8,0)\"><g data-mml-node=\"mi\"><use data-c=\"65\" xlink:href=\"#MJX-TEX-N-65\"></use><use data-c=\"56\" xlink:href=\"#MJX-TEX-N-56\" transform=\"translate(444,0)\"></use></g></g></g></g></svg></mjx-container> and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.464ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"12.225ex\" height=\"2.161ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 5403.5 955\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D719\" xlink:href=\"#MJX-TEX-I-1D719\"></use></g><g data-mml-node=\"mi\" transform=\"translate(629,-150) scale(0.707)\"><use data-c=\"1D45F\" xlink:href=\"#MJX-TEX-I-1D45F\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(1275.7,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(2331.5,0)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\" transform=\"translate(500,0)\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(778,0)\"></use></g><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\" transform=\"translate(3609.5,0)\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\"> </text></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(4209.5,0)\"><g data-mml-node=\"mi\"><use data-c=\"65\" xlink:href=\"#MJX-TEX-N-65\"></use><use data-c=\"56\" xlink:href=\"#MJX-TEX-N-56\" transform=\"translate(444,0)\"></use></g></g></g></g></svg></mjx-container>, respecticely. A light beam containing wavelengths of 550 nm, 450 nm and 350 nm with equal intensities illuminates each of the plates. The correct I-V graph for the experiment is (Take hc = 1240 eV nm)</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-allowed-energy-for-the-particle-for-a-particular-valu-jee-advanced-physics-motion-kvtaspb0vrnizjh3",
+          "paperTitle": "IIT-JEE 2009 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "<p>The allowed energy for the particle for a particular value of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.357ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 600 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g></g></g></svg></mjx-container> is proportional to</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-the-mass-of-the-particle-is-m10times10-30-kg-jee-advanced-physics-motion-eutpxjnu6gaoyinn",
+          "paperTitle": "IIT-JEE 2009 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "<p>If the mass of the particle is <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"15.955ex\" height=\"2.005ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864 7052.2 886\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D45A\" xlink:href=\"#MJX-TEX-I-1D45A\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1155.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(2211.6,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\" transform=\"translate(500,0)\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(778,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(3711.8,0)\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g><g data-mml-node=\"msup\" transform=\"translate(4712,0)\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1033,393.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(778,0)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use></g></g></g></g></g></svg></mjx-container> kg and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"7.105ex\" height=\"1.557ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -666 3140.6 688\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"mo\" transform=\"translate(806.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1862.6,0)\"><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\"></use><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\" transform=\"translate(500,0)\"></use><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\" transform=\"translate(778,0)\"></use></g></g></g></svg></mjx-container> nm, the energy of the particle in its ground state is closest to</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pwhich-one-of-the-following-statements-is-wrong-in-the-con-jee-advanced-physics-motion-tbaa6cbjhd58fhju",
+          "paperTitle": "IIT-JEE 2008 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "<p>Which one of the following statements is WRONG in the context of X-rays generated from a X-ray tube?</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pelectrons-with-de-broglie-wavelength-lambda-fall-on-jee-advanced-physics-motion-kfjkfbic5clqocyj",
+          "paperTitle": "IIT-JEE 2007 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "<p>Electrons with de-Broglie wavelength <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.027ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.319ex\" height=\"1.597ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 583 706\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D706\" xlink:href=\"#MJX-TEX-I-1D706\"></use></g></g></g></svg></mjx-container> fall on the target in an X-ray tube. The cut-off wavelength of the emitted X-rays is</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "psome-lawsprocesses-are-given-in-column-i-match-these-wi-jee-advanced-physics-motion-g8icwkz3m3h4s4e4",
+          "paperTitle": "IIT-JEE 2007 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "<p>Some laws/processes are given in Column I. Match these with the physical phenomena given in Column II and indicate your answer by darkening appropriate bubbles in the 4 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 4 matrix given in the ORS.</p>\n<p>\n<table class=\"tg\" style=\"undefined;table-layout: fixed; width: 472px\">\n<colgroup>\n<col style=\"width: 48px\">\n<col style=\"width: 192px\">\n<col style=\"width: 53px\">\n<col style=\"width: 179px\">\n</colgroup>\n<thead>\n  <tr>\n    <th class=\"tg-7btt\"></th>\n    <th class=\"tg-7btt\">Column I</th>\n    <th class=\"tg-7btt\"></th>\n    <th class=\"tg-7btt\">Column II</th>\n  </tr>\n</thead>\n<tbody>\n  <tr>\n    <td class=\"tg-c3ow\">(A)</td>\n    <td class=\"tg-0pky\">Transition between two atomic energy levels</td>\n    <td class=\"tg-c3ow\">(P)</td>\n    <td class=\"tg-0pky\">Characteristic X-rays</td>\n  </tr>\n  <tr>\n    <td class=\"tg-c3ow\">(B)</td>\n    <td class=\"tg-0pky\">Electron emission from a material</td>\n    <td class=\"tg-c3ow\">(Q)</td>\n    <td class=\"tg-0pky\">Photoelectric effect</td>\n  </tr>\n  <tr>\n    <td class=\"tg-c3ow\">(C)</td>\n    <td class=\"tg-0pky\">Mosley's law</td>\n    <td class=\"tg-c3ow\">(R)</td>\n    <td class=\"tg-0pky\">Hydrogen spectrum</td>\n  </tr>\n  <tr>\n    <td class=\"tg-c3ow\">(D)</td>\n    <td class=\"tg-0pky\">Change of photon energy into kinetic energy of electrons</td>\n    <td class=\"tg-c3ow\">(S)</td>\n    <td class=\"tg-0pky\"><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.439ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.296ex\" height=\"2.034ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 573 899\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D6FD\" xlink:href=\"#MJX-TEX-I-1D6FD\"></use></g></g></g></svg></mjx-container>-decay</td>\n  </tr>\n</tbody>\n</table></p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pstatement-1p-pif-the-accelerating-potential-in-an-x-jee-advanced-physics-motion-iwlf6lkzqkl2aylz",
+          "paperTitle": "IIT-JEE 2007 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "<p><b>Statement 1 :</b></p>\n<p>If the accelerating potential in an X-ray tube is increased, the wavelengths of the characteristic X-rays do not change.</p>\n\n<p><b>Statement 2 :</b></p>\n<p>When an electron beam strikes the target in an X-ray tube, part of the kinetic energy is converted into X-ray energy.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-potential-energy-of-a-particle-of-mass-m-is-given-by-jee-advanced-physics-motion-ekx1dttqsfekwqug",
+          "paperTitle": "IIT-JEE 2005 Mains",
+          "question": {
+            "en": {
+              "content": "<p>The potential energy of a particle of mass m \nis given by</p>\n<p><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -2.432ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"26.381ex\" height=\"5.995ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1575 11660.2 2650\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"55\" xlink:href=\"#MJX-TEX-N-55\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(750,0)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1139,0)\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1711,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2377.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mrow\" transform=\"translate(3433.6,0)\"><g data-mml-node=\"mo\" transform=\"translate(0 -0.5)\"><use data-c=\"7B\" xlink:href=\"#MJX-TEX-S3-7B\"></use></g><g data-mml-node=\"mtable\" data-frame-styles=\"\" transform=\"translate(750,0)\"><g data-mml-node=\"mtr\" transform=\"translate(0,700)\"><g data-mml-node=\"mtd\" transform=\"translate(500,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"45\" xlink:href=\"#MJX-TEX-N-45\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(714,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g></g></g></g><g data-mml-node=\"mtd\" transform=\"translate(2617.6,0)\"><g data-mml-node=\"mn\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g><g data-mml-node=\"mo\" transform=\"translate(777.8,0)\"><use data-c=\"2264\" xlink:href=\"#MJX-TEX-N-2264\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1833.6,0)\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2683.3,0)\"><use data-c=\"2264\" xlink:href=\"#MJX-TEX-N-2264\"></use></g><g data-mml-node=\"mn\" transform=\"translate(3739.1,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g><g data-mml-node=\"mtr\" transform=\"translate(0,-700)\"><g data-mml-node=\"mtd\" transform=\"translate(808.8,0)\"><g data-mml-node=\"mn\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g></g><g data-mml-node=\"mtd\" transform=\"translate(3534.3,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g><g data-mml-node=\"mo\" transform=\"translate(849.8,0)\"><use data-c=\"3E\" xlink:href=\"#MJX-TEX-N-3E\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1905.6,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g></g><g data-mml-node=\"mo\" transform=\"translate(8106.7,0) translate(0 250)\"></g></g></g></g></svg></mjx-container></p>\n<p><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.307ex\" height=\"1.91ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 1019.6 844\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D706\" xlink:href=\"#MJX-TEX-I-1D706\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(616,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g></g></g></svg></mjx-container> and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.307ex\" height=\"1.91ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 1019.6 844\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D706\" xlink:href=\"#MJX-TEX-I-1D706\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(616,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></g></svg></mjx-container> are the de Broglie wavelengths of the particle, when <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.312ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"9.591ex\" height=\"1.819ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -666 4239.1 804\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g><g data-mml-node=\"mo\" transform=\"translate(777.8,0)\"><use data-c=\"2264\" xlink:href=\"#MJX-TEX-N-2264\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1833.6,0)\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2683.3,0)\"><use data-c=\"2264\" xlink:href=\"#MJX-TEX-N-2264\"></use></g><g data-mml-node=\"mn\" transform=\"translate(3739.1,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g></svg></mjx-container> and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.442ex\" height=\"1.597ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -666 2405.6 706\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g><g data-mml-node=\"mo\" transform=\"translate(849.8,0)\"><use data-c=\"3E\" xlink:href=\"#MJX-TEX-N-3E\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1905.6,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g></svg></mjx-container>, respectively. If the total energy of particle is <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.375ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.66ex\" height=\"1.913ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -680 1617.6 845.6\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"msub\" transform=\"translate(500,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"45\" xlink:href=\"#MJX-TEX-N-45\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(714,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g></g></g></g></g></svg></mjx-container>, find <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -1.021ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.627ex\" height=\"3.14ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -936.8 1160.9 1387.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"msub\" transform=\"translate(220,446.1) scale(0.707)\"><g data-mml-node=\"mi\"><use data-c=\"1D706\" xlink:href=\"#MJX-TEX-I-1D706\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(616,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g><g data-mml-node=\"msub\" transform=\"translate(220,-345) scale(0.707)\"><g data-mml-node=\"mi\"><use data-c=\"1D706\" xlink:href=\"#MJX-TEX-I-1D706\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(616,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><rect width=\"920.9\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></svg></mjx-container>.</p>"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "MCQ (More than One Correct Answer)",
+      "key": "mcqm",
+      "questions": [
+        {
+          "examGroup": "jee",
+          "permalink": "light-of-wavelength-lambdasubphsub-falls-on-a-cath-jee-advanced-physics-units-and-measurements-hbdbv2qhhenlumst",
+          "paperTitle": "JEE Advanced 2016 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "Light of wavelength <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.027ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.319ex\" height=\"1.597ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 583 706\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D706\" xlink:href=\"#MJX-TEX-I-1D706\"></use></g></g></g></svg></mjx-container><sub>ph</sub> falls on a cathode plate inside a vacuum tube as shown in the figure. The work function of the cathode surface is <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.464ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.348ex\" height=\"2.034ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 596 899\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D719\" xlink:href=\"#MJX-TEX-I-1D719\"></use></g></g></g></svg></mjx-container> and the anode is a wire mesh of conducting material kept at a distance d from the cathode. A potential difference V is maintained between the electrodes. If the minimum de-Broglie wavelength of the electrons passing through the anode is <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.027ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.319ex\" height=\"1.597ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 583 706\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D706\" xlink:href=\"#MJX-TEX-I-1D706\"></use></g></g></g></svg></mjx-container><sub>e</sub>, which of the following statement(s) is (are) true?<br><br> <img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l0pzi04o/da33fc1f-d65e-46bb-901f-2a71dadf6257/0a60da80-a330-11ec-9278-e7cbe8cb9053/file-1l0pzi04p.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l0pzi04o/da33fc1f-d65e-46bb-901f-2a71dadf6257/0a60da80-a330-11ec-9278-e7cbe8cb9053/file-1l0pzi04p.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Advanced 2016 Paper 2 Offline Physics - Dual Nature of Radiation Question 24 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l0pzi04o/da33fc1f-d65e-46bb-901f-2a71dadf6257/0a60da80-a330-11ec-9278-e7cbe8cb9053/file-1l0pzi04p.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l0pzi04o/da33fc1f-d65e-46bb-901f-2a71dadf6257/0a60da80-a330-11ec-9278-e7cbe8cb9053/file-1l0pzi04p.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l0pzi04o/da33fc1f-d65e-46bb-901f-2a71dadf6257/0a60da80-a330-11ec-9278-e7cbe8cb9053/file-1l0pzi04p.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l0pzi04o/da33fc1f-d65e-46bb-901f-2a71dadf6257/0a60da80-a330-11ec-9278-e7cbe8cb9053/file-1l0pzi04p.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l0pzi04o/da33fc1f-d65e-46bb-901f-2a71dadf6257/0a60da80-a330-11ec-9278-e7cbe8cb9053/file-1l0pzi04p.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l0pzi04o/da33fc1f-d65e-46bb-901f-2a71dadf6257/0a60da80-a330-11ec-9278-e7cbe8cb9053/file-1l0pzi04p.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "for-photo-electric-effect-with-incident-photon-wavelength--jee-advanced-physics-units-and-measurements-28s6hmn05cqpv4oe",
+          "paperTitle": "JEE Advanced 2015 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "For photo-electric effect with incident photon wavelength <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.027ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.319ex\" height=\"1.597ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 583 706\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D706\" xlink:href=\"#MJX-TEX-I-1D706\"></use></g></g></g></svg></mjx-container>, the stopping potential is V<sub>0</sub>. Identify the correct variation(s) of V<sub>0</sub> with <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.027ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.319ex\" height=\"1.597ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 583 706\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D706\" xlink:href=\"#MJX-TEX-I-1D706\"></use></g></g></g></svg></mjx-container> and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.8ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.928ex\" height=\"2.757ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864.9 852.2 1218.4\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mn\" transform=\"translate(249.3,394) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mi\" transform=\"translate(220,-345) scale(0.707)\"><use data-c=\"1D706\" xlink:href=\"#MJX-TEX-I-1D706\"></use></g><rect width=\"612.2\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container>."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "using-the-expression-2dsin-theta-lambda-one-calc-2013-marks-3-fmaesindxv1tcrf8.htm",
+          "paperTitle": "JEE Advanced 2013 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "Using the expression <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.027ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"11.244ex\" height=\"1.622ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 4969.9 717\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mi\" transform=\"translate(500,0)\"><use data-c=\"1D451\" xlink:href=\"#MJX-TEX-I-1D451\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1189.7,0)\"><use data-c=\"73\" xlink:href=\"#MJX-TEX-N-73\"></use><use data-c=\"69\" xlink:href=\"#MJX-TEX-N-69\" transform=\"translate(394,0)\"></use><use data-c=\"6E\" xlink:href=\"#MJX-TEX-N-6E\" transform=\"translate(672,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2417.7,0)\"><use data-c=\"2061\" xlink:href=\"#MJX-TEX-N-2061\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2584.3,0)\"><use data-c=\"1D703\" xlink:href=\"#MJX-TEX-I-1D703\"></use></g><g data-mml-node=\"mo\" transform=\"translate(3331.1,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mi\" transform=\"translate(4386.9,0)\"><use data-c=\"1D706\" xlink:href=\"#MJX-TEX-I-1D706\"></use></g></g></g></svg></mjx-container>, one calculates the values of d by measuring the corresponding angles <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.023ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.061ex\" height=\"1.618ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 469 715\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D703\" xlink:href=\"#MJX-TEX-I-1D703\"></use></g></g></g></svg></mjx-container> in\nthe range 0 to 90<sup>o</sup>. The wavelength <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.027ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.319ex\" height=\"1.597ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 583 706\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D706\" xlink:href=\"#MJX-TEX-I-1D706\"></use></g></g></g></svg></mjx-container> is exactly known and the error in <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.023ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.061ex\" height=\"1.618ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 469 715\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D703\" xlink:href=\"#MJX-TEX-I-1D703\"></use></g></g></g></svg></mjx-container> is constant for all values of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.023ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.061ex\" height=\"1.618ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 469 715\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D703\" xlink:href=\"#MJX-TEX-I-1D703\"></use></g></g></g></svg></mjx-container>. As <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.023ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.061ex\" height=\"1.618ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 469 715\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D703\" xlink:href=\"#MJX-TEX-I-1D703\"></use></g></g></g></svg></mjx-container> increases from 0<sup>o</sup>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-graph-between-frac1lambda-and-stopping-potent-jee-advanced-physics-motion-rhzpylkt8om0bpuj",
+          "paperTitle": "IIT-JEE 2006",
+          "question": {
+            "en": {
+              "content": "<p>The graph between <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.8ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.928ex\" height=\"2.757ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864.9 852.2 1218.4\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mn\" transform=\"translate(249.3,394) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mi\" transform=\"translate(220,-345) scale(0.707)\"><use data-c=\"1D706\" xlink:href=\"#MJX-TEX-I-1D706\"></use></g><rect width=\"612.2\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></svg></mjx-container> and stopping potential (V) of three metals having work functions <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.464ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.678ex\" height=\"2.034ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 2509.8 899\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D719\" xlink:href=\"#MJX-TEX-I-1D719\"></use></g><g data-mml-node=\"mn\" transform=\"translate(629,-150) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(1032.6,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"msub\" transform=\"translate(1477.2,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D719\" xlink:href=\"#MJX-TEX-I-1D719\"></use></g><g data-mml-node=\"mn\" transform=\"translate(629,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></svg></mjx-container>, and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.464ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.336ex\" height=\"2.034ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 1032.6 899\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D719\" xlink:href=\"#MJX-TEX-I-1D719\"></use></g><g data-mml-node=\"mn\" transform=\"translate(629,-150) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g></g></svg></mjx-container> in an experiment of photoelectric effect is plotted as shown in the figure. Which of the following statement(s) is/are correct? (Here, <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.027ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.319ex\" height=\"1.597ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 583 706\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D706\" xlink:href=\"#MJX-TEX-I-1D706\"></use></g></g></g></svg></mjx-container> is the wavelength of the incident ray).</p><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/jaoe38c1mgt21m64/8a512c64-8929-4ffc-bebf-ea4191ce2231/97afebc0-aa5b-11f0-b4b0-a3aba211cddc/file-jaoe38c1mgt21m65.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/jaoe38c1mgt21m64/8a512c64-8929-4ffc-bebf-ea4191ce2231/97afebc0-aa5b-11f0-b4b0-a3aba211cddc/file-jaoe38c1mgt21m65.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0 auto;max-height:40vh;vertical-align:baseline\" alt=\"IIT-JEE 2006 Physics - Dual Nature of Radiation Question 1 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/jaoe38c1mgt21m64/8a512c64-8929-4ffc-bebf-ea4191ce2231/97afebc0-aa5b-11f0-b4b0-a3aba211cddc/file-jaoe38c1mgt21m65.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/jaoe38c1mgt21m64/8a512c64-8929-4ffc-bebf-ea4191ce2231/97afebc0-aa5b-11f0-b4b0-a3aba211cddc/file-jaoe38c1mgt21m65.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/jaoe38c1mgt21m64/8a512c64-8929-4ffc-bebf-ea4191ce2231/97afebc0-aa5b-11f0-b4b0-a3aba211cddc/file-jaoe38c1mgt21m65.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/jaoe38c1mgt21m64/8a512c64-8929-4ffc-bebf-ea4191ce2231/97afebc0-aa5b-11f0-b4b0-a3aba211cddc/file-jaoe38c1mgt21m65.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/jaoe38c1mgt21m64/8a512c64-8929-4ffc-bebf-ea4191ce2231/97afebc0-aa5b-11f0-b4b0-a3aba211cddc/file-jaoe38c1mgt21m65.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/jaoe38c1mgt21m64/8a512c64-8929-4ffc-bebf-ea4191ce2231/97afebc0-aa5b-11f0-b4b0-a3aba211cddc/file-jaoe38c1mgt21m65.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "yO2oNOERoTRIcfsnUt7k9k2k5idm5w4",
+      "paperTitle": "JEE Main 2020 (Online) 9th January Morning Slot",
+      "year": 2020,
+      "examDate": "2020-01-09 09:30",
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "isomerism-of-coordination-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "complex-x-of-composition-crhsub2subosub6subclsu-jee-main-chemistry-analytical-chemistry-jb2fqh71amhvdemn",
+      "content": "Complex X of composition Cr(H<sub>2</sub>O)<sub>6</sub>Cl<sub>n</sub>\nhas a spin only magnetic moment of 3.83\nBM. It reacts with AgNO<sub>3</sub> and shows\ngeometrical isomerism. The IUPAC\nnomenclature of X is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Hexaaqua chromium (III) chloride"
+        },
+        {
+          "identifier": "B",
+          "content": "Tetraaquadichlorido chromium(IV)\nchloride dihydrate"
+        },
+        {
+          "identifier": "C",
+          "content": "Tetraaquadichlorido chromium (III)\nchloride dihydrate"
+        },
+        {
+          "identifier": "D",
+          "content": "Dichloridotetraaqua chromium (IV)\nchloride dihydrate"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Given complex Cr(H<sub>2</sub>O)<sub>6</sub>Cl<sub>n</sub>\n<br><br>As the magnetic mement is 3.83 BM then \n<br><br>Spin only magnetic moment = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.639ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"11.057ex\" height=\"2.851ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -977.5 4887.1 1260\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msqrt\"><g data-mml-node=\"mo\" transform=\"translate(0,67.5)\"><use data-c=\"221A\" xlink:href=\"#MJX-TEX-SO-221A\"></use></g><g transform=\"translate(1020,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mrow\" transform=\"translate(766.7,0)\"><g data-mml-node=\"mo\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(389,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mo\" transform=\"translate(822.2,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1822.4,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(2711.4,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g></g><rect width=\"3867.1\" height=\"60\" x=\"1020\" y=\"857.5\"></rect></g></g></g></svg></mjx-container> BM = 3.83\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> n = 3\n<br><br>Chromium\nin +3 oxidation state so molecular formula is\nCr(H<sub>2</sub>O)<sub>6</sub>Cl<sub>n</sub>.\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> This formula have following isomers\n<br><br>(a) [Cr(H<sub>2</sub>O)<sub>6</sub>]Cl<sub>3</sub> : react with AgNO<sub>3</sub> but does\nnot show geometrical isomerism.\n<br><br>(b) [Cr(H<sub>2</sub>O)<sub>5</sub>Cl]Cl<sub>2</sub>.H<sub>2</sub>O react with AgNO<sub>3</sub> but\ndoes not show geometrical isomerism.\n<br><br>(c) [Cr(H<sub>2</sub>O)<sub>4</sub>Cl<sub>2</sub>]Cl.2H<sub>2</sub>O react with AgNO<sub>3</sub> &amp;\nshow geometrical isomerism.\n<br><br>(d) [Cr(H<sub>2</sub>O)<sub>3</sub>Cl<sub>3</sub>].3H<sub>2</sub>O does not react with\nAgNO<sub>3</sub> &amp; show geometrical isomerism.\n<br><br>Compound will be\n[Cr(H<sub>2</sub>O)<sub>4</sub>Cl<sub>2</sub>] Cl.2H<sub>2</sub>O\n<br><br>IUPAC NAME : Tetraaquadichlorido chromium(III) chloride dihydrate \n"
+    }
+  ]
+}

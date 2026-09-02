@@ -1,0 +1,42 @@
+{
+  "questions": [
+    {
+      "question_id": "r4vgBzotsUELxbYlYCbsq",
+      "paperTitle": "JEE Main 2019 (Online) 11th January Evening Slot",
+      "year": 2019,
+      "examDate": "2019-01-11 14:30",
+      "subject": "chemistry",
+      "chapter": "alcohols-phenols-and-ethers",
+      "chapterGroup": "organic-chemistry",
+      "topic": "properties-preparation-and-uses-of-phenols",
+      "type": "mcqm",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-compounds-reacts-with-ethylmagnesium-jee-main-chemistry-some-basic-concepts-of-chemistry-bhsqweket5jgi2vx",
+      "content": "Which of the following compounds reacts with ethylmagnesium bromide and also decolourizes bromine water solution: \n",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/jWQfM152kmbnTcevV/BVqkXAiNELfVkyRWJAFvhyUAYSIqd/w0Zbci8KSayvFgKJtSbaPD/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 11th January Evening Slot Chemistry - Alcohols, Phenols and Ethers Question 147 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/XwGYzSY5nX3iaR1eu/JnHItNDDsPadGndjRSGYgpsfmvQbG/pbNxoPjKSo8cxumoTbPqFk/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 11th January Evening Slot Chemistry - Alcohols, Phenols and Ethers Question 147 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/psvlYqZ4ZR397ZX7N/KEKsGKWjY9OR5g91sDuEZIC4gdl0Z/f1nAZGQeofbMoq4MObnfK7/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 11th January Evening Slot Chemistry - Alcohols, Phenols and Ethers Question 147 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/h40cyAwyUgYebOkXX/uUe9K0XXxri1Hgw6LxAKjCyYaUniN/URtbPXuOvF8CqpGf5TJPbK/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 11th January Evening Slot Chemistry - Alcohols, Phenols and Ethers Question 147 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "B",
+        "C"
+      ],
+      "explanation": "<b>For option (B) :</b>\n<br><br>C<sub>2</sub>H<sub>5</sub>MgBr performs addition reaction with - C <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.081ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"0.968ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -464 778 428\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2261\" xlink:href=\"#MJX-TEX-N-2261\"></use></g></g></g></svg></mjx-container> N.\n<br>C<sub>2</sub>H<sub>5</sub>MgBr performs substitution reaction with ester -COOCH<sub>3</sub>.\n<br><br>Conjugated dienes (two double bonds separated by a single bond) gives Br water test. Either 1-2 or 1-4 addition can happen.\n<br><br><b>For option (C) :</b>\n<br><br>C<sub>2</sub>H<sub>5</sub>MgBr reacts with -OH group and creates alkane C<sub>2</sub>H<sub>6</sub>.\n<br><br>As here C = C present, so this compound gives Br water tests."
+    }
+  ]
+}

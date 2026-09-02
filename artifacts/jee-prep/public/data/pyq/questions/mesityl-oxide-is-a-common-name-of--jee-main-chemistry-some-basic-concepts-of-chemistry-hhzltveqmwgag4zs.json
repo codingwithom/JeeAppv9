@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "07HBNTV4FkzqfYabzM1kmj7v421",
+      "paperTitle": "JEE Main 2021 (Online) 17th March Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "aldehydes-ketones-and-carboxylic-acids",
+      "chapterGroup": "organic-chemistry",
+      "topic": "preparation-methods-for-both-aldehydes-and-ketones",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "mesityl-oxide-is-a-common-name-of--jee-main-chemistry-some-basic-concepts-of-chemistry-hhzltveqmwgag4zs",
+      "content": "Mesityl oxide is a common name of :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "3-Methyl cyclohexane carbaldehyde"
+        },
+        {
+          "identifier": "B",
+          "content": "4-Methyl pent-3-en-2-one"
+        },
+        {
+          "identifier": "C",
+          "content": "2,4-Dimethyl pentan-3-one"
+        },
+        {
+          "identifier": "D",
+          "content": "2-Methyl cyclohexanone"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1kn1y9bxv/aabea80b-6dc9-4dfc-bb9e-68f90a6257f4/90943030-9499-11eb-a011-9b3eb6f542eb/file-1kn1y9bxw.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 17th March Morning Shift Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 178 English Explanation\">"
+    }
+  ]
+}

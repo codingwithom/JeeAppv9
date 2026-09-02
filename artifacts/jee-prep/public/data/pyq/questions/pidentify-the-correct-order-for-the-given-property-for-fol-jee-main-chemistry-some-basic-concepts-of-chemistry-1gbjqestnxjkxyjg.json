@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ldsr6wu7",
+      "paperTitle": "JEE Main 2023 (Online) 29th January Morning Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "haloalkanes-and-haloarenes",
+      "chapterGroup": "organic-chemistry",
+      "topic": "haloalkanes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pidentify-the-correct-order-for-the-given-property-for-fol-jee-main-chemistry-some-basic-concepts-of-chemistry-1gbjqestnxjkxyjg",
+      "content": "<p>Identify the correct order for the given property for following compounds.</p>\n<p><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1ldt1kji0/77701a55-31c7-4b95-bef5-f513f0d98dc8/4d179380-a63d-11ed-8e98-03be028140e9/file-1ldt1kji1.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1ldt1kji0/77701a55-31c7-4b95-bef5-f513f0d98dc8/4d179380-a63d-11ed-8e98-03be028140e9/file-1ldt1kji1.png\" loading=\"lazy\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;max-height: 80vh\" alt=\"JEE Main 2023 (Online) 29th January Morning Shift Chemistry - Haloalkanes and Haloarenes Question 75 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1ldt1kji0/77701a55-31c7-4b95-bef5-f513f0d98dc8/4d179380-a63d-11ed-8e98-03be028140e9/file-1ldt1kji1.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1ldt1kji0/77701a55-31c7-4b95-bef5-f513f0d98dc8/4d179380-a63d-11ed-8e98-03be028140e9/file-1ldt1kji1.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1ldt1kji0/77701a55-31c7-4b95-bef5-f513f0d98dc8/4d179380-a63d-11ed-8e98-03be028140e9/file-1ldt1kji1.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1ldt1kji0/77701a55-31c7-4b95-bef5-f513f0d98dc8/4d179380-a63d-11ed-8e98-03be028140e9/file-1ldt1kji1.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1ldt1kji0/77701a55-31c7-4b95-bef5-f513f0d98dc8/4d179380-a63d-11ed-8e98-03be028140e9/file-1ldt1kji1.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1ldt1kji0/77701a55-31c7-4b95-bef5-f513f0d98dc8/4d179380-a63d-11ed-8e98-03be028140e9/file-1ldt1kji1.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"></p>\n<p>Choose the correct answer from the option given below :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(A), (B) and (E) only"
+        },
+        {
+          "identifier": "B",
+          "content": "(A), (C) and (D) only"
+        },
+        {
+          "identifier": "C",
+          "content": "(A), (C) and (E) only"
+        },
+        {
+          "identifier": "D",
+          "content": "(B), (C) and (D) only"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Boiling point of alkyl halide increases with\nincrease in size, mass of halogen atom and size of\nalkyl group.<br><br>\nBoiling point of isomeric alkyl halide decreases\nwith increase in branching. But we know boiling point of alkyl halide increases with\nincrease in mass of halogen atom and here halogen atom Br has atomic mass 80 which is very high, so by adding each 'Br' atom molecular weight of alkyl halide increases very much and increases boiling point. Here decrease of boiling point due to branching get's overcome by high atomic mass of Br.<br><br>\n Density increases with increase in atomic mass of\nhalogen atom. As Density = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.816ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"6.544ex\" height=\"2.8ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -877 2892.2 1237.5\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(555.9,394) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D440\" xlink:href=\"#MJX-TEX-I-1D440\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1051,0)\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1580,0)\"><use data-c=\"1D460\" xlink:href=\"#MJX-TEX-I-1D460\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2049,0)\"><use data-c=\"1D460\" xlink:href=\"#MJX-TEX-I-1D460\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(220,-345) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D449\" xlink:href=\"#MJX-TEX-I-1D449\"></use></g><g data-mml-node=\"mi\" transform=\"translate(769,0)\"><use data-c=\"1D45C\" xlink:href=\"#MJX-TEX-I-1D45C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1254,0)\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1552,0)\"><use data-c=\"1D462\" xlink:href=\"#MJX-TEX-I-1D462\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2124,0)\"><use data-c=\"1D45A\" xlink:href=\"#MJX-TEX-I-1D45A\"></use></g><g data-mml-node=\"mi\" transform=\"translate(3002,0)\"><use data-c=\"1D452\" xlink:href=\"#MJX-TEX-I-1D452\"></use></g></g><rect width=\"2652.2\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container>"
+    }
+  ]
+}

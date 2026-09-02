@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "qXDYEcfHKbmURV1O",
+      "paperTitle": "JEE Main 2018 (Offline)",
+      "year": 2018,
+      "examDate": null,
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "isomerism-of-coordination-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "consider-the-following-reaction-and-statements-conh34br2-2018-marks-4-qxdyecfhkbmurv1o.htm",
+      "content": "Consider the following reaction and statements:<br>\n[Co(NH<sub>3</sub>)<sub>4</sub>Br<sub>2</sub>]<sup>+</sup> + Br<sup>-</sup> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> [Co(NH<sub>3</sub>)<sub>3</sub>Br<sub>3</sub>] + NH<sub>3</sub><br>\n(I) Two isomers are produced if the reactant complex ion is a cis-isomer<br>\n(II) Two isomers are produced if the reactant complex ion is a trans-isomer<br>\n(III) Only one isomer is produced if the reactant complex ion is a trans-isomer<br>\n(IV) Only one isomer is produced if the reactant complex ion is a cis – isomer<br>\nThe correct statements are<br> ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(II) and (IV)"
+        },
+        {
+          "identifier": "B",
+          "content": "(I) and (II)"
+        },
+        {
+          "identifier": "C",
+          "content": "(I) and (III)"
+        },
+        {
+          "identifier": "D",
+          "content": "(III) and (IV)"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "When reactant is cis isomer then following reaction takes place. \n<br><br><img class=\"question-image\" src=\"https://imagex.cdn.examgoal.net/D8bhReIOwlHBQGQnE/WmvbW3mFV0Wv6WmGNqZvGPRWvaKau/xd2NnHw0G4qJ3LwStQSz14/image.png\" loading=\"lazy\" alt=\"JEE Main 2018 (Offline) Chemistry - Coordination Compounds Question 316 English Explanation 1\">\n<br>So, if reactant is cis - isomer then two isomers are produced. \n<br><br>When reactant is trans isomer then following reaction takes place.\n<br><br><img class=\"question-image\" src=\"https://imagex.cdn.examgoal.net/xtn1dotCLezQXOcRe/uMFC7TAI9aO6W3KHhBqZaDcI16ihX/ircXHktQvPDd4dq5eq8F91/image.png\" loading=\"lazy\" alt=\"JEE Main 2018 (Offline) Chemistry - Coordination Compounds Question 316 English Explanation 2\">\n<br><br>So, if the reactant is trans isomer then only one isomer is produced."
+    }
+  ]
+}

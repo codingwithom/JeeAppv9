@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktb5rkay",
+      "paperTitle": "JEE Main 2021 (Online) 26th August Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "electrochemistry",
+      "chapterGroup": "physical-chemistry",
+      "topic": "electrochemical-series-cell-and-their-emf",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "these-are-physical-properties-of-an-elementbrbra-sub-jee-main-chemistry-some-basic-concepts-of-chemistry-raskaokhbltvyrrb",
+      "content": "These are physical properties of an element<br><br>(A) Sublimation enthalpy<br><br>(B) Ionisation enthalpy<br><br>(C) Hydration enthalpy<br><br>(D) Electron gain enthalpy<br><br>The total number of above properties that affect the reduction potential is ____________ (Integer answer)",
+      "options": [],
+      "correct_options": [],
+      "explanation": "Sublimation enthalpy, Ionisation enthalpy and hydration enthalpy affect the reduction potential."
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "TZIEsWcPSEVUXC603sjgy2xukg0ls23c",
+      "paperTitle": "JEE Main 2020 (Online) 6th September Evening Slot",
+      "year": 2020,
+      "examDate": "2020-09-06 15:00",
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "carbohydrates",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-one-of-the-following-statements-is-not-true-jee-main-chemistry-biomolecules-jze7ksiewulayo5w",
+      "content": "Which one of the following statements is not\ntrue?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Lactose contains <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.448ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 640 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D6FC\" xlink:href=\"#MJX-TEX-I-1D6FC\"></use></g></g></g></svg></mjx-container>-glycosidic linkage\nbetween C<sub>1</sub> of galactose and C<sub>4</sub> of glucose"
+        },
+        {
+          "identifier": "B",
+          "content": "Lactose is a reducing sugar and it gives\nFehling’s test"
+        },
+        {
+          "identifier": "C",
+          "content": "On acid hydrolysis, lactose gives one\nmolecule of D(+)-glucose and one molecule\nof D(+)-galactose"
+        },
+        {
+          "identifier": "D",
+          "content": "Lactose (C<sub>11</sub>H<sub>22</sub>O<sub>11</sub>) is a disaccharide and it\ncontains 8 hydroxyl groups"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukgelpdls/600e347d-38c7-4c68-8818-38dca8432802/24ec0200-10f9-11eb-8293-3b6cc591631c/file-jgy2xukgelpdlt-448w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 6th September Evening Slot Chemistry - Biomolecules Question 138 English Explanation\">\nLactose contains <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.439ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.296ex\" height=\"2.034ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 573 899\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D6FD\" xlink:href=\"#MJX-TEX-I-1D6FD\"></use></g></g></g></svg></mjx-container>-glycosidic linkage between C<sub>1</sub>\n of galactose and C<sub>4</sub>\n of glucose."
+    }
+  ]
+}

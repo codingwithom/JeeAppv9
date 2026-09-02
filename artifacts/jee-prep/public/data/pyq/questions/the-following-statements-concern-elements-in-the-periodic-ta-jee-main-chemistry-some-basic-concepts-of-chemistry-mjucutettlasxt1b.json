@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "e7847wQT5m3tOcaK9JXhZ",
+      "paperTitle": "JEE Main 2016 (Online) 10th April Morning Slot",
+      "year": 2016,
+      "examDate": "2016-04-10 09:30",
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "periodic-table-and-its-features",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-following-statements-concern-elements-in-the-periodic-ta-jee-main-chemistry-some-basic-concepts-of-chemistry-mjucutettlasxt1b",
+      "content": "The following statements concern elements in the periodic table. Which of the following is true ?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "All the elements in Group 17 are gases."
+        },
+        {
+          "identifier": "B",
+          "content": "The Group 13 elements are all metals."
+        },
+        {
+          "identifier": "C",
+          "content": "Elements of Group 16 have lower ionization enthalpy values compared\nto those of Group 15 in the corresponding periods."
+        },
+        {
+          "identifier": "D",
+          "content": "For Group 15 elements, the stability of + 5 oxidation state increases down\nthe group."
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<p>(A) Group 17 elements are halogens; they exist in all three states of matter at room temperature.</p>\n\n<p>(B) Except for the lightest element (boron), all other Group 13 elements are relatively electropositive and are thus metals.</p>\n\n<p>(C) Group 15 elements have half-filled electronic configuration, thus have high values of ionization enthalpy, while Group 16 elements achieve halffilled configuration on loss of one electron and therefore have lower ionisation enthalpy.</p>\n\n(i) In Group 15 elements, due to the inert pair affect the stability of +5 oxidation state decreases down the group."
+    }
+  ]
+}

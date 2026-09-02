@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1krt37ftf",
+      "paperTitle": "JEE Main 2021 (Online) 22th July Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "purification-of-organic-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-purification-technique-is-used-for-high-boiling-organi-jee-main-chemistry-some-basic-concepts-of-chemistry-nygqxus4qmchx90i",
+      "content": "Which purification technique is used for high boiling organic liquid compound (decomposes near its boiling point)?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Simple distillation"
+        },
+        {
+          "identifier": "B",
+          "content": "Steam ditillation"
+        },
+        {
+          "identifier": "C",
+          "content": "Fractional distillation"
+        },
+        {
+          "identifier": "D",
+          "content": "Reduced pressure distillation"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Reduced pressure distillation or vacuum distillation is used for the purification of high boiling organic liquids which decomposes at or below their boiling point."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "GyL4X7e8as9MgbpYQh1kk2949km",
+      "paperTitle": "JEE Advanced 2020 Paper 1 Offline",
+      "year": 2020,
+      "subject": "chemistry",
+      "chapter": "gaseous-state",
+      "chapterGroup": "physical-chemistry",
+      "topic": "maxwells-distribution-of-speed",
+      "type": "mcq",
+      "marks": 3,
+      "negMarks": 1,
+      "permalink": "if-the-distribution-of-molecular-speeds-of-a-gas-is-as-per-t-jee-advanced-chemistry-some-basic-concepts-of-chemistry-uakxbcw4zr05wbg5",
+      "content": "If the distribution of molecular speeds of a gas is as per the figure shown below, then the ratio of the most probable, the average, and the root mean square speeds, respectively, is<br><br><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1kx9ukawq/d1953ec3-150a-4288-bd8b-9d8b40e8bf0e/8c2679a0-5eeb-11ec-b929-8518f088d7e0/file-1kx9ukawr.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1kx9ukawq/d1953ec3-150a-4288-bd8b-9d8b40e8bf0e/8c2679a0-5eeb-11ec-b929-8518f088d7e0/file-1kx9ukawr.png\" loading=\"lazy\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;max-height: 50vh\" alt=\"JEE Advanced 2020 Paper 1 Offline Chemistry - Gaseous State Question 13 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1kx9ukawq/d1953ec3-150a-4288-bd8b-9d8b40e8bf0e/8c2679a0-5eeb-11ec-b929-8518f088d7e0/file-1kx9ukawr.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1kx9ukawq/d1953ec3-150a-4288-bd8b-9d8b40e8bf0e/8c2679a0-5eeb-11ec-b929-8518f088d7e0/file-1kx9ukawr.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1kx9ukawq/d1953ec3-150a-4288-bd8b-9d8b40e8bf0e/8c2679a0-5eeb-11ec-b929-8518f088d7e0/file-1kx9ukawr.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1kx9ukawq/d1953ec3-150a-4288-bd8b-9d8b40e8bf0e/8c2679a0-5eeb-11ec-b929-8518f088d7e0/file-1kx9ukawr.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1kx9ukawq/d1953ec3-150a-4288-bd8b-9d8b40e8bf0e/8c2679a0-5eeb-11ec-b929-8518f088d7e0/file-1kx9ukawr.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1kx9ukawq/d1953ec3-150a-4288-bd8b-9d8b40e8bf0e/8c2679a0-5eeb-11ec-b929-8518f088d7e0/file-1kx9ukawr.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "1 : 1 : 1"
+        },
+        {
+          "identifier": "B",
+          "content": "1 : 1 : 1.224"
+        },
+        {
+          "identifier": "C",
+          "content": "1 : 1.128 : 1.224"
+        },
+        {
+          "identifier": "D",
+          "content": "1 : 1.128 : 1"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Fraction of molecules vs velocity graph is Maxwell distribution curve.<br><br>This curve is slightly unsymmetrical as shown below.<br><br> <img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1kx9ul05d/0d736689-3338-47c3-9c11-45628af48c40/9fa5c710-5eeb-11ec-b1f6-5f1771b464e3/file-1kx9ul05e.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1kx9ul05d/0d736689-3338-47c3-9c11-45628af48c40/9fa5c710-5eeb-11ec-b1f6-5f1771b464e3/file-1kx9ul05e.png\" loading=\"lazy\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;max-height: 50vh\" alt=\"JEE Advanced 2020 Paper 1 Offline Chemistry - Gaseous State Question 13 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1kx9ul05d/0d736689-3338-47c3-9c11-45628af48c40/9fa5c710-5eeb-11ec-b1f6-5f1771b464e3/file-1kx9ul05e.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1kx9ul05d/0d736689-3338-47c3-9c11-45628af48c40/9fa5c710-5eeb-11ec-b1f6-5f1771b464e3/file-1kx9ul05e.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1kx9ul05d/0d736689-3338-47c3-9c11-45628af48c40/9fa5c710-5eeb-11ec-b1f6-5f1771b464e3/file-1kx9ul05e.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1kx9ul05d/0d736689-3338-47c3-9c11-45628af48c40/9fa5c710-5eeb-11ec-b1f6-5f1771b464e3/file-1kx9ul05e.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1kx9ul05d/0d736689-3338-47c3-9c11-45628af48c40/9fa5c710-5eeb-11ec-b1f6-5f1771b464e3/file-1kx9ul05e.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1kx9ul05d/0d736689-3338-47c3-9c11-45628af48c40/9fa5c710-5eeb-11ec-b1f6-5f1771b464e3/file-1kx9ul05e.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"><p>The ratio of most probable, the average and the root mean square speeds for this graph is 1 : 1.128 : 1.224</p><p>But the graph in question is completely symmetrical. Therefore, the most probable and the average speed will be same here but root mean square speed will be greater than average speed. So, the correct ratio is 1 : 1 : 1.224.</p>"
+    }
+  ]
+}

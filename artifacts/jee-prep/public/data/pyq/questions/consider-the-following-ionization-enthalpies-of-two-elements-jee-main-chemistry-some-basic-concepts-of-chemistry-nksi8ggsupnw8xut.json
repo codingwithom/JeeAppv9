@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "EFht6grTUGVQ7GXkQErPQ",
+      "paperTitle": "JEE Main 2017 (Online) 8th April Morning Slot",
+      "year": 2017,
+      "examDate": "2017-04-08 09:30",
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "ionization-energy",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "consider-the-following-ionization-enthalpies-of-two-elements-jee-main-chemistry-some-basic-concepts-of-chemistry-nksi8ggsupnw8xut",
+      "content": "Consider the following ionization enthalpies of two elements 'A' and 'B' .\n<br><br>\n<table class=\"tg\">\n  <tbody><tr>\n    <th class=\"tg-p7ly\">Element</th>\n    <th class=\"tg-p7ly\" colspan=\"3\">Ionization enthalpy (kJ/mol)</th>\n  </tr>\n  <tr>\n    <td class=\"tg-4kyz\"></td>\n    <td class=\"tg-p7ly\">1<sup>st</sup></td>\n    <td class=\"tg-p7ly\">2<sup>nd</sup></td>\n    <td class=\"tg-p7ly\">3<sup>rd</sup></td>\n  </tr>\n  <tr>\n    <td class=\"tg-p7ly\">A</td>\n    <td class=\"tg-4kyz\">899</td>\n    <td class=\"tg-4kyz\">1757</td>\n    <td class=\"tg-4kyz\">14847</td>\n  </tr>\n  <tr>\n    <td class=\"tg-p7ly\">B</td>\n    <td class=\"tg-4kyz\">737</td>\n    <td class=\"tg-4kyz\">1450</td>\n    <td class=\"tg-4kyz\">7731</td>\n  </tr>\n</tbody></table>\n<br><br>Which of the following statements is <b>correct</b>  ?\n",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Both ‘A’ and ‘B’ belong to group-1where ‘B’ comes below ‘A’.\n"
+        },
+        {
+          "identifier": "B",
+          "content": "Both ‘A’ and ‘B’ belong to group-1 where ‘A’ comes below ‘B’."
+        },
+        {
+          "identifier": "C",
+          "content": "Both ‘A’ and ‘B’ belong to group-2 where ‘B’ comes below ‘A’."
+        },
+        {
+          "identifier": "D",
+          "content": "Both ‘A’ and ‘B’ belong to group-2 where ‘A’ comes below ‘B’."
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "From the table you can see ionization enthalpy of A is greater than B in all the cases.\n<br><br>So, B comes below A in the group as in a group  from top to bottom ionization enthalpy decreases.\n<br><br>After 1<sup>st</sup> ionization enthalpy each element become cation by removing a electron. In A<sup>+</sup> and B<sup>+</sup>, after removing one electron from each element, effective nuclear charge increases as per-electron attraction increase by the neuclers. So, the removal of next electron will be more difficult, therefore more energy is required for 2<sup>nd</sup> ionization energy. From the table you can see 2<sup>nd</sup> ionization energy is more than first ionization energy for both elements. \n<br><br>But you can see 3<sup>rd</sup> ionization enthalpy is so much higher than 2<sup>nd</sup> ionization enthalpy.  It means after 2<sup>nd</sup> ionization enthalpy outermost shell is empty and in 3<sup>rd</sup> ionization enthalpy from a new shell electron is removed, as the new shell is closer to the neucleus so the attraction by the nucleus to the electrons of this shell is more and to remove a electron from this shell you have to provide very high energy, that is why 3<sup>rd</sup> ionization enthalpy is so high.\n<br><br>If A and B are from group 1 then after 1<sup>st</sup> ionization enthalpy outermost shell will be empty and 2<sup>nd</sup> electron will be removed from inner shell, so 2<sup>nd</sup> ionization will be so high. But from table you can see 2<sup>nd</sup> ionization energy is around double of 1<sup>st</sup> ionization energy, it is not so much high than 1<sup>st</sup> onization energy.  So A and B can't be from group 1.\n<br><br>A and B are from group 2 as in group 2 element, outermost shell has 2 electron and after 2<sup>nd</sup> ionization enthalpy outermost shell will be empty and in 3<sup>rd</sup> ionization enethalpy, third electron will removed from innershell so 3<sup>rd</sup> ionization enthalpy will be very high. "
+    }
+  ]
+}

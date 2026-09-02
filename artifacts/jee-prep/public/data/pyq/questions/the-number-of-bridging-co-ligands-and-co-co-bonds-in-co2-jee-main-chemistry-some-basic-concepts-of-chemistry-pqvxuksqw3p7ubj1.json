@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "lqv8LdKmfE4KuilL0KfXD",
+      "paperTitle": "JEE Main 2019 (Online) 11th January Evening Slot",
+      "year": 2019,
+      "examDate": "2019-01-11 14:30",
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "application-of-coordination-compound-and-organometallic-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-number-of-bridging-co-ligands-and-co-co-bonds-in-co2-jee-main-chemistry-some-basic-concepts-of-chemistry-pqvxuksqw3p7ubj1",
+      "content": "The number of bridging CO ligand(s) and Co-Co bond(s) in Co<sub>2</sub>(CO)<sub>8</sub>, respectively are : ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "2 and 0"
+        },
+        {
+          "identifier": "B",
+          "content": "0 and 2"
+        },
+        {
+          "identifier": "C",
+          "content": "4 and 0"
+        },
+        {
+          "identifier": "D",
+          "content": "2 and 1"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1qpqahkk8okazy5/1fefb31e-3e5e-4eab-9ea7-b9255eb395cc/c760d2d0-7811-11ea-aedc-f1c8d8e0194b/file-1qpqahkk8okazy6-246w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 11th January Evening Slot Chemistry - Coordination Compounds Question 297 English Explanation\">"
+    }
+  ]
+}

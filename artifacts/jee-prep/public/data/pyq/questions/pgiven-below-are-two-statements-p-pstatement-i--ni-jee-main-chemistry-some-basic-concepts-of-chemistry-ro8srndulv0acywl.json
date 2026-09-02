@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l56aywg1",
+      "paperTitle": "JEE Main 2022 (Online) 28th June Morning Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "warners-theory-and-valence-bond-theory",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pgiven-below-are-two-statements-p-pstatement-i--ni-jee-main-chemistry-some-basic-concepts-of-chemistry-ro8srndulv0acywl",
+      "content": "<p>Given below are two statements :</p>\n<p>Statement I : [Ni(CN)<sub>4</sub>]<sup>2<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container></sup> is square planar and diamagnetic complex, with dsp<sup>2</sup> hybridization for Ni but [Ni(CO)<sub>4</sub>] is tetrahedral, paramagnetic and with sp<sup>3</sup>-hybridication for Ni.</p>\n<p>Statement  II : [NiCl<sub>4</sub>]<sup>2<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container></sup> and [Ni(CO)<sub>4</sub>] both have same d-electron configuration have same geometry and are paramagnetic.</p>\n<p>In light the above statements, choose the correct answer from the options given below :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Both Statement I and Statement II are true."
+        },
+        {
+          "identifier": "B",
+          "content": "Both Statement I and Statement II are false."
+        },
+        {
+          "identifier": "C",
+          "content": "Statement I is correct but Statement II is false."
+        },
+        {
+          "identifier": "D",
+          "content": "Statement I is false but Statement II is correct."
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "[Ni(CN)<sub>4</sub>]<sup>2–</sup> : d<sup>8</sup> configuration, SFL, sq. planar splitting (dsp<sup>2</sup>), diamagnetic.<br/><br/>\n[Ni(CO)<sub>4</sub>] : d<sup>10</sup> config (after excitation), SFL, tetrahedral splitting (sp<sup>3</sup>), diamagnetic. <br/><br/>\n[NiCl<sub>4</sub>]<sup>2–</sup> : d<sup>8</sup> config, WFL, tetrahedral splitting (sp<sup>3</sup>), paramagnetic(2 unpaired e<sup>–</sup>)."
+    }
+  ]
+}

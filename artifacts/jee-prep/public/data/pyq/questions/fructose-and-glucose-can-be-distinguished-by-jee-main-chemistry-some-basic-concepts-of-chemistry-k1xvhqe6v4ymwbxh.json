@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "ZaXj9ZOX5MNxtwNjw6lES",
+      "paperTitle": "JEE Main 2019 (Online) 8th April Evening Slot",
+      "year": 2019,
+      "examDate": "2019-04-08 14:30",
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "carbohydrates",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "fructose-and-glucose-can-be-distinguished-by-jee-main-chemistry-some-basic-concepts-of-chemistry-k1xvhqe6v4ymwbxh",
+      "content": "Fructose and glucose can be distinguished by :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Barfoed's test"
+        },
+        {
+          "identifier": "B",
+          "content": "Fehling's test"
+        },
+        {
+          "identifier": "C",
+          "content": "Seliwanoff's test"
+        },
+        {
+          "identifier": "D",
+          "content": "Benedict's test"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Seliwanoff's test is used to distinguish aldose\nand ketose.\n<br><br>When Seliwanoff's reagent added to a solution containing ketoses, red colour is formed rapidly indicating a positive test. \n<br>While in case of aldose, a slower forming light pink colour observed."
+    }
+  ]
+}

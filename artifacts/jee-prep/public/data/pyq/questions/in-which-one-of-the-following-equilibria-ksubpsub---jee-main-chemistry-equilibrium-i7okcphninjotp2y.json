@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "5DyBjOOhCKpSEcMoeo3rsa0w2w9jx97n6gj",
+      "paperTitle": "JEE Main 2019 (Online) 12th April Evening Slot",
+      "year": 2019,
+      "examDate": "2019-04-12 14:30",
+      "subject": "chemistry",
+      "chapter": "chemical-equilibrium",
+      "chapterGroup": "physical-chemistry",
+      "topic": "chemical-equilibrium-law-of-mass-action-and-equilibrium-constant",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "in-which-one-of-the-following-equilibria-ksubpsub---jee-main-chemistry-equilibrium-i7okcphninjotp2y",
+      "content": "In which one of the following equilibria, K<sub>p</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.486ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"2.106ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 778 931\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2260\" xlink:href=\"#MJX-TEX-N-2260\"></use></g></g></g></svg></mjx-container> K<sub>C</sub> ?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "2NO(g) ⇋ N<sub>2</sub>(g) + O<sub>2</sub>(g)"
+        },
+        {
+          "identifier": "B",
+          "content": "2C(s) + O<sub>2</sub>(g) ⇋ 2CO(g)"
+        },
+        {
+          "identifier": "C",
+          "content": "2HI(g) ⇋ H<sub>2</sub>(g) + I<sub>2</sub>(g)"
+        },
+        {
+          "identifier": "D",
+          "content": "NO<sub>2</sub>(g) + SO<sub>2</sub>(g) ⇋ NO(g) + SO<sub>3</sub>(g)"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "We know,\n<br>K<sub>p</sub> = K<sub>C</sub>(RT)<sup><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.885ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 833 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></svg></mjx-container>n<sub>g</sub></sup>\n<br><br>K<sub>p</sub> = K<sub>C</sub> when <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.885ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 833 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></svg></mjx-container>n<sub>g</sub> = 0\n<br>K<sub>p</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.486ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"2.106ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 778 931\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2260\" xlink:href=\"#MJX-TEX-N-2260\"></use></g></g></g></svg></mjx-container> K<sub>C</sub> when <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.885ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 833 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></svg></mjx-container>n<sub>g</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.486ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"2.106ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 778 931\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2260\" xlink:href=\"#MJX-TEX-N-2260\"></use></g></g></g></svg></mjx-container> 0 and T <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.486ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"2.106ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 778 931\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2260\" xlink:href=\"#MJX-TEX-N-2260\"></use></g></g></g></svg></mjx-container> 12 K\n<br><br>In this reaction, 2C(s) + O<sub>2</sub>(g) ⇋ 2CO(g)\n<br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.885ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 833 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></svg></mjx-container>n<sub>g</sub> = 1, so K<sub>p</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.486ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"2.106ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 778 931\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2260\" xlink:href=\"#MJX-TEX-N-2260\"></use></g></g></g></svg></mjx-container> K<sub>C</sub>"
+    }
+  ]
+}

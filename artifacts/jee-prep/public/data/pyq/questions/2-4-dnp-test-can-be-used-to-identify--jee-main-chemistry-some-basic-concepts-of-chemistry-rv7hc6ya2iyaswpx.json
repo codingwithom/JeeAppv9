@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "Cav9RjZYrYvXTKqtM51klus87ww",
+      "paperTitle": "JEE Main 2021 (Online) 26th February Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "aldehydes-ketones-and-carboxylic-acids",
+      "chapterGroup": "organic-chemistry",
+      "topic": "tests-for-aldehyde-and-ketones",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "2-4-dnp-test-can-be-used-to-identify--jee-main-chemistry-some-basic-concepts-of-chemistry-rv7hc6ya2iyaswpx",
+      "content": "2, 4-DNP test can be used to identify :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "ether"
+        },
+        {
+          "identifier": "B",
+          "content": "amine"
+        },
+        {
+          "identifier": "C",
+          "content": "aldehyde"
+        },
+        {
+          "identifier": "D",
+          "content": "halogens"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "2,4 DNP test is used to identify\n– (CO) – group. It\ngives addition reaction with carbonyl\ncompounds. So, it can be used to identify\naldehyde in the given option. It gives yellow/\norange ppt with carbonyl containing\ncompounds.\n<br><img src=\"https://imagex.cdn.examgoal.net/1klw5ecir/39f4f32f-9f99-49cf-9116-88fb18f9a016/90b39330-7d9c-11eb-9141-afb9e8637d33/file-1klw5ecis-318w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 26th February Evening Shift Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 183 English Explanation\">"
+    }
+  ]
+}

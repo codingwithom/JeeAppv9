@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "MdVelIX6HfOOQO1NDE66Q",
+      "paperTitle": "JEE Main 2019 (Online) 9th April Evening Slot",
+      "year": 2019,
+      "examDate": "2019-04-09 14:30",
+      "subject": "chemistry",
+      "chapter": "hydrocarbons",
+      "chapterGroup": "organic-chemistry",
+      "topic": "reaction-of-alkanes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-potential-energy-pe-diagrams-repres-jee-main-chemistry-some-basic-concepts-of-chemistry-rtfmcfjnxzkpuuo2",
+      "content": "Which of the following potential energy (PE)\ndiagrams represents the S<sub>N</sub>1 reaction?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76htyjzn5ozhz/c58d379a-eec4-42b4-8092-1af7bc6bf7bb/e85ccc70-c51d-11e9-8a74-7f4f47aa0c85/file-jf76htyjzn5ozi0-320w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/jf76htyjzn5ozhz/c58d379a-eec4-42b4-8092-1af7bc6bf7bb/e85ccc70-c51d-11e9-8a74-7f4f47aa0c85/file-jf76htyjzn5ozi0-500w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 9th April Evening Slot Chemistry - Hydrocarbons Question 132 English Option 1\"></picture>"
+        },
+        {
+          "identifier": "B",
+          "content": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76htyjzn5xv0z/42d36a78-fdc8-44f4-9f5a-6f0d6c764f78/df30aa30-c51e-11e9-8a74-7f4f47aa0c85/file-jf76htyjzn5xv10-320w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/jf76htyjzn5xv0z/42d36a78-fdc8-44f4-9f5a-6f0d6c764f78/df30aa30-c51e-11e9-8a74-7f4f47aa0c85/file-jf76htyjzn5xv10-500w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 9th April Evening Slot Chemistry - Hydrocarbons Question 132 English Option 2\"></picture>"
+        },
+        {
+          "identifier": "C",
+          "content": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76htyjzn620i1/d0e5dcfc-9fad-4235-9df4-b3e6896fe7e9/52a7af90-c51f-11e9-8a74-7f4f47aa0c85/file-jf76htyjzn620i2-320w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/jf76htyjzn620i1/d0e5dcfc-9fad-4235-9df4-b3e6896fe7e9/52a7af90-c51f-11e9-8a74-7f4f47aa0c85/file-jf76htyjzn620i2-500w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 9th April Evening Slot Chemistry - Hydrocarbons Question 132 English Option 3\"></picture>"
+        },
+        {
+          "identifier": "D",
+          "content": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76htyjzn65v18/f6c49886-bdf6-4dbe-98c9-c684ef01444d/bdab29c0-c51f-11e9-8a74-7f4f47aa0c85/file-jf76htyjzn65v19-320w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/jf76htyjzn65v18/f6c49886-bdf6-4dbe-98c9-c684ef01444d/bdab29c0-c51f-11e9-8a74-7f4f47aa0c85/file-jf76htyjzn65v19-500w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 9th April Evening Slot Chemistry - Hydrocarbons Question 132 English Option 4\"></picture>"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "S<sub>N</sub>1 reaction happens in two steps :\n<br><br><b>1<sup>st</sup> step :</b> Formation of carbocation intermediate when  leaving group leaves.\n<br><br><b>2<sup>nd</sup> step :</b> The nucleophile attacks the carbocation, forming the\nproduct.\n<br><br>In S<sub>N</sub>1 reaction, formation of carbocation\n(1st step) is called rate determining step (RDS). RDS is the most difficult and slowest step. That is why potential energy required to complete first step is more compare to the second step.\n<br><br>So option A should be the right option.\n<br><br><picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76htyjzn8mo92/38e79851-4d24-446d-ba56-288b4edd8772/63716e60-c529-11e9-8a74-7f4f47aa0c85/file-jf76htyjzn8mo93-320w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/jf76htyjzn8mo92/38e79851-4d24-446d-ba56-288b4edd8772/63716e60-c529-11e9-8a74-7f4f47aa0c85/file-jf76htyjzn8mo93-500w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 9th April Evening Slot Chemistry - Hydrocarbons Question 132 English Explanation\"></picture>"
+    }
+  ]
+}

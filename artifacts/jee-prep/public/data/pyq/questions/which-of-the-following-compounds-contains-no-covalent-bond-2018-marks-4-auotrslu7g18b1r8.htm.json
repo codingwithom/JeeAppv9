@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "aUOtRsLU7g18b1R8",
+      "paperTitle": "JEE Main 2018 (Offline)",
+      "year": 2018,
+      "examDate": null,
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "covalent-and-co-ordinate-bond",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-compounds-contains-no-covalent-bond-2018-marks-4-auotrslu7g18b1r8.htm",
+      "content": "Which of the following compounds contain(s) no covalent bond(s)?\nKCl, PH<sub>3</sub>, O<sub>2</sub>, B<sub>2</sub>H<sub>6</sub>, H<sub>2</sub>SO<sub>4</sub> ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "KCl, B<sub>2</sub>H<sub>6</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "KCl, B<sub>2</sub>H<sub>6</sub>, PH<sub>3</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "KCl, H<sub>2</sub>SO<sub>4</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "KCl"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Here only KCl is ionic compound all other compound has covalent bond."
+    }
+  ]
+}

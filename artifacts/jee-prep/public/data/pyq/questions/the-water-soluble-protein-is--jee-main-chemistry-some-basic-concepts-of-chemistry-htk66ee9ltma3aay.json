@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1kruryaji",
+      "paperTitle": "JEE Main 2021 (Online) 25th July Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "proteins-and-enzymes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-water-soluble-protein-is--jee-main-chemistry-some-basic-concepts-of-chemistry-htk66ee9ltma3aay",
+      "content": "The water soluble protein is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Fibrin"
+        },
+        {
+          "identifier": "B",
+          "content": "Albumin"
+        },
+        {
+          "identifier": "C",
+          "content": "Myosin"
+        },
+        {
+          "identifier": "D",
+          "content": "Collagen"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Albumin is water soluble."
+    }
+  ]
+}

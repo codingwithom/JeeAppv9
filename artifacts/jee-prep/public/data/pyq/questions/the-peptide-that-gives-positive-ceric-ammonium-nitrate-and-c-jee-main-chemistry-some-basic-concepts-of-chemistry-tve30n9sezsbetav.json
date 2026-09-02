@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "133K4VCn7QfsukBrIHsVK",
+      "paperTitle": "JEE Main 2019 (Online) 9th April Evening Slot",
+      "year": 2019,
+      "examDate": "2019-04-09 14:30",
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "proteins-and-enzymes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-peptide-that-gives-positive-ceric-ammonium-nitrate-and-c-jee-main-chemistry-some-basic-concepts-of-chemistry-tve30n9sezsbetav",
+      "content": "The peptide that gives positive ceric\nammonium nitrate and carbylamine tests is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Ser-Lys"
+        },
+        {
+          "identifier": "B",
+          "content": "Asp-Gln"
+        },
+        {
+          "identifier": "C",
+          "content": "Gln-Asp"
+        },
+        {
+          "identifier": "D",
+          "content": "Lys-Asp"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Positive Ceric ammonium nitrate test is given by\nalcohol (- OH).\n<br><br>Positive Carbylamine test is given by 1<sup>o</sup> amine (-NH<sub>2</sub>).\n<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76htyjzslaf4m/1c77c842-c318-4a19-bb3e-923919abe2ee/d09c9b60-c81a-11e9-8a74-7f4f47aa0c85/file-jf76htyjzslaf4n-320w.jpg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76htyjzslaf4m/1c77c842-c318-4a19-bb3e-923919abe2ee/d09c9b60-c81a-11e9-8a74-7f4f47aa0c85/file-jf76htyjzslaf4n-500w.jpg\"><source media=\"(max-width: 680px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76htyjzslaf4m/1c77c842-c318-4a19-bb3e-923919abe2ee/d09c9b60-c81a-11e9-8a74-7f4f47aa0c85/file-jf76htyjzslaf4n-680w.jpg\"><source media=\"(max-width: 860px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76htyjzslaf4m/1c77c842-c318-4a19-bb3e-923919abe2ee/d09c9b60-c81a-11e9-8a74-7f4f47aa0c85/file-jf76htyjzslaf4n-860w.jpg\"><source media=\"(max-width: 1040px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76htyjzslaf4m/1c77c842-c318-4a19-bb3e-923919abe2ee/d09c9b60-c81a-11e9-8a74-7f4f47aa0c85/file-jf76htyjzslaf4n-1040w.jpg\"><source media=\"(max-width: 1220px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76htyjzslaf4m/1c77c842-c318-4a19-bb3e-923919abe2ee/d09c9b60-c81a-11e9-8a74-7f4f47aa0c85/file-jf76htyjzslaf4n-1220w.jpg\"><source media=\"(max-width: 1400px)\" srcset=\"https://imagex.cdn.examgoal.net/jf76htyjzslaf4m/1c77c842-c318-4a19-bb3e-923919abe2ee/d09c9b60-c81a-11e9-8a74-7f4f47aa0c85/file-jf76htyjzslaf4n-1400w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/jf76htyjzslaf4m/1c77c842-c318-4a19-bb3e-923919abe2ee/d09c9b60-c81a-11e9-8a74-7f4f47aa0c85/file-jf76htyjzslaf4n-1580w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 9th April Evening Slot Chemistry - Biomolecules Question 157 English Explanation\"></picture>\n<br><br> Among those peptide you can see only in (A) Serine(Ser)Lysine(Lys) has alcohol (- OH) and 1<sup>o</sup> amine (-NH<sub>2</sub>)."
+    }
+  ]
+}

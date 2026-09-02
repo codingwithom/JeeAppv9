@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l549k6lc",
+      "paperTitle": "JEE Main 2022 (Online) 29th June Morning Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "hydrocarbons",
+      "chapterGroup": "organic-chemistry",
+      "topic": "reaction-of-alkenes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "ptwo-isomers-a-and-b-with-molecular-formula-csub4s-jee-main-chemistry-some-basic-concepts-of-chemistry-7tjqdeq5wezsm7lu",
+      "content": "<p>Two isomers 'A' and 'B' with molecular formula C<sub>4</sub>H<sub>8</sub> give different products on oxidation with KMnO<sub>4</sub> in acidic medium. Isomer 'A' on reaction with KMnO<sub>4</sub>/H<sup>+</sup> results in effervescence of a gas and gives ketone. The compound 'A' is</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "But-1-ene."
+        },
+        {
+          "identifier": "B",
+          "content": "cis-But-2-ene."
+        },
+        {
+          "identifier": "C",
+          "content": "trans-But-2-ene."
+        },
+        {
+          "identifier": "D",
+          "content": "2-methyl propene."
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1lc3xvqcx/1c429d41-7d0c-4e07-9dc6-b4c856bde6af/1028fa10-84a3-11ed-9935-c94109650755/file-1lc3xvqcy.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1lc3xvqcx/1c429d41-7d0c-4e07-9dc6-b4c856bde6af/1028fa10-84a3-11ed-9935-c94109650755/file-1lc3xvqcy.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2022 (Online) 29th June Morning Shift Chemistry - Hydrocarbons Question 91 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1lc3xvqcx/1c429d41-7d0c-4e07-9dc6-b4c856bde6af/1028fa10-84a3-11ed-9935-c94109650755/file-1lc3xvqcy.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1lc3xvqcx/1c429d41-7d0c-4e07-9dc6-b4c856bde6af/1028fa10-84a3-11ed-9935-c94109650755/file-1lc3xvqcy.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1lc3xvqcx/1c429d41-7d0c-4e07-9dc6-b4c856bde6af/1028fa10-84a3-11ed-9935-c94109650755/file-1lc3xvqcy.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1lc3xvqcx/1c429d41-7d0c-4e07-9dc6-b4c856bde6af/1028fa10-84a3-11ed-9935-c94109650755/file-1lc3xvqcy.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1lc3xvqcx/1c429d41-7d0c-4e07-9dc6-b4c856bde6af/1028fa10-84a3-11ed-9935-c94109650755/file-1lc3xvqcy.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1lc3xvqcx/1c429d41-7d0c-4e07-9dc6-b4c856bde6af/1028fa10-84a3-11ed-9935-c94109650755/file-1lc3xvqcy.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">"
+    }
+  ]
+}

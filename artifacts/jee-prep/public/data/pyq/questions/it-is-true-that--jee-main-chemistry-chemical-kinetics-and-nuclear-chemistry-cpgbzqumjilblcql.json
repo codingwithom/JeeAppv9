@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "6t6QNoFnJSEbjAZcG3jgy2xukf25i9vq",
+      "paperTitle": "JEE Main 2020 (Online) 3rd September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-03 09:00",
+      "subject": "chemistry",
+      "chapter": "chemical-kinetics-and-nuclear-chemistry",
+      "chapterGroup": "physical-chemistry",
+      "topic": "integrated-rate-law-equations",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "it-is-true-that--jee-main-chemistry-chemical-kinetics-and-nuclear-chemistry-cpgbzqumjilblcql",
+      "content": "It is true that :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "A first order reaction is always a single step reaction"
+        },
+        {
+          "identifier": "B",
+          "content": "A zero order reaction is a multistep reaction"
+        },
+        {
+          "identifier": "C",
+          "content": "A zero order reaction is a single step reaction"
+        },
+        {
+          "identifier": "D",
+          "content": "A second order reaction is always a multistep reaction"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Zero order reaction has complex mechanism.\n<br>Zero order reaction is a multistep reaction."
+    }
+  ]
+}

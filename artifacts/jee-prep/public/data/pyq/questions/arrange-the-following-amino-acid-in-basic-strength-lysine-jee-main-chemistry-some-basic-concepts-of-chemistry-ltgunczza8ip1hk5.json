@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "DoVmhIIJy0ohCCmDVARNW",
+      "paperTitle": "JEE Main 2019 (Online) 9th January Morning Slot",
+      "year": 2019,
+      "examDate": "2019-01-09 09:30",
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "proteins-and-enzymes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "arrange-the-following-amino-acid-in-basic-strength-lysine-jee-main-chemistry-some-basic-concepts-of-chemistry-ltgunczza8ip1hk5",
+      "content": "The increasing order of pka of the following amino acids in aqueous solution is : <br><br/>\nGly,  Asp, Lys,  Arg",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Asp  &lt;  Gly  &lt; Arg  &lt; Lys"
+        },
+        {
+          "identifier": "B",
+          "content": "Gly  &lt;  Asp   &lt;  Arg  &lt;  Lys"
+        },
+        {
+          "identifier": "C",
+          "content": "Asp  &lt;  Gly  &lt;  Lys  &lt;  Arg"
+        },
+        {
+          "identifier": "D",
+          "content": "Arg  &lt;  Lys  &lt; Gly  &lt;  Asp"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/Eaqbr1lLEi7xfkmFM/G38echqhA57g964f9gP52BJ6XyLvX/zYEMQ0Nua6PRxacFf4buPF/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 9th January Morning Slot Chemistry - Biomolecules Question 169 English Explanation 1\">\n<br><img src=\"https://imagex.cdn.examgoal.net/Ck47WlzDqwtw26ARR/Y2w1B6KnUDcdPjmnIayLWFlTmJGf6/xnssYA2RrzPXB6lqfGzMk5/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 9th January Morning Slot Chemistry - Biomolecules Question 169 English Explanation 2\">\n<br><img src=\"https://imagex.cdn.examgoal.net/CuZgQfflmaxRQjXN2/Bp6KVfoKnjYjjSbv0mKXbXJ2GdRWJ/ZIYtyaXXCJwEw8MU4DvIn6/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 9th January Morning Slot Chemistry - Biomolecules Question 169 English Explanation 3\">\n<br><img src=\"https://imagex.cdn.examgoal.net/W0KGDQ34APjKhL2mu/shGyLj0HbizvYqyAbNuIeUTVSxHrs/OWide1CErtjyWfB7pH915P/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 9th January Morning Slot Chemistry - Biomolecules Question 169 English Explanation 4\">\n<br>pKa = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container> logKa\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container>   Acidic strength (Ka) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 778 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"221D\" xlink:href=\"#MJX-TEX-N-221D\"></use></g></g></g></svg></mjx-container> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -1.091ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.069ex\" height=\"3.048ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864.9 1798.4 1347.1\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mn\" transform=\"translate(722.4,394) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(220,-345) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D45D\" xlink:href=\"#MJX-TEX-I-1D45D\"></use></g><g data-mml-node=\"mi\" transform=\"translate(503,0)\"><use data-c=\"1D43E\" xlink:href=\"#MJX-TEX-I-1D43E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1392,0)\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g></g><rect width=\"1558.4\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container>\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container>   Order of acidic strength : \n<br><br>Asp &gt; Gly &gt; LYs &gt; Arg\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container>   Order of pKa is :  \n<br><br>Asp &lt; Gly &lt; Lys &lt; Arg."
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "xe5ZfgVxYCdbpMKEGIuOF",
+      "paperTitle": "JEE Main 2018 (Online) 15th April Evening Slot",
+      "year": 2018,
+      "examDate": "2018-04-15 14:30",
+      "subject": "mathematics",
+      "chapter": "permutations-and-combinations",
+      "chapterGroup": "algebra",
+      "topic": "number-of-permutations",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-number-of-four-letter-words-that-can-be-formed-using-the-jee-main-mathematics-trigonometric-functions-and-equations-swmfei6js31xmikf",
+      "content": "The number of four letter words that can be formed using the letters of the word <b>BARRACK</b> is : ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "120"
+        },
+        {
+          "identifier": "B",
+          "content": "144"
+        },
+        {
+          "identifier": "C",
+          "content": "264"
+        },
+        {
+          "identifier": "D",
+          "content": "270"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<b>Case 1 :</b>\n<br><br>When all the four letters different then no of words\n<br>= <sup>5</sup>C<sub>4</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container>4!\n<br><br><b>Case 2 :</b>\n<br><br>When out of four letters two letters are R and other two different letters are chosen from B, A, C, K then the no of words <br>= <sup>4</sup>C<sub>2</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.783ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.24ex\" height=\"2.82ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -900.3 990.1 1246.6\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(220,394) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"21\" xlink:href=\"#MJX-TEX-N-21\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(220,-346.3) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"21\" xlink:href=\"#MJX-TEX-N-21\"></use></g></g><rect width=\"750.1\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container> = 72\n<br><br><b>Case 3 :</b>\n<br><br>When out of four letters two letters are A and other two different letters are chosen from B, R, C, K then the no of words <br>= <sup>4</sup>C<sub>2</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.783ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.24ex\" height=\"2.82ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -900.3 990.1 1246.6\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(220,394) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"21\" xlink:href=\"#MJX-TEX-N-21\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(220,-346.3) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"21\" xlink:href=\"#MJX-TEX-N-21\"></use></g></g><rect width=\"750.1\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container> = 72\n<br><br><b>Case 4 :</b>\n<br><br>When word is formed using two R and two A then number of words<br> = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.783ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.485ex\" height=\"2.82ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -900.3 1540.3 1246.6\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(495.1,394) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"21\" xlink:href=\"#MJX-TEX-N-21\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(220,-346.3) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"21\" xlink:href=\"#MJX-TEX-N-21\"></use></g><g data-mml-node=\"mn\" transform=\"translate(778,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1278,0)\"><use data-c=\"21\" xlink:href=\"#MJX-TEX-N-21\"></use></g></g><rect width=\"1300.3\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container> = 6\n<br><br>So, total number of 4 letters words possible = 120 + 72 + 72 + 6 = 270"
+    }
+  ]
+}

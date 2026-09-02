@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "1ldpthzaf",
+      "paperTitle": "JEE Main 2023 (Online) 31st January Morning Shift",
+      "year": 2023,
+      "subject": "mathematics",
+      "chapter": "permutations-and-combinations",
+      "chapterGroup": "algebra",
+      "topic": "number-of-permutations",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "plet-5-digit-numbers-be-constructed-using-the-digits-02-jee-main-mathematics-trigonometric-functions-and-equations-qkkvfbmpwonv8mz9",
+      "content": "<p>Let 5 digit numbers be constructed using the digits <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.439ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"11.817ex\" height=\"1.971ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -677 5223.3 871\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mn\" transform=\"translate(944.7,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1444.7,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1889.3,0)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2389.3,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mn\" transform=\"translate(2834,0)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g><g data-mml-node=\"mo\" transform=\"translate(3334,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mn\" transform=\"translate(3778.7,0)\"><use data-c=\"37\" xlink:href=\"#MJX-TEX-N-37\"></use></g><g data-mml-node=\"mo\" transform=\"translate(4278.7,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mn\" transform=\"translate(4723.3,0)\"><use data-c=\"39\" xlink:href=\"#MJX-TEX-N-39\"></use></g></g></g></svg></mjx-container> with repetition allowed, and are arranged in ascending order with serial numbers. Then the serial number of the number 42923 is __________.</p>",
+      "options": [],
+      "correct_options": [],
+      "explanation": "<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1lelo42n9/53ce0458-9680-4b44-8466-08f8e9ec8d51/6747a240-b5fb-11ed-9b52-9b6c0357d10e/file-1lelo42na.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1lelo42n9/53ce0458-9680-4b44-8466-08f8e9ec8d51/6747a240-b5fb-11ed-9b52-9b6c0357d10e/file-1lelo42na.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2023 (Online) 31st January Morning Shift Mathematics - Permutations and Combinations Question 104 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1lelo42n9/53ce0458-9680-4b44-8466-08f8e9ec8d51/6747a240-b5fb-11ed-9b52-9b6c0357d10e/file-1lelo42na.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1lelo42n9/53ce0458-9680-4b44-8466-08f8e9ec8d51/6747a240-b5fb-11ed-9b52-9b6c0357d10e/file-1lelo42na.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1lelo42n9/53ce0458-9680-4b44-8466-08f8e9ec8d51/6747a240-b5fb-11ed-9b52-9b6c0357d10e/file-1lelo42na.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1lelo42n9/53ce0458-9680-4b44-8466-08f8e9ec8d51/6747a240-b5fb-11ed-9b52-9b6c0357d10e/file-1lelo42na.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1lelo42n9/53ce0458-9680-4b44-8466-08f8e9ec8d51/6747a240-b5fb-11ed-9b52-9b6c0357d10e/file-1lelo42na.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1lelo42n9/53ce0458-9680-4b44-8466-08f8e9ec8d51/6747a240-b5fb-11ed-9b52-9b6c0357d10e/file-1lelo42na.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "1lh333die",
+      "paperTitle": "JEE Main 2023 (Online) 6th April Evening Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "hydrogen-bonding",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pin-an-ice-crystal-each-water-molecule-is-hydrogen-bonded-jee-main-chemistry-some-basic-concepts-of-chemistry-isvvxnxz2d75yzey",
+      "content": "<p>In an ice crystal, each water molecule is hydrogen bonded to ____________ neighbouring molecules.</p>",
+      "options": [],
+      "correct_options": [],
+      "explanation": "In an ice crystal, each water molecule is hydrogen bonded to four neighbouring molecules."
+    }
+  ]
+}

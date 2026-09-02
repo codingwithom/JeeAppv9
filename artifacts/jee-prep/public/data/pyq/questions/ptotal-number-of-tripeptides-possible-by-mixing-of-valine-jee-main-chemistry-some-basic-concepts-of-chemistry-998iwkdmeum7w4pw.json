@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "1ldwvd0a2",
+      "paperTitle": "JEE Main 2023 (Online) 24th January Evening Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "proteins-and-enzymes",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "ptotal-number-of-tripeptides-possible-by-mixing-of-valine-jee-main-chemistry-some-basic-concepts-of-chemistry-998iwkdmeum7w4pw",
+      "content": "<p>Total number of tripeptides possible by mixing of valine and proline is ___________</p>",
+      "options": [],
+      "correct_options": [],
+      "explanation": "<p>To calculate the total number of tripeptides possible by mixing valine and proline, we need to use the fundamental principle of counting.</p>\n\n<p>Since a tripeptide is made up of three amino acids, and we have two choices for each position (either valine or proline), we can use the multiplication principle to find the total number of possible tripeptides.</p>\n\n<p>That is, the total number of tripeptides possible by mixing valine and proline is:</p>\n\n<p>2 x 2 x 2 = 8</p>\n\n<p>Therefore, there are a total of 8 possible tripeptides that can be formed by mixing valine and proline.</p>"
+    }
+  ]
+}

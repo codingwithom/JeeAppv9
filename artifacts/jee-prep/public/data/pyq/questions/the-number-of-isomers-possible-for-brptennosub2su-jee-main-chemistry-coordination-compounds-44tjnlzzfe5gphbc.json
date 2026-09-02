@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "fwfAGYIljIqSeKNWEcjgy2xukf93y6xw",
+      "paperTitle": "JEE Main 2020 (Online) 4th September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-04 09:00",
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "isomerism-of-coordination-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-number-of-isomers-possible-for-brptennosub2su-jee-main-chemistry-coordination-compounds-44tjnlzzfe5gphbc",
+      "content": "The number of isomers possible for\n<br>[Pt(en)(NO<sub>2</sub>)<sub>2</sub>] is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "3"
+        },
+        {
+          "identifier": "B",
+          "content": "1"
+        },
+        {
+          "identifier": "C",
+          "content": "4"
+        },
+        {
+          "identifier": "D",
+          "content": "2"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1khq9dt80/e1dbf564-ab13-4ca7-8c57-068ad2cf6d0b/94e5f300-2b2e-11eb-9275-4b07e7f2e8d3/file-1khq9dt81-419w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 4th September Morning Slot Chemistry - Coordination Compounds Question 255 English Explanation\">\n<br><br>Total 3 geometrical isomers are possible."
+    }
+  ]
+}

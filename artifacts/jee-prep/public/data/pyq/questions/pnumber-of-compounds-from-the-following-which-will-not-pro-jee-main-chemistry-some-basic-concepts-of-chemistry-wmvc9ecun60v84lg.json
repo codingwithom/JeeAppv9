@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "1lgsz5bwm",
+      "paperTitle": "JEE Main 2023 (Online) 11th April Evening Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "carbohydrates",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pnumber-of-compounds-from-the-following-which-will-not-pro-jee-main-chemistry-some-basic-concepts-of-chemistry-wmvc9ecun60v84lg",
+      "content": "<p>Number of compounds from the following which will not produce orange red precipitate with Benedict solution is ___________.</p>\n<p>Glucose, maltose, sucrose, ribose, 2-deoxyribose, amylose, lactose</p>",
+      "options": [],
+      "correct_options": [],
+      "explanation": "Benedict's solution is a reagent that tests for reducing sugars. A reducing sugar is one that has a free aldehyde or ketone group, which can reduce the copper(II) ions in Benedict's reagent to copper(I) oxide, which forms a brick-red or orange-red precipitate.\n<br/><br/>Given the compounds :\n\n<br/><br/>1. Glucose - is a reducing sugar, as it has a free aldehyde group.\n<br/><br/>2. Maltose - is a reducing sugar. It has a free anomeric carbon that can form an aldehyde group.\n<br/><br/>3. Sucrose - is not a reducing sugar. Its glycosidic bond locks the anomeric carbons, preventing them from forming an aldehyde or ketone.\n<br/><br/>4. Ribose - is a reducing sugar, as it has an aldehyde group.\n<br/><br/>5. 2-deoxyribose - is a reducing sugar. It has a free anomeric carbon that can form an aldehyde group.\n<br/><br/>6. Amylose - is a polysaccharide and does not typically behave as a reducing sugar in Benedict's test. Even though one end of the amylose chain can technically open to reveal an aldehyde group (the so-called reducing end), the reaction would likely be much less dramatic than with true reducing sugars, and might not occur at all under typical test conditions.\n<br/><br/>7. Lactose - is a reducing sugar, as it has a free anomeric carbon that can form an aldehyde group.\n\n<br/><br/>Hence, out of the seven compounds listed, sucrose and amylose will not likely produce an orange-red precipitate with Benedict's solution. Thus, the number of compounds that will not produce an orange-red precipitate with Benedict's solution is 2."
+    }
+  ]
+}

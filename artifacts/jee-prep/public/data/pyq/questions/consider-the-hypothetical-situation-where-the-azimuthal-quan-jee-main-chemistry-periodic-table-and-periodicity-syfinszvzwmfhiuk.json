@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "Txt0uLrhcklmhRd7XJjgy2xukf3hktvy",
+      "paperTitle": "JEE Main 2020 (Online) 3rd September Evening Slot",
+      "year": 2020,
+      "examDate": "2020-09-03 15:00",
+      "subject": "chemistry",
+      "chapter": "structure-of-atom",
+      "chapterGroup": "physical-chemistry",
+      "topic": "quantum-numbers-and-orbitals",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "consider-the-hypothetical-situation-where-the-azimuthal-quan-jee-main-chemistry-periodic-table-and-periodicity-syfinszvzwmfhiuk",
+      "content": "Consider the hypothetical situation where the\nazimuthal quantum number,\n<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"0.674ex\" height=\"1.595ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 298 705\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g></g></g></svg></mjx-container>, takes values 0,\n1, 2, ....., n + 1, where n is the principal\nquantum number. Then, the element with\natomic number :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "13 has a half-filled valence subshell"
+        },
+        {
+          "identifier": "B",
+          "content": "9 is the first alkali metal"
+        },
+        {
+          "identifier": "C",
+          "content": "8 is the first noble gas"
+        },
+        {
+          "identifier": "D",
+          "content": "6 has a 2p-valence subshell"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Under hypothetical situation, the value of l is\ngreater than n which varies from 0 to n + 1.\n<br><br>For n = 1, l = 0, 1, 2\n<br><br>n = 2, l = 0, 1, 2, 3\n<br><br>Elements follow the following electronic\nconfiguration\n<br><br>1s 1p 1d 2s 2p 2d 2f\n<br><br>Atomic number (Z) = 9\n<br>1s<sup>2</sup> 1p<sup>6</sup> 1d<sup>1</sup>\n<br><br>Atomic number = 6\n<br>1s<sup>2</sup> 1p<sup>4</sup>\n<br><br>Atomic number 8\n<br>1s<sup>2</sup> 1p<sup>6</sup>\n<br><br>Atomic number 13\n<br>1s<sup>2</sup> 1p<sup>6</sup> 1d<sup>5</sup> (half filled)"
+    }
+  ]
+}

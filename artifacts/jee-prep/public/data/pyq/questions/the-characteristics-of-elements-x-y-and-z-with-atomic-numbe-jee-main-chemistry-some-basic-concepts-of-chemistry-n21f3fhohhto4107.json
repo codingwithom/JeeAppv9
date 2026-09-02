@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "940D1wmXBAMZmuPmmK1kmitht5n",
+      "paperTitle": "JEE Main 2021 (Online) 16th March Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "periodic-table-and-its-features",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-characteristics-of-elements-x-y-and-z-with-atomic-numbe-jee-main-chemistry-some-basic-concepts-of-chemistry-n21f3fhohhto4107",
+      "content": "The characteristics of elements X, Y and Z with atomic numbers, respectively, 33, 53 and 83 are :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "X and Y are metalloids and Z is a metal."
+        },
+        {
+          "identifier": "B",
+          "content": "X and Z are non-metals and Y is a metalloid."
+        },
+        {
+          "identifier": "C",
+          "content": "X is a metalloid, Y is a non-metal and Z is a metal."
+        },
+        {
+          "identifier": "D",
+          "content": "X, Y and Z are metals."
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "X(Z = 33) = As (metalloid)<br><br>\nY(Z = 53) = I (non-metal)<br><br>\nZ(Z = 83) = Bi (metal)"
+    }
+  ]
+}

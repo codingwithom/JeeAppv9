@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "bROozFyhm5jkbwI4fvbGs",
+      "paperTitle": "JEE Main 2018 (Online) 16th April Morning Slot",
+      "year": 2018,
+      "examDate": "2018-04-16 09:30",
+      "subject": "chemistry",
+      "chapter": "structure-of-atom",
+      "chapterGroup": "physical-chemistry",
+      "topic": "quantum-mechanical-model-of-atom",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-statements-is-false-jee-main-chemistry-some-basic-concepts-of-chemistry-jenl0ue3bexflhoh",
+      "content": "Which of the following statements is <b>false</b> ?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Photon has momentum as well as wavelength. "
+        },
+        {
+          "identifier": "B",
+          "content": "Splitting of spectral lines in electrical field is called Stark effect. "
+        },
+        {
+          "identifier": "C",
+          "content": "Rydberg constant has unit of energy. "
+        },
+        {
+          "identifier": "D",
+          "content": "Frequency of emitted radiation from a black body goes from a lower wavelength to higher wavelength as  the temperature increases. "
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "When a black body is heated,  black body emit high energy radiation, from higher wavelength to lower wavelength."
+    }
+  ]
+}

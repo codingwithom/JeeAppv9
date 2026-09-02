@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l54yuu6n",
+      "paperTitle": "JEE Main 2022 (Online) 29th June Evening Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "proteins-and-enzymes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pthe-structure-of-protein-that-is-unaffected-by-heating-is-jee-main-chemistry-some-basic-concepts-of-chemistry-7kquuydpvqsopdno",
+      "content": "<p>The structure of protein that is unaffected by heating is</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "secondary structure"
+        },
+        {
+          "identifier": "B",
+          "content": "tertiary structure"
+        },
+        {
+          "identifier": "C",
+          "content": "primary structure"
+        },
+        {
+          "identifier": "D",
+          "content": "quaternary structure"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<p>The primary structure of protein is unaffected by physical 'or' chemical changes.</p>"
+    }
+  ]
+}

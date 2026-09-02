@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "MrqfcjQFcUHNHBRLD5jgy2xukfjew7v5",
+      "paperTitle": "JEE Main 2020 (Online) 5th September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-05 09:00",
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "inner-transition-elements-lanthanoids-and-actinoids",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "in-the-sixth-period-the-orbitals-that-are-filled-are--jee-main-chemistry-environmental-chemistry-kl5cnqqrob57xwzi",
+      "content": "In the sixth period, the orbitals that are filled are :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "6s, 5d, 5f, 6p"
+        },
+        {
+          "identifier": "B",
+          "content": "6s, 4f, 5d, 6p"
+        },
+        {
+          "identifier": "C",
+          "content": "6s, 6p, 6d, 6f"
+        },
+        {
+          "identifier": "D",
+          "content": "6s, 5f, 6d, 6p"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "As per (n + l) rule in 6th period, order of orbitals filling is 6s, 4f, 5d, 6p."
+    }
+  ]
+}

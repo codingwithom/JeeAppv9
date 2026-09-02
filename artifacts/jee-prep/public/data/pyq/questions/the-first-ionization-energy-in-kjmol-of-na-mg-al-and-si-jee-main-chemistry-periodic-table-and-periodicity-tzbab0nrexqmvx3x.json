@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "2Mg8RHzSwYaiLtI0ly7k9k2k5h6kkpk",
+      "paperTitle": "JEE Main 2020 (Online) 8th January Morning Slot",
+      "year": 2020,
+      "examDate": "2020-01-08 09:30",
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "ionization-energy",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-first-ionization-energy-in-kjmol-of-na-mg-al-and-si-jee-main-chemistry-periodic-table-and-periodicity-tzbab0nrexqmvx3x",
+      "content": "The first ionization energy (in kJ/mol) of Na, Mg, Al and Si respectively, are :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "496, 577, 786, 737"
+        },
+        {
+          "identifier": "B",
+          "content": "496, 737, 577, 786"
+        },
+        {
+          "identifier": "C",
+          "content": "786, 737, 577, 496"
+        },
+        {
+          "identifier": "D",
+          "content": "496, 577, 737, 786"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Elecronic configuration of Na = [Ne] 3s<sup>1</sup>\n<br>Mg = [Ne] 3s<sup>2</sup>\n<br>Al = [Ne] 3s<sup>2</sup>3p<sup>1</sup>\n<br>Si = [Ne] 3s<sup>2</sup>3p<sup>2</sup>\n<br><br>Correct order is :\n<br><br>Na <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.312ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 778 580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"3C\" xlink:href=\"#MJX-TEX-N-3C\"></use></g></g></g></svg></mjx-container> Al <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.312ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 778 580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"3C\" xlink:href=\"#MJX-TEX-N-3C\"></use></g></g></g></svg></mjx-container> Mg <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.312ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 778 580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"3C\" xlink:href=\"#MJX-TEX-N-3C\"></use></g></g></g></svg></mjx-container> Si"
+    }
+  ]
+}

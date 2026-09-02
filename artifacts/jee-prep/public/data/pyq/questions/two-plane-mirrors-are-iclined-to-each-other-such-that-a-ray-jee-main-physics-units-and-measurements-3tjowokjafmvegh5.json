@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "KUdHNKvbxVETGrks1LdhS",
+      "paperTitle": "JEE Main 2019 (Online) 9th January Evening Slot",
+      "year": 2019,
+      "examDate": "2019-01-09 14:30",
+      "subject": "physics",
+      "chapter": "geometrical-optics",
+      "chapterGroup": "optics",
+      "topic": "reflection-of-light",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "two-plane-mirrors-are-iclined-to-each-other-such-that-a-ray-jee-main-physics-units-and-measurements-3tjowokjafmvegh5",
+      "content": "Two plane mirrors are inclined to each other such that a ray of light incident on the first mirror (M<sub>1</sub>) and parallel to the second mirror (M<sub>2</sub>) is finally reflected from the second mirror (M<sub>2</sub>) parallel to the first mirror (M<sub>1</sub>). The angle between the two mirrors will be : ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "45<sup>o</sup>"
+        },
+        {
+          "identifier": "B",
+          "content": "60<sup>o</sup>"
+        },
+        {
+          "identifier": "C",
+          "content": "75<sup>o</sup>"
+        },
+        {
+          "identifier": "D",
+          "content": "90<sup>o</sup>"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/V5FHqzfkUqlXIAi7L/bq2KVIoBh6s20TVDfOQfh69g9clXF/8iiH2MxcWRtioJOvf7C5sM/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 9th January Evening Slot Physics - Geometrical Optics Question 232 English Explanation\">\n<br>Let the angle between two mirrors are <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.023ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.061ex\" height=\"1.618ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 469 715\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D703\" xlink:href=\"#MJX-TEX-I-1D703\"></use></g></g></g></svg></mjx-container>.\n<br><br>We know sum of angles of triangle = 180<sup>o</sup>\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container>  3<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.023ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.061ex\" height=\"1.618ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 469 715\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D703\" xlink:href=\"#MJX-TEX-I-1D703\"></use></g></g></g></svg></mjx-container> = 180<sup>o</sup>\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container>  <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.023ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.061ex\" height=\"1.618ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 469 715\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D703\" xlink:href=\"#MJX-TEX-I-1D703\"></use></g></g></g></svg></mjx-container>  = 60<sup>o</sup>"
+    }
+  ]
+}

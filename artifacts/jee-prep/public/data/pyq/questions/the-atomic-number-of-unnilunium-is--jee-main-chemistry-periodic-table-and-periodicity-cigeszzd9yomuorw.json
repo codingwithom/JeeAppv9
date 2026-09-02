@@ -1,0 +1,22 @@
+{
+  "questions": [
+    {
+      "question_id": "V2JMW23vCOnBpjSIYgjgy2xukg4nsvx5",
+      "paperTitle": "JEE Main 2020 (Online) 6th September Evening Slot",
+      "year": 2020,
+      "examDate": "2020-09-06 15:00",
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "periodic-table-and-its-features",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 0,
+      "permalink": "the-atomic-number-of-unnilunium-is--jee-main-chemistry-periodic-table-and-periodicity-cigeszzd9yomuorw",
+      "content": "The atomic number of Unnilunium is _______.",
+      "options": [],
+      "correct_options": [],
+      "explanation": "<p>Historically, the systematic (IUPAC temporary) name <strong>\"Unnilunium\"</strong> was used for the element with the atomic number <strong>101</strong>, which is now officially named <strong>Mendelevium</strong>. Thus,</p>\n<p><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.654ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.602ex\" height=\"2.765ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -933 2034 1222\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"menclose\"><g transform=\"translate(267, 0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mstyle\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\" transform=\"translate(1000,0)\"></use></g></g></g></g></g><rect x=\"33.5\" y=\"-255.5\" width=\"1967\" height=\"1155\" fill=\"none\" stroke-width=\"67\"></rect></g></g></g></svg></mjx-container></p>"
+    }
+  ]
+}

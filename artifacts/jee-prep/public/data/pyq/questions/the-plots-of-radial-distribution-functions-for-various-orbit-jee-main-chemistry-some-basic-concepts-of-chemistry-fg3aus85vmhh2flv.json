@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "o4aC9l2tePKlz69NpY1kls81s7u",
+      "paperTitle": "JEE Main 2021 (Online) 25th February Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "structure-of-atom",
+      "chapterGroup": "physical-chemistry",
+      "topic": "quantum-mechanical-model-of-atom",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-plots-of-radial-distribution-functions-for-various-orbit-jee-main-chemistry-some-basic-concepts-of-chemistry-fg3aus85vmhh2flv",
+      "content": "The plots of radial distribution functions for various orbitals of hydrogen atom against 'r' are given below :<br><br><img src=\"https://imagex.cdn.examgoal.net/1klseempn/dce24c09-7acd-4df6-9df4-b0f0eb4851c7/a82384b0-7b8c-11eb-a157-49f87e3afb79/file-1klseempo-496w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 25th February Morning Shift Chemistry - Structure of Atom Question 149 English\"><br>\nThe correct plot for 3s orbital is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(B)"
+        },
+        {
+          "identifier": "B",
+          "content": "(A)"
+        },
+        {
+          "identifier": "C",
+          "content": "(C)"
+        },
+        {
+          "identifier": "D",
+          "content": "(D)"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Number of radial nodes = n – (l + 1)\n<br><br>For 3s orbital n = 3, l = 0\n<br><br>Number of radial nodes = 3 – 0 – 1 = 2\n<br><br>It is correctly represented in graph of option D."
+    }
+  ]
+}

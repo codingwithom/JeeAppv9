@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "VydGFYjRQaFrqKxMRP1kmhul9yp",
+      "paperTitle": "JEE Main 2021 (Online) 16th March Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "inner-transition-elements-lanthanoids-and-actinoids",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "given-below-are-two-statement--one-is-labelled-as-assertion-jee-main-chemistry-some-basic-concepts-of-chemistry-yi5lsbm0ax3f2edz",
+      "content": "Given below are two statement : one is labelled as Assertion A and the other is labelled as Reason R :<br><br>Assertion A : Size of Bk<sup>3+</sup> ion is less than Np<sup>3+</sup> ion.<br><br>Reason R : The above is a consequence of the lanthanoid contraction.<br><br>In the light of the above statements, choose the correct answer from the options given below :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Both A and B are true and R is the correct explanation of A"
+        },
+        {
+          "identifier": "B",
+          "content": "A is false but R is true"
+        },
+        {
+          "identifier": "C",
+          "content": "A is true but R is false"
+        },
+        {
+          "identifier": "D",
+          "content": "Both A and B are true but R is not the correct explanation of A"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Size of Bk<sup>3+</sup> is 98 pm<br><br>\nSize of Np<sup>3+</sup> is 101 pm<br><br>\nSo size of Np<sup>3+</sup> is more than Bk3+ ion.<br><br>\nthere is a gradual decrease in the size of M<sup>3+</sup> ions\nacross the series. This may be referred to as the\nactinoid contraction."
+    }
+  ]
+}

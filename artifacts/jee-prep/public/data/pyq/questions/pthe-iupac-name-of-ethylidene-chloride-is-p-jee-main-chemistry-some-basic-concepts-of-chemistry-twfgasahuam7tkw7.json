@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l5am41p7",
+      "paperTitle": "JEE Main 2022 (Online) 25th June Morning Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "iupac-nomenclature",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pthe-iupac-name-of-ethylidene-chloride-is-p-jee-main-chemistry-some-basic-concepts-of-chemistry-twfgasahuam7tkw7",
+      "content": "<p>The IUPAC name of ethylidene chloride is :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "1-Chloroethene"
+        },
+        {
+          "identifier": "B",
+          "content": "1-Chloroethyne"
+        },
+        {
+          "identifier": "C",
+          "content": "1,2-Dichloroethane"
+        },
+        {
+          "identifier": "D",
+          "content": "1,1-Dichloroethane"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<p>Ethylidene chloride is CH<sub>3</sub>– CHCl<sub>2</sub>, its IUPAC name is 1,1-Dichloromethane.</p>"
+    }
+  ]
+}

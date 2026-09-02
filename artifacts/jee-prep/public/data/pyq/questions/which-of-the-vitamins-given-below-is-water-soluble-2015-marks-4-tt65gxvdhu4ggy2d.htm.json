@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "tt65GxVDHU4gGy2D",
+      "paperTitle": "JEE Main 2015 (Offline)",
+      "year": 2015,
+      "examDate": null,
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "vitamins-and-nucleic-acids",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-vitamins-given-below-is-water-soluble-2015-marks-4-tt65gxvdhu4ggy2d.htm",
+      "content": "Which of the vitamins given below is water soluble?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Vitamin D"
+        },
+        {
+          "identifier": "B",
+          "content": "Vitamin E"
+        },
+        {
+          "identifier": "C",
+          "content": "Vitamin K"
+        },
+        {
+          "identifier": "D",
+          "content": "Vitamin C"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Water-soluble vitamins dissolve in water and are not stored by the body. The water soluble vitamins include the vitamin <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.717ex\" height=\"1.545ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -683 759 683\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D435\" xlink:href=\"#MJX-TEX-I-1D435\"></use></g></g></g></svg></mjx-container>-complex group and vitamin <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.348ex\" height=\"1.645ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 1038 727\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mo\" transform=\"translate(760,0)\"><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\"></use></g></g></g></svg></mjx-container>"
+    }
+  ]
+}

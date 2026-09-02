@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1lgysfdkf",
+      "paperTitle": "JEE Main 2023 (Online) 8th April Evening Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "vitamins-and-nucleic-acids",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pmatch-list-i-with-list-iip-pstyle-typetextcss-jee-main-chemistry-some-basic-concepts-of-chemistry-8iuw6pz48rxnnuur",
+      "content": "<p>Match List I with List II</p>\n<p>\n<table class=\"tg\" style=\"undefined;table-layout: fixed; width: 658px\">\n<colgroup>\n<col style=\"width: 46px\">\n<col style=\"width: 300px\">\n<col style=\"width: 48px\">\n<col style=\"width: 264px\">\n</colgroup>\n<thead>\n  <tr>\n    <th class=\"tg-amwm\"></th>\n    <th class=\"tg-amwm\">LIST I<br>Natural amino acid</th>\n    <th class=\"tg-amwm\"></th>\n    <th class=\"tg-amwm\">LIST II<br>One letter code</th>\n  </tr>\n</thead>\n<tbody>\n  <tr>\n    <td class=\"tg-baqh\">A.</td>\n    <td class=\"tg-0lax\">Glutamic acid</td>\n    <td class=\"tg-baqh\">I.</td>\n    <td class=\"tg-0lax\">Q</td>\n  </tr>\n  <tr>\n    <td class=\"tg-baqh\">B.</td>\n    <td class=\"tg-0lax\">Glutamine</td>\n    <td class=\"tg-baqh\">II.</td>\n    <td class=\"tg-0lax\">W</td>\n  </tr>\n  <tr>\n    <td class=\"tg-baqh\">C.</td>\n    <td class=\"tg-0lax\">Tyrosine</td>\n    <td class=\"tg-baqh\">III.</td>\n    <td class=\"tg-0lax\">E</td>\n  </tr>\n  <tr>\n    <td class=\"tg-baqh\">D.</td>\n    <td class=\"tg-0lax\">Tryptophan</td>\n    <td class=\"tg-baqh\">IV.</td>\n    <td class=\"tg-0lax\">Y</td>\n  </tr>\n</tbody>\n</table></p>\n<p>Choose the correct answer from the options given below:</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "A-III, B-IV, C-I, D-II"
+        },
+        {
+          "identifier": "B",
+          "content": "A-IV, B-III, C-I, D-II"
+        },
+        {
+          "identifier": "C",
+          "content": "A-II, B-I, C-IV, D-III"
+        },
+        {
+          "identifier": "D",
+          "content": "A-III, B-I, C-IV, D-II"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<p>The one-letter code for each amino acid is as follows:</p>\n<p>Glutamic Acid (A) is represented by the letter E (III).<br/><br/>\nGlutamine (B) is represented by the letter Q (I).<br/><br/>\nTyrosine (C) is represented by the letter Y (IV).<br/><br/>\nTryptophan (D) is represented by the letter W (II).</p>\n<p>These one-letter codes are part of the standard notation used in biology and biochemistry to represent the 20 standard amino acids, plus a few others. The codes are designed to be short and easy to remember, while still being distinct from each other.</p>\n"
+    }
+  ]
+}

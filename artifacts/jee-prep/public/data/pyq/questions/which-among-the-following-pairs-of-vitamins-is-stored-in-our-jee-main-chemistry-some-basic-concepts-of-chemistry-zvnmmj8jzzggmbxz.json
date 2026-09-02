@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "eMkBQqrHHud2tzfoyx1kmhtnuq9",
+      "paperTitle": "JEE Main 2021 (Online) 16th March Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "vitamins-and-nucleic-acids",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-among-the-following-pairs-of-vitamins-is-stored-in-our-jee-main-chemistry-some-basic-concepts-of-chemistry-zvnmmj8jzzggmbxz",
+      "content": "Which among the following pairs of Vitamins is stored in our body relatively for longer duration?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Thiamine and Vitamin A"
+        },
+        {
+          "identifier": "B",
+          "content": "Ascorbic acid and Vitamin D"
+        },
+        {
+          "identifier": "C",
+          "content": "Thiamine and Ascorbic acid"
+        },
+        {
+          "identifier": "D",
+          "content": "Vitamin A and Vitamin D"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Vitamins which are soluble in fat and oils but\ninsoluble in water are fat-soluble vitamins, which\nare stored in our body relatively for a longer time.<br><br>\ne.g. Vitamin A and Vitamin D<br><br>\nThiamine (Vit B<sub>1</sub>) and Ascorbic acid (Vit C) are\nwater-soluble."
+    }
+  ]
+}

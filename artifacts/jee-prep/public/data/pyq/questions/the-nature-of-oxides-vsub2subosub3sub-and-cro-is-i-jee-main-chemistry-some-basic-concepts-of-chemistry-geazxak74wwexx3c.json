@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktecd6r2",
+      "paperTitle": "JEE Main 2021 (Online) 27th August Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "properties-of-transition-elements",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-nature-of-oxides-vsub2subosub3sub-and-cro-is-i-jee-main-chemistry-some-basic-concepts-of-chemistry-geazxak74wwexx3c",
+      "content": "The nature of oxides V<sub>2</sub>O<sub>3</sub> and CrO is indexed as 'X' and 'Y' type respectively. The correct set of X and Y is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<table>\n<thead>\n  <tr>\n    <td>X = basic</td>\n    <td></td>\n    <td>Y = amphoteric</td>\n  </tr>\n</thead>\n</table>"
+        },
+        {
+          "identifier": "B",
+          "content": "<table>\n<thead>\n  <tr>\n    <td>X = amphoteric</td>\n    <td></td>\n    <td>Y = basic</td>\n  </tr>\n</thead>\n</table>"
+        },
+        {
+          "identifier": "C",
+          "content": "<table>\n<thead>\n  <tr>\n    <td>X = acidic</td>\n    <td></td>\n    <td>Y = acidic</td>\n  </tr>\n</thead>\n</table>"
+        },
+        {
+          "identifier": "D",
+          "content": "<table>\n<thead>\n  <tr>\n    <td>X = basic</td>\n    <td></td>\n    <td>Y = basic</td>\n  </tr>\n</thead>\n</table>"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "V<sub>2</sub>O<sub>3</sub> basic<br><br>CrO basic"
+    }
+  ]
+}

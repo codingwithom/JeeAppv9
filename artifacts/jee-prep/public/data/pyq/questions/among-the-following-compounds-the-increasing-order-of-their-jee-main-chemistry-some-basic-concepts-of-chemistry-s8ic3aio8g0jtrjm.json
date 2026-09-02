@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "dL1463yWZ8AzQ8ouKnTqy",
+      "paperTitle": "JEE Main 2017 (Online) 9th April Morning Slot",
+      "year": 2017,
+      "examDate": "2017-04-09 09:30",
+      "subject": "chemistry",
+      "chapter": "compounds-containing-nitrogen",
+      "chapterGroup": "organic-chemistry",
+      "topic": "diazonium-salts-and-other-nitrogen-containing-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "among-the-following-compounds-the-increasing-order-of-their-jee-main-chemistry-some-basic-concepts-of-chemistry-s8ic3aio8g0jtrjm",
+      "content": "Among the following compounds, the increasing order of their basic strength is :\n<br><br><img src=\"https://imagex.cdn.examgoal.net/BM3KkZ8rhoURNlMQO/C4qSmI0tP2ocSaFMgdtauZDQXpAu1/hFQBefqHOiZO16PNtNnoPk/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2017 (Online) 9th April Morning Slot Chemistry - Compounds Containing Nitrogen Question 230 English\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(I) &lt; (II) &lt; (IV) &lt; (III)"
+        },
+        {
+          "identifier": "B",
+          "content": "(I) &lt; (II) &lt; (III) &lt; (IV)"
+        },
+        {
+          "identifier": "C",
+          "content": "(II) &lt; (I) &lt; (IV) &lt; (III)"
+        },
+        {
+          "identifier": "D",
+          "content": "(II) &lt; (I) &lt; (III) &lt; (IV)"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<p>The basicity of an amine depends on the ability of its nitrogen atom to donate lone pair of electrons in an acid-base reaction. Resonance, inductive effect and steric hindrance etc. plays a very important role in deciding the basicity of compound.</p>\n\n<p>Among the given compounds, (III) is most basic due to the presence of electron donating methyl group which increases the electron density on nitrogen. Compound (IV) is less basic than (III). Hybridisation of nitrogen atom in aniline (I) and pyrrole (II) is sp<sup>3</sup> and sp<sup>2</sup> , respectively, therefore, (I) is more basic than (II). Thus, the correct order of basicity is</p>\n\n<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l3qt1awa/bc470ec2-d40e-417a-9bba-26d5950dc6eb/31f38ca0-df08-11ec-b17a-f1edf5965e5d/file-1l3qt1awb.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l3qt1awa/bc470ec2-d40e-417a-9bba-26d5950dc6eb/31f38ca0-df08-11ec-b17a-f1edf5965e5d/file-1l3qt1awb.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2017 (Online) 9th April Morning Slot Chemistry - Compounds Containing Nitrogen Question 230 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l3qt1awa/bc470ec2-d40e-417a-9bba-26d5950dc6eb/31f38ca0-df08-11ec-b17a-f1edf5965e5d/file-1l3qt1awb.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l3qt1awa/bc470ec2-d40e-417a-9bba-26d5950dc6eb/31f38ca0-df08-11ec-b17a-f1edf5965e5d/file-1l3qt1awb.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l3qt1awa/bc470ec2-d40e-417a-9bba-26d5950dc6eb/31f38ca0-df08-11ec-b17a-f1edf5965e5d/file-1l3qt1awb.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l3qt1awa/bc470ec2-d40e-417a-9bba-26d5950dc6eb/31f38ca0-df08-11ec-b17a-f1edf5965e5d/file-1l3qt1awb.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l3qt1awa/bc470ec2-d40e-417a-9bba-26d5950dc6eb/31f38ca0-df08-11ec-b17a-f1edf5965e5d/file-1l3qt1awb.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l3qt1awa/bc470ec2-d40e-417a-9bba-26d5950dc6eb/31f38ca0-df08-11ec-b17a-f1edf5965e5d/file-1l3qt1awb.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "ZjcfHEUzV3Q33VCX4S1klrdqcd3",
+      "paperTitle": "JEE Main 2021 (Online) 24th February Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "aldehydes-ketones-and-carboxylic-acids",
+      "chapterGroup": "organic-chemistry",
+      "topic": "preparation-methods-for-both-aldehydes-and-ketones",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-reagent-is-used-for-the-following-rea-jee-main-chemistry-some-basic-concepts-of-chemistry-czghuakwdsl71bey",
+      "content": "Which of the following reagent is used for the following reaction ?<br><br>\n<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.375ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"31.643ex\" height=\"3.336ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1308.8 13986.3 1474.4\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"43\" xlink:href=\"#MJX-TEX-N-43\"></use><use data-c=\"48\" xlink:href=\"#MJX-TEX-N-48\" transform=\"translate(722,0)\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(1505,-150) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g><g data-mml-node=\"msub\" transform=\"translate(1908.6,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"43\" xlink:href=\"#MJX-TEX-N-43\"></use><use data-c=\"48\" xlink:href=\"#MJX-TEX-N-48\" transform=\"translate(722,0)\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(1505,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g><g data-mml-node=\"msub\" transform=\"translate(3817.1,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"43\" xlink:href=\"#MJX-TEX-N-43\"></use><use data-c=\"48\" xlink:href=\"#MJX-TEX-N-48\" transform=\"translate(722,0)\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(1505,-150) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"REL\" transform=\"translate(6003.4,0)\"><g data-mml-node=\"mover\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"OP\"><g data-mml-node=\"mo\"><use data-c=\"27F6\" xlink:href=\"#MJX-TEX-N-27F6\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(652.1,710.3) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"3F\" xlink:href=\"#MJX-TEX-N-3F\"></use></g></g></g></g><g data-mml-node=\"msub\" transform=\"translate(7919.2,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"43\" xlink:href=\"#MJX-TEX-N-43\"></use><use data-c=\"48\" xlink:href=\"#MJX-TEX-N-48\" transform=\"translate(722,0)\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(1505,-150) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g><g data-mml-node=\"msub\" transform=\"translate(9827.8,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"43\" xlink:href=\"#MJX-TEX-N-43\"></use><use data-c=\"48\" xlink:href=\"#MJX-TEX-N-48\" transform=\"translate(722,0)\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(1505,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(11736.3,0)\"><g data-mml-node=\"mi\"><use data-c=\"43\" xlink:href=\"#MJX-TEX-N-43\"></use><use data-c=\"48\" xlink:href=\"#MJX-TEX-N-48\" transform=\"translate(722,0)\"></use><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\" transform=\"translate(1472,0)\"></use></g></g></g></g></svg></mjx-container>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Molybdenum oxide"
+        },
+        {
+          "identifier": "B",
+          "content": "Manganese acetate"
+        },
+        {
+          "identifier": "C",
+          "content": "Copper at high temperature and pressure"
+        },
+        {
+          "identifier": "D",
+          "content": "Potassium permanganate"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Molybdenum oxide (Mo<sub>2</sub>O<sub>3</sub> ) is used for oxidising alkanes to\naldehyde. It used to manufacture molybdenum metal, which serves\nas an additive to steel and corrosive resistant alloys.\n<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1kxhci1gp/478f2156-9f7d-414a-bcc7-e58c22e6ac31/2e1b3d90-630b-11ec-877b-854219a26a55/file-1kxhci1gq.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1kxhci1gp/478f2156-9f7d-414a-bcc7-e58c22e6ac31/2e1b3d90-630b-11ec-877b-854219a26a55/file-1kxhci1gq.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2021 (Online) 24th February Morning Shift Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 194 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1kxhci1gp/478f2156-9f7d-414a-bcc7-e58c22e6ac31/2e1b3d90-630b-11ec-877b-854219a26a55/file-1kxhci1gq.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1kxhci1gp/478f2156-9f7d-414a-bcc7-e58c22e6ac31/2e1b3d90-630b-11ec-877b-854219a26a55/file-1kxhci1gq.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1kxhci1gp/478f2156-9f7d-414a-bcc7-e58c22e6ac31/2e1b3d90-630b-11ec-877b-854219a26a55/file-1kxhci1gq.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1kxhci1gp/478f2156-9f7d-414a-bcc7-e58c22e6ac31/2e1b3d90-630b-11ec-877b-854219a26a55/file-1kxhci1gq.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1kxhci1gp/478f2156-9f7d-414a-bcc7-e58c22e6ac31/2e1b3d90-630b-11ec-877b-854219a26a55/file-1kxhci1gq.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1kxhci1gp/478f2156-9f7d-414a-bcc7-e58c22e6ac31/2e1b3d90-630b-11ec-877b-854219a26a55/file-1kxhci1gq.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">"
+    }
+  ]
+}

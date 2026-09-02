@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktiereev",
+      "paperTitle": "JEE Main 2021 (Online) 31st August Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "solutions",
+      "chapterGroup": "physical-chemistry",
+      "topic": "depression-in-freezing-point",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-one-of-the-following-010-m-aqueous-solutions-will-exh-jee-main-chemistry-some-basic-concepts-of-chemistry-1mng9qowg5z1xzzd",
+      "content": "Which one of the following 0.10 M aqueous solutions will exhibit the largest freezing point depression?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "hydrazine"
+        },
+        {
+          "identifier": "B",
+          "content": "glucose"
+        },
+        {
+          "identifier": "C",
+          "content": "glycine"
+        },
+        {
+          "identifier": "D",
+          "content": "KHSO<sub>4</sub>"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "ΔT<sub>f</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 778 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"221D\" xlink:href=\"#MJX-TEX-N-221D\"></use></g></g></g></svg></mjx-container> i × m\n<br><br>greater the value of i, greater will be the ΔT<sub>f</sub>\n value.\n<br><br>Van't Hoff factor is highest for KHSO<sub>4</sub><br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> colligative property (<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.885ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 833 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></svg></mjx-container>T<sub>f</sub>) will be highest for KHSO<sub>4</sub>"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "jQeKAfN0dgQh2Avyxi1kluc9c0i",
+      "paperTitle": "JEE Main 2021 (Online) 26th February Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "practical-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "chemistry-involved-in-the-preparation-of-organic-and-inorganic-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-is-a-false-statement-jee-main-chemistry-some-basic-concepts-of-chemistry-vxr16vt9kqodanjk",
+      "content": "Which of the following is 'a' FALSE statement ?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Carius method is used for the estimation of nitrogen in an organic compound."
+        },
+        {
+          "identifier": "B",
+          "content": "Kjeldahl's method is used for the estimation of nitrogen in an organic compound."
+        },
+        {
+          "identifier": "C",
+          "content": "Carius tube is used in the estimation of sulphur in an organic compound."
+        },
+        {
+          "identifier": "D",
+          "content": "Phosphoric acid produced on oxidation of phosphorus present in an organic compound is precipitated as Mg<sub>2</sub>P<sub>2</sub>O<sub>7</sub> by adding magnesia mixture."
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Carius method is used in the estimation of\nhalogen and sulphur in organic compounds."
+    }
+  ]
+}

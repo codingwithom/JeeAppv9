@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "l7emkb9k",
+      "paperTitle": "JEE Advanced 2022 Paper 1 Online",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "surface-chemistry",
+      "chapterGroup": "physical-chemistry",
+      "topic": "adsorption",
+      "type": "mcqm",
+      "marks": 4,
+      "negMarks": 2,
+      "permalink": "the-correct-options-related-to-adsorption-processes-isare-jee-advanced-chemistry-some-basic-concepts-of-chemistry-motsx5hdddy3ngkj",
+      "content": "The correct option(s) related to adsorption processes is(are)",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Chemisorption results in a unimolecular layer."
+        },
+        {
+          "identifier": "B",
+          "content": "The enthalpy change during physisorption is in the range of 100 to <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.452ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"14.343ex\" height=\"2.597ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -948 6339.7 1148\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\" transform=\"translate(500,0)\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(1000,0)\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1500,0)\"><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\"> </text></g><g data-mml-node=\"mi\" transform=\"translate(600,0)\"><use data-c=\"6B\" xlink:href=\"#MJX-TEX-N-6B\"></use><use data-c=\"4A\" xlink:href=\"#MJX-TEX-N-4A\" transform=\"translate(528,0)\"></use></g></g><g data-mml-node=\"msup\" transform=\"translate(3142,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\"> </text></g><g data-mml-node=\"mi\" transform=\"translate(600,0)\"><use data-c=\"6D\" xlink:href=\"#MJX-TEX-N-6D\"></use><use data-c=\"6F\" xlink:href=\"#MJX-TEX-N-6F\" transform=\"translate(833,0)\"></use><use data-c=\"6C\" xlink:href=\"#MJX-TEX-N-6C\" transform=\"translate(1333,0)\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(2244,477.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(778,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g></g></g></svg></mjx-container>."
+        },
+        {
+          "identifier": "C",
+          "content": "Chemisorption is an endothermic process."
+        },
+        {
+          "identifier": "D",
+          "content": "Lowering the temperature favors physisorption processes. "
+        }
+      ],
+      "correct_options": [
+        "A",
+        "D"
+      ],
+      "explanation": "(A) In Chemisorption unimolecular layer is formed.\n<br/><br/> (B) In Phesisorption 20-40 kJ of heat is released.\n<br/><br/>(C) Chemisorption is exothermic process.\n<br/><br/> (D) Physisorption increases with decrease in temperature."
+    }
+  ]
+}

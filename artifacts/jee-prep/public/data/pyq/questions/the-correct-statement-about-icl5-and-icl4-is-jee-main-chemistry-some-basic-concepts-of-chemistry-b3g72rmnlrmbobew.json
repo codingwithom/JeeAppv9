@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "oAa6YvGMfJQ4vKQf77p3L",
+      "paperTitle": "JEE Main 2019 (Online) 8th April Evening Slot",
+      "year": 2019,
+      "examDate": "2019-04-08 14:30",
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "hybridization-and-vsepr-theory",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-correct-statement-about-icl5-and-icl4-is-jee-main-chemistry-some-basic-concepts-of-chemistry-b3g72rmnlrmbobew",
+      "content": "The correct statement about ICl<sub>5</sub> and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.69ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.966ex\" height=\"2.554ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -823.8 2195.1 1128.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D43C\" xlink:href=\"#MJX-TEX-I-1D43C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(504,0)\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"msubsup\" transform=\"translate(1264,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g><g data-mml-node=\"mo\" transform=\"translate(331,411.6) scale(0.707)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(331,-305.1) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g></g></svg></mjx-container> is",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "ICl<sub>5</sub> is square pyramidal and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.69ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.966ex\" height=\"2.554ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -823.8 2195.1 1128.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D43C\" xlink:href=\"#MJX-TEX-I-1D43C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(504,0)\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"msubsup\" transform=\"translate(1264,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g><g data-mml-node=\"mo\" transform=\"translate(331,411.6) scale(0.707)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(331,-305.1) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g></g></svg></mjx-container> is square\nplanar."
+        },
+        {
+          "identifier": "B",
+          "content": "ICl<sub>5</sub> is trigonal bipyramidal and  is\ntetrahedral."
+        },
+        {
+          "identifier": "C",
+          "content": "ICl<sub>5</sub> is square pyramidal and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.69ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.966ex\" height=\"2.554ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -823.8 2195.1 1128.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D43C\" xlink:href=\"#MJX-TEX-I-1D43C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(504,0)\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"msubsup\" transform=\"translate(1264,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g><g data-mml-node=\"mo\" transform=\"translate(331,411.6) scale(0.707)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(331,-305.1) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g></g></svg></mjx-container> is\ntetrahedral"
+        },
+        {
+          "identifier": "D",
+          "content": "Both are isostructural."
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/7km5fk05rl45o/6d70ce33-21c8-4a4a-812e-df73be624156/a14148c0-cf59-11e9-acf6-6d09a288f7f2/file-7km5fk05rl45p-320w.jpg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/7km5fk05rl45o/6d70ce33-21c8-4a4a-812e-df73be624156/a14148c0-cf59-11e9-acf6-6d09a288f7f2/file-7km5fk05rl45p-500w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/7km5fk05rl45o/6d70ce33-21c8-4a4a-812e-df73be624156/a14148c0-cf59-11e9-acf6-6d09a288f7f2/file-7km5fk05rl45p-680w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 8th April Evening Slot Chemistry - Chemical Bonding &amp; Molecular Structure Question 208 English Explanation\"></picture>"
+    }
+  ]
+}

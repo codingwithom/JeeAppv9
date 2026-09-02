@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "1JH2i525goy0oScG",
+      "paperTitle": "JEE Main 2017 (Offline)",
+      "year": 2017,
+      "examDate": null,
+      "subject": "mathematics",
+      "chapter": "matrices-and-determinants",
+      "chapterGroup": "algebra",
+      "topic": "solutions-of-system-of-linear-equations-in-two-or-three-variables-using-determinants-and-matrices",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "if-s-is-the-set-of-distinct-values-of-b-for-which-the-foll-2017-marks-4-1jh2i525goy0oscg.htm",
+      "content": "If S is the set of distinct values of 'b' for which the following system of linear equations \n<br><br>x + y + z = 1\n<br>x + ay + z = 1\n<br>ax + by + z = 0\n<br><br>has no solution, then S is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "an empty set"
+        },
+        {
+          "identifier": "B",
+          "content": "an infinite set"
+        },
+        {
+          "identifier": "C",
+          "content": "a finite set containing two or more elements"
+        },
+        {
+          "identifier": "D",
+          "content": "a singleton "
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -4.016ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"14.61ex\" height=\"9.163ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -2275 6457.6 4050\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mrow\"><g data-mml-node=\"mo\"><svg width=\"333\" height=\"4050\" y=\"-1775\" x=\"0\" viewBox=\"0 870.6 333 4050\"><use data-c=\"2223\" xlink:href=\"#MJX-TEX-SO-2223\" transform=\"scale(1,9.463)\"></use></svg></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(333,0)\"><g data-mml-node=\"mtable\" data-frame-styles=\"\"><g data-mml-node=\"mtr\" transform=\"translate(0,1400)\"><g data-mml-node=\"mtd\" transform=\"translate(214.5,0)\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g><g data-mml-node=\"mtd\" transform=\"translate(1743.5,0)\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g><g data-mml-node=\"mtd\" transform=\"translate(3258,0)\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g><g data-mml-node=\"mtr\"><g data-mml-node=\"mtd\" transform=\"translate(214.5,0)\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g><g data-mml-node=\"mtd\" transform=\"translate(1729,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g></g><g data-mml-node=\"mtd\" transform=\"translate(3258,0)\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g><g data-mml-node=\"mtr\" transform=\"translate(0,-1400)\"><g data-mml-node=\"mtd\" transform=\"translate(200,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g></g><g data-mml-node=\"mtd\" transform=\"translate(1779,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D44F\" xlink:href=\"#MJX-TEX-I-1D44F\"></use></g></g><g data-mml-node=\"mtd\" transform=\"translate(3258,0)\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g></g></g><g data-mml-node=\"mo\" transform=\"translate(4291,0)\"><svg width=\"333\" height=\"4050\" y=\"-1775\" x=\"0\" viewBox=\"0 870.6 333 4050\"><use data-c=\"2223\" xlink:href=\"#MJX-TEX-SO-2223\" transform=\"scale(1,9.463)\"></use></svg></g></g><g data-mml-node=\"mo\" transform=\"translate(4901.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(5957.6,0)\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g></g></g></svg></mjx-container>\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> 1 [a – b] – 1 [1 – a] + 1 [b – a<sup>2</sup>] = 0\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> (a - 1)<sup>2</sup> = 0\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> a = 1\n<br><br>For a = 1, the equations become\n<br><br>x + y + z = 1\n<br><br>x + y + z = 1\n<br><br>x + by + z = 0\n<br><br>These equations give no solution for b = 1\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> S is singleton set."
+    }
+  ]
+}

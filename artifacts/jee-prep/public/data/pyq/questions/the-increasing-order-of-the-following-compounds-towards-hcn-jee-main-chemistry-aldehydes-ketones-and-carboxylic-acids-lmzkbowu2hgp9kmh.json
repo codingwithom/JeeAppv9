@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "jlJFlPXAVOC4t0DeBojgy2xukevm16qw",
+      "paperTitle": "JEE Main 2020 (Online) 2nd September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-02 09:00",
+      "subject": "chemistry",
+      "chapter": "aldehydes-ketones-and-carboxylic-acids",
+      "chapterGroup": "organic-chemistry",
+      "topic": "reactions-involving-aldehydes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-increasing-order-of-the-following-compounds-towards-hcn-jee-main-chemistry-aldehydes-ketones-and-carboxylic-acids-lmzkbowu2hgp9kmh",
+      "content": "The increasing order of the following\ncompounds towards HCN addition is :\n<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jgy2xukevlspy8/8c32f4cc-3a41-4e9d-b32a-5fd7c7db9480/662b3d10-f2ba-11ea-8293-3b6cc591631c/file-jgy2xukevlspy9-320w.png\"><img src=\"https://imagex.cdn.examgoal.net/jgy2xukevlspy8/8c32f4cc-3a41-4e9d-b32a-5fd7c7db9480/662b3d10-f2ba-11ea-8293-3b6cc591631c/file-jgy2xukevlspy9-500w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 2nd September Morning Slot Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 210 English\"></picture>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(iii) &lt; (iv) &lt; (ii) &lt; (i)"
+        },
+        {
+          "identifier": "B",
+          "content": "(i) &lt; (iii) &lt; (iv) &lt; (ii)"
+        },
+        {
+          "identifier": "C",
+          "content": "(iii) &lt; (i) &lt; (iv) &lt; (ii)"
+        },
+        {
+          "identifier": "D",
+          "content": "(iii) &lt; (iv) &lt; (i) &lt; (ii)"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "In HCN, CN<sup>–</sup>\n is acts as nucleophile, attack first that –CHO group which has maximum positive\ncharge. The magnitude of the (+ve) charge increases by –R and –I group. So reactivity order will\nbe\n<br><picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jgy2xukhd045ro/3d07c5e6-b66b-4e58-a5c4-6a772b51b1be/25e4f650-23e4-11eb-8293-3b6cc591631c/file-jgy2xukhd045rp-320w.png\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/jgy2xukhd045ro/3d07c5e6-b66b-4e58-a5c4-6a772b51b1be/25e4f650-23e4-11eb-8293-3b6cc591631c/file-jgy2xukhd045rp-500w.png\"><img src=\"https://imagex.cdn.examgoal.net/jgy2xukhd045ro/3d07c5e6-b66b-4e58-a5c4-6a772b51b1be/25e4f650-23e4-11eb-8293-3b6cc591631c/file-jgy2xukhd045rp-680w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 2nd September Morning Slot Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 210 English Explanation\"></picture>"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "sRQBiRT79O6o9WlHSe1kk0zc8r4",
+      "paperTitle": "JEE Advanced 2020 Paper 2 Offline",
+      "year": 2020,
+      "subject": "chemistry",
+      "chapter": "alcohols-phenols-and-ethers",
+      "chapterGroup": "organic-chemistry",
+      "topic": "properties-preparation-and-uses-of-phenols",
+      "type": "integer",
+      "marks": 3,
+      "negMarks": 1,
+      "permalink": "an-organic-compound-csub8subhsub10subosub2sub-jee-advanced-chemistry-some-basic-concepts-of-chemistry-1gejuqwucrw5sikn",
+      "content": "An organic compound (C<sub>8</sub>H<sub>10</sub>O<sub>2</sub>) rotates plane-porarised light. It produces pink color with neutral FeCl<sub>3</sub> solution. What is the total number of all the possible isomers for this compound?",
+      "options": [],
+      "correct_options": [],
+      "explanation": "Phenolic (<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>OH) group gives positive test with neutral FeCl<sub>3</sub> solution, means organic compound (C<sub>8</sub>H<sub>10</sub>O<sub>2</sub>) also rotate plane porarised light means compound is an optically active and chiral carbon atom is present.<br><br>So, the possible structures which are optically active and have phenolic group are as followed :<br><br> <picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1kscbkp24/f4741080-0063-4246-8398-03dbc6d28d4b/8eae58d0-fd4a-11eb-9c9f-cb40e30fb586/file-1kscbkp25-320w.jpeg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1kscbkp24/f4741080-0063-4246-8398-03dbc6d28d4b/8eae58d0-fd4a-11eb-9c9f-cb40e30fb586/file-1kscbkp25-500w.jpeg\"><img src=\"https://imagex.cdn.examgoal.net/1kscbkp24/f4741080-0063-4246-8398-03dbc6d28d4b/8eae58d0-fd4a-11eb-9c9f-cb40e30fb586/file-1kscbkp25.jpeg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2020 Paper 2 Offline Chemistry - Alcohols, Phenols and Ethers Question 29 English Explanation\"></picture> <br><br>Therefore, total optically active isomers will be 6."
+    }
+  ]
+}

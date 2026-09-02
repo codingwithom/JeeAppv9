@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "Bcpwk8KChYg6mPuCFE1kmkjcqy8",
+      "paperTitle": "JEE Main 2021 (Online) 17th March Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "warners-theory-and-valence-bond-theory",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "on-complete-reaction-of-feclsub3sub-with-oxalic-acid-in-jee-main-chemistry-some-basic-concepts-of-chemistry-lmks8rtb6f6hyvfa",
+      "content": "On complete reaction of FeCl<sub>3</sub> with oxalic acid in aqueous solution containing KOH, resulted in the formation of product A. The secondary valency of Fe in the product A is __________. (Round off to the Nearest Integer).",
+      "options": [],
+      "correct_options": [],
+      "explanation": "FeCl<sub>3</sub> + 3H<sub>2</sub>C<sub>2</sub>O<sub>4</sub> + 6KOH <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> K<sub>3</sub>[Fe(C<sub>2</sub>O<sub>4</sub>)<sub>3</sub>] + 3KCl + 6H<sub>2</sub>O\n<img src=\"https://imagex.cdn.examgoal.net/1kncweupg/de81de52-3594-4d1f-9440-ffd7be7e140a/f701c250-9a9e-11eb-af16-4b60add055a3/file-1kncweuph.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 17th March Evening Shift Chemistry - Coordination Compounds Question 236 English Explanation\">\n<br>Coordination number = 6\n<br><br>Secondary valency is 6"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "VrGyCUrha6FdMeKKOG3rsa0w2w9jxb3fiw6",
+      "paperTitle": "JEE Main 2019 (Online) 12th April Evening Slot",
+      "year": 2019,
+      "examDate": "2019-04-12 14:30",
+      "subject": "mathematics",
+      "chapter": "limits-continuity-and-differentiability",
+      "chapterGroup": "calculus",
+      "topic": "limits-of-trigonometric-functions",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "mathop-lim-limitsx-to-0-x--2sin-x-over-sq-jee-main-mathematics-limits-continuity-and-differentiability-elhazknddg5otpsv",
+      "content": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -1.705ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"25.826ex\" height=\"3.675ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -871 11415.1 1624.5\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"munder\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"OP\" transform=\"translate(38.1,0)\"><g data-mml-node=\"mo\"><use data-c=\"6C\" xlink:href=\"#MJX-TEX-N-6C\"></use><use data-c=\"69\" xlink:href=\"#MJX-TEX-N-69\" transform=\"translate(278,0)\"></use><use data-c=\"6D\" xlink:href=\"#MJX-TEX-N-6D\" transform=\"translate(556,0)\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(0,-637.9) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g><g data-mml-node=\"mo\" transform=\"translate(572,0)\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1572,0)\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(1465.1,0)\"><use data-c=\"2061\" xlink:href=\"#MJX-TEX-N-2061\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1631.8,0)\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(3483.3,398) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g><g data-mml-node=\"mo\" transform=\"translate(572,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1350,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2016.7,0)\"><use data-c=\"73\" xlink:href=\"#MJX-TEX-N-73\"></use><use data-c=\"69\" xlink:href=\"#MJX-TEX-N-69\" transform=\"translate(394,0)\"></use><use data-c=\"6E\" xlink:href=\"#MJX-TEX-N-6E\" transform=\"translate(672,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(3244.7,0)\"><use data-c=\"2061\" xlink:href=\"#MJX-TEX-N-2061\"></use></g><g data-mml-node=\"mi\" transform=\"translate(3411.3,0)\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(220,-632) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msqrt\"><g data-mml-node=\"mo\" transform=\"translate(0,88.9)\"><use data-c=\"221A\" xlink:href=\"#MJX-TEX-N-221A\"></use></g><g transform=\"translate(853,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g><g data-mml-node=\"mn\" transform=\"translate(605,289) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(1008.6,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1786.6,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2453.2,0)\"><use data-c=\"73\" xlink:href=\"#MJX-TEX-N-73\"></use><use data-c=\"69\" xlink:href=\"#MJX-TEX-N-69\" transform=\"translate(394,0)\"></use><use data-c=\"6E\" xlink:href=\"#MJX-TEX-N-6E\" transform=\"translate(672,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(3681.2,0)\"><use data-c=\"2061\" xlink:href=\"#MJX-TEX-N-2061\"></use></g><g data-mml-node=\"mi\" transform=\"translate(3847.9,0)\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g><g data-mml-node=\"mo\" transform=\"translate(4419.9,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(5197.9,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g><rect width=\"5697.9\" height=\"42.4\" x=\"853\" y=\"846.5\"></rect></g><g data-mml-node=\"mo\" transform=\"translate(6550.9,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"msqrt\" transform=\"translate(7328.9,0)\"><g data-mml-node=\"mo\" transform=\"translate(0,192.4)\"><use data-c=\"221A\" xlink:href=\"#MJX-TEX-SO-221A\"></use></g><g transform=\"translate(1020,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msup\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"73\" xlink:href=\"#MJX-TEX-N-73\"></use><use data-c=\"69\" xlink:href=\"#MJX-TEX-N-69\" transform=\"translate(394,0)\"></use><use data-c=\"6E\" xlink:href=\"#MJX-TEX-N-6E\" transform=\"translate(672,0)\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(1261,396.1) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"mi\" transform=\"translate(1664.6,0)\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2236.6,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mi\" transform=\"translate(3014.6,0)\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g><g data-mml-node=\"mo\" transform=\"translate(3586.6,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(4364.6,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g><rect width=\"4864.6\" height=\"42.4\" x=\"1020\" y=\"1000\"></rect></g></g><rect width=\"9543.3\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container> is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "6"
+        },
+        {
+          "identifier": "B",
+          "content": "1"
+        },
+        {
+          "identifier": "C",
+          "content": "3"
+        },
+        {
+          "identifier": "D",
+          "content": "2"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/3rsa0w4kejxj337zk/64a8a64d-9f24-4348-9808-c91a79fa0ca2/27813300-9b48-11e9-a4ff-cd603c22e5ad/file-3rsa0w4kejxj337zl.jpg\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th April Evening Slot Mathematics - Limits, Continuity and Differentiability Question 204 English Explanation\">"
+    }
+  ]
+}

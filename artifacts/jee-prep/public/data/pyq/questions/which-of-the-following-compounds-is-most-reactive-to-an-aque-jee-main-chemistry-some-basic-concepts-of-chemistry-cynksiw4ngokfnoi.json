@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "3ObavSJcWCQNENNkKlpEn",
+      "paperTitle": "JEE Main 2017 (Online) 9th April Morning Slot",
+      "year": 2017,
+      "examDate": "2017-04-09 09:30",
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "aromaticity",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-compounds-is-most-reactive-to-an-aque-jee-main-chemistry-some-basic-concepts-of-chemistry-cynksiw4ngokfnoi",
+      "content": "Which of the following compounds is most reactive to an aqueous solution of sodium\ncarbonate ?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/i4iKMCHxhoLN2R2OG/bnbdCQbwfH9VJKyKLSggTgi24OP61/GUxfNNU6YVtqsSmO0MynbB/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2017 (Online) 9th April Morning Slot Chemistry - Basics of Organic Chemistry Question 243 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/WIAotfR141VMwgtDP/1V4YQdV47LcVRma6iG7NhASkx62bW/7lOLgdIQfMmQdYN3nPVPZW/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2017 (Online) 9th April Morning Slot Chemistry - Basics of Organic Chemistry Question 243 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/4W96zmaoh93Hj9cP0/jnBnyj52n2euOlFlcYM8w7KsmZghG/xD1xmRbIfA1pj4skqCXvwy/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2017 (Online) 9th April Morning Slot Chemistry - Basics of Organic Chemistry Question 243 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/a0ksMOX3tYydIW1sT/BzYVw9SfosZscIsxg36Hc3QTumVUK/HrwYlhmkA0fKZRBZuQQIPq/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2017 (Online) 9th April Morning Slot Chemistry - Basics of Organic Chemistry Question 243 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<p>Among the given compounds, cyclopentadiene is most reactive to an aqueous solution of sodium carbonate. It forms cyclopentadienyl anion which is aromatic and therefore, highly stable.</p>\n\n<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l3pd0euh/e787df04-1b95-4bc5-aa13-d61de1ed6aaa/be7a4190-de3c-11ec-8d15-d70e976d6a92/file-1l3pd0eui.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l3pd0euh/e787df04-1b95-4bc5-aa13-d61de1ed6aaa/be7a4190-de3c-11ec-8d15-d70e976d6a92/file-1l3pd0eui.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2017 (Online) 9th April Morning Slot Chemistry - Basics of Organic Chemistry Question 243 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l3pd0euh/e787df04-1b95-4bc5-aa13-d61de1ed6aaa/be7a4190-de3c-11ec-8d15-d70e976d6a92/file-1l3pd0eui.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l3pd0euh/e787df04-1b95-4bc5-aa13-d61de1ed6aaa/be7a4190-de3c-11ec-8d15-d70e976d6a92/file-1l3pd0eui.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l3pd0euh/e787df04-1b95-4bc5-aa13-d61de1ed6aaa/be7a4190-de3c-11ec-8d15-d70e976d6a92/file-1l3pd0eui.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l3pd0euh/e787df04-1b95-4bc5-aa13-d61de1ed6aaa/be7a4190-de3c-11ec-8d15-d70e976d6a92/file-1l3pd0eui.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l3pd0euh/e787df04-1b95-4bc5-aa13-d61de1ed6aaa/be7a4190-de3c-11ec-8d15-d70e976d6a92/file-1l3pd0eui.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l3pd0euh/e787df04-1b95-4bc5-aa13-d61de1ed6aaa/be7a4190-de3c-11ec-8d15-d70e976d6a92/file-1l3pd0eui.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">"
+    }
+  ]
+}

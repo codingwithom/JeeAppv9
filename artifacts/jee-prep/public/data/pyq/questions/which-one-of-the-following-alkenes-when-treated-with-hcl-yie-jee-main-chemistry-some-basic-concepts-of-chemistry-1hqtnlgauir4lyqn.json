@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "lq85iCEuexDvaQkD2cVT6",
+      "paperTitle": "JEE Main 2019 (Online) 8th April Evening Slot",
+      "year": 2019,
+      "examDate": "2019-04-08 14:30",
+      "subject": "chemistry",
+      "chapter": "haloalkanes-and-haloarenes",
+      "chapterGroup": "organic-chemistry",
+      "topic": "haloalkanes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-one-of-the-following-alkenes-when-treated-with-hcl-yie-jee-main-chemistry-some-basic-concepts-of-chemistry-1hqtnlgauir4lyqn",
+      "content": "Which one of the following alkenes when\ntreated with HCl yields majorly an anti\nMarkovnikov product?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Cl – CH = CH<sub>2</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "F<sub>3</sub>C – CH = CH<sub>2</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "CH<sub>3</sub>O – CH = CH<sub>2</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "H<sub>2</sub>N – CH = CH<sub>2</sub>"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Markovnikov rule says negative part of the reagent attacks on the carbon of the double bond which have less number of hydrogen atom.\n<br><br>So in Anti-Markovnikov rule negative part of the reagent attacks on the carbon of the double bond which have more number of hydrogen atom.\n<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/7km5fk097havf/09bfd5df-5165-48ea-a766-4bbe1a8cc6fd/233871b0-d13e-11e9-acf6-6d09a288f7f2/file-7km5fk097havg-320w.jpg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/7km5fk097havf/09bfd5df-5165-48ea-a766-4bbe1a8cc6fd/233871b0-d13e-11e9-acf6-6d09a288f7f2/file-7km5fk097havg-500w.jpg\"><source media=\"(max-width: 680px)\" srcset=\"https://imagex.cdn.examgoal.net/7km5fk097havf/09bfd5df-5165-48ea-a766-4bbe1a8cc6fd/233871b0-d13e-11e9-acf6-6d09a288f7f2/file-7km5fk097havg-680w.jpg\"><source media=\"(max-width: 860px)\" srcset=\"https://imagex.cdn.examgoal.net/7km5fk097havf/09bfd5df-5165-48ea-a766-4bbe1a8cc6fd/233871b0-d13e-11e9-acf6-6d09a288f7f2/file-7km5fk097havg-860w.jpg\"><source media=\"(max-width: 1040px)\" srcset=\"https://imagex.cdn.examgoal.net/7km5fk097havf/09bfd5df-5165-48ea-a766-4bbe1a8cc6fd/233871b0-d13e-11e9-acf6-6d09a288f7f2/file-7km5fk097havg-1040w.jpg\"><source media=\"(max-width: 1220px)\" srcset=\"https://imagex.cdn.examgoal.net/7km5fk097havf/09bfd5df-5165-48ea-a766-4bbe1a8cc6fd/233871b0-d13e-11e9-acf6-6d09a288f7f2/file-7km5fk097havg-1220w.jpg\"><source media=\"(max-width: 1400px)\" srcset=\"https://imagex.cdn.examgoal.net/7km5fk097havf/09bfd5df-5165-48ea-a766-4bbe1a8cc6fd/233871b0-d13e-11e9-acf6-6d09a288f7f2/file-7km5fk097havg-1400w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/7km5fk097havf/09bfd5df-5165-48ea-a766-4bbe1a8cc6fd/233871b0-d13e-11e9-acf6-6d09a288f7f2/file-7km5fk097havg-1580w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 8th April Evening Slot Chemistry - Haloalkanes and Haloarenes Question 148 English Explanation\"></picture>"
+    }
+  ]
+}

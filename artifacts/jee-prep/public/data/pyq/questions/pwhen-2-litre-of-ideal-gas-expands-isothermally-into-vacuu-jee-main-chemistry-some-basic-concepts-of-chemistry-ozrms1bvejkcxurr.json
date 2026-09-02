@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "1ldr52d12",
+      "paperTitle": "JEE Main 2023 (Online) 30th January Morning Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "thermodynamics",
+      "chapterGroup": "physical-chemistry",
+      "topic": "first-law-of-thermodynamics",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pwhen-2-litre-of-ideal-gas-expands-isothermally-into-vacuu-jee-main-chemistry-some-basic-concepts-of-chemistry-ozrms1bvejkcxurr",
+      "content": "<p>When 2 litre of ideal gas expands isothermally into vacuum to a total volume of 6 litre, the change in internal energy is ____________ J. (Nearest integer)</p>",
+      "options": [],
+      "correct_options": [],
+      "explanation": "<p>For isothermal process of an ideal gas; <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"7.574ex\" height=\"1.67ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 3347.6 738\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g><g data-mml-node=\"mi\" transform=\"translate(833,0)\"><use data-c=\"45\" xlink:href=\"#MJX-TEX-N-45\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1791.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(2847.6,0)\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g></g></g></g></svg></mjx-container></p>"
+    }
+  ]
+}

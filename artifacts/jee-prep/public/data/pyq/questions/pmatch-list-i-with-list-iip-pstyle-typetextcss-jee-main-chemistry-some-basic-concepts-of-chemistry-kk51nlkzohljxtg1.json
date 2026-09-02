@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l58iw1xa",
+      "paperTitle": "JEE Main 2022 (Online) 26th June Evening Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "proteins-and-enzymes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pmatch-list-i-with-list-iip-pstyle-typetextcss-jee-main-chemistry-some-basic-concepts-of-chemistry-kk51nlkzohljxtg1",
+      "content": "<p>Match List-I with List-II</p>\n<p>\n<table class=\"tg\" style=\"undefined;table-layout: fixed; width: 545px\">\n<colgroup>\n<col style=\"width: 44px\">\n<col style=\"width: 202px\">\n<col style=\"width: 42px\">\n<col style=\"width: 257px\">\n</colgroup>\n<thead>\n  <tr>\n    <th class=\"tg-1wig\"></th>\n    <th class=\"tg-1wig\">List - I <br>Enzyne</th>\n    <th class=\"tg-1wig\"></th>\n    <th class=\"tg-1wig\">List - II<br>Conversion of</th>\n  </tr>\n</thead>\n<tbody>\n  <tr>\n    <td class=\"tg-0lax\">A.</td>\n    <td class=\"tg-0lax\">Invertase</td>\n    <td class=\"tg-0lax\">I.</td>\n    <td class=\"tg-0lax\">Starch into maltose</td>\n  </tr>\n  <tr>\n    <td class=\"tg-0lax\">B.</td>\n    <td class=\"tg-0lax\">Zymase</td>\n    <td class=\"tg-0lax\">II.</td>\n    <td class=\"tg-0lax\">Maltose into glucose</td>\n  </tr>\n  <tr>\n    <td class=\"tg-0lax\">C.</td>\n    <td class=\"tg-0lax\">Diastase</td>\n    <td class=\"tg-0lax\">III.</td>\n    <td class=\"tg-0lax\">Glucose into ethanol</td>\n  </tr>\n  <tr>\n    <td class=\"tg-0lax\">D.</td>\n    <td class=\"tg-0lax\">Maltase</td>\n    <td class=\"tg-0lax\">IV.</td>\n    <td class=\"tg-0lax\">Cane sugar into glucose</td>\n  </tr>\n</tbody>\n</table></p>\n<p>Choose the most appropriate answer from the options given below :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "A-III, B-IV, C-II, D-I"
+        },
+        {
+          "identifier": "B",
+          "content": "A-III, B-II, C-I, D-IV"
+        },
+        {
+          "identifier": "C",
+          "content": "A-IV, B-III, C-I, D-II"
+        },
+        {
+          "identifier": "D",
+          "content": "A-IV, B-II, C-III, D-I"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "(A) Invertase → Cane sugar into glucose<br/><br/>\n(B) Zymase → Glucose into ethanol<br/><br/>\n(C) Diastase → Starch into maltose<br/><br/>\n(D) Maltase → Maltose into glucose"
+    }
+  ]
+}

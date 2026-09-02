@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l59r6ck3",
+      "paperTitle": "JEE Main 2022 (Online) 25th June Evening Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "purification-of-organic-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pgiven-below-are-two-statements--one-is-labelled-as-asser-jee-main-chemistry-some-basic-concepts-of-chemistry-bdzyifaejjbytq8t",
+      "content": "<p>Given below are two statements : one is labelled as Assertion A and the other is labelled as Reason R.</p>\n<p>Assertion A : A mixture contains benzoic acid and napthalene. The pure benzoic acid can be separated out by the use of benzene.</p>\n<p>Reason R : Benzoic acid is soluble in hot water.</p>\n<p>In the light of the above statements, choose the most appropriate answer from the options given below.</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Both A and R are true and R is the correct explanation of A."
+        },
+        {
+          "identifier": "B",
+          "content": "Both A and R are true but R is NOT the correct explanation of A."
+        },
+        {
+          "identifier": "C",
+          "content": "A is true but R is false."
+        },
+        {
+          "identifier": "D",
+          "content": "A is false but R is true."
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Since, both benzoic acid and naphthalene will\ndissolve in benzene. Hence assertion is wrong.<br/><br/>\nBenzoic acid is almost insoluble in cold water but\nsoluble in hot water. Hence Reason is true."
+    }
+  ]
+}

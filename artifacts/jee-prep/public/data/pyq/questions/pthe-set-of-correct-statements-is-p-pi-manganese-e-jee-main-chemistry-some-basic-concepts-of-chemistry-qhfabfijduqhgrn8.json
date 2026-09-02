@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ldsckotv",
+      "paperTitle": "JEE Main 2023 (Online) 29th January Evening Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "properties-of-transition-elements",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pthe-set-of-correct-statements-is-p-pi-manganese-e-jee-main-chemistry-some-basic-concepts-of-chemistry-qhfabfijduqhgrn8",
+      "content": "<p>The set of correct statements is :</p>\n<p>(i) Manganese exhibits +7 oxidation state in its oxide.</p>\n<p>(ii) Ruthenium and Osmium exhibit +8 oxidation in their oxides.</p>\n<p>(iii) Sc shows +4 oxidation state which is oxidizing in nature.</p>\n<p>(iv) Cr shows oxidising nature in +6 oxidation state.</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(ii), (iii) and (iv)"
+        },
+        {
+          "identifier": "B",
+          "content": "(ii) and (iii)"
+        },
+        {
+          "identifier": "C",
+          "content": "(i) and (iii)"
+        },
+        {
+          "identifier": "D",
+          "content": "(i), (ii) and (iv)"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<p>(i) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.375ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"13.92ex\" height=\"1.97ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 6152.7 870.6\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"4D\" xlink:href=\"#MJX-TEX-N-4D\"></use><use data-c=\"6E\" xlink:href=\"#MJX-TEX-N-6E\" transform=\"translate(917,0)\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1506,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g><g data-mml-node=\"msub\" transform=\"translate(1909.6,0)\"><g data-mml-node=\"mi\"><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\"></use></g><g data-mml-node=\"mn\" transform=\"translate(811,-150) scale(0.707)\"><use data-c=\"37\" xlink:href=\"#MJX-TEX-N-37\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(3401.9,0)\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g><g data-mml-node=\"mi\" transform=\"translate(4679.7,0)\"><use data-c=\"4D\" xlink:href=\"#MJX-TEX-N-4D\"></use><use data-c=\"6E\" xlink:href=\"#MJX-TEX-N-6E\" transform=\"translate(917,0)\"></use></g></g></g></g></svg></mjx-container> in (+7) oxidation state</p>\n<p>(ii) It is also correct</p>\n<p>(iii) Sc only shows +3 oxidation state</p>\n<p>(iv) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.048ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.753ex\" height=\"2.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -903 2100.7 924\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"43\" xlink:href=\"#MJX-TEX-N-43\"></use><use data-c=\"72\" xlink:href=\"#MJX-TEX-N-72\" transform=\"translate(722,0)\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1147,432.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(778,0)\"><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\"></use></g></g></g></g></g></g></svg></mjx-container> is oxidising in nature</p>"
+    }
+  ]
+}

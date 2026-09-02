@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "1Gebxf54wXuxRyKpGU1kjcbf5iz",
+      "paperTitle": "JEE Advanced 2019 Paper 1 Offline",
+      "year": 2019,
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "dipole-moment",
+      "type": "mcqm",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "each-of-the-following-options-contains-a-set-of-four-molecul-jee-advanced-chemistry-some-basic-concepts-of-chemistry-smuyt1lisyacib9v",
+      "content": "Each of the following options contains a set of four molecules. Identify the option(s) where all four molecules posses permanent dipole moment at room temperature.",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "SO<sub>2</sub>, C<sub>6</sub>H<sub>5</sub>Cl, H<sub>2</sub>Se, BrF<sub>5</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "BeCl<sub>2</sub>, CO<sub>2</sub>, BCl<sub>3</sub>, CHCl<sub>3</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "NO<sub>2</sub>, NH<sub>3</sub>, POCl<sub>3</sub>, CH<sub>3</sub>Cl"
+        },
+        {
+          "identifier": "D",
+          "content": "BF<sub>3</sub>, O<sub>3</sub>, SF<sub>6</sub>, XeF<sub>6</sub>"
+        }
+      ],
+      "correct_options": [
+        "A",
+        "C"
+      ],
+      "explanation": "The molecules which gives permanent dipole moment are polar in nature.<br><br> <picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1kswcg8ha/9860849d-8554-48a6-8615-41274d6a4aec/a8c130e0-084d-11ec-99a1-d33164c638d1/file-1kswcg8hb-320w.jpeg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1kswcg8ha/9860849d-8554-48a6-8615-41274d6a4aec/a8c130e0-084d-11ec-99a1-d33164c638d1/file-1kswcg8hb-500w.jpeg\"><source media=\"(max-width: 680px)\" srcset=\"https://imagex.cdn.examgoal.net/1kswcg8ha/9860849d-8554-48a6-8615-41274d6a4aec/a8c130e0-084d-11ec-99a1-d33164c638d1/file-1kswcg8hb-680w.jpeg\"><img src=\"https://imagex.cdn.examgoal.net/1kswcg8ha/9860849d-8554-48a6-8615-41274d6a4aec/a8c130e0-084d-11ec-99a1-d33164c638d1/file-1kswcg8hb.jpeg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2019 Paper 1 Offline Chemistry - Chemical Bonding &amp; Molecular Structure Question 21 English Explanation 1\"></picture> <br><br> <picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1kswcgsva/62ec0186-c78b-4fb0-8a42-74df6e05ca19/b8812c60-084d-11ec-99a1-d33164c638d1/file-1kswcgsvb-320w.jpeg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1kswcgsva/62ec0186-c78b-4fb0-8a42-74df6e05ca19/b8812c60-084d-11ec-99a1-d33164c638d1/file-1kswcgsvb-500w.jpeg\"><source media=\"(max-width: 680px)\" srcset=\"https://imagex.cdn.examgoal.net/1kswcgsva/62ec0186-c78b-4fb0-8a42-74df6e05ca19/b8812c60-084d-11ec-99a1-d33164c638d1/file-1kswcgsvb-680w.jpeg\"><img src=\"https://imagex.cdn.examgoal.net/1kswcgsva/62ec0186-c78b-4fb0-8a42-74df6e05ca19/b8812c60-084d-11ec-99a1-d33164c638d1/file-1kswcgsvb.jpeg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Advanced 2019 Paper 1 Offline Chemistry - Chemical Bonding &amp; Molecular Structure Question 21 English Explanation 2\"></picture> <br><br>Thus, options (a, c) are correct."
+    }
+  ]
+}

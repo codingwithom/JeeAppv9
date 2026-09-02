@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l5bdfzjg",
+      "paperTitle": "JEE Main 2022 (Online) 24th June Evening Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "hydrocarbons",
+      "chapterGroup": "organic-chemistry",
+      "topic": "properties-and-preparation-of-alkenes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pgiven-below-are-two-statements-p-pstatement-i--the-jee-main-chemistry-some-basic-concepts-of-chemistry-bjq0qogcicysrjlv",
+      "content": "<p>Given below are two statements :</p>\n<p>Statement I : The presence of weaker <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.296ex\" height=\"1ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -431 573 442\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D70B\" xlink:href=\"#MJX-TEX-I-1D70B\"></use></g></g></g></svg></mjx-container>-bonds make alkenes less stable than alkanes.</p>\n<p>Statement II : The strength of the double bond is greater than that of carbon-carbon single bond.</p>\n<p>In the light of the above statements, choose the correct answer from the options given below :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Both Statement I and Statement II are correct."
+        },
+        {
+          "identifier": "B",
+          "content": "Both Statement I and Statement II are incorrect."
+        },
+        {
+          "identifier": "C",
+          "content": "Statement I is correct but Statement II is incorrect."
+        },
+        {
+          "identifier": "D",
+          "content": "Statement I is incorrect but Statement II is correct."
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "The <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.296ex\" height=\"1ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -431 573 442\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D70B\" xlink:href=\"#MJX-TEX-I-1D70B\"></use></g></g></g></svg></mjx-container>-bond present is alkenes is weaker than <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.294ex\" height=\"1ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -431 572 442\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D70E\" xlink:href=\"#MJX-TEX-I-1D70E\"></use></g></g></g></svg></mjx-container> bond present in alkanes. That makes alkenes less stable than alkanes. Therefore, statement-I is correct.\n<br><br>\nCarbon-carbon double bond is stronger than Carbon-carbon single bond because more energy is required to break 1 sigma and 1 pi bond than to break 1 sigma bond only. Therefore, statement-II is also correct."
+    }
+  ]
+}

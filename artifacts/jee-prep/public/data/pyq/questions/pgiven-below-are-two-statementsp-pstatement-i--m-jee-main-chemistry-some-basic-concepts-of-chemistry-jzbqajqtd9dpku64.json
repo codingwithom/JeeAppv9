@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1lgrl2jd4",
+      "paperTitle": "JEE Main 2023 (Online) 12th April Morning Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "p-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "group-15-elements-nitrogen-family",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pgiven-below-are-two-statementsp-pstatement-i--m-jee-main-chemistry-some-basic-concepts-of-chemistry-jzbqajqtd9dpku64",
+      "content": "<p>Given below are two statements :</p>\n<p>Statement I : <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.375ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.766ex\" height=\"1.97ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 2548.6 870.6\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"53\" xlink:href=\"#MJX-TEX-N-53\"></use><use data-c=\"62\" xlink:href=\"#MJX-TEX-N-62\" transform=\"translate(556,0)\"></use><use data-c=\"43\" xlink:href=\"#MJX-TEX-N-43\" transform=\"translate(1112,0)\"></use><use data-c=\"6C\" xlink:href=\"#MJX-TEX-N-6C\" transform=\"translate(1834,0)\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(2145,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use></g></g></g></g></g></svg></mjx-container> is more covalent than <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.375ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.766ex\" height=\"1.97ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 2548.6 870.6\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"53\" xlink:href=\"#MJX-TEX-N-53\"></use><use data-c=\"62\" xlink:href=\"#MJX-TEX-N-62\" transform=\"translate(556,0)\"></use><use data-c=\"43\" xlink:href=\"#MJX-TEX-N-43\" transform=\"translate(1112,0)\"></use><use data-c=\"6C\" xlink:href=\"#MJX-TEX-N-6C\" transform=\"translate(1834,0)\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(2145,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g></g></g></svg></mjx-container></p>\n<p>Statement II: The higher oxides of halogens also tend to be more stable than the lower ones.</p>\n<p>In the light of the above statements, choose the most appropriate answer from the options given below :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Both statement I and Statement II are correct"
+        },
+        {
+          "identifier": "B",
+          "content": "Both Statement I and Statement II are incorrect"
+        },
+        {
+          "identifier": "C",
+          "content": "Statement I is correct but Statement II is incorrect"
+        },
+        {
+          "identifier": "D",
+          "content": "Statement I is incorrect but Statement II is correct"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<p>Statement I : SbCl₅ is more covalent than SbCl₃</p>\n<p>In general, the covalent character of a compound is directly proportional to the polarization, and the polarization depends upon the size of the cation and the charge on the cation. If the charge on the cation increases or if the size of the cation decreases, the covalent character increases. </p>\n<p>In the case of SbCl₅ and SbCl₃, the antimony (Sb) cation in SbCl₅ has a higher charge due to the greater number of chlorine (Cl) atoms, thus increasing the polarization and making SbCl₅ more covalent than SbCl₃.</p>\n<p>Statement II : The higher oxides of halogens also tend to be more stable than the lower ones.</p>\n<p>This statement is also correct. Halogens can form a variety of oxides, and generally, the stability of these oxides increases with increasing oxidation state. This is because the halogens, being highly electronegative, stabilize the high positive oxidation state. For example, in the case of chlorine, Cl₂O₇ (where chlorine is in the +7 oxidation state) is more stable than Cl₂O (where chlorine is in the +1 oxidation state).</p>\n"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktn1sujz",
+      "paperTitle": "JEE Main 2021 (Online) 1st September Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "properties-of-transition-elements",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "identify-the-element-for-which-electronic-configuration-in--jee-main-chemistry-some-basic-concepts-of-chemistry-oztghkbdavfq9ypb",
+      "content": "Identify the element for which electronic configuration in +3 oxidation state is [Ar]3d<sup>5</sup> :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Ru"
+        },
+        {
+          "identifier": "B",
+          "content": "Mn"
+        },
+        {
+          "identifier": "C",
+          "content": "Co"
+        },
+        {
+          "identifier": "D",
+          "content": "Fe"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Mn(25) = [Ar]3d<sup>5</sup>4s<sup>2</sup>\n<br><br>Mn<sup>+3</sup> = [Ar]3d<sup>4</sup>4s<sup>0</sup>\n<br><br>Ru-belongs to 4d transition series\n<br><br>Co (27) = [Ar]3d<sup>7</sup>4s<sup>2</sup>\n<br><br>Co<sup>+3</sup> = [Ar]3d<sup>6</sup>4s<sup>0</sup>\n<br><br>Fe(26) = [Ar]3d<sup>6</sup>4s<sup>2</sup>\n<br><br>Fe<sup>+3</sup> = [Ar]3d<sup>5</sup>4s<sup>0</sup>"
+    }
+  ]
+}

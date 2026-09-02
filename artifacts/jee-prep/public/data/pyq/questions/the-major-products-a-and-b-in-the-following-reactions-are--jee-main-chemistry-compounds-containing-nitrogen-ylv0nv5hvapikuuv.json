@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "qT8JE1Nolujt9MAq4O7k9k2k5h2jv28",
+      "paperTitle": "JEE Main 2020 (Online) 8th January Morning Slot",
+      "year": 2020,
+      "examDate": "2020-01-08 09:30",
+      "subject": "chemistry",
+      "chapter": "compounds-containing-nitrogen",
+      "chapterGroup": "organic-chemistry",
+      "topic": "aliphatic-amines",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-major-products-a-and-b-in-the-following-reactions-are--jee-main-chemistry-compounds-containing-nitrogen-ylv0nv5hvapikuuv",
+      "content": "The major products A and B in the following reactions are :\n<br><br><img src=\"https://imagex.cdn.examgoal.net/7k9k2k5h2d142/f3cb7206-39a8-47c8-8103-e29c981762e7/78e37c20-388d-11ea-92dd-4b9c3519996f/file-7k9k2k5h2d143-339w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 8th January Morning Slot Chemistry - Compounds Containing Nitrogen Question 202 English\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/7k9k2k5h2eily/648af8bd-4706-40d1-8c5a-e1e9b8a43a87/a236b560-388d-11ea-92dd-4b9c3519996f/file-7k9k2k5h2eilz-494w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 8th January Morning Slot Chemistry - Compounds Containing Nitrogen Question 202 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/7k9k2k5h2eu4k/0c10805e-0f2b-4381-bad4-2880d23c93ed/ab1c3c40-388d-11ea-92dd-4b9c3519996f/file-7k9k2k5h2eu4l-464w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 8th January Morning Slot Chemistry - Compounds Containing Nitrogen Question 202 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/7k9k2k5h2frbq/abf4cfd0-5912-4f31-8f98-13e02ee00452/c4c17b60-388d-11ea-92dd-4b9c3519996f/file-7k9k2k5h2frbr-468w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 8th January Morning Slot Chemistry - Compounds Containing Nitrogen Question 202 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/7k9k2k5h2geaz/e1123608-2795-4153-bb20-4bf1bfb44dd0/d681b3b0-388d-11ea-92dd-4b9c3519996f/file-7k9k2k5h2geb0-417w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 8th January Morning Slot Chemistry - Compounds Containing Nitrogen Question 202 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Peroxide generates a radical that abstracts\nH-atom from the C-atom adjacent to CN group\nto give more stable radical.\n<br><br><img src=\"https://imagex.cdn.examgoal.net/7kd4dk6bnhakp/8f47c214-5b7e-4470-884e-a455c037bf6e/92a10b90-495f-11ea-b62d-51ccc5d4afb6/file-7kd4dk6bnhakq-320w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 8th January Morning Slot Chemistry - Compounds Containing Nitrogen Question 202 English Explanation 1\">\n<br><br>[A] attacks 1-pentene to give 2° radical that\npicks up H-atom to give [B].\n<br><br><picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/7kd4dk6bnihap/21bc39c6-da96-4887-af32-73694ee690fd/b3a18810-495f-11ea-b62d-51ccc5d4afb6/file-7kd4dk6bnihaq-320w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/7kd4dk6bnihap/21bc39c6-da96-4887-af32-73694ee690fd/b3a18810-495f-11ea-b62d-51ccc5d4afb6/file-7kd4dk6bnihaq-500w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 8th January Morning Slot Chemistry - Compounds Containing Nitrogen Question 202 English Explanation 2\"></picture>"
+    }
+  ]
+}

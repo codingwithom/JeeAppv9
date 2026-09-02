@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "EDau64VLDJSkHlHB2F1klgrks65",
+      "paperTitle": "JEE Advanced 2016 Paper 1 Offline",
+      "year": 2016,
+      "subject": "chemistry",
+      "chapter": "redox-reactions",
+      "chapterGroup": "physical-chemistry",
+      "topic": "balancing-of-redox-reactions",
+      "type": "integer",
+      "marks": 3,
+      "negMarks": 0,
+      "permalink": "in-neutral-or-faintly-alkaline-solution-8-moles-of-permanga-jee-advanced-chemistry-some-basic-concepts-of-chemistry-wlsfdk6w3bqtpfpp",
+      "content": "In neutral or faintly alkaline solution, 8 moles of permanganate anion quantitative oxidise thiosulphate anions to produce X moles of a sulphur containing product. The magnitude of X is.... ",
+      "options": [],
+      "correct_options": [],
+      "explanation": "<p>In neutral or faintly alkaline solution, thiosulphate is\noxidized to sulphate by permanganate,</p>\n<p>8MnO<sub>4</sub><sup>–</sup> + 3S<sub>2</sub>O<sub>3</sub><sup>2–</sup> + H<sub>2</sub>O <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> 8MnO<sub>2</sub> + 6SO<sub>4</sub><sup>2–</sup> + 2OH<sup>–</sup></p>"
+    }
+  ]
+}

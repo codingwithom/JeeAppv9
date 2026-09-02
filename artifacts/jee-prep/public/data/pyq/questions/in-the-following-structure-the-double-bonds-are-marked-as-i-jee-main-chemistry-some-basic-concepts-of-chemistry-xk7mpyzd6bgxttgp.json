@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "G8mFcjuM63HmXOKr8xzyt",
+      "paperTitle": "JEE Main 2017 (Online) 9th April Morning Slot",
+      "year": 2017,
+      "examDate": "2017-04-09 09:30",
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "isomerism",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "in-the-following-structure-the-double-bonds-are-marked-as-i-jee-main-chemistry-some-basic-concepts-of-chemistry-xk7mpyzd6bgxttgp",
+      "content": "In the following structure, the double bonds are marked as I, II, III and IV\n<br><br><img src=\"https://imagex.cdn.examgoal.net/tIjzgto9eS4jnpzMI/XAfkzHQmndYBIxd44aPZXns9uctO4/AH7sD0nc1wkm8YZlWfcMoe/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2017 (Online) 9th April Morning Slot Chemistry - Basics of Organic Chemistry Question 242 English\">\n<br><br>Geometrical isomerism is <b>not</b> possible at site (s) :\n",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "III"
+        },
+        {
+          "identifier": "B",
+          "content": "I"
+        },
+        {
+          "identifier": "C",
+          "content": "I and III"
+        },
+        {
+          "identifier": "D",
+          "content": "III and IV"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/hMCGvvadaJXRUWLbu/U6QZ5AKGq7UOGFvfEoQmmkrsVJ2W9/zNBKQNeeTD6ZhPCOf0pcew/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2017 (Online) 9th April Morning Slot Chemistry - Basics of Organic Chemistry Question 242 English Explanation\">\n<br><br>For geometrical isomerism,  different groups should be attached to each sp<sup>2</sup> hybridised C <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container> atom.\n<br><br>Here at double bond I, at sp<sup>2</sup> hybridised C <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container> atom same group <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container> CH<sub>3</sub> is attached, so, at site I isomer is not  possible. "
+    }
+  ]
+}

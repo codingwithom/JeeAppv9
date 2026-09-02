@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "DpbIaKmUJaLDxujcxegRK",
+      "paperTitle": "JEE Main 2019 (Online) 11th January Evening Slot",
+      "year": 2019,
+      "examDate": "2019-01-11 14:30",
+      "subject": "mathematics",
+      "chapter": "straight-lines-and-pair-of-straight-lines",
+      "chapterGroup": "coordinate-geometry",
+      "topic": "various-forms-of-straight-line",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "if-in-a-parallelogram-abdc-the-coordinates-of-a-b-and-c-ar-jee-main-mathematics-trigonometric-functions-and-equations-amugn9arilbnj7rb",
+      "content": "If in a parallelogram ABDC, the coordinates of A, B and C are respectively (1, 2), (3, 4) and (2, 5), then the\nequation of the diagonal AD is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "5x + 3y – 11 = 0"
+        },
+        {
+          "identifier": "B",
+          "content": "5x – 3y + 1 = 0"
+        },
+        {
+          "identifier": "C",
+          "content": "3x – 5y + 7 = 0"
+        },
+        {
+          "identifier": "D",
+          "content": "3x + 5y – 13 = 0"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "co-ordinates of point D are (4, 7)\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container>  line AD is 5x <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container> 3y + 1 = 0"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "Ju7MKvcDmXaFE38YBqdM7",
+      "paperTitle": "JEE Main 2019 (Online) 10th January Evening Slot",
+      "year": 2019,
+      "examDate": "2019-01-10 14:30",
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "proteins-and-enzymes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-test-cannot-be-used-for-identifying-a-jee-main-chemistry-some-basic-concepts-of-chemistry-gfzthke4vkqchpyt",
+      "content": "Which of the following tests cannot be used for identifying amino acids? ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Ninhydrin test "
+        },
+        {
+          "identifier": "B",
+          "content": "Barfoed test \n"
+        },
+        {
+          "identifier": "C",
+          "content": "Xanthoproteic test"
+        },
+        {
+          "identifier": "D",
+          "content": "Biuret test \n"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Barfoed test is used to detect the presence of monosaccharide (reducing sugars) in solutions not amino acids."
+    }
+  ]
+}

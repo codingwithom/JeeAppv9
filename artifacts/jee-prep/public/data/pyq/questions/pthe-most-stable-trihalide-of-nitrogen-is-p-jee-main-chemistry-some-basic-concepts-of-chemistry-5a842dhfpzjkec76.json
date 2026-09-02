@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l5c6o6y5",
+      "paperTitle": "JEE Main 2022 (Online) 24th June Morning Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "p-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "group-15-elements-nitrogen-family",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pthe-most-stable-trihalide-of-nitrogen-is-p-jee-main-chemistry-some-basic-concepts-of-chemistry-5a842dhfpzjkec76",
+      "content": "<p>The most stable trihalide of nitrogen is :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "NF<sub>3</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "NCl<sub>3</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "NBr<sub>3</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "NI<sub>3</sub>"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<p>The\nstability of trihalides decreases down the group due\nto weakening of N – X bond and inability of N to\naccommodate large sized halogen atoms (Cl, Br, I)\naround it.</p>"
+    }
+  ]
+}

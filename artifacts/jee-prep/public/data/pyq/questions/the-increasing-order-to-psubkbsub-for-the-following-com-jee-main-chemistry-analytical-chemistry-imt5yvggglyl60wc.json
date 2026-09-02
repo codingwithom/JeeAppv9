@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "3scsRZzXKoeqea24xv7k9k2k5dywvde",
+      "paperTitle": "JEE Main 2020 (Online) 7th January Morning Slot",
+      "year": 2020,
+      "examDate": "2020-01-07 09:30",
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "acid-and-base-strength",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-increasing-order-to-psubkbsub-for-the-following-com-jee-main-chemistry-analytical-chemistry-imt5yvggglyl60wc",
+      "content": "The increasing order to P<sub>kb</sub> for the following compounds will be :\n<img src=\"https://imagex.cdn.examgoal.net/7k9k2k5dyveuo/68a9f222-6a1f-4fa3-8d77-50b9d2f647b6/7999ff00-36d9-11ea-92dd-4b9c3519996f/file-7k9k2k5dyveup-259w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 7th January Morning Slot Chemistry - Basics of Organic Chemistry Question 218 English\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(A) &lt; (B) &lt; (C) "
+        },
+        {
+          "identifier": "B",
+          "content": "(C) &lt; (A) &lt; (B)\n"
+        },
+        {
+          "identifier": "C",
+          "content": "(B) &lt; (A) &lt; (C)"
+        },
+        {
+          "identifier": "D",
+          "content": "(B) &lt; (C) &lt; (A)"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "pK<sub>b</sub> = –logK<sub>b</sub>\n<br><br>So, as K<sub>b</sub> increases, pK<sub>b</sub> decreases.\n<br><br>K<sub>b</sub> : (B) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.312ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 778 580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"3E\" xlink:href=\"#MJX-TEX-N-3E\"></use></g></g></g></svg></mjx-container> (A) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.312ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 778 580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"3E\" xlink:href=\"#MJX-TEX-N-3E\"></use></g></g></g></svg></mjx-container> (C)\n<br><br>pK<sub>b</sub> : (B) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.312ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 778 580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"3C\" xlink:href=\"#MJX-TEX-N-3C\"></use></g></g></g></svg></mjx-container> (A) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.312ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 778 580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"3C\" xlink:href=\"#MJX-TEX-N-3C\"></use></g></g></g></svg></mjx-container> (C)\n<br><br>Base strength order\n<img src=\"https://imagex.cdn.examgoal.net/7kd4dk6cy60ow/27267902-960c-456d-b6f1-1329dbe8e08d/2629f000-4a16-11ea-b62d-51ccc5d4afb6/file-7kd4dk6cy60ox-320w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 7th January Morning Slot Chemistry - Basics of Organic Chemistry Question 218 English Explanation\">"
+    }
+  ]
+}

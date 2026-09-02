@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "mhzhGRed4mor9bPOHgjgy2xukeyfg6n8",
+      "paperTitle": "JEE Main 2020 (Online) 2nd September Evening Slot",
+      "year": 2020,
+      "examDate": "2020-09-02 15:00",
+      "subject": "chemistry",
+      "chapter": "chemical-kinetics-and-nuclear-chemistry",
+      "chapterGroup": "physical-chemistry",
+      "topic": "different-methods-to-determine-order-of-reaction",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-results-given-in-the-below-table-were-obtained-during-ki-jee-main-chemistry-chemical-kinetics-and-nuclear-chemistry-3avwzhukevlsmugq",
+      "content": "The results given in the below table were\nobtained during kinetic studies of the following\nreaction\n<br><br>2A + B <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> C + D\n<img src=\"https://imagex.cdn.examgoal.net/jgy2xukeyfe7k3/95d13c76-86a4-422e-9d16-96aa676880bc/b5ce4130-f447-11ea-8293-3b6cc591631c/file-jgy2xukeyfe7k4-320w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 2nd September Evening Slot Chemistry - Chemical Kinetics and Nuclear Chemistry Question 155 English\">\n<br>X and Y in the given table are respectively :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "0.3, 0.4"
+        },
+        {
+          "identifier": "B",
+          "content": "0.4, 0.3"
+        },
+        {
+          "identifier": "C",
+          "content": "0.4, 0.4"
+        },
+        {
+          "identifier": "D",
+          "content": "0.3, 0.3"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Rate = k[A]<sup>a</sup>[B]<sup>b</sup>\n<br><br>6 × 10<sup>–3</sup> = k(0.1)<sup>a</sup>(0.1)<sup>b</sup> ...(1)\n<br><br>2.4 × 10<sup>–3</sup> = k(0.1)<sup>a</sup>(0.2)<sup>b</sup> ...(2)\n<br><br>1.2 × 10<sup>–3</sup> = k(0.2)<sup>a</sup> (0.1)<sup>b</sup> ...(3)\n<br><br>(3) ÷ (1) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> x = 1\n<br><br>(2) ÷ (3) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> x = 2\n<br><br>So, order with respect to A = 1\n<br><br>Order with respect to B = 2\n<br><br>6 × 10<sup>–3</sup> = k(0.1)<sup>1</sup> (0.1)<sup>2</sup> from (1)\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> k = 6\n<br><br>From experiment IV,\n<br><br>7.2 × 10<sup>–2</sup> = 6(x)<sup>1</sup>(0.2)<sup>2</sup> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> x = 0.3\n<br><br>From experiment V,\n<br><br>2.88 × 10<sup>–2</sup> = 6(0.3)<sup>1</sup>(y)<sup>2</sup> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> y = 0.4"
+    }
+  ]
+}

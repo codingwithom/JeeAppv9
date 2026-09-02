@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "ldo9pvcf",
+      "paperTitle": "JEE Main 2023 (Online) 31st January Evening Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "ionic-equilibrium",
+      "chapterGroup": "physical-chemistry",
+      "topic": "ph-buffer-and-indicators",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-incorrect-statement-for-the-use-of-indicators-in-acid-ba-jee-main-chemistry-mkzr4dbg0cxxppnl",
+      "content": "The incorrect statement for the use of indicators in acid-base titration is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Phenolphthalein is a suitable indicator for a weak acid vs strong base titration."
+        },
+        {
+          "identifier": "B",
+          "content": "Methyl orange may be used for a weak acid vs weak base titration."
+        },
+        {
+          "identifier": "C",
+          "content": "Methyl orange is a suitable indicator for a strong acid vs weak base titration."
+        },
+        {
+          "identifier": "D",
+          "content": "Phenolphthalein may be used for a strong acid vs strong base titration."
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "\n<table class=\"tg\">\n<thead>\n  <tr>\n    <th class=\"tg-amwm\">Indicator</th>\n    <th class=\"tg-amwm\">pH range</th>\n  </tr>\n</thead>\n<tbody>\n  <tr>\n    <td class=\"tg-baqh\">Methyl orange</td>\n    <td class=\"tg-baqh\">3.2 - 4.5</td>\n  </tr>\n  <tr>\n    <td class=\"tg-baqh\">Phenolpthalein</td>\n    <td class=\"tg-baqh\">8.3 - 10.5</td>\n  </tr>\n</tbody>\n</table>\n<br/>Option B is the incorrect statement for the use of indicators in acid-base titration.\n\n<br/><br/>Methyl orange is a suitable indicator for a strong acid vs strong base titration, not for a weak acid vs weak base titration. In a weak acid vs weak base titration, the pH at the equivalence point is typically around 7, which is within the pH range where methyl orange undergoes a color change. Therefore, methyl orange is not suitable for use in weak acid vs weak base titrations.\n\n<br/><br/>The other options are correct:\n\n<br/><br/>Phenolphthalein is a suitable indicator for a weak acid vs strong base titration because the pH at the equivalence point is basic, which causes phenolphthalein to undergo a color change.\n<br/><br/>Methyl orange is a suitable indicator for a strong acid vs weak base titration because the pH at the equivalence point is acidic, which causes methyl orange to undergo a color change.\n<br/><br/>Phenolphthalein may be used for a strong acid vs strong base titration because the pH at the equivalence point is basic, which causes phenolphthalein to undergo a color change."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktb4nsec",
+      "paperTitle": "JEE Main 2021 (Online) 26th August Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "ionic-equilibrium",
+      "chapterGroup": "physical-chemistry",
+      "topic": "ph-buffer-and-indicators",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "given-below-are-two-statementsbrbrstatement-i--in-th-jee-main-chemistry-some-basic-concepts-of-chemistry-fewujunmu41xnmek",
+      "content": "Given below are two statements.<br><br>Statement I : In the titration between strong acid and weak base methyl orange is suitable as an indicator.<br><br>Statement II : For titration of acetic acid with NaOH phenolphthalein is not a suitable indicator.<br><br>In the light of the above statements, choose the most appropriate answer from the options given below :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Statement I is false but Statement II is true"
+        },
+        {
+          "identifier": "B",
+          "content": "Statement I is true but Statement II is false"
+        },
+        {
+          "identifier": "C",
+          "content": "Both Statement I and Statement II are true"
+        },
+        {
+          "identifier": "D",
+          "content": "Both Statement I and Statement II are false"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Titration curve for strong acid and weak base initially a buffer of weak base and conjugate acid is :<br><br><picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1ktcmblzu/a72c216d-8bde-43ab-8ecf-f182cb3f46f4/cdd4d7a0-1140-11ec-872f-5fd5e1adec85/file-1ktcmblzv-320w.png\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1ktcmblzu/a72c216d-8bde-43ab-8ecf-f182cb3f46f4/cdd4d7a0-1140-11ec-872f-5fd5e1adec85/file-1ktcmblzv-500w.png\"><img src=\"https://imagex.cdn.examgoal.net/1ktcmblzu/a72c216d-8bde-43ab-8ecf-f182cb3f46f4/cdd4d7a0-1140-11ec-872f-5fd5e1adec85/file-1ktcmblzv.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 26th August Morning Shift Chemistry - Ionic Equilibrium Question 75 English Explanation 1\"></picture><br><br>Formed, thus pH falls slowly and after equivalence point, so the pH falls sharply so methyl orange, having pH range of 3.2 to 4.4 will weak as indicator. So, statement I is correct.<br><br><picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1ktcmbyeh/dd34c261-40d1-4ffe-b4ed-8d342893a4e1/d76a4d90-1140-11ec-9385-ab2040916e22/file-1ktcmbyei-320w.png\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1ktcmbyeh/dd34c261-40d1-4ffe-b4ed-8d342893a4e1/d76a4d90-1140-11ec-9385-ab2040916e22/file-1ktcmbyei-500w.png\"><img src=\"https://imagex.cdn.examgoal.net/1ktcmbyeh/dd34c261-40d1-4ffe-b4ed-8d342893a4e1/d76a4d90-1140-11ec-9385-ab2040916e22/file-1ktcmbyei.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 26th August Morning Shift Chemistry - Ionic Equilibrium Question 75 English Explanation 2\"></picture><br><br>Titration curve for weak acid and strong base (NaOH)<br><br>Initially weak acid will form a buffer so pH increases slowly but after equivalence point. It rises sharply covering range of phenolphthalein so it will be suitable indicator so statement II is false."
+    }
+  ]
+}

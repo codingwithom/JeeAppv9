@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "29z4WLBVmkEWrQH1s65uX",
+      "paperTitle": "JEE Main 2018 (Online) 16th April Morning Slot",
+      "year": 2018,
+      "examDate": "2018-04-16 09:30",
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "properties-of-transition-elements",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-incorrect-statement-is-jee-main-chemistry-some-basic-concepts-of-chemistry-kcrmg5usa0pdw9y4",
+      "content": "The <b>incorrect</b> statement is : ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Cu<sup>2+</sup> salts give red coloured borax bead test in reducing flame. "
+        },
+        {
+          "identifier": "B",
+          "content": "Cu2<sup>+</sup> and Ni<sup>2+</sup> ions give black precipitate with H<sub>2</sub>S in presence of HCl solution. "
+        },
+        {
+          "identifier": "C",
+          "content": "Ferric ion gives blood red color with potasium thiocyanate."
+        },
+        {
+          "identifier": "D",
+          "content": "Cu<sup>2+</sup> ion gives chocolate coloured preciitate with potassium ferrocyanide solution. "
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<p>Cu<sup>2+</sup> and Ni<sup>2+</sup> ions belong to Group II and Group IV respectively.</p>\n<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l3xb1ktk/925df3ad-9a20-40db-aec3-efcc765d6884/51d6e990-e29b-11ec-8ea3-fd6d660fc854/file-1l3xb1ktl.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l3xb1ktk/925df3ad-9a20-40db-aec3-efcc765d6884/51d6e990-e29b-11ec-8ea3-fd6d660fc854/file-1l3xb1ktl.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2018 (Online) 16th April Morning Slot Chemistry - d and f Block Elements Question 203 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l3xb1ktk/925df3ad-9a20-40db-aec3-efcc765d6884/51d6e990-e29b-11ec-8ea3-fd6d660fc854/file-1l3xb1ktl.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l3xb1ktk/925df3ad-9a20-40db-aec3-efcc765d6884/51d6e990-e29b-11ec-8ea3-fd6d660fc854/file-1l3xb1ktl.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l3xb1ktk/925df3ad-9a20-40db-aec3-efcc765d6884/51d6e990-e29b-11ec-8ea3-fd6d660fc854/file-1l3xb1ktl.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l3xb1ktk/925df3ad-9a20-40db-aec3-efcc765d6884/51d6e990-e29b-11ec-8ea3-fd6d660fc854/file-1l3xb1ktl.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l3xb1ktk/925df3ad-9a20-40db-aec3-efcc765d6884/51d6e990-e29b-11ec-8ea3-fd6d660fc854/file-1l3xb1ktl.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l3xb1ktk/925df3ad-9a20-40db-aec3-efcc765d6884/51d6e990-e29b-11ec-8ea3-fd6d660fc854/file-1l3xb1ktl.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">\n<p>Group II sulphides precipitated out even under low concentration of sulphides, while Group IV sulphides require higher concentration of sulphides. To fulfill this reaction condition, dil. HCl is chosen in Group II reagents and NH<sub>4</sub>OH is chosen in Group IV reagents.</p>"
+    }
+  ]
+}

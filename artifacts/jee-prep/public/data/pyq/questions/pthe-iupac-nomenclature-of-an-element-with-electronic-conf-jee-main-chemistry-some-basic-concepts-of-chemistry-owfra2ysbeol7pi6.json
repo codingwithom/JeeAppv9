@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l6e13hl0",
+      "paperTitle": "JEE Main 2022 (Online) 25th July Morning Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "periodic-table-and-its-features",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pthe-iupac-nomenclature-of-an-element-with-electronic-conf-jee-main-chemistry-some-basic-concepts-of-chemistry-owfra2ysbeol7pi6",
+      "content": "<p>The IUPAC nomenclature of an element with electronic configuration [Rn] <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"10.268ex\" height=\"1.954ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -841.7 4538.5 863.7\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use></g><g data-mml-node=\"msup\" transform=\"translate(500,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"66\" xlink:href=\"#MJX-TEX-N-66\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(458.3,363) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\" transform=\"translate(500,0)\"></use></g></g></g><g data-mml-node=\"mn\" transform=\"translate(1715.4,0)\"><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\"></use></g><g data-mml-node=\"msup\" transform=\"translate(2215.4,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"64\" xlink:href=\"#MJX-TEX-N-64\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(589,363) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g><g data-mml-node=\"mn\" transform=\"translate(3208,0)\"><use data-c=\"37\" xlink:href=\"#MJX-TEX-N-37\"></use></g><g data-mml-node=\"msup\" transform=\"translate(3708,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"73\" xlink:href=\"#MJX-TEX-N-73\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(427,363) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></g></svg></mjx-container> is :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Unnilbium"
+        },
+        {
+          "identifier": "B",
+          "content": "Unnilunium"
+        },
+        {
+          "identifier": "C",
+          "content": "Unnilquadium"
+        },
+        {
+          "identifier": "D",
+          "content": "Unniltrium"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "The element with electronic configuration [Rn] <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.452ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"12.983ex\" height=\"2.597ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -948 5738.5 1148\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use></g><g data-mml-node=\"msup\" transform=\"translate(500,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"66\" xlink:href=\"#MJX-TEX-N-66\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(458.3,363) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\" transform=\"translate(500,0)\"></use></g></g></g><g data-mml-node=\"mn\" transform=\"translate(1715.4,0)\"><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\"></use></g><g data-mml-node=\"msup\" transform=\"translate(2215.4,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\"> </text></g><g data-mml-node=\"mi\" transform=\"translate(600,0)\"><use data-c=\"64\" xlink:href=\"#MJX-TEX-N-64\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1189,477.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g><g data-mml-node=\"mn\" transform=\"translate(3808,0)\"><use data-c=\"37\" xlink:href=\"#MJX-TEX-N-37\"></use></g><g data-mml-node=\"msup\" transform=\"translate(4308,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\"> </text></g><g data-mml-node=\"mi\" transform=\"translate(600,0)\"><use data-c=\"73\" xlink:href=\"#MJX-TEX-N-73\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1027,477.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></g></svg></mjx-container> has atomic number <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"6.285ex\" height=\"1.557ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -666 2777.8 688\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1277.8,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\" transform=\"translate(1000,0)\"></use></g></g></g></svg></mjx-container>\n<br><br>\n<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> Its IUPAC name is: Unniltrium"
+    }
+  ]
+}

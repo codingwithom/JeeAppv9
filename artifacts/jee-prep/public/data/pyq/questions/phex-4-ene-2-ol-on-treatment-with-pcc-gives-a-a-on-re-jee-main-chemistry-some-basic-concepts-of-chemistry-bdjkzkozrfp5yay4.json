@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l5bdivfj",
+      "paperTitle": "JEE Main 2022 (Online) 24th June Evening Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "alcohols-phenols-and-ethers",
+      "chapterGroup": "organic-chemistry",
+      "topic": "properties-preparation-and-uses-of-alcohols",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "phex-4-ene-2-ol-on-treatment-with-pcc-gives-a-a-on-re-jee-main-chemistry-some-basic-concepts-of-chemistry-bdjkzkozrfp5yay4",
+      "content": "<p>Hex-4-ene-2-ol on treatment with PCC gives 'A'. 'A' on reaction with sodium hypoiodite gives 'B', which on further heating with soda lime gives 'C'. The compound 'C' is :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "2-pentene"
+        },
+        {
+          "identifier": "B",
+          "content": "proponaldehyde"
+        },
+        {
+          "identifier": "C",
+          "content": "2-butene"
+        },
+        {
+          "identifier": "D",
+          "content": "4-methylpent-2-ene"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l8mep1aq/8486d45d-6ce5-4561-8330-49120f4974d4/0f50cb20-3f9a-11ed-8593-f506a41bac9c/file-1l8mep1ar.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l8mep1aq/8486d45d-6ce5-4561-8330-49120f4974d4/0f50cb20-3f9a-11ed-8593-f506a41bac9c/file-1l8mep1ar.png\" loading=\"lazy\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;max-height: 70vh\" alt=\"JEE Main 2022 (Online) 24th June Evening Shift Chemistry - Alcohols, Phenols and Ethers Question 90 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l8mep1aq/8486d45d-6ce5-4561-8330-49120f4974d4/0f50cb20-3f9a-11ed-8593-f506a41bac9c/file-1l8mep1ar.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l8mep1aq/8486d45d-6ce5-4561-8330-49120f4974d4/0f50cb20-3f9a-11ed-8593-f506a41bac9c/file-1l8mep1ar.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l8mep1aq/8486d45d-6ce5-4561-8330-49120f4974d4/0f50cb20-3f9a-11ed-8593-f506a41bac9c/file-1l8mep1ar.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l8mep1aq/8486d45d-6ce5-4561-8330-49120f4974d4/0f50cb20-3f9a-11ed-8593-f506a41bac9c/file-1l8mep1ar.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l8mep1aq/8486d45d-6ce5-4561-8330-49120f4974d4/0f50cb20-3f9a-11ed-8593-f506a41bac9c/file-1l8mep1ar.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l8mep1aq/8486d45d-6ce5-4561-8330-49120f4974d4/0f50cb20-3f9a-11ed-8593-f506a41bac9c/file-1l8mep1ar.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">"
+    }
+  ]
+}

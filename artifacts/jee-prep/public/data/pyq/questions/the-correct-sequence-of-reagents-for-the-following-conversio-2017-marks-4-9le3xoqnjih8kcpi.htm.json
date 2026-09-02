@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "9le3XOQNjIh8kCPi",
+      "paperTitle": "JEE Main 2017 (Offline)",
+      "year": 2017,
+      "examDate": null,
+      "subject": "chemistry",
+      "chapter": "aldehydes-ketones-and-carboxylic-acids",
+      "chapterGroup": "organic-chemistry",
+      "topic": "chemical-reactions-for-aldehydes-and-ketones",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-correct-sequence-of-reagents-for-the-following-conversio-2017-marks-4-9le3xoqnjih8kcpi.htm",
+      "content": "The correct sequence of reagents for the following conversion will be :<br><br>\n<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l7ynl17j/d00ac2a3-d4b3-481c-862f-8ab973fc0fcf/02963ef0-328a-11ed-8893-19b23ee4c66d/file-1l7ynl17k.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l7ynl17j/d00ac2a3-d4b3-481c-862f-8ab973fc0fcf/02963ef0-328a-11ed-8893-19b23ee4c66d/file-1l7ynl17k.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2017 (Offline) Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 265 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l7ynl17j/d00ac2a3-d4b3-481c-862f-8ab973fc0fcf/02963ef0-328a-11ed-8893-19b23ee4c66d/file-1l7ynl17k.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l7ynl17j/d00ac2a3-d4b3-481c-862f-8ab973fc0fcf/02963ef0-328a-11ed-8893-19b23ee4c66d/file-1l7ynl17k.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l7ynl17j/d00ac2a3-d4b3-481c-862f-8ab973fc0fcf/02963ef0-328a-11ed-8893-19b23ee4c66d/file-1l7ynl17k.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l7ynl17j/d00ac2a3-d4b3-481c-862f-8ab973fc0fcf/02963ef0-328a-11ed-8893-19b23ee4c66d/file-1l7ynl17k.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l7ynl17j/d00ac2a3-d4b3-481c-862f-8ab973fc0fcf/02963ef0-328a-11ed-8893-19b23ee4c66d/file-1l7ynl17k.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l7ynl17j/d00ac2a3-d4b3-481c-862f-8ab973fc0fcf/02963ef0-328a-11ed-8893-19b23ee4c66d/file-1l7ynl17k.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "CH<sub>3</sub>MgBr, H<sup>+</sup>/ CH<sub>3</sub>OH, [Ag(NH<sub>3</sub>)<sub>2</sub>]<sup>+</sup>OH<sup>-</sup>"
+        },
+        {
+          "identifier": "B",
+          "content": "[Ag(NH<sub>3</sub>)<sub>2</sub>]<sup>+</sup>OH<sup>-</sup>, CH<sub>3</sub>MgBr, H<sup>+</sup>/ CH<sub>3</sub>OH"
+        },
+        {
+          "identifier": "C",
+          "content": "[Ag(NH<sub>3</sub>)<sub>2</sub>]<sup>+</sup>OH<sup>-</sup>, H<sup>+</sup>/ CH<sub>3</sub>OH, CH<sub>3</sub>MgBr"
+        },
+        {
+          "identifier": "D",
+          "content": "CH<sub>3</sub>MgBr, [Ag(NH<sub>3</sub>)<sub>2</sub>]<sup>+</sup>OH<sup>-</sup>, H<sup>+</sup>/ CH<sub>3</sub>OH"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/7kejek2vuz4xe/a0b157fc-16d4-44b4-a9a2-d5d410cc5959/b2353920-054b-11ea-a7bc-b7b08ce8d541/file-7kejek2vuz4xf-320w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2017 (Offline) Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 265 English Explanation\">"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "w1abhmj4LOGf4FH3eS1kk0smspd",
+      "paperTitle": "JEE Advanced 2020 Paper 2 Offline",
+      "year": 2020,
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "dipole-moment",
+      "type": "integer",
+      "marks": 3,
+      "negMarks": 1,
+      "permalink": "consider-the-following-compounds-in-the-liquid-form-brb-jee-advanced-chemistry-some-basic-concepts-of-chemistry-iqxpv23go9nmlo5h",
+      "content": "Consider the following compounds in the liquid form :<br><br>O<sub>2</sub>, HF, H<sub>2</sub>O, NH<sub>3</sub>, H<sub>2</sub>O<sub>2</sub>, CCl<sub>4</sub>, CHCl<sub>3</sub>, C<sub>6</sub>H<sub>6</sub>, C<sub>6</sub>H<sub>5</sub>Cl<br><br>When a charged comb is brought near their flowing stream, how many of them show deflection as per the following figure?<br><br> <img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1letdcucw/1bc66322-723e-4c96-bcf2-b307c2da421d/9bef6b00-ba37-11ed-88a1-f386cf70a840/file-1letdcucx.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1letdcucw/1bc66322-723e-4c96-bcf2-b307c2da421d/9bef6b00-ba37-11ed-88a1-f386cf70a840/file-1letdcucx.png\" loading=\"lazy\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;max-height: 60vh\" alt=\"JEE Advanced 2020 Paper 2 Offline Chemistry - Chemical Bonding &amp; Molecular Structure Question 20 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1letdcucw/1bc66322-723e-4c96-bcf2-b307c2da421d/9bef6b00-ba37-11ed-88a1-f386cf70a840/file-1letdcucx.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1letdcucw/1bc66322-723e-4c96-bcf2-b307c2da421d/9bef6b00-ba37-11ed-88a1-f386cf70a840/file-1letdcucx.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1letdcucw/1bc66322-723e-4c96-bcf2-b307c2da421d/9bef6b00-ba37-11ed-88a1-f386cf70a840/file-1letdcucx.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1letdcucw/1bc66322-723e-4c96-bcf2-b307c2da421d/9bef6b00-ba37-11ed-88a1-f386cf70a840/file-1letdcucx.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1letdcucw/1bc66322-723e-4c96-bcf2-b307c2da421d/9bef6b00-ba37-11ed-88a1-f386cf70a840/file-1letdcucx.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1letdcucw/1bc66322-723e-4c96-bcf2-b307c2da421d/9bef6b00-ba37-11ed-88a1-f386cf70a840/file-1letdcucx.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">",
+      "options": [],
+      "correct_options": [],
+      "explanation": "Only polar liquid will be attracted towards charged comb due to the formation of electrically charged droplets in the polar liquid stream, induced by a nearby charged object. Hence, liquid showing deflection are HF, H<sub>2</sub>O, NH<sub>3</sub>, H<sub>2</sub>O<sub>2</sub>, CHCl<sub>3</sub>, C<sub>6</sub>H<sub>5</sub>Cl."
+    }
+  ]
+}

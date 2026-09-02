@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l6gqp075",
+      "paperTitle": "JEE Main 2022 (Online) 26th July Morning Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "alcohols-phenols-and-ethers",
+      "chapterGroup": "organic-chemistry",
+      "topic": "properties-preparation-and-uses-of-phenols",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pthe-difference-in-the-reaction-of-phenol-with-bromine-in-jee-main-chemistry-some-basic-concepts-of-chemistry-rdr4rudhrgzhs8j7",
+      "content": "<p>The difference in the reaction of phenol with bromine in chloroform and bromine in water medium is due to :</p>\n\n ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Hyperconjugation in substrate"
+        },
+        {
+          "identifier": "B",
+          "content": "Polarity of solvent"
+        },
+        {
+          "identifier": "C",
+          "content": "Free radical formation"
+        },
+        {
+          "identifier": "D",
+          "content": "Electromeric effect the substrate"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Phenol gives different products with bromine in\nchloroform and water medium due to the polarity\ndifference between chloroform and water acting as\nsolvent"
+    }
+  ]
+}

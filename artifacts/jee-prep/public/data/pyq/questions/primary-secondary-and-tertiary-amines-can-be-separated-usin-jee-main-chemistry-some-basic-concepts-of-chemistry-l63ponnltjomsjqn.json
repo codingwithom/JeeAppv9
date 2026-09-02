@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "lXqqqlAxX4ZbbG6NXt1kmkisrv9",
+      "paperTitle": "JEE Main 2021 (Online) 17th March Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "compounds-containing-nitrogen",
+      "chapterGroup": "organic-chemistry",
+      "topic": "aliphatic-amines",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "primary-secondary-and-tertiary-amines-can-be-separated-usin-jee-main-chemistry-some-basic-concepts-of-chemistry-l63ponnltjomsjqn",
+      "content": "Primary, secondary and tertiary amines can be separated using:",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Chloroform and KOH"
+        },
+        {
+          "identifier": "B",
+          "content": "Acetyl amide"
+        },
+        {
+          "identifier": "C",
+          "content": "Benzene sulphonic acid"
+        },
+        {
+          "identifier": "D",
+          "content": "para-Toluene sulphonyl chloride"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1kn1sa4pg/a8384e06-ff68-4761-a5ac-a989c74f1b3c/30067140-9482-11eb-a405-cf12956abac3/file-1kn1sa4ph.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 17th March Evening Shift Chemistry - Compounds Containing Nitrogen Question 172 English Explanation\">"
+    }
+  ]
+}

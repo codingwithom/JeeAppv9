@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "ILZMXBbS6Wf9jXCoyj6rP",
+      "paperTitle": "JEE Main 2019 (Online) 9th April Morning Slot",
+      "year": 2019,
+      "examDate": "2019-04-09 09:30",
+      "subject": "chemistry",
+      "chapter": "redox-reactions",
+      "chapterGroup": "physical-chemistry",
+      "topic": "oxidation-number",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-correct-order-of-the-oxidation-states-of-nitrogen-in-no-jee-main-chemistry-some-basic-concepts-of-chemistry-xbgrewdbrnq8m24g",
+      "content": "The correct order of the oxidation states of\nnitrogen in NO, N<sub>2</sub>O, NO<sub>2</sub> and N<sub>2</sub>O<sub>3</sub> is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "NO<sub>2</sub> &lt; NO &lt; N<sub>2</sub>O<sub>3</sub> &lt; N<sub>2</sub>O"
+        },
+        {
+          "identifier": "B",
+          "content": "NO<sub>2</sub> &lt; N<sub>2</sub>O<sub>3</sub> &lt; NO &lt; N<sub>2</sub>O"
+        },
+        {
+          "identifier": "C",
+          "content": "N<sub>2</sub>O &lt; NO &lt; N<sub>2</sub>O<sub>3</sub> &lt; NO<sub>2</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "N<sub>2</sub>O &lt; N<sub>2</sub>O<sub>3</sub> &lt; NO &lt; NO<sub>2</sub>"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "In N<sub>2</sub>O oxidation states of\nnitrogen = +1\n<br><br>In NO oxidation states of\nnitrogen = +2\n<br><br>In N<sub>2</sub>O<sub>3</sub> oxidation states of\nnitrogen = +3\n<br><br>In NO<sub>2</sub> oxidation states of\nnitrogen = +4"
+    }
+  ]
+}

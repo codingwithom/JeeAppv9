@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "SgYdXDfyjDlA5dSk",
+      "paperTitle": "JEE Main 2015 (Offline)",
+      "year": 2015,
+      "examDate": null,
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "isomerism-of-coordination-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-number-of-geometric-isomers-that-can-exist-for-square-pl-2015-marks-4-sgydxdfyjdla5dsk.htm",
+      "content": "The number of geometric isomers that can exist for square planar [Pt (Cl) (py) (NH<sub>3</sub>) (NH<sub>2</sub>OH)]+ is (py = pyridine) :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "3"
+        },
+        {
+          "identifier": "B",
+          "content": "4"
+        },
+        {
+          "identifier": "C",
+          "content": "6"
+        },
+        {
+          "identifier": "D",
+          "content": "2"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Square planar complexes of type <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.566ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"11.397ex\" height=\"2.262ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 5037.7 1000\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D440\" xlink:href=\"#MJX-TEX-I-1D440\"></use></g><g data-mml-node=\"mrow\" transform=\"translate(1217.7,0)\"><g data-mml-node=\"mo\"><use data-c=\"5B\" xlink:href=\"#MJX-TEX-N-5B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(278,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D434\" xlink:href=\"#MJX-TEX-I-1D434\"></use></g><g data-mml-node=\"mi\" transform=\"translate(750,0)\"><use data-c=\"1D435\" xlink:href=\"#MJX-TEX-I-1D435\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1509,0)\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2269,0)\"><use data-c=\"1D437\" xlink:href=\"#MJX-TEX-I-1D437\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(3375,0)\"><use data-c=\"5D\" xlink:href=\"#MJX-TEX-N-5D\"></use></g></g><g data-mml-node=\"mspace\" transform=\"translate(4870.7,0)\"></g></g></g></svg></mjx-container> form three isomers. Their position may be obtained by fixing the position of one ligand and placing at the <i>trans</i> position any one of the remaining three ligands one by one. \n<br><br><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l91otovx/97be41e5-a979-4a4c-b9f6-f8f3ec15c075/6dce7ed0-4801-11ed-8757-0f869593f41f/file-1l91otovy.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l91otovx/97be41e5-a979-4a4c-b9f6-f8f3ec15c075/6dce7ed0-4801-11ed-8757-0f869593f41f/file-1l91otovy.png\" loading=\"lazy\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;max-height: 60vh\" alt=\"JEE Main 2015 (Offline) Chemistry - Coordination Compounds Question 320 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l91otovx/97be41e5-a979-4a4c-b9f6-f8f3ec15c075/6dce7ed0-4801-11ed-8757-0f869593f41f/file-1l91otovy.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l91otovx/97be41e5-a979-4a4c-b9f6-f8f3ec15c075/6dce7ed0-4801-11ed-8757-0f869593f41f/file-1l91otovy.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l91otovx/97be41e5-a979-4a4c-b9f6-f8f3ec15c075/6dce7ed0-4801-11ed-8757-0f869593f41f/file-1l91otovy.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l91otovx/97be41e5-a979-4a4c-b9f6-f8f3ec15c075/6dce7ed0-4801-11ed-8757-0f869593f41f/file-1l91otovy.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l91otovx/97be41e5-a979-4a4c-b9f6-f8f3ec15c075/6dce7ed0-4801-11ed-8757-0f869593f41f/file-1l91otovy.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l91otovx/97be41e5-a979-4a4c-b9f6-f8f3ec15c075/6dce7ed0-4801-11ed-8757-0f869593f41f/file-1l91otovy.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">"
+    }
+  ]
+}

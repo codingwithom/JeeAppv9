@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1lh02rkk8",
+      "paperTitle": "JEE Main 2023 (Online) 8th April Morning Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "alcohols-phenols-and-ethers",
+      "chapterGroup": "organic-chemistry",
+      "topic": "properties-preparation-and-uses-of-alcohols",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pgiven-below-are-two-statements-one-is-labelled-as-assert-jee-main-chemistry-some-basic-concepts-of-chemistry-whske9lwxmtyky2a",
+      "content": "<p>Given below are two statements: One is labelled as Assertion A and the other is labelled as Reason R.</p>\n<p>Assertion A: Butan -1- ol has higher boiling point than ethoxyethane.</p>\n<p>Reason R: Extensive hydrogen bonding leads to stronger association of molecules.</p>\n<p>In the light of the above statements, choose the correct answer from the options given below:</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "A is false but R is true"
+        },
+        {
+          "identifier": "B",
+          "content": "Both A and R are true but R is not the correct explanation of A"
+        },
+        {
+          "identifier": "C",
+          "content": "Both A and R are true and R is the correct explanation of A"
+        },
+        {
+          "identifier": "D",
+          "content": "A is true but R is false"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<p>The boiling point of a substance is dependent on the strength of the intermolecular forces between its molecules. Stronger intermolecular forces require more energy to overcome, thus resulting in a higher boiling point.</p>\n<p>In the case of butan-1-ol and ethoxyethane (diethyl ether), they are both composed of similar numbers of similar atoms, but the type of intermolecular force between the molecules differs due to their functional groups.</p>\n<p>Butan-1-ol is an alcohol and has a -OH group, which allows for hydrogen bonding, a strong type of dipole-dipole interaction. This happens when the hydrogen atom in a polar bond (especially -OH, -NH, -HF) is attracted to some electronegative atom (like O, N, or F) in another molecule. Because of this, butan-1-ol molecules &quot;stick together&quot; more strongly, requiring more heat energy to separate them and thus exhibiting a higher boiling point.</p>\n<p>On the other hand, ethoxyethane, being an ether, does not have the ability to form hydrogen bonds since it lacks the -OH group. The primary intermolecular forces in ethers are relatively weaker van der Waals forces. Therefore, it requires less heat energy to break these forces, resulting in a lower boiling point compared to butan-1-ol.</p>\n<p>So, both A and R are true and R is indeed the correct explanation for A.</p>\n"
+    }
+  ]
+}

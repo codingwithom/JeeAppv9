@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "JQtM1Iubq2JHnySXbobVJ",
+      "paperTitle": "JEE Main 2018 (Online) 15th April Morning Slot",
+      "year": 2018,
+      "examDate": "2018-04-15 09:30",
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "hybridization-and-vsepr-theory",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-decreasing-order-of-bond-angles-in-bf3-nh3-pf3-and-i3-jee-main-chemistry-some-basic-concepts-of-chemistry-xkvw2hik62zydfos",
+      "content": "The decreasing order of bond angles in BF<sub>3</sub>, NH<sub>3</sub>, PF<sub>3</sub> and I<sub>3</sub><sup>-</sup> is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "I<sub>3</sub><sup>-</sup> &gt; NH<sub>3</sub> &gt; PF<sub>3</sub> &gt; BF<sub>3</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "I<sub>3</sub><sup>-</sup> &gt; BF<sub>3</sub> &gt; NH<sub>3</sub> &gt; PF<sub>3</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "BF<sub>3</sub> &gt; I<sub>3</sub><sup>-</sup> &gt; PF<sub>3</sub> &gt; NH<sub>3</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "BF<sub>3</sub>  &gt; NH<sub>3</sub> &gt; PF<sub>3</sub> &gt; I<sub>3</sub><sup>-</sup>"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/6yvB9AS81RLzVhSHT/qI61kMmtSQZv7vX0Dj66Z40gbtiMM/tnbUeYgJPi333Tkz8lAaVW/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2018 (Online) 15th April Morning Slot Chemistry - Chemical Bonding &amp; Molecular Structure Question 226 English Explanation 1\">\n<br><img src=\"https://imagex.cdn.examgoal.net/ZiqotNvpEiO07e0OQ/dUNLkU7ajKe4bJldbQQwAClyclxyo/VdJOUxJCiPfuHCX7Y8jS8B/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2018 (Online) 15th April Morning Slot Chemistry - Chemical Bonding &amp; Molecular Structure Question 226 English Explanation 2\">\n<br><img src=\"https://imagex.cdn.examgoal.net/ksaavZfgbreXCuHUz/m4UOghQ39Vdurdx6GLeBGNfn3rp9W/TKppKZD1jC2y5Jo9RMMBbE/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2018 (Online) 15th April Morning Slot Chemistry - Chemical Bonding &amp; Molecular Structure Question 226 English Explanation 3\">\n<br><img src=\"https://imagex.cdn.examgoal.net/sZXURGLwKddxy1tWF/aqWZMn3y1iVMSeHgvcaNzFfSgdclW/0hXUcD1e8or4B3oLr82ueH/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2018 (Online) 15th April Morning Slot Chemistry - Chemical Bonding &amp; Molecular Structure Question 226 English Explanation 4\">"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktn3e844",
+      "paperTitle": "JEE Main 2021 (Online) 1st September Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "proteins-and-enzymes",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "a-peptide-synthesized-by-the-reactions-of-one-molecule-each-jee-main-chemistry-some-basic-concepts-of-chemistry-b2uagjizceclt0iw",
+      "content": "A peptide synthesized by the reactions of one molecule each of Glycine, Leucine, Aspartic acid and Histidine will have _________ peptide linkages.",
+      "options": [],
+      "correct_options": [],
+      "explanation": "Combination of n amino acids gives a polypeptide\nwith (n – 1) peptide linkages.\n<br><br>Similarly combination of four amino acids gives a\ntetrapeptide with three peptide linkages."
+    }
+  ]
+}

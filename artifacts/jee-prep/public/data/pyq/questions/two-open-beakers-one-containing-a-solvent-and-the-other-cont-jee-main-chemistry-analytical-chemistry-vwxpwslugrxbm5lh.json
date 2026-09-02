@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "ScWeujDIfg1TcG9q6G7k9k2k5epvacb",
+      "paperTitle": "JEE Main 2020 (Online) 7th January Evening Slot",
+      "year": 2020,
+      "examDate": "2020-01-07 14:30",
+      "subject": "chemistry",
+      "chapter": "solutions",
+      "chapterGroup": "physical-chemistry",
+      "topic": "relative-lowering-of-vapour-pressure-and-roults-law",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "two-open-beakers-one-containing-a-solvent-and-the-other-cont-jee-main-chemistry-analytical-chemistry-vwxpwslugrxbm5lh",
+      "content": "Two open beakers one containing a solvent and the other containing a mixture of that solvent\nwith a non voltatile solute are together selated in a container. Over time :\n",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "The volume of the solution increases and the volume of the solvent decreases."
+        },
+        {
+          "identifier": "B",
+          "content": "The volume of solution does not change and the volume of the solvent decreases."
+        },
+        {
+          "identifier": "C",
+          "content": "The volumer of the solution and the solvent does not change."
+        },
+        {
+          "identifier": "D",
+          "content": "The volume of the solution decreases and the volume of the solvent increases.\n"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "There will be lowering in vapour pressure for\nsolution containing non-volatile solute. So,\nthere will be transfer of solvent molecules\nfrom pure solvent to solution and hence,\nvolume of beaker containing solvent (pure) will\ndecrease and volume of beaker containing\nsolution will increase."
+    }
+  ]
+}

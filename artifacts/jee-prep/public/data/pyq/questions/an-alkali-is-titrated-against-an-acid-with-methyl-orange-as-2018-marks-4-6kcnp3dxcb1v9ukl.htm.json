@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "6kCnP3DxcB1v9UKL",
+      "paperTitle": "JEE Main 2018 (Offline)",
+      "year": 2018,
+      "examDate": null,
+      "subject": "chemistry",
+      "chapter": "ionic-equilibrium",
+      "chapterGroup": "physical-chemistry",
+      "topic": "ph-buffer-and-indicators",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "an-alkali-is-titrated-against-an-acid-with-methyl-orange-as-2018-marks-4-6kcnp3dxcb1v9ukl.htm",
+      "content": "An alkali is titrated against an acid with methyl orange as indicator, which of the following is a correct combination?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "\n<table class=\"tg\">\n<thead>\n  <tr>\n    <th class=\"tg-amwm\">Base</th>\n    <th class=\"tg-amwm\">Acid</th>\n    <th class=\"tg-amwm\">End point</th>\n  </tr>\n</thead>\n<tbody>\n  <tr>\n    <td class=\"tg-baqh\">Weak</td>\n    <td class=\"tg-baqh\">Strong</td>\n    <td class=\"tg-baqh\">Colourless to pink</td>\n  </tr>\n</tbody>\n</table>"
+        },
+        {
+          "identifier": "B",
+          "content": "<table class=\"tg\">\n  <tbody><tr>\n    <th class=\"tg-uys7\"><span style=\"font-weight:bold\">Base</span></th>\n    <th class=\"tg-uys7\"><span style=\"font-weight:bold\">Acid</span></th>\n    <th class=\"tg-baqh\"><span style=\"font-weight:bold\">End point</span></th>\n  </tr>\n  <tr>\n    <td class=\"tg-uys7\">Strong</td>\n    <td class=\"tg-uys7\">Strong</td>\n    <td class=\"tg-baqh\">Pinkish red to yellow</td>\n  </tr>\n</tbody></table>"
+        },
+        {
+          "identifier": "C",
+          "content": "<table class=\"tg\">\n  <tbody><tr>\n    <th class=\"tg-uys7\"><span style=\"font-weight:bold\">Base</span></th>\n    <th class=\"tg-uys7\"><span style=\"font-weight:bold\">Acid</span></th>\n    <th class=\"tg-baqh\"><span style=\"font-weight:bold\">End point</span></th>\n  </tr>\n  <tr>\n    <td class=\"tg-uys7\">Weak</td>\n    <td class=\"tg-uys7\">Strong</td>\n    <td class=\"tg-baqh\">Yellow to pinkish red</td>\n  </tr>\n</tbody></table>"
+        },
+        {
+          "identifier": "D",
+          "content": "<table class=\"tg\">\n  <tbody><tr>\n    <th class=\"tg-uys7\"><span style=\"font-weight:bold\">Base</span></th>\n    <th class=\"tg-uys7\"><span style=\"font-weight:bold\">Acid</span></th>\n    <th class=\"tg-baqh\"><span style=\"font-weight:bold\">End point</span></th>\n  </tr>\n  <tr>\n    <td class=\"tg-uys7\">Strong</td>\n    <td class=\"tg-uys7\">Strong</td>\n    <td class=\"tg-baqh\">Pink to colourless</td>\n  </tr>\n</tbody></table>"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<p>Methyl orange is a pH indicator frequently used in titrations because of its clear and distinct colour change. Under acidic conditions, it is red or pinkish red and under alkaline conditions, it turns yellow.</p>\n<p>Let&#39;s consider each of the options :</p>\n<p>Option A : When a weak base is titrated against a strong acid, the solution at the end point is slightly acidic. However, the color change from colorless to pink is not associated with methyl orange.</p>\n<p>Option B : When a strong base is titrated against a strong acid, the solution is neutral at the end point. Methyl orange changes color from pinkish-red in acidic conditions to yellow in basic conditions, so this color change doesn&#39;t match the description.</p>\n<p>Option C : When a weak base is titrated against a strong acid, the solution is slightly acidic at the end point. Methyl orange would change from yellow in the basic solution to red in the acidic solution at the end point. This corresponds to a &quot;yellow to pinkish-red&quot; color change. </p>\n<p>Option D : When a strong base is titrated against a strong acid, the solution is neutral at the end point. The color change described here is &quot;pink to colorless&quot; which does not correspond with the characteristic changes of methyl orange.</p>\n<p>Therefore, the correct answer is Option C: Weak base, Strong acid, Yellow to pinkish-red.</p>"
+    }
+  ]
+}

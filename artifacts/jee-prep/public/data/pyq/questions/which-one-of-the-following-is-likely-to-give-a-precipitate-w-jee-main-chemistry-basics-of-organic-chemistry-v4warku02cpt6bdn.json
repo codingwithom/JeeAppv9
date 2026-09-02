@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "yJbMVAdqAXHeDT2BqQ3rsa0w2w9jx97q3kk",
+      "paperTitle": "JEE Main 2019 (Online) 12th April Evening Slot",
+      "year": 2019,
+      "examDate": "2019-04-12 14:30",
+      "subject": "chemistry",
+      "chapter": "haloalkanes-and-haloarenes",
+      "chapterGroup": "organic-chemistry",
+      "topic": "haloalkanes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-one-of-the-following-is-likely-to-give-a-precipitate-w-jee-main-chemistry-basics-of-organic-chemistry-v4warku02cpt6bdn",
+      "content": "Which one of the following is likely to give a precipitate with AgNO<sub>3</sub> solution ?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "CHCl<sub>3</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "(CH<sub>3</sub>)<sub>3</sub>CCl"
+        },
+        {
+          "identifier": "C",
+          "content": "CCl<sub>4</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "CH<sub>2</sub>=CH–Cl"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "The molecule which will produce stable carbocation will react with AgNO<sub>3</sub> solution.\n<br><br>(CH<sub>3</sub>)<sub>3</sub>CCl <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.307ex\" height=\"3.132ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1373.2 2345.9 1384.2\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"REL\"><g data-mml-node=\"mover\"><g data-mml-node=\"mo\" transform=\"translate(353.9,0)\"><use data-c=\"27F6\" xlink:href=\"#MJX-TEX-N-27F6\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(0,767) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D434\" xlink:href=\"#MJX-TEX-I-1D434\"></use></g><g data-mml-node=\"mi\" transform=\"translate(750,0)\"><use data-c=\"1D454\" xlink:href=\"#MJX-TEX-I-1D454\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1230,0)\"><use data-c=\"1D441\" xlink:href=\"#MJX-TEX-I-1D441\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2118,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-150) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g></g></g></g></g></g></svg></mjx-container> (CH<sub>3</sub>)<sub>3</sub>C<sup>+</sup>NO<sub>3</sub><sup>-</sup> + AgCl(<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.439ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.131ex\" height=\"2.009ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 500 888\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2193\" xlink:href=\"#MJX-TEX-N-2193\"></use></g></g></g></svg></mjx-container>)"
+    }
+  ]
+}

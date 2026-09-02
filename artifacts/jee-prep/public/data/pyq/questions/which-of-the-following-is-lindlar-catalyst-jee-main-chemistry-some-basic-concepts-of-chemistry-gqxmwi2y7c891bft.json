@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "ditAYlp468Ihw58lXJ1kmhtjw42",
+      "paperTitle": "JEE Main 2021 (Online) 16th March Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "hydrocarbons",
+      "chapterGroup": "organic-chemistry",
+      "topic": "reaction-of-alkynes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-is-lindlar-catalyst-jee-main-chemistry-some-basic-concepts-of-chemistry-gqxmwi2y7c891bft",
+      "content": "Which of the following is Lindlar catalyst?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Partially deactivated palladised charcoal"
+        },
+        {
+          "identifier": "B",
+          "content": "Zinc chloride and HCl"
+        },
+        {
+          "identifier": "C",
+          "content": "Sodium and Liquid NH<sub>3</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "Cold dilute solution of KMnO<sub>4</sub>"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Lindlar's catalyst <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> Pd/CaCO<sub>3</sub> + (CH<sub>3</sub>COO)<sub>2</sub> Pb + quinolene"
+    }
+  ]
+}

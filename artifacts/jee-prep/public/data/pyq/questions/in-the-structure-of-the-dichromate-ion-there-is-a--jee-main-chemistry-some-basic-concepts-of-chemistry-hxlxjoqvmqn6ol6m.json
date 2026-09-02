@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktia93a7",
+      "paperTitle": "JEE Main 2021 (Online) 31st August Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "important-compounds-of-transition-elements",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "in-the-structure-of-the-dichromate-ion-there-is-a--jee-main-chemistry-some-basic-concepts-of-chemistry-hxlxjoqvmqn6ol6m",
+      "content": "In the structure of the dichromate ion, there is a :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "linear symmetrical Cr-O-Cr bond."
+        },
+        {
+          "identifier": "B",
+          "content": "non-linear symmetrical Cr-O-Cr bond."
+        },
+        {
+          "identifier": "C",
+          "content": "linear unsymmetrical Cr-O-Cr bond."
+        },
+        {
+          "identifier": "D",
+          "content": "non-linear unsymmetrical Cr-O-Cr bond."
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1ku9wmbon/662734b6-6574-4061-af11-6f942b87b67f/f07d3b70-238e-11ec-bce3-bbf6f2550649/file-1ku9wmboo.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 31st August Morning Shift Chemistry - d and f Block Elements Question 142 English Explanation\"><br><br>Dichromate ion contain non-linear symmetrical Cr-O-Cr bond."
+    }
+  ]
+}

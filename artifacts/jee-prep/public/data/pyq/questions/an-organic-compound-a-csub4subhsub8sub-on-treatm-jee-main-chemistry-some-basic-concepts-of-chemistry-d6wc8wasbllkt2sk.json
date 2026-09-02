@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1krutcjxz",
+      "paperTitle": "JEE Main 2021 (Online) 25th July Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "hydrocarbons",
+      "chapterGroup": "organic-chemistry",
+      "topic": "reaction-of-alkenes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "an-organic-compound-a-csub4subhsub8sub-on-treatm-jee-main-chemistry-some-basic-concepts-of-chemistry-d6wc8wasbllkt2sk",
+      "content": "An organic compound 'A' C<sub>4</sub>H<sub>8</sub> on treatment with KMnO<sub>4</sub>/H<sup>+</sup> yields compound 'B' C<sub>3</sub>H<sub>6</sub>O.<br><br>Compound 'A' also yields compound 'B' an ozonolysis. Compound 'A' is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "2-Methylpropene"
+        },
+        {
+          "identifier": "B",
+          "content": "1-Methylcyclopropane"
+        },
+        {
+          "identifier": "C",
+          "content": "But-2-ene"
+        },
+        {
+          "identifier": "D",
+          "content": "Cyclobutane"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1krwj31g0/eb4a08da-0e98-4961-bebc-9dde63594798/62538100-f49b-11eb-a821-83e09925499d/file-1krwj31g1-320w.jpeg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1krwj31g0/eb4a08da-0e98-4961-bebc-9dde63594798/62538100-f49b-11eb-a821-83e09925499d/file-1krwj31g1-500w.jpeg\"><source media=\"(max-width: 680px)\" srcset=\"https://imagex.cdn.examgoal.net/1krwj31g0/eb4a08da-0e98-4961-bebc-9dde63594798/62538100-f49b-11eb-a821-83e09925499d/file-1krwj31g1-680w.jpeg\"><source media=\"(max-width: 860px)\" srcset=\"https://imagex.cdn.examgoal.net/1krwj31g0/eb4a08da-0e98-4961-bebc-9dde63594798/62538100-f49b-11eb-a821-83e09925499d/file-1krwj31g1-860w.jpeg\"><img src=\"https://imagex.cdn.examgoal.net/1krwj31g0/eb4a08da-0e98-4961-bebc-9dde63594798/62538100-f49b-11eb-a821-83e09925499d/file-1krwj31g1.jpeg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 25th July Morning Shift Chemistry - Hydrocarbons Question 98 English Explanation\"></picture>"
+    }
+  ]
+}

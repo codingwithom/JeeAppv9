@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "bsO11rG2h8VURkIcQKDH2",
+      "paperTitle": "JEE Main 2019 (Online) 8th April Morning Slot",
+      "year": 2019,
+      "examDate": "2019-04-08 09:30",
+      "subject": "mathematics",
+      "chapter": "application-of-derivatives",
+      "chapterGroup": "calculus",
+      "topic": "maxima-and-minima",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "if-s1-and-s2-are-respectively-the-sets-of-local-minimum-and-jee-main-mathematics-trigonometric-functions-and-equations-aq6qhdmwikb2wjjb",
+      "content": "If S<sub>1</sub> and S<sub>2</sub> are respectively the sets of local\nminimum and local maximum points of the function, \n<br><br>ƒ(x) = 9x<sup>4</sup> + 12x<sup>3</sup> – 36x<sup>2</sup> + 25, x <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.312ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 667 580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2208\" xlink:href=\"#MJX-TEX-N-2208\"></use></g></g></g></svg></mjx-container> R,\nthen :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "S<sub>1</sub> = {–1}; S<sub>2</sub> = {0, 2}"
+        },
+        {
+          "identifier": "B",
+          "content": "S<sub>1</sub> = {–2}; S<sub>2</sub> = {0, 1}"
+        },
+        {
+          "identifier": "C",
+          "content": "S<sub>1</sub> = {–2, 0}; S<sub>2</sub> = {1}"
+        },
+        {
+          "identifier": "D",
+          "content": "S<sub>1</sub> = {–2, 1}; S<sub>2</sub> = {0}"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "ƒ(x) = 9x<sup>4</sup> + 12x<sup>3</sup> – 36x<sup>2</sup> + 25\n<br><br>ƒ'(x) = 36x<sup>3</sup> + 36x<sup>2</sup> – 72x\n<br><br>ƒ'(x) = 36x(x<sup>2</sup> + x – 2)\n<br><br>ƒ'(x) = 36x(x + 2)(x - 1)\n<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/7km5fk0trpftr/5f0e1eff-71b5-4d0d-a88e-74ee4f331bcb/e9176ef0-dc8c-11e9-acf6-6d09a288f7f2/file-7km5fk0trpfts-320w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/7km5fk0trpftr/5f0e1eff-71b5-4d0d-a88e-74ee4f331bcb/e9176ef0-dc8c-11e9-acf6-6d09a288f7f2/file-7km5fk0trpfts-500w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 8th April Morning Slot Mathematics - Application of Derivatives Question 173 English Explanation\"></picture>\n<br><br>While moving\nleft to right on x-axis whenever derivative changes sign from\nnegative to positive, we get local minima, and\nwhenever derivative changes sign from positive\nto negative, we get local maxima.\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> S<sub>1</sub> = {–2, 1}\n<br><br>S<sub>2</sub> = {0}"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "5MXK0IIzT59kN5CVrU1kmj67h8f",
+      "paperTitle": "JEE Main 2021 (Online) 17th March Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "electron-gain-enthalpy",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-absolute-value-of-the-electron-gain-enthalpy-of-halogens-jee-main-chemistry-some-basic-concepts-of-chemistry-qvieyzdupy8lhkb8",
+      "content": "The absolute value of the electron gain enthalpy of halogens satisfies :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Cl &gt; Br &gt; F &gt; I"
+        },
+        {
+          "identifier": "B",
+          "content": "Cl &gt; F &gt; Br &gt; I"
+        },
+        {
+          "identifier": "C",
+          "content": "I &gt; Br &gt; Cl &gt; F"
+        },
+        {
+          "identifier": "D",
+          "content": "F &gt; Cl &gt; Br &gt; I"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "The magnitude of electron gain enthalpy of halogen\natoms down the group show abnormal behavior.\nThe |ΔH<sub>eg</sub>| of F is lower than that of Cl due to its\nsmaller size. The incoming electron experiences\nhigher repulsive force due to valence electrons of\nF than Cl. The correct order is Cl &gt; F &gt; Br &gt; I."
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "jsgorkZ6BUuFnGFy",
+      "paperTitle": "JEE Main 2017 (Offline)",
+      "year": 2017,
+      "examDate": null,
+      "subject": "chemistry",
+      "chapter": "thermodynamics",
+      "chapterGroup": "physical-chemistry",
+      "topic": "first-law-of-thermodynamics",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "delta-u-is-equal-to-2017-marks-4-jsgorkz6buufngfy.htm",
+      "content": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.885ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 833 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></svg></mjx-container>U is equal to :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Isobaric work"
+        },
+        {
+          "identifier": "B",
+          "content": "Adiabatic work "
+        },
+        {
+          "identifier": "C",
+          "content": "Isothermal work "
+        },
+        {
+          "identifier": "D",
+          "content": "Isochoric work "
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "From 1st law of thermodynamics\n<br><br>ΔU = q + w\n<br><br>For adiabatic process :\n<br><br>q = 0\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> ΔU = w\n<br><br>So change in internal energy (ΔU) is equal to adiabatic work."
+    }
+  ]
+}

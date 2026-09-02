@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktiauoy6",
+      "paperTitle": "JEE Main 2021 (Online) 31st August Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "alcohols-phenols-and-ethers",
+      "chapterGroup": "organic-chemistry",
+      "topic": "properties-preparation-and-uses-of-alcohols",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "given-below-are-two-statements--one-is-labelled-as-assertio-jee-main-chemistry-some-basic-concepts-of-chemistry-ufyk7h874buwywnk",
+      "content": "Given below are two statements : one is labelled as Assertion (A) and the other is labelled as Reason (R). <br><br>Assertion (A) : Treatment of bromine water with propene yields 1-bromopropan-2-ol.<br><br>Reason (R) : Attack of water on bromonium ion follows Markovnikov rule and results in 1-bromopropan-2-ol.<br><br>In the light of the above statements, choose the most appropriate answer from the options given below :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Both (A) and (R) are true but (R) is not the correct explanation of (A)"
+        },
+        {
+          "identifier": "B",
+          "content": "(A) is false but (R) is true"
+        },
+        {
+          "identifier": "C",
+          "content": "Both (A) and (R) are true and (R) is the correct explanation of (A)"
+        },
+        {
+          "identifier": "D",
+          "content": "(A) is true but (R) is false"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1ku9k9f80/4c772051-8085-4faf-afb8-ab3b2ea1347b/9c274500-235e-11ec-8f4b-fd0f0135951d/file-1ku9k9f81.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 31st August Morning Shift Chemistry - Alcohols, Phenols and Ethers Question 102 English Explanation\"><br><br>Its IUPAC name 1-bromopropan-2-ol<br><br>A and R are true and (R) is the correct explanation of (A)."
+    }
+  ]
+}

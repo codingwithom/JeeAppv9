@@ -1,0 +1,686 @@
+{
+  "exam": "jee-advanced",
+  "subject": "chemistry",
+  "chapterKey": "alcohols-phenols-and-ethers",
+  "title": "Alcohols, Phenols and Ethers | Chemistry | JEE Advanced Previous Year Questions",
+  "chapter": {
+    "metaId": "64546d00-a634-5914-8d01-b0a9c6f86d25",
+    "country": "in",
+    "exam": "jee-advanced",
+    "examGroup": "jee",
+    "key": "alcohols-phenols-and-ethers",
+    "subject": "chemistry",
+    "chapterGroup": "organic-chemistry",
+    "createdAt": "2020-12-28T13:53:25.405Z",
+    "description": null,
+    "keyValuePairs": {},
+    "order": 24,
+    "subjectGroup": null,
+    "title": "Alcohols, Phenols and Ethers",
+    "updatedAt": "2024-07-13T15:03:09.817Z",
+    "type": "chapter",
+    "pyq_stats": [
+      {
+        "year": 2026,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2025,
+        "total": 3,
+        "avg": 1.5,
+        "weightage": 9.38
+      },
+      {
+        "year": 2024,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.94
+      },
+      {
+        "year": 2023,
+        "total": 2,
+        "avg": 1,
+        "weightage": 5.88
+      },
+      {
+        "year": 2022,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2021,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2020,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.78
+      },
+      {
+        "year": 2019,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2018,
+        "total": 2,
+        "avg": 1,
+        "weightage": 5.56
+      },
+      {
+        "year": 2017,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2016,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2015,
+        "total": 2,
+        "avg": 1,
+        "weightage": 5
+      },
+      {
+        "year": 2014,
+        "total": 3,
+        "avg": 1.5,
+        "weightage": 7.5
+      },
+      {
+        "year": 2013,
+        "total": 4,
+        "avg": 2,
+        "weightage": 10
+      },
+      {
+        "year": 2012,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2011,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.33
+      },
+      {
+        "year": 2010,
+        "total": 3,
+        "avg": 1.5,
+        "weightage": 6.38
+      },
+      {
+        "year": 2009,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2008,
+        "total": 3,
+        "avg": 1.5,
+        "weightage": 6.67
+      },
+      {
+        "year": 2007,
+        "total": 3,
+        "avg": 1,
+        "weightage": 6.38
+      },
+      {
+        "year": 2006,
+        "total": 2,
+        "avg": 2,
+        "weightage": 5
+      },
+      {
+        "year": 2005,
+        "total": 1,
+        "avg": 0.33,
+        "weightage": 4.17
+      },
+      {
+        "year": 2004,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2003,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2002,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2001,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2000,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1999,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1998,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1997,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1996,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1995,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1994,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1993,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1992,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1991,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1990,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1989,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1988,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1987,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1986,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1985,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1984,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1983,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1982,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1981,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1980,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1979,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1978,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      }
+    ],
+    "pyq": {
+      "count": {
+        "out_of_syllabus": 0,
+        "total": 31,
+        "private": 0,
+        "public": 31,
+        "bucket": 0
+      },
+      "isTopicWise": true
+    },
+    "image": null,
+    "isOutOfSyllabus": false,
+    "hideFromClassify": false,
+    "groups": [
+      {
+        "title": "Numerical",
+        "key": "integer"
+      },
+      {
+        "title": "MCQ (Single Correct Answer)",
+        "key": "mcq"
+      },
+      {
+        "title": "MCQ (Multiple Correct Answer)",
+        "key": "mcqm"
+      },
+      {
+        "title": "Subjective",
+        "key": "subjective"
+      }
+    ]
+  },
+  "questions": [
+    {
+      "title": "MCQ (Single Correct Answer)",
+      "key": "mcq",
+      "questions": [
+        {
+          "examGroup": "jee",
+          "permalink": "the-correct-reactionreaction-sequence-that-would-produce-a-jee-advanced-chemistry-mc80ndmh2439rjyz",
+          "paperTitle": "JEE Advanced 2025 Paper 2 Online",
+          "question": {
+            "en": {
+              "content": "The correct reaction/reaction sequence that would produce a dicarboxylic acid as the major product is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "in-the-given-reaction-scheme-mathbfp-is-a-phenyl-alkyl-jee-advanced-chemistry-f0jsbcoznrqlvm5f",
+          "paperTitle": "JEE Advanced 2023 Paper 1 Online",
+          "question": {
+            "en": {
+              "content": "In the given reaction scheme, <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.778ex\" height=\"1.552ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -686 786 686\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D40F\" xlink:href=\"#MJX-TEX-B-1D40F\"></use></g></g></g></g></svg></mjx-container> is a phenyl alkyl ether, <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.437ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.955ex\" height=\"2.011ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -696 864 889\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D410\" xlink:href=\"#MJX-TEX-B-1D410\"></use></g></g></g></g></svg></mjx-container> is an aromatic compound; <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.95ex\" height=\"1.577ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -686 862 697\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D411\" xlink:href=\"#MJX-TEX-B-1D411\"></use></g></g></g></g></svg></mjx-container> and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.029ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.446ex\" height=\"1.611ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -699 639 712\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D412\" xlink:href=\"#MJX-TEX-B-1D412\"></use></g></g></g></g></svg></mjx-container> are the major products.<br><br>\n<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1liiqwk7t/f9b789d5-a70e-4305-affb-50e6eb6f2ec3/d555d490-0390-11ee-94c1-c5ddbb3cc6a9/file-1liiqwk7u.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1liiqwk7t/f9b789d5-a70e-4305-affb-50e6eb6f2ec3/d555d490-0390-11ee-94c1-c5ddbb3cc6a9/file-1liiqwk7u.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Advanced 2023 Paper 1 Online Chemistry - Alcohols, Phenols and Ethers Question 8 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1liiqwk7t/f9b789d5-a70e-4305-affb-50e6eb6f2ec3/d555d490-0390-11ee-94c1-c5ddbb3cc6a9/file-1liiqwk7u.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1liiqwk7t/f9b789d5-a70e-4305-affb-50e6eb6f2ec3/d555d490-0390-11ee-94c1-c5ddbb3cc6a9/file-1liiqwk7u.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1liiqwk7t/f9b789d5-a70e-4305-affb-50e6eb6f2ec3/d555d490-0390-11ee-94c1-c5ddbb3cc6a9/file-1liiqwk7u.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1liiqwk7t/f9b789d5-a70e-4305-affb-50e6eb6f2ec3/d555d490-0390-11ee-94c1-c5ddbb3cc6a9/file-1liiqwk7u.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1liiqwk7t/f9b789d5-a70e-4305-affb-50e6eb6f2ec3/d555d490-0390-11ee-94c1-c5ddbb3cc6a9/file-1liiqwk7u.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1liiqwk7t/f9b789d5-a70e-4305-affb-50e6eb6f2ec3/d555d490-0390-11ee-94c1-c5ddbb3cc6a9/file-1liiqwk7u.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"><br>The correct statement about <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.029ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.446ex\" height=\"1.611ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -699 639 712\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D412\" xlink:href=\"#MJX-TEX-B-1D412\"></use></g></g></g></g></svg></mjx-container> is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "list-i-contains-reactions-and-list-ii-contains-major-produc-2018-marks-3-24gp2b6hikrcl19c.htm",
+          "paperTitle": "JEE Advanced 2018 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "<b>LIST-I </b>contains reactions and <b> LIST-II </b>contains major products.   \n<br><br><img class=\"question-image\" src=\"https://imagex.cdn.examgoal.net/vHUY7ehiXvrOEFyvH/eDVh3MkR4kLcGRT2oiDnxJRLlE0fD/omMpQ3ea3UW7z6InAXo3WD/image.png\" loading=\"lazy\" alt=\"JEE Advanced 2018 Paper 2 Offline Chemistry - Alcohols, Phenols and Ethers Question 30 English\"> \n<br><br>Match the reaction in <b>LIST-I</b>  with one or more products in <b>LIST-II</b> and choose the correct option. "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pfor-the-identification-of-beta-naphthol-using-dye-te-jee-advanced-chemistry-some-basic-concepts-of-chemistry-2yyzwnzzou2ojpud",
+          "paperTitle": "JEE Advanced 2014 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "<p>For the identification of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.439ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.296ex\" height=\"2.034ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 573 899\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D6FD\" xlink:href=\"#MJX-TEX-I-1D6FD\"></use></g></g></g></svg></mjx-container>-naphthol using dye test, it is necessary to use</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-acidic-hydrolysis-of-ether-x-shown-below-is-fastest-jee-advanced-chemistry-some-basic-concepts-of-chemistry-gzuusmqo204iymn9",
+          "paperTitle": "JEE Advanced 2014 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "<p>The acidic hydrolysis of ether (X) shown below is fastest when</p>\n<p><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l181b7e7/37521ed4-5f72-41d7-84ec-e3b0310add67/3b461bf0-ad1d-11ec-9281-4dfe83126473/file-1l181b7e8.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l181b7e7/37521ed4-5f72-41d7-84ec-e3b0310add67/3b461bf0-ad1d-11ec-9281-4dfe83126473/file-1l181b7e8.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Advanced 2014 Paper 2 Offline Chemistry - Alcohols, Phenols and Ethers Question 24 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l181b7e7/37521ed4-5f72-41d7-84ec-e3b0310add67/3b461bf0-ad1d-11ec-9281-4dfe83126473/file-1l181b7e8.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l181b7e7/37521ed4-5f72-41d7-84ec-e3b0310add67/3b461bf0-ad1d-11ec-9281-4dfe83126473/file-1l181b7e8.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l181b7e7/37521ed4-5f72-41d7-84ec-e3b0310add67/3b461bf0-ad1d-11ec-9281-4dfe83126473/file-1l181b7e8.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l181b7e7/37521ed4-5f72-41d7-84ec-e3b0310add67/3b461bf0-ad1d-11ec-9281-4dfe83126473/file-1l181b7e8.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l181b7e7/37521ed4-5f72-41d7-84ec-e3b0310add67/3b461bf0-ad1d-11ec-9281-4dfe83126473/file-1l181b7e8.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l181b7e7/37521ed4-5f72-41d7-84ec-e3b0310add67/3b461bf0-ad1d-11ec-9281-4dfe83126473/file-1l181b7e8.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"></p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pmatch-the-chemical-conversations-in-list-i-with-the-appro-jee-advanced-chemistry-some-basic-concepts-of-chemistry-zcdivcfrkeigjcu3",
+          "paperTitle": "JEE Advanced 2013 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "<p>Match the chemical conversions in List I with the appropriate reagents in List II and select the correct answer using the code given below the lists :</p>\n<p><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l1qo4ksr/ea22ef03-a14a-4728-92c7-65d142bdd4e8/909fd1b0-b75c-11ec-9370-27e75f4b6a7c/file-1l1qo4kss.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l1qo4ksr/ea22ef03-a14a-4728-92c7-65d142bdd4e8/909fd1b0-b75c-11ec-9370-27e75f4b6a7c/file-1l1qo4kss.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Advanced 2013 Paper 2 Offline Chemistry - Alcohols, Phenols and Ethers Question 23 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l1qo4ksr/ea22ef03-a14a-4728-92c7-65d142bdd4e8/909fd1b0-b75c-11ec-9370-27e75f4b6a7c/file-1l1qo4kss.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l1qo4ksr/ea22ef03-a14a-4728-92c7-65d142bdd4e8/909fd1b0-b75c-11ec-9370-27e75f4b6a7c/file-1l1qo4kss.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l1qo4ksr/ea22ef03-a14a-4728-92c7-65d142bdd4e8/909fd1b0-b75c-11ec-9370-27e75f4b6a7c/file-1l1qo4kss.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l1qo4ksr/ea22ef03-a14a-4728-92c7-65d142bdd4e8/909fd1b0-b75c-11ec-9370-27e75f4b6a7c/file-1l1qo4kss.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l1qo4ksr/ea22ef03-a14a-4728-92c7-65d142bdd4e8/909fd1b0-b75c-11ec-9370-27e75f4b6a7c/file-1l1qo4kss.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l1qo4ksr/ea22ef03-a14a-4728-92c7-65d142bdd4e8/909fd1b0-b75c-11ec-9370-27e75f4b6a7c/file-1l1qo4kss.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"></p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-compound-that-does-not-liberate-cosub2sub-on-tr-jee-advanced-chemistry-some-basic-concepts-of-chemistry-ir41hfs9ouogiaco",
+          "paperTitle": "JEE Advanced 2013 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "<p>The compound that does NOT liberate CO<sub>2</sub>, on treatment with aqueous sodium bicarbonate solution, is</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pmatch-the-reactions-in-column-i-with-appropriate-types-of-jee-advanced-chemistry-some-basic-concepts-of-chemistry-8eeqspw1k11tx8dt",
+          "paperTitle": "IIT-JEE 2011 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "<p>Match the reactions in Column I with appropriate types of steps/reactive intermediate involved in these reactions as given in Column II :</p>\n<p></p><table style=\"undefined;table-layout: fixed; width: 418px\">\n\n<colgroup>\n\n<col style=\"width: 43px\">\n\n<col style=\"width: 174px\">\n\n<col style=\"width: 42px\">\n\n<col style=\"width: 159px\">\n\n</colgroup>\n\n<thead>\n\n  <tr>\n\n    <th></th>\n\n    <th>Column I</th>\n\n    <th></th>\n\n    <th>Column II</th>\n\n  </tr>\n\n</thead>\n\n<tbody>\n\n  <tr>\n\n    <td>(A)</td>\n\n    <td><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/jaoe38c1m04n191b/fb9ca972-6c7d-45a0-a15d-fffb2db382f1/9ef4c8f0-602a-11ef-a1c9-9b299e7750eb/file-jaoe38c1m04n191c.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/jaoe38c1m04n191b/fb9ca972-6c7d-45a0-a15d-fffb2db382f1/9ef4c8f0-602a-11ef-a1c9-9b299e7750eb/file-jaoe38c1m04n191c.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0 auto;max-height:40vh;vertical-align:baseline\" alt=\"IIT-JEE 2011 Paper 2 Offline Chemistry - Alcohols, Phenols and Ethers Question 19 English 1\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/jaoe38c1m04n191b/fb9ca972-6c7d-45a0-a15d-fffb2db382f1/9ef4c8f0-602a-11ef-a1c9-9b299e7750eb/file-jaoe38c1m04n191c.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/jaoe38c1m04n191b/fb9ca972-6c7d-45a0-a15d-fffb2db382f1/9ef4c8f0-602a-11ef-a1c9-9b299e7750eb/file-jaoe38c1m04n191c.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/jaoe38c1m04n191b/fb9ca972-6c7d-45a0-a15d-fffb2db382f1/9ef4c8f0-602a-11ef-a1c9-9b299e7750eb/file-jaoe38c1m04n191c.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/jaoe38c1m04n191b/fb9ca972-6c7d-45a0-a15d-fffb2db382f1/9ef4c8f0-602a-11ef-a1c9-9b299e7750eb/file-jaoe38c1m04n191c.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/jaoe38c1m04n191b/fb9ca972-6c7d-45a0-a15d-fffb2db382f1/9ef4c8f0-602a-11ef-a1c9-9b299e7750eb/file-jaoe38c1m04n191c.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/jaoe38c1m04n191b/fb9ca972-6c7d-45a0-a15d-fffb2db382f1/9ef4c8f0-602a-11ef-a1c9-9b299e7750eb/file-jaoe38c1m04n191c.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"></td>\n\n    <td>(P)</td>\n\n    <td>Nucleophilic substitution</td>\n\n  </tr>\n\n  <tr>\n\n    <td>(B)</td>\n\n    <td><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/jaoe38c1m04n178t/2482fd79-9176-46f9-8964-046b2e00c891/9d92a0e0-602a-11ef-a1c9-9b299e7750eb/file-jaoe38c1m04n178u.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/jaoe38c1m04n178t/2482fd79-9176-46f9-8964-046b2e00c891/9d92a0e0-602a-11ef-a1c9-9b299e7750eb/file-jaoe38c1m04n178u.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0 auto;max-height:40vh;vertical-align:baseline\" alt=\"IIT-JEE 2011 Paper 2 Offline Chemistry - Alcohols, Phenols and Ethers Question 19 English 2\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/jaoe38c1m04n178t/2482fd79-9176-46f9-8964-046b2e00c891/9d92a0e0-602a-11ef-a1c9-9b299e7750eb/file-jaoe38c1m04n178u.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/jaoe38c1m04n178t/2482fd79-9176-46f9-8964-046b2e00c891/9d92a0e0-602a-11ef-a1c9-9b299e7750eb/file-jaoe38c1m04n178u.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/jaoe38c1m04n178t/2482fd79-9176-46f9-8964-046b2e00c891/9d92a0e0-602a-11ef-a1c9-9b299e7750eb/file-jaoe38c1m04n178u.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/jaoe38c1m04n178t/2482fd79-9176-46f9-8964-046b2e00c891/9d92a0e0-602a-11ef-a1c9-9b299e7750eb/file-jaoe38c1m04n178u.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/jaoe38c1m04n178t/2482fd79-9176-46f9-8964-046b2e00c891/9d92a0e0-602a-11ef-a1c9-9b299e7750eb/file-jaoe38c1m04n178u.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/jaoe38c1m04n178t/2482fd79-9176-46f9-8964-046b2e00c891/9d92a0e0-602a-11ef-a1c9-9b299e7750eb/file-jaoe38c1m04n178u.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"></td>\n\n    <td>(Q)</td>\n\n    <td>Electrophilic substitution</td>\n\n  </tr>\n\n  <tr>\n\n    <td>(C)</td>\n\n    <td><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/jaoe38c1m04n15ju/3227ac32-38b6-4eb3-b197-b9ba9fe3427f/9c438ba0-602a-11ef-a1c9-9b299e7750eb/file-jaoe38c1m04n15jv.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/jaoe38c1m04n15ju/3227ac32-38b6-4eb3-b197-b9ba9fe3427f/9c438ba0-602a-11ef-a1c9-9b299e7750eb/file-jaoe38c1m04n15jv.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0 auto;max-height:40vh;vertical-align:baseline\" alt=\"IIT-JEE 2011 Paper 2 Offline Chemistry - Alcohols, Phenols and Ethers Question 19 English 3\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/jaoe38c1m04n15ju/3227ac32-38b6-4eb3-b197-b9ba9fe3427f/9c438ba0-602a-11ef-a1c9-9b299e7750eb/file-jaoe38c1m04n15jv.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/jaoe38c1m04n15ju/3227ac32-38b6-4eb3-b197-b9ba9fe3427f/9c438ba0-602a-11ef-a1c9-9b299e7750eb/file-jaoe38c1m04n15jv.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/jaoe38c1m04n15ju/3227ac32-38b6-4eb3-b197-b9ba9fe3427f/9c438ba0-602a-11ef-a1c9-9b299e7750eb/file-jaoe38c1m04n15jv.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/jaoe38c1m04n15ju/3227ac32-38b6-4eb3-b197-b9ba9fe3427f/9c438ba0-602a-11ef-a1c9-9b299e7750eb/file-jaoe38c1m04n15jv.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/jaoe38c1m04n15ju/3227ac32-38b6-4eb3-b197-b9ba9fe3427f/9c438ba0-602a-11ef-a1c9-9b299e7750eb/file-jaoe38c1m04n15jv.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/jaoe38c1m04n15ju/3227ac32-38b6-4eb3-b197-b9ba9fe3427f/9c438ba0-602a-11ef-a1c9-9b299e7750eb/file-jaoe38c1m04n15jv.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"></td>\n\n    <td>(R)</td>\n\n    <td>Dehydration</td>\n\n  </tr>\n\n  <tr>\n\n    <td>(D)</td>\n\n    <td><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/jaoe38c1m04n13jp/4d842996-923e-4c7c-b501-69ed91183c57/9ab74650-602a-11ef-a1c9-9b299e7750eb/file-jaoe38c1m04n13jq.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/jaoe38c1m04n13jp/4d842996-923e-4c7c-b501-69ed91183c57/9ab74650-602a-11ef-a1c9-9b299e7750eb/file-jaoe38c1m04n13jq.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0 auto;max-height:40vh;vertical-align:baseline\" alt=\"IIT-JEE 2011 Paper 2 Offline Chemistry - Alcohols, Phenols and Ethers Question 19 English 4\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/jaoe38c1m04n13jp/4d842996-923e-4c7c-b501-69ed91183c57/9ab74650-602a-11ef-a1c9-9b299e7750eb/file-jaoe38c1m04n13jq.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/jaoe38c1m04n13jp/4d842996-923e-4c7c-b501-69ed91183c57/9ab74650-602a-11ef-a1c9-9b299e7750eb/file-jaoe38c1m04n13jq.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/jaoe38c1m04n13jp/4d842996-923e-4c7c-b501-69ed91183c57/9ab74650-602a-11ef-a1c9-9b299e7750eb/file-jaoe38c1m04n13jq.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/jaoe38c1m04n13jp/4d842996-923e-4c7c-b501-69ed91183c57/9ab74650-602a-11ef-a1c9-9b299e7750eb/file-jaoe38c1m04n13jq.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/jaoe38c1m04n13jp/4d842996-923e-4c7c-b501-69ed91183c57/9ab74650-602a-11ef-a1c9-9b299e7750eb/file-jaoe38c1m04n13jq.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/jaoe38c1m04n13jp/4d842996-923e-4c7c-b501-69ed91183c57/9ab74650-602a-11ef-a1c9-9b299e7750eb/file-jaoe38c1m04n13jq.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"></td>\n\n    <td>(S)</td>\n\n    <td>Nucleophilic</td>\n\n  </tr>\n\n  <tr>\n\n    <td></td>\n\n    <td></td>\n\n    <td>(T)</td>\n\n    <td>Carbanion</td>\n\n  </tr>\n\n</tbody>\n\n</table><p></p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pin-the-reactionp-pimagep-pthe-products-arep-jee-advanced-chemistry-some-basic-concepts-of-chemistry-pbwflwq1xmxs9n58",
+          "paperTitle": "IIT-JEE 2010 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "<p>In the reaction</p>\n<p><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1lexkn9vu/25f7d282-e7cc-4a7d-b53e-953b75191b09/4086b410-bc87-11ed-98d6-2f70d8df8cde/file-1lexkn9w1.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1lexkn9vu/25f7d282-e7cc-4a7d-b53e-953b75191b09/4086b410-bc87-11ed-98d6-2f70d8df8cde/file-1lexkn9w1.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"IIT-JEE 2010 Paper 1 Offline Chemistry - Alcohols, Phenols and Ethers Question 18 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1lexkn9vu/25f7d282-e7cc-4a7d-b53e-953b75191b09/4086b410-bc87-11ed-98d6-2f70d8df8cde/file-1lexkn9w1.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1lexkn9vu/25f7d282-e7cc-4a7d-b53e-953b75191b09/4086b410-bc87-11ed-98d6-2f70d8df8cde/file-1lexkn9w1.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1lexkn9vu/25f7d282-e7cc-4a7d-b53e-953b75191b09/4086b410-bc87-11ed-98d6-2f70d8df8cde/file-1lexkn9w1.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1lexkn9vu/25f7d282-e7cc-4a7d-b53e-953b75191b09/4086b410-bc87-11ed-98d6-2f70d8df8cde/file-1lexkn9w1.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1lexkn9vu/25f7d282-e7cc-4a7d-b53e-953b75191b09/4086b410-bc87-11ed-98d6-2f70d8df8cde/file-1lexkn9w1.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1lexkn9vu/25f7d282-e7cc-4a7d-b53e-953b75191b09/4086b410-bc87-11ed-98d6-2f70d8df8cde/file-1lexkn9w1.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"></p>\n<p>the products are :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-compounds-mathbfp-mathbfq-and-mathbfs-were-jee-advanced-chemistry-mugh07m6sfpfhx5t",
+          "paperTitle": "IIT-JEE 2010 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "The compounds <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.439ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.739ex\" height=\"2.014ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -696 2094.7 890\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D40F\" xlink:href=\"#MJX-TEX-B-1D40F\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(786,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1230.7,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D410\" xlink:href=\"#MJX-TEX-B-1D410\"></use></g></g></g></g></svg></mjx-container> and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.029ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.446ex\" height=\"1.611ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -699 639 712\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D412\" xlink:href=\"#MJX-TEX-B-1D412\"></use></g></g></g></g></svg></mjx-container> were separately subjected to nitration using <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.566ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"13.963ex\" height=\"2.262ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 6171.7 1000\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"48\" xlink:href=\"#MJX-TEX-N-48\"></use><use data-c=\"4E\" xlink:href=\"#MJX-TEX-N-4E\" transform=\"translate(750,0)\"></use><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\" transform=\"translate(1500,0)\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(2311,-150) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(2714.6,0)\"><use data-c=\"2F\" xlink:href=\"#MJX-TEX-N-2F\"></use></g><g data-mml-node=\"msub\" transform=\"translate(3214.6,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"48\" xlink:href=\"#MJX-TEX-N-48\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(783,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g><g data-mml-node=\"msub\" transform=\"translate(4401.1,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"53\" xlink:href=\"#MJX-TEX-N-53\"></use><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\" transform=\"translate(556,0)\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(1367,-150) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g></g></svg></mjx-container> mixture. The major product formed in each case respectively, is :<p></p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pcompound-h-is-formed-by-the-reaction-ofp-jee-advanced-chemistry-some-basic-concepts-of-chemistry-wrv74xerfzxsm2om",
+          "paperTitle": "IIT-JEE 2008 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "<p>Compound H is formed by the reaction of</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-structure-of-compound-i-isp-jee-advanced-chemistry-some-basic-concepts-of-chemistry-eoojmu6fg19tragj",
+          "paperTitle": "IIT-JEE 2008 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "<p>The structure of compound I is :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-structures-of-compound-j-k-and-l-respectively-are-jee-advanced-chemistry-some-basic-concepts-of-chemistry-wb0sc5ua9efdi0bu",
+          "paperTitle": "IIT-JEE 2008 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "<p>The structures of compound J, K and L, respectively, are:</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "p-which-one-of-the-following-reagents-is-used-in-the-above-jee-advanced-chemistry-some-basic-concepts-of-chemistry-iqmny5zgwhl49gna",
+          "paperTitle": "IIT-JEE 2007 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "<p> Which one of the following reagents is used in the above reaction?</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-electrophile-in-this-reaction-isp-jee-advanced-chemistry-some-basic-concepts-of-chemistry-yh6xltppou520hnh",
+          "paperTitle": "IIT-JEE 2007 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "<p>The electrophile in this reaction is :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-structure-of-the-intermediate-i-isp-jee-advanced-chemistry-some-basic-concepts-of-chemistry-byijw4jgux0vgykf",
+          "paperTitle": "IIT-JEE 2007 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "<p>The structure of the intermediate I is</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pwhen-benzene-sulphonic-acid-and-p-nitrophenol-are-treat-jee-advanced-chemistry-some-basic-concepts-of-chemistry-r72iq0beuogpsgkw",
+          "paperTitle": "IIT-JEE 2006",
+          "question": {
+            "en": {
+              "content": "<p>When benzene sulphonic acid and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.439ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.138ex\" height=\"1.439ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 503 636\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D45D\" xlink:href=\"#MJX-TEX-I-1D45D\"></use></g></g></g></svg></mjx-container>-nitrophenol are treated with <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.375ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"8.906ex\" height=\"1.97ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 3936.6 870.6\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"4E\" xlink:href=\"#MJX-TEX-N-4E\"></use><use data-c=\"61\" xlink:href=\"#MJX-TEX-N-61\" transform=\"translate(750,0)\"></use><use data-c=\"48\" xlink:href=\"#MJX-TEX-N-48\" transform=\"translate(1250,0)\"></use><use data-c=\"43\" xlink:href=\"#MJX-TEX-N-43\" transform=\"translate(2000,0)\"></use><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\" transform=\"translate(2722,0)\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(3533,-150) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g></g></svg></mjx-container>, the gases released respectively are</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pi-12-dihydroxybenzenep-pii-13-dihydroxybenzene-jee-advanced-chemistry-some-basic-concepts-of-chemistry-7lcmdivm0j2f1gav",
+          "paperTitle": "IIT-JEE 2006",
+          "question": {
+            "en": {
+              "content": "<p>(I) 1,2-Dihydroxybenzene</p>\n<p>(II) 1,3-Dihydroxybenzene</p>\n<p>(III) 1,4-Dihydroxybenzene</p>\n<p>(IV) Hydroxy benzene</p>\n<p>The increasing order of boiling points of the above mentioned alcohols is</p>"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "MCQ (More than One Correct Answer)",
+      "key": "mcqm",
+      "questions": [
+        {
+          "examGroup": "jee",
+          "permalink": "pfor-the-reaction-sequence-given-below-the-correct-statem-jee-advanced-chemistry-oga0gd9wxdiowdte",
+          "paperTitle": "JEE Advanced 2025 Paper 2 Online",
+          "question": {
+            "en": {
+              "content": "<p>For the reaction sequence given below, the correct statement(s) is(are)</p><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/jaoe38c1maxf94at/533bafdf-a514-4e09-8f7a-3cbc5ded8f05/155c3a60-35f9-11f0-84ec-6defa35971db/file-jaoe38c1maxf94au.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/jaoe38c1maxf94at/533bafdf-a514-4e09-8f7a-3cbc5ded8f05/155c3a60-35f9-11f0-84ec-6defa35971db/file-jaoe38c1maxf94au.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0 auto;max-height:40vh;vertical-align:baseline\" alt=\"JEE Advanced 2025 Paper 2 Online Chemistry - Alcohols, Phenols and Ethers Question 4 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/jaoe38c1maxf94at/533bafdf-a514-4e09-8f7a-3cbc5ded8f05/155c3a60-35f9-11f0-84ec-6defa35971db/file-jaoe38c1maxf94au.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/jaoe38c1maxf94at/533bafdf-a514-4e09-8f7a-3cbc5ded8f05/155c3a60-35f9-11f0-84ec-6defa35971db/file-jaoe38c1maxf94au.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/jaoe38c1maxf94at/533bafdf-a514-4e09-8f7a-3cbc5ded8f05/155c3a60-35f9-11f0-84ec-6defa35971db/file-jaoe38c1maxf94au.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/jaoe38c1maxf94at/533bafdf-a514-4e09-8f7a-3cbc5ded8f05/155c3a60-35f9-11f0-84ec-6defa35971db/file-jaoe38c1maxf94au.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/jaoe38c1maxf94at/533bafdf-a514-4e09-8f7a-3cbc5ded8f05/155c3a60-35f9-11f0-84ec-6defa35971db/file-jaoe38c1maxf94au.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/jaoe38c1maxf94at/533bafdf-a514-4e09-8f7a-3cbc5ded8f05/155c3a60-35f9-11f0-84ec-6defa35971db/file-jaoe38c1maxf94au.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "preaction-of-iso-propylbenzene-with-mathrmo2-followe-jee-advanced-chemistry-ejrytcizlwblq4dy",
+          "paperTitle": "JEE Advanced 2024 Paper 1 Online",
+          "question": {
+            "en": {
+              "content": "<p>Reaction of iso-propylbenzene with <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.748ex\" height=\"1.934ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 1214.6 855\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(811,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></svg></mjx-container> followed by the treatment with <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.375ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.877ex\" height=\"2.129ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -775.2 2597.7 940.8\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"48\" xlink:href=\"#MJX-TEX-N-48\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(783,-150) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g><g data-mml-node=\"msup\" transform=\"translate(1186.6,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(811,363) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g></g></g></g></g></svg></mjx-container>forms phenol and a by-product <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.778ex\" height=\"1.552ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -686 786 686\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D40F\" xlink:href=\"#MJX-TEX-B-1D40F\"></use></g></g></g></g></svg></mjx-container>. Reaction of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.778ex\" height=\"1.552ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -686 786 686\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D40F\" xlink:href=\"#MJX-TEX-B-1D40F\"></use></g></g></g></g></svg></mjx-container> with 3 equivalents of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.25ex\" height=\"1.934ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 1436.6 855\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"43\" xlink:href=\"#MJX-TEX-N-43\"></use><use data-c=\"6C\" xlink:href=\"#MJX-TEX-N-6C\" transform=\"translate(722,0)\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(1033,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></svg></mjx-container> gives compound <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.437ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.955ex\" height=\"2.011ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -696 864 889\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D410\" xlink:href=\"#MJX-TEX-B-1D410\"></use></g></g></g></g></svg></mjx-container>. Treatment of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.437ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.955ex\" height=\"2.011ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -696 864 889\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D410\" xlink:href=\"#MJX-TEX-B-1D410\"></use></g></g></g></g></svg></mjx-container> with <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.566ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"8.97ex\" height=\"2.262ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 3964.6 1000\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"43\" xlink:href=\"#MJX-TEX-N-43\"></use><use data-c=\"61\" xlink:href=\"#MJX-TEX-N-61\" transform=\"translate(722,0)\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(1222,0)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1611,0)\"><g data-mml-node=\"mi\"><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\"></use><use data-c=\"48\" xlink:href=\"#MJX-TEX-N-48\" transform=\"translate(778,0)\"></use></g></g><g data-mml-node=\"msub\" transform=\"translate(3139,0)\"><g data-mml-node=\"mo\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g><g data-mml-node=\"mn\" transform=\"translate(422,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></svg></mjx-container> produces compound <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.95ex\" height=\"1.577ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -686 862 697\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D411\" xlink:href=\"#MJX-TEX-B-1D411\"></use></g></g></g></g></svg></mjx-container> and calcium salt <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.029ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.446ex\" height=\"1.611ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -699 639 712\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D412\" xlink:href=\"#MJX-TEX-B-1D412\"></use></g></g></g></g></svg></mjx-container>.</p>\n\n<p>The correct statement(s) regarding <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.439ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"7.695ex\" height=\"2.014ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -696 3401.3 890\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D40F\" xlink:href=\"#MJX-TEX-B-1D40F\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(786,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1230.7,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D410\" xlink:href=\"#MJX-TEX-B-1D410\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(2094.7,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2539.3,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D411\" xlink:href=\"#MJX-TEX-B-1D411\"></use></g></g></g></g></svg></mjx-container> and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.029ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.446ex\" height=\"1.611ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -699 639 712\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D412\" xlink:href=\"#MJX-TEX-B-1D412\"></use></g></g></g></g></svg></mjx-container> is(are)</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "consider-the-following-reaction-scheme-and-choose-the-correc-jee-advanced-chemistry-e2sd4ihdoxnrz50m",
+          "paperTitle": "JEE Advanced 2023 Paper 1 Online",
+          "question": {
+            "en": {
+              "content": "Consider the following reaction scheme and choose the correct option(s) for the major products <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.437ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.955ex\" height=\"2.011ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -696 864 889\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D410\" xlink:href=\"#MJX-TEX-B-1D410\"></use></g></g></g></g></svg></mjx-container>, <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.95ex\" height=\"1.577ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -686 862 697\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D411\" xlink:href=\"#MJX-TEX-B-1D411\"></use></g></g></g></g></svg></mjx-container> and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.029ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.446ex\" height=\"1.611ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -699 639 712\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D412\" xlink:href=\"#MJX-TEX-B-1D412\"></use></g></g></g></g></svg></mjx-container>.<br><br>\n<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1liiqmjct/a6961da2-9a99-4ced-ad5c-0ea17fcdd284/be9422d0-038f-11ee-add3-0f52d4fe427d/file-1liiqmjcu.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1liiqmjct/a6961da2-9a99-4ced-ad5c-0ea17fcdd284/be9422d0-038f-11ee-add3-0f52d4fe427d/file-1liiqmjcu.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Advanced 2023 Paper 1 Online Chemistry - Alcohols, Phenols and Ethers Question 9 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1liiqmjct/a6961da2-9a99-4ced-ad5c-0ea17fcdd284/be9422d0-038f-11ee-add3-0f52d4fe427d/file-1liiqmjcu.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1liiqmjct/a6961da2-9a99-4ced-ad5c-0ea17fcdd284/be9422d0-038f-11ee-add3-0f52d4fe427d/file-1liiqmjcu.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1liiqmjct/a6961da2-9a99-4ced-ad5c-0ea17fcdd284/be9422d0-038f-11ee-add3-0f52d4fe427d/file-1liiqmjcu.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1liiqmjct/a6961da2-9a99-4ced-ad5c-0ea17fcdd284/be9422d0-038f-11ee-add3-0f52d4fe427d/file-1liiqmjcu.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1liiqmjct/a6961da2-9a99-4ced-ad5c-0ea17fcdd284/be9422d0-038f-11ee-add3-0f52d4fe427d/file-1liiqmjcu.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1liiqmjct/a6961da2-9a99-4ced-ad5c-0ea17fcdd284/be9422d0-038f-11ee-add3-0f52d4fe427d/file-1liiqmjcu.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "in-the-following-reaction-sequence-the-correct-structures-2018-marks-4-sbg3pwr42miq7v2n.htm",
+          "paperTitle": "JEE Advanced 2018 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "In the following reaction sequence, the correct structure(s) of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.928ex\" height=\"1.545ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -683 852 683\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D44B\" xlink:href=\"#MJX-TEX-I-1D44B\"></use></g></g></g></svg></mjx-container> is (are) \n<br><br><img class=\"question-image\" src=\"https://imagex.cdn.examgoal.net/9V7fpcS0YtfeTr8Ct/qgFoHwfRD7k3PXHWBUkgS3mLsxHLN/nkPGG4QQj5VfhUAgGH1gd2/image.png\" loading=\"lazy\" alt=\"JEE Advanced 2018 Paper 1 Offline Chemistry - Alcohols, Phenols and Ethers Question 31 English\">  "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-reactivity-of-compound-z-with-different-halogens-under-a-jee-advanced-chemistry-some-basic-concepts-of-chemistry-xogreaxpmi9h5hmh",
+          "paperTitle": "JEE Advanced 2014 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "The reactivity of compound Z with different halogens under appropriate conditions is given below<br><br><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l1anz6zy/70f61afc-1874-4524-8e87-28bf8a750c02/7086edd0-ae8f-11ec-8c7e-1b4a74698496/file-1l1anz6zz.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l1anz6zy/70f61afc-1874-4524-8e87-28bf8a750c02/7086edd0-ae8f-11ec-8c7e-1b4a74698496/file-1l1anz6zz.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Advanced 2014 Paper 1 Offline Chemistry - Alcohols, Phenols and Ethers Question 28 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l1anz6zy/70f61afc-1874-4524-8e87-28bf8a750c02/7086edd0-ae8f-11ec-8c7e-1b4a74698496/file-1l1anz6zz.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l1anz6zy/70f61afc-1874-4524-8e87-28bf8a750c02/7086edd0-ae8f-11ec-8c7e-1b4a74698496/file-1l1anz6zz.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l1anz6zy/70f61afc-1874-4524-8e87-28bf8a750c02/7086edd0-ae8f-11ec-8c7e-1b4a74698496/file-1l1anz6zz.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l1anz6zy/70f61afc-1874-4524-8e87-28bf8a750c02/7086edd0-ae8f-11ec-8c7e-1b4a74698496/file-1l1anz6zz.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l1anz6zy/70f61afc-1874-4524-8e87-28bf8a750c02/7086edd0-ae8f-11ec-8c7e-1b4a74698496/file-1l1anz6zz.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l1anz6zy/70f61afc-1874-4524-8e87-28bf8a750c02/7086edd0-ae8f-11ec-8c7e-1b4a74698496/file-1l1anz6zz.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"><br>The observed pattern of electrophilic substitution can be explained by"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pin-the-following-reaction-the-productproducts-formed-is-jee-advanced-chemistry-some-basic-concepts-of-chemistry-aetvrxrpsfdvplgr",
+          "paperTitle": "JEE Advanced 2013 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "<p>In the following reaction, the product/products formed is/are</p>\n<p> <img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l1qon7am/b7227e2f-d333-47aa-b94c-97759e69f9ff/96910ce0-b75e-11ec-acd6-e509a939c26f/file-1l1qon7an.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l1qon7am/b7227e2f-d333-47aa-b94c-97759e69f9ff/96910ce0-b75e-11ec-acd6-e509a939c26f/file-1l1qon7an.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Advanced 2013 Paper 2 Offline Chemistry - Alcohols, Phenols and Ethers Question 22 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l1qon7am/b7227e2f-d333-47aa-b94c-97759e69f9ff/96910ce0-b75e-11ec-acd6-e509a939c26f/file-1l1qon7an.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l1qon7am/b7227e2f-d333-47aa-b94c-97759e69f9ff/96910ce0-b75e-11ec-acd6-e509a939c26f/file-1l1qon7an.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l1qon7am/b7227e2f-d333-47aa-b94c-97759e69f9ff/96910ce0-b75e-11ec-acd6-e509a939c26f/file-1l1qon7an.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l1qon7am/b7227e2f-d333-47aa-b94c-97759e69f9ff/96910ce0-b75e-11ec-acd6-e509a939c26f/file-1l1qon7an.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l1qon7am/b7227e2f-d333-47aa-b94c-97759e69f9ff/96910ce0-b75e-11ec-acd6-e509a939c26f/file-1l1qon7an.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l1qon7am/b7227e2f-d333-47aa-b94c-97759e69f9ff/96910ce0-b75e-11ec-acd6-e509a939c26f/file-1l1qon7an.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"></p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-major-products-of-the-following-reaction-isarep-jee-advanced-chemistry-some-basic-concepts-of-chemistry-d1isa8dsdmhmkhbw",
+          "paperTitle": "JEE Advanced 2013 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "<p>The major product(s) of the following reaction is(are)</p>\n<p><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l1qkwcmr/5f81dea6-f0e2-4a21-9991-ca8a18d2b180/f0748430-b74f-11ec-ba54-3d4992e361c3/file-1l1qkwcms.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l1qkwcmr/5f81dea6-f0e2-4a21-9991-ca8a18d2b180/f0748430-b74f-11ec-ba54-3d4992e361c3/file-1l1qkwcms.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Advanced 2013 Paper 2 Offline Chemistry - Alcohols, Phenols and Ethers Question 21 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l1qkwcmr/5f81dea6-f0e2-4a21-9991-ca8a18d2b180/f0748430-b74f-11ec-ba54-3d4992e361c3/file-1l1qkwcms.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l1qkwcmr/5f81dea6-f0e2-4a21-9991-ca8a18d2b180/f0748430-b74f-11ec-ba54-3d4992e361c3/file-1l1qkwcms.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l1qkwcmr/5f81dea6-f0e2-4a21-9991-ca8a18d2b180/f0748430-b74f-11ec-ba54-3d4992e361c3/file-1l1qkwcms.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l1qkwcmr/5f81dea6-f0e2-4a21-9991-ca8a18d2b180/f0748430-b74f-11ec-ba54-3d4992e361c3/file-1l1qkwcms.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l1qkwcmr/5f81dea6-f0e2-4a21-9991-ca8a18d2b180/f0748430-b74f-11ec-ba54-3d4992e361c3/file-1l1qkwcms.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l1qkwcmr/5f81dea6-f0e2-4a21-9991-ca8a18d2b180/f0748430-b74f-11ec-ba54-3d4992e361c3/file-1l1qkwcms.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"></p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pin-the-reactionp-pimagep-pthe-intermediates-i-jee-advanced-chemistry-some-basic-concepts-of-chemistry-zz9sw69sxeirgxre",
+          "paperTitle": "IIT-JEE 2010 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "<p>In the reaction</p>\n<p><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1lexlu1os/49259a5d-75f1-4de0-8090-025087605d30/e5fbe4c0-bc8b-11ed-98d6-2f70d8df8cde/file-1lexlu1ot.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1lexlu1os/49259a5d-75f1-4de0-8090-025087605d30/e5fbe4c0-bc8b-11ed-98d6-2f70d8df8cde/file-1lexlu1ot.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"IIT-JEE 2010 Paper 1 Offline Chemistry - Alcohols, Phenols and Ethers Question 17 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1lexlu1os/49259a5d-75f1-4de0-8090-025087605d30/e5fbe4c0-bc8b-11ed-98d6-2f70d8df8cde/file-1lexlu1ot.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1lexlu1os/49259a5d-75f1-4de0-8090-025087605d30/e5fbe4c0-bc8b-11ed-98d6-2f70d8df8cde/file-1lexlu1ot.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1lexlu1os/49259a5d-75f1-4de0-8090-025087605d30/e5fbe4c0-bc8b-11ed-98d6-2f70d8df8cde/file-1lexlu1ot.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1lexlu1os/49259a5d-75f1-4de0-8090-025087605d30/e5fbe4c0-bc8b-11ed-98d6-2f70d8df8cde/file-1lexlu1ot.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1lexlu1os/49259a5d-75f1-4de0-8090-025087605d30/e5fbe4c0-bc8b-11ed-98d6-2f70d8df8cde/file-1lexlu1ot.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1lexlu1os/49259a5d-75f1-4de0-8090-025087605d30/e5fbe4c0-bc8b-11ed-98d6-2f70d8df8cde/file-1lexlu1ot.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"></p>\n<p>The intermediate(s) is(are)</p>"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Numerical",
+      "key": "integer",
+      "questions": [
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-reaction-sequence-given-below-is-carried-out-with-16-jee-advanced-chemistry-cexwnax0afumy3lb",
+          "paperTitle": "JEE Advanced 2025 Paper 1 Online",
+          "question": {
+            "en": {
+              "content": "<p>The reaction sequence given below is carried out with 16 moles of X. The yield of the major product in each step is given below the product in parentheses. The amount (in grams) of <b>S</b> produced is ______.</p><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/jaoe38c1mb1ntg6k/e3e8a968-1307-409b-b41a-db55d674e870/b65a16c0-384d-11f0-aca4-dfd8c6b21521/file-jaoe38c1mb1ntg6l.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/jaoe38c1mb1ntg6k/e3e8a968-1307-409b-b41a-db55d674e870/b65a16c0-384d-11f0-aca4-dfd8c6b21521/file-jaoe38c1mb1ntg6l.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0 auto;max-height:40vh;vertical-align:baseline\" alt=\"JEE Advanced 2025 Paper 1 Online Chemistry - Alcohols, Phenols and Ethers Question 3 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/jaoe38c1mb1ntg6k/e3e8a968-1307-409b-b41a-db55d674e870/b65a16c0-384d-11f0-aca4-dfd8c6b21521/file-jaoe38c1mb1ntg6l.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/jaoe38c1mb1ntg6k/e3e8a968-1307-409b-b41a-db55d674e870/b65a16c0-384d-11f0-aca4-dfd8c6b21521/file-jaoe38c1mb1ntg6l.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/jaoe38c1mb1ntg6k/e3e8a968-1307-409b-b41a-db55d674e870/b65a16c0-384d-11f0-aca4-dfd8c6b21521/file-jaoe38c1mb1ntg6l.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/jaoe38c1mb1ntg6k/e3e8a968-1307-409b-b41a-db55d674e870/b65a16c0-384d-11f0-aca4-dfd8c6b21521/file-jaoe38c1mb1ntg6l.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/jaoe38c1mb1ntg6k/e3e8a968-1307-409b-b41a-db55d674e870/b65a16c0-384d-11f0-aca4-dfd8c6b21521/file-jaoe38c1mb1ntg6l.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/jaoe38c1mb1ntg6k/e3e8a968-1307-409b-b41a-db55d674e870/b65a16c0-384d-11f0-aca4-dfd8c6b21521/file-jaoe38c1mb1ntg6l.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"><p><b>Use:</b> Atomic mass (in amu): H = 1, C = 12, O = 16, Br = 80</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "an-organic-compound-csub8subhsub10subosub2sub-jee-advanced-chemistry-some-basic-concepts-of-chemistry-1gejuqwucrw5sikn",
+          "paperTitle": "JEE Advanced 2020 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "An organic compound (C<sub>8</sub>H<sub>10</sub>O<sub>2</sub>) rotates plane-porarised light. It produces pink color with neutral FeCl<sub>3</sub> solution. What is the total number of all the possible isomers for this compound?"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-number-of-hydroxyl-groups-in-q-is-p-jee-advanced-chemistry-some-basic-concepts-of-chemistry-xjcdi9su3nfrfx9t",
+          "paperTitle": "JEE Advanced 2015 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "<p>The number of hydroxyl group(s) in Q is ___________.</p>\n<p><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l0w6tsj9/6ea6e77c-9649-4522-87bf-5d49d0b3bd2e/66058e50-a699-11ec-b9eb-53930cade2cb/file-1l0w6tsja.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l0w6tsj9/6ea6e77c-9649-4522-87bf-5d49d0b3bd2e/66058e50-a699-11ec-b9eb-53930cade2cb/file-1l0w6tsja.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Advanced 2015 Paper 2 Offline Chemistry - Alcohols, Phenols and Ethers Question 27 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l0w6tsj9/6ea6e77c-9649-4522-87bf-5d49d0b3bd2e/66058e50-a699-11ec-b9eb-53930cade2cb/file-1l0w6tsja.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l0w6tsj9/6ea6e77c-9649-4522-87bf-5d49d0b3bd2e/66058e50-a699-11ec-b9eb-53930cade2cb/file-1l0w6tsja.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l0w6tsj9/6ea6e77c-9649-4522-87bf-5d49d0b3bd2e/66058e50-a699-11ec-b9eb-53930cade2cb/file-1l0w6tsja.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l0w6tsj9/6ea6e77c-9649-4522-87bf-5d49d0b3bd2e/66058e50-a699-11ec-b9eb-53930cade2cb/file-1l0w6tsja.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l0w6tsj9/6ea6e77c-9649-4522-87bf-5d49d0b3bd2e/66058e50-a699-11ec-b9eb-53930cade2cb/file-1l0w6tsja.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l0w6tsj9/6ea6e77c-9649-4522-87bf-5d49d0b3bd2e/66058e50-a699-11ec-b9eb-53930cade2cb/file-1l0w6tsja.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"></p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-number-of-resonance-structure-for-n-is-p-jee-advanced-chemistry-some-basic-concepts-of-chemistry-ifioiqarogdwmhni",
+          "paperTitle": "JEE Advanced 2015 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "<p>The number of resonance structure for N is _________.</p>\n<p><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l13htfpf/630d275a-fa80-40ed-b203-4eac57ae6d16/dd13ea20-aa9d-11ec-9e36-1782c85ce4cb/file-1l13htfpg.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l13htfpf/630d275a-fa80-40ed-b203-4eac57ae6d16/dd13ea20-aa9d-11ec-9e36-1782c85ce4cb/file-1l13htfpg.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Advanced 2015 Paper 1 Offline Chemistry - Alcohols, Phenols and Ethers Question 26 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l13htfpf/630d275a-fa80-40ed-b203-4eac57ae6d16/dd13ea20-aa9d-11ec-9e36-1782c85ce4cb/file-1l13htfpg.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l13htfpf/630d275a-fa80-40ed-b203-4eac57ae6d16/dd13ea20-aa9d-11ec-9e36-1782c85ce4cb/file-1l13htfpg.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l13htfpf/630d275a-fa80-40ed-b203-4eac57ae6d16/dd13ea20-aa9d-11ec-9e36-1782c85ce4cb/file-1l13htfpg.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l13htfpf/630d275a-fa80-40ed-b203-4eac57ae6d16/dd13ea20-aa9d-11ec-9e36-1782c85ce4cb/file-1l13htfpg.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l13htfpf/630d275a-fa80-40ed-b203-4eac57ae6d16/dd13ea20-aa9d-11ec-9e36-1782c85ce4cb/file-1l13htfpg.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l13htfpf/630d275a-fa80-40ed-b203-4eac57ae6d16/dd13ea20-aa9d-11ec-9e36-1782c85ce4cb/file-1l13htfpg.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"></p>"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Subjective",
+      "key": "subjective",
+      "questions": [
+        {
+          "examGroup": "jee",
+          "permalink": "pin-the-following-reactionp-pimagep-pidentify-x-jee-advanced-chemistry-some-basic-concepts-of-chemistry-zsq9novwgf28ksdw",
+          "paperTitle": "IIT-JEE 2005 Mains",
+          "question": {
+            "en": {
+              "content": "<p>In the following reaction</p>\n<p><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/jaoe38c1mh9kyrws/bd4f0719-f3ae-4d85-a41c-f580651638f6/2089f0c0-b372-11f0-b034-2711d08df967/file-jaoe38c1mh9kyrwt.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/jaoe38c1mh9kyrws/bd4f0719-f3ae-4d85-a41c-f580651638f6/2089f0c0-b372-11f0-b034-2711d08df967/file-jaoe38c1mh9kyrwt.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0 auto;max-height:40vh;vertical-align:baseline\" alt=\"IIT-JEE 2005 Mains Chemistry - Alcohols, Phenols and Ethers Question 10 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/jaoe38c1mh9kyrws/bd4f0719-f3ae-4d85-a41c-f580651638f6/2089f0c0-b372-11f0-b034-2711d08df967/file-jaoe38c1mh9kyrwt.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/jaoe38c1mh9kyrws/bd4f0719-f3ae-4d85-a41c-f580651638f6/2089f0c0-b372-11f0-b034-2711d08df967/file-jaoe38c1mh9kyrwt.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/jaoe38c1mh9kyrws/bd4f0719-f3ae-4d85-a41c-f580651638f6/2089f0c0-b372-11f0-b034-2711d08df967/file-jaoe38c1mh9kyrwt.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/jaoe38c1mh9kyrws/bd4f0719-f3ae-4d85-a41c-f580651638f6/2089f0c0-b372-11f0-b034-2711d08df967/file-jaoe38c1mh9kyrwt.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/jaoe38c1mh9kyrws/bd4f0719-f3ae-4d85-a41c-f580651638f6/2089f0c0-b372-11f0-b034-2711d08df967/file-jaoe38c1mh9kyrwt.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/jaoe38c1mh9kyrws/bd4f0719-f3ae-4d85-a41c-f580651638f6/2089f0c0-b372-11f0-b034-2711d08df967/file-jaoe38c1mh9kyrwt.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"></p>\n<p>Identify X and Y.</p>"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

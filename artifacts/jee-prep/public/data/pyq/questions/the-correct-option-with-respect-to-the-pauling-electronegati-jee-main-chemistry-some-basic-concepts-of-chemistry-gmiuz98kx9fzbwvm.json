@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "1NYoLvdsw8RDFpOlqJnUx",
+      "paperTitle": "JEE Main 2019 (Online) 11th January Evening Slot",
+      "year": 2019,
+      "examDate": "2019-01-11 14:30",
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "electronegativity",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-correct-option-with-respect-to-the-pauling-electronegati-jee-main-chemistry-some-basic-concepts-of-chemistry-gmiuz98kx9fzbwvm",
+      "content": "The correct option with respect to the Pauling electronegativity values of the element is : ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Ga &lt; Ge"
+        },
+        {
+          "identifier": "B",
+          "content": "Si &lt; Al"
+        },
+        {
+          "identifier": "C",
+          "content": "Te &gt; Se"
+        },
+        {
+          "identifier": "D",
+          "content": "P &gt; S"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Electronegativity increases from left to right in a period and decreases down the group. The correct orders are\n<br><br>Si &gt; Al, Ga &lt; Ge, Te &lt; Se and P &lt; S."
+    }
+  ]
+}

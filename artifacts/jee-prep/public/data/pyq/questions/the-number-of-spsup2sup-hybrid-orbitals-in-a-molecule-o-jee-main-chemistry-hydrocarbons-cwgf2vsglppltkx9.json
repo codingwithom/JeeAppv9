@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "EH7XWeAT0VLMyVxT5e7k9k2k5llkutr",
+      "paperTitle": "JEE Main 2020 (Online) 9th January Evening Slot",
+      "year": 2020,
+      "examDate": "2020-01-09 14:30",
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "hybridization-and-vsepr-theory",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-number-of-spsup2sup-hybrid-orbitals-in-a-molecule-o-jee-main-chemistry-hydrocarbons-cwgf2vsglppltkx9",
+      "content": "The number of sp<sup>2</sup> hybrid orbitals in a molecule\nof benzene is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "24"
+        },
+        {
+          "identifier": "B",
+          "content": "12"
+        },
+        {
+          "identifier": "C",
+          "content": "6"
+        },
+        {
+          "identifier": "D",
+          "content": "18"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Each carbon atom is sp<sup>2</sup> hybrid\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> 3 sp<sup>2</sup> hybrid orbitals are formed by each\ncarbon atom\n<br><br>Total sp<sup>2</sup> orbitals = 6 × 3 = 18"
+    }
+  ]
+}

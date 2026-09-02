@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "FfcPR8gIUJ2hhhvHGEZzh",
+      "paperTitle": "JEE Main 2019 (Online) 12th January Morning Slot",
+      "year": 2019,
+      "examDate": "2019-01-12 09:30",
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "crystal-field-theory-cft",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-pair-of-metal-ions-that-can-give-a-spin-only-magnetic-mo-jee-main-chemistry-some-basic-concepts-of-chemistry-wo3oqbqjdn2ff101",
+      "content": "The pair of metal ions that can give a spin only magnetic moment of 3.9 BM for the complex [M(H<sub>2</sub>O)<sub>6</sub>]Cl<sub>2</sub>, is - \n",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "V<sup>2+</sup> and Fe<sup>2+ </sup>"
+        },
+        {
+          "identifier": "B",
+          "content": "V<sup>2+</sup> and Co<sup>2+</sup> "
+        },
+        {
+          "identifier": "C",
+          "content": "Co<sup>2+</sup> and Fe<sup>2+ </sup>"
+        },
+        {
+          "identifier": "D",
+          "content": "Cr<sup>2+</sup> and Mn<sup>2+</sup>"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Magnetic moment = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.639ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"11.057ex\" height=\"2.851ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -977.5 4887.1 1260\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msqrt\"><g data-mml-node=\"mo\" transform=\"translate(0,67.5)\"><use data-c=\"221A\" xlink:href=\"#MJX-TEX-SO-221A\"></use></g><g transform=\"translate(1020,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mrow\" transform=\"translate(766.7,0)\"><g data-mml-node=\"mo\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(389,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mo\" transform=\"translate(822.2,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1822.4,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(2711.4,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g></g><rect width=\"3867.1\" height=\"60\" x=\"1020\" y=\"857.5\"></rect></g></g></g></svg></mjx-container> BM\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.639ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"11.057ex\" height=\"2.851ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -977.5 4887.1 1260\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msqrt\"><g data-mml-node=\"mo\" transform=\"translate(0,67.5)\"><use data-c=\"221A\" xlink:href=\"#MJX-TEX-SO-221A\"></use></g><g transform=\"translate(1020,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mrow\" transform=\"translate(766.7,0)\"><g data-mml-node=\"mo\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(389,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mo\" transform=\"translate(822.2,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1822.4,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(2711.4,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g></g><rect width=\"3867.1\" height=\"60\" x=\"1020\" y=\"857.5\"></rect></g></g></g></svg></mjx-container> = 3.9\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> n = 3\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container>  no. of unpaired electron = 3\n<br><br>H<sub>2</sub>O is weak field ligand so no pairing of electrons happens.\n<br><br>Fe<sup>2+</sup> = t<sub>2g</sub><sup>4</sup>e<sub>g</sub><sup>2</sup>\n<br><br>Co<sup>2+</sup> = t<sub>2g</sub><sup>5</sup>e<sub>g</sub><sup>2</sup>\n<br><br>V<sup>2+</sup> = t<sub>2g</sub><sup>3</sup>e<sub>g</sub><sup>0</sup>\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> M is V, Co.\n"
+    }
+  ]
+}

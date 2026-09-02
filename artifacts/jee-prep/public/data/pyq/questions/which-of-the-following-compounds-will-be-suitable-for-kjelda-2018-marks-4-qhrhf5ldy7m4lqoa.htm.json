@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "qhRhf5ldY7m4LQoa",
+      "paperTitle": "JEE Main 2018 (Offline)",
+      "year": 2018,
+      "examDate": null,
+      "subject": "chemistry",
+      "chapter": "practical-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "detection-of-extra-elements-and-functional-groups",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-compounds-will-be-suitable-for-kjelda-2018-marks-4-qhrhf5ldy7m4lqoa.htm",
+      "content": "Which of the following compounds will be suitable for Kjeldahl’s method for nitrogen estimation?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img class=\"question-image\" src=\"https://gateclass.cdn.examgoal.net/fZ7Du03ryLsQEvYhI/7nQoGYsPpTyxCLFJvfnrBqMylWGdJ/eSkuETVAHQo7pa9ccQ7itf/uploadfile.jpg\" loading=\"lazy\" alt=\"JEE Main 2018 (Offline) Chemistry - Practical Organic Chemistry Question 111 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img class=\"question-image\" src=\"https://imagex.cdn.examgoal.net/Yx2JZr2Pd6Lp7V23H/NqM3h6ZRkADq8KYtQM1XtYX1lfUyI/DcS4Y04N7NGHG03XpH3Gta/uploadfile.jpg\" loading=\"lazy\" alt=\"JEE Main 2018 (Offline) Chemistry - Practical Organic Chemistry Question 111 English Option 2\"> "
+        },
+        {
+          "identifier": "C",
+          "content": "<img class=\"question-image\" src=\"https://imagex.cdn.examgoal.net/KOdXVpph7eEQLpKZT/lv93ghsmYrwg5V8JkTuGT1y7aXYRV/tDYjKmKhItZY6qPywKZKWe/uploadfile.jpg\" loading=\"lazy\" alt=\"JEE Main 2018 (Offline) Chemistry - Practical Organic Chemistry Question 111 English Option 3\"> "
+        },
+        {
+          "identifier": "D",
+          "content": "<img class=\"question-image\" src=\"https://gateclass.static.cdn.examgoal.net/3Nswr8j7sZ8koahQ8/NcfxpTnz3bBt4ZHX3LrDgb2Sv3tFV/lYwxykX4ROM4PkZgxKSuQX/uploadfile.jpg\" loading=\"lazy\" alt=\"JEE Main 2018 (Offline) Chemistry - Practical Organic Chemistry Question 111 English Option 4\"> "
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "In Kjeldahl’s method, ammonium  ion or ammonia should generate from a compound. \n<br><br>So, those compounds which contain nitrogen in nitro and azo groups and nitrogen in the ring cannot generate ammonium ion or ammonia. \n<br><br>Among the given option only aniline can generate NH<sub>3</sub>. So it is suitable far nitrogen estimation by Kjeldahl’s method."
+    }
+  ]
+}

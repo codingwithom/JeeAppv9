@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1lgow5dwx",
+      "paperTitle": "JEE Main 2023 (Online) 13th April Evening Shift",
+      "year": 2023,
+      "subject": "mathematics",
+      "chapter": "permutations-and-combinations",
+      "chapterGroup": "algebra",
+      "topic": "number-of-permutations",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pall-words-with-or-without-meaning-are-made-using-all-th-jee-main-mathematics-trigonometric-functions-and-equations-9bgvv2qpevro3jwk",
+      "content": "<p>All words, with or without meaning, are made using all the letters of the word MONDAY. These words are written as in a dictionary with serial numbers. The serial number of the word MONDAY is :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "324"
+        },
+        {
+          "identifier": "B",
+          "content": "328"
+        },
+        {
+          "identifier": "C",
+          "content": "326"
+        },
+        {
+          "identifier": "D",
+          "content": "327"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "\n<p>The letters of &quot;MONDAY&quot; arranged in alphabetical order are: A, D, M, N, O, Y.</p>\n<ol>\n<li>Fix A as the first letter, we can arrange the remaining 5 letters in 5! ways = 120 ways.</li>\n<li>Fix D as the first letter, we can arrange the remaining 5 letters in 5! ways = 120 ways.</li>\n</ol>\n<p>So far, we have 120 (for A) + 120 (for D) = 240 words.</p>\n<p>Now, let&#39;s proceed with words starting with M:</p>\n<ol>\n<li>Fix MA as the first two letters, we can arrange the remaining 4 letters in 4! ways = 24 ways.</li>\n<li>Fix MD as the first two letters, we can arrange the remaining 4 letters in 4! ways = 24 ways.</li>\n<li>Fix MN as the first two letters, we can arrange the remaining 4 letters in 4! ways = 24 ways.</li>\n</ol>\n<p>Now, we have 240 (for A and D) + 24 (for MA) + 24 (for MD) + 24 (for MN) = 312 words.</p>\n<p>After MN, we consider words that start with MO:</p>\n<ol>\n<li>Fix MOA as the first three letters, we can arrange the remaining 3 letters in 3! ways = 6 ways.</li>\n<li>Fix MOD as the first three letters, we can arrange the remaining 3 letters in 3! ways = 6 ways.</li>\n</ol>\n<p>Adding these to the total, we have 312 (previous total) + 6 (for MOA) + 6 (for MOD) = 324 words.</p>\n\n<p>Next, we consider words that start with &#39;MON&#39;. The word &#39;MONDAY&#39; comes after &#39;MONAD&#39; in dictionary order, so:</p>\n<ol>\n<li>Fix &#39;MONA&#39; as the first four letters. The remaining 2 letters (&#39;D&#39; and &#39;Y&#39;) can be arranged in 2! ways, which gives us 2 more words: &#39;MONADY&#39; and &#39;MONAYD&#39;.</li>\n</ol>\n<p>So, we have 324 (previous total) + 2 (for &#39;MONADY&#39; and &#39;MONAYD&#39;) = 326 words.</p>\n<p>Finally, we have the word &#39;MONDAY&#39; itself, which is the 327th word. </p>"
+    }
+  ]
+}

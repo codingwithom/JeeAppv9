@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "vhxIvDxZuBdZYxUw5w1kmlmskfq",
+      "paperTitle": "JEE Main 2021 (Online) 18th March Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "hydrocarbons",
+      "chapterGroup": "organic-chemistry",
+      "topic": "properties-and-preparation-of-alkynes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "match-list-i-with-list-ii-brbrlist-i-chemicals-jee-main-chemistry-some-basic-concepts-of-chemistry-vh0rbbpdmel7r9ty",
+      "content": "Match List - I with List - II :<br><br><b>List - I (Chemicals)</b><br><br>(a) Alcoholic potassium hydroxide<br><br>(b) Pd/BaSO<sub>4</sub><br><br>(c) BHC (Benzene hexachloride)<br><br>(d) Polyacetylene<br><br><b>List - II (Use / Preparation / Constituent)</b><br><br>(i) Electrodes in batteries<br><br>(ii) Obtained by addition reaction<br><br>(iii) Used for <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.439ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.296ex\" height=\"2.034ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 573 899\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D6FD\" xlink:href=\"#MJX-TEX-I-1D6FD\"></use></g></g></g></svg></mjx-container> - elimination reaction<br><br>(iv) Lindlar's catalyst<br><br>Choose the most appropriate match :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(a) - (ii), (b) - (i), (c) - (iv), (d) - (iii)"
+        },
+        {
+          "identifier": "B",
+          "content": "(a) - (iii), (b) - (iv), (c) - (ii), (d) - (i)"
+        },
+        {
+          "identifier": "C",
+          "content": "(a) - (iii), (b) - (i), (c) - (iv), (d) - (ii)"
+        },
+        {
+          "identifier": "D",
+          "content": "(a) - (ii), (b) - (iv), (c) - (i), (d) - (iii)"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Alc. KOH causes elimination<br><br>\nPd / BaSO<sub>4</sub> – Lindlar’s catalyst<br><br>\nBHC is obtained by the addition reaction of Cl<sub>2</sub>\nwith benzene in presence of U.V.<br><br>\nThin film of polyacetylene can be used as\nelectrode in batteries."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktiedge7",
+      "paperTitle": "JEE Main 2021 (Online) 31st August Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "purification-of-organic-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "given-below-are-two-statements--one-is-labelled-as-assertio-jee-main-chemistry-some-basic-concepts-of-chemistry-stru2mbj63r0arhs",
+      "content": "Given below are two statements : one is labelled as Assertion (A) and the other is labelled as Reason (R) :<br><br>Assertion (A) : A simple distillation can be used to separate a mixture of propanol and propanone.<br><br>Reason (R) : Two liquids with a difference of more than 20<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"0.988ex\" height=\"1.532ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -677 436.6 677\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"></g><g data-mml-node=\"mo\" transform=\"translate(33,363) scale(0.707)\"><use data-c=\"2218\" xlink:href=\"#MJX-TEX-N-2218\"></use></g></g></g></g></svg></mjx-container> in their boiling points can be separated by simple distillations.<br><br>In the light of the above statements, choose the most appropriate answer from the options given below :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(A) is false but (R) is true."
+        },
+        {
+          "identifier": "B",
+          "content": "Both (A) and (R) are correct but (R) is not the correct explanation of (A)"
+        },
+        {
+          "identifier": "C",
+          "content": "(A) is true but (R) is false"
+        },
+        {
+          "identifier": "D",
+          "content": "Both (A) and (R) are correct and (R) is the correct explanation of (A)."
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Simple distillation can be used to separate a\nmixture of propanol and propanone.\n<br><br>• Two liquid with difference in B.P. around 20°C\ncan be separated by simple distillation.\n<br><br>• B.P. of propanol is 370 K.\n<br>B.P. of acetone is 329 K.\n\n<br><br>Both assertion &amp; reason are correct &amp; (R) is the correct explanation of (A)."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ldr4anoy",
+      "paperTitle": "JEE Main 2023 (Online) 30th January Morning Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "periodic-table-and-its-features",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pmatch-list-i-with-list-iip-pstyle-typetextcss-jee-main-chemistry-some-basic-concepts-of-chemistry-7mt5xp8ysjwymcv6",
+      "content": "<p>Match List I with List II</p>\n<p>\n<table class=\"tg\" style=\"undefined;table-layout: fixed; width: 607px\">\n<colgroup>\n<col style=\"width: 50px\">\n<col style=\"width: 249px\">\n<col style=\"width: 45px\">\n<col style=\"width: 263px\">\n</colgroup>\n<thead>\n  <tr>\n    <th class=\"tg-7btt\"></th>\n    <th class=\"tg-7btt\">List I<br>(Atomic number)</th>\n    <th class=\"tg-7btt\"></th>\n    <th class=\"tg-7btt\">List II<br>(Block of periodic table)</th>\n  </tr>\n</thead>\n<tbody>\n  <tr>\n    <td class=\"tg-0pky\">A.</td>\n    <td class=\"tg-0pky\">37</td>\n    <td class=\"tg-0pky\">I.</td>\n    <td class=\"tg-0pky\">p-block</td>\n  </tr>\n  <tr>\n    <td class=\"tg-0pky\">B.</td>\n    <td class=\"tg-0pky\">78</td>\n    <td class=\"tg-0pky\">II.</td>\n    <td class=\"tg-0pky\">d-block</td>\n  </tr>\n  <tr>\n    <td class=\"tg-0pky\">C.</td>\n    <td class=\"tg-0pky\">52</td>\n    <td class=\"tg-0pky\">III.</td>\n    <td class=\"tg-0pky\">f-block</td>\n  </tr>\n  <tr>\n    <td class=\"tg-0pky\">D.</td>\n    <td class=\"tg-0pky\">65</td>\n    <td class=\"tg-0pky\">IV.</td>\n    <td class=\"tg-0pky\">s-block</td>\n  </tr>\n</tbody>\n</table></p>\n<p>Choose the correct answer from the options given below :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "A - II, B - IV, C - I, D - III"
+        },
+        {
+          "identifier": "B",
+          "content": "A - IV, B - III, C - II, D - I"
+        },
+        {
+          "identifier": "C",
+          "content": "A - IV, B - II, C - I, D - III"
+        },
+        {
+          "identifier": "D",
+          "content": "A - I, B - III, C - IV, D - II"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<p>\n<table class=\"tg\" style=\"undefined;table-layout: fixed; width: 607px\">\n<colgroup>\n<col style=\"width: 50px\">\n<col style=\"width: 249px\">\n<col style=\"width: 45px\">\n<col style=\"width: 263px\">\n</colgroup>\n<thead>\n  <tr>\n    <th class=\"tg-7btt\"></th>\n    <th class=\"tg-7btt\">List I<br>(Atomic number)</th>\n    <th class=\"tg-7btt\"></th>\n    <th class=\"tg-7btt\">List II<br>(Block of periodic table)</th>\n  </tr>\n</thead>\n<tbody>\n  <tr>\n    <td class=\"tg-0pky\">A.</td>\n    <td class=\"tg-0pky\">37 (Rb - Rubidium)</td>\n    <td class=\"tg-0pky\">IV.</td>\n    <td class=\"tg-0pky\">s-block</td>\n  </tr>\n  <tr>\n    <td class=\"tg-0pky\">B.</td>\n    <td class=\"tg-0pky\">78 (Pt - Platinum)</td>\n    <td class=\"tg-0pky\">II.</td>\n    <td class=\"tg-0pky\">d-block</td>\n  </tr>\n  <tr>\n    <td class=\"tg-0pky\">C.</td>\n    <td class=\"tg-0pky\">52 (Te - Tellurium)</td>\n    <td class=\"tg-0pky\">I.</td>\n    <td class=\"tg-0pky\">p-block</td>\n  </tr>\n  <tr>\n    <td class=\"tg-0pky\">D.</td>\n    <td class=\"tg-0pky\">65 (Tb - Terbium)</td>\n    <td class=\"tg-0pky\">III.</td>\n    <td class=\"tg-0pky\">f-block</td>\n  </tr>\n</tbody>\n</table></p>"
+    }
+  ]
+}

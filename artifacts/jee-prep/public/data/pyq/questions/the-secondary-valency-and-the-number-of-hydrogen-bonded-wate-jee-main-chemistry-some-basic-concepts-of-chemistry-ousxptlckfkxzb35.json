@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "GkRzsetVzXfZ4CMKJD1kmm0zhdr",
+      "paperTitle": "JEE Main 2021 (Online) 18th March Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "coordination-number",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-secondary-valency-and-the-number-of-hydrogen-bonded-wate-jee-main-chemistry-some-basic-concepts-of-chemistry-ousxptlckfkxzb35",
+      "content": "The secondary valency and the number of hydrogen bonded water molecule(s) in CuSO<sub>4</sub> . 5H<sub>2</sub>O, respectively, are :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "5 and 1"
+        },
+        {
+          "identifier": "B",
+          "content": "4 and 1"
+        },
+        {
+          "identifier": "C",
+          "content": "6 and 5"
+        },
+        {
+          "identifier": "D",
+          "content": "6 and 4"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "CuSO<sub>4</sub>.5H<sub>2</sub>O <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> [Cu(H<sub>2</sub>O)<sub>4</sub>]SO<sub>4</sub>.H<sub>2</sub>O<br><br>\n In CuSO<sub>4</sub>.5H<sub>2</sub>O, Cu is co-ordinated with 4 water molecule and two more oxygen atom from sulphate ion and fifth water molecule is hydrogen bonded.<br><br>\n So secondary valency = 4<br><br>\n No. of hydrogen bond per molecule = 1"
+    }
+  ]
+}

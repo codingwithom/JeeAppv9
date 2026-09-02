@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "kJgtQcrQQjJh5krB8Djgy2xukf93lzve",
+      "paperTitle": "JEE Main 2020 (Online) 4th September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-04 09:00",
+      "subject": "chemistry",
+      "chapter": "structure-of-atom",
+      "chapterGroup": "physical-chemistry",
+      "topic": "hydrogen-spectrum",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-region-in-the-electromagnetic-spectrum-where-the-balmar-jee-main-chemistry-structure-of-atom-ms88ucamwa0kzpes",
+      "content": "The region in the electromagnetic spectrum\nwhere the Balmar series lines appear is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Microwave"
+        },
+        {
+          "identifier": "B",
+          "content": "Ultraviolet"
+        },
+        {
+          "identifier": "C",
+          "content": "Visible"
+        },
+        {
+          "identifier": "D",
+          "content": "Infrared"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "In the hydrogen spectrum,\n<br>Balmer series lies in visible region."
+    }
+  ]
+}

@@ -1,0 +1,3530 @@
+{
+  "exam": "jee-main",
+  "subject": "mathematics",
+  "chapterKey": "definite-integration",
+  "title": "Definite Integration | Mathematics | JEE Main Previous Year Questions",
+  "chapter": {
+    "country": "in",
+    "exam": "jee-main",
+    "examGroup": "jee",
+    "key": "definite-integration",
+    "subject": "mathematics",
+    "type": "chapter",
+    "chapterGroup": "calculus",
+    "createdAt": "2023-07-21T10:07:36.275Z",
+    "description": null,
+    "image": null,
+    "keyValuePairs": {},
+    "metaId": "77188481-2f1b-55a1-90a6-aea764fe8ff7",
+    "pyq": {
+      "isTopicWise": true,
+      "count": {
+        "out_of_syllabus": 22,
+        "total": 331,
+        "private": 0,
+        "public": 331,
+        "bucket": 68
+      }
+    },
+    "title": "Definite Integration",
+    "updatedAt": "2023-07-23T10:45:02.979Z",
+    "order": 29,
+    "pyq_stats": [
+      {
+        "year": 2026,
+        "total": 31,
+        "avg": 1.63,
+        "weightage": 6.53
+      },
+      {
+        "year": 2025,
+        "total": 23,
+        "avg": 1.21,
+        "weightage": 4.84
+      },
+      {
+        "year": 2024,
+        "total": 43,
+        "avg": 2.15,
+        "weightage": 7.17
+      },
+      {
+        "year": 2023,
+        "total": 40,
+        "avg": 1.67,
+        "weightage": 5.56
+      },
+      {
+        "year": 2022,
+        "total": 46,
+        "avg": 2,
+        "weightage": 6.67
+      },
+      {
+        "year": 2021,
+        "total": 58,
+        "avg": 2.23,
+        "weightage": 7.44
+      },
+      {
+        "year": 2020,
+        "total": 20,
+        "avg": 1.25,
+        "weightage": 5
+      },
+      {
+        "year": 2019,
+        "total": 22,
+        "avg": 1.38,
+        "weightage": 4.58
+      },
+      {
+        "year": 2018,
+        "total": 5,
+        "avg": 1.25,
+        "weightage": 4.17
+      },
+      {
+        "year": 2017,
+        "total": 4,
+        "avg": 1.33,
+        "weightage": 4.44
+      },
+      {
+        "year": 2016,
+        "total": 4,
+        "avg": 1.33,
+        "weightage": 4.44
+      },
+      {
+        "year": 2015,
+        "total": 1,
+        "avg": 1,
+        "weightage": 3.33
+      },
+      {
+        "year": 2014,
+        "total": 1,
+        "avg": 1,
+        "weightage": 3.45
+      },
+      {
+        "year": 2013,
+        "total": 1,
+        "avg": 1,
+        "weightage": 3.33
+      },
+      {
+        "year": 2012,
+        "total": 1,
+        "avg": 1,
+        "weightage": 3.45
+      },
+      {
+        "year": 2011,
+        "total": 1,
+        "avg": 1,
+        "weightage": 3.13
+      },
+      {
+        "year": 2010,
+        "total": 1,
+        "avg": 1,
+        "weightage": 3.33
+      },
+      {
+        "year": 2009,
+        "total": 1,
+        "avg": 1,
+        "weightage": 3.33
+      },
+      {
+        "year": 2008,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2007,
+        "total": 3,
+        "avg": 3,
+        "weightage": 7.89
+      },
+      {
+        "year": 2006,
+        "total": 3,
+        "avg": 3,
+        "weightage": 8.33
+      },
+      {
+        "year": 2005,
+        "total": 5,
+        "avg": 5,
+        "weightage": 6.85
+      },
+      {
+        "year": 2004,
+        "total": 5,
+        "avg": 5,
+        "weightage": 7.35
+      },
+      {
+        "year": 2003,
+        "total": 6,
+        "avg": 6,
+        "weightage": 8.96
+      },
+      {
+        "year": 2002,
+        "total": 6,
+        "avg": 6,
+        "weightage": 8.33
+      }
+    ],
+    "hideFromClassify": false,
+    "groups": [
+      {
+        "title": "Numerical",
+        "key": "integer"
+      },
+      {
+        "title": "MCQ (Single Correct Answer)",
+        "key": "mcq"
+      },
+      {
+        "title": "MCQ (Multiple Correct Answer)",
+        "key": "mcqm"
+      }
+    ]
+  },
+  "questions": [
+    {
+      "title": "MCQ (Single Correct Answer)",
+      "key": "mcq",
+      "questions": [
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-value-of-the-integral-int02-fracsqrtxleftx-jee-main-mathematics-trigonometric-functions-and-equations-usbvrda1ujnoyl82",
+          "paperTitle": "JEE Main 2026 (Online) 8th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>The value of the integral $\\int\\limits_0^2 \\frac{\\sqrt{x\\left(x^2+x+1\\right)}}{(\\sqrt{x+1})\\left(\\sqrt{x^4+x^2+1}\\right)} \\mathrm{d} x$ is equal to:</p>\n"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-fxleftbeginarrayccfrac13--x-leq--jee-main-mathematics-trigonometric-functions-and-equations-kiaes1xfcf9smat0",
+          "paperTitle": "JEE Main 2026 (Online) 8th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $f(x)=\\left\\{\\begin{array}{cc}\\frac{1}{3}, & x \\leq \\pi / 2 \\\\ \\frac{\\mathrm{~b}(1-\\sin x)}{(\\pi-2 x)^2}, & x>\\pi / 2\\end{array}\\right.$. If $f$ is continuous at $x=\\pi / 2$, then the value of $\\int\\limits_0^{3 \\mathrm{~b}-6}\\left|x^2+2 x-3\\right| \\mathrm{d} x$ is :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-mathrmaleftbeginarrayccc1--3--1--2--jee-main-mathematics-trigonometric-functions-and-equations-9psg9a4ccnejmdar",
+          "paperTitle": "JEE Main 2026 (Online) 6th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $\\mathrm{A}=\\left[\\begin{array}{ccc}1 & 3 & -1 \\\\ 2 & 1 & \\alpha \\\\ 0 & 1 & -1\\end{array}\\right]$ be a singular matrix. Let $f(x)=\\int_0^x\\left(\\mathrm{t}^2+2 \\mathrm{t}+3\\right) \\mathrm{dt}, x \\in[1, \\alpha]$. If M and m are respectively the maximum and the minimum values of $f$ in $[1, \\alpha]$, then $3(\\mathrm{M}-\\mathrm{m})$ is equal to :</p>\n"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-value-of-the-integral-int-11leftfracx3x-jee-main-mathematics-trigonometric-functions-and-equations-o1cqjoeri2wxosgn",
+          "paperTitle": "JEE Main 2026 (Online) 6th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>The value of the integral $\\int\\limits_{-1}^1\\left(\\frac{x^3+|x|+1}{x^2+2|x|+1}\\right) \\mathrm{d} x$ is equal to:</p>\n"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-value-of-the-integral-int-fracpi4frac-jee-main-mathematics-trigonometric-functions-and-equations-f62flcuifcie4rm3",
+          "paperTitle": "JEE Main 2026 (Online) 6th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>The value of the integral $\\int\\limits_{-\\frac{\\pi}{4}}^{\\frac{\\pi}{4}}\\left(\\frac{32 \\cos ^4 x}{1+e^{\\sin x}}\\right) d x$ is :</p>\n"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-left21-mathrma21mathrmaright-fm-jee-main-mathematics-trigonometric-functions-and-equations-hlyoappfxo5shvcf",
+          "paperTitle": "JEE Main 2026 (Online) 5th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $\\left(2^{1-\\mathrm{a}}+2^{1+\\mathrm{a}}\\right), f(\\mathrm{a}),\\left(3^{\\mathrm{a}}+3^{-\\mathrm{a}}\\right)$ be in A.P. and $\\alpha$ be the minimum value of $f(\\mathrm{a})$. Then the value of the integral $\\int\\limits_{\\log _e(\\alpha-1)}^{\\log _e(\\alpha)} \\frac{d x}{\\left(e^{2 x}-e^{-2 x}\\right)}$ is :</p>\n"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-value-of-the-integral-int0infty-fraclog-e-jee-main-mathematics-trigonometric-functions-and-equations-khcuzfq1diuodtjy",
+          "paperTitle": "JEE Main 2026 (Online) 5th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>The value of the integral $\\int\\limits_0^{\\infty} \\frac{\\log _e(x)}{x^2+4} d x$ is:</p>\n"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-value-of-the-integral-intfracpi6fracp-jee-main-mathematics-trigonometric-functions-and-equations-lnayk66tac1rhiq2",
+          "paperTitle": "JEE Main 2026 (Online) 5th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>The value of the integral $\\int\\limits_{\\frac{\\pi}{6}}^{\\frac{\\pi}{3}}\\left(\\frac{4-\\operatorname{cosec}^2 x}{\\cos ^4 x}\\right) d x$ is :</p>\n"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-alpha1-and-beta1i-sqrt2-where-isqrt-1-jee-main-mathematics-trigonometric-functions-and-equations-je1qqc7bbai4sbhs",
+          "paperTitle": "JEE Main 2026 (Online) 4th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>If $\\alpha=1$ and $\\beta=1+i \\sqrt{2}$, where $i=\\sqrt{-1}$ are two roots of the equation</p>\n<p>$x^3+a x^2+b x+c=0, a, b, \\in \\mathbb{R}$, then $\\int_{-1}^1\\left(x^3+a x^2+b x+c\\right) d x$ is equal to:</p>\n"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-integral-int01-cot--1left1xx2right-d-x-jee-main-mathematics-trigonometric-functions-and-equations-riljf9ulwsqeglvx",
+          "paperTitle": "JEE Main 2026 (Online) 4th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>The integral $\\int\\limits_0^1 \\cot ^{-1}\\left(1+x+x^2\\right) d x$ is equal to :</p>\n"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-f-be-a-real-polynomial-of-degree-n-such-that-fx-jee-main-mathematics-trigonometric-functions-and-equations-biq5ig9qstyq4ntp",
+          "paperTitle": "JEE Main 2026 (Online) 4th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $f$ be a real polynomial of degree $n$ such that $f(x)=f^{\\prime}(x) f^{\\prime \\prime}(x)$, for all $x \\in \\mathbb{R}$. If $f(0)=0$, then $36\\left(f^{\\prime}(2)+f^{\\prime \\prime}(2)+\\int_0^2 f(x) d x\\right)$ is equal to:</p>\n"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-int-22sin-xx-sin-x-d-x23-cos-2be-jee-main-mathematics-trigonometric-functions-and-equations-b0pl5p5k5wgpnm7e",
+          "paperTitle": "JEE Main 2026 (Online) 4th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $\\int\\limits_{-2}^2(|\\sin x|+[x \\sin x]) d x=2(3-\\cos 2)+\\beta$, where [ ⋅ ] is the greatest integer function. Then $\\beta \\sin \\left(\\frac{\\beta}{2}\\right)$ equals:</p>\n"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-value-of-intlimits020pi-sin4-x--cos4-jee-main-mathematics-awipbowsury4rqga",
+          "paperTitle": "JEE Main 2026 (Online) 2nd April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>The value of $\\int\\limits_{0}^{20\\pi} (\\sin^4 x + \\cos^4 x) dx$ is equal to:</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet--denote-the-greatest-integer-function-then-the-va-jee-main-mathematics-tm2eigmyqbhn23bj",
+          "paperTitle": "JEE Main 2026 (Online) 2nd April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let [.] denote the greatest integer function. Then the value of $\\int\\limits_{0}^{3} \\left( \\frac{e^{x} + e^{-x}}{[x]!} \\right) dx$ is :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet--denote-the-greatest-integer-function-thenpp-jee-main-mathematics-2ptrphof83drfrd5",
+          "paperTitle": "JEE Main 2026 (Online) 28th January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let [.] denote the greatest integer function. Then</p><p>$$ \\int\\limits_{-\\frac{\\pi}{2}}^{\\frac{\\pi}{2}} \\left( \\frac{12(3+[x])}{3+\\left[\\sin x\\right]+\\left[\\cos x\\right]} \\right) dx $$<br>is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-f-be-a-polynomial-function-such-that-fleftx21-jee-main-mathematics-trigonometric-functions-and-equations-dwrnkcaw06l3mura",
+          "paperTitle": "JEE Main 2026 (Online) 28th January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $f$ be a polynomial function such that $f\\left(x^2+1\\right)=x^4+5 x^2+2$, for all $x \\in \\mathbb{R}$.</p>\n<p>Then $\\int\\limits_0^3 f(x) d x$ is equal to</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-value-of-the-integral-intfracpi24frac5-jee-main-mathematics-trigonometric-functions-and-equations-pqyyepjdoq3h7zkj",
+          "paperTitle": "JEE Main 2026 (Online) 23rd January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>The value of the integral $\\int_{\\frac{\\pi}{24}}^{\\frac{5 \\pi}{24}} \\frac{\\mathrm{~d} x}{1+\\sqrt[3]{\\tan 2 x}}$ is :</p>\n"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-value-of-int-fracpi2fracpi2left-jee-main-mathematics-trigonometric-functions-and-equations-7x88jbmi09kswtos",
+          "paperTitle": "JEE Main 2026 (Online) 22nd January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>The value of $\\int\\limits_{-\\frac{\\pi}{2}}^{\\frac{\\pi}{2}}\\left(\\frac{1}{[x]+4}\\right) d x$, where $[\\cdot]$ denotes the greatest integer function, is</p>\n"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-f1-infty-rightarrow-mathbbr-be-a-different-jee-main-mathematics-trigonometric-functions-and-equations-db4uii8hvg7vd93a",
+          "paperTitle": "JEE Main 2026 (Online) 22nd January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $f:[1, \\infty) \\rightarrow \\mathbb{R}$ be a differentiable function. If $6 \\int\\limits_1^x f(t) d t=3 x f(x)+x^3-4$ for all $x \\geq 1$, then the value of $f(2)-f(3)$ is :</p>\n"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-value-of-int-pi--6pi--6leftfracpi4-jee-main-mathematics-trigonometric-functions-and-equations-t1pxuzrahxm9ddjm",
+          "paperTitle": "JEE Main 2026 (Online) 21st January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>The value of $\\int\\limits_{-\\pi / 6}^{\\pi / 6}\\left(\\frac{\\pi+4 x^{11}}{1-\\sin (|x|+\\pi / 6)}\\right) d x$ is equal to:</p>\n"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-integral-intlimits-1frac32-left-pi-jee-main-mathematics-83f78zhgsmkz7p41",
+          "paperTitle": "JEE Main 2025 (Online) 8th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>The integral $\\int\\limits_{-1}^{\\frac{3}{2}} \\left(| \\pi^2 x \\sin(\\pi x) \\right|) dx$ is equal to:</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-emfxem-be-a-positive-function-and-i1--in-jee-main-mathematics-cellzhvcqng8qwuj",
+          "paperTitle": "JEE Main 2025 (Online) 8th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let <em>f(x)</em> be a positive function and $I_{1} = \\int\\limits_{-\\frac{1}{2}}^{1} 2x \\, f(2x(1-2x)) \\, dx$ and $I_{2} = \\int\\limits_{-1}^{2} f(x(1-x)) \\, dx$. Then the value of $\\frac{I_{2}}{I_{1}}$ is equal to ________</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-integral-int0pi-fracx3-sin-x13-cos-2-jee-main-mathematics-trigonometric-functions-and-equations-jvhoy1xr9qqmfku3",
+          "paperTitle": "JEE Main 2025 (Online) 7th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>The integral $\\int_0^\\pi \\frac{(x+3) \\sin x}{1+3 \\cos ^2 x} d x$ is equal to</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-fx2-fleftfrac1xrightx25-and-2-gx-jee-main-mathematics-trigonometric-functions-and-equations-cdhn5orwzkqdux5r",
+          "paperTitle": "JEE Main 2025 (Online) 4th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $f(x)+2 f\\left(\\frac{1}{x}\\right)=x^2+5$ and $2 g(x)-3 g\\left(\\frac{1}{x}\\right)=x, x>0$. If $\\alpha=\\int_1^2 f(x) \\mathrm{d} x$, and $\\beta=\\int_1^2 g(x) \\mathrm{d} x$, then the value of $9 \\alpha+\\beta$ is :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-value-of-intlimits-11-frac1sqrtx-x-e-jee-main-mathematics-trigonometric-functions-and-equations-5ygxyk2dyuimst2r",
+          "paperTitle": "JEE Main 2025 (Online) 4th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>The value of $\\int_\\limits{-1}^1 \\frac{(1+\\sqrt{|x|-x}) e^x+(\\sqrt{|x|-x}) e^{-x}}{e^x+e^{-x}} d x$ is equal to</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-integral-int0pi-frac8-x-d-x4-cos-2-xsin-2-jee-main-mathematics-trigonometric-ratio-and-identites-ngactp5jslmqp3t6",
+          "paperTitle": "JEE Main 2025 (Online) 3rd April Evening Shift",
+          "question": {
+            "en": {
+              "content": "The integral $\\int_0^\\pi \\frac{8 x d x}{4 \\cos ^2 x+\\sin ^2 x}$ is equal to\n"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-the-domain-of-the-function-fxlog-2-log-4-log-jee-main-mathematics-trigonometric-ratio-and-identites-grbij5fii3dx34kz",
+          "paperTitle": "JEE Main 2025 (Online) 3rd April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let the domain of the function $f(x)=\\log _2 \\log _4 \\log _6\\left(3+4 x-x^2\\right)$ be $(a, b)$. If $\\int_0^{b-a}\\left[x^2\\right] d x=p-\\sqrt{q}-\\sqrt{r}, p, q, r \\in \\mathbb{N}, \\operatorname{gcd}(p, q, r)=1$, where $[\\cdot]$ is the greatest integer function, then $p+q+r$ is equal to</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-f1-infty-rightarrow2-infty-be-a-differentiab-jee-main-mathematics-trigonometric-functions-and-equations-pnou3dmvtykzuuyk",
+          "paperTitle": "JEE Main 2025 (Online) 2nd April Evening Shift",
+          "question": {
+            "en": {
+              "content": "Let $f:[1, \\infty) \\rightarrow[2, \\infty)$ be a differentiable function. If $10 \\int_1^x f(\\mathrm{t}) \\mathrm{dt}=5 x f(x)-x^5-9$ for all $x \\geqslant 1$, then the value of $f(3)$ is :\n"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-a-b-be-the-point-of-intersection-of-the-curve-x2-jee-main-mathematics-trigonometric-functions-and-equations-rhj8o7jvqnzjs01u",
+          "paperTitle": "JEE Main 2025 (Online) 2nd April Evening Shift",
+          "question": {
+            "en": {
+              "content": "Let $(a, b)$ be the point of intersection of the curve $x^2=2 y$ and the straight line $y-2 x-6=0$ in the second quadrant. Then the integral $\\mathrm{I}=\\int_{\\mathrm{a}}^{\\mathrm{b}} \\frac{9 x^2}{1+5^x} \\mathrm{~d} x$ is equal to :\n"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "4-int01leftfrac1sqrt3x2sqrt1x2right-jee-main-mathematics-trigonometric-functions-and-equations-pmp88t55jkrzvm7a",
+          "paperTitle": "JEE Main 2025 (Online) 2nd April Evening Shift",
+          "question": {
+            "en": {
+              "content": "$4 \\int_0^1\\left(\\frac{1}{\\sqrt{3+x^2}+\\sqrt{1+x^2}}\\right) d x-3 \\log _e(\\sqrt{3})$ is equal to :\n"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-fxintlimits0x-mathrmtleftmathrmt2-9-ma-jee-main-mathematics-8czrqhc5rralocho",
+          "paperTitle": "JEE Main 2025 (Online) 29th January Evening Shift",
+          "question": {
+            "en": {
+              "content": "Let $f(x)=\\int\\limits_0^x \\mathrm{t}\\left(\\mathrm{t}^2-9 \\mathrm{t}+20\\right) \\mathrm{dt}, 1 \\leq x \\leq 5$. If the range of $f$ is $[\\alpha, \\beta]$, then $4(\\alpha+\\beta)$ equals :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-integral-80-intlimits0fracpi4leftfrac-jee-main-mathematics-w0gywhaxcjubwswn",
+          "paperTitle": "JEE Main 2025 (Online) 29th January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>The integral $80 \\int\\limits_0^{\\frac{\\pi}{4}}\\left(\\frac{\\sin \\theta+\\cos \\theta}{9+16 \\sin 2 \\theta}\\right) d \\theta$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-mathrmf-mathrmr-rightarrow-mathrmr-be-a-jee-main-mathematics-hs6umsgiokug4btg",
+          "paperTitle": "JEE Main 2025 (Online) 28th January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $\\mathrm{f}: \\mathrm{R} \\rightarrow \\mathrm{R}$ be a twice differentiable function such that $f(2)=1$. If $\\mathrm{F}(\\mathrm{x})=\\mathrm{x} f(\\mathrm{x})$ for all $\\mathrm{x} \\in \\mathrm{R}$, $\\int\\limits_0^2 x F^{\\prime}(x) d x=6$ and $\\int\\limits_0^2 x^2 F^{\\prime \\prime}(x) d x=40$, then $F^{\\prime}(2)+\\int\\limits_0^2 F(x) d x$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-f-be-a-real-valued-continuous-function-defined-on-t-jee-main-mathematics-ritthgscpmpdemh4",
+          "paperTitle": "JEE Main 2025 (Online) 28th January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $f$ be a real valued continuous function defined on the positive real axis such that $g(x)=\\int\\limits_0^x t f(t) d t$. If $g\\left(x^3\\right)=x^6+x^7$, then value of $\\sum\\limits_{r=1}^{15} f\\left(r^3\\right)$ is :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-int-fracpi2fracpi2-frac96-x2-c-jee-main-mathematics-trigonometric-functions-and-equations-agr9vn1etiuuqs9m",
+          "paperTitle": "JEE Main 2025 (Online) 28th January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>If $\\int_{-\\frac{\\pi}{2}}^{\\frac{\\pi}{2}} \\frac{96 x^2 \\cos ^2 x}{\\left(1+e^x\\right)} \\mathrm{d} x=\\pi\\left(\\alpha \\pi^2+\\beta\\right), \\alpha, \\beta \\in \\mathbb{Z}$, then $(\\alpha+\\beta)^2$ equals</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-im-nint01-xm-11-xn-1-d-x-m-n0-the-jee-main-mathematics-trigonometric-functions-and-equations-hkoy5cnxtmtpreuu",
+          "paperTitle": "JEE Main 2025 (Online) 24th January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>If $I(m, n)=\\int_0^1 x^{m-1}(1-x)^{n-1} d x, m, n>0$, then $I(9,14)+I(10,13)$ is</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-mathrmiint0fracpi2-fracsin-frac-jee-main-mathematics-trigonometric-functions-and-equations-wz6o26si5rilkfsv",
+          "paperTitle": "JEE Main 2025 (Online) 23rd January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>If $\\mathrm{I}=\\int_0^{\\frac{\\pi}{2}} \\frac{\\sin ^{\\frac{3}{2}} x}{\\sin ^{\\frac{3}{2}} x+\\cos ^{\\frac{3}{2}} x} \\mathrm{~d} x$, then $\\int_0^{2I} \\frac{x \\sin x \\cos x}{\\sin ^4 x+\\cos ^4 x} \\mathrm{~d} x$ equals :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-value-of-inte2e4-frac1xleftfrace-jee-main-mathematics-trigonometric-functions-and-equations-ehi8gsxf1fu2oq8e",
+          "paperTitle": "JEE Main 2025 (Online) 23rd January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>The value of $\\int_{e^2}^{e^4} \\frac{1}{x}\\left(\\frac{e^{\\left(\\left(\\log _e x\\right)^2+1\\right)^{-1}}}{e^{\\left(\\left(\\log _e x\\right)^2+1\\right)^{-1}}+e^{\\left(\\left(6-\\log _e x\\right)^2+1\\right)^{-1}}}\\right) d x$ is</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-for-fx7-tan-8-x7-tan-6-x-3-tan-4-x-3-tan-jee-main-mathematics-trigonometric-functions-and-equations-wrebf4xiwvqu9lar",
+          "paperTitle": "JEE Main 2025 (Online) 22nd January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let for $f(x)=7 \\tan ^8 x+7 \\tan ^6 x-3 \\tan ^4 x-3 \\tan ^2 x, \\quad \\mathrm{I}_1=\\int_0^{\\pi / 4} f(x) \\mathrm{d} x$ and $\\mathrm{I}_2=\\int_0^{\\pi / 4} x f(x) \\mathrm{d} x$. Then $7 \\mathrm{I}_1+12 \\mathrm{I}_2$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-integral-intlimits1--43--4-cos-left2--jee-main-mathematics-trigonometric-functions-and-equations-huxh2lm3wjfanpmf",
+          "paperTitle": "JEE Main 2024 (Online) 9th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>The integral $$\\int_\\limits{1 / 4}^{3 / 4} \\cos \\left(2 \\cot ^{-1} \\sqrt{\\frac{1-x}{1+x}}\\right) d x$$ is equal to</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plim-limitsx-rightarrow-fracpi2leftfrac-jee-main-mathematics-trigonometric-functions-and-equations-fmyoimfzfnqyystj",
+          "paperTitle": "JEE Main 2024 (Online) 9th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>$$\\lim _\\limits{x \\rightarrow \\frac{\\pi}{2}}\\left(\\frac{\\int_{x^3}^{(\\pi / 2)^3}\\left(\\sin \\left(2 t^{1 / 3}\\right)+\\cos \\left(t^{1 / 3}\\right)\\right) d t}{\\left(x-\\frac{\\pi}{2}\\right)^2}\\right)$$ is equal to</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-value-of-the-integral-intlimits-12-log-ele-jee-main-mathematics-trigonometric-functions-and-equations-ahdbnhzait0mfsk4",
+          "paperTitle": "JEE Main 2024 (Online) 9th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>The value of the integral $$\\int_\\limits{-1}^2 \\log _e\\left(x+\\sqrt{x^2+1}\\right) d x$$ is</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-intlimitsalphalog-e-4-fracmathrmd-x-jee-main-mathematics-trigonometric-functions-and-equations-jgcgqcbvlzs50nuk",
+          "paperTitle": "JEE Main 2024 (Online) 8th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$\\int_\\limits\\alpha^{\\log _e 4} \\frac{\\mathrm{d} x}{\\sqrt{\\mathrm{e}^x-1}}=\\frac{\\pi}{6}$$. Then $$\\mathrm{e}^\\alpha$$ and $$\\mathrm{e}^{-\\alpha}$$ are the roots of the equation :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-value-of-k-in-mathbbn-for-which-the-integral-jee-main-mathematics-trigonometric-functions-and-equations-bmxtnndztflkglxl",
+          "paperTitle": "JEE Main 2024 (Online) 8th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>The value of $$k \\in \\mathbb{N}$$ for which the integral $$I_n=\\int_0^1\\left(1-x^k\\right)^n d x, n \\in \\mathbb{N}$$, satisfies $$147 I_{20}=148 I_{21}$$ is</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pintlimits0pi--4-fraccos-2-x-sin-2-xlef-jee-main-mathematics-trigonometric-functions-and-equations-vuqpgd6blkd7puqb",
+          "paperTitle": "JEE Main 2024 (Online) 6th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>$$\\int_\\limits0^{\\pi / 4} \\frac{\\cos ^2 x \\sin ^2 x}{\\left(\\cos ^3 x+\\sin ^3 x\\right)^2} d x \\text { is equal to }$$</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-betamathrmm-mathrmnintlimits01-xm-jee-main-mathematics-trigonometric-functions-and-equations-kqdjlaoidkydjget",
+          "paperTitle": "JEE Main 2024 (Online) 5th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$\\beta(\\mathrm{m}, \\mathrm{n})=\\int_\\limits0^1 x^{\\mathrm{m}-1}(1-x)^{\\mathrm{n}-1} \\mathrm{~d} x, \\mathrm{~m}, \\mathrm{n}>0$$. If $$\\int_\\limits0^1\\left(1-x^{10}\\right)^{20} \\mathrm{~d} x=\\mathrm{a} \\times \\beta(\\mathrm{b}, \\mathrm{c})$$, then $$100(\\mathrm{a}+\\mathrm{b}+\\mathrm{c})$$ equals _________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-integral-intlimits0pi--4-frac136-sin-x-jee-main-mathematics-trigonometric-functions-and-equations-xc3vev4zqbowmgpg",
+          "paperTitle": "JEE Main 2024 (Online) 5th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>The integral $$\\int_\\limits0^{\\pi / 4} \\frac{136 \\sin x}{3 \\sin x+5 \\cos x} \\mathrm{~d} x$$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-value-of-intlimits-pipi-frac2-y1sin-y-jee-main-mathematics-trigonometric-functions-and-equations-kzysiceb8aimu4bp",
+          "paperTitle": "JEE Main 2024 (Online) 5th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>The value of $$\\int_\\limits{-\\pi}^\\pi \\frac{2 y(1+\\sin y)}{1+\\cos ^2 y} d y$$ is :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-fxint0xlefttsin-left1-etrightright-jee-main-mathematics-trigonometric-functions-and-equations-m4pwbn5d3ycysogk",
+          "paperTitle": "JEE Main 2024 (Online) 4th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$f(x)=\\int_0^x\\left(t+\\sin \\left(1-e^t\\right)\\right) d t, x \\in \\mathbb{R}$$. Then, $$\\lim _\\limits{x \\rightarrow 0} \\frac{f(x)}{x^3}$$ is equal to</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-the-value-of-the-integral-int-11-fraccos-al-jee-main-mathematics-trigonometric-functions-and-equations-e5kq0exjvs9vax27",
+          "paperTitle": "JEE Main 2024 (Online) 4th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>If the value of the integral $$\\int\\limits_{-1}^1 \\frac{\\cos \\alpha x}{1+3^x} d x$$ is $$\\frac{2}{\\pi}$$.Then, a value of $$\\alpha$$ is</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "ptext--let--fxleftbeginarraylr-2--2-l-jee-main-mathematics-trigonometric-functions-and-equations-9abfjwmhsfhld4ww",
+          "paperTitle": "JEE Main 2024 (Online) 4th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>$$\\text { Let } f(x)=\\left\\{\\begin{array}{lr}\n-2, & -2 \\leq x \\leq 0 \\\\\nx-2, & 0< x \\leq 2\n\\end{array} \\text { and } \\mathrm{h}(x)=f(|x|)+|f(x)| \\text {. Then } \\int_\\limits{-2}^2 \\mathrm{~h}(x) \\mathrm{d} x\\right. \\text { is equal to: }$$</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-intlimits0fracpi3-cos-4-x-mathrmd-xm-jee-main-mathematics-dek6atanfcjkq6ky",
+          "paperTitle": "JEE Main 2024 (Online) 1st February Evening Shift",
+          "question": {
+            "en": {
+              "content": "If $\\int\\limits_0^{\\frac{\\pi}{3}} \\cos ^4 x \\mathrm{~d} x=\\mathrm{a} \\pi+\\mathrm{b} \\sqrt{3}$, where $\\mathrm{a}$ and $\\mathrm{b}$ are rational numbers, then $9 \\mathrm{a}+8 \\mathrm{b}$ is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-value-of-intlimits01left2-x3-3-x2-x1right-jee-main-mathematics-rshqvfriak6l3mkn",
+          "paperTitle": "JEE Main 2024 (Online) 1st February Evening Shift",
+          "question": {
+            "en": {
+              "content": "The value of $\\int\\limits_0^1\\left(2 x^3-3 x^2-x+1\\right)^{\\frac{1}{3}} \\mathrm{~d} x$ is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-value-of-the-intergral-intlimits0pi--4-fracx-jee-main-mathematics-yy3t2ejsjyeyen7o",
+          "paperTitle": "JEE Main 2024 (Online) 1st February Morning Shift",
+          "question": {
+            "en": {
+              "content": "The value of the integral $\\int\\limits_0^{\\pi / 4} \\frac{x \\mathrm{~d} x}{\\sin ^4(2 x)+\\cos ^4(2 x)}$ equals :\n"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-f-g0-infty-rightarrow-mathbbr-be-two-fu-jee-main-mathematics-trigonometric-functions-and-equations-oncatuomtotpmmsh",
+          "paperTitle": "JEE Main 2024 (Online) 31st January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$f, g:(0, \\infty) \\rightarrow \\mathbb{R}$$ be two functions defined by $$f(x)=\\int\\limits_{-x}^x\\left(|t|-t^2\\right) e^{-t^2} d t$$ and $$g(x)=\\int\\limits_0^{x^2} t^{1 / 2} e^{-t} d t$$. Then, the value of $$9\\left(f\\left(\\sqrt{\\log _e 9}\\right)+g\\left(\\sqrt{\\log _e 9}\\right)\\right)$$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-f-mathbbr-rightarrow-mathbbr-be-a-functio-jee-main-mathematics-trigonometric-functions-and-equations-pvuctiu7uieprtwb",
+          "paperTitle": "JEE Main 2024 (Online) 30th January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$f: \\mathbb{R} \\rightarrow \\mathbb{R}$$ be a function defined by $$f(x)=\\frac{x}{\\left(1+x^4\\right)^{1 / 4}}$$, and $$g(x)=f(f(f(f(x))))$$. Then, $$18 \\int_0^{\\sqrt{2 \\sqrt{5}}} x^2 g(x) d x$$ is equal to</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-yfx-be-a-thrice-differentiable-function-in--jee-main-mathematics-trigonometric-functions-and-equations-w009ocb6imh9r2ke",
+          "paperTitle": "JEE Main 2024 (Online) 30th January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$y=f(x)$$ be a thrice differentiable function in $$(-5,5)$$. Let the tangents to the curve $$y=f(x)$$ at $$(1, f(1))$$ and $$(3, f(3))$$ make angles $$\\pi / 6$$ and $$\\pi / 4$$, respectively with positive $$x$$-axis. If $$27 \\int_\\limits1^3\\left(\\left(f^{\\prime}(t)\\right)^2+1\\right) f^{\\prime \\prime}(t) d t=\\alpha+\\beta \\sqrt{3}$$ where $$\\alpha, \\beta$$ are integers, then the value of $$\\alpha+\\beta$$ equals</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-a-and-b-be-real-constants-such-that-the-funct-jee-main-mathematics-trigonometric-functions-and-equations-yqjugapunwvzac6i",
+          "paperTitle": "JEE Main 2024 (Online) 30th January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$a$$ and $$b$$ be real constants such that the function $$f$$ defined by $$f(x)=\\left\\{\\begin{array}{ll}x^2+3 x+a & , x \\leq 1 \\\\ b x+2 & , x>1\\end{array}\\right.$$ be differentiable on $$\\mathbb{R}$$. Then, the value of $$\\int_\\limits{-2}^2 f(x) d x$$ equals</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-mathrmf-mathbbr-rightarrow-mathbbr-be-jee-main-mathematics-trigonometric-functions-and-equations-onnn6zo4pda69ccr",
+          "paperTitle": "JEE Main 2024 (Online) 30th January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$\\mathrm{f}: \\mathbb{R} \\rightarrow \\mathbb{R}$$ be defined as $$f(x)=a e^{2 x}+b e^x+c x$$. If $$f(0)=-1, f^{\\prime}\\left(\\log _e 2\\right)=21$$ and $$\\int_0^{\\log _e 4}(f(x)-c x) d x=\\frac{39}{2}$$, then the value of $$|a+b+c|$$ equals</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-value-of-lim-limitsn-rightarrow-infty-sum-jee-main-mathematics-trigonometric-functions-and-equations-d1zczuwrcjfc0ahj",
+          "paperTitle": "JEE Main 2024 (Online) 30th January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>The value of $$\\lim _\\limits{n \\rightarrow \\infty} \\sum_\\limits{k=1}^n \\frac{n^3}{\\left(n^2+k^2\\right)\\left(n^2+3 k^2\\right)}$$ is :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-fleft-fracpi2-fracpi2right-right-jee-main-mathematics-trigonometric-functions-and-equations-si1t8igfbxuaa34h",
+          "paperTitle": "JEE Main 2024 (Online) 30th January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$f:\\left[-\\frac{\\pi}{2}, \\frac{\\pi}{2}\\right] \\rightarrow \\mathbf{R}$$ be a differentiable function such that $$f(0)=\\frac{1}{2}$$. If the $$\\lim _\\limits{x \\rightarrow 0} \\frac{x \\int_0^x f(\\mathrm{t}) \\mathrm{dt}}{\\mathrm{e}^{x^2}-1}=\\alpha$$, then $$8 \\alpha^2$$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pmathop-lim-limitsx-to-pi-over-2-left--jee-main-mathematics-trigonometric-functions-and-equations-xxl7jspg5obsm1av",
+          "paperTitle": "JEE Main 2024 (Online) 29th January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>$$\\mathop {\\lim }\\limits_{x \\to {\\pi  \\over 2}} \\left( {{1 \\over {{{\\left( {x - {\\pi  \\over 2}} \\right)}^2}}}\\int\\limits_{{x^3}}^{{{\\left( {{\\pi  \\over 2}} \\right)}^3}} {\\cos \\left( {{t^{{1 \\over 3}}}} \\right)dt} } \\right)$$ is equal to</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-the-value-of-the-integral-intlimits-fracpi2-jee-main-mathematics-trigonometric-functions-and-equations-foht2z7l9qqpiatm",
+          "paperTitle": "JEE Main 2024 (Online) 29th January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>If the value of the integral $$\\int_\\limits{-\\frac{\\pi}{2}}^{\\frac{\\pi}{2}}\\left(\\frac{x^2 \\cos x}{1+\\pi^x}+\\frac{1+\\sin ^2 x}{1+e^{\\sin x^{2123}}}\\right) d x=\\frac{\\pi}{4}(\\pi+a)-2$$, then the value of $$a$$ is</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pfor-0--mathrma--1-the-value-of-the-integral--jee-main-mathematics-trigonometric-functions-and-equations-okjwsvbhrkn3q8dp",
+          "paperTitle": "JEE Main 2024 (Online) 27th January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>For $$0 < \\mathrm{a} < 1$$, the value of the integral $$\\int_\\limits0^\\pi \\frac{\\mathrm{d} x}{1-2 \\mathrm{a} \\cos x+\\mathrm{a}^2}$$ is :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-intlimits01-frac1sqrt3xsqrt1x-mathrm-jee-main-mathematics-kqagbcisgz4ke3gy",
+          "paperTitle": "JEE Main 2024 (Online) 27th January Morning Shift",
+          "question": {
+            "en": {
+              "content": "If $\\int\\limits_0^1 \\frac{1}{\\sqrt{3+x}+\\sqrt{1+x}} \\mathrm{~d} x=\\mathrm{a}+\\mathrm{b} \\sqrt{2}+\\mathrm{c} \\sqrt{3}$, where $\\mathrm{a}, \\mathrm{b}, \\mathrm{c}$ are rational numbers, then $2 \\mathrm{a}+3 \\mathrm{~b}-4 \\mathrm{c}$ is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-a-b-be-the-orthocentre-of-the-triangle-whose-vertice-jee-main-mathematics-eeno6h8qw6kyhmul",
+          "paperTitle": "JEE Main 2024 (Online) 27th January Morning Shift",
+          "question": {
+            "en": {
+              "content": "If $(a, b)$ be the orthocentre of the triangle whose vertices are $(1,2),(2,3)$ and $(3,1)$, and $\\mathrm{I}_1=\\int\\limits_{\\mathrm{a}}^{\\mathrm{b}} x \\sin \\left(4 x-x^2\\right) \\mathrm{d} x, \\mathrm{I}_2=\\int\\limits_{\\mathrm{a}}^{\\mathrm{b}} \\sin \\left(4 x-x^2\\right) \\mathrm{d} x$, then $36 \\frac{\\mathrm{I}_1}{\\mathrm{I}_2}$ is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-intlimits01-frac1left52-x-2-x2right-jee-main-mathematics-xsqxv4wlbymlsjwd",
+          "paperTitle": "JEE Main 2023 (Online) 15th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "If $\\int\\limits_{0}^{1} \\frac{1}{\\left(5+2 x-2 x^{2}\\right)\\left(1+e^{(2-4 x)}\\right)} d x=\\frac{1}{\\alpha} \\log _{e}\\left(\\frac{\\alpha+1}{\\beta}\\right), \\alpha, \\beta>0$, then $\\alpha^{4}-\\beta^{4}$\n\nis equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-value-of-e-pi-over-4--intlimits0-jee-main-mathematics-trigonometric-functions-and-equations-quylsmuqyrfzowco",
+          "paperTitle": "JEE Main 2023 (Online) 13th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>The value of $${{{e^{ - {\\pi  \\over 4}}} + \\int\\limits_0^{{\\pi  \\over 4}} {{e^{ - x}}{{\\tan }^{50}}xdx} } \\over {\\int\\limits_0^{{\\pi  \\over 4}} {{e^{ - x}}({{\\tan }^{49}}x + {{\\tan }^{51}}x)dx} }}$$ is</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pamongp-ps1-limlimitsn-rightarrow-infty--jee-main-mathematics-trigonometric-functions-and-equations-wtgydnrraxgmcxpt",
+          "paperTitle": "JEE Main 2023 (Online) 13th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Among</p>\n<p>(S1): $$\\lim_\\limits{n \\rightarrow \\infty} \\frac{1}{n^{2}}(2+4+6+\\ldots \\ldots+2 n)=1$$</p>\n<p>(S2) : $$\\lim_\\limits{n \\rightarrow \\infty} \\frac{1}{n^{16}}\\left(1^{15}+2^{15}+3^{15}+\\ldots \\ldots+n^{15}\\right)=\\frac{1}{16}$$</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pintlimits0infty-frac6e3-x6-e2-x11-jee-main-mathematics-trigonometric-functions-and-equations-11skk30mtyfx9wcz",
+          "paperTitle": "JEE Main 2023 (Online) 13th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>$$\\int_\\limits{0}^{\\infty} \\frac{6}{e^{3 x}+6 e^{2 x}+11 e^{x}+6} d x=$$</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-f-mathbbr-rightarrow-mathbbr-be-a-continuo-jee-main-mathematics-trigonometric-functions-and-equations-tgnxgduv82nqudzm",
+          "paperTitle": "JEE Main 2023 (Online) 11th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>If $$f: \\mathbb{R} \\rightarrow \\mathbb{R}$$ be a continuous function satisfying $$\\int_\\limits{0}^{\\frac{\\pi}{2}} f(\\sin 2 x) \\sin x d x+\\alpha \\int_\\limits{0}^{\\frac{\\pi}{4}} f(\\cos 2 x) \\cos x d x=0$$, then the value of $$\\alpha$$ is :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-the-function-f02-rightarrow-mathbbr-be-de-jee-main-mathematics-trigonometric-functions-and-equations-jeqafjd4v6gvpxul",
+          "paperTitle": "JEE Main 2023 (Online) 11th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let the function $$f:[0,2] \\rightarrow \\mathbb{R}$$ be defined as</p>\n<p>$$f(x)= \\begin{cases}e^{\\min \\left\\{x^{2}, x-[x]\\right\\},} & x \\in[0,1) \\\\ e^{\\left[x-\\log _{e} x\\right]}, & x \\in[1,2]\\end{cases}$$</p>\n<p>where $$[t]$$ denotes the greatest integer less than or equal to $$t$$. Then the value of the integral $$\\int_\\limits{0}^{2} x f(x) d x$$ is :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-value-of-the-integral-intlimits-log-e-2-jee-main-mathematics-trigonometric-functions-and-equations-ted62nu3jqvtpsmy",
+          "paperTitle": "JEE Main 2023 (Online) 11th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>The value of the integral $$\\int_\\limits{-\\log _{e} 2}^{\\log _{e} 2} e^{x}\\left(\\log _{e}\\left(e^{x}+\\sqrt{1+e^{2 x}}\\right)\\right) d x$$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-f-be-a-continuous-function-satisfying-intlim-jee-main-mathematics-trigonometric-functions-and-equations-abfp4rabeoeycldo",
+          "paperTitle": "JEE Main 2023 (Online) 10th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$f$$ be a continuous function satisfying $$\\int_\\limits{0}^{t^{2}}\\left(f(x)+x^{2}\\right) d x=\\frac{4}{3} t^{3}, \\forall t > 0$$. Then\n\n$$f\\left(\\frac{\\pi^{2}}{4}\\right)$$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-fx-be-a-function-satisfying-fxfpi-xpi-jee-main-mathematics-trigonometric-functions-and-equations-1vmahjyj8hpixvs8",
+          "paperTitle": "JEE Main 2023 (Online) 6th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$f(x)$$ be a function satisfying $$f(x)+f(\\pi-x)=\\pi^{2}, \\forall x \\in \\mathbb{R}$$. Then $$\\int_\\limits{0}^{\\pi} f(x) \\sin x d x$$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plim-limitsn-rightarrow-inftyleftleft2fra-jee-main-mathematics-trigonometric-functions-and-equations-tykr5aevzmmynsju",
+          "paperTitle": "JEE Main 2023 (Online) 6th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>$$\\lim _\\limits{n \\rightarrow \\infty}\\left\\{\\left(2^{\\frac{1}{2}}-2^{\\frac{1}{3}}\\right)\\left(2^{\\frac{1}{2}}-2^{\\frac{1}{5}}\\right) \\ldots . .\\left(2^{\\frac{1}{2}}-2^{\\frac{1}{2 n+1}}\\right)\\right\\}$$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-5-fx4-fleftfrac1xrightfrac1x3-x-jee-main-mathematics-trigonometric-functions-and-equations-n1utuwv0wttfgria",
+          "paperTitle": "JEE Main 2023 (Online) 6th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$5 f(x)+4 f\\left(\\frac{1}{x}\\right)=\\frac{1}{x}+3, x > 0$$. Then $$18 \\int_\\limits{1}^{2} f(x) d x$$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-value-of-the-integral-intlimits-pi-over-4-jee-main-mathematics-trigonometric-functions-and-equations-ixkbmg2cjw05ds6y",
+          "paperTitle": "JEE Main 2023 (Online) 1st February Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>The value of the integral <br/><br/>$$\\int\\limits_{ - {\\pi  \\over 4}}^{{\\pi  \\over 4}} {{{x + {\\pi  \\over 4}} \\over {2 - \\cos 2x}}dx} $$ is :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pmathop-lim-limitsn-to-infty--left-1-over-jee-main-mathematics-trigonometric-functions-and-equations-pdmydvfizu3djydi",
+          "paperTitle": "JEE Main 2023 (Online) 1st February Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>$$\\mathop {\\lim }\\limits_{n \\to \\infty } \\left[ {{1 \\over {1 + n}} + {1 \\over {2 + n}} + {1 \\over {3 + n}}\\, + \\,...\\, + \\,{1 \\over {2n}}} \\right]$$ is equal to</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-alpha0-if-int0alpha-fracxsqrtxalpha--jee-main-mathematics-qg4uphvohcw7ymtn",
+          "paperTitle": "JEE Main 2023 (Online) 31st January Evening Shift",
+          "question": {
+            "en": {
+              "content": "Let $\\alpha>0$. If $\\int\\limits_0^\\alpha \\frac{x}{\\sqrt{x+\\alpha}-\\sqrt{x}} \\mathrm{~d} x=\\frac{16+20 \\sqrt{2}}{15}$, then $\\alpha$ is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-phixfrac1sqrtx-intlimitsfracpi4x-jee-main-mathematics-pkeb4cl9dmdcsgj7",
+          "paperTitle": "JEE Main 2023 (Online) 31st January Evening Shift",
+          "question": {
+            "en": {
+              "content": "If $\\phi(x)=\\frac{1}{\\sqrt{x}} \\int\\limits_{\\frac{\\pi}{4}}^x\\left(4 \\sqrt{2} \\sin t-3 \\phi^{\\prime}(t)\\right) d t, x>0$, \n<br/><br/>then $\\emptyset^{\\prime}\\left(\\frac{\\pi}{4}\\right)$ is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-alpha-in-01-and-beta--log-e1-a-jee-main-mathematics-trigonometric-functions-and-equations-n0q9siryks4d19hn",
+          "paperTitle": "JEE Main 2023 (Online) 31st January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$\\alpha  \\in (0,1)$$ and $$\\beta  = {\\log _e}(1 - \\alpha )$$. Let $${P_n}(x) = x + {{{x^2}} \\over 2} + {{{x^3}} \\over 3}\\, + \\,...\\, + \\,{{{x^n}} \\over n},x \\in (0,1)$$. Then the integral $$\\int\\limits_0^\\alpha  {{{{t^{50}}} \\over {1 - t}}dt} $$ is equal to</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-value-of-intlimitsfracpi3fracpi2-jee-main-mathematics-trigonometric-functions-and-equations-1n8cktulql7jfzeg",
+          "paperTitle": "JEE Main 2023 (Online) 31st January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>The value of $$\\int_\\limits{\\frac{\\pi}{3}}^{\\frac{\\pi}{2}} \\frac{(2+3 \\sin x)}{\\sin x(1+\\cos x)} d x$$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "limlimitsn-rightarrow-infty-frac3nleft4lef-jee-main-mathematics-1plaljzce1ycxksv",
+          "paperTitle": "JEE Main 2023 (Online) 30th January Evening Shift",
+          "question": {
+            "en": {
+              "content": "$\\lim\\limits_{n \\rightarrow \\infty} \\frac{3}{n}\\left\\{4+\\left(2+\\frac{1}{n}\\right)^2+\\left(2+\\frac{2}{n}\\right)^2+\\ldots+\\left(3-\\frac{1}{n}\\right)^2\\right\\}$ is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-t-denotes-the-greatest-integer-le-mathrmt-t-jee-main-mathematics-trigonometric-functions-and-equations-kw7wkan4jcnm9fzt",
+          "paperTitle": "JEE Main 2023 (Online) 30th January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>If [t] denotes the greatest integer $$\\le \\mathrm{t}$$, then the value of $${{3(e - 1)} \\over e}\\int\\limits_1^2 {{x^2}{e^{[x] + [{x^3}]}}dx} $$ is :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-value-of-the-integral-int12-left-t4--1-jee-main-mathematics-trigonometric-functions-and-equations-pcjb5j81dqxe108g",
+          "paperTitle": "JEE Main 2023 (Online) 29th January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>The value of the integral $$\\int_1^2 {\\left( {{{{t^4} + 1} \\over {{t^6} + 1}}} \\right)dt} $$ is</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-value-of-the-integral-intlimits122-tan-jee-main-mathematics-trigonometric-functions-and-equations-podc4xafvuzhjusp",
+          "paperTitle": "JEE Main 2023 (Online) 29th January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>The value of the integral $$\\int\\limits_{1/2}^2 {{{{{\\tan }^{ - 1}}x} \\over x}dx} $$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-fx--x--a-over-pi-2-4sin-x--b-ove-jee-main-mathematics-trigonometric-functions-and-equations-p7dtit0vsynfg5b0",
+          "paperTitle": "JEE Main 2023 (Online) 29th January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$f(x) = x + {a \\over {{\\pi ^2} - 4}}\\sin x + {b \\over {{\\pi ^2} - 4}}\\cos x,x \\in R$$ be a function which<br/><br/> satisfies $$f(x) = x + \\int\\limits_0^{\\pi /2} {\\sin (x + y)f(y)dy} $$. then $$(a+b)$$ is equal to</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-integral-16intlimits12-dx-over-x3le-jee-main-mathematics-trigonometric-functions-and-equations-i87jngute7iuocxc",
+          "paperTitle": "JEE Main 2023 (Online) 25th January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>The integral $$16\\int\\limits_1^2 {{{dx} \\over {{x^3}{{\\left( {{x^2} + 2} \\right)}^2}}}} $$ is equal to</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-minimum-value-of-the-function-fx--intlimits0-jee-main-mathematics-trigonometric-functions-and-equations-3rz2al6jfjdn1pks",
+          "paperTitle": "JEE Main 2023 (Online) 25th January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>The minimum value of the function $$f(x) = \\int\\limits_0^2 {{e^{|x - t|}}dt} $$ is :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pint3sqrt-2--over-43sqrt-3--over-4--jee-main-mathematics-trigonometric-functions-and-equations-epqjm7segabdlawx",
+          "paperTitle": "JEE Main 2023 (Online) 24th January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>$$\\int\\limits_{{{3\\sqrt 2 } \\over 4}}^{{{3\\sqrt 3 } \\over 4}} {{{48} \\over {\\sqrt {9 - 4{x^2}} }}dx} $$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-t-denotes-the-greatest-integer-leq-t-then-jee-main-mathematics-trigonometric-functions-and-equations-xhjb1xjyhigq6ab0",
+          "paperTitle": "JEE Main 2022 (Online) 29th July Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>If $$[t]$$ denotes the greatest integer $$\\leq t$$, then the value of $$\\int_{0}^{1}\\left[2 x-\\left|3 x^{2}-5 x+2\\right|+1\\right] \\mathrm{d} x$$ is :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-integral-intlimits0fracpi2-frac13-jee-main-mathematics-trigonometric-functions-and-equations-3kdyo74dnsx3slib",
+          "paperTitle": "JEE Main 2022 (Online) 29th July Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>The integral $$\\int\\limits_{0}^{\\frac{\\pi}{2}} \\frac{1}{3+2 \\sin x+\\cos x} \\mathrm{~d} x$$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-falphaintlimits1alpha-fraclog-10-jee-main-mathematics-trigonometric-functions-and-equations-hy8zwroxwnc0cb4o",
+          "paperTitle": "JEE Main 2022 (Online) 29th July Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>If $$f(\\alpha)=\\int\\limits_{1}^{\\alpha} \\frac{\\log _{10} \\mathrm{t}}{1+\\mathrm{t}} \\mathrm{dt}, \\alpha>0$$, then $$f\\left(\\mathrm{e}^{3}\\right)+f\\left(\\mathrm{e}^{-3}\\right)$$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-inxint0x-frac1leftt25right-jee-main-mathematics-trigonometric-functions-and-equations-in9r8ekhaqbvdgtm",
+          "paperTitle": "JEE Main 2022 (Online) 28th July Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$I_{n}(x)=\\int_{0}^{x} \\frac{1}{\\left(t^{2}+5\\right)^{n}} d t, n=1,2,3, \\ldots .$$ Then :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-minimum-value-of-the-twice-differentiable-function--jee-main-mathematics-trigonometric-functions-and-equations-c9brmybjpksjnsma",
+          "paperTitle": "JEE Main 2022 (Online) 28th July Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>The minimum value of the twice differentiable function $$f(x)=\\int\\limits_{0}^{x} \\mathrm{e}^{x-\\mathrm{t}} f^{\\prime}(\\mathrm{t}) \\mathrm{dt}-\\left(x^{2}-x+1\\right) \\mathrm{e}^{x}$$, $$x \\in \\mathbf{R}$$, is :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-fx2x-x-1x1-x-in-mathbfrp-p-jee-main-mathematics-trigonometric-functions-and-equations-tokq43j86asnkdfh",
+          "paperTitle": "JEE Main 2022 (Online) 27th July Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$f(x)=2+|x|-|x-1|+|x+1|, x \\in \\mathbf{R}$$.</p>\n<p>Consider</p>\n<p>$$(\\mathrm{S} 1): f^{\\prime}\\left(-\\frac{3}{2}\\right)+f^{\\prime}\\left(-\\frac{1}{2}\\right)+f^{\\prime}\\left(\\frac{1}{2}\\right)+f^{\\prime}\\left(\\frac{3}{2}\\right)=2$$</p>\n<p>$$(\\mathrm{S} 2): \\int\\limits_{-2}^{2} f(x) \\mathrm{d} x=12$$</p>\n<p>Then,</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pintlimits02leftleft2-x2-3-xrightleft-jee-main-mathematics-trigonometric-functions-and-equations-qilbkjyr0tqiwlve",
+          "paperTitle": "JEE Main 2022 (Online) 27th July Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>$$\\int\\limits_{0}^{2}\\left(\\left|2 x^{2}-3 x\\right|+\\left[x-\\frac{1}{2}\\right]\\right) \\mathrm{d} x$$, where [t] is the greatest integer function, is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-f-mathbbr-rightarrow-mathbbr-be-a-functio-jee-main-mathematics-trigonometric-functions-and-equations-ieczykit5ygprljp",
+          "paperTitle": "JEE Main 2022 (Online) 27th July Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$f: \\mathbb{R} \\rightarrow \\mathbb{R}$$ be a function defined as</p>\n<p>$$f(x)=a \\sin \\left(\\frac{\\pi[x]}{2}\\right)+[2-x], a \\in \\mathbb{R}$$ where $$[t]$$ is the greatest integer less than or equal to $$t$$. If $$\\mathop {\\lim }\\limits_{x \\to -1 } f(x)$$ exists, then the value of $$\\int\\limits_{0}^{4} f(x) d x$$ is equal to</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet--iintpi--4pi--3leftfrac8-sin-x-si-jee-main-mathematics-trigonometric-functions-and-equations-sismsbu7hrxl8kyu",
+          "paperTitle": "JEE Main 2022 (Online) 27th July Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$\nI=\\int_{\\pi / 4}^{\\pi / 3}\\left(\\frac{8 \\sin x-\\sin 2 x}{x}\\right) d x\n$$. Then</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-a-function-f-mathbbr-rightarrow-mathbbr-b-jee-main-mathematics-trigonometric-functions-and-equations-juzef3vugqhd2jra",
+          "paperTitle": "JEE Main 2022 (Online) 27th July Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let a function $$f: \\mathbb{R} \\rightarrow \\mathbb{R}$$ be defined as :</p>\n<p>$$f(x)= \\begin{cases}\\int\\limits_{0}^{x}(5-|t-3|) d t, & x>4 \\\\ x^{2}+b x & , x \\leq 4\\end{cases}$$</p>\n<p>where $$\\mathrm{b} \\in \\mathbb{R}$$. If $$f$$ is continuous at $$x=4$$, then which of the following statements is NOT true?</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "p-intlimits020-pisin-xcos-x2-d-x-t-jee-main-mathematics-trigonometric-functions-and-equations-rm98wxjiklunp1al",
+          "paperTitle": "JEE Main 2022 (Online) 26th July Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>$$\n\\int\\limits_{0}^{20 \\pi}(|\\sin x|+|\\cos x|)^{2} d x \\text { is equal to }\n$$</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-a--mathop-lim-limitsn-to-infty--sumlimi-jee-main-mathematics-trigonometric-functions-and-equations-xp9wqgmjfe9dew5p",
+          "paperTitle": "JEE Main 2022 (Online) 26th July Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>If $$a = \\mathop {\\lim }\\limits_{n \\to \\infty } \\sum\\limits_{k = 1}^n {{{2n} \\over {{n^2} + {k^2}}}} $$ and $$f(x) = \\sqrt {{{1 - \\cos x} \\over {1 + \\cos x}}} $$, $$x \\in (0,1)$$, then :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "p-lim-n-rightarrow-infty-frac12nleftfra-jee-main-mathematics-trigonometric-functions-and-equations-nl9iozxgj4ynnmky",
+          "paperTitle": "JEE Main 2022 (Online) 25th July Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>$$\\mathop {\\lim }\\limits_{n \\to \\infty } {1 \\over {{2^n}}}\\left( {{1 \\over {\\sqrt {1 - {1 \\over {{2^n}}}} }} + {1 \\over {\\sqrt {1 - {2 \\over {{2^n}}}} }} + {1 \\over {\\sqrt {1 - {3 \\over {{2^n}}}} }} + \\,\\,...\\,\\, + \\,\\,{1 \\over {\\sqrt {1 - {{{2^n} - 1} \\over {{2^n}}}} }}} \\right)$$ is equal to</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-t-denote-the-greatest-integer-less-than-or-equa-jee-main-mathematics-trigonometric-functions-and-equations-unfh1flah3pirsjg",
+          "paperTitle": "JEE Main 2022 (Online) 25th July Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$[t]$$ denote the greatest integer less than or equal to $$t$$. Then the value of the integral $$\\int_{-3}^{101}\\left([\\sin (\\pi x)]+e^{[\\cos (2 \\pi x)]}\\right) d x$$ is equal to</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pfor-any-real-number-x-let-x-denote-the-largest-jee-main-mathematics-trigonometric-functions-and-equations-8nexqbvhxqrbdhtz",
+          "paperTitle": "JEE Main 2022 (Online) 25th July Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>For any real number $$x$$, let $$[x]$$ denote the largest integer less than equal to $$x$$. Let $$f$$ be a real valued function defined on the interval $$[-10,10]$$ by $$f(x)=\\left\\{\\begin{array}{l}x-[x], \\text { if }[x] \\text { is odd } \\\\ 1+[x]-x, \\text { if }[x] \\text { is even } .\\end{array}\\right.$$\n\nThen the value of $$\\frac{\\pi^{2}}{10} \\int_{-10}^{10} f(x) \\cos \\pi x \\,d x$$ is :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pmathop-lim-limitsn-to-infty--sumlimitsr--jee-main-mathematics-trigonometric-functions-and-equations-bxkaxrdci7xe4hic",
+          "paperTitle": "JEE Main 2022 (Online) 30th June Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>$$\\mathop {\\lim }\\limits_{n \\to \\infty } \\sum\\limits_{r = 1}^n {{r \\over {2{r^2} - 7rn + 6{n^2}}}} $$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-f-be-a-real-valued-continuous-function-on-0-1-and-jee-main-mathematics-trigonometric-functions-and-equations-u9gz8jy1ig5w9xos",
+          "paperTitle": "JEE Main 2022 (Online) 29th June Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let f be a real valued continuous function on [0, 1] and $$f(x) = x + \\int\\limits_0^1 {(x - t)f(t)dt} $$.</p>\n<p>Then, which of the following points (x, y) lies on the curve y = f(x) ?</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-intlimits02-left-sqrt-2x-sqrt-2x--jee-main-mathematics-trigonometric-functions-and-equations-uidv4ye94epqcjkj",
+          "paperTitle": "JEE Main 2022 (Online) 29th June Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>If $$\\int\\limits_0^2 {\\left( {\\sqrt {2x}  - \\sqrt {2x - {x^2}} } \\right)dx = \\int\\limits_0^1 {\\left( {1 - \\sqrt {1 - {y^2}}  - {{{y^2}} \\over 2}} \\right)dy + \\int\\limits_1^2 {\\left( {2 - {{{y^2}} \\over 2}} \\right)dy + I} } } $$, then I equals</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-fr-to-r-be-a-function-defined-by-p-pfx-jee-main-mathematics-trigonometric-functions-and-equations-hrgzoot8pogwkbk5",
+          "paperTitle": "JEE Main 2022 (Online) 29th June Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$f:R \\to R$$ be a function defined by :</p>\n<p>$$f(x) = \\left\\{ {\\matrix{\n   {\\max \\,\\{ {t^3} - 3t\\} \\,t \\le x} & ; & {x \\le 2}  \\cr \n   {{x^2} + 2x - 6} & ; & {2 < x < 3}  \\cr \n   {[x - 3] + 9} & ; & {3 \\le x \\le 5}  \\cr \n   {2x + 1} & ; & {x > 5}  \\cr \n\n } } \\right.$$</p>\n<p>where [t] is the greatest integer less than or equal to t. Let m be the number of points where f is not differentiable and $$I = \\int\\limits_{ - 2}^2 {f(x)\\,dx} $$. Then the ordered pair (m, I) is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pint05-cos-left-pi-left-x-left-x-over-jee-main-mathematics-trigonometric-functions-and-equations-shlchkmpte2unadx",
+          "paperTitle": "JEE Main 2022 (Online) 29th June Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>$$\\int_0^5 {\\cos \\left( {\\pi \\left( {x - \\left[ {{x \\over 2}} \\right]} \\right)} \\right)dx} $$,</p>\n<p>where [t] denotes greatest integer less than or equal to t, is equal to:</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-f--r-to-r-be-a-differentiable-function-such-tha-jee-main-mathematics-trigonometric-functions-and-equations-edw0nnnvmto2roxc",
+          "paperTitle": "JEE Main 2022 (Online) 28th June Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let f : R $$\\to$$ R be a differentiable function such that $$f\\left( {{\\pi  \\over 4}} \\right) = \\sqrt 2 ,\\,f\\left( {{\\pi  \\over 2}} \\right) = 0$$ and $$f'\\left( {{\\pi  \\over 2}} \\right) = 1$$ and <br/><br/>let $$g(x) = \\int_x^{\\pi /4} {(f'(t)\\sec t + \\tan t\\sec t\\,f(t))\\,dt} $$ for $$x \\in \\left[ {{\\pi  \\over 4},{\\pi  \\over 2}} \\right)$$. Then $$\\mathop {\\lim }\\limits_{x \\to {{\\left( {{\\pi  \\over 2}} \\right)}^ - }} g(x)$$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-f--r-to-r-be-a-continuous-function-satisfying-f-jee-main-mathematics-trigonometric-functions-and-equations-vtoe0xclnllz9h9i",
+          "paperTitle": "JEE Main 2022 (Online) 28th June Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let f : R $$\\to$$ R be a continuous function satisfying f(x) + f(x  + k) = n, for all x $$\\in$$ R where k > 0 and n is a positive integer. If $${I_1} = \\int\\limits_0^{4nk} {f(x)dx} $$ and $${I_2} = \\int\\limits_{ - k}^{3k} {f(x)dx} $$, then :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-t-denote-the-greatest-integer-less-than-or-equal-to-jee-main-mathematics-trigonometric-functions-and-equations-obijpu2lgol4hiq7",
+          "paperTitle": "JEE Main 2022 (Online) 28th June Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let [t] denote the greatest integer less than or equal to t. Then, the value of the integral $$\\int\\limits_0^1 {[ - 8{x^2} + 6x - 1]dx} $$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-m-and-n-respectively-are-the-number-of-local-maximum-a-jee-main-mathematics-trigonometric-functions-and-equations-hq7hhmyom2m4jxrk",
+          "paperTitle": "JEE Main 2022 (Online) 27th June Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>If m and n respectively are the number of local maximum and local minimum points of the function $$f(x) = \\int\\limits_0^{{x^2}} {{{{t^2} - 5t + 4} \\over {2 + {e^t}}}dt} $$, then the ordered pair (m, n) is equal to</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-f-be-a-differentiable-function-in-left-0pi--jee-main-mathematics-trigonometric-functions-and-equations-i3lelisk1wghim9t",
+          "paperTitle": "JEE Main 2022 (Online) 27th June Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let f be a differentiable function in $$\\left( {0,{\\pi  \\over 2}} \\right)$$. If $$\\int\\limits_{\\cos x}^1 {{t^2}\\,f(t)dt = {{\\sin }^3}x + \\cos x} $$, then $${1 \\over {\\sqrt 3 }}f'\\left( {{1 \\over {\\sqrt 3 }}} \\right)$$ is equal to</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-integral-intlimits01-1-over-7left-1-jee-main-mathematics-trigonometric-functions-and-equations-hn6wbflovmkhdwis",
+          "paperTitle": "JEE Main 2022 (Online) 27th June Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>The integral $$\\int\\limits_0^1 {{1 \\over {{7^{\\left[ {{1 \\over x}} \\right]}}}}dx} $$, where [ . ] denotes the greatest integer function, is equal to</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-value-of-the-integral-intlimits-22-x3-jee-main-mathematics-trigonometric-functions-and-equations-vucf3bn4rlgjlj9m",
+          "paperTitle": "JEE Main 2022 (Online) 27th June Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>The value of the integral <br/><br/>$$\\int\\limits_{ - 2}^2 {{{|{x^3} + x|} \\over {({e^{x|x|}} + 1)}}dx} $$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-bn--int0pi-over-2-cos-2nx-o-jee-main-mathematics-trigonometric-functions-and-equations-4j5ixguvzyxnyhur",
+          "paperTitle": "JEE Main 2022 (Online) 25th June Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>If $${b_n} = \\int_0^{{\\pi  \\over 2}} {{{{{\\cos }^2}nx} \\over {\\sin x}}dx,\\,n \\in N} $$, then</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-value-of-intlimits0pi-ecos-xsin-x-jee-main-mathematics-trigonometric-functions-and-equations-w5idunitjxi9jwqy",
+          "paperTitle": "JEE Main 2022 (Online) 25th June Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>The value of $$\\int\\limits_0^\\pi  {{{{e^{\\cos x}}\\sin x} \\over {(1 + {{\\cos }^2}x)({e^{\\cos x}} + {e^{ - \\cos x}})}}dx} $$ is equal to:</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-value-of-the-integral-intlimits-pi-2pi-jee-main-mathematics-trigonometric-functions-and-equations-okci6e7sr99qiozp",
+          "paperTitle": "JEE Main 2022 (Online) 24th June Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>The value of the integral <br/><br/>$$\\int\\limits_{ - \\pi /2}^{\\pi /2} {{{dx} \\over {(1 + {e^x})({{\\sin }^6}x + {{\\cos }^6}x)}}} $$ is equal to</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pmathop-lim-limitsn-to-infty--left-n2-jee-main-mathematics-trigonometric-functions-and-equations-vsgqfo7caneofked",
+          "paperTitle": "JEE Main 2022 (Online) 24th June Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>$$\\mathop {\\lim }\\limits_{n \\to \\infty } \\left( {{{{n^2}} \\over {({n^2} + 1)(n + 1)}} + {{{n^2}} \\over {({n^2} + 4)(n + 2)}} + {{{n^2}} \\over {({n^2} + 9)(n + 3)}} + \\,\\,....\\,\\, + \\,\\,{{{n^2}} \\over {({n^2} + {n^2})(n + n)}}} \\right)$$ is equal to :</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-f--r-to-r-be-a-continuous-function-then-mathop-jee-main-mathematics-trigonometric-functions-and-equations-1c0ypfuiyfcfxbp3",
+          "paperTitle": "JEE Main 2021 (Online) 1st September Evening Shift",
+          "question": {
+            "en": {
+              "content": "Let f : R $$\\to$$ R be a continuous function. Then $$\\mathop {\\lim }\\limits_{x \\to {\\pi  \\over 4}} {{{\\pi  \\over 4}\\int\\limits_2^{{{\\sec }^2}x} {f(x)\\,dx} } \\over {{x^2} - {{{\\pi ^2}} \\over {16}}}}$$ is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-jnm--intlimits01-over-2-xn-ove-jee-main-mathematics-trigonometric-functions-and-equations-y3k0qqxmxdb8fhas",
+          "paperTitle": "JEE Main 2021 (Online) 1st September Evening Shift",
+          "question": {
+            "en": {
+              "content": "Let $${J_{n,m}} = \\int\\limits_0^{{1 \\over 2}} {{{{x^n}} \\over {{x^m} - 1}}dx} $$, $$\\forall$$ n &gt; m and n, m $$\\in$$ N. Consider a matrix $$A = {[{a_{ij}}]_{3 \\times 3}}$$ where $${a_{ij}} = \\left\\{ {\\matrix{\n   {{j_{6 + i,3}} - {j_{i + 3,3}},} &amp; {i \\le j}  \\cr \n   {0,} &amp; {i &gt; j}  \\cr \n\n } } \\right.$$. Then $$\\left| {adj{A^{ - 1}}} \\right|$$ is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-function-fx-that-satisfies-the-condition-fx--x--jee-main-mathematics-trigonometric-functions-and-equations-tqfqmeyh48ax3g7j",
+          "paperTitle": "JEE Main 2021 (Online) 1st September Evening Shift",
+          "question": {
+            "en": {
+              "content": "The function f(x), that satisfies the condition<br> $$f(x) = x + \\int\\limits_0^{\\pi /2} {\\sin x.\\cos y\\,f(y)\\,dy} $$, is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-x-is-the-greatest-integer-le-x-then-pi-2in-jee-main-mathematics-trigonometric-functions-and-equations-nkxphztfskyswm0v",
+          "paperTitle": "JEE Main 2021 (Online) 31st August Evening Shift",
+          "question": {
+            "en": {
+              "content": "If [x] is the greatest integer $$\\le$$ x, then <br><br>$${\\pi ^2}\\int\\limits_0^2 {\\left( {\\sin {{\\pi x} \\over 2}} \\right)(x - [x]} {)^{[x]}}dx$$ is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-f-be-a-non-negative-function-in-0-1-and-twice-differe-jee-main-mathematics-trigonometric-functions-and-equations-jrwaohrttnlumu66",
+          "paperTitle": "JEE Main 2021 (Online) 31st August Morning Shift",
+          "question": {
+            "en": {
+              "content": "Let f be a non-negative function in [0, 1] and twice differentiable in (0, 1). If $$\\int_0^x {\\sqrt {1 - {{(f'(t))}^2}} dt = \\int_0^x {f(t)dt} } $$, $$0 \\le x \\le 1$$ and f(0) = 0, then $$\\mathop {\\lim }\\limits_{x \\to 0} {1 \\over {{x^2}}}\\int_0^x {f(t)dt} $$ :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-value-of-the-integral-intlimits01-sqrt-x-dx--jee-main-mathematics-trigonometric-functions-and-equations-ias0wcobovp0y4bv",
+          "paperTitle": "JEE Main 2021 (Online) 27th August Evening Shift",
+          "question": {
+            "en": {
+              "content": "The value of the integral $$\\int\\limits_0^1 {{{\\sqrt x dx} \\over {(1 + x)(1 + 3x)(3 + x)}}} $$ is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-un--left-1--1-over-n2-rightleft-1-jee-main-mathematics-trigonometric-functions-and-equations-atnonw5crcoevgih",
+          "paperTitle": "JEE Main 2021 (Online) 27th August Morning Shift",
+          "question": {
+            "en": {
+              "content": "If $${U_n} = \\left( {1 + {1 \\over {{n^2}}}} \\right)\\left( {1 + {{{2^2}} \\over {{n^2}}}} \\right)^2.....\\left( {1 + {{{n^2}} \\over {{n^2}}}} \\right)^n$$, then $$\\mathop {\\lim }\\limits_{n \\to \\infty } {({U_n})^{{{ - 4} \\over {{n^2}}}}}$$ is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "intlimits616-log-ex2-over-log-e-jee-main-mathematics-trigonometric-functions-and-equations-rjcvnq4jad1gwba8",
+          "paperTitle": "JEE Main 2021 (Online) 27th August Morning Shift",
+          "question": {
+            "en": {
+              "content": "$$\\int\\limits_6^{16} {{{{{\\log }_e}{x^2}} \\over {{{\\log }_e}{x^2} + {{\\log }_e}({x^2} - 44x + 484)}}dx} $$ is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-the-value-of-the-integral-intlimits05-x--x--jee-main-mathematics-trigonometric-functions-and-equations-wzc8cflp8cqddol5",
+          "paperTitle": "JEE Main 2021 (Online) 26th August Evening Shift",
+          "question": {
+            "en": {
+              "content": "If the value of the integral <br>$$\\int\\limits_0^5 {{{x + [x]} \\over {{e^{x - [x]}}}}dx = \\alpha {e^{ - 1}} + \\beta } $$, where $$\\alpha$$, $$\\beta$$ $$\\in$$ R, 5$$\\alpha$$ + 6$$\\beta$$ = 0, and [x] denotes the greatest integer less than or equal to x; then the value of ($$\\alpha$$ + $$\\beta$$)<sup>2</sup> is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-value-of-intlimits-pi-over-2pi-over-jee-main-mathematics-trigonometric-functions-and-equations-ex8hqqrxaegiubhs",
+          "paperTitle": "JEE Main 2021 (Online) 26th August Evening Shift",
+          "question": {
+            "en": {
+              "content": "The value of $$\\int\\limits_{ - {\\pi  \\over 2}}^{{\\pi  \\over 2}} {\\left( {{{1 + {{\\sin }^2}x} \\over {1 + {\\pi ^{\\sin x}}}}} \\right)} \\,dx$$ is "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-value-of-intlimits-1-over-sqrt-2-1--jee-main-mathematics-trigonometric-functions-and-equations-9fabz0lkjeqjkhro",
+          "paperTitle": "JEE Main 2021 (Online) 26th August Morning Shift",
+          "question": {
+            "en": {
+              "content": "The value of $$\\int\\limits_{{{ - 1} \\over {\\sqrt 2 }}}^{{1 \\over {\\sqrt 2 }}} {{{\\left( {{{\\left( {{{x + 1} \\over {x - 1}}} \\right)}^2} + {{\\left( {{{x - 1} \\over {x + 1}}} \\right)}^2} - 2} \\right)}^{{1 \\over 2}}}dx} $$ is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-value-of-mathop-lim-limitsn-to-infty--1-ov-jee-main-mathematics-trigonometric-functions-and-equations-mkufni4n6ikbb0ta",
+          "paperTitle": "JEE Main 2021 (Online) 26th August Morning Shift",
+          "question": {
+            "en": {
+              "content": "The value of <br/><br/>$$\\mathop {\\lim }\\limits_{n \\to \\infty } {1 \\over n}\\sum\\limits_{r = 0}^{2n - 1} {{{{n^2}} \\over {{n^2} + 4{r^2}}}} $$ is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-f--a-b-to-r-be-twice-differentiable-function-su-jee-main-mathematics-trigonometric-functions-and-equations-xhsrxxqvwbajvhwl",
+          "paperTitle": "JEE Main 2021 (Online) 27th July Evening Shift",
+          "question": {
+            "en": {
+              "content": "Let f : (a, b) $$\\to$$ R be twice differentiable function such that $$f(x) = \\int_a^x {g(t)dt} $$ for a differentiable function g(x). If f(x) = 0 has exactly five distinct roots in (a, b), then g(x)g'(x) = 0 has at least :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-value-of-mathop-lim-limitsn-to-infty--1-ov-jee-main-mathematics-trigonometric-functions-and-equations-loh2aeofnfyt9y0n",
+          "paperTitle": "JEE Main 2021 (Online) 27th July Morning Shift",
+          "question": {
+            "en": {
+              "content": "The value of $$\\mathop {\\lim }\\limits_{n \\to \\infty } {1 \\over n}\\sum\\limits_{j = 1}^n {{{(2j - 1) + 8n} \\over {(2j - 1) + 4n}}} $$ is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-value-of-the-definite-integralbrbrintlimits-jee-main-mathematics-trigonometric-functions-and-equations-blbjzrloakwgi1p9",
+          "paperTitle": "JEE Main 2021 (Online) 27th July Morning Shift",
+          "question": {
+            "en": {
+              "content": "The value of the definite integral<br><br>$$\\int\\limits_{ - {\\pi  \\over 4}}^{{\\pi  \\over 4}} {{{dx} \\over {(1 + {e^{x\\cos x}})({{\\sin }^4}x + {{\\cos }^4}x)}}} $$ is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-fx--left-matrix-intlimits0x-left-5-jee-main-mathematics-trigonometric-functions-and-equations-pqm3m2003qt4poys",
+          "paperTitle": "JEE Main 2021 (Online) 25th July Evening Shift",
+          "question": {
+            "en": {
+              "content": "If $$f(x) = \\left\\{ {\\matrix{\n   {\\int\\limits_0^x {\\left( {5 + \\left| {1 - t} \\right|} \\right)dt,} } &amp; {x &gt; 2}  \\cr \n   {5x + 1,} &amp; {x \\le 2}  \\cr \n\n } } \\right.$$, then "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-value-of-the-integral-intlimits-11-log-left-jee-main-mathematics-trigonometric-functions-and-equations-jtfbi97v8isnfvgc",
+          "paperTitle": "JEE Main 2021 (Online) 25th July Evening Shift",
+          "question": {
+            "en": {
+              "content": "The value of the <br><br>integral $$\\int\\limits_{ - 1}^1 {\\log \\left( {x + \\sqrt {{x^2} + 1} } \\right)dx} $$ is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-value-of-the-definite-integral-intlimitspi-24-jee-main-mathematics-trigonometric-functions-and-equations-nzfxzqdnjbgs9sed",
+          "paperTitle": "JEE Main 2021 (Online) 25th July Morning Shift",
+          "question": {
+            "en": {
+              "content": "The value of the definite integral $$\\int\\limits_{\\pi /24}^{5\\pi /24} {{{dx} \\over {1 + \\root 3 \\of {\\tan 2x} }}} $$ is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-f0infty--to-0infty--be-defined-as-fx--jee-main-mathematics-trigonometric-functions-and-equations-vx5nw9nwooalmhzn",
+          "paperTitle": "JEE Main 2021 (Online) 25th July Morning Shift",
+          "question": {
+            "en": {
+              "content": "Let $$f:[0,\\infty ) \\to [0,\\infty )$$ be defined as $$f(x) = \\int_0^x {[y]dy} $$<br><br>where [x] is the greatest integer less than or equal to x. Which of the following is true?"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-intlimits0100pi--sin-2x-over-ele-jee-main-mathematics-trigonometric-functions-and-equations-czlcp2dwxmrg066b",
+          "paperTitle": "JEE Main 2021 (Online) 22th July Evening Shift",
+          "question": {
+            "en": {
+              "content": "If $$\\int\\limits_0^{100\\pi } {{{{{\\sin }^2}x} \\over {{e^{\\left( {{x \\over \\pi } - \\left[ {{x \\over \\pi }} \\right]} \\right)}}}}dx = {{\\alpha {\\pi ^3}} \\over {1 + 4{\\pi ^2}}},\\alpha  \\in R} $$ where [x] is the greatest integer less than or equal to x, then the value of $$\\alpha$$ is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-x-denotes-the-greatest-integer-less-than-or-equal-to-x-jee-main-mathematics-trigonometric-functions-and-equations-pw1v2rqwwf6dzvng",
+          "paperTitle": "JEE Main 2021 (Online) 20th July Evening Shift",
+          "question": {
+            "en": {
+              "content": "If [x] denotes the greatest integer less than or equal to x, then the value of the integral $$\\int_{ - \\pi /2}^{\\pi /2} {[[x] - \\sin x]dx} $$ is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-the-real-part-of-the-complex-number-1-cos-theta-jee-main-mathematics-trigonometric-functions-and-equations-puslkpadumlysrd9",
+          "paperTitle": "JEE Main 2021 (Online) 20th July Evening Shift",
+          "question": {
+            "en": {
+              "content": "If the real part of the complex number $${(1 - \\cos \\theta  + 2i\\sin \\theta )^{ - 1}}$$ is $${1 \\over 5}$$ for $$\\theta  \\in (0,\\pi )$$, then the value of the integral $$\\int_0^\\theta  {\\sin x} dx$$ is equal to:"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-gt--int-pi-2pi-2-cos-left-pi--jee-main-mathematics-trigonometric-functions-and-equations-0dhiytqgkupglrvn",
+          "paperTitle": "JEE Main 2021 (Online) 20th July Evening Shift",
+          "question": {
+            "en": {
+              "content": "Let $$g(t) = \\int_{ - \\pi /2}^{\\pi /2} {\\cos \\left( {{\\pi  \\over 4}t + f(x)} \\right)} dx$$, where $$f(x) = {\\log _e}\\left( {x + \\sqrt {{x^2} + 1} } \\right),x \\in R$$. Then which one of the following is correct?"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-a-be-a-positive-real-number-such-that-int0a-ex-jee-main-mathematics-trigonometric-functions-and-equations-5sh4l4wcfb1nipua",
+          "paperTitle": "JEE Main 2021 (Online) 20th July Morning Shift",
+          "question": {
+            "en": {
+              "content": "Let a be a positive real number such that $$\\int_0^a {{e^{x - [x]}}} dx = 10e - 9$$ where [ x ] is the greatest integer less than or equal to x. Then a is equal to:"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-value-of-the-integral-intlimits-11-log-e-jee-main-mathematics-trigonometric-functions-and-equations-th84nbwetbrehq86",
+          "paperTitle": "JEE Main 2021 (Online) 20th July Morning Shift",
+          "question": {
+            "en": {
+              "content": "The value of the integral $$\\int\\limits_{ - 1}^1 {{{\\log }_e}(\\sqrt {1 - x}  + \\sqrt {1 + x} )dx} $$ is equal to:"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-gx--int0x-ftdt--where-f-is-continuous-fun-jee-main-mathematics-trigonometric-functions-and-equations-e30d6dybbzgeihof",
+          "paperTitle": "JEE Main 2021 (Online) 18th March Evening Shift",
+          "question": {
+            "en": {
+              "content": "Let g(x) = $$\\int_0^x {f(t)dt} $$, where f is continuous function in [ 0, 3 ] such that $${1 \\over 3}$$ $$ \\le $$ f(t) $$ \\le $$ 1 for all t$$\\in$$ [0, 1] and 0 $$ \\le $$ f(t) $$ \\le $$ $${1 \\over 2}$$ for all t$$\\in$$ (1, 3]. The largest possible interval in which g(3) lies is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-f--r--to--r-be-defined-as-fx--esup-xsup-jee-main-mathematics-trigonometric-functions-and-equations-rlpqmupel3xqhqns",
+          "paperTitle": "JEE Main 2021 (Online) 17th March Evening Shift",
+          "question": {
+            "en": {
+              "content": "Let f : R $$ \\to $$ R be defined as f(x) = e<sup>$$-$$x</sup>sinx. If F : [0, 1] $$ \\to $$ R is a differentiable function with that F(x) = $$\\int_0^x {f(t)dt} $$, then the value of $$\\int_0^1 {(F'(x) + f(x)){e^x}dx} $$ lies in the interval"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-the-integral-int010-sin-2pi-x-over-ex-jee-main-mathematics-trigonometric-functions-and-equations-yw2f5okjq10sxhto",
+          "paperTitle": "JEE Main 2021 (Online) 17th March Evening Shift",
+          "question": {
+            "en": {
+              "content": "If the integral \n<br><br>$$\\int_0^{10} {{{[\\sin 2\\pi x]} \\over {{e^{x - [x]}}}}} dx = \\alpha {e^{ - 1}} + \\beta {e^{ - {1 \\over 2}}} + \\gamma $$, where $$\\alpha$$, $$\\beta$$, $$\\gamma$$ are integers and [x] denotes the greatest integer less than or equal to x, then the value of $$\\alpha$$ + $$\\beta$$ + $$\\gamma$$ is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "which-of-the-following-statements-is-incorrect-for-the-funct-jee-main-mathematics-trigonometric-functions-and-equations-umczxfl4adtt4qfu",
+          "paperTitle": "JEE Main 2021 (Online) 17th March Morning Shift",
+          "question": {
+            "en": {
+              "content": "Which of the following statements is correct for the function g($$\\alpha$$) for $$\\alpha$$ $$\\in$$ R such that <br><br>$$g(\\alpha ) = \\int\\limits_{{\\pi  \\over 6}}^{{\\pi  \\over 3}} {{{{{\\sin }^\\alpha }x} \\over {{{\\cos }^\\alpha }x + {{\\sin }^\\alpha }x}}dx} $$"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "consider-the-integral-i--int010-xex-ov-jee-main-mathematics-trigonometric-functions-and-equations-zogpzlpxqnumj1iz",
+          "paperTitle": "JEE Main 2021 (Online) 16th March Evening Shift",
+          "question": {
+            "en": {
+              "content": "Consider the integral <br>$$I = \\int_0^{10} {{{[x]{e^{[x]}}} \\over {{e^{x - 1}}}}dx} $$, <br>where [x] denotes the greatest integer less than or equal to x. Then the value of I is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-px--xsup2sup--bx--c-be-a-quadratic-polynomial-jee-main-mathematics-trigonometric-functions-and-equations-fxhxxmysxfmxfej5",
+          "paperTitle": "JEE Main 2021 (Online) 16th March Evening Shift",
+          "question": {
+            "en": {
+              "content": "Let P(x) = x<sup>2</sup> + bx + c be a quadratic polynomial with real coefficients such that $$\\int_0^1 {P(x)dx} $$ = 1 and P(x) leaves remainder 5 when it is divided by (x $$-$$ 2). Then the value of 9(b + c) is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-fx--intlimits0x-etftdt--ex--be-a-d-jee-main-mathematics-trigonometric-functions-and-equations-cjouyasptxnehzhs",
+          "paperTitle": "JEE Main 2021 (Online) 26th February Evening Shift",
+          "question": {
+            "en": {
+              "content": "Let $$f(x) = \\int\\limits_0^x {{e^t}f(t)dt + {e^x}} $$ be a differentiable function for all x$$\\in$$R. Then f(x) equals :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "for-x--0-if-fx--intlimits1x-log-et-ove-jee-main-mathematics-trigonometric-functions-and-equations-drj1duu0w09xua8g",
+          "paperTitle": "JEE Main 2021 (Online) 26th February Evening Shift",
+          "question": {
+            "en": {
+              "content": "For x &gt; 0, if $$f(x) = \\int\\limits_1^x {{{{{\\log }_e}t} \\over {(1 + t)}}dt} $$, then $$f(e) + f\\left( {{1 \\over e}} \\right)$$ is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-value-of-intlimits-pi-2pi-2-cos--jee-main-mathematics-trigonometric-functions-and-equations-98mpvp2vr3kxg9sg",
+          "paperTitle": "JEE Main 2021 (Online) 26th February Morning Shift",
+          "question": {
+            "en": {
+              "content": "The value of $$\\int\\limits_{ - \\pi /2}^{\\pi /2} {{{{{\\cos }^2}x} \\over {1 + {3^x}}}} dx$$ is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-value-of-sumlimitsn--1100-intlimitsn--1-jee-main-mathematics-trigonometric-functions-and-equations-xg77xrwnm6ehrakg",
+          "paperTitle": "JEE Main 2021 (Online) 26th February Morning Shift",
+          "question": {
+            "en": {
+              "content": "The value of $$\\sum\\limits_{n = 1}^{100} {\\int\\limits_{n - 1}^n {{e^{x - [x]}}dx} } $$, where [ x ] is the greatest integer $$ \\le $$ x, is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-in--intlimitspi-over-4pi-over-2--jee-main-mathematics-trigonometric-functions-and-equations-9bqynvzaj8pa9mtl",
+          "paperTitle": "JEE Main 2021 (Online) 25th February Evening Shift",
+          "question": {
+            "en": {
+              "content": "If $${I_n} = \\int\\limits_{{\\pi  \\over 4}}^{{\\pi  \\over 2}} {{{\\cot }^n}x\\,dx} $$, then :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "mathop-lim-limitsn-to-infty--left-1-over-n-jee-main-mathematics-trigonometric-functions-and-equations-czk5our6ng8jqj3l",
+          "paperTitle": "JEE Main 2021 (Online) 25th February Evening Shift",
+          "question": {
+            "en": {
+              "content": "$$\\mathop {\\lim }\\limits_{n \\to \\infty } \\left[ {{1 \\over n} + {n \\over {{{(n + 1)}^2}}} + {n \\over {{{(n + 2)}^2}}} + ........ + {n \\over {{{(2n + 1)}^2}}}} \\right]$$ is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-value-of-intlimits-11-x2ex3-dx-jee-main-mathematics-trigonometric-functions-and-equations-wdq0iwe8jswxdan9",
+          "paperTitle": "JEE Main 2021 (Online) 25th February Morning Shift",
+          "question": {
+            "en": {
+              "content": "The value of $$\\int\\limits_{ - 1}^1 {{x^2}{e^{[{x^3}]}}} dx$$, where [ t ] denotes the greatest integer $$ \\le $$ t, is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-value-of-the-integral-intlimits13-x2-2x-jee-main-mathematics-trigonometric-functions-and-equations-gkazkyfhug9w9rmv",
+          "paperTitle": "JEE Main 2021 (Online) 24th February Evening Shift",
+          "question": {
+            "en": {
+              "content": "The value of the integral, $$\\int\\limits_1^3 {[{x^2} - 2x - 2]dx} $$, where [x] denotes the greatest integer less than or equal to x, is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-fx-be-a-differentiable-function-defined-on-0-2-such-jee-main-mathematics-trigonometric-functions-and-equations-l5xnl9f8pmqwuhtw",
+          "paperTitle": "JEE Main 2021 (Online) 24th February Evening Shift",
+          "question": {
+            "en": {
+              "content": "Let f(x) be a differentiable function defined on [0, 2] such that f'(x) = f'(2 $$-$$ x) for all x$$ \\in $$ (0, 2), f(0) = 1 and f(2) = e<sup>2</sup>. Then the value of $$\\int\\limits_0^2 {f(x)} dx$$ is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-f-be-a-twice-differentiable-function-defined-on-r-such-t-jee-main-mathematics-trigonometric-functions-and-equations-ed3s6cv2mkatewy1",
+          "paperTitle": "JEE Main 2021 (Online) 24th February Evening Shift",
+          "question": {
+            "en": {
+              "content": "Let f be a twice differentiable function defined on R such that f(0) = 1, f'(0) = 2 and f'(x) $$ \\ne $$ 0 for all x $$ \\in $$ R. If $$\\left| {\\matrix{\n   {f(x)} &amp; {f'(x)}  \\cr \n   {f'(x)} &amp; {f''(x)}  \\cr \n\n } } \\right|$$ = 0, for all x$$ \\in $$R, then the value of f(1) lies in the interval :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "mathop-lim-limitsx-to-0-intlimits0x2--jee-main-mathematics-definite-integrals-and-applications-of-integrals-lu0zl1858xjz0pc7",
+          "paperTitle": "JEE Main 2021 (Online) 24th February Morning Shift",
+          "question": {
+            "en": {
+              "content": "$$\\mathop {\\lim }\\limits_{x \\to 0} {{\\int\\limits_0^{{x^2}} {\\left( {\\sin \\sqrt t } \\right)dt} } \\over {{x^3}}}$$ is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-integral-intlimits12-exxxleft-2--lo-jee-main-mathematics-complex-numbers-fjwis6xxab6fel3t",
+          "paperTitle": "JEE Main 2020 (Online) 6th September Evening Slot",
+          "question": {
+            "en": {
+              "content": "The integral $$\\int\\limits_1^2 {{e^x}.{x^x}\\left( {2 + {{\\log }_e}x} \\right)} dx$$ equals : "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "mathop-lim-limitsx-to-1-left-intlimits0-jee-main-mathematics-limits-continuity-and-differentiability-qz5v6g1r4z3vvotv",
+          "paperTitle": "JEE Main 2020 (Online) 6th September Morning Slot",
+          "question": {
+            "en": {
+              "content": "$$\\mathop {\\lim }\\limits_{x \\to 1} \\left( {{{\\int\\limits_0^{{{\\left( {x - 1} \\right)}^2}} {t\\cos \\left( {{t^2}} \\right)dt} } \\over {\\left( {x - 1} \\right)\\sin \\left( {x - 1} \\right)}}} \\right)$$"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-isub1sub--intlimits01-left-1-x50-jee-main-mathematics-definite-integrals-and-applications-of-integrals-9rrp1rwa9rftu0xe",
+          "paperTitle": "JEE Main 2020 (Online) 6th September Morning Slot",
+          "question": {
+            "en": {
+              "content": "If I<sub>1</sub> = $$\\int\\limits_0^1 {{{\\left( {1 - {x^{50}}} \\right)}^{100}}} dx$$ and\n<br>I<sub>2</sub> = $$\\int\\limits_0^1 {{{\\left( {1 - {x^{50}}} \\right)}^{101}}} dx$$ such <br>that I<sub>2</sub>\n = $$\\alpha $$I<sub>1</sub>\nthen $$\\alpha $$\nequals to :\n"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-value-of-intlimits-pi--over-2pi-ove-jee-main-mathematics-complex-numbers-ayujd4xsfitjz5vb",
+          "paperTitle": "JEE Main 2020 (Online) 5th September Morning Slot",
+          "question": {
+            "en": {
+              "content": "The value of $$\\int\\limits_{{{ - \\pi } \\over 2}}^{{\\pi  \\over 2}} {{1 \\over {1 + {e^{\\sin x}}}}dx} $$ is:"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-integral-intx6x3-tan-3xsin-23x-jee-main-mathematics-complex-numbers-ymqotje0dltqrq8p",
+          "paperTitle": "JEE Main 2020 (Online) 4th September Evening Slot",
+          "question": {
+            "en": {
+              "content": "The integral <br>$$\\int\\limits_{{\\pi  \\over 6}}^{{\\pi  \\over 3}} {{{\\tan }^3}x.{{\\sin }^2}3x\\left( {2{{\\sec }^2}x.{{\\sin }^2}3x + 3\\tan x.\\sin 6x} \\right)dx} $$\n<br>is equal to:"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-fx--left-x-2-right-and-gx--ffx--jee-main-mathematics-complex-numbers-vydnhtit9fn4rmjv",
+          "paperTitle": "JEE Main 2020 (Online) 4th September Morning Slot",
+          "question": {
+            "en": {
+              "content": "Let $$f(x) = \\left| {x - 2} \\right|$$ and g(x) = f(f(x)), $$x \\in \\left[ {0,4} \\right]$$. Then <br>$$\\int\\limits_0^3 {\\left( {g(x) - f(x)} \\right)} dx$$ is equal to:"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-the-value-of-the-integral-brintlimits01-over-jee-main-mathematics-definite-integrals-and-applications-of-integrals-vwtpwuiqzjds3fnm",
+          "paperTitle": "JEE Main 2020 (Online) 3rd September Evening Slot",
+          "question": {
+            "en": {
+              "content": "If the value of the integral \n<br>$$\\int\\limits_0^{{1 \\over 2}} {{{{x^2}} \\over {{{\\left( {1 - {x^2}} \\right)}^{{3 \\over 2}}}}}} dx$$ \n<br><br>is $${k \\over 6}$$, then k is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "suppose-fx-is-a-polynomial-of-degree-four-having-critica-jee-main-mathematics-definite-integrals-and-applications-of-integrals-zocvslmfhirmqhua",
+          "paperTitle": "JEE Main 2020 (Online) 3rd September Evening Slot",
+          "question": {
+            "en": {
+              "content": "Suppose f(x) is a polynomial of degree four,\nhaving critical points at –1, 0, 1. If \n<br>T = {x $$ \\in $$ R |\nf(x) = f(0)}, then the sum of squares of all the\nelements of T is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "intlimits-pi-pi-left-pi-left-x-right-jee-main-mathematics-definite-integrals-and-applications-of-integrals-7foekrgyqojppuno",
+          "paperTitle": "JEE Main 2020 (Online) 3rd September Morning Slot",
+          "question": {
+            "en": {
+              "content": "$$\\int\\limits_{ - \\pi }^\\pi  {\\left| {\\pi  - \\left| x \\right|} \\right|dx} $$ is equal to :\n"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-a-function---0-5--to--r-be-continuous-1--jee-main-mathematics-complex-numbers-n1gqdy7g2gx4dktm",
+          "paperTitle": "JEE Main 2020 (Online) 9th January Evening Slot",
+          "question": {
+            "en": {
+              "content": "Let a function ƒ : [0, 5] $$ \\to $$ R be continuous,\nƒ(1) = 3 and F be defined as :<br><br>\n$$F(x) = \\int\\limits_1^x {{t^2}g(t)dt} $$ , where $$g(t) = \\int\\limits_1^t {f(u)du} $$ <br><br>Then for the function F, the point x = 1 is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-value-of-brintlimits02pi--xsin-8x-jee-main-mathematics-definite-integrals-and-applications-of-integrals-pryiknzcrs8oennj",
+          "paperTitle": "JEE Main 2020 (Online) 9th January Morning Slot",
+          "question": {
+            "en": {
+              "content": "The value of\n<br>$$\\int\\limits_0^{2\\pi } {{{x{{\\sin }^8}x} \\over {{{\\sin }^8}x + {{\\cos }^8}x}}} dx$$ is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-for-all-real-triplets-a-b-c-x--a--bx--cxsup2-jee-main-mathematics-definite-integrals-and-applications-of-integrals-bv7pt5xuutaeghmr",
+          "paperTitle": "JEE Main 2020 (Online) 9th January Morning Slot",
+          "question": {
+            "en": {
+              "content": "If for all real triplets (a, b, c), ƒ(x) = a + bx + cx<sup>2</sup>;\nthen $$\\int\\limits_0^1 {f(x)dx} $$ is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-i--intlimits12-dx-over-sqrt-2x3-9x2-jee-main-mathematics-complex-numbers-2o0th7vhqe0xlxuu",
+          "paperTitle": "JEE Main 2020 (Online) 8th January Evening Slot",
+          "question": {
+            "en": {
+              "content": "If $$I = \\int\\limits_1^2 {{{dx} \\over {\\sqrt {2{x^3} - 9{x^2} + 12x + 4} }}} $$, then :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "mathop-lim-limitsx-to-0-int0x-tsin-left-jee-main-mathematics-complex-numbers-ult8okurz6imxo3b",
+          "paperTitle": "JEE Main 2020 (Online) 8th January Evening Slot",
+          "question": {
+            "en": {
+              "content": "$$\\mathop {\\lim }\\limits_{x \\to 0} {{\\int_0^x {t\\sin \\left( {10t} \\right)dt} } \\over x}$$ is equal to"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-value-of-alpha--for-which-br4alpha-intlimi-jee-main-mathematics-definite-integrals-and-applications-of-integrals-rbhwhk1h4r0erfe4",
+          "paperTitle": "JEE Main 2020 (Online) 7th January Evening Slot",
+          "question": {
+            "en": {
+              "content": "The value of $$\\alpha $$ for which \n<br>$$4\\alpha \\int\\limits_{ - 1}^2 {{e^{ - \\alpha \\left| x \\right|}}dx}  = 5$$, is:"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-theta-sub1sub-and-theta-sub2sub-be-jee-main-mathematics-definite-integrals-and-applications-of-integrals-k4mkff8rqfajq4m7",
+          "paperTitle": "JEE Main 2020 (Online) 7th January Evening Slot",
+          "question": {
+            "en": {
+              "content": "If $$\\theta $$<sub>1</sub>\n and $$\\theta $$<sub>2</sub>\n be respectively the smallest and the largest values of $$\\theta $$ in (0, 2$$\\pi $$) - {$$\\pi $$} which satisfy\nthe equation,\n<br>2cot<sup>2</sup>$$\\theta $$ - $${5 \\over {\\sin \\theta }}$$ + 4 = 0, then\n<br>$$\\int\\limits_{{\\theta _1}}^{{\\theta _2}} {{{\\cos }^2}3\\theta d\\theta } $$ is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-a--b--1-x--x-for-all-x-where-a-and-b-are-fix-jee-main-mathematics-complex-numbers-nmi2666bgk7qwcy3",
+          "paperTitle": "JEE Main 2020 (Online) 7th January Morning Slot",
+          "question": {
+            "en": {
+              "content": "If ƒ(a + b + 1 - x) = ƒ(x), for all x, where a and b are fixed positive real numbers, then<br><br>\n$${1 \\over {a + b}}\\int_a^b {x\\left( {f(x) + f(x + 1)} \\right)} dx$$ is equal to:\n"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "a-value-of-alpha--such-that-brintlimitsalpha--jee-main-mathematics-definite-integrals-and-applications-of-integrals-fh7zesc5qddxeftf",
+          "paperTitle": "JEE Main 2019 (Online) 12th April Evening Slot",
+          "question": {
+            "en": {
+              "content": "A value of $$\\alpha $$ such that\n<br>$$\\int\\limits_\\alpha ^{\\alpha  + 1} {{{dx} \\over {\\left( {x + \\alpha } \\right)\\left( {x + \\alpha  + 1} \\right)}}}  = {\\log _e}\\left( {{9 \\over 8}} \\right)$$ is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-intlimits0pi-over-2-cot-x-over-cot-x-jee-main-mathematics-definite-integrals-and-applications-of-integrals-mcrphvuvv7bocyr1",
+          "paperTitle": "JEE Main 2019 (Online) 12th April Morning Slot",
+          "question": {
+            "en": {
+              "content": "If $$\\int\\limits_0^{{\\pi  \\over 2}} {{{\\cot x} \\over {\\cot x + \\cos ecx}}} dx$$ = m($$\\pi $$ + n), then m.n is equal to "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-f--r--to--r-be-a-continuously-differentiable-funct-jee-main-mathematics-definite-integrals-and-applications-of-integrals-umroe5gxubo99xzr",
+          "paperTitle": "JEE Main 2019 (Online) 12th April Morning Slot",
+          "question": {
+            "en": {
+              "content": "Let f : R $$ \\to $$ R be a continuously differentiable function such that f(2) = 6 and f'(2) = $${1 \\over {48}}$$. If $$\\int\\limits_6^{f\\left( x \\right)} {4{t^3}} dt$$ = (x - 2)g(x), then $$\\mathop {\\lim }\\limits_{x \\to 2} g\\left( x \\right)$$ is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-integral-intlimitspi-6pi-3-sec-23-jee-main-mathematics-definite-integrals-and-applications-of-integrals-dvum0xwv0o9qubyk",
+          "paperTitle": "JEE Main 2019 (Online) 10th April Evening Slot",
+          "question": {
+            "en": {
+              "content": "The integral $$\\int\\limits_{\\pi /6}^{\\pi /3} {{{\\sec }^{2/3}}} x\\cos e{c^{4/3}}xdx$$ is equal to : "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-value-of-intlimits02pi--left-sin-2xleft-jee-main-mathematics-definite-integrals-and-applications-of-integrals-q9lffb8qlshrvnkv",
+          "paperTitle": "JEE Main 2019 (Online) 10th April Morning Slot",
+          "question": {
+            "en": {
+              "content": "The value of $$\\int\\limits_0^{2\\pi } {\\left[ {\\sin 2x\\left( {1 + \\cos 3x} \\right)} \\right]} dx$$,\n<br>where [t] denotes the greatest integer function is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "mathop-lim-limitsn-to-infty--left-n--1-jee-main-mathematics-limits-continuity-and-differentiability-zvt2ojugblbcwfai",
+          "paperTitle": "JEE Main 2019 (Online) 10th April Morning Slot",
+          "question": {
+            "en": {
+              "content": "$$\\mathop {\\lim }\\limits_{n \\to \\infty } \\left( {{{{{(n + 1)}^{1/3}}} \\over {{n^{4/3}}}} + {{{{(n + 2)}^{1/3}}} \\over {{n^{4/3}}}} + ....... + {{{{(2n)}^{1/3}}} \\over {{n^{4/3}}}}} \\right)$$\n<br>is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-value-of-the-integral-intlimits01-xcot--1-jee-main-mathematics-trigonometric-functions-and-equations-zpn3wpcupp5qax7f",
+          "paperTitle": "JEE Main 2019 (Online) 9th April Evening Slot",
+          "question": {
+            "en": {
+              "content": "The value of the integral $$\\int\\limits_0^1 {x{{\\cot }^{ - 1}}(1 - {x^2} + {x^4})dx} $$ is :-"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-f--r--to--r-is-a-differentiable-function-and-f2--jee-main-mathematics-trigonometric-functions-and-equations-4khz3dees54ft6ui",
+          "paperTitle": "JEE Main 2019 (Online) 9th April Evening Slot",
+          "question": {
+            "en": {
+              "content": "If f : R $$ \\to $$ R is a differentiable function and\nf(2) = 6,<br> then $$\\mathop {\\lim }\\limits_{x \\to 2} {{\\int\\limits_6^{f\\left( x \\right)} {2tdt} } \\over {\\left( {x - 2} \\right)}}$$ is :-"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-value-of-intlimits0pi-2-sin-3x-over-jee-main-mathematics-trigonometric-functions-and-equations-ry61ecjixh6sr6ol",
+          "paperTitle": "JEE Main 2019 (Online) 9th April Morning Slot",
+          "question": {
+            "en": {
+              "content": "The value of $$\\int\\limits_0^{\\pi /2} {{{{{\\sin }^3}x} \\over {\\sin x + \\cos x}}dx} $$ is"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-fx-intlimits0x-gtdt-where-g-is-a-non-z-jee-main-mathematics-trigonometric-functions-and-equations-ylzgcqkgogaliqul",
+          "paperTitle": "JEE Main 2019 (Online) 8th April Evening Slot",
+          "question": {
+            "en": {
+              "content": "Let $$f(x) = \\int\\limits_0^x {g(t)dt} $$  where g is a non-zero even\nfunction. If ƒ(x + 5) = g(x), then $$ \\int\\limits_0^x {f(t)dt} $$ equals-"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-fx-2-xcos-x-over-2-xcos-x-and-gx-jee-main-mathematics-trigonometric-functions-and-equations-lyynswri2k46vkz0",
+          "paperTitle": "JEE Main 2019 (Online) 8th April Morning Slot",
+          "question": {
+            "en": {
+              "content": "If $$f(x) = {{2 - x\\cos x} \\over {2 + x\\cos x}}$$ and g(x) = log<sub>e</sub>x, (x &gt; 0) then\nthe value of integral<br><br> $$\\int\\limits_{ - {\\pi  \\over 4}}^{{\\pi  \\over 4}} {g\\left( {f\\left( x \\right)} \\right)dx{\\rm{ }}} $$ is"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-integral-intlimits1e-left-left-x-over-jee-main-mathematics-trigonometric-functions-and-equations-ygckeevsxcmuhwy8",
+          "paperTitle": "JEE Main 2019 (Online) 12th January Evening Slot",
+          "question": {
+            "en": {
+              "content": "The integral $$\\int\\limits_1^e {\\left\\{ {{{\\left( {{x \\over e}} \\right)}^{2x}} - {{\\left( {{e \\over x}} \\right)}^x}} \\right\\}} \\,$$ log<sub>e</sub> x dx is equal to : "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "mathop-lim-limitsx-to-infty-left-n-over-jee-main-mathematics-trigonometric-functions-and-equations-8d2te0z2dykgn3tt",
+          "paperTitle": "JEE Main 2019 (Online) 12th January Evening Slot",
+          "question": {
+            "en": {
+              "content": "$$\\mathop {\\lim }\\limits_{x \\to \\infty } \\left( {{n \\over {{n^2} + {1^2}}} + {n \\over {{n^2} + {2^2}}} + {n \\over {{n^2} + {3^2}}} + ..... + {1 \\over {5n}}} \\right)$$ is equal to : "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-f-and-g-be-continuous-functions-on-0-a-such-that-fx-jee-main-mathematics-trigonometric-functions-and-equations-yhmyybcjkwopccvk",
+          "paperTitle": "JEE Main 2019 (Online) 12th January Morning Slot",
+          "question": {
+            "en": {
+              "content": "Let f and g be continuous functions on [0, a] such that f(x) = f(a – x) and g(x) + g(a – x) = 4, then $$\\int\\limits_0^a \\, $$f(x) g(x) dx is equal to : "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-integralnbspnbspintlimitspi-6pi-4-d-jee-main-mathematics-trigonometric-functions-and-equations-9jhebejiwpel6hbu",
+          "paperTitle": "JEE Main 2019 (Online) 11th January Evening Slot",
+          "question": {
+            "en": {
+              "content": "The integral&nbsp;&nbsp;$$\\int\\limits_{\\pi /6}^{\\pi /4} {{{dx} \\over {\\sin 2x\\left( {{{\\tan }^5}x + {{\\cot }^5}x} \\right)}}} $$&nbsp;&nbsp;equals : "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-value-of-the-integral-intlimits-22-sin-jee-main-mathematics-trigonometric-functions-and-equations-6vcqtsgp7shbp8r9",
+          "paperTitle": "JEE Main 2019 (Online) 11th January Morning Slot",
+          "question": {
+            "en": {
+              "content": "The value of the integral $$\\int\\limits_{ - 2}^2 {{{{{\\sin }^2}x} \\over { \\left[ {{x \\over \\pi }} \\right] + {1 \\over 2}}}} \\,dx$$ (where  [x] denotes the greatest integer less than or equal to x) is "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-value-of-nbspnbspintlimits-pi-2pi-2-jee-main-mathematics-trigonometric-functions-and-equations-bjsy9rseeznzsxng",
+          "paperTitle": "JEE Main 2019 (Online) 10th January Evening Slot",
+          "question": {
+            "en": {
+              "content": "The value of &nbsp;&nbsp;$$\\int\\limits_{ - \\pi /2}^{\\pi /2} {{{dx} \\over {\\left[ x \\right] + \\left[ {\\sin x} \\right] + 4}}} ,$$&nbsp;&nbsp;where [t] denotes the greatest integer less than or equal to t, is "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "ifnbspnbspintlimits0x-ft-dt-x2-intl-jee-main-mathematics-trigonometric-functions-and-equations-yitrcqinwldf5qku",
+          "paperTitle": "JEE Main 2019 (Online) 10th January Evening Slot",
+          "question": {
+            "en": {
+              "content": "If&nbsp;&nbsp;$$\\int\\limits_0^x \\, $$f(t) dt = x<sup>2</sup> + $$\\int\\limits_x^1 \\, $$ t<sup>2</sup>f(t)  dt  then f '$$\\left( {{1 \\over 2}} \\right)$$ is -"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-nbsprm-i-intlimitsab-left-x4-2x2-jee-main-mathematics-trigonometric-functions-and-equations-vd7mc5y6kwcw6xqw",
+          "paperTitle": "JEE Main 2019 (Online) 10th January Morning Slot",
+          "question": {
+            "en": {
+              "content": "Let &nbsp;$${\\rm I} = \\int\\limits_a^b {\\left( {{x^4} - 2{x^2}} \\right)} dx.$$&nbsp;&nbsp;If I is minimum then the ordered pair (a, b) is -"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "ifnbspnbspnbspintlimits0pi-over-3-tan-jee-main-mathematics-trigonometric-functions-and-equations-qtgmyraanagvqslo",
+          "paperTitle": "JEE Main 2019 (Online) 9th January Evening Slot",
+          "question": {
+            "en": {
+              "content": "If&nbsp;&nbsp;&nbsp;$$\\int\\limits_0^{{\\pi  \\over 3}} {{{\\tan \\theta } \\over {\\sqrt {2k\\,\\sec \\theta } }}} \\,d\\theta  = 1 - {1 \\over {\\sqrt 2 }},\\left( {k &gt; 0} \\right),$$ then value of k is : "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-f-be-a-differentiable-function-from-r-to-r-such-that-jee-main-mathematics-trigonometric-functions-and-equations-xzkhws48szu5ojke",
+          "paperTitle": "JEE Main 2019 (Online) 9th January Evening Slot",
+          "question": {
+            "en": {
+              "content": "Let f be a differentiable function from \n<br><br><b>R</b> to <b>R</b> such that $$\\left| {f\\left( x \\right) - f\\left( y \\right)} \\right| \\le 2{\\left| {x - y} \\right|^{{3 \\over 2}}},$$&nbsp;&nbsp;&nbsp; <br><br>for all&nbsp;&nbsp;$$x,y \\in $$ <b>R</b>. \n<br><br>If&nbsp;&nbsp;&nbsp;$$f\\left( 0 \\right) = 1$$&nbsp;&nbsp; \n<br><br>then  &nbsp;&nbsp;$$\\int\\limits_0^1 {{f^2}} \\left( x \\right)dx$$&nbsp;&nbsp;is equal to : "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "int0pi-cos-x3dx-is-equal-to-jee-main-mathematics-definite-integrals-and-applications-of-integrals-apf6isuppjfkdmhm",
+          "paperTitle": "JEE Main 2019 (Online) 9th January Morning Slot",
+          "question": {
+            "en": {
+              "content": "The value of $$\\int\\limits_0^\\pi  {{{\\left| {\\cos x} \\right|}^3}} \\,dx$$ is : "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-fx-intlimits0x-tleft-sin-x-sin-t-righ-jee-main-mathematics-trigonometric-functions-and-equations-jdpaxta6nv4av1tq",
+          "paperTitle": "JEE Main 2018 (Online) 16th April Morning Slot",
+          "question": {
+            "en": {
+              "content": "If $$f(x) = \\int\\limits_0^x {t\\left( {\\sin x - \\sin t} \\right)dt\\,\\,\\,} $$ then :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-value-of-intlimits-pi-2pi-2-sin-2018-marks-4-18ltmlb3i2tl8sfd.htm",
+          "paperTitle": "JEE Main 2018 (Offline)",
+          "question": {
+            "en": {
+              "content": "The value of $$\\int\\limits_{ - \\pi /2}^{\\pi /2} {{{{{\\sin }^2}x} \\over {1 + {2^x}}}} dx$$ is"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-nbspnbsprm-i1-intlimits01-e-x-jee-main-mathematics-trigonometric-functions-and-equations-yyh1mdutlios0fov",
+          "paperTitle": "JEE Main 2018 (Online) 15th April Evening Slot",
+          "question": {
+            "en": {
+              "content": "If &nbsp;&nbsp;$${I_1} = \\int_0^1 {{e^{ - x}}} {\\cos ^2}x{\\mkern 1mu} dx;$$\n<br><br> &nbsp;&nbsp; $${I_2} = \\int_0^1 {{e^{ - {x^2}}}} {\\cos ^2}x{\\mkern 1mu} dx$$ &nbsp;and\n<br><br>$${I_3} = \\int_0^1 {{e^{ - {x^3}}}} dx;$$ then"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-value-of-integral-intlimitsraise05exhboxscr-jee-main-mathematics-trigonometric-functions-and-equations-2fqhxxneauh1ojzx",
+          "paperTitle": "JEE Main 2018 (Online) 15th April Evening Slot",
+          "question": {
+            "en": {
+              "content": "The value of integral $$\\int_{{\\pi  \\over 4}}^{{{3\\pi } \\over 4}} {{x \\over {1 + \\sin x}}dx} $$ is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-value-of-the-integral-intlimits-pi-over-2-jee-main-mathematics-trigonometric-functions-and-equations-ehgh94cl0w5qwkoc",
+          "paperTitle": "JEE Main 2018 (Online) 15th April Morning Slot",
+          "question": {
+            "en": {
+              "content": "The value of the integral\n<br><br>$$\\int\\limits_{ - {\\pi  \\over 2}}^{{\\pi  \\over 2}} {{{\\sin }^4}} x\\left( {1 + \\log \\left( {{{2 + \\sin x} \\over {2 - \\sin x}}} \\right)} \\right)dx$$ is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-nbspnbsp-mathop-lim-limitsn-to-infty-jee-main-mathematics-trigonometric-functions-and-equations-u31p99f0zfbq4fjr",
+          "paperTitle": "JEE Main 2017 (Online) 9th April Morning Slot",
+          "question": {
+            "en": {
+              "content": "If &nbsp;&nbsp; $$\\mathop {\\lim }\\limits_{n \\to \\infty } \\,\\,{{{1^a} + {2^a} + ...... + {n^a}} \\over {{{(n + 1)}^{a - 1}}\\left[ {\\left( {na + 1} \\right) + \\left( {na + 2} \\right) + ..... + \\left( {na + n} \\right)} \\right]}} = {1 \\over {60}}$$\n<br><br>for some positive real number a, then a is equal to :\n"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-nbspnbsp-intlimits12-dx-over-left-x-jee-main-mathematics-trigonometric-functions-and-equations-fivsh1bxqtbr1kyb",
+          "paperTitle": "JEE Main 2017 (Online) 9th April Morning Slot",
+          "question": {
+            "en": {
+              "content": "If &nbsp;&nbsp; $$\\int\\limits_1^2 {{{dx} \\over {{{\\left( {{x^2} - 2x + 4} \\right)}^{{3 \\over 2}}}}}}  = {k \\over {k + 5}},$$  then k is equal to : "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-integral-intpi-over-12pi-over-4-jee-main-mathematics-trigonometric-functions-and-equations-yxqvsrm9pnjjdiic",
+          "paperTitle": "JEE Main 2017 (Online) 8th April Morning Slot",
+          "question": {
+            "en": {
+              "content": "The integral $$\\int_{{\\pi  \\over {12}}}^{{\\pi  \\over 4}} {\\,\\,{{8\\cos 2x} \\over {{{\\left( {\\tan x + \\cot x} \\right)}^3}}}} \\,dx$$ equals : "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-integral-intlimitspi-over-43pi-over-2017-marks-4-q5elwpzugf4mve5d.htm",
+          "paperTitle": "JEE Main 2017 (Offline)",
+          "question": {
+            "en": {
+              "content": "The integral $$\\int\\limits_{{\\pi  \\over 4}}^{{{3\\pi } \\over 4}} {{{dx} \\over {1 + \\cos x}}} $$ is equal to"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "for-x-in-r-x-ne-0-if-yx-is-a-differentiab-jee-main-mathematics-trigonometric-functions-and-equations-ok5afrjhwxzmhmxq",
+          "paperTitle": "JEE Main 2016 (Online) 10th April Morning Slot",
+          "question": {
+            "en": {
+              "content": "For x $$ \\in $$ <b>R</b>, x $$ \\ne $$ 0,  if y(x) is a differentiable function such that\n<br><br>x $$\\int\\limits_1^x y $$ (t) dt = (x + 1) $$\\int\\limits_1^x ty $$ (t) dt,  &nbsp;then y (x) equals : \n<br><br>(where C is a constant.)"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-value-of-the-integral-intlimits410-left-x-jee-main-mathematics-trigonometric-functions-and-equations-bfc3gtzp3xqighg8",
+          "paperTitle": "JEE Main 2016 (Online) 10th April Morning Slot",
+          "question": {
+            "en": {
+              "content": "The value of the integral\n<br><br>$$\\int\\limits_4^{10} {{{\\left[ {{x^2}} \\right]dx} \\over {\\left[ {{x^2} - 28x + 196} \\right] + \\left[ {{x^2}} \\right]}}} ,$$ \n<br><br>where [x] denotes the greatest integer less than or\nequal to x, is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "ifnbspnbsp-2intlimits01-tan-1xdx-in-jee-main-mathematics-trigonometric-functions-and-equations-jmp9ccbuugqyyhmi",
+          "paperTitle": "JEE Main 2016 (Online) 9th April Morning Slot",
+          "question": {
+            "en": {
+              "content": "If&nbsp;&nbsp; $$2\\int\\limits_0^1 {{{\\tan }^{ - 1}}xdx = \\int\\limits_0^1 {{{\\cot }^{ - 1}}} } \\left( {1 - x + {x^2}} \\right)dx,$$\n<br><br>then $$\\int\\limits_0^1 {{{\\tan }^{ - 1}}} \\left( {1 - x + {x^2}} \\right)dx$$ is equalto : "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "mathop-lim-limitsn-to-infty-left-left-2016-marks-4-vgqrb1cplwdux43w.htm",
+          "paperTitle": "JEE Main 2016 (Offline)",
+          "question": {
+            "en": {
+              "content": "$$\\mathop {\\lim }\\limits_{n \\to \\infty } {\\left( {{{\\left( {n + 1} \\right)\\left( {n + 2} \\right)...3n} \\over {{n^{2n}}}}} \\right)^{{1 \\over n}}}$$ is equal to:"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-integral-intlimits24-log-x2-over-log-x2-log-left-36-12x-jee-main-2015-marks-4-t8g0j8q5j5uqh3wn.htm",
+          "paperTitle": "JEE Main 2015 (Offline)",
+          "question": {
+            "en": {
+              "content": "The integral \n<br>$$\\int\\limits_2^4 {{{\\log \\,{x^2}} \\over {\\log {x^2} + \\log \\left( {36 - 12x + {x^2}} \\right)}}dx} $$   is equal to :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-integral-intlimits0pi-sqrt-1-4sin-2x-over-2-4sin-x-over-jee-main-2014-marks-4-4bkfmfmauvuvke3r.htm",
+          "paperTitle": "JEE Main 2014 (Offline)",
+          "question": {
+            "en": {
+              "content": "The integral $$\\int\\limits_0^\\pi  {\\sqrt {1 + 4{{\\sin }^2}{x \\over 2} - 4\\sin {x \\over 2}{\\mkern 1mu} } } dx$$  equals: "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "statement-1-the-value-of-the-integral-intlimitspi-6pi-3-dx-o-jee-main-2013-marks-4-ntdz2u0brhjp26vh.htm",
+          "paperTitle": "JEE Main 2013 (Offline)",
+          "question": {
+            "en": {
+              "content": "<b>Statement-1 :</b> The value of the integral \n<br>$$\\int\\limits_{\\pi /6}^{\\pi /3} {{{dx} \\over {1 + \\sqrt {\\tan \\,x} }}} $$ is equal to $$\\pi /6$$\n<p><b>Statement-2 :</b> $$\\int\\limits_a^b {f\\left( x \\right)} dx = \\int\\limits_a^b {f\\left( {a + b - x} \\right)} dx.$$</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-value-of-intlimits01-8log-left-1-x-right-over-1-x2-dx-is-jee-main-2011-marks-4-vjfdorzgvdtiregh.htm",
+          "paperTitle": "AIEEE 2011",
+          "question": {
+            "en": {
+              "content": "The value of $$\\int\\limits_0^1 {{{8\\log \\left( {1 + x} \\right)} \\over {1 + {x^2}}}} dx$$ is "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-px-be-a-function-defined-on-r-such-that-pxp1-x-for-all-x-jee-main-2010-marks-4-vm6dq1l0s3jozxyo.htm",
+          "paperTitle": "AIEEE 2010",
+          "question": {
+            "en": {
+              "content": "Let $$p(x)$$ be a function defined on $$R$$ such that $$p'(x)=p'(1-x),$$ for all $$x \\in \\left[ {0,1} \\right],p\\left( 0 \\right) = 1$$ and $$p(1)=41.$$ Then $$\\int\\limits_0^1 {p\\left( x \\right)dx} $$ equals : "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "intlimits0pi-left-cot-x-rightdx-where-left-right-denotes-the-jee-main-2009-marks-4-qzgz9mqkhcsetyc4.htm",
+          "paperTitle": "AIEEE 2009",
+          "question": {
+            "en": {
+              "content": "$$\\int\\limits_0^\\pi  {\\left[ {\\cot x} \\right]dx,} $$ where $$\\left[ . \\right]$$ denotes the greatest integer function, is equal to:"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-i-intlimits01-sin-x-over-sqrt-x-dx-and-j-intlimits01-cos-jee-main-2007-marks-4-mzirftcb0glb9bvx.htm",
+          "paperTitle": "AIEEE 2007",
+          "question": {
+            "en": {
+              "content": "Let $$I = \\int\\limits_0^1 {{{\\sin x} \\over {\\sqrt x }}dx} $$ and $$J = \\int\\limits_0^1 {{{\\cos x} \\over {\\sqrt x }}dx} .$$ Then which one of the following is true?"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-fleft-x-right-fleft-x-right-fleft-1-over-2-right-where-f-jee-main-2007-marks-4-t2dps7dxrpgx0dcq.htm",
+          "paperTitle": "AIEEE 2007",
+          "question": {
+            "en": {
+              "content": "Let $$F\\left( x \\right) = f\\left( x \\right) + f\\left( {{1 \\over x}} \\right),$$ where $$f\\left( x \\right) = \\int\\limits_l^x {{{\\log t} \\over {1 + t}}dt,} $$ Then $$F(e)$$  equals"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-solution-for-x-of-the-equation-intlimitssqrt-2-x-dt-over-jee-main-2007-marks-4-g92xwmovhmmdniwk.htm",
+          "paperTitle": "AIEEE 2007",
+          "question": {
+            "en": {
+              "content": "The solution for $$x$$ of the equation $$\\int\\limits_{\\sqrt 2 }^x {{{dt} \\over {t\\sqrt {{t^2} - 1} }} = {\\pi  \\over 2}} $$ is "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-value-of-intlimits1a-left-x-right-fleft-x-rightdxa-1-whe-jee-main-2006-marks-4-7ans7jsh92bunbqo.htm",
+          "paperTitle": "AIEEE 2006",
+          "question": {
+            "en": {
+              "content": "The value of $$\\int\\limits_1^a {\\left[ x \\right]} f'\\left( x \\right)dx,a &gt; 1$$ where $${\\left[ x \\right]}$$ denotes the greatest integer not exceeding $$x$$ is "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "intlimits0pi-xfleft-sin-x-rightdx-is-equal-to-jee-main-2006-marks-4-edjmcbmzawf5oeno.htm",
+          "paperTitle": "AIEEE 2006",
+          "question": {
+            "en": {
+              "content": "$$\\int\\limits_0^\\pi  {xf\\left( {\\sin x} \\right)dx} $$   is equal to "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "intlimits-3pi-over-2-pi-over-2-left-left-x-pi-right3-cos-2le-jee-main-2006-marks-4-83nydna4phzxg3p2.htm",
+          "paperTitle": "AIEEE 2006",
+          "question": {
+            "en": {
+              "content": "$$\\int\\limits_{ - {{3\\pi } \\over 2}}^{ - {\\pi  \\over 2}} {\\left[ {{{\\left( {x + \\pi } \\right)}^3} + {{\\cos }^2}\\left( {x + 3\\pi } \\right)} \\right]} dx$$  is equal to "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-fr-to-r-be-a-differentiable-function-having-fleft-2-righ-jee-main-2005-marks-4-pjmn8tkqvshxcqwi.htm",
+          "paperTitle": "AIEEE 2005",
+          "question": {
+            "en": {
+              "content": "Let   $$f:R \\to R$$ be a differentiable function having $$f\\left( 2 \\right) = 6$$, \n<br>$$f'\\left( 2 \\right) = \\left( {{1 \\over {48}}} \\right)$$. Then  $$\\mathop {\\lim }\\limits_{x \\to 2} \\int\\limits_6^{f\\left( x \\right)} {{{4{t^3}} \\over {x - 2}}dt} $$ equals :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-i1-intlimits01-2x2dxi2-intlimits01-2x3dxi3-intlimits12-2x-jee-main-2005-marks-4-wzh8lobjq9h9mxpm.htm",
+          "paperTitle": "AIEEE 2005",
+          "question": {
+            "en": {
+              "content": "If $${I_1} = \\int\\limits_0^1 {{2^{{x^2}}}dx,{I_2} = \\int\\limits_0^1 {{2^{{x^3}}}dx,\\,{I_3} = \\int\\limits_1^2 {{2^{{x^2}}}dx} } } $$ and $${I_4} = \\int\\limits_1^2 {{2^{{x^3}}}dx} $$ then "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-value-of-intlimits-pi-pi-cos-2-over-1-axdxa-0-is-jee-main-2005-marks-4-utc1jo5ctqq7oazr.htm",
+          "paperTitle": "AIEEE 2005",
+          "question": {
+            "en": {
+              "content": "The value of $$\\int\\limits_{ - \\pi }^\\pi  {{{{{\\cos }^2}} \\over {1 + {a^x}}}dx,\\,\\,a &gt; 0,} $$  is "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-value-of-integral-intlimits36-sqrt-x-over-sqrt-9-x-sqrt-jee-main-2005-marks-4-hyawqjqsy59anvip.htm",
+          "paperTitle": "AIEEE 2005",
+          "question": {
+            "en": {
+              "content": "The value of integral, $$\\int\\limits_3^6 {{{\\sqrt x } \\over {\\sqrt {9 - x}  + \\sqrt x }}} dx $$  is"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "mathop-lim-limitsn-to-infty-left-1-over-2005-marks-4-zqui65exuf62ve2u.htm",
+          "paperTitle": "AIEEE 2005",
+          "question": {
+            "en": {
+              "content": "$$\\mathop {\\lim }\\limits_{n \\to \\infty } \\left[ {{1 \\over {{n^2}}}{{\\sec }^2}{1 \\over {{n^2}}} + {2 \\over {{n^2}}}{{\\sec }^2}{4 \\over {{n^2}}}.... + {1 \\over n}{{\\sec }^2}1} \\right]$$ \n<br>equals"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "mathop-limlimitsn-to-infty-sumlimitsr-1n-1-over-ner-over-n-i-jee-main-2004-marks-4-ze5mgssshsysqex4.htm",
+          "paperTitle": "AIEEE 2004",
+          "question": {
+            "en": {
+              "content": "$$\\mathop {Lim}\\limits_{n \\to \\infty } \\sum\\limits_{r = 1}^n {{1 \\over n}{e^{{r \\over n}}}} $$ is "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-value-of-i-intlimits0pi-2-left-sin-x-cos-x-right2-over-s-jee-main-2004-marks-4-cgm65khjrmbng3a6.htm",
+          "paperTitle": "AIEEE 2004",
+          "question": {
+            "en": {
+              "content": "The value of $$I = \\int\\limits_0^{\\pi /2} {{{{{\\left( {\\sin x + \\cos x} \\right)}^2}} \\over {\\sqrt {1 + \\sin 2x} }}dx} $$ is "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-intlimits0pi-xfleft-sin-x-rightdx-aintlimits0pi-2-fleft-s-jee-main-2004-marks-4-mf2hi0v3oqpz6k8y.htm",
+          "paperTitle": "AIEEE 2004",
+          "question": {
+            "en": {
+              "content": "If $$\\int\\limits_0^\\pi  {xf\\left( {\\sin x} \\right)dx = A\\int\\limits_0^{\\pi /2} {f\\left( {\\sin x} \\right)dx,} } $$   then $$A$$ is "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-value-of-intlimits-23-left-1-x2-rightdx-is-jee-main-2004-marks-4-yxxhhzhxwfw8kp9m.htm",
+          "paperTitle": "AIEEE 2004",
+          "question": {
+            "en": {
+              "content": "The value of $$\\int\\limits_{ - 2}^3 {\\left| {1 - {x^2}} \\right|dx} $$ is "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-fleft-x-right-ex-over-1-exi1-intlimitsfleft-a-rightfleft-jee-main-2004-marks-4-tpvnhnipqwfmq5m6.htm",
+          "paperTitle": "AIEEE 2004",
+          "question": {
+            "en": {
+              "content": "If $$f\\left( x \\right) = {{{e^x}} \\over {1 + {e^x}}},{I_1} = \\int\\limits_{f\\left( { - a} \\right)}^{f\\left( a \\right)} {xg\\left\\{ {x\\left( {1 - x} \\right)} \\right\\}dx} $$ \n<br>and $${I_2} = \\int\\limits_{f\\left( { - a} \\right)}^{f\\left( a \\right)} {g\\left\\{ {x\\left( {1 - x} \\right)} \\right\\}dx} ,$$ then the value of $${{{I_2}} \\over {{I_1}}}$$ is "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-fleft-y-right-ey-gleft-y-right-yy-0-and-fleft-t-right-int-jee-main-2003-marks-4-tiedgbvfifzgtj0o.htm",
+          "paperTitle": "AIEEE 2003",
+          "question": {
+            "en": {
+              "content": "If $$f\\left( y \\right) = {e^y},$$ $$g\\left( y \\right) = y;y &gt; 0$$ and \n<br><br/>$$F\\left( t \\right) = \\int\\limits_0^t {f\\left( {t - y} \\right)g\\left( y \\right)dy,} $$  then :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-value-of-mathop-lim-limitsx-to-0-intlimit-2003-marks-4-i6qjxswerizm8zty.htm",
+          "paperTitle": "AIEEE 2003",
+          "question": {
+            "en": {
+              "content": "The value of $$\\mathop {\\lim }\\limits_{x \\to 0} {{\\int\\limits_0^{{x^2}} {{{\\sec }^2}tdt} } \\over xsinx}$$ is"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "mathop-lim-limitsn-to-infty-1-24-34-2003-marks-4-wxfq6ecjbbtnfejk.htm",
+          "paperTitle": "AIEEE 2003",
+          "question": {
+            "en": {
+              "content": "$$\\mathop {\\lim }\\limits_{n \\to \\infty } {{1 + {2^4} + {3^4} + .... + {n^4}} \\over {{n^5}}}$$ - $$\\mathop {\\lim }\\limits_{n \\to \\infty } {{1 + {2^3} + {3^3} + .... + {n^3}} \\over {{n^5}}}$$"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-value-of-the-integral-i-intlimits01-xleft-1-x-rightndx-i-jee-main-2003-marks-4-5d1pwqj8xgbfokzr.htm",
+          "paperTitle": "AIEEE 2003",
+          "question": {
+            "en": {
+              "content": "The value of the integral $$I = \\int\\limits_0^1 {x{{\\left( {1 - x} \\right)}^n}dx} $$ is "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-fleft-a-b-x-right-fleft-x-right-then-intlimitsab-xfleft-x-jee-main-2003-marks-4-ykvdakdcus4nswlz.htm",
+          "paperTitle": "AIEEE 2003",
+          "question": {
+            "en": {
+              "content": "If $$f\\left( {a + b - x} \\right) = f\\left( x \\right)$$ then $$\\int\\limits_a^b {xf\\left( x \\right)dx} $$ is equal to "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-fx-be-a-function-satisfying-fxfx-with-f01-and-gx-be-a-fu-jee-main-2003-marks-4-0mv321urqhcrm7sb.htm",
+          "paperTitle": "AIEEE 2003",
+          "question": {
+            "en": {
+              "content": "Let $$f(x)$$ be a function satisfying $$f'(x)=f(x)$$ with $$f(0)=1$$ and $$g(x)$$ be a function that satisfies $$f\\left( x \\right) + g\\left( x \\right) = {x^2}$$. Then the value of the integral $$\\int\\limits_0^1 {f\\left( x \\right)g\\left( x \\right)dx,} $$ is"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "mathop-lim-limitsn-to-infty-1p-2p-2002-marks-4-jq9muck61xq6ddpr.htm",
+          "paperTitle": "AIEEE 2002",
+          "question": {
+            "en": {
+              "content": "$$\\mathop {\\lim }\\limits_{n \\to \\infty } {{{1^p} + {2^p} + {3^p} + ..... + {n^p}} \\over {{n^{p + 1}}}}$$ is"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "intlimits02-left-x2-rightdx-is-jee-main-2002-marks-4-o2ykyj1nwtzqnytw.htm",
+          "paperTitle": "AIEEE 2002",
+          "question": {
+            "en": {
+              "content": "$$\\int\\limits_0^2 {\\left[ {{x^2}} \\right]dx} $$ is "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "int-pi-pi-2xleft-1-sin-x-right-over-1-cos-2x-dx-is-jee-main-2002-marks-4-e87vkbcxqlihzlai.htm",
+          "paperTitle": "AIEEE 2002",
+          "question": {
+            "en": {
+              "content": "$$\\int_{ - \\pi }^\\pi  {{{2x\\left( {1 + \\sin x} \\right)} \\over {1 + {{\\cos }^2}x}}} dx$$  is "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "int010pi-left-sin-x-rightdx-is-jee-main-2002-marks-4-fotnk3xkayiytvbr.htm",
+          "paperTitle": "AIEEE 2002",
+          "question": {
+            "en": {
+              "content": "$$\\int\\limits_0^{10\\pi } {\\left| {\\sin x} \\right|dx} $$ is "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-yfx-makes-ve-intercept-of-2-and-0-unit-on-x-and-y-axes-an-jee-main-2002-marks-4-vah0gqp8qnqsrnoi.htm",
+          "paperTitle": "AIEEE 2002",
+          "question": {
+            "en": {
+              "content": "If $$y=f(x)$$ makes +$$ve$$ intercept of $$2$$ and $$0$$ unit on $$x$$ and $$y$$ axes and encloses an area of $$3/4$$ square unit with the axes then $$\\int\\limits_0^2 {xf'\\left( x \\right)dx} $$ is "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "in-intlimits0pi-4-tan-nxdx-then-mathop-lim-limitsn-to-infty-jee-main-2002-marks-4-hqf2i8kje6uvcfhw.htm",
+          "paperTitle": "AIEEE 2002",
+          "question": {
+            "en": {
+              "content": "$${I_n} = \\int\\limits_0^{\\pi /4} {{{\\tan }^n}x\\,dx} $$ then $$\\,\\mathop {\\lim }\\limits_{n \\to \\infty } \\,n\\left[ {{I_n} + {I_{n + 2}}} \\right]$$ equals "
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Numerical",
+      "key": "integer",
+      "questions": [
+        {
+          "examGroup": "jee",
+          "permalink": "pif-intpi--6pi--4leftcot-leftx-fracpi-jee-main-mathematics-trigonometric-functions-and-equations-vnwxmrrvp8z4v50t",
+          "paperTitle": "JEE Main 2026 (Online) 8th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>If $\\int\\limits_{\\pi / 6}^{\\pi / 4}\\left(\\cot \\left(x-\\frac{\\pi}{3}\\right) \\cot \\left(x+\\frac{\\pi}{3}\\right)+1\\right) d x=\\alpha \\log _{\\mathrm{e}}(\\sqrt{3}-1)$, then $9 \\alpha^2$ is equal to $\\_\\_\\_\\_$ .</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-alpha--intlimits02sqrt3-log2x2--jee-main-mathematics-nz3tspxpama3weix",
+          "paperTitle": "JEE Main 2026 (Online) 2nd April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>If $\\alpha = \\int\\limits_{0}^{2\\sqrt{3}} \\log_{2}(x^{2} + 4) \\, dx + \\int\\limits_{2}^{4} \\sqrt{2x - 4} \\, dx$, then $\\alpha^{2}$ is equal to ________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-f-be-a-differentiable-function-satisfying-fx--1-jee-main-mathematics-cvpzs4xd7jw7cokk",
+          "paperTitle": "JEE Main 2026 (Online) 28th January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $f$ be a differentiable function satisfying $f(x) = 1 - 2x + \\int\\limits_0^x e^{(x-t)} f(t)\\,dt$, $x \\in \\mathbb{R}$ and let</p> <p>$g(x) = \\int\\limits_0^x (f(t) + 2)^{15} (t - 4)^6 (t + 12)^{17}\\,dt$, $x \\in \\mathbb{R}$.</p> <p>If $p$ and $q$ are respectively the points of local minima and local maxima of $g$, then the value of $|p+q|$ is equal to ________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "p-text--the-value-of--sumr120leftleftsqr-jee-main-mathematics-trigonometric-functions-and-equations-wbstiwehx6hryunv",
+          "paperTitle": "JEE Main 2026 (Online) 28th January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>$$ \\text { The value of } \\sum\\limits_{r=1}^{20}\\left(\\left|\\sqrt{\\pi\\left(\\int\\limits_0^r x|\\sin \\pi x| d x\\right)}\\right|\\right) \\text { is } $$</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-fx-satisfies-the-relation-fxexint01leftyx-jee-main-mathematics-trigonometric-functions-and-equations-t8ibs0n9ohx2l6is",
+          "paperTitle": "JEE Main 2026 (Online) 24th January Evening Shift",
+          "question": {
+            "en": {
+              "content": "If $f(x)$ satisfies the relation $f(x)=e^x+\\int_0^1\\left(y+x e^x\\right) f(y) d y$, then $e+f(0)$ is equal to $\\_\\_\\_\\_$ ."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-a-differentiable-function-f-satisfy-the-equation--jee-main-mathematics-trigonometric-functions-and-equations-s7snrhgtdxbimvt7",
+          "paperTitle": "JEE Main 2026 (Online) 24th January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let a differentiable function $f$ satisfy the equation $\\int_0^{36} f\\left(\\frac{t x}{36}\\right) d t=4 \\alpha f(x)$. If $y=f(x)$ is a standard parabola passing through the points $(2,1)$ and $(-4, \\beta)$, then $\\beta^\\alpha$ is equal to $\\_\\_\\_\\_$ .</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-number-of-elements-in-the-set-mathrmsleftx-x-jee-main-mathematics-trigonometric-functions-and-equations-qlkiw9ov4qirppq6",
+          "paperTitle": "JEE Main 2026 (Online) 23rd January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>The number of elements in the set $\\mathrm{S}=\\left\\{x: x \\in[0,100]\\right.$ and $\\left.\\int\\limits_0^x t^2 \\sin (x-t) \\mathrm{d} t=x^2\\right\\}$ is $\\_\\_\\_\\_$</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet--be-the-greatest-integer-function-if-alphaint-jee-main-mathematics-trigonometric-functions-and-equations-3rptysrssdp4j5wa",
+          "paperTitle": "JEE Main 2026 (Online) 22nd January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let [.] be the greatest integer function. If $\\alpha=\\int\\limits_0^{64}\\left(x^{1 / 3}-\\left[x^{1 / 3}\\right]\\right) \\mathrm{d} x$, then $\\frac{1}{\\pi} \\int\\limits_0^{\\alpha \\pi}\\left(\\frac{\\sin ^2 \\theta}{\\sin ^6 \\theta+\\cos ^6 \\theta}\\right) \\mathrm{d} \\theta$ is equal to $\\_\\_\\_\\_$ .</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-cdot-denote-the-greatest-integer-function-and-f-jee-main-mathematics-loixinijovzg8dte",
+          "paperTitle": "JEE Main 2026 (Online) 21st January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $[\\cdot]$ denote the greatest integer function and $f(x) = \\lim\\limits_{n \\to \\infty} \\frac{1}{n^{3}} \\sum\\limits_{k=1}^n \\left[ \\frac{k^2}{3^x} \\right]$. Then $12 \\sum\\limits_{j=1}^{\\infty} f(i)$ is equal to ________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-intlimits01-4-cot--1left1-2-x4-x2right-ma-jee-main-mathematics-7m12haysam6f7k80",
+          "paperTitle": "JEE Main 2026 (Online) 21st January Evening Shift",
+          "question": {
+            "en": {
+              "content": "If $\\int\\limits_0^1 4 \\cot ^{-1}\\left(1-2 x+4 x^2\\right) \\mathrm{d} x=\\mathrm{a\\,tan}^{-1}(2)-\\mathrm{b\\,log}_{\\mathrm{e}}(5)$, where $\\mathrm{a}, \\mathrm{b} \\in \\mathrm{N}$, then $(2 \\mathrm{a}+\\mathrm{b})$ is equal to $\\_\\_\\_\\_$ ."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "p6-int0pisin-3-xsin-2-xsin-x-d-x-is-equal-t-jee-main-mathematics-trigonometric-functions-and-equations-dawkeci5vx1lseqr",
+          "paperTitle": "JEE Main 2026 (Online) 21st January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>$6 \\int_0^\\pi|(\\sin 3 x+\\sin 2 x+\\sin x)| d x$ is equal to $\\_\\_\\_\\_$ .</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet--denote-the-greatest-integer-function-if-intl-jee-main-mathematics-trigonometric-functions-and-equations-rfqz0dcxkgej2dnp",
+          "paperTitle": "JEE Main 2025 (Online) 2nd April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let [.] denote the greatest integer function. If $\\int_\\limits0^{e^3}\\left[\\frac{1}{e^{x-1}}\\right] d x=\\alpha-\\log _e 2$, then $\\alpha^3$ is equal to _________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif--24-intlimits0fracpi4-biggsin-left-4-jee-main-mathematics-dz2gjironu9qpbja",
+          "paperTitle": "JEE Main 2025 (Online) 29th January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>If $ 24 \\int\\limits_0^{\\frac{\\pi}{4}} \\bigg[\\sin \\left| 4x - \\frac{\\pi}{12} \\right| + [2 \\sin x] \\bigg] dx = 2\\pi + \\alpha $, where $[\\cdot]$ denotes the greatest integer function, then $\\alpha$ is equal to ________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-limlimits-t-rightarrow-0leftintlimits013-x-jee-main-mathematics-lhspwqvbx0y0arqf",
+          "paperTitle": "JEE Main 2025 (Online) 29th January Evening Shift",
+          "question": {
+            "en": {
+              "content": "If $\\lim\\limits _{t \\rightarrow 0}\\left(\\int\\limits_0^1(3 x+5)^t d x\\right)^{\\frac{1}{t}}=\\frac{\\alpha}{5 e}\\left(\\frac{8}{5}\\right)^{\\frac{2}{3}}$, then $\\alpha$ is equal to ________________."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-f0-infty-rightarrow-mathbfr-be-a-twice-dif-jee-main-mathematics-qbspjhhosdjjvann",
+          "paperTitle": "JEE Main 2025 (Online) 29th January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $f:(0, \\infty) \\rightarrow \\mathbf{R}$ be a twice differentiable function. If for some $a\\ne 0, \\int\\limits_0^1 f(\\lambda x) \\mathrm{d} \\mathrm{\\lambda}=a f(x), f(1)=1$ and $f(16)=\\frac{1}{8}$, then $16-f^{\\prime}\\left(\\frac{1}{16}\\right)$ is equal to __________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-lim-limitsn-rightarrow-inftyleftfracn-jee-main-mathematics-trigonometric-functions-and-equations-tp7hn6bfwj3k9rjx",
+          "paperTitle": "JEE Main 2024 (Online) 9th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$\\lim _\\limits{n \\rightarrow \\infty}\\left(\\frac{n}{\\sqrt{n^4+1}}-\\frac{2 n}{\\left(n^2+1\\right) \\sqrt{n^4+1}}+\\frac{n}{\\sqrt{n^4+16}}-\\frac{8 n}{\\left(n^2+4\\right) \\sqrt{n^4+16}}\\right.$$ $$\\left.+\\ldots+\\frac{n}{\\sqrt{n^4+n^4}}-\\frac{2 n \\cdot n^2}{\\left(n^2+n^2\\right) \\sqrt{n^4+n^4}}\\right)$$ be $$\\frac{\\pi}{k}$$, using only the principal values of the inverse trigonometric functions. Then $$\\mathrm{k}^2$$ is equal to _________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-t-denote-the-largest-integer-less-than-or-equal-jee-main-mathematics-trigonometric-functions-and-equations-ow5lyvwno7loqvta",
+          "paperTitle": "JEE Main 2024 (Online) 6th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$[t]$$ denote the largest integer less than or equal to $$t$$. If $$\\int_\\limits0^3\\left(\\left[x^2\\right]+\\left[\\frac{x^2}{2}\\right]\\right) \\mathrm{d} x=\\mathrm{a}+\\mathrm{b} \\sqrt{2}-\\sqrt{3}-\\sqrt{5}+\\mathrm{c} \\sqrt{6}-\\sqrt{7}$$, where $$\\mathrm{a}, \\mathrm{b}, \\mathrm{c} \\in \\mathbf{Z}$$, then $$\\mathrm{a}+\\mathrm{b}+\\mathrm{c}$$ is equal to __________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-rkfracint01left1-x7rightk-d-xint0-jee-main-mathematics-trigonometric-functions-and-equations-l771pytevhb9n9gr",
+          "paperTitle": "JEE Main 2024 (Online) 6th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$r_k=\\frac{\\int_0^1\\left(1-x^7\\right)^k d x}{\\int_0^1\\left(1-x^7\\right)^{k+1} d x}, k \\in \\mathbb{N}$$. Then the value of $$\\sum_\\limits{k=1}^{10} \\frac{1}{7\\left(r_k-1\\right)}$$ is equal to _________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-ftintlimits0pi-frac2-x-mathrmd-x1-c-jee-main-mathematics-trigonometric-functions-and-equations-c5uncbux7hrgbyrn",
+          "paperTitle": "JEE Main 2024 (Online) 5th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>If $$f(t)=\\int_\\limits0^\\pi \\frac{2 x \\mathrm{~d} x}{1-\\cos ^2 \\mathrm{t} \\sin ^2 x}, 0<\\mathrm{t}<\\pi$$, then the value of $$\\int_\\limits0^{\\frac{\\pi}{2}} \\frac{\\pi^2 \\mathrm{dt}}{f(\\mathrm{t})}$$ equals __________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-the-shortest-distance-between-the-lines-fracx22-jee-main-mathematics-trigonometric-functions-and-equations-vfgftr3zpijej0x3",
+          "paperTitle": "JEE Main 2024 (Online) 4th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>If the shortest distance between the lines $$\\frac{x+2}{2}=\\frac{y+3}{3}=\\frac{z-5}{4}$$ and $$\\frac{x-3}{1}=\\frac{y-2}{-3}=\\frac{z+4}{2}$$ is $$\\frac{38}{3 \\sqrt{5}} \\mathrm{k}$$, and $$\\int_\\limits 0^{\\mathrm{k}}\\left[x^2\\right] \\mathrm{d} x=\\alpha-\\sqrt{\\alpha}$$, where $$[x]$$ denotes the greatest integer function, then $$6 \\alpha^3$$ is equal to _________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-int0fracpi4-fracsin-2-x1sin-x-co-jee-main-mathematics-trigonometric-functions-and-equations-plwadpmkokvqflm8",
+          "paperTitle": "JEE Main 2024 (Online) 4th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>If $$\\int_0^{\\frac{\\pi}{4}} \\frac{\\sin ^2 x}{1+\\sin x \\cos x} \\mathrm{~d} x=\\frac{1}{\\mathrm{a}} \\log _{\\mathrm{e}}\\left(\\frac{\\mathrm{a}}{3}\\right)+\\frac{\\pi}{\\mathrm{b} \\sqrt{3}}$$, where $$\\mathrm{a}, \\mathrm{b} \\in \\mathrm{N}$$, then $$\\mathrm{a}+\\mathrm{b}$$ is equal to _________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-f0-infty-rightarrow-mathbfr-and-mathrmfx-jee-main-mathematics-aib09b3actxgho2a",
+          "paperTitle": "JEE Main 2024 (Online) 1st February Evening Shift",
+          "question": {
+            "en": {
+              "content": "Let $f:(0, \\infty) \\rightarrow \\mathbf{R}$ and $\\mathrm{F}(x)=\\int\\limits_0^x \\mathrm{t} f(\\mathrm{t}) \\mathrm{dt}$. If $\\mathrm{F}\\left(x^2\\right)=x^4+x^5$, then $\\sum\\limits_{\\mathrm{r}=1}^{12} f\\left(\\mathrm{r}^2\\right)$ is equal to ____________."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-intlimits-pi--2pi--2-frac8-sqrt2-cos-x-jee-main-mathematics-yey1dq8v6qdnonct",
+          "paperTitle": "JEE Main 2024 (Online) 1st February Morning Shift",
+          "question": {
+            "en": {
+              "content": "If $\\int\\limits_{-\\pi / 2}^{\\pi / 2} \\frac{8 \\sqrt{2} \\cos x \\mathrm{~d} x}{\\left(1+\\mathrm{e}^{\\sin x}\\right)\\left(1+\\sin ^4 x\\right)}=\\alpha \\pi+\\beta \\log _{\\mathrm{e}}(3+2 \\sqrt{2})$, where $\\alpha, \\beta$ are integers, then $\\alpha^2+\\beta^2$ equals :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pleftfrac120pi3-intlimits0pi-fracx2-si-jee-main-mathematics-trigonometric-functions-and-equations-yoypy7jdfekgsqs4",
+          "paperTitle": "JEE Main 2024 (Online) 31st January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>$$\\left|\\frac{120}{\\pi^3} \\int_\\limits0^\\pi \\frac{x^2 \\sin x \\cos x}{\\sin ^4 x+\\cos ^4 x} d x\\right| \\text { is equal to }$$ ________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-the-integral-525-intlimits0fracpi2-sin-jee-main-mathematics-trigonometric-functions-and-equations-dqd6ufdkjeui7wmt",
+          "paperTitle": "JEE Main 2024 (Online) 31st January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>If the integral $$525 \\int_\\limits0^{\\frac{\\pi}{2}} \\sin 2 x \\cos ^{\\frac{11}{2}} x\\left(1+\\operatorname{Cos}^{\\frac{5}{2}} x\\right)^{\\frac{1}{2}} d x$$ is equal to $$(n \\sqrt{2}-64)$$, then $$n$$ is equal to _________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-s-1-infty-and-f-s-rightarrow-mathbbr-jee-main-mathematics-trigonometric-functions-and-equations-yljnkijgcplby4wb",
+          "paperTitle": "JEE Main 2024 (Online) 31st January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$S=(-1, \\infty)$$ and $$f: S \\rightarrow \\mathbb{R}$$ be defined as</p>\n<p>$$f(x)=\\int_\\limits{-1}^x\\left(e^t-1\\right)^{11}(2 t-1)^5(t-2)^7(t-3)^{12}(2 t-10)^{61} d t \\text {, }$$</p>\n<p>Let $$\\mathrm{p}=$$ Sum of squares of the values of $$x$$, where $$f(x)$$ attains local maxima on $$S$$, and $$\\mathrm{q}=$$ Sum of the values of $$\\mathrm{x}$$, where $$f(x)$$ attains local minima on $$S$$. Then, the value of $$p^2+2 q$$ is _________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-f-mathbbr-rightarrow-mathbbr-be-a-functio-jee-main-mathematics-trigonometric-functions-and-equations-ud3eaxueqnearzgg",
+          "paperTitle": "JEE Main 2024 (Online) 31st January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$f: \\mathbb{R} \\rightarrow \\mathbb{R}$$ be a function defined by $$f(x)=\\frac{4^x}{4^x+2}$$ and $$M=\\int_\\limits{f(a)}^{f(1-a)} x \\sin ^4(x(1-x)) d x, N=\\int_\\limits{f(a)}^{f(1-a)} \\sin ^4(x(1-x)) d x ; a \\neq \\frac{1}{2}$$. If $$\\alpha M=\\beta N, \\alpha, \\beta \\in \\mathbb{N}$$, then the least value of $$\\alpha^2+\\beta^2$$ is equal to __________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-value-of-9-intlimits09leftsqrtfrac10-xx-jee-main-mathematics-trigonometric-functions-and-equations-tbbdqtxxyp1cteye",
+          "paperTitle": "JEE Main 2024 (Online) 30th January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>The value of $$9 \\int_\\limits0^9\\left[\\sqrt{\\frac{10 x}{x+1}}\\right] \\mathrm{d} x$$, where $$[t]$$ denotes the greatest integer less than or equal to $$t$$, is</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-the-slope-of-the-line-45-x5-y30-be-27-r1f-jee-main-mathematics-trigonometric-functions-and-equations-zs7x4nyjsblfpdkh",
+          "paperTitle": "JEE Main 2024 (Online) 29th January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let the slope of the line $$45 x+5 y+3=0$$ be $$27 r_1+\\frac{9 r_2}{2}$$ for some $$r_1, r_2 \\in \\mathbb{R}$$. Then $$\\lim _\\limits{x \\rightarrow 3}\\left(\\int_3^x \\frac{8 t^2}{\\frac{3 r_2 x}{2}-r_2 x^2-r_1 x^3-3 x} d t\\right)$$ is equal to _________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-intlimitsfracpi6fracpi3-sqrt1-jee-main-mathematics-trigonometric-functions-and-equations-7vwwhdgbnq4ljktg",
+          "paperTitle": "JEE Main 2024 (Online) 29th January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>If $$\\int_\\limits{\\frac{\\pi}{6}}^{\\frac{\\pi}{3}} \\sqrt{1-\\sin 2 x} d x=\\alpha+\\beta \\sqrt{2}+\\gamma \\sqrt{3}$$, where $$\\alpha, \\beta$$ and $$\\gamma$$ are rational numbers, then\n$$3 \\alpha+4 \\beta-\\gamma$$ is equal to _________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-fxintlimits0x-gt-log-mathrmeleft-jee-main-mathematics-trigonometric-functions-and-equations-zumnkwwvxr5aigwo",
+          "paperTitle": "JEE Main 2024 (Online) 27th January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$f(x)=\\int_\\limits0^x g(t) \\log _{\\mathrm{e}}\\left(\\frac{1-\\mathrm{t}}{1+\\mathrm{t}}\\right) \\mathrm{dt}$$, where $$g$$ is a continuous odd function.\nIf $$\\int_{-\\pi / 2}^{\\pi / 2}\\left(f(x)+\\frac{x^2 \\cos x}{1+\\mathrm{e}^x}\\right) \\mathrm{d} x=\\left(\\frac{\\pi}{\\alpha}\\right)^2-\\alpha$$, then $$\\alpha$$ is equal to _________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-fnintlimits0fracpi2leftsumli-jee-main-mathematics-trigonometric-functions-and-equations-pebntwlxuhni2rnh",
+          "paperTitle": "JEE Main 2023 (Online) 13th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$f_{n}=\\int_\\limits{0}^{\\frac{\\pi}{2}}\\left(\\sum_\\limits{k=1}^{n} \\sin ^{k-1} x\\right)\\left(\\sum_\\limits{k=1}^{n}(2 k-1) \\sin ^{k-1} x\\right) \\cos x d x, n \\in \\mathbb{N}$$. Then $$f_{21}-f_{20}$$ is equal to _________</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-for-x-in-mathbbr-s0xx-skxck-x-jee-main-mathematics-trigonometric-functions-and-equations-iawuukw95yhuyape",
+          "paperTitle": "JEE Main 2023 (Online) 13th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let for $$x \\in \\mathbb{R}, S_{0}(x)=x, S_{k}(x)=C_{k} x+k \\int_{0}^{x} S_{k-1}(t) d t$$, where \n<br/><br/>$$C_{0}=1, C_{k}=1-\\int_{0}^{1} S_{k-1}(x) d x, k=1,2,3, \\ldots$$ Then $$S_{2}(3)+6 C_{3}$$ is equal to ____________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-intlimits-015015left100-x2-1right-d-jee-main-mathematics-trigonometric-functions-and-equations-5mibyoxfq60ocl2w",
+          "paperTitle": "JEE Main 2023 (Online) 12th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>If $$\\int_\\limits{-0.15}^{0.15}\\left|100 x^{2}-1\\right| d x=\\frac{k}{3000}$$, then $$k$$ is equal to ___________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pfor-m-n--0-let-alpham-nintlimits02-jee-main-mathematics-trigonometric-functions-and-equations-bbpmvgvz4tik0ufa",
+          "paperTitle": "JEE Main 2023 (Online) 11th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>For $$m, n > 0$$, let $$\\alpha(m, n)=\\int_\\limits{0}^{2} t^{m}(1+3 t)^{n} d t$$. If $$11 \\alpha(10,6)+18 \\alpha(11,5)=p(14)^{6}$$, then $$p$$ is equal to ___________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-t-denote-the-greatest-integer-function-if-i-jee-main-mathematics-trigonometric-functions-and-equations-byvvpe9yebqhzorr",
+          "paperTitle": "JEE Main 2023 (Online) 8th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$[t]$$ denote the greatest integer function. If $$\\int_\\limits{0}^{2.4}\\left[x^{2}\\right] d x=\\alpha+\\beta \\sqrt{2}+\\gamma \\sqrt{3}+\\delta \\sqrt{5}$$, then $$\\alpha+\\beta+\\gamma+\\delta$$ is equal to __________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-t-denote-the-greatest-integer-leq-t-then-jee-main-mathematics-trigonometric-functions-and-equations-uumlyjrqszkuomyf",
+          "paperTitle": "JEE Main 2023 (Online) 8th April Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$[t]$$ denote the greatest integer $$\\leq t$$. Then $$\\frac{2}{\\pi} \\int_\\limits{\\pi / 6}^{5 \\pi / 6}(8[\\operatorname{cosec} x]-5[\\cot x]) d x$$ is equal to __________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-fxfracxleft1xnrightfrac1n-jee-main-mathematics-trigonometric-functions-and-equations-gvefeqcqczauqapc",
+          "paperTitle": "JEE Main 2023 (Online) 6th April Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$f(x)=\\frac{x}{\\left(1+x^{n}\\right)^{\\frac{1}{n}}}, x \\in \\mathbb{R}-\\{-1\\}, n \\in \\mathbb{N}, n > 2$$.</p>\n<p>If $$f^{n}(x)=\\left(f \\circ f \\circ f \\ldots .\\right.$$. upto $$n$$ times) $$(x)$$, then \n<br/><br/>$$\\lim _\\limits{n \\rightarrow \\infty} \\int_\\limits{0}^{1} x^{n-2}\\left(f^{n}(x)\\right) d x$$ is equal to ____________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-intlimits0pi-5cos-x1--cos-xcos-3x-jee-main-mathematics-trigonometric-functions-and-equations-nierozmmtdwsqlgk",
+          "paperTitle": "JEE Main 2023 (Online) 1st February Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>If $$\\int\\limits_0^\\pi  {{{{5^{\\cos x}}(1 + \\cos x\\cos 3x + {{\\cos }^2}x + {{\\cos }^3}x\\cos 3x)dx} \\over {1 + {5^{\\cos x}}}} = {{k\\pi } \\over {16}}} $$, then k is equal to _____________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-intlimits01leftx21x14x7right-jee-main-mathematics-trigonometric-functions-and-equations-6mho8szonyzo7cci",
+          "paperTitle": "JEE Main 2023 (Online) 1st February Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>If $$\\int_\\limits{0}^{1}\\left(x^{21}+x^{14}+x^{7}\\right)\\left(2 x^{14}+3 x^{7}+6\\right)^{1 / 7} d x=\\frac{1}{l}(11)^{m / n}$$ where $$l, m, n \\in \\mathbb{N}, m$$ and $$n$$ are coprime then $$l+m+n$$ is equal to ____________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-f-mathbbr-rightarrow-mathbbr-be-a-differe-jee-main-mathematics-trigonometric-functions-and-equations-zfry7nopqxtdt4dm",
+          "paperTitle": "JEE Main 2023 (Online) 1st February Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$f: \\mathbb{R} \\rightarrow \\mathbb{R}$$ be a differentiable function such that $$f^{\\prime}(x)+f(x)=\\int_\\limits{0}^{2} f(t) d t$$. If $$f(0)=e^{-2}$$, then $$2 f(0)-f(2)$$ is equal to ____________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plimlimitsx-rightarrow-0-frac48x4-intli-jee-main-mathematics-trigonometric-functions-and-equations-2y7qfhbq06u53vby",
+          "paperTitle": "JEE Main 2023 (Online) 30th January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>$$\\lim_\\limits{x \\rightarrow 0} \\frac{48}{x^{4}} \\int_\\limits{0}^{x} \\frac{t^{3}}{t^{6}+1} \\mathrm{~d} t$$ is equal to ___________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-intlimits1-over-33-log-exdx--m--jee-main-mathematics-trigonometric-functions-and-equations-n5pfpni6g7wg3yjh",
+          "paperTitle": "JEE Main 2023 (Online) 25th January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>If $$\\int\\limits_{{1 \\over 3}}^3 {|{{\\log }_e}x|dx = {m \\over n}{{\\log }_e}\\left( {{{{n^2}} \\over e}} \\right)} $$, where m and n are coprime natural numbers, then $${m^2} + {n^2} - 5$$ is equal to _____________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-f-be-a-differentiable-function-defined-on--jee-main-mathematics-trigonometric-functions-and-equations-ddhvgdcqi2cql2eg",
+          "paperTitle": "JEE Main 2023 (Online) 24th January Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$f$$ be $$a$$ differentiable function defined on $$\\left[ {0,{\\pi  \\over 2}} \\right]$$ such that $$f(x) > 0$$ and $$f(x) + \\int_0^x {f(t)\\sqrt {1 - {{({{\\log }_e}f(t))}^2}} dt = e,\\forall x \\in \\left[ {0,{\\pi  \\over 2}} \\right]}$$. Then $$\\left( {6{{\\log }_e}f\\left( {{\\pi  \\over 6}} \\right)} \\right)^2$$ is equal to __________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-value-of-12intlimits03-left-x2-3x--2-jee-main-mathematics-trigonometric-functions-and-equations-nu8gxftdib628s4u",
+          "paperTitle": "JEE Main 2023 (Online) 24th January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>The value of $$12\\int\\limits_0^3 {\\left| {{x^2} - 3x + 2} \\right|dx} $$ is ____________</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-value-of-8-over-pi-intlimits0pi-over-2-jee-main-mathematics-trigonometric-functions-and-equations-ik748bdrt4oopisg",
+          "paperTitle": "JEE Main 2023 (Online) 24th January Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>The value of $${8 \\over \\pi }\\int\\limits_0^{{\\pi  \\over 2}} {{{{{(\\cos x)}^{2023}}} \\over {{{(\\sin x)}^{2023}} + {{(\\cos x)}^{2023}}}}dx} $$ is ___________</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-value-of-the-integral-intlimits0fracpi2-jee-main-mathematics-trigonometric-functions-and-equations-mdqywecn339rut1i",
+          "paperTitle": "JEE Main 2022 (Online) 28th July Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>The value of the integral $$\\int\\limits_{0}^{\\frac{\\pi}{2}} 60 \\frac{\\sin (6 x)}{\\sin x} d x$$ is equal to _________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-intlimits0sqrt3-frac15-x3sqrt1x-jee-main-mathematics-trigonometric-functions-and-equations-m8sjknfsphddj1j3",
+          "paperTitle": "JEE Main 2022 (Online) 28th July Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>If $$\\int\\limits_{0}^{\\sqrt{3}} \\frac{15 x^{3}}{\\sqrt{1+x^{2}+\\sqrt{\\left(1+x^{2}\\right)^{3}}}} \\mathrm{~d} x=\\alpha \\sqrt{2}+\\beta \\sqrt{3}$$, where $$\\alpha, \\beta$$ are integers, then $$\\alpha+\\beta$$ is equal to __________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-fxmin-x-1x-2-ldotsx-10-where-t-jee-main-mathematics-trigonometric-functions-and-equations-n0qxghrb4sxiaisc",
+          "paperTitle": "JEE Main 2022 (Online) 27th July Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$f(x)=\\min \\{[x-1],[x-2], \\ldots,[x-10]\\}$$ where [t] denotes the greatest integer $$\\leq \\mathrm{t}$$. Then $$\\int\\limits_{0}^{10} f(x) \\mathrm{d} x+\\int\\limits_{0}^{10}(f(x))^{2} \\mathrm{~d} x+\\int\\limits_{0}^{10}|f(x)| \\mathrm{d} x$$ is equal to ________________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-f-be-a-differentiable-function-satisfying-fxfra-jee-main-mathematics-trigonometric-functions-and-equations-btexmlvfavbzpjop",
+          "paperTitle": "JEE Main 2022 (Online) 27th July Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let f be a differentiable function satisfying $$f(x)=\\frac{2}{\\sqrt{3}} \\int\\limits_{0}^{\\sqrt{3}} f\\left(\\frac{\\lambda^{2} x}{3}\\right) \\mathrm{d} \\lambda, x>0$$ and $$f(1)=\\sqrt{3}$$. If $$y=f(x)$$ passes through the point $$(\\alpha, 6)$$, then $$\\alpha$$ is equal to _____________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pif-mathrmn2-mathrmn1-int01left1-xm-jee-main-mathematics-trigonometric-functions-and-equations-aosw8hitmgilsqxs",
+          "paperTitle": "JEE Main 2022 (Online) 26th July Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>If $$\\mathrm{n}(2 \\mathrm{n}+1) \\int_{0}^{1}\\left(1-x^{\\mathrm{n}}\\right)^{2 \\mathrm{n}} \\mathrm{d} x=1177 \\int_{0}^{1}\\left(1-x^{\\mathrm{n}}\\right)^{2 \\mathrm{n}+1} \\mathrm{~d} x$$, then $$\\mathrm{n} \\in \\mathbf{N}$$ is equal to ______________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-f-be-a-twice-differentiable-function-on-mathbb-jee-main-mathematics-trigonometric-functions-and-equations-r2qsvwkcgjicftat",
+          "paperTitle": "JEE Main 2022 (Online) 25th July Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$f$$ be a twice differentiable function on $$\\mathbb{R}$$. If $$f^{\\prime}(0)=4$$ and $$f(x) + \\int\\limits_0^x {(x - t)f'(t)dt = \\left( {{e^{2x}} + {e^{ - 2x}}} \\right)\\cos 2x + {2 \\over a}x} $$, then $$(2 a+1)^{5}\\, a^{2}$$ is equal to _______________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-an--int-1n-left-1--x-over-2---jee-main-mathematics-trigonometric-functions-and-equations-gixstnd7dwuezlqw",
+          "paperTitle": "JEE Main 2022 (Online) 25th July Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $${a_n} = \\int\\limits_{ - 1}^n {\\left( {1 + {x \\over 2} + {{{x^2}} \\over 3} + \\,\\,.....\\,\\, + \\,\\,{{{x^{n - 1}}} \\over n}} \\right)dx} $$ for every n $$\\in$$ N. Then the sum of all the elements of the set {n $$\\in$$ N : a<sub>n</sub> $$\\in$$ (2, 30)} is ____________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "p-beginaligned-text--if--lim-n-rightarrow-in-jee-main-mathematics-trigonometric-functions-and-equations-yhjs2whvh5bwyxbi",
+          "paperTitle": "JEE Main 2022 (Online) 25th July Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>$$\n\\begin{aligned}\n&\\text { If } \\lim _{n \\rightarrow \\infty} \\frac{(n+1)^{k-1}}{n^{k+1}}[(n k+1)+(n k+2)+\\ldots+(n k+n)] \\\\\n&=33 \\cdot \\lim _{n \\rightarrow \\infty} \\frac{1}{n^{k+1}} \\cdot\\left[1^{k}+2^{k}+3^{k}+\\ldots+n^{k}\\right]\n\\end{aligned}$$,\n\nthen the integral value of $$\\mathrm{k}$$ is equal to _____________</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-ft--intlimits0t-ex3left-x8-jee-main-mathematics-trigonometric-functions-and-equations-b1yvqkrspplleas0",
+          "paperTitle": "JEE Main 2022 (Online) 30th June Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$f(t) = \\int\\limits_0^t {{e^{{x^3}}}\\left( {{{{x^8}} \\over {{{({x^6} + 2{x^3} + 2)}^2}}}} \\right)dx} $$. If $$f(1) + f'(1) = \\alpha e - {1 \\over 6}$$, then the value of 150$$\\alpha$$ is equal to ___________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-integral-24-over-pi-int0sqrt-2--2-jee-main-mathematics-trigonometric-functions-and-equations-kotm6ak3w5b0oien",
+          "paperTitle": "JEE Main 2022 (Online) 26th June Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>The integral $${{24} \\over \\pi }\\int_0^{\\sqrt 2 } {{{(2 - {x^2})dx} \\over {(2 + {x^2})\\sqrt {4 + {x^4}} }}} $$ is equal to ____________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-fx--max-x--1-x--2--x--5-then-jee-main-mathematics-trigonometric-functions-and-equations-o4stqhzmsevkymcp",
+          "paperTitle": "JEE Main 2022 (Online) 26th June Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let f(x) = max {|x  + 1|, |x + 2|, ....., |x + 5|}. Then $$\\int\\limits_{ - 6}^0 {f(x)dx} $$ is equal to __________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-value-of-the-integral-48-over-pi-4intl-jee-main-mathematics-trigonometric-functions-and-equations-3nsglb3hpdprb8wu",
+          "paperTitle": "JEE Main 2022 (Online) 26th June Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>The value of the integral <br/><br/>$${{48} \\over {{\\pi ^4}}}\\int\\limits_0^\\pi  {\\left( {{{3\\pi {x^2}} \\over 2} - {x^3}} \\right){{\\sin x} \\over {1 + {{\\cos }^2}x}}dx} $$ is equal to __________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-value-of-b--3-for-which-12intlimits3b-1-ove-jee-main-mathematics-trigonometric-functions-and-equations-zcmn2qjv4tryn3ne",
+          "paperTitle": "JEE Main 2022 (Online) 25th June Evening Shift",
+          "question": {
+            "en": {
+              "content": "<p>The value of b > 3 for which $$12\\int\\limits_3^b {{1 \\over {({x^2} - 1)({x^2} - 4)}}dx = {{\\log }_e}\\left( {{{49} \\over {40}}} \\right)} $$, is equal to ___________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-ftheta---sin-theta--intlimits-pi-2-jee-main-mathematics-trigonometric-functions-and-equations-zht6mwzqing7wy7l",
+          "paperTitle": "JEE Main 2022 (Online) 24th June Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$f(\\theta ) = \\sin \\theta  + \\int\\limits_{ - \\pi /2}^{\\pi /2} {(\\sin \\theta  + t\\cos \\theta )f(t)dt} $$. Then the value of $$\\left| {\\int_0^{\\pi /2} {f(\\theta )d\\theta } } \\right|$$ is _____________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "plet-mathop-maxlimits0-le-x-le-2-left--jee-main-mathematics-trigonometric-functions-and-equations-dngvergn1dc2bxcz",
+          "paperTitle": "JEE Main 2022 (Online) 24th June Morning Shift",
+          "question": {
+            "en": {
+              "content": "<p>Let $$\\mathop {Max}\\limits_{0\\, \\le x\\, \\le 2} \\left\\{ {{{9 - {x^2}} \\over {5 - x}}} \\right\\} = \\alpha $$ and $$\\mathop {Min}\\limits_{0\\, \\le x\\, \\le 2} \\left\\{ {{{9 - {x^2}} \\over {5 - x}}} \\right\\} = \\beta $$.</p>\n<p>If $$\\int\\limits_{\\beta  - {8 \\over 3}}^{2\\alpha  - 1} {Max\\left\\{ {{{9 - {x^2}} \\over {5 - x}},x} \\right\\}dx = {\\alpha _1} + {\\alpha _2}{{\\log }_e}\\left( {{8 \\over {15}}} \\right)} $$ then $${\\alpha _1} + {\\alpha _2}$$ is equal to _____________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-t-denote-the-greatest-integer-le-t-then-the-valu-jee-main-mathematics-trigonometric-functions-and-equations-x9zccrduycogwlub",
+          "paperTitle": "JEE Main 2021 (Online) 31st August Morning Shift",
+          "question": {
+            "en": {
+              "content": "Let [t] denote the greatest integer $$\\le$$ t. Then the value of <br/><br/>$$8.\\int\\limits_{ - {1 \\over 2}}^1 {([2x] + |x|)dx} $$ is ___________."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-xphi-x--intlimits5x-3t2-2phi-tdt--jee-main-mathematics-trigonometric-functions-and-equations-1hs5yldod71u9gc9",
+          "paperTitle": "JEE Main 2021 (Online) 31st August Morning Shift",
+          "question": {
+            "en": {
+              "content": "If $$x\\phi (x) = \\int\\limits_5^x {(3{t^2} - 2\\phi '(t))dt} $$, x &gt; $$-$$2, and $$\\phi$$(0) = 4, then $$\\phi$$(2) is __________."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-int0pi-sin-3xe-sin-2xdx--a-jee-main-mathematics-trigonometric-functions-and-equations-nepyqwbyfhnet3ih",
+          "paperTitle": "JEE Main 2021 (Online) 27th July Evening Shift",
+          "question": {
+            "en": {
+              "content": "If $$\\int_0^\\pi  {({{\\sin }^3}x){e^{ - {{\\sin }^2}x}}dx = \\alpha  - {\\beta  \\over e}\\int_0^1 {\\sqrt t {e^t}dt} } $$, then $$\\alpha$$ + $$\\beta$$ is equal to ____________."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-the-domain-of-the-functionbrbrfx--log-4l-jee-main-mathematics-trigonometric-functions-and-equations-9wuaebjk1pou0ykw",
+          "paperTitle": "JEE Main 2021 (Online) 27th July Morning Shift",
+          "question": {
+            "en": {
+              "content": "Let the domain of the function<br><br>$$f(x) = {\\log _4}\\left( {{{\\log }_5}\\left( {{{\\log }_3}(18x - {x^2} - 77)} \\right)} \\right)$$ be (a, b). Then the value of the integral $$\\int\\limits_a^b {{{{{\\sin }^3}x} \\over {({{\\sin }^3}x + {{\\sin }^3}(a + b - x)}}} dx$$ is equal to _____________."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-f35-to-r-be-a-twice-differentiable-function-on-jee-main-mathematics-trigonometric-functions-and-equations-iz1btj5wvqsw29wk",
+          "paperTitle": "JEE Main 2021 (Online) 27th July Morning Shift",
+          "question": {
+            "en": {
+              "content": "Let $$F:[3,5] \\to R$$ be a twice differentiable function on (3, 5) such that <br/><br/>$$F(x) = {e^{ - x}}\\int\\limits_3^x {(3{t^2} + 2t + 4F'(t))dt} $$. If $$F'(4) = {{\\alpha {e^\\beta } - 224} \\over {{{({e^\\beta } - 4)}^2}}}$$, then $$\\alpha$$ + $$\\beta$$ is equal to _______________."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-px-be-a-real-polynomial-of-degree-3-which-vanishes-at-jee-main-mathematics-trigonometric-functions-and-equations-yhllqzflm1pwwk6z",
+          "paperTitle": "JEE Main 2021 (Online) 18th March Evening Shift",
+          "question": {
+            "en": {
+              "content": "Let P(x) be a real polynomial of degree 3 which vanishes at x = $$-$$3. Let P(x) have local minima at x = 1, local maxima at x = $$-$$1 and $$\\int\\limits_{ - 1}^1 {P(x)dx} $$ = 18, then the sum of all the coefficients of the polynomial P(x) is equal to _________."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-fx-and-gx-be-two-functions-satisfying-fxsup2sup-jee-main-mathematics-trigonometric-functions-and-equations-hbjyreeawv3nf3zw",
+          "paperTitle": "JEE Main 2021 (Online) 18th March Morning Shift",
+          "question": {
+            "en": {
+              "content": "Let f(x) and g(x) be two functions satisfying f(x<sup>2</sup>) + g(4 $$-$$ x) = 4x<sup>3</sup> and g(4 $$-$$ x) + g(x) = 0, then the value of $$\\int\\limits_{ - 4}^4 {f{{(x)}^2}dx} $$ is "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-in--int1e-x19log-xn-dx-wher-jee-main-mathematics-trigonometric-functions-and-equations-5jbzs76cx2eef3fl",
+          "paperTitle": "JEE Main 2021 (Online) 17th March Evening Shift",
+          "question": {
+            "en": {
+              "content": "Let $${I_n} = \\int_1^e {{x^{19}}{{(\\log |x|)}^n}} dx$$, where n$$\\in$$N. If (20)I<sub>10</sub> = $$\\alpha$$I<sub>9</sub> + $$\\beta$$I<sub>8</sub>, for natural numbers $$\\alpha$$ and $$\\beta$$, then $$\\alpha$$ $$-$$ $$\\beta$$ equals to ___________."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if----represents-the-greatest-integer-function-then-the-jee-main-mathematics-trigonometric-functions-and-equations-2m2blzjzksjcaxua",
+          "paperTitle": "JEE Main 2021 (Online) 17th March Morning Shift",
+          "question": {
+            "en": {
+              "content": "If [ . ] represents the greatest integer function, then the value of <br><br><br>$$\\left| {\\int\\limits_0^{\\sqrt {{\\pi  \\over 2}} } {\\left[ {[{x^2}] - \\cos x} \\right]dx} } \\right|$$ is ____________."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-f--r--to--r-be-a-continuous-function-such-that-fx-jee-main-mathematics-trigonometric-functions-and-equations-2zdlol0huch5bl1p",
+          "paperTitle": "JEE Main 2021 (Online) 16th March Morning Shift",
+          "question": {
+            "en": {
+              "content": "Let f : R $$ \\to $$ R be a continuous function such that f(x) + f(x + 1) = 2, for all x$$\\in$$R. <br><br>If $${I_1} = \\int\\limits_0^8 {f(x)dx} $$ and $${I_2} = \\int\\limits_{ - 1}^3 {f(x)dx} $$, then the value of I<sub>1</sub> + 2I<sub>2</sub> is equal to ____________."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-f--0-2--to--r-be-defined-as-fx--logsub2s-jee-main-mathematics-trigonometric-functions-and-equations-cxwvx0dpd4e01xul",
+          "paperTitle": "JEE Main 2021 (Online) 16th March Morning Shift",
+          "question": {
+            "en": {
+              "content": "Let f : (0, 2) $$ \\to $$ R be defined as f(x) = log<sub>2</sub>$$\\left( {1 + \\tan \\left( {{{\\pi x} \\over 4}} \\right)} \\right)$$. Then, $$\\mathop {\\lim }\\limits_{n \\to \\infty } {2 \\over n}\\left( {f\\left( {{1 \\over n}} \\right) + f\\left( {{2 \\over n}} \\right) + ... + f(1)} \\right)$$ is equal to ___________."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-the-normal-to-the-curve-yx--intlimits0x-2t2-jee-main-mathematics-trigonometric-functions-and-equations-nhwu8ltnicv8qmmx",
+          "paperTitle": "JEE Main 2021 (Online) 16th March Morning Shift",
+          "question": {
+            "en": {
+              "content": "If the normal to the curve y(x) = $$\\int\\limits_0^x {(2{t^2} - 15t + 10)dt} $$ at a point (a, b) is parallel to the line x + 3y = $$-$$5, a &gt; 1, then the value of | a + 6b | is equal to ___________."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-imn--intlimits01-xm-11-xn-jee-main-mathematics-trigonometric-functions-and-equations-kwcxjqgjhh5srpll",
+          "paperTitle": "JEE Main 2021 (Online) 26th February Evening Shift",
+          "question": {
+            "en": {
+              "content": "If $${I_{m,n}} = \\int\\limits_0^1 {{x^{m - 1}}{{(1 - x)}^{n - 1}}dx} $$, for m, $$n \\ge 1$$, and <br>$$\\int\\limits_0^1 {{{{x^{m - 1}} + {x^{n - 1}}} \\over {{{(1 + x)}^{m + 1}}}}} dx = \\alpha {I_{m,n}}\\alpha  \\in R$$, then $$\\alpha$$ equals ___________."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-value-of-the-integral-intlimits0pi-sin-2-jee-main-mathematics-trigonometric-functions-and-equations-fwi4mqclxu7nzmkj",
+          "paperTitle": "JEE Main 2021 (Online) 26th February Morning Shift",
+          "question": {
+            "en": {
+              "content": "The value of the integral $$\\int\\limits_0^\\pi  {|{{\\sin }\\,}2x|dx} $$ is ___________."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-value-of-intlimits-22-3x2-3x-6dx--jee-main-mathematics-trigonometric-functions-and-equations-cuaqosblwnge0gwv",
+          "paperTitle": "JEE Main 2021 (Online) 25th February Evening Shift",
+          "question": {
+            "en": {
+              "content": "The value of $$\\int\\limits_{ - 2}^2 {|3{x^2} - 3x - 6|dx} $$ is ___________."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-intlimits-aa-left-left-x-right--left-jee-main-mathematics-definite-integrals-and-applications-of-integrals-mdjnceb9xr7mmsga",
+          "paperTitle": "JEE Main 2021 (Online) 24th February Morning Shift",
+          "question": {
+            "en": {
+              "content": "If $$\\int\\limits_{ - a}^a {\\left( {\\left| x \\right| + \\left| {x - 2} \\right|} \\right)} dx = 22$$, (a &gt; 2) and [x] denotes the greatest integer $$ \\le $$ x, then$$\\int\\limits_{ - a}^a {\\left( {x + \\left[ x \\right]} \\right)} dx$$ is equal to _________."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-x-and-x-denote-the-fractional-part-of-x-and-the-grea-jee-main-mathematics-complex-numbers-tkge8pzk9chuagrt",
+          "paperTitle": "JEE Main 2020 (Online) 4th September Evening Slot",
+          "question": {
+            "en": {
+              "content": "Let {x} and [x] denote the fractional part of x and <br>the greatest integer $$ \\le $$ x respectively of a real<br> number x. If $$\\int_0^n {\\left\\{ x \\right\\}dx} ,\\int_0^n {\\left[ x \\right]dx} $$ and 10(n<sup>2</sup> – n), <br>$$\\left( {n \\in N,n &gt; 1} \\right)$$  are three consecutive terms of a G.P., then n is equal to_____."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "let-t-denote-the-greatest-integer-less-than-or-equal-to-t-jee-main-mathematics-definite-integrals-and-applications-of-integrals-qlanhwxz2jltlvx5",
+          "paperTitle": "JEE Main 2020 (Online) 2nd September Evening Slot",
+          "question": {
+            "en": {
+              "content": "Let [t] denote the greatest integer less than or\nequal to t. <br>Then the value of $$\\int\\limits_1^2 {\\left| {2x - \\left[ {3x} \\right]} \\right|dx} $$ is ______."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-integral-intlimits02-left-left-x-1-righ-jee-main-mathematics-definite-integrals-and-applications-of-integrals-ubexeuoltoz6xind",
+          "paperTitle": "JEE Main 2020 (Online) 2nd September Morning Slot",
+          "question": {
+            "en": {
+              "content": "The integral $$\\int\\limits_0^2 {\\left| {\\left| {x - 1} \\right| - x} \\right|dx} $$<br> is equal to______."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "MCQ (More than One Correct Answer)",
+      "key": "mcqm",
+      "questions": [
+        {
+          "examGroup": "jee",
+          "permalink": "if-gleft-x-right-intlimits0x-cos-4tdt-then-gleft-x-pi-right-jee-main-2012-marks-4-zuwph9e7uzjwhvpd.htm",
+          "paperTitle": "AIEEE 2012",
+          "question": {
+            "en": {
+              "content": "If $$g\\left( x \\right) = \\int\\limits_0^x {\\cos 4t\\,dt,} $$ then $$g\\left( {x + \\pi } \\right)$$ equals"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

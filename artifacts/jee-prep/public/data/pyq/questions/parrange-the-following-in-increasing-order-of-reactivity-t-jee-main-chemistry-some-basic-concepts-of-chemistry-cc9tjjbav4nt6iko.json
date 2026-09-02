@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l6nwslel",
+      "paperTitle": "JEE Main 2022 (Online) 28th July Evening Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "electron-displacement-effect",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "parrange-the-following-in-increasing-order-of-reactivity-t-jee-main-chemistry-some-basic-concepts-of-chemistry-cc9tjjbav4nt6iko",
+      "content": "<p>Arrange the following in increasing order of reactivity towards nitration</p>\n<p>A. p-xylene</p>\n<p>B. bromobenzene</p>\n<p>C. mesitylene</p>\n<p>D. nitrobenzene</p>\n<p>E. benzene</p>\n<p>Choose the correct answer from the options given below</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "C < D < E < A < B"
+        },
+        {
+          "identifier": "B",
+          "content": "D < B < E < A < C"
+        },
+        {
+          "identifier": "C",
+          "content": "D < C < E < A < B"
+        },
+        {
+          "identifier": "D",
+          "content": "C < D < E < B < A"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "The correct order of reactivity towards nitration is<br><br>\n<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l7vxvrsu/2c5e8a71-27f2-4615-a662-5378e2aa4981/ee9029e0-310b-11ed-9c98-ad39d53b642b/file-1l7vxvrsv.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l7vxvrsu/2c5e8a71-27f2-4615-a662-5378e2aa4981/ee9029e0-310b-11ed-9c98-ad39d53b642b/file-1l7vxvrsv.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2022 (Online) 28th July Evening Shift Chemistry - Basics of Organic Chemistry Question 145 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l7vxvrsu/2c5e8a71-27f2-4615-a662-5378e2aa4981/ee9029e0-310b-11ed-9c98-ad39d53b642b/file-1l7vxvrsv.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l7vxvrsu/2c5e8a71-27f2-4615-a662-5378e2aa4981/ee9029e0-310b-11ed-9c98-ad39d53b642b/file-1l7vxvrsv.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l7vxvrsu/2c5e8a71-27f2-4615-a662-5378e2aa4981/ee9029e0-310b-11ed-9c98-ad39d53b642b/file-1l7vxvrsv.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l7vxvrsu/2c5e8a71-27f2-4615-a662-5378e2aa4981/ee9029e0-310b-11ed-9c98-ad39d53b642b/file-1l7vxvrsv.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l7vxvrsu/2c5e8a71-27f2-4615-a662-5378e2aa4981/ee9029e0-310b-11ed-9c98-ad39d53b642b/file-1l7vxvrsv.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l7vxvrsu/2c5e8a71-27f2-4615-a662-5378e2aa4981/ee9029e0-310b-11ed-9c98-ad39d53b642b/file-1l7vxvrsv.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">\n<br>as electron releasing groups on benzene ring facilitate the nitration at benzene ring."
+    }
+  ]
+}

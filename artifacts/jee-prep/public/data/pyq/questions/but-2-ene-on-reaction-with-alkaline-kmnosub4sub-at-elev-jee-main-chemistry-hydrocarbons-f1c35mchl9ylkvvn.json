@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "Z1vaLGdgThZ7lsC7ZI3rsa0w2w9jx52svzv",
+      "paperTitle": "JEE Main 2019 (Online) 12th April Morning Slot",
+      "year": 2019,
+      "examDate": "2019-04-12 09:30",
+      "subject": "chemistry",
+      "chapter": "hydrocarbons",
+      "chapterGroup": "organic-chemistry",
+      "topic": "reaction-of-alkenes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "but-2-ene-on-reaction-with-alkaline-kmnosub4sub-at-elev-jee-main-chemistry-hydrocarbons-f1c35mchl9ylkvvn",
+      "content": "But-2-ene on reaction with alkaline KMnO<sub>4</sub> at elevated temperature followed by acidification will give :\n",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "one molecule of CH<sub>3</sub>CHO and one molecule of CH<sub>3</sub>COOH"
+        },
+        {
+          "identifier": "B",
+          "content": "2 molecules of CH<sub>3</sub>COOH"
+        },
+        {
+          "identifier": "C",
+          "content": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jf7697gjy9h5zfb/f8d2cb37-70c1-4560-8533-e98a59479ca6/9502ba70-a9cb-11e9-a277-6507805b1ccf/file-jf7697gjy9h5zfc-320w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/jf7697gjy9h5zfb/f8d2cb37-70c1-4560-8533-e98a59479ca6/9502ba70-a9cb-11e9-a277-6507805b1ccf/file-jf7697gjy9h5zfc-500w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th April Morning Slot Chemistry - Hydrocarbons Question 131 English Option 3\"></picture>"
+        },
+        {
+          "identifier": "D",
+          "content": "2 molecules of CH<sub>3</sub>CHO"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jf7697gjy9h17cr/511f941d-5907-450d-b018-d7c24d880f17/101704b0-a9cb-11e9-a277-6507805b1ccf/file-jf7697gjy9h17cs-320w.jpg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/jf7697gjy9h17cr/511f941d-5907-450d-b018-d7c24d880f17/101704b0-a9cb-11e9-a277-6507805b1ccf/file-jf7697gjy9h17cs-500w.jpg\"><source media=\"(max-width: 680px)\" srcset=\"https://imagex.cdn.examgoal.net/jf7697gjy9h17cr/511f941d-5907-450d-b018-d7c24d880f17/101704b0-a9cb-11e9-a277-6507805b1ccf/file-jf7697gjy9h17cs-680w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/jf7697gjy9h17cr/511f941d-5907-450d-b018-d7c24d880f17/101704b0-a9cb-11e9-a277-6507805b1ccf/file-jf7697gjy9h17cs-860w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th April Morning Slot Chemistry - Hydrocarbons Question 131 English Explanation\"></picture>"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ldo2veix",
+      "paperTitle": "JEE Main 2023 (Online) 1st February Evening Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "electrochemistry",
+      "chapterGroup": "physical-chemistry",
+      "topic": "conductance-and-electrolysis",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pgiven-below-are-two-statements--one-is-labelled-as-asser-jee-main-chemistry-some-basic-concepts-of-chemistry-7bwli36m5ecg11iw",
+      "content": "<p>Given below are two statements : one is labelled as Assertion (A) and the other is labelled as Reason (R)</p>\n<p>Assertion (A) : An aqueous solution of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.217ex\" height=\"1.645ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 2306 727\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"4B\" xlink:href=\"#MJX-TEX-N-4B\"></use><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\" transform=\"translate(778,0)\"></use><use data-c=\"48\" xlink:href=\"#MJX-TEX-N-48\" transform=\"translate(1556,0)\"></use></g></g></g></g></svg></mjx-container> when used for volumetric analysis, its concentration should be checked before the use.</p>\n<p>Reason (R) : On aging, <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.217ex\" height=\"1.645ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 2306 727\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"4B\" xlink:href=\"#MJX-TEX-N-4B\"></use><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\" transform=\"translate(778,0)\"></use><use data-c=\"48\" xlink:href=\"#MJX-TEX-N-48\" transform=\"translate(1556,0)\"></use></g></g></g></g></svg></mjx-container> solution absorbs atmospheric <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.381ex\" height=\"1.934ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 1936.6 855\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"43\" xlink:href=\"#MJX-TEX-N-43\"></use><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\" transform=\"translate(722,0)\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1533,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></g></svg></mjx-container>.</p>\n<p>In the light of the above statements, choose the correct answer from the options given below :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(A) is correct but (R) is not correct"
+        },
+        {
+          "identifier": "B",
+          "content": "(A) is not correct but (R) is correct"
+        },
+        {
+          "identifier": "C",
+          "content": "Both (A) and (R) are correct but (R) is not the correct explanation of (A)"
+        },
+        {
+          "identifier": "D",
+          "content": "Both (A) and (R) are correct and (R) is the correct explanation of (A)"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<p>In volumetric analysis, the concentration of a solution is a crucial factor in determining the accuracy of the results. In the case of an aqueous solution of KOH, the concentration can change over time due to the absorption of atmospheric CO<sub>2</sub>. This occurs because KOH is a basic (alkaline) solution and reacts with carbon dioxide (CO<sub>2</sub>) from the air to form potassium carbonate (K<sub>2</sub>CO<sub>3</sub>).</p>\n\n<p>The reaction between KOH and CO<sub>2</sub> is given by :</p>\n\n<p>KOH + CO<sub>2</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> K<sub>2</sub>CO<sub>3</sub></p>\n\n<p>This reaction will change the concentration of KOH in the solution, which in turn will impact the accuracy of the results obtained in volumetric analysis. For example, if the concentration of KOH is lower than it was when the solution was prepared, then more solution will be needed to reach the endpoint in a reaction, and the results will be inaccurate.</p>\n\n<p>That's why it is important to check the concentration of the KOH solution before using it for volumetric analysis, as stated in the assertion (A). And the reason (R) provides the explanation for why the concentration should be checked. Hence, both the assertion and the reason are correct and the correct answer is (D). Both (A) and (R) are correct and (R) is the correct explanation of (A).</p>"
+    }
+  ]
+}

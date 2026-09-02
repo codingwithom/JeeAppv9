@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "EqgJ5MWVQbKw7AJZzYit0",
+      "paperTitle": "JEE Main 2019 (Online) 9th April Evening Slot",
+      "year": 2019,
+      "examDate": "2019-04-09 14:30",
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "warners-theory-and-valence-bond-theory",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-correct-statements-among-i-to-iii-are-i-valence-bond-jee-main-chemistry-some-basic-concepts-of-chemistry-mhv8noghzxkm8kdc",
+      "content": "The correct statements among I to III are :<br>\n(I) Valence bond theory cannot explain the\ncolor exhibited by transition metal\ncomplexes.<br>\n(II) Valence bond theory can predict\nquantitatively the magnetic properties of\ntranstition metal complexes.<br>\n(III) Valence bond theory cannot distinguish\nligands as weak and strong field ones.",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(II) and (III) only"
+        },
+        {
+          "identifier": "B",
+          "content": "(I) and (II) only"
+        },
+        {
+          "identifier": "C",
+          "content": "(I), (II) and (III)"
+        },
+        {
+          "identifier": "D",
+          "content": "(I) and (III) only"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<p>To determine which statements are correct, let's analyze each one individually in the context of <strong>Valence Bond Theory (VBT)</strong> as it applies to transition metal complexes.</p>\n<hr>\n<h3><strong>Statement (I):</strong></h3>\n<p><strong>\"Valence bond theory cannot explain the color exhibited by transition metal complexes.\"</strong></p>\n<p><strong>Analysis:</strong></p>\n\n<p><p><strong>Color in Transition Metal Complexes:</strong></p></p>\n<p><p>The colors of transition metal complexes arise from <strong>electronic transitions</strong> between different energy levels of the d-orbitals, specifically <strong>d-d transitions</strong>.</p></p>\n<p><p>These transitions occur when an electron absorbs light energy and moves from a lower-energy d-orbital to a higher-energy d-orbital.</p></p>\n\n<p><p><strong>Valence Bond Theory Limitations:</strong></p></p>\n<p><p>VBT focuses on the <strong>hybridization of atomic orbitals</strong> to form covalent bonds.</p></p>\n<p><p>It does not account for the splitting of d-orbitals into different energy levels in the presence of ligands (known as <strong>crystal field splitting</strong>).</p></p>\n<p><p>Therefore, VBT <strong>cannot explain the origin of color</strong> in these complexes because it doesn't address the electronic transitions responsible for color.</p></p>\n\n<p><strong>Conclusion:</strong></p>\n\n<p><strong>Statement (I) is correct.</strong></p>\n\n<hr>\n<h3><strong>Statement (II):</strong></h3>\n<p><strong>\"Valence bond theory can predict quantitatively the magnetic properties of transition metal complexes.\"</strong></p>\n<p><strong>Analysis:</strong></p>\n\n<p><p><strong>Magnetic Properties:</strong></p></p>\n<p><p>The magnetic behavior of a complex depends on the number of <strong>unpaired electrons</strong> in the metal ion.</p></p>\n<p><p>Quantitative prediction requires calculating the <strong>magnetic moment</strong>, often using the formula:</p>\n<p><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.639ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"42.21ex\" height=\"2.851ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -977.5 18657 1260\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D707\" xlink:href=\"#MJX-TEX-I-1D707\"></use></g><g data-mml-node=\"mo\" transform=\"translate(880.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"msqrt\" transform=\"translate(1936.6,0)\"><g data-mml-node=\"mo\" transform=\"translate(0,67.5)\"><use data-c=\"221A\" xlink:href=\"#MJX-TEX-SO-221A\"></use></g><g transform=\"translate(1020,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mo\" transform=\"translate(600,0)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"mi\" transform=\"translate(989,0)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1811.2,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(2811.4,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mo\" transform=\"translate(3311.4,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g><rect width=\"3700.4\" height=\"60\" x=\"1020\" y=\"857.5\"></rect></g><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\" transform=\"translate(6657,0)\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\"> </text></g><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\" transform=\"translate(7257,0)\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\">Bohr Magnetons (BM)</text></g></g></g></svg></mjx-container></p>\n<p>where <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.357ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 600 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g></g></g></svg></mjx-container> is the number of unpaired electrons.</p></p>\n<p><p><strong>Valence Bond Theory Capabilities:</strong></p></p>\n<p><p>VBT can provide a <strong>qualitative</strong> idea about the magnetic properties by indicating whether a complex is <strong>paramagnetic</strong> (unpaired electrons present) or <strong>diamagnetic</strong> (no unpaired electrons).</p></p>\n<p><p>However, VBT does not offer the tools to <strong>quantitatively</strong> predict the exact magnetic moment.</p></p>\n<p><p>Accurate quantitative predictions require more advanced theories like <strong>Crystal Field Theory (CFT)</strong> or <strong>Ligand Field Theory (LFT)</strong>.</p></p>\n\n<p><strong>Conclusion:</strong></p>\n\n<p><strong>Statement (II) is incorrect.</strong></p>\n\n<hr>\n<h3><strong>Statement (III):</strong></h3>\n<p><strong>\"Valence bond theory cannot distinguish ligands as weak and strong field ones.\"</strong></p>\n<p><strong>Analysis:</strong></p>\n\n<p><p><strong>Weak and Strong Field Ligands:</strong></p></p>\n<p><p>Ligands are classified based on their ability to split the d-orbitals of the metal ion, influencing the pairing of electrons.</p></p>\n<p><p><strong>Strong field ligands</strong> cause a large splitting, often leading to low-spin complexes.</p></p>\n<p><p><strong>Weak field ligands</strong> cause small splitting, leading to high-spin complexes.</p></p>\n<p><p><strong>Valence Bond Theory Limitations:</strong></p></p>\n<p><p>VBT does not address the energy splitting of d-orbitals.</p></p>\n<p><p>It assumes that all bonds are formed via overlap of orbitals without considering the effect of ligands on d-orbital energies.</p></p>\n<p><p>Therefore, VBT <strong>cannot distinguish between weak and strong field ligands</strong> because it doesn't involve the spectrochemical series or orbital splitting concepts.</p></p>\n\n<p><strong>Conclusion:</strong></p>\n\n<p><strong>Statement (III) is correct.</strong></p>\n\n<hr>\n<h3><strong>Final Answer:</strong></h3>\n\n<p><p><strong>Statements (I) and (III) are correct.</strong></p></p>\n<p><p><strong>Statement (II) is incorrect.</strong></p></p>\n\n<hr>\n<p><strong>Answer:</strong> Option D</p>\n<p><strong>(I) and (III) only</strong></p>"
+    }
+  ]
+}

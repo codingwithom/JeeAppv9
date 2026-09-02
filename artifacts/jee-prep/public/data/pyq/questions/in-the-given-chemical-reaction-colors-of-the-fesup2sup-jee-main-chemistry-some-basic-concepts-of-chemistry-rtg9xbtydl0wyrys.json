@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktn0xa2k",
+      "paperTitle": "JEE Main 2021 (Online) 1st September Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "important-compounds-of-transition-elements",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "in-the-given-chemical-reaction-colors-of-the-fesup2sup-jee-main-chemistry-some-basic-concepts-of-chemistry-rtg9xbtydl0wyrys",
+      "content": "In the given chemical reaction, colors of the Fe<sup>2+</sup> and Fe<sup>3+</sup> ions, are respectively :<br><br>5Fe<sup>2+</sup> + MnO<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.69ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.432ex\" height=\"2.554ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -823.8 633.1 1128.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msubsup\"><g data-mml-node=\"mi\"></g><g data-mml-node=\"mo\" transform=\"translate(33,411.6) scale(0.707)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(33,-305.1) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g></g></svg></mjx-container> + 8H<sup>+</sup> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> Mn<sup>2+</sup> + 4H<sub>2</sub>O + 5Fe<sup>3+</sup>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Yellow, Orange"
+        },
+        {
+          "identifier": "B",
+          "content": "Yellow, Green"
+        },
+        {
+          "identifier": "C",
+          "content": "Green, Orange"
+        },
+        {
+          "identifier": "D",
+          "content": "Green, Yellow"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Colour of Fe<sup>2+</sup> is observed green and Fe<sup>3+</sup> is yellow."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1krz0c21g",
+      "paperTitle": "JEE Main 2021 (Online) 27th July Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "compounds-containing-nitrogen",
+      "chapterGroup": "organic-chemistry",
+      "topic": "aromatic-amines",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "given-below-are-two-statements--brbrstatement-i--ani-jee-main-chemistry-some-basic-concepts-of-chemistry-aivtmgocnrnuimkk",
+      "content": "Given below are two statements : <br><br>Statement I : Aniline is less basic than acetamide.<br><br>Statement II : In aniline, the lone pair of electrons on nitrogen atom is delocalized over benzene ring due to resonance and hence less available to a proton.<br><br>Choose the most appropriate option;",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Statement I is true but statement II is false."
+        },
+        {
+          "identifier": "B",
+          "content": "Statement I is false but statement II is true."
+        },
+        {
+          "identifier": "C",
+          "content": "Both statement I and statement II are true."
+        },
+        {
+          "identifier": "D",
+          "content": "Both statement I and statement II are false."
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Explanation : aniline is more basic than acetamide because in acetamide, lone pair of nitrogen is delocalized to more electronegative element oxygen.<br><br>In Aniline lone pair of nitrogen delocalized over benzene ring."
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "1ldwvoouk",
+      "paperTitle": "JEE Main 2023 (Online) 24th January Evening Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "some-basic-concepts-of-chemistry",
+      "chapterGroup": "physical-chemistry",
+      "topic": "concentration-terms",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pthe-number-of-units-which-are-used-to-express-concentrat-jee-main-chemistry-some-basic-concepts-of-chemistry-vini545nntavzdfu",
+      "content": "<p>The number of units, which are used to express concentration of solutions from the following is _________</p>\n<p>Mass percent, Mole, Mole fraction, Molarity, ppm, Molality</p>",
+      "options": [],
+      "correct_options": [],
+      "explanation": "Mass percent, mole fraction, molarity, ppm & molality is used to express concentration. So, the number of units = 5"
+    }
+  ]
+}

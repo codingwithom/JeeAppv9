@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l56b6oim",
+      "paperTitle": "JEE Main 2022 (Online) 28th June Morning Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "compounds-containing-nitrogen",
+      "chapterGroup": "organic-chemistry",
+      "topic": "diazonium-salts-and-other-nitrogen-containing-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pa-primary-aliphatic-amine-on-reaction-with-nitrous-acid-i-jee-main-chemistry-some-basic-concepts-of-chemistry-ptkyttd4zbvpm7ie",
+      "content": "<p>A primary aliphatic amine on reaction with nitrous acid in cold (273 K) and there after raising temperature of reaction mixture to room temperature (298 K), gives a/an</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "nitrile"
+        },
+        {
+          "identifier": "B",
+          "content": "alcohol"
+        },
+        {
+          "identifier": "C",
+          "content": "diazonium salt"
+        },
+        {
+          "identifier": "D",
+          "content": "secondary amine"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -1.997ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"42.239ex\" height=\"4.998ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1326.6 18669.8 2209.2\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"52\" xlink:href=\"#MJX-TEX-N-52\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(958.2,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"msub\" transform=\"translate(1958.4,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"4E\" xlink:href=\"#MJX-TEX-N-4E\"></use><use data-c=\"48\" xlink:href=\"#MJX-TEX-N-48\" transform=\"translate(750,0)\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(1533,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g><g data-mml-node=\"munder\" transform=\"translate(4172.8,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"REL\"><g data-mml-node=\"mover\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"OP\" transform=\"translate(317.5,0)\"><g data-mml-node=\"mo\"><use data-c=\"27F6\" xlink:href=\"#MJX-TEX-N-27F6\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(0,728.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"4E\" xlink:href=\"#MJX-TEX-N-4E\"></use><use data-c=\"61\" xlink:href=\"#MJX-TEX-N-61\" transform=\"translate(750,0)\"></use><use data-c=\"4E\" xlink:href=\"#MJX-TEX-N-4E\" transform=\"translate(1250,0)\"></use><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\" transform=\"translate(2000,0)\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(2811,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></g><g data-mml-node=\"mrow\" transform=\"translate(242.7,-676.5) scale(0.707)\"><g data-mml-node=\"mo\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(778,0)\"><g data-mml-node=\"mi\"><use data-c=\"48\" xlink:href=\"#MJX-TEX-N-48\"></use><use data-c=\"43\" xlink:href=\"#MJX-TEX-N-43\" transform=\"translate(750,0)\"></use><use data-c=\"6C\" xlink:href=\"#MJX-TEX-N-6C\" transform=\"translate(1472,0)\"></use></g></g></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(6723.6,0)\"><g data-mml-node=\"mi\"><use data-c=\"52\" xlink:href=\"#MJX-TEX-N-52\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(7681.8,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"msubsup\" transform=\"translate(8682,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"4E\" xlink:href=\"#MJX-TEX-N-4E\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(783,411.6) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(783,-297.3) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(10342.9,0)\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g><g data-mml-node=\"msup\" transform=\"translate(11620.7,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"52\" xlink:href=\"#MJX-TEX-N-52\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(769,363) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g></g></g><g data-mml-node=\"munder\" transform=\"translate(13267.6,0)\"><g data-mml-node=\"mo\"><use data-c=\"27F6\" xlink:href=\"#MJX-TEX-N-27F6\"></use></g><g data-mml-node=\"mrow\" transform=\"translate(124.4,-676.5) scale(0.707)\"><g data-mml-node=\"msub\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"48\" xlink:href=\"#MJX-TEX-N-48\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(783,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1186.6,0)\"><g data-mml-node=\"mi\"><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\"></use></g></g></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(15183.4,0)\"><g data-mml-node=\"mi\"><use data-c=\"52\" xlink:href=\"#MJX-TEX-N-52\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(16141.6,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(17141.8,0)\"><g data-mml-node=\"mi\"><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\"></use><use data-c=\"48\" xlink:href=\"#MJX-TEX-N-48\" transform=\"translate(778,0)\"></use></g></g></g></g></svg></mjx-container>"
+    }
+  ]
+}

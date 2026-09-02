@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1lgyhf41e",
+      "paperTitle": "JEE Main 2023 (Online) 10th April Morning Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "haloalkanes-and-haloarenes",
+      "chapterGroup": "organic-chemistry",
+      "topic": "haloarenes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pidentify-the-correct-order-of-reactivity-for-the-followin-jee-main-chemistry-some-basic-concepts-of-chemistry-rdo1ar321protpxj",
+      "content": "<p>Identify the correct order of reactivity for the following pairs towards the respective mechanism</p>\n<p><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1lh0baeh2/8f77feb7-30de-4a2e-888b-3d8ed0d7920c/7117bd70-e5a1-11ed-b8fd-1151881dc03b/file-1lh0baeh3.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1lh0baeh2/8f77feb7-30de-4a2e-888b-3d8ed0d7920c/7117bd70-e5a1-11ed-b8fd-1151881dc03b/file-1lh0baeh3.png\" loading=\"lazy\" style=\"max-width: 100%; height: auto; display: block; margin: 0px auto; max-height: 80vh;\" alt=\"JEE Main 2023 (Online) 10th April Morning Shift Chemistry - Haloalkanes and Haloarenes Question 65 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1lh0baeh2/8f77feb7-30de-4a2e-888b-3d8ed0d7920c/7117bd70-e5a1-11ed-b8fd-1151881dc03b/file-1lh0baeh3.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1lh0baeh2/8f77feb7-30de-4a2e-888b-3d8ed0d7920c/7117bd70-e5a1-11ed-b8fd-1151881dc03b/file-1lh0baeh3.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1lh0baeh2/8f77feb7-30de-4a2e-888b-3d8ed0d7920c/7117bd70-e5a1-11ed-b8fd-1151881dc03b/file-1lh0baeh3.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1lh0baeh2/8f77feb7-30de-4a2e-888b-3d8ed0d7920c/7117bd70-e5a1-11ed-b8fd-1151881dc03b/file-1lh0baeh3.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1lh0baeh2/8f77feb7-30de-4a2e-888b-3d8ed0d7920c/7117bd70-e5a1-11ed-b8fd-1151881dc03b/file-1lh0baeh3.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1lh0baeh2/8f77feb7-30de-4a2e-888b-3d8ed0d7920c/7117bd70-e5a1-11ed-b8fd-1151881dc03b/file-1lh0baeh3.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"></p>\n<p>Choose the correct answer from the options given below:</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(A), (B) and (D) only"
+        },
+        {
+          "identifier": "B",
+          "content": "(A), (B), (C) and (D)"
+        },
+        {
+          "identifier": "C",
+          "content": "(B), (C) and (D) only"
+        },
+        {
+          "identifier": "D",
+          "content": "(A), (C) and (D) only"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "All are correct<br><br>\n(A) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.777ex\" height=\"1.934ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 1669.3 855\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"53\" xlink:href=\"#MJX-TEX-N-53\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(589,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"4E\" xlink:href=\"#MJX-TEX-N-4E\"></use></g></g></g></g><g data-mml-node=\"mn\" transform=\"translate(1169.3,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></svg></mjx-container> reaction decreases with increase in steric crowding.<br><br>\n(B) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.777ex\" height=\"1.934ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 1669.3 855\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"53\" xlink:href=\"#MJX-TEX-N-53\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(589,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"4E\" xlink:href=\"#MJX-TEX-N-4E\"></use></g></g></g></g><g data-mml-node=\"mn\" transform=\"translate(1169.3,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g></svg></mjx-container> reaction increases with stability of carbocation.<br><br>\n(C) EAS reaction decreases with decrease in electron density.<br><br>\n(D) Presence of electron withdrawing group at ortho and para-position to a halogen in haloarene increase nucleophilic aryl substitution."
+    }
+  ]
+}

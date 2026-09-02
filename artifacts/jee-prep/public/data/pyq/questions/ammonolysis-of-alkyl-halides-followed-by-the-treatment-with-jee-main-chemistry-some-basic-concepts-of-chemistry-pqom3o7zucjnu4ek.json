@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "DmrPZdbthdot2aUXpD1kmitq92x",
+      "paperTitle": "JEE Main 2021 (Online) 16th March Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "compounds-containing-nitrogen",
+      "chapterGroup": "organic-chemistry",
+      "topic": "aliphatic-amines",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "ammonolysis-of-alkyl-halides-followed-by-the-treatment-with-jee-main-chemistry-some-basic-concepts-of-chemistry-pqom3o7zucjnu4ek",
+      "content": "Ammonolysis of Alkyl halides followed by the treatment with NaOH solution can be used to prepare primary, secondary and tertiary amines. The purpose of NaOH in the reaction is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "to remove acidic impurities"
+        },
+        {
+          "identifier": "B",
+          "content": "to remove basic impurities"
+        },
+        {
+          "identifier": "C",
+          "content": "to activate NH<sub>3</sub> used in the reaction"
+        },
+        {
+          "identifier": "D",
+          "content": "to increase the reactivity of alkyl halide"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1kn8hrh6k/7f266f90-ca47-4524-9a2d-bb46690acd58/8a8aefc0-9832-11eb-a02f-31d48fd393c0/file-1kn8hrh6l.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 16th March Evening Shift Chemistry - Compounds Containing Nitrogen Question 175 English Explanation\"><br>\nDuring the reaction HX (acid) is formed<br><br>\nHence, we use NaOH to remove these acidic impurities"
+    }
+  ]
+}

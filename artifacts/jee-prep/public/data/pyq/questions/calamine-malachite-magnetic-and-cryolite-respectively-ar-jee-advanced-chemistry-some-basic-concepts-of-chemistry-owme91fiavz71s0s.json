@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "M837OE8hyx7RB6n9oJ1kjbp3n2g",
+      "paperTitle": "JEE Advanced 2019 Paper 1 Offline",
+      "year": 2019,
+      "subject": "chemistry",
+      "chapter": "isolation-of-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "minerals-and-ores",
+      "type": "mcq",
+      "marks": 3,
+      "negMarks": 1,
+      "permalink": "calamine-malachite-magnetic-and-cryolite-respectively-ar-jee-advanced-chemistry-some-basic-concepts-of-chemistry-owme91fiavz71s0s",
+      "content": "Calamine, malachite, magnetic and cryolite, respectively, are",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "ZnCO<sub>3</sub>, CuCO<sub>3</sub>, Fe<sub>2</sub>O<sub>3</sub>, Na<sub>3</sub>AlF<sub>6</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "ZnSO<sub>4</sub>, CuCO<sub>3</sub>, Fe<sub>2</sub>O<sub>3</sub>, AlF<sub>3</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "ZnSO<sub>4</sub>, Cu(OH)<sub>2</sub>, Fe<sub>3</sub>O<sub>4</sub>, Na<sub>3</sub>AlF<sub>6</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "ZnCO<sub>3</sub>, CuCO<sub>3</sub>.Cu(OH)<sub>2</sub>, Fe<sub>3</sub>O<sub>4</sub>, Na<sub>3</sub>AlF<sub>6</sub>"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "ZnCO<sub>3</sub> - Calamine (zinc ore)<br><br>CuCO<sub>3</sub>.Cu(OH)<sub>2</sub> - Malachite (copper ore)<br><br>Fe<sub>3</sub>O<sub>4</sub> - Magnetite (iron ore)<br><br>Na<sub>3</sub>AlF<sub>6</sub> - Cryolite (aluminum ore)<br><br>Thus, option (d) is correct.\n<br><br><b>Note : ( Remember all those ores names. Any one of those can be asked in the exam.)</b>\n<br><br><b>Oxides Ores :</b>\n<br><br> (1) ZnO - Zincite<br><br>(2) Fe<sub>2</sub>O<sub>3</sub> - Haematite<br><br>(3) Fe<sub>3</sub>O<sub>4</sub> - Magnetite (FeO + Fe<sub>2</sub>O<sub>3</sub> mixture)<br><br>(4) Fe<sub>2</sub>O<sub>3</sub> . 3H<sub>2</sub>O - Limonite<br><br>(5) MnO<sub>2</sub> - Pyrolusite<br><br>(6) Cu<sub>2</sub>O - Cuprite or Ruby Copper<br><br>(7) TiO<sub>2</sub> - Rutile<br><br>(8) FeCr<sub>2</sub>O<sub>4</sub> - Chromite (FeO + Cr<sub>2</sub>O<sub>3</sub>)<br><br>(9) FeTiO<sub>3</sub> - Illmenite (FeO + TiO<sub>2</sub>)<br><br>(10) Na<sub>2</sub>B<sub>4</sub>O<sub>7</sub> . 10H<sub>2</sub>O - Borax or Tincal<br><br>(11) U<sub>3</sub>O<sub>8</sub> - Pitch Blende<br><br>(12) SnO<sub>2</sub> - Tin Stone or Cassiterite<br><br>(13) Ca<sub>2</sub>B<sub>6</sub>O<sub>11</sub> . 5H<sub>2</sub>O - Colemanite (2 Cao + 3 B<sub>2</sub>O<sub>3</sub>)<br><br>(14) Al<sub>2</sub>O<sub>3</sub> . 2H<sub>2</sub>O - Bauxite<br><br>(15) Al<sub>2</sub>O<sub>3</sub> . H<sub>2</sub>O - Diaspore<br><br>(16) Al<sub>2</sub>O<sub>3</sub> - Corundum\n<br><br><b>Sulphides Ores :</b>\n<br><br>(1) ZnS - Zinc Blende or Sphalerite<br><br>(2) PbS - Galena<br><br>(3) Ag<sub>2</sub>S - Argentite or Silver Glance<br><br>(4) HgS - Cinnabar<br><br>(5) Cu<sub>2</sub>S - Chalcocite or Copper glance<br><br>(6) CuFeS<sub>2</sub> - Copper pyrites or Chalco pyrites (Cu<sub>2</sub>S + Fe<sub>2</sub>S<sub>3</sub> mixture)<br><br>(7) FeS<sub>2</sub> - Iron pyrites or Fool's Gold<br><br>(8) 3Ag<sub>2</sub>S . Sb<sub>2</sub>S<sub>2</sub> - Pyrargyrite or ruby silver\n<br><br> <b>Halides Ores :</b><br><br>(1) NaCl - Rock Salt<br><br>(2) KCl - Sylvine<br><br>(3) Na<sub>3</sub>AlF<sub>6</sub> - Cryolite [3NaF + AlF<sub>6</sub>]<br><br>(4) CaF<sub>2</sub> - Fluorspar<br><br>(5) KCl . MgCl<sub>2</sub> . 6H<sub>2</sub>O - Carnalite<br><br>(6) AgCl - Horn Silver\n<br><br><b>Carbonates Ores :</b><br><br>(1) CaCO<sub>3</sub> - Limestone<br><br>(2) MgCO<sub>3</sub> - Magnesite<br><br>(3) CaCO<sub>3</sub> . MgCO<sub>3</sub> - Dolomite<br><br>(4) ZnCO<sub>3</sub> - Calamine<br><br>(5) PbCO<sub>3</sub> - Cerrusite<br><br>(6) FeCO<sub>3</sub> - Siderite<br><br>(7) CuCO<sub>3</sub> . Cu(OH)<sub>2</sub> or Cu<sub>2</sub>CO<sub>3</sub>(OH)<sub>2</sub> - Malachite or Basic Copper Carbonates<br><br>(8) 2 CuCO<sub>3</sub> . Cu(OH)<sub>2</sub> - Azurite\n<br><br><b>Sulphates Ores :</b><br><br>(1) CuSO<sub>4</sub> . 2H<sub>2</sub>O - Gypsum<br><br>(2) MgSO<sub>4</sub> . 7H<sub>2</sub>O - Epson Salt<br><br>(3) Na<sub>2</sub>SO<sub>4</sub> . 10 H<sub>2</sub>O - Glauber's Salt<br><br>(4) PbSO<sub>4</sub> - Anglesite<br><br>(5) ZnSO<sub>4</sub> . 7H<sub>2</sub>O - White Vitriol<br><br>(6) FeSO<sub>4</sub> . 7H<sub>2</sub>O - Green Vitriol<br><br>(7) CuSO<sub>4</sub> . 5H<sub>2</sub>O - Blue Vitriol or Chalcanthite<br><br><b>Nitrate Ores :</b><br><br>(1) KNO<sub>3</sub> - Indian Saltpetre<br><br>(2) NaNO<sub>3</sub> - Chile Saltpetre<br><br><b>Arsenides Ores :</b><br><br>(1) NiAs - Kupfernickel<br><br>(2) NiAsS - Nickel glance"
+    }
+  ]
+}

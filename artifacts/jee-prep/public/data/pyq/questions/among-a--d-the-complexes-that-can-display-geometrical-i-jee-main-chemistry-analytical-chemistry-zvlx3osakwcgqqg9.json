@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "ghTjG9Ue6vkfOiRHW27k9k2k5hlmtrs",
+      "paperTitle": "JEE Main 2020 (Online) 8th January Evening Slot",
+      "year": 2020,
+      "examDate": "2020-01-08 14:30",
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "isomerism-of-coordination-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "among-a--d-the-complexes-that-can-display-geometrical-i-jee-main-chemistry-analytical-chemistry-zvlx3osakwcgqqg9",
+      "content": "Among (a) – (d) the complexes that can display\ngeometrical isomerism are :<br>\n(a) [Pt(NH<sub>3</sub>)<sub>3</sub>Cl]<sup>+</sup> <br>\n(b) [Pt(NH<sub>3</sub>)Cl<sub>5</sub>]<sup>–</sup><br>\n(c) [Pt(NH<sub>3</sub>)<sub>2</sub>Cl(NO<sub>2</sub>)]<br>\n (d) [Pt(NH<sub>3</sub>)<sub>4</sub>ClBr]<sup>2+</sup>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(a) and (b)"
+        },
+        {
+          "identifier": "B",
+          "content": "(c) and (d)"
+        },
+        {
+          "identifier": "C",
+          "content": "(d) and (a)"
+        },
+        {
+          "identifier": "D",
+          "content": "(b) and (c)"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "[Pt(NH<sub>3</sub>)<sub>2</sub>Cl(NO<sub>2</sub>)] and [Pt(NH<sub>3</sub>)<sub>4</sub>ClBr]<sup>2+</sup> can display geometrical isomerism.\n<br><img src=\"https://imagex.cdn.examgoal.net/7kd4dk68m6vh5/8629348f-a53c-4622-8fe1-27a2b8d3c474/2dcbfc90-47b4-11ea-b62d-51ccc5d4afb6/file-7kd4dk68m6vh6-320w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 8th January Evening Slot Chemistry - Coordination Compounds Question 271 English Explanation\">"
+    }
+  ]
+}

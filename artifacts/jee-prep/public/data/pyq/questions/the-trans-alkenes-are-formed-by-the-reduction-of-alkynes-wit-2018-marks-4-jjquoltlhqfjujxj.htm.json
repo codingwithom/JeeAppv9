@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "jJQuoLtlHQfjujXJ",
+      "paperTitle": "JEE Main 2018 (Offline)",
+      "year": 2018,
+      "examDate": null,
+      "subject": "chemistry",
+      "chapter": "hydrocarbons",
+      "chapterGroup": "organic-chemistry",
+      "topic": "properties-and-preparation-of-alkenes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-trans-alkenes-are-formed-by-the-reduction-of-alkynes-wit-2018-marks-4-jjquoltlhqfjujxj.htm",
+      "content": "The trans-alkenes are formed by the reduction of alkynes with",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Sn - HCl"
+        },
+        {
+          "identifier": "B",
+          "content": "H<sub>2</sub> – Pd/C, BaSO<sub>4</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "NaBH<sub>4</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "Na/liq. NH<sub>3</sub>"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<img class=\"question-image\" src=\"https://imagex.cdn.examgoal.net/NiI6c6ovCZQY1TahD/5WIH0KW9B0T1LThT9ntDpaniUcZvN/owqZ22kWldAAgkSgkjVcPE/image.png\" loading=\"lazy\" alt=\"JEE Main 2018 (Offline) Chemistry - Hydrocarbons Question 155 English Explanation\"> "
+    }
+  ]
+}

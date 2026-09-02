@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "UaHsITv2yOJsiIh7UHnwU",
+      "paperTitle": "JEE Main 2019 (Online) 9th April Morning Slot",
+      "year": 2019,
+      "examDate": "2019-04-09 09:30",
+      "subject": "chemistry",
+      "chapter": "practical-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "chemistry-involved-in-the-preparation-of-organic-and-inorganic-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-organic-compound-that-gives-following-qualitative-analys-jee-main-chemistry-some-basic-concepts-of-chemistry-d8yi9i6vu7j6oiua",
+      "content": "The organic compound that gives following\nqualitative analysis is :<br><br>\n\n<table class=\"tg\">\n  <tbody><tr>\n    <th class=\"tg-s6z2\"></th>\n    <th class=\"tg-s6z2\"><b>Test</b></th>\n    <th class=\"tg-s6z2\"><b>Inference</b></th>\n  </tr>\n  <tr>\n    <td class=\"tg-s6z2\">(a)</td>\n    <td class=\"tg-s6z2\">Dil. HCl</td>\n    <td class=\"tg-s6z2\">Insoluble</td>\n  </tr>\n  <tr>\n    <td class=\"tg-s6z2\">(b)</td>\n    <td class=\"tg-s6z2\">NaOH solution</td>\n    <td class=\"tg-s6z2\">soluble</td>\n  </tr>\n  <tr>\n    <td class=\"tg-baqh\">(c)</td>\n    <td class=\"tg-baqh\">Br<sub>2</sub>/water</td>\n    <td class=\"tg-baqh\">Decolourization</td>\n  </tr>\n</tbody></table>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/18hoxe66ijwi3gp4f/2762bc40-de1c-4513-9503-aa3b2fa4b2fc/9e3b4bf0-86f0-11e9-8081-1d558b7f1d26/file-18hoxe66ijwi3gp4g.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 9th April Morning Slot Chemistry - Practical Organic Chemistry Question 101 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/18hoxe66ijwi3hcy6/4febd568-332c-4d32-87a4-2e30796295d7/b0a335f0-86f0-11e9-8081-1d558b7f1d26/file-18hoxe66ijwi3hcy7.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 9th April Morning Slot Chemistry - Practical Organic Chemistry Question 101 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/18hoxe66ijwi3htcu/ff2a3250-0434-47ca-ab47-cd325bb33a30/bd4fafe0-86f0-11e9-8081-1d558b7f1d26/file-18hoxe66ijwi3htcv.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 9th April Morning Slot Chemistry - Practical Organic Chemistry Question 101 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/18hoxe66ijwi3i4n7/06ee23ab-b2bf-42e1-994a-c6671392f2d4/c607e530-86f0-11e9-8081-1d558b7f1d26/file-18hoxe66ijwi3i4n8.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 9th April Morning Slot Chemistry - Practical Organic Chemistry Question 101 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/7km5fk00k37wx/745cd4d7-c4f2-43f7-8e19-4b78ba2d0ec8/64710410-cc7c-11e9-acf6-6d09a288f7f2/file-7km5fk00k37wy-320w.jpg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/7km5fk00k37wx/745cd4d7-c4f2-43f7-8e19-4b78ba2d0ec8/64710410-cc7c-11e9-acf6-6d09a288f7f2/file-7km5fk00k37wy-500w.jpg\"><source media=\"(max-width: 680px)\" srcset=\"https://imagex.cdn.examgoal.net/7km5fk00k37wx/745cd4d7-c4f2-43f7-8e19-4b78ba2d0ec8/64710410-cc7c-11e9-acf6-6d09a288f7f2/file-7km5fk00k37wy-680w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/7km5fk00k37wx/745cd4d7-c4f2-43f7-8e19-4b78ba2d0ec8/64710410-cc7c-11e9-acf6-6d09a288f7f2/file-7km5fk00k37wy-860w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 9th April Morning Slot Chemistry - Practical Organic Chemistry Question 101 English Explanation\"></picture>"
+    }
+  ]
+}

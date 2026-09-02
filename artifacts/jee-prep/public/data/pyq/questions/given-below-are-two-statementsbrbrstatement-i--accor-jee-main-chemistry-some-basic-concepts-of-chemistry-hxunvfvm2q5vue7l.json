@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktb5a0k2",
+      "paperTitle": "JEE Main 2021 (Online) 26th August Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "structure-of-atom",
+      "chapterGroup": "physical-chemistry",
+      "topic": "bohrs-model-for-hydrogen-atom",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "given-below-are-two-statementsbrbrstatement-i--accor-jee-main-chemistry-some-basic-concepts-of-chemistry-hxunvfvm2q5vue7l",
+      "content": "Given below are two statements.<br><br>Statement I : According to Bohr's model of an atom, qualitatively the magnitude of velocity of electron increases with decrease in positive charges on the nucleus as there is no strong hold on the electron by the nucleus.<br><br>Statement II : According to Bohr's model of an atom, qualitatively the magnitude of velocity of electron increases with decrease in principal quantum number.<br><br>In the light of the above statements, choose the most appropriate answer from the options given below :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Both Statement I and Statement II are false"
+        },
+        {
+          "identifier": "B",
+          "content": "Both Statement I and Statement II are true"
+        },
+        {
+          "identifier": "C",
+          "content": "Statement I is false but Statement II is true"
+        },
+        {
+          "identifier": "D",
+          "content": "Statement I is true but Statement II is false"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Velocity of electron in Bohr's atom is given by <br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.798ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"6.909ex\" height=\"2.782ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -877 3053.8 1229.7\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D449\" xlink:href=\"#MJX-TEX-I-1D449\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1046.8,0)\"><use data-c=\"221D\" xlink:href=\"#MJX-TEX-N-221D\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2102.6,0)\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"mi\" transform=\"translate(220,394) scale(0.707)\"><use data-c=\"1D44D\" xlink:href=\"#MJX-TEX-I-1D44D\"></use></g><g data-mml-node=\"mi\" transform=\"translate(263.5,-345) scale(0.707)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><rect width=\"711.2\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g></g></g></svg></mjx-container><br><br>Z = atomic number of atom, corresponds to +ve charge so as Z increase velocity increases so statement I is wrong and as 'n' decreases velocity increases so statement II is correct."
+    }
+  ]
+}

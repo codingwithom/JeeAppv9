@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1lguzrwva",
+      "paperTitle": "JEE Main 2023 (Online) 11th April Morning Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "purification-of-organic-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pthin-layer-chromatography-of-a-mixture-shows-the-followin-jee-main-chemistry-some-basic-concepts-of-chemistry-o1spbpdfbze6nf93",
+      "content": "<p>Thin layer chromatography of a mixture shows the following observation:</p>\n<p><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1lgvevsvn/9f6b1a8c-7da4-4009-b8ec-456f29f585ef/945a4b40-e2ef-11ed-b29f-636b60af9e14/file-1lgvevsvo.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1lgvevsvn/9f6b1a8c-7da4-4009-b8ec-456f29f585ef/945a4b40-e2ef-11ed-b29f-636b60af9e14/file-1lgvevsvo.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2023 (Online) 11th April Morning Shift Chemistry - Basics of Organic Chemistry Question 127 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1lgvevsvn/9f6b1a8c-7da4-4009-b8ec-456f29f585ef/945a4b40-e2ef-11ed-b29f-636b60af9e14/file-1lgvevsvo.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1lgvevsvn/9f6b1a8c-7da4-4009-b8ec-456f29f585ef/945a4b40-e2ef-11ed-b29f-636b60af9e14/file-1lgvevsvo.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1lgvevsvn/9f6b1a8c-7da4-4009-b8ec-456f29f585ef/945a4b40-e2ef-11ed-b29f-636b60af9e14/file-1lgvevsvo.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1lgvevsvn/9f6b1a8c-7da4-4009-b8ec-456f29f585ef/945a4b40-e2ef-11ed-b29f-636b60af9e14/file-1lgvevsvo.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1lgvevsvn/9f6b1a8c-7da4-4009-b8ec-456f29f585ef/945a4b40-e2ef-11ed-b29f-636b60af9e14/file-1lgvevsvo.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1lgvevsvn/9f6b1a8c-7da4-4009-b8ec-456f29f585ef/945a4b40-e2ef-11ed-b29f-636b60af9e14/file-1lgvevsvo.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"></p>\n<p>The correct order of elution in the silica gel column chromatography is</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "B, A, C"
+        },
+        {
+          "identifier": "B",
+          "content": "C, A, B"
+        },
+        {
+          "identifier": "C",
+          "content": "A, C, B"
+        },
+        {
+          "identifier": "D",
+          "content": "B, C, A"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "According to the observation, A is more mobile and interacts with the mobile phase more than <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.048ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.633ex\" height=\"1.643ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 722 726\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"43\" xlink:href=\"#MJX-TEX-N-43\"></use></g></g></g></g></svg></mjx-container>, and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.048ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.633ex\" height=\"1.643ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 722 726\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"43\" xlink:href=\"#MJX-TEX-N-43\"></use></g></g></g></g></svg></mjx-container> is more drawn to the mobile phase than <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.602ex\" height=\"1.545ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -683 708 683\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"42\" xlink:href=\"#MJX-TEX-N-42\"></use></g></g></g></g></svg></mjx-container>.\n<br><br>Hence, the correct order of elution in the silico gel column chromatography is : <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"10.966ex\" height=\"1.71ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 4847.1 756\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"42\" xlink:href=\"#MJX-TEX-N-42\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(985.8,0)\"><use data-c=\"3C\" xlink:href=\"#MJX-TEX-N-3C\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2041.6,0)\"><g data-mml-node=\"mi\"><use data-c=\"43\" xlink:href=\"#MJX-TEX-N-43\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(3041.3,0)\"><use data-c=\"3C\" xlink:href=\"#MJX-TEX-N-3C\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(4097.1,0)\"><g data-mml-node=\"mi\"><use data-c=\"41\" xlink:href=\"#MJX-TEX-N-41\"></use></g></g></g></g></svg></mjx-container>"
+    }
+  ]
+}

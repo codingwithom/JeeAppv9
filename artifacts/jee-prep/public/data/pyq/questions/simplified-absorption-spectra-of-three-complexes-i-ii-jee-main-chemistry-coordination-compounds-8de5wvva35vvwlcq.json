@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "EkoqynS80fXyZUTglvjgy2xukeyak6di",
+      "paperTitle": "JEE Main 2020 (Online) 2nd September Evening Slot",
+      "year": 2020,
+      "examDate": "2020-09-02 15:00",
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "crystal-field-theory-cft",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "simplified-absorption-spectra-of-three-complexes-i-ii-jee-main-chemistry-coordination-compounds-8de5wvva35vvwlcq",
+      "content": "Simplified absorption spectra of three\ncomplexes ((i), (ii) and (iii)) of Mn<sup>+</sup> ion are\nprovided below; their <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.027ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.319ex\" height=\"1.597ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 583 706\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D706\" xlink:href=\"#MJX-TEX-I-1D706\"></use></g></g></g></svg></mjx-container><sub>max</sub> values are marked\nas A, B and C respectively. The correct match\nbetween the complexes and their <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.027ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.319ex\" height=\"1.597ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 583 706\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D706\" xlink:href=\"#MJX-TEX-I-1D706\"></use></g></g></g></svg></mjx-container><sub>max</sub> values is\n<img src=\"https://imagex.cdn.examgoal.net/jgy2xukeyadvmq/9a980935-4df0-4a08-a931-529de5cc4eca/1ef26420-f434-11ea-8293-3b6cc591631c/file-jgy2xukeyadvmr-498w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 2nd September Evening Slot Chemistry - Coordination Compounds Question 261 English\">\n\n<br>(i) [M(NCS)<sub>6</sub>]<sup>(–6 + n)</sup>\n<br>(ii) [MF<sub>6</sub>]<sup>(–6 + n)</sup>\n<br>(iii) [M(NH<sub>3</sub>)<sub>6</sub>]<sup>n+</sup>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "A-(i), B-(ii), C-(iii)\n"
+        },
+        {
+          "identifier": "B",
+          "content": "A-(ii), B-(iii), C-(i)"
+        },
+        {
+          "identifier": "C",
+          "content": "A-(ii), B-(i), C-(iii)"
+        },
+        {
+          "identifier": "D",
+          "content": "A-(iii), B-(i), C-(ii)"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Stronger the ligand greater is splitting of d orbitals and smaller will be wavelength of light absorbed.\n<br><br>The splitting of ligand is F<sup>–</sup>\n &lt; NCS<sup>–</sup>\n &lt; NH<sub>3</sub>\n<br><br>So order of wavelength of light absorbed is\n<br><br>(<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.027ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.319ex\" height=\"1.597ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 583 706\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D706\" xlink:href=\"#MJX-TEX-I-1D706\"></use></g></g></g></svg></mjx-container><sub>max</sub>)<sub>NH<sub>3</sub></sub> &lt; (<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.027ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.319ex\" height=\"1.597ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 583 706\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D706\" xlink:href=\"#MJX-TEX-I-1D706\"></use></g></g></g></svg></mjx-container><sub>max</sub>)<sub>NCS<sup>–</sup></sub> &lt; (<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.027ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.319ex\" height=\"1.597ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 583 706\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D706\" xlink:href=\"#MJX-TEX-I-1D706\"></use></g></g></g></svg></mjx-container><sub>max</sub>)<sub>F<sup>–</sup></sub>"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "Wymv2TIWJaheArgnEdjgy2xukfi6jvls",
+      "paperTitle": "JEE Main 2020 (Online) 5th September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-05 09:00",
+      "subject": "chemistry",
+      "chapter": "chemical-equilibrium",
+      "chapterGroup": "physical-chemistry",
+      "topic": "chemical-equilibrium-law-of-mass-action-and-equilibrium-constant",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "consider-the-following-reaction-brbrnsub2subosu-jee-main-chemistry-equilibrium-rxy61mpybfvwed0v",
+      "content": "Consider the following reaction:\n<br><br>N<sub>2</sub>O<sub>4</sub>(g) ⇌ 2NO<sub>2</sub>(g); <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.885ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 833 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g></g></g></svg></mjx-container>H<sup>o</sup> = +58 kJ\n<br><br>For each of the following cases (a, b), the direction in which the equilibrium shifts is :\n<br>(a) Temperature is decreased.\n<br>(b) Pressure is increased by adding N<sub>2</sub>\n at constant T.",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(a) towards reactant, (b) towards product"
+        },
+        {
+          "identifier": "B",
+          "content": "(a) towards reactant, (b) no change"
+        },
+        {
+          "identifier": "C",
+          "content": "(a) towards product, (b) towards reactant"
+        },
+        {
+          "identifier": "D",
+          "content": "(a) towards product, (b) no change"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2235\" xlink:href=\"#MJX-TEX-N-2235\"></use></g></g></g></svg></mjx-container> Given reaction is endothermic.\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> On decreasing temperature backward\nreaction will be favoured.\n<br><br>On adding N<sub>2</sub>, pressure is increased at\nconstant T, and volume would also be constant\nso no change is observed."
+    }
+  ]
+}

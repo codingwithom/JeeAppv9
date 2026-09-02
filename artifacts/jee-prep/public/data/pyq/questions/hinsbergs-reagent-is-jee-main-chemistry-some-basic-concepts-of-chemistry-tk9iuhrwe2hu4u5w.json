@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "IraPHZmXOikPwDmCaphaf",
+      "paperTitle": "JEE Main 2019 (Online) 9th April Evening Slot",
+      "year": 2019,
+      "examDate": "2019-04-09 14:30",
+      "subject": "chemistry",
+      "chapter": "compounds-containing-nitrogen",
+      "chapterGroup": "organic-chemistry",
+      "topic": "diazonium-salts-and-other-nitrogen-containing-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "hinsbergs-reagent-is-jee-main-chemistry-some-basic-concepts-of-chemistry-tk9iuhrwe2hu4u5w",
+      "content": "Hinsberg's reagent is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "C<sub>6</sub>H<sub>5</sub>COCl"
+        },
+        {
+          "identifier": "B",
+          "content": "C<sub>6</sub>H<sub>5</sub>SO<sub>2</sub>Cl"
+        },
+        {
+          "identifier": "C",
+          "content": "SOCl<sub>2</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "(COCl)<sub>2</sub>"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<p>The correct answer is <strong>Option B: C<sub>6</sub>H<sub>5</sub>SO<sub>2</sub>Cl</strong>.</p>\n\n<p>Hinsberg's reagent is <strong>benzenesulfonyl chloride (C<sub>6</sub>H<sub>5</sub>SO<sub>2</sub>Cl)</strong>. It is used to differentiate primary, secondary, and tertiary amines.</p>\n\n<p>Here's why the other options are incorrect :</p>\n\n<ul>\n\n<li><strong>Option A: C<sub>6</sub>H<sub>5</sub>COCl</strong> is benzoyl chloride, a reagent used in Friedel-Crafts acylation reactions.</li>\n\n<br/><li><strong>Option C: SOCl<sub>2</sub></strong> is thionyl chloride, a reagent used to convert alcohols into alkyl chlorides.</li>\n\n<br/><li><strong>Option D: (COCl)<sub>2</sub></strong> is oxalyl chloride, a reagent used for the conversion of carboxylic acids into acid chlorides.</li>\n\n</ul>"
+    }
+  ]
+}

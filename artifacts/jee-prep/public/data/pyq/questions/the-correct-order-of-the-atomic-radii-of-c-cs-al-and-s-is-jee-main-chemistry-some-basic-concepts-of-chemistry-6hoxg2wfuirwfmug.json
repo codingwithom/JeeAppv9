@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "FIPtNdY8hkCMpNOBONkFM",
+      "paperTitle": "JEE Main 2019 (Online) 11th January Morning Slot",
+      "year": 2019,
+      "examDate": "2019-01-11 09:30",
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "atomic-and-ionic-radius",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-correct-order-of-the-atomic-radii-of-c-cs-al-and-s-is-jee-main-chemistry-some-basic-concepts-of-chemistry-6hoxg2wfuirwfmug",
+      "content": "The correct order of the atomic radii of C, Cs, Al, and S is : ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "S &lt; C &lt; Al &lt; Cs "
+        },
+        {
+          "identifier": "B",
+          "content": "S &lt; C &lt; Cs &lt; Al"
+        },
+        {
+          "identifier": "C",
+          "content": "C &lt; S &lt; Al &lt; Cs "
+        },
+        {
+          "identifier": "D",
+          "content": "C &lt; S &lt; Cs &lt; Al \n"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Atomic radii increase by moving down the group and\ndecrease across a period. <br><br>Hence, the correct order of atomic\nradii is : C &lt; S &lt; Al &lt; Cs."
+    }
+  ]
+}

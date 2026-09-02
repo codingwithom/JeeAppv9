@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "j4e8FzqKoN8xZ8DFKE1kmht1tzs",
+      "paperTitle": "JEE Main 2021 (Online) 16th March Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "aldehydes-ketones-and-carboxylic-acids",
+      "chapterGroup": "organic-chemistry",
+      "topic": "chemical-reactions-for-aldehydes-and-ketones",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "assertion-a--enol-form-of-acetone-chsub3subcochsub3-jee-main-chemistry-some-basic-concepts-of-chemistry-j4irwfinccbwgwmh",
+      "content": "Assertion A : Enol form of acetone [CH<sub>3</sub>COCH<sub>3</sub>] exists in &lt; 0.1% quantity. However, the enol form of acetyl acetone [CH<sub>3</sub>COCH<sub>2</sub>OCCH<sub>3</sub>] exists in approximately 15% quantity.<br><br>Reason R : Enol form of acetyl acetone is stabilized by intramolecular hydrogen bonding, which is not possible in enol form of acetone.<br><br>Choose the correct statement :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Both A and R are true but R is not the correct explanation of A"
+        },
+        {
+          "identifier": "B",
+          "content": "A is true but R is false"
+        },
+        {
+          "identifier": "C",
+          "content": "A is false but R is true"
+        },
+        {
+          "identifier": "D",
+          "content": "Both A and R are true and R is the correct explanation of A"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1knan4q6r/fe232b95-9701-4cfa-9625-95704681e345/19f66e30-9961-11eb-8fbe-df9b65fe2fe2/file-1knan4q6s.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 16th March Morning Shift Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 181 English Explanation\"><br>\nAcetyl acetone in enol form have intramolecular\nH-bonding, which is absent in acetone.\n"
+    }
+  ]
+}

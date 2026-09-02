@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "lgo0bx7d",
+      "paperTitle": "JEE Main 2023 (Online) 15th April Morning Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "electrochemistry",
+      "chapterGroup": "physical-chemistry",
+      "topic": "conductance-and-electrolysis",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-number-of-correct-statements-from-the-following-is--jee-main-chemistry-6ndule2n7qvxzkth",
+      "content": "The number of correct statements from the following is _______.<br/><br/>\n(A) Conductivity always decreases with decrease in concentration for both strong and weak electrolytes.\n<br/><br/>\n(B) The number of ions per unit volume that carry current in a solution increases on dilution.\n<br/><br/>\n(C) Molar conductivity increases with decrease in concentration\n<br/><br/>\n(D) The variation in molar conductivity is different for strong and weak electrolytes\n<br/><br/>\n(E) For weak electrolytes, the change in molar conductivity with dilution is due to decrease in degree of dissociation.",
+      "options": [],
+      "correct_options": [],
+      "explanation": "Let us evaluate each statement one by one to determine whether it is true or false:\n<br><br>\n(A) Conductivity always decreases with decrease in concentration for both strong and weak electrolytes.\n<br><br>\nThis statement is true. Conductivity is defined as the ability of a solution to conduct electricity, and it depends on the concentration of ions in the solution. As the concentration of ions decreases, the conductivity of the solution also decreases, regardless of whether the electrolyte is strong or weak.\n<br><br>\n(B) The number of ions per unit volume that carry current in a solution increases on dilution.\n<br><br>\nThis statement is false. The number of ions per unit volume in a solution decreases on dilution, because the total number of ions in the solution remains the same, but the volume increases.\n<br><br>\n(C) Molar conductivity increases with decrease in concentration.\n<br><br>\nThis statement is generally true. Molar conductivity is a measure of the ability of an electrolyte to conduct electricity, and it depends on both the concentration of the electrolyte and the mobility of the ions. As the concentration of the electrolyte decreases, the molar conductivity increases because the ions become more separated from each other, and the electrostatic interactions between them become weaker, allowing them to move more freely in the solution.\n<br><br>\n(D) The variation in molar conductivity is different for strong and weak electrolytes.\n<br><br>\nThis statement is true. The variation in molar conductivity with concentration is different for strong and weak electrolytes. Strong electrolytes dissociate completely in solution, so their molar conductivity increases rapidly with dilution, while weak electrolytes dissociate only partially, so their molar conductivity increases more slowly with dilution.\n<br><br>\n(E) For weak electrolytes, the change in molar conductivity with dilution is due to decrease in degree of dissociation.\n<br><br>\nThis statement is false. For weak electrolytes, the change in molar conductivity with dilution is due to an increase in the degree of dissociation, not a decrease. \n<br><br>\nTherefore, there are <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.654ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.339ex\" height=\"2.762ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -932 1034 1221\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"menclose\"><g transform=\"translate(267, 0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mstyle\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g></g></g><rect x=\"33.5\" y=\"-255.5\" width=\"967\" height=\"1154\" fill=\"none\" stroke-width=\"67\"></rect></g></g></g></svg></mjx-container> correct statements in the given options, namely (A), (C), (D)."
+    }
+  ]
+}

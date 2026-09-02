@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1krri516o",
+      "paperTitle": "JEE Main 2021 (Online) 20th July Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "proteins-and-enzymes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-one-of-the-following-statements-is-not-true-about-enzy-jee-main-chemistry-some-basic-concepts-of-chemistry-skxni8sgqkqhku2z",
+      "content": "Which one of the following statements is not true about enzymes?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Enzymes are non-specific for a reaction and substrate."
+        },
+        {
+          "identifier": "B",
+          "content": "Almost all enzymes are proteins."
+        },
+        {
+          "identifier": "C",
+          "content": "Enzymes work as catalysts by lowering the activation energy of a biochemical reaction."
+        },
+        {
+          "identifier": "D",
+          "content": "The action of enzymes is temperature and pH specific."
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Enzymes are mostly proteins. They function as catalysts in biochemical reactions by lowering the energy of activation. They are highly specific w.r.t. temperature and pH in their action."
+    }
+  ]
+}

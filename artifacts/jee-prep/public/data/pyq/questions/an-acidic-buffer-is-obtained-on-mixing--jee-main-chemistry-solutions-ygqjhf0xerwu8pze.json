@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "B4iZSjmdcOHx6CvPr6jgy2xukf25kmue",
+      "paperTitle": "JEE Main 2020 (Online) 3rd September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-03 09:00",
+      "subject": "chemistry",
+      "chapter": "ionic-equilibrium",
+      "chapterGroup": "physical-chemistry",
+      "topic": "ph-buffer-and-indicators",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "an-acidic-buffer-is-obtained-on-mixing--jee-main-chemistry-solutions-ygqjhf0xerwu8pze",
+      "content": "An acidic buffer is obtained on mixing :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "100 mL of 0.1 M HCl and 200 mL of 0.1 M CH<sub>3</sub>COONa"
+        },
+        {
+          "identifier": "B",
+          "content": "100 mL of 0.1 M HCl and 200 mL of 0.1 M NaCl"
+        },
+        {
+          "identifier": "C",
+          "content": "100 mL of 0.1 M CH<sub>3</sub>COOH and 100 mL of 0.1 M NaOH"
+        },
+        {
+          "identifier": "D",
+          "content": "100 mL of 0.1 M CH<sub>3</sub>COOH and 200 mL of 0.1 M NaOH"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1khok09yp/2a389f41-bbac-480e-ad7d-0e18e4b9b7c4/8f9fb700-2a3e-11eb-b68f-7fa597c6318b/file-1khok09yq-320w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 3rd September Morning Slot Chemistry - Ionic Equilibrium Question 91 English Explanation\">\n<br><br>So finally we get mixture of\n<br><br>CH<sub>3</sub>COOH + CH<sub>3</sub>COONa that will work like acidic buffer solution."
+    }
+  ]
+}

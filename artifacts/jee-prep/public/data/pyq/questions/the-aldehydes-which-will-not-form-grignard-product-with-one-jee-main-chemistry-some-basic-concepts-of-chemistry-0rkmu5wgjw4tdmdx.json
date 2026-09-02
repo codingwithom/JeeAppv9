@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "3V67IKAULyqeDIlG1Z4VR",
+      "paperTitle": "JEE Main 2019 (Online) 12th January Evening Slot",
+      "year": 2019,
+      "examDate": "2019-01-12 14:30",
+      "subject": "chemistry",
+      "chapter": "aldehydes-ketones-and-carboxylic-acids",
+      "chapterGroup": "organic-chemistry",
+      "topic": "chemical-reactions-for-aldehydes-and-ketones",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-aldehydes-which-will-not-form-grignard-product-with-one-jee-main-chemistry-some-basic-concepts-of-chemistry-0rkmu5wgjw4tdmdx",
+      "content": "The aldehydes which will not form Grignard product with one equivalent Grignard reagents are - \n<br><br><img src=\"https://imagex.cdn.examgoal.net/6MlwjiiiTaVxM5QQm/J8vg4x2hP90ff3eDRTQSem3SoHDHh/L5FFkOzeGZAT8l5eRlcIze/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th January Evening Slot Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 231 English\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "B and D"
+        },
+        {
+          "identifier": "B",
+          "content": "C and D"
+        },
+        {
+          "identifier": "C",
+          "content": "B, C and D"
+        },
+        {
+          "identifier": "D",
+          "content": "B and C"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Grignard product is that product which forms because of nucleophilic addition reaction.\n<br><br>Aldehydes on reaction with Grignard reagent gives Grignard product.\n<br><br><img src=\"https://imagex.cdn.examgoal.net/h3NZMVM0QClPGBbH9/VBfLaJNaYAmLk9dItpUoXPOGFdOyk/Zi34ARda5h3eNpDx9nD3xw/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th January Evening Slot Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 231 English Explanation 1\">\n<br><br>In Grignard reagent R<sup><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container></sup> is a very strong base, so it will react with acidic H<sup>+</sup> of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>COOH group first. As Grignard reagent is one equivalent, so no reagent will remain to react with aldehyde group.\n<br><br><img src=\"https://imagex.cdn.examgoal.net/0SEIU3xB12FaJBRzp/AdsmtmCig19KceVEnxuQolFHpTepi/z41ngSTzfFze0voaZKwZB0/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th January Evening Slot Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 231 English Explanation 2\">\n<br><br>Here also in alcohol functional group (<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>CH<sub>2</sub>OH)  H<sup>+</sup> is acidic so here acid base reaction will occur.\n<br><br>In option (A) only one functional group (<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container> CHO) present so it will give Grignard product by nucleofilic addition reaction.\n<br><br>In option (C) functional group ether (<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container> CH<sub>3</sub>) does not react with RMgX so aldehyde functional group will react with RMgX and give Grignard product. \n<br><br><img src=\"https://imagex.cdn.examgoal.net/xSnbPjA1QkamJ9llK/WsCVRxDrwxzwEQbAXxhxvnlEdZ6TO/3z94WiNq3M5uo9UrwrN34F/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 12th January Evening Slot Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 231 English Explanation 3\">"
+    }
+  ]
+}

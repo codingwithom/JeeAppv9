@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l58bcavr",
+      "paperTitle": "JEE Main 2022 (Online) 26th June Morning Shift",
+      "year": 2022,
+      "subject": "physics",
+      "chapter": "center-of-mass",
+      "chapterGroup": "mechanics",
+      "topic": "impulse-momentum-theorem",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pan-object-is-thrown-vertically-upwards-at-its-maximum-he-jee-main-physics-motion-ln6c1tuzmveji0bw",
+      "content": "<p>An object is thrown vertically upwards. At its maximum height, which of the following quantity becomes zero?</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Momentum"
+        },
+        {
+          "identifier": "B",
+          "content": "Potential Energy"
+        },
+        {
+          "identifier": "C",
+          "content": "Acceleration"
+        },
+        {
+          "identifier": "D",
+          "content": "Force"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<p><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l5jhmqf4/db9636cb-1bea-4bce-8bbd-a227247c026f/8a98c400-029a-11ed-a9b8-43edceee002f/file-1l5jhmqf5.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l5jhmqf4/db9636cb-1bea-4bce-8bbd-a227247c026f/8a98c400-029a-11ed-a9b8-43edceee002f/file-1l5jhmqf5.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2022 (Online) 26th June Morning Shift Physics - Center of Mass and Collision Question 47 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l5jhmqf4/db9636cb-1bea-4bce-8bbd-a227247c026f/8a98c400-029a-11ed-a9b8-43edceee002f/file-1l5jhmqf5.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l5jhmqf4/db9636cb-1bea-4bce-8bbd-a227247c026f/8a98c400-029a-11ed-a9b8-43edceee002f/file-1l5jhmqf5.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l5jhmqf4/db9636cb-1bea-4bce-8bbd-a227247c026f/8a98c400-029a-11ed-a9b8-43edceee002f/file-1l5jhmqf5.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l5jhmqf4/db9636cb-1bea-4bce-8bbd-a227247c026f/8a98c400-029a-11ed-a9b8-43edceee002f/file-1l5jhmqf5.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l5jhmqf4/db9636cb-1bea-4bce-8bbd-a227247c026f/8a98c400-029a-11ed-a9b8-43edceee002f/file-1l5jhmqf5.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l5jhmqf4/db9636cb-1bea-4bce-8bbd-a227247c026f/8a98c400-029a-11ed-a9b8-43edceee002f/file-1l5jhmqf5.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"></p>\n<p>At maximum height it's velocity is zero. So momentum (mv) will be zero.</p>"
+    }
+  ]
+}

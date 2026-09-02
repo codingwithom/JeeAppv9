@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1lh248pml",
+      "paperTitle": "JEE Main 2023 (Online) 6th April Morning Shift",
+      "year": 2023,
+      "subject": "physics",
+      "chapter": "electromagnetic-induction",
+      "chapterGroup": "electricity",
+      "topic": "magnetic-flux-faradays-and-lenzs-laws",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pthe-induced-emf-can-be-produced-in-a-coil-byp-pa-mo-jee-main-physics-motion-ash1cjirrlfth8pu",
+      "content": "<p>The induced emf can be produced in a coil by</p>\n<p>A. moving the coil with uniform speed inside uniform magnetic field</p>\n<p>B. moving the coil with non uniform speed inside uniform magnetic field</p>\n<p>C. rotating the coil inside the uniform magnetic field</p>\n<p>D. changing the area of the coil inside the uniform magnetic field</p>\n<p>Choose the correct answer from the options given below:</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "A and C only"
+        },
+        {
+          "identifier": "B",
+          "content": "C and D only"
+        },
+        {
+          "identifier": "C",
+          "content": "B and D only"
+        },
+        {
+          "identifier": "D",
+          "content": "B and C only"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "If the coil is simply moved at uniform or non-uniform speed in a uniform magnetic field without changing the orientation of the coil or the area of the coil enclosed by the magnetic field, the magnetic flux through the coil does not change, and no emf is induced according to Faraday's Law of electromagnetic induction."
+    }
+  ]
+}

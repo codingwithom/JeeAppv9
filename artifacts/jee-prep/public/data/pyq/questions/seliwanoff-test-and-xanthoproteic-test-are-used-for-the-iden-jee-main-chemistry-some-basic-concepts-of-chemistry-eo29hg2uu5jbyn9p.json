@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "oi6jDGS4mmZ38RLMZ61klusopw1",
+      "paperTitle": "JEE Main 2021 (Online) 26th February Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "practical-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "chemistry-involved-in-the-preparation-of-organic-and-inorganic-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "seliwanoff-test-and-xanthoproteic-test-are-used-for-the-iden-jee-main-chemistry-some-basic-concepts-of-chemistry-eo29hg2uu5jbyn9p",
+      "content": "Seliwanoff test and Xanthoproteic test are used for the identification of ___________ and ________ respectively.",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "ketoses, proteins"
+        },
+        {
+          "identifier": "B",
+          "content": "proteins, ketoses"
+        },
+        {
+          "identifier": "C",
+          "content": "aldoses, ketoses"
+        },
+        {
+          "identifier": "D",
+          "content": "ketoses, aldoses"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Seliwanoff test and Xanthaproteic test are used for identification of 'Ketoses' and proteins\nrespectively."
+    }
+  ]
+}

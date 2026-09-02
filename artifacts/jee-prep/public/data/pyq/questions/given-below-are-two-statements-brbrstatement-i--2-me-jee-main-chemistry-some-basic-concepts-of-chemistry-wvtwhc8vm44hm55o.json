@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "V3gZMChucf9b9KzhZ91kmkicf5x",
+      "paperTitle": "JEE Main 2021 (Online) 17th March Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "hydrocarbons",
+      "chapterGroup": "organic-chemistry",
+      "topic": "reaction-of-alkanes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "given-below-are-two-statements-brbrstatement-i--2-me-jee-main-chemistry-some-basic-concepts-of-chemistry-wvtwhc8vm44hm55o",
+      "content": "Given below are two statements :<br><br>Statement I : 2-methylbutane on oxidation with KMnO<sub>4</sub> gives 2-methylbutan-2-ol.<br><br>Statement II : n-alkanes can be easily oxidised to corresponding alcohols with KMnO<sub>4</sub>.<br><br>Choose the correct option :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Both statement I and statement II are incorrect"
+        },
+        {
+          "identifier": "B",
+          "content": "Both statement I and statement II are correct"
+        },
+        {
+          "identifier": "C",
+          "content": "Statement I is correct but statement II is incorrect"
+        },
+        {
+          "identifier": "D",
+          "content": "Statement I is incorrect but statement II is correct"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Alkanes having tertiary H can be oxidized to\ncorresponding alcohols by KMnO<sub>4</sub>.<br><br>\n<img src=\"https://imagex.cdn.examgoal.net/1kn1rultk/afb7c6b9-541d-4336-a5f5-b9aa98d178bf/804cbe90-9480-11eb-a405-cf12956abac3/file-1kn1rultl.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 17th March Evening Shift Chemistry - Hydrocarbons Question 105 English Explanation\"><br>whereas ordinary alkanes resist oxidation."
+    }
+  ]
+}

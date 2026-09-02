@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "dNrvBHTF6tk0VbIIE07k9k2k5eoyyxh",
+      "paperTitle": "JEE Main 2020 (Online) 7th January Evening Slot",
+      "year": 2020,
+      "examDate": "2020-01-07 14:30",
+      "subject": "chemistry",
+      "chapter": "alcohols-phenols-and-ethers",
+      "chapterGroup": "organic-chemistry",
+      "topic": "properties-preparation-and-uses-of-ethers",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-correct-order-of-stability-for-the-following-alkoxides-i-jee-main-chemistry-analytical-chemistry-mi0okch45eiajl1r",
+      "content": "The correct order of stability for the following alkoxides is :<br><br>\n<img src=\"https://imagex.cdn.examgoal.net/7k9k2k5eoxrtn/3f10a5bb-ef48-4fe1-830d-fee8d25518e3/68990eb0-373f-11ea-92dd-4b9c3519996f/file-7k9k2k5eoxrto-364w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 7th January Evening Slot Chemistry - Alcohols, Phenols and Ethers Question 138 English\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(C) &gt; (B) &gt; (A)"
+        },
+        {
+          "identifier": "B",
+          "content": "(C) &gt; (A) &gt; (B)"
+        },
+        {
+          "identifier": "C",
+          "content": "(B) &gt; (C) &gt; (A)"
+        },
+        {
+          "identifier": "D",
+          "content": "(B) &gt; (A) &gt; (C)"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Compound (C) is stable by –M effect of NO<sub>2</sub>.\n<br><br>Compound (B) is stable by Resonance effect."
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "ubQhYAu8evYWN8lF",
+      "paperTitle": "JEE Main 2017 (Offline)",
+      "year": 2017,
+      "examDate": null,
+      "subject": "chemistry",
+      "chapter": "haloalkanes-and-haloarenes",
+      "chapterGroup": "organic-chemistry",
+      "topic": "haloalkanes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "3-methyl-pent-2-ene-on-reaction-with-hbr-in-presence-of-pero-2017-marks-4-ubqhyau8evywn8lf.htm",
+      "content": "3-Methyl-pent-2-ene on reaction with HBr in presence of peroxide forms an addition product. The number\nof possible stereoisomers for the product is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Zero"
+        },
+        {
+          "identifier": "B",
+          "content": "Two"
+        },
+        {
+          "identifier": "C",
+          "content": "Four"
+        },
+        {
+          "identifier": "D",
+          "content": "Six"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/7kejek2vsan4y/d5174d92-ee85-4ffd-9dab-c4ebf1afd173/36c9cf30-0541-11ea-a7bc-b7b08ce8d541/file-7kejek2vsan4z-320w.jpg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/7kejek2vsan4y/d5174d92-ee85-4ffd-9dab-c4ebf1afd173/36c9cf30-0541-11ea-a7bc-b7b08ce8d541/file-7kejek2vsan4z-500w.jpg\"><source media=\"(max-width: 680px)\" srcset=\"https://imagex.cdn.examgoal.net/7kejek2vsan4y/d5174d92-ee85-4ffd-9dab-c4ebf1afd173/36c9cf30-0541-11ea-a7bc-b7b08ce8d541/file-7kejek2vsan4z-680w.jpg\"><source media=\"(max-width: 860px)\" srcset=\"https://imagex.cdn.examgoal.net/7kejek2vsan4y/d5174d92-ee85-4ffd-9dab-c4ebf1afd173/36c9cf30-0541-11ea-a7bc-b7b08ce8d541/file-7kejek2vsan4z-860w.jpg\"><source media=\"(max-width: 1040px)\" srcset=\"https://imagex.cdn.examgoal.net/7kejek2vsan4y/d5174d92-ee85-4ffd-9dab-c4ebf1afd173/36c9cf30-0541-11ea-a7bc-b7b08ce8d541/file-7kejek2vsan4z-1040w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/7kejek2vsan4y/d5174d92-ee85-4ffd-9dab-c4ebf1afd173/36c9cf30-0541-11ea-a7bc-b7b08ce8d541/file-7kejek2vsan4z-1220w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2017 (Offline) Chemistry - Haloalkanes and Haloarenes Question 172 English Explanation 1\"></picture>\n<br><br>A compound having two chiral centres can exist in 4 stereoisomeric forms (2<sup>n</sup>).\n<br><br><img src=\"https://imagex.cdn.examgoal.net/7kejek2vsdds2/7920d689-24e0-478a-8c25-40be9e96e135/82fc7e20-0541-11ea-a7bc-b7b08ce8d541/file-7kejek2vsdds3-496w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2017 (Offline) Chemistry - Haloalkanes and Haloarenes Question 172 English Explanation 2\">"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "1l0w0k2q4",
+      "paperTitle": "JEE Advanced 2015 Paper 2 Offline",
+      "year": 2015,
+      "subject": "chemistry",
+      "chapter": "p-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "group-17-elements-halogen-family",
+      "type": "mcqm",
+      "marks": 4,
+      "negMarks": 2,
+      "permalink": "pthe-correct-statements-regarding-i-hclo-ii-hclosub-jee-advanced-chemistry-some-basic-concepts-of-chemistry-krvvdtekmbnrznzd",
+      "content": "<p>The correct statements regarding (i) HClO, (ii) HClO<sub>2</sub>, (iii) HClO<sub>3</sub> and (iv) HClO<sub>4</sub> is (are)</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "The number of Cl=O bonds (ii) and (iii) together is two."
+        },
+        {
+          "identifier": "B",
+          "content": "The number of lone pairs of electrons on Cl in (ii) and (iii) together is three."
+        },
+        {
+          "identifier": "C",
+          "content": "The hybridization of Cl in (iv) is sp<sup>3</sup>"
+        },
+        {
+          "identifier": "D",
+          "content": "Amongst (i) to (iv), the strongest acid is (i)."
+        }
+      ],
+      "correct_options": [
+        "B",
+        "C"
+      ],
+      "explanation": "<p>In all the oxyacids of chlorine : Cl undergoes sp<sup>3</sup> hybridization HClO<sub>4</sub> is the strongest acid among the given compounds.</p>\n<p> <img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l0wfz1wm/f7a29ae5-3190-4bd2-b82d-4145c23bffde/2a780060-a6bd-11ec-a76e-13814fbf11cf/file-1l0wfz1wn.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l0wfz1wm/f7a29ae5-3190-4bd2-b82d-4145c23bffde/2a780060-a6bd-11ec-a76e-13814fbf11cf/file-1l0wfz1wn.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Advanced 2015 Paper 2 Offline Chemistry - p-Block Elements Question 51 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l0wfz1wm/f7a29ae5-3190-4bd2-b82d-4145c23bffde/2a780060-a6bd-11ec-a76e-13814fbf11cf/file-1l0wfz1wn.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l0wfz1wm/f7a29ae5-3190-4bd2-b82d-4145c23bffde/2a780060-a6bd-11ec-a76e-13814fbf11cf/file-1l0wfz1wn.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l0wfz1wm/f7a29ae5-3190-4bd2-b82d-4145c23bffde/2a780060-a6bd-11ec-a76e-13814fbf11cf/file-1l0wfz1wn.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l0wfz1wm/f7a29ae5-3190-4bd2-b82d-4145c23bffde/2a780060-a6bd-11ec-a76e-13814fbf11cf/file-1l0wfz1wn.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l0wfz1wm/f7a29ae5-3190-4bd2-b82d-4145c23bffde/2a780060-a6bd-11ec-a76e-13814fbf11cf/file-1l0wfz1wn.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l0wfz1wm/f7a29ae5-3190-4bd2-b82d-4145c23bffde/2a780060-a6bd-11ec-a76e-13814fbf11cf/file-1l0wfz1wn.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"></p>"
+    }
+  ]
+}

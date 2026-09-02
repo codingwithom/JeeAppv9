@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l6jki5g8",
+      "paperTitle": "JEE Main 2022 (Online) 27th July Morning Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "p-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "group-16-elements-oxygen-family",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pgiven-below-are-two-statements-one-is-labelled-as-assert-jee-main-chemistry-some-basic-concepts-of-chemistry-v3o6vkby1kgwqaua",
+      "content": "<p>Given below are two statements. One is labelled as Assertion A and the other is labelled as Reason R.</p>\n<p>Assertion A : Activated charcoal adsorbs SO<sub>2</sub> more efficiently than CH<sub>4</sub>.</p>\n<p>Reason R : Gases with lower critical temperatures are readily adsorbed by activated charcoal.</p>\n<p>In the light of the above statements, choose the correct answer from the options given below.</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Both A and R are correct and R is the correct explanation of A."
+        },
+        {
+          "identifier": "B",
+          "content": "Both A and R are correct but R is NOT the correct explanation of A."
+        },
+        {
+          "identifier": "C",
+          "content": "A is correct but R is not correct."
+        },
+        {
+          "identifier": "D",
+          "content": "A is not correct but R is correct."
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "More polar gases easily adsorbs on activated charcoal.\n<br><br>\nAnd more polar gases has more (higher) critical temperature as compared to non-polar or less polar gases.\n<br><br>\n<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> Gases with higher critical temperature adsorbed more."
+    }
+  ]
+}

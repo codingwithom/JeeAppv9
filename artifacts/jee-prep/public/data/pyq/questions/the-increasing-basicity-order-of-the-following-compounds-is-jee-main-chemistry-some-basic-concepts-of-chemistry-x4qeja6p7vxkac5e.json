@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "d6PiefOCsOJE4fsqxTPzP",
+      "paperTitle": "JEE Main 2019 (Online) 9th January Evening Slot",
+      "year": 2019,
+      "examDate": "2019-01-09 14:30",
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "acid-and-base-strength",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-increasing-basicity-order-of-the-following-compounds-is-jee-main-chemistry-some-basic-concepts-of-chemistry-x4qeja6p7vxkac5e",
+      "content": "The increasing basicity order of the following compounds is : <br>\n<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l8p9749e/c7fbfaf5-c822-4437-bc41-d1876a6fe655/e957a320-412a-11ed-a864-6db2254ccf9e/file-1l8p9749f.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l8p9749e/c7fbfaf5-c822-4437-bc41-d1876a6fe655/e957a320-412a-11ed-a864-6db2254ccf9e/file-1l8p9749f.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2019 (Online) 9th January Evening Slot Chemistry - Basics of Organic Chemistry Question 236 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l8p9749e/c7fbfaf5-c822-4437-bc41-d1876a6fe655/e957a320-412a-11ed-a864-6db2254ccf9e/file-1l8p9749f.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l8p9749e/c7fbfaf5-c822-4437-bc41-d1876a6fe655/e957a320-412a-11ed-a864-6db2254ccf9e/file-1l8p9749f.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l8p9749e/c7fbfaf5-c822-4437-bc41-d1876a6fe655/e957a320-412a-11ed-a864-6db2254ccf9e/file-1l8p9749f.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l8p9749e/c7fbfaf5-c822-4437-bc41-d1876a6fe655/e957a320-412a-11ed-a864-6db2254ccf9e/file-1l8p9749f.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l8p9749e/c7fbfaf5-c822-4437-bc41-d1876a6fe655/e957a320-412a-11ed-a864-6db2254ccf9e/file-1l8p9749f.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l8p9749e/c7fbfaf5-c822-4437-bc41-d1876a6fe655/e957a320-412a-11ed-a864-6db2254ccf9e/file-1l8p9749f.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "A &lt; B &lt; D &lt; C"
+        },
+        {
+          "identifier": "B",
+          "content": "D &lt; C &lt; A &lt; B"
+        },
+        {
+          "identifier": "C",
+          "content": "D &lt; C &lt; B &lt; A"
+        },
+        {
+          "identifier": "D",
+          "content": "A &lt; B &lt; C &lt; D"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "(A) In the first compound, because of +I effect of CH<sub>3</sub>CH<sub>2</sub>- group electron density increses on N atom.\n<br><br>(B) In the second compound, because of +I effect of two CH<sub>3</sub>CH<sub>2</sub>- group electron density is more on N atom than first compound so it is more basic than compound A.\n<br><br>(C) Three -CH<sub>3</sub> group creates steric hindrance around N atom, for that reason N atom can't donate lone pair easily.\n<br><br>(D) Here lone pair of N atom, perticipate in resonance with benzene ring so N atom can't donate lone pair. That is why it is least basic among this four compounds.\n<br><br>So correct order is D &lt; C &lt; A &lt; B."
+    }
+  ]
+}

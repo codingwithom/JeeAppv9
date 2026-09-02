@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "AATwZbXq05scQugf121kmhtir6n",
+      "paperTitle": "JEE Main 2021 (Online) 16th March Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "compounds-containing-nitrogen",
+      "chapterGroup": "organic-chemistry",
+      "topic": "aliphatic-amines",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-reactions-does-not-involve-hoffmann-b-jee-main-chemistry-some-basic-concepts-of-chemistry-6p8ds5okxzfh1cdp",
+      "content": "Which of the following reactions DOES NOT involve Hoffmann bromamide degradation?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kmim86kr/5e8d5f71-2499-49ca-9955-c280d2f87ada/9ebcc1b0-89f7-11eb-9c26-d9a423ffb060/file-1kmim86ks.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 16th March Morning Shift Chemistry - Compounds Containing Nitrogen Question 177 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kmim7xzj/31eafd29-ab56-48ee-b345-75ed122684c8/981a25f0-89f7-11eb-9c26-d9a423ffb060/file-1kmim7xzk.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 16th March Morning Shift Chemistry - Compounds Containing Nitrogen Question 177 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kmim7qsn/bf05dc35-e40c-44a1-9196-53099de87936/928c0770-89f7-11eb-9c26-d9a423ffb060/file-1kmim7qso.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 16th March Morning Shift Chemistry - Compounds Containing Nitrogen Question 177 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kmim7i79/201477b1-720a-4c3e-aeb7-fed9770a95cb/8be88150-89f7-11eb-9c26-d9a423ffb060/file-1kmim7i7a.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 16th March Morning Shift Chemistry - Compounds Containing Nitrogen Question 177 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1knamjiau/1340c124-a767-4480-b2c8-2516ae26dd36/cbe0e060-995e-11eb-8fbe-df9b65fe2fe2/file-1knamjiav.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 16th March Morning Shift Chemistry - Compounds Containing Nitrogen Question 177 English Explanation 1\">\n<img src=\"https://imagex.cdn.examgoal.net/1knamk2rt/ca266f7d-7378-4867-ab7a-a8bb91ed4b09/dbb12f90-995e-11eb-8fbe-df9b65fe2fe2/file-1knamk2ru.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 16th March Morning Shift Chemistry - Compounds Containing Nitrogen Question 177 English Explanation 2\">"
+    }
+  ]
+}

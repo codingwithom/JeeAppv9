@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "vlhjHX6yKGZg6V7YU07k9k2k5idmyit",
+      "paperTitle": "JEE Main 2020 (Online) 9th January Morning Slot",
+      "year": 2020,
+      "examDate": "2020-01-09 09:30",
+      "subject": "chemistry",
+      "chapter": "redox-reactions",
+      "chapterGroup": "physical-chemistry",
+      "topic": "oxidation-number",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-compound-that-cannot-act-both-as-oxidising-and-reducing-jee-main-chemistry-analytical-chemistry-mpn7nelqjngbkie6",
+      "content": "The compound that cannot act both as oxidising\nand reducing agent is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "H<sub>3</sub>PO<sub>4</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "H<sub>2</sub>SO<sub>3</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "H<sub>2</sub>O<sub>2</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "HNO<sub>2</sub>"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "In H<sub>3</sub>PO<sub>4</sub>, P is present in +5 oxidation state and\nit can act as reducing agent only."
+    }
+  ]
+}

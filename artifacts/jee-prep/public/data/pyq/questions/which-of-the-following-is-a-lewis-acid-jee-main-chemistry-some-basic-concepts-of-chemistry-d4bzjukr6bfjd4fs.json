@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "aYVW7FnWxEC4TOAkuok7v",
+      "paperTitle": "JEE Main 2018 (Online) 15th April Morning Slot",
+      "year": 2018,
+      "examDate": "2018-04-15 09:30",
+      "subject": "chemistry",
+      "chapter": "ionic-equilibrium",
+      "chapterGroup": "physical-chemistry",
+      "topic": "ostwalds-dilution-law-and-concept-of-acid-and-base",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-is-a-lewis-acid-jee-main-chemistry-some-basic-concepts-of-chemistry-d4bzjukr6bfjd4fs",
+      "content": "Which of the following is a Lewis acid?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "PH<sub>3</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "B(CH<sub>3</sub>)<sub>3</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "NaH"
+        },
+        {
+          "identifier": "D",
+          "content": "NF<sub>3</sub>"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/HWSBCUIi7D06Wqc3H/fpNwpYrJSCGQWNa4DTh8BotY1d7GI/5py9JgXIpIPYRFcDvpps2u/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2018 (Online) 15th April Morning Slot Chemistry - Ionic Equilibrium Question 114 English Explanation\">\n<br><br>As B can accept electron pair, so it is Lewis Acid."
+    }
+  ]
+}

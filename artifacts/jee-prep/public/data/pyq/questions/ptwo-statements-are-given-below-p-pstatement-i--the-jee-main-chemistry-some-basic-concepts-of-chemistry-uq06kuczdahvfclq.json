@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l5c6sbau",
+      "paperTitle": "JEE Main 2022 (Online) 24th June Morning Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "aldehydes-ketones-and-carboxylic-acids",
+      "chapterGroup": "organic-chemistry",
+      "topic": "preparation-properties-and-uses-of-carboxylic-acids",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "ptwo-statements-are-given-below-p-pstatement-i--the-jee-main-chemistry-some-basic-concepts-of-chemistry-uq06kuczdahvfclq",
+      "content": "<p>Two statements are given below :</p>\n<p>Statement I : The melting point of monocarboxylic acid with even number of carbon atoms is higher than that of with odd number of carbon atoms acid immediately below and above it in the series.</p>\n<p>Statement II : The solubility of monocarboxylic acids in water decreases with increase in molar mass.</p>\n<p>Choose the most appropriate option :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Both Statement I and Statement II are correct."
+        },
+        {
+          "identifier": "B",
+          "content": "Both Statement I and Statement II are incorrect."
+        },
+        {
+          "identifier": "C",
+          "content": "Statement I is correct but Statement II is incorrect."
+        },
+        {
+          "identifier": "D",
+          "content": "Statement I is incorrect but Statement II is correct."
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Statement (I) is correct as monocarboxylic acids\nwith even number of carbon atoms show better\npacking efficiency in the solid state, statement (II) is\nalso correct as the solubility of carboxylic acids\ndecreases with an increase in molar mass due to\nincrease in the hydrophobic portion with an increase in\nthe number of carbon atoms."
+    }
+  ]
+}

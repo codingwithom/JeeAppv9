@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "1l5be68he",
+      "paperTitle": "JEE Main 2022 (Online) 24th June Evening Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "proteins-and-enzymes",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pin-alanylglycylleucylalanylvaline-the-number-of-peptide-jee-main-chemistry-some-basic-concepts-of-chemistry-bsxq4h5bjawv6kc9",
+      "content": "<p>In alanylglycyl leucyl alanyl valine, the number of peptide linkages is ___________.</p>",
+      "options": [],
+      "correct_options": [],
+      "explanation": "The given pentapeptide is\n<br><br>\n<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.452ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"39.367ex\" height=\"2.149ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 17400 950\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\"> ALA - GLY - LEU - ALA - VAL </text></g></g></g></svg></mjx-container>\n<br><br>\nIt has 4 peptide linkages."
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "0fOD1sLduw0qCWTfaKgYw",
+      "paperTitle": "JEE Main 2019 (Online) 11th January Evening Slot",
+      "year": 2019,
+      "examDate": "2019-01-11 14:30",
+      "subject": "mathematics",
+      "chapter": "inverse-trigonometric-functions",
+      "chapterGroup": "trigonometry",
+      "topic": "properties-of-inverse-trigonometric-functions",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "all-x-satisfying-the-inequality-cot1-x2-7cot1-x-jee-main-mathematics-trigonometric-functions-and-equations-veintythcydsvwqj",
+      "content": "All x satisfying the inequality (cot<sup>–1</sup>\nx)<sup>2</sup>– 7(cot<sup>–1</sup> x) + 10 &gt; 0, lie in the interval :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(cot 2, <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 1000 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"221E\" xlink:href=\"#MJX-TEX-N-221E\"></use></g></g></g></svg></mjx-container>)"
+        },
+        {
+          "identifier": "B",
+          "content": "(–<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 1000 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"221E\" xlink:href=\"#MJX-TEX-N-221E\"></use></g></g></g></svg></mjx-container>, cot 5) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.403ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -598 667 620\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"222A\" xlink:href=\"#MJX-TEX-N-222A\"></use></g></g></g></svg></mjx-container> (cot 2, <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 1000 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"221E\" xlink:href=\"#MJX-TEX-N-221E\"></use></g></g></g></svg></mjx-container>)"
+        },
+        {
+          "identifier": "C",
+          "content": "(cot 5, cot 4)"
+        },
+        {
+          "identifier": "D",
+          "content": "(– <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.025ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 1000 453\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"221E\" xlink:href=\"#MJX-TEX-N-221E\"></use></g></g></g></svg></mjx-container>, cot 5) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.403ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -598 667 620\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"222A\" xlink:href=\"#MJX-TEX-N-222A\"></use></g></g></g></svg></mjx-container> (cot 4, cot 2)"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "cot<sup><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>1</sup> x &gt; 5,    cot<sup><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>1</sup> x &lt; 2\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container>  x &lt; cot5,   x &gt; cot2"
+    }
+  ]
+}

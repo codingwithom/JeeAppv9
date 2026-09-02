@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "3S1G0WJPmCpX2z10Ng1klurc923",
+      "paperTitle": "JEE Main 2021 (Online) 26th February Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "alcohols-phenols-and-ethers",
+      "chapterGroup": "organic-chemistry",
+      "topic": "properties-preparation-and-uses-of-alcohols",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "ceric-ammonium-nitrate-and-chclsub3subalc-koh-are-use-jee-main-chemistry-some-basic-concepts-of-chemistry-jax991rdvwys8e6l",
+      "content": "Ceric ammonium nitrate and CHCl<sub>3</sub>/alc. KOH are used for the identification of functional groups present in __________ and _______ respectively.",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "amine, alcohol"
+        },
+        {
+          "identifier": "B",
+          "content": "alcohol, phenol"
+        },
+        {
+          "identifier": "C",
+          "content": "alcohol, amine"
+        },
+        {
+          "identifier": "D",
+          "content": "amine, phenol"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Alcohol give positive test with ceric ammonium nitrate and primary amines gives carbyl amine\ntest with CHCl<sub>3</sub>, KOH."
+    }
+  ]
+}

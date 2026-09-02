@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "upxFmVOuay2cBhvViHjgy2xukf9k2fko",
+      "paperTitle": "JEE Main 2020 (Online) 4th September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-04 09:00",
+      "subject": "chemistry",
+      "chapter": "chemical-bonding-and-molecular-structure",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "bond-parameters",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-intermolecular-potential-energy-for-the-molecules-a-b-jee-main-chemistry-chemical-bonding-and-molecular-structure-fhnvovxpekwop5er",
+      "content": "The intermolecular potential energy for the\nmolecules A, B, C and D given below suggests\nthat :\n<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/jgy2xukf9jx1fd/6dffd935-5a12-4b49-9510-0f4c4a95b6c3/051a7690-fa66-11ea-8293-3b6cc591631c/file-jgy2xukf9jx1fe-320w.png\"><img src=\"https://imagex.cdn.examgoal.net/jgy2xukf9jx1fd/6dffd935-5a12-4b49-9510-0f4c4a95b6c3/051a7690-fa66-11ea-8293-3b6cc591631c/file-jgy2xukf9jx1fe-500w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 4th September Morning Slot Chemistry - Chemical Bonding &amp; Molecular Structure Question 189 English\"></picture>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "A-B has the stiffest bond"
+        },
+        {
+          "identifier": "B",
+          "content": "A-D has the shortest bond length"
+        },
+        {
+          "identifier": "C",
+          "content": "A-A has the largest bond enthalpy"
+        },
+        {
+          "identifier": "D",
+          "content": "D is more electronegative than other atoms"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "From the given graph, potential energy of A-B molecule is minimum.\n<br><br>Thus A-B bond is most stable as it\nrequires more energy to dissociate and have strongest bond amongst these.\n<br><br>B = Most electronegative\n<br><br>D = Least electronegative\n<br><br>A - B = Shortest bond length\n<br><br>A - B = Largest bond enthalpy"
+    }
+  ]
+}

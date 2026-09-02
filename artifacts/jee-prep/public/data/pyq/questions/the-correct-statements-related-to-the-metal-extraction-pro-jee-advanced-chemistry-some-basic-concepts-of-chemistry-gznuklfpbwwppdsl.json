@@ -1,0 +1,42 @@
+{
+  "questions": [
+    {
+      "question_id": "1kufl8pqg",
+      "paperTitle": "JEE Advanced 2021 Paper 1 Online",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "isolation-of-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "extractions-of-metals",
+      "type": "mcqm",
+      "marks": 4,
+      "negMarks": 2,
+      "permalink": "the-correct-statements-related-to-the-metal-extraction-pro-jee-advanced-chemistry-some-basic-concepts-of-chemistry-gznuklfpbwwppdsl",
+      "content": "The correct statement(s) related to the metal extraction processes is (are) :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "A mixture of PbS and PbO undergoes self-reduction to produce Pb and SO<sub>2</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "In the extraction process of copper from copper pyrites, silica is added to produce copper silicate."
+        },
+        {
+          "identifier": "C",
+          "content": "Partial oxidation of sulphide ore of copper by roasting, followed by self-reduction produces blister copper."
+        },
+        {
+          "identifier": "D",
+          "content": "In cyanide process, zinc powder is utilized to precipitate gold from Na[Au(CN)<sub>2</sub>]"
+        }
+      ],
+      "correct_options": [
+        "A",
+        "C",
+        "D"
+      ],
+      "explanation": "<p>Statements (a), (c) and (d) are correct, whereas statement (b) is\nincorrect. All statements are explained as follows :</p>\n<p>(a) A mixture PbO and PbS reacts as follows:</p>\n<br><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1kx8ad256/425f6322-ec8c-44bf-a6bb-238f62989c94/c37b97a0-5e0f-11ec-b6f3-d95f9331133d/file-1kx8ad257.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1kx8ad256/425f6322-ec8c-44bf-a6bb-238f62989c94/c37b97a0-5e0f-11ec-b6f3-d95f9331133d/file-1kx8ad257.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Advanced 2021 Paper 1 Online Chemistry - Isolation of Elements Question 11 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1kx8ad256/425f6322-ec8c-44bf-a6bb-238f62989c94/c37b97a0-5e0f-11ec-b6f3-d95f9331133d/file-1kx8ad257.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1kx8ad256/425f6322-ec8c-44bf-a6bb-238f62989c94/c37b97a0-5e0f-11ec-b6f3-d95f9331133d/file-1kx8ad257.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1kx8ad256/425f6322-ec8c-44bf-a6bb-238f62989c94/c37b97a0-5e0f-11ec-b6f3-d95f9331133d/file-1kx8ad257.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1kx8ad256/425f6322-ec8c-44bf-a6bb-238f62989c94/c37b97a0-5e0f-11ec-b6f3-d95f9331133d/file-1kx8ad257.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1kx8ad256/425f6322-ec8c-44bf-a6bb-238f62989c94/c37b97a0-5e0f-11ec-b6f3-d95f9331133d/file-1kx8ad257.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1kx8ad256/425f6322-ec8c-44bf-a6bb-238f62989c94/c37b97a0-5e0f-11ec-b6f3-d95f9331133d/file-1kx8ad257.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">\n<br><br>This reaction is known as self-reduction.\n<p>(b) Silica is added to remove impurities of Fe in the form of\nslag, FeSiO<sub>3</sub>\n.</p>\n<p>(c) CuFeS<sub>2</sub>\nare in partially oxidised first by roasting and then\nself-reduction of Cu takes place to produce blister copper.</p>\n<p>(d) Zn powder reacts with Na[Au(CN)<sub>2</sub>\n] to form gold. This\nprocess is called cyanide process.</p>\n<p>2Zn + 4Na[Au(CN)<sub>2</sub>] → 2Na<sub>2</sub>[Zn(CN)<sub>4</sub>]+ 4Au</p>"
+    }
+  ]
+}

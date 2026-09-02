@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "QpyXMtfVkQTUnuxoZ3qaz",
+      "paperTitle": "JEE Main 2019 (Online) 8th April Evening Slot",
+      "year": 2019,
+      "examDate": "2019-04-08 14:30",
+      "subject": "mathematics",
+      "chapter": "permutations-and-combinations",
+      "chapterGroup": "algebra",
+      "topic": "conditional-permutations",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-number-of-four-digit-numbers-strictly-greater-than-4321-jee-main-mathematics-trigonometric-functions-and-equations-ruagw42gn6i0jdwv",
+      "content": "The number of four-digit numbers strictly greater\nthan 4321 that can be formed using the digits\n0,1,2,3,4,5 (repetition of digits is allowed) is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "306"
+        },
+        {
+          "identifier": "B",
+          "content": "288"
+        },
+        {
+          "identifier": "C",
+          "content": "310"
+        },
+        {
+          "identifier": "D",
+          "content": "360"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/7kejek12cwvv5/e1820e51-959b-40f7-8768-b52f93a03f4e/1d0d6c10-e146-11e9-a7bc-b7b08ce8d541/file-7kejek12cwvv6-320w.jpg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/7kejek12cwvv5/e1820e51-959b-40f7-8768-b52f93a03f4e/1d0d6c10-e146-11e9-a7bc-b7b08ce8d541/file-7kejek12cwvv6-500w.jpg\"><source media=\"(max-width: 680px)\" srcset=\"https://imagex.cdn.examgoal.net/7kejek12cwvv5/e1820e51-959b-40f7-8768-b52f93a03f4e/1d0d6c10-e146-11e9-a7bc-b7b08ce8d541/file-7kejek12cwvv6-680w.jpg\"><source media=\"(max-width: 860px)\" srcset=\"https://imagex.cdn.examgoal.net/7kejek12cwvv5/e1820e51-959b-40f7-8768-b52f93a03f4e/1d0d6c10-e146-11e9-a7bc-b7b08ce8d541/file-7kejek12cwvv6-860w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/7kejek12cwvv5/e1820e51-959b-40f7-8768-b52f93a03f4e/1d0d6c10-e146-11e9-a7bc-b7b08ce8d541/file-7kejek12cwvv6-1040w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 8th April Evening Slot Mathematics - Permutations and Combinations Question 180 English Explanation 1\"></picture>\n<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/7kejek12dapyn/39a29563-8ff6-4c08-92bc-7beb68eb8f2b/9dd217f0-e147-11e9-a7bc-b7b08ce8d541/file-7kejek12dapyo-320w.jpg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/7kejek12dapyn/39a29563-8ff6-4c08-92bc-7beb68eb8f2b/9dd217f0-e147-11e9-a7bc-b7b08ce8d541/file-7kejek12dapyo-500w.jpg\"><source media=\"(max-width: 680px)\" srcset=\"https://imagex.cdn.examgoal.net/7kejek12dapyn/39a29563-8ff6-4c08-92bc-7beb68eb8f2b/9dd217f0-e147-11e9-a7bc-b7b08ce8d541/file-7kejek12dapyo-680w.jpg\"><source media=\"(max-width: 860px)\" srcset=\"https://imagex.cdn.examgoal.net/7kejek12dapyn/39a29563-8ff6-4c08-92bc-7beb68eb8f2b/9dd217f0-e147-11e9-a7bc-b7b08ce8d541/file-7kejek12dapyo-860w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/7kejek12dapyn/39a29563-8ff6-4c08-92bc-7beb68eb8f2b/9dd217f0-e147-11e9-a7bc-b7b08ce8d541/file-7kejek12dapyo-1040w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 8th April Evening Slot Mathematics - Permutations and Combinations Question 180 English Explanation 2\"></picture>\n<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/7kejek12dlc0u/a89849db-4c4c-4791-b827-d43935f49e61/c4f423e0-e148-11e9-a7bc-b7b08ce8d541/file-7kejek12dlc0v-320w.jpg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/7kejek12dlc0u/a89849db-4c4c-4791-b827-d43935f49e61/c4f423e0-e148-11e9-a7bc-b7b08ce8d541/file-7kejek12dlc0v-500w.jpg\"><source media=\"(max-width: 680px)\" srcset=\"https://imagex.cdn.examgoal.net/7kejek12dlc0u/a89849db-4c4c-4791-b827-d43935f49e61/c4f423e0-e148-11e9-a7bc-b7b08ce8d541/file-7kejek12dlc0v-680w.jpg\"><source media=\"(max-width: 860px)\" srcset=\"https://imagex.cdn.examgoal.net/7kejek12dlc0u/a89849db-4c4c-4791-b827-d43935f49e61/c4f423e0-e148-11e9-a7bc-b7b08ce8d541/file-7kejek12dlc0v-860w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/7kejek12dlc0u/a89849db-4c4c-4791-b827-d43935f49e61/c4f423e0-e148-11e9-a7bc-b7b08ce8d541/file-7kejek12dlc0v-1040w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 8th April Evening Slot Mathematics - Permutations and Combinations Question 180 English Explanation 3\"></picture>\n<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/7kejek12dv8np/32d2792d-dd1d-4a0c-b0de-9f84bb49f757/d8721c50-e149-11e9-a7bc-b7b08ce8d541/file-7kejek12dv8nq-320w.jpg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/7kejek12dv8np/32d2792d-dd1d-4a0c-b0de-9f84bb49f757/d8721c50-e149-11e9-a7bc-b7b08ce8d541/file-7kejek12dv8nq-500w.jpg\"><source media=\"(max-width: 680px)\" srcset=\"https://imagex.cdn.examgoal.net/7kejek12dv8np/32d2792d-dd1d-4a0c-b0de-9f84bb49f757/d8721c50-e149-11e9-a7bc-b7b08ce8d541/file-7kejek12dv8nq-680w.jpg\"><source media=\"(max-width: 860px)\" srcset=\"https://imagex.cdn.examgoal.net/7kejek12dv8np/32d2792d-dd1d-4a0c-b0de-9f84bb49f757/d8721c50-e149-11e9-a7bc-b7b08ce8d541/file-7kejek12dv8nq-860w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/7kejek12dv8np/32d2792d-dd1d-4a0c-b0de-9f84bb49f757/d8721c50-e149-11e9-a7bc-b7b08ce8d541/file-7kejek12dv8nq-1040w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 8th April Evening Slot Mathematics - Permutations and Combinations Question 180 English Explanation 4\"></picture>\n<br>So total 4 digit numbers possibe = 216 + 72 + 18 + 4 = 310"
+    }
+  ]
+}

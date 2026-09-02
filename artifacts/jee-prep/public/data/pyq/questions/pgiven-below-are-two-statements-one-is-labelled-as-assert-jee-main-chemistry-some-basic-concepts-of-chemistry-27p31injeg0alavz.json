@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l6nwylpp",
+      "paperTitle": "JEE Main 2022 (Online) 28th July Evening Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "compounds-containing-nitrogen",
+      "chapterGroup": "organic-chemistry",
+      "topic": "aromatic-amines",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pgiven-below-are-two-statements-one-is-labelled-as-assert-jee-main-chemistry-some-basic-concepts-of-chemistry-27p31injeg0alavz",
+      "content": "<p>Given below are two statements: one is labelled as Assertion <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.966ex\" height=\"1.579ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -698 869 698\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D400\" xlink:href=\"#MJX-TEX-B-1D400\"></use></g></g></g></g></svg></mjx-container> and the other is labelled as Reason <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.95ex\" height=\"1.577ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -686 862 697\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D411\" xlink:href=\"#MJX-TEX-B-1D411\"></use></g></g></g></g></svg></mjx-container></p>\n<p>Assertion A : Aniline on nitration yields ortho, meta &amp; para nitro derivatives of aniline.</p>\n<p>Reason <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.665ex\" height=\"1.595ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -683 736 705\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"52\" xlink:href=\"#MJX-TEX-N-52\"></use></g></g></g></g></svg></mjx-container> : Nitrating mixture is a strong acidic mixture.</p>\n<p>In the light of the above statements, choose the correct answer from the options given below</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Both A and R are true and R is the correct explanation of A"
+        },
+        {
+          "identifier": "B",
+          "content": "Both <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.697ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 750 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"41\" xlink:href=\"#MJX-TEX-N-41\"></use></g></g></g></g></svg></mjx-container> and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.665ex\" height=\"1.595ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -683 736 705\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"52\" xlink:href=\"#MJX-TEX-N-52\"></use></g></g></g></g></svg></mjx-container> are true but <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.665ex\" height=\"1.595ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -683 736 705\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"52\" xlink:href=\"#MJX-TEX-N-52\"></use></g></g></g></g></svg></mjx-container> is NOT the correct explanation of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.697ex\" height=\"1.62ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -716 750 716\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"41\" xlink:href=\"#MJX-TEX-N-41\"></use></g></g></g></g></svg></mjx-container>"
+        },
+        {
+          "identifier": "C",
+          "content": "A is true but R is false"
+        },
+        {
+          "identifier": "D",
+          "content": "A is false but R is true"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l7vxztv3/f742a966-86e2-4e80-9654-2a8308447e4b/5f64bf00-310c-11ed-9c98-ad39d53b642b/file-1l7vxztv4.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l7vxztv3/f742a966-86e2-4e80-9654-2a8308447e4b/5f64bf00-310c-11ed-9c98-ad39d53b642b/file-1l7vxztv4.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2022 (Online) 28th July Evening Shift Chemistry - Compounds Containing Nitrogen Question 114 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l7vxztv3/f742a966-86e2-4e80-9654-2a8308447e4b/5f64bf00-310c-11ed-9c98-ad39d53b642b/file-1l7vxztv4.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l7vxztv3/f742a966-86e2-4e80-9654-2a8308447e4b/5f64bf00-310c-11ed-9c98-ad39d53b642b/file-1l7vxztv4.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l7vxztv3/f742a966-86e2-4e80-9654-2a8308447e4b/5f64bf00-310c-11ed-9c98-ad39d53b642b/file-1l7vxztv4.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l7vxztv3/f742a966-86e2-4e80-9654-2a8308447e4b/5f64bf00-310c-11ed-9c98-ad39d53b642b/file-1l7vxztv4.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l7vxztv3/f742a966-86e2-4e80-9654-2a8308447e4b/5f64bf00-310c-11ed-9c98-ad39d53b642b/file-1l7vxztv4.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l7vxztv3/f742a966-86e2-4e80-9654-2a8308447e4b/5f64bf00-310c-11ed-9c98-ad39d53b642b/file-1l7vxztv4.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"><br>\nDue to formation of anilinium ion in acidic\nmedium meta product is also obtained in\nsignificant amount "
+    }
+  ]
+}

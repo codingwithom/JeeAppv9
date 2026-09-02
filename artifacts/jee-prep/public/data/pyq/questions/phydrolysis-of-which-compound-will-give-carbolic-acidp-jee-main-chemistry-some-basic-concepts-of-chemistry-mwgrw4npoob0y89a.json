@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l6i5icdc",
+      "paperTitle": "JEE Main 2022 (Online) 26th July Evening Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "alcohols-phenols-and-ethers",
+      "chapterGroup": "organic-chemistry",
+      "topic": "properties-preparation-and-uses-of-phenols",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "phydrolysis-of-which-compound-will-give-carbolic-acidp-jee-main-chemistry-some-basic-concepts-of-chemistry-mwgrw4npoob0y89a",
+      "content": "<p>Hydrolysis of which compound will give carbolic acid?</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Cumene"
+        },
+        {
+          "identifier": "B",
+          "content": "Benzenediazonium chloride"
+        },
+        {
+          "identifier": "C",
+          "content": "Benzal chloride"
+        },
+        {
+          "identifier": "D",
+          "content": "Ethylene glycol ketal"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<p>Phenol, is known as Carbolic acid.</p>\n<p>Diazonium salt are hydrolysed to phonols.</p>\n<p><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1lc8le42s/896e25ad-de4a-4457-a63a-6783ef8a9a5f/23e3f550-8732-11ed-806b-d74011098e63/file-1lc8le42t.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1lc8le42s/896e25ad-de4a-4457-a63a-6783ef8a9a5f/23e3f550-8732-11ed-806b-d74011098e63/file-1lc8le42t.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2022 (Online) 26th July Evening Shift Chemistry - Alcohols, Phenols and Ethers Question 83 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1lc8le42s/896e25ad-de4a-4457-a63a-6783ef8a9a5f/23e3f550-8732-11ed-806b-d74011098e63/file-1lc8le42t.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1lc8le42s/896e25ad-de4a-4457-a63a-6783ef8a9a5f/23e3f550-8732-11ed-806b-d74011098e63/file-1lc8le42t.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1lc8le42s/896e25ad-de4a-4457-a63a-6783ef8a9a5f/23e3f550-8732-11ed-806b-d74011098e63/file-1lc8le42t.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1lc8le42s/896e25ad-de4a-4457-a63a-6783ef8a9a5f/23e3f550-8732-11ed-806b-d74011098e63/file-1lc8le42t.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1lc8le42s/896e25ad-de4a-4457-a63a-6783ef8a9a5f/23e3f550-8732-11ed-806b-d74011098e63/file-1lc8le42t.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1lc8le42s/896e25ad-de4a-4457-a63a-6783ef8a9a5f/23e3f550-8732-11ed-806b-d74011098e63/file-1lc8le42t.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"></p>\n<p>Benzal chloride on hydrolysis gives benzaldehyde</p>"
+    }
+  ]
+}

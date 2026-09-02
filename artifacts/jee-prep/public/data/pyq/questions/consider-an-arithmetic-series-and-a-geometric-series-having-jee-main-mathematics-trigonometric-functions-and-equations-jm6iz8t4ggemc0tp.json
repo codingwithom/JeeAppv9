@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "y5OVsMxprZsXF3XuT31kmhzkrrq",
+      "paperTitle": "JEE Main 2021 (Online) 16th March Morning Shift",
+      "year": 2021,
+      "subject": "mathematics",
+      "chapter": "sequences-and-series",
+      "chapterGroup": "algebra",
+      "topic": "geometric-progression",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "consider-an-arithmetic-series-and-a-geometric-series-having-jee-main-mathematics-trigonometric-functions-and-equations-jm6iz8t4ggemc0tp",
+      "content": "Consider an arithmetic series and a geometric series having four initial terms from the set {11, 8, 21, 16, 26, 32, 4}. If the last terms of these series are the maximum possible four digit numbers, then the number of common terms in these two series is equal to ___________.",
+      "options": [],
+      "correct_options": [],
+      "explanation": "A.P. from the set will be 11, 16, 21, 26 .....\n<br><br>G.P. from the set will be 4, 8, 16, 32, 64, 128, 256,\n512, 1024, 2048, 4096, 8192 .....\n<br><br>So common terms are 16, 256, 4096."
+    }
+  ]
+}

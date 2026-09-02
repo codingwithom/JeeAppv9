@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l56bamt0",
+      "paperTitle": "JEE Main 2022 (Online) 28th June Morning Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "practical-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "detection-of-extra-elements-and-functional-groups",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pthe-formula-of-the-purple-colour-formed-in-laissaignes-t-jee-main-chemistry-some-basic-concepts-of-chemistry-rr1zaxwmm60fk5le",
+      "content": "<p>The formula of the purple colour formed in Laissaigne's test for sulphur using sodium nitroprusside is :</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "NaFe[Fe(CN)<sub>6</sub>]"
+        },
+        {
+          "identifier": "B",
+          "content": "Na[Cr(NH<sub>3</sub>)<sub>2</sub>(NCS)<sub>4</sub>]"
+        },
+        {
+          "identifier": "C",
+          "content": "Na<sub>2</sub>[Fe(CN)<sub>5</sub>(NO)]"
+        },
+        {
+          "identifier": "D",
+          "content": "Na<sub>4</sub>[Fe(CN)<sub>5</sub>(NOS)]"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.791ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"45.274ex\" height=\"3.161ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1047.5 20011.2 1397\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msup\"><g data-mml-node=\"mrow\"><g data-mml-node=\"mo\" transform=\"translate(0 250)\"></g><g data-mml-node=\"msup\" transform=\"translate(120,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"53\" xlink:href=\"#MJX-TEX-N-53\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(589,363) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(1884.9,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mrow\" transform=\"translate(2885.1,0)\"><g data-mml-node=\"mo\"><use data-c=\"5B\" xlink:href=\"#MJX-TEX-N-5B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(278,0)\"><g data-mml-node=\"mi\"><use data-c=\"46\" xlink:href=\"#MJX-TEX-N-46\"></use><use data-c=\"65\" xlink:href=\"#MJX-TEX-N-65\" transform=\"translate(653,0)\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(1375,0)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1764,0)\"><g data-mml-node=\"mi\"><use data-c=\"43\" xlink:href=\"#MJX-TEX-N-43\"></use><use data-c=\"4E\" xlink:href=\"#MJX-TEX-N-4E\" transform=\"translate(722,0)\"></use></g></g><g data-mml-node=\"msub\" transform=\"translate(3236,0)\"><g data-mml-node=\"mo\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(422,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use></g></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(4061.6,0)\"><g data-mml-node=\"mi\"><use data-c=\"4E\" xlink:href=\"#MJX-TEX-N-4E\"></use><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\" transform=\"translate(750,0)\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(5589.6,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(8863.7,0) translate(0 -0.5)\"><use data-c=\"5D\" xlink:href=\"#MJX-TEX-SO-5D\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(9313.7,576.6) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(10545.1,0)\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g><g data-mml-node=\"msup\" transform=\"translate(11822.9,0)\"><g data-mml-node=\"mrow\"><g data-mml-node=\"mo\"><use data-c=\"5B\" xlink:href=\"#MJX-TEX-N-5B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(278,0)\"><g data-mml-node=\"mi\"><use data-c=\"46\" xlink:href=\"#MJX-TEX-N-46\"></use><use data-c=\"65\" xlink:href=\"#MJX-TEX-N-65\" transform=\"translate(653,0)\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(1375,0)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1764,0)\"><g data-mml-node=\"mi\"><use data-c=\"43\" xlink:href=\"#MJX-TEX-N-43\"></use><use data-c=\"4E\" xlink:href=\"#MJX-TEX-N-4E\" transform=\"translate(722,0)\"></use></g></g><g data-mml-node=\"msub\" transform=\"translate(3236,0)\"><g data-mml-node=\"mo\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(422,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(4061.6,0)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(4450.6,0)\"><g data-mml-node=\"mi\"><use data-c=\"4E\" xlink:href=\"#MJX-TEX-N-4E\"></use><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\" transform=\"translate(750,0)\"></use><use data-c=\"53\" xlink:href=\"#MJX-TEX-N-53\" transform=\"translate(1528,0)\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(6534.6,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g><g data-mml-node=\"mo\" transform=\"translate(6923.6,0)\"><use data-c=\"5D\" xlink:href=\"#MJX-TEX-N-5D\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(7234.6,477.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></g></g></svg></mjx-container>"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "YNKUz0vHr32WvL7ebJTXB",
+      "paperTitle": "JEE Main 2019 (Online) 9th April Evening Slot",
+      "year": 2019,
+      "examDate": "2019-04-09 14:30",
+      "subject": "chemistry",
+      "chapter": "p-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "group-13-elements-boron-family",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-correct-statements-among-i-to-iii-regarding-group-13-ele-jee-main-chemistry-some-basic-concepts-of-chemistry-99l7tme4gzxfcrf4",
+      "content": "The correct statements among I to III regarding\ngroup 13 element oxides are,<br>\n(I) Boron trioxide is acidic.<br>\n(II) Oxides of aluminium and gallium are\namphoteric.<br>\n(III) Oxides of indium and thalliumare basic.",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(II) and (III) only"
+        },
+        {
+          "identifier": "B",
+          "content": "(I), (II) and (III)"
+        },
+        {
+          "identifier": "C",
+          "content": "(I) and (III) only"
+        },
+        {
+          "identifier": "D",
+          "content": "(I) and (II) only"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "B<sub>2</sub>O<sub>3</sub> is an acidic oxide.\n<br><br>Al<sub>2</sub>O<sub>3</sub> and Ga<sub>2</sub>O<sub>3</sub> are amphoteric oxide.\n<br><br>In<sub>2</sub>O<sub>3</sub> and Tl<sub>2</sub>O are basic oxide."
+    }
+  ]
+}

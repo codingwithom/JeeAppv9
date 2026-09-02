@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "fG7JGryJ49wVQOWIzE1lB",
+      "paperTitle": "JEE Main 2019 (Online) 12th January Evening Slot",
+      "year": 2019,
+      "examDate": "2019-01-12 14:30",
+      "subject": "mathematics",
+      "chapter": "limits-continuity-and-differentiability",
+      "chapterGroup": "calculus",
+      "topic": "differentiability",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "let-f-be-a-differentiable-function-such-that-f1-2-and-f-jee-main-mathematics-trigonometric-functions-and-equations-6vkvm31dwx6h9d7k",
+      "content": "Let f be a differentiable function such that f(1) = 2 and f '(x) = f(x) for all x <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.09ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.312ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -540 667 580\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2208\" xlink:href=\"#MJX-TEX-N-2208\"></use></g></g></g></svg></mjx-container> R R. If h(x) = f(f(x)), then h'(1) is equal to : ",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "4e"
+        },
+        {
+          "identifier": "B",
+          "content": "2e<sup>2</sup>"
+        },
+        {
+          "identifier": "C",
+          "content": "4e<sup>2</sup>"
+        },
+        {
+          "identifier": "D",
+          "content": "2e"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -1.238ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"15.747ex\" height=\"3.621ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1053.5 6960.3 1600.6\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mfrac\"><g data-mml-node=\"TeXAtom\" transform=\"translate(220,516.8) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"1D453\" xlink:href=\"#MJX-TEX-I-1D453\"></use></g><g data-mml-node=\"mo\" transform=\"translate(636,363) scale(0.707)\"><use data-c=\"2032\" xlink:href=\"#MJX-TEX-V-2032\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(880.5,0)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1269.5,0)\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1841.5,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(336.8,-370.3) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D453\" xlink:href=\"#MJX-TEX-I-1D453\"></use></g><g data-mml-node=\"mo\" transform=\"translate(550,0)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"mi\" transform=\"translate(939,0)\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g><g data-mml-node=\"mo\" transform=\"translate(1511,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g><rect width=\"1777.2\" height=\"60\" x=\"120\" y=\"220\"></rect></g></g><g data-mml-node=\"mo\" transform=\"translate(2294.9,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(3350.7,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mi\" transform=\"translate(3850.7,0)\"><use data-c=\"2200\" xlink:href=\"#MJX-TEX-N-2200\"></use></g><g data-mml-node=\"mi\" transform=\"translate(4406.7,0)\"><use data-c=\"1D465\" xlink:href=\"#MJX-TEX-I-1D465\"></use></g><g data-mml-node=\"mo\" transform=\"translate(5256.5,0)\"><use data-c=\"2208\" xlink:href=\"#MJX-TEX-N-2208\"></use></g><g data-mml-node=\"mi\" transform=\"translate(6201.3,0)\"><use data-c=\"1D445\" xlink:href=\"#MJX-TEX-I-1D445\"></use></g></g></g></svg></mjx-container>\n<br><br>Intergrate &amp; use f(1) = 2\n<br><br>f(x) = 2e<sup>x-1</sup> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container>   f '(x) = 2e<sup>x<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>1</sup>\n<br><br>h(x) = f(f(x)) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> h'(x) = f '(f(x))  f'(x)\n<br><br>h'(1) = f '(f(1)) f'(1)\n<br><br>= f '(2) f '(1)\n<br><br>= 2e . 2 = 4e"
+    }
+  ]
+}

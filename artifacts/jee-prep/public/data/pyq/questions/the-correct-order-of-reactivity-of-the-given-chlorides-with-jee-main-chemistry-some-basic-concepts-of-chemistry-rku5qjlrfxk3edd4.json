@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktia35n9",
+      "paperTitle": "JEE Main 2021 (Online) 31st August Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "haloalkanes-and-haloarenes",
+      "chapterGroup": "organic-chemistry",
+      "topic": "haloalkanes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-correct-order-of-reactivity-of-the-given-chlorides-with-jee-main-chemistry-some-basic-concepts-of-chemistry-rku5qjlrfxk3edd4",
+      "content": "The correct order of reactivity of the given chlorides with acetate in acetic acid is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1ku56368f/55bc59e0-1740-445d-8468-c994841c22e2/0bf30df0-20f4-11ec-9bd7-1f87243a4560/file-1ku56368g-320w.jpg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1ku56368f/55bc59e0-1740-445d-8468-c994841c22e2/0bf30df0-20f4-11ec-9bd7-1f87243a4560/file-1ku56368g-500w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/1ku56368f/55bc59e0-1740-445d-8468-c994841c22e2/0bf30df0-20f4-11ec-9bd7-1f87243a4560/file-1ku56368g.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 31st August Morning Shift Chemistry - Haloalkanes and Haloarenes Question 100 English Option 1\"></picture>"
+        },
+        {
+          "identifier": "B",
+          "content": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1ku563gel/b3a1daa2-7f30-4220-9978-d2c7b89007a7/13ce77d0-20f4-11ec-9bd7-1f87243a4560/file-1ku563gem-320w.jpg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1ku563gel/b3a1daa2-7f30-4220-9978-d2c7b89007a7/13ce77d0-20f4-11ec-9bd7-1f87243a4560/file-1ku563gem-500w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/1ku563gel/b3a1daa2-7f30-4220-9978-d2c7b89007a7/13ce77d0-20f4-11ec-9bd7-1f87243a4560/file-1ku563gem.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 31st August Morning Shift Chemistry - Haloalkanes and Haloarenes Question 100 English Option 2\"></picture>"
+        },
+        {
+          "identifier": "C",
+          "content": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1ku563qye/e2914703-aa4f-400a-be04-bd0a24b5409b/1bf4cd60-20f4-11ec-9bd7-1f87243a4560/file-1ku563qyf-320w.jpg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1ku563qye/e2914703-aa4f-400a-be04-bd0a24b5409b/1bf4cd60-20f4-11ec-9bd7-1f87243a4560/file-1ku563qyf-500w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/1ku563qye/e2914703-aa4f-400a-be04-bd0a24b5409b/1bf4cd60-20f4-11ec-9bd7-1f87243a4560/file-1ku563qyf.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 31st August Morning Shift Chemistry - Haloalkanes and Haloarenes Question 100 English Option 3\"></picture>"
+        },
+        {
+          "identifier": "D",
+          "content": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1ku5640mu/42e88619-57e9-42f1-844e-94d19e8ffcf0/236edd60-20f4-11ec-9bd7-1f87243a4560/file-1ku5640mv-320w.jpg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1ku5640mu/42e88619-57e9-42f1-844e-94d19e8ffcf0/236edd60-20f4-11ec-9bd7-1f87243a4560/file-1ku5640mv-500w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/1ku5640mu/42e88619-57e9-42f1-844e-94d19e8ffcf0/236edd60-20f4-11ec-9bd7-1f87243a4560/file-1ku5640mv.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 31st August Morning Shift Chemistry - Haloalkanes and Haloarenes Question 100 English Option 4\"></picture>"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Acetate in acetic acid with R-X cause S<sub>N</sub>1\n<br><br>Allylic halides undergo faster S<sub>N</sub>1\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> Correct order is\n<br><br><picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1ku5640mu/42e88619-57e9-42f1-844e-94d19e8ffcf0/236edd60-20f4-11ec-9bd7-1f87243a4560/file-1ku5640mv-320w.jpg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/1ku5640mu/42e88619-57e9-42f1-844e-94d19e8ffcf0/236edd60-20f4-11ec-9bd7-1f87243a4560/file-1ku5640mv-500w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/1ku5640mu/42e88619-57e9-42f1-844e-94d19e8ffcf0/236edd60-20f4-11ec-9bd7-1f87243a4560/file-1ku5640mv.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 31st August Morning Shift Chemistry - Haloalkanes and Haloarenes Question 100 English Explanation\"></picture>"
+    }
+  ]
+}

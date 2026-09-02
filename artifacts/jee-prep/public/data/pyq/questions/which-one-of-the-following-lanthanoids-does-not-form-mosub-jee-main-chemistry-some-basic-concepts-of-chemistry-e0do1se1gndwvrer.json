@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "j7TTVpuLtdcxOEc0UU1klud3myx",
+      "paperTitle": "JEE Main 2021 (Online) 26th February Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "inner-transition-elements-lanthanoids-and-actinoids",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-one-of-the-following-lanthanoids-does-not-form-mosub-jee-main-chemistry-some-basic-concepts-of-chemistry-e0do1se1gndwvrer",
+      "content": "Which one of the following lanthanoids does not form MO<sub>2</sub>? [M is lanthanoid metal]",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Nd"
+        },
+        {
+          "identifier": "B",
+          "content": "Dy"
+        },
+        {
+          "identifier": "C",
+          "content": "Yb"
+        },
+        {
+          "identifier": "D",
+          "content": "Pr"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Nd (60) = 4f<sup>4</sup> 6s<sup>2</sup><br><br>\nPr (59) = 4f<sup>3</sup> 6s<sup>2</sup><br><br>\nDy (66) = 4f<sup>10</sup> 6s<sup>2</sup><br><br>\nYb (70) = 4f<sup>14</sup> 6s<sup>2</sup><br><br>\nYb<sup>+2</sup> has fully-filled 4f orbital, it will require very\nlarge amount of energy to reach +4 oxidation\nstate."
+    }
+  ]
+}

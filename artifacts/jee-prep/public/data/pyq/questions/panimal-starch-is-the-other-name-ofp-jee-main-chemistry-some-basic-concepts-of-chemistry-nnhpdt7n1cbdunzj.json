@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l6i5nzqq",
+      "paperTitle": "JEE Main 2022 (Online) 26th July Evening Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "carbohydrates",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "panimal-starch-is-the-other-name-ofp-jee-main-chemistry-some-basic-concepts-of-chemistry-nnhpdt7n1cbdunzj",
+      "content": "<p>Animal starch is the other name of</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "amylose."
+        },
+        {
+          "identifier": "B",
+          "content": "maltose."
+        },
+        {
+          "identifier": "C",
+          "content": "glycogen."
+        },
+        {
+          "identifier": "D",
+          "content": "amylopectin."
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Animal starch is the other name of glycogen\nbecause its structure is similar to amylopectin."
+    }
+  ]
+}

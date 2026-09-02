@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l54yfkx5",
+      "paperTitle": "JEE Main 2022 (Online) 29th June Evening Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "coordination-number",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pgiven-below-are-two-statementsp-pbullet-statem-jee-main-chemistry-some-basic-concepts-of-chemistry-4osjas30bcf1dzvg",
+      "content": "<p>Given below are two statements.</p>\n<p><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.124ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.131ex\" height=\"0.88ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -444 500 389\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2219\" xlink:href=\"#MJX-TEX-N-2219\"></use></g></g></g></svg></mjx-container> Statement I : In CuSO<sub>4</sub> . 5H<sub>2</sub>O, Cu-O bonds are present.</p>\n<p><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.124ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.131ex\" height=\"0.88ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -444 500 389\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2219\" xlink:href=\"#MJX-TEX-N-2219\"></use></g></g></g></svg></mjx-container> Statement II : In CuSO<sub>4</sub> . 5H<sub>2</sub>O, ligands coordinating with Cu(II) ion are O-and S-based ligands.</p>\n<p>In the light of the above statements, choose the correct answer from the options given below.</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Both Statement I and Statement II are correct."
+        },
+        {
+          "identifier": "B",
+          "content": "Both Statement I and Statement II are incorrect."
+        },
+        {
+          "identifier": "C",
+          "content": "Statement I is correct but Statement II is incorrect."
+        },
+        {
+          "identifier": "D",
+          "content": "Statement I is incorrect but Statement II is correct."
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<p>Statement I is true but statement II is false. Only\noxygen atom forms a Co-ordinate bond with Cu<sup>+2</sup> in\nCuSO<sub>4</sub>.5H<sub>2</sub>O</p>\n<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l5dy7n6s/10b431e5-7fe8-4395-8793-bab6867552e3/ae435550-ff8e-11ec-84f2-63556e5b6b22/file-1l5dy7n6t.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l5dy7n6s/10b431e5-7fe8-4395-8793-bab6867552e3/ae435550-ff8e-11ec-84f2-63556e5b6b22/file-1l5dy7n6t.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2022 (Online) 29th June Evening Shift Chemistry - Coordination Compounds Question 205 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l5dy7n6s/10b431e5-7fe8-4395-8793-bab6867552e3/ae435550-ff8e-11ec-84f2-63556e5b6b22/file-1l5dy7n6t.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l5dy7n6s/10b431e5-7fe8-4395-8793-bab6867552e3/ae435550-ff8e-11ec-84f2-63556e5b6b22/file-1l5dy7n6t.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l5dy7n6s/10b431e5-7fe8-4395-8793-bab6867552e3/ae435550-ff8e-11ec-84f2-63556e5b6b22/file-1l5dy7n6t.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l5dy7n6s/10b431e5-7fe8-4395-8793-bab6867552e3/ae435550-ff8e-11ec-84f2-63556e5b6b22/file-1l5dy7n6t.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l5dy7n6s/10b431e5-7fe8-4395-8793-bab6867552e3/ae435550-ff8e-11ec-84f2-63556e5b6b22/file-1l5dy7n6t.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l5dy7n6s/10b431e5-7fe8-4395-8793-bab6867552e3/ae435550-ff8e-11ec-84f2-63556e5b6b22/file-1l5dy7n6t.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">"
+    }
+  ]
+}

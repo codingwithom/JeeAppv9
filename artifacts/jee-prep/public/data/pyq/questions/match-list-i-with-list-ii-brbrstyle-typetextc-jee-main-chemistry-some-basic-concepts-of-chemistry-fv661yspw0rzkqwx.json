@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ks1iajmp",
+      "paperTitle": "JEE Main 2021 (Online) 27th July Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "p-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "group-16-elements-oxygen-family",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "match-list-i-with-list-ii-brbrstyle-typetextc-jee-main-chemistry-some-basic-concepts-of-chemistry-fv661yspw0rzkqwx",
+      "content": "Match List - I with List - II :<br><br>\n<table class=\"tg\">\n<thead>\n  <tr>\n    <th class=\"tg-7btt\"></th>\n    <th class=\"tg-7btt\">List - I<br>(compound)</th>\n    <th class=\"tg-7btt\"></th>\n    <th class=\"tg-7btt\">List - II<br>(effect/affected species)</th>\n  </tr>\n</thead>\n<tbody>\n  <tr>\n    <td class=\"tg-0pky\">(a)</td>\n    <td class=\"tg-0pky\">Carbon monoxide</td>\n    <td class=\"tg-0pky\">(i)</td>\n    <td class=\"tg-0pky\">Carcinogenic</td>\n  </tr>\n  <tr>\n    <td class=\"tg-0pky\">(b)</td>\n    <td class=\"tg-0pky\">Sulphur dioxide</td>\n    <td class=\"tg-0pky\">(ii)</td>\n    <td class=\"tg-0pky\">Metabolized by pyrus plants</td>\n  </tr>\n  <tr>\n    <td class=\"tg-0pky\">(c)</td>\n    <td class=\"tg-0pky\">Polychlorinated biphenyls</td>\n    <td class=\"tg-0pky\">(iii)</td>\n    <td class=\"tg-0pky\">haemoglobin</td>\n  </tr>\n  <tr>\n    <td class=\"tg-0pky\">(d)</td>\n    <td class=\"tg-0pky\">Oxides of Nitrogen</td>\n    <td class=\"tg-0pky\">(iv)</td>\n    <td class=\"tg-0pky\">Stiffness of flower buds</td>\n  </tr>\n</tbody>\n</table><br><br>Choose the correct answer from the options given below :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(a) - (iii), (b) - (iv), (c) - (i), (d) - (ii)"
+        },
+        {
+          "identifier": "B",
+          "content": "(a) - (iv), (b) - (i), (c) - (iii), (d) - (ii)"
+        },
+        {
+          "identifier": "C",
+          "content": "(a) - (i), (b) - (ii), (c) - (iii), (d) - (iv)"
+        },
+        {
+          "identifier": "D",
+          "content": "(a) - (iii), (b) - (iv), (c) - (ii), (d) - (i)"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<p>A. If haemoglobin binds CO, it prevents the binding of O<sub>2</sub>\nto\nhaemoglobin due to the competition for same binding sites.</p>\n<p>B. Higher conc. SO<sub>2</sub>\nin air can cause stiffness of flower buds.</p>\n<p>C. Polychlorinated biphenyls are carcinogenic (cancer causing) in\nhumans as well as animals.</p>\n<p>D. Certain plants, e.g. pinus, Juniparus, quercus, pyrus and vitis\ncan metabolise nitrogen oxides. Hence, the correct match is </p>\n(a) - (iii), (b) - (iv), (c) - (i), (d) - (ii)"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1krx564o8",
+      "paperTitle": "JEE Main 2021 (Online) 25th July Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "coordination-compounds",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "coordination-number",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-one-of-the-following-metal-complexes-is-most-stable-jee-main-chemistry-some-basic-concepts-of-chemistry-j3k7935z1s6a8itr",
+      "content": "Which one of the following metal complexes is most stable?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "[Co(en)(NH<sub>3</sub>)<sub>4</sub>]Cl<sub>2</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "[Co(en)<sub>3</sub>]Cl<sub>2</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "[Co(en)<sub>2</sub>(NH<sub>3</sub>)<sub>2</sub>]Cl<sub>2</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "[Co(NH<sub>3</sub>)<sub>6</sub>]Cl<sub>2</sub>"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Complex [Co(en)<sub>3</sub>]Cl<sub>2</sub> is most stable complex among the given complex compounds because more number of chelate rings are present in this complex as compare to others.<br><br>(1) [Co(en)(NH<sub>3</sub>)<sub>4</sub>]Cl<sub>2</sub> 1 chelate ring<br><br>(2) [Co(en)<sub>3</sub>]Cl<sub>2</sub> 3 chelate ring<br><br>(3) [Co(en)<sub>2</sub>(NH<sub>3</sub>)<sub>2</sub>]Cl<sub>2</sub> 2 chelate ring<br><br>(4) [Co(NH<sub>3</sub>)<sub>6</sub>]Cl<sub>2</sub> 0 chelate ring "
+    }
+  ]
+}

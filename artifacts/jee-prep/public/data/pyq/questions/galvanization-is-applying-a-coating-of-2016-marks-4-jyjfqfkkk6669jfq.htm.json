@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "JYJFqFkkk6669jFQ",
+      "paperTitle": "JEE Main 2016 (Offline)",
+      "year": 2016,
+      "examDate": null,
+      "subject": "chemistry",
+      "chapter": "electrochemistry",
+      "chapterGroup": "physical-chemistry",
+      "topic": "batteries-fuel-cells-and-corrosion",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "galvanization-is-applying-a-coating-of-2016-marks-4-jyjfqfkkk6669jfq.htm",
+      "content": "Galvanization is applying a coating of :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Cr"
+        },
+        {
+          "identifier": "B",
+          "content": "Cu"
+        },
+        {
+          "identifier": "C",
+          "content": "Zn"
+        },
+        {
+          "identifier": "D",
+          "content": "Pb"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<b>Galvanization</b> is the process by which zinc is coated over corrosive (easily rusted) metals to prevent them from corrosion. "
+    }
+  ]
+}

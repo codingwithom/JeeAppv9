@@ -1,0 +1,22 @@
+{
+  "questions": [
+    {
+      "question_id": "8GyteLImln8kPPouTpjgy2xukfcgjnbd",
+      "paperTitle": "JEE Main 2020 (Online) 4th September Evening Slot",
+      "year": 2020,
+      "examDate": "2020-09-04 15:00",
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "proteins-and-enzymes",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 0,
+      "permalink": "the-number-of-chiral-centres-present-in-threonine-is--jee-main-chemistry-aldehydes-ketones-and-carboxylic-acids-yaroko7lrmktem8j",
+      "content": "The number of chiral centres present in\nthreonine is ________.",
+      "options": [],
+      "correct_options": [],
+      "explanation": "The structure of threonine is\n<img src=\"https://imagex.cdn.examgoal.net/1khrvmgia/609f4a5e-af98-468b-ab1a-d049c9b2cefd/56d97f20-2c12-11eb-911c-c97e77823e36/file-1khrvmgib-484w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 4th September Evening Slot Chemistry - Biomolecules Question 142 English Explanation\">\n<br>No. of chiral centres present in it = 2"
+    }
+  ]
+}

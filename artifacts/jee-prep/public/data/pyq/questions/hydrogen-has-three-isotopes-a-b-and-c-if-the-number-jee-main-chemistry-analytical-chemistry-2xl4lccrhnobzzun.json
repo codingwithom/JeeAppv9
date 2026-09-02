@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "S92kk16mmQYeosX0RP7k9k2k5hltccg",
+      "paperTitle": "JEE Main 2020 (Online) 8th January Evening Slot",
+      "year": 2020,
+      "examDate": "2020-01-08 14:30",
+      "subject": "chemistry",
+      "chapter": "structure-of-atom",
+      "chapterGroup": "physical-chemistry",
+      "topic": "electronic-configuration-and-nodes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "hydrogen-has-three-isotopes-a-b-and-c-if-the-number-jee-main-chemistry-analytical-chemistry-2xl4lccrhnobzzun",
+      "content": "Hydrogen has three isotopes (A), (B) and (C).\nIf the number of neutron(s) in (A), (B) and (C)\nrespectively, are (x), (y) and (z), the sum of (x),\n(y) an (z) is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "3"
+        },
+        {
+          "identifier": "B",
+          "content": "1"
+        },
+        {
+          "identifier": "C",
+          "content": "4"
+        },
+        {
+          "identifier": "D",
+          "content": "2"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Hydrogen has three isotopes\n<br><br>(A) Protium (<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.651ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.997ex\" height=\"2.538ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -833.9 1324.6 1121.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msubsup\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"></g><g data-mml-node=\"mn\" transform=\"translate(33,363) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mn\" transform=\"translate(33,-287.9) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g><g data-mml-node=\"mi\" transform=\"translate(436.6,0)\"><use data-c=\"1D43B\" xlink:href=\"#MJX-TEX-I-1D43B\"></use></g></g></g></svg></mjx-container>) has 0 neutron.\n<br><br>(B) Deutrium (<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.651ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.997ex\" height=\"2.538ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -833.9 1324.6 1121.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msubsup\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"></g><g data-mml-node=\"mn\" transform=\"translate(33,363) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mn\" transform=\"translate(33,-287.9) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g><g data-mml-node=\"mi\" transform=\"translate(436.6,0)\"><use data-c=\"1D43B\" xlink:href=\"#MJX-TEX-I-1D43B\"></use></g></g></g></svg></mjx-container>) has 1 neutrons.\n<br><br>(C) Tritium (<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.673ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.997ex\" height=\"2.572ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -839.4 1324.6 1136.7\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msubsup\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"></g><g data-mml-node=\"mn\" transform=\"translate(33,369.2) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g><g data-mml-node=\"mn\" transform=\"translate(33,-297.3) scale(0.707)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g><g data-mml-node=\"mi\" transform=\"translate(436.6,0)\"><use data-c=\"1D43B\" xlink:href=\"#MJX-TEX-I-1D43B\"></use></g></g></g></svg></mjx-container>) has 2 neutrons.\n<br><br>Total number of neutrons in three <br>isotopes of\nhydrogen = 0 + 1 + 2 = 3"
+    }
+  ]
+}

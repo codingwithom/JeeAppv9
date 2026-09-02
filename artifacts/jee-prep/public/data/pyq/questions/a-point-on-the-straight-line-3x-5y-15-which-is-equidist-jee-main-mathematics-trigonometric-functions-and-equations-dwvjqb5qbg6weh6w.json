@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "kLBkRZEqREDdFmqosAann",
+      "paperTitle": "JEE Main 2019 (Online) 8th April Morning Slot",
+      "year": 2019,
+      "examDate": "2019-04-08 09:30",
+      "subject": "mathematics",
+      "chapter": "straight-lines-and-pair-of-straight-lines",
+      "chapterGroup": "coordinate-geometry",
+      "topic": "various-forms-of-straight-line",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "a-point-on-the-straight-line-3x-5y-15-which-is-equidist-jee-main-mathematics-trigonometric-functions-and-equations-dwvjqb5qbg6weh6w",
+      "content": "A point on the straight line, 3x + 5y = 15 which is equidistant from the coordinate axes will lie only\nin :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "1<sup>st </sup> and 2<sup>nd</sup> qudratants"
+        },
+        {
+          "identifier": "B",
+          "content": "4<sup>th</sup> qudratant"
+        },
+        {
+          "identifier": "C",
+          "content": "1<sup>st </sup> and 2<sup>nd</sup> and 4<sup>th</sup> qudratants"
+        },
+        {
+          "identifier": "D",
+          "content": "1<sup>st </sup> qudratant"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<picture><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/7km5fk0v99mq3/ef88664f-98f4-4ef5-98d8-f1afe74fe41b/5e72b1b0-dd5e-11e9-acf6-6d09a288f7f2/file-7km5fk0v99mq4-320w.jpg\"><source media=\"(max-width: 500px)\" srcset=\"https://imagex.cdn.examgoal.net/7km5fk0v99mq3/ef88664f-98f4-4ef5-98d8-f1afe74fe41b/5e72b1b0-dd5e-11e9-acf6-6d09a288f7f2/file-7km5fk0v99mq4-500w.jpg\"><source media=\"(max-width: 680px)\" srcset=\"https://imagex.cdn.examgoal.net/7km5fk0v99mq3/ef88664f-98f4-4ef5-98d8-f1afe74fe41b/5e72b1b0-dd5e-11e9-acf6-6d09a288f7f2/file-7km5fk0v99mq4-680w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/7km5fk0v99mq3/ef88664f-98f4-4ef5-98d8-f1afe74fe41b/5e72b1b0-dd5e-11e9-acf6-6d09a288f7f2/file-7km5fk0v99mq4-860w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 8th April Morning Slot Mathematics - Straight Lines and Pair of Straight Lines Question 126 English Explanation\"></picture>\n<br>Let the point is P(x, y).\n<br><br>According to the question, the point P(x, y) is equidistance from both x and y axis.\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> |x| = |y|\n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.054ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.242ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -525 1000 549\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"21D2\" xlink:href=\"#MJX-TEX-N-21D2\"></use></g></g></g></svg></mjx-container> x = <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.507ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -666 778 666\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"B1\" xlink:href=\"#MJX-TEX-N-B1\"></use></g></g></g></svg></mjx-container> y\n<br><br>So the point P lies on the either x = y or x = - y line. And point P(x, y) also lies on the straight line 3x + 5y = 15.\n<br><br>Form the graph, you can see the point P can either be on 1<sup>st</sup> qudratant or 2<sup>nd</sup> qudratant."
+    }
+  ]
+}

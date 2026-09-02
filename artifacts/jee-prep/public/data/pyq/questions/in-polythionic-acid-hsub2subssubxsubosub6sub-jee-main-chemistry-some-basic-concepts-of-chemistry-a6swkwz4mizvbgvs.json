@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktecrru0",
+      "paperTitle": "JEE Main 2021 (Online) 27th August Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "p-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "group-16-elements-oxygen-family",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "in-polythionic-acid-hsub2subssubxsubosub6sub-jee-main-chemistry-some-basic-concepts-of-chemistry-a6swkwz4mizvbgvs",
+      "content": "In polythionic acid, H<sub>2</sub>S<sub>x</sub>O<sub>6</sub> (x = 3 to 5) the oxidation state(s) of sulphur is/are :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "+ 5 only"
+        },
+        {
+          "identifier": "B",
+          "content": "+ 6 only"
+        },
+        {
+          "identifier": "C",
+          "content": "+ 3 and + 5 only"
+        },
+        {
+          "identifier": "D",
+          "content": "0 and + 5 only"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1ktr5bl96/c3da55ee-8060-48c6-ac3d-af840fc002e7/13cde490-193e-11ec-b67d-f7eb9e95a61c/file-1ktr5bl97.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 27th August Morning Shift Chemistry - p-Block Elements Question 146 English Explanation\">"
+    }
+  ]
+}

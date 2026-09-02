@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktb5v79w",
+      "paperTitle": "JEE Main 2021 (Online) 26th August Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "solutions",
+      "chapterGroup": "physical-chemistry",
+      "topic": "abnormal-colligative-property-and-vant-hoff-factor",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "of-the-following-four-aqueous-solutions-total-number-of-tho-jee-main-chemistry-some-basic-concepts-of-chemistry-gpwaco6jj1h1uolb",
+      "content": "Of the following four aqueous solutions, total number of those solutions whose freezing point is lower than that of 0.10 M C<sub>2</sub>H<sub>5</sub>OH is __________ (Integer answer)<br><br>(i) 0.10 M Ba<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub><br><br>(ii) 0.10 M Na<sub>2</sub>SO<sub>4</sub><br><br>(iii) 0.10 M KCl<br><br>(iv) 0.10 M Li<sub>3</sub>PO<sub>4</sub>",
+      "options": [],
+      "correct_options": [],
+      "explanation": "As 0.1 M C<sub>2</sub>H<sub>5</sub>OH is non-dissociative and rest all salt given are electrolyte so in each case effective molarity &gt; 0.1 so each will have lower freezing point."
+    }
+  ]
+}

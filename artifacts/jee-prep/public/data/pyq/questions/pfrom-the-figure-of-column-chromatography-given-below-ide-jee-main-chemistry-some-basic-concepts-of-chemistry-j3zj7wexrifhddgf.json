@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1lh32g43h",
+      "paperTitle": "JEE Main 2023 (Online) 6th April Evening Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "purification-of-organic-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pfrom-the-figure-of-column-chromatography-given-below-ide-jee-main-chemistry-some-basic-concepts-of-chemistry-j3zj7wexrifhddgf",
+      "content": "<p>From the figure of column chromatography given below, identify incorrect statements.</p>\n<p><img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1lh5p0uer/7c946354-9c4a-4c9d-8562-9e055b2cbd1c/125db430-e897-11ed-8179-292e62481b94/file-1lh5p0ues.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1lh5p0uer/7c946354-9c4a-4c9d-8562-9e055b2cbd1c/125db430-e897-11ed-8179-292e62481b94/file-1lh5p0ues.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2023 (Online) 6th April Evening Shift Chemistry - Basics of Organic Chemistry Question 122 English\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1lh5p0uer/7c946354-9c4a-4c9d-8562-9e055b2cbd1c/125db430-e897-11ed-8179-292e62481b94/file-1lh5p0ues.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1lh5p0uer/7c946354-9c4a-4c9d-8562-9e055b2cbd1c/125db430-e897-11ed-8179-292e62481b94/file-1lh5p0ues.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1lh5p0uer/7c946354-9c4a-4c9d-8562-9e055b2cbd1c/125db430-e897-11ed-8179-292e62481b94/file-1lh5p0ues.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1lh5p0uer/7c946354-9c4a-4c9d-8562-9e055b2cbd1c/125db430-e897-11ed-8179-292e62481b94/file-1lh5p0ues.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1lh5p0uer/7c946354-9c4a-4c9d-8562-9e055b2cbd1c/125db430-e897-11ed-8179-292e62481b94/file-1lh5p0ues.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1lh5p0uer/7c946354-9c4a-4c9d-8562-9e055b2cbd1c/125db430-e897-11ed-8179-292e62481b94/file-1lh5p0ues.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"></p>\n<p>A. Compound 'c' is more polar than 'a' and 'b'</p>\n<p>B. Compound '<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.131ex\" height=\"1.038ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -448 500 459\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"61\" xlink:href=\"#MJX-TEX-N-61\"></use></g></g></g></g></svg></mjx-container>' is least polar</p>\n<p>C. Compound 'b' comes out of the column before 'c' and after 'a'</p>\n<p>D. Compound 'a' spends more time in the column</p>\n<p>Choose the correct answer from the options given below:</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "B and D only"
+        },
+        {
+          "identifier": "B",
+          "content": "B, C and D only"
+        },
+        {
+          "identifier": "C",
+          "content": "A, B and D only"
+        },
+        {
+          "identifier": "D",
+          "content": "A, B and C only"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "As the chromatogram, degree of polarity\n<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.452ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"15.034ex\" height=\"2.149ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 6644.9 950\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1277.8,0)\"><g data-mml-node=\"mi\"><use data-c=\"61\" xlink:href=\"#MJX-TEX-N-61\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(2055.6,0)\"><use data-c=\"3E\" xlink:href=\"#MJX-TEX-N-3E\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(3111.3,0)\"><g data-mml-node=\"mi\"><use data-c=\"62\" xlink:href=\"#MJX-TEX-N-62\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(3945.1,0)\"><use data-c=\"3E\" xlink:href=\"#MJX-TEX-N-3E\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(5000.9,0)\"><g data-mml-node=\"mi\"><use data-c=\"63\" xlink:href=\"#MJX-TEX-N-63\"></use></g></g><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\" transform=\"translate(5444.9,0)\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\">. </text></g></g></g></svg></mjx-container><br><br>\n<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.509ex\" height=\"1.251ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -471 667 553\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2234\" xlink:href=\"#MJX-TEX-N-2234\"></use></g></g></g></svg></mjx-container> Statements A, B are incorrect as b comes out before ' <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.719ex\" height=\"1.645ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 760 727\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g></g></g></svg></mjx-container> ' the statement <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.719ex\" height=\"1.645ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 760 727\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g></g></g></svg></mjx-container> is also incorrect.<br><br>\nAs a is most polar, it spends most time. Hence, A, B &amp; C are incorrect statements."
+    }
+  ]
+}

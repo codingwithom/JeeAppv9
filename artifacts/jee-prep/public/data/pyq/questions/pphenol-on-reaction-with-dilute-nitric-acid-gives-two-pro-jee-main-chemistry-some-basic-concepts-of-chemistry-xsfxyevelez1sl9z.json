@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l5am1psg",
+      "paperTitle": "JEE Main 2022 (Online) 25th June Morning Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "purification-of-organic-compounds",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pphenol-on-reaction-with-dilute-nitric-acid-gives-two-pro-jee-main-chemistry-some-basic-concepts-of-chemistry-xsfxyevelez1sl9z",
+      "content": "<p>Phenol on reaction with dilute nitric acid, gives two products. Which method will be most efficient for large scale separation?</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Chromatographic separation"
+        },
+        {
+          "identifier": "B",
+          "content": "Fractional Crystallisation"
+        },
+        {
+          "identifier": "C",
+          "content": "Steam distillation"
+        },
+        {
+          "identifier": "D",
+          "content": "Sublimation"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l8mcjbp1/3d2ed7f3-8d11-474b-a0ae-7b9a916da7d8/9e3bf250-3f91-11ed-b7a1-977a3e42380c/file-1l8mcjbp2.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l8mcjbp1/3d2ed7f3-8d11-474b-a0ae-7b9a916da7d8/9e3bf250-3f91-11ed-b7a1-977a3e42380c/file-1l8mcjbp2.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2022 (Online) 25th June Morning Shift Chemistry - Basics of Organic Chemistry Question 161 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l8mcjbp1/3d2ed7f3-8d11-474b-a0ae-7b9a916da7d8/9e3bf250-3f91-11ed-b7a1-977a3e42380c/file-1l8mcjbp2.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l8mcjbp1/3d2ed7f3-8d11-474b-a0ae-7b9a916da7d8/9e3bf250-3f91-11ed-b7a1-977a3e42380c/file-1l8mcjbp2.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l8mcjbp1/3d2ed7f3-8d11-474b-a0ae-7b9a916da7d8/9e3bf250-3f91-11ed-b7a1-977a3e42380c/file-1l8mcjbp2.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l8mcjbp1/3d2ed7f3-8d11-474b-a0ae-7b9a916da7d8/9e3bf250-3f91-11ed-b7a1-977a3e42380c/file-1l8mcjbp2.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l8mcjbp1/3d2ed7f3-8d11-474b-a0ae-7b9a916da7d8/9e3bf250-3f91-11ed-b7a1-977a3e42380c/file-1l8mcjbp2.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l8mcjbp1/3d2ed7f3-8d11-474b-a0ae-7b9a916da7d8/9e3bf250-3f91-11ed-b7a1-977a3e42380c/file-1l8mcjbp2.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\"><br>\no-Nitrophenol and p-Nitrophenol can be easily separated by steam distillation."
+    }
+  ]
+}

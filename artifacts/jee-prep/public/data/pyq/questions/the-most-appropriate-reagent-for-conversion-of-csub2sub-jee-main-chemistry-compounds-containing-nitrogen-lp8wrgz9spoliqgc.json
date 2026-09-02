@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "rkxCXZW1PjLQ7qUzSJjgy2xukfjah2zh",
+      "paperTitle": "JEE Main 2020 (Online) 5th September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-05 09:00",
+      "subject": "chemistry",
+      "chapter": "compounds-containing-nitrogen",
+      "chapterGroup": "organic-chemistry",
+      "topic": "aliphatic-amines",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-most-appropriate-reagent-for-conversion-of-csub2sub-jee-main-chemistry-compounds-containing-nitrogen-lp8wrgz9spoliqgc",
+      "content": "The most appropriate reagent for conversion of\nC<sub>2</sub>H<sub>5</sub>CN into CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>NH<sub>2</sub> is",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "NaBH<sub>4</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "CaH<sub>2</sub>"
+        },
+        {
+          "identifier": "C",
+          "content": "Na(CN)BH<sub>3</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "LiAlH<sub>4</sub>"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "CH<sub>3</sub>–CH<sub>2</sub>–C<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.081ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"0.968ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -464 778 428\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2261\" xlink:href=\"#MJX-TEX-N-2261\"></use></g></g></g></svg></mjx-container>N  <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.346ex\" height=\"3.044ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1334.4 2362.8 1345.4\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"REL\"><g data-mml-node=\"mover\"><g data-mml-node=\"mo\" transform=\"translate(362.4,0)\"><use data-c=\"27F6\" xlink:href=\"#MJX-TEX-N-27F6\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(0,728.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D43F\" xlink:href=\"#MJX-TEX-I-1D43F\"></use></g><g data-mml-node=\"mi\" transform=\"translate(681,0)\"><use data-c=\"1D456\" xlink:href=\"#MJX-TEX-I-1D456\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1026,0)\"><use data-c=\"1D434\" xlink:href=\"#MJX-TEX-I-1D434\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1776,0)\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2074,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D43B\" xlink:href=\"#MJX-TEX-I-1D43B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(864,-150) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g></g></g></g></g></g></svg></mjx-container> CH<sub>3</sub>–CH<sub>2</sub>–CH<sub>2</sub>–NH<sub>2</sub>"
+    }
+  ]
+}

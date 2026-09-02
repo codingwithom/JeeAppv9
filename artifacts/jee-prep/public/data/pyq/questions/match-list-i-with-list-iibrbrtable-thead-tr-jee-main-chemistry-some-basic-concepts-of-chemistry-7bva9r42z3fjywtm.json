@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "e0DGPaqfKBSF9y7rmD1kmln75qn",
+      "paperTitle": "JEE Main 2021 (Online) 18th March Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "p-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "group-16-elements-oxygen-family",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "match-list-i-with-list-iibrbrtable-thead-tr-jee-main-chemistry-some-basic-concepts-of-chemistry-7bva9r42z3fjywtm",
+      "content": "Match List - I with List - II<br><br><table>\n<thead>\n  <tr>\n    <th></th>\n    <th>List - I<br>(process)</th>\n    <th></th>\n    <th>List - II<br>(catalyst)</th>\n  </tr>\n</thead>\n<tbody>\n  <tr>\n    <td>(a)</td>\n    <td>Deacron's process</td>\n    <td>(i)</td>\n    <td>ZSM-5</td>\n  </tr>\n  <tr>\n    <td>(b)</td>\n    <td>Contact process</td>\n    <td>(ii)</td>\n    <td><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"6.395ex\" height=\"1.934ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 2826.6 855\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mi\" transform=\"translate(760,0)\"><use data-c=\"1D462\" xlink:href=\"#MJX-TEX-I-1D462\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1332,0)\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2092,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g><g data-mml-node=\"mn\" transform=\"translate(331,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></g></svg></mjx-container></td>\n  </tr>\n  <tr>\n    <td>(c)</td>\n    <td>Cracking of hydrocarbons</td>\n    <td>(iii)</td>\n    <td>Particles 'Ni'</td>\n  </tr>\n  <tr>\n    <td>(d)</td>\n    <td>Hydrogenation of vegetable oils</td>\n    <td>(iv)</td>\n    <td><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.375ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.021ex\" height=\"1.967ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -704 2219.1 869.6\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D449\" xlink:href=\"#MJX-TEX-I-1D449\"></use></g><g data-mml-node=\"mn\" transform=\"translate(616,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1019.6,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-150) scale(0.707)\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use></g></g></g></g></g></svg></mjx-container></td>\n  </tr>\n</tbody>\n</table><br><br>Choose the most appropriate answer from the options given below :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(a)-(ii), (b)-(iv), (c)-(i), (d)-(iii)"
+        },
+        {
+          "identifier": "B",
+          "content": "(a)-(i), (b)-(iii), (c)-(ii), (d)-(iv)"
+        },
+        {
+          "identifier": "C",
+          "content": "(a)-(iii), (b)-(i), (c)-(iv), (d)-(ii)"
+        },
+        {
+          "identifier": "D",
+          "content": "(a)-(iv), (b)-(ii), (c)-(i), (d)-(iii)"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "In manufacture of H<sub>2</sub>SO<sub>4</sub> (contact process), V<sub>2</sub>O<sub>5</sub> is used as a catalyst.<br><br>\nNi catalysts enables the hydrogenation of fats.\nCuCl<sub>2</sub> is used as catalyst in Deacon's process.\nZSM-5 used as catalyst in cracking of\nhydrocarbons."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "19nbBbCnM7kQT1i5FF1kltbpb4s",
+      "paperTitle": "JEE Main 2021 (Online) 25th February Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "compounds-containing-nitrogen",
+      "chapterGroup": "organic-chemistry",
+      "topic": "aromatic-amines",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "carbylamine-test-is-used-to-detect-the-presence-of-primary-a-jee-main-chemistry-some-basic-concepts-of-chemistry-uuxy3va5hv3w3bqb",
+      "content": "Carbylamine test is used to detect the presence of primary amino group in an organic compound. Which of the following compound is formed when this test is performed with aniline?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1klteu3tj/9695a5ed-ef36-4f6a-a1ef-ebe9732f63fe/1f240e70-7c1b-11eb-b0eb-7d97e0807144/file-1klteu3tk-107w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 25th February Evening Shift Chemistry - Compounds Containing Nitrogen Question 182 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kltetw7w/72c98f9c-a88a-4992-90d2-6c95667b56f0/1944e9c0-7c1b-11eb-b0eb-7d97e0807144/file-1kltetw7x-137w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 25th February Evening Shift Chemistry - Compounds Containing Nitrogen Question 182 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kltetodj/b21343b1-c8d2-43f3-bba3-3335716e8074/1335db70-7c1b-11eb-b0eb-7d97e0807144/file-1kltetodk-143w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 25th February Evening Shift Chemistry - Compounds Containing Nitrogen Question 182 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1kltetgv6/de5c2da1-e9c1-4047-8c9f-1b888efc1423/0d68b820-7c1b-11eb-b0eb-7d97e0807144/file-1kltetgv7-106w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 25th February Evening Shift Chemistry - Compounds Containing Nitrogen Question 182 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<picture><source media=\"(max-width: 811px)\" srcset=\"https://imagex.cdn.examgoal.net/1km7947cu/10ab461c-39d3-4a88-b058-0e6c2a307c9e/ba47e5e0-83b7-11eb-9a1c-d1697d563c9f/file-1km7947cv.jpg\"><source media=\"(max-width: 320px)\" srcset=\"https://imagex.cdn.examgoal.net/1km7947cu/10ab461c-39d3-4a88-b058-0e6c2a307c9e/ba47e5e0-83b7-11eb-9a1c-d1697d563c9f/file-1km7947cv-320w.jpg\"><img src=\"https://imagex.cdn.examgoal.net/1km7947cu/10ab461c-39d3-4a88-b058-0e6c2a307c9e/ba47e5e0-83b7-11eb-9a1c-d1697d563c9f/file-1km7947cv-500w.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 25th February Evening Shift Chemistry - Compounds Containing Nitrogen Question 182 English Explanation\"></picture>"
+    }
+  ]
+}

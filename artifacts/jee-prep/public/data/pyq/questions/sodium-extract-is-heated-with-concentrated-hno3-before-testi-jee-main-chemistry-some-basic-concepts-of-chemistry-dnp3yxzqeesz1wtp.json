@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "5SZYObrM7c9kpKCGNPq1U",
+      "paperTitle": "JEE Main 2016 (Online) 10th April Morning Slot",
+      "year": 2016,
+      "examDate": "2016-04-10 09:30",
+      "subject": "chemistry",
+      "chapter": "practical-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "detection-of-extra-elements-and-functional-groups",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "sodium-extract-is-heated-with-concentrated-hno3-before-testi-jee-main-chemistry-some-basic-concepts-of-chemistry-dnp3yxzqeesz1wtp",
+      "content": "Sodium extract is heated with concentrated HNO<sub>3</sub> before testing for halogens because :\n",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Silver halides are totally insoluble in nitric acid."
+        },
+        {
+          "identifier": "B",
+          "content": "Ag<sub>2</sub>S and AgCN are soluble in acidic medium."
+        },
+        {
+          "identifier": "C",
+          "content": "S<sub>2</sub><sup>−</sup> and CN<sup>−</sup>, if present, are\ndecomposed by conc. HNO<sub>3</sub> and hence do not interfere in the test.\n"
+        },
+        {
+          "identifier": "D",
+          "content": "Ag reacts faster with halides in acidic medium."
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<p>Sodium fusion extract is heated with dilute HNO<sub>3</sub> to decompose NaCN or Na<sub>2</sub>S (if present) to HCN and H<sub>2</sub>S gases, respectively.</p>\n<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l3y9ip5i/8f361b81-e501-4328-a5e6-8fdaa4707f13/2454e760-e322-11ec-8ab2-698930c131d9/file-1l3y9ip5j.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l3y9ip5i/8f361b81-e501-4328-a5e6-8fdaa4707f13/2454e760-e322-11ec-8ab2-698930c131d9/file-1l3y9ip5j.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2016 (Online) 10th April Morning Slot Chemistry - Practical Organic Chemistry Question 107 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l3y9ip5i/8f361b81-e501-4328-a5e6-8fdaa4707f13/2454e760-e322-11ec-8ab2-698930c131d9/file-1l3y9ip5j.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l3y9ip5i/8f361b81-e501-4328-a5e6-8fdaa4707f13/2454e760-e322-11ec-8ab2-698930c131d9/file-1l3y9ip5j.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l3y9ip5i/8f361b81-e501-4328-a5e6-8fdaa4707f13/2454e760-e322-11ec-8ab2-698930c131d9/file-1l3y9ip5j.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l3y9ip5i/8f361b81-e501-4328-a5e6-8fdaa4707f13/2454e760-e322-11ec-8ab2-698930c131d9/file-1l3y9ip5j.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l3y9ip5i/8f361b81-e501-4328-a5e6-8fdaa4707f13/2454e760-e322-11ec-8ab2-698930c131d9/file-1l3y9ip5j.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l3y9ip5i/8f361b81-e501-4328-a5e6-8fdaa4707f13/2454e760-e322-11ec-8ab2-698930c131d9/file-1l3y9ip5j.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">\n\n<p>The presence of N or S interferes with the test of halogens by forming precipitate with AgNO<sub>3</sub>.</p>"
+    }
+  ]
+}

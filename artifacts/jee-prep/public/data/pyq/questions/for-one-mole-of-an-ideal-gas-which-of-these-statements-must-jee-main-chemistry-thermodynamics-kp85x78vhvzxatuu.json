@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "dKxseaqgpKvic9iQK0jgy2xukf7tfwiq",
+      "paperTitle": "JEE Main 2020 (Online) 4th September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-04 09:00",
+      "subject": "chemistry",
+      "chapter": "thermodynamics",
+      "chapterGroup": "physical-chemistry",
+      "topic": "fundamentals-of-thermodynamics",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "for-one-mole-of-an-ideal-gas-which-of-these-statements-must-jee-main-chemistry-thermodynamics-kp85x78vhvzxatuu",
+      "content": "For one mole of an ideal gas, which of these\nstatements must be true?\n<br>(a) U and H each depends only on temperature\n<br>(b) Compressibility factor z is not equal to 1\n<br>(c) C<sub>P, m</sub> – C<sub>V, m</sub> = R\n<br>(d) dU = C<sub>V</sub>dT for any process<br>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(a), (c) and (d)"
+        },
+        {
+          "identifier": "B",
+          "content": "(a) and (c)"
+        },
+        {
+          "identifier": "C",
+          "content": "(c) and (d)"
+        },
+        {
+          "identifier": "D",
+          "content": "(b), (c) and (d)"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "For 1 mole of ideal gas :\n <br><br>1. Both internal energy (U) and Enthalpy (H)\ndepends on temperature\n <br><br>2. Compressibility factor Z = 1\n<br><br>3. C<sub>P, m</sub> – C<sub>V, m</sub> = R\n<br><br>4. dU = C<sub>V</sub>dT for all process"
+    }
+  ]
+}

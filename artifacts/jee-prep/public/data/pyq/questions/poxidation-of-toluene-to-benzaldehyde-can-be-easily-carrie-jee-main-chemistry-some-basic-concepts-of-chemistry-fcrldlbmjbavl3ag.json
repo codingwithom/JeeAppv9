@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l58jpzbj",
+      "paperTitle": "JEE Main 2022 (Online) 26th June Evening Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "aldehydes-ketones-and-carboxylic-acids",
+      "chapterGroup": "organic-chemistry",
+      "topic": "preparation-methods-for-both-aldehydes-and-ketones",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "poxidation-of-toluene-to-benzaldehyde-can-be-easily-carrie-jee-main-chemistry-some-basic-concepts-of-chemistry-fcrldlbmjbavl3ag",
+      "content": "<p>Oxidation of toluene to benzaldehyde can be easily carried out with which of the following reagents?</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "CrO<sub>3</sub>/acetic acid, H<sub>3</sub>O<sup>+</sup>"
+        },
+        {
+          "identifier": "B",
+          "content": "CrO<sub>3</sub>/acetic anhydride, H<sub>3</sub>O<sup>+</sup>"
+        },
+        {
+          "identifier": "C",
+          "content": "KMnO<sub>4</sub>/HCl, H<sub>3</sub>O<sup>+</sup>"
+        },
+        {
+          "identifier": "D",
+          "content": "CO/HCl, anhydrous AlCl<sub>3</sub>"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<img src=\"https://app-content.cdn.examgoal.net/fly/1000/image/1l9bly2tx/1e22714e-7969-43f2-8965-fccf0ae504cb/02ebf050-4d76-11ed-bdbc-253e8d1bba81/file-1l9bly2ty.png?format=png\" data-orsrc=\"https://app-content.cdn.examgoal.net/image/1l9bly2tx/1e22714e-7969-43f2-8965-fccf0ae504cb/02ebf050-4d76-11ed-bdbc-253e8d1bba81/file-1l9bly2ty.png\" loading=\"lazy\" style=\"max-width:100%;height:auto;display:block;margin:0px auto;max-height:40vh\" alt=\"JEE Main 2022 (Online) 26th June Evening Shift Chemistry - Aldehydes, Ketones and Carboxylic Acids Question 141 English Explanation\" srcset=\"https://app-content.cdn.examgoal.net/fly/500/image/1l9bly2tx/1e22714e-7969-43f2-8965-fccf0ae504cb/02ebf050-4d76-11ed-bdbc-253e8d1bba81/file-1l9bly2ty.png?format=png 500w, https://app-content.cdn.examgoal.net/fly/750/image/1l9bly2tx/1e22714e-7969-43f2-8965-fccf0ae504cb/02ebf050-4d76-11ed-bdbc-253e8d1bba81/file-1l9bly2ty.png?format=png 750w, https://app-content.cdn.examgoal.net/fly/1000/image/1l9bly2tx/1e22714e-7969-43f2-8965-fccf0ae504cb/02ebf050-4d76-11ed-bdbc-253e8d1bba81/file-1l9bly2ty.png?format=png 1000w, https://app-content.cdn.examgoal.net/fly/1500/image/1l9bly2tx/1e22714e-7969-43f2-8965-fccf0ae504cb/02ebf050-4d76-11ed-bdbc-253e8d1bba81/file-1l9bly2ty.png?format=png 1500w, https://app-content.cdn.examgoal.net/fly/2000/image/1l9bly2tx/1e22714e-7969-43f2-8965-fccf0ae504cb/02ebf050-4d76-11ed-bdbc-253e8d1bba81/file-1l9bly2ty.png?format=png 2000w, https://app-content.cdn.examgoal.net/fly/2500/image/1l9bly2tx/1e22714e-7969-43f2-8965-fccf0ae504cb/02ebf050-4d76-11ed-bdbc-253e8d1bba81/file-1l9bly2ty.png?format=png 2500w\" sizes=\"(max-width: 767px) 100vw, 720px\" decoding=\"async\">"
+    }
+  ]
+}

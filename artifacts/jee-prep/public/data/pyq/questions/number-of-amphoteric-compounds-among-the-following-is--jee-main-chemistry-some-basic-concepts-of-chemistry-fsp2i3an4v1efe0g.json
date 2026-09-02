@@ -1,0 +1,21 @@
+{
+  "questions": [
+    {
+      "question_id": "GTMP3L6qKSkLalXPVK1klrgga4d",
+      "paperTitle": "JEE Main 2021 (Online) 24th February Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "nature-of-oxide",
+      "type": "integer",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "number-of-amphoteric-compounds-among-the-following-is--jee-main-chemistry-some-basic-concepts-of-chemistry-fsp2i3an4v1efe0g",
+      "content": "Number of amphoteric compounds among the following is ________.<br>\n(A) BeO<br>\n(B) BaO<br>\n(C) Be(OH)<sub>2</sub><br>\n(D) Sr(OH)<sub>2</sub>",
+      "options": [],
+      "correct_options": [],
+      "explanation": "\nAn amphoteric compound is a molecule or ion that can react with both as an acid or as a base.<br/><br/>BeO = Amphoteric<br/><br/>BaO = Basic<br/><br/>Be(OH)<sub>2</sub> = Amphoteric<br/><br/>Sr(OH)<sub>2</sub> = Basic<br/><br/>Both beryllium compound BeO and Be(OH)<sub>2</sub> are amphoteric in nature while compound BaO and Sr(OH)<sub>2</sub> are basic in nature, they form alkaline solution in H<sub>2</sub>O.\n"
+    }
+  ]
+}

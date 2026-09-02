@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1ktjvf3ck",
+      "paperTitle": "JEE Main 2021 (Online) 31st August Evening Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "proteins-and-enzymes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-of-the-following-is-not-an-example-of-fibrous-protein-jee-main-chemistry-some-basic-concepts-of-chemistry-gtsp55fzki5mhfjm",
+      "content": "Which of the following is not an example of fibrous protein?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Keratin"
+        },
+        {
+          "identifier": "B",
+          "content": "Albumin"
+        },
+        {
+          "identifier": "C",
+          "content": "Collagen"
+        },
+        {
+          "identifier": "D",
+          "content": "Myosin"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "<p>Fibrous proteins are characterized by their elongated, insoluble structure and often serve structural or mechanical roles. Among the options provided, keratin, collagen, and myosin are examples of fibrous proteins.</p>\n<p>Albumin, on the other hand, is a globular protein that is soluble in water. It has a more spherical shape compared to the elongated shape of fibrous proteins. Albumin is found in blood plasma and has various functions including maintaining osmotic pressure.</p>\n<p>So, the correct answer is:</p>\n<p>Option B: Albumin.</p>\n"
+    }
+  ]
+}

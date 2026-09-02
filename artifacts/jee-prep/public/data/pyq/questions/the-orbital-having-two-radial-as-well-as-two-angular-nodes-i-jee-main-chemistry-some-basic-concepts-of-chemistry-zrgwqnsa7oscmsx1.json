@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "LJ3LhuwhcNFrYDYDsE1klue0c5x",
+      "paperTitle": "JEE Main 2021 (Online) 26th February Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "structure-of-atom",
+      "chapterGroup": "physical-chemistry",
+      "topic": "electronic-configuration-and-nodes",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-orbital-having-two-radial-as-well-as-two-angular-nodes-i-jee-main-chemistry-some-basic-concepts-of-chemistry-zrgwqnsa7oscmsx1",
+      "content": "The orbital having two radial as well as two angular nodes is :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "3p"
+        },
+        {
+          "identifier": "B",
+          "content": "5d"
+        },
+        {
+          "identifier": "C",
+          "content": "4d"
+        },
+        {
+          "identifier": "D",
+          "content": "4f"
+        }
+      ],
+      "correct_options": [
+        "B"
+      ],
+      "explanation": "Number of radial nodes = (n – l – 1)<br><br>\nNumber of angular nodes = l<br><br>\nfor 5d; n = 5, l = 2<br><br>\n5d orbital has two radial nodes and two angular nodes"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1lgp2jfq1",
+      "paperTitle": "JEE Main 2023 (Online) 13th April Evening Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "vitamins-and-nucleic-acids",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pthe-naturally-occurring-amino-acid-that-contains-only-one-jee-main-chemistry-some-basic-concepts-of-chemistry-swsqb1ne97qhe42c",
+      "content": "<p>The naturally occurring amino acid that contains only one basic functional group in its chemical structure is</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "asparagine"
+        },
+        {
+          "identifier": "B",
+          "content": "arginine"
+        },
+        {
+          "identifier": "C",
+          "content": "histidine"
+        },
+        {
+          "identifier": "D",
+          "content": "lysine"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Among the given options, arginine, histidine, and lysine are all basic amino acids because they contain amino (-NH<sub>2</sub>) and imino (-NH=) functional groups that can accept a proton (H<sup>+</sup>) to become positively charged. \n<br/><br/>\nAsparagine, on the other hand, contains an amide (-CONH<sub>2</sub>) functional group instead of an imino group. This functional group is not basic because it does not have a proton that can be easily removed. Therefore, the answer is:  asparagine."
+    }
+  ]
+}

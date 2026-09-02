@@ -23,7 +23,8 @@ import {
   BrainCircuit,
   ChevronUp,
   ChevronDown,
-  Search
+  Search,
+  HelpCircle
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
@@ -291,6 +292,7 @@ export function Sidebar() {
 
   const links = [
     { href: "/", label: "Dashboard", icon: Home },
+    { href: "/questions", label: "Questions", icon: HelpCircle },
     { href: "/calendar", label: "Calendar", icon: Tag },
     { href: "/ambient", label: "Zen Mixer", icon: Headphones },
     { href: "/music", label: "Focus Music", icon: Music },

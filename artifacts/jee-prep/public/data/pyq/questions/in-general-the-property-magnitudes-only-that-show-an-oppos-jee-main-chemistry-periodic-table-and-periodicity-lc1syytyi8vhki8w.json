@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "kUkJbCnwVC6Xpxdirgjgy2xukevlra8w",
+      "paperTitle": "JEE Main 2020 (Online) 2nd September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-02 09:00",
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "electronegativity",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "in-general-the-property-magnitudes-only-that-show-an-oppos-jee-main-chemistry-periodic-table-and-periodicity-lc1syytyi8vhki8w",
+      "content": "In general the property (magnitudes only) that\nshow an opposite trend in comparison to other\nproperties across a period is",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Electron gain enthalpy"
+        },
+        {
+          "identifier": "B",
+          "content": "Electronegativity"
+        },
+        {
+          "identifier": "C",
+          "content": "Ionization enthalpy"
+        },
+        {
+          "identifier": "D",
+          "content": "Atomic radius"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<p>Across a period (left to right) in the periodic table :</p>\n\n<p><p><strong>Ionization enthalpy</strong> tends to <strong>increase</strong>  </p></p>\n<p><p><strong>Electron gain enthalpy</strong> (in magnitude) tends to <strong>increase</strong> (more negative values)  </p></p>\n<p><p><strong>Electronegativity</strong> tends to <strong>increase</strong>  </p></p>\n<p><p><strong>Atomic radius</strong> tends to <strong>decrease</strong>  </p></p>\n\n<p>Hence, <strong>atomic radius</strong> shows the <strong>opposite</strong> trend compared to the other three properties. Therefore, the correct answer is</p>\n<p><strong>(D) Atomic radius.</strong></p>"
+    }
+  ]
+}

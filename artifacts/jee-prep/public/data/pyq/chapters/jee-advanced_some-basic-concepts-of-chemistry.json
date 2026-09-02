@@ -1,0 +1,1186 @@
+{
+  "exam": "jee-advanced",
+  "subject": "chemistry",
+  "chapterKey": "some-basic-concepts-of-chemistry",
+  "title": "Some Basic Concepts of Chemistry | Chemistry | JEE Advanced Previous Year Questions",
+  "chapter": {
+    "metaId": "333ca0dd-8e6d-5e9a-9b3c-15bbd5899b8c",
+    "country": "in",
+    "exam": "jee-advanced",
+    "examGroup": "jee",
+    "key": "some-basic-concepts-of-chemistry",
+    "subject": "chemistry",
+    "chapterGroup": "physical-chemistry",
+    "createdAt": "2020-12-22T16:07:33.555Z",
+    "description": null,
+    "keyValuePairs": {},
+    "order": 0,
+    "subjectGroup": null,
+    "title": "Some Basic Concepts of Chemistry",
+    "updatedAt": "2024-04-19T07:50:11.742Z",
+    "type": "chapter",
+    "pyq_stats": [
+      {
+        "year": 2026,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2025,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2024,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2023,
+        "total": 2,
+        "avg": 1,
+        "weightage": 5.88
+      },
+      {
+        "year": 2022,
+        "total": 2,
+        "avg": 1,
+        "weightage": 5.56
+      },
+      {
+        "year": 2021,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2020,
+        "total": 2,
+        "avg": 1,
+        "weightage": 5.56
+      },
+      {
+        "year": 2019,
+        "total": 2,
+        "avg": 1,
+        "weightage": 5.56
+      },
+      {
+        "year": 2018,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.78
+      },
+      {
+        "year": 2017,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2016,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2015,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2014,
+        "total": 2,
+        "avg": 1,
+        "weightage": 5
+      },
+      {
+        "year": 2013,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2012,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.5
+      },
+      {
+        "year": 2011,
+        "total": 2,
+        "avg": 1,
+        "weightage": 4.65
+      },
+      {
+        "year": 2010,
+        "total": 2,
+        "avg": 1,
+        "weightage": 4.26
+      },
+      {
+        "year": 2009,
+        "total": 1,
+        "avg": 0.5,
+        "weightage": 2.56
+      },
+      {
+        "year": 2008,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2007,
+        "total": 1,
+        "avg": 0.33,
+        "weightage": 2.13
+      },
+      {
+        "year": 2006,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2005,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2004,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 2003,
+        "total": 3,
+        "avg": 1.5,
+        "weightage": 37.5
+      },
+      {
+        "year": 2002,
+        "total": 1,
+        "avg": 1,
+        "weightage": 14.29
+      },
+      {
+        "year": 2001,
+        "total": 3,
+        "avg": 1.5,
+        "weightage": 27.27
+      },
+      {
+        "year": 2000,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1999,
+        "total": 2,
+        "avg": 2,
+        "weightage": 13.33
+      },
+      {
+        "year": 1998,
+        "total": 1,
+        "avg": 1,
+        "weightage": 6.25
+      },
+      {
+        "year": 1997,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1996,
+        "total": 1,
+        "avg": 1,
+        "weightage": 7.14
+      },
+      {
+        "year": 1995,
+        "total": 0,
+        "avg": 0,
+        "weightage": 0
+      },
+      {
+        "year": 1994,
+        "total": 3,
+        "avg": 3,
+        "weightage": 20
+      },
+      {
+        "year": 1993,
+        "total": 1,
+        "avg": 1,
+        "weightage": 5
+      },
+      {
+        "year": 1992,
+        "total": 2,
+        "avg": 2,
+        "weightage": 11.76
+      },
+      {
+        "year": 1991,
+        "total": 5,
+        "avg": 5,
+        "weightage": 26.32
+      },
+      {
+        "year": 1990,
+        "total": 3,
+        "avg": 3,
+        "weightage": 25
+      },
+      {
+        "year": 1989,
+        "total": 1,
+        "avg": 1,
+        "weightage": 6.67
+      },
+      {
+        "year": 1988,
+        "total": 3,
+        "avg": 3,
+        "weightage": 21.43
+      },
+      {
+        "year": 1987,
+        "total": 1,
+        "avg": 1,
+        "weightage": 5.88
+      },
+      {
+        "year": 1986,
+        "total": 1,
+        "avg": 1,
+        "weightage": 4.17
+      },
+      {
+        "year": 1985,
+        "total": 1,
+        "avg": 1,
+        "weightage": 4.35
+      },
+      {
+        "year": 1984,
+        "total": 1,
+        "avg": 1,
+        "weightage": 6.67
+      },
+      {
+        "year": 1983,
+        "total": 3,
+        "avg": 3,
+        "weightage": 14.29
+      },
+      {
+        "year": 1982,
+        "total": 1,
+        "avg": 1,
+        "weightage": 5.26
+      },
+      {
+        "year": 1981,
+        "total": 2,
+        "avg": 2,
+        "weightage": 13.33
+      },
+      {
+        "year": 1980,
+        "total": 8,
+        "avg": 8,
+        "weightage": 44.44
+      },
+      {
+        "year": 1979,
+        "total": 9,
+        "avg": 9,
+        "weightage": 64.29
+      },
+      {
+        "year": 1978,
+        "total": 7,
+        "avg": 7,
+        "weightage": 87.5
+      }
+    ],
+    "pyq": {
+      "count": {
+        "out_of_syllabus": 0,
+        "total": 81,
+        "private": 68,
+        "public": 81,
+        "bucket": 0
+      },
+      "isTopicWise": true
+    },
+    "image": null,
+    "isOutOfSyllabus": false,
+    "hideFromClassify": false,
+    "groups": [
+      {
+        "title": "Fill in the Blanks",
+        "key": "fill-blanks"
+      },
+      {
+        "title": "Numerical",
+        "key": "integer"
+      },
+      {
+        "title": "MCQ (Single Correct Answer)",
+        "key": "mcq"
+      },
+      {
+        "title": "MCQ (Multiple Correct Answer)",
+        "key": "mcqm"
+      },
+      {
+        "title": "Subjective",
+        "key": "subjective"
+      }
+    ]
+  },
+  "questions": [
+    {
+      "title": "Numerical",
+      "key": "integer",
+      "questions": [
+        {
+          "examGroup": "jee",
+          "permalink": "mathrmh2-mathrms-5-moles-reacts-completely-with-a-jee-advanced-chemistry-g0hkxrvhqlbsdvgn",
+          "paperTitle": "JEE Advanced 2023 Paper 2 Online",
+          "question": {
+            "en": {
+              "content": "<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.942ex\" height=\"1.934ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 1742.6 855\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"48\" xlink:href=\"#MJX-TEX-N-48\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(783,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1186.6,0)\"><g data-mml-node=\"mi\"><use data-c=\"53\" xlink:href=\"#MJX-TEX-N-53\"></use></g></g></g></g></svg></mjx-container> (5 moles) reacts completely with acidified aqueous potassium permanganate solution. In this reaction, the number of moles of water produced is <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.373ex\" height=\"1.005ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -444 607 444\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D431\" xlink:href=\"#MJX-TEX-B-1D431\"></use></g></g></g></g></svg></mjx-container>, and the number of moles of electrons involved is <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.452ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.373ex\" height=\"1.457ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -444 607 644\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D432\" xlink:href=\"#MJX-TEX-B-1D432\"></use></g></g></g></g></svg></mjx-container>. The value of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.566ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"7.272ex\" height=\"2.262ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 3214.4 1000\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(389,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D431\" xlink:href=\"#MJX-TEX-B-1D431\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(1218.2,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2218.4,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D432\" xlink:href=\"#MJX-TEX-B-1D432\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(2825.4,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g></g></svg></mjx-container> is ________."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-stoichiometric-reaction-of-516-mathrmg-of-dimethyl-jee-advanced-chemistry-zcahmle0lmvuqsuv",
+          "paperTitle": "JEE Advanced 2023 Paper 1 Online",
+          "question": {
+            "en": {
+              "content": "The stoichiometric reaction of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.466ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.882ex\" height=\"2.163ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 2600 956\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\" transform=\"translate(500,0)\"></use><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\" transform=\"translate(1000,0)\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1500,0)\"><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\"> </text></g><g data-mml-node=\"mi\" transform=\"translate(600,0)\"><use data-c=\"67\" xlink:href=\"#MJX-TEX-N-67\"></use></g></g></g></g></svg></mjx-container> of dimethyldichlorosilane with water results in a tetrameric cyclic product <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.966ex\" height=\"1.552ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -686 869 686\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D417\" xlink:href=\"#MJX-TEX-B-1D417\"></use></g></g></g></g></svg></mjx-container> in <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.127ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.147ex\" height=\"1.824ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 1833 806\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"37\" xlink:href=\"#MJX-TEX-N-37\"></use><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1000,0)\"><use data-c=\"25\" xlink:href=\"#MJX-TEX-N-25\"></use></g></g></g></svg></mjx-container> yield. The weight (in g) of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.966ex\" height=\"1.552ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -686 869 686\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D417\" xlink:href=\"#MJX-TEX-B-1D417\"></use></g></g></g></g></svg></mjx-container> obtained is _______.\n<br><br>\n[Use, molar mass <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.791ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"52.615ex\" height=\"2.809ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -892 23255.7 1241.5\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mrow\"><g data-mml-node=\"mo\" transform=\"translate(0 -0.5)\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-SO-28\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(458,0)\"><g data-mml-node=\"mi\"><use data-c=\"67\" xlink:href=\"#MJX-TEX-N-67\"></use></g></g><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\" transform=\"translate(958,0)\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\"> </text></g><g data-mml-node=\"msup\" transform=\"translate(1558,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"6D\" xlink:href=\"#MJX-TEX-N-6D\"></use><use data-c=\"6F\" xlink:href=\"#MJX-TEX-N-6F\" transform=\"translate(833,0)\"></use><use data-c=\"6C\" xlink:href=\"#MJX-TEX-N-6C\" transform=\"translate(1333,0)\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1644,421.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(778,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(4155.7,0) translate(0 -0.5)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-SO-29\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(4891.5,0)\"><use data-c=\"3A\" xlink:href=\"#MJX-TEX-N-3A\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(5447.2,0)\"><g data-mml-node=\"mi\"><use data-c=\"48\" xlink:href=\"#MJX-TEX-N-48\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(6475,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(7530.8,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mo\" transform=\"translate(8030.8,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(8475.5,0)\"><g data-mml-node=\"mi\"><use data-c=\"43\" xlink:href=\"#MJX-TEX-N-43\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(9475.2,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(10531,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(11531,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(11975.7,0)\"><g data-mml-node=\"mi\"><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(13031.5,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(14087.2,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(15087.2,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(15531.9,0)\"><g data-mml-node=\"mi\"><use data-c=\"53\" xlink:href=\"#MJX-TEX-N-53\"></use><use data-c=\"69\" xlink:href=\"#MJX-TEX-N-69\" transform=\"translate(556,0)\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(16643.7,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(17699.5,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use><use data-c=\"38\" xlink:href=\"#MJX-TEX-N-38\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(18699.5,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(19144.1,0)\"><g data-mml-node=\"mi\"><use data-c=\"43\" xlink:href=\"#MJX-TEX-N-43\"></use><use data-c=\"6C\" xlink:href=\"#MJX-TEX-N-6C\" transform=\"translate(722,0)\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(20421.9,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(21477.7,0)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\" transform=\"translate(500,0)\"></use><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\" transform=\"translate(1000,0)\"></use><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\" transform=\"translate(1278,0)\"></use></g></g></g></svg></mjx-container> ]"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-treatment-of-an-aqueous-solution-of-374-mathrmg-jee-advanced-chemistry-some-basic-concepts-of-chemistry-pxuue3ewtcutzevw",
+          "paperTitle": "JEE Advanced 2022 Paper 1 Online",
+          "question": {
+            "en": {
+              "content": "<p>The treatment of an aqueous solution of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.466ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"6.511ex\" height=\"2.163ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 2878 956\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\" transform=\"translate(500,0)\"></use><use data-c=\"37\" xlink:href=\"#MJX-TEX-N-37\" transform=\"translate(778,0)\"></use><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\" transform=\"translate(1278,0)\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1778,0)\"><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\"> </text></g><g data-mml-node=\"mi\" transform=\"translate(600,0)\"><use data-c=\"67\" xlink:href=\"#MJX-TEX-N-67\"></use></g></g></g></g></svg></mjx-container> of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.646ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"10.084ex\" height=\"2.342ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 4457.1 1035.4\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"43\" xlink:href=\"#MJX-TEX-N-43\"></use><use data-c=\"75\" xlink:href=\"#MJX-TEX-N-75\" transform=\"translate(722,0)\"></use></g></g><g data-mml-node=\"msub\" transform=\"translate(1278,0)\"><g data-mml-node=\"mrow\"><g data-mml-node=\"mo\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"msub\" transform=\"translate(389,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"4E\" xlink:href=\"#MJX-TEX-N-4E\"></use><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\" transform=\"translate(750,0)\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1561,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(2353.6,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(2775.6,-285.4) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></g></svg></mjx-container> with excess KI results in a brown solution along with the formation of a precipitate. Passing <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.452ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.3ex\" height=\"2.149ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 2342.6 950\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"48\" xlink:href=\"#MJX-TEX-N-48\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(783,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1186.6,0)\"><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\"> </text></g><g data-mml-node=\"mi\" transform=\"translate(600,0)\"><use data-c=\"53\" xlink:href=\"#MJX-TEX-N-53\"></use></g></g></g></g></svg></mjx-container> through this brown solution gives another precipitate <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.966ex\" height=\"1.552ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -686 869 686\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D417\" xlink:href=\"#MJX-TEX-B-1D417\"></use></g></g></g></g></svg></mjx-container>. The amount of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.966ex\" height=\"1.552ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -686 869 686\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D417\" xlink:href=\"#MJX-TEX-B-1D417\"></use></g></g></g></g></svg></mjx-container> (in <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.464ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.086ex\" height=\"1.464ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 480 647\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D454\" xlink:href=\"#MJX-TEX-I-1D454\"></use></g></g></g></svg></mjx-container> ) is ___________.\n</p>\n<p>[Given: Atomic mass of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.452ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"58.945ex\" height=\"2.149ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 26053.9 950\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"48\" xlink:href=\"#MJX-TEX-N-48\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(1027.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(2083.6,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mo\" transform=\"translate(2583.6,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(3028.2,0)\"><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\"> </text></g><g data-mml-node=\"mi\" transform=\"translate(600,0)\"><use data-c=\"4E\" xlink:href=\"#MJX-TEX-N-4E\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(4656,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(5711.8,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(6711.8,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(7156.4,0)\"><g data-mml-node=\"mi\"><use data-c=\"4F\" xlink:href=\"#MJX-TEX-N-4F\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(8212.2,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(9268,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(10268,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(10712.7,0)\"><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\"> </text></g><g data-mml-node=\"mi\" transform=\"translate(600,0)\"><use data-c=\"53\" xlink:href=\"#MJX-TEX-N-53\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(12146.4,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(13202.2,0)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(14202.2,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(14646.9,0)\"><g data-mml-node=\"mtext\" style=\"font-family: Roboto,'Tiro Devanagari Hindi','Tiro Bangla',sans-serif;\"><text data-variant=\"-explicitFont\" transform=\"scale(1,-1)\" font-size=\"884px\"> </text></g><g data-mml-node=\"mi\" transform=\"translate(600,0)\"><use data-c=\"4B\" xlink:href=\"#MJX-TEX-N-4B\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(16302.7,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(17358.4,0)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use><use data-c=\"39\" xlink:href=\"#MJX-TEX-N-39\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(18358.4,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(18803.1,0)\"><g data-mml-node=\"mi\"><use data-c=\"43\" xlink:href=\"#MJX-TEX-N-43\"></use><use data-c=\"75\" xlink:href=\"#MJX-TEX-N-75\" transform=\"translate(722,0)\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(20358.9,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(21414.7,0)\"><use data-c=\"36\" xlink:href=\"#MJX-TEX-N-36\"></use><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(22414.7,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(22859.3,0)\"><g data-mml-node=\"mi\"><use data-c=\"49\" xlink:href=\"#MJX-TEX-N-49\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(23498.1,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(24553.9,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\" transform=\"translate(500,0)\"></use><use data-c=\"37\" xlink:href=\"#MJX-TEX-N-37\" transform=\"translate(1000,0)\"></use></g></g></g></svg></mjx-container> ]</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "in-the-chemical-reaction-between-stoichiometric-quantities-o-jee-advanced-chemistry-some-basic-concepts-of-chemistry-c909wz6usqplf1ki",
+          "paperTitle": "JEE Advanced 2020 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "In the chemical reaction between stoichiometric quantities of KMnO<sub>4</sub> and KI in weakly basic solution, what is the number of moles of I<sub>2</sub> released for 4 moles of KMnO<sub>4</sub> consumed?"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "500-ml-of-010-m-oxalic-acid-solution-taken-in-a-conical-fl-jee-advanced-chemistry-some-basic-concepts-of-chemistry-bhhc3rx84of32kcp",
+          "paperTitle": "JEE Advanced 2020 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "5.00 mL of 0.10 M oxalic acid solution taken in a conical flask is titrated against NaOH from a burette using phenolphthalein indicator. The volume of NaOH required for the appearance of permanent faint pink color is tabulated below for five experiments. What is the concentration, in molarity, of the NaOH solution?<br><br><table>\n<thead>\n  <tr>\n    <th>Exp. No.</th>\n    <th>Vol. of NaOH (mL)</th>\n  </tr>\n</thead>\n<tbody>\n  <tr>\n    <td>1</td>\n    <td>12.5</td>\n  </tr>\n  <tr>\n    <td>2</td>\n    <td>10.5</td>\n  </tr>\n  <tr>\n    <td>3</td>\n    <td>9.0</td>\n  </tr>\n  <tr>\n    <td>4</td>\n    <td>9.0</td>\n  </tr>\n  <tr>\n    <td>5</td>\n    <td>9.0</td>\n  </tr>\n</tbody>\n</table>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-mole-fraction-of-urea-in-an-aqueous-urea-solution-contai-jee-advanced-chemistry-some-basic-concepts-of-chemistry-l2yukv9g6fytk73m",
+          "paperTitle": "JEE Advanced 2019 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "The mole fraction of urea in an aqueous urea solution containing 900 g of water is 0.05. If the density of the solution is 1.2 g cm<sup><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>3</sup>, then molarity of urea solution is ................<br><br>(Given data : Molar masses of urea and water are 60 g mol<sup><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>1</sup> and 18 g mol<sup><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>1</sup>, respectively)"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-amount-of-water-produced-in-g-in-the-oxidation-of-1-mo-jee-advanced-chemistry-some-basic-concepts-of-chemistry-jnkwya1idag1a4jw",
+          "paperTitle": "JEE Advanced 2019 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "The amount of water produced (in g) in the oxidation of 1 mole of rhombic sulphur by conc. HNO<sub>3</sub> to a compound with the highest oxidation state of sulphur is ..............<br><br>(Given data : Molar mass of water = 18 g mol<sup><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.186ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.505ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -583 778 665\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g></g></svg></mjx-container>1</sup>)"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "to-measure-the-quantity-of-mncl2-dissolved-in-an-aque-2018-marks-3-vvp5k0ysd1xqazyz.htm",
+          "paperTitle": "JEE Advanced 2018 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "To measure the quantity of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"7.117ex\" height=\"1.934ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 3145.6 855\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D440\" xlink:href=\"#MJX-TEX-I-1D440\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1051,0)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1651,0)\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2411,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g><g data-mml-node=\"mn\" transform=\"translate(331,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></g></svg></mjx-container> dissolved in an aqueous solution, it was completely converted to <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"8.461ex\" height=\"1.932ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -704 3739.6 854\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D43E\" xlink:href=\"#MJX-TEX-I-1D43E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(889,0)\"><use data-c=\"1D440\" xlink:href=\"#MJX-TEX-I-1D440\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1940,0)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2540,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-150) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g></g></g></svg></mjx-container>  using the reaction, \n<br><br><mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.375ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"54.194ex\" height=\"1.97ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 23953.8 870.6\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D440\" xlink:href=\"#MJX-TEX-I-1D440\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1051,0)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1651,0)\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2411,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g><g data-mml-node=\"mn\" transform=\"translate(331,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(3367.8,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(4368,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D43E\" xlink:href=\"#MJX-TEX-I-1D43E\"></use></g><g data-mml-node=\"mn\" transform=\"translate(882,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(5653.6,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D446\" xlink:href=\"#MJX-TEX-I-1D446\"></use></g><g data-mml-node=\"mn\" transform=\"translate(646,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(6703.1,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-150) scale(0.707)\"><use data-c=\"38\" xlink:href=\"#MJX-TEX-N-38\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(8124.9,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(9125.1,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D43B\" xlink:href=\"#MJX-TEX-I-1D43B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(864,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"mi\" transform=\"translate(10392.7,0)\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mo\" transform=\"translate(11433.4,0)\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g><g data-mml-node=\"mi\" transform=\"translate(12711.2,0)\"><use data-c=\"1D43E\" xlink:href=\"#MJX-TEX-I-1D43E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(13600.2,0)\"><use data-c=\"1D440\" xlink:href=\"#MJX-TEX-I-1D440\"></use></g><g data-mml-node=\"mi\" transform=\"translate(14651.2,0)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(15251.2,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-150) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(16673,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(17673.2,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D43B\" xlink:href=\"#MJX-TEX-I-1D43B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(864,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"mi\" transform=\"translate(18940.8,0)\"><use data-c=\"1D446\" xlink:href=\"#MJX-TEX-I-1D446\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(19585.8,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-150) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g><g data-mml-node=\"mo\" transform=\"translate(21007.5,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mi\" transform=\"translate(22007.8,0)\"><use data-c=\"1D43B\" xlink:href=\"#MJX-TEX-I-1D43B\"></use></g><g data-mml-node=\"mi\" transform=\"translate(22895.8,0)\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mi\" transform=\"translate(23655.8,0)\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g></g></g></svg></mjx-container> (equation not balanced).  \n<br><br>Few drops of concentrated <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.403ex\" height=\"1.645ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 1946 727\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D43B\" xlink:href=\"#MJX-TEX-I-1D43B\"></use></g><g data-mml-node=\"mi\" transform=\"translate(888,0)\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1648,0)\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g></g></g></svg></mjx-container> were added to this solution and gently warmed. Further, oxalic acid  (<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.394ex\" height=\"1.557ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -666 1500 688\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\" transform=\"translate(500,0)\"></use><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\" transform=\"translate(1000,0)\"></use></g></g></g></svg></mjx-container> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.464ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.072ex\" height=\"1.464ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -442 1358 647\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D45A\" xlink:href=\"#MJX-TEX-I-1D45A\"></use></g><g data-mml-node=\"mi\" transform=\"translate(878,0)\"><use data-c=\"1D454\" xlink:href=\"#MJX-TEX-I-1D454\"></use></g></g></g></svg></mjx-container>) was added in portions till the colour of  the permanganate ion disappeared. The quantity of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"7.117ex\" height=\"1.934ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 3145.6 855\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D440\" xlink:href=\"#MJX-TEX-I-1D440\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1051,0)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1651,0)\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2411,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g><g data-mml-node=\"mn\" transform=\"translate(331,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></g></svg></mjx-container> (in mg) present in the initial solution is ____________. \n<br><br>(Atomic weights in <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.464ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"29.172ex\" height=\"2.351ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -833.9 12894 1038.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D454\" xlink:href=\"#MJX-TEX-I-1D454\"></use></g><g data-mml-node=\"mspace\" transform=\"translate(480,0)\"></g><g data-mml-node=\"mspace\" transform=\"translate(647,0)\"></g><g data-mml-node=\"mi\" transform=\"translate(814,0)\"><use data-c=\"1D45A\" xlink:href=\"#MJX-TEX-I-1D45A\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1692,0)\"><use data-c=\"1D45C\" xlink:href=\"#MJX-TEX-I-1D45C\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(2177,0)\"><g data-mml-node=\"msup\"><g data-mml-node=\"mi\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(331,363) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(778,0)\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g></g></g></g><g data-mml-node=\"mo\" transform=\"translate(3739.5,0)\"><use data-c=\"3A\" xlink:href=\"#MJX-TEX-N-3A\"></use></g><g data-mml-node=\"mi\" transform=\"translate(4295.2,0)\"><use data-c=\"1D440\" xlink:href=\"#MJX-TEX-I-1D440\"></use></g><g data-mml-node=\"mi\" transform=\"translate(5346.2,0)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mo\" transform=\"translate(6224,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(7279.8,0)\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"mo\" transform=\"translate(8279.8,0)\"><use data-c=\"2C\" xlink:href=\"#MJX-TEX-N-2C\"></use></g><g data-mml-node=\"mi\" transform=\"translate(8724.5,0)\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mi\" transform=\"translate(9484.5,0)\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g><g data-mml-node=\"mo\" transform=\"translate(10060.2,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"mn\" transform=\"translate(11116,0)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\" transform=\"translate(500,0)\"></use><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\" transform=\"translate(1000,0)\"></use><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\" transform=\"translate(1278,0)\"></use></g></g></g></svg></mjx-container> )"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "a-compound-h2x-with-molar-weight-of-80g-is-dissolved-in-a-so-2014-marks-3-zwxicmbr9jwlhy1a.htm",
+          "paperTitle": "JEE Advanced 2014 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "A compound H<sub>2</sub>X with molar weight of 80g is dissolved in a solvent having density of 0.4 gml<sup>–1</sup> . Assuming no change in volume upon dissolution, the molality of a 3.2 molar solution is"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-the-value-of-avogadro-number-is-6023-times-1023-mol-1-and-jee-advanced-2014-marks-4-4w1hsbhmi3govwys.htm",
+          "paperTitle": "JEE Advanced 2014 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "If the value of Avogadro number is 6.023 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 10<sup>23</sup> mol<sup>-1</sup> and the value of Boltzmann constant is 1.380 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 10<sup>-23</sup> J K<sup>-1</sup>, then the number of significant digits in the calculated value of the universal gas constant is"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "292-ww-hcl-stock-solution-has-density-of-125-g-ml-1-2012-marks-3-y1urybrscjhg35zv.htm",
+          "paperTitle": "IIT-JEE 2012 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "29.2 % (w/w) HCl stock solution has density of 1.25 g mL<sup>-1</sup> . The molecular weight of HCl is 36.5 g mol<sup>-1</sup> .\nThe volume (mL) of stock solution required to prepare a 200 mL solution of 0.4 M HCl is"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "pthe-volume-in-ml-of-01-m-agnosub3sub-required-for-jee-advanced-chemistry-some-basic-concepts-of-chemistry-vwdwbvx63e8jdnk9",
+          "paperTitle": "IIT-JEE 2011 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "<p>The volume (in mL) of 0.1 M AgNO<sub>3</sub> required for complete precipitation of chloride ions present in 30 mL of 0.01 M solution of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.566ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"17.115ex\" height=\"2.262ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 7564.7 1000\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"5B\" xlink:href=\"#MJX-TEX-N-5B\"></use></g><g data-mml-node=\"mi\" transform=\"translate(278,0)\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1038,0)\"><use data-c=\"1D45F\" xlink:href=\"#MJX-TEX-I-1D45F\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(1489,0)\"><g data-mml-node=\"mo\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(389,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D43B\" xlink:href=\"#MJX-TEX-I-1D43B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(864,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g><g data-mml-node=\"mi\" transform=\"translate(1656.6,0)\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"msub\" transform=\"translate(2419.6,0)\"><g data-mml-node=\"mo\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g><g data-mml-node=\"mn\" transform=\"translate(422,-150) scale(0.707)\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use></g></g></g><g data-mml-node=\"mi\" transform=\"translate(4734.1,0)\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mi\" transform=\"translate(5494.1,0)\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g><g data-mml-node=\"mo\" transform=\"translate(5792.1,0)\"><use data-c=\"5D\" xlink:href=\"#MJX-TEX-N-5D\"></use></g><g data-mml-node=\"mi\" transform=\"translate(6070.1,0)\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(6830.1,0)\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D459\" xlink:href=\"#MJX-TEX-I-1D459\"></use></g><g data-mml-node=\"mn\" transform=\"translate(331,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g></g></g></g></svg></mjx-container>, as silver chloride is close to ____________.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "a-student-performs-a-titration-with-different-burettes-and-f-jee-advanced-2010-marks-2-wmmmyd0hdt8jozzo.htm",
+          "paperTitle": "IIT-JEE 2010 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "A student performs a titration with different burettes and finds titre values of 25.2 mL, 25.25 mL, and 25.0 mL. The number of significant figures in the average titre value is"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "silver-atomic-weight-108-g-mol-1-has-a-density-of-105-gcm-3-jee-advanced-2010-marks-4-mwynav2hfrlsfmlp.htm",
+          "paperTitle": "IIT-JEE 2010 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "Silver (atomic weight = 108 g mol<sup>-1</sup>) has a density of 10.5 g.cm<sup>-3</sup>. The number of silver atoms on a surface of area 10<sup>-12</sup> m<sup>2</sup> can be expressed in scientific notation as y <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 10<sup>x</sup>. The value of x is?"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "268-times-10-3-moles-of-a-solution-containing-an-ion-an-requ-jee-advanced-1984-marks-2-hanb9asiqxazzodw.htm",
+          "paperTitle": "IIT-JEE 1984",
+          "question": {
+            "en": {
+              "content": "2.68 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 10<sup>-3</sup> moles of a solution containing an ion A<sup>n+</sup> require 1.61 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 10<sup>-3</sup> moles of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.69ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"6.894ex\" height=\"2.554ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -823.8 3047.1 1128.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D440\" xlink:href=\"#MJX-TEX-I-1D440\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1051,0)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"msubsup\" transform=\"translate(1651,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mo\" transform=\"translate(796,411.6) scale(0.707)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-305.1) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g></g></svg></mjx-container> for the oxidation of An<sup>+</sup> to <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.706ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"4.855ex\" height=\"2.57ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -823.8 2146.1 1136\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D434\" xlink:href=\"#MJX-TEX-I-1D434\"></use></g><g data-mml-node=\"msubsup\" transform=\"translate(750,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mo\" transform=\"translate(796,411.6) scale(0.707)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-296.6) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g></g></svg></mjx-container> in acid medium. What is the value of n?"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "MCQ (More than One Correct Answer)",
+      "key": "mcqm",
+      "questions": [
+        {
+          "examGroup": "jee",
+          "permalink": "to-check-the-principle-of-multiple-proportions-a-series-of-jee-advanced-chemistry-hydrocarbons-segfvr1fqn715eby",
+          "paperTitle": "JEE Advanced 2022 Paper 2 Online",
+          "question": {
+            "en": {
+              "content": " To check the principle of multiple proportions, a series of pure binary compounds <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.566ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"7.659ex\" height=\"2.262ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -750 3385.2 1000\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mrow\"><g data-mml-node=\"mo\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"msub\" transform=\"translate(389,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"50\" xlink:href=\"#MJX-TEX-N-50\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(714,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"6D\" xlink:href=\"#MJX-TEX-N-6D\"></use></g></g></g></g><g data-mml-node=\"msub\" transform=\"translate(1742,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"51\" xlink:href=\"#MJX-TEX-N-51\"></use></g></g><g data-mml-node=\"TeXAtom\" transform=\"translate(811,-150) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"6E\" xlink:href=\"#MJX-TEX-N-6E\"></use></g></g></g></g><g data-mml-node=\"mo\" transform=\"translate(2996.2,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g></g></g></svg></mjx-container> were analyzed and their composition is tabulated below. The correct option(s) is(are)<br><br>\n\n<table class=\"tg\">\n<thead>\n  <tr>\n    <th class=\"tg-1wig\">Compound</th>\n    <th class=\"tg-1wig\">Weight % of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.541ex\" height=\"1.545ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -683 681 683\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"50\" xlink:href=\"#MJX-TEX-N-50\"></use></g></g></g></g></svg></mjx-container></th>\n    <th class=\"tg-1wig\">Weight % of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.437ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"2.032ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 778 898\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"51\" xlink:href=\"#MJX-TEX-N-51\"></use></g></g></g></g></svg></mjx-container></th>\n  </tr>\n</thead>\n<tbody>\n  <tr>\n    <td class=\"tg-0lax\">1</td>\n    <td class=\"tg-0lax\">50</td>\n    <td class=\"tg-0lax\">50</td>\n  </tr>\n  <tr>\n    <td class=\"tg-0lax\">2</td>\n    <td class=\"tg-0lax\">44.4</td>\n    <td class=\"tg-0lax\">55.6</td>\n  </tr>\n  <tr>\n    <td class=\"tg-0lax\">3</td>\n    <td class=\"tg-0lax\">40</td>\n    <td class=\"tg-0lax\">60</td>\n  </tr>\n</tbody>\n</table>\n"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "MCQ (Single Correct Answer)",
+      "key": "mcq",
+      "questions": [
+        {
+          "examGroup": "jee",
+          "permalink": "dissolving-120-g-of-urea-mol-wt-60-in-1000-g-of-water-ga-2011-marks-1-f4dfxsgtymmsnlqn.htm",
+          "paperTitle": "IIT-JEE 2011 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "Dissolving 120 g of urea (mol. wt. 60) in 1000 g of water gave a solution of density 1.15 g/mL. The molarity of the solution is"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "given-that-the-abundances-of-isotopes-54fe-56fe-and-57fe-are-jee-advanced-2009-screening-marks-1-piailmuy08lrhzgx.htm",
+          "paperTitle": "IIT-JEE 2009 Paper 1 Offline",
+          "question": {
+            "en": {
+              "content": "Given that the abundances of isotopes <sup>54</sup>Fe, <sup>56</sup>Fe and <sup>57</sup>Fe are 5%, 90% and 5%, respectively, the atomic mass of Fe is :"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "consider-a-titration-of-potassium-dichromate-solution-with-a-jee-advanced-2007-marks-2-uzciyhj90wn3bmmc.htm",
+          "paperTitle": "IIT-JEE 2007 Paper 2 Offline",
+          "question": {
+            "en": {
+              "content": "Consider a titration of potassium dichromate solution with acidified Mohr’s salt solution using diphenylamine as indicator. The number of moles of Mohr’s salt required per mole of dichromate is "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "mixture-x-002-mol-of-conh35so4br-and-002-mol-of-conh35brso4-jee-advanced-2003-screening-marks-2-nd6n9fw6wafgpjup.htm",
+          "paperTitle": "IIT-JEE 2003 Screening",
+          "question": {
+            "en": {
+              "content": "Mixture X = 0.02 mol of [Co(NH<sub>3</sub>)<sub>5</sub>SO<sub>4</sub>]Br and 0.02 mol of [Co(NH<sub>3</sub>)<sub>5</sub>Br]SO<sub>4</sub> was prepared in 2 litre of solution.<br>\n1 litre of mixture X + excess AgNO<sub>3</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> Y.<br>\n1 litre of mixture X + excess BaCl<sub>2</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> Z<br>\nNo. of moles of Y and Z are"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "which-has-maximum-number-of-atoms-jee-advanced-2003-screening-marks-2-bk7sqhsmf6yf0vxf.htm",
+          "paperTitle": "IIT-JEE 2003 Screening",
+          "question": {
+            "en": {
+              "content": "Which has maximum number of atoms?"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "how-many-moles-of-electron-weigh-one-kilogram-jee-advanced-2002-screening-marks-2-vikk3a3jkizlksaq.htm",
+          "paperTitle": "IIT-JEE 2002 Screening",
+          "question": {
+            "en": {
+              "content": "How many moles of electron weigh one kilogram?"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "-in-the-standardization-of-na2s2o3-using-k2cr2o7-by-iodometr-jee-advanced-2001-screening-marks-2-dpfc6ix5adhbyir3.htm",
+          "paperTitle": "IIT-JEE 2001 Screening",
+          "question": {
+            "en": {
+              "content": "In the standardization of Na<sub>2</sub>S<sub>2</sub>O<sub>3</sub> using K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub> by iodometry, the equivalent weight of K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub> is: "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "an-aqueous-solution-of-63-g-oxalic-acid-dehydrate-is-made-up-jee-advanced-2001-screening-marks-2-jzpdiearaobkl6mn.htm",
+          "paperTitle": "IIT-JEE 2001 Screening",
+          "question": {
+            "en": {
+              "content": "An aqueous solution of 6.3 g oxalic acid dihydrate is made up to 250ml. the volume of\n0.1N NaOH required to completely neutralize 10ml of this solution is : "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-oxidation-state-of-the-most-electronegative-element-in-t-jee-advanced-1991-marks-1-o41ickmmkpu6mhbv.htm",
+          "paperTitle": "IIT-JEE 1991",
+          "question": {
+            "en": {
+              "content": "The oxidation state of the most electronegative element in the products of the reaction. BaO<sub>2</sub> with dil. H<sub>2</sub>SO<sub>4</sub> are"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "read-the-following-statement-and-explanation-and-answer-as-p-jee-advanced-1991-marks-2-qcnbwb146s4569d6.htm",
+          "paperTitle": "IIT-JEE 1991",
+          "question": {
+            "en": {
+              "content": "Read the following statement and explanation and answer as per the options given below:<br><br>\n<b>STATEMENT (S):</b> In the titration of Na<sub>2</sub>CO<sub>3</sub> with HCl using methyl orange indicator, the volume required at the equivalence point is twice that of the acid required using phenolphthalein indicator.<br><br>\n<b>EXPLANATION (E):</b> Two moles of HCl are required for the complete neutralization of one mole of Na<sub>2</sub>CO<sub>3</sub> "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "in-which-mode-of-expression-the-concentration-of-a-solution-jee-advanced-1988-marks-1-b7xvnxlunxriferp.htm",
+          "paperTitle": "IIT-JEE 1988",
+          "question": {
+            "en": {
+              "content": "In which mode of expression, the concentration of a solution remains independent of temperature?"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "a-molal-solution-is-one-that-contains-one-mole-of-solute-in-jee-advanced-1986-marks-1-fttkz6za0shpxtjt.htm",
+          "paperTitle": "IIT-JEE 1986",
+          "question": {
+            "en": {
+              "content": "A molal solution is one that contains one mole of solute in "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "if-050-mol-of-bacl2-is-mixed-with-020-mol-of-na3po4-the-maxi-jee-advanced-1981-marks-1-hzztndoxckinvril.htm",
+          "paperTitle": "IIT-JEE 1981",
+          "question": {
+            "en": {
+              "content": "If 0.50 mol of BaCl<sub>2</sub> is mixed with 0.20 mol of Na<sub>3</sub>PO<sub>4</sub>, the maximum amount of Ba<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub> that can be formed is "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "a-gaseous-mixture-contains-oxygen-and-nitrogen-in-the-ratio-jee-advanced-1979-marks-4-xqzppjyh2jmcwo7r.htm",
+          "paperTitle": "IIT-JEE 1979",
+          "question": {
+            "en": {
+              "content": "A gaseous mixture contains oxygen and nitrogen in the ratio of 1 : 4 by weight. Therefore the ratio of their no of molecules is"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-largest-number-of-molecules-is-in-jee-advanced-1979-marks-2-q0ogshlsaryr2e6x.htm",
+          "paperTitle": "IIT-JEE 1979",
+          "question": {
+            "en": {
+              "content": "The largest number of molecules is in"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-total-number-of-electrons-is-one-molecule-of-carbon-diox-jee-advanced-1979-marks-2-83cyayfvge3i0nc7.htm",
+          "paperTitle": "IIT-JEE 1979",
+          "question": {
+            "en": {
+              "content": "The total number of electrons is one molecule of carbon dioxide is"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "276-g-of-silver-carbonate-on-being-strongly-heated-yields-a-jee-advanced-1979-marks-2-qiuvtgg4mzutwysb.htm",
+          "paperTitle": "IIT-JEE 1979",
+          "question": {
+            "en": {
+              "content": "2.76 g of silver carbonate  on being strongly heated yields a residue weighing"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "a-compound-was-found-to-contain-nitrogen-and-oxygen-in-the-r-jee-advanced-1978-marks-2-qcgjl6h7n0kld4hn.htm",
+          "paperTitle": "IIT-JEE 1978",
+          "question": {
+            "en": {
+              "content": "A compound was found to contain nitrogen and oxygen in the ratio 28 gm and 80 gm respectively. The formula of compound is "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "27-g-of-al-will-react-completely-with-how-many-grams-if-oxyg-jee-advanced-1978-marks-2-orh8wpqu5lrfs0xl.htm",
+          "paperTitle": "IIT-JEE 1978",
+          "question": {
+            "en": {
+              "content": "27 g of Al will react completely with how many grams if oxygen?"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Subjective",
+      "key": "subjective",
+      "questions": [
+        {
+          "examGroup": "jee",
+          "permalink": "calculate-the-molarity-of-water-if-its-density-is-1000-kgm3-jee-advanced-2003-marks-2-vwap60dnkd2swp5y.htm",
+          "paperTitle": "IIT-JEE 2003",
+          "question": {
+            "en": {
+              "content": "Calculate the molarity of water if it's density is 1000 kg/m<sup>3</sup>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "hydrogen-peroxide-solution-20-ml-reacts-quantitatively-with-jee-advanced-2001-marks-5-sy2c9xzbp9hiiblp.htm",
+          "paperTitle": "IIT-JEE 2001",
+          "question": {
+            "en": {
+              "content": "Hydrogen peroxide solution (20 ml) reacts quantitatively with a solution of KMnO<sub>4</sub> solution is just decolourised by 10 ml of MnSO<sub>4</sub> in neutral medium simultaneously forming a dark brown precipitate of hydrated MnO<sub>2</sub>. The brown precipitated is dissolved in 10 ml of 0.2 M sodium oxalate under boiling condition in the presence of dilute H<sub>2</sub>SO<sub>4</sub>. Write the balanced equations involved in the reactions and calculate the molarity of H<sub>2</sub>O<sub>2</sub>."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "how-many-millilitres-of-05-m-h2so4-are-needed-to-dissolve-05-jee-advanced-1999-marks-3-jkdvknj4fqkfza5y.htm",
+          "paperTitle": "IIT-JEE 1999",
+          "question": {
+            "en": {
+              "content": "How many millilitres of 0.5 M H<sub>2</sub>SO<sub>4</sub> are needed to dissolve 0.5 g of copper(II) carbonate?"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "a-plant-virus-is-found-to-consist-of-uniform-cylindrical-par-jee-advanced-1999-marks-3-sh8w0osyjeblydbz.htm",
+          "paperTitle": "IIT-JEE 1999",
+          "question": {
+            "en": {
+              "content": "A plant virus is found to consist of uniform cylindrical particles of 150 Å in diameter and 5000 Å long. The specific volume of the virus is 0.75 cm<sup>3</sup>/g. If the virus is considered to be a single particle, find its molar mass."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "an-aqueous-solution-containing-010-g-kio3-formula-weight-214-jee-advanced-1998-marks-5-2yzc0ox3zjjkjpap.htm",
+          "paperTitle": "IIT-JEE 1998",
+          "question": {
+            "en": {
+              "content": "An aqueous solution containing 0.10 g KIO<sub>3</sub> (formula weight = 214.0) was treated with an excess of KI solution. The solution was acidified with HCl. The liberated I<sub>2</sub> consumed 45.0 mL of thiosulphate solution to decolourise the blue strach-iodine complex. Calculate the molarity of the sodium thiosulphate solution."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "a-300-g-sample-containing-fe3o4-fe2o3-and-an-inert-impure-su-jee-advanced-1996-marks-5-c4fcs1mi7neobjrv.htm",
+          "paperTitle": "IIT-JEE 1996",
+          "question": {
+            "en": {
+              "content": "A 3.00 g sample containing Fe<sub>3</sub>O<sub>4</sub>, Fe<sub>2</sub>O<sub>3</sub> and an inert impure substance is treated with excess of KI solution in presence of dilute H<sub>2</sub>SO<sub>4</sub>. The entire iron is converted into Fe<sup>2+</sup>  along with the liberation of iodine. The resulting solution is diluted to 100 ml, A 20 ml of the diluted solution requires 11.0 ml of 0.5 M Na<sub>2</sub>S<sub>2</sub>O<sub>3</sub> solution to reduce the iodine present. A 50 ml of the diluted solution, after complete extraction of the iodine requires 12.80 ml of 0.25 M KMnO<sub>4</sub> solution in the dilute H<sub>2</sub>SO<sub>4</sub> medium for the oxidation of Fe<sup>2+</sup>. Calculate the percentages of Fe<sub>2</sub>O<sub>3</sub> and Fe<sub>3</sub>O<sub>4</sub> in the original sample."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-composition-of-a-sample-of-wustite-is-fe093o100-what-per-jee-advanced-1994-marks-2-v97f9bvfjy12mton.htm",
+          "paperTitle": "IIT-JEE 1994",
+          "question": {
+            "en": {
+              "content": "The composition of a sample of Wustite is Fe<sub>0.93</sub>O<sub>1.00</sub> what percentage of the iron is present in the form of Fe(III)?"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "80575-times-10-2-kg-of-glaubers-salt-is-dissolved-in-water-t-jee-advanced-1994-marks-3-bzcfazvpg7arrvqp.htm",
+          "paperTitle": "IIT-JEE 1994",
+          "question": {
+            "en": {
+              "content": "8.0575 <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0.02ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.76ex\" height=\"1.09ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -491 778 482\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g></g></g></svg></mjx-container> 10<sup>-2</sup> kg of Glauber's salt is dissolved in water to obtain 1 dm<sup>3</sup> of a solution of density 1077.2 kg.m<sup>-3</sup>. Calculate the molarity, molality and mole fraction Na<sub>2</sub>SO<sub>4</sub> in the solution."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "upon-mixing-450-ml-of-025-m-lead-nitrate-solution-with-250-m-jee-advanced-1993-marks-3-wtovgywndi6awpen.htm",
+          "paperTitle": "IIT-JEE 1993",
+          "question": {
+            "en": {
+              "content": "Upon mixing 45.0 ml. of 0.25 M lead nitrate solution with 25.0 ml. of 0.10M chromic sulphate solution, precipitation of lead sulphate takes place. How many moles of lead sulphate are formed? Also, calculate the molar concentrations of the species left behind in the final solution. Assume that lead sulphate is completely insoluble."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "a-20-g-sample-of-a-mixture-containing-sodium-carbonate-sodiu-jee-advanced-1992-marks-5-qswpdjbimiwm9g1a.htm",
+          "paperTitle": "IIT-JEE 1992",
+          "question": {
+            "en": {
+              "content": "A 2.0 g sample of a mixture containing sodium carbonate, sodium bicarbonate and sodium suplphate is gently heated till the evolution of CO<sub>2</sub> ceases. The volume of CO<sub>2</sub> at 750 mm Hg pressure and at 298K is measured to be 123.9 ml. A 1.5g of the same sample requires 150 ml. of (M/10) HCl for complete neutralisation. Calculate the % composition of the components of the mixture."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "one-gram-of-commercial-agno3-is-dissolved-in-50-ml-of-water-jee-advanced-1992-marks-4-t5fpvfchlfg4yjsv.htm",
+          "paperTitle": "IIT-JEE 1992",
+          "question": {
+            "en": {
+              "content": "One gram of commercial AgNO<sub>3</sub> is dissolved in 50 ml. of water. It is treated with 50 ml. of a KI solution. The silver iodide thus precipitated is filtered off. Excess of KI in the filterate is titrated with (M/10) KIO<sub>3</sub> solution in presence of 6M HCl till all I<sup>-</sup> ions are converted into ICl. It requires 50 ml. of (M/10) KIO<sub>3</sub> solution. 20 ml. of the same stock solution of KI requires 30 ml. of (M/10) KIO<sub>3</sub> under similar conditions. Calculate the percentage of AgNO<sub>3</sub> in the sample.\n<br>\n(Reaction : KIO<sub>3</sub> + 2KI + 6HCl <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> 3ICl + 3KCl + 3H<sub>2</sub>O)"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "a-solution-of-02-g-of-a-compound-containing-cu2-and-c2o42-io-jee-advanced-1991-marks-5-kdqbj9kngqgosmrv.htm",
+          "paperTitle": "IIT-JEE 1991",
+          "question": {
+            "en": {
+              "content": "A solution of 0.2 g of a compound containing Cu<sup>2+</sup> and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.69ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"6.564ex\" height=\"2.687ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -882.5 2901.2 1187.6\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mn\" transform=\"translate(748,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g><g data-mml-node=\"msubsup\" transform=\"translate(1151.6,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(796,411.6) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(796,-305.1) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g></g></svg></mjx-container> ions on titration with 0.02M <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"8.461ex\" height=\"1.932ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -704 3739.6 854\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D43E\" xlink:href=\"#MJX-TEX-I-1D43E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(889,0)\"><use data-c=\"1D440\" xlink:href=\"#MJX-TEX-I-1D440\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1940,0)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"msub\" transform=\"translate(2540,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-150) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g></g></svg></mjx-container> in presence of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.339ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"7.041ex\" height=\"1.934ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 3112.1 855\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D43B\" xlink:href=\"#MJX-TEX-I-1D43B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(864,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g><g data-mml-node=\"mi\" transform=\"translate(1267.6,0)\"><use data-c=\"1D446\" xlink:href=\"#MJX-TEX-I-1D446\"></use></g><g data-mml-node=\"msub\" transform=\"translate(1912.6,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-150) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g></g></svg></mjx-container>  consumes 22.6 ml. of the oxidant. The resultant solution in neutralized with Na<sub>2</sub>CO<sub>3</sub>, acidified with dil. acetic acid and treated with excess KI. The liberated iodine requires 11.3 ml of 0.05M Na<sub>2</sub>S<sub>2</sub>O<sub>3</sub> solution for complete reduction.<br><br>\nFind out the molar ratio of Cu<sup>2+</sup> to <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.69ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"6.564ex\" height=\"2.687ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -882.5 2901.2 1187.6\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g><g data-mml-node=\"mn\" transform=\"translate(748,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g><g data-mml-node=\"msubsup\" transform=\"translate(1151.6,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(796,411.6) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g><g data-mml-node=\"mo\" transform=\"translate(500,0)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(796,-305.1) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g></g></svg></mjx-container> in the compound.Write down the balanced redox reactions involved in the above titrations."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "a-10-g-sample-of-fe2o3-solid-of-552-purity-is-dissolved-in-a-jee-advanced-1991-marks-4-yaig1hrv2ksg72t1.htm",
+          "paperTitle": "IIT-JEE 1991",
+          "question": {
+            "en": {
+              "content": "A 1.0 g sample of Fe<sub>2</sub>O<sub>3</sub> solid of 55.2% purity is dissolved in acid and reduced by heating the solution with zinc dust. The resultant solution is cooled and made upto 100.0 ml. An aliquot of 25.0 ml of this solution requires 17.0 ml of 0.0167M solution of an oxidant for titration. Calculate the number of electrons taken by the oxidant in the reaction of the above titration."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "a-mixture-of-h2c2o4-oxalic-acid-and-nahc2o4-weighing-202-g-w-jee-advanced-1990-marks-5-f2an3lkbatuwu5dj.htm",
+          "paperTitle": "IIT-JEE 1990",
+          "question": {
+            "en": {
+              "content": "A mixture of H<sub>2</sub>C<sub>2</sub>O<sub>4</sub> (oxalic acid) and NaHC<sub>2</sub>O<sub>4</sub> weighing 2.02 g was dissolved in water and solution made upto one litre. Ten millilitres of the solution required 3.0 ml. of 0.1 N sodium hydroxide solution for complete neutralization. In another experiment, 10.0 ml. of the same solution, in hot dilute sulphuric acid medium. require 4.0 ml. of 0.1 N potassium permanganate solution for complete reaction. Calculate the amount of H<sub>2</sub>C<sub>2</sub>O<sub>4</sub> and NaHC<sub>2</sub>O<sub>4</sub> in the mixture."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "a-solid-mixture-50-g-consisting-of-lead-nitrate-and-sodium-n-jee-advanced-1990-marks-4-zwadlfut88svlaxt.htm",
+          "paperTitle": "IIT-JEE 1990",
+          "question": {
+            "en": {
+              "content": "A solid mixture (5.0 g) consisting of lead nitrate and sodium nitrate was headed below 600<sup>o</sup>C until the weight of the residue was constant. If the loss in weight 28.0 percent, find the amount of lead nitrate and sodium nitrate in the mixture."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "calculate-the-molality-of-1-litre-solution-of-93-h2so4-weigh-jee-advanced-1990-marks-1-k3nbqqvv6dzwtfyl.htm",
+          "paperTitle": "IIT-JEE 1990",
+          "question": {
+            "en": {
+              "content": "Calculate the molality of 1 litre solution of 93% H<sub>2</sub>SO<sub>4</sub> (weight/volume). The density of the solution is 1.84 g/ml"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "an-equal-volume-of-a-reducing-agent-is-titrated-separately-w-jee-advanced-1989-marks-5-5uz4i9ee5l6ro2oa.htm",
+          "paperTitle": "IIT-JEE 1989",
+          "question": {
+            "en": {
+              "content": "An equal volume of a reducing agent is titrated separately with 1M KMnO<sub>4</sub> in acid neutral  and alkaline media. The volumes of KMnO<sub>4</sub> required are 20 ml. in acid 33.4 ml. neutral  and 100 ml in alkaline media. Find out the oxidation state of manganese in each reduction product. Give the balanced equations for all three half reactions. Find out the volume of \n 1M K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub> consumed; if the same volume of the reducing agent is titrated in acid medium."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "a-sample-of-hydrazine-sulphate-n2h6so4-was-dissolved-in-100-jee-advanced-1988-marks-3-3wmnca8fe6nzljlp.htm",
+          "paperTitle": "IIT-JEE 1988",
+          "question": {
+            "en": {
+              "content": "A sample of hydrazine sulphate (N<sub>2</sub>H<sub>6</sub>SO<sub>4</sub>) was dissolved in 100 ml. of water, 10 ml of this solution was reacted with excess of ferric chloride solution and warmed to complete the reaction. Ferrous ion formed was estimated and it required 20 ml of M/50 potassium permanganate solution. Estimate the amount of hydrazine sulphate in one litre of the solution.<br><br>\n<b>Reaction:</b><br><br>\n4Fe<sup>3+</sup> + N<sub>2</sub>H<sub>4</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> N<sub>2</sub> + 4Fe<sup>2+</sup> + 4H<sup>+</sup> <br><br>\n<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.69ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"6.894ex\" height=\"2.554ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -823.8 3047.1 1128.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D440\" xlink:href=\"#MJX-TEX-I-1D440\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1051,0)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"msubsup\" transform=\"translate(1651,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mo\" transform=\"translate(796,411.6) scale(0.707)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-305.1) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g></g></svg></mjx-container> + 4Fe<sup>2+</sup> + 8H<sup>+</sup> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> Mn<sup>2+</sup> + 5Fe<sup>3+</sup> + 4H<sub>2</sub>O "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "a-sugar-syrup-of-weight-2142-g-contains-342-g-of-sugar-c2h22-jee-advanced-1988-marks-2-j7wzrou82pj2tbpj.htm",
+          "paperTitle": "IIT-JEE 1988",
+          "question": {
+            "en": {
+              "content": "A sugar syrup of weight 214.2 g contains 34.2 g of sugar (C<sub>12</sub>H<sub>22</sub>O<sub>11</sub>). Calculate <b>(i)</b> molal concentration and <b>(ii)</b> mole fraction of sugar in the syrup "
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "five-ml-of-8n-nitric-acid-48ml-of-5n-hydrochloric-acid-and-a-jee-advanced-1985-marks-4-0kz99ymmgr944p2h.htm",
+          "paperTitle": "IIT-JEE 1985",
+          "question": {
+            "en": {
+              "content": "Five ml of 8N nitric acid, 4.8ml of 5N hydrochloric acid and a certain volume of 17M sulphuric acid are mixed together and made upto 2 litre. Thirty ml of this acid mixture neutralise 42.9 ml of sodium carbonate solution containing one gram of Na<sub>2</sub>CO<sub>3</sub>.10H<sub>2</sub>O in 100 ml of water. Calculate the amount in gram of the sulphate ions in solution."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "408-g-of-a-mixture-of-bao-and-an-unknown-carbonate-mco3-was-jee-advanced-1983-marks-4-gf4kcxeuorkgvu6y.htm",
+          "paperTitle": "IIT-JEE 1983",
+          "question": {
+            "en": {
+              "content": "4.08 g of a mixture of BaO and an unknown carbonate MCO<sub>3</sub> was heated strongly. The residue weighed 3.64 g. This was dissolved in 100 ml of 1 N HCl. The excess acid required 16 ml of 2.5 N NaOH solution for complete neutralization. Identify the metal M. (At wt. H = 1, C = 12, O = 16, Cl = 35.5, Ba = 138)"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-density-of-a-3-m-sodium-thiosulphate-solution-na2s2o3-is-jee-advanced-1983-marks-5-jr0krs1ydnqtpder.htm",
+          "paperTitle": "IIT-JEE 1983",
+          "question": {
+            "en": {
+              "content": "The density of a 3 M Sodium thiosulphate solution (Na<sub>2</sub>S<sub>2</sub>O<sub>3</sub>) is 1.25 g per ml. Calculate <br><br><b>(i)</b> the percentage by weight of sodium thiosulphate, <br><br><b>(ii)</b>  the mole fraction of sodium thiosulphate and <br><br><b>(iii)</b> the molalities of Na<sup>+</sup> and <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.706ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"6.333ex\" height=\"2.703ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -882.5 2799.2 1194.7\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"msub\"><g data-mml-node=\"mi\"><use data-c=\"1D446\" xlink:href=\"#MJX-TEX-I-1D446\"></use></g><g data-mml-node=\"mn\" transform=\"translate(646,-150) scale(0.707)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g><g data-mml-node=\"msubsup\" transform=\"translate(1049.6,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(796,411.6) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mo\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(778,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g><g data-mml-node=\"mn\" transform=\"translate(796,-296.6) scale(0.707)\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use></g></g></g></g></svg></mjx-container> ions"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "hydroxylamine-reduces-iron-iii-according-to-the-equation-2nh-jee-advanced-1982-marks-4-eiliffsosl1yepq2.htm",
+          "paperTitle": "IIT-JEE 1982",
+          "question": {
+            "en": {
+              "content": "Hydroxylamine reduces iron (III) according to the equation: <br><br>\n2NH<sub>2</sub>OH + 4Fe<sup>3+</sup> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> N<sub>2</sub>O(g) <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.437ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.131ex\" height=\"2.007ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -694 500 887\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2191\" xlink:href=\"#MJX-TEX-N-2191\"></use></g></g></g></svg></mjx-container> + H<sub>2</sub>O + 4Fe<sup>2+</sup> + 4H<sup>+</sup> <br><br>\nIron (II) thus produced is estimated by titration with a standard permanganate solution. The reaction is :<br><br>\n<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.69ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"6.894ex\" height=\"2.554ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -823.8 3047.1 1128.9\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D440\" xlink:href=\"#MJX-TEX-I-1D440\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1051,0)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"msubsup\" transform=\"translate(1651,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D442\" xlink:href=\"#MJX-TEX-I-1D442\"></use></g><g data-mml-node=\"mo\" transform=\"translate(796,411.6) scale(0.707)\"><use data-c=\"2212\" xlink:href=\"#MJX-TEX-N-2212\"></use></g><g data-mml-node=\"mn\" transform=\"translate(796,-305.1) scale(0.707)\"><use data-c=\"34\" xlink:href=\"#MJX-TEX-N-34\"></use></g></g></g></g></svg></mjx-container> + 5Fe<sup>2+</sup> + 8H<sup>+</sup> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2.262ex\" height=\"1.181ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -511 1000 522\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"2192\" xlink:href=\"#MJX-TEX-N-2192\"></use></g></g></g></svg></mjx-container> Mn<sup>2+</sup> + 5Fe<sup>3+</sup> + 4H<sub>2</sub>O<br><br>\nA 10 ml sample of hydroxylamine solution was Diluted to 1 litre. 50 ml of this diluted solution was boiled with an excess of iron (III) solution. The resulting solution required 12 ml of 0.02 M KMnO<sub>4</sub> solution for complete oxidation of iron (II). Calculate the weight of hydroxylamine in one litre of the original solution. (H = 1, N = 14, O = 16, K =39, Mn = 55, Fe = 56)"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "a-100-gm-sample-of-h2o2-solution-containing-x-percent-h2o2-b-jee-advanced-1981-marks-3-wpuujc2siy4yxf7g.htm",
+          "paperTitle": "IIT-JEE 1981",
+          "question": {
+            "en": {
+              "content": "A 1.00 gm sample of H<sub>2</sub>O<sub>2</sub> solution containing X percent  H<sub>2</sub>O<sub>2</sub> by weight requires X ml of a KMnO<sub>4</sub> solution for complete oxidation under acidic conditions. Calculate the normality of the KMnO<sub>4</sub> solution."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "i-a-sample-of-mnso44h2o-is-strongly-heated-in-air-the-residu-jee-advanced-1980-marks-4-yihkrq1stgzqredk.htm",
+          "paperTitle": "IIT-JEE 1980",
+          "question": {
+            "en": {
+              "content": "<b>(i)</b>. A sample of MnSO<sub>4</sub>.4H<sub>2</sub>O is strongly heated in air. The residue is Mn<sub>3</sub>O<sub>4</sub>.<br><br>\n<b>(ii)</b>. The residue is dissolved in 100 ml of 0.1N FeSO<sub>4</sub> containing dilute H<sub>2</sub>SO<sub>4</sub>.<br><br>\n<b>(iii)</b>. The solution reacts completely with 50 ml of KMnO<sub>4</sub> solution.<br><br>\n<b>(iv)</b>. 25 ml of the KMnO<sub>4</sub> solution used in step <b>(iii)</b>  requires 30 ml of 0.1 N FeSO<sub>4</sub> solution for complete reaction.<br><br>\nFind the amount of MnSO<sub>4</sub>.4H<sub>2</sub>O present in the sample."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "a-hydrocarbon-contains-105-g-of-carbon-per-gram-of-hydrogen-jee-advanced-1980-marks-2-qb4cjntzmnqmsvtx.htm",
+          "paperTitle": "IIT-JEE 1980",
+          "question": {
+            "en": {
+              "content": "A hydrocarbon contains 10.5 g of carbon per gram of hydrogen. 1 litre of the hydrocarbon at 127<sup>o</sup>C and 1 atmosphere weighs 2.8 g. Find the molecular formula."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "a-one-litre-of-a-sample-of-hard-water-contains-1-mg-of-cacl2-jee-advanced-1980-marks-4-sq1y25su8zafyzpf.htm",
+          "paperTitle": "IIT-JEE 1980",
+          "question": {
+            "en": {
+              "content": "<b>(a)</b> One litre of a sample of hard water contains 1 mg of CaCl<sub>2</sub> and 1 mg of MgCl<sub>2</sub>. Find the total hardness in terms of parts of CaCO<sub>3</sub> per 10<sup>6</sup> parts of water by weight.<br><br>\n<b>(b)</b> A sample of hard water contains 20 mg of Ca<sup>++</sup> ions per litre. How many milli-equivalent of Na<sub>2</sub>CO<sub>3</sub> would be required to soften 1 litre of the sample?<br><br>\n<b>(c)</b> 1 gm of Mg is burnt in a closed vessel which contains 0.5gm of O<sub>2</sub>.<br>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (i) Which reactant is left in excess?<br>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (ii) Find the weight of the excess reactants.<br>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (iii) How many milliliters of 0.5N H<sub>2</sub>SO<sub>4</sub> will dissolve the residue in the vessel?<br>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "a-mixture-contains-nacl-and-unknown-chloride-mcli-1g-of-this-jee-advanced-1980-marks-2-tolilegqadb7m1kr.htm",
+          "paperTitle": "IIT-JEE 1980",
+          "question": {
+            "en": {
+              "content": "A mixture contains NaCl and unknown chloride MCl.<br><br>\n<b>(i)</b> 1g of this is dissolved in water. Excess of acidified AgNO<sub>3</sub> solution is added to it. 2.567 g of white ppt is formed.<br><br>\n<b>(ii)</b> 1 g of original mixture is heated to 300<sup>o</sup>C. Some vapours come out which are absorbed in acidified AgNO<sub>3</sub> solution, 1.341 g of white precipitate was obtained.<br><br>\nFind the molecular weight of unknown chloride."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "findi-the-total-number-of-neutrons-and-ii-the-total-mass-of-jee-advanced-1980-marks-2-cirfdzmc3c7rfvky.htm",
+          "paperTitle": "IIT-JEE 1980",
+          "question": {
+            "en": {
+              "content": "Find<br>\n<b>(i)</b> The total number of neutrons and <br>\n<b>(ii)</b> The total mass of neutron in 7 mg of <sup>14</sup>C<br>\n(Assume that mass of neutron = mass of hydrogen atom)"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "a-compound-contains-28-percent-of-nitrogen-and-72-percent-of-jee-advanced-1980-marks-2-intfs6q0lhn1atum.htm",
+          "paperTitle": "IIT-JEE 1980",
+          "question": {
+            "en": {
+              "content": "<p>(a) 1 litre of a mixture of CO and CO<sub>2</sub>\n is taken. This\nmixture is passed through a tube containing red hot\ncharcoal. The volume now becomes 1.6 litre. The\nvolumes are measured under the same conditions.\nFind the composition of the mixture by volume.</p>\n<p>(b) A compound contains 28 percent of nitrogen and 72 percent of metal by weight. 3 atoms of metal combine with 2 atoms of N. Find the atomic weight of metal.</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "5-ml-of-a-gas-containing-only-carbon-and-hydrogen-were-mixed-jee-advanced-1979-marks-4-9cwtctupof6ca0sn.htm",
+          "paperTitle": "IIT-JEE 1979",
+          "question": {
+            "en": {
+              "content": "5 ml of a gas containing only carbon and hydrogen were mixed with an excess of oxygen (30 ml) and the mixture exploded by means of an electric spark. After the explosion, the volume of the mixed gases remaining was 25 ml. On adding a concentrated solution of potassium hydroxide, the volume further diminished to 15 ml of the residual gas being pure oxygen. All volumes have been reduced to N.T.P. Calculate the molecular formula of the hydrocarbon gas."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "in-the-analysis-of-05-g-sample-feldspar-a-mixture-of-chlorid-jee-advanced-1979-marks-4-njgvqmbe5uutygf2.htm",
+          "paperTitle": "IIT-JEE 1979",
+          "question": {
+            "en": {
+              "content": "In the analysis of 0.5 g sample feldspar, a mixture of chlorides of sodium and potassium is obtained which weighs 0.1180g. Subsequent treatment of mixed chlorides with silver nitrate gives 0.2451 g of silver chloride. What is the percentage of sodium oxide and potassium oxide in feldspar."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "4215-g-of-a-metallic-carbonate-was-heated-in-a-hard-glass-tu-jee-advanced-1979-marks-2-4a5pzalijlpbc8be.htm",
+          "paperTitle": "IIT-JEE 1979",
+          "question": {
+            "en": {
+              "content": "4.215 g of a metallic carbonate was heated in a hard glass tube and the CO<sub>2</sub> evolved was found to measure 1336 ml at 27<sup>o</sup>C and 700 mm pressure. What is the equivalent weight of metal?"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "a-55-g-of-a-mixture-feso47h2o-and-fe2so439h2o-requires-54-ml-jee-advanced-1979-marks-4-uuhchh0asetx7nqb.htm",
+          "paperTitle": "IIT-JEE 1979",
+          "question": {
+            "en": {
+              "content": "<b>(a)</b>. 5.5 g of a mixture FeSO<sub>4</sub>.7H<sub>2</sub>O and Fe<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub>.9H<sub>2</sub>O requires 5.4 ml of 0.1 N KMnO<sub>4</sub> solution for complete oxidation. Calculate the number of gram mole of hydrated ferric sulphate in the mixture.<br><br>\n<b>(b)</b>. The vapour density (hydrogen = 1) of a mixture consisting of NO<sub>2</sub> and N<sub>2</sub>O<sub>4</sub> is 38.3 at 26.7<sup>o</sup>C. Calculate the number of moles of NO<sub>2</sub> in 100 g of  the mixure."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "paccount-for-the-following--limit-your-answer-to-two-sent-jee-advanced-chemistry-some-basic-concepts-of-chemistry-56ombybi4ciyiy9v",
+          "paperTitle": "IIT-JEE 1979",
+          "question": {
+            "en": {
+              "content": "<p>Account for the following : Limit your answer to two\nsentences.</p>\n<p>\"Atomic weights of most of the elements are fractional.\"</p>"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "what-weight-of-agcl-will-be-precipitated-when-a-solution-con-jee-advanced-1978-marks-2-1wlv1x6qwdtbkzyk.htm",
+          "paperTitle": "IIT-JEE 1978",
+          "question": {
+            "en": {
+              "content": "What weight of AgCl will be precipitated when a solution containing 4.77 g of NaCl is added to a solution of 5.77g of AgNO<sub>3</sub>?"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "one-gram-of-an-alloy-of-aluminium-and-magnetism-when-treated-jee-advanced-1978-marks-2-eksudjuk8rghtxfo.htm",
+          "paperTitle": "IIT-JEE 1978",
+          "question": {
+            "en": {
+              "content": "One gram of an alloy of aluminium  and magnetism when treated with excess of dil. HCl forms magnesium chloride, aluminium chloride and hydrogen. The evolved hydrogen, collected over mercury at <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"3.814ex\" height=\"1.645ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -705 1685.9 727\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"msup\"><g data-mml-node=\"mn\"><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\"></use></g><g data-mml-node=\"mi\" transform=\"translate(533,363) scale(0.707)\"><use data-c=\"1D45C\" xlink:href=\"#MJX-TEX-I-1D45C\"></use></g></g></g><g data-mml-node=\"mi\" transform=\"translate(925.9,0)\"><use data-c=\"1D436\" xlink:href=\"#MJX-TEX-I-1D436\"></use></g></g></g></svg></mjx-container> has a volume of 1.20 litres at 0.92 atm. pressure. Calculate the composition of the alloy. [H = 1, Mg = 24, Al = 27]"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "igniting-mno2-converts-it-quantitatively-to-mn3o4-a-sample-o-jee-advanced-1978-marks-4-em0xtt2nmkgvdekj.htm",
+          "paperTitle": "IIT-JEE 1978",
+          "question": {
+            "en": {
+              "content": "Igniting MnO<sub>2</sub> converts it quantitatively to Mn<sub>3</sub>O<sub>4</sub>. A sample of pyrolusite is of the following composition : MnO<sub>2</sub> 80%, SiO<sub>2</sub> and other inert constituents 15%, rest being water. The sample is ignited in air to constant weight. What is the percentage of Mn in the ignited sample? [O = 16, Mn = 54.9]"
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "naturally-occurring-boron-consists-of-two-isotopes-whose-ato-1978-marks-4-dktyzzclsiz7c8cw.htm",
+          "paperTitle": "IIT-JEE 1978",
+          "question": {
+            "en": {
+              "content": "Naturally occurring boron consists of two isotopes whose atomic weighs are 10.01 and 11.01. The atomic weight of natural oron is 10.81. Calculate the percentage of each isotope in natural boron."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "what-is-the-molarity-and-molality-of-a-13-solution-by-weig-1978-marks-2-b4u3dz7bzzpfilkw.htm",
+          "paperTitle": "IIT-JEE 1978",
+          "question": {
+            "en": {
+              "content": "What is the molarity and molality of a 13% solution (by weight) of sulphuric acid with a density of 1.02 g/ml? To what volume should 100 ml of this acid be diluted in order to prepare a 1.5 N solution?"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Fill in the Blanks",
+      "key": "fill-blanks",
+      "questions": [
+        {
+          "examGroup": "jee",
+          "permalink": "the-compound-yba2cu3o7-which-shows-superconductivity-has-cop-jee-advanced-1994-marks-1-r1cy6rxp0yld4bgi.htm",
+          "paperTitle": "IIT-JEE 1994",
+          "question": {
+            "en": {
+              "content": "The compound YBa<sub>2</sub>Cu<sub>3</sub>O<sub>7</sub>, which  shows superconductivity, has copper in oxidation state ______ assume that the rare earth element yttrium is in its usual +3 oxidation state."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-weight-of-1-times-1022-molecules-of-cuso45h2o-is-jee-advanced-1991-marks-1-f3nevdy4qmqmpg0n.htm",
+          "paperTitle": "IIT-JEE 1991",
+          "question": {
+            "en": {
+              "content": "The weight of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"7.947ex\" height=\"2.005ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -864 3512.6 886\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use></g><g data-mml-node=\"mo\" transform=\"translate(722.2,0)\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g><g data-mml-node=\"msup\" transform=\"translate(1722.4,0)\"><g data-mml-node=\"mn\"><use data-c=\"31\" xlink:href=\"#MJX-TEX-N-31\"></use><use data-c=\"30\" xlink:href=\"#MJX-TEX-N-30\" transform=\"translate(500,0)\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(1033,393.1) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mn\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\" transform=\"translate(500,0)\"></use></g></g></g></g></g></svg></mjx-container> molecules of CuSO<sub>4</sub>.5H<sub>2</sub>O is ____."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "3-g-of-a-salt-of-molecular-weight-30-is-dissolved-in-250-g-o-jee-advanced-1983-marks-1-bl85nhh2xcrs12ix.htm",
+          "paperTitle": "IIT-JEE 1983",
+          "question": {
+            "en": {
+              "content": "3 g of a salt of molecular weight 30 is dissolved in 250 g  of water. The molality if the solution is _____."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-total-no-of-electron-present-in-18-ml-of-water-is-jee-advanced-1980-marks-1-qqdkoypiyu7jstbj.htm",
+          "paperTitle": "IIT-JEE 1980",
+          "question": {
+            "en": {
+              "content": "The total no of electron present in 18 ml of water is ______."
+            }
+          }
+        },
+        {
+          "examGroup": "jee",
+          "permalink": "the-modern-atomic-unit-is-based-on-jee-advanced-1980-marks-1-llxwbt2ejsxf62wm.htm",
+          "paperTitle": "IIT-JEE 1980",
+          "question": {
+            "en": {
+              "content": "The modern atomic unit is based on the mass of ______."
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

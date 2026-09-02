@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "Sv6vXzQkXSGQA5qck57k9k2k5idpeyw",
+      "paperTitle": "JEE Main 2020 (Online) 9th January Morning Slot",
+      "year": 2020,
+      "examDate": "2020-01-09 09:30",
+      "subject": "chemistry",
+      "chapter": "periodic-table-and-periodicity",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "periodic-table-and-its-features",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-electronic-configurations-of-bivalent-europium-and-triva-jee-main-chemistry-analytical-chemistry-vawv2upvcxjp4z9h",
+      "content": "The electronic configurations of bivalent\neuropium and trivalent cerium are<br>\n(atomic number : Xe = 54, Ce = 58, Eu = 63)",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "[Xe] 4f<sup>7</sup> 6s<sup>2</sup> and [Xe] 4f<sup>2</sup> 6s<sup>2</sup>"
+        },
+        {
+          "identifier": "B",
+          "content": "[Xe] 4f<sup>2</sup> and [Xe] 4f<sup>7</sup>"
+        },
+        {
+          "identifier": "C",
+          "content": "[Xe] 4f<sup>4</sup> and [Xe] 4f<sup>9</sup>"
+        },
+        {
+          "identifier": "D",
+          "content": "[Xe] 4f<sup>7</sup> and [Xe] 4f<sup>1</sup>"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Eu<sup>2+</sup> : [xe] 4f<sup>7</sup>\n<br><br>Ce<sup>3+</sup> : [xe] 4f<sup>1</sup>"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "l7hm5fm8",
+      "paperTitle": "JEE Advanced 2022 Paper 2 Online",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "polymers",
+      "chapterGroup": "organic-chemistry",
+      "topic": "classification-preparations-and-properties-of-polymers",
+      "type": "mcqm",
+      "marks": 4,
+      "negMarks": 2,
+      "permalink": "among-the-following-the-correct-statements-about-polymers-jee-advanced-chemistry-hydrocarbons-jqqcas8wxwi887tv",
+      "content": "Among the following, the correct statement(s) about polymers is(are)",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "The polymerization of chloroprene gives natural rubber."
+        },
+        {
+          "identifier": "B",
+          "content": "Teflon is prepared from tetrafluoroethene by heating it with persulphate catalyst at high pressures."
+        },
+        {
+          "identifier": "C",
+          "content": "PVC are thermoplastic polymers."
+        },
+        {
+          "identifier": "D",
+          "content": " Ethene at 350-570 K temperature and 1000-2000 atm pressure in the presence of a peroxide initiator yields high density polythene. "
+        }
+      ],
+      "correct_options": [
+        "B",
+        "C"
+      ],
+      "explanation": "<p>(A) Polymerization of chloroprene gives synthetic rubber.</p>\n<p>(B) Teflon is manufactured by heating tetrafluoroethene with a free radical or persulphate catalyst at hight pressure.</p>\n<p>(C) Polyvinyl chloride (PVC) is a thermoplastic polymer and used in making hand bags, vinyl flooring and water pipes.</p>\n<p>(D) Ethene at 350-570 K temperature and 1000-2000 atm pressure in the presence of a peroxide initiator yields low density polythene.</p>"
+    }
+  ]
+}

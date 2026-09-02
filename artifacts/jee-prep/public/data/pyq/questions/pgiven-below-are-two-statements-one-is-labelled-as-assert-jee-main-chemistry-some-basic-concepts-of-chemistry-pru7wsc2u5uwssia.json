@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l6nunztx",
+      "paperTitle": "JEE Main 2022 (Online) 28th July Evening Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "thermodynamics",
+      "chapterGroup": "physical-chemistry",
+      "topic": "entropy-free-energy-change-and-spontaneity",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pgiven-below-are-two-statements-one-is-labelled-as-assert-jee-main-chemistry-some-basic-concepts-of-chemistry-pru7wsc2u5uwssia",
+      "content": "<p>Given below are two statements: One is labelled as Assertion <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: 0;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.966ex\" height=\"1.579ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -698 869 698\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D400\" xlink:href=\"#MJX-TEX-B-1D400\"></use></g></g></g></g></svg></mjx-container> and the other is labelled as Reason <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.95ex\" height=\"1.577ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -686 862 697\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D411\" xlink:href=\"#MJX-TEX-B-1D411\"></use></g></g></g></g></svg></mjx-container></p>\n<p>Assertion A : The reduction of a metal oxide is easier if the metal formed is in liquid state than solid state.</p>\n<p>Reason <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.95ex\" height=\"1.577ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -686 862 697\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"1D411\" xlink:href=\"#MJX-TEX-B-1D411\"></use></g></g></g></g></svg></mjx-container> : The value of <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.05ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.095ex\" height=\"1.999ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -861.5 2252.1 883.5\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"394\" xlink:href=\"#MJX-TEX-N-394\"></use></g><g data-mml-node=\"msup\" transform=\"translate(833,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D43A\" xlink:href=\"#MJX-TEX-I-1D43A\"></use></g><g data-mml-node=\"mi\" transform=\"translate(819,363) scale(0.707)\"><use data-c=\"398\" xlink:href=\"#MJX-TEX-N-398\"></use></g></g></g></g></svg></mjx-container> becomes more on negative side as entropy is higher in liquid state than solid state.</p>\n<p>In the light of the above statements, choose the most appropriate answer from the options given below</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Both A and R are correct and R is the correct explanation of A"
+        },
+        {
+          "identifier": "B",
+          "content": "Both A and R are correct but R is NOT the correct explanation of A"
+        },
+        {
+          "identifier": "C",
+          "content": "A is correct but R is not correct"
+        },
+        {
+          "identifier": "D",
+          "content": "A is not correct but R is correct"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "Reduction of a metal oxide is easier if the metal is formed in a liquid state at the temperature of reduction because the entropy is higher if the metal is in a liquid state."
+    }
+  ]
+}

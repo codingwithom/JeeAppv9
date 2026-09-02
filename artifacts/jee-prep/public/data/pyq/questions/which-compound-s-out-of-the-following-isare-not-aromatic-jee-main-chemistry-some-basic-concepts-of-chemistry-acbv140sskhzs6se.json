@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "NnU9I4K1GO3gTEvoyc6bJ",
+      "paperTitle": "JEE Main 2019 (Online) 11th January Morning Slot",
+      "year": 2019,
+      "examDate": "2019-01-11 09:30",
+      "subject": "chemistry",
+      "chapter": "hydrocarbons",
+      "chapterGroup": "organic-chemistry",
+      "topic": "aromatic-hydrocarbons",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-compound-s-out-of-the-following-isare-not-aromatic-jee-main-chemistry-some-basic-concepts-of-chemistry-acbv140sskhzs6se",
+      "content": "Which compound (s) out of the following is/are not aromatic ? \n<br><br><img src=\"https://imagex.cdn.examgoal.net/zxASQtOrjzT8JWtk7/3VmEejMHTjyOYmoYjpVqrW2jtk8y3/UZWh9g8l6NyMNahw5poBlU/image.png\" style=\"max-width: 100%;  height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2019 (Online) 11th January Morning Slot Chemistry - Hydrocarbons Question 142 English\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(A) and (C)"
+        },
+        {
+          "identifier": "B",
+          "content": "(C) and (D)"
+        },
+        {
+          "identifier": "C",
+          "content": "(B) "
+        },
+        {
+          "identifier": "D",
+          "content": "(B), (C) and (D)"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "Compounds which follow (4n + 2)<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1.296ex\" height=\"1ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -431 573 442\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D70B\" xlink:href=\"#MJX-TEX-I-1D70B\"></use></g></g></g></svg></mjx-container> rule, are aromatic.\nHence, compounds in option B, C, D are not aromatic."
+    }
+  ]
+}

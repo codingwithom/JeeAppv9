@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "eNmOk3cHKhEQx4fD8Tjgy2xukg3811s7",
+      "paperTitle": "JEE Main 2020 (Online) 6th September Evening Slot",
+      "year": 2020,
+      "examDate": "2020-09-06 15:00",
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "iupac-nomenclature",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-iupac-name-of-the-following-compound-is--img-srchtt-jee-main-chemistry-basics-of-organic-chemistry-lviakamsjh3hf8z0",
+      "content": "The IUPAC name of the following compound is :\n<img src=\"https://imagex.cdn.examgoal.net/jgy2xukg37yfye/4e6d6305-b2f2-48bc-bb4e-d4d1150c4bc0/c2116e60-0ab6-11eb-8293-3b6cc591631c/file-jgy2xukg37yfyf-251w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 6th September Evening Slot Chemistry - Basics of Organic Chemistry Question 204 English\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "2-nitro-4-hydroxymethyl-5-amino benzaldehyde"
+        },
+        {
+          "identifier": "B",
+          "content": "3-amino-4-hydroxymethyl-5-nitro benzaldehyde"
+        },
+        {
+          "identifier": "C",
+          "content": "4-amino-2-formyl-5-hydroxymehtyl nitrobenzene"
+        },
+        {
+          "identifier": "D",
+          "content": "5-amino-4-hydroxymethyl-2-nitro benzaldehyde"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukgem3va5/a46b596b-ae58-44e0-aeba-08e3a1e2b515/b7e79cd0-10fa-11eb-8293-3b6cc591631c/file-jgy2xukgem3va6-229w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 6th September Evening Slot Chemistry - Basics of Organic Chemistry Question 204 English Explanation\">\n<br><br>5-amino-4-hydroxymethyl-2-nitrobenzaldehyde."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1kruso62r",
+      "paperTitle": "JEE Main 2021 (Online) 25th July Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "electron-displacement-effect",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "which-one-among-the-following-resonating-structures-is-not-c-jee-main-chemistry-some-basic-concepts-of-chemistry-0ozvsmqj8sjiipeg",
+      "content": "Which one among the following resonating structures is not correct?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1krwggbs2/8db9e4fa-4e76-4b7e-9ebb-2cdab47541fd/1870e820-f491-11eb-9dc6-a7061d629865/file-1krwggbs3.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 25th July Morning Shift Chemistry - Basics of Organic Chemistry Question 185 English Option 1\">"
+        },
+        {
+          "identifier": "B",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1krwgeio2/c16f5820-6fac-476b-bd43-702de8c2a196/e624c710-f490-11eb-9dc6-a7061d629865/file-1krwgeio3.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 25th July Morning Shift Chemistry - Basics of Organic Chemistry Question 185 English Option 2\">"
+        },
+        {
+          "identifier": "C",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1krwgfoh4/0fb83ace-326b-4534-8c27-06d318fa34b5/06707280-f491-11eb-9dc6-a7061d629865/file-1krwgfoh5.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 25th July Morning Shift Chemistry - Basics of Organic Chemistry Question 185 English Option 3\">"
+        },
+        {
+          "identifier": "D",
+          "content": "<img src=\"https://imagex.cdn.examgoal.net/1krwgg0vo/7de4294c-4ce0-4fa4-98c2-5f6dea6e76e8/10057340-f491-11eb-9dc6-a7061d629865/file-1krwgg0vp.jpg\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 25th July Morning Shift Chemistry - Basics of Organic Chemistry Question 185 English Option 4\">"
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/1krwgi5pj/60bc70be-8a76-4598-bde8-7778853a9211/4b5ec770-f491-11eb-9dc6-a7061d629865/file-1krwgi5pk.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2021 (Online) 25th July Morning Shift Chemistry - Basics of Organic Chemistry Question 185 English Explanation\"><br>It is unstable Resonating Structure (due to similar charge on adjacent atom)."
+    }
+  ]
+}

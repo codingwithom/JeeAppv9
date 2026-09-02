@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "V7tz4oL9700z3b4sjr1kmj6iv65",
+      "paperTitle": "JEE Main 2021 (Online) 17th March Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "d-and-f-block-elements",
+      "chapterGroup": "inorganic-chemistry",
+      "topic": "properties-of-transition-elements",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "what-is-the-spin-only-magnetic-moment-value-bm-of-a-divale-jee-main-chemistry-some-basic-concepts-of-chemistry-c9f2n1ljzzosusyt",
+      "content": "What is the spin-only magnetic moment value (BM) of a divalent metal ion with atomic number 25, in it's aqueous solution?",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "zero"
+        },
+        {
+          "identifier": "B",
+          "content": "5.26"
+        },
+        {
+          "identifier": "C",
+          "content": "5.0"
+        },
+        {
+          "identifier": "D",
+          "content": "5.92"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<sub>25</sub>Mn = [Ar]3d<sup>5</sup> 4s<sup>2</sup><br>\nMn<sup>2+</sup> = [Ar]3d<sup>5</sup> 4s<sup>0</sup><br><br>\nNo. of unpaired electron (n) = 5<br><br>\n<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.639ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"19.911ex\" height=\"2.851ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -977.5 8800.7 1260\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mi\"><use data-c=\"1D707\" xlink:href=\"#MJX-TEX-I-1D707\"></use></g><g data-mml-node=\"mo\" transform=\"translate(880.8,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"msqrt\" transform=\"translate(1936.6,0)\"><g data-mml-node=\"mo\" transform=\"translate(0,67.5)\"><use data-c=\"221A\" xlink:href=\"#MJX-TEX-SO-221A\"></use></g><g transform=\"translate(1020,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mrow\" transform=\"translate(766.7,0)\"><g data-mml-node=\"mo\"><use data-c=\"28\" xlink:href=\"#MJX-TEX-N-28\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(389,0)\"><g data-mml-node=\"mi\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mo\" transform=\"translate(822.2,0)\"><use data-c=\"2B\" xlink:href=\"#MJX-TEX-N-2B\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1822.4,0)\"><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\"></use></g></g><g data-mml-node=\"mo\" transform=\"translate(2711.4,0)\"><use data-c=\"29\" xlink:href=\"#MJX-TEX-N-29\"></use></g></g></g><rect width=\"3867.1\" height=\"60\" x=\"1020\" y=\"857.5\"></rect></g><g data-mml-node=\"mspace\" transform=\"translate(6823.7,0)\"></g><g data-mml-node=\"mi\" transform=\"translate(6990.7,0)\"><use data-c=\"1D435\" xlink:href=\"#MJX-TEX-I-1D435\"></use></g><g data-mml-node=\"mi\" transform=\"translate(7749.7,0)\"><use data-c=\"1D440\" xlink:href=\"#MJX-TEX-I-1D440\"></use></g></g></g></svg></mjx-container><br><br>\n<mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.25ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"23.596ex\" height=\"2.41ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -954.5 10429.3 1065\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"mo\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"msqrt\" transform=\"translate(1055.8,0)\"><g data-mml-node=\"mo\" transform=\"translate(0,94.5)\"><use data-c=\"221A\" xlink:href=\"#MJX-TEX-N-221A\"></use></g><g transform=\"translate(853,0)\"><g data-mml-node=\"mn\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use></g><g data-mml-node=\"mo\" transform=\"translate(722.2,0)\"><use data-c=\"D7\" xlink:href=\"#MJX-TEX-N-D7\"></use></g><g data-mml-node=\"mn\" transform=\"translate(1722.4,0)\"><use data-c=\"37\" xlink:href=\"#MJX-TEX-N-37\"></use></g></g><rect width=\"2222.4\" height=\"60\" x=\"853\" y=\"834.5\"></rect></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(4131.2,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"></g></g><g data-mml-node=\"mo\" transform=\"translate(4409,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"msqrt\" transform=\"translate(5464.8,0)\"><g data-mml-node=\"mo\" transform=\"translate(0,89.5)\"><use data-c=\"221A\" xlink:href=\"#MJX-TEX-N-221A\"></use></g><g transform=\"translate(853,0)\"><g data-mml-node=\"mn\"><use data-c=\"33\" xlink:href=\"#MJX-TEX-N-33\"></use><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\" transform=\"translate(500,0)\"></use></g></g><rect width=\"1000\" height=\"60\" x=\"853\" y=\"829.5\"></rect></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(7317.8,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"></g></g><g data-mml-node=\"mo\" transform=\"translate(7595.6,0)\"><use data-c=\"3D\" xlink:href=\"#MJX-TEX-N-3D\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(8651.3,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"></g></g><g data-mml-node=\"mn\" transform=\"translate(8651.3,0)\"><use data-c=\"35\" xlink:href=\"#MJX-TEX-N-35\"></use><use data-c=\"2E\" xlink:href=\"#MJX-TEX-N-2E\" transform=\"translate(500,0)\"></use><use data-c=\"39\" xlink:href=\"#MJX-TEX-N-39\" transform=\"translate(778,0)\"></use><use data-c=\"32\" xlink:href=\"#MJX-TEX-N-32\" transform=\"translate(1278,0)\"></use></g><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\" transform=\"translate(10429.3,0)\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"ORD\"></g></g></g></g></svg></mjx-container> BM\n"
+    }
+  ]
+}

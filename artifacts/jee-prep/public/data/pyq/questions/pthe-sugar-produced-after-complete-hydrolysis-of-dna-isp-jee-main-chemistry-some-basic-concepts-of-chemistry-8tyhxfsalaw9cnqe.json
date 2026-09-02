@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1l5w6evbk",
+      "paperTitle": "JEE Main 2022 (Online) 30th June Morning Shift",
+      "year": 2022,
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "vitamins-and-nucleic-acids",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pthe-sugar-produced-after-complete-hydrolysis-of-dna-isp-jee-main-chemistry-some-basic-concepts-of-chemistry-8tyhxfsalaw9cnqe",
+      "content": "<p>The sugar produced after complete hydrolysis of DNA is</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "a pentose sugar."
+        },
+        {
+          "identifier": "B",
+          "content": "a hexose sugar."
+        },
+        {
+          "identifier": "C",
+          "content": "a polysaccharide."
+        },
+        {
+          "identifier": "D",
+          "content": "a disaccharide."
+        }
+      ],
+      "correct_options": [
+        "A"
+      ],
+      "explanation": "DNA mainly consist of a nitrogeneous base, phosphate group and a pentose sugar.\n<br/><br/>\nSo, hydrolysis of DNA produces a pentose sugar."
+    }
+  ]
+}

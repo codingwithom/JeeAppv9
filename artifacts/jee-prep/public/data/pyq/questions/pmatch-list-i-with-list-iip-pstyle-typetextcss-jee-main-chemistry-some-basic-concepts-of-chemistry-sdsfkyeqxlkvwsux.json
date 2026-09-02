@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1lh32d6j3",
+      "paperTitle": "JEE Main 2023 (Online) 6th April Evening Shift",
+      "year": 2023,
+      "subject": "chemistry",
+      "chapter": "biomolecules",
+      "chapterGroup": "organic-chemistry",
+      "topic": "vitamins-and-nucleic-acids",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "pmatch-list-i-with-list-iip-pstyle-typetextcss-jee-main-chemistry-some-basic-concepts-of-chemistry-sdsfkyeqxlkvwsux",
+      "content": "<p>Match List I with List II</p>\n<p>\n<table class=\"tg\" style=\"undefined;table-layout: fixed; width: 616px\">\n<colgroup>\n<col style=\"width: 46px\">\n<col style=\"width: 258px\">\n<col style=\"width: 48px\">\n<col style=\"width: 264px\">\n</colgroup>\n<thead>\n  <tr>\n    <th class=\"tg-7btt\"></th>\n    <th class=\"tg-7btt\">LIST I <br>Natural Amino Acid</th>\n    <th class=\"tg-7btt\"></th>\n    <th class=\"tg-7btt\">LIST II <br>One Letter Code</th>\n  </tr>\n</thead>\n<tbody>\n  <tr>\n    <td class=\"tg-c3ow\">A.</td>\n    <td class=\"tg-0pky\">Arginine</td>\n    <td class=\"tg-c3ow\">I.</td>\n    <td class=\"tg-0pky\">D</td>\n  </tr>\n  <tr>\n    <td class=\"tg-c3ow\">B.</td>\n    <td class=\"tg-0pky\">Aspartic acid</td>\n    <td class=\"tg-c3ow\">II.</td>\n    <td class=\"tg-0pky\">N</td>\n  </tr>\n  <tr>\n    <td class=\"tg-c3ow\">C.</td>\n    <td class=\"tg-0pky\">Asparagine</td>\n    <td class=\"tg-c3ow\">III.</td>\n    <td class=\"tg-0pky\">A</td>\n  </tr>\n  <tr>\n    <td class=\"tg-c3ow\">D.</td>\n    <td class=\"tg-0pky\">Alanine</td>\n    <td class=\"tg-c3ow\">IV.</td>\n    <td class=\"tg-0pky\">R</td>\n  </tr>\n</tbody>\n</table></p>\n<p>Choose the correct answer from the options given below:</p>",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(A) - IV, (B) - I, (C) - III, (D) - II"
+        },
+        {
+          "identifier": "B",
+          "content": "(A) - III, (B) - I, (C) - II, (D) - IV"
+        },
+        {
+          "identifier": "C",
+          "content": "(A) - IV, (B) - I, (C) - II, (D) - III"
+        },
+        {
+          "identifier": "D",
+          "content": "(A) - I, (B) - III, (C) - IV, (D) - II"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "<p>In protein chemistry, each amino acid is assigned a one-letter code to simplify notation. The matching for the given amino acids to their one-letter codes is as follows:</p>\n<ul>\n<li>Arginine (A) - R (IV)</li>\n<li>Aspartic Acid (B) - D (I)</li>\n<li>Asparagine (C) - N (II)</li>\n<li>Alanine (D) - A (III)</li>\n</ul>\n<p>So, the correct answer is Option C: (A) - IV, (B) - I, (C) - II, (D) - III.</p>\n"
+    }
+  ]
+}

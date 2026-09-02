@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "QYwru3oZrKqa5TggNXjgy2xukevk4ooe",
+      "paperTitle": "JEE Main 2020 (Online) 2nd September Morning Slot",
+      "year": 2020,
+      "examDate": "2020-09-02 09:00",
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "iupac-nomenclature",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "the-iupac-name-for-the-following-compound-is-img-srchttp-jee-main-chemistry-basics-of-organic-chemistry-3acssf3jnvjjy0yc",
+      "content": "The IUPAC name for the following compound\nis\n<img src=\"https://imagex.cdn.examgoal.net/jgy2xukevk2arb/b7b98763-d7c8-4254-a375-a90b704aeb96/9e441070-f2b3-11ea-8293-3b6cc591631c/file-jgy2xukevk2arc-320w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 2nd September Morning Slot Chemistry - Basics of Organic Chemistry Question 212 English\">",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "2, 5-dimethyl-6-carboxy-hex-3-enal"
+        },
+        {
+          "identifier": "B",
+          "content": "6-formyl-2-methyl-hex-3-enoic acid"
+        },
+        {
+          "identifier": "C",
+          "content": "2, 5-dimethyl-5-carboxy-hex-3-enal"
+        },
+        {
+          "identifier": "D",
+          "content": "2, 5-dimethyl-6-oxo-hex-3-enoic acid"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<img src=\"https://imagex.cdn.examgoal.net/jgy2xukhd0couo/009416a2-bbfd-4c78-a16b-41c384f7a437/131bbd00-23e5-11eb-8293-3b6cc591631c/file-jgy2xukhd0coup-330w.png\" style=\"max-width: 100%;height: auto;display: block;margin: 0 auto;\" loading=\"lazy\" alt=\"JEE Main 2020 (Online) 2nd September Morning Slot Chemistry - Basics of Organic Chemistry Question 212 English Explanation\">\n<br>2, 5-dimethyl-6-oxo-hex-3-enoic acid"
+    }
+  ]
+}

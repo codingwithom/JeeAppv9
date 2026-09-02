@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "question_id": "8fiCCKECwzPVdw8D820jz",
+      "paperTitle": "JEE Main 2019 (Online) 8th April Morning Slot",
+      "year": 2019,
+      "examDate": "2019-04-08 09:30",
+      "subject": "chemistry",
+      "chapter": "basics-of-organic-chemistry",
+      "chapterGroup": "organic-chemistry",
+      "topic": "acid-and-base-strength",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "in-the-following-compounds-the-decreasing-order-of-basic-st-jee-main-chemistry-some-basic-concepts-of-chemistry-sckhuetfvgiepw4j",
+      "content": "In the following compounds, the decreasing order of basic strength will be :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "(C<sub>2</sub>H<sub>5</sub>)<sub>2</sub>NH &gt; NH<sub>3</sub> &gt; C<sub>2</sub>H<sub>5</sub>NH<sub>2</sub>"
+        },
+        {
+          "identifier": "B",
+          "content": "NH<sub>3</sub> &gt; C<sub>2</sub>H<sub>5</sub>NH<sub>2</sub> &gt; (C<sub>2</sub>H<sub>5</sub>)<sub>2</sub>NH"
+        },
+        {
+          "identifier": "C",
+          "content": "(C<sub>2</sub>H<sub>5</sub>)<sub>2</sub>NH &gt; C<sub>2</sub>H<sub>5</sub>NH<sub>2</sub> &gt; NH<sub>3</sub>"
+        },
+        {
+          "identifier": "D",
+          "content": "C<sub>2</sub>H<sub>5</sub>NH<sub>2</sub> &gt; NH<sub>3</sub> &gt; (C<sub>2</sub>H<sub>5</sub>)<sub>2</sub>NH"
+        }
+      ],
+      "correct_options": [
+        "C"
+      ],
+      "explanation": "Because of +I effect of -C<sub>2</sub>H<sub>5</sub> group, C<sub>2</sub>H<sub>5</sub>NH<sub>2</sub> and (C<sub>2</sub>H<sub>5</sub>)<sub>2</sub>NH are more basic than NH<sub>3</sub>.\n<br><br>When with amine ethyl group (-C<sub>2</sub>H<sub>5</sub>) present then basic strength order :\n<br><br> 2<sup>o</sup> amine &gt; 3<sup>o</sup> amine &gt; 1<sup>o</sup> amine\n<br><br><b>Note :</b>\n<br><br>When with amine methyl group (-CH<sub>3</sub>) present then basic strength order :\n<br><br> 2<sup>o</sup> amine &gt; 1<sup>o</sup> amine &gt; 3<sup>o</sup> amine"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_id": "1yIt1yVHzptcjID1Jm1kmlnapae",
+      "paperTitle": "JEE Main 2021 (Online) 18th March Morning Shift",
+      "year": 2021,
+      "subject": "chemistry",
+      "chapter": "ionic-equilibrium",
+      "chapterGroup": "physical-chemistry",
+      "topic": "salt-hydrolysis",
+      "type": "mcq",
+      "marks": 4,
+      "negMarks": 1,
+      "permalink": "given-below-are-two-statements--one-is-labelled-as-assertio-jee-main-chemistry-some-basic-concepts-of-chemistry-kjkhteosdp4nwv6o",
+      "content": "Given below are two statements : One is labelled as Assertion A and the other labelled as reason R<br><br>Assertion A : During the boiling of water having temporary hardness, Mg(HCO<sub>3</sub>)<sub>2</sub> is converted to MgCO<sub>3</sub>.<br><br>Reason R : The solubility product of Mg(OH)<sub>2</sub> is greater than that of MgCO<sub>3</sub>.<br><br>In the light of the above statements, choose the most appropriate answer from the options given below :",
+      "options": [
+        {
+          "identifier": "A",
+          "content": "Both A and R are true but R is not the correct explanation of A"
+        },
+        {
+          "identifier": "B",
+          "content": "A is true but R is false"
+        },
+        {
+          "identifier": "C",
+          "content": "Both A and R are true and R is the correct explanation of A"
+        },
+        {
+          "identifier": "D",
+          "content": "A is false but R is true"
+        }
+      ],
+      "correct_options": [
+        "D"
+      ],
+      "explanation": "<b>A</b> : For temporary hardness,<br> Mg(HCO<sub>3</sub>)<sub>2</sub> <mjx-container class=\"MathJax\" jax=\"SVG\" overflow=\"overflow\"><svg style=\"vertical-align: -0.025ex;\" xmlns=\"http://www.w3.org/2000/svg\" width=\"5.37ex\" height=\"3.097ex\" role=\"img\" focusable=\"false\" viewBox=\"0 -1357.7 2373.8 1368.7\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><g stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" transform=\"scale(1,-1)\"><g data-mml-node=\"math\"><g data-mml-node=\"TeXAtom\" data-mjx-texclass=\"REL\"><g data-mml-node=\"mover\"><g data-mml-node=\"mo\" transform=\"translate(367.9,0)\"><use data-c=\"27F6\" xlink:href=\"#MJX-TEX-N-27F6\"></use></g><g data-mml-node=\"TeXAtom\" transform=\"translate(0,767) scale(0.707)\" data-mjx-texclass=\"ORD\"><g data-mml-node=\"mi\"><use data-c=\"210E\" xlink:href=\"#MJX-TEX-I-210E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(576,0)\"><use data-c=\"1D452\" xlink:href=\"#MJX-TEX-I-1D452\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1042,0)\"><use data-c=\"1D44E\" xlink:href=\"#MJX-TEX-I-1D44E\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1571,0)\"><use data-c=\"1D461\" xlink:href=\"#MJX-TEX-I-1D461\"></use></g><g data-mml-node=\"mi\" transform=\"translate(1932,0)\"><use data-c=\"1D456\" xlink:href=\"#MJX-TEX-I-1D456\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2277,0)\"><use data-c=\"1D45B\" xlink:href=\"#MJX-TEX-I-1D45B\"></use></g><g data-mml-node=\"mi\" transform=\"translate(2877,0)\"><use data-c=\"1D454\" xlink:href=\"#MJX-TEX-I-1D454\"></use></g></g></g></g></g></g></svg></mjx-container> Mg(OH)<sub>2</sub> + 2CO<sub>2</sub> Assertion is false. MgCO<sub>3</sub> has\nhigh solubility product than Mg(OH)<sub>2</sub>.<br><br>\n<b>R</b> : MgCO<sub>3</sub> is more water soluble than Mg(OH)<sub>2</sub>. <br><br>\nK<sub>SP(Mg(OH)<sub>2</sub>)</sub> = 1.8 × 10<sup>–11</sup><br><br>\nK<sub>SP(MgCO<sub>3</sub>)</sub> = 3.5 × 10<sup>–8</sup>"
+    }
+  ]
+}

@@ -74,6 +74,26 @@ function formatPaperTitle(titleOrKey?: string): string {
   return str;
 }
 
+// Universal helper that resolves data files from any path (dist/data, dist/data/pyq, root /data, etc.)
+async function fetchStaticData(subPath: string): Promise<Response | null> {
+  const cleanPath = subPath.startsWith("/") ? subPath.slice(1) : subPath;
+  const candidates = [
+    `/${cleanPath}`,
+    `./${cleanPath}`,
+    `/${cleanPath.replace(/^data\/pyq\//, "data/")}`,
+    `./${cleanPath.replace(/^data\/pyq\//, "data/")}`,
+    `/${cleanPath.replace(/^data\//, "data/pyq/")}`,
+    `./${cleanPath.replace(/^data\//, "data/pyq/")}`
+  ];
+  for (const url of candidates) {
+    try {
+      const res = await fetch(url);
+      if (res.ok) return res;
+    } catch (e) {}
+  }
+  return null;
+}
+
 function scoreMatch(query: string, item: any): number {
   const cleanQ = query.toLowerCase().replace(/[^a-z0-9\s]/g, " ").replace(/\s+/g, " ").trim();
   const cleanTarget = (item.text + " " + (item.paperTitle || "") + " " + (item.chapter || "")).toLowerCase().replace(/[^a-z0-9\s]/g, " ").replace(/\s+/g, " ");

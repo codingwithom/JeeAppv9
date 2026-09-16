@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { RichMathContent } from "./RichMathContent";
 
-export type QuestionCategory = "mcq" | "multiple_mcq" | "numerical";
+export type QuestionCategory = "mcq" | "multiple_mcq" | "numerical" | "subjective" | "fill_blanks";
 
 export function getQuestionCategory(q: any): QuestionCategory {
   if (!q) return "mcq";
@@ -16,6 +16,12 @@ export function getQuestionCategory(q: any): QuestionCategory {
   }
   if (typeStr === "mcqm" || typeStr.includes("more than one") || typeStr.includes("multiple") || typeStr.includes("one or more")) {
     return "multiple_mcq";
+  }
+  if (typeStr === "subjective" || typeStr.includes("subjective")) {
+    return "subjective";
+  }
+  if (typeStr === "fill-blanks" || typeStr === "fill_blanks" || typeStr.includes("fill")) {
+    return "fill_blanks";
   }
   if (typeStr === "mcq" || typeStr.includes("single correct") || typeStr.includes("mcq")) {
     return "mcq";
@@ -40,7 +46,12 @@ export function getQuestionCategory(q: any): QuestionCategory {
     }
   }
 
-  // 4. Default to mcq
+  // 4. If no options exist, check if paper is before 2006 (often subjective in classic IIT-JEE)
+  if (typeStr.includes("subject") || (q.paperTitle && /19\d\d|200[0-5]/.test(q.paperTitle) && !options.length)) {
+    return "subjective";
+  }
+
+  // 5. Default to mcq
   return "mcq";
 }
 
@@ -85,7 +96,7 @@ export function QuestionInteractiveArea({
   const marks = question?.marks || 4;
   const negMarks = question?.negMarks !== undefined 
     ? question.negMarks 
-    : (category === "multiple_mcq" ? 2 : category === "numerical" ? 0 : 1);
+    : (category === "multiple_mcq" ? 2 : (category === "numerical" || category === "subjective" || category === "fill_blanks") ? 0 : 1);
 
   // Keypad click for numerical input
   const handleKeypadPress = (val: string) => {
@@ -150,11 +161,12 @@ export function QuestionInteractiveArea({
   // Can check answer button be clicked?
   const canCheck = React.useMemo(() => {
     if (isChecked) return false;
-    if (category === "mcq") return Boolean(userSelectedOption);
+    if (category === "mcq") return options.length > 0 ? Boolean(userSelectedOption) : true;
     if (category === "multiple_mcq") return selectedOptionsList.length > 0;
     if (category === "numerical") return numericalInput.trim().length > 0;
+    if (category === "subjective" || category === "fill_blanks") return true;
     return false;
-  }, [isChecked, category, userSelectedOption, selectedOptionsList, numericalInput]);
+  }, [isChecked, category, userSelectedOption, selectedOptionsList, numericalInput, options]);
 
   return (
     <div className="relative">
@@ -294,57 +306,25 @@ export function QuestionInteractiveArea({
                 ))}
               </div>
             ) : (
-              <div className="space-y-2.5 pt-1">
-                {["A", "B", "C", "D"].map((optId) => {
-                  const isSelected = userSelectedOption === optId;
-                  const isCorrectOption = correctOptions.includes(optId);
-                  let optClass = "border-border/80 bg-card hover:bg-muted/40 text-foreground";
-                  if (isChecked) {
-                    if (isCorrectOption) {
-                      optClass = "border-emerald-500 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-950 dark:text-emerald-100 ring-2 ring-emerald-500/30";
-                    } else if (isSelected && !isCorrectOption) {
-                      optClass = "border-red-500 bg-red-50 dark:bg-red-950/40 text-red-950 dark:text-red-100 ring-2 ring-red-500/30";
-                    }
-                  } else if (isSelected) {
-                    optClass = "border-primary bg-primary/5 text-foreground ring-2 ring-primary/30 shadow-xs";
-                  }
-
-                  return (
-                    <div
-                      key={optId}
-                      onClick={() => {
-                        if (!isChecked) onSelectOption(optId);
-                      }}
-                      className={`p-3.5 sm:p-4 rounded-xl border transition-all cursor-pointer flex items-center justify-between gap-4 ${optClass}`}
-                    >
-                      <div className="flex items-center gap-3.5 min-w-0 flex-1">
-                        <span className={`w-7 h-7 rounded-lg flex items-center justify-center text-xs font-bold shrink-0 transition-colors ${
-                          isSelected
-                            ? "bg-primary text-primary-foreground shadow-xs"
-                            : "bg-muted text-muted-foreground"
-                        }`}>
-                          {optId}
-                        </span>
-                        <div className="text-sm font-medium flex-1 text-foreground">
-                          Option {optId}
-                        </div>
-                      </div>
-                      {isChecked && (
-                        <div className="shrink-0 flex items-center gap-1.5">
-                          {isCorrectOption ? (
-                            <span className="px-2.5 py-1 rounded-md text-[11px] font-bold bg-emerald-600 text-white flex items-center gap-1 shadow-xs">
-                              <Check className="w-3.5 h-3.5 stroke-[3]" /> Correct
-                            </span>
-                          ) : isSelected ? (
-                            <span className="px-2.5 py-1 rounded-md text-[11px] font-bold bg-red-600 text-white flex items-center gap-1 shadow-xs">
-                              <X className="w-3.5 h-3.5 stroke-[3]" /> Your Choice
-                            </span>
-                          ) : null}
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
+              <div className="p-4 sm:p-5 rounded-2xl border border-border/80 bg-muted/20 space-y-3">
+                <div className="flex items-center gap-2 text-xs font-bold text-foreground">
+                  <AlertCircle className="w-4 h-4 text-primary" />
+                  <span>Question Choices & Verification</span>
+                </div>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  Options and step-by-step mathematical reasoning for this question are detailed in the verified solution below.
+                </p>
+                <div className="pt-1">
+                  <Button
+                    variant={isSolutionVisible ? "outline" : "default"}
+                    size="sm"
+                    onClick={onToggleSolution}
+                    className="rounded-xl text-xs gap-2 py-3 px-5 font-semibold shadow-xs"
+                  >
+                    <HelpCircle className="w-4 h-4" />
+                    {isSolutionVisible ? "Hide Detailed Solution" : "View Detailed Solution & Answer"}
+                  </Button>
+                </div>
               </div>
             )}
           </div>
@@ -603,30 +583,73 @@ export function QuestionInteractiveArea({
           </div>
         )}
 
+        {/* ── 4. SUBJECTIVE / LONG-ANSWER / FILL-BLANKS UI ─────────────────── */}
+        {(category === "subjective" || category === "fill_blanks") && (
+          <div className="space-y-4 pt-2">
+            <div className="p-5 rounded-2xl bg-amber-500/10 border border-amber-500/25 space-y-3">
+              <div className="flex items-center justify-between gap-2">
+                <div className="flex items-center gap-2 font-bold text-xs text-amber-800 dark:text-amber-300">
+                  <Sparkles className="w-4 h-4 text-amber-500" />
+                  <span>{category === "subjective" ? "Subjective / Long-Answer Question" : "Fill in the Blank Question"}</span>
+                </div>
+                <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-500/20 text-amber-800 dark:text-amber-200 border border-amber-500/30">
+                  {question?.paperTitle || "IIT-JEE Archive"}
+                </span>
+              </div>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                This is an authentic analytical question from past IIT-JEE examinations. Work out the full derivation or value on paper, then click below to view the verified step-by-step solution.
+              </p>
+              <div className="pt-1">
+                <Button
+                  variant={isSolutionVisible ? "outline" : "default"}
+                  onClick={onToggleSolution}
+                  className="rounded-xl text-xs gap-2 py-4 px-6 font-semibold shadow-xs"
+                >
+                  <HelpCircle className="w-4 h-4" />
+                  {isSolutionVisible ? "Hide Step-by-Step Solution" : "View Step-by-Step Solution"}
+                </Button>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* ── Check Answer & Action Controls ─────────────────────────────────── */}
-        <div className="flex flex-wrap items-center justify-center gap-4 pt-4 border-t border-border/60">
-          {!isChecked ? (
-            <Button
-              onClick={onCheckAnswer}
-              disabled={!canCheck}
-              className="px-8 py-5 rounded-xl font-bold text-sm bg-primary hover:bg-primary/90 text-primary-foreground shadow-md shadow-primary/20 transition-all active:scale-95"
-            >
-              Check Answer
-            </Button>
-          ) : (
-            <Button
-              variant="outline"
-              onClick={onToggleSolution}
-              className="rounded-xl text-xs gap-2 py-4 px-6 font-semibold"
-            >
-              <HelpCircle className="w-4 h-4 text-primary" />
-              {isSolutionVisible ? "Hide Detailed Solution" : "View Detailed Solution"}
-            </Button>
-          )}
-        </div>
+        {category !== "subjective" && category !== "fill_blanks" && (
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 pt-4 border-t border-border/60">
+            {!isChecked ? (
+              <>
+                <Button
+                  onClick={onCheckAnswer}
+                  disabled={!canCheck}
+                  className="px-8 py-5 rounded-xl font-bold text-sm bg-primary hover:bg-primary/90 text-primary-foreground shadow-md shadow-primary/20 transition-all active:scale-95"
+                >
+                  Check Answer
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={onToggleSolution}
+                  className="rounded-xl text-xs gap-1.5 text-muted-foreground hover:text-foreground"
+                >
+                  <HelpCircle className="w-3.5 h-3.5 text-primary" />
+                  {isSolutionVisible ? "Hide Solution" : "View Solution"}
+                </Button>
+              </>
+            ) : (
+              <Button
+                variant="outline"
+                onClick={onToggleSolution}
+                className="rounded-xl text-xs gap-2 py-4 px-6 font-semibold"
+              >
+                <HelpCircle className="w-4 h-4 text-primary" />
+                {isSolutionVisible ? "Hide Detailed Solution" : "View Detailed Solution"}
+              </Button>
+            )}
+          </div>
+        )}
 
         {/* ── Step-by-Step Mathematical Explanation ───────────────────────────── */}
-        {isChecked && isSolutionVisible && (
+        {isSolutionVisible && (
           <div className="space-y-3 pt-4 border-t border-border/60 animate-in fade-in slide-in-from-top-3 duration-300">
             <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-muted-foreground">
               <Sparkles className="w-4 h-4 text-amber-500" />
@@ -636,9 +659,18 @@ export function QuestionInteractiveArea({
             <div className="bg-muted/30 border border-border/80 rounded-2xl p-6 shadow-xs leading-relaxed">
               {explanation ? (
                 <RichMathContent content={explanation} />
+              ) : officialAnswer || correctOptions.length > 0 ? (
+                <div className="space-y-2">
+                  <div className="text-xs font-semibold text-foreground">
+                    Verified Correct Answer: <strong className="text-emerald-600 dark:text-emerald-400 font-mono text-sm">{String(officialAnswer || correctOptions.join(", "))}</strong>
+                  </div>
+                  <p className="text-xs text-muted-foreground italic">
+                    Full step-by-step derivation for this past question is being processed from the IIT-JEE archives.
+                  </p>
+                </div>
               ) : (
                 <p className="text-xs text-muted-foreground italic">
-                  Official answer verified: <strong>{String(officialAnswer || correctOptions.join(", "))}</strong>. Full detailed solution is loading.
+                  Step-by-step derivation for this past question is recorded in the IIT-JEE examination archive.
                 </p>
               )}
             </div>

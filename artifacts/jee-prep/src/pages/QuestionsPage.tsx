@@ -47,7 +47,7 @@ function isFullyLoaded(q: any): boolean {
   if (!content || typeof content !== "string" || content.trim().length === 0) {
     return false;
   }
-  if (q.type === "integer" || q.category === "numerical") {
+  if (q.type === "integer" || q.category === "numerical" || q.type === "subjective" || q.type === "fill-blanks" || q.type === "tf") {
     return true;
   }
   const opts = q.options || q.question?.en?.options;
@@ -86,6 +86,7 @@ async function fetchStaticData(subPath: string): Promise<Response | null> {
 
   const candidates = [
     `${cdnBase}/${pathWithoutData}`,
+    `https://raw.githubusercontent.com/codingwithom/jee-pyq-db/main/${pathWithoutData}`,
     `/${cleanPath}`,
     `./${cleanPath}`,
     `/data/${pathWithoutData}`,
@@ -761,7 +762,7 @@ export default function QuestionsPage() {
     // 2. Set fallback question immediately with explicit type so there is ZERO category confusion!
     const immediateFallback = fallbackQ ? {
       ...fallbackQ,
-      type: fallbackQ.type || (fallbackQ.groupKey === "integer" ? "integer" : fallbackQ.groupKey === "mcqm" ? "mcqm" : "mcq")
+      type: fallbackQ.type || (fallbackQ.groupKey === "integer" ? "integer" : fallbackQ.groupKey === "mcqm" ? "mcqm" : fallbackQ.groupKey === "subjective" ? "subjective" : fallbackQ.groupKey === "fill-blanks" ? "fill-blanks" : "mcq")
     } : null;
     setActiveQuestionData(immediateFallback);
     setQuestionDetailLoading(true);
@@ -782,7 +783,7 @@ export default function QuestionsPage() {
             options: optList,
             correct_options: corList,
             explanation: rawQ.question?.en?.explanation || rawQ.explanation || "",
-            type: rawQ.type || immediateFallback?.type || (optList.length > 0 ? "mcq" : "integer"),
+            type: rawQ.type || immediateFallback?.type || (optList.length > 0 ? "mcq" : (immediateFallback?.type || "integer")),
             paperTitle: formatPaperTitle(rawQ.paperTitle || immediateFallback?.paperTitle || "")
           };
         }
@@ -813,7 +814,7 @@ export default function QuestionsPage() {
           ...q,
           groupKey: g.key,
           groupTitle: g.title,
-          type: q.type || (g.key === "integer" ? "integer" : g.key === "mcqm" ? "mcqm" : "mcq")
+          type: q.type || (g.key === "integer" ? "integer" : g.key === "mcqm" ? "mcqm" : g.key === "subjective" ? "subjective" : g.key === "fill-blanks" ? "fill-blanks" : "mcq")
         }))
       );
     }
@@ -823,7 +824,7 @@ export default function QuestionsPage() {
           ...q,
           groupKey: targetGroup.key,
           groupTitle: targetGroup.title,
-          type: q.type || (targetGroup.key === "integer" ? "integer" : targetGroup.key === "mcqm" ? "mcqm" : "mcq")
+          type: q.type || (targetGroup.key === "integer" ? "integer" : targetGroup.key === "mcqm" ? "mcqm" : targetGroup.key === "subjective" ? "subjective" : targetGroup.key === "fill-blanks" ? "fill-blanks" : "mcq")
         }))
       : [];
   }, [chapterQuestionGroups, selectedTypeFilter]);

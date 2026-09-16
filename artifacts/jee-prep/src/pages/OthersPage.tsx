@@ -537,6 +537,7 @@ export default function OthersPage() {
   const [syncMessage, setSyncMessage] = useState<string>("");
   const [openChapters, setOpenChapters] = useState<Record<string, boolean>>({});
   const [openLectureMenu, setOpenLectureMenu] = useState<string | null>(null);
+  const [isLoadingBatch, setIsLoadingBatch] = useState<boolean>(false);
   const loadingBatchIds = React.useRef(new Set<string>());
 
   // Completed Lectures Set (stored locally and synced to IndexedDB)
@@ -602,6 +603,7 @@ export default function OthersPage() {
       return;
     }
 
+    setIsLoadingBatch(true);
     loadingBatchIds.current.add(selectedBatchId);
     fetchBatchMetadata(selectedBatchId)
       .then(subjects => {
@@ -611,11 +613,15 @@ export default function OthersPage() {
         }
         setBatches(prev => prev.map(batch => batch.id === selectedBatchId ? { ...batch, subjects } : batch));
         const topicCount = subjects.reduce((count, subject) => count + subject.chapters.length, 0);
-        setSyncMessage(`Loaded ${subjects.length} subjects, teachers, and ${topicCount} chapter names`);
+        const dppCount = subjects.reduce((count, subject) => count + subject.chapters.reduce((sum, ch) => sum + ch.lectures.filter(l => l.type === "dpp").length, 0), 0);
+        setSyncMessage(`Loaded ${subjects.length} subjects, ${topicCount} chapters, and ${dppCount} DPPs`);
       })
-        .catch(() => setSyncMessage("Live batch metadata could not be loaded. Check that the backend is running, then retry the batch."))
-        .finally(() => loadingBatchIds.current.delete(selectedBatchId));
-      }, [batches, catalogBatches, selectedBatchId]);
+      .catch(() => setSyncMessage("Live batch metadata could not be loaded. Check that the backend is running, then retry the batch."))
+      .finally(() => {
+        loadingBatchIds.current.delete(selectedBatchId);
+        setIsLoadingBatch(false);
+      });
+  }, [batches, catalogBatches, selectedBatchId]);
 
   // Expand all chapters by default when batch changes
   useEffect(() => {
@@ -955,7 +961,23 @@ export default function OthersPage() {
           </div>
 
           {/* Chapters & Lectures Accordions */}
-          {currentBatch.subjects.length === 0 ? (
+          {isLoadingBatch ? (
+            <Card className="border border-border/80 bg-card p-8 text-center space-y-4 shadow-sm animate-pulse">
+              <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mx-auto">
+                <RotateCcw className="w-6 h-6 animate-spin text-primary" />
+              </div>
+              <div className="space-y-1.5">
+                <h3 className="text-base font-bold text-foreground">Loading Batch Curriculum & DPPs...</h3>
+                <p className="text-xs text-muted-foreground max-w-md mx-auto">
+                  Fetching chapters, theory lectures, class notes, and daily practice problem (DPP) PDFs directly from the live feed.
+                </p>
+              </div>
+              <div className="flex items-center justify-center gap-2 text-[11px] font-medium text-primary">
+                <span className="w-2 h-2 rounded-full bg-primary animate-ping" />
+                <span>Synchronizing latest PW schedule...</span>
+              </div>
+            </Card>
+          ) : currentBatch.subjects.length === 0 ? (
             <Card className="border-dashed border-amber-500/40 bg-amber-500/5 p-6 text-center">
               <p className="text-sm font-semibold text-foreground">No subject metadata was returned for this batch.</p>
               <p className="mt-1 text-xs text-muted-foreground">
@@ -1124,6 +1146,20 @@ export default function OthersPage() {
                                         }`}>
                                           {lec.type}
                                         </span>
+                                        {lecturePdfUrl && (
+                                          <button
+                                            type="button"
+                                            onClick={(event) => {
+                                              event.stopPropagation();
+                                              window.open(lecturePdfUrl, "_blank", "noopener,noreferrer");
+                                            }}
+                                            className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[10px] font-bold border border-primary/30 bg-primary/10 text-primary hover:bg-primary/20 transition-all shadow-2xs cursor-pointer"
+                                            title="Open PDF in new tab"
+                                          >
+                                            <FileText className="w-3 h-3" />
+                                            <span>PDF ↗</span>
+                                          </button>
+                                        )}
                                         <button
                                           type="button"
                                           aria-label={`Actions for ${lec.title}`}

@@ -32,9 +32,10 @@ function decodeMathEntities(str: string) {
 interface RichMathContentProps {
   content?: string | null;
   className?: string;
+  compact?: boolean;
 }
 
-export function RichMathContent({ content, className = "" }: RichMathContentProps) {
+export function RichMathContent({ content, className = "", compact = false }: RichMathContentProps) {
   useEffect(() => {
     ensureMathJaxDefs();
   }, []);
@@ -43,6 +44,12 @@ export function RichMathContent({ content, className = "" }: RichMathContentProp
     if (!content) return "";
 
     let html = content;
+
+    // 0. Remove empty paragraphs, consecutive line breaks, and trailing spaces that create huge gaps
+    html = html
+      .replace(/<p>\s*(?:&nbsp;|\s|<br\s*\/?>)*\s*<\/p>/gi, "")
+      .replace(/(?:<br\s*\/?>\s*){3,}/gi, "<br/><br/>")
+      .replace(/<p>\s*<\/p>/gi, "");
 
     // 1. Fix CDN image URLs if relative
     html = html.replace(/src=["']\/([^"']+)["']/g, 'src="https://questions.examside.com/$1"');
@@ -88,12 +95,20 @@ export function RichMathContent({ content, className = "" }: RichMathContentProp
       }
     });
 
+    // 7. If compact mode (e.g. inside option items), remove outer single paragraph wrappers
+    if (compact) {
+      html = html.trim();
+      if (html.startsWith("<p>") && html.endsWith("</p>") && (html.match(/<p>/gi) || []).length === 1) {
+        html = html.slice(3, -4);
+      }
+    }
+
     return html;
-  }, [content]);
+  }, [content, compact]);
 
   return (
     <div
-      className={`prose dark:prose-invert max-w-none text-foreground text-sm sm:text-base leading-relaxed rich-math-content ${className}`}
+      className={`prose dark:prose-invert max-w-none text-foreground text-sm sm:text-base leading-relaxed rich-math-content ${compact ? "compact" : ""} ${className}`}
       dangerouslySetInnerHTML={{ __html: processedHtml }}
     />
   );

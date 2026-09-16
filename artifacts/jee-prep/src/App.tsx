@@ -25,6 +25,7 @@ const VideoPage = React.lazy(() => import("@/pages/VideoPage"));
 const SavesPage = React.lazy(() => import("@/pages/SavesPage"));
 const QuizPage = React.lazy(() => import("@/pages/QuizPage"));
 const QuestionsPage = React.lazy(() => import("@/pages/QuestionsPage"));
+const OthersPage = React.lazy(() => import("@/pages/OthersPage"));
 const AmbientMixer = React.lazy(() => import("@/components/AmbientMixer").then(m => ({ default: m.AmbientMixer })));
 import { MiniPlayer } from "@/components/MiniPlayer";
 import { AnimatePresence, motion } from "framer-motion";
@@ -39,13 +40,14 @@ import {
   FileText, 
   Video, 
   Shield, 
-  Bookmark,
-  X,
-  Headphones,
-  Trees,
-  PenTool,
-  BrainCircuit,
-  HelpCircle
+  Bookmark, 
+  X, 
+  Headphones, 
+  Trees, 
+  PenTool, 
+  BrainCircuit, 
+  HelpCircle,
+  Layers
 } from "lucide-react";
 import { idbGetAllKeys, idbGet, idbSet } from "@/lib/idb";
 
@@ -53,7 +55,6 @@ const queryClient = new QueryClient();
 
 const PAGE_LABELS: Record<string, string> = {
   "/": "Dashboard",
-  "/questions": "Questions",
   "/calendar": "Calendar & Tags",
   "/music": "Focus Music",
   "/pdf": "PDF Viewer",
@@ -61,6 +62,10 @@ const PAGE_LABELS: Record<string, string> = {
   "/admin": "Admin Panel",
   "/saves": "Saves",
   "/quiz": "AI",
+  "/others": "Others",
+  "/others/pw": "Physics Wallah",
+  "/others/questions": "JEE Questions",
+  "/questions": "JEE Questions",
   "/ambient": "Zen Mixer",
 };
 
@@ -85,7 +90,6 @@ function CommandPalette() {
 
   const items = [
     { name: "Dashboard", path: "/", icon: LayoutDashboard },
-    { name: "Questions", path: "/questions", icon: HelpCircle },
     { name: "Calendar & Tags", path: "/calendar", icon: CalendarDays },
     { name: "Focus Music", path: "/music", icon: Music },
     { name: "PDF Viewer", path: "/pdf", icon: FileText },
@@ -93,6 +97,8 @@ function CommandPalette() {
     { name: "Admin Panel", path: "/admin", icon: Shield },
     { name: "Saves & Flashcards", path: "/saves", icon: Bookmark },
     { name: "AI", path: "/quiz", icon: BrainCircuit },
+    { name: "Others", path: "/others", icon: Layers },
+    { name: "Questions", path: "/others/questions", icon: HelpCircle },
     { name: "Zen Mixer", path: "/ambient", icon: Headphones },
   ];
 
@@ -297,7 +303,7 @@ function TimeTracker() {
     if (sessionState !== "running") return;
 
     let sectionName = "Dashboard";
-    if (location.startsWith("/questions")) sectionName = "Questions";
+    if (location.startsWith("/others") || location.startsWith("/questions")) sectionName = "Others";
     else if (location.startsWith("/pdf")) sectionName = "PDF Viewer";
     else if (location.startsWith("/music")) sectionName = "Music";
     else if (location.startsWith("/video")) sectionName = "Videos";
@@ -355,6 +361,8 @@ function Router() {
       <React.Suspense fallback={null}>
         <Switch>
           <Route path="/" component={HomePage} />
+          <Route path="/others" component={OthersPage} />
+          <Route path="/others/:rest*" component={OthersPage} />
           <Route path="/questions" component={QuestionsPage} />
           <Route path="/calendar" component={CalendarPage} />
           <Route path="/music" component={MusicPage} />

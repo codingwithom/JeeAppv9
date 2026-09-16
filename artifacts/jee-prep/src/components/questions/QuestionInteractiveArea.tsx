@@ -271,7 +271,7 @@ export function QuestionInteractiveArea({
                         {optId}
                       </span>
                       <div className="text-sm font-medium flex-1">
-                        <RichMathContent content={opt.content} />
+                        <RichMathContent content={opt.content} compact />
                       </div>
                     </div>
 
@@ -376,7 +376,7 @@ export function QuestionInteractiveArea({
                         {isSelected ? <Check className="w-4 h-4 stroke-[3]" /> : optId}
                       </div>
                       <div className="text-sm font-medium flex-1">
-                        <RichMathContent content={opt.content} />
+                        <RichMathContent content={opt.content} compact />
                       </div>
                     </div>
 

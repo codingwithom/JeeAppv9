@@ -24,7 +24,8 @@ import {
   ChevronUp,
   ChevronDown,
   Search,
-  HelpCircle
+  HelpCircle,
+  Layers
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
@@ -292,7 +293,6 @@ export function Sidebar() {
 
   const links = [
     { href: "/", label: "Dashboard", icon: Home },
-    { href: "/questions", label: "Questions", icon: HelpCircle },
     { href: "/calendar", label: "Calendar", icon: Tag },
     { href: "/ambient", label: "Zen Mixer", icon: Headphones },
     { href: "/music", label: "Focus Music", icon: Music },
@@ -300,6 +300,7 @@ export function Sidebar() {
     { href: "/video", label: "Videos", icon: Video },
     { href: "/saves", label: "Saves", icon: Bookmark },
     { href: "/quiz", label: "AI", icon: BrainCircuit },
+    { href: "/others", label: "Others", icon: Layers },
   ];
 
   const allowedLockdownLinks = ["/", "/pdf", "/saves"];
@@ -429,7 +430,7 @@ export function Sidebar() {
 
         <nav className="flex-1 py-6 px-3 space-y-2 overflow-y-auto overflow-x-hidden">
           {links.map((link) => {
-            const active = location === link.href;
+            const active = location === link.href || (link.href === "/others" && (location.startsWith("/others") || location.startsWith("/questions")));
             const isLocked = isLockdownActive && !allowedLockdownLinks.includes(link.href);
 
             return (

@@ -378,11 +378,55 @@ mjx-container[jax="SVG"][display="true"] > svg {
   vertical-align: 0;
 }
 
-/* Rich Math Question & Solution styling */
+/* Rich Math Question & Solution styling - Clean, Gap-Free Typography */
+.rich-math-content {
+  line-height: 1.6;
+}
+
 .rich-math-content p {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-  line-height: 1.7;
+  margin-top: 0.35em;
+  margin-bottom: 0.35em;
+  line-height: 1.65;
+}
+
+.rich-math-content p:first-child {
+  margin-top: 0;
+}
+
+.rich-math-content p:last-child {
+  margin-bottom: 0;
+}
+
+.rich-math-content.compact,
+.rich-math-content.compact p {
+  margin: 0 !important;
+  display: inline;
+  line-height: 1.45;
+}
+
+.rich-math-content .katex-display {
+  margin: 0.5em 0 !important;
+}
+
+.rich-math-content mjx-container[display="true"] {
+  margin: 0.5em 0 !important;
+}
+
+.rich-math-content mjx-container:not([display="true"]) {
+  display: inline-block;
+  margin: 0 0.12em;
+  vertical-align: -0.15em;
+}
+
+.rich-math-content ul, .rich-math-content ol {
+  margin-top: 0.35em;
+  margin-bottom: 0.35em;
+  padding-left: 1.25em;
+}
+
+.rich-math-content li {
+  margin-top: 0.15em;
+  margin-bottom: 0.15em;
 }
 
 .rich-math-content img {

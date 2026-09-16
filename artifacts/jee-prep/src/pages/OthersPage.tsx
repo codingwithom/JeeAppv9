@@ -20,6 +20,8 @@ import {
   Video, 
   ChevronRight, 
   ChevronDown, 
+  ChevronLeft,
+  Play,
   Zap, 
   Award, 
   Calendar, 
@@ -80,14 +82,23 @@ interface PWBatch {
 
 interface PWScheduleItem {
   id: string;
+  type?: "LECTURE" | "NOTES" | string;
   subject: string;
+  rawSubject?: string;
   teacher: string;
+  teacherImage?: string;
   topic: string;
+  chapter?: string;
   date: string;
   startTime?: string;
   endTime?: string;
-  time: string;
+  duration?: string;
+  time?: string;
   status?: string;
+  tag?: string;
+  isLive?: boolean;
+  isUpcoming?: boolean;
+  dppTitle?: string;
 }
 
 interface PWCatalogBatch {
@@ -120,22 +131,103 @@ async function fetchBatchMetadata(batchId: string): Promise<PWSubject[]> {
   return Array.isArray(payload.subjects) ? payload.subjects : [];
 }
 
-async function fetchTodaySchedule(batchId: string): Promise<PWScheduleItem[]> {
-  const today = new Date();
-  const date = [today.getFullYear(), String(today.getMonth() + 1).padStart(2, "0"), String(today.getDate()).padStart(2, "0")].join("-");
-  const response = await fetch(`/api/pw-schedule?batchId=${encodeURIComponent(batchId)}&date=${date}`, { cache: "no-store" });
+async function fetchDateSchedule(batchId: string, date: string): Promise<PWScheduleItem[]> {
+  const response = await fetch(`/api/pw-schedule?batchId=${encodeURIComponent(batchId)}&date=${encodeURIComponent(date)}`, { cache: "no-store" });
   if (!response.ok) throw new Error(`PW schedule unavailable (${response.status})`);
   const payload = await response.json() as { schedules?: PWScheduleItem[] };
   return Array.isArray(payload.schedules) ? payload.schedules : [];
+}
+
+async function fetchTodaySchedule(batchId: string): Promise<PWScheduleItem[]> {
+  const date = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Kolkata" }).format(new Date());
+  return fetchDateSchedule(batchId, date);
 }
 
 function formatScheduleTime(value?: string): string {
   if (!value) return "Time not listed";
   const parsed = new Date(value);
   if (!Number.isNaN(parsed.getTime()) && /T|Z|\d{4}-\d{2}-\d{2}/.test(value)) {
-    return parsed.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+    return parsed.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", hour12: true, timeZone: "Asia/Kolkata" });
   }
   return value;
+}
+
+function getTeacherInitials(name?: string): string {
+  if (!name) return "PW";
+  const cleaned = name.replace(/\b(Sir|Ma'am|Dr|Prof|Anna|Faculty)\b/gi, "").trim();
+  const parts = cleaned.split(/\s+/).filter(Boolean);
+  if (parts.length === 0) return name.slice(0, 2).toUpperCase();
+  if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+  return (parts[0][0] + parts[1][0]).toUpperCase();
+}
+
+function getSubjectBadgeColor(subject?: string): { bg: string; text: string; border: string; avatar: string } {
+  const s = (subject || "").toLowerCase();
+  if (s.includes("phy")) {
+    return {
+      bg: "bg-blue-500/10 dark:bg-blue-500/20",
+      text: "text-blue-700 dark:text-blue-300",
+      border: "border-blue-500/25",
+      avatar: "bg-gradient-to-br from-blue-500 to-indigo-600 text-white"
+    };
+  }
+  if (s.includes("chem")) {
+    return {
+      bg: "bg-emerald-500/10 dark:bg-emerald-500/20",
+      text: "text-emerald-700 dark:text-emerald-300",
+      border: "border-emerald-500/25",
+      avatar: "bg-gradient-to-br from-emerald-500 to-teal-600 text-white"
+    };
+  }
+  if (s.includes("math")) {
+    return {
+      bg: "bg-purple-500/10 dark:bg-purple-500/20",
+      text: "text-purple-700 dark:text-purple-300",
+      border: "border-purple-500/25",
+      avatar: "bg-gradient-to-br from-purple-500 to-violet-600 text-white"
+    };
+  }
+  return {
+    bg: "bg-amber-500/10 dark:bg-amber-500/20",
+    text: "text-amber-700 dark:text-amber-300",
+    border: "border-amber-500/25",
+    avatar: "bg-gradient-to-br from-amber-500 to-orange-600 text-white"
+  };
+}
+
+function formatDateHeading(dateStr: string): string {
+  try {
+    const [y, m, d] = dateStr.split("-").map(Number);
+    const date = new Date(Date.UTC(y, m - 1, d, 12, 0, 0));
+    return date.toLocaleDateString("en-US", {
+      weekday: "long",
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+      timeZone: "UTC"
+    });
+  } catch {
+    return dateStr;
+  }
+}
+
+function addDaysToDate(dateStr: string, days: number): string {
+  try {
+    const [y, m, d] = dateStr.split("-").map(Number);
+    const dt = new Date(Date.UTC(y, m - 1, d + days, 12, 0, 0));
+    return new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Kolkata" }).format(dt);
+  } catch {
+    return dateStr;
+  }
+}
+
+function getDaysInMonth(year: number, month: number): number {
+  return new Date(year, month + 1, 0).getDate();
+}
+
+function getFirstDayOfMonth(year: number, month: number): number {
+  const day = new Date(year, month, 1).getDay();
+  return day === 0 ? 6 : day - 1;
 }
 
 function catalogToBatch(batch: PWCatalogBatch): PWBatch {
@@ -567,6 +659,18 @@ export default function OthersPage() {
   const [syncMessage, setSyncMessage] = useState<string>("");
   const [todaySchedule, setTodaySchedule] = useState<PWScheduleItem[]>([]);
   const [scheduleMessage, setScheduleMessage] = useState<string>("");
+  const [scheduleTab, setScheduleTab] = useState<"all" | "live" | "lectures" | "notes">("all");
+  const [scheduleViewMode, setScheduleViewMode] = useState<"compact" | "full">("compact");
+  const [selectedScheduleDate, setSelectedScheduleDate] = useState<string>(() => {
+    return new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Kolkata" }).format(new Date());
+  });
+  const [calendarMonth, setCalendarMonth] = useState<Date>(() => new Date());
+  const [scheduleForDate, setScheduleForDate] = useState<PWScheduleItem[]>([]);
+  const [isLoadingSchedule, setIsLoadingSchedule] = useState<boolean>(false);
+  const [scheduleSubjectFilter, setScheduleSubjectFilter] = useState<string>("All");
+  const [upcomingEvents, setUpcomingEvents] = useState<PWScheduleItem[]>([]);
+  const [scheduleCache, setScheduleCache] = useState<Record<string, PWScheduleItem[]>>({});
+  const [chapterTab, setChapterTab] = useState<Record<string, "all" | "lecture" | "dpp">>({});
   const [openChapters, setOpenChapters] = useState<Record<string, boolean>>({});
   const [openLectureMenu, setOpenLectureMenu] = useState<string | null>(null);
   const [isLoadingBatch, setIsLoadingBatch] = useState<boolean>(false);
@@ -657,18 +761,59 @@ export default function OthersPage() {
 
   useEffect(() => {
     if (!selectedBatchId || !catalogBatches.some(batch => batch.batch_id === selectedBatchId)) return;
+    const todayDate = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Kolkata" }).format(new Date());
     setTodaySchedule([]);
     setScheduleMessage("Loading today’s classes...");
     fetchTodaySchedule(selectedBatchId)
       .then(schedule => {
         setTodaySchedule(schedule);
+        setScheduleCache(prev => ({ ...prev, [`${selectedBatchId}_${todayDate}`]: schedule }));
         setScheduleMessage(schedule.length ? "" : "No classes scheduled for today.");
+
+        // Compute upcoming and live events
+        const liveOrUpcoming = schedule.filter(s => s.isLive || s.isUpcoming || s.status === "PENDING" || s.tag?.toLowerCase() === "live");
+        if (liveOrUpcoming.length >= 2) {
+          setUpcomingEvents(liveOrUpcoming);
+        } else {
+          // If today has fewer than 2 upcoming classes, also check tomorrow
+          const tomorrowDate = addDaysToDate(todayDate, 1);
+          fetchDateSchedule(selectedBatchId, tomorrowDate)
+            .then(tomorrowSched => {
+              setScheduleCache(prev => ({ ...prev, [`${selectedBatchId}_${tomorrowDate}`]: tomorrowSched }));
+              const tomorrowUpcoming = tomorrowSched.filter(s => s.isUpcoming || s.status === "PENDING");
+              setUpcomingEvents([...liveOrUpcoming, ...tomorrowUpcoming]);
+            })
+            .catch(() => setUpcomingEvents(liveOrUpcoming));
+        }
       })
       .catch(() => {
         setTodaySchedule([]);
+        setUpcomingEvents([]);
         setScheduleMessage("Today’s schedule could not be loaded.");
       });
   }, [catalogBatches, selectedBatchId]);
+
+  // Load schedule whenever selectedScheduleDate or selectedBatchId changes
+  useEffect(() => {
+    if (!selectedBatchId) return;
+    const cacheKey = `${selectedBatchId}_${selectedScheduleDate}`;
+    if (scheduleCache[cacheKey]) {
+      setScheduleForDate(scheduleCache[cacheKey]);
+      return;
+    }
+    setIsLoadingSchedule(true);
+    fetchDateSchedule(selectedBatchId, selectedScheduleDate)
+      .then(items => {
+        setScheduleForDate(items);
+        setScheduleCache(prev => ({ ...prev, [cacheKey]: items }));
+      })
+      .catch(() => {
+        setScheduleForDate([]);
+      })
+      .finally(() => {
+        setIsLoadingSchedule(false);
+      });
+  }, [selectedBatchId, selectedScheduleDate, scheduleCache]);
 
   // Expand all chapters by default when batch changes
   useEffect(() => {
@@ -800,9 +945,18 @@ export default function OthersPage() {
               Back to Others Hub
             </Button>
             <div className="flex items-center gap-2">
-              <span className="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20 flex items-center gap-1.5">
+              <Button
+                variant={scheduleViewMode === "full" ? "default" : "outline"}
+                size="sm"
+                onClick={() => setScheduleViewMode(prev => prev === "full" ? "compact" : "full")}
+                className="gap-2 text-xs font-bold rounded-xl"
+              >
+                <Calendar className="w-4 h-4" />
+                {scheduleViewMode === "full" ? "Batch Overview" : "Weekly Schedule"}
+              </Button>
+              <span className="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20 hidden sm:flex items-center gap-1.5">
                 <Flame className="w-3.5 h-3.5 fill-amber-500 text-amber-500" />
-                PW Daily Lecture Tracker
+                PW Tracker
               </span>
             </div>
           </div>
@@ -922,47 +1076,138 @@ export default function OthersPage() {
             </div>
           </div>
 
-          {/* Today's scheduled classes */}
-          <Card className="border border-amber-500/30 bg-amber-500/5 p-4 sm:p-5 shadow-xs">
-            <div className="flex items-center justify-between gap-3 mb-3">
-              <div className="flex items-center gap-2">
-                <Calendar className="w-4 h-4 text-amber-600 dark:text-amber-400" />
-                <h2 className="text-sm font-bold text-foreground">Today’s Classes</h2>
-              </div>
-              <span className="text-[11px] text-muted-foreground">
-                {new Date().toLocaleDateString([], { weekday: "short", month: "short", day: "numeric" })}
-              </span>
-            </div>
-            {todaySchedule.length > 0 ? (
-              <div className="grid gap-2 sm:grid-cols-2">
-                {todaySchedule.map(item => (
-                  <div key={item.id} className="rounded-xl border border-border/70 bg-card p-3">
-                    <div className="flex items-start justify-between gap-2">
-                      <div className="min-w-0">
-                        <p className="text-xs font-bold text-foreground truncate">{item.topic}</p>
-                        <p className="mt-1 text-[11px] text-muted-foreground">
-                          {item.subject} • {item.teacher}
-                        </p>
-                      </div>
-                      <span className="shrink-0 rounded-md bg-amber-500/10 px-2 py-1 text-[10px] font-bold text-amber-700 dark:text-amber-300">
-                        {item.startTime ? formatScheduleTime(item.startTime) : item.time}
-                      </span>
+          {/* Upcoming Events Card (Matches 00:00 - 00:01 in video) */}
+          {(() => {
+            const eventsToShow = upcomingEvents.length > 0 ? upcomingEvents : todaySchedule;
+            const upcomingCount = eventsToShow.length;
+
+            return (
+              <Card className="border border-border/80 bg-gradient-to-br from-amber-500/5 via-card to-card p-4 sm:p-5 rounded-3xl shadow-xs space-y-4">
+                {/* Header */}
+                <div className="flex items-center justify-between gap-2.5">
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-8 h-8 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center font-bold shrink-0">
+                      <Clock className="w-4 h-4" />
                     </div>
-                    {(item.endTime || item.status) && (
-                      <div className="mt-2 flex items-center gap-2 text-[10px] text-muted-foreground">
-                        {item.endTime && <span>Ends {formatScheduleTime(item.endTime)}</span>}
-                        {item.status && <span>• {item.status}</span>}
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <h2 className="text-sm sm:text-base font-bold text-foreground">
+                          Upcoming Events ({upcomingCount})
+                        </h2>
+                        {eventsToShow.some(s => s.isLive || s.tag?.toLowerCase() === "live") && (
+                          <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-black bg-red-600 text-white animate-pulse shadow-xs">
+                            <span className="w-1.5 h-1.5 rounded-full bg-white" />
+                            LIVE
+                          </span>
+                        )}
                       </div>
-                    )}
+                      <p className="text-[11px] text-muted-foreground">
+                        Live sessions, upcoming classes &amp; today's schedule
+                      </p>
+                    </div>
                   </div>
-                ))}
-              </div>
-            ) : (
-              <p className="text-xs text-muted-foreground">
-                {scheduleMessage || "No classes scheduled for today."}
-              </p>
-            )}
-          </Card>
+
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => setScheduleViewMode("full")}
+                    className="text-primary hover:text-primary font-bold text-xs gap-1 self-center"
+                  >
+                    View Full Schedule
+                    <ChevronRight className="w-4 h-4" />
+                  </Button>
+                </div>
+
+                {/* Grid of Upcoming Events (2 columns on sm/md) */}
+                {eventsToShow.length > 0 ? (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {eventsToShow.slice(0, 4).map(item => {
+                      const isLive = Boolean(item.isLive || item.tag?.toLowerCase() === "live");
+                      const colors = getSubjectBadgeColor(item.subject);
+                      const teacherInitials = getTeacherInitials(item.teacher);
+                      const itemDate = item.date ? item.date.split("T")[0] : selectedScheduleDate;
+
+                      return (
+                        <div
+                          key={item.id}
+                          onClick={() => {
+                            setSelectedScheduleDate(itemDate);
+                            setScheduleViewMode("full");
+                          }}
+                          className={`p-3.5 rounded-2xl border transition-all cursor-pointer flex items-center justify-between gap-3 group ${
+                            isLive
+                              ? "border-red-500/50 bg-red-500/5 shadow-xs ring-1 ring-red-500/20 hover:bg-red-500/10"
+                              : "border-border/80 bg-background hover:border-primary/50 hover:bg-muted/30 shadow-2xs"
+                          }`}
+                        >
+                          <div className="flex items-center gap-3 min-w-0 flex-1">
+                            {/* Avatar */}
+                            {item.teacherImage ? (
+                              <img
+                                src={item.teacherImage}
+                                alt={item.teacher}
+                                className="w-10 h-10 rounded-full object-cover shrink-0 border border-border"
+                              />
+                            ) : (
+                              <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-xs shrink-0 ${colors.avatar}`}>
+                                {teacherInitials}
+                              </div>
+                            )}
+
+                            <div className="min-w-0 flex-1 space-y-1">
+                              {/* Line 1: Time, Live badge, Subject & Teacher */}
+                              <div className="flex items-center gap-1.5 flex-wrap text-[11px]">
+                                <span className="font-semibold text-muted-foreground flex items-center gap-1">
+                                  <Clock className="w-3 h-3 text-primary" />
+                                  {formatScheduleTime(item.startTime)}
+                                </span>
+                                {isLive ? (
+                                  <span className="inline-flex items-center gap-1 px-1.5 py-0.2 rounded-full text-[9px] font-black bg-red-600 text-white animate-pulse">
+                                    LIVE
+                                  </span>
+                                ) : (
+                                  <span className="px-1.5 py-0.2 rounded text-[9px] font-bold bg-amber-500/15 text-amber-700 dark:text-amber-300">
+                                    UPCOMING
+                                  </span>
+                                )}
+                                <span className="text-muted-foreground truncate">
+                                  • {item.type === "NOTES" ? "Notes" : "Lecture"} • {item.subject} by {item.teacher}
+                                </span>
+                              </div>
+
+                              {/* Line 2: Topic title */}
+                              <p className="text-xs sm:text-sm font-bold text-foreground truncate flex items-center gap-1.5">
+                                <BookOpen className="w-3.5 h-3.5 text-muted-foreground shrink-0" />
+                                <span className="truncate">{item.topic}</span>
+                              </p>
+                            </div>
+                          </div>
+
+                          {/* Right Arrow */}
+                          <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-foreground group-hover:translate-x-0.5 transition-all shrink-0" />
+                        </div>
+                      );
+                    })}
+                  </div>
+                ) : (
+                  <p className="text-xs text-muted-foreground">
+                    {scheduleMessage || "No upcoming events scheduled right now."}
+                  </p>
+                )}
+
+                {/* Bottom Button: View Full Schedule */}
+                <Button
+                  onClick={() => setScheduleViewMode("full")}
+                  variant="outline"
+                  className="w-full h-10 rounded-xl bg-primary/5 hover:bg-primary/10 text-primary border-primary/20 font-bold text-xs gap-2"
+                >
+                  <Calendar className="w-4 h-4" />
+                  View Full Schedule &amp; Weekly Calendar
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+              </Card>
+            );
+          })()}
 
           {/* Filtering & Search Bar */}
           <div className="bg-card border border-border/80 rounded-2xl p-4 shadow-xs space-y-3">
@@ -1128,6 +1373,136 @@ export default function OthersPage() {
                         const totalInChapter = ch.lectures.length;
                         const completedInChapter = ch.lectures.filter(l => completedMap[l.id]).length;
                         const isChapterComplete = totalInChapter > 0 && completedInChapter === totalInChapter;
+                        const chapterLecCount = ch.lectures.filter(l => l.type !== "dpp").length;
+                        const chapterDppCount = ch.lectures.filter(l => l.type === "dpp").length;
+                        const completedDpps = ch.lectures.filter(l => l.type === "dpp" && completedMap[l.id]).length;
+
+                        const theoryLectures = filteredLectures.filter(l => l.type !== "dpp");
+                        const dppLectures = filteredLectures.filter(l => l.type === "dpp");
+                        const activeChapterTab = chapterTab[ch.id] || "all";
+
+                        const renderLectureRow = (lec: PWLecture, isDppItem: boolean) => {
+                          const isChecked = Boolean(completedMap[lec.id]);
+                          const isMenuOpen = openLectureMenu === lec.id;
+                          const lecturePdfUrl = lec.pdfUrl || lec.notesUrl || lec.dppPdfUrl || "";
+
+                          return (
+                            <div
+                              key={lec.id}
+                              onClick={() => toggleLectureCompletion(lec.id)}
+                              className={`p-3.5 sm:px-5 flex items-center justify-between gap-3 cursor-pointer transition-colors ${
+                                isChecked
+                                  ? "bg-emerald-50/40 dark:bg-emerald-950/20 text-muted-foreground"
+                                  : isDppItem
+                                  ? "hover:bg-purple-500/5 text-foreground"
+                                  : "hover:bg-muted/30 text-foreground"
+                              }`}
+                            >
+                              <div className="flex items-center gap-3.5 min-w-0 flex-1">
+                                {/* Tick Checkbox */}
+                                <div className={`w-5 h-5 rounded-md border flex items-center justify-center shrink-0 transition-all ${
+                                  isChecked
+                                    ? "bg-emerald-600 border-emerald-600 text-white shadow-2xs"
+                                    : isDppItem
+                                    ? "border-purple-500/40 bg-background hover:border-purple-500"
+                                    : "border-border/80 bg-background hover:border-primary"
+                                }`}>
+                                  {isChecked && <Check className="w-3.5 h-3.5 stroke-[3]" />}
+                                </div>
+
+                                <div className="min-w-0 flex-1">
+                                  <p className={`text-xs sm:text-sm font-medium leading-tight ${
+                                    isChecked ? "line-through opacity-75" : ""
+                                  }`}>
+                                    {lec.title}
+                                  </p>
+                                </div>
+                              </div>
+
+                              <div className="relative flex items-center gap-2 shrink-0">
+                                {lec.duration && (
+                                  <span className={`text-[11px] font-mono hidden sm:inline-block ${
+                                    isDppItem ? "text-purple-600 dark:text-purple-400 font-semibold" : "text-muted-foreground"
+                                  }`}>
+                                    {lec.duration}
+                                  </span>
+                                )}
+                                {lec.date && (
+                                  <span className="text-[11px] text-muted-foreground hidden md:inline-block">
+                                    {new Date(lec.date).toLocaleDateString()}
+                                  </span>
+                                )}
+                                <span className={`px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider ${
+                                  isDppItem
+                                    ? "bg-purple-500/15 text-purple-700 dark:text-purple-300 border border-purple-500/30"
+                                    : "bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20"
+                                }`}>
+                                  {isDppItem ? "DPP" : "Lecture"}
+                                </span>
+                                {lecturePdfUrl && (
+                                  <button
+                                    type="button"
+                                    onClick={(event) => {
+                                      event.stopPropagation();
+                                      window.open(lecturePdfUrl, "_blank", "noopener,noreferrer");
+                                    }}
+                                    className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[10px] font-bold border border-primary/30 bg-primary/10 text-primary hover:bg-primary/20 transition-all shadow-2xs cursor-pointer"
+                                    title="Open PDF in new tab"
+                                  >
+                                    <FileText className="w-3 h-3" />
+                                    <span>PDF ↗</span>
+                                  </button>
+                                )}
+                                <button
+                                  type="button"
+                                  aria-label={`Actions for ${lec.title}`}
+                                  onClick={(event) => {
+                                    event.stopPropagation();
+                                    setOpenLectureMenu(isMenuOpen ? null : lec.id);
+                                  }}
+                                  className="rounded-md p-1 text-muted-foreground hover:bg-muted hover:text-foreground"
+                                >
+                                  <MoreVertical className="h-4 w-4" />
+                                </button>
+                                {isMenuOpen && (
+                                  <div className="absolute right-0 top-8 z-20 min-w-44 rounded-lg border border-border bg-card p-1 shadow-lg">
+                                    <button
+                                      type="button"
+                                      disabled={!lecturePdfUrl}
+                                      onClick={(event) => {
+                                        event.stopPropagation();
+                                        if (lecturePdfUrl) window.open(lecturePdfUrl, "_blank", "noopener,noreferrer");
+                                      }}
+                                      className={`flex w-full items-center rounded-md px-3 py-2 text-left text-xs ${
+                                        lecturePdfUrl ? "text-foreground hover:bg-muted" : "cursor-not-allowed text-muted-foreground opacity-60"
+                                      }`}
+                                      title={lecturePdfUrl ? "Open the Notes/DPP PDF in a new tab" : "No public PDF URL was returned in this metadata response"}
+                                    >
+                                      Open PDF in new tab
+                                    </button>
+                                    <button
+                                      type="button"
+                                      disabled={!lecturePdfUrl}
+                                      onClick={(event) => {
+                                        event.stopPropagation();
+                                        if (lecturePdfUrl) window.open(`/pdf-viewer?url=${encodeURIComponent(lecturePdfUrl)}`, "_blank", "noopener,noreferrer");
+                                      }}
+                                      className={`flex w-full items-center rounded-md px-3 py-2 text-left text-xs ${
+                                        lecturePdfUrl ? "text-foreground hover:bg-muted" : "cursor-not-allowed text-muted-foreground opacity-60"
+                                      }`}
+                                      title={lecturePdfUrl ? "Open the PDF in the integrated PDF viewer" : "No public PDF URL was returned in this metadata response"}
+                                    >
+                                      Open in PDF viewer
+                                    </button>
+                                    <span className="block px-3 py-1 text-[10px] text-muted-foreground">
+                                      {lecturePdfUrl ? "Notes / DPP PDF metadata loaded" : "PDF link not supplied by the metadata API"}
+                                    </span>
+                                  </div>
+                                )}
+                              </div>
+                            </div>
+                          );
+                        };
 
                         return (
                           <Card 
@@ -1152,10 +1527,26 @@ export default function OthersPage() {
                                   {isChapterComplete ? <Check className="w-4 h-4 stroke-[3]" /> : <BookOpen className="w-4 h-4" />}
                                 </div>
                                 <div className="min-w-0 flex-1">
-                                  <h3 className="text-sm sm:text-base font-bold text-foreground truncate">
-                                    {ch.title}
-                                  </h3>
-                                  <div className="flex items-center gap-2 text-[11px] text-muted-foreground">
+                                  <div className="flex items-center gap-2 flex-wrap">
+                                    <h3 className="text-sm sm:text-base font-bold text-foreground truncate">
+                                      {ch.title}
+                                    </h3>
+                                    <div className="flex items-center gap-1.5 flex-wrap">
+                                      {chapterLecCount > 0 && (
+                                        <span className="px-2 py-0.5 rounded-md text-[10px] font-semibold bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20">
+                                          {chapterLecCount} Lectures
+                                        </span>
+                                      )}
+                                      {chapterDppCount > 0 && (
+                                        <span className="px-2 py-0.5 rounded-md text-[10px] font-bold bg-purple-500/15 text-purple-700 dark:text-purple-300 border border-purple-500/30 inline-flex items-center gap-1">
+                                          <FileQuestion className="w-3 h-3" />
+                                          {chapterDppCount} DPPs
+                                          {completedDpps > 0 && ` (${completedDpps}/${chapterDppCount})`}
+                                        </span>
+                                      )}
+                                    </div>
+                                  </div>
+                                  <div className="flex items-center gap-2 text-[11px] text-muted-foreground mt-0.5">
                                     <span>{completedInChapter} of {totalInChapter} completed</span>
                                     <span>•</span>
                                     <span className="font-semibold text-primary">{Math.round((completedInChapter / totalInChapter) * 100)}%</span>
@@ -1183,122 +1574,65 @@ export default function OthersPage() {
 
                             {/* Lectures Checklist Rows */}
                             {isOpen && (
-                              <div className="border-t border-border/60 divide-y divide-border/40 bg-muted/10">
-                                {filteredLectures.map(lec => {
-                                  const isChecked = Boolean(completedMap[lec.id]);
-                                  const isMenuOpen = openLectureMenu === lec.id;
-                                  const lecturePdfUrl = lec.pdfUrl || lec.notesUrl || lec.dppPdfUrl || "";
-                                  return (
-                                    <div
-                                      key={lec.id}
-                                      onClick={() => toggleLectureCompletion(lec.id)}
-                                      className={`p-3.5 sm:px-5 flex items-center justify-between gap-3 cursor-pointer transition-colors ${
-                                        isChecked
-                                          ? "bg-emerald-50/40 dark:bg-emerald-950/20 text-muted-foreground"
-                                          : "hover:bg-muted/30 text-foreground"
-                                      }`}
-                                    >
-                                      <div className="flex items-center gap-3.5 min-w-0 flex-1">
-                                        {/* Tick Checkbox */}
-                                        <div className={`w-5 h-5 rounded-md border flex items-center justify-center shrink-0 transition-all ${
-                                          isChecked
-                                            ? "bg-emerald-600 border-emerald-600 text-white shadow-2xs"
-                                            : "border-border/80 bg-background hover:border-primary"
-                                        }`}>
-                                          {isChecked && <Check className="w-3.5 h-3.5 stroke-[3]" />}
-                                        </div>
-
-                                        <div className="min-w-0 flex-1">
-                                          <p className={`text-xs sm:text-sm font-medium leading-tight ${
-                                            isChecked ? "line-through opacity-75" : ""
-                                          }`}>
-                                            {lec.title}
-                                          </p>
-                                        </div>
-                                      </div>
-
-                                      <div className="relative flex items-center gap-2 shrink-0">
-                                        {lec.duration && (
-                                          <span className="text-[11px] font-mono text-muted-foreground hidden sm:inline-block">
-                                            {lec.duration}
-                                          </span>
-                                        )}
-                                        {lec.date && (
-                                          <span className="text-[11px] text-muted-foreground hidden md:inline-block">
-                                            {new Date(lec.date).toLocaleDateString()}
-                                          </span>
-                                        )}
-                                        <span className={`px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider ${
-                                          lec.type === "dpp"
-                                            ? "bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/20"
-                                            : "bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20"
-                                        }`}>
-                                          {lec.type}
-                                        </span>
-                                        {lecturePdfUrl && (
-                                          <button
-                                            type="button"
-                                            onClick={(event) => {
-                                              event.stopPropagation();
-                                              window.open(lecturePdfUrl, "_blank", "noopener,noreferrer");
-                                            }}
-                                            className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[10px] font-bold border border-primary/30 bg-primary/10 text-primary hover:bg-primary/20 transition-all shadow-2xs cursor-pointer"
-                                            title="Open PDF in new tab"
-                                          >
-                                            <FileText className="w-3 h-3" />
-                                            <span>PDF ↗</span>
-                                          </button>
-                                        )}
+                              <div className="border-t border-border/60 bg-muted/10">
+                                {/* Chapter Sub-Filter tabs if both theory and DPPs exist */}
+                                {theoryLectures.length > 0 && dppLectures.length > 0 && contentFilter === "all" && (
+                                  <div className="flex items-center justify-between px-4 py-2 bg-background/60 border-b border-border/40 text-xs">
+                                    <span className="text-[11px] text-muted-foreground font-medium">Chapter Content:</span>
+                                    <div className="flex items-center gap-1">
+                                      {[
+                                        { key: "all", label: `All (${filteredLectures.length})` },
+                                        { key: "lecture", label: `📚 Lectures (${theoryLectures.length})` },
+                                        { key: "dpp", label: `📝 DPPs (${dppLectures.length})` },
+                                      ].map(tab => (
                                         <button
+                                          key={tab.key}
                                           type="button"
-                                          aria-label={`Actions for ${lec.title}`}
-                                          onClick={(event) => {
-                                            event.stopPropagation();
-                                            setOpenLectureMenu(isMenuOpen ? null : lec.id);
+                                          onClick={(e) => {
+                                            e.stopPropagation();
+                                            setChapterTab(prev => ({ ...prev, [ch.id]: tab.key as any }));
                                           }}
-                                          className="rounded-md p-1 text-muted-foreground hover:bg-muted hover:text-foreground"
+                                          className={`px-2 py-0.5 rounded-md text-[10px] font-semibold transition-all ${
+                                            activeChapterTab === tab.key
+                                              ? "bg-primary text-primary-foreground shadow-2xs"
+                                              : "bg-muted text-muted-foreground hover:text-foreground"
+                                          }`}
                                         >
-                                          <MoreVertical className="h-4 w-4" />
+                                          {tab.label}
                                         </button>
-                                        {isMenuOpen && (
-                                          <div className="absolute right-0 top-8 z-20 min-w-44 rounded-lg border border-border bg-card p-1 shadow-lg">
-                                            <button
-                                              type="button"
-                                              disabled={!lecturePdfUrl}
-                                              onClick={(event) => {
-                                                event.stopPropagation();
-                                                if (lecturePdfUrl) window.open(lecturePdfUrl, "_blank", "noopener,noreferrer");
-                                              }}
-                                              className={`flex w-full items-center rounded-md px-3 py-2 text-left text-xs ${
-                                                lecturePdfUrl ? "text-foreground hover:bg-muted" : "cursor-not-allowed text-muted-foreground opacity-60"
-                                              }`}
-                                              title={lecturePdfUrl ? "Open the Notes/DPP PDF in a new tab" : "No public PDF URL was returned in this metadata response"}
-                                            >
-                                              Open PDF in new tab
-                                            </button>
-                                            <button
-                                              type="button"
-                                              disabled={!lecturePdfUrl}
-                                              onClick={(event) => {
-                                                event.stopPropagation();
-                                                if (lecturePdfUrl) window.open(`/pdf-viewer?url=${encodeURIComponent(lecturePdfUrl)}`, "_blank", "noopener,noreferrer");
-                                              }}
-                                              className={`flex w-full items-center rounded-md px-3 py-2 text-left text-xs ${
-                                                lecturePdfUrl ? "text-foreground hover:bg-muted" : "cursor-not-allowed text-muted-foreground opacity-60"
-                                              }`}
-                                              title={lecturePdfUrl ? "Open the PDF in the integrated PDF viewer" : "No public PDF URL was returned in this metadata response"}
-                                            >
-                                              Open in PDF viewer
-                                            </button>
-                                            <span className="block px-3 py-1 text-[10px] text-muted-foreground">
-                                              {lecturePdfUrl ? "Notes / DPP PDF metadata loaded" : "PDF link not supplied by the metadata API"}
-                                            </span>
-                                          </div>
-                                        )}
-                                      </div>
+                                      ))}
                                     </div>
-                                  );
-                                })}
+                                  </div>
+                                )}
+
+                                {/* Section 1: Theory Lectures */}
+                                {(activeChapterTab === "all" || activeChapterTab === "lecture") && theoryLectures.length > 0 && (
+                                  <div>
+                                    {activeChapterTab === "all" && dppLectures.length > 0 && (
+                                      <div className="flex items-center justify-between px-4 py-1.5 bg-muted/30 text-[10px] font-bold text-muted-foreground uppercase tracking-wider border-b border-border/30">
+                                        <span className="flex items-center gap-1.5"><BookOpen className="w-3 h-3 text-blue-500" /> Theory Lectures ({theoryLectures.length})</span>
+                                      </div>
+                                    )}
+                                    <div className="divide-y divide-border/40">
+                                      {theoryLectures.map(lec => renderLectureRow(lec, false))}
+                                    </div>
+                                  </div>
+                                )}
+
+                                {/* Section 2: Daily Practice Problems (DPP) */}
+                                {(activeChapterTab === "all" || activeChapterTab === "dpp") && dppLectures.length > 0 && (
+                                  <div>
+                                    {activeChapterTab === "all" && theoryLectures.length > 0 && (
+                                      <div className="flex items-center justify-between px-4 py-2 bg-purple-500/10 text-[10px] font-bold text-purple-700 dark:text-purple-300 uppercase tracking-wider border-y border-purple-500/20">
+                                        <span className="flex items-center gap-1.5"><FileQuestion className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" /> Daily Practice Problems (DPP) ({dppLectures.length})</span>
+                                        <span className="text-[10px] font-normal lowercase tracking-normal text-purple-600/80 dark:text-purple-400/80">practice quizzes & sheets</span>
+                                      </div>
+                                    )}
+                                    <div className="divide-y divide-border/40">
+                                      {dppLectures.map(lec => renderLectureRow(lec, true))}
+                                    </div>
+                                  </div>
+                                )}
                               </div>
                             )}
                           </Card>

@@ -43,12 +43,15 @@ type ExamType = "jee-main" | "jee-advanced";
 
 function isFullyLoaded(q: any): boolean {
   if (!q) return false;
-  return Boolean(
-    (q.options && q.options.length > 0) ||
-    q.type === "integer" ||
-    (q.explanation && q.explanation.length > 0) ||
-    (q.correct_options && q.correct_options.length > 0)
-  );
+  const content = q.content || q.question?.en?.content;
+  if (!content || typeof content !== "string" || content.trim().length === 0) {
+    return false;
+  }
+  if (q.type === "integer" || q.category === "numerical") {
+    return true;
+  }
+  const opts = q.options || q.question?.en?.options;
+  return Array.isArray(opts) && opts.length > 0;
 }
 
 function formatTopicName(str?: string): string {

@@ -298,6 +298,7 @@ app.get("/api/healthz", (_req, res) => {
 const pwMetadataCache = new Map();
 const PW_METADATA_TTL = 30 * 60 * 1000;
 const PW_DETAILS_ORIGIN = "https://vidcloud.eu.org";
+const PW_CATALOG_URL = "https://studystark.github.io/batches/batches.json";
 const PW_HEADERS = {
   "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
   "Referer": "https://vidcloud.eu.org/",
@@ -888,6 +889,24 @@ app.get("/api/pw-metadata", async (req, res) => {
     res.json(await fetchPwMetadata(batchId));
   } catch (error) {
     res.status(502).json({ error: error.message || "PW metadata unavailable" });
+  }
+});
+
+app.get("/api/pw-catalog", async (_req, res) => {
+  try {
+    const response = await fetch(PW_CATALOG_URL, {
+      headers: {
+        "User-Agent": PW_HEADERS["User-Agent"],
+        Accept: "application/json",
+      },
+      signal: AbortSignal.timeout(20000),
+    });
+    if (!response.ok) {
+      return res.status(502).json({ error: `PW catalog failed (${response.status})` });
+    }
+    res.json(await response.json());
+  } catch (error) {
+    res.status(502).json({ error: error.message || "PW catalog unavailable" });
   }
 });
 

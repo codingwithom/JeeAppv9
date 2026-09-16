@@ -123,7 +123,6 @@ interface PWCatalogBatch {
   end_date?: string;
 }
 
-const PW_CATALOG_URL = "https://studystark.github.io/batches/batches.json";
 const PW_DETAILS_URL = "https://vidcloud.eu.org/api/v3/batches";
 const PW_TOPICS_URL = "https://vidcloud.eu.org/api/v2/batches";
 const PW_TOKEN_URL = "https://vidcloud.eu.org/generate_token.php";
@@ -918,7 +917,7 @@ export default function OthersPage() {
 
   // Load the live PW batch catalog.
   useEffect(() => {
-    fetch(PW_CATALOG_URL)
+    fetch("/api/pw-catalog", { cache: "no-store" })
       .then(res => res.ok ? res.json() : null)
       .then(data => {
         const remoteBatches = extractCatalogBatches(data);

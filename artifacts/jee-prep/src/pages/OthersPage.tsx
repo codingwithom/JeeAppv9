@@ -32,12 +32,22 @@ import {
   Square,
   TrendingUp,
   ListTodo,
-  MoreVertical
+  MoreVertical,
+  UserCheck,
+  Users,
+  BookMarked,
+  ExternalLink,
+  MessageSquare,
+  Trophy,
+  Filter,
+  X,
+  Settings2
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
+import { useAppContext, SelectedGoal } from "@/context/AppContext";
 import QuestionsPage from "@/pages/QuestionsPage";
 import { idbGet, idbSet } from "@/lib/idb";
 
@@ -52,6 +62,7 @@ interface PWLecture {
   pdfUrl?: string;
   notesUrl?: string;
   dppPdfUrl?: string;
+  videoUrl?: string;
 }
 
 interface PWChapter {
@@ -125,10 +136,171 @@ const EMPTY_PW_BATCH: PWBatch = {
 };
 
 async function fetchBatchMetadata(batchId: string): Promise<PWSubject[]> {
+  try {
+    const cached = await idbGet<PWSubject[]>(`pw_meta_${batchId}`);
+    if (cached && Array.isArray(cached) && cached.length > 0) {
+      return cached;
+    }
+  } catch {}
+
   const response = await fetch(`/api/pw-metadata?batchId=${encodeURIComponent(batchId)}`, { cache: "no-store" });
   if (!response.ok) throw new Error(`PW metadata unavailable (${response.status})`);
   const payload = await response.json() as { subjects?: PWSubject[] };
-  return Array.isArray(payload.subjects) ? payload.subjects : [];
+  const subjects = Array.isArray(payload.subjects) ? payload.subjects : [];
+  if (subjects.length > 0) {
+    idbSet(`pw_meta_${batchId}`, subjects).catch(() => {});
+  }
+  return subjects;
+}
+
+// ─── PW DISCIPLINE & BADGE HELPERS ──────────────────────────────────────────
+function getSubjectDiscipline(subjectName: string): string {
+  const s = subjectName.toLowerCase();
+  if (s.includes("physical chem") || s.includes("pc")) return "Physical Chemistry";
+  if (s.includes("inorganic chem") || s.includes("ioc")) return "Inorganic Chemistry";
+  if (s.includes("organic chem") || s.includes("oc")) return "Organic Chemistry";
+  if (s.includes("chem")) return "Chemistry";
+  if (s.includes("phys")) return "Physics";
+  if (s.includes("math")) return "Mathematics";
+  if (s.includes("botany")) return "Botany";
+  if (s.includes("zoology")) return "Zoology";
+  if (s.includes("bio")) return "Biology";
+  const beforeBy = subjectName.split(/\bby\b/i)[0].trim();
+  return beforeBy || "General";
+}
+
+function getSubjectBadge(subjectName: string): { label: string; bg: string; text: string; border: string } {
+  const s = subjectName.toLowerCase();
+  if (s.includes("physical chem") || s.includes("pc")) {
+    return { label: "Ch", bg: "bg-emerald-500/15 dark:bg-emerald-500/25", text: "text-emerald-700 dark:text-emerald-300", border: "border-emerald-500/30" };
+  }
+  if (s.includes("inorganic chem") || s.includes("ioc")) {
+    return { label: "In", bg: "bg-teal-500/15 dark:bg-teal-500/25", text: "text-teal-700 dark:text-teal-300", border: "border-teal-500/30" };
+  }
+  if (s.includes("organic chem") || s.includes("oc")) {
+    return { label: "Or", bg: "bg-amber-500/15 dark:bg-amber-500/25", text: "text-amber-700 dark:text-amber-300", border: "border-amber-500/30" };
+  }
+  if (s.includes("chem")) {
+    return { label: "Ch", bg: "bg-emerald-500/15 dark:bg-emerald-500/25", text: "text-emerald-700 dark:text-emerald-300", border: "border-emerald-500/30" };
+  }
+  if (s.includes("phys")) {
+    return { label: "Ph", bg: "bg-blue-500/15 dark:bg-blue-500/25", text: "text-blue-700 dark:text-blue-300", border: "border-blue-500/30" };
+  }
+  if (s.includes("math")) {
+    return { label: "Ma", bg: "bg-purple-500/15 dark:bg-purple-500/25", text: "text-purple-700 dark:text-purple-300", border: "border-purple-500/30" };
+  }
+  if (s.includes("bio") || s.includes("botany") || s.includes("zoology")) {
+    return { label: "Bi", bg: "bg-rose-500/15 dark:bg-rose-500/25", text: "text-rose-700 dark:text-rose-300", border: "border-rose-500/30" };
+  }
+  return { label: subjectName.slice(0, 2).toUpperCase(), bg: "bg-primary/10", text: "text-primary", border: "border-primary/20" };
+}
+
+function isStudyMaterialChapter(title: string): boolean {
+  return /only\s+pdf|only\s+video|demo\s+videos?|short\s+notes|mind\s+maps?|pyq\s+practice\s+sheet|quick\s+revision|bridge\s+course|replica\s+sheet|parakram\s+solution|ncert\s+discussion|homework\s+discussion|summary\s+lecture/i.test(title);
+}
+
+interface SuggestedBatchInfo {
+  id: string;
+  name: string;
+  badge?: string;
+  target?: string;
+  isPrimary?: boolean;
+}
+
+function getGoalSuggestedBatches(
+  selectedGoal: SelectedGoal | null,
+  _catalogBatches: PWCatalogBatch[]
+): SuggestedBatchInfo[] {
+  const goalStr = `${selectedGoal?.category || ""} ${selectedGoal?.displayName || ""} ${(selectedGoal?.path || []).join(" ")}`.toLowerCase();
+
+  const isClass11 = goalStr.includes("11") || goalStr.includes("2027") || goalStr.includes("2028") || goalStr.includes("arjuna");
+  const isClass12 = goalStr.includes("12") || goalStr.includes("lakshya");
+  const isDropper = goalStr.includes("drop") || goalStr.includes("repeat") || goalStr.includes("prayas");
+  const isNeet = goalStr.includes("neet") || goalStr.includes("medical");
+
+  if (isNeet) {
+    if (isClass11) {
+      return [
+        { id: "67738e4cfd376db122d5a876", name: "Arjuna NEET 2027", badge: "Class 11", isPrimary: true },
+        { id: "686e179074ee3585f88d566f", name: "Arjuna Power NEET 2027", badge: "Class 11" },
+        { id: "678214ed354cbd5d79c48cd8", name: "Arjuna NEET Hindi 2027", badge: "Hindi" },
+        { id: "684320c01147f14a92a56c21", name: "Arjuna NEET 2.0 2027", badge: "2.0" },
+      ];
+    }
+    if (isClass12) {
+      return [
+        { id: "6644485eb034030018a1bf1b", name: "Lakshya NEET 2026", badge: "Class 12", isPrimary: true },
+        { id: "6613d2fbc625030018dc330d", name: "Lakshya NEET 2.0 2026", badge: "2.0" },
+        { id: "67626d2969e22ef8fe2c5a29", name: "Lakshya NEET AIR Recorded", badge: "AIR" },
+      ];
+    }
+    return [
+      { id: "6614dc3ec82d6b001824a7ba", name: "Yakeen NEET 2026", badge: "Dropper", isPrimary: true },
+      { id: "66275ef9505a76001844b245", name: "Yakeen NEET 2.0 2026", badge: "2.0" },
+      { id: "676262745b1ff583ca25bb89", name: "Yakeen NEET 3.0 2026", badge: "3.0" },
+    ];
+  }
+
+  if (isDropper) {
+    return [
+      { id: "65d86238fb2810001895eab8", name: "Prayas JEE 2026", badge: "Dropper", isPrimary: true },
+      { id: "66275ef9505a76001844b245", name: "Prayas JEE 2.0 2026", badge: "2.0" },
+      { id: "676262745b1ff583ca25bb89", name: "Prayas JEE 3.0 2026", badge: "3.0" },
+      { id: "67626d2969e22ef8fe2c5a29", name: "Prayas JEE AIR Recorded", badge: "AIR" },
+    ];
+  }
+
+  if (isClass12) {
+    return [
+      { id: "65d862392b1da90018ad8f3b", name: "Lakshya JEE 2026", badge: "Class 12", isPrimary: true },
+      { id: "6613d2fbc625030018dc330d", name: "Lakshya JEE 2.0 2026", badge: "2.0" },
+      { id: "673af27c87f8c1497d4fa4bf", name: "Lakshya JEE 3.0 2026", badge: "3.0" },
+      { id: "67626d2969e22ef8fe2c5a29", name: "Lakshya JEE AIR Recorded", badge: "AIR" },
+    ];
+  }
+
+  // Default: Class 11th JEE -> Arjuna JEE 2027!
+  return [
+    { id: "698ad3519549b300a5e1cc6a", name: "Arjuna JEE 2027", badge: "Class 11 (Recommended)", isPrimary: true },
+    { id: "67626d2969e22ef8fe2c5a29", name: "Arjuna JEE 2.0 2027", badge: "2.0" },
+    { id: "676262745b1ff583ca25bb89", name: "Arjuna JEE 3.0 2027", badge: "3.0" },
+    { id: "673af27c87f8c1497d4fa4bf", name: "Arjuna JEE 4.0 2027", badge: "4.0" },
+    { id: "6826b67b9354ed4bb9f31756", name: "Arjuna JEE AIR Recorded 2027", badge: "AIR" },
+  ];
+}
+
+const BATCH_RESOURCES = [
+  { id: "re-01", code: "RE - 01", title: "Batch Demo Videos", desc: "Watch sample lectures & teaching methodology", icon: Play, action: "demo" },
+  { id: "re-02", code: "RE - 02", title: "Infinity Pro", desc: "1-on-1 mentorship, doubt solving & live practice", icon: Sparkles, action: "infinity" },
+  { id: "re-03", code: "RE - 03", title: "Class Schedule", desc: "Live class timetable & weekly interactive calendar", icon: Calendar, action: "schedule" },
+  { id: "re-04", code: "RE - 04", title: "Lecture Planner", desc: "Detailed syllabus roadmaps & lecture sequence", icon: FileText, action: "planner" },
+  { id: "re-05", code: "RE - 05", title: "Test Planner", desc: "Schedule of minor, part & full syllabus tests", icon: Award, action: "tests" },
+  { id: "re-06", code: "RE - 06", title: "Telegram Link", desc: "Join official batch announcements & doubt group", icon: MessageSquare, action: "telegram" },
+  { id: "re-07", code: "RE - 07", title: "Test Syllabus", desc: "Upcoming test portion and question weightage", icon: BookOpen, action: "syllabus" },
+  { id: "re-08", code: "RE - 08", title: "Test Solution", desc: "Video solutions and step-by-step PDF explanations", icon: CheckSquare, action: "solutions" },
+  { id: "re-09", code: "RE - 09", title: "Test Papers", desc: "Downloadable test question papers and answer keys", icon: FileQuestion, action: "papers" },
+  { id: "re-10", code: "RE - 10", title: "Admission Form Link", desc: "Batch enrolment verification & details", icon: GraduationCap, action: "admission" },
+  { id: "re-11", code: "RE - 11", title: "WhatsApp Link", desc: "Receive immediate class alerts and notifications", icon: Zap, action: "whatsapp" },
+  { id: "re-12", code: "RE - 12", title: "AIR Proctored Test", desc: "All-India test engine with proctored ranking", icon: Trophy, action: "air" },
+  { id: "re-13", code: "RE - 13", title: "Interaction Session", desc: "Live AMA webinars & guidance with teachers", icon: Users, action: "interaction" },
+  { id: "re-14", code: "RE - 14", title: "60 Minute NCERT", desc: "One-hour focused NCERT booster lectures", icon: BookMarked, action: "ncert" },
+];
+
+function getInitialFaculty(batchId: string): Record<string, string> {
+  try {
+    const saved = localStorage.getItem(`pw_faculty_${batchId}`);
+    if (saved) return JSON.parse(saved);
+  } catch {}
+  if (batchId === "698ad3519549b300a5e1cc6a") {
+    return {
+      "Physics": "Physics By Rajwant Singh Sir",
+      "Mathematics": "Maths By Sachin Jakhar Sir",
+      "Physical Chemistry": "Physical Chemistry By Rahul Dudi Sir",
+      "Inorganic Chemistry": "Inorganic Chemistry By Kunwar Om Pandey Sir",
+      "Organic Chemistry": "Organic Chemistry By Pankaj Sijariya Sir"
+    };
+  }
+  return {};
 }
 
 async function fetchDateSchedule(batchId: string, date: string): Promise<PWScheduleItem[]> {
@@ -316,8 +488,8 @@ async function fetchSubjectTopics(batchId: string, subject: PWRemoteSubject, tok
 // Fallback initial dataset in case offline or CDN loading
 const DEFAULT_PW_BATCHES: PWBatch[] = [
   {
-    id: "arjuna-jee-2026",
-    name: "Arjuna JEE 2026",
+    id: "698ad3519549b300a5e1cc6a",
+    name: "Arjuna JEE 2027",
     target: "Class 11 (JEE Main & Advanced 2027)",
     description: "Complete foundational Class 11 curriculum with theory lectures and daily problem sheets (DPPs).",
     subjects: [

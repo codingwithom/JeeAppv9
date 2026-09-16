@@ -819,9 +819,39 @@ export default function OthersPage() {
   const [location, navigate] = useLocation();
   const [subView, setSubView] = useState<OthersSubView>("hub");
 
-  // PW Batches Data & Selection State
-  const [batches, setBatches] = useState<PWBatch[]>([]);
-  const [selectedBatchId, setSelectedBatchId] = useState<string>("");
+  const { selectedGoal } = useAppContext();
+
+  // Navigation hierarchy matching UIvid.mp4
+  // Level 1: Batch View (tabs: subjects | resources)
+  const [activeBatchTab, setActiveBatchTab] = useState<"subjects" | "resources">("subjects");
+  // Level 2: Subject View (tabs: chapters | studyMaterial)
+  const [selectedSubject, setSelectedSubject] = useState<PWSubject | null>(null);
+  const [selectedSubjectTab, setSelectedSubjectTab] = useState<"chapters" | "studyMaterial">("chapters");
+  // Level 3: Chapter Detail View
+  const [selectedChapter, setSelectedChapter] = useState<PWChapter | null>(null);
+
+  // Modals & User Filters
+  const [facultyModalOpen, setFacultyModalOpen] = useState<boolean>(false);
+  const [batchSearchModalOpen, setBatchSearchModalOpen] = useState<boolean>(false);
+  const [facultyFilterMode, setFacultyFilterMode] = useState<"myFaculty" | "all">("myFaculty");
+  const [resourceModal, setResourceModal] = useState<{ title: string; desc: string; link?: string } | null>(null);
+  const [videoModalLec, setVideoModalLec] = useState<PWLecture | null>(null);
+
+  // PW Batches Data & Selection State with LocalStorage Persistence
+  const [batches, setBatches] = useState<PWBatch[]>(DEFAULT_PW_BATCHES);
+  const [selectedBatchId, setSelectedBatchId] = useState<string>(() => {
+    try {
+      const saved = localStorage.getItem("pw_selected_batch_id");
+      if (saved) return saved;
+    } catch {}
+    return "698ad3519549b300a5e1cc6a";
+  });
+
+  // Faculty Selection per Batch with LocalStorage Persistence
+  const [selectedFaculty, setSelectedFaculty] = useState<Record<string, string>>(() => {
+    return getInitialFaculty(selectedBatchId);
+  });
+
   const [activeSubject, setActiveSubject] = useState<string>("All");
   const [statusFilter, setStatusFilter] = useState<"all" | "pending" | "completed">("all");
   const [contentFilter, setContentFilter] = useState<"all" | "lecture" | "dpp">("all");
@@ -858,15 +888,51 @@ export default function OthersPage() {
     }
   });
 
-  // Load the live PW batch catalog. Detailed subjects and lectures load on selection.
+  // When selectedBatchId changes, persist to localStorage and reset faculty/navigation
+  useEffect(() => {
+    if (selectedBatchId) {
+      try {
+        localStorage.setItem("pw_selected_batch_id", selectedBatchId);
+        const savedFaculty = localStorage.getItem(`pw_faculty_${selectedBatchId}`);
+        if (savedFaculty) {
+          setSelectedFaculty(JSON.parse(savedFaculty));
+        } else {
+          setSelectedFaculty(getInitialFaculty(selectedBatchId));
+        }
+      } catch {}
+      setSelectedSubject(null);
+      setSelectedChapter(null);
+    }
+  }, [selectedBatchId]);
+
+  // Update selected faculty for a discipline and persist to localStorage
+  const handleSelectFaculty = (discipline: string, subjectName: string) => {
+    setSelectedFaculty(prev => {
+      const next = { ...prev, [discipline]: subjectName };
+      try {
+        localStorage.setItem(`pw_faculty_${selectedBatchId}`, JSON.stringify(next));
+      } catch {}
+      return next;
+    });
+  };
+
+  // Load the live PW batch catalog.
   useEffect(() => {
     fetch(PW_CATALOG_URL)
       .then(res => res.ok ? res.json() : null)
       .then(data => {
         const remoteBatches = extractCatalogBatches(data);
         setCatalogBatches(remoteBatches);
-        setBatches(remoteBatches.map(catalogToBatch));
-        setSelectedBatchId(current => current || remoteBatches[0]?.batch_id || "");
+        setBatches(prev => {
+          const catalogConverted = remoteBatches.map(catalogToBatch);
+          const merged = [...prev];
+          catalogConverted.forEach(cb => {
+            if (!merged.some(m => m.id === cb.id)) {
+              merged.push(cb);
+            }
+          });
+          return merged;
+        });
         if (remoteBatches.length > 0) {
           setSyncMessage(`Catalog synced: ${remoteBatches.length.toLocaleString()} public batches`);
         }
@@ -905,9 +971,25 @@ export default function OthersPage() {
     return batches.find(b => b.id === selectedBatchId) || batches[0] || EMPTY_PW_BATCH;
   }, [batches, selectedBatchId]);
 
+  // Compute 4-5 Goal-Suggested Batches
+  const suggestedBatches = useMemo(() => {
+    return getGoalSuggestedBatches(selectedGoal, catalogBatches);
+  }, [selectedGoal, catalogBatches]);
+
+  // If no saved batch, auto-select the first suggested batch matching user's goal
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem("pw_selected_batch_id");
+      if (!saved && suggestedBatches.length > 0) {
+        setSelectedBatchId(suggestedBatches[0].id);
+      }
+    } catch {}
+  }, [suggestedBatches]);
+
+  // Load batch metadata when batch is selected
   useEffect(() => {
     const selectedBatch = batches.find(batch => batch.id === selectedBatchId);
-    if (!selectedBatchId || selectedBatch?.subjects.length || !catalogBatches.some(batch => batch.batch_id === selectedBatchId) || loadingBatchIds.current.has(selectedBatchId)) {
+    if (!selectedBatchId || (selectedBatch?.subjects && selectedBatch.subjects.length > 0) || loadingBatchIds.current.has(selectedBatchId)) {
       return;
     }
 
@@ -919,20 +1001,36 @@ export default function OthersPage() {
           setSyncMessage("This batch has no public subject metadata");
           return;
         }
-        setBatches(prev => prev.map(batch => batch.id === selectedBatchId ? { ...batch, subjects } : batch));
-        const topicCount = subjects.reduce((count, subject) => count + subject.chapters.length, 0);
-        const dppCount = subjects.reduce((count, subject) => count + subject.chapters.reduce((sum, ch) => sum + ch.lectures.filter(l => l.type === "dpp").length, 0), 0);
-        setSyncMessage(`Loaded ${subjects.length} subjects, ${topicCount} chapters, and ${dppCount} DPPs`);
+        setBatches(prev => {
+          const exists = prev.some(b => b.id === selectedBatchId);
+          if (exists) {
+            return prev.map(b => b.id === selectedBatchId ? { ...b, subjects } : b);
+          }
+          const cat = catalogBatches.find(b => b.batch_id === selectedBatchId);
+          const newBatch = cat ? catalogToBatch(cat) : {
+            id: selectedBatchId,
+            name: "Physics Wallah Batch",
+            target: "IIT JEE / NEET Preparation",
+            description: "Live batch curriculum",
+            subjects: []
+          };
+          return [...prev, { ...newBatch, subjects }];
+        });
+        setSyncMessage(`Curriculum synchronized (${subjects.length} subjects)`);
       })
-      .catch(() => setSyncMessage("Live batch metadata could not be loaded. Check that the backend is running, then retry the batch."))
+      .catch((err) => {
+        console.error("Failed to load batch metadata:", err);
+        setSyncMessage("Metadata temporarily unavailable");
+      })
       .finally(() => {
-        loadingBatchIds.current.delete(selectedBatchId);
         setIsLoadingBatch(false);
+        loadingBatchIds.current.delete(selectedBatchId);
       });
-  }, [batches, catalogBatches, selectedBatchId]);
+  }, [selectedBatchId, batches, catalogBatches]);
 
+  // Load today's schedule
   useEffect(() => {
-    if (!selectedBatchId || !catalogBatches.some(batch => batch.batch_id === selectedBatchId)) return;
+    if (!selectedBatchId) return;
     const todayDate = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Kolkata" }).format(new Date());
     setTodaySchedule([]);
     setScheduleMessage("Loading today’s classes...");
@@ -947,7 +1045,6 @@ export default function OthersPage() {
         if (liveOrUpcoming.length >= 2) {
           setUpcomingEvents(liveOrUpcoming);
         } else {
-          // If today has fewer than 2 upcoming classes, also check tomorrow
           const tomorrowDate = addDaysToDate(todayDate, 1);
           fetchDateSchedule(selectedBatchId, tomorrowDate)
             .then(tomorrowSched => {
@@ -963,7 +1060,7 @@ export default function OthersPage() {
         setUpcomingEvents([]);
         setScheduleMessage("Today’s schedule could not be loaded.");
       });
-  }, [catalogBatches, selectedBatchId]);
+  }, [selectedBatchId]);
 
   // Load schedule whenever selectedScheduleDate or selectedBatchId changes
   useEffect(() => {
@@ -986,6 +1083,26 @@ export default function OthersPage() {
         setIsLoadingSchedule(false);
       });
   }, [selectedBatchId, selectedScheduleDate]);
+
+  // Keep selectedSubject in sync with fresh batch metadata
+  useEffect(() => {
+    if (selectedSubject && currentBatch.subjects.length > 0) {
+      const fresh = currentBatch.subjects.find(s => s.name === selectedSubject.name);
+      if (fresh && fresh !== selectedSubject) {
+        setSelectedSubject(fresh);
+      }
+    }
+  }, [currentBatch.subjects, selectedSubject]);
+
+  // Keep selectedChapter in sync with fresh subject data
+  useEffect(() => {
+    if (selectedChapter && selectedSubject) {
+      const freshCh = selectedSubject.chapters.find(c => c.id === selectedChapter.id);
+      if (freshCh && freshCh !== selectedChapter) {
+        setSelectedChapter(freshCh);
+      }
+    }
+  }, [selectedSubject, selectedChapter]);
 
   // Expand all chapters by default when batch changes
   useEffect(() => {
@@ -1017,50 +1134,78 @@ export default function OthersPage() {
     }));
   };
 
-  // Mark an entire chapter as completed / pending
-  const toggleAllInChapter = (chapter: PWChapter) => {
-    const allCompleted = chapter.lectures.every(l => completedMap[l.id]);
-    setCompletedMap(prev => {
-      const updated = { ...prev };
-      chapter.lectures.forEach(l => {
-        updated[l.id] = !allCompleted;
-      });
-      return updated;
+  // Group all batch subjects by discipline for the faculty selection menu
+  const disciplinesGrouped = useMemo(() => {
+    const grouped: Record<string, PWSubject[]> = {};
+    currentBatch.subjects.forEach(s => {
+      const disc = getSubjectDiscipline(s.name);
+      if (!grouped[disc]) grouped[disc] = [];
+      grouped[disc].push(s);
     });
-  };
+    return grouped;
+  }, [currentBatch.subjects]);
 
-  // Calculation of progress stats for the selected batch
+  // Active Subjects based on User's Selected Faculty (NO DOUBLE COUNTING!)
+  const activeBatchSubjects = useMemo(() => {
+    if (!currentBatch.subjects || currentBatch.subjects.length === 0) return [];
+
+    const grouped: Record<string, PWSubject[]> = {};
+    currentBatch.subjects.forEach(s => {
+      const disc = getSubjectDiscipline(s.name);
+      if (!grouped[disc]) grouped[disc] = [];
+      grouped[disc].push(s);
+    });
+
+    const result: PWSubject[] = [];
+    for (const [disc, subs] of Object.entries(grouped)) {
+      if (subs.length === 1) {
+        result.push(subs[0]);
+      } else {
+        const chosenName = selectedFaculty[disc];
+        const match = subs.find(s => s.name === chosenName) || subs[0];
+        result.push(match);
+      }
+    }
+    return result;
+  }, [currentBatch.subjects, selectedFaculty]);
+
+  // Calculation of progress stats for the selected batch ONLY across chosen faculty (NO DOUBLE COUNTING)
   const batchStats = useMemo(() => {
     let total = 0;
     let completed = 0;
-    const subjectStats: Record<string, { total: number; completed: number }> = {};
+    const subjectStats: Record<string, { total: number; completed: number; faculty?: string }> = {};
 
-    currentBatch.subjects.forEach(sub => {
-      if (!subjectStats[sub.name]) {
-        subjectStats[sub.name] = { total: 0, completed: 0 };
-      }
+    activeBatchSubjects.forEach(sub => {
+      let subTotal = 0;
+      let subCompleted = 0;
       sub.chapters.forEach(ch => {
         ch.lectures.forEach(l => {
-          total++;
-          subjectStats[sub.name].total++;
+          total += 1;
+          subTotal += 1;
           if (completedMap[l.id]) {
-            completed++;
-            subjectStats[sub.name].completed++;
+            completed += 1;
+            subCompleted += 1;
           }
         });
       });
+      const disc = getSubjectDiscipline(sub.name);
+      subjectStats[disc] = {
+        total: subTotal,
+        completed: subCompleted,
+        faculty: sub.faculty || sub.name.split(/\bby\b/i)[1]?.trim()
+      };
     });
 
     const percent = total > 0 ? Math.round((completed / total) * 100) : 0;
     return { total, completed, percent, subjectStats };
-  }, [currentBatch, completedMap]);
+  }, [activeBatchSubjects, completedMap]);
 
   const visibleCatalogBatches = useMemo(() => {
     const query = batchSearch.trim().toLowerCase();
-    if (!query) return catalogBatches.slice(0, 12);
+    if (!query) return catalogBatches.slice(0, 15);
     return catalogBatches
       .filter(batch => [batch.name, batch.byName, batch.exam, batch.class].filter(Boolean).join(" ").toLowerCase().includes(query))
-      .slice(0, 12);
+      .slice(0, 20);
   }, [batchSearch, catalogBatches]);
 
   const visibleBatches = useMemo(() => {
@@ -1546,690 +1691,1202 @@ export default function OthersPage() {
           </div>
         ) : (
           <>
-          {/* Batch Selector Header */}
-          <div className="bg-card border border-border/80 rounded-3xl p-6 sm:p-7 shadow-xs space-y-5">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-              <div>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-1.5 mb-1">
-                  <Flame className="w-3.5 h-3.5 text-amber-500" />
-                  Select Your Physics Wallah Batch
-                </span>
-                <h1 className="text-2xl sm:text-3xl font-black text-foreground">
-                  {currentBatch.name}
-                </h1>
-                <p className="text-xs text-muted-foreground mt-0.5">
-                  {currentBatch.target} • {currentBatch.description}
-                </p>
-              </div>
+            {/* ── BATCH SELECTOR HEADER & GOAL SUGGESTIONS ──────── */}
+            <div className="bg-card border border-border/80 rounded-3xl p-6 sm:p-7 shadow-xs space-y-5">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                  <div className="flex items-center gap-2 flex-wrap mb-1">
+                    <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20 inline-flex items-center gap-1">
+                      <Flame className="w-3.5 h-3.5 text-amber-500" />
+                      Physics Wallah
+                    </span>
+                    {selectedGoal && (
+                      <span className="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-primary/10 text-primary border border-primary/20">
+                        Goal: {selectedGoal.displayName}
+                      </span>
+                    )}
+                  </div>
+                  <h1 className="text-2xl sm:text-3xl font-black text-foreground">
+                    {currentBatch.name}
+                  </h1>
+                  <p className="text-xs text-muted-foreground mt-0.5">
+                    {currentBatch.target} • {currentBatch.description}
+                  </p>
+                </div>
 
-              {/* Batch Switcher Pills */}
-              <div className="flex flex-col items-stretch gap-2 sm:items-end">
-                <Input
-                  value={batchSearch}
-                  onChange={(event) => setBatchSearch(event.target.value)}
-                  placeholder="Search Arjuna, Lakshya, Ajay..."
-                  className="h-9 w-full text-xs sm:w-64"
-                  aria-label="Search public PW batches"
-                />
-                <div className="flex max-w-xl flex-wrap justify-end gap-2">
-                {visibleBatches.map(b => (
-                  <button
-                    key={b.id}
-                    onClick={() => setSelectedBatchId(b.id)}
-                    className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all ${
-                      selectedBatchId === b.id
-                        ? "bg-amber-600 text-white shadow-sm shadow-amber-600/30 scale-102"
-                        : "bg-muted text-muted-foreground hover:text-foreground hover:bg-muted/80 border border-border/60"
-                    }`}
+                {/* Right Actions: Customize Faculty & Search All Batches */}
+                <div className="flex items-center gap-2 flex-wrap">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => setFacultyModalOpen(true)}
+                    className="h-9 px-3.5 rounded-xl text-xs font-bold gap-1.5 border-amber-500/30 bg-amber-500/5 hover:bg-amber-500/15 text-amber-700 dark:text-amber-300"
                   >
-                    {b.name}
+                    <Settings2 className="w-4 h-4" />
+                    Customize Faculty ✎
+                    <Badge variant="secondary" className="ml-1 h-5 px-1.5 text-[10px] font-black bg-amber-500/20 text-amber-800 dark:text-amber-200">
+                      {activeBatchSubjects.length} Active
+                    </Badge>
+                  </Button>
+
+                  <Button
+                    variant="default"
+                    size="sm"
+                    onClick={() => setBatchSearchModalOpen(true)}
+                    className="h-9 px-3.5 rounded-xl text-xs font-bold gap-1.5 shadow-xs"
+                  >
+                    <Search className="w-4 h-4" />
+                    Search All Batches ▾
+                  </Button>
+                </div>
+              </div>
+
+              {/* Goal-Suggested Batches (4-5 main batches matching user's goal) */}
+              <div className="space-y-2 pt-1 border-t border-border/60">
+                <div className="flex items-center justify-between gap-2 text-xs">
+                  <span className="font-semibold text-muted-foreground flex items-center gap-1.5 text-[11px]">
+                    <Sparkles className="w-3.5 h-3.5 text-amber-500" />
+                    Suggested Batches for Your Goal:
+                  </span>
+                  <button
+                    onClick={() => setBatchSearchModalOpen(true)}
+                    className="text-[11px] text-primary hover:underline font-semibold flex items-center gap-1"
+                  >
+                    View More / All Batches ▾
                   </button>
-                ))}
-                {visibleCatalogBatches
-                  .filter(batch => !batches.some(existing => existing.id === batch.batch_id))
-                  .map(batch => (
-                    <button
-                      key={batch.batch_id}
-                      onClick={() => {
-                        setBatches(prev => [...prev, catalogToBatch(batch)]);
-                        setSelectedBatchId(batch.batch_id);
-                      }}
-                      className="border border-dashed border-amber-500/50 bg-amber-500/5 px-3.5 py-2 rounded-xl text-xs font-bold text-amber-700 hover:bg-amber-500/15 dark:text-amber-300"
-                    >
-                      {batch.name}
-                    </button>
-                  ))}
                 </div>
-                {syncMessage && <span className="text-[10px] text-muted-foreground">{syncMessage}</span>}
-              </div>
-            </div>
 
-            {/* Overall Progress Bar Card */}
-            <div className="p-4 rounded-2xl bg-muted/40 border border-border/80 space-y-3">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
-                <div className="flex items-center gap-2">
-                  <TrendingUp className="w-4 h-4 text-emerald-500" />
-                  <span className="font-bold text-foreground">Batch Progress:</span>
-                  <span className="font-mono font-bold text-emerald-600 dark:text-emerald-400">
-                    {batchStats.completed} / {batchStats.total} Items Completed
-                  </span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="font-mono font-bold text-base text-foreground">
-                    {batchStats.percent}%
-                  </span>
-                  {batchStats.completed > 0 && (
-                    <button
-                      onClick={() => {
-                        if (window.confirm("Reset all completed checkmarks for this batch?")) {
-                          setCompletedMap({});
-                        }
-                      }}
-                      className="text-[11px] text-muted-foreground hover:text-red-500 flex items-center gap-1 transition-colors"
-                      title="Reset completed ticks"
-                    >
-                      <RotateCcw className="w-3 h-3" /> Reset
-                    </button>
-                  )}
+                <div className="flex flex-wrap items-center gap-2">
+                  {suggestedBatches.map(b => {
+                    const isSelected = selectedBatchId === b.id;
+                    return (
+                      <button
+                        key={b.id}
+                        type="button"
+                        onClick={() => {
+                          setSelectedBatchId(b.id);
+                        }}
+                        className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
+                          isSelected
+                            ? "bg-amber-600 text-white shadow-sm shadow-amber-600/30 scale-102 ring-2 ring-amber-500/40"
+                            : "bg-muted hover:bg-muted/80 text-muted-foreground hover:text-foreground border border-border/60"
+                        }`}
+                      >
+                        <span>{b.name}</span>
+                        {b.badge && (
+                          <span className={`px-1.5 py-0.2 rounded text-[9px] font-bold uppercase tracking-wider ${
+                            isSelected ? "bg-white/20 text-white" : "bg-background text-muted-foreground"
+                          }`}>
+                            {b.badge}
+                          </span>
+                        )}
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
 
-              {/* Visual Progress Bar */}
-              <div className="h-2.5 w-full bg-muted rounded-full overflow-hidden">
-                <div 
-                  className="h-full bg-gradient-to-r from-amber-500 to-emerald-500 rounded-full transition-all duration-500"
-                  style={{ width: `${batchStats.percent}%` }}
-                />
-              </div>
+              {/* Overall Progress Bar Card (NO DOUBLE COUNTING) */}
+              <div className="p-4 rounded-2xl bg-muted/40 border border-border/80 space-y-3">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
+                  <div className="flex items-center gap-2">
+                    <TrendingUp className="w-4 h-4 text-emerald-500" />
+                    <span className="font-bold text-foreground">Selected Faculty Progress:</span>
+                    <span className="font-mono font-bold text-emerald-600 dark:text-emerald-400">
+                      {batchStats.completed} / {batchStats.total} Items Completed
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className="font-mono font-bold text-base text-foreground">
+                      {batchStats.percent}%
+                    </span>
+                    {batchStats.completed > 0 && (
+                      <button
+                        onClick={() => {
+                          if (window.confirm("Reset all completed checkmarks for this batch?")) {
+                            setCompletedMap({});
+                          }
+                        }}
+                        className="text-[11px] text-muted-foreground hover:text-red-500 flex items-center gap-1 transition-colors"
+                        title="Reset completed ticks"
+                      >
+                        <RotateCcw className="w-3 h-3" /> Reset
+                      </button>
+                    )}
+                  </div>
+                </div>
 
-              {/* Subject-Wise Micro Badges */}
-              <div className="flex flex-wrap gap-2 pt-1 text-[11px]">
-                {Object.entries(batchStats.subjectStats).map(([subName, stats]) => {
-                  const subPct = stats.total > 0 ? Math.round((stats.completed / stats.total) * 100) : 0;
-                  return (
-                    <div 
-                      key={subName}
-                      className="px-2.5 py-1 rounded-lg bg-background border border-border/80 flex items-center gap-1.5 shadow-2xs"
-                    >
-                      <span className="font-medium text-foreground">{subName}:</span>
-                      <span className="font-mono font-bold text-primary">{stats.completed}/{stats.total}</span>
-                      <span className="text-[10px] text-muted-foreground font-semibold">({subPct}%)</span>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
+                {/* Visual Progress Bar */}
+                <div className="h-2.5 w-full bg-muted rounded-full overflow-hidden">
+                  <div 
+                    className="h-full bg-gradient-to-r from-amber-500 to-emerald-500 rounded-full transition-all duration-500"
+                    style={{ width: `${batchStats.percent}%` }}
+                  />
+                </div>
 
-          {/* Upcoming Events Card (Matches 00:00 - 00:01 in video) */}
-          {(() => {
-            const eventsToShow = upcomingEvents.length > 0 ? upcomingEvents : todaySchedule;
-            const upcomingCount = eventsToShow.length;
-
-            return (
-              <Card className="border border-border/80 bg-gradient-to-br from-amber-500/5 via-card to-card p-4 sm:p-5 rounded-3xl shadow-xs space-y-4">
-                {/* Header */}
-                <div className="flex items-center justify-between gap-2.5">
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-8 h-8 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center font-bold shrink-0">
-                      <Clock className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <h2 className="text-sm sm:text-base font-bold text-foreground">
-                          Upcoming Events ({upcomingCount})
-                        </h2>
-                        {eventsToShow.some(s => s.isLive || s.tag?.toLowerCase() === "live") && (
-                          <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-black bg-red-600 text-white animate-pulse shadow-xs">
-                            <span className="w-1.5 h-1.5 rounded-full bg-white" />
-                            LIVE
+                {/* Subject-Wise Micro Badges (Active faculty only) */}
+                <div className="flex flex-wrap gap-2 pt-1 text-[11px]">
+                  {Object.entries(batchStats.subjectStats).map(([discName, stats]) => {
+                    const subPct = stats.total > 0 ? Math.round((stats.completed / stats.total) * 100) : 0;
+                    const badge = getSubjectBadge(discName);
+                    return (
+                      <div 
+                        key={discName}
+                        className="px-2.5 py-1 rounded-lg bg-background border border-border/80 flex items-center gap-1.5 shadow-2xs"
+                      >
+                        <span className={`w-4 h-4 rounded text-[9px] font-black flex items-center justify-center ${badge.bg} ${badge.text}`}>
+                          {badge.label}
+                        </span>
+                        <span className="font-medium text-foreground">{discName}:</span>
+                        <span className="font-mono font-bold text-primary">{stats.completed}/{stats.total}</span>
+                        <span className="text-[10px] text-muted-foreground font-semibold">({subPct}%)</span>
+                        {stats.faculty && (
+                          <span className="text-[10px] text-muted-foreground hidden md:inline">
+                            • {stats.faculty}
                           </span>
                         )}
                       </div>
-                      <p className="text-[11px] text-muted-foreground">
-                        Live sessions, upcoming classes &amp; today's schedule
-                      </p>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+
+            {/* Upcoming Events Card */}
+            {(() => {
+              const eventsToShow = upcomingEvents.length > 0 ? upcomingEvents : todaySchedule;
+              const upcomingCount = eventsToShow.length;
+
+              return (
+                <Card className="border border-border/80 bg-gradient-to-br from-amber-500/5 via-card to-card p-4 sm:p-5 rounded-3xl shadow-xs space-y-4">
+                  <div className="flex items-center justify-between gap-2.5">
+                    <div className="flex items-center gap-2.5">
+                      <div className="w-8 h-8 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center font-bold shrink-0">
+                        <Clock className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <div className="flex items-center gap-2">
+                          <h2 className="text-sm sm:text-base font-bold text-foreground">
+                            Upcoming Classes ({upcomingCount})
+                          </h2>
+                          {eventsToShow.some(s => s.isLive || s.tag?.toLowerCase() === "live") && (
+                            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-black bg-red-600 text-white animate-pulse shadow-xs">
+                              <span className="w-1.5 h-1.5 rounded-full bg-white" />
+                              LIVE
+                            </span>
+                          )}
+                        </div>
+                        <p className="text-[11px] text-muted-foreground">
+                          Today's live sessions &amp; weekly timetable
+                        </p>
+                      </div>
+                    </div>
+
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => setScheduleViewMode("full")}
+                      className="text-primary hover:text-primary font-bold text-xs gap-1 self-center"
+                    >
+                      View Full Schedule
+                      <ChevronRight className="w-4 h-4" />
+                    </Button>
+                  </div>
+
+                  {eventsToShow.length > 0 ? (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                      {eventsToShow.slice(0, 4).map(item => {
+                        const isLive = Boolean(item.isLive || item.tag?.toLowerCase() === "live");
+                        const colors = getSubjectBadgeColor(item.subject);
+                        const teacherInitials = getTeacherInitials(item.teacher);
+                        const itemDate = item.date ? item.date.split("T")[0] : selectedScheduleDate;
+
+                        return (
+                          <div
+                            key={item.id}
+                            onClick={() => {
+                              setSelectedScheduleDate(itemDate);
+                              setScheduleViewMode("full");
+                            }}
+                            className={`p-3.5 rounded-2xl border transition-all cursor-pointer flex items-center justify-between gap-3 group ${
+                              isLive
+                                ? "border-red-500/50 bg-red-500/5 shadow-xs ring-1 ring-red-500/20 hover:bg-red-500/10"
+                                : "border-border/80 bg-background hover:border-primary/50 hover:bg-muted/30 shadow-2xs"
+                            }`}
+                          >
+                            <div className="flex items-center gap-3 min-w-0 flex-1">
+                              {item.teacherImage ? (
+                                <img
+                                  src={item.teacherImage}
+                                  alt={item.teacher}
+                                  className="w-10 h-10 rounded-full object-cover shrink-0 border border-border"
+                                />
+                              ) : (
+                                <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-xs shrink-0 ${colors.avatar}`}>
+                                  {teacherInitials}
+                                </div>
+                              )}
+
+                              <div className="min-w-0 flex-1 space-y-1">
+                                <div className="flex items-center gap-1.5 flex-wrap text-[11px]">
+                                  <span className="font-semibold text-muted-foreground flex items-center gap-1">
+                                    <Clock className="w-3 h-3 text-primary" />
+                                    {formatScheduleTime(item.startTime)}
+                                  </span>
+                                  {isLive ? (
+                                    <span className="inline-flex items-center gap-1 px-1.5 py-0.2 rounded-full text-[9px] font-black bg-red-600 text-white animate-pulse">
+                                      LIVE
+                                    </span>
+                                  ) : (
+                                    <span className="px-1.5 py-0.2 rounded text-[9px] font-bold bg-amber-500/15 text-amber-700 dark:text-amber-300">
+                                      UPCOMING
+                                    </span>
+                                  )}
+                                  <span className="text-muted-foreground truncate">
+                                    • {item.type === "NOTES" ? "Notes" : "Lecture"} • {item.subject} by {item.teacher}
+                                  </span>
+                                </div>
+
+                                <p className="text-xs sm:text-sm font-bold text-foreground truncate flex items-center gap-1.5">
+                                  <BookOpen className="w-3.5 h-3.5 text-muted-foreground shrink-0" />
+                                  <span className="truncate">{item.topic}</span>
+                                </p>
+                              </div>
+                            </div>
+
+                            <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-foreground group-hover:translate-x-0.5 transition-all shrink-0" />
+                          </div>
+                        );
+                      })}
+                    </div>
+                  ) : (
+                    <p className="text-xs text-muted-foreground">
+                      {scheduleMessage || "No upcoming events scheduled right now."}
+                    </p>
+                  )}
+
+                  <Button
+                    onClick={() => setScheduleViewMode("full")}
+                    variant="outline"
+                    className="w-full h-10 rounded-xl bg-primary/5 hover:bg-primary/10 text-primary border-primary/20 font-bold text-xs gap-2"
+                  >
+                    <Calendar className="w-4 h-4" />
+                    Open Weekly Schedule &amp; Calendar
+                    <ArrowRight className="w-4 h-4" />
+                  </Button>
+                </Card>
+              );
+            })()}
+
+            {/* ── HIERARCHICAL NAVIGATION (LEVEL 1 / 2 / 3) ──────── */}
+            {/* LEVEL 3: CHAPTER OR STUDY MATERIAL DETAIL VIEW */}
+            {selectedChapter !== null && selectedSubject !== null ? (
+              <div className="space-y-5 animate-in fade-in duration-200">
+                {/* Back to Subject */}
+                <div className="bg-card border border-border/80 rounded-3xl p-5 sm:p-6 shadow-xs space-y-4">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => setSelectedChapter(null)}
+                      className="gap-2 text-xs font-semibold rounded-xl self-start"
+                    >
+                      <ArrowLeft className="w-4 h-4" />
+                      Back to {selectedSubject.name}
+                    </Button>
+                    <div className="flex items-center gap-2">
+                      <Badge className="bg-amber-500/10 text-amber-700 dark:text-amber-300 border-amber-500/20 text-xs font-bold">
+                        {isStudyMaterialChapter(selectedChapter.title) ? "Study Material" : "Chapter"}
+                      </Badge>
                     </div>
                   </div>
 
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={() => setScheduleViewMode("full")}
-                    className="text-primary hover:text-primary font-bold text-xs gap-1 self-center"
-                  >
-                    View Full Schedule
-                    <ChevronRight className="w-4 h-4" />
-                  </Button>
+                  <div>
+                    <h2 className="text-xl sm:text-2xl font-black text-foreground flex items-center gap-2.5">
+                      <BookOpen className="w-6 h-6 text-primary" />
+                      {selectedChapter.title}
+                    </h2>
+                    <p className="text-xs text-muted-foreground mt-1">
+                      {selectedSubject.name} • {selectedSubject.faculty || "Faculty"} • {selectedChapter.lectures.length} Total Items
+                    </p>
+                  </div>
+
+                  {/* Chapter Progress Bar */}
+                  {(() => {
+                    const totalLec = selectedChapter.lectures.length;
+                    const compLec = selectedChapter.lectures.filter(l => completedMap[l.id]).length;
+                    const pct = totalLec > 0 ? Math.round((compLec / totalLec) * 100) : 0;
+                    return (
+                      <div className="space-y-1.5 pt-2 border-t border-border/60">
+                        <div className="flex items-center justify-between text-xs">
+                          <span className="font-semibold text-muted-foreground">
+                            Completion: {compLec} / {totalLec} items completed
+                          </span>
+                          <span className="font-mono font-bold text-primary">{pct}%</span>
+                        </div>
+                        <div className="h-2 w-full bg-muted rounded-full overflow-hidden">
+                          <div
+                            className="h-full bg-primary rounded-full transition-all duration-300"
+                            style={{ width: `${pct}%` }}
+                          />
+                        </div>
+                      </div>
+                    );
+                  })()}
                 </div>
 
-                {/* Grid of Upcoming Events (2 columns on sm/md) */}
-                {eventsToShow.length > 0 ? (
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    {eventsToShow.slice(0, 4).map(item => {
-                      const isLive = Boolean(item.isLive || item.tag?.toLowerCase() === "live");
-                      const colors = getSubjectBadgeColor(item.subject);
-                      const teacherInitials = getTeacherInitials(item.teacher);
-                      const itemDate = item.date ? item.date.split("T")[0] : selectedScheduleDate;
+                {/* Filters within Chapter */}
+                <div className="bg-card border border-border/80 rounded-2xl p-4 shadow-xs space-y-3">
+                  <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center justify-between">
+                    <div className="relative flex-1 max-w-md">
+                      <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-muted-foreground" />
+                      <Input
+                        type="text"
+                        placeholder="Search inside this chapter..."
+                        value={lectureSearch}
+                        onChange={(e) => setLectureSearch(e.target.value)}
+                        className="pl-9 h-9 rounded-xl text-xs bg-background border-border"
+                      />
+                    </div>
+
+                    <div className="flex items-center gap-2 flex-wrap">
+                      {/* Content Type Filter */}
+                      <div className="flex items-center gap-1 bg-muted/60 p-1 rounded-xl">
+                        {[
+                          { key: "all", label: `All (${selectedChapter.lectures.length})` },
+                          { key: "lecture", label: `Lectures (${selectedChapter.lectures.filter(l => l.type !== "dpp").length})` },
+                          { key: "dpp", label: `DPPs (${selectedChapter.lectures.filter(l => l.type === "dpp").length})` },
+                        ].map(t => (
+                          <button
+                            key={t.key}
+                            onClick={() => setContentFilter(t.key as any)}
+                            className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-all ${
+                              contentFilter === t.key
+                                ? "bg-background text-foreground shadow-xs font-bold"
+                                : "text-muted-foreground hover:text-foreground"
+                            }`}
+                          >
+                            {t.label}
+                          </button>
+                        ))}
+                      </div>
+
+                      {/* Status Filter */}
+                      <div className="flex items-center gap-1 bg-muted/60 p-1 rounded-xl">
+                        {[
+                          { key: "all", label: "All" },
+                          { key: "pending", label: "Pending" },
+                          { key: "completed", label: "Done" },
+                        ].map(s => (
+                          <button
+                            key={s.key}
+                            onClick={() => setStatusFilter(s.key as any)}
+                            className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-all ${
+                              statusFilter === s.key
+                                ? "bg-background text-foreground shadow-xs font-bold"
+                                : "text-muted-foreground hover:text-foreground"
+                            }`}
+                          >
+                            {s.label}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Items List */}
+                <Card className="rounded-2xl border border-border/80 overflow-hidden divide-y divide-border/60 bg-card shadow-xs">
+                  {(() => {
+                    const filtered = selectedChapter.lectures.filter(l => {
+                      if (contentFilter !== "all" && l.type !== contentFilter) return false;
+                      if (statusFilter === "completed" && !completedMap[l.id]) return false;
+                      if (statusFilter === "pending" && completedMap[l.id]) return false;
+                      if (lectureSearch.trim().length > 0) {
+                        const q = lectureSearch.toLowerCase();
+                        if (!l.title.toLowerCase().includes(q)) return false;
+                      }
+                      return true;
+                    });
+
+                    if (filtered.length === 0) {
+                      return (
+                        <div className="p-8 text-center text-xs text-muted-foreground">
+                          No items match the current filters.
+                        </div>
+                      );
+                    }
+
+                    return filtered.map(lec => {
+                      const isChecked = Boolean(completedMap[lec.id]);
+                      const isDpp = lec.type === "dpp";
+                      const pdfUrl = lec.pdfUrl || lec.notesUrl || lec.dppPdfUrl;
 
                       return (
                         <div
-                          key={item.id}
-                          onClick={() => {
-                            setSelectedScheduleDate(itemDate);
-                            setScheduleViewMode("full");
-                          }}
-                          className={`p-3.5 rounded-2xl border transition-all cursor-pointer flex items-center justify-between gap-3 group ${
-                            isLive
-                              ? "border-red-500/50 bg-red-500/5 shadow-xs ring-1 ring-red-500/20 hover:bg-red-500/10"
-                              : "border-border/80 bg-background hover:border-primary/50 hover:bg-muted/30 shadow-2xs"
+                          key={lec.id}
+                          className={`p-3.5 sm:px-5 flex items-center justify-between gap-3 transition-colors ${
+                            isChecked
+                              ? "bg-emerald-50/30 dark:bg-emerald-950/15 text-muted-foreground"
+                              : "hover:bg-muted/30 text-foreground"
                           }`}
                         >
-                          <div className="flex items-center gap-3 min-w-0 flex-1">
-                            {/* Avatar */}
-                            {item.teacherImage ? (
-                              <img
-                                src={item.teacherImage}
-                                alt={item.teacher}
-                                className="w-10 h-10 rounded-full object-cover shrink-0 border border-border"
-                              />
-                            ) : (
-                              <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-xs shrink-0 ${colors.avatar}`}>
-                                {teacherInitials}
-                              </div>
-                            )}
+                          <div
+                            onClick={() => toggleLectureCompletion(lec.id)}
+                            className="flex items-center gap-3.5 min-w-0 flex-1 cursor-pointer select-none"
+                          >
+                            <div className={`w-5 h-5 rounded-md border flex items-center justify-center shrink-0 transition-all ${
+                              isChecked
+                                ? "bg-emerald-600 border-emerald-600 text-white shadow-2xs"
+                                : isDpp
+                                ? "border-purple-500/40 bg-background hover:border-purple-500"
+                                : "border-border/80 bg-background hover:border-primary"
+                            }`}>
+                              {isChecked && <Check className="w-3.5 h-3.5 stroke-[3]" />}
+                            </div>
 
-                            <div className="min-w-0 flex-1 space-y-1">
-                              {/* Line 1: Time, Live badge, Subject & Teacher */}
-                              <div className="flex items-center gap-1.5 flex-wrap text-[11px]">
-                                <span className="font-semibold text-muted-foreground flex items-center gap-1">
-                                  <Clock className="w-3 h-3 text-primary" />
-                                  {formatScheduleTime(item.startTime)}
-                                </span>
-                                {isLive ? (
-                                  <span className="inline-flex items-center gap-1 px-1.5 py-0.2 rounded-full text-[9px] font-black bg-red-600 text-white animate-pulse">
-                                    LIVE
-                                  </span>
-                                ) : (
-                                  <span className="px-1.5 py-0.2 rounded text-[9px] font-bold bg-amber-500/15 text-amber-700 dark:text-amber-300">
-                                    UPCOMING
-                                  </span>
-                                )}
-                                <span className="text-muted-foreground truncate">
-                                  • {item.type === "NOTES" ? "Notes" : "Lecture"} • {item.subject} by {item.teacher}
-                                </span>
-                              </div>
-
-                              {/* Line 2: Topic title */}
-                              <p className="text-xs sm:text-sm font-bold text-foreground truncate flex items-center gap-1.5">
-                                <BookOpen className="w-3.5 h-3.5 text-muted-foreground shrink-0" />
-                                <span className="truncate">{item.topic}</span>
+                            <div className="min-w-0 flex-1">
+                              <p className={`text-xs sm:text-sm font-medium leading-tight ${
+                                isChecked ? "line-through opacity-75" : ""
+                              }`}>
+                                {lec.title}
                               </p>
+                              <div className="flex items-center gap-2 mt-0.5 text-[11px] text-muted-foreground">
+                                {lec.duration && <span>{lec.duration}</span>}
+                                {lec.date && <span>• {new Date(lec.date).toLocaleDateString()}</span>}
+                              </div>
                             </div>
                           </div>
 
-                          {/* Right Arrow */}
-                          <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-foreground group-hover:translate-x-0.5 transition-all shrink-0" />
+                          <div className="flex items-center gap-2 shrink-0">
+                            <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${
+                              isDpp
+                                ? "bg-purple-500/15 text-purple-700 dark:text-purple-300 border border-purple-500/30"
+                                : "bg-blue-500/10 text-blue-700 dark:text-blue-300 border border-blue-500/20"
+                            }`}>
+                              {isDpp ? "DPP" : "Lecture"}
+                            </span>
+
+                            {pdfUrl ? (
+                              <Button
+                                variant="outline"
+                                size="sm"
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  window.open(pdfUrl, "_blank", "noopener,noreferrer");
+                                }}
+                                className="h-7 px-2.5 rounded-lg text-[11px] font-semibold gap-1"
+                                title="Open PDF"
+                              >
+                                <FileText className="w-3 h-3 text-red-500" />
+                                PDF
+                              </Button>
+                            ) : null}
+
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                setVideoModalLec(lec);
+                              }}
+                              className="h-7 px-2.5 rounded-lg text-[11px] font-bold gap-1 bg-primary/5 hover:bg-primary/15 text-primary border-primary/20"
+                            >
+                              <Play className="w-3 h-3 fill-primary text-primary" />
+                              Watch
+                            </Button>
+                          </div>
+                        </div>
+                      );
+                    });
+                  })()}
+                </Card>
+              </div>
+            ) : selectedSubject !== null ? (
+              /* LEVEL 2: SUBJECT VIEW (CHAPTERS & STUDY MATERIAL TABS) */
+              <div className="space-y-6 animate-in fade-in duration-200">
+                {/* Back to Subjects & Subject Header */}
+                <div className="bg-card border border-border/80 rounded-3xl p-5 sm:p-6 shadow-xs space-y-4">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => setSelectedSubject(null)}
+                      className="gap-2 text-xs font-semibold rounded-xl self-start"
+                    >
+                      <ArrowLeft className="w-4 h-4" />
+                      Back to Subjects
+                    </Button>
+
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => setFacultyModalOpen(true)}
+                      className="text-xs font-semibold text-amber-600 dark:text-amber-400 gap-1.5 self-start sm:self-auto"
+                    >
+                      <Settings2 className="w-3.5 h-3.5" />
+                      Switch Teacher
+                    </Button>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <div>
+                      <div className="flex items-center gap-2">
+                        {(() => {
+                          const badge = getSubjectBadge(selectedSubject.name);
+                          return (
+                            <span className={`w-8 h-8 rounded-xl flex items-center justify-center font-black text-xs ${badge.bg} ${badge.text}`}>
+                              {badge.label}
+                            </span>
+                          );
+                        })()}
+                        <h2 className="text-xl sm:text-2xl font-black text-foreground">
+                          {selectedSubject.name}
+                        </h2>
+                      </div>
+                      <p className="text-xs text-muted-foreground mt-1">
+                        Faculty: {selectedSubject.faculty || "PW Faculty"} • {selectedSubject.chapters.length} Sections
+                      </p>
+                    </div>
+
+                    {/* Overall Subject Progress */}
+                    {(() => {
+                      let subTot = 0;
+                      let subDone = 0;
+                      selectedSubject.chapters.forEach(c => c.lectures.forEach(l => {
+                        subTot++;
+                        if (completedMap[l.id]) subDone++;
+                      }));
+                      const pct = subTot > 0 ? Math.round((subDone / subTot) * 100) : 0;
+                      return (
+                        <div className="sm:text-right">
+                          <div className="font-mono font-bold text-lg text-primary">{pct}%</div>
+                          <div className="text-[11px] text-muted-foreground">{subDone}/{subTot} Completed</div>
+                        </div>
+                      );
+                    })()}
+                  </div>
+                </div>
+
+                {/* Level 2 Tabs: Chapters | Study Material (NO digital books as requested) */}
+                <div className="flex items-center gap-3 border-b border-border/80 pb-1">
+                  {[
+                    { key: "chapters", label: "Chapters", icon: BookOpen },
+                    { key: "studyMaterial", label: "Study Material", icon: FileText },
+                  ].map(tab => {
+                    const Icon = tab.icon;
+                    const isActive = selectedSubjectTab === tab.key;
+                    const count = tab.key === "chapters"
+                      ? selectedSubject.chapters.filter(ch => !isStudyMaterialChapter(ch.title)).length
+                      : selectedSubject.chapters.filter(ch => isStudyMaterialChapter(ch.title)).length;
+
+                    return (
+                      <button
+                        key={tab.key}
+                        onClick={() => setSelectedSubjectTab(tab.key as any)}
+                        className={`pb-3 px-3 text-sm font-bold flex items-center gap-2 border-b-2 transition-all ${
+                          isActive
+                            ? "border-primary text-primary"
+                            : "border-transparent text-muted-foreground hover:text-foreground"
+                        }`}
+                      >
+                        <Icon className="w-4 h-4" />
+                        {tab.label}
+                        <Badge variant="secondary" className="h-5 px-1.5 text-[10px] font-bold">
+                          {count}
+                        </Badge>
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {/* 3-Column Grid of Chapters or Study Material */}
+                {selectedSubjectTab === "chapters" ? (
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {selectedSubject.chapters
+                      .filter(ch => !isStudyMaterialChapter(ch.title))
+                      .map((ch, idx) => {
+                        const totalLec = ch.lectures.length;
+                        const compLec = ch.lectures.filter(l => completedMap[l.id]).length;
+                        const isComplete = totalLec > 0 && compLec === totalLec;
+                        const lecs = ch.lectures.filter(l => l.type !== "dpp").length;
+                        const dpps = ch.lectures.filter(l => l.type === "dpp").length;
+                        const pct = totalLec > 0 ? Math.round((compLec / totalLec) * 100) : 0;
+
+                        return (
+                          <div
+                            key={ch.id}
+                            onClick={() => setSelectedChapter(ch)}
+                            className={`p-4 sm:p-5 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between gap-3 group ${
+                              isComplete
+                                ? "border-emerald-500/40 bg-emerald-50/20 dark:bg-emerald-950/15 shadow-2xs"
+                                : "border-border/80 bg-card hover:border-primary/50 hover:shadow-md"
+                            }`}
+                          >
+                            <div className="space-y-2">
+                              <div className="flex items-center justify-between gap-2">
+                                <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-muted text-muted-foreground">
+                                  CH - {String(idx + 1).padStart(2, "0")}
+                                </span>
+                                {isComplete && (
+                                  <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30 flex items-center gap-1">
+                                    <Check className="w-3 h-3 stroke-[3]" /> Completed
+                                  </span>
+                                )}
+                              </div>
+
+                              <h3 className="font-bold text-sm sm:text-base text-foreground group-hover:text-primary transition-colors line-clamp-2">
+                                {ch.title}
+                              </h3>
+
+                              <div className="flex items-center gap-1.5 text-xs text-muted-foreground font-medium flex-wrap">
+                                <span>Lecture: {lecs}/{lecs}</span>
+                                <span>•</span>
+                                <span>DPP: {dpps}/{dpps}</span>
+                              </div>
+                            </div>
+
+                            <div className="pt-2 border-t border-border/40 flex items-center justify-between text-xs">
+                              <div className="flex items-center gap-2">
+                                <span className="font-mono font-bold text-primary">{compLec}/{totalLec}</span>
+                                <span className="text-muted-foreground">({pct}%)</span>
+                              </div>
+                              <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-foreground group-hover:translate-x-0.5 transition-all" />
+                            </div>
+                          </div>
+                        );
+                      })}
+                  </div>
+                ) : (
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {selectedSubject.chapters
+                      .filter(ch => isStudyMaterialChapter(ch.title))
+                      .map((ch, idx) => {
+                        const totalLec = ch.lectures.length;
+                        const compLec = ch.lectures.filter(l => completedMap[l.id]).length;
+                        const isComplete = totalLec > 0 && compLec === totalLec;
+
+                        return (
+                          <div
+                            key={ch.id}
+                            onClick={() => setSelectedChapter(ch)}
+                            className={`p-4 sm:p-5 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between gap-3 group ${
+                              isComplete
+                                ? "border-emerald-500/40 bg-emerald-50/20 dark:bg-emerald-950/15 shadow-2xs"
+                                : "border-border/80 bg-card hover:border-primary/50 hover:shadow-md"
+                            }`}
+                          >
+                            <div className="space-y-2">
+                              <div className="flex items-center justify-between gap-2">
+                                <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-muted text-muted-foreground">
+                                  SM - {String(idx + 1).padStart(2, "0")}
+                                </span>
+                                {isComplete && (
+                                  <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30 flex items-center gap-1">
+                                    <Check className="w-3 h-3 stroke-[3]" /> Done
+                                  </span>
+                                )}
+                              </div>
+
+                              <h3 className="font-bold text-sm sm:text-base text-foreground group-hover:text-primary transition-colors line-clamp-2">
+                                {ch.title}
+                              </h3>
+
+                              <div className="text-xs text-muted-foreground font-medium">
+                                Items: {totalLec} • Completed: {compLec}
+                              </div>
+                            </div>
+
+                            <div className="pt-2 border-t border-border/40 flex items-center justify-between text-xs">
+                              <span className="text-muted-foreground font-semibold">View Materials</span>
+                              <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-foreground group-hover:translate-x-0.5 transition-all" />
+                            </div>
+                          </div>
+                        );
+                      })}
+                  </div>
+                )}
+              </div>
+            ) : (
+              /* LEVEL 1: BATCH VIEW (SUBJECTS & RESOURCES TABS) */
+              <div className="space-y-6 animate-in fade-in duration-200">
+                {/* Level 1 Main Tabs: Subjects | Resources */}
+                <div className="flex items-center justify-between border-b border-border/80 pb-1 flex-wrap gap-3">
+                  <div className="flex items-center gap-3">
+                    {[
+                      { key: "subjects", label: "Subjects", count: facultyFilterMode === "myFaculty" ? activeBatchSubjects.length : currentBatch.subjects.length },
+                      { key: "resources", label: "Resources", count: BATCH_RESOURCES.length },
+                    ].map(tab => {
+                      const isActive = activeBatchTab === tab.key;
+                      return (
+                        <button
+                          key={tab.key}
+                          onClick={() => setActiveBatchTab(tab.key as any)}
+                          className={`pb-3 px-3 text-sm font-bold flex items-center gap-2 border-b-2 transition-all ${
+                            isActive
+                              ? "border-primary text-primary"
+                              : "border-transparent text-muted-foreground hover:text-foreground"
+                          }`}
+                        >
+                          {tab.label}
+                          <Badge variant="secondary" className="h-5 px-1.5 text-[10px] font-bold">
+                            {tab.count}
+                          </Badge>
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  {/* Teacher Filter Toggle (My Faculty vs All Teachers) */}
+                  {activeBatchTab === "subjects" && currentBatch.subjects.length > activeBatchSubjects.length && (
+                    <div className="flex items-center gap-1.5 bg-muted/60 p-1 rounded-xl text-xs">
+                      <button
+                        onClick={() => setFacultyFilterMode("myFaculty")}
+                        className={`px-3 py-1 rounded-lg font-bold transition-all ${
+                          facultyFilterMode === "myFaculty"
+                            ? "bg-background text-foreground shadow-xs"
+                            : "text-muted-foreground hover:text-foreground"
+                        }`}
+                      >
+                        My Faculty ({activeBatchSubjects.length})
+                      </button>
+                      <button
+                        onClick={() => setFacultyFilterMode("all")}
+                        className={`px-3 py-1 rounded-lg font-bold transition-all ${
+                          facultyFilterMode === "all"
+                            ? "bg-background text-foreground shadow-xs"
+                            : "text-muted-foreground hover:text-foreground"
+                        }`}
+                      >
+                        All Teachers ({currentBatch.subjects.length})
+                      </button>
+                    </div>
+                  )}
+                </div>
+
+                {/* Tab 1: Subjects Grid (3 Columns) */}
+                {activeBatchTab === "subjects" && (
+                  <div>
+                    {isLoadingBatch ? (
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        {[1, 2, 3, 4, 5, 6].map(i => (
+                          <div key={i} className="p-5 rounded-2xl border border-border/60 bg-card/60 space-y-3 animate-pulse">
+                            <div className="flex items-center gap-3">
+                              <div className="w-9 h-9 rounded-xl bg-muted" />
+                              <div className="space-y-1.5 flex-1">
+                                <div className="h-4 w-32 bg-muted rounded" />
+                                <div className="h-3 w-20 bg-muted/70 rounded" />
+                              </div>
+                            </div>
+                            <div className="h-2 w-full bg-muted rounded-full" />
+                          </div>
+                        ))}
+                      </div>
+                    ) : (facultyFilterMode === "myFaculty" ? activeBatchSubjects : currentBatch.subjects).length === 0 ? (
+                      <Card className="border-dashed border-amber-500/40 bg-amber-500/5 p-8 text-center space-y-2">
+                        <p className="font-bold text-foreground">No subjects found for this batch</p>
+                        <p className="text-xs text-muted-foreground">Select another batch or customize faculty choices.</p>
+                      </Card>
+                    ) : (
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        {(facultyFilterMode === "myFaculty" ? activeBatchSubjects : currentBatch.subjects).map((sub) => {
+                          const badge = getSubjectBadge(sub.name);
+                          const disc = getSubjectDiscipline(sub.name);
+                          let subTotal = 0;
+                          let subCompleted = 0;
+                          sub.chapters.forEach(c => c.lectures.forEach(l => {
+                            subTotal++;
+                            if (completedMap[l.id]) subCompleted++;
+                          }));
+                          const pct = subTotal > 0 ? Math.round((subCompleted / subTotal) * 100) : 0;
+
+                          return (
+                            <div
+                              key={sub.name}
+                              onClick={() => {
+                                setSelectedSubject(sub);
+                                setSelectedSubjectTab("chapters");
+                                setSelectedChapter(null);
+                              }}
+                              className="p-5 rounded-2xl border border-border/80 bg-card hover:border-primary/50 hover:shadow-md transition-all cursor-pointer flex flex-col justify-between gap-4 group"
+                            >
+                              <div className="space-y-3">
+                                {/* Top Badge & Discipline */}
+                                <div className="flex items-center justify-between gap-2">
+                                  <div className="flex items-center gap-2">
+                                    <span className={`w-9 h-9 rounded-xl flex items-center justify-center font-black text-sm ${badge.bg} ${badge.text} border ${badge.border}`}>
+                                      {badge.label}
+                                    </span>
+                                    <div>
+                                      <span className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
+                                        {disc}
+                                      </span>
+                                      <h3 className="font-bold text-sm sm:text-base text-foreground group-hover:text-primary transition-colors line-clamp-1">
+                                        {sub.name}
+                                      </h3>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                {sub.faculty && (
+                                  <div className="text-xs text-muted-foreground flex items-center gap-1">
+                                    <span className="font-semibold">Faculty:</span> {sub.faculty}
+                                  </div>
+                                )}
+                              </div>
+
+                              <div className="space-y-2 pt-2 border-t border-border/40">
+                                <div className="flex items-center justify-between text-xs">
+                                  <span className="text-muted-foreground font-semibold">
+                                    Completed: {subCompleted} / {subTotal}
+                                  </span>
+                                  <span className="font-mono font-bold text-primary">{pct}%</span>
+                                </div>
+                                <div className="h-2 w-full bg-muted rounded-full overflow-hidden">
+                                  <div
+                                    className="h-full bg-primary rounded-full transition-all duration-300"
+                                    style={{ width: `${pct}%` }}
+                                  />
+                                </div>
+                                <div className="flex items-center justify-between text-[11px] text-muted-foreground pt-1">
+                                  <span>{sub.chapters.length} Chapters</span>
+                                  <span className="text-primary font-semibold flex items-center gap-0.5 group-hover:translate-x-0.5 transition-transform">
+                                    View Subject <ChevronRight className="w-3.5 h-3.5" />
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {/* Tab 2: Resources Grid (3 Columns) Matching UIvid.mp4 */}
+                {activeBatchTab === "resources" && (
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {BATCH_RESOURCES.map(res => {
+                      const Icon = res.icon;
+                      return (
+                        <div
+                          key={res.id}
+                          onClick={() => {
+                            if (res.action === "schedule") {
+                              setScheduleViewMode("full");
+                            } else {
+                              setResourceModal({
+                                title: `${res.code} - ${res.title}`,
+                                desc: res.desc,
+                                link: res.action === "telegram" ? "https://t.me/physicswallah" : undefined
+                              });
+                            }
+                          }}
+                          className="p-5 rounded-2xl border border-border/80 bg-card hover:border-primary/50 hover:shadow-md transition-all cursor-pointer flex flex-col justify-between gap-3 group"
+                        >
+                          <div className="space-y-2.5">
+                            <div className="flex items-center justify-between gap-2">
+                              <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-muted text-muted-foreground">
+                                {res.code}
+                              </span>
+                              <div className="w-8 h-8 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover:scale-105 transition-transform">
+                                <Icon className="w-4 h-4" />
+                              </div>
+                            </div>
+
+                            <h3 className="font-bold text-sm sm:text-base text-foreground group-hover:text-primary transition-colors">
+                              {res.title}
+                            </h3>
+
+                            <p className="text-xs text-muted-foreground line-clamp-2">
+                              {res.desc}
+                            </p>
+                          </div>
+
+                          <div className="pt-2 border-t border-border/40 flex items-center justify-between text-xs text-primary font-semibold">
+                            <span>Open Resource</span>
+                            <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-0.5 transition-all" />
+                          </div>
                         </div>
                       );
                     })}
                   </div>
-                ) : (
-                  <p className="text-xs text-muted-foreground">
-                    {scheduleMessage || "No upcoming events scheduled right now."}
-                  </p>
                 )}
+              </div>
+            )}
 
-                {/* Bottom Button: View Full Schedule */}
-                <Button
-                  onClick={() => setScheduleViewMode("full")}
-                  variant="outline"
-                  className="w-full h-10 rounded-xl bg-primary/5 hover:bg-primary/10 text-primary border-primary/20 font-bold text-xs gap-2"
-                >
-                  <Calendar className="w-4 h-4" />
-                  View Full Schedule &amp; Weekly Calendar
-                  <ArrowRight className="w-4 h-4" />
-                </Button>
-              </Card>
-            );
-          })()}
-
-          {/* Filtering & Search Bar */}
-          <div className="bg-card border border-border/80 rounded-2xl p-4 shadow-xs space-y-3">
-            <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center justify-between">
-              {/* Search */}
-              <div className="relative flex-1 max-w-md">
-                <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-muted-foreground" />
-                <Input
-                  type="text"
-                  placeholder="Search lecture, topic, or chapter (e.g. Projectile, Mole)..."
-                  value={lectureSearch}
-                  onChange={(e) => setLectureSearch(e.target.value)}
-                  className="pl-9 h-10 rounded-xl text-xs bg-background border-border"
-                />
-              </div>
-
-              {/* Subject Tabs */}
-              <div className="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0">
-                {["All", ...currentBatch.subjects.map(s => s.name)].map((sub) => (
-                  <button
-                    key={sub}
-                    onClick={() => setActiveSubject(sub)}
-                    className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all ${
-                      activeSubject === sub
-                        ? "bg-primary text-primary-foreground shadow-xs"
-                        : "bg-muted hover:bg-muted/80 text-muted-foreground hover:text-foreground"
-                    }`}
-                  >
-                    {sub}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Status Filter */}
-            <div className="flex items-center justify-between gap-2 pt-2 border-t border-border/40 text-xs">
-              <div className="flex items-center gap-1 text-[11px] text-muted-foreground">
-                <ListTodo className="w-3.5 h-3.5" /> Filter by Status:
-              </div>
-              <div className="flex items-center gap-1.5">
-                {[
-                  { key: "all", label: "All Items" },
-                  { key: "pending", label: "Pending Only" },
-                  { key: "completed", label: "Completed" }
-                ].map(tab => (
-                  <button
-                    key={tab.key}
-                    onClick={() => setStatusFilter(tab.key as any)}
-                    className={`px-2.5 py-1 rounded-lg text-[11px] font-medium transition-all ${
-                      statusFilter === tab.key
-                        ? "bg-amber-500/20 text-amber-700 dark:text-amber-300 font-bold border border-amber-500/30"
-                        : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                    }`}
-                  >
-                    {tab.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <div className="flex items-center justify-between gap-2 pt-2 border-t border-border/40 text-xs">
-              <div className="flex items-center gap-1 text-[11px] text-muted-foreground">
-                <BookOpen className="w-3.5 h-3.5" /> Show content:
-              </div>
-              <div className="flex items-center gap-1.5">
-                {[
-                  { key: "all", label: "All" },
-                  { key: "lecture", label: "Lectures" },
-                  { key: "dpp", label: "DPPs" },
-                ].map(tab => (
-                  <button
-                    key={tab.key}
-                    onClick={() => setContentFilter(tab.key as "all" | "lecture" | "dpp")}
-                    className={`px-2.5 py-1 rounded-lg text-[11px] font-medium transition-all ${
-                      contentFilter === tab.key
-                        ? "bg-primary/10 text-primary font-bold border border-primary/20"
-                        : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                    }`}
-                  >
-                    {tab.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Chapters & Lectures Accordions */}
-          {isLoadingBatch ? (
-            <Card className="border border-border/80 bg-card p-8 text-center space-y-4 shadow-sm animate-pulse">
-              <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mx-auto">
-                <RotateCcw className="w-6 h-6 animate-spin text-primary" />
-              </div>
-              <div className="space-y-1.5">
-                <h3 className="text-base font-bold text-foreground">Loading Batch Curriculum & DPPs...</h3>
-                <p className="text-xs text-muted-foreground max-w-md mx-auto">
-                  Fetching chapters, theory lectures, class notes, and daily practice problem (DPP) PDFs directly from the live feed.
-                </p>
-              </div>
-              <div className="flex items-center justify-center gap-2 text-[11px] font-medium text-primary">
-                <span className="w-2 h-2 rounded-full bg-primary animate-ping" />
-                <span>Synchronizing latest PW schedule...</span>
-              </div>
-            </Card>
-          ) : currentBatch.subjects.length === 0 ? (
-            <Card className="border-dashed border-amber-500/40 bg-amber-500/5 p-6 text-center">
-              <p className="text-sm font-semibold text-foreground">No subject metadata was returned for this batch.</p>
-              <p className="mt-1 text-xs text-muted-foreground">
-                The metadata service returned no subjects. Try refreshing the batch or selecting another batch.
-              </p>
-            </Card>
-          ) : <div className="space-y-4">
-            {currentBatch.subjects
-              .filter(sub => activeSubject === "All" || sub.name === activeSubject)
-              .map(sub => {
-                return (
-                  <div key={sub.name} className="space-y-3">
-                    <div className="flex items-center justify-between gap-2 pt-2 pb-1">
-                      <h2 className="text-lg font-bold text-foreground flex items-center gap-2">
-                        <span className={`w-2.5 h-2.5 rounded-full ${
-                          sub.name === "Physics"
-                            ? "bg-blue-500"
-                            : sub.name === "Chemistry"
-                            ? "bg-emerald-500"
-                            : "bg-purple-500"
-                        }`} />
-                        {sub.name}
-                        {sub.faculty && (
-                          <span className="text-xs font-normal text-muted-foreground">
-                            • {sub.faculty}
-                          </span>
-                        )}
-                      </h2>
-                    </div>
-
-                    {sub.chapters.length === 0 && (
-                      <div className="rounded-xl border border-dashed border-amber-500/30 bg-amber-500/5 px-4 py-3 text-xs text-muted-foreground">
-                        Subject and teacher loaded. No chapter names were returned for this subject.
+            {/* ── MODAL 1: FACULTY CUSTOMIZATION MODAL ──────── */}
+            {facultyModalOpen && (
+              <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4">
+                <div className="bg-card border border-border rounded-3xl max-w-2xl w-full max-h-[85vh] overflow-hidden flex flex-col shadow-2xl animate-in zoom-in-95 duration-200">
+                  <div className="p-5 sm:p-6 border-b border-border/60 flex items-center justify-between gap-3">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-2xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center">
+                        <Settings2 className="w-5 h-5" />
                       </div>
-                    )}
+                      <div>
+                        <h3 className="font-bold text-lg text-foreground">Customize Your Faculty</h3>
+                        <p className="text-xs text-muted-foreground">
+                          Choose the teachers you study with. Syllabus stats will only count selected teachers.
+                        </p>
+                      </div>
+                    </div>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      onClick={() => setFacultyModalOpen(false)}
+                      className="rounded-xl h-8 w-8"
+                    >
+                      <X className="w-4 h-4" />
+                    </Button>
+                  </div>
 
-                    {/* Chapter Cards */}
-                    <div className="space-y-3">
-                      {sub.chapters.map(ch => {
-                        // Apply filters to lectures
-                        const filteredLectures = ch.lectures.filter(l => {
-                          if (contentFilter !== "all" && l.type !== contentFilter) return false;
-                          if (statusFilter === "completed" && !completedMap[l.id]) return false;
-                          if (statusFilter === "pending" && completedMap[l.id]) return false;
-                          if (lectureSearch.trim().length > 0) {
-                            const q = lectureSearch.toLowerCase();
-                            const match = l.title.toLowerCase().includes(q) || ch.title.toLowerCase().includes(q);
-                            if (!match) return false;
-                          }
-                          return true;
-                        });
+                  <div className="p-5 sm:p-6 overflow-y-auto space-y-5 divide-y divide-border/40">
+                    {Object.entries(disciplinesGrouped).map(([disc, subs]) => {
+                      const badge = getSubjectBadge(disc);
+                      const currentChosen = selectedFaculty[disc] || subs[0]?.name;
 
-                        // If search/filter hid all lectures, hide chapter
-                        if (filteredLectures.length === 0 && (lectureSearch.trim().length > 0 || statusFilter !== "all" || contentFilter !== "all")) {
-                          return null;
-                        }
+                      return (
+                        <div key={disc} className="pt-4 first:pt-0 space-y-3">
+                          <div className="flex items-center gap-2">
+                            <span className={`w-6 h-6 rounded-lg text-xs font-black flex items-center justify-center ${badge.bg} ${badge.text}`}>
+                              {badge.label}
+                            </span>
+                            <h4 className="font-bold text-sm text-foreground">{disc}</h4>
+                            <span className="text-xs text-muted-foreground">({subs.length} available)</span>
+                          </div>
 
-                        const isOpen = openChapters[ch.id] ?? true;
-                        const totalInChapter = ch.lectures.length;
-                        const completedInChapter = ch.lectures.filter(l => completedMap[l.id]).length;
-                        const isChapterComplete = totalInChapter > 0 && completedInChapter === totalInChapter;
-                        const chapterLecCount = ch.lectures.filter(l => l.type !== "dpp").length;
-                        const chapterDppCount = ch.lectures.filter(l => l.type === "dpp").length;
-                        const completedDpps = ch.lectures.filter(l => l.type === "dpp" && completedMap[l.id]).length;
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                            {subs.map(s => {
+                              const isSelected = currentChosen === s.name;
+                              const teacher = s.faculty || s.name.split(/\bby\b/i)[1]?.trim() || s.name;
 
-                        const theoryLectures = filteredLectures.filter(l => l.type !== "dpp");
-                        const dppLectures = filteredLectures.filter(l => l.type === "dpp");
-                        const activeChapterTab = chapterTab[ch.id] || "all";
-
-                        const renderLectureRow = (lec: PWLecture, isDppItem: boolean) => {
-                          const isChecked = Boolean(completedMap[lec.id]);
-                          const isMenuOpen = openLectureMenu === lec.id;
-                          const lecturePdfUrl = lec.pdfUrl || lec.notesUrl || lec.dppPdfUrl || "";
-
-                          return (
-                            <div
-                              key={lec.id}
-                              onClick={() => toggleLectureCompletion(lec.id)}
-                              className={`p-3.5 sm:px-5 flex items-center justify-between gap-3 cursor-pointer transition-colors ${
-                                isChecked
-                                  ? "bg-emerald-50/40 dark:bg-emerald-950/20 text-muted-foreground"
-                                  : isDppItem
-                                  ? "hover:bg-purple-500/5 text-foreground"
-                                  : "hover:bg-muted/30 text-foreground"
-                              }`}
-                            >
-                              <div className="flex items-center gap-3.5 min-w-0 flex-1">
-                                {/* Tick Checkbox */}
-                                <div className={`w-5 h-5 rounded-md border flex items-center justify-center shrink-0 transition-all ${
-                                  isChecked
-                                    ? "bg-emerald-600 border-emerald-600 text-white shadow-2xs"
-                                    : isDppItem
-                                    ? "border-purple-500/40 bg-background hover:border-purple-500"
-                                    : "border-border/80 bg-background hover:border-primary"
-                                }`}>
-                                  {isChecked && <Check className="w-3.5 h-3.5 stroke-[3]" />}
-                                </div>
-
-                                <div className="min-w-0 flex-1">
-                                  <p className={`text-xs sm:text-sm font-medium leading-tight ${
-                                    isChecked ? "line-through opacity-75" : ""
-                                  }`}>
-                                    {lec.title}
-                                  </p>
-                                </div>
-                              </div>
-
-                              <div className="relative flex items-center gap-2 shrink-0">
-                                {lec.duration && (
-                                  <span className={`text-[11px] font-mono hidden sm:inline-block ${
-                                    isDppItem ? "text-purple-600 dark:text-purple-400 font-semibold" : "text-muted-foreground"
-                                  }`}>
-                                    {lec.duration}
-                                  </span>
-                                )}
-                                {lec.date && (
-                                  <span className="text-[11px] text-muted-foreground hidden md:inline-block">
-                                    {new Date(lec.date).toLocaleDateString()}
-                                  </span>
-                                )}
-                                <span className={`px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider ${
-                                  isDppItem
-                                    ? "bg-purple-500/15 text-purple-700 dark:text-purple-300 border border-purple-500/30"
-                                    : "bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20"
-                                }`}>
-                                  {isDppItem ? "DPP" : "Lecture"}
-                                </span>
-                                {lecturePdfUrl && (
-                                  <button
-                                    type="button"
-                                    onClick={(event) => {
-                                      event.stopPropagation();
-                                      window.open(lecturePdfUrl, "_blank", "noopener,noreferrer");
-                                    }}
-                                    className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[10px] font-bold border border-primary/30 bg-primary/10 text-primary hover:bg-primary/20 transition-all shadow-2xs cursor-pointer"
-                                    title="Open PDF in new tab"
-                                  >
-                                    <FileText className="w-3 h-3" />
-                                    <span>PDF ↗</span>
-                                  </button>
-                                )}
+                              return (
                                 <button
+                                  key={s.name}
                                   type="button"
-                                  aria-label={`Actions for ${lec.title}`}
-                                  onClick={(event) => {
-                                    event.stopPropagation();
-                                    setOpenLectureMenu(isMenuOpen ? null : lec.id);
-                                  }}
-                                  className="rounded-md p-1 text-muted-foreground hover:bg-muted hover:text-foreground"
+                                  onClick={() => handleSelectFaculty(disc, s.name)}
+                                  className={`p-3 rounded-2xl border text-left transition-all flex items-center justify-between gap-2.5 ${
+                                    isSelected
+                                      ? "border-primary bg-primary/10 shadow-xs ring-1 ring-primary/40"
+                                      : "border-border/70 hover:border-border hover:bg-muted/30"
+                                  }`}
                                 >
-                                  <MoreVertical className="h-4 w-4" />
+                                  <div className="min-w-0 flex-1">
+                                    <div className="font-bold text-xs text-foreground truncate">{teacher}</div>
+                                    <div className="text-[11px] text-muted-foreground">{s.chapters.length} Chapters</div>
+                                  </div>
+                                  <div className={`w-5 h-5 rounded-full border flex items-center justify-center shrink-0 ${
+                                    isSelected ? "bg-primary border-primary text-primary-foreground" : "border-muted-foreground/40"
+                                  }`}>
+                                    {isSelected && <Check className="w-3 h-3 stroke-[3]" />}
+                                  </div>
                                 </button>
-                                {isMenuOpen && (
-                                  <div className="absolute right-0 top-8 z-20 min-w-44 rounded-lg border border-border bg-card p-1 shadow-lg">
-                                    <button
-                                      type="button"
-                                      disabled={!lecturePdfUrl}
-                                      onClick={(event) => {
-                                        event.stopPropagation();
-                                        if (lecturePdfUrl) window.open(lecturePdfUrl, "_blank", "noopener,noreferrer");
-                                      }}
-                                      className={`flex w-full items-center rounded-md px-3 py-2 text-left text-xs ${
-                                        lecturePdfUrl ? "text-foreground hover:bg-muted" : "cursor-not-allowed text-muted-foreground opacity-60"
-                                      }`}
-                                      title={lecturePdfUrl ? "Open the Notes/DPP PDF in a new tab" : "No public PDF URL was returned in this metadata response"}
-                                    >
-                                      Open PDF in new tab
-                                    </button>
-                                    <button
-                                      type="button"
-                                      disabled={!lecturePdfUrl}
-                                      onClick={(event) => {
-                                        event.stopPropagation();
-                                        if (lecturePdfUrl) window.open(`/pdf-viewer?url=${encodeURIComponent(lecturePdfUrl)}`, "_blank", "noopener,noreferrer");
-                                      }}
-                                      className={`flex w-full items-center rounded-md px-3 py-2 text-left text-xs ${
-                                        lecturePdfUrl ? "text-foreground hover:bg-muted" : "cursor-not-allowed text-muted-foreground opacity-60"
-                                      }`}
-                                      title={lecturePdfUrl ? "Open the PDF in the integrated PDF viewer" : "No public PDF URL was returned in this metadata response"}
-                                    >
-                                      Open in PDF viewer
-                                    </button>
-                                    <span className="block px-3 py-1 text-[10px] text-muted-foreground">
-                                      {lecturePdfUrl ? "Notes / DPP PDF metadata loaded" : "PDF link not supplied by the metadata API"}
-                                    </span>
-                                  </div>
-                                )}
-                              </div>
-                            </div>
-                          );
-                        };
+                              );
+                            })}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
 
-                        return (
-                          <Card 
-                            key={ch.id}
-                            className={`rounded-2xl border transition-all overflow-hidden ${
-                              isChapterComplete 
-                                ? "border-emerald-500/40 bg-emerald-50/20 dark:bg-emerald-950/10" 
-                                : "border-border/80 bg-card"
-                            }`}
-                          >
-                            {/* Chapter Header */}
-                            <div 
-                              onClick={() => toggleChapter(ch.id)}
-                              className="p-4 sm:p-4.5 flex items-center justify-between gap-3 cursor-pointer hover:bg-muted/40 select-none transition-colors"
-                            >
-                              <div className="flex items-center gap-3 min-w-0 flex-1">
-                                <div className={`w-8 h-8 rounded-xl flex items-center justify-center shrink-0 text-xs font-bold ${
-                                  isChapterComplete
-                                    ? "bg-emerald-500 text-white shadow-xs"
-                                    : "bg-muted text-muted-foreground"
-                                }`}>
-                                  {isChapterComplete ? <Check className="w-4 h-4 stroke-[3]" /> : <BookOpen className="w-4 h-4" />}
-                                </div>
-                                <div className="min-w-0 flex-1">
-                                  <div className="flex items-center gap-2 flex-wrap">
-                                    <h3 className="text-sm sm:text-base font-bold text-foreground truncate">
-                                      {ch.title}
-                                    </h3>
-                                    <div className="flex items-center gap-1.5 flex-wrap">
-                                      {chapterLecCount > 0 && (
-                                        <span className="px-2 py-0.5 rounded-md text-[10px] font-semibold bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20">
-                                          {chapterLecCount} Lectures
-                                        </span>
-                                      )}
-                                      {chapterDppCount > 0 && (
-                                        <span className="px-2 py-0.5 rounded-md text-[10px] font-bold bg-purple-500/15 text-purple-700 dark:text-purple-300 border border-purple-500/30 inline-flex items-center gap-1">
-                                          <FileQuestion className="w-3 h-3" />
-                                          {chapterDppCount} DPPs
-                                          {completedDpps > 0 && ` (${completedDpps}/${chapterDppCount})`}
-                                        </span>
-                                      )}
-                                    </div>
-                                  </div>
-                                  <div className="flex items-center gap-2 text-[11px] text-muted-foreground mt-0.5">
-                                    <span>{completedInChapter} of {totalInChapter} completed</span>
-                                    <span>•</span>
-                                    <span className="font-semibold text-primary">{Math.round((completedInChapter / totalInChapter) * 100)}%</span>
-                                  </div>
-                                </div>
-                              </div>
+                  <div className="p-4 sm:p-5 border-t border-border/60 bg-muted/20 flex items-center justify-end">
+                    <Button
+                      onClick={() => setFacultyModalOpen(false)}
+                      className="rounded-xl font-bold text-xs px-5"
+                    >
+                      Save &amp; Apply Selection
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            )}
 
-                              <div className="flex items-center gap-2 shrink-0">
-                                <button
-                                  type="button"
-                                  onClick={(e) => {
-                                    e.stopPropagation();
-                                    toggleAllInChapter(ch);
-                                  }}
-                                  className="px-2.5 py-1 rounded-lg text-[11px] font-semibold border border-border/80 bg-background hover:bg-muted text-muted-foreground hover:text-foreground transition-all"
-                                  title="Mark all items in this chapter as done"
-                                >
-                                  {isChapterComplete ? "Uncheck All" : "Mark All"}
-                                </button>
-                                <div className="p-1 text-muted-foreground">
-                                  {isOpen ? <ChevronDown className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}
-                                </div>
-                              </div>
-                            </div>
+            {/* ── MODAL 2: SEARCH ALL BATCHES MODAL ──────── */}
+            {batchSearchModalOpen && (
+              <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4">
+                <div className="bg-card border border-border rounded-3xl max-w-2xl w-full max-h-[85vh] overflow-hidden flex flex-col shadow-2xl animate-in zoom-in-95 duration-200">
+                  <div className="p-5 sm:p-6 border-b border-border/60 flex items-center justify-between gap-3">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-2xl bg-primary/10 text-primary flex items-center justify-center">
+                        <Search className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-lg text-foreground">Search PW Batches Catalog</h3>
+                        <p className="text-xs text-muted-foreground">
+                          Search from 16,000+ Physics Wallah batches in the live public catalog.
+                        </p>
+                      </div>
+                    </div>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      onClick={() => setBatchSearchModalOpen(false)}
+                      className="rounded-xl h-8 w-8"
+                    >
+                      <X className="w-4 h-4" />
+                    </Button>
+                  </div>
 
-                            {/* Lectures Checklist Rows */}
-                            {isOpen && (
-                              <div className="border-t border-border/60 bg-muted/10">
-                                {/* Chapter Sub-Filter tabs if both theory and DPPs exist */}
-                                {theoryLectures.length > 0 && dppLectures.length > 0 && contentFilter === "all" && (
-                                  <div className="flex items-center justify-between px-4 py-2 bg-background/60 border-b border-border/40 text-xs">
-                                    <span className="text-[11px] text-muted-foreground font-medium">Chapter Content:</span>
-                                    <div className="flex items-center gap-1">
-                                      {[
-                                        { key: "all", label: `All (${filteredLectures.length})` },
-                                        { key: "lecture", label: `📚 Lectures (${theoryLectures.length})` },
-                                        { key: "dpp", label: `📝 DPPs (${dppLectures.length})` },
-                                      ].map(tab => (
-                                        <button
-                                          key={tab.key}
-                                          type="button"
-                                          onClick={(e) => {
-                                            e.stopPropagation();
-                                            setChapterTab(prev => ({ ...prev, [ch.id]: tab.key as any }));
-                                          }}
-                                          className={`px-2 py-0.5 rounded-md text-[10px] font-semibold transition-all ${
-                                            activeChapterTab === tab.key
-                                              ? "bg-primary text-primary-foreground shadow-2xs"
-                                              : "bg-muted text-muted-foreground hover:text-foreground"
-                                          }`}
-                                        >
-                                          {tab.label}
-                                        </button>
-                                      ))}
-                                    </div>
-                                  </div>
-                                )}
-
-                                {/* Section 1: Theory Lectures */}
-                                {(activeChapterTab === "all" || activeChapterTab === "lecture") && theoryLectures.length > 0 && (
-                                  <div>
-                                    {activeChapterTab === "all" && dppLectures.length > 0 && (
-                                      <div className="flex items-center justify-between px-4 py-1.5 bg-muted/30 text-[10px] font-bold text-muted-foreground uppercase tracking-wider border-b border-border/30">
-                                        <span className="flex items-center gap-1.5"><BookOpen className="w-3 h-3 text-blue-500" /> Theory Lectures ({theoryLectures.length})</span>
-                                      </div>
-                                    )}
-                                    <div className="divide-y divide-border/40">
-                                      {theoryLectures.map(lec => renderLectureRow(lec, false))}
-                                    </div>
-                                  </div>
-                                )}
-
-                                {/* Section 2: Daily Practice Problems (DPP) */}
-                                {(activeChapterTab === "all" || activeChapterTab === "dpp") && dppLectures.length > 0 && (
-                                  <div>
-                                    {activeChapterTab === "all" && theoryLectures.length > 0 && (
-                                      <div className="flex items-center justify-between px-4 py-2 bg-purple-500/10 text-[10px] font-bold text-purple-700 dark:text-purple-300 uppercase tracking-wider border-y border-purple-500/20">
-                                        <span className="flex items-center gap-1.5"><FileQuestion className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" /> Daily Practice Problems (DPP) ({dppLectures.length})</span>
-                                        <span className="text-[10px] font-normal lowercase tracking-normal text-purple-600/80 dark:text-purple-400/80">practice quizzes & sheets</span>
-                                      </div>
-                                    )}
-                                    <div className="divide-y divide-border/40">
-                                      {dppLectures.map(lec => renderLectureRow(lec, true))}
-                                    </div>
-                                  </div>
-                                )}
-                              </div>
-                            )}
-                          </Card>
-                        );
-                      })}
+                  <div className="p-4 sm:p-5 border-b border-border/40">
+                    <div className="relative">
+                      <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-muted-foreground" />
+                      <Input
+                        type="text"
+                        autoFocus
+                        placeholder="Type batch name (e.g. Arjuna 2.0, Prayas JEE, Lakshya)..."
+                        value={batchSearch}
+                        onChange={(e) => setBatchSearch(e.target.value)}
+                        className="pl-9 h-10 rounded-xl text-xs bg-background border-border"
+                      />
                     </div>
                   </div>
-                );
-              })}
-              </div>}
-            </>
-          )}
+
+                  <div className="p-4 sm:p-5 overflow-y-auto space-y-2 divide-y divide-border/30">
+                    {visibleCatalogBatches.length === 0 ? (
+                      <div className="p-8 text-center text-xs text-muted-foreground">
+                        No batches matching "{batchSearch}". Try another keyword.
+                      </div>
+                    ) : (
+                      visibleCatalogBatches.map(b => (
+                        <div
+                          key={b.batch_id}
+                          className="pt-2.5 first:pt-0 flex items-center justify-between gap-3 hover:bg-muted/30 p-2.5 rounded-xl transition-colors"
+                        >
+                          <div className="min-w-0 flex-1">
+                            <h4 className="font-bold text-xs sm:text-sm text-foreground truncate">{b.name}</h4>
+                            <p className="text-[11px] text-muted-foreground truncate">
+                              {[b.class, b.exam, b.language].filter(Boolean).join(" • ") || "Physics Wallah batch"}
+                            </p>
+                          </div>
+                          <Button
+                            size="sm"
+                            onClick={() => {
+                              setBatches(prev => {
+                                if (prev.some(existing => existing.id === b.batch_id)) return prev;
+                                return [...prev, catalogToBatch(b)];
+                              });
+                              setSelectedBatchId(b.batch_id);
+                              setBatchSearchModalOpen(false);
+                            }}
+                            className="rounded-xl text-xs font-bold h-8 px-3.5"
+                          >
+                            Select Batch
+                          </Button>
+                        </div>
+                      ))
+                    )}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* ── MODAL 3: RESOURCE DETAILS MODAL ──────── */}
+            {resourceModal && (
+              <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4">
+                <div className="bg-card border border-border rounded-3xl max-w-md w-full p-6 shadow-2xl space-y-4 animate-in zoom-in-95 duration-200">
+                  <div className="flex items-center justify-between gap-3">
+                    <h3 className="font-bold text-base text-foreground">{resourceModal.title}</h3>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      onClick={() => setResourceModal(null)}
+                      className="rounded-xl h-8 w-8"
+                    >
+                      <X className="w-4 h-4" />
+                    </Button>
+                  </div>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    {resourceModal.desc}
+                  </p>
+                  <div className="pt-2 flex justify-end gap-2">
+                    {resourceModal.link ? (
+                      <Button
+                        onClick={() => {
+                          window.open(resourceModal.link, "_blank", "noopener,noreferrer");
+                          setResourceModal(null);
+                        }}
+                        className="rounded-xl text-xs font-bold gap-1.5"
+                      >
+                        <ExternalLink className="w-3.5 h-3.5" />
+                        Open Resource
+                      </Button>
+                    ) : (
+                      <Button
+                        onClick={() => setResourceModal(null)}
+                        className="rounded-xl text-xs font-bold"
+                      >
+                        Close
+                      </Button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* ── MODAL 4: VIDEO WATCH MODAL ──────── */}
+            {videoModalLec && (
+              <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-xs flex items-center justify-center p-4">
+                <div className="bg-card border border-border rounded-3xl max-w-lg w-full p-6 shadow-2xl space-y-4 animate-in zoom-in-95 duration-200">
+                  <div className="flex items-center justify-between gap-3">
+                    <div>
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+                        {videoModalLec.type === "dpp" ? "DPP Video Solution" : "Theory Video Lecture"}
+                      </span>
+                      <h3 className="font-bold text-sm sm:text-base text-foreground">{videoModalLec.title}</h3>
+                    </div>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      onClick={() => setVideoModalLec(null)}
+                      className="rounded-xl h-8 w-8"
+                    >
+                      <X className="w-4 h-4" />
+                    </Button>
+                  </div>
+
+                  <div className="p-4 rounded-2xl bg-muted/40 border border-border text-xs space-y-2">
+                    <div className="flex items-center justify-between text-muted-foreground">
+                      <span>Duration: {videoModalLec.duration || "Standard Class"}</span>
+                      {videoModalLec.date && <span>Date: {new Date(videoModalLec.date).toLocaleDateString()}</span>}
+                    </div>
+                    <p className="text-muted-foreground">
+                      This lecture stream is linked to your batch timetable. You can view associated PDFs or search related lecture resources below.
+                    </p>
+                  </div>
+
+                  <div className="pt-2 flex items-center justify-between gap-2 flex-wrap">
+                    {(videoModalLec.pdfUrl || videoModalLec.notesUrl || videoModalLec.dppPdfUrl) && (
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => {
+                          const url = videoModalLec.pdfUrl || videoModalLec.notesUrl || videoModalLec.dppPdfUrl;
+                          if (url) window.open(url, "_blank", "noopener,noreferrer");
+                        }}
+                        className="rounded-xl text-xs font-semibold gap-1.5"
+                      >
+                        <FileText className="w-3.5 h-3.5 text-red-500" />
+                        Open Class Notes / PDF
+                      </Button>
+                    )}
+                    <Button
+                      onClick={() => {
+                        const kw = encodeURIComponent(videoModalLec.title);
+                        window.open(`https://www.youtube.com/results?search_query=${kw}+physics+wallah`, "_blank", "noopener,noreferrer");
+                        setVideoModalLec(null);
+                      }}
+                      className="rounded-xl text-xs font-bold gap-1.5 ml-auto bg-red-600 hover:bg-red-700 text-white"
+                    >
+                      <Play className="w-3.5 h-3.5 fill-current" />
+                      Watch Online
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            )}
+          </>
+        )}
         </div>
       )}
 

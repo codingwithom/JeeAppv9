@@ -295,6 +295,172 @@ app.get("/api/healthz", (_req, res) => {
   res.json({ status: "ok" });
 });
 
+const pwMetadataCache = new Map();
+const PW_METADATA_TTL = 5 * 60 * 1000;
+const PW_DETAILS_ORIGIN = "https://vidcloud.eu.org";
+
+function findPublicPdfUrl(value, seen = new Set()) {
+  if (!value || typeof value !== "object" || seen.has(value)) return undefined;
+  seen.add(value);
+  if (Array.isArray(value)) {
+    for (const item of value) {
+      const found = findPublicPdfUrl(item, seen);
+      if (found) return found;
+    }
+    return undefined;
+  }
+  for (const [key, child] of Object.entries(value)) {
+    if (typeof child === "string" && /pdf|note|file|document|attachment/i.test(key) && /^https?:\/\//i.test(child) && /\.pdf(?:[?#]|$)/i.test(child)) {
+      return child;
+    }
+    const found = findPublicPdfUrl(child, seen);
+    if (found) return found;
+  }
+  return undefined;
+}
+
+async function fetchPwMetadata(batchId) {
+  const cached = pwMetadataCache.get(batchId);
+  if (cached && cached.expiresAt > Date.now()) return cached.value;
+
+  const tokenResponse = await fetch(`${PW_DETAILS_ORIGIN}/generate_token.php`, {
+    cache: "no-store",
+    signal: AbortSignal.timeout(15000),
+  });
+  if (!tokenResponse.ok) throw new Error(`PW metadata token failed (${tokenResponse.status})`);
+  const tokenPayload = await tokenResponse.json();
+  const token = tokenPayload.access_token || tokenPayload.token;
+  if (!token) throw new Error("PW metadata token was empty");
+
+  const detailsResponse = await fetch(
+    `${PW_DETAILS_ORIGIN}/api/v3/batches/${encodeURIComponent(batchId)}/details?type=EXPLORE_LEAD`,
+    { signal: AbortSignal.timeout(20000) },
+  );
+  if (!detailsResponse.ok) throw new Error(`PW batch details failed (${detailsResponse.status})`);
+  const detailsPayload = await detailsResponse.json();
+  const remoteSubjects = Array.isArray(detailsPayload.data?.subjects)
+    ? detailsPayload.data.subjects
+    : Array.isArray(detailsPayload.subjects)
+      ? detailsPayload.subjects
+      : [];
+
+  const subjects = await Promise.all(remoteSubjects.map(async (remoteSubject) => {
+    const name = typeof remoteSubject.subject === "string" ? remoteSubject.subject : "Subject";
+    const faculty = Array.isArray(remoteSubject.teacherIds)
+      ? remoteSubject.teacherIds
+        .map((teacher) => [teacher?.firstName, teacher?.lastName].filter(Boolean).join(" "))
+        .filter(Boolean)
+        .join(" & ")
+      : undefined;
+    const shell = { name, faculty, chapters: [] };
+    if (typeof remoteSubject._id !== "string") return shell;
+
+    try {
+      const chapters = [];
+      let page = 1;
+      let totalCount = Number.POSITIVE_INFINITY;
+      while (page <= 100) {
+        const topicsResponse = await fetch(
+          `${PW_DETAILS_ORIGIN}/api/v2/batches/${encodeURIComponent(batchId)}/subject/${encodeURIComponent(remoteSubject._id)}/topics?page=${page}`,
+          {
+            headers: { Authorization: `Bearer ${token}` },
+            signal: AbortSignal.timeout(20000),
+          },
+        );
+        if (!topicsResponse.ok) throw new Error(`topics failed (${topicsResponse.status})`);
+        const topicsPayload = await topicsResponse.json();
+        const rawTopics = Array.isArray(topicsPayload.data) ? topicsPayload.data : [];
+        const topics = rawTopics.filter((topic) => {
+            if (typeof topic.name !== "string") return false;
+            return !/(only\s+pdf|only\s+video|demo\s+videos?|short\s+notes|mind\s+maps?|blueprint|notice|announcement|test\s+series)/i.test(topic.name);
+          });
+        topics.forEach((topic, index) => {
+          const topicId = topic._id || `${remoteSubject._id}-${chapters.length + index}`;
+          chapters.push({
+            id: `${remoteSubject._id}-${topicId}`,
+            title: topic.name,
+            lectures: [],
+          });
+        });
+        totalCount = topicsPayload.paginate?.totalCount || chapters.length;
+        if (rawTopics.length === 0) break;
+        if (page * (topicsPayload.paginate?.limit || rawTopics.length) >= totalCount) break;
+        page += 1;
+      }
+
+      const chaptersByTitle = new Map(chapters.map((chapter) => [chapter.title.trim().toLowerCase(), chapter]));
+      page = 1;
+      while (page <= 100) {
+        const contentsResponse = await fetch(
+          `${PW_DETAILS_ORIGIN}/api/v2/batches/${encodeURIComponent(batchId)}/subject/${encodeURIComponent(remoteSubject._id)}/contents?page=${page}`,
+          {
+            headers: { Authorization: `Bearer ${token}` },
+            signal: AbortSignal.timeout(20000),
+          },
+        );
+        if (!contentsResponse.ok) throw new Error(`contents failed (${contentsResponse.status})`);
+        const contentsPayload = await contentsResponse.json();
+        const contents = Array.isArray(contentsPayload.data) ? contentsPayload.data : [];
+        contents.forEach((content) => {
+          if (typeof content.topic !== "string" || typeof content._id !== "string") return;
+          if (/(only\s+pdf|only\s+video|demo\s+videos?|short\s+notes|mind\s+maps?|blueprint|notice|announcement|test\s+series)/i.test(content.topic)) return;
+          const tags = Array.isArray(content.tags) ? content.tags : [];
+          const tag = tags.find((item) => typeof item?.name === "string");
+          const tagName = typeof tag?.name === "string" ? tag.name.trim().toLowerCase() : "";
+          const chapter = chaptersByTitle.get(tagName)
+            || chapters.find((candidate) => content.topic.toLowerCase().includes(candidate.title.trim().toLowerCase()));
+          if (!chapter) return;
+          const duration = typeof content.videoDetails?.duration === "string" ? content.videoDetails.duration : undefined;
+          const dateValue = content.date || content.startTime;
+          const isDpp = (content.isDPPVideos === true || content.isDPPNotes === true)
+            || (/\bdpp\b/i.test(content.topic) && !/no\s+dpp/i.test(content.topic));
+          const pdfUrl = findPublicPdfUrl({
+            notes: content.notes,
+            attachments: content.attachments,
+            files: content.files,
+            documents: content.documents,
+            dpp: content.dpp,
+          });
+          chapter.lectures.push({
+            id: `${remoteSubject._id}-${content._id}`,
+            title: content.topic.trim(),
+            type: isDpp ? "dpp" : "lecture",
+            duration,
+            date: typeof dateValue === "string" ? dateValue : undefined,
+            ...(pdfUrl ? { pdfUrl } : {}),
+          });
+        });
+        const limit = contentsPayload.paginate?.limit || contents.length;
+        const reportedTotal = contentsPayload.paginate?.totalCount || 0;
+        if (contents.length === 0) break;
+        if (reportedTotal > 0 && page * limit >= reportedTotal) break;
+        page += 1;
+      }
+      return { ...shell, chapters };
+    } catch {
+      return shell;
+    }
+  }));
+
+  const value = { batchId, subjects };
+  if (subjects.length > 0) {
+    pwMetadataCache.set(batchId, { value, expiresAt: Date.now() + PW_METADATA_TTL });
+  }
+  return value;
+}
+
+app.get("/api/pw-metadata", async (req, res) => {
+  const batchId = typeof req.query.batchId === "string" ? req.query.batchId : "";
+  if (!/^[a-zA-Z0-9_-]{8,100}$/.test(batchId)) {
+    return res.status(400).json({ error: "A valid batchId is required" });
+  }
+  try {
+    res.json(await fetchPwMetadata(batchId));
+  } catch (error) {
+    res.status(502).json({ error: error.message || "PW metadata unavailable" });
+  }
+});
+
 // Helper to extract JSON from HTML via brace matching
 function extractJsonFromHtml(html, varName) {
   const index = html.indexOf(varName);

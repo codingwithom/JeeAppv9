@@ -29,7 +29,8 @@ import {
   CheckSquare, 
   Square,
   TrendingUp,
-  ListTodo
+  ListTodo,
+  MoreVertical
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -45,6 +46,7 @@ interface PWLecture {
   title: string;
   type: "lecture" | "dpp" | "revision" | "doubt";
   duration?: string;
+  date?: string;
 }
 
 interface PWChapter {
@@ -57,6 +59,12 @@ interface PWSubject {
   name: string;
   faculty?: string;
   chapters: PWChapter[];
+}
+
+interface PWRemoteSubject {
+  id: string;
+  name: string;
+  faculty?: string;
 }
 
 interface PWBatch {
@@ -80,6 +88,22 @@ interface PWCatalogBatch {
 
 const PW_CATALOG_URL = "https://studystark.github.io/batches/batches.json";
 const PW_DETAILS_URL = "https://vidcloud.eu.org/api/v3/batches";
+const PW_TOPICS_URL = "https://vidcloud.eu.org/api/v2/batches";
+const PW_TOKEN_URL = "https://vidcloud.eu.org/generate_token.php";
+const EMPTY_PW_BATCH: PWBatch = {
+  id: "",
+  name: "Physics Wallah batches",
+  target: "Select a batch",
+  description: "Live batch metadata will appear here.",
+  subjects: [],
+};
+
+async function fetchBatchMetadata(batchId: string): Promise<PWSubject[]> {
+  const response = await fetch(`/api/pw-metadata?batchId=${encodeURIComponent(batchId)}`, { cache: "no-store" });
+  if (!response.ok) throw new Error(`PW metadata unavailable (${response.status})`);
+  const payload = await response.json() as { subjects?: PWSubject[] };
+  return Array.isArray(payload.subjects) ? payload.subjects : [];
+}
 
 function catalogToBatch(batch: PWCatalogBatch): PWBatch {
   return {
@@ -107,20 +131,61 @@ function extractCatalogBatches(payload: unknown): PWCatalogBatch[] {
   return [];
 }
 
-async function fetchBatchDetails(batchId: string): Promise<PWSubject[]> {
+async function fetchPublicToken(): Promise<string> {
+  const response = await fetch(PW_TOKEN_URL, { cache: "no-store" });
+  if (!response.ok) throw new Error("Public metadata token unavailable");
+  const payload = await response.json() as { access_token?: string; token?: string };
+  const token = payload.access_token || payload.token;
+  if (!token) throw new Error("Public metadata token missing");
+  return token;
+}
+
+async function fetchBatchDetails(batchId: string): Promise<PWRemoteSubject[]> {
   const response = await fetch(`${PW_DETAILS_URL}/${encodeURIComponent(batchId)}/details?type=EXPLORE_LEAD`);
   if (!response.ok) throw new Error(`Batch details unavailable (${response.status})`);
   const payload = await response.json() as { data?: { subjects?: unknown } };
   if (!Array.isArray(payload.data?.subjects)) return [];
 
-  return payload.data.subjects.flatMap((item: any): PWSubject[] => {
+  return payload.data.subjects.flatMap((item: any): PWRemoteSubject[] => {
     if (!item || typeof item !== "object") return [];
     const subjectName = typeof item.subject === "string" ? item.subject : "Subject";
     const faculty = Array.isArray(item.teacherIds)
       ? item.teacherIds.map((teacher: any) => [teacher?.firstName, teacher?.lastName].filter(Boolean).join(" ")).filter(Boolean).join(" & ")
       : undefined;
-    return [{ name: subjectName, faculty, chapters: [] }];
+    return typeof item._id === "string" ? [{ id: item._id, name: subjectName, faculty }] : [];
   });
+}
+
+async function fetchSubjectTopics(batchId: string, subject: PWRemoteSubject, token: string): Promise<PWSubject> {
+  const topics: PWChapter[] = [];
+  let page = 1;
+  let totalCount = Number.POSITIVE_INFINITY;
+
+  while (topics.length < totalCount && page <= 100) {
+    const response = await fetch(
+      `${PW_TOPICS_URL}/${encodeURIComponent(batchId)}/subject/${encodeURIComponent(subject.id)}/topics?page=${page}`,
+      { headers: { Authorization: `Bearer ${token}` }, cache: "no-store" },
+    );
+    if (!response.ok) throw new Error(`Topic metadata unavailable (${response.status})`);
+    const payload = await response.json() as {
+      data?: Array<{ _id?: string; name?: string }>;
+      paginate?: { totalCount?: number; limit?: number };
+    };
+    const pageTopics = (payload.data || []).filter(topic => typeof topic.name === "string");
+    pageTopics.forEach(topic => {
+      const id = topic._id || `${subject.id}-${topics.length}`;
+      topics.push({
+        id: `${subject.id}-${id}`,
+        title: topic.name as string,
+        lectures: [{ id: `${subject.id}-${id}-item`, title: topic.name as string, type: "lecture" }],
+      });
+    });
+    totalCount = payload.paginate?.totalCount || topics.length;
+    if (pageTopics.length === 0) break;
+    page += 1;
+  }
+
+  return { name: subject.name, faculty: subject.faculty, chapters: topics };
 }
 
 // Fallback initial dataset in case offline or CDN loading
@@ -458,15 +523,18 @@ export default function OthersPage() {
   const [subView, setSubView] = useState<OthersSubView>("hub");
 
   // PW Batches Data & Selection State
-  const [batches, setBatches] = useState<PWBatch[]>(DEFAULT_PW_BATCHES);
-  const [selectedBatchId, setSelectedBatchId] = useState<string>("arjuna-jee-2026");
+  const [batches, setBatches] = useState<PWBatch[]>([]);
+  const [selectedBatchId, setSelectedBatchId] = useState<string>("");
   const [activeSubject, setActiveSubject] = useState<string>("All");
   const [statusFilter, setStatusFilter] = useState<"all" | "pending" | "completed">("all");
+  const [contentFilter, setContentFilter] = useState<"all" | "lecture" | "dpp">("all");
   const [lectureSearch, setLectureSearch] = useState<string>("");
   const [batchSearch, setBatchSearch] = useState<string>("");
   const [catalogBatches, setCatalogBatches] = useState<PWCatalogBatch[]>([]);
   const [syncMessage, setSyncMessage] = useState<string>("");
   const [openChapters, setOpenChapters] = useState<Record<string, boolean>>({});
+  const [openLectureMenu, setOpenLectureMenu] = useState<string | null>(null);
+  const loadingBatchIds = React.useRef(new Set<string>());
 
   // Completed Lectures Set (stored locally and synced to IndexedDB)
   const [completedMap, setCompletedMap] = useState<Record<string, boolean>>(() => {
@@ -478,40 +546,20 @@ export default function OthersPage() {
     }
   });
 
-  // Load dynamic batches from CDN or local data
+  // Load the live PW batch catalog. Detailed subjects and lectures load on selection.
   useEffect(() => {
-    const cdnUrl = "https://cdn.jsdelivr.net/gh/codingwithom/jee-pyq-db@main/pw/batches.json";
-    fetch(cdnUrl)
+    fetch(PW_CATALOG_URL)
       .then(res => res.ok ? res.json() : null)
       .then(data => {
-        if (data && data.batches && Array.isArray(data.batches) && data.batches.length > 0) {
-          setBatches(data.batches);
-        } else {
-          throw new Error("Local batch CDN returned no batches");
+        const remoteBatches = extractCatalogBatches(data);
+        setCatalogBatches(remoteBatches);
+        setBatches(remoteBatches.map(catalogToBatch));
+        setSelectedBatchId(current => current || remoteBatches[0]?.batch_id || "");
+        if (remoteBatches.length > 0) {
+          setSyncMessage(`Catalog synced: ${remoteBatches.length.toLocaleString()} public batches`);
         }
       })
-      .catch(() => {
-        // Try local static fallback
-        fetch("/data/pw/batches.json")
-          .then(res => res.ok ? res.json() : null)
-          .then(data => {
-            if (data && data.batches && Array.isArray(data.batches)) {
-              setBatches(data.batches);
-            }
-          })
-          .catch(() => {});
-
-        fetch(PW_CATALOG_URL)
-          .then(res => res.ok ? res.json() : null)
-          .then(data => {
-            const remoteBatches = extractCatalogBatches(data);
-            setCatalogBatches(remoteBatches);
-            if (remoteBatches.length > 0) {
-              setSyncMessage(`Catalog synced: ${remoteBatches.length.toLocaleString()} public batches`);
-            }
-          })
-          .catch(() => setSyncMessage("Using the local batch catalog"));
-      });
+      .catch(() => setSyncMessage("Using the local batch catalog"));
 
     // Also load completed items from IndexedDB
     idbGet<Record<string, boolean>>("pw_completed_lectures").then(saved => {
@@ -542,38 +590,43 @@ export default function OthersPage() {
 
   // Active Batch Object
   const currentBatch = useMemo(() => {
-    return batches.find(b => b.id === selectedBatchId) || batches[0] || DEFAULT_PW_BATCHES[0];
+    return batches.find(b => b.id === selectedBatchId) || batches[0] || EMPTY_PW_BATCH;
   }, [batches, selectedBatchId]);
 
   useEffect(() => {
-    if (!selectedBatchId || currentBatch.subjects.length > 0 || !catalogBatches.some(batch => batch.batch_id === selectedBatchId)) {
+    const selectedBatch = batches.find(batch => batch.id === selectedBatchId);
+    if (!selectedBatchId || selectedBatch?.subjects.length || !catalogBatches.some(batch => batch.batch_id === selectedBatchId) || loadingBatchIds.current.has(selectedBatchId)) {
       return;
     }
 
-    fetchBatchDetails(selectedBatchId)
+    loadingBatchIds.current.add(selectedBatchId);
+    fetchBatchMetadata(selectedBatchId)
       .then(subjects => {
         if (subjects.length === 0) {
           setSyncMessage("This batch has no public subject metadata");
           return;
         }
         setBatches(prev => prev.map(batch => batch.id === selectedBatchId ? { ...batch, subjects } : batch));
-        setSyncMessage("Batch metadata synced; lecture names require a public topic response");
+        const topicCount = subjects.reduce((count, subject) => count + subject.chapters.length, 0);
+        setSyncMessage(`Loaded ${subjects.length} subjects, teachers, and ${topicCount} chapter names`);
       })
-      .catch(() => setSyncMessage("Lecture metadata is unavailable from the public endpoint; showing local data where available"));
-  }, [catalogBatches, currentBatch, selectedBatchId]);
+        .catch(() => setSyncMessage("Live batch metadata could not be loaded. Check that the backend is running, then retry the batch."))
+        .finally(() => loadingBatchIds.current.delete(selectedBatchId));
+      }, [batches, catalogBatches, selectedBatchId]);
 
   // Expand all chapters by default when batch changes
   useEffect(() => {
-    if (currentBatch && currentBatch.subjects) {
-      const initialOpen: Record<string, boolean> = {};
-      currentBatch.subjects.forEach(sub => {
-        sub.chapters.forEach(ch => {
-          initialOpen[ch.id] = true;
-        });
-      });
-      setOpenChapters(initialOpen);
-    }
-  }, [currentBatch]);
+    const chapterIds = currentBatch.subjects.flatMap(subject => subject.chapters.map(chapter => chapter.id));
+    setOpenChapters(previous => {
+      const next = Object.fromEntries(chapterIds.map(id => [id, previous[id] ?? true]));
+      const previousKeys = Object.keys(previous);
+      const nextKeys = Object.keys(next);
+      if (previousKeys.length === nextKeys.length && nextKeys.every(id => previous[id] === next[id])) {
+        return previous;
+      }
+      return next;
+    });
+  }, [currentBatch.subjects]);
 
   // Toggle Lecture completion
   const toggleLectureCompletion = (lectureId: string) => {
@@ -871,14 +924,39 @@ export default function OthersPage() {
                 ))}
               </div>
             </div>
+
+            <div className="flex items-center justify-between gap-2 pt-2 border-t border-border/40 text-xs">
+              <div className="flex items-center gap-1 text-[11px] text-muted-foreground">
+                <BookOpen className="w-3.5 h-3.5" /> Show content:
+              </div>
+              <div className="flex items-center gap-1.5">
+                {[
+                  { key: "all", label: "All" },
+                  { key: "lecture", label: "Lectures" },
+                  { key: "dpp", label: "DPPs" },
+                ].map(tab => (
+                  <button
+                    key={tab.key}
+                    onClick={() => setContentFilter(tab.key as "all" | "lecture" | "dpp")}
+                    className={`px-2.5 py-1 rounded-lg text-[11px] font-medium transition-all ${
+                      contentFilter === tab.key
+                        ? "bg-primary/10 text-primary font-bold border border-primary/20"
+                        : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                    }`}
+                  >
+                    {tab.label}
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* Chapters & Lectures Accordions */}
-          {currentBatch.subjects.length === 0 || currentBatch.subjects.every(subject => subject.chapters.length === 0) ? (
+          {currentBatch.subjects.length === 0 ? (
             <Card className="border-dashed border-amber-500/40 bg-amber-500/5 p-6 text-center">
-              <p className="text-sm font-semibold text-foreground">Lecture metadata is not available for this batch yet.</p>
+              <p className="text-sm font-semibold text-foreground">No subject metadata was returned for this batch.</p>
               <p className="mt-1 text-xs text-muted-foreground">
-                The public catalog found the batch, but its topic endpoint requires access that a static website cannot provide. No videos or private data are requested.
+                The metadata service returned no subjects. Try refreshing the batch or selecting another batch.
               </p>
             </Card>
           ) : <div className="space-y-4">
@@ -905,11 +983,18 @@ export default function OthersPage() {
                       </h2>
                     </div>
 
+                    {sub.chapters.length === 0 && (
+                      <div className="rounded-xl border border-dashed border-amber-500/30 bg-amber-500/5 px-4 py-3 text-xs text-muted-foreground">
+                        Subject and teacher loaded. No chapter names were returned for this subject.
+                      </div>
+                    )}
+
                     {/* Chapter Cards */}
                     <div className="space-y-3">
                       {sub.chapters.map(ch => {
                         // Apply filters to lectures
                         const filteredLectures = ch.lectures.filter(l => {
+                          if (contentFilter !== "all" && l.type !== contentFilter) return false;
                           if (statusFilter === "completed" && !completedMap[l.id]) return false;
                           if (statusFilter === "pending" && completedMap[l.id]) return false;
                           if (lectureSearch.trim().length > 0) {
@@ -921,7 +1006,7 @@ export default function OthersPage() {
                         });
 
                         // If search/filter hid all lectures, hide chapter
-                        if (filteredLectures.length === 0 && (lectureSearch.trim().length > 0 || statusFilter !== "all")) {
+                        if (filteredLectures.length === 0 && (lectureSearch.trim().length > 0 || statusFilter !== "all" || contentFilter !== "all")) {
                           return null;
                         }
 
@@ -987,6 +1072,7 @@ export default function OthersPage() {
                               <div className="border-t border-border/60 divide-y divide-border/40 bg-muted/10">
                                 {filteredLectures.map(lec => {
                                   const isChecked = Boolean(completedMap[lec.id]);
+                                  const isMenuOpen = openLectureMenu === lec.id;
                                   return (
                                     <div
                                       key={lec.id}
@@ -1016,10 +1102,15 @@ export default function OthersPage() {
                                         </div>
                                       </div>
 
-                                      <div className="flex items-center gap-2 shrink-0">
+                                      <div className="relative flex items-center gap-2 shrink-0">
                                         {lec.duration && (
                                           <span className="text-[11px] font-mono text-muted-foreground hidden sm:inline-block">
                                             {lec.duration}
+                                          </span>
+                                        )}
+                                        {lec.date && (
+                                          <span className="text-[11px] text-muted-foreground hidden md:inline-block">
+                                            {new Date(lec.date).toLocaleDateString()}
                                           </span>
                                         )}
                                         <span className={`px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider ${
@@ -1029,6 +1120,40 @@ export default function OthersPage() {
                                         }`}>
                                           {lec.type}
                                         </span>
+                                        <button
+                                          type="button"
+                                          aria-label={`Actions for ${lec.title}`}
+                                          onClick={(event) => {
+                                            event.stopPropagation();
+                                            setOpenLectureMenu(isMenuOpen ? null : lec.id);
+                                          }}
+                                          className="rounded-md p-1 text-muted-foreground hover:bg-muted hover:text-foreground"
+                                        >
+                                          <MoreVertical className="h-4 w-4" />
+                                        </button>
+                                        {isMenuOpen && (
+                                          <div className="absolute right-0 top-8 z-20 min-w-44 rounded-lg border border-border bg-card p-1 shadow-lg">
+                                            <button
+                                              type="button"
+                                              disabled
+                                              className="flex w-full cursor-not-allowed items-center rounded-md px-3 py-2 text-left text-xs text-muted-foreground opacity-60"
+                                              title="No public PDF URL was returned in this metadata response"
+                                            >
+                                              Open PDF in new tab
+                                            </button>
+                                            <button
+                                              type="button"
+                                              disabled
+                                              className="flex w-full cursor-not-allowed items-center rounded-md px-3 py-2 text-left text-xs text-muted-foreground opacity-60"
+                                              title="No public PDF URL was returned in this metadata response"
+                                            >
+                                              Open in PDF viewer
+                                            </button>
+                                            <span className="block px-3 py-1 text-[10px] text-muted-foreground">
+                                              PDF link not supplied by the metadata API
+                                            </span>
+                                          </div>
+                                        )}
                                       </div>
                                     </div>
                                   );

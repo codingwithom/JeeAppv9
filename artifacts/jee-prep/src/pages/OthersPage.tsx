@@ -78,6 +78,18 @@ interface PWBatch {
   subjects: PWSubject[];
 }
 
+interface PWScheduleItem {
+  id: string;
+  subject: string;
+  teacher: string;
+  topic: string;
+  date: string;
+  startTime?: string;
+  endTime?: string;
+  time: string;
+  status?: string;
+}
+
 interface PWCatalogBatch {
   batch_id: string;
   name: string;
@@ -106,6 +118,24 @@ async function fetchBatchMetadata(batchId: string): Promise<PWSubject[]> {
   if (!response.ok) throw new Error(`PW metadata unavailable (${response.status})`);
   const payload = await response.json() as { subjects?: PWSubject[] };
   return Array.isArray(payload.subjects) ? payload.subjects : [];
+}
+
+async function fetchTodaySchedule(batchId: string): Promise<PWScheduleItem[]> {
+  const today = new Date();
+  const date = [today.getFullYear(), String(today.getMonth() + 1).padStart(2, "0"), String(today.getDate()).padStart(2, "0")].join("-");
+  const response = await fetch(`/api/pw-schedule?batchId=${encodeURIComponent(batchId)}&date=${date}`, { cache: "no-store" });
+  if (!response.ok) throw new Error(`PW schedule unavailable (${response.status})`);
+  const payload = await response.json() as { schedules?: PWScheduleItem[] };
+  return Array.isArray(payload.schedules) ? payload.schedules : [];
+}
+
+function formatScheduleTime(value?: string): string {
+  if (!value) return "Time not listed";
+  const parsed = new Date(value);
+  if (!Number.isNaN(parsed.getTime()) && /T|Z|\d{4}-\d{2}-\d{2}/.test(value)) {
+    return parsed.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+  }
+  return value;
 }
 
 function catalogToBatch(batch: PWCatalogBatch): PWBatch {
@@ -535,6 +565,8 @@ export default function OthersPage() {
   const [batchSearch, setBatchSearch] = useState<string>("");
   const [catalogBatches, setCatalogBatches] = useState<PWCatalogBatch[]>([]);
   const [syncMessage, setSyncMessage] = useState<string>("");
+  const [todaySchedule, setTodaySchedule] = useState<PWScheduleItem[]>([]);
+  const [scheduleMessage, setScheduleMessage] = useState<string>("");
   const [openChapters, setOpenChapters] = useState<Record<string, boolean>>({});
   const [openLectureMenu, setOpenLectureMenu] = useState<string | null>(null);
   const [isLoadingBatch, setIsLoadingBatch] = useState<boolean>(false);
@@ -622,6 +654,21 @@ export default function OthersPage() {
         setIsLoadingBatch(false);
       });
   }, [batches, catalogBatches, selectedBatchId]);
+
+  useEffect(() => {
+    if (!selectedBatchId || !catalogBatches.some(batch => batch.batch_id === selectedBatchId)) return;
+    setTodaySchedule([]);
+    setScheduleMessage("Loading today’s classes...");
+    fetchTodaySchedule(selectedBatchId)
+      .then(schedule => {
+        setTodaySchedule(schedule);
+        setScheduleMessage(schedule.length ? "" : "No classes scheduled for today.");
+      })
+      .catch(() => {
+        setTodaySchedule([]);
+        setScheduleMessage("Today’s schedule could not be loaded.");
+      });
+  }, [catalogBatches, selectedBatchId]);
 
   // Expand all chapters by default when batch changes
   useEffect(() => {
@@ -874,6 +921,48 @@ export default function OthersPage() {
               </div>
             </div>
           </div>
+
+          {/* Today's scheduled classes */}
+          <Card className="border border-amber-500/30 bg-amber-500/5 p-4 sm:p-5 shadow-xs">
+            <div className="flex items-center justify-between gap-3 mb-3">
+              <div className="flex items-center gap-2">
+                <Calendar className="w-4 h-4 text-amber-600 dark:text-amber-400" />
+                <h2 className="text-sm font-bold text-foreground">Today’s Classes</h2>
+              </div>
+              <span className="text-[11px] text-muted-foreground">
+                {new Date().toLocaleDateString([], { weekday: "short", month: "short", day: "numeric" })}
+              </span>
+            </div>
+            {todaySchedule.length > 0 ? (
+              <div className="grid gap-2 sm:grid-cols-2">
+                {todaySchedule.map(item => (
+                  <div key={item.id} className="rounded-xl border border-border/70 bg-card p-3">
+                    <div className="flex items-start justify-between gap-2">
+                      <div className="min-w-0">
+                        <p className="text-xs font-bold text-foreground truncate">{item.topic}</p>
+                        <p className="mt-1 text-[11px] text-muted-foreground">
+                          {item.subject} • {item.teacher}
+                        </p>
+                      </div>
+                      <span className="shrink-0 rounded-md bg-amber-500/10 px-2 py-1 text-[10px] font-bold text-amber-700 dark:text-amber-300">
+                        {item.startTime ? formatScheduleTime(item.startTime) : item.time}
+                      </span>
+                    </div>
+                    {(item.endTime || item.status) && (
+                      <div className="mt-2 flex items-center gap-2 text-[10px] text-muted-foreground">
+                        {item.endTime && <span>Ends {formatScheduleTime(item.endTime)}</span>}
+                        {item.status && <span>• {item.status}</span>}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <p className="text-xs text-muted-foreground">
+                {scheduleMessage || "No classes scheduled for today."}
+              </p>
+            )}
+          </Card>
 
           {/* Filtering & Search Bar */}
           <div className="bg-card border border-border/80 rounded-2xl p-4 shadow-xs space-y-3">

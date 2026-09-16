@@ -580,16 +580,25 @@ async function fetchSubjectData(batchId, remoteSubject, token) {
         if (contents.length === 0) break;
         contents.forEach((content) => {
           const hws = Array.isArray(content.homeworkIds) ? content.homeworkIds : [];
-          hws.forEach((hw) => {
-            if (!hw || typeof hw.topic !== "string") return;
-            const chapter = findChapter(hw.topic);
+          const dppItems = hws.length > 0
+            ? hws.map((hw) => ({ item: hw, topic: hw?.topic }))
+            : [{ item: content, topic: content.topic }];
+          dppItems.forEach(({ item, topic }) => {
+            if (!item || typeof topic !== "string") return;
+            const tags = Array.isArray(item.tags) ? item.tags : Array.isArray(content.tags) ? content.tags : [];
+            const tag = tags.find((entry) => typeof entry?.name === "string");
+            const chapter = findChapter(topic, tag?._id, tag?.name);
             if (!chapter) return;
-            const att = Array.isArray(hw.attachmentIds) ? hw.attachmentIds[0] : null;
+            const att = Array.isArray(item.attachmentIds)
+              ? item.attachmentIds[0]
+              : Array.isArray(content.attachmentIds)
+                ? content.attachmentIds[0]
+                : null;
             const pdfUrl = extractPdfUrl(att);
             const dateValue = content.date || content.startTime;
 
             const existingDpp = chapter.lectures.find(
-              l => l.type === "dpp" && l.title.toLowerCase() === hw.topic.toLowerCase()
+              l => l.type === "dpp" && l.title.toLowerCase() === topic.toLowerCase()
             );
             if (existingDpp) {
               if (pdfUrl && !existingDpp.pdfUrl) {
@@ -598,9 +607,9 @@ async function fetchSubjectData(batchId, remoteSubject, token) {
               }
             } else {
               chapter.lectures.push({
-                id: `${remoteSubject._id}-${hw._id || content._id}-dpp`,
+                id: `${remoteSubject._id}-${item._id || content._id}-dpp`,
                 rawContentId: content._id,
-                title: hw.topic.trim(),
+                title: topic.trim(),
                 type: "dpp",
                 date: typeof dateValue === "string" ? dateValue : undefined,
                 ...(pdfUrl ? { pdfUrl, dppPdfUrl: pdfUrl } : {}),
@@ -674,6 +683,79 @@ async function fetchPwMetadata(batchId) {
   return value;
 }
 
+function firstText(...values) {
+  return values.find((value) => typeof value === "string" && value.trim())?.trim();
+}
+
+function scheduleTeacher(item) {
+  const teacher = item.teacher || item.instructor || item.faculty || item.teacherDetails;
+  if (typeof teacher === "string") return teacher.trim();
+  if (teacher && typeof teacher === "object") {
+    return firstText(
+      teacher.name,
+      [teacher.firstName, teacher.lastName].filter(Boolean).join(" "),
+    );
+  }
+  const teachers = Array.isArray(item.teacherIds) ? item.teacherIds : Array.isArray(item.teachers) ? item.teachers : [];
+  return teachers
+    .map((entry) => typeof entry === "string" ? entry : firstText(entry?.name, [entry?.firstName, entry?.lastName].filter(Boolean).join(" ")))
+    .filter(Boolean)
+    .join(" & ") || undefined;
+}
+
+async function fetchPwSchedule(batchId, date) {
+  const token = await getPwToken();
+  const query = new URLSearchParams({
+    batchId,
+    startDate: date,
+    endDate: date,
+    page: "1",
+  });
+  const response = await fetch(
+    `${PW_DETAILS_ORIGIN}/api/v2/batches/${encodeURIComponent(batchId)}/weekly-schedules?${query}`,
+    {
+      headers: { ...PW_HEADERS, Authorization: `Bearer ${token}` },
+      signal: AbortSignal.timeout(20000),
+    },
+  );
+  if (!response.ok) throw new Error(`PW weekly schedule failed (${response.status})`);
+  const payload = await response.json();
+  const rawItems = Array.isArray(payload.data)
+    ? payload.data
+    : Array.isArray(payload.schedules)
+      ? payload.schedules
+      : Array.isArray(payload.results)
+        ? payload.results
+        : [];
+
+  return {
+    batchId,
+    date,
+    schedules: rawItems.flatMap((item, index) => {
+      if (!item || typeof item !== "object") return [];
+      const subjectValue = item.subject || item.subjectDetails;
+      const subject = typeof subjectValue === "string"
+        ? subjectValue
+        : firstText(subjectValue?.name, subjectValue?.subject);
+      const topic = firstText(item.topic, item.title, item.lectureName, item.className, item.name) || "Scheduled class";
+      const start = firstText(item.startTime, item.startDate, item.from, item.start, item.time);
+      const end = firstText(item.endTime, item.endDate, item.to, item.end);
+      const dateValue = firstText(item.date, item.scheduleDate, item.startDate) || date;
+      return [{
+        id: String(item._id || item.id || `${batchId}-${date}-${index}`),
+        subject: subject || "Subject",
+        teacher: scheduleTeacher(item) || "Teacher not listed",
+        topic,
+        date: dateValue,
+        startTime: start,
+        endTime: end,
+        time: start && end ? `${start} - ${end}` : start || end || "Time not listed",
+        status: firstText(item.status, item.classStatus),
+      }];
+    }),
+  };
+}
+
 app.get("/api/pw-metadata", async (req, res) => {
   const batchId = typeof req.query.batchId === "string" ? req.query.batchId : "";
   if (!/^[a-zA-Z0-9_-]{8,100}$/.test(batchId)) {
@@ -683,6 +765,22 @@ app.get("/api/pw-metadata", async (req, res) => {
     res.json(await fetchPwMetadata(batchId));
   } catch (error) {
     res.status(502).json({ error: error.message || "PW metadata unavailable" });
+  }
+});
+
+app.get("/api/pw-schedule", async (req, res) => {
+  const batchId = typeof req.query.batchId === "string" ? req.query.batchId : "";
+  const requestedDate = typeof req.query.date === "string" ? req.query.date : "";
+  const date = /^\d{4}-\d{2}-\d{2}$/.test(requestedDate)
+    ? requestedDate
+    : new Date().toISOString().slice(0, 10);
+  if (!/^[a-zA-Z0-9_-]{8,100}$/.test(batchId)) {
+    return res.status(400).json({ error: "A valid batchId is required" });
+  }
+  try {
+    res.json(await fetchPwSchedule(batchId, date));
+  } catch (error) {
+    res.status(502).json({ error: error.message || "PW weekly schedule unavailable" });
   }
 });
 

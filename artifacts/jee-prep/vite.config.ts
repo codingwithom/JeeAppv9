@@ -14,7 +14,9 @@ const gcPlugin = () => {
       count++;
       if (count % 40 === 0) {
         if (typeof global !== "undefined" && (global as any).gc) {
-          (global as any).gc();
+          (global as any).gc(
+            
+          );
         }
       }
     },
@@ -59,6 +61,25 @@ export default defineConfig(async () => {
     plugins: [
       react(),
       tailwindcss(),
+      {
+        name: "serve-local-data",
+        configureServer(server) {
+          server.middlewares.use("/data", async (req: any, res: any, next: any) => {
+            try {
+              const fs = await import("fs");
+              const cleanSub = decodeURIComponent((req.url || "").replace(/^\//, "").split("?")[0]);
+              const filePath = path.join(path.resolve(import.meta.dirname, "data"), cleanSub);
+              if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
+                res.setHeader("Content-Type", filePath.endsWith(".json") ? "application/json" : "text/plain");
+                res.setHeader("Access-Control-Allow-Origin", "*");
+                fs.createReadStream(filePath).pipe(res);
+                return;
+              }
+            } catch (e) {}
+            next();
+          });
+        }
+      },
       ...extraPlugins,
     ],
     resolve: {

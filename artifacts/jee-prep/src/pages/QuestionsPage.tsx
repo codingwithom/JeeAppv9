@@ -74,17 +74,23 @@ function formatPaperTitle(titleOrKey?: string): string {
   return str;
 }
 
-// Universal helper that resolves data files from any path (dist/data, dist/data/pyq, root /data, etc.)
+// Universal helper that resolves data files from CDN (jsDelivr) or local fallback (/data)
 async function fetchStaticData(subPath: string): Promise<Response | null> {
   const cleanPath = subPath.startsWith("/") ? subPath.slice(1) : subPath;
+  const pathWithoutData = cleanPath.replace(/^data\/pyq\//, "").replace(/^data\//, "");
+
+  const cdnBase = (import.meta.env.VITE_DATA_CDN_URL || "https://cdn.jsdelivr.net/gh/codingwithom/jee-pyq-db@main").replace(/\/$/, "");
+
   const candidates = [
+    `${cdnBase}/${pathWithoutData}`,
     `/${cleanPath}`,
     `./${cleanPath}`,
-    `/${cleanPath.replace(/^data\/pyq\//, "data/")}`,
-    `./${cleanPath.replace(/^data\/pyq\//, "data/")}`,
-    `/${cleanPath.replace(/^data\//, "data/pyq/")}`,
-    `./${cleanPath.replace(/^data\//, "data/pyq/")}`
+    `/data/${pathWithoutData}`,
+    `./data/${pathWithoutData}`,
+    `/${pathWithoutData}`,
+    `./${pathWithoutData}`
   ];
+
   for (const url of candidates) {
     try {
       const res = await fetch(url);
@@ -283,66 +289,11 @@ export default function QuestionsPage() {
     setQuestionDetailLoading(true);
 
     try {
-      let fullQ: any = null;
-
-      // 1. If question came from a paper, check local paper JSON
-      if (item.paperKey && item.questionId) {
+      // 1. Try unified single question file (works seamlessly from CDN or local data)
+      const targetKey = item.qKey || item.permalink || item.questionId;
+      if (targetKey) {
         try {
-          const pRes = await fetchStaticData(`data/pyq/papers/${item.paperKey}.json`);
-          if (pRes && pRes.ok) {
-            const pData = await pRes.json();
-            for (const sec of (pData.sections || [])) {
-              const qIndex = (sec.questions || []).findIndex((x: any) => x.question_id === item.questionId);
-              if (qIndex !== -1) {
-                const matched = sec.questions[qIndex];
-                const optList = matched.question?.en?.options || matched.options || [];
-                const corList = matched.question?.en?.correct_options || matched.question?.en?.correctOptions || matched.correct_options || [];
-                fullQ = {
-                  ...matched,
-                  questionNo: qIndex + 1,
-                  content: matched.question?.en?.content || matched.content || item.text,
-                  options: optList,
-                  correct_options: corList,
-                  explanation: matched.question?.en?.explanation || matched.explanation || "",
-                  paperTitle: formatPaperTitle(item.paperTitle || matched.paperTitle || pData.title || item.paperKey),
-                  subject: item.subject || matched.subject || sec.title?.toLowerCase(),
-                  type: matched.type || (optList.length > 0 ? normalizedCategory : "integer")
-                };
-                break;
-              }
-            }
-          }
-        } catch(e) {}
-
-        if (!fullQ) {
-          try {
-            const res = await fetch(`/api/pyq/paper-question?exam=${item.exam || "jee-main"}&paperKey=${encodeURIComponent(item.paperKey)}&questionId=${encodeURIComponent(item.questionId)}`);
-            if (res.ok) {
-              const data = await res.json();
-              const matched = (data.questions || []).find((x: any) => x.question_id === item.questionId) || data.questions?.[0];
-              if (matched) {
-                const optList = matched.question?.en?.options || matched.options || [];
-                const corList = matched.question?.en?.correct_options || matched.question?.en?.correctOptions || matched.correct_options || [];
-                fullQ = {
-                  ...matched,
-                  content: matched.question?.en?.content || matched.content,
-                  options: optList,
-                  correct_options: corList,
-                  explanation: matched.question?.en?.explanation || matched.explanation || "",
-                  paperTitle: formatPaperTitle(item.paperTitle || matched.paperTitle || item.paperKey),
-                  subject: item.subject || matched.subject,
-                  type: matched.type || normalizedCategory
-                };
-              }
-            }
-          } catch(e) {}
-        }
-      }
-
-      // 2. If question has permalink, try static local question file or API
-      if (!fullQ && item.permalink) {
-        try {
-          const sRes = await fetchStaticData(`data/pyq/questions/${encodeURIComponent(item.permalink)}.json`);
+          const sRes = await fetchStaticData(`questions/${encodeURIComponent(targetKey)}.json`);
           if (sRes && sRes.ok) {
             const sData = await sRes.json();
             const sq = sData.questions?.[0] || sData;
@@ -362,6 +313,39 @@ export default function QuestionsPage() {
             }
           }
         } catch (e) {}
+      }
+
+      // 2. Fallback: check paper JSON if needed
+      if (!fullQ && item.paperKey && item.questionId) {
+        try {
+          const pRes = await fetchStaticData(`papers/${item.paperKey}.json`);
+          if (pRes && pRes.ok) {
+            const pData = await pRes.json();
+            for (const sec of (pData.sections || [])) {
+              const qIndex = (sec.questions || []).findIndex((x: any) => x.question_id === item.questionId || x.qKey === targetKey);
+              if (qIndex !== -1) {
+                const matched = sec.questions[qIndex];
+                if (matched.content) {
+                  const optList = matched.question?.en?.options || matched.options || [];
+                  const corList = matched.question?.en?.correct_options || matched.question?.en?.correctOptions || matched.correct_options || [];
+                  fullQ = {
+                    ...matched,
+                    questionNo: qIndex + 1,
+                    content: matched.question?.en?.content || matched.content || item.text,
+                    options: optList,
+                    correct_options: corList,
+                    explanation: matched.question?.en?.explanation || matched.explanation || "",
+                    paperTitle: formatPaperTitle(item.paperTitle || matched.paperTitle || pData.title || item.paperKey),
+                    subject: item.subject || matched.subject || sec.title?.toLowerCase(),
+                    type: matched.type || (optList.length > 0 ? normalizedCategory : "integer")
+                  };
+                  break;
+                }
+              }
+            }
+          }
+        } catch(e) {}
+      }
 
         if (!fullQ) {
           try {
@@ -386,7 +370,6 @@ export default function QuestionsPage() {
             }
           } catch(e) {}
         }
-      }
 
       if (fullQ) {
         setActiveQuestionData({
@@ -590,6 +573,50 @@ export default function QuestionsPage() {
     setQuestionDetailLoading(true);
     resetAnswerState();
     const exam = examOverride || selectedPaper?.exam || selectedExam;
+
+    // 1. Fetch from unified single question JSON file (CDN or local /data)
+    const targetKey = immediateQ?.qKey || immediateQ?.permalink || questionId;
+    if (targetKey) {
+      try {
+        const qRes = await fetchStaticData(`questions/${encodeURIComponent(targetKey)}.json`);
+        if (qRes && qRes.ok) {
+          const sData = await qRes.json();
+          const matchedQ = sData.questions?.[0] || sData;
+          if (matchedQ) {
+            const optList = matchedQ.question?.en?.options || matchedQ.options || [];
+            const corList = matchedQ.question?.en?.correct_options || matchedQ.question?.en?.correctOptions || matchedQ.correct_options || [];
+            const normalizedQ = {
+              ...matchedQ,
+              content: matchedQ.question?.en?.content || matchedQ.content,
+              options: optList,
+              correct_options: corList,
+              explanation: matchedQ.question?.en?.explanation || matchedQ.explanation || "",
+              type: matchedQ.type || (optList.length > 0 ? "mcq" : "integer"),
+              paperTitle: formatPaperTitle(matchedQ.paperTitle || selectedPaper?.title || paperKey)
+            };
+            setActiveQuestionData(normalizedQ);
+            setQuestionDetailLoading(false);
+            resetAnswerState();
+
+            // Cache into paperSubjects state
+            setPaperSubjects(prevSections => {
+              return prevSections.map((sec: any) => ({
+                ...sec,
+                questions: (sec.questions || []).map((existingQ: any) => {
+                  if (existingQ.question_id === questionId || existingQ.qKey === targetKey) {
+                    return { ...existingQ, ...normalizedQ };
+                  }
+                  return existingQ;
+                })
+              }));
+            });
+            return;
+          }
+        }
+      } catch(e) {}
+    }
+
+    // 2. Fallback to API if running with backend server
     try {
       const res = await fetch(`/api/pyq/paper-question?exam=${exam}&paperKey=${encodeURIComponent(paperKey)}&questionId=${encodeURIComponent(questionId)}`);
       if (res.ok) {

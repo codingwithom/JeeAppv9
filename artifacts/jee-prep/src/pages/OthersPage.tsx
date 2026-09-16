@@ -67,6 +67,62 @@ interface PWBatch {
   subjects: PWSubject[];
 }
 
+interface PWCatalogBatch {
+  batch_id: string;
+  name: string;
+  byName?: string;
+  exam?: string;
+  class?: string;
+  language?: string;
+  start_date?: string;
+  end_date?: string;
+}
+
+const PW_CATALOG_URL = "https://studystark.github.io/batches/batches.json";
+const PW_DETAILS_URL = "https://vidcloud.eu.org/api/v3/batches";
+
+function catalogToBatch(batch: PWCatalogBatch): PWBatch {
+  return {
+    id: batch.batch_id,
+    name: batch.name,
+    target: [batch.class, batch.exam].filter(Boolean).join(" • ") || "Physics Wallah batch",
+    description: batch.byName || `${batch.language || ""} batch metadata from the public catalog`.trim(),
+    subjects: [],
+  };
+}
+
+function extractCatalogBatches(payload: unknown): PWCatalogBatch[] {
+  if (!payload || typeof payload !== "object") return [];
+  const root = payload as Record<string, unknown>;
+  const candidates = [root.data, root.vidyapeeth_batches, payload];
+  for (const candidate of candidates) {
+    if (Array.isArray(candidate)) {
+      return candidate.filter((item): item is PWCatalogBatch => {
+        if (!item || typeof item !== "object") return false;
+        const value = item as Record<string, unknown>;
+        return typeof value.batch_id === "string" && typeof value.name === "string";
+      });
+    }
+  }
+  return [];
+}
+
+async function fetchBatchDetails(batchId: string): Promise<PWSubject[]> {
+  const response = await fetch(`${PW_DETAILS_URL}/${encodeURIComponent(batchId)}/details?type=EXPLORE_LEAD`);
+  if (!response.ok) throw new Error(`Batch details unavailable (${response.status})`);
+  const payload = await response.json() as { data?: { subjects?: unknown } };
+  if (!Array.isArray(payload.data?.subjects)) return [];
+
+  return payload.data.subjects.flatMap((item: any): PWSubject[] => {
+    if (!item || typeof item !== "object") return [];
+    const subjectName = typeof item.subject === "string" ? item.subject : "Subject";
+    const faculty = Array.isArray(item.teacherIds)
+      ? item.teacherIds.map((teacher: any) => [teacher?.firstName, teacher?.lastName].filter(Boolean).join(" ")).filter(Boolean).join(" & ")
+      : undefined;
+    return [{ name: subjectName, faculty, chapters: [] }];
+  });
+}
+
 // Fallback initial dataset in case offline or CDN loading
 const DEFAULT_PW_BATCHES: PWBatch[] = [
   {
@@ -407,6 +463,9 @@ export default function OthersPage() {
   const [activeSubject, setActiveSubject] = useState<string>("All");
   const [statusFilter, setStatusFilter] = useState<"all" | "pending" | "completed">("all");
   const [lectureSearch, setLectureSearch] = useState<string>("");
+  const [batchSearch, setBatchSearch] = useState<string>("");
+  const [catalogBatches, setCatalogBatches] = useState<PWCatalogBatch[]>([]);
+  const [syncMessage, setSyncMessage] = useState<string>("");
   const [openChapters, setOpenChapters] = useState<Record<string, boolean>>({});
 
   // Completed Lectures Set (stored locally and synced to IndexedDB)
@@ -427,6 +486,8 @@ export default function OthersPage() {
       .then(data => {
         if (data && data.batches && Array.isArray(data.batches) && data.batches.length > 0) {
           setBatches(data.batches);
+        } else {
+          throw new Error("Local batch CDN returned no batches");
         }
       })
       .catch(() => {
@@ -439,6 +500,17 @@ export default function OthersPage() {
             }
           })
           .catch(() => {});
+
+        fetch(PW_CATALOG_URL)
+          .then(res => res.ok ? res.json() : null)
+          .then(data => {
+            const remoteBatches = extractCatalogBatches(data);
+            setCatalogBatches(remoteBatches);
+            if (remoteBatches.length > 0) {
+              setSyncMessage(`Catalog synced: ${remoteBatches.length.toLocaleString()} public batches`);
+            }
+          })
+          .catch(() => setSyncMessage("Using the local batch catalog"));
       });
 
     // Also load completed items from IndexedDB
@@ -472,6 +544,23 @@ export default function OthersPage() {
   const currentBatch = useMemo(() => {
     return batches.find(b => b.id === selectedBatchId) || batches[0] || DEFAULT_PW_BATCHES[0];
   }, [batches, selectedBatchId]);
+
+  useEffect(() => {
+    if (!selectedBatchId || currentBatch.subjects.length > 0 || !catalogBatches.some(batch => batch.batch_id === selectedBatchId)) {
+      return;
+    }
+
+    fetchBatchDetails(selectedBatchId)
+      .then(subjects => {
+        if (subjects.length === 0) {
+          setSyncMessage("This batch has no public subject metadata");
+          return;
+        }
+        setBatches(prev => prev.map(batch => batch.id === selectedBatchId ? { ...batch, subjects } : batch));
+        setSyncMessage("Batch metadata synced; lecture names require a public topic response");
+      })
+      .catch(() => setSyncMessage("Lecture metadata is unavailable from the public endpoint; showing local data where available"));
+  }, [catalogBatches, currentBatch, selectedBatchId]);
 
   // Expand all chapters by default when batch changes
   useEffect(() => {
@@ -539,6 +628,20 @@ export default function OthersPage() {
     const percent = total > 0 ? Math.round((completed / total) * 100) : 0;
     return { total, completed, percent, subjectStats };
   }, [currentBatch, completedMap]);
+
+  const visibleCatalogBatches = useMemo(() => {
+    const query = batchSearch.trim().toLowerCase();
+    if (!query) return catalogBatches.slice(0, 12);
+    return catalogBatches
+      .filter(batch => [batch.name, batch.byName, batch.exam, batch.class].filter(Boolean).join(" ").toLowerCase().includes(query))
+      .slice(0, 12);
+  }, [batchSearch, catalogBatches]);
+
+  const visibleBatches = useMemo(() => {
+    const query = batchSearch.trim().toLowerCase();
+    if (!query) return batches;
+    return batches.filter(batch => `${batch.name} ${batch.target} ${batch.description}`.toLowerCase().includes(query));
+  }, [batches, batchSearch]);
 
   return (
     <div className="min-h-full bg-background text-foreground transition-colors">
@@ -612,8 +715,16 @@ export default function OthersPage() {
               </div>
 
               {/* Batch Switcher Pills */}
-              <div className="flex flex-wrap gap-2">
-                {batches.map(b => (
+              <div className="flex flex-col items-stretch gap-2 sm:items-end">
+                <Input
+                  value={batchSearch}
+                  onChange={(event) => setBatchSearch(event.target.value)}
+                  placeholder="Search Arjuna, Lakshya, Ajay..."
+                  className="h-9 w-full text-xs sm:w-64"
+                  aria-label="Search public PW batches"
+                />
+                <div className="flex max-w-xl flex-wrap justify-end gap-2">
+                {visibleBatches.map(b => (
                   <button
                     key={b.id}
                     onClick={() => setSelectedBatchId(b.id)}
@@ -626,6 +737,22 @@ export default function OthersPage() {
                     {b.name}
                   </button>
                 ))}
+                {visibleCatalogBatches
+                  .filter(batch => !batches.some(existing => existing.id === batch.batch_id))
+                  .map(batch => (
+                    <button
+                      key={batch.batch_id}
+                      onClick={() => {
+                        setBatches(prev => [...prev, catalogToBatch(batch)]);
+                        setSelectedBatchId(batch.batch_id);
+                      }}
+                      className="border border-dashed border-amber-500/50 bg-amber-500/5 px-3.5 py-2 rounded-xl text-xs font-bold text-amber-700 hover:bg-amber-500/15 dark:text-amber-300"
+                    >
+                      {batch.name}
+                    </button>
+                  ))}
+                </div>
+                {syncMessage && <span className="text-[10px] text-muted-foreground">{syncMessage}</span>}
               </div>
             </div>
 
@@ -747,7 +874,14 @@ export default function OthersPage() {
           </div>
 
           {/* Chapters & Lectures Accordions */}
-          <div className="space-y-4">
+          {currentBatch.subjects.length === 0 || currentBatch.subjects.every(subject => subject.chapters.length === 0) ? (
+            <Card className="border-dashed border-amber-500/40 bg-amber-500/5 p-6 text-center">
+              <p className="text-sm font-semibold text-foreground">Lecture metadata is not available for this batch yet.</p>
+              <p className="mt-1 text-xs text-muted-foreground">
+                The public catalog found the batch, but its topic endpoint requires access that a static website cannot provide. No videos or private data are requested.
+              </p>
+            </Card>
+          ) : <div className="space-y-4">
             {currentBatch.subjects
               .filter(sub => activeSubject === "All" || sub.name === activeSubject)
               .map(sub => {
@@ -908,7 +1042,7 @@ export default function OthersPage() {
                   </div>
                 );
               })}
-          </div>
+              </div>}
         </div>
       )}
 

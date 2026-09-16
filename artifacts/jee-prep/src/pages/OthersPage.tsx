@@ -47,6 +47,9 @@ interface PWLecture {
   type: "lecture" | "dpp" | "revision" | "doubt";
   duration?: string;
   date?: string;
+  pdfUrl?: string;
+  notesUrl?: string;
+  dppPdfUrl?: string;
 }
 
 interface PWChapter {
@@ -1073,6 +1076,7 @@ export default function OthersPage() {
                                 {filteredLectures.map(lec => {
                                   const isChecked = Boolean(completedMap[lec.id]);
                                   const isMenuOpen = openLectureMenu === lec.id;
+                                  const lecturePdfUrl = lec.pdfUrl || lec.notesUrl || lec.dppPdfUrl || "";
                                   return (
                                     <div
                                       key={lec.id}
@@ -1135,22 +1139,34 @@ export default function OthersPage() {
                                           <div className="absolute right-0 top-8 z-20 min-w-44 rounded-lg border border-border bg-card p-1 shadow-lg">
                                             <button
                                               type="button"
-                                              disabled
-                                              className="flex w-full cursor-not-allowed items-center rounded-md px-3 py-2 text-left text-xs text-muted-foreground opacity-60"
-                                              title="No public PDF URL was returned in this metadata response"
+                                              disabled={!lecturePdfUrl}
+                                              onClick={(event) => {
+                                                event.stopPropagation();
+                                                if (lecturePdfUrl) window.open(lecturePdfUrl, "_blank", "noopener,noreferrer");
+                                              }}
+                                              className={`flex w-full items-center rounded-md px-3 py-2 text-left text-xs ${
+                                                lecturePdfUrl ? "text-foreground hover:bg-muted" : "cursor-not-allowed text-muted-foreground opacity-60"
+                                              }`}
+                                              title={lecturePdfUrl ? "Open the Notes/DPP PDF in a new tab" : "No public PDF URL was returned in this metadata response"}
                                             >
                                               Open PDF in new tab
                                             </button>
                                             <button
                                               type="button"
-                                              disabled
-                                              className="flex w-full cursor-not-allowed items-center rounded-md px-3 py-2 text-left text-xs text-muted-foreground opacity-60"
-                                              title="No public PDF URL was returned in this metadata response"
+                                              disabled={!lecturePdfUrl}
+                                              onClick={(event) => {
+                                                event.stopPropagation();
+                                                if (lecturePdfUrl) window.open(`/pdf-viewer?url=${encodeURIComponent(lecturePdfUrl)}`, "_blank", "noopener,noreferrer");
+                                              }}
+                                              className={`flex w-full items-center rounded-md px-3 py-2 text-left text-xs ${
+                                                lecturePdfUrl ? "text-foreground hover:bg-muted" : "cursor-not-allowed text-muted-foreground opacity-60"
+                                              }`}
+                                              title={lecturePdfUrl ? "Open the PDF in the integrated PDF viewer" : "No public PDF URL was returned in this metadata response"}
                                             >
                                               Open in PDF viewer
                                             </button>
                                             <span className="block px-3 py-1 text-[10px] text-muted-foreground">
-                                              PDF link not supplied by the metadata API
+                                              {lecturePdfUrl ? "Notes / DPP PDF metadata loaded" : "PDF link not supplied by the metadata API"}
                                             </span>
                                           </div>
                                         )}

@@ -299,24 +299,102 @@ const pwMetadataCache = new Map();
 const PW_METADATA_TTL = 5 * 60 * 1000;
 const PW_DETAILS_ORIGIN = "https://vidcloud.eu.org";
 
-function findPublicPdfUrl(value, seen = new Set()) {
+function findPdfUrl(value, seen = new Set()) {
   if (!value || typeof value !== "object" || seen.has(value)) return undefined;
   seen.add(value);
+
   if (Array.isArray(value)) {
     for (const item of value) {
-      const found = findPublicPdfUrl(item, seen);
+      const found = findPdfUrl(item, seen);
       if (found) return found;
     }
     return undefined;
   }
-  for (const [key, child] of Object.entries(value)) {
-    if (typeof child === "string" && /pdf|note|file|document|attachment/i.test(key) && /^https?:\/\//i.test(child) && /\.pdf(?:[?#]|$)/i.test(child)) {
-      return child;
+
+  const entries = Object.entries(value);
+  for (const [key, child] of entries) {
+    const keyText = String(key).toLowerCase();
+    if (typeof child === "string") {
+      const trimmed = child.trim();
+      const looksLikePdf = /^https?:\/\//i.test(trimmed) && /\.pdf(?:[?#]|$)/i.test(trimmed);
+      if (looksLikePdf && /(pdf|notes?|attachment|document|dpp)/i.test(keyText)) {
+        return trimmed;
+      }
     }
-    const found = findPublicPdfUrl(child, seen);
-    if (found) return found;
+    if (child && typeof child === "object") {
+      const nested = findPdfUrl(child, seen);
+      if (nested) return nested;
+    }
   }
+
+  const directUrl = value.pdfUrl || value.url || value.link || value.href || value.fileUrl || value.downloadUrl;
+  if (typeof directUrl === "string") {
+    const trimmed = directUrl.trim();
+    if (/^https?:\/\//i.test(trimmed) && /\.pdf(?:[?#]|$)/i.test(trimmed)) {
+      return trimmed;
+    }
+  }
+
   return undefined;
+}
+
+function getPdfMetaForContent(content) {
+  if (!content || typeof content !== "object") return { pdfUrl: undefined, notesUrl: undefined, dppPdfUrl: undefined };
+
+  const notesUrl = findPdfUrl(content) && /(notes?|attachment|material)/i.test(JSON.stringify(content))
+    ? (() => {
+        const queue = [content];
+        const visited = new Set();
+        while (queue.length) {
+          const node = queue.shift();
+          if (!node || typeof node !== "object" || visited.has(node)) continue;
+          visited.add(node);
+          if (Array.isArray(node)) {
+            queue.push(...node);
+            continue;
+          }
+          for (const [key, value] of Object.entries(node)) {
+            const keyText = String(key).toLowerCase();
+            if (typeof value === "string") {
+              const trimmed = value.trim();
+              if (/^https?:\/\//i.test(trimmed) && /\.pdf(?:[?#]|$)/i.test(trimmed) && /(notes?|lecture.*notes|attachment|material|document)/i.test(keyText)) {
+                return trimmed;
+              }
+            }
+            if (value && typeof value === "object") queue.push(value);
+          }
+        }
+        return undefined;
+      })()
+    : undefined;
+
+  const dppPdfUrl = (() => {
+    const queue = [content];
+    const visited = new Set();
+    while (queue.length) {
+      const node = queue.shift();
+      if (!node || typeof node !== "object" || visited.has(node)) continue;
+      visited.add(node);
+      if (Array.isArray(node)) {
+        queue.push(...node);
+        continue;
+      }
+      for (const [key, value] of Object.entries(node)) {
+        const keyText = String(key).toLowerCase();
+        if (typeof value === "string") {
+          const trimmed = value.trim();
+          if (/^https?:\/\//i.test(trimmed) && /\.pdf(?:[?#]|$)/i.test(trimmed) && /(dpp|pdf)/i.test(keyText)) {
+            return trimmed;
+          }
+        }
+        if (value && typeof value === "object") queue.push(value);
+      }
+    }
+    return undefined;
+  })();
+
+  const pdfUrl = findPdfUrl(content) || notesUrl || dppPdfUrl;
+  return { pdfUrl, notesUrl: notesUrl || pdfUrl, dppPdfUrl: dppPdfUrl || pdfUrl };
 }
 
 async function fetchPwMetadata(batchId) {
@@ -414,20 +492,16 @@ async function fetchPwMetadata(batchId) {
           const dateValue = content.date || content.startTime;
           const isDpp = (content.isDPPVideos === true || content.isDPPNotes === true)
             || (/\bdpp\b/i.test(content.topic) && !/no\s+dpp/i.test(content.topic));
-          const pdfUrl = findPublicPdfUrl({
-            notes: content.notes,
-            attachments: content.attachments,
-            files: content.files,
-            documents: content.documents,
-            dpp: content.dpp,
-          });
+          const pdfMeta = getPdfMetaForContent(content);
           chapter.lectures.push({
             id: `${remoteSubject._id}-${content._id}`,
             title: content.topic.trim(),
             type: isDpp ? "dpp" : "lecture",
             duration,
             date: typeof dateValue === "string" ? dateValue : undefined,
-            ...(pdfUrl ? { pdfUrl } : {}),
+            pdfUrl: isDpp ? pdfMeta.dppPdfUrl || pdfMeta.pdfUrl : pdfMeta.notesUrl || pdfMeta.pdfUrl,
+            notesUrl: isDpp ? undefined : pdfMeta.notesUrl || pdfMeta.pdfUrl,
+            dppPdfUrl: isDpp ? pdfMeta.dppPdfUrl || pdfMeta.pdfUrl : undefined,
           });
         });
         const limit = contentsPayload.paginate?.limit || contents.length;

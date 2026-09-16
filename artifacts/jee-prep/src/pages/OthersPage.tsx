@@ -813,7 +813,7 @@ export default function OthersPage() {
       .finally(() => {
         setIsLoadingSchedule(false);
       });
-  }, [selectedBatchId, selectedScheduleDate, scheduleCache]);
+  }, [selectedBatchId, selectedScheduleDate]);
 
   // Expand all chapters by default when batch changes
   useEffect(() => {
@@ -961,6 +961,419 @@ export default function OthersPage() {
             </div>
           </div>
 
+        {scheduleViewMode === "full" ? (
+          <div className="space-y-6 animate-in fade-in duration-200">
+            {/* Top Bar for Weekly Schedule */}
+            <div className="bg-card border border-border/80 rounded-3xl p-5 sm:p-6 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div className="flex items-center gap-3">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setScheduleViewMode("compact")}
+                  className="gap-1.5 text-xs font-semibold rounded-xl shrink-0"
+                >
+                  <ArrowLeft className="w-4 h-4" />
+                  Back to Batch Overview
+                </Button>
+                <div>
+                  <div className="flex items-center gap-2">
+                    <Calendar className="w-5 h-5 text-amber-500" />
+                    <h2 className="text-xl sm:text-2xl font-black text-foreground">Weekly Schedule</h2>
+                  </div>
+                  <p className="text-xs text-muted-foreground">{currentBatch.name}</p>
+                </div>
+              </div>
+
+              {/* Right Controls: Batch Picker & Subject Filter */}
+              <div className="flex items-center gap-3 flex-wrap">
+                {batches.length > 1 && (
+                  <div className="flex items-center gap-1.5 text-xs">
+                    <span className="text-muted-foreground font-semibold">Batch:</span>
+                    <select
+                      value={selectedBatchId}
+                      onChange={(e) => setSelectedBatchId(e.target.value)}
+                      className="h-9 px-2.5 rounded-xl text-xs bg-background border border-border font-medium text-foreground max-w-[180px] truncate focus:ring-1 focus:ring-primary focus:outline-none"
+                    >
+                      {batches.map(b => (
+                        <option key={b.id} value={b.id}>{b.name}</option>
+                      ))}
+                    </select>
+                  </div>
+                )}
+
+                {/* Subject Filter Dropdown */}
+                <div className="flex items-center gap-1.5 text-xs">
+                  <span className="text-muted-foreground font-semibold">Subject:</span>
+                  <select
+                    value={scheduleSubjectFilter}
+                    onChange={(e) => setScheduleSubjectFilter(e.target.value)}
+                    className="h-9 px-3 rounded-xl text-xs bg-background border border-border font-medium text-foreground focus:ring-1 focus:ring-primary focus:outline-none"
+                  >
+                    {["All", ...Array.from(new Set([...currentBatch.subjects.map(s => s.name), ...scheduleForDate.map(s => s.subject)].filter(Boolean)))].map(sub => (
+                      <option key={sub} value={sub}>{sub === "All" ? "All Subjects" : sub}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            {/* Main Content Grid: Left Timeline + Right Calendar */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+              {/* Left Column: Schedule Timeline for Selected Date */}
+              <div className="lg:col-span-8 space-y-4">
+                {/* Date Heading & Day Pills */}
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2 border-b border-border/60">
+                  <div>
+                    <div className="flex items-center gap-2.5 flex-wrap">
+                      <h3 className="text-lg sm:text-xl font-bold text-foreground">
+                        {formatDateHeading(selectedScheduleDate)}
+                      </h3>
+                      {selectedScheduleDate === new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Kolkata" }).format(new Date()) ? (
+                        <Badge className="bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border-emerald-500/30 text-[11px] font-bold">
+                          Today
+                        </Badge>
+                      ) : selectedScheduleDate === addDaysToDate(new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Kolkata" }).format(new Date()), 1) ? (
+                        <Badge className="bg-blue-500/15 text-blue-700 dark:text-blue-300 border-blue-500/30 text-[11px] font-bold">
+                          Tomorrow
+                        </Badge>
+                      ) : null}
+                    </div>
+                    <p className="text-xs text-muted-foreground mt-0.5">
+                      {isLoadingSchedule
+                        ? "Fetching latest schedule..."
+                        : `${scheduleForDate.filter(item => scheduleSubjectFilter === "All" || (item.subject || "").toLowerCase() === scheduleSubjectFilter.toLowerCase()).length} classes / events scheduled`}
+                    </p>
+                  </div>
+
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => {
+                      const todayIst = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Kolkata" }).format(new Date());
+                      setSelectedScheduleDate(todayIst);
+                      setCalendarMonth(new Date());
+                    }}
+                    className="text-xs font-semibold text-primary hover:text-primary self-start sm:self-auto"
+                  >
+                    Jump to Today
+                  </Button>
+                </div>
+
+                {/* Shimmer / Skeleton Loading State (Matching Video at 00:11) */}
+                {isLoadingSchedule ? (
+                  <div className="space-y-3.5 animate-pulse">
+                    {[1, 2, 3].map(i => (
+                      <div key={i} className="p-4 sm:p-5 rounded-2xl border border-border/60 bg-card/60 space-y-4">
+                        <div className="flex items-start justify-between gap-3">
+                          <div className="flex items-center gap-3">
+                            <div className="w-11 h-11 rounded-full bg-muted shrink-0" />
+                            <div className="space-y-2">
+                              <div className="h-3 w-36 bg-muted/80 rounded" />
+                              <div className="h-4.5 w-60 sm:w-80 bg-muted rounded" />
+                            </div>
+                          </div>
+                          <div className="h-6 w-20 bg-muted/70 rounded-full shrink-0" />
+                        </div>
+                        <div className="pt-3 border-t border-border/40 flex items-center justify-between">
+                          <div className="h-3.5 w-32 bg-muted/60 rounded" />
+                          <div className="flex gap-2">
+                            <div className="h-8 w-24 bg-muted/80 rounded-lg" />
+                            <div className="h-8 w-20 bg-muted/80 rounded-lg" />
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : scheduleForDate.filter(item => scheduleSubjectFilter === "All" || (item.subject || "").toLowerCase() === scheduleSubjectFilter.toLowerCase()).length === 0 ? (
+                  /* Empty State */
+                  <Card className="p-10 rounded-2xl border border-dashed border-border/80 text-center space-y-3">
+                    <div className="w-12 h-12 rounded-2xl bg-muted/80 text-muted-foreground flex items-center justify-center mx-auto">
+                      <Calendar className="w-6 h-6" />
+                    </div>
+                    <h4 className="font-bold text-base text-foreground">No classes scheduled for this date</h4>
+                    <p className="text-xs text-muted-foreground max-w-sm mx-auto">
+                      There are no scheduled lectures or study materials on {formatDateHeading(selectedScheduleDate)}. Pick any other date from the interactive calendar on the right.
+                    </p>
+                    <div className="pt-2">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => {
+                          const todayIst = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Kolkata" }).format(new Date());
+                          setSelectedScheduleDate(todayIst);
+                          setCalendarMonth(new Date());
+                        }}
+                        className="text-xs font-semibold rounded-xl"
+                      >
+                        Go to Today
+                      </Button>
+                    </div>
+                  </Card>
+                ) : (
+                  /* Class Cards List */
+                  <div className="space-y-3.5">
+                    {scheduleForDate
+                      .filter(item => scheduleSubjectFilter === "All" || (item.subject || "").toLowerCase() === scheduleSubjectFilter.toLowerCase())
+                      .map(item => {
+                        const isLive = Boolean(item.isLive || item.tag?.toLowerCase() === "live");
+                        const isEnded = item.tag?.toLowerCase() === "ended" || item.status === "COMPLETED";
+                        const isUpcoming = Boolean(item.isUpcoming || (item.status === "PENDING" && !isLive && !isEnded));
+                        const colors = getSubjectBadgeColor(item.subject);
+                        const teacherInitials = getTeacherInitials(item.teacher);
+
+                        return (
+                          <Card
+                            key={item.id}
+                            className={`p-4 sm:p-5 rounded-2xl border transition-all space-y-3.5 ${
+                              isLive
+                                ? "border-red-500/50 bg-red-500/5 shadow-xs ring-1 ring-red-500/30"
+                                : "border-border/80 bg-card hover:border-primary/40 shadow-xs"
+                            }`}
+                          >
+                            {/* Top Row: Avatar, Subtitle, Topic & Status */}
+                            <div className="flex items-start justify-between gap-3">
+                              <div className="flex items-start gap-3 min-w-0 flex-1">
+                                {/* Teacher Avatar */}
+                                {item.teacherImage ? (
+                                  <img
+                                    src={item.teacherImage}
+                                    alt={item.teacher}
+                                    className="w-11 h-11 rounded-full object-cover shrink-0 border border-border"
+                                  />
+                                ) : (
+                                  <div className={`w-11 h-11 rounded-full flex items-center justify-center font-black text-xs shrink-0 shadow-xs ${colors.avatar}`}>
+                                    {teacherInitials}
+                                  </div>
+                                )}
+
+                                <div className="min-w-0 flex-1 space-y-1">
+                                  {/* Subject & Teacher Line */}
+                                  <div className="flex items-center gap-2 flex-wrap">
+                                    <span className="text-[11px] font-semibold text-muted-foreground">
+                                      {item.type === "NOTES" ? "Notes" : "Lecture"} • <strong className="text-foreground">{item.subject}</strong> By {item.teacher || "PW Faculty"}
+                                    </span>
+                                  </div>
+
+                                  {/* Topic Title */}
+                                  <h4 className="text-sm sm:text-base font-bold text-foreground leading-snug">
+                                    {item.topic}
+                                  </h4>
+
+                                  {/* Chapter Tag */}
+                                  {item.chapter && item.chapter !== "Concise Summary Notes || Only PDF" && (
+                                    <p className="text-[11px] text-muted-foreground flex items-center gap-1.5 pt-0.5">
+                                      <BookOpen className="w-3 h-3 shrink-0" />
+                                      <span className="truncate">{item.chapter}</span>
+                                    </p>
+                                  )}
+                                </div>
+                              </div>
+
+                              {/* Status Badge */}
+                              <div className="shrink-0">
+                                {isLive ? (
+                                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-black bg-red-600 text-white shadow-2xs animate-pulse">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-white" />
+                                    LIVE NOW
+                                  </span>
+                                ) : isEnded ? (
+                                  <span className="px-2.5 py-1 rounded-full text-[11px] font-medium bg-muted text-muted-foreground border border-border/50">
+                                    Ended
+                                  </span>
+                                ) : (
+                                  <span className="px-2.5 py-1 rounded-full text-[11px] font-bold bg-amber-500/15 text-amber-700 dark:text-amber-300 border border-amber-500/25">
+                                    Upcoming
+                                  </span>
+                                )}
+                              </div>
+                            </div>
+
+                            {/* Bottom Action & Detail Bar */}
+                            <div className="pt-3 border-t border-border/50 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 text-xs">
+                              {/* Left: Timing & Duration */}
+                              <div className="flex items-center gap-3 text-muted-foreground font-medium flex-wrap">
+                                <span className="flex items-center gap-1.5">
+                                  <Clock className="w-3.5 h-3.5 text-primary shrink-0" />
+                                  <span>
+                                    {item.startTime ? formatScheduleTime(item.startTime) : "Time TBD"}
+                                    {item.endTime ? ` – ${formatScheduleTime(item.endTime)}` : ""}
+                                  </span>
+                                </span>
+                                {item.duration && (
+                                  <span className="font-mono text-[11px] bg-muted/60 px-2 py-0.5 rounded-md">
+                                    ⏱ {item.duration}
+                                  </span>
+                                )}
+                              </div>
+
+                              {/* Right: DPP & Watch Action Buttons */}
+                              <div className="flex items-center gap-2 flex-wrap">
+                                {item.dppTitle && (
+                                  <button
+                                    type="button"
+                                    onClick={() => {
+                                      setScheduleViewMode("compact");
+                                      setContentFilter("dpp");
+                                      if (item.chapter) setLectureSearch(item.chapter);
+                                    }}
+                                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold bg-purple-500/10 text-purple-700 dark:text-purple-300 border border-purple-500/25 hover:bg-purple-500/20 transition-all cursor-pointer"
+                                    title={item.dppTitle}
+                                  >
+                                    <FileQuestion className="w-3.5 h-3.5 shrink-0" />
+                                    <span>Attempt DPP</span>
+                                    <ChevronRight className="w-3.5 h-3.5 shrink-0" />
+                                  </button>
+                                )}
+
+                                {item.type === "NOTES" ? (
+                                  <Button
+                                    variant="outline"
+                                    size="sm"
+                                    onClick={() => {
+                                      setScheduleViewMode("compact");
+                                      if (item.chapter) setLectureSearch(item.chapter);
+                                    }}
+                                    className="h-8 px-3 rounded-xl text-xs font-semibold"
+                                  >
+                                    <FileText className="w-3.5 h-3.5 mr-1 text-muted-foreground" />
+                                    Notes &amp; more
+                                  </Button>
+                                ) : (
+                                  <Button
+                                    size="sm"
+                                    onClick={() => {
+                                      if (isUpcoming) {
+                                        alert(`This lecture is scheduled for ${formatDateHeading(item.date)} at ${formatScheduleTime(item.startTime)}. Video stream will activate when live.`);
+                                        return;
+                                      }
+                                      setScheduleViewMode("compact");
+                                      if (item.topic) {
+                                        const kw = item.topic.split(":")[0].trim();
+                                        setLectureSearch(kw);
+                                      }
+                                    }}
+                                    className={`h-8 px-3 rounded-xl text-xs font-bold gap-1.5 ${
+                                      isLive
+                                        ? "bg-red-600 hover:bg-red-700 text-white shadow-xs"
+                                        : ""
+                                    }`}
+                                  >
+                                    <Play className="w-3.5 h-3.5 fill-current" />
+                                    Watch
+                                  </Button>
+                                )}
+                              </div>
+                            </div>
+                          </Card>
+                        );
+                      })}
+                  </div>
+                )}
+              </div>
+
+              {/* Right Column: Interactive Sticky Calendar Widget */}
+              <div className="lg:col-span-4">
+                <Card className="p-5 rounded-3xl border border-border/80 bg-card shadow-xs sticky top-20 space-y-4">
+                  {/* Month Navigation */}
+                  <div className="flex items-center justify-between gap-2 pb-2 border-b border-border/60">
+                    <h4 className="font-bold text-sm sm:text-base text-foreground">
+                      {calendarMonth.toLocaleDateString("en-US", { month: "long", year: "numeric" })}
+                    </h4>
+                    <div className="flex items-center gap-1">
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        onClick={() => setCalendarMonth(prev => new Date(prev.getFullYear(), prev.getMonth() - 1, 1))}
+                        className="h-7 w-7 rounded-lg"
+                        title="Previous Month"
+                      >
+                        <ChevronLeft className="w-4 h-4" />
+                      </Button>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => {
+                          const today = new Date();
+                          setCalendarMonth(today);
+                          const todayIst = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Kolkata" }).format(today);
+                          setSelectedScheduleDate(todayIst);
+                        }}
+                        className="h-7 px-2 text-[11px] font-bold rounded-lg"
+                      >
+                        Today
+                      </Button>
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        onClick={() => setCalendarMonth(prev => new Date(prev.getFullYear(), prev.getMonth() + 1, 1))}
+                        className="h-7 w-7 rounded-lg"
+                        title="Next Month"
+                      >
+                        <ChevronRight className="w-4 h-4" />
+                      </Button>
+                    </div>
+                  </div>
+
+                  {/* Weekday Row (Monday Start) */}
+                  <div className="grid grid-cols-7 text-center">
+                    {["M", "T", "W", "T", "F", "S", "S"].map((d, i) => (
+                      <span key={i} className="text-[11px] font-bold text-muted-foreground py-1">
+                        {d}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Calendar Days Grid */}
+                  <div className="grid grid-cols-7 gap-1.5 text-center">
+                    {/* Blank cells for offset */}
+                    {Array.from({ length: getFirstDayOfMonth(calendarMonth.getFullYear(), calendarMonth.getMonth()) }).map((_, i) => (
+                      <div key={`blank-${i}`} className="w-8 h-8 sm:w-9 sm:h-9" />
+                    ))}
+
+                    {/* Month Days */}
+                    {Array.from({ length: getDaysInMonth(calendarMonth.getFullYear(), calendarMonth.getMonth()) }).map((_, i) => {
+                      const dayNum = i + 1;
+                      const dateStr = `${calendarMonth.getFullYear()}-${String(calendarMonth.getMonth() + 1).padStart(2, "0")}-${String(dayNum).padStart(2, "0")}`;
+                      const isSelected = dateStr === selectedScheduleDate;
+                      const todayIst = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Kolkata" }).format(new Date());
+                      const isToday = dateStr === todayIst;
+
+                      return (
+                        <button
+                          key={dateStr}
+                          type="button"
+                          onClick={() => setSelectedScheduleDate(dateStr)}
+                          className={`w-8 h-8 sm:w-9 sm:h-9 mx-auto rounded-full flex items-center justify-center text-xs font-semibold transition-all relative ${
+                            isSelected
+                              ? "bg-primary text-primary-foreground font-bold shadow-sm ring-2 ring-primary/40 scale-105"
+                              : isToday
+                              ? "ring-2 ring-primary text-primary font-bold hover:bg-primary/10"
+                              : "hover:bg-muted text-foreground"
+                          }`}
+                        >
+                          {dayNum}
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  {/* Calendar Legend */}
+                  <div className="pt-3 border-t border-border/50 text-[11px] text-muted-foreground space-y-1.5">
+                    <div className="flex items-center gap-2">
+                      <span className="w-3 h-3 rounded-full bg-primary inline-block" />
+                      <span>Selected date view</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="w-3 h-3 rounded-full ring-2 ring-primary inline-block" />
+                      <span>Today (IST)</span>
+                    </div>
+                  </div>
+                </Card>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <>
           {/* Batch Selector Header */}
           <div className="bg-card border border-border/80 rounded-3xl p-6 sm:p-7 shadow-xs space-y-5">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -1643,6 +2056,8 @@ export default function OthersPage() {
                 );
               })}
               </div>}
+            </>
+          )}
         </div>
       )}
 

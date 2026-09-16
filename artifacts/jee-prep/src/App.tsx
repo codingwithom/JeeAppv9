@@ -352,11 +352,7 @@ function ProtectedLayout({ children }: { children: React.ReactNode }) {
 function Router() {
   return (
     <ProtectedLayout>
-      <React.Suspense fallback={
-        <div className="flex h-full w-full items-center justify-center p-8 min-h-[300px]">
-          <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin" />
-        </div>
-      }>
+      <React.Suspense fallback={null}>
         <Switch>
           <Route path="/" component={HomePage} />
           <Route path="/questions" component={QuestionsPage} />

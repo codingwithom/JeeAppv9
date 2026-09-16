@@ -100,6 +100,29 @@ async function fetchStaticData(subPath: string): Promise<Response | null> {
   return null;
 }
 
+// Global in-memory caches for 0ms instantaneous loading and instant revisits
+const globalQuestionCache = new Map<string, any>();
+const globalDataCache = new Map<string, any>();
+
+async function fetchStaticJson(subPath: string): Promise<any | null> {
+  const cleanPath = subPath.startsWith("/") ? subPath.slice(1) : subPath;
+  const pathWithoutData = cleanPath.replace(/^data\/pyq\//, "").replace(/^data\//, "");
+
+  if (globalDataCache.has(pathWithoutData)) {
+    return globalDataCache.get(pathWithoutData);
+  }
+
+  const res = await fetchStaticData(subPath);
+  if (res && res.ok) {
+    try {
+      const data = await res.json();
+      globalDataCache.set(pathWithoutData, data);
+      return data;
+    } catch (e) {}
+  }
+  return null;
+}
+
 function scoreMatch(query: string, item: any): number {
   const cleanQ = query.toLowerCase().replace(/[^a-z0-9\s]/g, " ").replace(/\s+/g, " ").trim();
   const cleanTarget = (item.text + " " + (item.paperTitle || "") + " " + (item.chapter || "")).toLowerCase().replace(/[^a-z0-9\s]/g, " ").replace(/\s+/g, " ");
@@ -177,6 +200,7 @@ export default function QuestionsPage() {
   const [searchSubject, setSearchSubject] = useState<string>("all");
   const [searchCategory, setSearchCategory] = useState<string>("all");
   const [searchExam, setSearchExam] = useState<string>("all");
+  const [searchYear, setSearchYear] = useState<string>("all");
   const [searchResults, setSearchResults] = useState<any[]>([]);
   const [searchTotal, setSearchTotal] = useState<number>(0);
   const [searchLoading, setSearchLoading] = useState<boolean>(false);
@@ -184,10 +208,19 @@ export default function QuestionsPage() {
   const [searchActiveResultIndex, setSearchActiveResultIndex] = useState<number>(0);
   const [isFilterOpen, setIsFilterOpen] = useState<boolean>(false);
 
-  // Search Effect (Debounced query + smart fuzzy scoring + multi-filter support)
+  // Preload search index in background as soon as page mounts
+  useEffect(() => {
+    fetchStaticJson("search_index.json").then(data => {
+      if (Array.isArray(data) && data.length > 0) {
+        setSearchIndexData(data);
+      }
+    }).catch(() => {});
+  }, []);
+
+  // Search Effect (Debounced query + instant memory search from search_index.json)
   useEffect(() => {
     const hasQuery = searchQuery.trim().length > 0;
-    const hasFilters = searchSubject !== "all" || searchCategory !== "all" || searchExam !== "all";
+    const hasFilters = searchSubject !== "all" || searchCategory !== "all" || searchExam !== "all" || searchYear !== "all";
 
     if (!hasQuery && !hasFilters) {
       setSearchResults([]);
@@ -198,73 +231,85 @@ export default function QuestionsPage() {
 
     setSearchLoading(true);
     const timer = setTimeout(async () => {
-      let foundViaApi = false;
       try {
-        const params = new URLSearchParams();
-        if (hasQuery) params.set("q", searchQuery.trim());
-        if (searchSubject !== "all") params.set("subject", searchSubject);
-        if (searchCategory !== "all") params.set("category", searchCategory);
-        if (searchExam !== "all") params.set("exam", searchExam);
-        params.set("limit", "50");
-
-        const res = await fetch(`/api/pyq/search?${params.toString()}`);
-        if (res.ok) {
-          const data = await res.json();
-          setSearchResults(data.results || []);
-          setSearchTotal(data.total || 0);
-          foundViaApi = true;
-        }
-      } catch (e) {}
-
-      // Fallback to client-side local search (for 100% static hosting / offline builds)
-      if (!foundViaApi) {
-        try {
-          let idxData = searchIndexData;
-          if (!idxData) {
-            const res = await fetchStaticData("data/pyq/search_index.json");
-            if (res && res.ok) {
-              idxData = await res.json();
-              setSearchIndexData(idxData);
-            }
+        let idxData = searchIndexData;
+        if (!idxData) {
+          idxData = await fetchStaticJson("search_index.json");
+          if (idxData && Array.isArray(idxData)) {
+            setSearchIndexData(idxData);
           }
+        }
 
-          if (idxData) {
-            const subjFilter = searchSubject.toLowerCase();
-            const catFilter = searchCategory.toLowerCase();
-            const examFilter = searchExam.toLowerCase();
+        if (idxData && Array.isArray(idxData)) {
+          const subjFilter = searchSubject.toLowerCase();
+          const catFilter = searchCategory.toLowerCase();
+          const examFilter = searchExam.toLowerCase();
+          const yearFilter = searchYear;
 
-            const matches: any[] = [];
-            for (const item of idxData) {
-              if (subjFilter !== "all" && item.subject?.toLowerCase() !== subjFilter) continue;
-              if (catFilter !== "all" && item.category?.toLowerCase() !== catFilter) continue;
-              if (examFilter !== "all" && item.exam?.toLowerCase() !== examFilter) continue;
+          const matches: any[] = [];
+          for (const item of idxData) {
+            if (subjFilter !== "all" && item.subject?.toLowerCase() !== subjFilter) continue;
+            if (catFilter !== "all" && item.category?.toLowerCase() !== catFilter) continue;
+            if (examFilter !== "all" && item.exam?.toLowerCase() !== examFilter) continue;
+            if (yearFilter !== "all") {
+              const itemYear = String(item.year || (item.paperTitle?.match(/20\d\d/) || [])[0] || "");
+              if (itemYear !== yearFilter) continue;
+            }
 
-              if (!hasQuery) {
-                matches.push({ item, score: 1 });
-              } else {
-                const score = scoreMatch(searchQuery, item);
-                if (score > 0) {
-                  matches.push({ item, score });
-                }
+            if (!hasQuery) {
+              matches.push({ item, score: 1 });
+            } else {
+              const score = scoreMatch(searchQuery, item);
+              if (score > 0) {
+                matches.push({ item, score });
               }
             }
-
-            if (hasQuery) {
-              matches.sort((a, b) => b.score - a.score);
-            }
-
-            setSearchTotal(matches.length);
-            setSearchResults(matches.slice(0, 50).map(m => m.item));
           }
-        } catch (err) {
-          console.error(err);
+
+          if (hasQuery) {
+            matches.sort((a, b) => b.score - a.score);
+          }
+
+          setSearchTotal(matches.length);
+          setSearchResults(matches.slice(0, 50).map(m => m.item));
         }
+      } catch (err) {
+        console.error("Search error:", err);
+      } finally {
+        setSearchLoading(false);
       }
-      setSearchLoading(false);
-    }, 180);
+    }, 80);
 
     return () => clearTimeout(timer);
-  }, [searchQuery, searchSubject, searchCategory, searchExam]);
+  }, [searchQuery, searchSubject, searchCategory, searchExam, searchYear, searchIndexData]);
+
+  const prefetchAdjacentSearchResults = (centerIdx: number) => {
+    [centerIdx + 1, centerIdx + 2, centerIdx - 1].forEach(idx => {
+      if (idx >= 0 && idx < searchResults.length) {
+        const item = searchResults[idx];
+        const key = item?.qKey || item?.permalink || item?.questionId;
+        if (key && !globalQuestionCache.has(key)) {
+          fetchStaticJson(`questions/${encodeURIComponent(key)}.json`).then(sData => {
+            const sq = sData?.questions?.[0] || sData;
+            if (sq) {
+              const optList = sq.question?.en?.options || sq.options || [];
+              const corList = sq.question?.en?.correct_options || sq.question?.en?.correctOptions || sq.correct_options || [];
+              globalQuestionCache.set(key, {
+                ...sq,
+                content: sq.question?.en?.content || sq.content || item.text,
+                options: optList,
+                correct_options: corList,
+                explanation: sq.question?.en?.explanation || sq.explanation || "",
+                paperTitle: formatPaperTitle(item.paperTitle || sq.paperTitle || item.paperKey),
+                subject: item.subject || sq.subject,
+                type: sq.type || (optList.length > 0 ? "mcq" : "integer")
+              });
+            }
+          }).catch(() => {});
+        }
+      }
+    });
+  };
 
   // Open search question in interactive attempt mode
   const openSearchResult = async (item: any, index: number) => {
@@ -273,6 +318,17 @@ export default function QuestionsPage() {
     resetAnswerState();
 
     const normalizedCategory = item.category === "numerical" ? "integer" : item.category === "multiple_mcq" ? "mcqm" : "mcq";
+    const targetKey = item.qKey || item.permalink || item.questionId;
+
+    // 0ms instant display from memory cache
+    if (targetKey && globalQuestionCache.has(targetKey)) {
+      const cached = globalQuestionCache.get(targetKey);
+      setActiveQuestionData(cached);
+      setQuestionDetailLoading(false);
+      prefetchAdjacentSearchResults(index);
+      return;
+    }
+
     const preliminaryQ = {
       ...item,
       question_id: item.questionId || item.permalink || item.id,
@@ -288,101 +344,36 @@ export default function QuestionsPage() {
     setActiveQuestionData(preliminaryQ);
     setQuestionDetailLoading(true);
 
+    let fullQ: any = null;
     try {
-      // 1. Try unified single question file (works seamlessly from CDN or local data)
-      const targetKey = item.qKey || item.permalink || item.questionId;
       if (targetKey) {
-        try {
-          const sRes = await fetchStaticData(`questions/${encodeURIComponent(targetKey)}.json`);
-          if (sRes && sRes.ok) {
-            const sData = await sRes.json();
-            const sq = sData.questions?.[0] || sData;
-            if (sq) {
-              const optList = sq.question?.en?.options || sq.options || [];
-              const corList = sq.question?.en?.correct_options || sq.question?.en?.correctOptions || sq.correct_options || [];
-              fullQ = {
-                ...sq,
-                content: sq.question?.en?.content || sq.content || item.text,
-                options: optList,
-                correct_options: corList,
-                explanation: sq.question?.en?.explanation || sq.explanation || "",
-                paperTitle: formatPaperTitle(item.paperTitle || sq.paperTitle || item.paperKey),
-                subject: item.subject || sq.subject,
-                type: sq.type || normalizedCategory
-              };
-            }
-          }
-        } catch (e) {}
-      }
-
-      // 2. Fallback: check paper JSON if needed
-      if (!fullQ && item.paperKey && item.questionId) {
-        try {
-          const pRes = await fetchStaticData(`papers/${item.paperKey}.json`);
-          if (pRes && pRes.ok) {
-            const pData = await pRes.json();
-            for (const sec of (pData.sections || [])) {
-              const qIndex = (sec.questions || []).findIndex((x: any) => x.question_id === item.questionId || x.qKey === targetKey);
-              if (qIndex !== -1) {
-                const matched = sec.questions[qIndex];
-                if (matched.content) {
-                  const optList = matched.question?.en?.options || matched.options || [];
-                  const corList = matched.question?.en?.correct_options || matched.question?.en?.correctOptions || matched.correct_options || [];
-                  fullQ = {
-                    ...matched,
-                    questionNo: qIndex + 1,
-                    content: matched.question?.en?.content || matched.content || item.text,
-                    options: optList,
-                    correct_options: corList,
-                    explanation: matched.question?.en?.explanation || matched.explanation || "",
-                    paperTitle: formatPaperTitle(item.paperTitle || matched.paperTitle || pData.title || item.paperKey),
-                    subject: item.subject || matched.subject || sec.title?.toLowerCase(),
-                    type: matched.type || (optList.length > 0 ? normalizedCategory : "integer")
-                  };
-                  break;
-                }
-              }
-            }
-          }
-        } catch(e) {}
-      }
-
-        if (!fullQ) {
-          try {
-            const res = await fetch(`/api/pyq/question?permalink=${encodeURIComponent(item.permalink)}`);
-            if (res.ok) {
-              const data = await res.json();
-              const sq = data.questions?.[0] || null;
-              if (sq) {
-                const optList = sq.question?.en?.options || sq.options || [];
-                const corList = sq.question?.en?.correct_options || sq.question?.en?.correctOptions || sq.correct_options || [];
-                fullQ = {
-                  ...sq,
-                  content: sq.question?.en?.content || sq.content || item.text,
-                  options: optList,
-                  correct_options: corList,
-                  explanation: sq.question?.en?.explanation || sq.explanation || "",
-                  paperTitle: formatPaperTitle(item.paperTitle || sq.paperTitle || item.paperKey),
-                  subject: item.subject || sq.subject,
-                  type: sq.type || normalizedCategory
-                };
-              }
-            }
-          } catch(e) {}
+        const sData = await fetchStaticJson(`questions/${encodeURIComponent(targetKey)}.json`);
+        const sq = sData?.questions?.[0] || sData;
+        if (sq) {
+          const optList = sq.question?.en?.options || sq.options || [];
+          const corList = sq.question?.en?.correct_options || sq.question?.en?.correctOptions || sq.correct_options || [];
+          fullQ = {
+            ...sq,
+            content: sq.question?.en?.content || sq.content || item.text,
+            options: optList,
+            correct_options: corList,
+            explanation: sq.question?.en?.explanation || sq.explanation || "",
+            paperTitle: formatPaperTitle(item.paperTitle || sq.paperTitle || item.paperKey),
+            subject: item.subject || sq.subject,
+            type: sq.type || normalizedCategory
+          };
         }
+      }
 
       if (fullQ) {
-        setActiveQuestionData({
-          ...fullQ,
-          paperTitle: formatPaperTitle(item.paperTitle || fullQ.paperTitle || item.paperKey),
-          subject: item.subject || fullQ.subject,
-          type: fullQ.type || normalizedCategory
-        });
+        if (targetKey) globalQuestionCache.set(targetKey, fullQ);
+        setActiveQuestionData(fullQ);
       }
     } catch (e) {
       console.error(e);
     } finally {
       setQuestionDetailLoading(false);
+      prefetchAdjacentSearchResults(index);
     }
   };
 
@@ -425,14 +416,11 @@ export default function QuestionsPage() {
     setPapersLoading(true);
 
     try {
-      const res = await fetchStaticData(`data/pyq/catalogs/${exam}-papers.json`);
-      if (res && res.ok) {
-        const localData = await res.json();
-        if (localData && localData.papers && localData.papers.length > 0) {
-          setPapersData(localData.papers);
-          setPapersLoading(false);
-          return;
-        }
+      const localData = await fetchStaticJson(`catalogs/${exam}-papers.json`);
+      if (localData && localData.papers && localData.papers.length > 0) {
+        setPapersData(localData.papers);
+        setPapersLoading(false);
+        return;
       }
     } catch (e) {}
 
@@ -455,15 +443,7 @@ export default function QuestionsPage() {
     const exam = (paper.exam || selectedExam) as ExamType;
 
     try {
-      let data: any = null;
-
-      // 1. Check local static pre-scraped paper file first
-      try {
-        const localRes = await fetchStaticData(`data/pyq/papers/${paper.key}.json`);
-        if (localRes && localRes.ok) {
-          data = await localRes.json();
-        }
-      } catch (e) {}
+      let data = await fetchStaticJson(`papers/${paper.key}.json`);
 
       // 2. Fallback to API if not in static files yet
       if (!data) {
@@ -510,46 +490,49 @@ export default function QuestionsPage() {
 
   const prefetchAdjacentPaperQuestions = (centerIdx: number) => {
     if (!currentPaperQuestions || currentPaperQuestions.length === 0) return;
-    const nextIdx = centerIdx + 1;
-    if (nextIdx < currentPaperQuestions.length) {
-      const item = currentPaperQuestions[nextIdx];
-      if (item && !isFullyLoaded(item)) {
-        const exam = selectedPaper?.exam || selectedExam;
-        fetch(`/api/pyq/paper-question?exam=${exam}&paperKey=${encodeURIComponent(selectedPaper.key)}&questionId=${encodeURIComponent(item.question_id)}`)
-          .then(r => (r.ok ? r.json() : null))
-          .then(data => {
-            const batch = data?.questions || [];
-            if (batch.length > 0) {
-              setPaperSubjects(prevSections =>
-                prevSections.map((sec: any) => ({
-                  ...sec,
-                  questions: (sec.questions || []).map((existingQ: any) => {
-                    const found = batch.find((b: any) => b.question_id === existingQ.question_id);
-                    if (found) {
-                      return {
-                        ...existingQ,
-                        ...found,
-                        content: found.question?.en?.content || found.content || existingQ.content,
-                        options: found.question?.en?.options || found.options || existingQ.options || [],
-                        correct_options: found.question?.en?.correct_options || found.question?.en?.correctOptions || found.correct_options || existingQ.correct_options || [],
-                        explanation: found.question?.en?.explanation || found.explanation || existingQ.explanation || ""
-                      };
-                    }
-                    return existingQ;
-                  })
-                }))
-              );
+    [centerIdx + 1, centerIdx + 2, centerIdx - 1].forEach(idx => {
+      if (idx >= 0 && idx < currentPaperQuestions.length) {
+        const item = currentPaperQuestions[idx];
+        const targetKey = item?.qKey || item?.permalink || item?.question_id;
+        if (targetKey && !globalQuestionCache.has(targetKey)) {
+          fetchStaticJson(`questions/${encodeURIComponent(targetKey)}.json`).then(sData => {
+            const sq = sData?.questions?.[0] || sData;
+            if (sq) {
+              const optList = sq.question?.en?.options || sq.options || [];
+              const corList = sq.question?.en?.correct_options || sq.question?.en?.correctOptions || sq.correct_options || [];
+              const normalizedQ = {
+                ...sq,
+                content: sq.question?.en?.content || sq.content,
+                options: optList,
+                correct_options: corList,
+                explanation: sq.question?.en?.explanation || sq.explanation || "",
+                type: sq.type || (optList.length > 0 ? "mcq" : "integer"),
+                paperTitle: formatPaperTitle(sq.paperTitle || item.paperTitle)
+              };
+              globalQuestionCache.set(targetKey, normalizedQ);
             }
-          })
-          .catch(() => {});
+          }).catch(() => {});
+        }
       }
-    }
+    });
   };
 
   // Load detailed question data (options, correct answer, explanation)
   const loadQuestionDetail = async (paperKey: string, questionId: string, examOverride?: ExamType, fallbackQ?: any, targetIdx?: number) => {
     const currentIdx = targetIdx !== undefined ? targetIdx : currentQuestionIndex;
     const immediateQ = fallbackQ || currentPaperQuestions.find((item: any) => item.question_id === questionId);
+    const targetKey = immediateQ?.qKey || immediateQ?.permalink || questionId;
+
+    // 0ms instant display from memory cache
+    if (targetKey && globalQuestionCache.has(targetKey)) {
+      const cached = globalQuestionCache.get(targetKey);
+      setActiveQuestionData(cached);
+      setQuestionDetailLoading(false);
+      resetAnswerState();
+      prefetchAdjacentPaperQuestions(currentIdx);
+      return;
+    }
+
     if (immediateQ) {
       const fullImmediate = {
         ...immediateQ,
@@ -564,8 +547,10 @@ export default function QuestionsPage() {
       };
       setActiveQuestionData(fullImmediate);
       if (isFullyLoaded(fullImmediate)) {
+        if (targetKey) globalQuestionCache.set(targetKey, fullImmediate);
         setQuestionDetailLoading(false);
         resetAnswerState();
+        prefetchAdjacentPaperQuestions(currentIdx);
         return;
       }
     }
@@ -575,43 +560,41 @@ export default function QuestionsPage() {
     const exam = examOverride || selectedPaper?.exam || selectedExam;
 
     // 1. Fetch from unified single question JSON file (CDN or local /data)
-    const targetKey = immediateQ?.qKey || immediateQ?.permalink || questionId;
     if (targetKey) {
       try {
-        const qRes = await fetchStaticData(`questions/${encodeURIComponent(targetKey)}.json`);
-        if (qRes && qRes.ok) {
-          const sData = await qRes.json();
-          const matchedQ = sData.questions?.[0] || sData;
-          if (matchedQ) {
-            const optList = matchedQ.question?.en?.options || matchedQ.options || [];
-            const corList = matchedQ.question?.en?.correct_options || matchedQ.question?.en?.correctOptions || matchedQ.correct_options || [];
-            const normalizedQ = {
-              ...matchedQ,
-              content: matchedQ.question?.en?.content || matchedQ.content,
-              options: optList,
-              correct_options: corList,
-              explanation: matchedQ.question?.en?.explanation || matchedQ.explanation || "",
-              type: matchedQ.type || (optList.length > 0 ? "mcq" : "integer"),
-              paperTitle: formatPaperTitle(matchedQ.paperTitle || selectedPaper?.title || paperKey)
-            };
-            setActiveQuestionData(normalizedQ);
-            setQuestionDetailLoading(false);
-            resetAnswerState();
+        const sData = await fetchStaticJson(`questions/${encodeURIComponent(targetKey)}.json`);
+        const matchedQ = sData?.questions?.[0] || sData;
+        if (matchedQ) {
+          const optList = matchedQ.question?.en?.options || matchedQ.options || [];
+          const corList = matchedQ.question?.en?.correct_options || matchedQ.question?.en?.correctOptions || matchedQ.correct_options || [];
+          const normalizedQ = {
+            ...matchedQ,
+            content: matchedQ.question?.en?.content || matchedQ.content,
+            options: optList,
+            correct_options: corList,
+            explanation: matchedQ.question?.en?.explanation || matchedQ.explanation || "",
+            type: matchedQ.type || (optList.length > 0 ? "mcq" : "integer"),
+            paperTitle: formatPaperTitle(matchedQ.paperTitle || selectedPaper?.title || paperKey)
+          };
+          globalQuestionCache.set(targetKey, normalizedQ);
+          setActiveQuestionData(normalizedQ);
+          setQuestionDetailLoading(false);
+          resetAnswerState();
+          prefetchAdjacentPaperQuestions(currentIdx);
 
-            // Cache into paperSubjects state
-            setPaperSubjects(prevSections => {
-              return prevSections.map((sec: any) => ({
-                ...sec,
-                questions: (sec.questions || []).map((existingQ: any) => {
-                  if (existingQ.question_id === questionId || existingQ.qKey === targetKey) {
-                    return { ...existingQ, ...normalizedQ };
-                  }
-                  return existingQ;
-                })
-              }));
-            });
-            return;
-          }
+          // Cache into paperSubjects state
+          setPaperSubjects(prevSections => {
+            return prevSections.map((sec: any) => ({
+              ...sec,
+              questions: (sec.questions || []).map((existingQ: any) => {
+                if (existingQ.question_id === questionId || existingQ.qKey === targetKey) {
+                  return { ...existingQ, ...normalizedQ };
+                }
+                return existingQ;
+              })
+            }));
+          });
+          return;
         }
       } catch(e) {}
     }
@@ -672,15 +655,12 @@ export default function QuestionsPage() {
     setChaptersLoading(true);
 
     try {
-      const res = await fetchStaticData(`data/pyq/catalogs/${exam}-${subject}-chapters.json`);
-      if (res && res.ok) {
-        const localData = await res.json();
-        if (localData && (localData.chapterGroups || localData.chapters)) {
-          setChapterGroups(localData.chapterGroups || []);
-          setAllChapters(localData.chapters || []);
-          setChaptersLoading(false);
-          return;
-        }
+      const localData = await fetchStaticJson(`catalogs/${exam}-${subject}-chapters.json`);
+      if (localData && (localData.chapterGroups || localData.chapters)) {
+        setChapterGroups(localData.chapterGroups || []);
+        setAllChapters(localData.chapters || []);
+        setChaptersLoading(false);
+        return;
       }
     } catch (e) {}
 
@@ -708,10 +688,7 @@ export default function QuestionsPage() {
     try {
       let data: any = null;
       try {
-        const localRes = await fetchStaticData(`data/pyq/chapters/${selectedExam}_${chapter.key}.json`);
-        if (localRes && localRes.ok) {
-          data = await localRes.json();
-        }
+        data = await fetchStaticJson(`chapters/${selectedExam}_${chapter.key}.json`);
       } catch (e) {}
 
       if (!data) {
@@ -742,16 +719,23 @@ export default function QuestionsPage() {
     targets.forEach(i => {
       if (i >= 0 && i < chapterFlattenedQuestions.length) {
         const item = chapterFlattenedQuestions[i];
-        if (item && item.permalink && !chapterQuestionsCacheRef.current.has(item.permalink)) {
-          fetch(`/api/pyq/question?permalink=${encodeURIComponent(item.permalink)}`)
-            .then(r => (r.ok ? r.json() : null))
-            .then(data => {
-              const fullQ = data?.questions?.[0];
-              if (fullQ) {
-                chapterQuestionsCacheRef.current.set(item.permalink, fullQ);
-              }
-            })
-            .catch(() => {});
+        const key = item?.qKey || item?.permalink;
+        if (key && !globalQuestionCache.has(key)) {
+          fetchStaticJson(`questions/${encodeURIComponent(key)}.json`).then(sData => {
+            const fullQ = sData?.questions?.[0] || sData;
+            if (fullQ) {
+              const optList = fullQ.question?.en?.options || fullQ.options || [];
+              const corList = fullQ.question?.en?.correct_options || fullQ.question?.en?.correctOptions || fullQ.correct_options || [];
+              globalQuestionCache.set(key, {
+                ...fullQ,
+                content: fullQ.question?.en?.content || fullQ.content,
+                options: optList,
+                correct_options: corList,
+                explanation: fullQ.question?.en?.explanation || fullQ.explanation || "",
+                type: fullQ.type || (optList.length > 0 ? "mcq" : "integer")
+              });
+            }
+          }).catch(() => {});
         }
       }
     });
@@ -760,10 +744,11 @@ export default function QuestionsPage() {
   const loadChapterQuestionDetail = async (permalink: string, fallbackQ?: any, targetIdx?: number) => {
     if (!permalink) return;
     const currentIdx = targetIdx !== undefined ? targetIdx : currentChapterQIndex;
+    const targetKey = fallbackQ?.qKey || permalink;
 
-    // 1. If in cache, load in 0ms instantly!
-    if (chapterQuestionsCacheRef.current.has(permalink)) {
-      setActiveQuestionData(chapterQuestionsCacheRef.current.get(permalink));
+    // 1. If in global cache, load in 0ms instantly!
+    if (globalQuestionCache.has(targetKey) || globalQuestionCache.has(permalink)) {
+      setActiveQuestionData(globalQuestionCache.get(targetKey) || globalQuestionCache.get(permalink));
       setQuestionDetailLoading(false);
       resetAnswerState();
       prefetchAdjacentChapterQuestions(currentIdx);
@@ -781,29 +766,31 @@ export default function QuestionsPage() {
 
     try {
       let q = null;
-      // 3. Try loading static local question file first (works 100% offline & in static build without API)
+      // 3. Try loading static question JSON from CDN / local data
       try {
-        const staticRes = await fetchStaticData(`data/pyq/questions/${encodeURIComponent(permalink)}.json`);
-        if (staticRes && staticRes.ok) {
-          const sData = await staticRes.json();
-          q = sData.questions?.[0] || sData;
+        const sData = await fetchStaticJson(`questions/${encodeURIComponent(targetKey)}.json`);
+        const rawQ = sData?.questions?.[0] || sData;
+        if (rawQ) {
+          const optList = rawQ.question?.en?.options || rawQ.options || [];
+          const corList = rawQ.question?.en?.correct_options || rawQ.question?.en?.correctOptions || rawQ.correct_options || [];
+          q = {
+            ...rawQ,
+            content: rawQ.question?.en?.content || rawQ.content || immediateFallback?.content || "",
+            options: optList,
+            correct_options: corList,
+            explanation: rawQ.question?.en?.explanation || rawQ.explanation || "",
+            type: rawQ.type || immediateFallback?.type || (optList.length > 0 ? "mcq" : "integer"),
+            paperTitle: formatPaperTitle(rawQ.paperTitle || immediateFallback?.paperTitle || "")
+          };
         }
       } catch (e) {}
-
-      // 4. Fallback to API if static file not available
-      if (!q) {
-        const res = await fetch(`/api/pyq/question?permalink=${encodeURIComponent(permalink)}`);
-        if (res.ok) {
-          const data = await res.json();
-          q = data.questions?.[0] || null;
-        }
-      }
 
       if (q) {
         if (immediateFallback?.type && !q.type) {
           q.type = immediateFallback.type;
         }
-        chapterQuestionsCacheRef.current.set(permalink, q);
+        globalQuestionCache.set(targetKey, q);
+        globalQuestionCache.set(permalink, q);
         setActiveQuestionData(q);
       }
     } catch (e) {
@@ -930,7 +917,8 @@ export default function QuestionsPage() {
       searchQuery.trim().length > 0 ||
       searchSubject !== "all" ||
       searchCategory !== "all" ||
-      searchExam !== "all"
+      searchExam !== "all" ||
+      searchYear !== "all"
     );
 
     return (
@@ -972,15 +960,15 @@ export default function QuestionsPage() {
               variant="outline"
               onClick={() => setIsFilterOpen(prev => !prev)}
               className={`h-[52px] px-3.5 sm:px-4 rounded-2xl border transition-all flex items-center gap-2 text-xs font-semibold shrink-0 ${
-                isFilterOpen || (searchSubject !== "all" || searchCategory !== "all" || searchExam !== "all")
+                isFilterOpen || (searchSubject !== "all" || searchCategory !== "all" || searchExam !== "all" || searchYear !== "all")
                   ? "bg-primary text-primary-foreground border-primary shadow-xs hover:bg-primary/90"
                   : "bg-card hover:bg-muted border-border/80 text-muted-foreground hover:text-foreground"
               }`}
-              title="Toggle Advanced Filters (Subject, Exam, Category)"
+              title="Toggle Advanced Filters (Subject, Category, Exam, Year)"
             >
               <SlidersHorizontal className="w-4 h-4" />
               <span className="hidden sm:inline">Filters</span>
-              {(searchSubject !== "all" || searchCategory !== "all" || searchExam !== "all") && (
+              {(searchSubject !== "all" || searchCategory !== "all" || searchExam !== "all" || searchYear !== "all") && (
                 <span className="w-2 h-2 rounded-full bg-amber-300" />
               )}
             </Button>
@@ -1065,8 +1053,23 @@ export default function QuestionsPage() {
                     ))}
                   </div>
 
+                  {/* Year Filters */}
+                  <div className="flex items-center gap-1 p-1 rounded-xl bg-muted/60 border border-border/60">
+                    <span className="px-2 font-bold text-[11px] text-muted-foreground">Year:</span>
+                    <select
+                      value={searchYear}
+                      onChange={(e) => setSearchYear(e.target.value)}
+                      className="bg-card text-foreground font-semibold text-xs px-2 py-1 rounded-lg border border-border/60 focus:outline-none focus:ring-1 focus:ring-primary cursor-pointer"
+                    >
+                      <option value="all">All Years</option>
+                      {Array.from({ length: 2026 - 2002 + 1 }, (_, i) => 2026 - i).map(y => (
+                        <option key={y} value={String(y)}>{y}</option>
+                      ))}
+                    </select>
+                  </div>
+
                   {/* Reset Filters */}
-                  {(searchSubject !== "all" || searchCategory !== "all" || searchExam !== "all") && (
+                  {(searchSubject !== "all" || searchCategory !== "all" || searchExam !== "all" || searchYear !== "all") && (
                     <Button
                       variant="ghost"
                       size="sm"
@@ -1074,6 +1077,7 @@ export default function QuestionsPage() {
                         setSearchSubject("all");
                         setSearchCategory("all");
                         setSearchExam("all");
+                        setSearchYear("all");
                       }}
                       className="h-7 px-2.5 rounded-lg text-xs text-muted-foreground hover:text-foreground"
                     >
@@ -1098,7 +1102,10 @@ export default function QuestionsPage() {
               </div>
               {searchLoading && (
                 <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                  <div className="w-3.5 h-3.5 border-2 border-primary border-t-transparent rounded-full animate-spin" />
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                  </span>
                   <span>Searching PYQs...</span>
                 </div>
               )}
@@ -1142,6 +1149,12 @@ export default function QuestionsPage() {
                         }`}>
                           {item.category === "multiple_mcq" ? "Multiple MCQ" : item.category === "numerical" ? "Numerical / Integer" : "MCQ"}
                         </span>
+
+                        {item.year && (
+                          <span className="px-2 py-0.5 rounded-md text-[10px] font-bold bg-muted/80 text-foreground border border-border/60">
+                            {item.year}
+                          </span>
+                        )}
 
                         <span className="text-xs text-muted-foreground truncate font-medium">
                           {item.paperTitle}
@@ -1459,9 +1472,13 @@ export default function QuestionsPage() {
 
         {/* Papers Grouped by Year */}
         {papersLoading ? (
-          <div className="flex flex-col items-center justify-center py-20 space-y-4">
-            <div className="w-8 h-8 border-3 border-primary border-t-transparent rounded-full animate-spin" />
-            <p className="text-sm text-muted-foreground font-medium">Loading papers catalog...</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-4">
+            {[1, 2, 3, 4, 5, 6].map(i => (
+              <div key={i} className="h-28 rounded-2xl border border-border/50 bg-card/40 animate-pulse p-5 flex flex-col justify-between">
+                <div className="h-4 bg-muted/60 rounded-md w-3/4" />
+                <div className="h-3 bg-muted/40 rounded-md w-1/2" />
+              </div>
+            ))}
           </div>
         ) : filteredGroups.length === 0 ? (
           <div className="text-center py-20 text-muted-foreground bg-card rounded-2xl border border-border/60 p-8">
@@ -1865,9 +1882,13 @@ export default function QuestionsPage() {
 
         {/* Chapter Groups & Chapters Grid */}
         {chaptersLoading ? (
-          <div className="flex flex-col items-center justify-center py-20 space-y-4">
-            <div className="w-8 h-8 border-3 border-primary border-t-transparent rounded-full animate-spin" />
-            <p className="text-sm text-muted-foreground font-medium capitalize">Loading {selectedSubject} chapters...</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-4">
+            {[1, 2, 3, 4, 5, 6].map(i => (
+              <div key={i} className="h-24 rounded-2xl border border-border/50 bg-card/40 animate-pulse p-5 flex flex-col justify-between">
+                <div className="h-4 bg-muted/60 rounded-md w-2/3" />
+                <div className="h-3 bg-muted/40 rounded-md w-1/3" />
+              </div>
+            ))}
           </div>
         ) : (
           <div className="space-y-8">

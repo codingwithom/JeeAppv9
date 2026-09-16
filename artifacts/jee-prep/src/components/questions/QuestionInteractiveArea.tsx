@@ -209,7 +209,17 @@ export function QuestionInteractiveArea({
 
         {/* Question Text & Math Formulas */}
         <div className="py-2 text-foreground text-sm sm:text-base leading-relaxed font-normal">
-          <RichMathContent content={qBody} />
+          {qBody ? (
+            <RichMathContent content={qBody} />
+          ) : isLoading ? (
+            <div className="space-y-2.5 py-2 animate-pulse">
+              <div className="h-4 bg-muted/60 rounded-md w-full" />
+              <div className="h-4 bg-muted/60 rounded-md w-5/6" />
+              <div className="h-4 bg-muted/40 rounded-md w-3/4" />
+            </div>
+          ) : (
+            <RichMathContent content={qBody} />
+          )}
         </div>
 
         {/* ── 1. SINGLE MCQ OPTIONS ────────────────────────────────────────── */}

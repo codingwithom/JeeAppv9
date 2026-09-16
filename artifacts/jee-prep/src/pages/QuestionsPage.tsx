@@ -777,13 +777,18 @@ export default function QuestionsPage() {
         if (rawQ) {
           const optList = rawQ.question?.en?.options || rawQ.options || [];
           const corList = rawQ.question?.en?.correct_options || rawQ.question?.en?.correctOptions || rawQ.correct_options || [];
+          const rawType = rawQ.type || immediateFallback?.type;
+          const resolvedType = rawType 
+            ? (rawType === "mcq" && optList.length === 0 ? ((rawQ.answer || corList[0]) && !isNaN(Number(rawQ.answer || corList[0])) ? "integer" : "subjective") : rawType)
+            : (optList.length > 0 ? "mcq" : (immediateFallback?.type || "integer"));
+
           q = {
             ...rawQ,
             content: rawQ.question?.en?.content || rawQ.content || immediateFallback?.content || "",
             options: optList,
             correct_options: corList,
             explanation: rawQ.question?.en?.explanation || rawQ.explanation || "",
-            type: rawQ.type || immediateFallback?.type || (optList.length > 0 ? "mcq" : (immediateFallback?.type || "integer")),
+            type: resolvedType,
             paperTitle: formatPaperTitle(rawQ.paperTitle || immediateFallback?.paperTitle || "")
           };
         }

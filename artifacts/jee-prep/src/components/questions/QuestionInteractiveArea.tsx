@@ -161,7 +161,7 @@ export function QuestionInteractiveArea({
   // Can check answer button be clicked?
   const canCheck = React.useMemo(() => {
     if (isChecked) return false;
-    if (category === "mcq") return options.length > 0 ? Boolean(userSelectedOption) : true;
+    if (category === "mcq") return options.length > 0 && Boolean(userSelectedOption);
     if (category === "multiple_mcq") return selectedOptionsList.length > 0;
     if (category === "numerical") return numericalInput.trim().length > 0;
     if (category === "subjective" || category === "fill_blanks") return true;
@@ -616,7 +616,16 @@ export function QuestionInteractiveArea({
         {/* ── Check Answer & Action Controls ─────────────────────────────────── */}
         {category !== "subjective" && category !== "fill_blanks" && (
           <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 pt-4 border-t border-border/60">
-            {!isChecked ? (
+            {category === "mcq" && options.length === 0 ? (
+              <Button
+                variant={isSolutionVisible ? "outline" : "default"}
+                onClick={onToggleSolution}
+                className="rounded-xl text-xs gap-2 py-4 px-6 font-semibold"
+              >
+                <HelpCircle className="w-4 h-4" />
+                {isSolutionVisible ? "Hide Detailed Solution" : "View Detailed Solution & Answer"}
+              </Button>
+            ) : !isChecked ? (
               <>
                 <Button
                   onClick={onCheckAnswer}

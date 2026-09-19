@@ -26,6 +26,8 @@ import {
   Info,
   Play,
   Lightbulb,
+  UserCheck,
+  SlidersHorizontal,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -239,6 +241,37 @@ export function getSubjectBadge(name: string): { abbr: string; style: string } {
   };
 }
 
+export function getSubjectDiscipline(name: string): string {
+  const lower = name.toLowerCase();
+  if (lower.includes("inorganic")) return "Inorganic Chemistry";
+  if (lower.includes("organic")) return "Organic Chemistry";
+  if (lower.includes("physical chem") || lower.includes("pc")) return "Physical Chemistry";
+  if (lower.includes("physic")) return "Physics";
+  if (lower.includes("math")) return "Mathematics";
+  if (lower.includes("biolog") || lower.includes("botan") || lower.includes("zoolog")) return "Biology";
+  if (lower.includes("chem")) return "Chemistry";
+  return name.split(/by/i)[0].trim() || "General Subject";
+}
+
+export function getDisciplineMetadata(discipline: string) {
+  switch (discipline) {
+    case "Physics":
+      return { icon: "⚡", color: "text-sky-600 dark:text-sky-400 bg-sky-50 dark:bg-sky-950/40 border-sky-200 dark:border-sky-800" };
+    case "Mathematics":
+      return { icon: "📐", color: "text-cyan-600 dark:text-cyan-400 bg-cyan-50 dark:bg-cyan-950/40 border-cyan-200 dark:border-cyan-800" };
+    case "Physical Chemistry":
+      return { icon: "🧪", color: "text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950/40 border-indigo-200 dark:border-indigo-800" };
+    case "Organic Chemistry":
+      return { icon: "🌿", color: "text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/40 border-amber-200 dark:border-amber-800" };
+    case "Inorganic Chemistry":
+      return { icon: "⚗️", color: "text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-950/40 border-teal-200 dark:border-teal-800" };
+    case "Biology":
+      return { icon: "🧬", color: "text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 border-emerald-200 dark:border-emerald-800" };
+    default:
+      return { icon: "📚", color: "text-slate-600 dark:text-zinc-400 bg-slate-100 dark:bg-zinc-800 border-slate-200 dark:border-zinc-700" };
+  }
+}
+
 export function formatSubjectTitle(sub: PWSubject): string {
   const teacher = sub.teachers?.[0]?.name || sub.faculty;
   if (!teacher) return sub.name;
@@ -253,15 +286,24 @@ export function formatSubjectTitle(sub: PWSubject): string {
 export function getSubjectProgress(sub: PWSubject, completedMap: Record<string, boolean>): number {
   let total = 0;
   let completed = 0;
-  sub.chapters.forEach(ch => {
+  const resourceRegex = /(demo|schedule|planner|telegram|whatsapp|admission|proctored|syllabus|infinity|orientation|guideline|solution)/i;
+
+  (sub.chapters || []).forEach(ch => {
+    // Exclude resource chapters: count only academic syllabus chapters
+    if (resourceRegex.test(ch.title)) return;
+
     if (Array.isArray(ch.lectures) && ch.lectures.length > 0) {
       ch.lectures.forEach(l => {
-        total++;
-        if (completedMap[l.id]) completed++;
+        // Count only lectures and DPPs (exclude notes/study materials)
+        if (l.type === "lecture" || l.type === "dpp" || !l.type) {
+          total++;
+          if (completedMap[l.id]) completed++;
+        }
       });
     } else {
       const counts = getChapterCounts(ch);
-      total += counts.total;
+      // Count only lectures and DPPs
+      total += (counts.lectureCount + counts.dppCount);
     }
   });
   if (total === 0) return 0;
@@ -555,6 +597,85 @@ export default function PWPage() {
     return batches.find(b => b.id === selectedBatchId) || batches[0] || EMPTY_PW_BATCH;
   }, [batches, selectedBatchId]);
 
+  // Teacher Selection State & Synchronization
+  const [teacherSelectModalOpen, setTeacherSelectModalOpen] = useState<boolean>(false);
+  const [selectedTeacherSubjectIds, setSelectedTeacherSubjectIds] = useState<string[]>([]);
+  const [tempSelectedTeacherSubjectIds, setTempSelectedTeacherSubjectIds] = useState<string[]>([]);
+  const promptedBatches = useRef<Set<string>>(new Set());
+
+  // Synchronize teacher selection with localStorage and batch subjects
+  useEffect(() => {
+    if (!selectedBatchId) return;
+    try {
+      const saved = localStorage.getItem(`pw_selected_teachers_${selectedBatchId}`);
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          setSelectedTeacherSubjectIds(parsed);
+          setTempSelectedTeacherSubjectIds(parsed);
+          return;
+        }
+      }
+    } catch {}
+
+    // No saved selection yet for this batch: default to 1 teacher per discipline and auto-prompt modal
+    if (currentBatch.subjects && currentBatch.subjects.length > 0) {
+      const disciplineMap = new Map<string, string>();
+      currentBatch.subjects.forEach(sub => {
+        const disc = getSubjectDiscipline(sub.name);
+        if (!disciplineMap.has(disc)) {
+          disciplineMap.set(disc, sub.id);
+        }
+      });
+      const defaultIds = Array.from(disciplineMap.values());
+      setSelectedTeacherSubjectIds(defaultIds);
+      setTempSelectedTeacherSubjectIds(defaultIds);
+
+      if (!promptedBatches.current.has(selectedBatchId)) {
+        promptedBatches.current.add(selectedBatchId);
+        setTeacherSelectModalOpen(true);
+      }
+    }
+  }, [selectedBatchId, currentBatch.subjects]);
+
+  // Displayed subjects based on user's selected teachers
+  const displayedSubjects = useMemo(() => {
+    if (!selectedTeacherSubjectIds || selectedTeacherSubjectIds.length === 0) {
+      return currentBatch.subjects;
+    }
+    const set = new Set(selectedTeacherSubjectIds);
+    const filtered = currentBatch.subjects.filter(s => set.has(s.id));
+    return filtered.length > 0 ? filtered : currentBatch.subjects;
+  }, [currentBatch.subjects, selectedTeacherSubjectIds]);
+
+  // Group batch subjects by discipline for teacher selection modal
+  const groupedTeacherDisciplines = useMemo(() => {
+    const map = new Map<string, PWSubject[]>();
+    currentBatch.subjects.forEach(sub => {
+      const disc = getSubjectDiscipline(sub.name);
+      if (!map.has(disc)) map.set(disc, []);
+      map.get(disc)!.push(sub);
+    });
+    return Array.from(map.entries()).map(([discipline, subjects]) => ({ discipline, subjects }));
+  }, [currentBatch.subjects]);
+
+  const handleSaveTeacherSelection = () => {
+    const finalIds = tempSelectedTeacherSubjectIds.length > 0
+      ? tempSelectedTeacherSubjectIds
+      : currentBatch.subjects.map(s => s.id);
+
+    setSelectedTeacherSubjectIds(finalIds);
+    try {
+      localStorage.setItem(`pw_selected_teachers_${selectedBatchId}`, JSON.stringify(finalIds));
+    } catch {}
+
+    // If currently viewed subject was deselected, return to subjects list
+    if (selectedSubject && !finalIds.includes(selectedSubject.id)) {
+      setSelectedSubject(null);
+    }
+    setTeacherSelectModalOpen(false);
+  };
+
   // Fetch batch metadata live from PW API
   const refreshBatchMetadata = (batchIdToFetch: string = selectedBatchId) => {
     if (!batchIdToFetch || loadingBatchIds.current.has(batchIdToFetch)) return;
@@ -697,24 +818,35 @@ export default function PWPage() {
     }
   };
 
-  // Overall batch statistics
+  // Overall batch statistics: counts only ticked teachers' non-resource chapters, and only lectures & DPPs
   const overallStats = useMemo(() => {
     let totalItems = 0;
     let completedItems = 0;
-    currentBatch.subjects.forEach(sub => {
-      sub.chapters.forEach(ch => {
-        const counts = getChapterCounts(ch);
-        totalItems += counts.total;
-        if (Array.isArray(ch.lectures)) {
+    const resourceRegex = /(demo|schedule|planner|telegram|whatsapp|admission|proctored|syllabus|infinity|orientation|guideline|solution)/i;
+
+    displayedSubjects.forEach(sub => {
+      (sub.chapters || []).forEach(ch => {
+        // Exclude resource chapters
+        if (resourceRegex.test(ch.title)) return;
+
+        if (Array.isArray(ch.lectures) && ch.lectures.length > 0) {
           ch.lectures.forEach(l => {
-            if (completedMap[l.id]) completedItems++;
+            // Count only lectures and DPPs
+            if (l.type === "lecture" || l.type === "dpp" || !l.type) {
+              totalItems++;
+              if (completedMap[l.id]) completedItems++;
+            }
           });
+        } else {
+          const counts = getChapterCounts(ch);
+          // Only lectureCount + dppCount
+          totalItems += (counts.lectureCount + counts.dppCount);
         }
       });
     });
     const percentage = totalItems > 0 ? Math.round((completedItems / totalItems) * 100) : 0;
     return { totalItems, completedItems, percentage };
-  }, [currentBatch.subjects, completedMap]);
+  }, [displayedSubjects, completedMap]);
 
   // Today Schedule status
   const todayStatus = useMemo(() => {
@@ -941,6 +1073,24 @@ export default function PWPage() {
                 <RefreshCw className={`w-3.5 h-3.5 ${isLoadingBatch ? "animate-spin text-amber-500" : ""}`} />
               </Button>
 
+              {/* Choose Teachers Dialog Trigger */}
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => {
+                  setTempSelectedTeacherSubjectIds(selectedTeacherSubjectIds);
+                  setTeacherSelectModalOpen(true);
+                }}
+                className="h-8 rounded-lg text-xs font-semibold gap-1.5 border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 hover:bg-slate-100 dark:hover:bg-zinc-800 text-slate-700 dark:text-zinc-200"
+                title="Select preferred teachers for each subject"
+              >
+                <Users className="w-3.5 h-3.5 text-amber-500" />
+                <span className="hidden sm:inline">Choose</span> Teachers
+                <span className="px-1.5 py-0.2 rounded-full bg-amber-500/15 text-amber-600 dark:text-amber-400 font-mono text-[10px] font-bold">
+                  {displayedSubjects.length}/{currentBatch.subjects.length}
+                </span>
+              </Button>
+
               {/* Switch Batch Dialog Trigger */}
               <Button
                 variant="outline"
@@ -1037,7 +1187,7 @@ export default function PWPage() {
                       }`}
                     >
                       <BookOpen className="w-3.5 h-3.5 text-amber-500" />
-                      Subjects ({currentBatch.subjects.length})
+                      Subjects ({displayedSubjects.length})
                     </button>
                     <button
                       onClick={() => setBatchSubTab("resources")}
@@ -1052,19 +1202,31 @@ export default function PWPage() {
                     </button>
                   </div>
 
-                  <span className="text-xs text-slate-500 dark:text-zinc-400">
-                    Click any subject to view segregated chapters, notes & DPPs
-                  </span>
+                  <div className="flex items-center gap-2">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => {
+                        setTempSelectedTeacherSubjectIds(selectedTeacherSubjectIds);
+                        setTeacherSelectModalOpen(true);
+                      }}
+                      className="h-8 rounded-xl text-xs font-semibold gap-1.5 border-amber-500/30 bg-amber-500/5 dark:bg-amber-500/10 hover:bg-amber-500/15 text-amber-700 dark:text-amber-300"
+                    >
+                      <Users className="w-3.5 h-3.5 text-amber-500" />
+                      <span>Customize Teachers ({displayedSubjects.length}/{currentBatch.subjects.length})</span>
+                    </Button>
+                  </div>
                 </div>
 
                 {/* SubTab 1: SUBJECTS GRID */}
                 {batchSubTab === "subjects" && (
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {currentBatch.subjects.map(sub => {
+                    {displayedSubjects.map(sub => {
                       const badge = getSubjectBadge(sub.name);
                       const title = formatSubjectTitle(sub);
                       const progress = getSubjectProgress(sub, completedMap);
                       const teacherName = sub.teachers?.[0]?.name || sub.faculty || "PW Faculty";
+                      const teacherImg = sub.teachers?.[0]?.imageUrl || resolveTeacherImage(teacherName);
 
                       return (
                         <div
@@ -1079,17 +1241,32 @@ export default function PWPage() {
                         >
                           <div className="flex items-start justify-between gap-3">
                             <div className="flex items-start gap-3.5 min-w-0 flex-1">
-                              {/* 2-Letter Colored Badge (Ph, Ma, In, Or, etc.) */}
-                              <div className={`w-11 h-11 rounded-xl flex items-center justify-center font-bold text-sm shrink-0 tracking-tight shadow-2xs ${badge.style}`}>
-                                {badge.abbr}
+                              {/* Teacher Picture Squircle with Subject Abbreviation Badge */}
+                              <div className="w-14 h-14 rounded-2xl overflow-hidden relative border border-slate-200 dark:border-zinc-700 bg-slate-100 dark:bg-zinc-800 shrink-0 shadow-2xs">
+                                {teacherImg ? (
+                                  <img
+                                    src={teacherImg}
+                                    alt={teacherName}
+                                    className="w-full h-full object-cover object-top"
+                                  />
+                                ) : (
+                                  <div className={`w-full h-full flex items-center justify-center font-bold text-base ${badge.style}`}>
+                                    {badge.abbr}
+                                  </div>
+                                )}
+                                <div className={`absolute bottom-0 right-0 px-1.5 py-0.5 rounded-tl-lg font-mono font-bold text-[9px] tracking-tight shadow-xs ${badge.style}`}>
+                                  {badge.abbr}
+                                </div>
                               </div>
 
                               <div className="min-w-0 flex-1">
                                 <h3 className="font-bold text-sm sm:text-base text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors leading-snug line-clamp-2">
                                   {title}
                                 </h3>
-                                <p className="text-xs text-slate-500 dark:text-zinc-400 mt-1">
-                                  {sub.chapters.length} Chapters • {teacherName}
+                                <p className="text-xs text-slate-500 dark:text-zinc-400 mt-1 flex items-center gap-1.5 truncate">
+                                  <span>{sub.chapters.length} Chapters</span>
+                                  <span>•</span>
+                                  <span className="font-medium text-slate-700 dark:text-zinc-300 truncate">{teacherName}</span>
                                 </p>
                               </div>
                             </div>
@@ -1100,10 +1277,10 @@ export default function PWPage() {
                             </div>
                           </div>
 
-                          {/* Mini Progress Bar & Percentage */}
+                          {/* Mini Progress Bar & Percentage (Lectures & DPPs only) */}
                           <div className="pt-2 border-t border-slate-100 dark:border-zinc-800/80">
                             <div className="flex items-center justify-between text-[11px] text-slate-500 dark:text-zinc-400 mb-1.5">
-                              <span>Syllabus Progress</span>
+                              <span>Syllabus Progress (Lectures & DPPs)</span>
                               <span className="font-semibold text-slate-700 dark:text-zinc-300 font-mono">
                                 {progress}%
                               </span>
@@ -1990,14 +2167,17 @@ export default function PWPage() {
                                   </div>
                                 </div>
 
-                                <Button
-                                  variant="outline"
-                                  size="sm"
-                                  onClick={() => openPdf(item.dppPdfUrl || item.notesUrl, item.topic)}
-                                  className="h-7 px-3 rounded-lg text-xs font-semibold gap-1 border-purple-500/30 text-purple-700 dark:text-purple-300 hover:bg-purple-500/10 shrink-0"
-                                >
-                                  Attempt DPP <ChevronRight className="w-3.5 h-3.5" />
-                                </Button>
+                                {(item.dppPdfUrl || item.notesUrl) && (
+                                  <Button
+                                    variant="outline"
+                                    size="sm"
+                                    onClick={() => openPdf((item.dppPdfUrl || item.notesUrl)!, `${item.topic} • DPP Sheet PDF`)}
+                                    className="h-7 px-3 rounded-lg text-xs font-semibold gap-1.5 border-purple-500/30 bg-purple-500/5 text-purple-700 dark:text-purple-300 hover:bg-purple-500/10 shrink-0"
+                                  >
+                                    <Eye className="w-3.5 h-3.5 text-purple-500" />
+                                    View DPP PDF
+                                  </Button>
+                                )}
                               </div>
                             );
                           }
@@ -2060,33 +2240,34 @@ export default function PWPage() {
                                 </div>
                               </div>
 
-                              {/* Action Buttons: [+ Watch] and [Notes & more] */}
-                              <div className="flex items-center gap-2 pt-1">
-                                <Button
-                                  variant="outline"
-                                  size="sm"
-                                  onClick={() => {
-                                    if (item.notesUrl) {
-                                      openPdf(item.notesUrl, `${item.topic} • Class Notes`);
-                                    }
-                                  }}
-                                  className="h-8 px-3 rounded-lg text-xs font-semibold gap-1.5 border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 hover:bg-slate-50 dark:hover:bg-zinc-700 text-slate-800 dark:text-zinc-200"
-                                >
-                                  <Play className="w-3.5 h-3.5 fill-current" />
-                                  Watch
-                                </Button>
+                              {/* Action Buttons: Show View PDF buttons ONLY if real PDF exists */}
+                              {(item.notesUrl || item.dppPdfUrl) && (
+                                <div className="flex items-center gap-2 pt-1 flex-wrap">
+                                  {item.notesUrl && (
+                                    <Button
+                                      variant="outline"
+                                      size="sm"
+                                      onClick={() => openPdf(item.notesUrl!, `${item.topic} • Class Notes PDF`)}
+                                      className="h-8 px-3 rounded-lg text-xs font-semibold gap-1.5 border-amber-500/30 bg-amber-500/5 text-amber-700 dark:text-amber-300 hover:bg-amber-500/10"
+                                    >
+                                      <FileText className="w-3.5 h-3.5 text-amber-500" />
+                                      View Notes PDF
+                                    </Button>
+                                  )}
 
-                                {item.notesUrl && (
-                                  <Button
-                                    variant="outline"
-                                    size="sm"
-                                    onClick={() => openPdf(item.notesUrl, `${item.topic} • Class Notes`)}
-                                    className="h-8 px-3 rounded-lg text-xs font-semibold border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 hover:bg-slate-50 dark:hover:bg-zinc-700 text-slate-700 dark:text-zinc-300"
-                                  >
-                                    Notes & more
-                                  </Button>
-                                )}
-                              </div>
+                                  {item.dppPdfUrl && (
+                                    <Button
+                                      variant="outline"
+                                      size="sm"
+                                      onClick={() => openPdf(item.dppPdfUrl!, `${item.dppTitle || item.topic} • DPP Sheet PDF`)}
+                                      className="h-8 px-3 rounded-lg text-xs font-semibold gap-1.5 border-purple-500/30 bg-purple-500/5 text-purple-700 dark:text-purple-300 hover:bg-purple-500/10"
+                                    >
+                                      <FileDown className="w-3.5 h-3.5 text-purple-500" />
+                                      View DPP PDF
+                                    </Button>
+                                  )}
+                                </div>
+                              )}
 
                               {/* Attached DPP Strip */}
                               {(item.dppTitle || item.dppPdfUrl || item.hasDpp) && (
@@ -2097,15 +2278,17 @@ export default function PWPage() {
                                       {item.dppTitle || `${item.topic} : DPP (Quiz)`}
                                     </span>
                                   </div>
-                                  <button
-                                    onClick={() => {
-                                      const pdf = item.dppPdfUrl || item.notesUrl;
-                                      if (pdf) openPdf(pdf, `${item.dppTitle || item.topic} • DPP Sheet`);
-                                    }}
-                                    className="text-xs font-semibold text-slate-500 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white shrink-0 flex items-center gap-1 transition-colors cursor-pointer"
-                                  >
-                                    Attempt DPP <ChevronRight className="w-3.5 h-3.5" />
-                                  </button>
+                                  {item.dppPdfUrl ? (
+                                    <Button
+                                      variant="outline"
+                                      size="sm"
+                                      onClick={() => openPdf(item.dppPdfUrl!, `${item.dppTitle || item.topic} • DPP Sheet PDF`)}
+                                      className="h-6 px-2.5 rounded text-[11px] font-semibold border-purple-500/30 text-purple-700 dark:text-purple-300 hover:bg-purple-500/10 shrink-0 gap-1"
+                                    >
+                                      <Eye className="w-3 h-3 text-purple-500" />
+                                      View DPP PDF
+                                    </Button>
+                                  ) : null}
                                 </div>
                               )}
                             </div>
@@ -2200,67 +2383,290 @@ export default function PWPage() {
         {/* ================================================================= */}
         {activeTab === "faculty" && (
           <div className="space-y-4">
-            <div className="p-4 sm:p-5 rounded-2xl border border-slate-200/80 dark:border-zinc-800 bg-white dark:bg-zinc-900/60 shadow-xs">
-              <h3 className="font-bold text-base sm:text-lg text-slate-900 dark:text-white">
-                Official Faculty for {currentBatch.name}
-              </h3>
-              <p className="text-xs text-slate-500 dark:text-zinc-400 mt-0.5">
-                Every teacher provides verified video lectures, handwritten class notes, and daily practice problem (DPP) sheets.
-              </p>
+            <div className="p-4 sm:p-5 rounded-2xl border border-slate-200/80 dark:border-zinc-800 bg-white dark:bg-zinc-900/60 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div>
+                <h3 className="font-bold text-base sm:text-lg text-slate-900 dark:text-white">
+                  Official Faculty for {currentBatch.name}
+                </h3>
+                <p className="text-xs text-slate-500 dark:text-zinc-400 mt-0.5">
+                  Every teacher provides verified video lectures, handwritten class notes, and daily practice problem (DPP) sheets.
+                </p>
+              </div>
+
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => {
+                  setTempSelectedTeacherSubjectIds(selectedTeacherSubjectIds);
+                  setTeacherSelectModalOpen(true);
+                }}
+                className="h-8 rounded-xl text-xs font-semibold gap-1.5 border-amber-500/30 bg-amber-500/5 dark:bg-amber-500/10 hover:bg-amber-500/15 text-amber-700 dark:text-amber-300 shrink-0"
+              >
+                <Users className="w-3.5 h-3.5 text-amber-500" />
+                Customize Faculty Selection ({displayedSubjects.length}/{currentBatch.subjects.length})
+              </Button>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {currentBatch.subjects.flatMap(s => (s.teachers || []).map(t => ({ ...t, subjectName: s.name, syllabusPdf: s.syllabusPdf }))).map((teacher, tIdx) => (
-                <div
-                  key={teacher._id || tIdx}
-                  className="p-5 rounded-2xl border border-slate-200/80 dark:border-zinc-800 bg-white dark:bg-zinc-900/60 shadow-xs flex flex-col justify-between gap-4"
-                >
-                  <div className="flex items-start gap-4">
-                    {teacher.imageUrl ? (
-                      <img
-                        src={teacher.imageUrl}
-                        alt={teacher.name}
-                        className="w-14 h-14 rounded-2xl object-cover border border-slate-200 dark:border-zinc-700 bg-slate-100 dark:bg-zinc-800 shrink-0"
-                      />
-                    ) : (
-                      <div className="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-600 dark:text-amber-400 font-bold text-lg flex items-center justify-center shrink-0">
-                        {teacher.name.charAt(0)}
-                      </div>
-                    )}
+              {currentBatch.subjects.flatMap(s => (s.teachers || []).map(t => ({ ...t, subjectId: s.id, subjectName: s.name, syllabusPdf: s.syllabusPdf }))).map((teacher, tIdx) => {
+                const isSelected = selectedTeacherSubjectIds.includes(teacher.subjectId);
 
-                    <div className="min-w-0 flex-1">
-                      <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-slate-100 dark:bg-zinc-800 text-slate-700 dark:text-zinc-300 border border-slate-200 dark:border-zinc-700">
-                        {teacher.subjectName}
-                      </span>
-                      <h4 className="font-bold text-base text-slate-900 dark:text-white mt-1 leading-snug">
-                        {teacher.name}
-                      </h4>
-                      {teacher.featuredLine && (
-                        <p className="text-xs text-slate-500 dark:text-zinc-400 line-clamp-2 mt-0.5">
-                          {teacher.featuredLine}
-                        </p>
+                return (
+                  <div
+                    key={teacher._id || tIdx}
+                    className={`p-5 rounded-2xl border transition-all shadow-xs flex flex-col justify-between gap-4 ${
+                      isSelected
+                        ? "bg-white dark:bg-zinc-900/60 border-slate-200/80 dark:border-zinc-800"
+                        : "bg-slate-50/50 dark:bg-zinc-900/30 border-slate-200/50 dark:border-zinc-800/50 opacity-80"
+                    }`}
+                  >
+                    <div className="flex items-start gap-4">
+                      {teacher.imageUrl ? (
+                        <img
+                          src={teacher.imageUrl}
+                          alt={teacher.name}
+                          className="w-14 h-14 rounded-2xl object-cover border border-slate-200 dark:border-zinc-700 bg-slate-100 dark:bg-zinc-800 shrink-0"
+                        />
+                      ) : (
+                        <div className="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-600 dark:text-amber-400 font-bold text-lg flex items-center justify-center shrink-0">
+                          {teacher.name.charAt(0)}
+                        </div>
+                      )}
+
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-center gap-1.5 flex-wrap">
+                          <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-slate-100 dark:bg-zinc-800 text-slate-700 dark:text-zinc-300 border border-slate-200 dark:border-zinc-700">
+                            {teacher.subjectName}
+                          </span>
+                          {isSelected ? (
+                            <span className="px-1.5 py-0.2 rounded text-[9px] font-bold bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                              Active
+                            </span>
+                          ) : (
+                            <span className="px-1.5 py-0.2 rounded text-[9px] font-medium text-slate-400 bg-slate-100 dark:bg-zinc-800">
+                              Inactive
+                            </span>
+                          )}
+                        </div>
+                        <h4 className="font-bold text-base text-slate-900 dark:text-white mt-1 leading-snug">
+                          {teacher.name}
+                        </h4>
+                        {teacher.featuredLine && (
+                          <p className="text-xs text-slate-500 dark:text-zinc-400 line-clamp-2 mt-0.5">
+                            {teacher.featuredLine}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+
+                    <div className="pt-3 border-t border-slate-100 dark:border-zinc-800 flex items-center justify-between text-xs text-slate-500 dark:text-zinc-400">
+                      <span>{teacher.experience || "Expert Faculty"}</span>
+                      {teacher.syllabusPdf && (
+                        <button
+                          onClick={() => openPdf(teacher.syllabusPdf, `${teacher.name} • Syllabus Roadmap`)}
+                          className="font-semibold text-amber-600 dark:text-amber-400 hover:underline flex items-center gap-1"
+                        >
+                          <FileText className="w-3 h-3" />
+                          Syllabus PDF
+                        </button>
                       )}
                     </div>
                   </div>
-
-                  <div className="pt-3 border-t border-slate-100 dark:border-zinc-800 flex items-center justify-between text-xs text-slate-500 dark:text-zinc-400">
-                    <span>{teacher.experience || "Expert Faculty"}</span>
-                    {teacher.syllabusPdf && (
-                      <button
-                        onClick={() => openPdf(teacher.syllabusPdf, `${teacher.name} • Syllabus Roadmap`)}
-                        className="font-semibold text-amber-600 dark:text-amber-400 hover:underline flex items-center gap-1"
-                      >
-                        <FileText className="w-3 h-3" />
-                        Syllabus PDF
-                      </button>
-                    )}
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         )}
       </main>
+
+      {/* ── TEACHER SELECTION MODAL ─────────────────────────────────────────── */}
+      {teacherSelectModalOpen && (
+        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4">
+          <div className="bg-white dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 rounded-2xl w-full max-w-3xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+            {/* Modal Header */}
+            <div className="p-4 sm:p-5 border-b border-slate-200 dark:border-zinc-800 flex items-start justify-between gap-3">
+              <div>
+                <div className="flex items-center gap-2">
+                  <span className="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">
+                    Faculty Customization
+                  </span>
+                  <span className="text-xs text-slate-400 dark:text-zinc-500">•</span>
+                  <span className="text-xs font-semibold text-slate-600 dark:text-zinc-400">{currentBatch.name}</span>
+                </div>
+                <h3 className="font-bold text-base sm:text-lg text-slate-900 dark:text-white mt-1">
+                  Choose Your Preferred Teachers
+                </h3>
+                <p className="text-xs text-slate-500 dark:text-zinc-400 mt-0.5">
+                  Select your preferred teachers for each subject. Only ticked teachers' lectures and DPPs will be included in your curriculum and progress.
+                </p>
+              </div>
+
+              <button
+                onClick={() => setTeacherSelectModalOpen(false)}
+                className="w-8 h-8 rounded-lg flex items-center justify-center text-slate-500 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-zinc-800 shrink-0"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+
+            {/* Quick Actions Bar */}
+            <div className="px-4 sm:px-5 py-2.5 border-b border-slate-200 dark:border-zinc-800 bg-slate-50/70 dark:bg-zinc-900/40 flex items-center justify-between gap-2 flex-wrap">
+              <span className="text-xs text-slate-600 dark:text-zinc-400">
+                <strong className="text-slate-900 dark:text-white font-mono">{tempSelectedTeacherSubjectIds.length}</strong> of {currentBatch.subjects.length} selected
+              </span>
+
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => {
+                    const disciplineMap = new Map<string, string>();
+                    currentBatch.subjects.forEach(sub => {
+                      const disc = getSubjectDiscipline(sub.name);
+                      if (!disciplineMap.has(disc)) disciplineMap.set(disc, sub.id);
+                    });
+                    setTempSelectedTeacherSubjectIds(Array.from(disciplineMap.values()));
+                  }}
+                  className="px-2.5 py-1 rounded-lg text-xs font-semibold bg-white dark:bg-zinc-800 border border-slate-200 dark:border-zinc-700 text-slate-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-700 cursor-pointer shadow-2xs"
+                >
+                  1 per Subject (Recommended)
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setTempSelectedTeacherSubjectIds(currentBatch.subjects.map(s => s.id));
+                  }}
+                  className="px-2.5 py-1 rounded-lg text-xs font-semibold bg-white dark:bg-zinc-800 border border-slate-200 dark:border-zinc-700 text-slate-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-700 cursor-pointer shadow-2xs"
+                >
+                  Select All
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setTempSelectedTeacherSubjectIds([])}
+                  className="px-2.5 py-1 rounded-lg text-xs font-semibold text-slate-500 hover:text-slate-800 dark:hover:text-zinc-200 cursor-pointer"
+                >
+                  Clear
+                </button>
+              </div>
+            </div>
+
+            {/* Modal Body: Disciplines & Teachers */}
+            <div className="flex-1 overflow-y-auto p-4 sm:p-5 space-y-6">
+              {groupedTeacherDisciplines.map(({ discipline, subjects }) => {
+                const meta = getDisciplineMetadata(discipline);
+                const selectedInDiscipline = subjects.filter(s => tempSelectedTeacherSubjectIds.includes(s.id)).length;
+
+                return (
+                  <div key={discipline} className="space-y-3">
+                    {/* Discipline Header */}
+                    <div className="flex items-center justify-between pb-1.5 border-b border-slate-100 dark:border-zinc-800/80">
+                      <div className="flex items-center gap-2">
+                        <span className="text-base">{meta.icon}</span>
+                        <h4 className="font-bold text-sm text-slate-900 dark:text-white">
+                          {discipline}
+                        </h4>
+                        <span className="text-xs text-slate-400 dark:text-zinc-500 hidden sm:inline">
+                          — Choose preferred faculty
+                        </span>
+                      </div>
+
+                      <span className={`px-2 py-0.5 rounded text-[11px] font-bold ${meta.color}`}>
+                        {selectedInDiscipline} of {subjects.length} selected
+                      </span>
+                    </div>
+
+                    {/* Teacher Cards Grid */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      {subjects.map(sub => {
+                        const isTicked = tempSelectedTeacherSubjectIds.includes(sub.id);
+                        const teacher = sub.teachers?.[0];
+                        const teacherName = teacher?.name || sub.faculty || "PW Faculty";
+                        const teacherImg = teacher?.imageUrl || resolveTeacherImage(teacherName);
+
+                        return (
+                          <div
+                            key={sub.id}
+                            onClick={() => {
+                              setTempSelectedTeacherSubjectIds(prev =>
+                                prev.includes(sub.id) ? prev.filter(id => id !== sub.id) : [...prev, sub.id]
+                              );
+                            }}
+                            className={`p-3.5 rounded-2xl border transition-all cursor-pointer flex items-center justify-between gap-3 select-none ${
+                              isTicked
+                                ? "bg-amber-500/10 border-amber-500/50 shadow-xs"
+                                : "bg-white dark:bg-zinc-900/60 hover:bg-slate-50 dark:hover:bg-zinc-900 border-slate-200 dark:border-zinc-800"
+                            }`}
+                          >
+                            <div className="flex items-center gap-3.5 min-w-0 flex-1">
+                              {/* Teacher Avatar */}
+                              <div className="w-13 h-13 rounded-xl overflow-hidden relative border border-slate-200 dark:border-zinc-700 bg-slate-100 dark:bg-zinc-800 shrink-0 shadow-2xs">
+                                {teacherImg ? (
+                                  <img
+                                    src={teacherImg}
+                                    alt={teacherName}
+                                    className="w-full h-full object-cover object-top"
+                                  />
+                                ) : (
+                                  <div className="w-full h-full flex items-center justify-center font-bold text-amber-600 dark:text-amber-400 text-sm">
+                                    {teacherName.charAt(0)}
+                                  </div>
+                                )}
+                              </div>
+
+                              <div className="min-w-0 flex-1">
+                                <h5 className={`font-bold text-xs sm:text-sm leading-tight truncate ${
+                                  isTicked ? "text-amber-900 dark:text-amber-200" : "text-slate-900 dark:text-white"
+                                }`}>
+                                  {teacherName}
+                                </h5>
+                                <p className="text-[11px] text-slate-500 dark:text-zinc-400 truncate mt-0.5">
+                                  {sub.name}
+                                </p>
+                                <p className="text-[10px] text-slate-400 dark:text-zinc-500 truncate mt-0.5">
+                                  {sub.chapters.length} Chapters
+                                  {teacher?.experience ? ` • ${teacher.experience}` : ""}
+                                </p>
+                              </div>
+                            </div>
+
+                            {/* Checkbox */}
+                            <div className={`w-5 h-5 rounded-md border flex items-center justify-center shrink-0 transition-all ${
+                              isTicked
+                                ? "bg-amber-500 border-amber-500 text-white font-bold"
+                                : "border-slate-300 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-900"
+                            }`}>
+                              {isTicked && <Check className="w-3.5 h-3.5 stroke-[3]" />}
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Modal Footer */}
+            <div className="p-4 sm:p-5 border-t border-slate-200 dark:border-zinc-800 bg-slate-50/50 dark:bg-zinc-900/30 flex items-center justify-between gap-3">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setTeacherSelectModalOpen(false)}
+                className="text-xs rounded-xl"
+              >
+                Cancel
+              </Button>
+
+              <Button
+                size="sm"
+                onClick={handleSaveTeacherSelection}
+                className="bg-amber-500 hover:bg-amber-600 text-white font-semibold text-xs rounded-xl px-5 shadow-xs"
+              >
+                Save & Apply Selection ({tempSelectedTeacherSubjectIds.length} Teachers)
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* ── BATCH SWITCHER MODAL ───────────────────────────────────────────── */}
       {batchModalOpen && (

@@ -104,6 +104,7 @@ export interface PWScheduleItem {
   subject: string;
   rawSubject?: string;
   teacher: string;
+  teacherImage?: string;
   topic: string;
   chapter?: string;
   date: string;
@@ -120,6 +121,7 @@ export interface PWScheduleItem {
   hasDpp?: boolean;
   notesUrl?: string;
   dppPdfUrl?: string;
+  dppTitle?: string;
   notes?: Array<{ topic: string; attachmentName?: string; url?: string }>;
   dpps?: Array<{ topic: string; attachmentName?: string; url?: string }>;
 }
@@ -180,7 +182,7 @@ function formatScheduleTime(value?: string): string {
   if (!value) return "Scheduled";
   const parsed = new Date(value);
   if (!Number.isNaN(parsed.getTime()) && /T|Z|\d{4}-\d{2}-\d{2}/.test(value)) {
-    return parsed.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", hour12: true, timeZone: "Asia/Kolkata" });
+    return parsed.toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit", hour12: true, timeZone: "Asia/Kolkata" });
   }
   return value;
 }
@@ -478,6 +480,8 @@ export default function PWPage() {
   const [todaySchedule, setTodaySchedule] = useState<PWScheduleItem[]>([]);
   const [dateSchedule, setDateSchedule] = useState<PWScheduleItem[]>([]);
   const [isLoadingSchedule, setIsLoadingSchedule] = useState<boolean>(false);
+  const [selectedScheduleSubject, setSelectedScheduleSubject] = useState<string>("ALL");
+  const [calendarMonth, setCalendarMonth] = useState<Date>(() => new Date());
 
   // Loaders
   const [isLoadingBatch, setIsLoadingBatch] = useState<boolean>(false);
@@ -779,6 +783,97 @@ export default function PWPage() {
       );
     }).slice(0, 48);
   }, [catalogBatches, batchSearchQuery]);
+
+  // Teacher Image Resolver from batch faculty data
+  const resolveTeacherImage = (teacherName?: string, fallbackImage?: string) => {
+    if (fallbackImage) return fallbackImage;
+    if (!teacherName) return undefined;
+    const q = teacherName.toLowerCase().replace(/sir|mam|ma'am/gi, "").trim();
+    for (const sub of currentBatch.subjects) {
+      for (const t of sub.teachers || []) {
+        if (t.name) {
+          const tName = t.name.toLowerCase();
+          if (tName.includes(q) || q.includes(tName)) {
+            if (t.imageUrl) return t.imageUrl;
+          }
+        }
+      }
+    }
+    return undefined;
+  };
+
+  // Schedule Subjects list for filter dropdown
+  const scheduleSubjectOptions = useMemo(() => {
+    const subs = new Set<string>();
+    currentBatch.subjects.forEach(s => {
+      if (s.name) subs.add(s.name);
+    });
+    dateSchedule.forEach(item => {
+      if (item.subject) subs.add(item.subject);
+    });
+    return Array.from(subs);
+  }, [currentBatch.subjects, dateSchedule]);
+
+  // Grouped Schedule by Time Slot (for Weekly Schedule left column)
+  const groupedSchedule = useMemo(() => {
+    let list = dateSchedule;
+    if (selectedScheduleSubject && selectedScheduleSubject !== "ALL") {
+      const q = selectedScheduleSubject.toLowerCase();
+      list = list.filter(s =>
+        s.subject?.toLowerCase().includes(q) ||
+        (s.rawSubject && s.rawSubject.toLowerCase().includes(q))
+      );
+    }
+    const map = new Map<string, PWScheduleItem[]>();
+    list.forEach(item => {
+      const timeLabel = formatScheduleTime(item.startTime);
+      if (!map.has(timeLabel)) map.set(timeLabel, []);
+      map.get(timeLabel)!.push(item);
+    });
+    return Array.from(map.entries()).map(([time, items]) => ({ time, items }));
+  }, [dateSchedule, selectedScheduleSubject]);
+
+  // Top Upcoming Events (Frame 00:00 - 00:01)
+  const upcomingEvents = useMemo(() => {
+    const list = todaySchedule.length > 0 ? todaySchedule : dateSchedule;
+    return list.slice(0, 4);
+  }, [todaySchedule, dateSchedule]);
+
+  // Month Calendar Days Grid Calculation (Monday to Sunday)
+  const calendarDays = useMemo(() => {
+    const year = calendarMonth.getFullYear();
+    const month = calendarMonth.getMonth();
+    const firstDay = new Date(year, month, 1);
+    const startDayOffset = (firstDay.getDay() + 6) % 7;
+    const totalDays = new Date(year, month + 1, 0).getDate();
+
+    const blanks = Array.from({ length: startDayOffset }, () => null);
+    const days = Array.from({ length: totalDays }, (_, i) => {
+      const dayNum = i + 1;
+      const dateStr = `${year}-${String(month + 1).padStart(2, "0")}-${String(dayNum).padStart(2, "0")}`;
+      return { dayNum, dateStr };
+    });
+
+    return [...blanks, ...days];
+  }, [calendarMonth]);
+
+  const monthLabel = useMemo(() => {
+    return calendarMonth.toLocaleDateString("en-US", { month: "long", year: "numeric" });
+  }, [calendarMonth]);
+
+  const handlePrevMonth = () => {
+    setCalendarMonth(prev => new Date(prev.getFullYear(), prev.getMonth() - 1, 1));
+  };
+
+  const handleNextMonth = () => {
+    setCalendarMonth(prev => new Date(prev.getFullYear(), prev.getMonth() + 1, 1));
+  };
+
+  const handleTodayClick = () => {
+    const now = new Date();
+    setCalendarMonth(now);
+    setSelectedScheduleDate(todayIstDate);
+  };
 
   // Helper to open PDF either in in-app modal or direct tab
   const openPdf = (url?: string, title: string = "Physics Wallah Document") => {
@@ -1665,171 +1760,437 @@ export default function PWPage() {
         )}
 
         {/* ================================================================= */}
-        {/* TAB 2: LIVE SCHEDULE & TODAY'S FEED                               */}
+        {/* TAB 2: LIVE SCHEDULE & TODAY'S FEED (Weekly Schedule + Calendar)  */}
         {/* ================================================================= */}
         {activeTab === "schedule" && (
-          <div className="space-y-5">
-            {/* Status Alert Banner */}
-            <div className={`p-4 sm:p-5 rounded-2xl border flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-xs ${
-              todayStatus.type === "LIVE"
-                ? "bg-emerald-50 dark:bg-emerald-950/30 border-emerald-300 dark:border-emerald-800/80 text-emerald-900 dark:text-emerald-200"
-                : todayStatus.type === "ENDED"
-                ? "bg-slate-100 dark:bg-zinc-900 border-slate-200 dark:border-zinc-800 text-slate-800 dark:text-zinc-200"
-                : "bg-white dark:bg-zinc-900/60 border-slate-200 dark:border-zinc-800 text-slate-800 dark:text-zinc-200"
-            }`}>
-              <div className="flex items-start gap-3.5">
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 bg-white dark:bg-zinc-800 border border-slate-200 dark:border-zinc-700 shadow-2xs">
-                  {todayStatus.type === "LIVE" ? (
-                    <span className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></span>
-                  ) : todayStatus.type === "ENDED" ? (
-                    <CheckCircle2 className="w-5 h-5 text-emerald-500" />
+          <div className="space-y-8">
+            {/* 1. TOP SECTION: Upcoming Events (Matching schedule.mp4 Frame 00:00 - 00:01) */}
+            {upcomingEvents.length > 0 && (
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <h3 className="font-bold text-base sm:text-lg text-slate-900 dark:text-white">
+                    Upcoming Events ({upcomingEvents.length})
+                  </h3>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+                  {upcomingEvents.map((item, idx) => {
+                    const isLecture = item.type !== "DPP" && item.type !== "NOTES";
+                    const isDpp = item.type === "DPP";
+                    const isNotes = item.type === "NOTES";
+                    const teacherImg = resolveTeacherImage(item.teacher, item.teacherImage);
+
+                    return (
+                      <div
+                        key={`up-${item.id || idx}`}
+                        onClick={() => {
+                          if (isNotes && item.notesUrl) {
+                            openPdf(item.notesUrl, item.topic);
+                          } else if (isDpp && (item.dppPdfUrl || item.notesUrl)) {
+                            openPdf(item.dppPdfUrl || item.notesUrl, item.topic);
+                          } else if (item.notesUrl) {
+                            openPdf(item.notesUrl, `${item.topic} • Class Notes`);
+                          }
+                        }}
+                        className="group p-4 rounded-2xl border border-slate-200/80 dark:border-zinc-800 bg-white dark:bg-zinc-900/60 hover:bg-slate-50 dark:hover:bg-zinc-900 hover:border-slate-300 dark:hover:border-zinc-700 transition-all cursor-pointer shadow-xs flex flex-col justify-between gap-3"
+                      >
+                        {/* Time & Live badge row */}
+                        <div className="flex items-center gap-2">
+                          <span className="flex items-center gap-1.5 text-xs text-slate-500 dark:text-zinc-400 font-mono">
+                            <Clock className="w-3.5 h-3.5 text-slate-400" />
+                            {formatScheduleTime(item.startTime)}
+                          </span>
+                          {item.isLive ? (
+                            <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-red-500 text-white shadow-xs animate-pulse">
+                              LIVE
+                            </span>
+                          ) : item.isUpcoming ? (
+                            <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-cyan-50 dark:bg-cyan-950/40 text-cyan-600 dark:text-cyan-400 border border-cyan-200 dark:border-cyan-800">
+                              UPCOMING
+                            </span>
+                          ) : (
+                            <span className="px-2 py-0.5 rounded text-[10px] font-semibold text-slate-500 bg-slate-100 dark:bg-zinc-800">
+                              ENDED
+                            </span>
+                          )}
+                        </div>
+
+                        {/* Card Content */}
+                        <div className="flex items-center justify-between gap-3">
+                          <div className="flex items-center gap-3.5 min-w-0 flex-1">
+                            {/* Avatar or Icon Squircle */}
+                            {isDpp ? (
+                              <div className="w-11 h-11 rounded-xl bg-indigo-50 dark:bg-indigo-950/40 border border-indigo-200 dark:border-indigo-800/60 flex items-center justify-center text-indigo-600 dark:text-indigo-400 shrink-0">
+                                <FileDown className="w-5 h-5" />
+                              </div>
+                            ) : isNotes ? (
+                              <div className="w-11 h-11 rounded-xl bg-sky-50 dark:bg-sky-950/40 border border-sky-200 dark:border-sky-800/60 flex items-center justify-center text-sky-600 dark:text-sky-400 shrink-0">
+                                <FileText className="w-5 h-5" />
+                              </div>
+                            ) : (
+                              <div className="w-11 h-11 rounded-xl overflow-hidden relative border border-slate-200 dark:border-zinc-700 bg-slate-100 dark:bg-zinc-800 shrink-0">
+                                {teacherImg ? (
+                                  <img src={teacherImg} alt={item.teacher} className="w-full h-full object-cover" />
+                                ) : (
+                                  <div className="w-full h-full flex items-center justify-center font-bold text-amber-600 dark:text-amber-400 text-sm">
+                                    {item.teacher?.charAt(0) || "P"}
+                                  </div>
+                                )}
+                                <div className="w-3.5 h-3.5 rounded bg-red-600 text-[8px] font-extrabold text-white flex items-center justify-center absolute bottom-0 right-0 tracking-tighter shadow-2xs">
+                                  PW
+                                </div>
+                              </div>
+                            )}
+
+                            <div className="min-w-0 flex-1">
+                              <p className="text-xs text-slate-500 dark:text-zinc-400 truncate">
+                                {isDpp ? "DPP" : isNotes ? "Notes" : "Lecture"} • {item.subject} By {item.teacher}
+                              </p>
+                              <h4 className="font-bold text-xs sm:text-sm text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors leading-snug truncate mt-0.5">
+                                {isDpp ? `💡 ${item.topic}` : item.topic}
+                              </h4>
+                            </div>
+                          </div>
+
+                          <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white group-hover:translate-x-0.5 transition-all shrink-0" />
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+
+                <div className="pt-2 text-center">
+                  <button
+                    onClick={() => {
+                      const el = document.getElementById("weekly-schedule");
+                      el?.scrollIntoView({ behavior: "smooth" });
+                    }}
+                    className="inline-flex items-center justify-center px-6 py-2 rounded-xl text-xs font-semibold border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 hover:bg-slate-50 dark:hover:bg-zinc-800 text-slate-700 dark:text-zinc-300 shadow-2xs transition-all cursor-pointer"
+                  >
+                    View Full Schedule
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {/* 2. MAIN SPLIT SECTION: Weekly Schedule & Month Calendar (Frame 00:02 - 00:22) */}
+            <div id="weekly-schedule" className="pt-4 border-t border-slate-200/80 dark:border-zinc-800">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                {/* LEFT COLUMN (lg:col-span-8): Schedule Timeline */}
+                <div className="lg:col-span-8 space-y-4">
+                  {/* Header: Title + Subjects Dropdown */}
+                  <div className="flex items-center justify-between gap-3 flex-wrap">
+                    <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white tracking-tight">
+                      Weekly Schedule
+                    </h2>
+
+                    <div className="relative">
+                      <select
+                        value={selectedScheduleSubject}
+                        onChange={(e) => setSelectedScheduleSubject(e.target.value)}
+                        className="h-8 pl-3 pr-8 rounded-lg text-xs font-semibold bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 text-slate-700 dark:text-zinc-300 shadow-2xs cursor-pointer focus:outline-none focus:ring-1 focus:ring-amber-500 appearance-none"
+                      >
+                        <option value="ALL">Subjects (All)</option>
+                        {scheduleSubjectOptions.map(sub => (
+                          <option key={sub} value={sub}>{sub}</option>
+                        ))}
+                      </select>
+                      <ChevronDown className="w-3.5 h-3.5 absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400" />
+                    </div>
+                  </div>
+
+                  {/* Schedule Timeline Feed */}
+                  {isLoadingSchedule ? (
+                    /* Skeleton animation matching frame 00:12 */
+                    <div className="space-y-4 pt-1">
+                      <div className="h-32 rounded-2xl bg-slate-200/70 dark:bg-zinc-800/80 animate-pulse border border-slate-200/50 dark:border-zinc-800/80" />
+                      <div className="h-32 rounded-2xl bg-slate-200/70 dark:bg-zinc-800/80 animate-pulse border border-slate-200/50 dark:border-zinc-800/80" />
+                      <div className="h-32 rounded-2xl bg-slate-200/70 dark:bg-zinc-800/80 animate-pulse border border-slate-200/50 dark:border-zinc-800/80" />
+                    </div>
+                  ) : groupedSchedule.length === 0 ? (
+                    <div className="p-12 text-center rounded-2xl border border-dashed border-slate-300 dark:border-zinc-800 text-slate-500 dark:text-zinc-400 bg-white dark:bg-zinc-900/30">
+                      No classes scheduled for {selectedScheduleDate}.
+                    </div>
                   ) : (
-                    <Calendar className="w-5 h-5 text-amber-500" />
+                    groupedSchedule.map(({ time, items }) => (
+                      <div key={time} className="space-y-3">
+                        <div className="text-xs font-mono font-bold text-slate-500 dark:text-zinc-400 mt-5 first:mt-1">
+                          {time}
+                        </div>
+
+                        {items.map((item, iIdx) => {
+                          const isNotes = item.type === "NOTES";
+                          const isDpp = item.type === "DPP";
+                          const teacherImg = resolveTeacherImage(item.teacher, item.teacherImage);
+
+                          if (isNotes) {
+                            return (
+                              <div
+                                key={item.id || iIdx}
+                                className="p-4 sm:p-5 rounded-2xl border border-slate-200/80 dark:border-zinc-800 bg-white dark:bg-zinc-900/60 shadow-xs flex flex-col justify-between gap-3.5"
+                              >
+                                <div className="flex items-start gap-3.5 min-w-0">
+                                  <div className="w-12 h-12 rounded-xl bg-sky-50 dark:bg-sky-950/40 border border-sky-200 dark:border-sky-800/60 flex items-center justify-center text-sky-600 dark:text-sky-400 shrink-0">
+                                    <FileText className="w-6 h-6" />
+                                  </div>
+
+                                  <div className="min-w-0 flex-1">
+                                    <p className="text-xs text-slate-500 dark:text-zinc-400">
+                                      Notes • {item.subject} By {item.teacher}
+                                    </p>
+                                    <h4 className="font-bold text-sm sm:text-base text-slate-900 dark:text-white leading-snug mt-0.5 line-clamp-2">
+                                      {item.topic}
+                                    </h4>
+                                  </div>
+                                </div>
+
+                                <div className="flex items-center gap-2 pt-2 border-t border-slate-100 dark:border-zinc-800">
+                                  <Button
+                                    variant="outline"
+                                    size="sm"
+                                    onClick={() => openPdf(item.notesUrl, item.topic)}
+                                    className="h-7 px-3 rounded-lg text-xs font-semibold gap-1.5 border-slate-200 dark:border-zinc-700 text-slate-700 dark:text-zinc-200"
+                                  >
+                                    <Eye className="w-3.5 h-3.5 text-slate-500" />
+                                    View Note
+                                  </Button>
+                                  {item.notesUrl && (
+                                    <a
+                                      href={item.notesUrl}
+                                      download
+                                      target="_blank"
+                                      rel="noreferrer"
+                                      className="w-7 h-7 rounded-lg border border-slate-200 dark:border-zinc-700 flex items-center justify-center text-slate-600 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-800"
+                                    >
+                                      <Download className="w-3.5 h-3.5" />
+                                    </a>
+                                  )}
+                                </div>
+                              </div>
+                            );
+                          }
+
+                          if (isDpp) {
+                            return (
+                              <div
+                                key={item.id || iIdx}
+                                className="p-4 sm:p-5 rounded-2xl border border-slate-200/80 dark:border-zinc-800 bg-white dark:bg-zinc-900/60 shadow-xs flex items-center justify-between gap-3"
+                              >
+                                <div className="flex items-center gap-3.5 min-w-0 flex-1">
+                                  <div className="w-12 h-12 rounded-xl bg-indigo-50 dark:bg-indigo-950/40 border border-indigo-200 dark:border-indigo-800/60 flex items-center justify-center text-indigo-600 dark:text-indigo-400 shrink-0">
+                                    <FileDown className="w-6 h-6" />
+                                  </div>
+                                  <div className="min-w-0 flex-1">
+                                    <p className="text-xs text-slate-500 dark:text-zinc-400">
+                                      DPP • {item.subject} By {item.teacher}
+                                    </p>
+                                    <h4 className="font-bold text-sm text-slate-900 dark:text-white leading-snug truncate mt-0.5">
+                                      💡 {item.topic}
+                                    </h4>
+                                  </div>
+                                </div>
+
+                                <Button
+                                  variant="outline"
+                                  size="sm"
+                                  onClick={() => openPdf(item.dppPdfUrl || item.notesUrl, item.topic)}
+                                  className="h-7 px-3 rounded-lg text-xs font-semibold gap-1 border-purple-500/30 text-purple-700 dark:text-purple-300 hover:bg-purple-500/10 shrink-0"
+                                >
+                                  Attempt DPP <ChevronRight className="w-3.5 h-3.5" />
+                                </Button>
+                              </div>
+                            );
+                          }
+
+                          /* Default: Lecture card matching frame 00:02 - 00:04 */
+                          return (
+                            <div
+                              key={item.id || iIdx}
+                              className="p-4 sm:p-5 rounded-2xl border border-slate-200/80 dark:border-zinc-800 bg-white dark:bg-zinc-900/60 shadow-xs space-y-3.5"
+                            >
+                              <div className="flex items-start justify-between gap-3">
+                                <div className="flex items-start gap-3.5 min-w-0 flex-1">
+                                  {/* Teacher Avatar Squircle with mini red PW badge */}
+                                  <div className="w-12 h-12 rounded-xl overflow-hidden relative border border-slate-200 dark:border-zinc-700 bg-slate-100 dark:bg-zinc-800 shrink-0">
+                                    {teacherImg ? (
+                                      <img
+                                        src={teacherImg}
+                                        alt={item.teacher}
+                                        className="w-full h-full object-cover"
+                                      />
+                                    ) : (
+                                      <div className="w-full h-full flex items-center justify-center font-bold text-amber-600 dark:text-amber-400 text-sm">
+                                        {item.teacher.charAt(0)}
+                                      </div>
+                                    )}
+                                    <div className="w-3.5 h-3.5 rounded bg-red-600 text-[8px] font-extrabold text-white flex items-center justify-center absolute bottom-0 right-0 tracking-tighter shadow-2xs">
+                                      PW
+                                    </div>
+                                  </div>
+
+                                  <div className="min-w-0 flex-1">
+                                    <p className="text-xs text-slate-500 dark:text-zinc-400">
+                                      Lecture • {item.subject} By {item.teacher}
+                                    </p>
+                                    <h4 className="font-bold text-sm sm:text-base text-slate-900 dark:text-white leading-snug mt-0.5 line-clamp-2">
+                                      {item.topic}
+                                    </h4>
+                                    <div className="flex items-center gap-1.5 text-[11px] text-slate-400 dark:text-zinc-500 font-mono mt-1">
+                                      <Clock className="w-3 h-3" />
+                                      <span>{item.duration || "1h 45m"}</span>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                {/* Status Badge */}
+                                <div className="shrink-0">
+                                  {item.isLive ? (
+                                    <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-red-500 text-white shadow-xs animate-pulse">
+                                      LIVE
+                                    </span>
+                                  ) : item.isUpcoming ? (
+                                    <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-cyan-50 dark:bg-cyan-950/40 text-cyan-600 dark:text-cyan-400 border border-cyan-200 dark:border-cyan-800">
+                                      UPCOMING
+                                    </span>
+                                  ) : (
+                                    <span className="px-2 py-0.5 rounded text-[10px] font-semibold text-slate-500 dark:text-zinc-400 bg-slate-100 dark:bg-zinc-800">
+                                      ENDED
+                                    </span>
+                                  )}
+                                </div>
+                              </div>
+
+                              {/* Action Buttons: [+ Watch] and [Notes & more] */}
+                              <div className="flex items-center gap-2 pt-1">
+                                <Button
+                                  variant="outline"
+                                  size="sm"
+                                  onClick={() => {
+                                    if (item.notesUrl) {
+                                      openPdf(item.notesUrl, `${item.topic} • Class Notes`);
+                                    }
+                                  }}
+                                  className="h-8 px-3 rounded-lg text-xs font-semibold gap-1.5 border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 hover:bg-slate-50 dark:hover:bg-zinc-700 text-slate-800 dark:text-zinc-200"
+                                >
+                                  <Play className="w-3.5 h-3.5 fill-current" />
+                                  Watch
+                                </Button>
+
+                                {item.notesUrl && (
+                                  <Button
+                                    variant="outline"
+                                    size="sm"
+                                    onClick={() => openPdf(item.notesUrl, `${item.topic} • Class Notes`)}
+                                    className="h-8 px-3 rounded-lg text-xs font-semibold border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 hover:bg-slate-50 dark:hover:bg-zinc-700 text-slate-700 dark:text-zinc-300"
+                                  >
+                                    Notes & more
+                                  </Button>
+                                )}
+                              </div>
+
+                              {/* Attached DPP Strip */}
+                              {(item.dppTitle || item.dppPdfUrl || item.hasDpp) && (
+                                <div className="pt-2.5 border-t border-slate-100 dark:border-zinc-800 flex items-center justify-between gap-3 text-xs">
+                                  <div className="flex items-center gap-2 text-slate-700 dark:text-zinc-300 min-w-0 flex-1">
+                                    <span className="text-amber-500 text-sm shrink-0">💡</span>
+                                    <span className="truncate font-medium">
+                                      {item.dppTitle || `${item.topic} : DPP (Quiz)`}
+                                    </span>
+                                  </div>
+                                  <button
+                                    onClick={() => {
+                                      const pdf = item.dppPdfUrl || item.notesUrl;
+                                      if (pdf) openPdf(pdf, `${item.dppTitle || item.topic} • DPP Sheet`);
+                                    }}
+                                    className="text-xs font-semibold text-slate-500 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white shrink-0 flex items-center gap-1 transition-colors cursor-pointer"
+                                  >
+                                    Attempt DPP <ChevronRight className="w-3.5 h-3.5" />
+                                  </button>
+                                </div>
+                              )}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    ))
                   )}
                 </div>
 
-                <div>
-                  <div className="flex items-center gap-2">
-                    <h3 className="font-bold text-sm sm:text-base text-slate-900 dark:text-white">
-                      {todayStatus.title}
-                    </h3>
-                    <Badge variant="outline" className="text-[10px] uppercase font-bold">
-                      {todayStatus.type === "ENDED" ? "Completed" : (todayStatus.type === "LIVE" ? "Live" : "Schedule")}
-                    </Badge>
-                  </div>
-                  <p className="text-xs text-slate-600 dark:text-zinc-400 mt-1 max-w-2xl leading-relaxed">
-                    {todayStatus.desc}
-                  </p>
-                </div>
-              </div>
+                {/* RIGHT COLUMN (lg:col-span-4): Month Calendar Widget */}
+                <div className="lg:col-span-4 lg:sticky lg:top-20">
+                  <div className="p-5 rounded-2xl border border-slate-200/80 dark:border-zinc-800 bg-white dark:bg-zinc-900/60 shadow-xs space-y-4">
+                    {/* Calendar Header: Month + Controls */}
+                    <div className="flex items-center justify-between">
+                      <h3 className="font-bold text-sm sm:text-base text-slate-900 dark:text-white">
+                        {monthLabel}
+                      </h3>
 
-              {/* Date Filter */}
-              <div className="flex items-center gap-2 shrink-0">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => setSelectedScheduleDate(todayIstDate)}
-                  className={`h-8 rounded-lg text-xs font-semibold ${
-                    selectedScheduleDate === todayIstDate
-                      ? "bg-slate-900 text-white dark:bg-white dark:text-zinc-900 border-slate-900 dark:border-white"
-                      : "border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-slate-700 dark:text-zinc-200"
-                  }`}
-                >
-                  Today (IST)
-                </Button>
-                <Input
-                  type="date"
-                  value={selectedScheduleDate}
-                  onChange={(e) => setSelectedScheduleDate(e.target.value)}
-                  className="h-8 text-xs bg-white dark:bg-zinc-900 border-slate-200 dark:border-zinc-800 rounded-lg w-36 font-mono"
-                />
-              </div>
-            </div>
-
-            {/* Schedule List */}
-            <div className="space-y-3">
-              {isLoadingSchedule ? (
-                <div className="p-12 text-center rounded-2xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/40">
-                  <RefreshCw className="w-6 h-6 animate-spin text-amber-500 mx-auto mb-2" />
-                  <p className="text-sm font-semibold text-slate-800 dark:text-zinc-200">
-                    Loading timetable for {selectedScheduleDate}...
-                  </p>
-                </div>
-              ) : dateSchedule.length === 0 ? (
-                <div className="p-12 text-center rounded-2xl border border-dashed border-slate-300 dark:border-zinc-800 text-slate-500 dark:text-zinc-400 bg-white dark:bg-zinc-900/30">
-                  No classes scheduled for {selectedScheduleDate}.
-                </div>
-              ) : (
-                dateSchedule.map((item, idx) => {
-                  const isEnded = item.isEnded || item.tag?.toLowerCase() === "ended";
-                  const isLive = item.isLive || item.tag?.toLowerCase() === "live";
-
-                  return (
-                    <div
-                      key={item.id || idx}
-                      className="p-4 sm:p-5 rounded-2xl border border-slate-200/80 dark:border-zinc-800/80 bg-white dark:bg-zinc-900/60 hover:bg-slate-50 dark:hover:bg-zinc-900 transition-all shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4"
-                    >
-                      <div className="flex items-start gap-4 min-w-0 flex-1">
-                        {/* Time Box */}
-                        <div className="w-16 h-16 rounded-xl bg-slate-100 dark:bg-zinc-800 border border-slate-200 dark:border-zinc-700 flex flex-col items-center justify-center shrink-0">
-                          <span className="font-bold text-xs font-mono text-slate-800 dark:text-zinc-200">
-                            {formatScheduleTime(item.startTime)}
-                          </span>
-                          <span className="text-[10px] text-slate-500 dark:text-zinc-400 font-mono mt-0.5">
-                            {item.duration || "1h 45m"}
-                          </span>
-                        </div>
-
-                        {/* Class Info */}
-                        <div className="min-w-0 flex-1">
-                          <div className="flex items-center gap-2 flex-wrap">
-                            <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-500/10 text-blue-700 dark:text-blue-400 border border-blue-500/20">
-                              {item.subject}
-                            </span>
-                            <span className="text-xs text-slate-500 dark:text-zinc-400 font-medium">
-                              👨‍🏫 {item.teacher}
-                            </span>
-                          </div>
-
-                          <h4 className="font-bold text-sm sm:text-base text-slate-900 dark:text-zinc-100 mt-1 leading-snug">
-                            {item.topic}
-                          </h4>
-
-                          {item.chapter && (
-                            <p className="text-xs text-slate-500 dark:text-zinc-400 mt-0.5">
-                              Chapter: {item.chapter}
-                            </p>
-                          )}
-                        </div>
-                      </div>
-
-                      {/* Right: Status Pill & PDFs */}
-                      <div className="flex items-center gap-2 shrink-0 self-end sm:self-center flex-wrap">
-                        {isEnded ? (
-                          <Badge variant="outline" className="text-[11px] font-bold bg-slate-100 dark:bg-zinc-800 text-slate-600 dark:text-zinc-300 border-slate-300 dark:border-zinc-700">
-                            Class Ended
-                          </Badge>
-                        ) : isLive ? (
-                          <Badge className="text-[11px] font-bold bg-emerald-500 text-white gap-1 animate-pulse">
-                            <span className="w-1.5 h-1.5 rounded-full bg-white"></span>
-                            Live Now
-                          </Badge>
-                        ) : (
-                          <Badge variant="outline" className="text-[11px] font-bold bg-blue-500/10 text-blue-700 dark:text-blue-300 border-blue-500/20">
-                            Upcoming
-                          </Badge>
-                        )}
-
-                        {/* Verified Notes PDF Button */}
-                        {item.notesUrl && (
-                          <Button
-                            variant="outline"
-                            size="sm"
-                            onClick={() => openPdf(item.notesUrl, `${item.topic} • Class Notes`)}
-                            className="h-7 px-2.5 rounded-lg text-[11px] font-semibold gap-1 border-red-500/30 bg-red-500/5 dark:bg-red-500/10 hover:bg-red-500/15 text-red-700 dark:text-red-300"
-                          >
-                            <FileText className="w-3 h-3 text-red-500" />
-                            Notes PDF
-                          </Button>
-                        )}
-
-                        {/* Verified DPP PDF Button */}
-                        {item.dppPdfUrl && (
-                          <Button
-                            variant="outline"
-                            size="sm"
-                            onClick={() => openPdf(item.dppPdfUrl, `${item.topic} • DPP PDF`)}
-                            className="h-7 px-2.5 rounded-lg text-[11px] font-semibold gap-1 border-purple-500/30 bg-purple-500/5 dark:bg-purple-500/10 hover:bg-purple-500/15 text-purple-700 dark:text-purple-300"
-                          >
-                            <FileDown className="w-3 h-3 text-purple-500" />
-                            DPP PDF
-                          </Button>
-                        )}
+                      <div className="flex items-center gap-1">
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          onClick={handleTodayClick}
+                          className="h-7 px-2 rounded-md text-[11px] font-semibold border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-800 text-slate-700 dark:text-zinc-200"
+                        >
+                          Today
+                        </Button>
+                        <button
+                          onClick={handlePrevMonth}
+                          className="w-7 h-7 rounded-md border border-slate-200 dark:border-zinc-700 flex items-center justify-center text-slate-500 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-zinc-800 transition-colors"
+                          title="Previous Month"
+                        >
+                          <ChevronLeft className="w-3.5 h-3.5" />
+                        </button>
+                        <button
+                          onClick={handleNextMonth}
+                          className="w-7 h-7 rounded-md border border-slate-200 dark:border-zinc-700 flex items-center justify-center text-slate-500 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-zinc-800 transition-colors"
+                          title="Next Month"
+                        >
+                          <ChevronRight className="w-3.5 h-3.5" />
+                        </button>
                       </div>
                     </div>
-                  );
-                })
-              )}
+
+                    {/* Weekday Row: M T W T F S S (Matching schedule.mp4) */}
+                    <div className="grid grid-cols-7 text-center">
+                      {["M", "T", "W", "T", "F", "S", "S"].map((d, dIdx) => (
+                        <span key={dIdx} className="text-[11px] font-bold text-slate-400 dark:text-zinc-500 py-1">
+                          {d}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Calendar Days Grid */}
+                    <div className="grid grid-cols-7 gap-y-1.5 text-center">
+                      {calendarDays.map((slot, sIdx) => {
+                        if (!slot) {
+                          return <div key={`blank-${sIdx}`} className="w-8 h-8" />;
+                        }
+
+                        const isSelected = slot.dateStr === selectedScheduleDate;
+                        const isToday = slot.dateStr === todayIstDate;
+
+                        return (
+                          <div key={slot.dateStr} className="flex items-center justify-center">
+                            <button
+                              onClick={() => setSelectedScheduleDate(slot.dateStr)}
+                              className={`w-8 h-8 rounded-full text-xs font-semibold flex items-center justify-center transition-all cursor-pointer ${
+                                isSelected
+                                  ? "bg-indigo-600 text-white shadow-xs font-bold"
+                                  : isToday
+                                  ? "border-2 border-indigo-600 text-indigo-600 dark:text-indigo-400 font-bold"
+                                  : "text-slate-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-800"
+                              }`}
+                            >
+                              {slot.dayNum}
+                            </button>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         )}

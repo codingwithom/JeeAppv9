@@ -25,7 +25,8 @@ import {
   ChevronDown,
   Search,
   HelpCircle,
-  Layers
+  Layers,
+  Flame
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
@@ -300,6 +301,7 @@ export function Sidebar() {
     { href: "/video", label: "Videos", icon: Video },
     { href: "/saves", label: "Saves", icon: Bookmark },
     { href: "/quiz", label: "AI", icon: BrainCircuit },
+    { href: "/pw", label: "PW Live", icon: Flame },
     { href: "/others", label: "Others", icon: Layers },
   ];
 

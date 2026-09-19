@@ -26,6 +26,7 @@ const SavesPage = React.lazy(() => import("@/pages/SavesPage"));
 const QuizPage = React.lazy(() => import("@/pages/QuizPage"));
 const QuestionsPage = React.lazy(() => import("@/pages/QuestionsPage"));
 const OthersPage = React.lazy(() => import("@/pages/OthersPage"));
+const PWPage = React.lazy(() => import("@/pages/PWPage"));
 const AmbientMixer = React.lazy(() => import("@/components/AmbientMixer").then(m => ({ default: m.AmbientMixer })));
 import { MiniPlayer } from "@/components/MiniPlayer";
 import { AnimatePresence, motion } from "framer-motion";
@@ -47,7 +48,8 @@ import {
   PenTool, 
   BrainCircuit, 
   HelpCircle,
-  Layers
+  Layers,
+  Flame
 } from "lucide-react";
 import { idbGetAllKeys, idbGet, idbSet } from "@/lib/idb";
 
@@ -62,8 +64,9 @@ const PAGE_LABELS: Record<string, string> = {
   "/admin": "Admin Panel",
   "/saves": "Saves",
   "/quiz": "AI",
+  "/pw": "Physics Wallah Live",
   "/others": "Others",
-  "/others/pw": "Physics Wallah",
+  "/others/pw": "Physics Wallah Live",
   "/others/questions": "JEE Questions",
   "/questions": "JEE Questions",
   "/ambient": "Zen Mixer",
@@ -97,6 +100,7 @@ function CommandPalette() {
     { name: "Admin Panel", path: "/admin", icon: Shield },
     { name: "Saves & Flashcards", path: "/saves", icon: Bookmark },
     { name: "AI", path: "/quiz", icon: BrainCircuit },
+    { name: "Physics Wallah Live", path: "/pw", icon: Flame },
     { name: "Others", path: "/others", icon: Layers },
     { name: "Questions", path: "/others/questions", icon: HelpCircle },
     { name: "Zen Mixer", path: "/ambient", icon: Headphones },
@@ -361,6 +365,8 @@ function Router() {
       <React.Suspense fallback={null}>
         <Switch>
           <Route path="/" component={HomePage} />
+          <Route path="/pw" component={PWPage} />
+          <Route path="/others/pw" component={PWPage} />
           <Route path="/others" component={OthersPage} />
           <Route path="/others/:rest*" component={OthersPage} />
           <Route path="/questions" component={QuestionsPage} />

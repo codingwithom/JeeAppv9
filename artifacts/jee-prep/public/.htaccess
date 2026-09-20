@@ -1,8 +1,41 @@
+# ==============================================================================
+# StudE & OM Network Universal Apache / cPanel / InfinityFree Configuration
+# Works seamlessly on stude.is-best.net (root) and omnetwork.in (root or /v4/)
+# ==============================================================================
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteBase /
-  RewriteRule ^index\.html$ - [L]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . index.html [L]
+  
+  # Allow direct access to existing files and directories
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Route all other web requests to index.html (SPA Fallback)
+  RewriteRule ^ index.html [QSA,L]
 </IfModule>
+
+# Enable Cross-Origin Resource Sharing (CORS) for all assets
+<IfModule mod_headers.c>
+  Header always set Access-Control-Allow-Origin "*"
+  Header always set Access-Control-Allow-Methods "GET, POST, OPTIONS, HEAD"
+  Header always set Access-Control-Allow-Headers "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+</IfModule>
+
+# Ensure proper MIME types for modern web assets
+<IfModule mod_mime.c>
+  AddType application/javascript .js .mjs
+  AddType application/json .json
+  AddType image/svg+xml .svg .svgz
+  AddType application/wasm .wasm
+  AddType audio/mpeg .mp3
+  AddType audio/ogg .ogg
+  AddType font/woff .woff
+  AddType font/woff2 .woff2
+</IfModule>
+
+# Enable Gzip Compression for fast delivery
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>
+

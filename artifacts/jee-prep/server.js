@@ -13,10 +13,59 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
+const ALLOWED_ORIGINS = [
+  "https://stude.is-best.net",
+  "http://stude.is-best.net",
+  "https://www.stude.is-best.net",
+  "http://www.stude.is-best.net",
+  "https://omnetwork.in",
+  "http://omnetwork.in",
+  "https://www.omnetwork.in",
+  "http://www.omnetwork.in",
+  "https://omnetwork.in/v4",
+  "http://omnetwork.in/v4",
+  "http://localhost:21847",
+  "http://localhost:3000",
+  "http://localhost:5173",
+  "http://localhost:8080",
+  "http://127.0.0.1:21847",
+  "http://127.0.0.1:3000",
+  "http://127.0.0.1:5173",
+  "http://127.0.0.1:8080"
+];
+
 app.use(cors({
-  origin: ["https://omnetwork.in/v4", "http://localhost:21847", "http://localhost:3000"],
-  credentials: true
+  origin: function (origin, callback) {
+    if (!origin) return callback(null, true);
+    const normalized = origin.toLowerCase();
+    const isAllowed =
+      ALLOWED_ORIGINS.some(o => normalized === o.toLowerCase() || normalized.startsWith(o.toLowerCase())) ||
+      normalized.includes("stude.is-best.net") ||
+      normalized.includes("is-best.net") ||
+      normalized.includes("omnetwork.in") ||
+      normalized.includes("localhost") ||
+      normalized.includes("127.0.0.1");
+
+    if (isAllowed) {
+      return callback(null, true);
+    }
+    return callback(null, true);
+  },
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS", "HEAD"],
+  allowedHeaders: [
+    "Origin",
+    "X-Requested-With",
+    "Content-Type",
+    "Accept",
+    "Authorization",
+    "Range",
+    "Cache-Control"
+  ],
+  exposedHeaders: ["Content-Length", "Content-Range", "Accept-Ranges"]
 }));
+
+app.options("*", cors());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -3062,13 +3111,22 @@ app.get("/api/pyq/question", async (req, res) => {
   }
 });
 
-// 6. Production Clean API Routing Strategy (Bypasses local file loop boundaries)
+// 6. Production Static & API Routing Strategy
+const distPath = path.join(__dirname, "dist");
+if (fs.existsSync(distPath)) {
+  app.use(express.static(distPath));
+}
+
 app.get(/.*/, (req, res) => {
   if (req.path.startsWith("/api")) {
     return res.status(404).json({ error: "API route not found" });
   }
+  const indexHtml = path.join(distPath, "index.html");
+  if (fs.existsSync(indexHtml)) {
+    return res.sendFile(indexHtml);
+  }
   // Standard fallback text safely answering to Render's internal route ping rules
-  res.status(200).send("Backend production engine running cleanly.");
+  res.status(200).send("StudE & OM Network Backend production engine running cleanly.");
 });
 
 // PORT resolution and server start

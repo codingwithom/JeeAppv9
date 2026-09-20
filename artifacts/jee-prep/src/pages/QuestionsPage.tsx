@@ -34,11 +34,12 @@ import { Input } from "@/components/ui/input";
 import { RichMathContent } from "@/components/questions/RichMathContent";
 import { QuestionInteractiveArea } from "@/components/questions/QuestionInteractiveArea";
 import { useToast } from "@/hooks/use-toast";
+import { NtaCbtExamSimulator, isCbtEligible } from "@/components/questions/NtaCbtExamSimulator";
 
 // Inlined instant logos (0ms load time)
 import { JEE_MAIN_LOGO, JEE_ADVANCED_LOGO } from "@/data/pyq/examIcons";
 
-type Mode = "landing" | "paper_list" | "paper_practice" | "chapter_list" | "chapter_practice" | "search_practice";
+type Mode = "landing" | "paper_list" | "paper_practice" | "chapter_list" | "chapter_practice" | "search_practice" | "cbt_exam";
 type ExamType = "jee-main" | "jee-advanced";
 
 function isFullyLoaded(q: any): boolean {
@@ -221,6 +222,17 @@ export default function QuestionsPage() {
     }).catch(() => {});
   }, []);
 
+  // Check URL parameter or hash for auto-launching NTA CBT Exam mode
+  useEffect(() => {
+    try {
+      const search = window.location.search;
+      const hash = window.location.hash;
+      if (search.includes("cbt=true") || hash.includes("cbt=true")) {
+        setMode("cbt_exam");
+      }
+    } catch (e) {}
+  }, []);
+
   // Search Effect (Debounced query + instant memory search from search_index.json)
   useEffect(() => {
     const hasQuery = searchQuery.trim().length > 0;
@@ -387,16 +399,16 @@ export default function QuestionsPage() {
     }
   };
 
-  // Check if current goal is IIT-JEE 11th or 12th
+  // Check if current goal is IIT-JEE or NEET (11th, 12th, or Dropper)
   const goalCheck = useMemo(() => {
     if (!selectedGoal) return { isAllowed: false, reason: "no_goal" };
     const text = `${selectedGoal.category || ""} ${selectedGoal.displayName || ""} ${(selectedGoal.path || []).join(" ")}`.toLowerCase();
-    const isJee = text.includes("jee") || text.includes("iit");
-    if (!isJee) return { isAllowed: false, reason: "wrong_category" };
+    const isJeeOrNeet = text.includes("jee") || text.includes("iit") || text.includes("neet") || text.includes("medical");
+    if (!isJeeOrNeet) return { isAllowed: false, reason: "wrong_category" };
 
-    // Check if 11th or 12th
-    const isClass11or12 = text.includes("11") || text.includes("12") || text.includes("dropper") || !text.includes("class");
-    if (!isClass11or12) return { isAllowed: false, reason: "wrong_class" };
+    // Check if 11th, 12th, or Dropper
+    const isClass11or12orDropper = text.includes("11") || text.includes("12") || text.includes("dropper") || text.includes("drop") || !text.includes("class");
+    if (!isClass11or12orDropper) return { isAllowed: false, reason: "wrong_class" };
 
     return { isAllowed: true, reason: "ok" };
   }, [selectedGoal]);
@@ -920,6 +932,16 @@ export default function QuestionsPage() {
     );
   }
 
+  // ─── 0. NTA CBT EXAM SIMULATION MODE ─────────────────────────────────────────
+  if (mode === "cbt_exam") {
+    return (
+      <NtaCbtExamSimulator
+        onExit={() => setMode("landing")}
+        initialExam={selectedExam}
+      />
+    );
+  }
+
   // ─── 1. LANDING VIEW (Matches JEE img.png + Search System) ───────────────────
   if (mode === "landing") {
     const isSearchActive = Boolean(
@@ -1300,36 +1322,100 @@ export default function QuestionsPage() {
           </>
         )}
 
-        {/* Feature Highlights */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
-          <div className="p-4 rounded-xl bg-card border border-border/60 flex items-start gap-3">
-            <div className="p-2 rounded-lg bg-blue-500/10 text-blue-500 shrink-0">
-              <Atom className="w-5 h-5" />
+        {/* NTA CBT EXAM SIMULATION MODE (Only for 11th, 12th & Dropper IIT-JEE) */}
+        {isCbtEligible(selectedGoal) && (
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="relative overflow-hidden rounded-3xl border-2 border-blue-600/30 dark:border-blue-500/30 bg-gradient-to-br from-[#0B3C61]/10 via-card to-emerald-500/5 p-6 sm:p-8 shadow-md hover:shadow-xl transition-all"
+          >
+            <div className="absolute top-0 right-0 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+
+            <div className="relative z-10 space-y-6">
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <div className="flex items-center gap-2">
+                  <span className="px-3 py-1 rounded-full text-xs font-black bg-[#0B3C61] text-white shadow-sm flex items-center gap-1.5">
+                    <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+                    NTA OFFICIAL CBT SIMULATION
+                  </span>
+                  <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20">
+                    100% Real Exam UI
+                  </span>
+                </div>
+
+                <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">
+                  Targeted: 11th, 12th &amp; Droppers (IIT-JEE)
+                </span>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
+                <div className="lg:col-span-2 space-y-2">
+                  <h3 className="text-xl sm:text-2xl font-black text-foreground tracking-tight flex items-center gap-2">
+                    NTA CBT Exam Simulation Mode
+                  </h3>
+                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                    Attempt full mock tests in the 100% exact National Testing Agency computer-based test interface with official question palette color codes (Answered, Not Answered, Marked for Review), virtual numerical keypad, subject switching, strict 3-hour timer, and instant rank/percentile scorecards.
+                  </p>
+
+                  <div className="flex flex-wrap gap-2 pt-2 text-[11px]">
+                    <span className="px-2.5 py-1 rounded-lg bg-card border border-border/80 font-semibold text-foreground flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-emerald-500" /> 146+ Real JEE Shifts
+                    </span>
+                    <span className="px-2.5 py-1 rounded-lg bg-card border border-border/80 font-semibold text-foreground flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-blue-500" /> JEE Mains &amp; Advance
+                    </span>
+                    <span className="px-2.5 py-1 rounded-lg bg-card border border-border/80 font-semibold text-foreground flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-purple-500" /> 5-Color Official Palette
+                    </span>
+                    <span className="px-2.5 py-1 rounded-lg bg-card border border-border/80 font-semibold text-foreground flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-amber-500" /> Virtual Numerical Keypad
+                    </span>
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-2.5 justify-center">
+                  <Button
+                    onClick={() => {
+                      setSelectedExam("jee-main");
+                      setMode("cbt_exam");
+                    }}
+                    className="w-full py-6 rounded-2xl font-black text-sm bg-[#0B3C61] hover:bg-[#07253d] text-white shadow-xl shadow-blue-900/20 group flex items-center justify-center gap-2 transition-all transform-gpu hover:scale-[1.02]"
+                  >
+                    Launch NTA CBT Exam
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                  <div className="grid grid-cols-2 gap-2">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => {
+                        setSelectedExam("jee-main");
+                        setMode("cbt_exam");
+                      }}
+                      className="rounded-xl text-xs font-bold border-blue-600/30 hover:bg-blue-500/10 text-[#0B3C61] dark:text-blue-300"
+                    >
+                      JEE Mains
+                    </Button>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => {
+                        setSelectedExam("jee-advanced");
+                        setMode("cbt_exam");
+                      }}
+                      className="rounded-xl text-xs font-bold border-amber-600/30 hover:bg-amber-500/10 text-amber-700 dark:text-amber-300"
+                    >
+                      JEE Advance
+                    </Button>
+                  </div>
+                  <p className="text-[11px] text-center text-muted-foreground font-medium">
+                    Strict exam hall simulation with auto-submit
+                  </p>
+                </div>
+              </div>
             </div>
-            <div>
-              <h4 className="text-sm font-semibold text-foreground">Physics First</h4>
-              <p className="text-xs text-muted-foreground">Comprehensive Physics questions across all shifts & papers.</p>
-            </div>
-          </div>
-          <div className="p-4 rounded-xl bg-card border border-border/60 flex items-start gap-3">
-            <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-500 shrink-0">
-              <CheckCircle2 className="w-5 h-5" />
-            </div>
-            <div>
-              <h4 className="text-sm font-semibold text-foreground">Instant Answer Check</h4>
-              <p className="text-xs text-muted-foreground">Select an option and get immediate verification with score calculation.</p>
-            </div>
-          </div>
-          <div className="p-4 rounded-xl bg-card border border-border/60 flex items-start gap-3">
-            <div className="p-2 rounded-lg bg-purple-500/10 text-purple-500 shrink-0">
-              <Sparkles className="w-5 h-5" />
-            </div>
-            <div>
-              <h4 className="text-sm font-semibold text-foreground">Step-by-Step Solutions</h4>
-              <p className="text-xs text-muted-foreground">Full mathematical derivations, diagrams, and explanations.</p>
-            </div>
-          </div>
-        </div>
+          </motion.div>
+        )}
       </div>
     );
   }

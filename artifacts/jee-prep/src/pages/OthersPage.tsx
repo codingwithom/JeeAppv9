@@ -15,12 +15,16 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import QuestionsPage from "@/pages/QuestionsPage";
 import PWPage from "@/pages/PWPage";
+import { useAppContext } from "@/context/AppContext";
+import { NtaCbtExamSimulator, isCbtEligible } from "@/components/questions/NtaCbtExamSimulator";
 
-type OthersSubView = "hub" | "questions" | "pw";
+type OthersSubView = "hub" | "questions" | "pw" | "cbt";
 
 export default function OthersPage() {
   const [location, navigate] = useLocation();
   const [subView, setSubView] = useState<OthersSubView>("hub");
+  const { selectedGoal } = useAppContext();
+  const isEligible = isCbtEligible(selectedGoal);
 
   // Sync subView with route
   useEffect(() => {
@@ -28,6 +32,8 @@ export default function OthersPage() {
       setSubView("questions");
     } else if (location === "/others/pw" || location === "/pw") {
       setSubView("pw");
+    } else if (location === "/others/cbt") {
+      setSubView("cbt");
     } else {
       setSubView("hub");
     }
@@ -56,7 +62,39 @@ export default function OthersPage() {
   }
 
   if (subView === "pw") {
-    return <PWPage />;
+    return (
+      <div className="animate-in fade-in duration-200">
+        <div className="p-4 border-b border-border/60 bg-card/60 backdrop-blur-md flex items-center justify-between">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => {
+              setSubView("hub");
+              navigate("/others");
+            }}
+            className="gap-2 text-xs font-semibold rounded-xl"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Back to Others Hub
+          </Button>
+          <span className="text-xs text-muted-foreground font-medium">Physics Wallah Live Tracker</span>
+        </div>
+        <PWPage />
+      </div>
+    );
+  }
+
+  if (subView === "cbt") {
+    return (
+      <div className="animate-in fade-in duration-200">
+        <NtaCbtExamSimulator
+          onExit={() => {
+            setSubView("hub");
+            navigate("/others");
+          }}
+        />
+      </div>
+    );
   }
 
   return (
@@ -80,7 +118,7 @@ export default function OthersPage() {
         {/* ── CARD 1: PHYSICS WALLAH PORTAL ──────────────────────────────────── */}
         <div
           onClick={() => {
-            navigate("/pw");
+            navigate("/others/pw");
           }}
           className="relative overflow-hidden rounded-3xl border border-border/80 bg-card p-6 sm:p-8 shadow-sm hover:shadow-xl hover:border-amber-500/50 transition-all cursor-pointer group flex flex-col justify-between"
         >
@@ -92,7 +130,7 @@ export default function OthersPage() {
                 <Flame className="w-7 h-7 fill-amber-500 text-amber-500" />
               </div>
               <span className="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">
-                Official Live Tracker
+                PW
               </span>
             </div>
 
@@ -126,7 +164,13 @@ export default function OthersPage() {
             <span className="text-xs font-bold text-muted-foreground group-hover:text-foreground transition-colors">
               Launch dedicated PW Tracker
             </span>
-            <Button className="rounded-xl font-bold text-xs gap-2 py-4 px-5 bg-amber-600 hover:bg-amber-700 text-white shadow-sm group-hover:shadow-md transition-all">
+            <Button 
+              onClick={(e) => {
+                e.stopPropagation();
+                navigate("/others/pw");
+              }}
+              className="rounded-xl font-bold text-xs gap-2 py-4 px-5 bg-amber-600 hover:bg-amber-700 text-white shadow-sm group-hover:shadow-md transition-all"
+            >
               Open PW Tracker <ArrowRight className="w-4 h-4" />
             </Button>
           </div>

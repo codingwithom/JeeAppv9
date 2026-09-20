@@ -6,12 +6,18 @@ import mathjaxDefs from "@/data/pyq/mathjax-defs.html?raw";
 // Inject the global MathJax SVG font cache into the document so all SVG glyphs (#MJX-TEX-...) render
 function ensureMathJaxDefs() {
   if (typeof document === "undefined") return;
-  if (!document.getElementById("MJX-SVG-global-cache")) {
+  const existing = document.getElementById("MJX-SVG-global-cache");
+  if (!existing) {
     const container = document.createElement("div");
     container.style.display = "none";
     container.innerHTML = mathjaxDefs;
     if (container.firstElementChild) {
       document.body.prepend(container.firstElementChild);
+    }
+  } else {
+    const defsContent = mathjaxDefs.replace(/^<svg[^>]*>/, "").replace(/<\/svg>\s*$/, "");
+    if (!existing.innerHTML.includes("MJX-TEX-S4-23A1")) {
+      existing.innerHTML = defsContent;
     }
   }
 }
@@ -50,6 +56,9 @@ export function RichMathContent({ content, className = "", compact = false }: Ri
       .replace(/<p>\s*(?:&nbsp;|\s|<br\s*\/?>)*\s*<\/p>/gi, "")
       .replace(/(?:<br\s*\/?>\s*){3,}/gi, "<br/><br/>")
       .replace(/<p>\s*<\/p>/gi, "");
+
+    // 0.1 Fix MathJax table frames & lines from turning into solid black blocks
+    html = html.replace(/<rect([^>]*)(?:class=["']mjx-solid["']|data-frame=["']true["'])([^>]*)>/gi, '<rect$1class="mjx-solid" data-frame="true" fill="none" stroke="currentColor" stroke-width="70"$2>');
 
     // 1. Fix CDN image URLs if relative
     html = html.replace(/src=["']\/([^"']+)["']/g, 'src="https://questions.examside.com/$1"');

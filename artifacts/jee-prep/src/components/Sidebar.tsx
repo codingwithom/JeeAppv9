@@ -25,8 +25,7 @@ import {
   ChevronDown,
   Search,
   HelpCircle,
-  Layers,
-  Flame
+  Layers
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
@@ -301,7 +300,6 @@ export function Sidebar() {
     { href: "/video", label: "Videos", icon: Video },
     { href: "/saves", label: "Saves", icon: Bookmark },
     { href: "/quiz", label: "AI", icon: BrainCircuit },
-    { href: "/pw", label: "PW Live", icon: Flame },
     { href: "/others", label: "Others", icon: Layers },
   ];
 
@@ -432,7 +430,7 @@ export function Sidebar() {
 
         <nav className="flex-1 py-6 px-3 space-y-2 overflow-y-auto overflow-x-hidden">
           {links.map((link) => {
-            const active = location === link.href || (link.href === "/others" && (location.startsWith("/others") || location.startsWith("/questions")));
+            const active = location === link.href || (link.href === "/others" && (location.startsWith("/others") || location.startsWith("/questions") || location.startsWith("/pw")));
             const isLocked = isLockdownActive && !allowedLockdownLinks.includes(link.href);
 
             return (

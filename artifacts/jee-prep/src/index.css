@@ -368,6 +368,20 @@ mjx-container[jax="SVG"] > svg {
   stroke: currentColor;
 }
 
+/* Fix MathJax SVG table frames & lines from turning into solid black blocks */
+mjx-container[jax="SVG"] rect,
+mjx-container[jax="SVG"] rect[data-frame],
+mjx-container[jax="SVG"] rect.mjx-solid,
+mjx-container[jax="SVG"] .mjx-solid {
+  fill: none !important;
+  stroke: currentColor !important;
+}
+
+mjx-container[jax="SVG"] line.mjx-solid,
+mjx-container[jax="SVG"] line[data-line] {
+  stroke: currentColor !important;
+}
+
 mjx-container[jax="SVG"][display="true"] {
   display: block;
   text-align: center;

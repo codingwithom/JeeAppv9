@@ -33,6 +33,7 @@ import { Button } from "@/components/ui/button";
 import { idbGet } from "@/lib/idb";
 import { Input } from "@/components/ui/input";
 import { useLockdown } from "@/context/LockdownContext";
+import { preloadRoute } from "@/App";
 
 function LockdownPanel({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const [hours, setHours] = useState(0);
@@ -370,6 +371,8 @@ export function Sidebar() {
             >
               <button
                 onClick={() => navigate("/admin")}
+                onMouseEnter={() => preloadRoute("/admin")}
+                onTouchStart={() => preloadRoute("/admin")}
                 className={cn(
                   "h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-primary/20 flex items-center justify-center cursor-pointer hover:scale-105 transition-all border-2 border-primary/30 overflow-hidden shrink-0 shadow-sm",
                   location === "/admin" && "border-primary/60 shadow-md",
@@ -392,6 +395,8 @@ export function Sidebar() {
             <>
               <button
                 onClick={() => navigate("/admin")}
+                onMouseEnter={() => preloadRoute("/admin")}
+                onTouchStart={() => preloadRoute("/admin")}
                 className={cn(
                   "h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center cursor-pointer hover:scale-105 transition-all border-2 border-primary/30 overflow-hidden shrink-0 shadow-sm mx-auto",
                   location === "/admin" && "border-primary/60 shadow-md",
@@ -434,14 +439,19 @@ export function Sidebar() {
             const isLocked = isLockdownActive && !allowedLockdownLinks.includes(link.href);
 
             return (
-              <div key={link.href} onClick={() => {
-                if (isLocked) {
-                  // Silently return to NOT break the fullscreen API which aborts on alerts
-                  return;
-                }
-                if (isMobile) setIsOpen(false);
-                navigate(link.href);
-              }}>
+              <div
+                key={link.href}
+                onMouseEnter={() => preloadRoute(link.href)}
+                onTouchStart={() => preloadRoute(link.href)}
+                onClick={() => {
+                  if (isLocked) {
+                    // Silently return to NOT break the fullscreen API which aborts on alerts
+                    return;
+                  }
+                  if (isMobile) setIsOpen(false);
+                  navigate(link.href);
+                }}
+              >
                 <div
                   className={cn(
                     "flex items-center gap-3 px-3 py-3 rounded-xl transition-all cursor-pointer group relative",

@@ -16,17 +16,64 @@ import NotFound from "@/pages/not-found";
 import LoginPage from "@/pages/LoginPage";
 import { Sidebar } from "@/components/Sidebar";
 
-const HomePage = React.lazy(() => import("@/pages/HomePage"));
-const CalendarPage = React.lazy(() => import("@/pages/CalendarPage"));
-const MusicPage = React.lazy(() => import("@/pages/MusicPage"));
-const PDFPage = React.lazy(() => import("@/pages/PDFPage"));
-const AdminPage = React.lazy(() => import("@/pages/AdminPage"));
-const VideoPage = React.lazy(() => import("@/pages/VideoPage"));
-const SavesPage = React.lazy(() => import("@/pages/SavesPage"));
-const QuizPage = React.lazy(() => import("@/pages/QuizPage"));
-const QuestionsPage = React.lazy(() => import("@/pages/QuestionsPage"));
-const OthersPage = React.lazy(() => import("@/pages/OthersPage"));
-const AmbientMixer = React.lazy(() => import("@/components/AmbientMixer").then(m => ({ default: m.AmbientMixer })));
+import { eagerLazy } from "@/lib/eagerLazy";
+
+export const HomePage = eagerLazy(() => import("@/pages/HomePage"));
+export const CalendarPage = eagerLazy(() => import("@/pages/CalendarPage"));
+export const MusicPage = eagerLazy(() => import("@/pages/MusicPage"));
+export const PDFPage = eagerLazy(() => import("@/pages/PDFPage"));
+export const AdminPage = eagerLazy(() => import("@/pages/AdminPage"));
+export const VideoPage = eagerLazy(() => import("@/pages/VideoPage"));
+export const SavesPage = eagerLazy(() => import("@/pages/SavesPage"));
+export const QuizPage = eagerLazy(() => import("@/pages/QuizPage"));
+export const QuestionsPage = eagerLazy(() => import("@/pages/QuestionsPage"));
+export const OthersPage = eagerLazy(() => import("@/pages/OthersPage"));
+export const AmbientMixer = eagerLazy(() => import("@/components/AmbientMixer").then(m => ({ default: m.AmbientMixer })));
+
+export const ROUTE_PRELOADERS: Record<string, () => void> = {
+  "/": () => HomePage.preload(),
+  "/admin": () => AdminPage.preload(),
+  "/others": () => OthersPage.preload(),
+  "/questions": () => QuestionsPage.preload(),
+  "/quiz": () => QuizPage.preload(),
+  "/saves": () => SavesPage.preload(),
+  "/calendar": () => CalendarPage.preload(),
+  "/music": () => MusicPage.preload(),
+  "/pdf": () => PDFPage.preload(),
+  "/video": () => VideoPage.preload(),
+  "/ambient": () => AmbientMixer.preload(),
+};
+
+export function preloadRoute(path: string) {
+  try {
+    const clean = path.split("?")[0].replace(/\/$/, "") || "/";
+    if (ROUTE_PRELOADERS[clean]) {
+      ROUTE_PRELOADERS[clean]();
+    } else if (clean.startsWith("/others") || clean.startsWith("/pw")) {
+      OthersPage.preload();
+    }
+  } catch (e) {}
+}
+
+export function preloadAllRoutes() {
+  const pages = [AdminPage, OthersPage, QuizPage, QuestionsPage, HomePage, CalendarPage, MusicPage, PDFPage, VideoPage, SavesPage, AmbientMixer];
+  let delay = 50;
+  pages.forEach((p) => {
+    setTimeout(() => {
+      p.preload?.().catch(() => {});
+    }, delay);
+    delay += 50;
+  });
+}
+
+// Background preload immediately on app initialization
+if (typeof window !== "undefined") {
+  if ("requestIdleCallback" in window) {
+    (window as any).requestIdleCallback(() => preloadAllRoutes(), { timeout: 1500 });
+  } else {
+    setTimeout(() => preloadAllRoutes(), 200);
+  }
+}
 import { MiniPlayer } from "@/components/MiniPlayer";
 import { AnimatePresence, motion } from "framer-motion";
 import { GoalSelection } from "@/components/GoalSelection";
@@ -121,7 +168,13 @@ function CommandPalette() {
         </div>
         <div className="max-h-80 overflow-y-auto p-2">
           {filtered.map((item) => (
-            <button key={item.path} onClick={() => { navigate(item.path); setIsOpen(false); setSearch(""); }} className="w-full flex items-center gap-3 px-3 py-3 hover:bg-primary/10 rounded-lg text-sm font-medium text-foreground transition-colors">
+            <button
+              key={item.path}
+              onMouseEnter={() => preloadRoute(item.path)}
+              onTouchStart={() => preloadRoute(item.path)}
+              onClick={() => { navigate(item.path); setIsOpen(false); setSearch(""); }}
+              className="w-full flex items-center gap-3 px-3 py-3 hover:bg-primary/10 rounded-lg text-sm font-medium text-foreground transition-colors"
+            >
               <item.icon className="h-4 w-4 text-muted-foreground" />
               {item.name}
             </button>
@@ -341,9 +394,7 @@ function ProtectedLayout({ children }: { children: React.ReactNode }) {
         <div className="flex-1 flex flex-col md:flex-row overflow-hidden relative">
           <CommandPalette />
           <div className="flex-1 overflow-y-auto relative">
-            <AnimatePresence mode="wait">
-              {children}
-            </AnimatePresence>
+            {children}
           </div>
         </div>
         <MiniPlayer />
@@ -361,25 +412,23 @@ function ProtectedLayout({ children }: { children: React.ReactNode }) {
 function Router() {
   return (
     <ProtectedLayout>
-      <React.Suspense fallback={null}>
-        <Switch>
-          <Route path="/" component={HomePage} />
-          <Route path="/pw" component={OthersPage} />
-          <Route path="/others/pw" component={OthersPage} />
-          <Route path="/others" component={OthersPage} />
-          <Route path="/others/:rest*" component={OthersPage} />
-          <Route path="/questions" component={QuestionsPage} />
-          <Route path="/calendar" component={CalendarPage} />
-          <Route path="/music" component={MusicPage} />
-          <Route path="/pdf" component={PDFPage} />
-          <Route path="/video" component={VideoPage} />
-          <Route path="/admin" component={AdminPage} />
-          <Route path="/saves" component={SavesPage} />
-          <Route path="/quiz" component={QuizPage} />
-          <Route path="/ambient" component={AmbientMixer} />
-          <Route component={NotFound} />
-        </Switch>
-      </React.Suspense>
+      <Switch>
+        <Route path="/" component={HomePage} />
+        <Route path="/pw" component={OthersPage} />
+        <Route path="/others/pw" component={OthersPage} />
+        <Route path="/others" component={OthersPage} />
+        <Route path="/others/:rest*" component={OthersPage} />
+        <Route path="/questions" component={QuestionsPage} />
+        <Route path="/calendar" component={CalendarPage} />
+        <Route path="/music" component={MusicPage} />
+        <Route path="/pdf" component={PDFPage} />
+        <Route path="/video" component={VideoPage} />
+        <Route path="/admin" component={AdminPage} />
+        <Route path="/saves" component={SavesPage} />
+        <Route path="/quiz" component={QuizPage} />
+        <Route path="/ambient" component={AmbientMixer} />
+        <Route component={NotFound} />
+      </Switch>
     </ProtectedLayout>
   );
 }

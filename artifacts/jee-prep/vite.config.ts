@@ -59,6 +59,7 @@ export default defineConfig(async () => {
     base: "./",
 
     plugins: [
+      gcPlugin(),
       react(),
       tailwindcss(),
       {
@@ -103,7 +104,17 @@ export default defineConfig(async () => {
       chunkSizeWarningLimit: 2000,
       rollupOptions: {
         maxParallelFileOps: 1,
-        cache: false
+        cache: false,
+        output: {
+          manualChunks(id) {
+            if (id.includes("node_modules")) {
+              if (id.includes("firebase")) return "vendor-firebase";
+              if (id.includes("katex") || id.includes("rehype-katex") || id.includes("remark-math")) return "vendor-math";
+              if (id.includes("recharts") || id.includes("d3-")) return "vendor-charts";
+              if (id.includes("pdfjs-dist")) return "vendor-pdf";
+            }
+          }
+        }
       }
     },
     server: {

@@ -1744,7 +1744,33 @@ async function handleScrape(targetUrl) {
 
 
 // ─── PYQ QUESTIONS ENGINE (EXAMSIDE INTEGRATION FOR /#/questions) ───────────
-const pyqCache = new LRUCache(300, 3600000);
+class SimpleLRUCache {
+  constructor(max = 300, ttl = 3600000) {
+    this.max = max;
+    this.ttl = ttl;
+    this.cache = new Map();
+  }
+  get(key) {
+    const item = this.cache.get(key);
+    if (!item) return null;
+    if (item.expiresAt && item.expiresAt < Date.now()) {
+      this.cache.delete(key);
+      return null;
+    }
+    this.cache.delete(key);
+    this.cache.set(key, item);
+    return item;
+  }
+  set(key, value) {
+    if (this.cache.has(key)) this.cache.delete(key);
+    else if (this.cache.size >= this.max) {
+      const oldestKey = this.cache.keys().next().value;
+      if (oldestKey) this.cache.delete(oldestKey);
+    }
+    this.cache.set(key, value);
+  }
+}
+const pyqCache = new SimpleLRUCache(300, 3600000);
 
 function unflatten(parsed) {
   if (!parsed || !Array.isArray(parsed)) return parsed;

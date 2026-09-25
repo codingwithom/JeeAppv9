@@ -1163,6 +1163,42 @@ async function fetchPwMetadata(batchId) {
     throw err;
   }
 
+  // If this batch has 0 direct subjects (combo/bundle/lead batches like Arjuna JEE 2027 + Uday 2027),
+  // automatically inherit curriculum subjects from the primary batch!
+  if (subjects.length === 0) {
+    let parentBatchId = null;
+    const bName = (data.name || data.batchName || "").toLowerCase();
+    const bExam = (Array.isArray(data.exam) ? data.exam.join(" ") : (data.exam || "")).toLowerCase();
+    const bClass = String(data.class || "").toLowerCase();
+
+    if (bName.includes("arjuna") && (bName.includes("2027") || bClass === "11") && (bExam.includes("jee") || bName.includes("jee"))) {
+      parentBatchId = "698ad3519549b300a5e1cc6a"; // Standard Arjuna JEE 2027
+    } else if (bName.includes("lakshya") && (bName.includes("2026") || bClass === "12") && (bExam.includes("jee") || bName.includes("jee"))) {
+      parentBatchId = "664cb3d34b4c100018eb7814"; // Standard Lakshya JEE 2026
+    } else if (bName.includes("prayas") && (bExam.includes("jee") || bName.includes("jee"))) {
+      parentBatchId = "660144f808baec001824efec"; // Standard Prayas JEE
+    } else if (bName.includes("arjuna") && (bExam.includes("neet") || bName.includes("neet"))) {
+      parentBatchId = "664ca7bc354afd415fa0808a"; // Standard Arjuna NEET 2027
+    } else if (bName.includes("lakshya") && (bExam.includes("neet") || bName.includes("neet"))) {
+      parentBatchId = "664cb4325a74070018d9db90"; // Standard Lakshya NEET 2026
+    } else if (bName.includes("yakeen") || (bExam.includes("neet") && (bClass === "13" || bClass.includes("drop")))) {
+      parentBatchId = "6630f9a2dbb730001859cff2"; // Standard Yakeen NEET
+    } else if (bExam.includes("jee") || bName.includes("jee")) {
+      parentBatchId = "698ad3519549b300a5e1cc6a";
+    }
+
+    if (parentBatchId && parentBatchId !== batchId) {
+      try {
+        const parentMeta = await fetchPwMetadata(parentBatchId);
+        if (parentMeta && Array.isArray(parentMeta.subjects) && parentMeta.subjects.length > 0) {
+          subjects.push(...parentMeta.subjects);
+        }
+      } catch (parentErr) {
+        console.warn(`[PW API]: Parent batch resolution failed for ${batchId}:`, parentErr.message);
+      }
+    }
+  }
+
   const batchPdf = data.batchPdfUrl || (data.fileId ? `https://static.pw.live/${data.fileId.key}` : undefined);
   const previewImage = data.previewImage || (data.imageId ? `https://static.pw.live/${data.imageId.key}` : undefined);
 

@@ -247,6 +247,55 @@ function extractCatalogBatches(payload: unknown): PWCatalogBatch[] {
   }));
 }
 
+function mergeBatches(existing: PWBatch | undefined, fresh: PWBatch): PWBatch {
+  if (!existing || !Array.isArray(existing.subjects) || existing.subjects.length === 0) {
+    return fresh;
+  }
+
+  // If fresh has 0 subjects but existing has subjects, preserve existing subjects completely!
+  if (!Array.isArray(fresh.subjects) || fresh.subjects.length === 0) {
+    return {
+      ...fresh,
+      subjects: existing.subjects
+    };
+  }
+
+  const mergedSubjects: PWSubject[] = fresh.subjects.map(freshSub => {
+    const existingSub = existing.subjects.find(s => s.id === freshSub.id || s.name === freshSub.name);
+    if (!existingSub) return freshSub;
+
+    const mergedChapters: PWChapter[] = freshSub.chapters.map(freshCh => {
+      const existingCh = existingSub.chapters.find(c => c.id === freshCh.id || c.title === freshCh.title);
+      if (!existingCh) return freshCh;
+
+      const hasLoadedLectures = Array.isArray(existingCh.lectures) && existingCh.lectures.length > 0;
+      return {
+        ...freshCh,
+        lectures: hasLoadedLectures ? existingCh.lectures : freshCh.lectures,
+        videoCount: Math.max(freshCh.videoCount || 0, existingCh.videoCount || 0),
+        notesCount: Math.max(freshCh.notesCount || 0, existingCh.notesCount || 0),
+        dppCount: Math.max(freshCh.dppCount || 0, existingCh.dppCount || 0),
+        isStarted: freshCh.isStarted || existingCh.isStarted
+      };
+    });
+
+    return {
+      ...freshSub,
+      chapters: mergedChapters.length > 0 ? mergedChapters : existingSub.chapters,
+      lectureCount: Math.max(freshSub.lectureCount || 0, existingSub.lectureCount || 0),
+      tagCount: Math.max(freshSub.tagCount || 0, existingSub.tagCount || 0),
+      syllabusPdf: freshSub.syllabusPdf || existingSub.syllabusPdf
+    };
+  });
+
+  return {
+    ...fresh,
+    subjects: mergedSubjects.length > 0 ? mergedSubjects : existing.subjects,
+    batchPdf: fresh.batchPdf || existing.batchPdf,
+    previewImage: fresh.previewImage || existing.previewImage
+  };
+}
+
 function formatScheduleTime(value?: string): string {
   if (!value) return "Scheduled";
   const parsed = new Date(value);
@@ -1196,6 +1245,28 @@ export default function PWPage() {
     }
   }, [selectedBatchId, currentBatch.subjects]);
 
+  // Dismissable overlay state so the user is never permanently trapped
+  const [overlayDismissed, setOverlayDismissed] = useState<boolean>(false);
+  useEffect(() => {
+    setOverlayDismissed(false);
+  }, [selectedBatchId]);
+
+  // Auto-switch recovery: if a batch remains with 0 subjects and is not loading for 3.5s, fall back to standard Arjuna JEE 2027
+  useEffect(() => {
+    if (!isLoadingBatch && (!currentBatch.subjects || currentBatch.subjects.length === 0)) {
+      const timer = setTimeout(() => {
+        if (!isLoadingBatch && (!currentBatch.subjects || currentBatch.subjects.length === 0) && selectedBatchId !== "698ad3519549b300a5e1cc6a") {
+          console.warn(`[PWPage] Batch ${selectedBatchId} has 0 subjects after loading. Auto-recovering to Arjuna JEE 2027.`);
+          setSelectedBatchId("698ad3519549b300a5e1cc6a");
+          localStorage.setItem("pw_selected_batch_id", "698ad3519549b300a5e1cc6a");
+          refreshBatchMetadata("698ad3519549b300a5e1cc6a", true);
+        }
+      }, 3500);
+      return () => clearTimeout(timer);
+    }
+    return undefined;
+  }, [isLoadingBatch, currentBatch.subjects, selectedBatchId]);
+
   // Displayed subjects based on user's selected teachers
   const displayedSubjects = useMemo(() => {
     if (!selectedTeacherSubjectIds || selectedTeacherSubjectIds.length === 0) {
@@ -1263,8 +1334,9 @@ export default function PWPage() {
         };
 
         setBatches(prev => {
-          const exists = prev.some(b => b.id === batchIdToFetch);
-          const updated = exists ? prev.map(b => b.id === batchIdToFetch ? fetchedBatch : b) : [...prev, fetchedBatch];
+          const existing = prev.find(b => b.id === batchIdToFetch);
+          const updatedBatch = existing ? mergeBatches(existing, fetchedBatch) : fetchedBatch;
+          const updated = existing ? prev.map(b => b.id === batchIdToFetch ? updatedBatch : b) : [...prev, updatedBatch];
           try {
             localStorage.setItem("pw_cached_batches", JSON.stringify(updated));
             idbSet("pw_cached_batches", updated).catch(() => {});
@@ -1315,8 +1387,9 @@ export default function PWPage() {
               };
 
               setBatches(prev => {
-                const exists = prev.some(b => b.id === batchIdToFetch);
-                const updated = exists ? prev.map(b => b.id === batchIdToFetch ? fetchedBatch : b) : [...prev, fetchedBatch];
+                const existing = prev.find(b => b.id === batchIdToFetch);
+                const updatedBatch = existing ? mergeBatches(existing, fetchedBatch) : fetchedBatch;
+                const updated = existing ? prev.map(b => b.id === batchIdToFetch ? updatedBatch : b) : [...prev, updatedBatch];
                 try {
                   localStorage.setItem("pw_cached_batches", JSON.stringify(updated));
                   idbSet("pw_cached_batches", updated).catch(() => {});
@@ -3718,9 +3791,19 @@ export default function PWPage() {
       )}
 
       {/* ── PW PAGE LOADING EFFECT WITH BACKGROUND BLUR OVERLAY ───────────── */}
-      {(!currentBatch.subjects || currentBatch.subjects.length === 0) && (
+      {!overlayDismissed && (!currentBatch.subjects || currentBatch.subjects.length === 0) && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 backdrop-blur-xl bg-slate-900/40 dark:bg-black/65 transition-all duration-300 animate-in fade-in">
           <div className="relative w-full max-w-md rounded-3xl border border-amber-500/30 bg-white/95 dark:bg-zinc-900/95 backdrop-blur-2xl p-6 sm:p-8 shadow-2xl overflow-hidden">
+            {/* Close / Dismiss Button */}
+            <button
+              onClick={() => setOverlayDismissed(true)}
+              className="absolute top-4 right-4 p-2 rounded-xl text-slate-400 hover:text-slate-600 dark:hover:text-zinc-200 hover:bg-slate-100 dark:hover:bg-zinc-800 transition-colors cursor-pointer z-20"
+              title="Dismiss overlay"
+              aria-label="Close"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
             {/* Ambient Background Glows */}
             <div className="absolute -top-20 -right-20 w-44 h-44 bg-amber-500/20 rounded-full blur-3xl pointer-events-none" />
             <div className="absolute -bottom-20 -left-20 w-44 h-44 bg-orange-500/20 rounded-full blur-3xl pointer-events-none" />
@@ -3782,13 +3865,24 @@ export default function PWPage() {
                   {isLoadingBatch ? "Connecting…" : "Retry Connection Now"}
                 </Button>
 
-                {catalogBatches.length > 0 && (
+                <Button
+                  variant="outline"
+                  onClick={() => setBatchModalOpen(true)}
+                  className="w-full h-10 rounded-xl text-xs font-semibold border-slate-200 dark:border-zinc-800 text-slate-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-800"
+                >
+                  Browse Other Batches
+                </Button>
+
+                {selectedBatchId !== "698ad3519549b300a5e1cc6a" && (
                   <Button
-                    variant="outline"
-                    onClick={() => setBatchModalOpen(true)}
-                    className="w-full h-10 rounded-xl text-xs font-semibold border-slate-200 dark:border-zinc-800 text-slate-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-800"
+                    onClick={() => {
+                      setSelectedBatchId("698ad3519549b300a5e1cc6a");
+                      localStorage.setItem("pw_selected_batch_id", "698ad3519549b300a5e1cc6a");
+                      refreshBatchMetadata("698ad3519549b300a5e1cc6a", true);
+                    }}
+                    className="w-full h-10 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-xs transition-all cursor-pointer shadow-md shadow-amber-500/20"
                   >
-                    Browse Other Batches
+                    Open Standard Arjuna JEE 2027
                   </Button>
                 )}
               </div>

@@ -1742,6 +1742,158 @@ async function handleScrape(targetUrl) {
   };
 }
 
+
+// ─── PYQ QUESTIONS ENGINE (EXAMSIDE INTEGRATION FOR /#/questions) ───────────
+const pyqCache = new LRUCache(300, 3600000);
+
+function unflatten(parsed) {
+  if (!parsed || !Array.isArray(parsed)) return parsed;
+  const values = parsed;
+  const hydrated = new Array(values.length);
+  function hydrate(index) {
+    if (index === -1) return undefined;
+    if (hydrated[index] !== undefined) return hydrated[index];
+    const value = values[index];
+    if (value === null || typeof value !== "object") return (hydrated[index] = value);
+    if (Array.isArray(value)) {
+      const array = new Array(value.length);
+      hydrated[index] = array;
+      for (let i = 0; i < value.length; i += 1) {
+        if (value[i] !== -1) array[i] = hydrate(value[i]);
+      }
+      return array;
+    }
+    const object = {};
+    hydrated[index] = object;
+    for (const key in value) {
+      if (value[key] !== -1) object[key] = hydrate(value[key]);
+    }
+    return object;
+  }
+  return hydrate(0);
+}
+
+async function fetchExamSideJson(url) {
+  const res = await fetch(url, {
+    headers: {
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept": "application/json, text/plain, */*",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Referer": "https://questions.examside.com/"
+    },
+    signal: AbortSignal.timeout(12000)
+  });
+  if (!res.ok) throw new Error(`HTTP ${res.status} fetching ${url}`);
+  const parsed = await res.json();
+  if (parsed && parsed.nodes && Array.isArray(parsed.nodes)) {
+    let dataNode = null;
+    for (let i = parsed.nodes.length - 1; i >= 0; i--) {
+      if (parsed.nodes[i] && parsed.nodes[i].data) {
+        dataNode = parsed.nodes[i];
+        break;
+      }
+    }
+    if (dataNode && dataNode.data) {
+      return unflatten(dataNode.data);
+    }
+  }
+  return parsed;
+}
+
+async function getPyqPapersList(exam = "jee-main") {
+  const cacheKey = `papers_${exam}`;
+  const cached = pyqCache.get(cacheKey);
+  if (cached && cached.expiresAt > Date.now()) return cached.data;
+
+  const url = `https://questions.examside.com/past-years/year-wise/jee/${exam}/__data.json`;
+  const data = await fetchExamSideJson(url);
+  const result = {
+    exam,
+    title: data.title || (exam === "jee-main" ? "JEE Main" : "JEE Advanced"),
+    papers: data.papers || []
+  };
+  pyqCache.set(cacheKey, { data: result, expiresAt: Date.now() + 3600000 });
+  return result;
+}
+
+async function getPyqPaperQuestions(exam = "jee-main", paperKey) {
+  const cacheKey = `paper_${exam}_${paperKey}`;
+  const cached = pyqCache.get(cacheKey);
+  if (cached && cached.expiresAt > Date.now()) return cached.data;
+
+  const url = `https://questions.examside.com/past-years/year-wise/jee/${exam}/${paperKey}/__data.json`;
+  const data = await fetchExamSideJson(url);
+  const result = {
+    exam,
+    paperKey,
+    title: data.title || paperKey,
+    paper: data.paper || null,
+    papers: data.papers || [],
+    questions: data.questions || []
+  };
+  pyqCache.set(cacheKey, { data: result, expiresAt: Date.now() + 3600000 });
+  return result;
+}
+
+async function getPyqPaperSingleQuestion(exam = "jee-main", paperKey, questionId) {
+  const cacheKey = `pq_${exam}_${paperKey}_${questionId}`;
+  const cached = pyqCache.get(cacheKey);
+  if (cached && cached.expiresAt > Date.now()) return cached.data;
+
+  const url = `https://questions.examside.com/past-years/year-wise/jee/${exam}/${paperKey}/${questionId}/__data.json`;
+  const data = await fetchExamSideJson(url);
+  pyqCache.set(cacheKey, { data, expiresAt: Date.now() + 3600000 });
+  return data;
+}
+
+async function getPyqChaptersList(exam = "jee-main", subject = "physics") {
+  const cacheKey = `chapters_${exam}_${subject}`;
+  const cached = pyqCache.get(cacheKey);
+  if (cached && cached.expiresAt > Date.now()) return cached.data;
+
+  const url = `https://questions.examside.com/past-years/jee/${exam}/${subject}/__data.json`;
+  const data = await fetchExamSideJson(url);
+  const result = {
+    exam,
+    subject,
+    title: data.title || "Physics",
+    chapterGroups: data.subject?.chapterGroups || [],
+    chapters: data.subject?.chapters || []
+  };
+  pyqCache.set(cacheKey, { data: result, expiresAt: Date.now() + 3600000 });
+  return result;
+}
+
+async function getPyqChapterQuestions(exam = "jee-main", subject = "physics", chapterKey) {
+  const cacheKey = `chapter_q_${exam}_${subject}_${chapterKey}`;
+  const cached = pyqCache.get(cacheKey);
+  if (cached && cached.expiresAt > Date.now()) return cached.data;
+
+  const url = `https://questions.examside.com/past-years/jee/${exam}/${subject}/${chapterKey}/__data.json`;
+  const data = await fetchExamSideJson(url);
+  const result = {
+    exam,
+    subject,
+    chapterKey,
+    title: data.title || chapterKey,
+    chapter: data.chapter || null,
+    questions: data.questions || []
+  };
+  pyqCache.set(cacheKey, { data: result, expiresAt: Date.now() + 3600000 });
+  return result;
+}
+
+async function getPyqQuestionByPermalink(permalink) {
+  const cacheKey = `single_q_${permalink}`;
+  const cached = pyqCache.get(cacheKey);
+  if (cached && cached.expiresAt > Date.now()) return cached.data;
+
+  const url = `https://questions.examside.com/past-years/jee/question/${permalink}/__data.json`;
+  const data = await fetchExamSideJson(url);
+  pyqCache.set(cacheKey, { data, expiresAt: Date.now() + 3600000 });
+  return data;
+}
+
 // ─── UNIVERSAL CORS PROXY ─────────────────────────────────────────────────────
 async function handleProxy(targetUrl, request) {
   const reqUrl = new URL(targetUrl);
@@ -2076,6 +2228,83 @@ export default {
         return Response.redirect(`https://inv.thepixora.com/latest_version?id=${vId}&itag=140`, 302);
       }
       return jsonResponse({ error: "Unable to resolve stream source" }, 400);
+    }
+
+
+    // 13. PYQ Papers List
+    if (pathname === "/api/pyq/papers") {
+      const exam = url.searchParams.get("exam") === "jee-advanced" ? "jee-advanced" : "jee-main";
+      try {
+        const data = await getPyqPapersList(exam);
+        return jsonResponse(data, 200, { "Cache-Control": "public, max-age=3600" });
+      } catch (err) {
+        return jsonResponse({ error: err.message || "Failed to load papers" }, 500);
+      }
+    }
+
+    // 14. PYQ Paper Questions
+    if (pathname === "/api/pyq/paper-questions") {
+      const exam = url.searchParams.get("exam") === "jee-advanced" ? "jee-advanced" : "jee-main";
+      const paperKey = url.searchParams.get("paperKey") || "";
+      if (!paperKey) return jsonResponse({ error: "Missing paperKey" }, 400);
+      try {
+        const data = await getPyqPaperQuestions(exam, paperKey);
+        return jsonResponse(data, 200, { "Cache-Control": "public, max-age=3600" });
+      } catch (err) {
+        return jsonResponse({ error: err.message || "Failed to load paper questions" }, 500);
+      }
+    }
+
+    // 15. PYQ Single Paper Question
+    if (pathname === "/api/pyq/paper-question") {
+      const exam = url.searchParams.get("exam") === "jee-advanced" ? "jee-advanced" : "jee-main";
+      const paperKey = url.searchParams.get("paperKey") || "";
+      const questionId = url.searchParams.get("questionId") || "";
+      if (!paperKey || !questionId) return jsonResponse({ error: "Missing paperKey or questionId" }, 400);
+      try {
+        const data = await getPyqPaperSingleQuestion(exam, paperKey, questionId);
+        return jsonResponse(data, 200, { "Cache-Control": "public, max-age=86400" });
+      } catch (err) {
+        return jsonResponse({ error: err.message || "Failed to load question" }, 500);
+      }
+    }
+
+    // 16. PYQ Chapters List
+    if (pathname === "/api/pyq/chapters") {
+      const exam = url.searchParams.get("exam") === "jee-advanced" ? "jee-advanced" : "jee-main";
+      const subject = url.searchParams.get("subject") || "physics";
+      try {
+        const data = await getPyqChaptersList(exam, subject);
+        return jsonResponse(data, 200, { "Cache-Control": "public, max-age=3600" });
+      } catch (err) {
+        return jsonResponse({ error: err.message || "Failed to load chapters" }, 500);
+      }
+    }
+
+    // 17. PYQ Chapter Questions
+    if (pathname === "/api/pyq/chapter-questions") {
+      const exam = url.searchParams.get("exam") === "jee-advanced" ? "jee-advanced" : "jee-main";
+      const subject = url.searchParams.get("subject") || "physics";
+      const chapterKey = url.searchParams.get("chapterKey") || "";
+      if (!chapterKey) return jsonResponse({ error: "Missing chapterKey" }, 400);
+      try {
+        const data = await getPyqChapterQuestions(exam, subject, chapterKey);
+        return jsonResponse(data, 200, { "Cache-Control": "public, max-age=3600" });
+      } catch (err) {
+        return jsonResponse({ error: err.message || "Failed to load chapter questions" }, 500);
+      }
+    }
+
+    // 18. PYQ Single Question By Permalink
+    if (pathname === "/api/pyq/question") {
+      const permalink = url.searchParams.get("permalink") || "";
+      if (!permalink) return jsonResponse({ error: "Missing permalink" }, 400);
+      try {
+        const data = await getPyqQuestionByPermalink(permalink);
+        return jsonResponse(data, 200, { "Cache-Control": "public, max-age=86400" });
+      } catch (err) {
+        return jsonResponse({ error: err.message || "Failed to load question" }, 500);
+      }
     }
 
     // 12. Universal CORS Proxy

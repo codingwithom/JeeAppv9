@@ -9,8 +9,9 @@ export function getBackendBaseUrl(): string {
   // 1. Check custom user override in localStorage (and auto-migrate old api-server worker domain)
   let savedOverride = localStorage.getItem("jee_backend_api") || localStorage.getItem("api_server_url");
   if (savedOverride) {
-    if (savedOverride.includes("api-server.stude.workers.dev")) {
-      savedOverride = savedOverride.replace("api-server.stude.workers.dev", "api.stude.workers.dev");
+    if (savedOverride.includes("api-server.stude.workers.dev") || savedOverride.includes("api.stude.workers.dev")) {
+      savedOverride = savedOverride.replace("api-server.stude.workers.dev", "apis.stude.workers.dev")
+                                   .replace("api.stude.workers.dev", "apis.stude.workers.dev");
       try {
         localStorage.setItem("jee_backend_api", savedOverride);
         localStorage.setItem("api_server_url", savedOverride);
@@ -26,7 +27,7 @@ export function getBackendBaseUrl(): string {
 
   // 3. In production builds (dist preview via npx serve or hosted on domain), route to Cloudflare Worker
   if (import.meta.env.PROD) {
-    return "https://api.stude.workers.dev";
+    return "https://apis.stude.workers.dev";
   }
 
   // 4. In local dev mode (npm run dev), check hostname
@@ -39,7 +40,7 @@ export function getBackendBaseUrl(): string {
     hostname.includes("github.dev");
 
   if (!isLocalDev) {
-    return "https://api.stude.workers.dev";
+    return "https://apis.stude.workers.dev";
   }
 
   // 5. Default dev mode: relative same-origin (Vite dev proxy to localhost:8080)

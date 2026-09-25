@@ -7,28 +7,33 @@ export function getBackendBaseUrl(): string {
   if (typeof window === "undefined") return "";
 
   // 1. Check custom user override in localStorage
-  const savedOverride = localStorage.getItem("jee_backend_api");
-  if (savedOverride) return savedOverride.replace(/\/$/, "");
+  const savedOverride = localStorage.getItem("jee_backend_api") || localStorage.getItem("api_server_url");
+  if (savedOverride) return savedOverride.trim().replace(/\/$/, "");
 
   // 2. Check environment variable if provided during build
   if (import.meta.env.VITE_API_URL) {
     return (import.meta.env.VITE_API_URL as string).replace(/\/$/, "");
   }
 
-  // 3. If hosted on stude.is-best.net or external static host, route API to live omnetwork.in backend
-  const hostname = window.location.hostname.toLowerCase();
-  const isStaticHost =
-    hostname.includes("stude.is-best.net") ||
-    hostname.includes("is-best.net") ||
-    hostname.endsWith(".github.io") ||
-    hostname.endsWith(".web.app") ||
-    hostname.endsWith(".firebaseapp.com");
-
-  if (isStaticHost) {
-    return "https://omnetwork.in";
+  // 3. In production builds (dist preview via npx serve or hosted on domain), route to Cloudflare Worker
+  if (import.meta.env.PROD) {
+    return "https://api-server.stude.workers.dev";
   }
 
-  // 4. Default: relative same-origin (for localhost and fullstack deployments)
+  // 4. In local dev mode (npm run dev), check hostname
+  const hostname = window.location.hostname.toLowerCase();
+  const isLocalDev =
+    hostname === "localhost" ||
+    hostname === "127.0.0.1" ||
+    hostname.endsWith(".local") ||
+    hostname.includes("replit.dev") ||
+    hostname.includes("github.dev");
+
+  if (!isLocalDev) {
+    return "https://api-server.stude.workers.dev";
+  }
+
+  // 5. Default dev mode: relative same-origin (Vite dev proxy to localhost:8080)
   return "";
 }
 
@@ -54,10 +59,30 @@ export function setupApiInterceptors() {
       urlStr = (input as Request).url;
     }
 
-    if (urlStr.startsWith("/api/")) {
+    const isApiCall =
+      urlStr.startsWith("/api/") ||
+      urlStr.startsWith("./api/") ||
+      urlStr.startsWith("api/") ||
+      (urlStr.includes("/api/") && (urlStr.startsWith(window.location.origin) || !urlStr.startsWith("http")));
+
+    if (isApiCall) {
       const backendBase = getBackendBaseUrl();
       if (backendBase) {
-        const fullUrl = `${backendBase}${urlStr}`;
+        let pathPart = urlStr;
+        if (urlStr.startsWith("http")) {
+          try {
+            const u = new URL(urlStr);
+            pathPart = u.pathname + u.search;
+          } catch {}
+        }
+        if (!pathPart.startsWith("/")) {
+          pathPart = `/${pathPart.replace(/^\.?\//, "")}`;
+        }
+        // Normalize /v4/api/ to /api/ if needed
+        if (pathPart.startsWith("/v4/api/")) {
+          pathPart = pathPart.replace("/v4/api/", "/api/");
+        }
+        const fullUrl = `${backendBase}${pathPart}`;
         if (typeof input === "string" || input instanceof URL) {
           input = fullUrl;
         } else {

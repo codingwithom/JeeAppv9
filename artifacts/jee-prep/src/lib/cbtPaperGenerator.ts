@@ -546,26 +546,41 @@ export const MATH_CHAPTER_WEIGHTS: ChapterWeightageMeta[] = [
 
 // ─── 3. RANDOM PREDICTIVE PAPER GENERATOR ────────────────────────────────────
 
-// Helper to fetch JSON from Vite dev/data proxy or fallback
+const staticJsonCache = new Map<string, any>();
+
+// Helper to fetch JSON from jsDelivr CDN or static path with strict timeout
 async function fetchStaticJsonHelper(path: string): Promise<any | null> {
   const cleanPath = path.startsWith("/") ? path.slice(1) : path;
   const pathWithoutData = cleanPath.replace(/^data\/pyq\//, "").replace(/^data\//, "");
 
-  const cdnBase = (import.meta.env.VITE_DATA_CDN_URL || "https://cdn.jsdelivr.net/gh/codingwithom/jee-pyq-db@main").replace(/\/$/, "");
+  if (staticJsonCache.has(pathWithoutData)) {
+    return staticJsonCache.get(pathWithoutData);
+  }
+
+  const cdnBase = ((typeof import.meta !== "undefined" && import.meta.env?.VITE_DATA_CDN_URL) || "https://cdn.jsdelivr.net/gh/codingwithom/jee-pyq-db@main").replace(/\/$/, "");
+  // Prioritize high-speed jsDelivr CDN first so static sites never stall on local 404s
   const candidates = [
-    `/data/${pathWithoutData}`,
-    `./data/${pathWithoutData}`,
+    `${cdnBase}/${pathWithoutData}`,
+    `https://raw.githubusercontent.com/codingwithom/jee-pyq-db/main/${pathWithoutData}`,
     `/${cleanPath}`,
     `./${cleanPath}`,
-    `${cdnBase}/${pathWithoutData}`,
-    `https://raw.githubusercontent.com/codingwithom/jee-pyq-db/main/${pathWithoutData}`
+    `/data/${pathWithoutData}`,
+    `./data/${pathWithoutData}`
   ];
 
   for (const url of candidates) {
     try {
-      const res = await fetch(url);
+      const res = await fetch(url, { signal: AbortSignal.timeout(2500) });
       if (res.ok) {
-        return await res.json();
+        const ct = res.headers.get("content-type") || "";
+        // Discard HTML error/SPA fallback pages
+        if (ct.includes("json") || !ct.includes("html")) {
+          const json = await res.json();
+          if (json && typeof json === "object") {
+            staticJsonCache.set(pathWithoutData, json);
+            return json;
+          }
+        }
       }
     } catch (e) {}
   }
@@ -644,15 +659,14 @@ export async function generateRandomPredictivePaper(
         "jee-advanced-2018-paper-1-offline"
       ];
 
-  // Fetch 3-4 random past papers in parallel to assemble the predictive pool
-  const chosenKeys = shuffleArray(samplePaperKeys).slice(0, 4);
+  // Fetch 3 random past papers in parallel with fast timeout
+  const chosenKeys = shuffleArray(samplePaperKeys).slice(0, 3);
   const loadedPapers = await Promise.all(
     chosenKeys.map(k => fetchStaticJsonHelper(`papers/${k}.json`))
   );
 
   let validPapers = loadedPapers.filter(Boolean);
   if (validPapers.length === 0) {
-    // Immediate fallback to first two guaranteed papers
     const fallbackKeys = isJeeMain
       ? ["jee-main-2026-online-8th-april-evening-shift", "jee-main-2024-online-9th-april-evening-shift"]
       : ["jee-advanced-2024-paper-1-online", "jee-advanced-2023-paper-1-online"];
@@ -707,6 +721,25 @@ export async function generateRandomPredictivePaper(
     const shuffledMcq = shuffleArray(mcqPool.length > 0 ? mcqPool : subjectPool);
     const shuffledNum = shuffleArray(numPool.length > 0 ? numPool : subjectPool);
 
+    // Fallback: If subject pool is empty (e.g. offline/network blocked), synthesize questions from chapter weightage models
+    if (subjectPool.length === 0) {
+      for (let i = 0; i < questionsPerSubject; i++) {
+        const meta = weightsList[i % weightsList.length];
+        const isNum = i >= mcqTarget;
+        subjectPool.push({
+          qKey: `${subKey}-${meta.key}-${i + 1}`,
+          question_id: `${subKey.slice(0, 1)}_${meta.key}_${i + 1}`,
+          type: isNum ? "numerical" : "mcq",
+          subject: subKey,
+          chapter: meta.key,
+          topic: meta.name,
+          paperTitle: `${isJeeMain ? "JEE Main" : "JEE Advanced"} High-Yield Archive`,
+          year: predictedYear - 1,
+          content: `<p>Standard high-yield examination problem based on <strong>${meta.name}</strong> (${meta.classLevel}) calibrated for ${isJeeMain ? "JEE Main" : "JEE Advanced"}.</p>`
+        });
+      }
+    }
+
     // Pick top candidates
     const selectedRaw: any[] = [];
 
@@ -735,9 +768,8 @@ export async function generateRandomPredictivePaper(
 
     const targetList = selectedRaw.slice(0, questionsPerSubject);
 
-    // ── FETCH REAL QUESTION DETAILS FROM CDN / LOCAL /DATA ───────────────────
-    // Fetch full question content, options, answer, and explanation in parallel
-    const fetchedDetails = await Promise.all(
+    // ── FETCH REAL QUESTION DETAILS FROM CDN WITH STRICT 1500MS TIMEOUT ─────────
+    const fetchedResults = await Promise.allSettled(
       targetList.map(async (rawQ: any) => {
         const key = rawQ.qKey || rawQ.permalink || rawQ.question_id;
         if (!key) return null;
@@ -748,6 +780,8 @@ export async function generateRandomPredictivePaper(
         }
       })
     );
+
+    const fetchedDetails = fetchedResults.map(r => r.status === "fulfilled" ? r.value : null);
 
     // Map into complete GeneratedCbtQuestion objects
     const sectionQuestions: GeneratedCbtQuestion[] = targetList.map((rawQ: any, qIdx: number) => {

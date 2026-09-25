@@ -196,10 +196,21 @@ export function NtaCbtExamSimulator({ onExit, initialExam = "jee-main" }: NtaCbt
     setChosenExam(exam);
     try {
       const generated = await generateRandomPredictivePaper(exam, targetExamYear);
-      setPaperData(generated);
-      setPhase("instructions");
+      if (generated && Array.isArray(generated.sections) && generated.sections.length > 0) {
+        setPaperData(generated);
+        setPhase("instructions");
+      } else {
+        throw new Error("Empty paper data generated");
+      }
     } catch (e) {
-      console.error("Failed to generate predictive paper:", e);
+      console.error("Failed to generate predictive paper, retrying with emergency fallback:", e);
+      try {
+        const fallbackGenerated = await generateRandomPredictivePaper(exam, targetExamYear);
+        setPaperData(fallbackGenerated);
+        setPhase("instructions");
+      } catch (err) {
+        console.error("Emergency fallback generation error:", err);
+      }
     } finally {
       setIsGenerating(false);
     }

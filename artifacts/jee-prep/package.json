@@ -6,7 +6,10 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js & vite --config vite.config.ts --host 0.0.0.0",
-    "build": "NODE_OPTIONS=\"--max-old-space-size=1536 --expose-gc\" vite build --config vite.config.ts && node scripts/post_build.js",
+    "build": "NODE_OPTIONS=\"--max-old-space-size=2048 --expose-gc\" vite build --config vite.config.ts && node scripts/post_build.js",
+    "build:cdn": "VITE_USE_CDN=true npm run build",
+    "push:dist": "node scripts/push_dist.mjs",
+    "deploy:dist": "VITE_USE_CDN=true npm run build && node scripts/push_dist.mjs",
     "serve": "vite preview --config vite.config.ts --host 0.0.0.0",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },

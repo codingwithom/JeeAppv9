@@ -65,7 +65,8 @@ app.use(cors({
   exposedHeaders: ["Content-Length", "Content-Range", "Accept-Ranges"]
 }));
 
-app.options("*", cors());
+// Preflight is handled by app.use(cors(...)), explicit handler for Express 5 compatibility
+app.options("/{*path}", cors());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -367,6 +368,8 @@ const PW_HEADERS = {
   "Accept": "application/json, text/plain, */*"
 };
 
+const FALLBACK_PW_TOKEN = "Qd2wfhzRoi5eQdoITwpbNKPMdMTNSs37YUjvj0rSb5sNyhMiNwdYRCmgiTbUdxAibU3m+ETsvfr08WHlOIw8V5Ae12IwN5xSWTknnXkHL5d+PK4xeNliyrKg7RyjrjaY9VM66AUNFORT6DY8AjgpXFtE86unYfEN0OK+jxrIAhhZEFa36XVws4yLUz4Espb9yIioPcpKeK2n3w1yZISAFs0mBdsfONwC7O9scHh9lnzjUr15GeJAPvvIKgivZ9NMLCOFEuwpXq45phXv8/pO3rEcWj/jtQdStmxbKDuxFU6LDY2CKN4A8veji9rjzZhsle+M4tlc+Q0xdoleA25zrzUJV82iyS1lkqe+VrMDMnLYa3uCq3Zc0Zn/WN2enQLT2XSqyquUk7yO3gcBt6n4pgO3tqVfLSjlZewb2qKi9hNo6gMkit71lsTcYn3dlVjE9DJMoNy0P8ua6EsjCy7YA4tM0vFOGclR0+JUTdXloIgyeM46jKxGajA2vQh8yIN7dDLxWc6rN5lgssWLpTN3j3/QJBTgJXI7eoyxB+3bBRDjAlBXd+tZvmJeE28YCp3Jop4ZEVMC6tRzi0u0KmZqnHmAZdP95aJX43MLb9aZXI0fIOOX/ilqBHSt53z3bP2rlPixNReYbGNt20TwL+E5m3OxQDT5dWmyBfD2dd41moLeTN3Ls8zzKXHooEID9rHXfYUVqqTanm2IjZ5qDIBPaRFomxkDC9vt50BtWFf/VyKRS2WswbwHdpv3DD3BM+qwPLH9QK87mpkWA61ODhbkVR364tfNYOLWxcXFn5sosEo=";
+
 async function getPwToken() {
   if (pwTokenMemoryCache.token && pwTokenMemoryCache.expiresAt > Date.now()) {
     return pwTokenMemoryCache.token;
@@ -387,12 +390,12 @@ async function getPwToken() {
     const tokenResponse = await fetch(`${PW_DETAILS_ORIGIN}/generate_token.php`, {
       headers: PW_HEADERS,
       cache: "no-store",
-      signal: AbortSignal.timeout(15000),
+      signal: AbortSignal.timeout(12000),
     });
     if (tokenResponse.ok) {
       const tokenPayload = await tokenResponse.json();
       const token = tokenPayload.access_token || tokenPayload.token;
-      if (token) {
+      if (token && typeof token === "string" && token.length > 20) {
         pwTokenMemoryCache = { token, expiresAt: Date.now() + 60 * 60 * 1000 };
         try {
           const fs = await import("fs");
@@ -402,11 +405,15 @@ async function getPwToken() {
       }
     }
   } catch (err) {
-    console.warn("PW generate_token error, checking memory cache:", err.message);
+    console.warn("PW generate_token error, using fallback token:", err.message);
   }
 
   if (pwTokenMemoryCache.token) return pwTokenMemoryCache.token;
-  throw new Error("PW metadata token is currently unavailable");
+  if (FALLBACK_PW_TOKEN) {
+    pwTokenMemoryCache = { token: FALLBACK_PW_TOKEN, expiresAt: Date.now() + 60 * 60 * 1000 };
+    return FALLBACK_PW_TOKEN;
+  }
+  return "";
 }
 
 function extractPdfUrl(att) {
@@ -420,6 +427,14 @@ function extractPdfUrl(att) {
   if (typeof att.url === "string" && /^https?:\/\//i.test(att.url.trim()) && /\.pdf(?:[?#]|$)/i.test(att.url.trim())) return att.url.trim();
   if (typeof att.fileUrl === "string" && /^https?:\/\//i.test(att.fileUrl.trim()) && /\.pdf(?:[?#]|$)/i.test(att.fileUrl.trim())) return att.fileUrl.trim();
   if (typeof att.link === "string" && /^https?:\/\//i.test(att.link.trim()) && /\.pdf(?:[?#]|$)/i.test(att.link.trim())) return att.link.trim();
+
+  // If key is empty but baseUrl and name or _id exist
+  if (typeof att._id === "string" && att._id.length > 10 && typeof att.baseUrl === "string") {
+    const bUrl = att.baseUrl.endsWith("/") ? att.baseUrl : `${att.baseUrl}/`;
+    if (typeof att.name === "string" && att.name.endsWith(".pdf")) {
+      return `${bUrl}${encodeURIComponent(att.name)}`;
+    }
+  }
   return undefined;
 }
 
@@ -662,6 +677,34 @@ async function fetchChapterContents(batchId, subjectId, chapterId, token) {
   }
 }
 
+function cleanChapterTitle(name) {
+  if (!name || typeof name !== "string") return "Chapter";
+  return name.trim();
+}
+
+function cleanBatchDescription(desc) {
+  if (!desc || typeof desc !== "string") return "Live curriculum from Physics Wallah";
+  let text = desc.replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, " ")
+                 .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, " ")
+                 .replace(/<[^>]+>/g, " ");
+  text = text.replace(/&nbsp;/gi, " ")
+             .replace(/&amp;/gi, "&")
+             .replace(/&quot;/gi, '"')
+             .replace(/&#39;|&rsquo;|&lsquo;/gi, "'")
+             .replace(/&lt;/gi, "<")
+             .replace(/&gt;/gi, ">");
+  text = text.replace(/\s+/g, " ").trim();
+  if (text.startsWith(".") || text.startsWith("{") || text.includes("display: flex") || text.includes("margin-bottom:") || text.includes(".desc-")) {
+    text = text.replace(/[^{}]*\{[^}]*\}/g, " ")
+               .replace(/\.[a-zA-Z0-9_-]+\s*\{[^}]*\}/g, " ")
+               .replace(/\s+/g, " ").trim();
+  }
+  if (!text || text.length < 3 || text.startsWith(".") || text.startsWith("{")) {
+    return "Live curriculum from Physics Wallah";
+  }
+  return text;
+}
+
 // ─── FETCH SUBJECT DATA VIA OFFICIAL PW METADATA & LIVE TOPICS ───────────────
 async function fetchSubjectData(batchId, remoteSubject, token) {
   const name = typeof remoteSubject.subject === "string" ? remoteSubject.subject : "Subject";
@@ -686,56 +729,124 @@ async function fetchSubjectData(batchId, remoteSubject, token) {
     : undefined;
 
   const chapters = [];
-  const subjectId = remoteSubject._id || remoteSubject.subjectId;
+  const primaryId = remoteSubject._id || remoteSubject.subjectId;
+  const altId = remoteSubject.subjectId && remoteSubject._id && remoteSubject.subjectId !== remoteSubject._id
+    ? (primaryId === remoteSubject._id ? remoteSubject.subjectId : remoteSubject._id)
+    : null;
 
-  if (subjectId && token) {
+  let rawTopics = [];
+
+  // Strategy 1: Official PenPencil v1 topics API (Fast, Reliable, Zero Token Required!)
+  if (primaryId) {
     try {
-      // Fetch academic chapters / topics for this subject
-      const [p1Res, p2Res] = await Promise.all([
-        fetch(
-          `${PW_DETAILS_ORIGIN}/api/v2/batches/${encodeURIComponent(batchId)}/subject/${encodeURIComponent(subjectId)}/topics?page=1`,
-          { headers: { ...PW_HEADERS, Authorization: `Bearer ${token}` }, signal: AbortSignal.timeout(15000) }
-        ).then(r => r.ok ? r.json() : { data: [] }).catch(() => ({ data: [] })),
-        fetch(
-          `${PW_DETAILS_ORIGIN}/api/v2/batches/${encodeURIComponent(batchId)}/subject/${encodeURIComponent(subjectId)}/topics?page=2`,
-          { headers: { ...PW_HEADERS, Authorization: `Bearer ${token}` }, signal: AbortSignal.timeout(15000) }
-        ).then(r => r.ok ? r.json() : { data: [] }).catch(() => ({ data: [] }))
-      ]);
+      const p1Res = await fetch(
+        `${PW_OFFICIAL_API}/v1/batches/${encodeURIComponent(batchId)}/subject/${encodeURIComponent(primaryId)}/topics?page=1`,
+        {
+          headers: { "client-type": "WEB", "User-Agent": PW_HEADERS["User-Agent"] },
+          signal: AbortSignal.timeout(8000)
+        }
+      ).then(r => r.ok ? r.json() : null).catch(() => null);
 
-      const rawTopics = [...(p1Res.data || []), ...(p2Res.data || [])];
-      // Filter out non-academic or supplemental folders
-      const validTopics = rawTopics.filter(topic => {
-        if (typeof topic.name !== "string") return false;
-        return !/(only\s+pdf|only\s+video|demo\s+videos?|short\s+notes|mind\s+maps?|blueprint|notice|announcement|test\s+series)/i.test(topic.name);
-      });
-
-      // Map topics into chapter structure
-      validTopics.forEach((t, idx) => {
-        const isStarted = Boolean((t.videos || 0) > 0 || (t.notes || 0) > 0 || (t.exercises || 0) > 0);
-        chapters.push({
-          id: t._id || `${subjectId}-ch-${idx + 1}`,
-          rawId: t._id,
-          title: t.name.trim(),
-          videoCount: t.videos || t.lectureVideos || 0,
-          notesCount: t.notes || 0,
-          dppCount: t.exercises || 0,
-          isStarted,
-          lectures: []
-        });
-      });
-
-      // Find the first started chapter to pre-fetch its contents so user sees data instantly
-      const firstStartedChapter = chapters.find(c => c.isStarted);
-      if (firstStartedChapter && firstStartedChapter.rawId) {
-        const contents = await fetchChapterContents(batchId, subjectId, firstStartedChapter.rawId, token);
-        firstStartedChapter.lectures = contents.lectures || [];
-        if (contents.totalLectures) firstStartedChapter.videoCount = contents.totalLectures;
-        if (contents.totalDpps) firstStartedChapter.dppCount = contents.totalDpps;
+      if (p1Res && Array.isArray(p1Res.data) && p1Res.data.length > 0) {
+        rawTopics = [...p1Res.data];
+        if (rawTopics.length >= 20) {
+          const p2Res = await fetch(
+            `${PW_OFFICIAL_API}/v1/batches/${encodeURIComponent(batchId)}/subject/${encodeURIComponent(primaryId)}/topics?page=2`,
+            {
+              headers: { "client-type": "WEB", "User-Agent": PW_HEADERS["User-Agent"] },
+              signal: AbortSignal.timeout(8000)
+            }
+          ).then(r => r.ok ? r.json() : null).catch(() => null);
+          if (p2Res && Array.isArray(p2Res.data)) {
+            rawTopics.push(...p2Res.data);
+          }
+        }
       }
-    } catch (err) {
-      console.warn(`Failed fetching topics for subject ${subjectId}:`, err.message);
+    } catch (e) {}
+
+    // If altId exists and rawTopics is still empty, try altId on penpencil
+    if (rawTopics.length === 0 && altId) {
+      try {
+        const altRes = await fetch(
+          `${PW_OFFICIAL_API}/v1/batches/${encodeURIComponent(batchId)}/subject/${encodeURIComponent(altId)}/topics?page=1`,
+          {
+            headers: { "client-type": "WEB", "User-Agent": PW_HEADERS["User-Agent"] },
+            signal: AbortSignal.timeout(8000)
+          }
+        ).then(r => r.ok ? r.json() : null).catch(() => null);
+        if (altRes && Array.isArray(altRes.data) && altRes.data.length > 0) {
+          rawTopics = altRes.data;
+        }
+      } catch (e) {}
     }
   }
+
+  // Strategy 2: Vidcloud fallback with token if penpencil returned 0
+  if (rawTopics.length === 0 && primaryId && token) {
+    try {
+      const p1Res = await fetch(
+        `${PW_DETAILS_ORIGIN}/api/v2/batches/${encodeURIComponent(batchId)}/subject/${encodeURIComponent(primaryId)}/topics?page=1`,
+        { headers: { ...PW_HEADERS, Authorization: `Bearer ${token}` }, signal: AbortSignal.timeout(8000) }
+      ).then(r => r.ok ? r.json() : { data: [] }).catch(() => ({ data: [] }));
+
+      if (Array.isArray(p1Res.data)) rawTopics = [...p1Res.data];
+
+      if (rawTopics.length === 0 && altId) {
+        const altRes = await fetch(
+          `${PW_DETAILS_ORIGIN}/api/v2/batches/${encodeURIComponent(batchId)}/subject/${encodeURIComponent(altId)}/topics?page=1`,
+          { headers: { ...PW_HEADERS, Authorization: `Bearer ${token}` }, signal: AbortSignal.timeout(8000) }
+        ).then(r => r.ok ? r.json() : { data: [] }).catch(() => ({ data: [] }));
+        if (Array.isArray(altRes.data) && altRes.data.length > 0) {
+          rawTopics = altRes.data;
+        }
+      }
+
+      if (rawTopics.length >= 20) {
+        const activeId = rawTopics.length > 0 && altId && p1Res.data?.length === 0 ? altId : primaryId;
+        const p2Res = await fetch(
+          `${PW_DETAILS_ORIGIN}/api/v2/batches/${encodeURIComponent(batchId)}/subject/${encodeURIComponent(activeId)}/topics?page=2`,
+          { headers: { ...PW_HEADERS, Authorization: `Bearer ${token}` }, signal: AbortSignal.timeout(8000) }
+        ).then(r => r.ok ? r.json() : { data: [] }).catch(() => ({ data: [] }));
+        if (Array.isArray(p2Res.data) && p2Res.data.length > 0) {
+          rawTopics.push(...p2Res.data);
+        }
+      }
+    } catch (err) {
+      console.warn(`Vidcloud fallback failed for subject ${primaryId}:`, err.message);
+    }
+  }
+
+  const validTopics = rawTopics.filter(topic => {
+    if (!topic || typeof topic.name !== "string") return false;
+    const tName = topic.name.trim();
+    if (/^(notices?|announcements?)$/i.test(tName)) return false;
+    return true;
+  });
+
+  const finalTopics = validTopics.length > 0 ? validTopics : rawTopics;
+  const seenTopicIds = new Set();
+
+  finalTopics.forEach((t, idx) => {
+    const tId = t._id || `${primaryId}-ch-${idx + 1}`;
+    if (seenTopicIds.has(tId)) return;
+    seenTopicIds.add(tId);
+
+    const vCount = Number(t.videos || t.videoCount || t.videosCount || t.lectureVideos || 0);
+    const nCount = Number(t.notes || t.notesCount || 0);
+    const dCount = Number(t.exercises || t.dppCount || t.dppsCount || 0);
+    const isStarted = Boolean(vCount > 0 || nCount > 0 || dCount > 0);
+
+    chapters.push({
+      id: tId,
+      rawId: t._id,
+      title: cleanChapterTitle(t.name ? t.name.trim() : `Chapter ${idx + 1}`),
+      videoCount: vCount,
+      notesCount: nCount,
+      dppCount: dCount,
+      isStarted,
+      lectures: []
+    });
+  });
 
   return {
     id: remoteSubject._id || "",
@@ -756,13 +867,35 @@ async function fetchPwMetadata(batchId) {
   const cached = pwMetadataCache.get(batchId);
   if (cached && cached.expiresAt > Date.now()) return cached.value;
 
-  let detailsPayload = null;
-  const hosts = [PW_DETAILS_ORIGIN, PW_OFFICIAL_API];
+  const cacheDir = path.join(__dirname, "data", "pw");
+  const cacheFile = path.join(cacheDir, `batch_${batchId}.json`);
+  let diskData = null;
+  try {
+    if (fs.existsSync(cacheFile)) {
+      diskData = JSON.parse(fs.readFileSync(cacheFile, "utf8"));
+    }
+  } catch (e) {}
 
-  for (const host of hosts) {
+  let detailsPayload = null;
+  const candidates = [
+    {
+      url: `${PW_OFFICIAL_API}/v3/batches/${encodeURIComponent(batchId)}/details?type=EXPLORE_LEAD`,
+      headers: { "User-Agent": PW_HEADERS["User-Agent"], "client-type": "WEB", "Accept": "application/json, text/plain, */*" }
+    },
+    {
+      url: `${PW_DETAILS_ORIGIN}/api/v3/batches/${encodeURIComponent(batchId)}/details?type=EXPLORE_LEAD`,
+      headers: PW_HEADERS
+    },
+    {
+      url: `${PW_OFFICIAL_API}/api/v3/batches/${encodeURIComponent(batchId)}/details?type=EXPLORE_LEAD`,
+      headers: { "User-Agent": PW_HEADERS["User-Agent"], "client-type": "WEB", "Accept": "application/json, text/plain, */*" }
+    }
+  ];
+
+  for (const candidate of candidates) {
     try {
-      const res = await fetch(`${host}/api/v3/batches/${encodeURIComponent(batchId)}/details?type=EXPLORE_LEAD`, {
-        headers: PW_HEADERS,
+      const res = await fetch(candidate.url, {
+        headers: candidate.headers,
         signal: AbortSignal.timeout(12000)
       });
       if (res.ok) {
@@ -775,6 +908,11 @@ async function fetchPwMetadata(batchId) {
   }
 
   if (!detailsPayload) {
+    if (diskData && Array.isArray(diskData.subjects) && diskData.subjects.length > 0) {
+      console.log(`[PW API]: Serving batch ${batchId} from disk cache fallback`);
+      pwMetadataCache.set(batchId, { value: diskData, expiresAt: Date.now() + PW_METADATA_TTL });
+      return diskData;
+    }
     throw new Error("PW batch details unavailable from official API");
   }
 
@@ -791,12 +929,21 @@ async function fetchPwMetadata(batchId) {
 
   // Fetch subjects in parallel chunks of 3 for high speed
   const subjects = [];
-  for (let i = 0; i < remoteSubjects.length; i += 3) {
-    const chunk = remoteSubjects.slice(i, i + 3);
-    const chunkResults = await Promise.all(
-      chunk.map(remoteSubject => fetchSubjectData(batchId, remoteSubject, token))
-    );
-    subjects.push(...chunkResults);
+  try {
+    for (let i = 0; i < remoteSubjects.length; i += 3) {
+      const chunk = remoteSubjects.slice(i, i + 3);
+      const chunkResults = await Promise.all(
+        chunk.map(remoteSubject => fetchSubjectData(batchId, remoteSubject, token))
+      );
+      subjects.push(...chunkResults);
+    }
+  } catch (err) {
+    if (diskData && Array.isArray(diskData.subjects) && diskData.subjects.length > 0) {
+      console.log(`[PW API]: Subject fetch error, using disk cache for ${batchId}`);
+      pwMetadataCache.set(batchId, { value: diskData, expiresAt: Date.now() + PW_METADATA_TTL });
+      return diskData;
+    }
+    throw err;
   }
 
   const batchPdf = data.batchPdfUrl || (data.fileId ? `https://static.pw.live/${data.fileId.key}` : undefined);
@@ -808,7 +955,7 @@ async function fetchPwMetadata(batchId) {
     class: data.class || "",
     exam: Array.isArray(data.exam) ? data.exam.join(", ") : (data.exam || ""),
     byName: data.byName || "",
-    description: data.description || "",
+    description: cleanBatchDescription(data.description || ""),
     previewImage,
     batchPdf,
     subjects
@@ -816,221 +963,246 @@ async function fetchPwMetadata(batchId) {
 
   if (subjects.length > 0) {
     pwMetadataCache.set(batchId, { value, expiresAt: Date.now() + PW_METADATA_TTL });
+    try {
+      if (!fs.existsSync(cacheDir)) fs.mkdirSync(cacheDir, { recursive: true });
+      fs.writeFileSync(cacheFile, JSON.stringify(value, null, 2));
+    } catch (e) {}
+  } else if (diskData && Array.isArray(diskData.subjects) && diskData.subjects.length > 0) {
+    return diskData;
   }
   return value;
 }
 
 // ─── FETCH PW SCHEDULE FROM OFFICIAL & WEEKLY SCHEDULES FEED ───────────────
-async function fetchPwSchedule(batchId, date) {
-  const cacheKey = `${batchId}_${date}`;
-  const cached = pwScheduleCache.get(cacheKey);
-  if (cached && cached.expiresAt > Date.now()) return cached.value;
+async function fetchPwSchedule(batchId, date, month, startDate, endDate) {
+  // Compute date range for month or query
+  let sDate = startDate;
+  let eDate = endDate;
 
-  const rawItems = [];
-  const token = await getPwToken().catch(() => "");
-
-  // 1. Try weekly-schedules feed (returns exact classes for selected day with full attachments)
-  if (token) {
-    try {
-      const wsRes = await fetch(
-        `${PW_DETAILS_ORIGIN}/api/v2/batches/${encodeURIComponent(batchId)}/weekly-schedules?batchId=${encodeURIComponent(batchId)}&startDate=${encodeURIComponent(date)}&endDate=${encodeURIComponent(date)}&page=1`,
-        { headers: { ...PW_HEADERS, Authorization: `Bearer ${token}` }, signal: AbortSignal.timeout(10000) }
-      );
-      if (wsRes.ok) {
-        const payload = await wsRes.json();
-        if (Array.isArray(payload.data) && payload.data.length > 0) {
-          rawItems.push(...payload.data);
-        }
-      }
-    } catch (err) {
-      console.warn("weekly-schedules fetch failed:", err.message);
-    }
-  }
-
-  // 2. Fallback to free-schedule if weekly-schedules returned empty
-  if (rawItems.length === 0) {
-    try {
-      const scheduleRes = await fetch(
-        `${PW_OFFICIAL_API}/v3/public/batch-service/batch-subject-schedules/${encodeURIComponent(batchId)}/free-schedule`,
-        { headers: PW_HEADERS, signal: AbortSignal.timeout(8000) }
-      );
-      if (scheduleRes.ok) {
-        const payload = await scheduleRes.json();
-        if (Array.isArray(payload.data)) {
-          rawItems.push(...payload.data);
-        }
-      }
-    } catch (err) {
-      console.warn("Free schedule fallback fetch failed:", err.message);
-    }
-  }
-
-  // Pre-fetch live attachments for day's ended / completed items that have video ID
-  const scheduleAttachmentsMap = new Map();
-  const candidateItems = rawItems.filter(item => {
-    const details = item?.videoDetails || item?.notesDetails || item;
-    return details && details._id;
-  });
-  if (token && candidateItems.length > 0) {
-    await Promise.all(
-      candidateItems.slice(0, 8).map(async item => {
-        const details = item.videoDetails || item.notesDetails || item;
-        const subId = typeof details.subjectId === "object" ? details.subjectId?._id : (typeof item.subjectId === "object" ? item.subjectId?._id : (details.subjectId || item.subjectId));
-        const topicId = details.tags?.[0]?._id || item.tags?.[0]?._id || "";
-        const vidId = details._id || item._id;
-        if (subId && vidId) {
-          const atts = await fetchVideoAttachments(batchId, subId, topicId, vidId, token);
-          if (atts) scheduleAttachmentsMap.set(vidId, atts);
-        }
-      })
-    );
-  }
-
-  const list = rawItems.flatMap((item, index) => {
-    if (!item || typeof item !== "object") return [];
-    const details = item.videoDetails || item.notesDetails || item.dppQuizDetails || item.bulkScheduleDetails || item.dppDetails || item;
-    const rawSubName = details.subjectId?.name || item.subjectId?.name || (typeof item.subject === "string" ? item.subject : "") || "Subject";
-    
-    // Extract teacher name cleanly from subject or teacher field
-    let teacher = "PW Faculty";
-    if (details.teachers?.[0]?.name && typeof details.teachers[0].name === "string" && !/^[a-f0-9]{24}$/i.test(details.teachers[0].name)) {
-      teacher = details.teachers[0].name;
-    } else if (item.teachers?.[0]?.name && typeof item.teachers[0].name === "string" && !/^[a-f0-9]{24}$/i.test(item.teachers[0].name)) {
-      teacher = item.teachers[0].name;
-    } else if (typeof item.teacher === "string" && item.teacher && !/^[a-f0-9]{24}$/i.test(item.teacher)) {
-      teacher = item.teacher;
-    } else if (rawSubName) {
-      const match = rawSubName.match(/By\s+([^()|]+)/i);
-      if (match) teacher = match[1].trim();
-    }
-
-    const topic = details.topic || item.topic || details.name || "Live Class";
-    const start = details.startTime || item.startTime || item.date || date;
-    const end = details.endTime || item.endTime || "";
-    const duration = details.videoDetails?.duration || details.duration || "1h 45m";
-    const tag = (details.tag || item.tag || "").trim();
-    const status = (details.status || item.status || "").trim();
-    const itemDate = item.date ? item.date.split("T")[0] : (start ? start.split("T")[0] : date);
-
-    const isLive = tag.toLowerCase() === "live" || status.toLowerCase() === "live";
-    const isEnded = tag.toLowerCase() === "ended" || status.toLowerCase() === "completed" || status.toLowerCase() === "canceled" || status.toLowerCase() === "cancelled" || (!isLive && Boolean(end) && new Date(end).getTime() < Date.now());
-    const isUpcoming = !isEnded && !isLive && (tag.toLowerCase() === "upcoming" || (Boolean(start) && new Date(start).getTime() > Date.now()));
-
-    // Collect Notes & DPPs attachments from homeworkIds and direct attachmentIds
-    const hws = Array.isArray(details.homeworkIds) ? details.homeworkIds : (Array.isArray(item.homeworkIds) ? item.homeworkIds : []);
-    const directAtts = Array.isArray(details.attachmentIds) ? details.attachmentIds : (Array.isArray(item.attachmentIds) ? item.attachmentIds : []);
-    const notesItems = [];
-    const dppItems = [];
-
-    hws.forEach(hw => {
-      if (!hw || typeof hw.topic !== "string") return;
-      const att = Array.isArray(hw.attachmentIds) ? hw.attachmentIds[0] : null;
-      const pdf = extractPdfUrl(att);
-      const isDppHw = (hw.note && /dpp/i.test(hw.note)) || /dpp/i.test(hw.topic);
-      if (isDppHw) {
-        dppItems.push({
-          topic: hw.topic.trim(),
-          attachmentName: att?.name || undefined,
-          url: pdf
-        });
+  if (!sDate || !eDate || !/^\d{4}-\d{2}-\d{2}$/.test(sDate) || !/^\d{4}-\d{2}-\d{2}$/.test(eDate)) {
+    let targetMonth = month;
+    if (!targetMonth || !/^\d{4}-\d{2}$/.test(targetMonth)) {
+      if (date && /^\d{4}-\d{2}-\d{2}$/.test(date)) {
+        targetMonth = date.slice(0, 7);
       } else {
-        notesItems.push({
-          topic: hw.topic.trim(),
-          attachmentName: att?.name || undefined,
-          url: pdf
-        });
+        const istDate = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Kolkata" }).format(new Date());
+        targetMonth = istDate.slice(0, 7);
       }
+    }
+    const [y, m] = targetMonth.split("-").map(Number);
+    const lastDay = new Date(y, m, 0).getDate();
+    sDate = `${targetMonth}-01`;
+    eDate = `${targetMonth}-${String(lastDay).padStart(2, "0")}`;
+  }
+
+  const cacheKey = `${batchId}_${sDate}_${eDate}`;
+  let fullSchedule = pwScheduleCache.get(cacheKey);
+
+  if (!fullSchedule || fullSchedule.expiresAt <= Date.now()) {
+    const rawItems = [];
+    const token = await getPwToken().catch(() => "");
+
+    // 1. Fetch weekly-schedules across pages 1..8 with startDate and endDate
+    if (token) {
+      try {
+        const pages = [1, 2, 3, 4, 5, 6, 7, 8];
+        const pagePromises = pages.map(page =>
+          fetch(
+            `${PW_DETAILS_ORIGIN}/api/v2/batches/${encodeURIComponent(batchId)}/weekly-schedules?batchId=${encodeURIComponent(batchId)}&startDate=${encodeURIComponent(sDate)}&endDate=${encodeURIComponent(eDate)}&page=${page}`,
+            { headers: { ...PW_HEADERS, Authorization: `Bearer ${token}` }, signal: AbortSignal.timeout(12000) }
+          ).then(r => r.ok ? r.json() : { data: [] }).catch(() => ({ data: [] }))
+        );
+        const results = await Promise.all(pagePromises);
+        results.forEach(res => {
+          if (Array.isArray(res.data) && res.data.length > 0) {
+            rawItems.push(...res.data);
+          }
+        });
+      } catch (err) {
+        console.warn("weekly-schedules range fetch failed:", err.message);
+      }
+    }
+
+    // 2. Fallback: If range query returned empty, try fetching pages 1..3 without date filter
+    if (rawItems.length === 0 && token) {
+      try {
+        const pagePromises = [1, 2, 3].map(page =>
+          fetch(
+            `${PW_DETAILS_ORIGIN}/api/v2/batches/${encodeURIComponent(batchId)}/weekly-schedules?batchId=${encodeURIComponent(batchId)}&page=${page}`,
+            { headers: { ...PW_HEADERS, Authorization: `Bearer ${token}` }, signal: AbortSignal.timeout(9000) }
+          ).then(r => r.ok ? r.json() : { data: [] }).catch(() => ({ data: [] }))
+        );
+        const results = await Promise.all(pagePromises);
+        results.forEach(res => {
+          if (Array.isArray(res.data) && res.data.length > 0) {
+            rawItems.push(...res.data);
+          }
+        });
+      } catch (err) {}
+    }
+
+    // Deduplicate items by _id
+    const seenRawIds = new Set();
+    const uniqueRawItems = rawItems.filter(item => {
+      const id = item?._id || (item?.videoDetails && item.videoDetails._id) || (item?.bulkScheduleDetails && item.bulkScheduleDetails._id);
+      if (!id) return true;
+      if (seenRawIds.has(id)) return false;
+      seenRawIds.add(id);
+      return true;
     });
 
-    directAtts.forEach(att => {
-      if (!att) return;
-      const pdf = extractPdfUrl(att);
-      const isDppAtt = (att.name && /dpp/i.test(att.name)) || (topic && /dpp/i.test(topic));
-      if (isDppAtt) {
-        dppItems.push({
-          topic: att.name || topic || "DPP Sheet",
-          attachmentName: att.name || undefined,
-          url: pdf
-        });
-      } else {
-        notesItems.push({
-          topic: att.name || topic || "Class Notes",
-          attachmentName: att.name || undefined,
-          url: pdf
+    // Pre-fetch live attachments for candidate video items
+    const scheduleAttachmentsMap = new Map();
+    const candidateItems = uniqueRawItems.filter(item => {
+      const details = item?.videoDetails || item?.notesDetails || item;
+      return details && details._id;
+    });
+    if (token && candidateItems.length > 0) {
+      await Promise.all(
+        candidateItems.slice(0, 6).map(async item => {
+          const details = item.videoDetails || item.notesDetails || item;
+          const subId = typeof details.subjectId === "object" ? details.subjectId?._id : (typeof item.subjectId === "object" ? item.subjectId?._id : (details.subjectId || item.subjectId));
+          const topicId = details.tags?.[0]?._id || item.tags?.[0]?._id || "";
+          const vidId = details._id || item._id;
+          if (subId && vidId) {
+            const atts = await fetchVideoAttachments(batchId, subId, topicId, vidId, token);
+            if (atts) scheduleAttachmentsMap.set(vidId, atts);
+          }
+        })
+      );
+    }
+
+    const list = uniqueRawItems.flatMap((item, index) => {
+      if (!item || typeof item !== "object") return [];
+      const details = item.videoDetails || item.notesDetails || item.dppQuizDetails || item.bulkScheduleDetails || item.dppDetails || item;
+      const rawSubName = details.subjectId?.name || item.subjectId?.name || (typeof item.subject === "string" ? item.subject : "") || "Subject";
+
+      let teacher = "PW Faculty";
+      if (details.teachers?.[0]?.name && typeof details.teachers[0].name === "string" && !/^[a-f0-9]{24}$/i.test(details.teachers[0].name)) {
+        teacher = details.teachers[0].name;
+      } else if (item.teachers?.[0]?.name && typeof item.teachers[0].name === "string" && !/^[a-f0-9]{24}$/i.test(item.teachers[0].name)) {
+        teacher = item.teachers[0].name;
+      } else if (typeof item.teacher === "string" && item.teacher && !/^[a-f0-9]{24}$/i.test(item.teacher)) {
+        teacher = item.teacher;
+      } else if (rawSubName) {
+        const match = rawSubName.match(/By\s+([^()|]+)/i);
+        if (match) teacher = match[1].trim();
+      }
+
+      const topic = details.topic || item.topic || details.name || "Live Class";
+      const start = details.startTime || item.startTime || item.date || date || "";
+      const end = details.endTime || item.endTime || "";
+      const duration = details.videoDetails?.duration || details.duration || "1h 45m";
+      const tag = (details.tag || item.tag || "").trim();
+      const status = (details.status || item.status || "").trim();
+      const itemDate = item.date ? item.date.split("T")[0] : (details.date ? details.date.split("T")[0] : (details.startTime ? details.startTime.split("T")[0] : (start ? start.split("T")[0] : date || "")));
+
+      const isLive = tag.toLowerCase() === "live" || status.toLowerCase() === "live";
+      const isEnded = tag.toLowerCase() === "ended" || status.toLowerCase() === "completed" || status.toLowerCase() === "canceled" || status.toLowerCase() === "cancelled" || (!isLive && Boolean(end) && new Date(end).getTime() < Date.now());
+      const isUpcoming = !isEnded && !isLive && (tag.toLowerCase() === "upcoming" || (Boolean(start) && new Date(start).getTime() > Date.now()));
+
+      // Collect Notes & DPPs attachments
+      const hws = Array.isArray(details.homeworkIds) ? details.homeworkIds : (Array.isArray(item.homeworkIds) ? item.homeworkIds : []);
+      const directAtts = Array.isArray(details.attachmentIds) ? details.attachmentIds : (Array.isArray(item.attachmentIds) ? item.attachmentIds : []);
+      const notesItems = [];
+      const dppItems = [];
+
+      hws.forEach(hw => {
+        if (!hw || typeof hw.topic !== "string") return;
+        const att = Array.isArray(hw.attachmentIds) ? hw.attachmentIds[0] : null;
+        const pdf = extractPdfUrl(att);
+        const isDppHw = (hw.note && /dpp/i.test(hw.note)) || /dpp/i.test(hw.topic);
+        if (isDppHw) {
+          dppItems.push({ topic: hw.topic.trim(), attachmentName: att?.name || undefined, url: pdf });
+        } else {
+          notesItems.push({ topic: hw.topic.trim(), attachmentName: att?.name || undefined, url: pdf });
+        }
+      });
+
+      directAtts.forEach(att => {
+        if (!att) return;
+        const pdf = extractPdfUrl(att);
+        const isDppAtt = (att.name && /dpp/i.test(att.name)) || (topic && /dpp/i.test(topic));
+        if (isDppAtt) {
+          dppItems.push({ topic: att.name || topic || "DPP Sheet", attachmentName: att.name || undefined, url: pdf });
+        } else {
+          notesItems.push({ topic: att.name || topic || "Class Notes", attachmentName: att.name || undefined, url: pdf });
+        }
+      });
+
+      const resolvedAtts = scheduleAttachmentsMap.get(details._id || item._id);
+      if (resolvedAtts?.notes) {
+        resolvedAtts.notes.forEach(nt => {
+          if (nt?.pdf && !notesItems.some(n => n.url === nt.pdf)) {
+            notesItems.push({ topic: nt.topic || "Class Notes", attachmentName: nt.note || "Class Notes", url: nt.pdf });
+          }
         });
       }
+      if (resolvedAtts?.dpp_pdf) {
+        resolvedAtts.dpp_pdf.forEach(dp => {
+          if (dp?.pdf && !dppItems.some(d => d.url === dp.pdf)) {
+            dppItems.push({ topic: dp.topic || "DPP Sheet", attachmentName: dp.note || "DPP Sheet", url: dp.pdf });
+          }
+        });
+      }
+
+      const isNotes = Boolean(item.notesDetails || details.type === "NOTES" || item.type === "NOTES" || /notes|summary|only pdf/i.test(topic));
+      const isDpp = Boolean(item.dppQuizDetails || item.dppDetails || details.type === "DPP" || item.type === "DPP" || /dpp|quiz/i.test(topic));
+      const finalType = isDpp ? "DPP" : (isNotes ? "NOTES" : "LECTURE");
+
+      const primaryNotesUrl = notesItems.find(n => n.url)?.url || undefined;
+      const primaryDppPdfUrl = dppItems.find(d => d.url)?.url || undefined;
+      const teacherImage = details.teachers?.[0]?.imageUrl || details.teachers?.[0]?.image || item.teachers?.[0]?.imageUrl || details.teacherImage || item.teacherImage || "";
+      const attachedDpp = dppItems[0] || notesItems.find(n => /dpp/i.test(n.topic));
+      const dppTitle = attachedDpp ? attachedDpp.topic : undefined;
+      const dppPdfUrl = attachedDpp?.url || primaryDppPdfUrl;
+
+      return [{
+        id: String(item._id || details._id || `${batchId}-${itemDate}-${index}`),
+        type: finalType,
+        subject: rawSubName,
+        rawSubject: rawSubName,
+        teacher,
+        teacherImage,
+        topic,
+        chapter: details.tags?.[0]?.name || item.tags?.[0]?.name || "",
+        date: itemDate,
+        startTime: start,
+        endTime: end,
+        duration,
+        time: start && end ? `${start} - ${end}` : start || "Scheduled Class",
+        tag: isEnded ? "Ended" : (isLive ? "Live" : (isUpcoming ? "Upcoming" : (tag || "Scheduled"))),
+        status,
+        isLive,
+        isUpcoming,
+        isEnded,
+        hasNotes: notesItems.length > 0 || Boolean(item.contentAlert?.isNotesChecked),
+        hasDpp: Boolean(dppTitle) || dppItems.length > 0 || Boolean(item.contentAlert?.isDppPdfChecked),
+        notesUrl: primaryNotesUrl,
+        dppPdfUrl,
+        dppTitle,
+        notes: notesItems,
+        dpps: dppItems
+      }];
     });
 
-    // Merge live resolved attachments if direct keys were empty
-    const resolvedAtts = scheduleAttachmentsMap.get(details._id || item._id);
-    if (resolvedAtts?.notes) {
-      resolvedAtts.notes.forEach(nt => {
-        if (nt?.pdf && !notesItems.some(n => n.url === nt.pdf)) {
-          notesItems.push({
-            topic: nt.topic || "Class Notes",
-            attachmentName: nt.note || "Class Notes",
-            url: nt.pdf
-          });
-        }
-      });
-    }
-    if (resolvedAtts?.dpp_pdf) {
-      resolvedAtts.dpp_pdf.forEach(dp => {
-        if (dp?.pdf && !dppItems.some(d => d.url === dp.pdf)) {
-          dppItems.push({
-            topic: dp.topic || "DPP Sheet",
-            attachmentName: dp.note || "DPP Sheet",
-            url: dp.pdf
-          });
-        }
-      });
-    }
+    list.sort((a, b) => {
+      const da = a.date || "";
+      const db = b.date || "";
+      if (da !== db) return da.localeCompare(db);
+      return (a.startTime || "").localeCompare(b.startTime || "");
+    });
 
-    const isNotes = Boolean(item.notesDetails || details.type === "NOTES" || item.type === "NOTES" || /notes|summary|only pdf/i.test(topic));
-    const isDpp = Boolean(item.dppQuizDetails || item.dppDetails || details.type === "DPP" || item.type === "DPP" || /dpp|quiz/i.test(topic));
-    const finalType = isDpp ? "DPP" : (isNotes ? "NOTES" : "LECTURE");
+    fullSchedule = {
+      list,
+      expiresAt: Date.now() + 15 * 60 * 1000
+    };
+    pwScheduleCache.set(cacheKey, fullSchedule);
+  }
 
-    const primaryNotesUrl = notesItems.find(n => n.url)?.url || undefined;
-    const primaryDppPdfUrl = dppItems.find(d => d.url)?.url || undefined;
-
-    const teacherImage = details.teachers?.[0]?.imageUrl || details.teachers?.[0]?.image || item.teachers?.[0]?.imageUrl || details.teacherImage || item.teacherImage || "";
-    const attachedDpp = dppItems[0] || notesItems.find(n => /dpp/i.test(n.topic));
-    const dppTitle = attachedDpp ? attachedDpp.topic : undefined;
-    const dppPdfUrl = attachedDpp?.url || primaryDppPdfUrl;
-
-    return [{
-      id: String(item._id || details._id || `${batchId}-${itemDate}-${index}`),
-      type: finalType,
-      subject: rawSubName,
-      rawSubject: rawSubName,
-      teacher,
-      teacherImage,
-      topic,
-      chapter: details.tags?.[0]?.name || item.tags?.[0]?.name || "",
-      date: itemDate,
-      startTime: start,
-      endTime: end,
-      duration,
-      time: start && end ? `${start} - ${end}` : start || "Scheduled Class",
-      tag: isEnded ? "Ended" : (isLive ? "Live" : (isUpcoming ? "Upcoming" : (tag || "Scheduled"))),
-      status,
-      isLive,
-      isUpcoming,
-      isEnded,
-      hasNotes: notesItems.length > 0 || Boolean(item.contentAlert?.isNotesChecked),
-      hasDpp: Boolean(dppTitle) || dppItems.length > 0 || Boolean(item.contentAlert?.isDppPdfChecked),
-      notesUrl: primaryNotesUrl,
-      dppPdfUrl,
-      dppTitle,
-      notes: notesItems,
-      dpps: dppItems
-    }];
-  });
-
-  const daySchedules = date ? list.filter(s => s.date === date) : list;
-  const availableDates = Array.from(new Set(list.map(s => s.date).filter(Boolean)));
-
-  // If all classes for the day have finished, report allEnded = true
+  const allSchedules = fullSchedule.list || [];
+  const daySchedules = date ? allSchedules.filter(s => s.date === date) : allSchedules;
+  const availableDates = Array.from(new Set(allSchedules.map(s => s.date).filter(Boolean))).sort();
   const allEnded = daySchedules.length > 0 && daySchedules.every(s => s.isEnded);
 
   const value = {
@@ -1039,14 +1211,23 @@ async function fetchPwSchedule(batchId, date) {
     allEnded,
     statusMessage: allEnded ? "Today's Classes Ended" : undefined,
     schedules: daySchedules,
-    allSchedules: list,
+    allSchedules,
     availableDates
   };
-  pwScheduleCache.set(cacheKey, { value, expiresAt: Date.now() + 15 * 60 * 1000 });
   return value;
 }
 
 // ─── PW API ROUTES ──────────────────────────────────────────────────────────
+app.get("/api/pw-status", (_req, res) => {
+  res.json({
+    status: "ok",
+    service: "Physics Wallah Integration",
+    cachedBatches: Array.from(pwMetadataCache.keys()),
+    uptime: process.uptime(),
+    timestamp: Date.now()
+  });
+});
+
 app.get("/api/pw-catalog", async (_req, res) => {
   if (pwCatalogCache.data && pwCatalogCache.expiresAt > Date.now()) {
     return res.json(pwCatalogCache.data);
@@ -1060,7 +1241,7 @@ app.get("/api/pw-catalog", async (_req, res) => {
       signal: AbortSignal.timeout(15000),
     });
     if (!response.ok) {
-      return res.status(502).json({ error: `PW catalog failed (${response.status})` });
+      throw new Error(`PW catalog failed (${response.status})`);
     }
     const data = await response.json();
     pwCatalogCache = { data, expiresAt: Date.now() + PW_CATALOG_TTL };
@@ -1069,6 +1250,15 @@ app.get("/api/pw-catalog", async (_req, res) => {
     if (pwCatalogCache.data) {
       return res.json(pwCatalogCache.data);
     }
+    // Fallback to local data/pw/batches.json if available
+    try {
+      const fallbackFile = path.join(__dirname, "data", "pw", "batches.json");
+      if (fs.existsSync(fallbackFile)) {
+        const localData = JSON.parse(fs.readFileSync(fallbackFile, "utf8"));
+        console.log("[PW Catalog]: Served from local disk fallback");
+        return res.json(localData);
+      }
+    } catch (e) {}
     res.status(502).json({ error: error.message || "PW catalog unavailable" });
   }
 });
@@ -1106,13 +1296,16 @@ app.get("/api/pw-chapter-contents", async (req, res) => {
 app.get("/api/pw-schedule", async (req, res) => {
   const batchId = typeof req.query.batchId === "string" ? req.query.batchId : "";
   const requestedDate = typeof req.query.date === "string" ? req.query.date : "";
+  const month = typeof req.query.month === "string" ? req.query.month : "";
+  const startDate = typeof req.query.startDate === "string" ? req.query.startDate : "";
+  const endDate = typeof req.query.endDate === "string" ? req.query.endDate : "";
   const istDate = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Kolkata" }).format(new Date());
   const date = /^\d{4}-\d{2}-\d{2}$/.test(requestedDate) ? requestedDate : istDate;
   if (!/^[a-zA-Z0-9_-]{8,100}$/.test(batchId)) {
     return res.status(400).json({ error: "A valid batchId is required" });
   }
   try {
-    res.json(await fetchPwSchedule(batchId, date));
+    res.json(await fetchPwSchedule(batchId, date, month, startDate, endDate));
   } catch (error) {
     res.status(502).json({ error: error.message || "PW weekly schedule unavailable" });
   }
@@ -3130,7 +3323,16 @@ app.get(/.*/, (req, res) => {
 });
 
 // PORT resolution and server start
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, '0.0.0.0', () => {
+// In dev environments where PORT may be set for Vite (e.g. 21847 or 3000), API server runs on port 8080
+const PORT = process.env.API_PORT || (process.env.PORT && process.env.PORT !== "21847" && process.env.PORT !== "3000" ? process.env.PORT : 8080);
+const server = app.listen(PORT, '0.0.0.0', () => {
   console.log(`Backend production engine running cleanly on port ${PORT}`);
+});
+
+server.on("error", (err) => {
+  if (err.code === "EADDRINUSE") {
+    console.warn(`[Backend Server]: Port ${PORT} is already in use by another instance.`);
+  } else {
+    console.error("[Backend Server Error]:", err);
+  }
 });

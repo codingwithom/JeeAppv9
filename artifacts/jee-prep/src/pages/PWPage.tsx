@@ -28,6 +28,9 @@ import {
   Lightbulb,
   UserCheck,
   SlidersHorizontal,
+  Flame,
+  AlertCircle,
+  Loader2,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -49,6 +52,10 @@ export interface PWLecture {
   pdfUrl?: string;
   notesUrl?: string;
   dppPdfUrl?: string;
+  dppTitle?: string;
+  hasDpp?: boolean;
+  notes?: Array<{ topic: string; url: string }>;
+  dpps?: Array<{ topic: string; url: string }>;
   allNotes?: Array<{ topic: string; note?: string; pdf?: string }>;
   allDpps?: Array<{ topic: string; note?: string; pdf?: string }>;
 }
@@ -329,15 +336,296 @@ export function categorizeSubjectContent(allChapters: PWChapter[]) {
     }
   });
 
-  if (syllabusChapters.length === 0 && studyMaterials.length === 0) {
+  // If there are no syllabus chapters (or if syllabusChapters is empty but allChapters is not),
+  // NEVER leave syllabusChapters empty! Fall back to allChapters so the user ALWAYS sees the chapters when opening a subject.
+  if (syllabusChapters.length === 0) {
     return {
       syllabusChapters: allChapters,
-      studyMaterials: [],
-      digitalBooks: []
+      studyMaterials,
+      digitalBooks
     };
   }
 
   return { syllabusChapters, studyMaterials, digitalBooks };
+}
+
+export function cleanBatchDescription(desc?: string): string {
+  if (!desc || typeof desc !== "string") return "Live curriculum from Physics Wallah";
+  // Remove style and script elements and their content
+  let text = desc.replace(/<style[\s\S]*?<\/style>/gi, " ")
+                 .replace(/<script[\s\S]*?<\/script>/gi, " ")
+                 .replace(/<[^>]+>/g, " ");
+  // Remove any remaining css declarations like { ... } or .class { ... }
+  text = text.replace(/\{[^}]*\}/g, " ")
+             .replace(/\.[a-zA-Z0-9_-]+\s*\{[^}]*\}/g, " ");
+  // Decode HTML entities
+  text = text.replace(/&nbsp;/gi, " ")
+             .replace(/&amp;/gi, "&")
+             .replace(/&quot;/gi, '"')
+             .replace(/&#39;|&rsquo;|&lsquo;/gi, "'")
+             .replace(/&lt;/gi, "<")
+             .replace(/&gt;/gi, ">");
+  text = text.replace(/\s+/g, " ").trim();
+  // Strip CSS artifact leftovers if any
+  if (text.startsWith(".") || text.startsWith("{") || text.includes("display: flex") || text.includes("margin-bottom:") || text.includes(".desc-") || text.includes("px;") || text.includes("border-") || text.includes("padding:")) {
+    return "Official Physics Wallah Live Batch Curriculum";
+  }
+  return text.slice(0, 180) || "Live curriculum from Physics Wallah";
+}
+
+const DIRECT_PW_TOKEN = "Qd2wfhzRoi5eQdoITwpbNKPMdMTNSs37YUjvj0rSb5sNyhMiNwdYRCmgiTbUdxAibU3m+ETsvfr08WHlOIw8V5Ae12IwN5xSWTknnXkHL5d+PK4xeNliyrKg7RyjrjaY9VM66AUNFORT6DY8AjgpXFtE86unYfEN0OK+jxrIAhhZEFa36XVws4yLUz4Espb9yIioPcpKeK2n3w1yZISAFs0mBdsfONwC7O9scHh9lnzjUr15GeJAPvvIKgivZ9NMLCOFEuwpXq45phXv8/pO3rEcWj/jtQdStmxbKDuxFU6LDY2CKN4A8veji9rjzZhsle+M4tlc+Q0xdoleA25zrzUJV82iyS1lkqe+VrMDMnLYa3uCq3Zc0Zn/WN2enQLT2XSqyquUk7yO3gcBt6n4pgO3tqVfLSjlZewb2qKi9hNo6gMkit71lsTcYn3dlVjE9DJMoNy0P8ua6EsjCy7YA4tM0vFOGclR0+JUTdXloIgyeM46jKxGajA2vQh8yIN7dDLxWc6rN5lgssWLpTN3j3/QJBTgJXI7eoyxB+3bBRDjAlBXd+tZvmJeE28YCp3Jop4ZEVMC6tRzi0u0KmZqnHmAZdP95aJX43MLb9aZXI0fIOOX/ilqBHSt53z3bP2rlPixNReYbGNt20TwL+E5m3OxQDT5dWmyBfD2dd41moLeTN3Ls8zzKXHooEID9rHXfYUVqqTanm2IjZ5qDIBPaRFomxkDC9vt50BtWFf/VyKRS2WswbwHdpv3DD3BM+qwPLH9QK87mpkWA61ODhbkVR364tfNYOLWxcXFn5sosEo=";
+
+// Direct resilient client-side chapter contents loader (bypasses Cloudflare Worker 429)
+async function fetchDirectChapterContents(batchId: string, subjectId: string, chapterId: string) {
+  const origin = "https://vidcloud.eu.org";
+  const headers = { "Authorization": `Bearer ${DIRECT_PW_TOKEN}` };
+
+  const [vRes, nRes, dRes] = await Promise.all([
+    fetch(`${origin}/api/v2/batches/${encodeURIComponent(batchId)}/subject/${encodeURIComponent(subjectId)}/contents?page=1&contentType=videos&tag=${encodeURIComponent(chapterId)}`, { headers, signal: AbortSignal.timeout(9000) }).then(r => r.ok ? r.json() : { data: [] }).catch(() => ({ data: [] })),
+    fetch(`${origin}/api/v2/batches/${encodeURIComponent(batchId)}/subject/${encodeURIComponent(subjectId)}/contents?page=1&contentType=notes&tag=${encodeURIComponent(chapterId)}`, { headers, signal: AbortSignal.timeout(9000) }).then(r => r.ok ? r.json() : { data: [] }).catch(() => ({ data: [] })),
+    fetch(`${origin}/api/v2/batches/${encodeURIComponent(batchId)}/subject/${encodeURIComponent(subjectId)}/contents?page=1&contentType=DppNotes&tag=${encodeURIComponent(chapterId)}`, { headers, signal: AbortSignal.timeout(9000) }).then(r => r.ok ? r.json() : { data: [] }).catch(() => ({ data: [] }))
+  ]);
+
+  const rawVideos: any[] = Array.isArray(vRes.data) ? vRes.data : [];
+  const rawNotes: any[] = Array.isArray(nRes.data) ? nRes.data : [];
+  const rawDpps: any[] = Array.isArray(dRes.data) ? dRes.data : [];
+
+  const notesList: Array<{ id: string; title: string; date?: string; notesUrl?: string }> = [];
+  rawNotes.forEach((item: any) => {
+    const hws = Array.isArray(item.homeworkIds) ? item.homeworkIds : [];
+    if (hws.length > 0) {
+      hws.forEach((hw: any) => {
+        if (!hw || typeof hw.topic !== "string") return;
+        const att = Array.isArray(hw.attachmentIds) ? hw.attachmentIds[0] : null;
+        let pdf: string | undefined = undefined;
+        if (att) {
+          if (typeof att.key === "string" && att.key.trim().length > 0) {
+            const baseUrl = att.baseUrl || "https://static.pw.live/";
+            pdf = baseUrl.endsWith("/") ? `${baseUrl}${att.key}` : `${baseUrl}/${att.key}`;
+          } else if (att.url && /\.pdf/i.test(att.url)) {
+            pdf = att.url;
+          }
+        }
+        notesList.push({
+          id: `${subjectId}-${hw._id || item._id}`,
+          title: hw.topic.trim(),
+          date: item.date ? item.date.split("T")[0] : undefined,
+          notesUrl: pdf
+        });
+      });
+    } else {
+      const att = Array.isArray(item.attachmentIds) ? item.attachmentIds[0] : null;
+      let pdf: string | undefined = undefined;
+      if (att) {
+        if (typeof att.key === "string" && att.key.trim().length > 0) {
+          const baseUrl = att.baseUrl || "https://static.pw.live/";
+          pdf = baseUrl.endsWith("/") ? `${baseUrl}${att.key}` : `${baseUrl}/${att.key}`;
+        } else if (att.url && /\.pdf/i.test(att.url)) {
+          pdf = att.url;
+        }
+      }
+      notesList.push({
+        id: `${subjectId}-${item._id}`,
+        title: (item.topic || item.name || "Class Notes").trim(),
+        date: item.date ? item.date.split("T")[0] : undefined,
+        notesUrl: pdf
+      });
+    }
+  });
+
+  const dppsList: Array<{ id: string; title: string; date?: string; dppPdfUrl?: string }> = [];
+  rawDpps.forEach((item: any) => {
+    const hws = Array.isArray(item.homeworkIds) ? item.homeworkIds : [];
+    if (hws.length > 0) {
+      hws.forEach((hw: any) => {
+        if (!hw || typeof hw.topic !== "string") return;
+        const att = Array.isArray(hw.attachmentIds) ? hw.attachmentIds[0] : null;
+        let pdf: string | undefined = undefined;
+        if (att) {
+          if (typeof att.key === "string" && att.key.trim().length > 0) {
+            const baseUrl = att.baseUrl || "https://static.pw.live/";
+            pdf = baseUrl.endsWith("/") ? `${baseUrl}${att.key}` : `${baseUrl}/${att.key}`;
+          } else if (att.url && /\.pdf/i.test(att.url)) {
+            pdf = att.url;
+          }
+        }
+        dppsList.push({
+          id: `${subjectId}-${hw._id || item._id}`,
+          title: hw.topic.trim(),
+          date: item.date ? item.date.split("T")[0] : undefined,
+          dppPdfUrl: pdf
+        });
+      });
+    } else {
+      const att = Array.isArray(item.attachmentIds) ? item.attachmentIds[0] : null;
+      let pdf: string | undefined = undefined;
+      if (att) {
+        if (typeof att.key === "string" && att.key.trim().length > 0) {
+          const baseUrl = att.baseUrl || "https://static.pw.live/";
+          pdf = baseUrl.endsWith("/") ? `${baseUrl}${att.key}` : `${baseUrl}/${att.key}`;
+        } else if (att.url && /\.pdf/i.test(att.url)) {
+          pdf = att.url;
+        }
+      }
+      dppsList.push({
+        id: `${subjectId}-${item._id}`,
+        title: (item.topic || item.name || "DPP Sheet").trim(),
+        date: item.date ? item.date.split("T")[0] : undefined,
+        dppPdfUrl: pdf
+      });
+    }
+  });
+
+  const lecturesList: PWLecture[] = rawVideos.map((item: any, idx: number) => {
+    const topic = (item.topic || item.name || `Lecture ${idx + 1}`).trim();
+    const itemDate = item.date ? item.date.split("T")[0] : undefined;
+
+    const matchedNote = notesList.find(n => n.date === itemDate || n.title.includes(topic) || topic.includes(n.title)) || notesList[idx];
+    const matchedDpp = dppsList.find(d => d.date === itemDate || d.title.includes(topic) || topic.includes(d.title)) || dppsList[idx];
+
+    return {
+      id: `${subjectId}-${item._id}`,
+      title: topic,
+      type: "lecture",
+      date: itemDate,
+      duration: item.duration || "1h 45m",
+      notesUrl: matchedNote?.notesUrl,
+      dppPdfUrl: matchedDpp?.dppPdfUrl,
+      dppTitle: matchedDpp?.title,
+      notes: matchedNote?.notesUrl ? [{ topic: matchedNote.title, url: matchedNote.notesUrl }] : [],
+      dpps: matchedDpp?.dppPdfUrl ? [{ topic: matchedDpp.title, url: matchedDpp.dppPdfUrl }] : []
+    };
+  });
+
+  const allLectures = [...lecturesList];
+  if (allLectures.length === 0) {
+    notesList.forEach(n => {
+      allLectures.push({
+        id: n.id,
+        title: n.title,
+        type: "lecture",
+        date: n.date,
+        notesUrl: n.notesUrl,
+        notes: n.notesUrl ? [{ topic: n.title, url: n.notesUrl }] : []
+      });
+    });
+    dppsList.forEach(d => {
+      allLectures.push({
+        id: d.id,
+        title: d.title,
+        type: "dpp",
+        date: d.date,
+        dppPdfUrl: d.dppPdfUrl,
+        dppTitle: d.title,
+        dpps: d.dppPdfUrl ? [{ topic: d.title, url: d.dppPdfUrl }] : []
+      });
+    });
+  }
+
+  return {
+    chapterId,
+    lectures: allLectures,
+    notes: notesList,
+    dpps: dppsList,
+    totalLectures: lecturesList.length,
+    totalNotes: notesList.length,
+    totalDpps: dppsList.length
+  };
+}
+
+// Direct resilient client-side batch schedule loader
+async function fetchDirectBatchSchedule(batchId: string, monthKey: string) {
+  const origin = "https://vidcloud.eu.org";
+  const [y, m] = (monthKey && /^\d{4}-\d{2}$/.test(monthKey) ? monthKey : "2026-10").split("-").map(Number);
+  const lastDay = new Date(y, m, 0).getDate();
+  const sDate = `${String(y).padStart(4, "0")}-${String(m).padStart(2, "0")}-01`;
+  const eDate = `${String(y).padStart(4, "0")}-${String(m).padStart(2, "0")}-${String(lastDay).padStart(2, "0")}`;
+
+  const headers = { "Authorization": `Bearer ${DIRECT_PW_TOKEN}` };
+
+  const [vcRes, ppRes] = await Promise.all([
+    fetch(`${origin}/api/v2/batches/${encodeURIComponent(batchId)}/weekly-schedules?batchId=${encodeURIComponent(batchId)}&startDate=${sDate}&endDate=${eDate}&page=1`, {
+      headers,
+      signal: AbortSignal.timeout(8000)
+    }).then(r => r.ok ? r.json() : null).catch(() => null),
+    fetch(`https://api.penpencil.co/v3/public/batch-service/batch-subject-schedules/${encodeURIComponent(batchId)}/free-schedule`, {
+      headers: { "client-id": "5eb393ee95fab7468a79d189", "client-type": "WEB" },
+      signal: AbortSignal.timeout(8000)
+    }).then(r => r.ok ? r.json() : null).catch(() => null)
+  ]);
+
+  const rawItems: any[] = [];
+  if (vcRes && Array.isArray(vcRes.data) && vcRes.data.length > 0) {
+    rawItems.push(...vcRes.data);
+  }
+  if (ppRes && Array.isArray(ppRes.data) && ppRes.data.length > 0) {
+    rawItems.push(...ppRes.data);
+  }
+
+  const seenIds = new Set<string>();
+  const list: PWScheduleItem[] = [];
+
+  rawItems.forEach((item, idx) => {
+    if (!item) return;
+    const details = item.bulkScheduleDetails || item.videoDetails || item.notesDetails || item;
+    const id = String(details._id || item._id || `${batchId}-${idx}`);
+    if (seenIds.has(id)) return;
+    seenIds.add(id);
+
+    const rawSubName = details.subjectId?.name || item.subjectId?.name || (typeof item.subject === "string" ? item.subject : "") || "Subject";
+    let teacher = "PW Faculty";
+    if (details.teachers?.[0]?.name && typeof details.teachers[0].name === "string" && !/^[a-f0-9]{24}$/i.test(details.teachers[0].name)) {
+      teacher = details.teachers[0].name;
+    } else if (item.teachers?.[0]?.name && typeof item.teachers[0].name === "string" && !/^[a-f0-9]{24}$/i.test(item.teachers[0].name)) {
+      teacher = item.teachers[0].name;
+    } else if (rawSubName) {
+      const match = rawSubName.match(/By\s+([^()|]+)/i);
+      if (match) teacher = match[1].trim();
+    }
+
+    const topic = (details.topic || item.topic || details.name || "Live Class").trim();
+    const start = details.startTime || item.startTime || item.date || "";
+    const end = details.endTime || item.endTime || "";
+    const duration = details.videoDetails?.duration || details.duration || "1h 45m";
+    const tag = (details.tag || item.tag || "").trim();
+    const status = (details.status || item.status || "").trim();
+    const itemDate = item.date ? item.date.split("T")[0] : (details.date ? details.date.split("T")[0] : (details.startTime ? details.startTime.split("T")[0] : (start ? start.split("T")[0] : "")));
+
+    const isLive = tag.toLowerCase() === "live" || status.toLowerCase() === "live";
+    const isEnded = tag.toLowerCase() === "ended" || status.toLowerCase() === "completed" || (!isLive && Boolean(end) && new Date(end).getTime() < Date.now());
+    const isUpcoming = !isEnded && !isLive && (tag.toLowerCase() === "upcoming" || (Boolean(start) && new Date(start).getTime() > Date.now()));
+
+    list.push({
+      id,
+      type: "LECTURE",
+      subject: rawSubName,
+      rawSubject: rawSubName,
+      teacher,
+      topic,
+      chapter: details.tags?.[0]?.name || item.tags?.[0]?.name || "",
+      date: itemDate,
+      startTime: start,
+      endTime: end,
+      time: start && end ? `${start} - ${end}` : start || "Scheduled Class",
+      duration,
+      tag: isEnded ? "Ended" : (isLive ? "Live" : (isUpcoming ? "Upcoming" : (tag || "Scheduled"))),
+      status,
+      isLive,
+      isUpcoming,
+      isEnded,
+      notes: [],
+      dpps: []
+    });
+  });
+
+  list.sort((a, b) => (a.date || "").localeCompare(b.date || "") || (a.startTime || "").localeCompare(b.startTime || ""));
+  const availableDates = Array.from(new Set(list.map(s => s.date).filter(Boolean))).sort();
+
+  return {
+    batchId,
+    allSchedules: list,
+    availableDates
+  };
 }
 
 export interface BatchResourceItem {
@@ -464,8 +752,10 @@ export function segregateChapterContent(ch: PWChapter): SegregatedChapterContent
 
     if (item.allDpps && item.allDpps.length > 0) {
       item.allDpps.forEach((dp, dIdx) => {
-        if (dp?.pdf && !seenDpps.has(dp.pdf)) {
-          seenDpps.add(dp.pdf);
+        if (!dp?.pdf) return;
+        const dppKey = dp.pdf;
+        if (!seenDpps.has(dppKey)) {
+          seenDpps.add(dppKey);
           dpps.push({
             id: `${item.id}-dpp-${dIdx}`,
             title: dp.note || dp.topic || `${item.title} • DPP Sheet`,
@@ -475,17 +765,20 @@ export function segregateChapterContent(ch: PWChapter): SegregatedChapterContent
           });
         }
       });
-    } else if (item.dppPdfUrl || (item.type === "dpp" && (item.pdfUrl || item.notesUrl))) {
+    } else if (item.dppPdfUrl || item.type === "dpp" || item.hasDpp || (item.title && /\bdpp\b/i.test(item.title))) {
       const pdf = item.dppPdfUrl || item.pdfUrl || item.notesUrl;
-      if (pdf && !seenDpps.has(pdf)) {
-        seenDpps.add(pdf);
-        dpps.push({
-          id: `${item.id}-dpp-direct`,
-          title: item.attachmentName || item.title || `DPP Sheet ${idx + 1}`,
-          url: pdf,
-          lectureTitle: item.title,
-          rawId: item.id
-        });
+      if (pdf) {
+        const dppKey = pdf;
+        if (!seenDpps.has(dppKey)) {
+          seenDpps.add(dppKey);
+          dpps.push({
+            id: `${item.id}-dpp-direct`,
+            title: item.attachmentName || item.dppTitle || item.title || `DPP Sheet ${idx + 1}`,
+            url: pdf,
+            lectureTitle: item.title,
+            rawId: item.id
+          });
+        }
       }
     }
   });
@@ -504,7 +797,16 @@ export default function PWPage() {
   const [selectedChapter, setSelectedChapter] = useState<PWChapter | null>(null);
 
   // Batches
-  const [batches, setBatches] = useState<PWBatch[]>([]);
+  const [batches, setBatches] = useState<PWBatch[]>(() => {
+    try {
+      const saved = localStorage.getItem("pw_cached_batches");
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+      }
+    } catch {}
+    return [];
+  });
   const [catalogBatches, setCatalogBatches] = useState<PWCatalogBatch[]>([]);
   const [selectedBatchId, setSelectedBatchId] = useState<string>(() => {
     try {
@@ -521,13 +823,18 @@ export default function PWPage() {
   const [selectedScheduleDate, setSelectedScheduleDate] = useState<string>(todayIstDate);
   const [todaySchedule, setTodaySchedule] = useState<PWScheduleItem[]>([]);
   const [dateSchedule, setDateSchedule] = useState<PWScheduleItem[]>([]);
+  const [allBatchSchedules, setAllBatchSchedules] = useState<PWScheduleItem[]>([]);
+  const [availableScheduleDates, setAvailableScheduleDates] = useState<string[]>([]);
   const [isLoadingSchedule, setIsLoadingSchedule] = useState<boolean>(false);
   const [selectedScheduleSubject, setSelectedScheduleSubject] = useState<string>("ALL");
   const [calendarMonth, setCalendarMonth] = useState<Date>(() => new Date());
 
-  // Loaders
-  const [isLoadingBatch, setIsLoadingBatch] = useState<boolean>(false);
+  // Loaders & API Status
+  const [isLoadingBatch, setIsLoadingBatch] = useState<boolean>(true);
   const [loadingChapterId, setLoadingChapterId] = useState<string | null>(null);
+  const [apiError, setApiError] = useState<string | null>(null);
+  const [retryCountdown, setRetryCountdown] = useState<number>(0);
+  const [retryAttempt, setRetryAttempt] = useState<number>(0);
   const loadingBatchIds = useRef(new Set<string>());
 
   // Filters & Search
@@ -677,11 +984,14 @@ export default function PWPage() {
   };
 
   // Fetch batch metadata live from PW API
-  const refreshBatchMetadata = (batchIdToFetch: string = selectedBatchId) => {
-    if (!batchIdToFetch || loadingBatchIds.current.has(batchIdToFetch)) return;
+  const refreshBatchMetadata = (batchIdToFetch: string = selectedBatchId, isManualOrAutoRetry = false) => {
+    if (!batchIdToFetch) return;
+    if (loadingBatchIds.current.has(batchIdToFetch) && !isManualOrAutoRetry) return;
 
     setIsLoadingBatch(true);
-    loadingBatchIds.current.add(batchIdToFetch);
+    if (!isManualOrAutoRetry) {
+      loadingBatchIds.current.add(batchIdToFetch);
+    }
 
     fetch(`/api/pw-metadata?batchId=${encodeURIComponent(batchIdToFetch)}`, { cache: "no-store" })
       .then(res => {
@@ -689,12 +999,13 @@ export default function PWPage() {
         return res.json();
       })
       .then(payload => {
+        if (!payload || typeof payload !== "object") throw new Error("Invalid batch response");
         const subjects: PWSubject[] = Array.isArray(payload.subjects) ? payload.subjects : [];
         const fetchedBatch: PWBatch = {
           id: payload.batchId || batchIdToFetch,
           name: payload.name || "Physics Wallah Batch",
           target: payload.exam ? `${payload.exam}${payload.class ? ` • Class ${payload.class}` : ""}` : (payload.byName || "PW Preparation"),
-          description: (payload.description || "").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim().slice(0, 160) || "Official PW Curriculum",
+          description: cleanBatchDescription(payload.description),
           batchPdf: payload.batchPdf,
           previewImage: payload.previewImage,
           subjects
@@ -702,14 +1013,23 @@ export default function PWPage() {
 
         setBatches(prev => {
           const exists = prev.some(b => b.id === batchIdToFetch);
-          if (exists) {
-            return prev.map(b => b.id === batchIdToFetch ? fetchedBatch : b);
-          }
-          return [...prev, fetchedBatch];
+          const updated = exists ? prev.map(b => b.id === batchIdToFetch ? fetchedBatch : b) : [...prev, fetchedBatch];
+          try {
+            localStorage.setItem("pw_cached_batches", JSON.stringify(updated));
+            idbSet("pw_cached_batches", updated).catch(() => {});
+          } catch {}
+          return updated;
         });
+
+        setApiError(null);
+        setRetryAttempt(0);
+        setRetryCountdown(0);
       })
       .catch(err => {
         console.warn("PW metadata fetch failed:", err);
+        setApiError(err.message || "Failed to reach PW API server");
+        setRetryAttempt(prev => prev + 1);
+        setRetryCountdown(3);
       })
       .finally(() => {
         setIsLoadingBatch(false);
@@ -717,40 +1037,122 @@ export default function PWPage() {
       });
   };
 
+  // Auto-retry timer when API fails or is warming up
+  useEffect(() => {
+    if (retryCountdown <= 0) return;
+    const timer = setTimeout(() => {
+      if (retryCountdown === 1) {
+        setRetryCountdown(0);
+        refreshBatchMetadata(selectedBatchId, true);
+      } else {
+        setRetryCountdown(prev => prev - 1);
+      }
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, [retryCountdown, selectedBatchId]);
+
+  // Load from IndexedDB on startup
+  useEffect(() => {
+    idbGet<PWBatch[]>("pw_cached_batches").then(cached => {
+      if (cached && Array.isArray(cached) && cached.length > 0) {
+        setBatches(prev => (prev.length === 0 ? cached : prev));
+      }
+    }).catch(() => {});
+  }, []);
+
   useEffect(() => {
     const existing = batches.find(b => b.id === selectedBatchId);
     if (!existing?.subjects || existing.subjects.length === 0) {
       refreshBatchMetadata(selectedBatchId);
+    } else {
+      setIsLoadingBatch(false);
     }
-  }, [selectedBatchId]);
+  }, [selectedBatchId, batches]);
 
-  // Fetch today's schedule
+  const calendarMonthKey = useMemo(() => {
+    const y = calendarMonth.getFullYear();
+    const m = String(calendarMonth.getMonth() + 1).padStart(2, "0");
+    return `${y}-${m}`;
+  }, [calendarMonth]);
+
+  // Fetch today's schedule on batch load
   useEffect(() => {
     if (!selectedBatchId) return;
-    fetch(`/api/pw-schedule?batchId=${encodeURIComponent(selectedBatchId)}&date=${encodeURIComponent(todayIstDate)}`, { cache: "no-store" })
+    fetch(`/api/pw-schedule?batchId=${encodeURIComponent(selectedBatchId)}&date=${encodeURIComponent(todayIstDate)}&month=${encodeURIComponent(calendarMonthKey)}`, { cache: "no-store" })
       .then(res => res.ok ? res.json() : null)
-      .then(payload => {
-        if (payload && Array.isArray(payload.schedules)) {
-          setTodaySchedule(payload.schedules);
+      .then(async payload => {
+        let schedules = payload?.schedules;
+        let allSchedules = payload?.allSchedules;
+        let availableDates = payload?.availableDates;
+
+        // Resilient fallback: If worker rate-limited or returned empty schedules, load direct
+        if (!Array.isArray(allSchedules) || allSchedules.length === 0) {
+          const direct = await fetchDirectBatchSchedule(selectedBatchId, calendarMonthKey).catch(() => null);
+          if (direct && Array.isArray(direct.allSchedules) && direct.allSchedules.length > 0) {
+            allSchedules = direct.allSchedules;
+            availableDates = direct.availableDates;
+            schedules = allSchedules.filter((s: any) => s.date === todayIstDate);
+          }
+        }
+
+        if (Array.isArray(schedules)) setTodaySchedule(schedules);
+        if (Array.isArray(allSchedules)) {
+          setAllBatchSchedules(prev => {
+            const map = new Map<string, PWScheduleItem>();
+            prev.forEach(item => map.set(item.id, item));
+            allSchedules.forEach((item: PWScheduleItem) => map.set(item.id, item));
+            return Array.from(map.values()).sort((a, b) => (a.date || "").localeCompare(b.date || "") || (a.startTime || "").localeCompare(b.startTime || ""));
+          });
+        }
+        if (Array.isArray(availableDates)) {
+          setAvailableScheduleDates(prev => Array.from(new Set([...prev, ...availableDates])).sort());
         }
       })
       .catch(() => {});
-  }, [selectedBatchId, todayIstDate]);
+  }, [selectedBatchId, todayIstDate, calendarMonthKey]);
 
-  // Fetch schedule for active date
+  // Fetch schedule for active date and calendar month
   useEffect(() => {
     if (!selectedBatchId || !selectedScheduleDate) return;
     setIsLoadingSchedule(true);
-    fetch(`/api/pw-schedule?batchId=${encodeURIComponent(selectedBatchId)}&date=${encodeURIComponent(selectedScheduleDate)}`, { cache: "no-store" })
+    fetch(`/api/pw-schedule?batchId=${encodeURIComponent(selectedBatchId)}&date=${encodeURIComponent(selectedScheduleDate)}&month=${encodeURIComponent(calendarMonthKey)}`, { cache: "no-store" })
       .then(res => res.ok ? res.json() : null)
-      .then(payload => {
-        if (payload && Array.isArray(payload.schedules)) {
-          setDateSchedule(payload.schedules);
+      .then(async payload => {
+        let schedules = payload?.schedules;
+        let allSchedules = payload?.allSchedules;
+        let availableDates = payload?.availableDates;
+
+        // Resilient fallback: If worker rate-limited or returned empty schedules, load direct
+        if (!Array.isArray(allSchedules) || allSchedules.length === 0) {
+          const direct = await fetchDirectBatchSchedule(selectedBatchId, calendarMonthKey).catch(() => null);
+          if (direct && Array.isArray(direct.allSchedules) && direct.allSchedules.length > 0) {
+            allSchedules = direct.allSchedules;
+            availableDates = direct.availableDates;
+            schedules = allSchedules.filter((s: any) => s.date === selectedScheduleDate);
+          }
+        }
+
+        if (Array.isArray(schedules) && schedules.length > 0) {
+          setDateSchedule(schedules);
+        } else {
+          const localMatch = (allSchedules || allBatchSchedules).filter((s: any) => s.date === selectedScheduleDate);
+          setDateSchedule(localMatch.length > 0 ? localMatch : (schedules || []));
+        }
+        if (Array.isArray(allSchedules)) {
+          setAllBatchSchedules(prev => {
+            const map = new Map<string, PWScheduleItem>();
+            prev.forEach(item => map.set(item.id, item));
+            allSchedules.forEach((item: PWScheduleItem) => map.set(item.id, item));
+            return Array.from(map.values()).sort((a, b) => (a.date || "").localeCompare(b.date || "") || (a.startTime || "").localeCompare(b.startTime || ""));
+          });
+        }
+        if (Array.isArray(availableDates)) {
+          setAvailableScheduleDates(prev => Array.from(new Set([...prev, ...availableDates])).sort());
         }
       })
       .catch(() => {})
       .finally(() => setIsLoadingSchedule(false));
-  }, [selectedBatchId, selectedScheduleDate]);
+  }, [selectedBatchId, selectedScheduleDate, calendarMonthKey]);
 
   // Keep selected subject in sync when batch updates
   useEffect(() => {
@@ -779,36 +1181,49 @@ export default function PWPage() {
       setLoadingChapterId(ch.id);
       try {
         const rawId = ch.rawId || ch.id;
-        const res = await fetch(
-          `/api/pw-chapter-contents?batchId=${encodeURIComponent(selectedBatchId)}&subjectId=${encodeURIComponent(selectedSubject.id)}&chapterId=${encodeURIComponent(rawId)}`,
-          { cache: "no-store" }
-        );
-        if (res.ok) {
-          const data = await res.json();
-          if (data && Array.isArray(data.lectures)) {
-            const updatedCh: PWChapter = {
-              ...ch,
-              lectures: data.lectures,
-              videoCount: data.totalLectures ?? ch.videoCount,
-              dppCount: data.totalDpps ?? ch.dppCount,
-              notesCount: data.totalNotes ?? ch.notesCount,
-              isStarted: (data.totalLectures > 0 || data.totalDpps > 0)
-            };
-            setSelectedChapter(updatedCh);
-            setBatches(prev => prev.map(b => {
-              if (b.id !== selectedBatchId) return b;
-              return {
-                ...b,
-                subjects: b.subjects.map(s => {
-                  if (s.id !== selectedSubject.id) return s;
-                  return {
-                    ...s,
-                    chapters: s.chapters.map(c => c.id === ch.id ? updatedCh : c)
-                  };
-                })
-              };
-            }));
+        let data: any = null;
+        try {
+          const res = await fetch(
+            `/api/pw-chapter-contents?batchId=${encodeURIComponent(selectedBatchId)}&subjectId=${encodeURIComponent(selectedSubject.id)}&chapterId=${encodeURIComponent(rawId)}`,
+            { cache: "no-store" }
+          );
+          if (res.ok) {
+            data = await res.json();
           }
+        } catch (e) {}
+
+        // Resilient fallback: If Cloudflare Worker rate-limited (429) or returned 0 lectures, fetch direct from client
+        if (!data || !Array.isArray(data.lectures) || (data.totalLectures === 0 && data.totalNotes === 0 && data.totalDpps === 0)) {
+          try {
+            data = await fetchDirectChapterContents(selectedBatchId, selectedSubject.id, rawId);
+          } catch (e) {
+            console.warn("Direct chapter contents fallback failed:", e);
+          }
+        }
+
+        if (data && Array.isArray(data.lectures)) {
+          const updatedCh: PWChapter = {
+            ...ch,
+            lectures: data.lectures,
+            videoCount: data.totalLectures ?? ch.videoCount,
+            dppCount: data.totalDpps ?? ch.dppCount,
+            notesCount: data.totalNotes ?? ch.notesCount,
+            isStarted: (data.totalLectures > 0 || data.totalDpps > 0)
+          };
+          setSelectedChapter(updatedCh);
+          setBatches(prev => prev.map(b => {
+            if (b.id !== selectedBatchId) return b;
+            return {
+              ...b,
+              subjects: b.subjects.map(s => {
+                if (s.id !== selectedSubject.id) return s;
+                return {
+                  ...s,
+                  chapters: s.chapters.map(c => c.id === ch.id ? updatedCh : c)
+                };
+              })
+            };
+          }));
         }
       } catch (err) {
         console.warn("Failed loading chapter contents:", err);
@@ -967,9 +1382,17 @@ export default function PWPage() {
 
   // Top Upcoming Events (Frame 00:00 - 00:01)
   const upcomingEvents = useMemo(() => {
-    const list = todaySchedule.length > 0 ? todaySchedule : dateSchedule;
-    return list.slice(0, 4);
-  }, [todaySchedule, dateSchedule]);
+    const pool = allBatchSchedules.length > 0 ? allBatchSchedules : (todaySchedule.length > 0 ? todaySchedule : dateSchedule);
+    const upcoming = pool.filter(s => 
+      s.isUpcoming || 
+      (s.date && s.date > todayIstDate) || 
+      (s.date === todayIstDate && !s.isEnded)
+    );
+    if (upcoming.length > 0) {
+      return upcoming.slice(0, 6);
+    }
+    return (todaySchedule.length > 0 ? todaySchedule : dateSchedule).slice(0, 4);
+  }, [allBatchSchedules, todaySchedule, dateSchedule, todayIstDate]);
 
   // Month Calendar Days Grid Calculation (Monday to Sunday)
   const calendarDays = useMemo(() => {
@@ -1041,7 +1464,7 @@ export default function PWPage() {
                   )}
                 </div>
                 <p className="text-xs text-slate-500 dark:text-zinc-400 truncate mt-0.5">
-                  {currentBatch.description || "Live curriculum from Physics Wallah"}
+                  {cleanBatchDescription(currentBatch.description)}
                 </p>
               </div>
             </div>
@@ -1221,80 +1644,112 @@ export default function PWPage() {
                 {/* SubTab 1: SUBJECTS GRID */}
                 {batchSubTab === "subjects" && (
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {displayedSubjects.map(sub => {
-                      const badge = getSubjectBadge(sub.name);
-                      const title = formatSubjectTitle(sub);
-                      const progress = getSubjectProgress(sub, completedMap);
-                      const teacherName = sub.teachers?.[0]?.name || sub.faculty || "PW Faculty";
-                      const teacherImg = sub.teachers?.[0]?.imageUrl || resolveTeacherImage(teacherName);
+                    {displayedSubjects.length > 0 ? (
+                      displayedSubjects.map(sub => {
+                        const badge = getSubjectBadge(sub.name);
+                        const title = formatSubjectTitle(sub);
+                        const progress = getSubjectProgress(sub, completedMap);
+                        const teacherName = sub.teachers?.[0]?.name || sub.faculty || "PW Faculty";
+                        const teacherImg = sub.teachers?.[0]?.imageUrl || resolveTeacherImage(teacherName);
 
-                      return (
-                        <div
-                          key={sub.id}
-                          onClick={() => {
-                            setSelectedSubject(sub);
-                            setSelectedChapter(null);
-                            setSubjectSubTab("chapters");
-                            setChapterSearchQuery("");
-                          }}
-                          className="group p-5 rounded-2xl border border-slate-200/80 dark:border-zinc-800 bg-white dark:bg-zinc-900/60 hover:bg-slate-50 dark:hover:bg-zinc-900 hover:border-slate-300 dark:hover:border-zinc-700 transition-all cursor-pointer shadow-xs flex flex-col justify-between gap-4"
-                        >
-                          <div className="flex items-start justify-between gap-3">
-                            <div className="flex items-start gap-3.5 min-w-0 flex-1">
-                              {/* Teacher Picture Squircle with Subject Abbreviation Badge */}
-                              <div className="w-14 h-14 rounded-2xl overflow-hidden relative border border-slate-200 dark:border-zinc-700 bg-slate-100 dark:bg-zinc-800 shrink-0 shadow-2xs">
-                                {teacherImg ? (
-                                  <img
-                                    src={teacherImg}
-                                    alt={teacherName}
-                                    className="w-full h-full object-cover object-top"
-                                  />
-                                ) : (
-                                  <div className={`w-full h-full flex items-center justify-center font-bold text-base ${badge.style}`}>
+                        return (
+                          <div
+                            key={sub.id}
+                            onClick={() => {
+                              setSelectedSubject(sub);
+                              setSelectedChapter(null);
+                              const { syllabusChapters: sChaps, studyMaterials: sMats, digitalBooks: sBooks } = categorizeSubjectContent(sub.chapters || []);
+                              const initialTab = sChaps.length > 0 ? "chapters" : (sMats.length > 0 ? "materials" : "books");
+                              setSubjectSubTab(initialTab);
+                              setChapterSearchQuery("");
+                            }}
+                            className="group p-5 rounded-2xl border border-slate-200/80 dark:border-zinc-800 bg-white dark:bg-zinc-900/60 hover:bg-slate-50 dark:hover:bg-zinc-900 hover:border-slate-300 dark:hover:border-zinc-700 transition-all cursor-pointer shadow-xs flex flex-col justify-between gap-4"
+                          >
+                            <div className="flex items-start justify-between gap-3">
+                              <div className="flex items-start gap-3.5 min-w-0 flex-1">
+                                {/* Teacher Picture Squircle with Subject Abbreviation Badge */}
+                                <div className="w-14 h-14 rounded-2xl overflow-hidden relative border border-slate-200 dark:border-zinc-700 bg-slate-100 dark:bg-zinc-800 shrink-0 shadow-2xs">
+                                  {teacherImg ? (
+                                    <img
+                                      src={teacherImg}
+                                      alt={teacherName}
+                                      className="w-full h-full object-cover object-top"
+                                    />
+                                  ) : (
+                                    <div className={`w-full h-full flex items-center justify-center font-bold text-base ${badge.style}`}>
+                                      {badge.abbr}
+                                    </div>
+                                  )}
+                                  <div className={`absolute bottom-0 right-0 px-1.5 py-0.5 rounded-tl-lg font-mono font-bold text-[9px] tracking-tight shadow-xs ${badge.style}`}>
                                     {badge.abbr}
                                   </div>
-                                )}
-                                <div className={`absolute bottom-0 right-0 px-1.5 py-0.5 rounded-tl-lg font-mono font-bold text-[9px] tracking-tight shadow-xs ${badge.style}`}>
-                                  {badge.abbr}
+                                </div>
+
+                                <div className="min-w-0 flex-1">
+                                  <h3 className="font-bold text-sm sm:text-base text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors leading-snug line-clamp-2">
+                                    {title}
+                                  </h3>
+                                  <p className="text-xs text-slate-500 dark:text-zinc-400 mt-1 flex items-center gap-1.5 truncate">
+                                    <span>{sub.chapters.length} Chapters</span>
+                                    <span>•</span>
+                                    <span className="font-medium text-slate-700 dark:text-zinc-300 truncate">{teacherName}</span>
+                                  </p>
                                 </div>
                               </div>
 
-                              <div className="min-w-0 flex-1">
-                                <h3 className="font-bold text-sm sm:text-base text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors leading-snug line-clamp-2">
-                                  {title}
-                                </h3>
-                                <p className="text-xs text-slate-500 dark:text-zinc-400 mt-1 flex items-center gap-1.5 truncate">
-                                  <span>{sub.chapters.length} Chapters</span>
-                                  <span>•</span>
-                                  <span className="font-medium text-slate-700 dark:text-zinc-300 truncate">{teacherName}</span>
-                                </p>
+                              {/* Chevron Right */}
+                              <div className="w-8 h-8 rounded-xl bg-slate-100 dark:bg-zinc-800 text-slate-400 dark:text-zinc-500 group-hover:text-amber-600 dark:group-hover:text-amber-400 group-hover:bg-amber-50 dark:group-hover:bg-amber-950/30 flex items-center justify-center shrink-0 transition-colors">
+                                <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                               </div>
                             </div>
 
-                            {/* Chevron Right */}
-                            <div className="w-8 h-8 rounded-xl bg-slate-100 dark:bg-zinc-800 text-slate-400 dark:text-zinc-500 group-hover:text-amber-600 dark:group-hover:text-amber-400 group-hover:bg-amber-50 dark:group-hover:bg-amber-950/30 flex items-center justify-center shrink-0 transition-colors">
-                              <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                            {/* Mini Progress Bar & Percentage (Lectures & DPPs only) */}
+                            <div className="pt-2 border-t border-slate-100 dark:border-zinc-800/80">
+                              <div className="flex items-center justify-between text-[11px] text-slate-500 dark:text-zinc-400 mb-1.5">
+                                <span>Syllabus Progress (Lectures & DPPs)</span>
+                                <span className="font-semibold text-slate-700 dark:text-zinc-300 font-mono">
+                                  {progress}%
+                                </span>
+                              </div>
+                              <div className="w-full bg-slate-100 dark:bg-zinc-800 h-1.5 rounded-full overflow-hidden">
+                                <div
+                                  className="bg-amber-500 h-full rounded-full transition-all duration-300"
+                                  style={{ width: `${progress}%` }}
+                                />
+                              </div>
                             </div>
                           </div>
-
-                          {/* Mini Progress Bar & Percentage (Lectures & DPPs only) */}
-                          <div className="pt-2 border-t border-slate-100 dark:border-zinc-800/80">
-                            <div className="flex items-center justify-between text-[11px] text-slate-500 dark:text-zinc-400 mb-1.5">
-                              <span>Syllabus Progress (Lectures & DPPs)</span>
-                              <span className="font-semibold text-slate-700 dark:text-zinc-300 font-mono">
-                                {progress}%
-                              </span>
+                        );
+                      })
+                    ) : (
+                      /* Realistic skeleton cards shown while loading or under blur */
+                      [1, 2, 3, 4, 5, 6].map(i => (
+                        <div
+                          key={`pw-skel-${i}`}
+                          className="p-5 rounded-2xl border border-slate-200/80 dark:border-zinc-800 bg-white dark:bg-zinc-900/60 shadow-xs flex flex-col justify-between gap-4"
+                        >
+                          <div className="flex items-start justify-between gap-3">
+                            <div className="flex items-start gap-3.5 min-w-0 flex-1">
+                              <div className="w-14 h-14 rounded-2xl bg-slate-200 dark:bg-zinc-800 animate-pulse shrink-0" />
+                              <div className="space-y-2 flex-1 pt-1">
+                                <div className="h-4 bg-slate-200 dark:bg-zinc-800 rounded-md w-3/4 animate-pulse" />
+                                <div className="h-3 bg-slate-100 dark:bg-zinc-800/60 rounded-md w-1/2 animate-pulse" />
+                              </div>
+                            </div>
+                            <div className="w-8 h-8 rounded-xl bg-slate-100 dark:bg-zinc-800/50 shrink-0" />
+                          </div>
+                          <div className="pt-2 border-t border-slate-100 dark:border-zinc-800/80 space-y-2">
+                            <div className="flex items-center justify-between">
+                              <div className="h-2.5 bg-slate-200 dark:bg-zinc-800 rounded-md w-28 animate-pulse" />
+                              <div className="h-2.5 bg-slate-200 dark:bg-zinc-800 rounded-md w-8 animate-pulse" />
                             </div>
                             <div className="w-full bg-slate-100 dark:bg-zinc-800 h-1.5 rounded-full overflow-hidden">
-                              <div
-                                className="bg-amber-500 h-full rounded-full transition-all duration-300"
-                                style={{ width: `${progress}%` }}
-                              />
+                              <div className="bg-amber-500/30 h-full rounded-full w-1/3 animate-pulse" />
                             </div>
                           </div>
                         </div>
-                      );
-                    })}
+                      ))
+                    )}
                   </div>
                 )}
 
@@ -1422,9 +1877,30 @@ export default function PWPage() {
                 {/* SubTab 1 Content: Chapters Grid */}
                 {subjectSubTab === "chapters" && (
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5">
-                    {filteredSyllabusChapters.length === 0 ? (
-                      <div className="col-span-full p-12 text-center rounded-2xl border border-dashed border-slate-300 dark:border-zinc-800 text-slate-500 dark:text-zinc-400 bg-white dark:bg-zinc-900/30">
-                        No chapters found matching "{chapterSearchQuery}".
+                    {isLoadingBatch ? (
+                      <div className="col-span-full p-12 text-center rounded-2xl border border-slate-200 dark:border-zinc-800 text-slate-500 dark:text-zinc-400 bg-white dark:bg-zinc-900/30">
+                        <Loader2 className="w-6 h-6 animate-spin mx-auto mb-2 text-amber-500" />
+                        <p className="text-sm font-semibold">Loading official curriculum & chapters...</p>
+                      </div>
+                    ) : filteredSyllabusChapters.length === 0 ? (
+                      <div className="col-span-full p-12 text-center rounded-2xl border border-dashed border-slate-300 dark:border-zinc-800 text-slate-500 dark:text-zinc-400 bg-white dark:bg-zinc-900/30 space-y-2">
+                        {chapterSearchQuery.trim() ? (
+                          <p>No chapters found matching "{chapterSearchQuery}".</p>
+                        ) : (
+                          <>
+                            <p className="font-semibold text-slate-700 dark:text-zinc-300">No chapters found for this subject.</p>
+                            <p className="text-xs text-slate-500">Tap below to refresh official batch curriculum.</p>
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              onClick={() => refreshBatchMetadata(selectedBatchId, true)}
+                              className="mt-2 text-xs"
+                            >
+                              <RefreshCw className="w-3.5 h-3.5 mr-1 text-amber-500" />
+                              Refresh Chapters
+                            </Button>
+                          </>
+                        )}
                       </div>
                     ) : (
                       filteredSyllabusChapters.map((ch, idx) => {
@@ -1487,7 +1963,7 @@ export default function PWPage() {
                       <div className="col-span-full p-12 text-center rounded-2xl border border-dashed border-slate-300 dark:border-zinc-800 text-slate-500 dark:text-zinc-400 bg-white dark:bg-zinc-900/30">
                         {activeSubjectCategorized.studyMaterials.length === 0
                           ? "No separate study materials identified for this subject. All materials are organized inside chapter tabs."
-                          : `No materials found matching "${chapterSearchQuery}".`}
+                          : (chapterSearchQuery.trim() ? `No materials found matching "${chapterSearchQuery}".` : "No study materials available for this subject.")}
                       </div>
                     ) : (
                       filteredStudyMaterials.map((ch, idx) => {
@@ -1533,7 +2009,7 @@ export default function PWPage() {
                       <div className="col-span-full p-12 text-center rounded-2xl border border-dashed border-slate-300 dark:border-zinc-800 text-slate-500 dark:text-zinc-400 bg-white dark:bg-zinc-900/30">
                         {activeSubjectCategorized.digitalBooks.length === 0
                           ? "Digital books and modules for this subject are available in the batch resources tab."
-                          : `No digital books found matching "${chapterSearchQuery}".`}
+                          : (chapterSearchQuery.trim() ? `No digital books found matching "${chapterSearchQuery}".` : "No digital books available for this subject.")}
                       </div>
                     ) : (
                       filteredDigitalBooks.map((ch, idx) => {
@@ -2112,9 +2588,16 @@ export default function PWPage() {
                                   </div>
 
                                   <div className="min-w-0 flex-1">
-                                    <p className="text-xs text-slate-500 dark:text-zinc-400">
-                                      Notes • {item.subject} By {item.teacher}
-                                    </p>
+                                    <div className="flex items-center gap-1.5 flex-wrap">
+                                      <p className="text-xs text-slate-500 dark:text-zinc-400">
+                                        Notes • {item.subject} By {item.teacher}
+                                      </p>
+                                      {item.chapter && (
+                                        <span className="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-sky-500/10 text-sky-700 dark:text-sky-300 border border-sky-500/20 truncate max-w-[200px]" title={item.chapter}>
+                                          📖 {item.chapter}
+                                        </span>
+                                      )}
+                                    </div>
                                     <h4 className="font-bold text-sm sm:text-base text-slate-900 dark:text-white leading-snug mt-0.5 line-clamp-2">
                                       {item.topic}
                                     </h4>
@@ -2158,9 +2641,16 @@ export default function PWPage() {
                                     <FileDown className="w-6 h-6" />
                                   </div>
                                   <div className="min-w-0 flex-1">
-                                    <p className="text-xs text-slate-500 dark:text-zinc-400">
-                                      DPP • {item.subject} By {item.teacher}
-                                    </p>
+                                    <div className="flex items-center gap-1.5 flex-wrap">
+                                      <p className="text-xs text-slate-500 dark:text-zinc-400">
+                                        DPP • {item.subject} By {item.teacher}
+                                      </p>
+                                      {item.chapter && (
+                                        <span className="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-purple-500/10 text-purple-700 dark:text-purple-300 border border-purple-500/20 truncate max-w-[200px]" title={item.chapter}>
+                                          📖 {item.chapter}
+                                        </span>
+                                      )}
+                                    </div>
                                     <h4 className="font-bold text-sm text-slate-900 dark:text-white leading-snug truncate mt-0.5">
                                       💡 {item.topic}
                                     </h4>
@@ -2209,9 +2699,16 @@ export default function PWPage() {
                                   </div>
 
                                   <div className="min-w-0 flex-1">
-                                    <p className="text-xs text-slate-500 dark:text-zinc-400">
-                                      Lecture • {item.subject} By {item.teacher}
-                                    </p>
+                                    <div className="flex items-center gap-1.5 flex-wrap">
+                                      <p className="text-xs text-slate-500 dark:text-zinc-400">
+                                        Lecture • {item.subject} By {item.teacher}
+                                      </p>
+                                      {item.chapter && (
+                                        <span className="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-amber-500/10 text-amber-700 dark:text-amber-300 border border-amber-500/20 truncate max-w-[200px]" title={item.chapter}>
+                                          📖 {item.chapter}
+                                        </span>
+                                      )}
+                                    </div>
                                     <h4 className="font-bold text-sm sm:text-base text-slate-900 dark:text-white leading-snug mt-0.5 line-clamp-2">
                                       {item.topic}
                                     </h4>
@@ -2352,20 +2849,26 @@ export default function PWPage() {
 
                         const isSelected = slot.dateStr === selectedScheduleDate;
                         const isToday = slot.dateStr === todayIstDate;
+                        const hasClass = availableScheduleDates.includes(slot.dateStr);
 
                         return (
                           <div key={slot.dateStr} className="flex items-center justify-center">
                             <button
                               onClick={() => setSelectedScheduleDate(slot.dateStr)}
-                              className={`w-8 h-8 rounded-full text-xs font-semibold flex items-center justify-center transition-all cursor-pointer ${
+                              className={`relative w-8 h-8 rounded-full text-xs font-semibold flex flex-col items-center justify-center transition-all cursor-pointer ${
                                 isSelected
                                   ? "bg-indigo-600 text-white shadow-xs font-bold"
                                   : isToday
                                   ? "border-2 border-indigo-600 text-indigo-600 dark:text-indigo-400 font-bold"
+                                  : hasClass
+                                  ? "text-slate-900 dark:text-zinc-100 font-bold bg-amber-500/10 hover:bg-amber-500/20"
                                   : "text-slate-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-800"
                               }`}
                             >
-                              {slot.dayNum}
+                              <span>{slot.dayNum}</span>
+                              {hasClass && !isSelected && (
+                                <span className="w-1 h-1 rounded-full bg-amber-500 absolute bottom-0.5" />
+                              )}
                             </button>
                           </div>
                         );
@@ -2798,6 +3301,92 @@ export default function PWPage() {
               title={activePdfModal.title}
               className="w-full h-full border-none"
             />
+          </div>
+        </div>
+      )}
+
+      {/* ── PW PAGE LOADING EFFECT WITH BACKGROUND BLUR OVERLAY ───────────── */}
+      {(!currentBatch.subjects || currentBatch.subjects.length === 0) && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 backdrop-blur-xl bg-slate-900/40 dark:bg-black/65 transition-all duration-300 animate-in fade-in">
+          <div className="relative w-full max-w-md rounded-3xl border border-amber-500/30 bg-white/95 dark:bg-zinc-900/95 backdrop-blur-2xl p-6 sm:p-8 shadow-2xl overflow-hidden">
+            {/* Ambient Background Glows */}
+            <div className="absolute -top-20 -right-20 w-44 h-44 bg-amber-500/20 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute -bottom-20 -left-20 w-44 h-44 bg-orange-500/20 rounded-full blur-3xl pointer-events-none" />
+
+            <div className="relative z-10 flex flex-col items-center text-center">
+              {/* Animated PW Badge with pulsing halos & rotating border */}
+              <div className="relative mb-5 flex items-center justify-center">
+                <div className="absolute -inset-3 rounded-3xl bg-gradient-to-tr from-amber-500/30 via-orange-500/20 to-amber-600/30 animate-pulse blur-sm" />
+                <div className="absolute -inset-1 rounded-2xl border-2 border-amber-500/40 border-t-amber-500 animate-spin [animation-duration:3s]" />
+
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center text-white font-black text-xl shadow-lg shadow-amber-500/40 relative">
+                  <Flame className="w-8 h-8 fill-white text-white drop-shadow-sm animate-pulse" />
+                </div>
+              </div>
+
+              {/* Title */}
+              <h3 className="text-xl sm:text-2xl font-black tracking-tight text-slate-900 dark:text-white">
+                {apiError ? "Connecting to PW Engine…" : "Loading Physics Wallah Portal"}
+              </h3>
+
+              {/* Dynamic Status / Description */}
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-zinc-400 mt-2 leading-relaxed max-w-xs">
+                {apiError
+                  ? "The PW API backend is currently starting or unreachable. We are automatically reconnecting in the background..."
+                  : `Synchronizing live curriculum, verified teachers & chapter schedules for ${currentBatch.name || "PW Batch"}...`}
+              </p>
+
+              {/* Animated Gradient Progress Shimmer */}
+              <div className="w-full bg-slate-100 dark:bg-zinc-800/80 h-2 rounded-full overflow-hidden my-5 border border-slate-200/50 dark:border-zinc-700/50 relative">
+                <div className="h-full bg-gradient-to-r from-amber-500 via-orange-400 to-amber-500 rounded-full w-full animate-pulse" />
+              </div>
+
+              {/* Status Pill */}
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/25 mb-5">
+                {apiError ? (
+                  <>
+                    <span className="w-2 h-2 rounded-full bg-amber-500 animate-ping" />
+                    <span>
+                      Auto-reconnecting {retryCountdown > 0 ? `in ${retryCountdown}s` : "now…"}
+                      {retryAttempt > 0 ? ` • Attempt ${retryAttempt}` : ""}
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <RefreshCw className="w-3.5 h-3.5 animate-spin text-amber-500" />
+                    <span>Syncing batches &amp; faculty profiles…</span>
+                  </>
+                )}
+              </div>
+
+              {/* Action Buttons */}
+              <div className="w-full space-y-2">
+                <Button
+                  onClick={() => refreshBatchMetadata(selectedBatchId, true)}
+                  disabled={isLoadingBatch}
+                  className="w-full h-11 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs sm:text-sm shadow-md shadow-amber-600/20 gap-2 transition-all cursor-pointer"
+                >
+                  <RefreshCw className={`w-4 h-4 ${isLoadingBatch ? "animate-spin" : ""}`} />
+                  {isLoadingBatch ? "Connecting…" : "Retry Connection Now"}
+                </Button>
+
+                {catalogBatches.length > 0 && (
+                  <Button
+                    variant="outline"
+                    onClick={() => setBatchModalOpen(true)}
+                    className="w-full h-10 rounded-xl text-xs font-semibold border-slate-200 dark:border-zinc-800 text-slate-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-800"
+                  >
+                    Browse Other Batches
+                  </Button>
+                )}
+              </div>
+
+              {/* Bottom Subtle Badge */}
+              <div className="mt-5 flex items-center justify-center gap-1.5 text-[11px] text-slate-400 dark:text-zinc-500">
+                <Sparkles className="w-3 h-3 text-amber-500" />
+                <span>Arjuna JEE • Lakshya • Prayas • Yakeen</span>
+              </div>
+            </div>
           </div>
         </div>
       )}

@@ -55,8 +55,10 @@ export default defineConfig(async () => {
   }
 
   return {
-    // Use relative path for universal static site hosting in final build
-    base: "./",
+    // Use CDN base if VITE_USE_CDN=true, otherwise relative ./
+    base: process.env.VITE_USE_CDN === "true"
+      ? (process.env.VITE_CDN_BASE || "https://cdn.jsdelivr.net/gh/codingwithom/dist@main/")
+      : "./",
 
     plugins: [
       gcPlugin(),

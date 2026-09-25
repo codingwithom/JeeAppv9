@@ -485,12 +485,63 @@ export function cleanBatchDescription(desc?: string): string {
   return text.slice(0, 180) || "Live curriculum from Physics Wallah";
 }
 
-const DIRECT_PW_TOKEN = "Qd2wfhzRoi5eQdoITwpbNKPMdMTNSs37YUjvj0rSb5sNyhMiNwdYRCmgiTbUdxAibU3m+ETsvfr08WHlOIw8V5Ae12IwN5xSWTknnXkHL5d+PK4xeNliyrKg7RyjrjaY9VM66AUNFORT6DY8AjgpXFtE86unYfEN0OK+jxrIAhhZEFa36XVws4yLUz4Espb9yIioPcpKeK2n3w1yZISAFs0mBdsfONwC7O9scHh9lnzjUr15GeJAPvvIKgivZ9NMLCOFEuwpXq45phXv8/pO3rEcWj/jtQdStmxbKDuxFU6LDY2CKN4A8veji9rjzZhsle+M4tlc+Q0xdoleA25zrzUJV82iyS1lkqe+VrMDMnLYa3uCq3Zc0Zn/WN2enQLT2XSqyquUk7yO3gcBt6n4pgO3tqVfLSjlZewb2qKi9hNo6gMkit71lsTcYn3dlVjE9DJMoNy0P8ua6EsjCy7YA4tM0vFOGclR0+JUTdXloIgyeM46jKxGajA2vQh8yIN7dDLxWc6rN5lgssWLpTN3j3/QJBTgJXI7eoyxB+3bBRDjAlBXd+tZvmJeE28YCp3Jop4ZEVMC6tRzi0u0KmZqnHmAZdP95aJX43MLb9aZXI0fIOOX/ilqBHSt53z3bP2rlPixNReYbGNt20TwL+E5m3OxQDT5dWmyBfD2dd41moLeTN3Ls8zzKXHooEID9rHXfYUVqqTanm2IjZ5qDIBPaRFomxkDC9vt50BtWFf/VyKRS2WswbwHdpv3DD3BM+qwPLH9QK87mpkWA61ODhbkVR364tfNYOLWxcXFn5sosEo=";
+const DIRECT_PW_TOKEN = "Qd2wfhzRoi5eQdoITwpbNKPMdMTNSs37YUjvj0rSb5sNyhMiNwdYRCmgiTbUdxAiTAdjE/1c9qMnWHp9YUqE+oZL4bPviYaZzVdVAkLe2KG8ikVGXixjdguu+lpbwGywqm/OURTCo6X0JC70vQfg9QzGQlSt3dlcmzrpbxYbHydzlQeJqyh0SyHSkoLsXjDy7Jxy+nCUVQB2jSFq514ABmMGUHYWabU7LbJS0d3wNE1prGsgtdw0crSJesiF9+8N2mPiyj+qYWjg2NKlflX+OkauJYy0L9aAMRcbzr4uyBS8XYG3SRFGmb7WgTOswlEX2C6L5FyGqJfoQdRoYkUNTAttt53RimIPdDLjgIICpakgewlNM/sW2y+t0Vj/tAEiOBylh5yiKndmR4ljGzanJ103SzIh09+xaNv5+Jze9ilzr+PkbVyxXvtDbf1Vr5fMs92LnvuH17H6gnixXCs23aze9AhVhQkAq3Bmhyx5pUYVHxaES568RIb0alXcNc/JPpT4D/cvVq+JvD+iEUudY7IlCyBG4VRhSjhXGZhWgTclX7/DFr1smIQKRjiP2M84cDMUY3weoG+GV0CMkp3WDNi4SZXarIcQj+ZA5pnjRb+pcasKojENmEckHh4VK9IuYvhVAuAtHMF0Py9h3MIEq8/6Pz8GM0+tA4wasjBF0RnyTU2+05/szE0VoIf3Ep+bmEKO4zYrCIvD3DVP8X5Dvidq7ujodbnKw4CKMsRY3hd6p1FlCB9sOuMWxKQlvxZFn8e5endhYONO1yisyJKFUGT7S6ivTpnF8syPbvUBNtk=";
+
+let dynamicDirectToken = "";
+let dynamicDirectTokenExpiry = 0;
+
+async function getDirectPwToken(): Promise<string> {
+  if (dynamicDirectToken && dynamicDirectTokenExpiry > Date.now()) {
+    return dynamicDirectToken;
+  }
+  // Try 1: Fetch from backend API /api/pw-token (with CORS)
+  try {
+    const apiRes = await fetch("/api/pw-token", { signal: AbortSignal.timeout(4000) });
+    if (apiRes.ok) {
+      const data = await apiRes.json();
+      const tok = data.token || data.access_token;
+      if (tok && typeof tok === "string" && tok.length > 20) {
+        dynamicDirectToken = tok;
+        dynamicDirectTokenExpiry = Date.now() + 60 * 60 * 1000;
+        return tok;
+      }
+    }
+  } catch {}
+
+  // Try 2: Direct from generate_token.php
+  try {
+    const res = await fetch("https://vidcloud.eu.org/generate_token.php", {
+      signal: AbortSignal.timeout(6000)
+    });
+    if (res.ok) {
+      const data = await res.json();
+      const tok = data.access_token || data.token;
+      if (tok && typeof tok === "string" && tok.length > 20) {
+        dynamicDirectToken = tok;
+        dynamicDirectTokenExpiry = Date.now() + 60 * 60 * 1000;
+        return tok;
+      }
+    }
+  } catch {}
+  return DIRECT_PW_TOKEN;
+}
+
+function getDirectPwHeaders(token: string) {
+  const activeToken = token || DIRECT_PW_TOKEN;
+  return {
+    "Authorization": `Bearer ${activeToken}`,
+    "Cookie": `auth_token=${activeToken}`,
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
+    "Referer": "https://vidcloud.eu.org/",
+    "Origin": "https://vidcloud.eu.org"
+  };
+}
 
 // Direct resilient client-side chapter contents loader (bypasses Cloudflare Worker 429)
 async function fetchDirectChapterContents(batchId: string, subjectId: string, chapterId: string, chapterTitle: string = "") {
   const origin = "https://vidcloud.eu.org";
-  const headers = { "Authorization": `Bearer ${DIRECT_PW_TOKEN}` };
+  const token = await getDirectPwToken();
+  const headers = getDirectPwHeaders(token);
 
   let rawVideos: any[] = [];
   let rawNotes: any[] = [];
@@ -713,7 +764,8 @@ async function fetchDirectBatchSchedule(batchId: string, monthKey: string) {
   const sDate = `${String(y).padStart(4, "0")}-${String(m).padStart(2, "0")}-01`;
   const eDate = `${String(y).padStart(4, "0")}-${String(m).padStart(2, "0")}-${String(lastDay).padStart(2, "0")}`;
 
-  const headers = { "Authorization": `Bearer ${DIRECT_PW_TOKEN}` };
+  const token = await getDirectPwToken();
+  const headers = getDirectPwHeaders(token);
 
   const [vcRes, ppRes] = await Promise.all([
     fetch(`${origin}/api/v2/batches/${encodeURIComponent(batchId)}/weekly-schedules?batchId=${encodeURIComponent(batchId)}&startDate=${sDate}&endDate=${eDate}&page=1`, {
@@ -2128,7 +2180,11 @@ export default function PWPage() {
                                     <img
                                       src={teacherImg}
                                       alt={teacherName}
+                                      referrerPolicy="no-referrer"
                                       className="w-full h-full object-cover object-top"
+                                      onError={(e) => {
+                                        (e.currentTarget as HTMLElement).style.display = 'none';
+                                      }}
                                     />
                                   ) : (
                                     <div className={`w-full h-full flex items-center justify-center font-bold text-base ${badge.style}`}>
@@ -2938,7 +2994,15 @@ export default function PWPage() {
                             ) : (
                               <div className="w-11 h-11 rounded-xl overflow-hidden relative border border-slate-200 dark:border-zinc-700 bg-slate-100 dark:bg-zinc-800 shrink-0">
                                 {teacherImg ? (
-                                  <img src={teacherImg} alt={item.teacher} className="w-full h-full object-cover" />
+                                  <img
+                                    src={teacherImg}
+                                    alt={item.teacher}
+                                    referrerPolicy="no-referrer"
+                                    className="w-full h-full object-cover"
+                                    onError={(e) => {
+                                      (e.currentTarget as HTMLElement).style.display = 'none';
+                                    }}
+                                  />
                                 ) : (
                                   <div className="w-full h-full flex items-center justify-center font-bold text-amber-600 dark:text-amber-400 text-sm">
                                     {item.teacher?.charAt(0) || "P"}
@@ -3141,7 +3205,11 @@ export default function PWPage() {
                                       <img
                                         src={teacherImg}
                                         alt={item.teacher}
+                                        referrerPolicy="no-referrer"
                                         className="w-full h-full object-cover"
+                                        onError={(e) => {
+                                          (e.currentTarget as HTMLElement).style.display = 'none';
+                                        }}
                                       />
                                     ) : (
                                       <div className="w-full h-full flex items-center justify-center font-bold text-amber-600 dark:text-amber-400 text-sm">
@@ -3383,7 +3451,11 @@ export default function PWPage() {
                         <img
                           src={teacher.imageUrl}
                           alt={teacher.name}
+                          referrerPolicy="no-referrer"
                           className="w-14 h-14 rounded-2xl object-cover border border-slate-200 dark:border-zinc-700 bg-slate-100 dark:bg-zinc-800 shrink-0"
+                          onError={(e) => {
+                            (e.currentTarget as HTMLElement).style.display = 'none';
+                          }}
                         />
                       ) : (
                         <div className="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-600 dark:text-amber-400 font-bold text-lg flex items-center justify-center shrink-0">
@@ -3561,7 +3633,11 @@ export default function PWPage() {
                                   <img
                                     src={teacherImg}
                                     alt={teacherName}
+                                    referrerPolicy="no-referrer"
                                     className="w-full h-full object-cover object-top"
+                                    onError={(e) => {
+                                      (e.currentTarget as HTMLElement).style.display = 'none';
+                                    }}
                                   />
                                 ) : (
                                   <div className="w-full h-full flex items-center justify-center font-bold text-amber-600 dark:text-amber-400 text-sm">

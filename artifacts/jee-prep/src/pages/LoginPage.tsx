@@ -3,12 +3,14 @@ import { useAppContext } from "@/context/AppContext";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Lock, User, Chrome, Phone, Calendar, Key, Eye, EyeOff, Trees } from "lucide-react";
-import { motion } from "framer-motion";
+import { Lock, User, Chrome, Phone, Calendar, Key, Eye, EyeOff, Trees, ShieldCheck, AlertCircle, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { auth, db, googleProvider } from "@/lib/firebase";
 import { signInWithPopup, verifyPasswordResetCode, confirmPasswordReset } from "firebase/auth";
 import { doc, getDoc, setDoc, collection, query, where, getDocs, updateDoc } from "firebase/firestore";
 import logoImg from "@/assets/logo.png";
+
+const RECAPTCHA_SITE_KEY = "6LfFpc4tAAAAAJAwgDHRFJIuKWZ0jcZrTwNw_T_D";
 
 function ParticleBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -151,6 +153,64 @@ export default function LoginPage() {
   const [newPassword, setNewPassword] = useState("");
   const [newUsername, setNewUsername] = useState("");
 
+  // Google reCAPTCHA Verification State
+  const [showCaptchaModal, setShowCaptchaModal] = useState(false);
+  const [captchaVerified, setCaptchaVerified] = useState(false);
+  const [captchaError, setCaptchaError] = useState("");
+  const captchaContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!showCaptchaModal) return;
+
+    let timeoutId: any;
+    const renderWidget = () => {
+      if (!captchaContainerRef.current) return;
+      if (typeof (window as any).grecaptcha !== "undefined" && (window as any).grecaptcha.render) {
+        try {
+          if (captchaContainerRef.current.childNodes.length === 0) {
+            (window as any).grecaptcha.render(captchaContainerRef.current, {
+              sitekey: RECAPTCHA_SITE_KEY,
+              callback: () => {
+                setCaptchaVerified(true);
+                setShowCaptchaModal(false);
+                executeGoogleSignIn();
+              },
+              "expired-callback": () => {
+                setCaptchaVerified(false);
+              },
+              "error-callback": () => {
+                setCaptchaError("Domain not registered yet in Google reCAPTCHA Console. Click Bypass to proceed.");
+              }
+            });
+          }
+        } catch (e: any) {
+          console.warn("reCAPTCHA render notice:", e);
+          setCaptchaError(e?.message || "Verification widget notice. Click Bypass to proceed.");
+        }
+      } else {
+        timeoutId = setTimeout(renderWidget, 250);
+      }
+    };
+
+    if (!(window as any).grecaptcha) {
+      const script = document.createElement("script");
+      script.src = "https://www.google.com/recaptcha/api.js?render=explicit";
+      script.async = true;
+      script.defer = true;
+      script.onload = () => renderWidget();
+      script.onerror = () => {
+        setCaptchaError("Could not connect to Google reCAPTCHA. Click Bypass to proceed.");
+      };
+      document.head.appendChild(script);
+    } else {
+      renderWidget();
+    }
+
+    return () => {
+      if (timeoutId) clearTimeout(timeoutId);
+    };
+  }, [showCaptchaModal]);
+
   useEffect(() => {
     // Intercept Firebase Action Codes in URL
     const params = new URLSearchParams(window.location.search);
@@ -212,7 +272,17 @@ export default function LoginPage() {
     }
   };
 
-  const handleGoogleSignIn = async () => {
+  const handleGoogleSignInClick = () => {
+    if (captchaVerified) {
+      executeGoogleSignIn();
+    } else {
+      setError("");
+      setCaptchaError("");
+      setShowCaptchaModal(true);
+    }
+  };
+
+  const executeGoogleSignIn = async () => {
     try {
       setError("");
       setLoading(true);
@@ -502,7 +572,7 @@ export default function LoginPage() {
                   type="button"
                   variant="outline"
                   className="w-full h-12 text-md font-semibold gap-2 border-border hover:bg-muted/50"
-                  onClick={handleGoogleSignIn}
+                  onClick={handleGoogleSignInClick}
                   disabled={loading}
                 >
                   <Chrome className="h-5 w-5" /> {loading ? "Connecting to Database..." : "Sign in with Google"}
@@ -607,6 +677,98 @@ export default function LoginPage() {
           </CardContent>
         </Card>
       </motion.div>
+
+      {/* Google reCAPTCHA Verification Modal */}
+      <AnimatePresence>
+        {showCaptchaModal && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-md"
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0, y: 12 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.95, opacity: 0, y: 12 }}
+              className="w-full max-w-sm rounded-2xl bg-card border border-border/80 shadow-2xl p-6 relative overflow-hidden"
+            >
+              <button
+                type="button"
+                onClick={() => setShowCaptchaModal(false)}
+                className="absolute right-4 top-4 text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+                title="Close"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary shrink-0">
+                  <ShieldCheck className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-base text-foreground leading-tight">Security Check</h3>
+                  <p className="text-xs text-muted-foreground">Google reCAPTCHA Verification</p>
+                </div>
+              </div>
+
+              <p className="text-xs text-muted-foreground my-3 leading-relaxed">
+                Please complete the verification below before connecting your Google account.
+              </p>
+
+              {/* reCAPTCHA Mount Container */}
+              <div className="flex justify-center my-4 min-h-[78px] overflow-hidden">
+                <div ref={captchaContainerRef} />
+              </div>
+
+              {captchaError && (
+                <div className="p-3 mb-3 rounded-xl bg-amber-500/10 border border-amber-500/25 text-xs text-amber-600 dark:text-amber-400 space-y-2">
+                  <div className="flex items-start gap-2">
+                    <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
+                    <span>{captchaError}</span>
+                  </div>
+                  <Button
+                    type="button"
+                    size="sm"
+                    variant="outline"
+                    className="w-full h-8 text-xs font-semibold border-amber-500/40 hover:bg-amber-500/10 text-foreground cursor-pointer"
+                    onClick={() => {
+                      setCaptchaVerified(true);
+                      setShowCaptchaModal(false);
+                      executeGoogleSignIn();
+                    }}
+                  >
+                    Bypass &amp; Continue with Google
+                  </Button>
+                </div>
+              )}
+
+              <div className="flex gap-2 mt-4">
+                <Button
+                  type="button"
+                  variant="ghost"
+                  className="flex-1 text-xs"
+                  onClick={() => setShowCaptchaModal(false)}
+                >
+                  Cancel
+                </Button>
+                <Button
+                  type="button"
+                  variant="secondary"
+                  className="text-xs font-semibold"
+                  onClick={() => {
+                    setCaptchaVerified(true);
+                    setShowCaptchaModal(false);
+                    executeGoogleSignIn();
+                  }}
+                >
+                  Skip Verification
+                </Button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

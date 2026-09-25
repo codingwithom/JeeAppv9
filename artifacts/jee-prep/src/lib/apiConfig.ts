@@ -6,9 +6,18 @@
 export function getBackendBaseUrl(): string {
   if (typeof window === "undefined") return "";
 
-  // 1. Check custom user override in localStorage
-  const savedOverride = localStorage.getItem("jee_backend_api") || localStorage.getItem("api_server_url");
-  if (savedOverride) return savedOverride.trim().replace(/\/$/, "");
+  // 1. Check custom user override in localStorage (and auto-migrate old api-server worker domain)
+  let savedOverride = localStorage.getItem("jee_backend_api") || localStorage.getItem("api_server_url");
+  if (savedOverride) {
+    if (savedOverride.includes("api-server.stude.workers.dev")) {
+      savedOverride = savedOverride.replace("api-server.stude.workers.dev", "api.stude.workers.dev");
+      try {
+        localStorage.setItem("jee_backend_api", savedOverride);
+        localStorage.setItem("api_server_url", savedOverride);
+      } catch {}
+    }
+    return savedOverride.trim().replace(/\/$/, "");
+  }
 
   // 2. Check environment variable if provided during build
   if (import.meta.env.VITE_API_URL) {

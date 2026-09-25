@@ -423,7 +423,7 @@ const POPULAR_PW_BATCHES = [
 
 const FALLBACK_PW_COOKIES = "access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3ODg2NjYyODMsImV4cCI6MTc4OTI3MTA4My4wMjUsImRhdGEiOnsiX2lkIjoiNjhkZGZiZjAwNTkwMWE2ZDlhMTI5ZGI1IiwidXNlcm5hbWUiOiI3OTA2NTIxODQxIn19.f2XuaPhdG1vbiI6yjFawQioI1IZWiZtOTN1ZTk1ZmFinZQ2OGE3OWQxODk1LCJ3ZWJzaXRlIjoiaG95c21jc3dhbGxhc5Jb201LCJvYWI1IjoiUGh5c2ljc3dhbGxhc39LCJyb2xlcyI6WyI1YjI3YmQ5NjU4NDJmOTUwYTc3OGM2ZWYiXSwiY291bnRyeUdyb3VwIjoiSU4iLCJvbmVsb2xlcyI6W10sInR5cGUiOiJVU0VSIn0sImp0aSI6Ijd6dG5rbE0zUmQyMmE2e1Q2cUZNT1FfNjhkZGZiZjAwNTkwMWE3ZDlhMTI5ZGI1In0.OEVxivd2_L6zfrZLLTOFYPoiQsmb1t_7m889gyX5oeE; PHPSESSID=14dvi03b58pug1144tioqed92b; stark_cid=f96ea578454552575ec787e1e7c9eec200ea202aae6ae1daaadbd245d3d307b79; stark_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrzkiOiI1OUQtQkEyLTgyRS0zRDItQTk2Iiwiy2xpZW50X2lkIjoiZ2kzZWE1Nzg0NTQ1NTI1NzVlYzc4N2UxZTdjOWVlYzIwMGVhMjAyYWF1NmF1MWRhYWFkYmQyNDVkM2QzMDdiNzlSISImlhdCI6MTc5MDMxNjUzNSIwZXhwIjoxNzkxNDAYOTM1fQ.gieu1Snd5WgiM8VByojkwmuq0rcNfON52CkuEyzFofs";
 
-const FALLBACK_PW_TOKEN = "Qd2wfhzRoi5eQdoITwpbNKPMdMTNSs37YUjvj0rSb5sNyhMiNwdYRCmgiTbUdxAiTAdjE/1c9qMnWHp9YUqE+oZL4bPviYaZzVdVAkLe2KG8ikVGXixjdguu+lpbwGywqm/OURTCo6X0JC70vQfg9QzGQlSt3dlcmzrpbxYbHydzlQeJqyh0SyHSkoLsXjDy7Jxy+nCUVQB2jSFq514ABmMGUHYWabU7LbJS0d3wNE1prGsgtdw0crSJesiF9+8N2mPiyj+qYWjg2NKlflX+OkauJYy0L9aAMRcbzr4uyBS8XYG3SRFGmb7WgTOswlEX2C6L5FyGqJfoQdRoYkUNTAttt53RimIPdDLjgIICpakgewlNM/sW2y+t0Vj/tAEiOBylh5yiKndmR4ljGzanJ103SzIh09+xaNv5+Jze9ilzr+PkbVyxXvtDbf1Vr5fMs92LnvuH17H6gnixXCs23aze9AhVhQkAq3Bmhyx5pUYVHxaES568RIb0alXcNc/JPpT4D/cvVq+JvD+iEUudY7IlCyBG4VRhSjhXGZhWgTclX7/DFr1smIQKRjiP2M84cDMUY3weoG+GV0CMkp3WDNi4SZXarIcQj+ZA5pnjRb+pcasKojENmEckHh4VK9IuYvhVAuAtHMF0Py9h3MIEq8/6Pz8GM0+tA4wasjBF0RnyTU2+05/szE0VoIf3Ep+bmEKO4zYrCIvD3DVP8X5Dvidq7ujodbnKw4CKMsRY3hd6p1FlCB9sOuMWxKQlvxZFn8e5endhYONO1yisyJKFUGT7S6ivTpnF8syPbvUBNtk=";
+const FALLBACK_PW_TOKEN = "Qd2wfhzRoi5eQdoITwpbNKPMdMTNSs37YUjvj0rSb5sNyhMiNwdYRCmgiTbUdxAiX4R2uidI2bB8XuLD0CLTBjvxsChq+LSUUj4MgHlhoDW6pP/G230zj0ZgAAZOro4yFwCM2v/3GzQUu5/yBLqkVtfC3JbQNCWAwoQe7DsXh05bJDgOtb3Zsf3OsE37EXt4kCaYweDEhEtreyXMDR7UHL50AMQATgB1vXiyvNYYi5I58rpO3VkE91sMMhwxwVuXDVCapJy41Nd/dZldogywVX3Zz6aHJc3qdcwbk1iBTTZdOFe/3B3S6Km6CX9o4tQhupmBhk2vtN9DU/6bfQySGcNBk6snYxYeDCDDJ/O+xEy3AdNHUGnUPjM5x/FZikybwjYPNwOm61OnPEFRJ8Dz36Ev/GBq7dsSej2rqlkMi76di4ZMyWOu4oWAvASKAJ0xHAmIBD6StdomjHF94w2oMOuz+TdeAX2GMLxqphI6+8574rC0JvaDNz0mSxRqKYFUH3zIJOkCuIrsw6fAaq3emaUAavQ1NsuunDSoTfmsnHKNWaa3481tqalExLODfyHCZjSdJJl3LYkFBAqvuKcsYXQXOtwvb1ux/1u99J+3E8byk3CieiGUaPh4kIEQNUr52iXUpqYv0j3uymayMxV2Oc+qL49OG8rawuskaCmlNfD9/E9tD864BMjeG0eIvjjNfqhkA6sxYo+sMaSxkZZrK+8N41R+nksm6+NfJKqctKspMEzXEXEMPDjBV2F8tKA2ouOltpEoKDHcOTUPM67y9g==";
 
 const PW_HEADERS = {
   "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
@@ -1569,6 +1569,24 @@ async function fetchPwSchedule(batchId, date, month, startDate, endDate) {
 }
 
 // ─── PW API ROUTES ──────────────────────────────────────────────────────────
+app.get("/api/pw-token", async (req, res) => {
+  try {
+    const token = await getPwToken().catch(() => FALLBACK_PW_TOKEN);
+    res.json({
+      success: true,
+      token: token || FALLBACK_PW_TOKEN,
+      access_token: token || FALLBACK_PW_TOKEN,
+      expires_at: Date.now() + 3600000
+    });
+  } catch (err) {
+    res.json({
+      success: true,
+      token: FALLBACK_PW_TOKEN,
+      access_token: FALLBACK_PW_TOKEN
+    });
+  }
+});
+
 app.get("/api/pw-status", (_req, res) => {
   res.json({
     status: "ok",

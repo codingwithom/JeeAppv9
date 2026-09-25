@@ -423,15 +423,23 @@ const POPULAR_PW_BATCHES = [
 
 const FALLBACK_PW_COOKIES = "access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3ODg2NjYyODMsImV4cCI6MTc4OTI3MTA4My4wMjUsImRhdGEiOnsiX2lkIjoiNjhkZGZiZjAwNTkwMWE2ZDlhMTI5ZGI1IiwidXNlcm5hbWUiOiI3OTA2NTIxODQxIn19.f2XuaPhdG1vbiI6yjFawQioI1IZWiZtOTN1ZTk1ZmFinZQ2OGE3OWQxODk1LCJ3ZWJzaXRlIjoiaG95c21jc3dhbGxhc5Jb201LCJvYWI1IjoiUGh5c2ljc3dhbGxhc39LCJyb2xlcyI6WyI1YjI3YmQ5NjU4NDJmOTUwYTc3OGM2ZWYiXSwiY291bnRyeUdyb3VwIjoiSU4iLCJvbmVsb2xlcyI6W10sInR5cGUiOiJVU0VSIn0sImp0aSI6Ijd6dG5rbE0zUmQyMmE2e1Q2cUZNT1FfNjhkZGZiZjAwNTkwMWE3ZDlhMTI5ZGI1In0.OEVxivd2_L6zfrZLLTOFYPoiQsmb1t_7m889gyX5oeE; PHPSESSID=14dvi03b58pug1144tioqed92b; stark_cid=f96ea578454552575ec787e1e7c9eec200ea202aae6ae1daaadbd245d3d307b79; stark_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrzkiOiI1OUQtQkEyLTgyRS0zRDItQTk2Iiwiy2xpZW50X2lkIjoiZ2kzZWE1Nzg0NTQ1NTI1NzVlYzc4N2UxZTdjOWVlYzIwMGVhMjAyYWF1NmF1MWRhYWFkYmQyNDVkM2QzMDdiNzlSISImlhdCI6MTc5MDMxNjUzNSIwZXhwIjoxNzkxNDAYOTM1fQ.gieu1Snd5WgiM8VByojkwmuq0rcNfON52CkuEyzFofs";
 
-const FALLBACK_PW_TOKEN = "Qd2wfhzRoi5eQdoITwpbNKPMdMTNSs37YUjvj0rSb5sNyhMiNwdYRCmgiTbUdxAibU3m+ETsvfr08WHlOIw8V5Ae12IwN5xSWTknnXkHL5d+PK4xeNliyrKg7RyjrjaY9VM66AUNFORT6DY8AjgpXFtE86unYfEN0OK+jxrIAhhZEFa36XVws4yLUz4Espb9yIioPcpKeK2n3w1yZISAFs0mBdsfONwC7O9scHh9lnzjUr15GeJAPvvIKgivZ9NMLCOFEuwpXq45phXv8/pO3rEcWj/jtQdStmxbKDuxFU6LDY2CKN4A8veji9rjzZhsle+M4tlc+Q0xdoleA25zrzUJV82iyS1lkqe+VrMDMnLYa3uCq3Zc0Zn/WN2enQLT2XSqyquUk7yO3gcBt6n4pgO3tqVfLSjlZewb2qKi9hNo6gMkit71lsTcYn3dlVjE9DJMoNy0P8ua6EsjCy7YA4tM0vFOGclR0+JUTdXloIgyeM46jKxGajA2vQh8yIN7dDLxWc6rN5lgssWLtTN3j3/QJBTgJXI7eoyxB+3bBRDjAlBXd+tZvmJeE28YCp3Jop4ZEVMC6tRzi0u0KmZqnHmAZdP95aJX43MLb9aZXI0fIOOX/ilqBHSt53z3bP2rlPixNReYbGNt20TwL+E5m3OxQDT5dWmyBfD2dd41moLeTN3Ls8zzKXHooEID9rHXfYUVqqTanm2IjZ5qDIBPaRFomxkDC9vt50BtWFf/VyKRS2WswbwHdpv3DD3BM+qwPLH9QK87mpkWA61ODhbkVR364tfNYOLWxcXFn5sosEo=";
+const FALLBACK_PW_TOKEN = "Qd2wfhzRoi5eQdoITwpbNKPMdMTNSs37YUjvj0rSb5sNyhMiNwdYRCmgiTbUdxAiTAdjE/1c9qMnWHp9YUqE+oZL4bPviYaZzVdVAkLe2KG8ikVGXixjdguu+lpbwGywqm/OURTCo6X0JC70vQfg9QzGQlSt3dlcmzrpbxYbHydzlQeJqyh0SyHSkoLsXjDy7Jxy+nCUVQB2jSFq514ABmMGUHYWabU7LbJS0d3wNE1prGsgtdw0crSJesiF9+8N2mPiyj+qYWjg2NKlflX+OkauJYy0L9aAMRcbzr4uyBS8XYG3SRFGmb7WgTOswlEX2C6L5FyGqJfoQdRoYkUNTAttt53RimIPdDLjgIICpakgewlNM/sW2y+t0Vj/tAEiOBylh5yiKndmR4ljGzanJ103SzIh09+xaNv5+Jze9ilzr+PkbVyxXvtDbf1Vr5fMs92LnvuH17H6gnixXCs23aze9AhVhQkAq3Bmhyx5pUYVHxaES568RIb0alXcNc/JPpT4D/cvVq+JvD+iEUudY7IlCyBG4VRhSjhXGZhWgTclX7/DFr1smIQKRjiP2M84cDMUY3weoG+GV0CMkp3WDNi4SZXarIcQj+ZA5pnjRb+pcasKojENmEckHh4VK9IuYvhVAuAtHMF0Py9h3MIEq8/6Pz8GM0+tA4wasjBF0RnyTU2+05/szE0VoIf3Ep+bmEKO4zYrCIvD3DVP8X5Dvidq7ujodbnKw4CKMsRY3hd6p1FlCB9sOuMWxKQlvxZFn8e5endhYONO1yisyJKFUGT7S6ivTpnF8syPbvUBNtk=";
 
 const PW_HEADERS = {
-  "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+  "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
   "Referer": "https://vidcloud.eu.org/",
   "Origin": "https://vidcloud.eu.org",
   "Accept": "application/json, text/plain, */*",
-  "Cookie": `${FALLBACK_PW_COOKIES}; auth_token=${FALLBACK_PW_TOKEN}`,
 };
+
+function getPwRequestHeaders(token) {
+  const activeToken = token || FALLBACK_PW_TOKEN;
+  return {
+    ...PW_HEADERS,
+    "Authorization": `Bearer ${activeToken}`,
+    "Cookie": `auth_token=${activeToken}; ${FALLBACK_PW_COOKIES}`,
+  };
+}
 
 async function getPwToken() {
   if (pwTokenMemoryCache.token && pwTokenMemoryCache.expiresAt > Date.now()) {
@@ -535,18 +543,19 @@ async function fetchChapterContents(batchId, subjectId, chapterId, token, allowF
   if (cached && cached.expiresAt > Date.now()) return cached.data;
 
   try {
+    const reqHeaders = getPwRequestHeaders(token);
     const [vRes, nRes, dRes] = await Promise.all([
       fetch(
         `${PW_DETAILS_ORIGIN}/api/v2/batches/${encodeURIComponent(batchId)}/subject/${encodeURIComponent(subjectId)}/contents?page=1&contentType=videos&tag=${encodeURIComponent(chapterId)}`,
-        { headers: { ...PW_HEADERS, Authorization: `Bearer ${token}` }, signal: AbortSignal.timeout(12000) }
+        { headers: reqHeaders, signal: AbortSignal.timeout(12000) }
       ).then(r => r.ok ? r.json() : { data: [] }).catch(() => ({ data: [] })),
       fetch(
         `${PW_DETAILS_ORIGIN}/api/v2/batches/${encodeURIComponent(batchId)}/subject/${encodeURIComponent(subjectId)}/contents?page=1&contentType=notes&tag=${encodeURIComponent(chapterId)}`,
-        { headers: { ...PW_HEADERS, Authorization: `Bearer ${token}` }, signal: AbortSignal.timeout(12000) }
+        { headers: reqHeaders, signal: AbortSignal.timeout(12000) }
       ).then(r => r.ok ? r.json() : { data: [] }).catch(() => ({ data: [] })),
       fetch(
         `${PW_DETAILS_ORIGIN}/api/v2/batches/${encodeURIComponent(batchId)}/subject/${encodeURIComponent(subjectId)}/contents?page=1&contentType=DppNotes&tag=${encodeURIComponent(chapterId)}`,
-        { headers: { ...PW_HEADERS, Authorization: `Bearer ${token}` }, signal: AbortSignal.timeout(12000) }
+        { headers: reqHeaders, signal: AbortSignal.timeout(12000) }
       ).then(r => r.ok ? r.json() : { data: [] }).catch(() => ({ data: [] }))
     ]);
 
@@ -560,21 +569,35 @@ async function fetchChapterContents(batchId, subjectId, chapterId, token, allowF
         const [vRes2, nRes2, dRes2] = await Promise.all([
           rawVideos.length >= 20 ? fetch(
             `${PW_DETAILS_ORIGIN}/api/v2/batches/${encodeURIComponent(batchId)}/subject/${encodeURIComponent(subjectId)}/contents?page=2&contentType=videos&tag=${encodeURIComponent(chapterId)}`,
-            { headers: { ...PW_HEADERS, Authorization: `Bearer ${token}` }, signal: AbortSignal.timeout(8000) }
+            { headers: reqHeaders, signal: AbortSignal.timeout(8000) }
           ).then(r => r.ok ? r.json() : { data: [] }).catch(() => ({ data: [] })) : { data: [] },
           rawNotes.length >= 20 ? fetch(
             `${PW_DETAILS_ORIGIN}/api/v2/batches/${encodeURIComponent(batchId)}/subject/${encodeURIComponent(subjectId)}/contents?page=2&contentType=notes&tag=${encodeURIComponent(chapterId)}`,
-            { headers: { ...PW_HEADERS, Authorization: `Bearer ${token}` }, signal: AbortSignal.timeout(8000) }
+            { headers: reqHeaders, signal: AbortSignal.timeout(8000) }
           ).then(r => r.ok ? r.json() : { data: [] }).catch(() => ({ data: [] })) : { data: [] },
           rawDpps.length >= 20 ? fetch(
             `${PW_DETAILS_ORIGIN}/api/v2/batches/${encodeURIComponent(batchId)}/subject/${encodeURIComponent(subjectId)}/contents?page=2&contentType=DppNotes&tag=${encodeURIComponent(chapterId)}`,
-            { headers: { ...PW_HEADERS, Authorization: `Bearer ${token}` }, signal: AbortSignal.timeout(8000) }
+            { headers: reqHeaders, signal: AbortSignal.timeout(8000) }
           ).then(r => r.ok ? r.json() : { data: [] }).catch(() => ({ data: [] })) : { data: [] }
         ]);
         if (Array.isArray(vRes2.data)) rawVideos.push(...vRes2.data);
         if (Array.isArray(nRes2.data)) rawNotes.push(...nRes2.data);
         if (Array.isArray(dRes2.data)) rawDpps.push(...dRes2.data);
       } catch (p2Err) {}
+    }
+
+    // Auto-fallback 0: If token expired, force-refresh token from generate_token.php and retry once
+    if (allowFallback && rawVideos.length === 0 && rawNotes.length === 0 && rawDpps.length === 0) {
+      pwTokenMemoryCache = { token: "", expiresAt: 0 };
+      try {
+        const refreshedToken = await getPwToken();
+        if (refreshedToken && refreshedToken !== token) {
+          const retryResult = await fetchChapterContents(batchId, subjectId, chapterId, refreshedToken, false, chapterTitle);
+          if (retryResult && (retryResult.totalLectures > 0 || retryResult.totalNotes > 0 || retryResult.totalDpps > 0)) {
+            return retryResult;
+          }
+        }
+      } catch (tokRetryErr) {}
     }
 
     // Auto-fallback 1: Check alternative subject ID from metadata

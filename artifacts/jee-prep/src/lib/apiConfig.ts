@@ -17,7 +17,7 @@ export function getBackendBaseUrl(): string {
 
   // 3. In production builds (dist preview via npx serve or hosted on domain), route to Cloudflare Worker
   if (import.meta.env.PROD) {
-    return "https://api-server.stude.workers.dev";
+    return "https://api.stude.workers.dev";
   }
 
   // 4. In local dev mode (npm run dev), check hostname
@@ -30,7 +30,7 @@ export function getBackendBaseUrl(): string {
     hostname.includes("github.dev");
 
   if (!isLocalDev) {
-    return "https://api-server.stude.workers.dev";
+    return "https://api.stude.workers.dev";
   }
 
   // 5. Default dev mode: relative same-origin (Vite dev proxy to localhost:8080)

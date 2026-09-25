@@ -187,28 +187,25 @@ export default function LoginPage() {
                     setShowCaptchaModal(false);
                     executeGoogleSignIn();
                   } else {
-                    // If Google API reports validation issue, allow seamless fallback
-                    setCaptchaVerified(true);
-                    setShowCaptchaModal(false);
-                    executeGoogleSignIn();
+                    setCaptchaVerified(false);
+                    setCaptchaError(verifyData?.error || "CAPTCHA verification failed. Please try again.");
                   }
                 } catch {
-                  setCaptchaVerified(true);
-                  setShowCaptchaModal(false);
-                  executeGoogleSignIn();
+                  setCaptchaVerified(false);
+                  setCaptchaError("Could not verify CAPTCHA. Please try again.");
                 }
               },
               "expired-callback": () => {
                 setCaptchaVerified(false);
               },
               "error-callback": () => {
-                setCaptchaError("Domain not registered yet in Google reCAPTCHA Console. Click Bypass to proceed.");
+                  setCaptchaError("This domain is not registered with Google reCAPTCHA. Please contact support.");
               }
             });
           }
         } catch (e: any) {
           console.warn("reCAPTCHA render notice:", e);
-          setCaptchaError(e?.message || "Verification widget notice. Click Bypass to proceed.");
+          setCaptchaError(e?.message || "Could not load CAPTCHA. Please try again.");
         }
       } else {
         timeoutId = setTimeout(renderWidget, 250);
@@ -222,7 +219,7 @@ export default function LoginPage() {
       script.defer = true;
       script.onload = () => renderWidget();
       script.onerror = () => {
-        setCaptchaError("Could not connect to Google reCAPTCHA. Click Bypass to proceed.");
+        setCaptchaError("Could not connect to Google reCAPTCHA. Please try again.");
       };
       document.head.appendChild(script);
     } else {
@@ -296,13 +293,10 @@ export default function LoginPage() {
   };
 
   const handleGoogleSignInClick = () => {
-    if (captchaVerified) {
-      executeGoogleSignIn();
-    } else {
-      setError("");
-      setCaptchaError("");
-      setShowCaptchaModal(true);
-    }
+    setCaptchaVerified(false);
+    setError("");
+    setCaptchaError("");
+    setShowCaptchaModal(true);
   };
 
   const executeGoogleSignIn = async () => {
@@ -335,6 +329,7 @@ export default function LoginPage() {
       console.error(err);
       setError(err.message || "Failed to sign in with Google.");
     } finally {
+      setCaptchaVerified(false);
       setLoading(false);
     }
   };
@@ -750,19 +745,6 @@ export default function LoginPage() {
                     <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
                     <span>{captchaError}</span>
                   </div>
-                  <Button
-                    type="button"
-                    size="sm"
-                    variant="outline"
-                    className="w-full h-8 text-xs font-semibold border-amber-500/40 hover:bg-amber-500/10 text-foreground cursor-pointer"
-                    onClick={() => {
-                      setCaptchaVerified(true);
-                      setShowCaptchaModal(false);
-                      executeGoogleSignIn();
-                    }}
-                  >
-                    Bypass &amp; Continue with Google
-                  </Button>
                 </div>
               )}
 
@@ -774,18 +756,6 @@ export default function LoginPage() {
                   onClick={() => setShowCaptchaModal(false)}
                 >
                   Cancel
-                </Button>
-                <Button
-                  type="button"
-                  variant="secondary"
-                  className="text-xs font-semibold"
-                  onClick={() => {
-                    setCaptchaVerified(true);
-                    setShowCaptchaModal(false);
-                    executeGoogleSignIn();
-                  }}
-                >
-                  Skip Verification
                 </Button>
               </div>
             </motion.div>

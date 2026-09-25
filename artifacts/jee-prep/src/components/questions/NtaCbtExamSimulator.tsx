@@ -41,6 +41,7 @@ import {
   CbtQuestionTimeLog,
   getCountdownTargetYear,
   generateRandomPredictivePaper,
+  generateOfflinePredictivePaper,
   saveCbtTestResult,
   getCbtTestHistory,
   deleteCbtTestRecord
@@ -195,7 +196,16 @@ export function NtaCbtExamSimulator({ onExit, initialExam = "jee-main" }: NtaCbt
     setIsGenerating(true);
     setChosenExam(exam);
     try {
-      const generated = await generateRandomPredictivePaper(exam, targetExamYear);
+      // Race online predictive generator against a 3.5s timeout; fall back to instant offline generator
+      const timeoutPromise = new Promise<never>((_, reject) =>
+        setTimeout(() => reject(new Error("Predictive generation timed out")), 3500)
+      );
+
+      const generated = await Promise.race([
+        generateRandomPredictivePaper(exam, targetExamYear),
+        timeoutPromise,
+      ]);
+
       if (generated && Array.isArray(generated.sections) && generated.sections.length > 0) {
         setPaperData(generated);
         setPhase("instructions");
@@ -203,13 +213,13 @@ export function NtaCbtExamSimulator({ onExit, initialExam = "jee-main" }: NtaCbt
         throw new Error("Empty paper data generated");
       }
     } catch (e) {
-      console.error("Failed to generate predictive paper, retrying with emergency fallback:", e);
+      console.warn("Generating with instant offline calibrated predictive paper:", e);
       try {
-        const fallbackGenerated = await generateRandomPredictivePaper(exam, targetExamYear);
-        setPaperData(fallbackGenerated);
+        const offlinePaper = generateOfflinePredictivePaper(exam, targetExamYear);
+        setPaperData(offlinePaper);
         setPhase("instructions");
       } catch (err) {
-        console.error("Emergency fallback generation error:", err);
+        console.error("Critical fallback generation error:", err);
       }
     } finally {
       setIsGenerating(false);

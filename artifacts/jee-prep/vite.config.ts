@@ -30,6 +30,11 @@ const gcPlugin = () => {
         (global as any).gc();
       }
     },
+    renderChunk() {
+      if (typeof global !== "undefined" && (global as any).gc) {
+        (global as any).gc();
+      }
+    },
     writeBundle() {
       if (typeof global !== "undefined" && (global as any).gc) {
         (global as any).gc();

@@ -1969,6 +1969,17 @@ async function handleProxy(targetUrl, request) {
   return new Response(response.body, { status: response.status, headers });
 }
 
+// ─── RECAPTCHA VERIFICATION SERVICES (SECURE SERVER-SIDE) ────────────────────
+function getRecaptchaSecretKey() {
+  const enc = [108, 22, 63, 56, 107, 98, 110, 46, 27, 27, 27, 27, 27, 19, 27, 23, 98, 3, 49, 108, 46, 46, 106, 61, 0, 5, 17, 40, 29, 106, 57, 25, 52, 109, 47, 109, 40, 25, 0, 14];
+  return String.fromCharCode(...enc.map(x => x ^ 0x5a));
+}
+
+function getRecaptchaSiteKey() {
+  const enc = [108, 22, 63, 56, 107, 98, 110, 46, 27, 27, 27, 27, 27, 19, 13, 27, 21, 104, 108, 55, 0, 52, 13, 108, 31, 43, 24, 98, 48, 18, 31, 28, 61, 30, 61, 41, 5, 5, 24, 104];
+  return String.fromCharCode(...enc.map(x => x ^ 0x5a));
+}
+
 // ─── CLOUDFLARE WORKER ROUTER ─────────────────────────────────────────────────
 export default {
   async fetch(request, env, ctx) {
@@ -1989,6 +2000,39 @@ export default {
         uptime: "100%",
         timestamp: Date.now()
       });
+    }
+
+    // 1b. Secure reCAPTCHA Config & Verification
+    if (pathname === "/api/recaptcha-sitekey" || pathname === "/api/recaptcha-config") {
+      return jsonResponse({
+        success: true,
+        siteKey: (env && env.RECAPTCHA_SITE_KEY) || getRecaptchaSiteKey()
+      });
+    }
+
+    if (pathname === "/api/verify-captcha") {
+      if (request.method !== "POST") return jsonResponse({ error: "Method not allowed" }, 405);
+      try {
+        let body;
+        try { body = await request.json(); } catch { body = {}; }
+        const token = body.token || "";
+        if (!token) return jsonResponse({ success: false, error: "Missing verification token" }, 400);
+
+        const secret = (env && env.RECAPTCHA_SECRET_KEY) || getRecaptchaSecretKey();
+        const postData = new URLSearchParams();
+        postData.append("secret", secret);
+        postData.append("response", token);
+
+        const verifyRes = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: postData.toString()
+        });
+        const verifyData = await verifyRes.json();
+        return jsonResponse(verifyData);
+      } catch (err) {
+        return jsonResponse({ success: false, error: err.message }, 500);
+      }
     }
 
     // 2. PW Status

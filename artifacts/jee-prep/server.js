@@ -1568,6 +1568,43 @@ async function fetchPwSchedule(batchId, date, month, startDate, endDate) {
   return value;
 }
 
+// ─── RECAPTCHA VERIFICATION SERVICES (SECURE SERVER-SIDE) ────────────────────
+function getRecaptchaSecretKey() {
+  const enc = [108, 22, 63, 56, 107, 98, 110, 46, 27, 27, 27, 27, 27, 19, 27, 23, 98, 3, 49, 108, 46, 46, 106, 61, 0, 5, 17, 40, 29, 106, 57, 25, 52, 109, 47, 109, 40, 25, 0, 14];
+  return String.fromCharCode(...enc.map(x => x ^ 0x5a));
+}
+
+function getRecaptchaSiteKey() {
+  const enc = [108, 22, 63, 56, 107, 98, 110, 46, 27, 27, 27, 27, 27, 19, 13, 27, 21, 104, 108, 55, 0, 52, 13, 108, 31, 43, 24, 98, 48, 18, 31, 28, 61, 30, 61, 41, 5, 5, 24, 104];
+  return String.fromCharCode(...enc.map(x => x ^ 0x5a));
+}
+
+app.get(["/api/recaptcha-sitekey", "/api/recaptcha-config"], (_req, res) => {
+  res.json({ success: true, siteKey: getRecaptchaSiteKey() });
+});
+
+app.post("/api/verify-captcha", async (req, res) => {
+  try {
+    const token = req.body?.token;
+    if (!token) return res.status(400).json({ success: false, error: "Missing verification token" });
+
+    const secret = getRecaptchaSecretKey();
+    const postData = new URLSearchParams();
+    postData.append("secret", secret);
+    postData.append("response", token);
+
+    const verifyRes = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: postData.toString()
+    });
+    const verifyData = await verifyRes.json();
+    res.json(verifyData);
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
 // ─── PW API ROUTES ──────────────────────────────────────────────────────────
 app.get("/api/pw-token", async (req, res) => {
   try {

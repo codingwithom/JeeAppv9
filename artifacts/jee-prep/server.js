@@ -421,14 +421,10 @@ const POPULAR_PW_BATCHES = [
   }
 ];
 
-const FALLBACK_PW_COOKIES = "access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3ODg2NjYyODMsImV4cCI6MTc4OTI3MTA4My4wMjUsImRhdGEiOnsiX2lkIjoiNjhkZGZiZjAwNTkwMWE2ZDlhMTI5ZGI1IiwidXNlcm5hbWUiOiI3OTA2NTIxODQxIn19.f2XuaPhdG1vbiI6yjFawQioI1IZWiZtOTN1ZTk1ZmFinZQ2OGE3OWQxODk1LCJ3ZWJzaXRlIjoiaG95c21jc3dhbGxhc5Jb201LCJvYWI1IjoiUGh5c2ljc3dhbGxhc39LCJyb2xlcyI6WyI1YjI3YmQ5NjU4NDJmOTUwYTc3OGM2ZWYiXSwiY291bnRyeUdyb3VwIjoiSU4iLCJvbmVsb2xlcyI6W10sInR5cGUiOiJVU0VSIn0sImp0aSI6Ijd6dG5rbE0zUmQyMmE2e1Q2cUZNT1FfNjhkZGZiZjAwNTkwMWE3ZDlhMTI5ZGI1In0.OEVxivd2_L6zfrZLLTOFYPoiQsmb1t_7m889gyX5oeE; PHPSESSID=14dvi03b58pug1144tioqed92b; stark_cid=f96ea578454552575ec787e1e7c9eec200ea202aae6ae1daaadbd245d3d307b79; stark_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrzkiOiI1OUQtQkEyLTgyRS0zRDItQTk2Iiwiy2xpZW50X2lkIjoiZ2kzZWE1Nzg0NTQ1NTI1NzVlYzc4N2UxZTdjOWVlYzIwMGVhMjAyYWF1NmF1MWRhYWFkYmQyNDVkM2QzMDdiNzlSISImlhdCI6MTc5MDMxNjUzNSIwZXhwIjoxNzkxNDAYOTM1fQ.gieu1Snd5WgiM8VByojkwmuq0rcNfON52CkuEyzFofs";
-
-const FALLBACK_PW_TOKEN = "Qd2wfhzRoi5eQdoITwpbNKPMdMTNSs37YUjvj0rSb5sNyhMiNwdYRCmgiTbUdxAiX4R2uidI2bB8XuLD0CLTBjvxsChq+LSUUj4MgHlhoDW6pP/G230zj0ZgAAZOro4yFwCM2v/3GzQUu5/yBLqkVtfC3JbQNCWAwoQe7DsXh05bJDgOtb3Zsf3OsE37EXt4kCaYweDEhEtreyXMDR7UHL50AMQATgB1vXiyvNYYi5I58rpO3VkE91sMMhwxwVuXDVCapJy41Nd/dZldogywVX3Zz6aHJc3qdcwbk1iBTTZdOFe/3B3S6Km6CX9o4tQhupmBhk2vtN9DU/6bfQySGcNBk6snYxYeDCDDJ/O+xEy3AdNHUGnUPjM5x/FZikybwjYPNwOm61OnPEFRJ8Dz36Ev/GBq7dsSej2rqlkMi76di4ZMyWOu4oWAvASKAJ0xHAmIBD6StdomjHF94w2oMOuz+TdeAX2GMLxqphI6+8574rC0JvaDNz0mSxRqKYFUH3zIJOkCuIrsw6fAaq3emaUAavQ1NsuunDSoTfmsnHKNWaa3481tqalExLODfyHCZjSdJJl3LYkFBAqvuKcsYXQXOtwvb1ux/1u99J+3E8byk3CieiGUaPh4kIEQNUr52iXUpqYv0j3uymayMxV2Oc+qL49OG8rawuskaCmlNfD9/E9tD864BMjeG0eIvjjNfqhkA6sxYo+sMaSxkZZrK+8N41R+nksm6+NfJKqctKspMEzXEXEMPDjBV2F8tKA2ouOltpEoKDHcOTUPM67y9g==";
+const FALLBACK_PW_TOKEN = "Qd2wfhzRoi5eQdoITwpbNKPMdMTNSs37YUjvj0rSb5sNyhMiNwdYRCmgiTbUdxAi+3Z7i89+91g8EkanxDbtI7cmrTLGscI/Z8dG2Cew4sFpqwjSQ/9S9EhvAe2afORvhjB33bPuBHZ+PSiqWiKn5g3OtjClufefx3LhX4/vrObplc62nePs6kVOBOqSuhRFsgYp2ADuY9q5qQkR3RIVErL3Uok8bxFIxiIu5MHHACj+ebCPJCICJ+xkIKE5+z5Eun0OOTCicwsgOH3e+nWkYk6iiGffevfsWmCsNSY/XnDHrJ4dxia1r/YE8gckIVSKNod6PfMozz9GtDhIKoymS5XL+HeFPDis7AGZTOYjyUFtPIpNUPu00YzyJUya0xx2ygz2Aeub8Iugv4/Lz74hLyuTLyWbXhRdKqBpXqQy5FIU4J054vpivsbw+KE5Nr0OTrAUduY+URQiaWO44JNcCDuCtpCT6XjKCivCL3TyNkJCLSpnaguZ2o79/xE0B7SreZFm1v9JEFr/O3BZaBZSPk/MS5KmBSp6m1qtOMWw4s6EU0mfXZetjb718j5mZSY/X1o/gTrxQgA38pMu+1YEmZ02BkPispssqGZhWv7EGm3r9Mq9Fulf9s8ggsssqXxQuSwCkCN8pGde6HytkhzQZ14+IMizQ3/r1slZYuKRNp5nMBC2Lg6oopVD4yYHQOpN2v7pgq/JLgeo5W5sqZ6M7OrJrrkY320YvrcGpFmUX3XYbzky7dIwVNUQMXmI0HFk1q4rccugBeeLRYfS8JEBrA==";
 
 const PW_HEADERS = {
   "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
-  "Referer": "https://vidcloud.eu.org/",
-  "Origin": "https://vidcloud.eu.org",
   "Accept": "application/json, text/plain, */*",
 };
 
@@ -437,7 +433,7 @@ function getPwRequestHeaders(token) {
   return {
     ...PW_HEADERS,
     "Authorization": `Bearer ${activeToken}`,
-    "Cookie": `auth_token=${activeToken}; ${FALLBACK_PW_COOKIES}`,
+    "Cookie": `auth_token=${activeToken}`
   };
 }
 
@@ -1281,7 +1277,7 @@ async function fetchPwSchedule(batchId, date, month, startDate, endDate) {
     // 1. Fetch weekly-schedules across pages 1..8 with startDate and endDate
     if (token) {
       try {
-        const pages = [1, 2, 3, 4, 5, 6, 7, 8];
+        const pages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
         const pagePromises = pages.map(page =>
           fetch(
             `${PW_DETAILS_ORIGIN}/api/v2/batches/${encodeURIComponent(batchId)}/weekly-schedules?batchId=${encodeURIComponent(batchId)}&startDate=${encodeURIComponent(sDate)}&endDate=${encodeURIComponent(eDate)}&page=${page}`,

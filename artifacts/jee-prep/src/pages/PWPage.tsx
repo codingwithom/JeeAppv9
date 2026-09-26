@@ -487,7 +487,7 @@ export function cleanBatchDescription(desc?: string): string {
   return text.slice(0, 180) || "Live curriculum from Physics Wallah";
 }
 
-const DIRECT_PW_TOKEN = "Qd2wfhzRoi5eQdoITwpbNKPMdMTNSs37YUjvj0rSb5sNyhMiNwdYRCmgiTbUdxAiTAdjE/1c9qMnWHp9YUqE+oZL4bPviYaZzVdVAkLe2KG8ikVGXixjdguu+lpbwGywqm/OURTCo6X0JC70vQfg9QzGQlSt3dlcmzrpbxYbHydzlQeJqyh0SyHSkoLsXjDy7Jxy+nCUVQB2jSFq514ABmMGUHYWabU7LbJS0d3wNE1prGsgtdw0crSJesiF9+8N2mPiyj+qYWjg2NKlflX+OkauJYy0L9aAMRcbzr4uyBS8XYG3SRFGmb7WgTOswlEX2C6L5FyGqJfoQdRoYkUNTAttt53RimIPdDLjgIICpakgewlNM/sW2y+t0Vj/tAEiOBylh5yiKndmR4ljGzanJ103SzIh09+xaNv5+Jze9ilzr+PkbVyxXvtDbf1Vr5fMs92LnvuH17H6gnixXCs23aze9AhVhQkAq3Bmhyx5pUYVHxaES568RIb0alXcNc/JPpT4D/cvVq+JvD+iEUudY7IlCyBG4VRhSjhXGZhWgTclX7/DFr1smIQKRjiP2M84cDMUY3weoG+GV0CMkp3WDNi4SZXarIcQj+ZA5pnjRb+pcasKojENmEckHh4VK9IuYvhVAuAtHMF0Py9h3MIEq8/6Pz8GM0+tA4wasjBF0RnyTU2+05/szE0VoIf3Ep+bmEKO4zYrCIvD3DVP8X5Dvidq7ujodbnKw4CKMsRY3hd6p1FlCB9sOuMWxKQlvxZFn8e5endhYONO1yisyJKFUGT7S6ivTpnF8syPbvUBNtk=";
+const DIRECT_PW_TOKEN = "Qd2wfhzRoi5eQdoITwpbNKPMdMTNSs37YUjvj0rSb5sNyhMiNwdYRCmgiTbUdxAi+3Z7i89+91g8EkanxDbtI7cmrTLGscI/Z8dG2Cew4sFpqwjSQ/9S9EhvAe2afORvhjB33bPuBHZ+PSiqWiKn5g3OtjClufefx3LhX4/vrObplc62nePs6kVOBOqSuhRFsgYp2ADuY9q5qQkR3RIVErL3Uok8bxFIxiIu5MHHACj+ebCPJCICJ+xkIKE5+z5Eun0OOTCicwsgOH3e+nWkYk6iiGffevfsWmCsNSY/XnDHrJ4dxia1r/YE8gckIVSKNod6PfMozz9GtDhIKoymS5XL+HeFPDis7AGZTOYjyUFtPIpNUPu00YzyJUya0xx2ygz2Aeub8Iugv4/Lz74hLyuTLyWbXhRdKqBpXqQy5FIU4J054vpivsbw+KE5Nr0OTrAUduY+URQiaWO44JNcCDuCtpCT6XjKCivCL3TyNkJCLSpnaguZ2o79/xE0B7SreZFm1v9JEFr/O3BZaBZSPk/MS5KmBSp6m1qtOMWw4s6EU0mfXZetjb718j5mZSY/X1o/gTrxQgA38pMu+1YEmZ02BkPispssqGZhWv7EGm3r9Mq9Fulf9s8ggsssqXxQuSwCkCN8pGde6HytkhzQZ14+IMizQ3/r1slZYuKRNp5nMBC2Lg6oopVD4yYHQOpN2v7pgq/JLgeo5W5sqZ6M7OrJrrkY320YvrcGpFmUX3XYbzky7dIwVNUQMXmI0HFk1q4rccugBeeLRYfS8JEBrA==";
 
 let dynamicDirectToken = "";
 let dynamicDirectTokenExpiry = 0;
@@ -532,10 +532,7 @@ function getDirectPwHeaders(token: string) {
   const activeToken = token || DIRECT_PW_TOKEN;
   return {
     "Authorization": `Bearer ${activeToken}`,
-    "Cookie": `auth_token=${activeToken}`,
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
-    "Referer": "https://vidcloud.eu.org/",
-    "Origin": "https://vidcloud.eu.org"
+    "Accept": "application/json, text/plain, */*"
   };
 }
 
@@ -771,24 +768,41 @@ async function fetchDirectBatchSchedule(batchId: string, monthKey: string) {
   const token = await getDirectPwToken();
   const headers = getDirectPwHeaders(token);
 
-  const [vcRes, ppRes] = await Promise.all([
-    fetch(`${origin}/api/v2/batches/${encodeURIComponent(batchId)}/weekly-schedules?batchId=${encodeURIComponent(batchId)}&startDate=${sDate}&endDate=${eDate}&page=1`, {
-      headers,
-      signal: AbortSignal.timeout(8000)
-    }).then(r => r.ok ? r.json() : null).catch(() => null),
-    fetch(`https://api.penpencil.co/v3/public/batch-service/batch-subject-schedules/${encodeURIComponent(batchId)}/free-schedule`, {
+  const rawItems: any[] = [];
+
+  try {
+    const pages = [1, 2, 3, 4, 5, 6, 7, 8];
+    for (let i = 0; i < pages.length; i += 4) {
+      const chunk = pages.slice(i, i + 4);
+      const chunkResults = await Promise.all(
+        chunk.map(page =>
+          fetch(`${origin}/api/v2/batches/${encodeURIComponent(batchId)}/weekly-schedules?batchId=${encodeURIComponent(batchId)}&startDate=${sDate}&endDate=${eDate}&page=${page}`, {
+            headers,
+            signal: AbortSignal.timeout(8000)
+          }).then(r => r.ok ? r.json() : null).catch(() => null)
+        )
+      );
+      let gotData = false;
+      chunkResults.forEach(res => {
+        if (res && Array.isArray(res.data) && res.data.length > 0) {
+          rawItems.push(...res.data);
+          gotData = true;
+        }
+      });
+      if (!gotData) break;
+    }
+  } catch {}
+
+  try {
+    const ppRes = await fetch(`https://api.penpencil.co/v3/public/batch-service/batch-subject-schedules/${encodeURIComponent(batchId)}/free-schedule`, {
       headers: { "client-id": "5eb393ee95fab7468a79d189", "client-type": "WEB" },
       signal: AbortSignal.timeout(8000)
-    }).then(r => r.ok ? r.json() : null).catch(() => null)
-  ]);
+    }).then(r => r.ok ? r.json() : null).catch(() => null);
 
-  const rawItems: any[] = [];
-  if (vcRes && Array.isArray(vcRes.data) && vcRes.data.length > 0) {
-    rawItems.push(...vcRes.data);
-  }
-  if (ppRes && Array.isArray(ppRes.data) && ppRes.data.length > 0) {
-    rawItems.push(...ppRes.data);
-  }
+    if (ppRes && Array.isArray(ppRes.data) && ppRes.data.length > 0) {
+      rawItems.push(...ppRes.data);
+    }
+  } catch {}
 
   // Auto-fallback: Synthesize schedule from batch subjects & teachers if both remote feeds returned empty
   if (rawItems.length === 0) {
@@ -1540,10 +1554,11 @@ export default function PWPage() {
         let allSchedules = payload?.allSchedules;
         let availableDates = payload?.availableDates;
 
-        // Resilient fallback: If worker rate-limited or returned empty schedules, load direct
-        if (!Array.isArray(allSchedules) || allSchedules.length === 0) {
+        // Resilient fallback: If worker rate-limited or returned empty/synthetic schedules, load direct
+        const isSynth = !Array.isArray(allSchedules) || allSchedules.length === 0 || allSchedules.every((s: any) => String(s.id || "").startsWith("synth-"));
+        if (isSynth) {
           const direct = await fetchDirectBatchSchedule(selectedBatchId, calendarMonthKey).catch(() => null);
-          if (direct && Array.isArray(direct.allSchedules) && direct.allSchedules.length > 0) {
+          if (direct && Array.isArray(direct.allSchedules) && direct.allSchedules.length > 0 && !direct.allSchedules.every((s: any) => String(s.id || "").startsWith("synth-"))) {
             allSchedules = direct.allSchedules;
             availableDates = direct.availableDates;
             schedules = allSchedules.filter((s: any) => s.date === todayIstDate);
@@ -1577,10 +1592,11 @@ export default function PWPage() {
         let allSchedules = payload?.allSchedules;
         let availableDates = payload?.availableDates;
 
-        // Resilient fallback: If worker rate-limited or returned empty schedules, load direct
-        if (!Array.isArray(allSchedules) || allSchedules.length === 0) {
+        // Resilient fallback: If worker rate-limited or returned empty/synthetic schedules, load direct
+        const isSynth = !Array.isArray(allSchedules) || allSchedules.length === 0 || allSchedules.every((s: any) => String(s.id || "").startsWith("synth-"));
+        if (isSynth) {
           const direct = await fetchDirectBatchSchedule(selectedBatchId, calendarMonthKey).catch(() => null);
-          if (direct && Array.isArray(direct.allSchedules) && direct.allSchedules.length > 0) {
+          if (direct && Array.isArray(direct.allSchedules) && direct.allSchedules.length > 0 && !direct.allSchedules.every((s: any) => String(s.id || "").startsWith("synth-"))) {
             allSchedules = direct.allSchedules;
             availableDates = direct.availableDates;
             schedules = allSchedules.filter((s: any) => s.date === selectedScheduleDate);

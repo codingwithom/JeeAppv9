@@ -264,24 +264,26 @@ function mergeBatches(existing: PWBatch | undefined, fresh: PWBatch): PWBatch {
     const existingSub = existing.subjects.find(s => s.id === freshSub.id || s.name === freshSub.name);
     if (!existingSub) return freshSub;
 
-    const mergedChapters: PWChapter[] = freshSub.chapters.map(freshCh => {
-      const existingCh = existingSub.chapters.find(c => c.id === freshCh.id || c.title === freshCh.title);
-      if (!existingCh) return freshCh;
+    const mergedChapters: PWChapter[] = (freshSub.chapters && freshSub.chapters.length > 0)
+      ? freshSub.chapters.map(freshCh => {
+          const existingCh = existingSub.chapters.find(c => c.id === freshCh.id || c.title === freshCh.title);
+          if (!existingCh) return freshCh;
 
-      const hasLoadedLectures = Array.isArray(existingCh.lectures) && existingCh.lectures.length > 0;
-      return {
-        ...freshCh,
-        lectures: hasLoadedLectures ? existingCh.lectures : freshCh.lectures,
-        videoCount: Math.max(freshCh.videoCount || 0, existingCh.videoCount || 0),
-        notesCount: Math.max(freshCh.notesCount || 0, existingCh.notesCount || 0),
-        dppCount: Math.max(freshCh.dppCount || 0, existingCh.dppCount || 0),
-        isStarted: freshCh.isStarted || existingCh.isStarted
-      };
-    });
+          const hasLoadedLectures = Array.isArray(existingCh.lectures) && existingCh.lectures.length > 0;
+          return {
+            ...freshCh,
+            lectures: hasLoadedLectures ? existingCh.lectures : freshCh.lectures,
+            videoCount: Math.max(freshCh.videoCount || 0, existingCh.videoCount || 0),
+            notesCount: Math.max(freshCh.notesCount || 0, existingCh.notesCount || 0),
+            dppCount: Math.max(freshCh.dppCount || 0, existingCh.dppCount || 0),
+            isStarted: freshCh.isStarted || existingCh.isStarted
+          };
+        })
+      : (existingSub.chapters || []);
 
     return {
       ...freshSub,
-      chapters: mergedChapters.length > 0 ? mergedChapters : existingSub.chapters,
+      chapters: mergedChapters.length > 0 ? mergedChapters : (existingSub.chapters || []),
       lectureCount: Math.max(freshSub.lectureCount || 0, existingSub.lectureCount || 0),
       tagCount: Math.max(freshSub.tagCount || 0, existingSub.tagCount || 0),
       syllabusPdf: freshSub.syllabusPdf || existingSub.syllabusPdf
@@ -1396,6 +1398,12 @@ export default function PWPage() {
           return updated;
         });
 
+        setSelectedSubject(prev => {
+          if (!prev) return null;
+          const freshSub = subjects.find(s => s.id === prev.id || s.name === prev.name);
+          return freshSub || prev;
+        });
+
         setApiError(null);
         setRetryAttempt(0);
         setRetryCountdown(0);
@@ -1447,6 +1455,15 @@ export default function PWPage() {
                   idbSet("pw_cached_batches", updated).catch(() => {});
                 } catch {}
                 return updated;
+              });
+
+              setSelectedSubject(prev => {
+                if (!prev) return null;
+                const freshSub = directSubjects.find(s => s.id === prev.id || s.name === prev.name);
+                if (freshSub && (!freshSub.chapters || freshSub.chapters.length === 0) && prev.chapters && prev.chapters.length > 0) {
+                  return { ...freshSub, chapters: prev.chapters };
+                }
+                return freshSub || prev;
               });
 
               setApiError(null);
@@ -1633,13 +1650,19 @@ export default function PWPage() {
     }
   }, [currentBatch.subjects, selectedSubject, selectedBatchId]);
 
-  // Keep selected chapter in sync
+  // Keep selected chapter in sync when subject chapters update with more content
   useEffect(() => {
     if (selectedChapter && selectedSubject) {
       const freshCh = selectedSubject.chapters.find(c => c.id === selectedChapter.id);
-      if (freshCh && freshCh !== selectedChapter) setSelectedChapter(freshCh);
+      if (freshCh && freshCh !== selectedChapter) {
+        const freshHasLectures = Array.isArray(freshCh.lectures) && freshCh.lectures.length > 0;
+        const currentHasLectures = Array.isArray(selectedChapter.lectures) && selectedChapter.lectures.length > 0;
+        if (freshHasLectures || !currentHasLectures) {
+          setSelectedChapter(freshCh);
+        }
+      }
     }
-  }, [selectedSubject, selectedChapter]);
+  }, [selectedSubject]);
 
   // Open chapter & live fetch detailed lectures/DPPs with real PDFs
   const handleOpenChapter = async (ch: PWChapter) => {
@@ -1676,12 +1699,16 @@ export default function PWPage() {
           const updatedCh: PWChapter = {
             ...ch,
             lectures: data.lectures,
-            videoCount: data.totalLectures ?? ch.videoCount,
-            dppCount: data.totalDpps ?? ch.dppCount,
-            notesCount: data.totalNotes ?? ch.notesCount,
-            isStarted: (data.totalLectures > 0 || data.totalDpps > 0)
+            videoCount: (data.totalLectures !== undefined && data.totalLectures > 0) ? data.totalLectures : (data.lectures.length || ch.videoCount),
+            dppCount: (data.totalDpps !== undefined && data.totalDpps > 0) ? data.totalDpps : ((data.dpps?.length) || ch.dppCount),
+            notesCount: (data.totalNotes !== undefined && data.totalNotes > 0) ? data.totalNotes : ((data.notes?.length) || ch.notesCount),
+            isStarted: (data.totalLectures > 0 || data.totalDpps > 0 || data.lectures.length > 0)
           };
           setSelectedChapter(updatedCh);
+          setSelectedSubject(prev => prev ? {
+            ...prev,
+            chapters: prev.chapters.map(c => c.id === ch.id ? updatedCh : c)
+          } : null);
           setBatches(prev => prev.map(b => {
             if (b.id !== selectedBatchId) return b;
             return {

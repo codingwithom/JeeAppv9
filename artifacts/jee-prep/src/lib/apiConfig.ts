@@ -17,6 +17,15 @@ export function getBackendBaseUrl(): string {
         localStorage.setItem("api_server_url", savedOverride);
       } catch {}
     }
+    const hostname = window.location.hostname.toLowerCase();
+    const isLocal = hostname === "localhost" || hostname === "127.0.0.1" || hostname.includes("github.dev");
+    if (!isLocal && (savedOverride.includes("localhost") || savedOverride.includes("127.0.0.1") || savedOverride.includes("github.dev"))) {
+      savedOverride = "https://apis.stude.workers.dev";
+      try {
+        localStorage.setItem("jee_backend_api", savedOverride);
+        localStorage.setItem("api_server_url", savedOverride);
+      } catch {}
+    }
     return savedOverride.trim().replace(/\/$/, "");
   }
 

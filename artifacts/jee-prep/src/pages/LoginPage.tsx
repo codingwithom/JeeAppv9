@@ -185,7 +185,7 @@ export default function LoginPage() {
                   if (verifyData && verifyData.success) {
                     setCaptchaVerified(true);
                     setShowCaptchaModal(false);
-                    executeGoogleSignIn();
+                    executeGoogleSignIn(true);
                   } else {
                     setCaptchaVerified(false);
                     setCaptchaError(verifyData?.error || "CAPTCHA verification failed. Please try again.");
@@ -299,7 +299,12 @@ export default function LoginPage() {
     setShowCaptchaModal(true);
   };
 
-  const executeGoogleSignIn = async () => {
+  const executeGoogleSignIn = async (forceVerified = false) => {
+    if (!captchaVerified && !forceVerified) {
+      setError("Security check required. Please complete the reCAPTCHA first.");
+      setShowCaptchaModal(true);
+      return;
+    }
     try {
       setError("");
       setLoading(true);

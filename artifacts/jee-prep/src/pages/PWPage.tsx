@@ -761,7 +761,9 @@ async function fetchDirectChapterContents(batchId: string, subjectId: string, ch
 // Direct resilient client-side batch schedule loader
 async function fetchDirectBatchSchedule(batchId: string, monthKey: string) {
   const origin = "https://vidcloud.eu.org";
-  const [y, m] = (monthKey && /^\d{4}-\d{2}$/.test(monthKey) ? monthKey : "2026-10").split("-").map(Number);
+  const now = new Date();
+  const defMonth = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}`;
+  const [y, m] = (monthKey && /^\d{4}-\d{2}$/.test(monthKey) ? monthKey : defMonth).split("-").map(Number);
   const lastDay = new Date(y, m, 0).getDate();
   const sDate = `${String(y).padStart(4, "0")}-${String(m).padStart(2, "0")}-01`;
   const eDate = `${String(y).padStart(4, "0")}-${String(m).padStart(2, "0")}-${String(lastDay).padStart(2, "0")}`;
@@ -842,7 +844,7 @@ async function fetchDirectBatchSchedule(batchId: string, monthKey: string) {
 
   rawItems.forEach((item, idx) => {
     if (!item) return;
-    const details = item.bulkScheduleDetails || item.videoDetails || item.notesDetails || item;
+    const details = item.bulkScheduleDetails || item.videoDetails || item.notesDetails || item.dppQuizDetails || item.dppPDFDetails || item.dppDetails || item;
     const id = String(details._id || item._id || `${batchId}-${idx}`);
     if (seenIds.has(id)) return;
     seenIds.add(id);
@@ -859,20 +861,24 @@ async function fetchDirectBatchSchedule(batchId: string, monthKey: string) {
     }
 
     const topic = (details.topic || item.topic || details.name || "Live Class").trim();
-    const start = details.startTime || item.startTime || item.date || "";
+    const start = details.startTime || item.startTime || details.date || item.date || "";
     const end = details.endTime || item.endTime || "";
     const duration = details.videoDetails?.duration || details.duration || "1h 45m";
     const tag = (details.tag || item.tag || "").trim();
     const status = (details.status || item.status || "").trim();
-    const itemDate = item.date ? item.date.split("T")[0] : (details.date ? details.date.split("T")[0] : (details.startTime ? details.startTime.split("T")[0] : (start ? start.split("T")[0] : "")));
+    const itemDate = item.date ? item.date.split("T")[0] : (details.date ? details.date.split("T")[0] : (details.startTime ? details.startTime.split("T")[0] : (start && /^\d{4}-\d{2}-\d{2}/.test(start) ? start.split("T")[0] : "")));
 
     const isLive = tag.toLowerCase() === "live" || status.toLowerCase() === "live";
     const isEnded = tag.toLowerCase() === "ended" || status.toLowerCase() === "completed" || (!isLive && Boolean(end) && new Date(end).getTime() < Date.now());
     const isUpcoming = !isEnded && !isLive && (tag.toLowerCase() === "upcoming" || (Boolean(start) && new Date(start).getTime() > Date.now()));
 
+    const isNotes = Boolean(item.notesDetails || details.type === "NOTES" || item.type === "NOTES" || /notes|summary|only pdf/i.test(topic));
+    const isDpp = Boolean(item.dppQuizDetails || item.dppDetails || item.dppPDFDetails || details.type === "DPP" || item.type === "DPP" || item.type === "DPP_PDF" || item.type === "DPP_QUIZ" || /dpp|quiz/i.test(topic));
+    const finalType: "LECTURE" | "NOTES" | "DPP" = isDpp ? "DPP" : (isNotes ? "NOTES" : "LECTURE");
+
     list.push({
       id,
-      type: "LECTURE",
+      type: finalType,
       subject: rawSubName,
       rawSubject: rawSubName,
       teacher,
@@ -1923,6 +1929,41 @@ export default function PWPage() {
     }
     return (todaySchedule.length > 0 ? todaySchedule : dateSchedule).slice(0, 4);
   }, [allBatchSchedules, todaySchedule, dateSchedule, todayIstDate]);
+
+  // Latest active schedule date helper (e.g. for weekends or holidays)
+  const latestActiveScheduleDate = useMemo(() => {
+    if (availableScheduleDates.length === 0) return null;
+    const pastOrToday = availableScheduleDates.filter(d => d <= (selectedScheduleDate || todayIstDate));
+    return pastOrToday.length > 0 ? pastOrToday[pastOrToday.length - 1] : availableScheduleDates[availableScheduleDates.length - 1];
+  }, [availableScheduleDates, selectedScheduleDate, todayIstDate]);
+
+  // Weekday Quick Navigation Strip (Mon - Sun for currently viewed week)
+  const currentWeekDays = useMemo(() => {
+    const base = new Date((selectedScheduleDate || todayIstDate) + "T00:00:00Z");
+    const day = base.getUTCDay(); // 0 is Sunday, 1 is Monday
+    const diffToMonday = (day === 0 ? -6 : 1) - day;
+    const monday = new Date(base);
+    monday.setUTCDate(base.getUTCDate() + diffToMonday);
+
+    const days = [];
+    const dayNames = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+    for (let i = 0; i < 7; i++) {
+      const d = new Date(monday);
+      d.setUTCDate(monday.getUTCDate() + i);
+      const dateStr = d.toISOString().split("T")[0];
+      const classCount = allBatchSchedules.filter(s => s.date === dateStr).length;
+      days.push({
+        dateStr,
+        dayName: dayNames[i],
+        dayNum: d.getUTCDate(),
+        classCount,
+        hasClasses: classCount > 0,
+        isToday: dateStr === todayIstDate,
+        isSelected: dateStr === selectedScheduleDate
+      });
+    }
+    return days;
+  }, [selectedScheduleDate, todayIstDate, allBatchSchedules]);
 
   // Month Calendar Days Grid Calculation (Monday to Sunday)
   const calendarDays = useMemo(() => {
@@ -3098,6 +3139,35 @@ export default function PWPage() {
                     </div>
                   </div>
 
+                  {/* Weekday Quick Navigation Strip */}
+                  <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
+                    {currentWeekDays.map(d => (
+                      <button
+                        key={d.dateStr}
+                        onClick={() => setSelectedScheduleDate(d.dateStr)}
+                        className={`flex flex-col items-center justify-center min-w-[56px] sm:min-w-[62px] py-2 px-2.5 rounded-xl text-center border transition-all cursor-pointer ${
+                          d.isSelected
+                            ? "bg-amber-500 text-white border-amber-500 shadow-xs font-bold"
+                            : d.isToday
+                            ? "bg-amber-50 dark:bg-amber-950/30 border-amber-300 dark:border-amber-700 text-amber-700 dark:text-amber-300 font-semibold"
+                            : "bg-white dark:bg-zinc-900 border-slate-200 dark:border-zinc-800 text-slate-700 dark:text-zinc-300 hover:border-slate-300 dark:hover:border-zinc-700"
+                        }`}
+                      >
+                        <span className="text-[10px] uppercase tracking-wider font-semibold opacity-80">{d.dayName}</span>
+                        <span className="text-sm sm:text-base font-extrabold">{d.dayNum}</span>
+                        {d.hasClasses ? (
+                          <span className={`text-[10px] mt-0.5 px-1.5 py-0.2 rounded-full font-medium ${
+                            d.isSelected ? "bg-white/20 text-white" : "bg-amber-100 dark:bg-amber-900/50 text-amber-700 dark:text-amber-300"
+                          }`}>
+                            {d.classCount} {d.classCount === 1 ? "class" : "classes"}
+                          </span>
+                        ) : (
+                          <span className="text-[9px] mt-0.5 text-slate-400 dark:text-zinc-500">Off</span>
+                        )}
+                      </button>
+                    ))}
+                  </div>
+
                   {/* Schedule Timeline Feed */}
                   {isLoadingSchedule ? (
                     /* Skeleton animation matching frame 00:12 */
@@ -3107,8 +3177,28 @@ export default function PWPage() {
                       <div className="h-32 rounded-2xl bg-slate-200/70 dark:bg-zinc-800/80 animate-pulse border border-slate-200/50 dark:border-zinc-800/80" />
                     </div>
                   ) : groupedSchedule.length === 0 ? (
-                    <div className="p-12 text-center rounded-2xl border border-dashed border-slate-300 dark:border-zinc-800 text-slate-500 dark:text-zinc-400 bg-white dark:bg-zinc-900/30">
-                      No classes scheduled for {selectedScheduleDate}.
+                    <div className="p-8 sm:p-10 text-center rounded-2xl border border-dashed border-slate-300 dark:border-zinc-800 text-slate-500 dark:text-zinc-400 bg-white dark:bg-zinc-900/30 space-y-3">
+                      <div className="w-12 h-12 rounded-full bg-amber-50 dark:bg-amber-950/40 text-amber-500 flex items-center justify-center mx-auto text-xl">
+                        📅
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-slate-800 dark:text-zinc-200">
+                          No Classes Scheduled for {selectedScheduleDate}
+                        </h4>
+                        <p className="text-xs text-slate-500 dark:text-zinc-400 mt-1">
+                          This is a rest or self-study day for {currentBatch.name}.
+                        </p>
+                      </div>
+                      {latestActiveScheduleDate && latestActiveScheduleDate !== selectedScheduleDate && (
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          onClick={() => setSelectedScheduleDate(latestActiveScheduleDate)}
+                          className="text-xs font-semibold gap-1.5 border-amber-500/30 text-amber-700 dark:text-amber-300 hover:bg-amber-500/10 cursor-pointer"
+                        >
+                          <span>👉 View Timetable for {latestActiveScheduleDate}</span>
+                        </Button>
+                      )}
                     </div>
                   ) : (
                     groupedSchedule.map(({ time, items }) => (

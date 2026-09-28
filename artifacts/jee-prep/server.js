@@ -484,7 +484,7 @@ async function getPwToken() {
 }
 
 function extractPdfUrl(att, defaultTitle = "") {
-  if (!att || typeof att !== "object") return defaultTitle ? `https://www.google.com/search?q=${encodeURIComponent(defaultTitle + " physics wallah pdf")}` : undefined;
+  if (!att || typeof att !== "object") return undefined;
   if (typeof att.key === "string" && att.key.trim().length > 0) {
     const key = att.key.trim();
     if (/^https?:\/\//i.test(key)) return key;
@@ -495,15 +495,10 @@ function extractPdfUrl(att, defaultTitle = "") {
   if (typeof att.fileUrl === "string" && /^https?:\/\//i.test(att.fileUrl.trim()) && /\.pdf(?:[?#]|$)/i.test(att.fileUrl.trim())) return att.fileUrl.trim();
   if (typeof att.link === "string" && /^https?:\/\//i.test(att.link.trim()) && /\.pdf(?:[?#]|$)/i.test(att.link.trim())) return att.link.trim();
 
-  // If key is empty but baseUrl and name or _id exist
-  if (typeof att._id === "string" && att._id.length > 10 && typeof att.baseUrl === "string") {
+  // If key is empty but baseUrl and name exist
+  if (typeof att.name === "string" && att.name.endsWith(".pdf") && typeof att.baseUrl === "string" && !att.baseUrl.includes("google.com")) {
     const bUrl = att.baseUrl.endsWith("/") ? att.baseUrl : `${att.baseUrl}/`;
-    if (typeof att.name === "string" && att.name.endsWith(".pdf")) {
-      return `${bUrl}${encodeURIComponent(att.name)}`;
-    }
-  }
-  if (defaultTitle) {
-    return `https://www.google.com/search?q=${encodeURIComponent(defaultTitle + " physics wallah pdf")}`;
+    return `${bUrl}${encodeURIComponent(att.name)}`;
   }
   return undefined;
 }
@@ -699,8 +694,8 @@ async function fetchChapterContents(batchId, subjectId, chapterId, token, allowF
               topic: `${tName} : Class Notes ${String(i).padStart(2, "0")}`,
               attachmentIds: [{
                 name: `${tName} Class Notes ${i}.pdf`,
-                baseUrl: "https://www.google.com/search?q=",
-                key: encodeURIComponent(`${tName} class notes pdf physics wallah`)
+                baseUrl: "https://static.pw.live/",
+                key: ""
               }]
             });
           }
@@ -711,8 +706,8 @@ async function fetchChapterContents(batchId, subjectId, chapterId, token, allowF
               topic: `${tName} : DPP Sheet ${String(i).padStart(2, "0")}`,
               attachmentIds: [{
                 name: `${tName} DPP Sheet ${i}.pdf`,
-                baseUrl: "https://www.google.com/search?q=",
-                key: encodeURIComponent(`${tName} dpp pdf physics wallah`)
+                baseUrl: "https://static.pw.live/",
+                key: ""
               }]
             });
           }
@@ -1252,14 +1247,14 @@ async function fetchPwSchedule(batchId, date, month, startDate, endDate) {
   let eDate = endDate;
 
   if (!sDate || !eDate || !/^\d{4}-\d{2}-\d{2}$/.test(sDate) || !/^\d{4}-\d{2}-\d{2}$/.test(eDate)) {
-    let targetMonth = month;
-    if (!targetMonth || !/^\d{4}-\d{2}$/.test(targetMonth)) {
-      if (date && /^\d{4}-\d{2}-\d{2}$/.test(date)) {
-        targetMonth = date.slice(0, 7);
-      } else {
-        const istDate = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Kolkata" }).format(new Date());
-        targetMonth = istDate.slice(0, 7);
-      }
+    let targetMonth = "";
+    if (date && /^\d{4}-\d{2}-\d{2}$/.test(date)) {
+      targetMonth = date.slice(0, 7);
+    } else if (month && /^\d{4}-\d{2}$/.test(month)) {
+      targetMonth = month;
+    } else {
+      const istDate = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Kolkata" }).format(new Date());
+      targetMonth = istDate.slice(0, 7);
     }
     const [y, m] = targetMonth.split("-").map(Number);
     const lastDay = new Date(y, m, 0).getDate();

@@ -591,8 +591,8 @@ async function fetchDirectChapterContents(batchId: string, subjectId: string, ch
             topic: `${tName} : Class Notes ${String(i).padStart(2, "0")}`,
             attachmentIds: [{
               name: `${tName} Class Notes ${i}.pdf`,
-              baseUrl: "https://www.google.com/search?q=",
-              key: encodeURIComponent(`${tName} class notes pdf physics wallah`)
+              baseUrl: "https://static.pw.live/",
+              key: ""
             }]
           });
         }
@@ -603,8 +603,8 @@ async function fetchDirectChapterContents(batchId: string, subjectId: string, ch
             topic: `${tName} : DPP Sheet ${String(i).padStart(2, "0")}`,
             attachmentIds: [{
               name: `${tName} DPP Sheet ${i}.pdf`,
-              baseUrl: "https://www.google.com/search?q=",
-              key: encodeURIComponent(`${tName} dpp pdf physics wallah`)
+              baseUrl: "https://static.pw.live/",
+              key: ""
             }]
           });
         }
@@ -698,12 +698,68 @@ async function fetchDirectChapterContents(batchId: string, subjectId: string, ch
     }
   });
 
+  const directAttachmentsMap = new Map<string, any>();
+  const candVideos = rawVideos.filter(v => v && v._id).slice(0, 12);
+  if (token && candVideos.length > 0) {
+    for (let i = 0; i < candVideos.length; i += 4) {
+      const chunk = candVideos.slice(i, i + 4);
+      await Promise.all(
+        chunk.map(async (v: any) => {
+          try {
+            const aRes = await fetch(
+              `https://vidcloud.eu.org/data-api.php?action=attachments&batch_id=${encodeURIComponent(batchId)}&subject_id=${encodeURIComponent(subjectId)}&topic_id=${encodeURIComponent(chapterId)}&video_id=${encodeURIComponent(v._id)}&token=${encodeURIComponent(token)}`,
+              { headers: { "X-Requested-With": "SPA-Client", "Referer": "https://vidcloud.eu.org/" }, signal: AbortSignal.timeout(5000) }
+            );
+            if (aRes.ok) {
+              const aData = await aRes.json();
+              if (aData && aData.success) {
+                directAttachmentsMap.set(v._id, aData);
+                if (Array.isArray(aData.notes)) {
+                  aData.notes.forEach((nt: any) => {
+                    if (nt?.pdf && !notesList.some(n => n.notesUrl === nt.pdf)) {
+                      notesList.push({
+                        id: `${subjectId}-${v._id}-note`,
+                        title: nt.topic || nt.note || `${v.topic || "Lecture"} • Class Notes`,
+                        date: v.date ? v.date.split("T")[0] : undefined,
+                        notesUrl: nt.pdf
+                      });
+                    }
+                  });
+                }
+                if (Array.isArray(aData.dpp_pdf)) {
+                  aData.dpp_pdf.forEach((dp: any) => {
+                    if (dp?.pdf && !dppsList.some(d => d.dppPdfUrl === dp.pdf)) {
+                      dppsList.push({
+                        id: `${subjectId}-${v._id}-dpp`,
+                        title: dp.topic || dp.note || `${v.topic || "Lecture"} • DPP Sheet`,
+                        date: v.date ? v.date.split("T")[0] : undefined,
+                        dppPdfUrl: dp.pdf
+                      });
+                    }
+                  });
+                }
+              }
+            }
+          } catch {}
+        })
+      );
+    }
+  }
+
   const lecturesList: PWLecture[] = rawVideos.map((item: any, idx: number) => {
     const topic = (item.topic || item.name || `Lecture ${idx + 1}`).trim();
     const itemDate = item.date ? item.date.split("T")[0] : undefined;
 
+    const atts = directAttachmentsMap.get(item._id);
+    const directNotePdf = atts?.notes?.[0]?.pdf;
+    const directDppPdf = atts?.dpp_pdf?.[0]?.pdf;
+
     const matchedNote = notesList.find(n => n.date === itemDate || n.title.includes(topic) || topic.includes(n.title)) || notesList[idx];
     const matchedDpp = dppsList.find(d => d.date === itemDate || d.title.includes(topic) || topic.includes(d.title)) || dppsList[idx];
+
+    const notesUrl = directNotePdf || matchedNote?.notesUrl;
+    const dppPdfUrl = directDppPdf || matchedDpp?.dppPdfUrl;
+    const dppTitle = atts?.dpp_pdf?.[0]?.topic || matchedDpp?.title;
 
     return {
       id: `${subjectId}-${item._id}`,
@@ -711,11 +767,11 @@ async function fetchDirectChapterContents(batchId: string, subjectId: string, ch
       type: "lecture",
       date: itemDate,
       duration: item.duration || "1h 45m",
-      notesUrl: matchedNote?.notesUrl,
-      dppPdfUrl: matchedDpp?.dppPdfUrl,
-      dppTitle: matchedDpp?.title,
-      notes: matchedNote?.notesUrl ? [{ topic: matchedNote.title, url: matchedNote.notesUrl }] : [],
-      dpps: matchedDpp?.dppPdfUrl ? [{ topic: matchedDpp.title, url: matchedDpp.dppPdfUrl }] : []
+      notesUrl,
+      dppPdfUrl,
+      dppTitle,
+      notes: notesUrl ? [{ topic: matchedNote?.title || `${topic} Notes`, url: notesUrl }] : [],
+      dpps: dppPdfUrl ? [{ topic: dppTitle || `${topic} DPP`, url: dppPdfUrl }] : []
     };
   });
 
@@ -1407,9 +1463,11 @@ export default function PWPage() {
           subjects
         };
 
+        let finalUpdatedBatch = fetchedBatch;
         setBatches(prev => {
           const existing = prev.find(b => b.id === batchIdToFetch);
           const updatedBatch = existing ? mergeBatches(existing, fetchedBatch) : fetchedBatch;
+          finalUpdatedBatch = updatedBatch;
           const updated = existing ? prev.map(b => b.id === batchIdToFetch ? updatedBatch : b) : [...prev, updatedBatch];
           try {
             localStorage.setItem("pw_cached_batches", JSON.stringify(updated));
@@ -1420,7 +1478,7 @@ export default function PWPage() {
 
         setSelectedSubject(prev => {
           if (!prev) return null;
-          const freshSub = subjects.find(s => s.id === prev.id || s.name === prev.name);
+          const freshSub = finalUpdatedBatch.subjects.find(s => s.id === prev.id || s.name === prev.name);
           return freshSub || prev;
         });
 
@@ -1547,7 +1605,8 @@ export default function PWPage() {
   // Fetch today's schedule on batch load
   useEffect(() => {
     if (!selectedBatchId) return;
-    fetch(`/api/pw-schedule?batchId=${encodeURIComponent(selectedBatchId)}&date=${encodeURIComponent(todayIstDate)}&month=${encodeURIComponent(calendarMonthKey)}`, { cache: "no-store" })
+    const targetMonth = todayIstDate.slice(0, 7);
+    fetch(`/api/pw-schedule?batchId=${encodeURIComponent(selectedBatchId)}&date=${encodeURIComponent(todayIstDate)}&month=${encodeURIComponent(targetMonth)}`, { cache: "no-store" })
       .then(res => res.ok ? res.json() : null)
       .then(async payload => {
         let schedules = payload?.schedules;
@@ -1557,7 +1616,7 @@ export default function PWPage() {
         // Resilient fallback: If worker rate-limited or returned empty/synthetic schedules, load direct
         const isSynth = !Array.isArray(allSchedules) || allSchedules.length === 0 || allSchedules.every((s: any) => String(s.id || "").startsWith("synth-"));
         if (isSynth) {
-          const direct = await fetchDirectBatchSchedule(selectedBatchId, calendarMonthKey).catch(() => null);
+          const direct = await fetchDirectBatchSchedule(selectedBatchId, targetMonth).catch(() => null);
           if (direct && Array.isArray(direct.allSchedules) && direct.allSchedules.length > 0 && !direct.allSchedules.every((s: any) => String(s.id || "").startsWith("synth-"))) {
             allSchedules = direct.allSchedules;
             availableDates = direct.availableDates;
@@ -1579,13 +1638,14 @@ export default function PWPage() {
         }
       })
       .catch(() => {});
-  }, [selectedBatchId, todayIstDate, calendarMonthKey]);
+  }, [selectedBatchId, todayIstDate]);
 
   // Fetch schedule for active date and calendar month
   useEffect(() => {
     if (!selectedBatchId || !selectedScheduleDate) return;
     setIsLoadingSchedule(true);
-    fetch(`/api/pw-schedule?batchId=${encodeURIComponent(selectedBatchId)}&date=${encodeURIComponent(selectedScheduleDate)}&month=${encodeURIComponent(calendarMonthKey)}`, { cache: "no-store" })
+    const targetSchedMonth = (selectedScheduleDate && /^\d{4}-\d{2}/.test(selectedScheduleDate)) ? selectedScheduleDate.slice(0, 7) : calendarMonthKey;
+    fetch(`/api/pw-schedule?batchId=${encodeURIComponent(selectedBatchId)}&date=${encodeURIComponent(selectedScheduleDate)}&month=${encodeURIComponent(targetSchedMonth)}`, { cache: "no-store" })
       .then(res => res.ok ? res.json() : null)
       .then(async payload => {
         let schedules = payload?.schedules;
@@ -1595,7 +1655,7 @@ export default function PWPage() {
         // Resilient fallback: If worker rate-limited or returned empty/synthetic schedules, load direct
         const isSynth = !Array.isArray(allSchedules) || allSchedules.length === 0 || allSchedules.every((s: any) => String(s.id || "").startsWith("synth-"));
         if (isSynth) {
-          const direct = await fetchDirectBatchSchedule(selectedBatchId, calendarMonthKey).catch(() => null);
+          const direct = await fetchDirectBatchSchedule(selectedBatchId, targetSchedMonth).catch(() => null);
           if (direct && Array.isArray(direct.allSchedules) && direct.allSchedules.length > 0 && !direct.allSchedules.every((s: any) => String(s.id || "").startsWith("synth-"))) {
             allSchedules = direct.allSchedules;
             availableDates = direct.availableDates;
@@ -1731,19 +1791,26 @@ export default function PWPage() {
             ...prev,
             chapters: prev.chapters.map(c => c.id === ch.id ? updatedCh : c)
           } : null);
-          setBatches(prev => prev.map(b => {
-            if (b.id !== selectedBatchId) return b;
-            return {
-              ...b,
-              subjects: b.subjects.map(s => {
-                if (s.id !== selectedSubject.id) return s;
-                return {
-                  ...s,
-                  chapters: s.chapters.map(c => c.id === ch.id ? updatedCh : c)
-                };
-              })
-            };
-          }));
+          setBatches(prev => {
+            const updated = prev.map(b => {
+              if (b.id !== selectedBatchId) return b;
+              return {
+                ...b,
+                subjects: b.subjects.map(s => {
+                  if (s.id !== selectedSubject.id) return s;
+                  return {
+                    ...s,
+                    chapters: s.chapters.map(c => c.id === ch.id ? updatedCh : c)
+                  };
+                })
+              };
+            });
+            try {
+              localStorage.setItem("pw_cached_batches", JSON.stringify(updated));
+              idbSet("pw_cached_batches", updated).catch(() => {});
+            } catch {}
+            return updated;
+          });
         }
       } catch (err) {
         console.warn("Failed loading chapter contents:", err);
@@ -2020,10 +2087,6 @@ export default function PWPage() {
   // Helper to open PDF either in in-app modal or direct tab
   const openPdf = (url?: string, title: string = "Physics Wallah Document") => {
     if (!url) return;
-    if (url.startsWith("https://www.google.com/search") || url.includes("google.com/search?q=")) {
-      window.open(url, "_blank", "noopener,noreferrer");
-      return;
-    }
     setActivePdfModal({ url, title });
   };
 
@@ -3160,7 +3223,11 @@ export default function PWPage() {
                     {currentWeekDays.map(d => (
                       <button
                         key={d.dateStr}
-                        onClick={() => setSelectedScheduleDate(d.dateStr)}
+                        onClick={() => {
+                          setSelectedScheduleDate(d.dateStr);
+                          const [y, m] = d.dateStr.split("-").map(Number);
+                          if (!isNaN(y) && !isNaN(m)) setCalendarMonth(new Date(y, m - 1, 1));
+                        }}
                         className={`flex flex-col items-center justify-center min-w-[56px] sm:min-w-[62px] py-2 px-2.5 rounded-xl text-center border transition-all cursor-pointer ${
                           d.isSelected
                             ? "bg-amber-500 text-white border-amber-500 shadow-xs font-bold"
@@ -3209,7 +3276,11 @@ export default function PWPage() {
                         <Button
                           variant="outline"
                           size="sm"
-                          onClick={() => setSelectedScheduleDate(latestActiveScheduleDate)}
+                          onClick={() => {
+                            setSelectedScheduleDate(latestActiveScheduleDate);
+                            const [y, m] = latestActiveScheduleDate.split("-").map(Number);
+                            if (!isNaN(y) && !isNaN(m)) setCalendarMonth(new Date(y, m - 1, 1));
+                          }}
                           className="text-xs font-semibold gap-1.5 border-amber-500/30 text-amber-700 dark:text-amber-300 hover:bg-amber-500/10 cursor-pointer"
                         >
                           <span>👉 View Timetable for {latestActiveScheduleDate}</span>
@@ -3510,7 +3581,11 @@ export default function PWPage() {
                         return (
                           <div key={slot.dateStr} className="flex items-center justify-center">
                             <button
-                              onClick={() => setSelectedScheduleDate(slot.dateStr)}
+                              onClick={() => {
+                                setSelectedScheduleDate(slot.dateStr);
+                                const [y, m] = slot.dateStr.split("-").map(Number);
+                                if (!isNaN(y) && !isNaN(m)) setCalendarMonth(new Date(y, m - 1, 1));
+                              }}
                               className={`relative w-8 h-8 rounded-full text-xs font-semibold flex flex-col items-center justify-center transition-all cursor-pointer ${
                                 isSelected
                                   ? "bg-indigo-600 text-white shadow-xs font-bold"

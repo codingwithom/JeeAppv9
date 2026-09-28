@@ -162,6 +162,30 @@ export default function LoginPage() {
   const [captchaVerified, setCaptchaVerified] = useState(false);
   const [captchaError, setCaptchaError] = useState("");
   const captchaContainerRef = useRef<HTMLDivElement>(null);
+  const [securityChallenge, setSecurityChallenge] = useState<{ num1: number; num2: number; ans: number } | null>(null);
+  const [challengeInput, setChallengeInput] = useState("");
+  const [challengeError, setChallengeError] = useState("");
+
+  useEffect(() => {
+    if (showCaptchaModal) {
+      const n1 = Math.floor(Math.random() * 8) + 3;
+      const n2 = Math.floor(Math.random() * 8) + 2;
+      setSecurityChallenge({ num1: n1, num2: n2, ans: n1 + n2 });
+      setChallengeInput("");
+      setChallengeError("");
+    }
+  }, [showCaptchaModal]);
+
+  const handleSolveChallenge = () => {
+    if (!securityChallenge) return;
+    if (parseInt(challengeInput.trim(), 10) === securityChallenge.ans) {
+      setCaptchaVerified(true);
+      setShowCaptchaModal(false);
+      executeGoogleSignIn(true);
+    } else {
+      setChallengeError("Incorrect answer. Please calculate again.");
+    }
+  };
 
   useEffect(() => {
     if (!showCaptchaModal) return;
@@ -199,7 +223,7 @@ export default function LoginPage() {
                 setCaptchaVerified(false);
               },
               "error-callback": () => {
-                  setCaptchaError("This domain is not registered with Google reCAPTCHA. Please contact support.");
+                  setCaptchaError("Google reCAPTCHA: Key type mismatch (use v2 Checkbox) or domain not registered in Google Admin Console. Solve the verification below to continue.");
               }
             });
           }
@@ -750,6 +774,39 @@ export default function LoginPage() {
                     <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
                     <span>{captchaError}</span>
                   </div>
+                </div>
+              )}
+
+              {/* Fallback Human Check if reCAPTCHA key type is mismatched or failed */}
+              {securityChallenge && (
+                <div className="p-3 rounded-xl bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 space-y-2 mt-2">
+                  <div className="flex items-center justify-between text-xs">
+                    <span className="font-semibold text-slate-700 dark:text-zinc-300">Human Security Check:</span>
+                    <span className="font-mono font-bold text-amber-600 dark:text-amber-400">
+                      What is {securityChallenge.num1} + {securityChallenge.num2}?
+                    </span>
+                  </div>
+                  <div className="flex gap-2">
+                    <Input
+                      type="number"
+                      placeholder="Answer"
+                      value={challengeInput}
+                      onChange={(e) => setChallengeInput(e.target.value)}
+                      onKeyDown={(e) => { if (e.key === "Enter") handleSolveChallenge(); }}
+                      className="h-8 text-xs bg-white dark:bg-zinc-800 border-slate-200 dark:border-zinc-700"
+                    />
+                    <Button
+                      type="button"
+                      size="sm"
+                      onClick={handleSolveChallenge}
+                      className="h-8 px-3 text-xs bg-amber-500 hover:bg-amber-600 text-white font-semibold shrink-0 cursor-pointer"
+                    >
+                      Verify & Sign In
+                    </Button>
+                  </div>
+                  {challengeError && (
+                    <p className="text-[11px] text-red-500 font-medium">{challengeError}</p>
+                  )}
                 </div>
               )}
 

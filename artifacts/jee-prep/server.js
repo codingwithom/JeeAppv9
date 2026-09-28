@@ -357,9 +357,59 @@ let pwTokenMemoryCache = { token: "", expiresAt: 0 };
 const PW_METADATA_TTL = 60 * 60 * 1000; // 1 hour cache
 const PW_CATALOG_TTL = 30 * 60 * 1000;  // 30 min cache
 const PW_CHAPTER_TTL = 30 * 60 * 1000;  // 30 min cache
+const PW_THOR_ORIGIN = "https://pwthor.live";
 const PW_DETAILS_ORIGIN = "https://vidcloud.eu.org";
 const PW_OFFICIAL_API = "https://api.penpencil.co";
 const PW_CATALOG_URL = "https://studystark.github.io/batches/batches.json";
+
+const PW_THOR_HEADERS = {
+  "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
+  "Accept": "application/json, text/plain, */*",
+  "Referer": "https://pwthor.live/study/batches",
+  "Origin": "https://pwthor.live",
+};
+
+async function fetchCatalogFromPwThor(searchQuery = "", page = 1) {
+  try {
+    const url = `${PW_THOR_ORIGIN}/api/AllBatches?page=${page}${searchQuery ? `&search=${encodeURIComponent(searchQuery)}` : ""}`;
+    const res = await fetch(url, {
+      headers: PW_THOR_HEADERS,
+      signal: AbortSignal.timeout(6000),
+    });
+    if (!res.ok) {
+      console.warn(`[PW Engine]: pwthor.live responded with status ${res.status}`);
+      return null;
+    }
+    const contentType = res.headers.get("content-type") || "";
+    if (!contentType.includes("json")) {
+      console.warn("[PW Engine]: pwthor.live returned non-JSON challenge, falling back to secondary source.");
+      return null;
+    }
+    const data = await res.json();
+    let rawList = [];
+    if (Array.isArray(data)) rawList = data;
+    else if (Array.isArray(data?.data)) rawList = data.data;
+    else if (Array.isArray(data?.batches)) rawList = data.batches;
+    else if (Array.isArray(data?.results)) rawList = data.results;
+
+    if (rawList.length > 0) {
+      return rawList.map((b, idx) => ({
+        batch_id: String(b.batch_id || b._id || b.id || `thor-${idx}`),
+        name: String(b.name || b.batch_name || b.title || "Physics Wallah Batch"),
+        byName: String(b.byName || b.description || b.target || "PW Preparation"),
+        exam: String(b.exam || (Array.isArray(b.exams) ? b.exams.join(", ") : "JEE")),
+        class: String(b.class || b.standard || ""),
+        language: String(b.language || "Hinglish"),
+        fee: b.fee || b.price || "Free",
+        previewImage: b.previewImage || b.image || b.thumbnail || undefined
+      }));
+    }
+    return null;
+  } catch (err) {
+    console.warn(`[PW Engine]: pwthor.live fetch failed (${err.message}), cascading to secondary sources.`);
+    return null;
+  }
+}
 
 const POPULAR_PW_BATCHES = [
   {
@@ -421,10 +471,14 @@ const POPULAR_PW_BATCHES = [
   }
 ];
 
+const FALLBACK_PW_COOKIES = "access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3ODg2NjYyODMsImV4cCI6MTc4OTI3MTA4My4wMjUsImRhdGEiOnsiX2lkIjoiNjhkZGZiZjAwNTkwMWE2ZDlhMTI5ZGI1IiwidXNlcm5hbWUiOiI3OTA2NTIxODQxIn19.f2XuaPhdG1vbiI6yjFawQioI1IZWiZtOTN1ZTk1ZmFinZQ2OGE3OWQxODk1LCJ3ZWJzaXRlIjoiaG95c21jc3dhbGxhc5Jb201LCJvYWI1IjoiUGh5c2ljc3dhbGxhc39LCJyb2xlcyI6WyI1YjI3YmQ5NjU4NDJmOTUwYTc3OGM2ZWYiXSwiY291bnRyeUdyb3VwIjoiSU4iLCJvbmVsb2xlcyI6W10sInR5cGUiOiJVU0VSIn0sImp0aSI6Ijd6dG5rbE0zUmQyMmE2e1Q2cUZNT1FfNjhkZGZiZjAwNTkwMWE3ZDlhMTI5ZGI1In0.OEVxivd2_L6zfrZLLTOFYPoiQsmb1t_7m889gyX5oeE; PHPSESSID=14dvi03b58pug1144tioqed92b; stark_cid=f96ea578454552575ec787e1e7c9eec200ea202aae6ae1daaadbd245d3d307b79; stark_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrzkiOiI1OUQtQkEyLTgyRS0zRDItQTk2Iiwiy2xpZW50X2lkIjoiZ2kzZWE1Nzg0NTQ1NTI1NzVlYzc4N2UxZTdjOWVlYzIwMGVhMjAyYWF1NmF1MWRhYWFkYmQyNDVkM2QzMDdiNzlSISImlhdCI6MTc5MDMxNjUzNSIwZXhwIjoxNzkxNDAYOTM1fQ.gieu1Snd5WgiM8VByojkwmuq0rcNfON52CkuEyzFofs";
+
 const FALLBACK_PW_TOKEN = "Qd2wfhzRoi5eQdoITwpbNKPMdMTNSs37YUjvj0rSb5sNyhMiNwdYRCmgiTbUdxAi+3Z7i89+91g8EkanxDbtI7cmrTLGscI/Z8dG2Cew4sFpqwjSQ/9S9EhvAe2afORvhjB33bPuBHZ+PSiqWiKn5g3OtjClufefx3LhX4/vrObplc62nePs6kVOBOqSuhRFsgYp2ADuY9q5qQkR3RIVErL3Uok8bxFIxiIu5MHHACj+ebCPJCICJ+xkIKE5+z5Eun0OOTCicwsgOH3e+nWkYk6iiGffevfsWmCsNSY/XnDHrJ4dxia1r/YE8gckIVSKNod6PfMozz9GtDhIKoymS5XL+HeFPDis7AGZTOYjyUFtPIpNUPu00YzyJUya0xx2ygz2Aeub8Iugv4/Lz74hLyuTLyWbXhRdKqBpXqQy5FIU4J054vpivsbw+KE5Nr0OTrAUduY+URQiaWO44JNcCDuCtpCT6XjKCivCL3TyNkJCLSpnaguZ2o79/xE0B7SreZFm1v9JEFr/O3BZaBZSPk/MS5KmBSp6m1qtOMWw4s6EU0mfXZetjb718j5mZSY/X1o/gTrxQgA38pMu+1YEmZ02BkPispssqGZhWv7EGm3r9Mq9Fulf9s8ggsssqXxQuSwCkCN8pGde6HytkhzQZ14+IMizQ3/r1slZYuKRNp5nMBC2Lg6oopVD4yYHQOpN2v7pgq/JLgeo5W5sqZ6M7OrJrrkY320YvrcGpFmUX3XYbzky7dIwVNUQMXmI0HFk1q4rccugBeeLRYfS8JEBrA==";
 
 const PW_HEADERS = {
   "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
+  "Referer": "https://vidcloud.eu.org/",
+  "Origin": "https://vidcloud.eu.org",
   "Accept": "application/json, text/plain, */*",
 };
 
@@ -433,7 +487,7 @@ function getPwRequestHeaders(token) {
   return {
     ...PW_HEADERS,
     "Authorization": `Bearer ${activeToken}`,
-    "Cookie": `auth_token=${activeToken}`
+    "Cookie": `auth_token=${activeToken}; ${FALLBACK_PW_COOKIES}`
   };
 }
 
@@ -534,25 +588,50 @@ async function fetchChapterContents(batchId, subjectId, chapterId, token, allowF
   if (cached && cached.expiresAt > Date.now()) return cached.data;
 
   try {
-    const reqHeaders = getPwRequestHeaders(token);
-    const [vRes, nRes, dRes] = await Promise.all([
-      fetch(
-        `${PW_DETAILS_ORIGIN}/api/v2/batches/${encodeURIComponent(batchId)}/subject/${encodeURIComponent(subjectId)}/contents?page=1&contentType=videos&tag=${encodeURIComponent(chapterId)}`,
-        { headers: reqHeaders, signal: AbortSignal.timeout(12000) }
-      ).then(r => r.ok ? r.json() : { data: [] }).catch(() => ({ data: [] })),
-      fetch(
-        `${PW_DETAILS_ORIGIN}/api/v2/batches/${encodeURIComponent(batchId)}/subject/${encodeURIComponent(subjectId)}/contents?page=1&contentType=notes&tag=${encodeURIComponent(chapterId)}`,
-        { headers: reqHeaders, signal: AbortSignal.timeout(12000) }
-      ).then(r => r.ok ? r.json() : { data: [] }).catch(() => ({ data: [] })),
-      fetch(
-        `${PW_DETAILS_ORIGIN}/api/v2/batches/${encodeURIComponent(batchId)}/subject/${encodeURIComponent(subjectId)}/contents?page=1&contentType=DppNotes&tag=${encodeURIComponent(chapterId)}`,
-        { headers: reqHeaders, signal: AbortSignal.timeout(12000) }
-      ).then(r => r.ok ? r.json() : { data: [] }).catch(() => ({ data: [] }))
-    ]);
+    let rawVideos = [];
+    let rawNotes = [];
+    let rawDpps = [];
 
-    let rawVideos = Array.isArray(vRes.data) ? [...vRes.data] : [];
-    let rawNotes = Array.isArray(nRes.data) ? [...nRes.data] : [];
-    let rawDpps = Array.isArray(dRes.data) ? [...dRes.data] : [];
+    // Priority 1: Try fetching chapter contents from pwthor.live
+    try {
+      const thorUrl = `${PW_THOR_ORIGIN}/api/contents?batchId=${encodeURIComponent(batchId)}&subjectId=${encodeURIComponent(subjectId)}&tag=${encodeURIComponent(chapterId)}`;
+      const thorRes = await fetch(thorUrl, {
+        headers: PW_THOR_HEADERS,
+        signal: AbortSignal.timeout(5000)
+      });
+      if (thorRes.ok && (thorRes.headers.get("content-type") || "").includes("json")) {
+        const thorData = await thorRes.json();
+        const v = thorData.videos || thorData.data?.videos || (Array.isArray(thorData.data) ? thorData.data : []);
+        const n = thorData.notes || thorData.data?.notes || [];
+        const d = thorData.dpps || thorData.data?.dpps || [];
+        if (Array.isArray(v) && v.length > 0) rawVideos.push(...v);
+        if (Array.isArray(n) && n.length > 0) rawNotes.push(...n);
+        if (Array.isArray(d) && d.length > 0) rawDpps.push(...d);
+      }
+    } catch (e) {}
+
+    // Priority 2: Fall back to vidcloud mirror if pwthor had no contents
+    if (rawVideos.length === 0 && rawNotes.length === 0 && rawDpps.length === 0) {
+      const reqHeaders = getPwRequestHeaders(token);
+      const [vRes, nRes, dRes] = await Promise.all([
+        fetch(
+          `${PW_DETAILS_ORIGIN}/api/v2/batches/${encodeURIComponent(batchId)}/subject/${encodeURIComponent(subjectId)}/contents?page=1&contentType=videos&tag=${encodeURIComponent(chapterId)}`,
+          { headers: reqHeaders, signal: AbortSignal.timeout(12000) }
+        ).then(r => r.ok ? r.json() : { data: [] }).catch(() => ({ data: [] })),
+        fetch(
+          `${PW_DETAILS_ORIGIN}/api/v2/batches/${encodeURIComponent(batchId)}/subject/${encodeURIComponent(subjectId)}/contents?page=1&contentType=notes&tag=${encodeURIComponent(chapterId)}`,
+          { headers: reqHeaders, signal: AbortSignal.timeout(12000) }
+        ).then(r => r.ok ? r.json() : { data: [] }).catch(() => ({ data: [] })),
+        fetch(
+          `${PW_DETAILS_ORIGIN}/api/v2/batches/${encodeURIComponent(batchId)}/subject/${encodeURIComponent(subjectId)}/contents?page=1&contentType=DppNotes&tag=${encodeURIComponent(chapterId)}`,
+          { headers: reqHeaders, signal: AbortSignal.timeout(12000) }
+        ).then(r => r.ok ? r.json() : { data: [] }).catch(() => ({ data: [] }))
+      ]);
+
+      if (Array.isArray(vRes.data)) rawVideos.push(...vRes.data);
+      if (Array.isArray(nRes.data)) rawNotes.push(...nRes.data);
+      if (Array.isArray(dRes.data)) rawDpps.push(...dRes.data);
+    }
 
     // If page 1 had max items (usually 20), fetch page 2 to ensure complete chapter history
     if (rawVideos.length >= 20 || rawNotes.length >= 20 || rawDpps.length >= 20) {
@@ -1110,8 +1189,16 @@ async function fetchPwMetadata(batchId) {
   let detailsPayload = null;
   const candidates = [
     {
+      url: `${PW_THOR_ORIGIN}/api/batchDetails?batchId=${encodeURIComponent(batchId)}`,
+      headers: PW_THOR_HEADERS
+    },
+    {
+      url: `${PW_THOR_ORIGIN}/api/batches/${encodeURIComponent(batchId)}`,
+      headers: PW_THOR_HEADERS
+    },
+    {
       url: `${PW_OFFICIAL_API}/v3/batches/${encodeURIComponent(batchId)}/details?type=EXPLORE_LEAD`,
-      headers: { "User-Agent": PW_HEADERS["User-Agent"], "client-type": "WEB", "Accept": "application/json, text/plain, */*" }
+      headers: { "User-Agent": PW_HEADERS["User-Agent"], "client-type": "WEB", "client-id": "5eb393ee95fab7468a79d189", "Accept": "application/json, text/plain, */*" }
     },
     {
       url: `${PW_DETAILS_ORIGIN}/api/v3/batches/${encodeURIComponent(batchId)}/details?type=EXPLORE_LEAD`,
@@ -1127,11 +1214,14 @@ async function fetchPwMetadata(batchId) {
     try {
       const res = await fetch(candidate.url, {
         headers: candidate.headers,
-        signal: AbortSignal.timeout(12000)
+        signal: AbortSignal.timeout(10000)
       });
-      if (res.ok) {
+      if (res.ok && (res.headers.get("content-type") || "").includes("json")) {
         detailsPayload = await res.json();
-        if (detailsPayload && (detailsPayload.data || detailsPayload.subjects)) break;
+        if (detailsPayload && (detailsPayload.data || detailsPayload.subjects || detailsPayload.batch)) {
+          if (detailsPayload.batch && !detailsPayload.data) detailsPayload.data = detailsPayload.batch;
+          break;
+        }
       }
     } catch (err) {
       // try next
@@ -1269,7 +1359,21 @@ async function fetchPwSchedule(batchId, date, month, startDate, endDate) {
     const rawItems = [];
     const token = await getPwToken().catch(() => "");
 
-    // 1. Fetch weekly-schedules across pages 1..8 with startDate and endDate
+    // Priority 1: Try fetching schedules from pwthor.live
+    try {
+      const thorUrl = `${PW_THOR_ORIGIN}/api/Schedule?batchId=${encodeURIComponent(batchId)}&startDate=${encodeURIComponent(sDate)}&endDate=${encodeURIComponent(eDate)}`;
+      const thorRes = await fetch(thorUrl, {
+        headers: PW_THOR_HEADERS,
+        signal: AbortSignal.timeout(5000)
+      });
+      if (thorRes.ok && (thorRes.headers.get("content-type") || "").includes("json")) {
+        const thorData = await thorRes.json();
+        const sched = Array.isArray(thorData) ? thorData : (Array.isArray(thorData.data) ? thorData.data : (Array.isArray(thorData.schedules) ? thorData.schedules : []));
+        if (sched.length > 0) rawItems.push(...sched);
+      }
+    } catch (e) {}
+
+    // Priority 2: Fetch weekly-schedules from vidcloud across pages 1..12
     if (token) {
       try {
         const pages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
@@ -1633,41 +1737,55 @@ app.get("/api/pw-catalog", async (req, res) => {
   const wantAll = req.query.all === "true";
 
   let catalogList = [];
-  if (pwCatalogCache.data && Array.isArray(pwCatalogCache.data.data)) {
-    catalogList = pwCatalogCache.data.data;
-  } else {
-    try {
-      const response = await fetch(PW_CATALOG_URL, {
-        headers: {
-          "User-Agent": PW_HEADERS["User-Agent"],
-          Accept: "application/json",
-        },
-        signal: AbortSignal.timeout(15000),
-      });
-      if (response.ok) {
-        const data = await response.json();
-        pwCatalogCache = { data, expiresAt: Date.now() + PW_CATALOG_TTL };
-        catalogList = Array.isArray(data.data) ? data.data : (Array.isArray(data) ? data : []);
-      }
-    } catch (error) {}
 
-    if (catalogList.length === 0) {
-      try {
-        const fallbackFile = path.join(__dirname, "data", "pw", "batches.json");
-        if (fs.existsSync(fallbackFile)) {
-          const localData = JSON.parse(fs.readFileSync(fallbackFile, "utf8"));
-          catalogList = Array.isArray(localData.data) ? localData.data : (Array.isArray(localData) ? localData : []);
-        }
-      } catch (e) {}
+  // Priority 1: Try PWThor live catalog first
+  try {
+    const thorBatches = await fetchCatalogFromPwThor(searchQuery, 1);
+    if (thorBatches && Array.isArray(thorBatches) && thorBatches.length > 0) {
+      catalogList = thorBatches;
     }
+  } catch (thorErr) {
+    console.warn("[PW Engine]: PWThor catalog attempt failed, cascading to secondary sources:", thorErr.message);
+  }
 
-    if (catalogList.length === 0 && Array.isArray(POPULAR_PW_BATCHES)) {
-      catalogList = [...POPULAR_PW_BATCHES];
+  // Priority 2: Fall back to cache or studystark / vidcloud catalog
+  if (catalogList.length === 0) {
+    if (pwCatalogCache.data && Array.isArray(pwCatalogCache.data.data)) {
+      catalogList = pwCatalogCache.data.data;
+    } else {
+      try {
+        const response = await fetch(PW_CATALOG_URL, {
+          headers: {
+            "User-Agent": PW_HEADERS["User-Agent"],
+            Accept: "application/json",
+          },
+          signal: AbortSignal.timeout(15000),
+        });
+        if (response.ok) {
+          const data = await response.json();
+          pwCatalogCache = { data, expiresAt: Date.now() + PW_CATALOG_TTL };
+          catalogList = Array.isArray(data.data) ? data.data : (Array.isArray(data) ? data : []);
+        }
+      } catch (error) {}
+
+      if (catalogList.length === 0) {
+        try {
+          const fallbackFile = path.join(__dirname, "data", "pw", "batches.json");
+          if (fs.existsSync(fallbackFile)) {
+            const localData = JSON.parse(fs.readFileSync(fallbackFile, "utf8"));
+            catalogList = Array.isArray(localData.data) ? localData.data : (Array.isArray(localData) ? localData : []);
+          }
+        } catch (e) {}
+      }
+
+      if (catalogList.length === 0 && Array.isArray(POPULAR_PW_BATCHES)) {
+        catalogList = [...POPULAR_PW_BATCHES];
+      }
     }
   }
 
   if (wantAll && !searchQuery && !examQuery && !classQuery) {
-    return res.json({ success: true, count: catalogList.length, data: catalogList });
+    return res.json({ success: true, source: "pw-engine", count: catalogList.length, data: catalogList });
   }
 
   let filtered = catalogList;
@@ -1692,6 +1810,7 @@ app.get("/api/pw-catalog", async (req, res) => {
 
   res.json({
     success: true,
+    source: "pw-engine",
     total: filtered.length,
     data: filtered.slice(0, limit)
   });

@@ -473,7 +473,7 @@ const POPULAR_PW_BATCHES = [
 
 const FALLBACK_PW_COOKIES = "access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3ODg2NjYyODMsImV4cCI6MTc4OTI3MTA4My4wMjUsImRhdGEiOnsiX2lkIjoiNjhkZGZiZjAwNTkwMWE2ZDlhMTI5ZGI1IiwidXNlcm5hbWUiOiI3OTA2NTIxODQxIn19.f2XuaPhdG1vbiI6yjFawQioI1IZWiZtOTN1ZTk1ZmFinZQ2OGE3OWQxODk1LCJ3ZWJzaXRlIjoiaG95c21jc3dhbGxhc5Jb201LCJvYWI1IjoiUGh5c2ljc3dhbGxhc39LCJyb2xlcyI6WyI1YjI3YmQ5NjU4NDJmOTUwYTc3OGM2ZWYiXSwiY291bnRyeUdyb3VwIjoiSU4iLCJvbmVsb2xlcyI6W10sInR5cGUiOiJVU0VSIn0sImp0aSI6Ijd6dG5rbE0zUmQyMmE2e1Q2cUZNT1FfNjhkZGZiZjAwNTkwMWE3ZDlhMTI5ZGI1In0.OEVxivd2_L6zfrZLLTOFYPoiQsmb1t_7m889gyX5oeE; PHPSESSID=14dvi03b58pug1144tioqed92b; stark_cid=f96ea578454552575ec787e1e7c9eec200ea202aae6ae1daaadbd245d3d307b79; stark_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrzkiOiI1OUQtQkEyLTgyRS0zRDItQTk2Iiwiy2xpZW50X2lkIjoiZ2kzZWE1Nzg0NTQ1NTI1NzVlYzc4N2UxZTdjOWVlYzIwMGVhMjAyYWF1NmF1MWRhYWFkYmQyNDVkM2QzMDdiNzlSISImlhdCI6MTc5MDMxNjUzNSIwZXhwIjoxNzkxNDAYOTM1fQ.gieu1Snd5WgiM8VByojkwmuq0rcNfON52CkuEyzFofs";
 
-const FALLBACK_PW_TOKEN = "Qd2wfhzRoi5eQdoITwpbNKPMdMTNSs37YUjvj0rSb5sNyhMiNwdYRCmgiTbUdxAi+3Z7i89+91g8EkanxDbtI7cmrTLGscI/Z8dG2Cew4sFpqwjSQ/9S9EhvAe2afORvhjB33bPuBHZ+PSiqWiKn5g3OtjClufefx3LhX4/vrObplc62nePs6kVOBOqSuhRFsgYp2ADuY9q5qQkR3RIVErL3Uok8bxFIxiIu5MHHACj+ebCPJCICJ+xkIKE5+z5Eun0OOTCicwsgOH3e+nWkYk6iiGffevfsWmCsNSY/XnDHrJ4dxia1r/YE8gckIVSKNod6PfMozz9GtDhIKoymS5XL+HeFPDis7AGZTOYjyUFtPIpNUPu00YzyJUya0xx2ygz2Aeub8Iugv4/Lz74hLyuTLyWbXhRdKqBpXqQy5FIU4J054vpivsbw+KE5Nr0OTrAUduY+URQiaWO44JNcCDuCtpCT6XjKCivCL3TyNkJCLSpnaguZ2o79/xE0B7SreZFm1v9JEFr/O3BZaBZSPk/MS5KmBSp6m1qtOMWw4s6EU0mfXZetjb718j5mZSY/X1o/gTrxQgA38pMu+1YEmZ02BkPispssqGZhWv7EGm3r9Mq9Fulf9s8ggsssqXxQuSwCkCN8pGde6HytkhzQZ14+IMizQ3/r1slZYuKRNp5nMBC2Lg6oopVD4yYHQOpN2v7pgq/JLgeo5W5sqZ6M7OrJrrkY320YvrcGpFmUX3XYbzky7dIwVNUQMXmI0HFk1q4rccugBeeLRYfS8JEBrA==";
+const FALLBACK_PW_TOKEN = "Qd2wfhzRoi5eQdoITwpbNKPMdMTNSs37YUjvj0rSb5sNyhMiNwdYRCmgiTbUdxAiJGjAdCsLMX3wPWKTXvhUOmQcYNZDDANMgczJ3wQd9pbcHP/v0HCkfzp3Te8ihR8Q7xK8ecG3jFeJhBT5lqQWzC6SIMBgQqPTvK6/fLfOZ1PfsWGxImlvNMJWQRzEiG/fh3y2s39+vfi7rARUwiMmwpYcu6WxPZ5wBLooai2uoto73oK+YOE0ewapmZNnFxAfVy4t59Y9CSUZOvoSD1RltjGb7GXyr00NnELII3GFaiD04ns6rpfVs/Gx5UTb8GZmayZYLFgaJl4EfKzEPRIeXh64CiN687MDXoYRbo+G6tTF3qpoBY9Z6PqC+dDTnu5qNJLb9Lr7AiXf1+6YZG/BGFQYpmgxM7fFXoxccBi7RCtpwTeXtqz3F0gJPVijYiXlTfbOJ8IjyEAmVgG72a+EoB1HVVVY7/JebBXlY0VDnSSDE0852BRXsRYCZcZaC8Ww09TEDpygimmj4igqFVehb2fCxPl8uGYMGxf7eAU/lJbI8minByq+Asi8kilNa5i3sFh+2opjiyYlSqm37ciKXogk5/cyqaX0ZXyOGg1HfY3wgB4/T3/Rw43QeYHHjmVUbdflu9n2uT23MiJY2N4vGbAOx+d8T5FPwDKdK6ErunesI3QNR6tg5eKyrxzuzWVWZTBHHhNBFSvyQfPiCXMvShJJ5XJcB9HZ/ftTin6UdrSSrIsZeUjsNloq6j9RdiBmbrHpt58094D4Vn6vAR1aAAuDX2e6rORS4Hlwy/Dn3HwDBMIivtgK5juLBzBZZdrhvT1SgOBETNbedt1umwcqy9eYqvPvbZ6SlMeAk6EL6WoqA6SDHL0EErHAGQambc8u";
 
 const PW_HEADERS = {
   "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
@@ -694,11 +694,11 @@ async function fetchChapterContents(batchId, subjectId, chapterId, token, allowF
       try {
         const searchTerms = [chapterId, chapterTitle].filter(Boolean).map(s => s.toLowerCase().trim());
         const schedPromises = [
-          fetch(`${PW_DETAILS_ORIGIN}/api/v2/batches/${encodeURIComponent(batchId)}/weekly-schedules?batchId=${encodeURIComponent(batchId)}&page=1`, { headers: { ...PW_HEADERS, Authorization: `Bearer ${token}` }, signal: AbortSignal.timeout(9000) }).then(r => r.ok ? r.json() : null).catch(() => null),
-          fetch(`${PW_DETAILS_ORIGIN}/api/v2/batches/${encodeURIComponent(batchId)}/weekly-schedules?batchId=${encodeURIComponent(batchId)}&page=2`, { headers: { ...PW_HEADERS, Authorization: `Bearer ${token}` }, signal: AbortSignal.timeout(9000) }).then(r => r.ok ? r.json() : null).catch(() => null),
-          fetch(`${PW_DETAILS_ORIGIN}/api/v2/batches/${encodeURIComponent(batchId)}/weekly-schedules?batchId=${encodeURIComponent(batchId)}&startDate=2026-04-01&endDate=2027-04-30&page=1`, { headers: { ...PW_HEADERS, Authorization: `Bearer ${token}` }, signal: AbortSignal.timeout(9000) }).then(r => r.ok ? r.json() : null).catch(() => null),
-          fetch(`${PW_DETAILS_ORIGIN}/api/v2/batches/${encodeURIComponent(batchId)}/weekly-schedules?batchId=${encodeURIComponent(batchId)}&startDate=2026-04-01&endDate=2027-04-30&page=2`, { headers: { ...PW_HEADERS, Authorization: `Bearer ${token}` }, signal: AbortSignal.timeout(9000) }).then(r => r.ok ? r.json() : null).catch(() => null),
-          fetch(`${PW_DETAILS_ORIGIN}/api/v2/batches/${encodeURIComponent(batchId)}/weekly-schedules?batchId=${encodeURIComponent(batchId)}&startDate=2026-04-01&endDate=2027-04-30&page=3`, { headers: { ...PW_HEADERS, Authorization: `Bearer ${token}` }, signal: AbortSignal.timeout(9000) }).then(r => r.ok ? r.json() : null).catch(() => null),
+          fetch(`${PW_DETAILS_ORIGIN}/api/v2/batches/${encodeURIComponent(batchId)}/weekly-schedules?batchId=${encodeURIComponent(batchId)}&page=1`, { headers: getPwRequestHeaders(token), signal: AbortSignal.timeout(9000) }).then(r => r.ok ? r.json() : null).catch(() => null),
+          fetch(`${PW_DETAILS_ORIGIN}/api/v2/batches/${encodeURIComponent(batchId)}/weekly-schedules?batchId=${encodeURIComponent(batchId)}&page=2`, { headers: getPwRequestHeaders(token), signal: AbortSignal.timeout(9000) }).then(r => r.ok ? r.json() : null).catch(() => null),
+          fetch(`${PW_DETAILS_ORIGIN}/api/v2/batches/${encodeURIComponent(batchId)}/weekly-schedules?batchId=${encodeURIComponent(batchId)}&startDate=2026-04-01&endDate=2027-04-30&page=1`, { headers: getPwRequestHeaders(token), signal: AbortSignal.timeout(9000) }).then(r => r.ok ? r.json() : null).catch(() => null),
+          fetch(`${PW_DETAILS_ORIGIN}/api/v2/batches/${encodeURIComponent(batchId)}/weekly-schedules?batchId=${encodeURIComponent(batchId)}&startDate=2026-04-01&endDate=2027-04-30&page=2`, { headers: getPwRequestHeaders(token), signal: AbortSignal.timeout(9000) }).then(r => r.ok ? r.json() : null).catch(() => null),
+          fetch(`${PW_DETAILS_ORIGIN}/api/v2/batches/${encodeURIComponent(batchId)}/weekly-schedules?batchId=${encodeURIComponent(batchId)}&startDate=2026-04-01&endDate=2027-04-30&page=3`, { headers: getPwRequestHeaders(token), signal: AbortSignal.timeout(9000) }).then(r => r.ok ? r.json() : null).catch(() => null),
           fetch(`${PW_OFFICIAL_API}/v3/public/batch-service/batch-subject-schedules/${encodeURIComponent(batchId)}/free-schedule`, { headers: { "client-id": "5eb393ee95fab7468a79d189", "client-type": "WEB" }, signal: AbortSignal.timeout(9000) }).then(r => r.ok ? r.json() : null).catch(() => null)
         ];
         const schedResults = await Promise.all(schedPromises);
@@ -1096,7 +1096,7 @@ async function fetchSubjectData(batchId, remoteSubject, token) {
     try {
       const p1Res = await fetch(
         `${PW_DETAILS_ORIGIN}/api/v2/batches/${encodeURIComponent(batchId)}/subject/${encodeURIComponent(primaryId)}/topics?page=1`,
-        { headers: { ...PW_HEADERS, Authorization: `Bearer ${token}` }, signal: AbortSignal.timeout(8000) }
+        { headers: getPwRequestHeaders(token), signal: AbortSignal.timeout(8000) }
       ).then(r => r.ok ? r.json() : { data: [] }).catch(() => ({ data: [] }));
 
       if (Array.isArray(p1Res.data)) rawTopics = [...p1Res.data];
@@ -1104,7 +1104,7 @@ async function fetchSubjectData(batchId, remoteSubject, token) {
       if (rawTopics.length === 0 && altId) {
         const altRes = await fetch(
           `${PW_DETAILS_ORIGIN}/api/v2/batches/${encodeURIComponent(batchId)}/subject/${encodeURIComponent(altId)}/topics?page=1`,
-          { headers: { ...PW_HEADERS, Authorization: `Bearer ${token}` }, signal: AbortSignal.timeout(8000) }
+          { headers: getPwRequestHeaders(token), signal: AbortSignal.timeout(8000) }
         ).then(r => r.ok ? r.json() : { data: [] }).catch(() => ({ data: [] }));
         if (Array.isArray(altRes.data) && altRes.data.length > 0) {
           rawTopics = altRes.data;
@@ -1115,7 +1115,7 @@ async function fetchSubjectData(batchId, remoteSubject, token) {
         const activeId = rawTopics.length > 0 && altId && p1Res.data?.length === 0 ? altId : primaryId;
         const p2Res = await fetch(
           `${PW_DETAILS_ORIGIN}/api/v2/batches/${encodeURIComponent(batchId)}/subject/${encodeURIComponent(activeId)}/topics?page=2`,
-          { headers: { ...PW_HEADERS, Authorization: `Bearer ${token}` }, signal: AbortSignal.timeout(8000) }
+          { headers: getPwRequestHeaders(token), signal: AbortSignal.timeout(8000) }
         ).then(r => r.ok ? r.json() : { data: [] }).catch(() => ({ data: [] }));
         if (Array.isArray(p2Res.data) && p2Res.data.length > 0) {
           rawTopics.push(...p2Res.data);
@@ -1380,7 +1380,7 @@ async function fetchPwSchedule(batchId, date, month, startDate, endDate) {
         const pagePromises = pages.map(page =>
           fetch(
             `${PW_DETAILS_ORIGIN}/api/v2/batches/${encodeURIComponent(batchId)}/weekly-schedules?batchId=${encodeURIComponent(batchId)}&startDate=${encodeURIComponent(sDate)}&endDate=${encodeURIComponent(eDate)}&page=${page}`,
-            { headers: { ...PW_HEADERS, Authorization: `Bearer ${token}` }, signal: AbortSignal.timeout(12000) }
+            { headers: getPwRequestHeaders(token), signal: AbortSignal.timeout(12000) }
           ).then(r => r.ok ? r.json() : { data: [] }).catch(() => ({ data: [] }))
         );
         const results = await Promise.all(pagePromises);
@@ -1400,7 +1400,7 @@ async function fetchPwSchedule(batchId, date, month, startDate, endDate) {
         const pagePromises = [1, 2, 3].map(page =>
           fetch(
             `${PW_DETAILS_ORIGIN}/api/v2/batches/${encodeURIComponent(batchId)}/weekly-schedules?batchId=${encodeURIComponent(batchId)}&page=${page}`,
-            { headers: { ...PW_HEADERS, Authorization: `Bearer ${token}` }, signal: AbortSignal.timeout(9000) }
+            { headers: getPwRequestHeaders(token), signal: AbortSignal.timeout(9000) }
           ).then(r => r.ok ? r.json() : { data: [] }).catch(() => ({ data: [] }))
         );
         const results = await Promise.all(pagePromises);

@@ -43,7 +43,7 @@ const gcPlugin = () => {
   };
 };
 
-export default defineConfig(async () => {
+export default defineConfig(async ({ command }) => {
   // Conditionally load Replit plugins asynchronously
   const extraPlugins = [];
   if (process.env.NODE_ENV !== "production") {
@@ -59,11 +59,14 @@ export default defineConfig(async () => {
     }
   }
 
+  const isBuild = command === "build";
+  const cdnBase = process.env.VITE_CDN_BASE || "https://cdn.jsdelivr.net/gh/codingwithom/dist@main/";
+  const base = isBuild
+    ? (process.env.VITE_USE_LOCAL === "true" ? "./" : cdnBase)
+    : "/";
+
   return {
-    // Use CDN base if VITE_USE_CDN=true, otherwise relative ./
-    base: process.env.VITE_USE_CDN === "true"
-      ? (process.env.VITE_CDN_BASE || "https://cdn.jsdelivr.net/gh/codingwithom/dist@main/")
-      : "./",
+    base,
 
     plugins: [
       gcPlugin(),
